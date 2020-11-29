@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<img width="200" alt="logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%" src="https://camotracker.djr.li/icon.jpg">
 ## What is the App? 
 
 CamoTracker is an app on iOS and Android that helps you track your Call of Duty: Black Ops Cold War Camo progression. Use this to track which guns you have gold on your way to Diamond and DM Ultra! With tracking for both Zombies and Multiplayer there's no easier way to track progression.
