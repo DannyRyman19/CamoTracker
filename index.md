@@ -8,11 +8,6 @@ With Zombies and Multiplayer options, you can track each weapon, with progress t
 
 Store your player level, weapon levels, and camo progression all in this handy app. No adverts 100% free. Support for new weapons added in-game in the future.
 
-The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are property of their respective owners. All In-Game Images are the sole Property of Activision, Treyarch, Raven Software, or their respective owners. Any and All such Content is used for educational purposes only!
-
-## Where can I download the App?
-The app will be available on the App Store and Google Play Store. 
-
-## I have an issue / want to provide feedback
+The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are property of their respective owners. All In-Game Images are the sole Property of Activision, Treyarch, Raven Software, or their respective owners. Any and All such Content is used for educational purposes ## I have an issue / want to provide feedback
 If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
 
