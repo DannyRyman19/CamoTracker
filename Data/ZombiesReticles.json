@@ -1,0 +1,1153 @@
+{
+  "Optics": [
+    {
+      "OpticID": 0,
+      "OpticName": "Axial Arms 3x",
+      "OpticDescription": "American scope with 3.0x magnification features a mil-dot crosshair for advanced targeting at extended ranges.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Axial Arms 3x in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Surveillance",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Stalker",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Disrupter",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Scalpel",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Sinister",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Vengeance",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Reasonance",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Afterlife",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Finger Guns",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Atom Smasher",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 1,
+      "OpticName": "Diamondback Reflex",
+      "OpticDescription": "Russia reflex sight with 1.37x magnification and a thin circular frame to prevent sight obstruction.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Diamondback Reflex in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 2,
+      "OpticName": "Fastpoint Reflex",
+      "OpticDescription": "Open reflex sight from Phantom with 1.37x magnification improves aiming precision and target acquisition.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Fastpoint Reflex in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 3,
+      "OpticName": "Hawksmoor",
+      "OpticDescription": "American reflex sight with a large objective lens and 1.37x magnification provides higher precision.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Hawksmoor in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 4,
+      "OpticName": "Kobra Red Dot",
+      "OpticDescription": "Red-dot sight of Soviet origin with 1.75x magnification features an illuminated aimpoint to improve targe acquisition.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Kobra Red Dot in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 5,
+      "OpticName": "Microflex LED",
+      "OpticDescription": "Reflex sight manufactured by Phantom USA with 1.25x magnification and a thin frame.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Microflex LED in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 6,
+      "OpticName": "Millstop Reflex",
+      "OpticDescription": "Precision optic produced by Millstop with 1.37x magnification.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete":0,
+      "UnlockDescription":"Get kills while aiming down sights with the Millstop Reflex in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+      "OpticID": 7,
+      "OpticName": "Otero Mini Reflex",
+      "OpticDescription": "Otero reflex sight with 1.37x magnification designed specifically for pistols.",
+      "CurrentAmount": 0,
+      "IsOpticCopmplete": false,
+      "AmountNeeded": 2000,
+      "PercentComplete": 0,
+      "UnlockDescription":"Get kills while aiming down sights with the Otero Mini Reflex in Zombies",
+      "Reticles": [
+        {
+          "ReticleID": 0,
+          "ReticleName": "Glare",
+          "AmountRequired": 50,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 1,
+          "ReticleName": "Murked",
+          "AmountRequired": 100,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 2,
+          "ReticleName": "Apex",
+          "AmountRequired": 250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 3,
+          "ReticleName": "Luminary",
+          "AmountRequired": 500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 4,
+          "ReticleName": "Extinction",
+          "AmountRequired": 750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 5,
+          "ReticleName": "Pit Boss",
+          "AmountRequired": 1000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 6,
+          "ReticleName": "Intersect",
+          "AmountRequired": 1250,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 7,
+          "ReticleName": "Teardrop",
+          "AmountRequired": 1500,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 8,
+          "ReticleName": "Nightwatch",
+          "AmountRequired": 1750,
+          "Opacity": 0.5,
+          "ImageURL": null
+        },
+        {
+          "ReticleID": 9,
+          "ReticleName": "Runed",
+          "AmountRequired": 2000,
+          "Opacity": 0.5,
+          "ImageURL": null
+        }
+      ]
+    },
+    {
+        "OpticID": 8,
+        "OpticName": "Quickdot LED",
+        "OpticDescription": "Compact mini reflex sight of American origin with 1.25x magnification.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the Quickdot LED in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Glare",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Murked",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Apex",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Luminary",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Extinction",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Pit Boss",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Intersect",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Teardrop",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Nightwatch",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Runed",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      },
+      {
+        "OpticID": 9,
+        "OpticName": "Royal & Kross 4X",
+        "OpticDescription": "4.0x optic manufactured in the UK with a light aluminium body improves targeting from long range.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the Royal & Kross 4X in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Surveillance",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Stalker",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Disrupter",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Scalpel",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Sinister",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Vengeance",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Reasonance",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Afterlife",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Finger Guns",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Atom Smasher",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      },
+      {
+        "OpticID": 10,
+        "OpticName": "Sillix Holoscout",
+        "OpticDescription": "Well-rounded holographic sight with 1.75x magnification provides a distortion-free sight picture.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the Sillix Holoscout in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Glare",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Murked",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Apex",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Luminary",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Extinction",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Pit Boss",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Intersect",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Teardrop",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Nightwatch",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Runed",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      },
+      {
+        "OpticID": 11,
+        "OpticName": "SnapPoint",
+        "OpticDescription": "Russian mini reflex sight with 1.5x magnification provides a clear sight picture.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the SnapPoint in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Glare",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Murked",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Apex",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Luminary",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Extinction",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Pit Boss",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Intersect",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Teardrop",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Nightwatch",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Runed",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      },
+      {
+        "OpticID": 12,
+        "OpticName": "Susat Multizoom",
+        "OpticDescription": "Telescopic sight produced in the UK with variable 2.0x-4.0x magnification for long range target acquisition.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the Susat Multizoom in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Surveillance",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Stalker",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Disrupter",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Scalpel",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Sinister",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Vengeance",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Reasonance",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Afterlife",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Finger Guns",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Atom Smasher",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      },
+      {
+        "OpticID": 13,
+        "OpticName": "Visiontech 2x",
+        "OpticDescription": "American-made scope with 2.0x magnification provides exceptional optical clarity.",
+        "CurrentAmount": 0,
+        "IsOpticCopmplete": false,
+        "AmountNeeded": 2000,
+        "PercentComplete": 0,
+        "UnlockDescription":"Get kills while aiming down sights with the Visiontech 2x in Zombies",
+        "Reticles": [
+          {
+            "ReticleID": 0,
+            "ReticleName": "Surveillance",
+            "AmountRequired": 50,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 1,
+            "ReticleName": "Stalker",
+            "AmountRequired": 100,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 2,
+            "ReticleName": "Disrupter",
+            "AmountRequired": 250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 3,
+            "ReticleName": "Scalpel",
+            "AmountRequired": 500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 4,
+            "ReticleName": "Sinister",
+            "AmountRequired": 750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 5,
+            "ReticleName": "Vengeance",
+            "AmountRequired": 1000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 6,
+            "ReticleName": "Reasonance",
+            "AmountRequired": 1250,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 7,
+            "ReticleName": "Afterlife",
+            "AmountRequired": 1500,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 8,
+            "ReticleName": "Finger Guns",
+            "AmountRequired": 1750,
+            "Opacity": 0.5,
+            "ImageURL": null
+          },
+          {
+            "ReticleID": 9,
+            "ReticleName": "Atom Smasher",
+            "AmountRequired": 2000,
+            "Opacity": 0.5,
+            "ImageURL": null
+          }
+        ]
+      }
+  ],
+  "PercentageComplete":0
+}
