@@ -11505,7 +11505,7 @@
           "CategoryDescription": "Destroy ground-based Scorestreaks or vehicles in Multiplayer.",
           "PercentComplete": 0,
           "CurrentAmount": 0,
-          "AmountNeeded": 50,
+          "AmountNeeded": 25,
           "IsCategoryComplete": false,
           "OpacityLevel": 0.5,
           "CategoryCamos": [
@@ -11558,7 +11558,7 @@
           "CategoryDescription": "Destroy aerial Scorestreaks or vehicles in Multiplayer.",
           "PercentComplete": 0,
           "CurrentAmount": 0,
-          "AmountNeeded": 50,
+          "AmountNeeded": 25,
           "IsCategoryComplete": false,
           "OpacityLevel": 0.5,
           "CategoryCamos": [
@@ -11590,17 +11590,17 @@
               "CamoName": "Lumber",
               "IsCamoComplete": false,
               "OpacityLevel": 0.5,
-              "Amount": 25,
+              "Amount": 20,
               "CamoURL": "lumber.jpg",
-              "CamoDescription": "Destroy 25 aerial Scorestreaks or vehicles in Multiplayer."
+              "CamoDescription": "Destroy 20 aerial Scorestreaks or vehicles in Multiplayer."
             },
             {
               "CamoName": "Cherry Blossom",
               "IsCamoComplete": false,
               "OpacityLevel": 0.5,
-              "Amount": 50,
+              "Amount": 25,
               "CamoURL": "cherry_blossom.jpg",
-              "CamoDescription": "Destroy 50 aerial Scorestreaks or vehicles in Multiplayer."
+              "CamoDescription": "Destroy 25 aerial Scorestreaks or vehicles in Multiplayer."
             }
           ]
         },
