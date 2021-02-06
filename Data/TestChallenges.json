@@ -8,7 +8,7 @@
             "GameModes":[
                 {
                     "GameModeID":0,
-                    "GameMode":"Multiplayer",
+                    "GameModeName":"Multiplayer",
                     "GameModeProgress":0,
                     "IsGameModeComplete":false,
                     "Challenges":[
@@ -216,7 +216,7 @@
                 },
                 {
                     "GameModeID":1,
-                    "GameMode":"Zombies",
+                    "GameModeName":"Zombies",
                     "GameModeProgress":0,
                     "IsGameModeComplete":false,
                     "Challenges":[
@@ -432,7 +432,7 @@
             "GameModes":[
                 {
                     "GameModeID":0,
-                    "GameMode":"Multiplayer",
+                    "GameModeName":"Multiplayer",
                     "GameModeProgress":0,
                     "IsGameModeComplete":false,
                     "Challenges":[
@@ -640,7 +640,7 @@
                 },
                 {
                     "GameModeID":1,
-                    "GameMode":"Zombies",
+                    "GameModeName":"Zombies",
                     "GameModeProgress":0,
                     "IsGameModeComplete":false,
                     "Challenges":[
