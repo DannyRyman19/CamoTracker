@@ -859,6 +859,436 @@
           ]
         }
       ]
-    }
+    },
+    {
+        "SeasonName": "Season 3",
+        "SeasonID": "2",
+        "SeasonProgress": 0,
+        "IsSeasonComplete": false,
+        "ChallengeCount": 40,
+        "ChallengesCompleted": 0,
+        "GameModes": [
+          {
+            "GameModeID": 0,
+            "GameModeName": "Multiplayer",
+            "GameModeProgress": 0,
+            "IsGameModeComplete": false,
+            "ChallengeCount": 20,
+            "ChallengesCompleted": 0,
+            "Challenges": [
+              {
+                "ChallengeID": 0,
+                "ChallengeName": "Haymaker",
+                "ChallengeDescription": "Earn * Butcher medals (Killed 5 or more enemies rapidly with a Melee Weapon).",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 1,
+                "ChallengeName": "Dead Air",
+                "ChallengeDescription": "Kill * enemies that are slowed by a Plagehound's toxic gas.",
+                "AmountRequired": 30,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 2,
+                "ChallengeName": "The Other Side",
+                "ChallengeDescription": "Get * eliminations in the Dark Aether.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 3,
+                "ChallengeName": "Counter Contamination",
+                "ChallengeDescription": "Block * Megaton projectiles with Ring of Fire.",
+                "AmountRequired": 30,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 4,
+                "ChallengeName": "The Great Escape",
+                "ChallengeDescription": "Successfully exfil from Die Maschine after Round 30",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 5,
+                "ChallengeName": "Bottoms Up",
+                "ChallengeDescription": "Drink 6 Perks in 6 seconds.",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 6,
+                "ChallengeName": "Help From Beyond",
+                "ChallengeDescription": "Earn * Spectral Salvation medals (Revie a teammate while cloaked in the Aether Shroud).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 7,
+                "ChallengeName": "Seeing Double",
+                "ChallengeDescription": "Split * Megaton while it is dazed from a Stun Grenade",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 8,
+                "ChallengeName": "Old Faithful",
+                "ChallengeDescription": "Upgrade a starting loadout weapon to Legendary Quality at the Arsenal.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 9,
+                "ChallengeName": "Scientific Advantage",
+                "ChallengeDescription": "Get * eliminations during the D.I.E weapon.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 10,
+                "ChallengeName": "Suction Please!",
+                "ChallengeDescription": "Earn * Easy Target medals (Killed a Megaton while it's caught by the D.I.E)..",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 11,
+                "ChallengeName": "Toxic Bomb",
+                "ChallengeDescription": "Kill * Megatons using C4.",
+                "AmountRequired": 3,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 12,
+                "ChallengeName": "Prime Positioning",
+                "ChallengeDescription": "Earn * Crackdown medals (Killed 5 or more enemies rapidly with the Sentry Turret).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 13,
+                "ChallengeName": "Biggest Bang",
+                "ChallengeDescription": "Kill 15 enemies with a single Energy Mine * times.",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 14,
+                "ChallengeName": "That Escalated Quickly",
+                "ChallengeDescription": "Get * eliminations shortly after mantling.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 15,
+                "ChallengeName": "Night Vision",
+                "ChallengeDescription": "Get * eliminations with the flashlight on.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 16,
+                "ChallengeName": "Elite Gamer",
+                "ChallengeDescription": "Redeem * Legendary Rewards from Trials.",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 17,
+                "ChallengeName": "Armor Breaker",
+                "ChallengeDescription": "Destroy * pieces of armor on Zombies.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 18,
+                "ChallengeName": "Push Your Luck",
+                "ChallengeDescription": "Move the Mystery Box * times.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 19,
+                "ChallengeName": "Triple Trouble",
+                "ChallengeDescription": "Earn * Double Trouble medals (Killed both halves of a Megaton within a short time of one another).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/multiplayer/",
+                "IsChallengeComplete": false
+              }
+            ]
+          },
+          {
+            "GameModeID": 1,
+            "GameModeName": "Zombies",
+            "GameModeProgress": 0,
+            "ChallengeCount": 20,
+            "ChallengesCompleted": 0,
+            "IsGameModeComplete": false,
+            "Challenges": [
+              {
+                "ChallengeID": 0,
+                "ChallengeName": "Haymaker",
+                "ChallengeDescription": "Earn * Butcher medals (Killed 5 or more enemies rapidly with a Melee Weapon).",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 1,
+                "ChallengeName": "Dead Air",
+                "ChallengeDescription": "Kill * enemies that are slowed by a Plagehound's toxic gas.",
+                "AmountRequired": 30,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 2,
+                "ChallengeName": "The Other Side",
+                "ChallengeDescription": "Get * eliminations in the Dark Aether.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 3,
+                "ChallengeName": "Counter Contamination",
+                "ChallengeDescription": "Block * Megaton projectiles with Ring of Fire.",
+                "AmountRequired": 30,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 4,
+                "ChallengeName": "The Great Escape",
+                "ChallengeDescription": "Successfully exfil from Die Maschine after Round 30",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 5,
+                "ChallengeName": "Bottoms Up",
+                "ChallengeDescription": "Drink 6 Perks in 6 seconds.",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 6,
+                "ChallengeName": "Help From Beyond",
+                "ChallengeDescription": "Earn * Spectral Salvation medals (Revie a teammate while cloaked in the Aether Shroud).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 7,
+                "ChallengeName": "Seeing Double",
+                "ChallengeDescription": "Split * Megaton while it is dazed from a Stun Grenade",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 8,
+                "ChallengeName": "Old Faithful",
+                "ChallengeDescription": "Upgrade a starting loadout weapon to Legendary Quality at the Arsenal.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 9,
+                "ChallengeName": "Scientific Advantage",
+                "ChallengeDescription": "Get * eliminations during the D.I.E weapon.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 10,
+                "ChallengeName": "Suction Please!",
+                "ChallengeDescription": "Earn * Easy Target medals (Killed a Megaton while it's caught by the D.I.E)..",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 11,
+                "ChallengeName": "Toxic Bomb",
+                "ChallengeDescription": "Kill * Megatons using C4.",
+                "AmountRequired": 3,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 12,
+                "ChallengeName": "Prime Positioning",
+                "ChallengeDescription": "Earn * Crackdown medals (Killed 5 or more enemies rapidly with the Sentry Turret).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 13,
+                "ChallengeName": "Biggest Bang",
+                "ChallengeDescription": "Kill 15 enemies with a single Energy Mine * times.",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 14,
+                "ChallengeName": "That Escalated Quickly",
+                "ChallengeDescription": "Get * eliminations shortly after mantling.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 15,
+                "ChallengeName": "Night Vision",
+                "ChallengeDescription": "Get * eliminations with the flashlight on.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 16,
+                "ChallengeName": "Elite Gamer",
+                "ChallengeDescription": "Redeem * Legendary Rewards from Trials.",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 17,
+                "ChallengeName": "Armor Breaker",
+                "ChallengeDescription": "Destroy * pieces of armor on Zombies.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 18,
+                "ChallengeName": "Push Your Luck",
+                "ChallengeDescription": "Move the Mystery Box * times.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              },
+              {
+                "ChallengeID": 19,
+                "ChallengeName": "Triple Trouble",
+                "ChallengeDescription": "Earn * Double Trouble medals (Killed both halves of a Megaton within a short time of one another).",
+                "AmountRequired": 5,
+                "CurrentAmount": 0,
+                "Progression": 0,
+                "CallingCardURL": "https://camotracker.djr.li/images/seasons/1/",
+                "IsChallengeComplete": false
+              }
+            ]
+          }
+        ]
+      }
   ]
 }
