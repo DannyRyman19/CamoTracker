@@ -3,7 +3,7 @@ layout: default
 ---
 **Privacy Policy**
 
-Danny Ryman built the CammoTracker app as a Free app. This SERVICE is provided by Danny Ryman at no cost and is intended for use as is.
+Danny Ryman built the CamoTracker app. This SERVICE is provided by Danny Ryman and is intended for use as is.
 
 This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
 
