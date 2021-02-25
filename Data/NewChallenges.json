@@ -429,8 +429,440 @@
           ]
         }
       ],
-      "SeasonEnd":"2021-02-25T05:00:00.0000000Z",
-      "IsSeasonFinished":true
+      "SeasonEnd": "2021-02-25T07:00:00.0000000Z",
+      "IsSeasonFinished": true
+    },
+    {
+      "SeasonName": "Season 2",
+      "SeasonID": "1",
+      "SeasonProgress": 0,
+      "IsSeasonComplete": false,
+      "ChallengeCount": 40,
+      "ChallengesCompleted": 0,
+      "GameModes": [
+        {
+          "GameModeID": 0,
+          "GameModeName": "Multiplayer",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Protective Overwatch",
+              "ChallengeDescription": "Use a Sniper Rifle to kill an enemy who is injuring a teammate * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/19.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Hot Drop",
+              "ChallengeDescription": "Kill an enemy shortly after skydiving * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Guerilla Warfare",
+              "ChallengeDescription": "Get * Eliminations using a weapon that you have picked up.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Clean Kill",
+              "ChallengeDescription": "Kill an enemy without taking damage * times.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Suppressing Fire",
+              "ChallengeDescription": "Get * Eliminations with LMGs.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Incendiary Warfare",
+              "ChallengeDescription": "Get * kills with Molotov Lethal Equipment.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Cybersecurity Threat",
+              "ChallengeDescription": "Using the Spycraft or Spotter Perk, kill an enemy with a hacked Field Upgrade.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Shelled",
+              "ChallengeDescription": "Get * Point Blank kills with Shotguns.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Arms Dealer",
+              "ChallengeDescription": "Acquire * Scorestreaks or Killstreaks from Care Packages, Supply Caches, or Buy Stations.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Brap Brap",
+              "ChallengeDescription": "Get * multi kills with SMGs.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Good Ammunition",
+              "ChallengeDescription": "Kill * enemies while using ammo acquired from the Assault Pack or Munitions Box.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Deception",
+              "ChallengeDescription": "Kill * enemies that are near your active Decoy Grenade.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Bump in the Road",
+              "ChallengeDescription": "User Proximity Mines to destroy * ground vehicles.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Toxic Behaviour",
+              "ChallengeDescription": "Kill * enemies with gas or who are affected by gas.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Well Rounded",
+              "ChallengeDescription": "Get a kill with at least two different weapons without dying * times.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Looting and Pillaging",
+              "ChallengeDescription": "Replenish ammo * times while using the Scavenger Perk.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Bullseye",
+              "ChallengeDescription": "Get * kills with the Tomahawk or Throwing Knife Lethal Equipment.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "In Their Heads",
+              "ChallengeDescription": "Get * Headshote kills.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Iron Sight Assassin",
+              "ChallengeDescription": "Get * Eliminations using weapons without a scope or optic attachment.",
+              "AmountRequired": 300,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Anti-Vehicle",
+              "ChallengeDescription": "Destory * enemy ground vehicles.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/multiplayer/18.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        },
+        {
+          "GameModeID": 1,
+          "GameModeName": "Zombies",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Contraband",
+              "ChallengeDescription": "Purchase Wonder Weapon ammo * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/19.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Strategic Operations",
+              "ChallengeDescription": "Capture * Aether Reactors in Firebase Z.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Overheating",
+              "ChallengeDescription": "Get * kills with the Death Machine",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Hide and Seek",
+              "ChallengeDescription": "Foce * Mimics to reveal themselbes by shooting their hidden form",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Disarmed",
+              "ChallengeDescription": "Destroy * Mangler arm cannons.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Field of Fire",
+              "ChallengeDescription": "Kill * enemies that are on fire from a Hellhound's explosion.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Bigger Brother",
+              "ChallengeDescription": "Get * Eliminations using the Rai K-84.",
+              "AmountRequired": 1500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Fire Discipline",
+              "ChallengeDescription": "Rapidly kill 3 or more enemies with an Artillery Strike * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Who's Who?",
+              "ChallengeDescription": "Revive yourself using Tombstone Soda * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Close and Personal",
+              "ChallengeDescription": "Kill * Manglers using a melee attack.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Army Reserves",
+              "ChallengeDescription": "Kill a Mangler using a zombie infected with your Brain Rot.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Feel the Heat",
+              "ChallengeDescription": "Kill * enemies with the Molotov equipment.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Now that's a Knife",
+              "ChallengeDescription": "Get * kills using primary melee weapon.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Shadow Assassin",
+              "ChallengeDescription": "Kill * enemies while in Tombstone shadow form.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Big Stop",
+              "ChallengeDescription": "Eliminate * Ordas.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Deep Pockets",
+              "ChallengeDescription": "Exfil with 30,000 essence.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Fool Me Once",
+              "ChallengeDescription": "Eliminate * Mimics.",
+              "AmountRequired": 20,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Bird in the Sky",
+              "ChallengeDescription": "Get * kills with the Chopper Gunner",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Ice Burn",
+              "ChallengeDescription": "Kill * Hellhounds with Frost Blast.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Field of Fire",
+              "ChallengeDescription": "Kill 10 enemies with a single Napalm Strike * times.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/2/zombies/18.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        }
+      ],
+      "SeasonEnd": "2021-04-22T04:00:00.0000000Z",
+      "IsSeasonFinished": true
     }
   ]
 }
