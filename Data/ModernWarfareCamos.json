@@ -18408,7 +18408,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/vlk_rogue.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using a Shotgun with 5 attachments, get 7 kills in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 51,
@@ -22658,7 +22658,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/holger-26.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Get 2 Longshot Kills using Light Machine Guns in 25 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 57,
@@ -23365,7 +23365,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/bruen_mk9.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Get 3 kills when the enemy is near smoke using an LMG in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 59,
@@ -24072,7 +24072,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/finn_lmg.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Get 1 Melee Kill while using an LMG in 7 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 58,
@@ -29736,7 +29736,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/sks.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using a Sniper or Marksman Rifle, Get 2 Longshot Kills that are headshots in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 53,
@@ -30443,7 +30443,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/sp-r_208.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using a Sniper or Marskman Rifle, Get 2 Longshot Kills that are Headshots in 5 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 55,
@@ -31150,7 +31150,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/rytec_amr.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Get 2 Quickscope Kills using a Sniper or Marksman Rifles in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 34,
@@ -32553,14 +32553,14 @@
           {
             "ID": 10,
             "CategoryName": "Obsidian",
-            "CategoryDescription": "Kill 15 enemies in a match 150 times",
-            "AmountNeeded": 150,
+            "CategoryDescription": "Kill 750 enemies.",
+            "AmountNeeded": 750,
             "CategoryCamos": [
               {
-                "CamoName": "obsidian",
+                "CamoName": "Obsidian",
                 "Opacity": 0.5,
-                "Amount": 150,
-                "CamoURL": "https://camotracker.djr.li/Images/Camos/obsidian.png"
+                "Amount": 750,
+                "CamoURL": "https://camotracker.djr.li/Images/Camos/Obsidian.png"
               }
             ]
           }
@@ -32920,7 +32920,7 @@
           {
             "ID": 5,
             "CategoryName": "Topo",
-            "CategoryDescription": "Kill 2 enemies without dying.",
+            "CategoryDescription": "Get Double Kills.",
             "AmountNeeded": 25,
             "CategoryCamos": [
               {
@@ -33193,7 +33193,7 @@
             "ID": 9,
             "CategoryName": "Skulls",
             "CategoryDescription": "Kill 3 enemies without dying.",
-            "AmountNeeded": 25,
+            "AmountNeeded": 10,
             "CategoryCamos": [
               {
                 "CamoName": "Necropolis",
@@ -33210,49 +33210,49 @@
               {
                 "CamoName": "Ossuary",
                 "Opacity": 0.5,
-                "Amount": 3,
+                "Amount": 2,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/ossuary.png"
               },
               {
                 "CamoName": "Haunting",
                 "Opacity": 0.5,
-                "Amount": 6,
+                "Amount": 3,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/haunting.png"
               },
               {
                 "CamoName": "Phantom",
                 "Opacity": 0.5,
-                "Amount": 9,
+                "Amount": 4,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/phantom.png"
               },
               {
                 "CamoName": "Forest Wraith",
                 "Opacity": 0.5,
-                "Amount": 12,
+                "Amount": 5,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/forest_wraith.png"
               },
               {
                 "CamoName": "Hemophiliac",
                 "Opacity": 0.5,
-                "Amount": 15,
+                "Amount": 6,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/hemophiliac.png"
               },
               {
                 "CamoName": "Skullduggery",
                 "Opacity": 0.5,
-                "Amount": 18,
+                "Amount": 7,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/skullduggery.png"
               },
               {
                 "CamoName": "Cthulu",
                 "Opacity": 0.5,
-                "Amount": 21,
+                "Amount": 8,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/cthulhu.png"
               },
               {
                 "CamoName": "Lichyard",
                 "Opacity": 0.5,
-                "Amount": 25,
+                "Amount": 10,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/lichyard.png"
               }
             ]
@@ -33260,14 +33260,14 @@
           {
             "ID": 10,
             "CategoryName": "Obsidian",
-            "CategoryDescription": "Kill 15 enemies in a match 150 times",
-            "AmountNeeded": 150,
+            "CategoryDescription": "Kill 10 enemies in a match 125 times.",
+            "AmountNeeded": 125,
             "CategoryCamos": [
               {
-                "CamoName": "obsidian",
+                "CamoName": "Obsidian",
                 "Opacity": 0.5,
-                "Amount": 150,
-                "CamoURL": "https://camotracker.djr.li/Images/Camos/obsidian.png"
+                "Amount": 125,
+                "CamoURL": "https://camotracker.djr.li/Images/Camos/Obsidian.png"
               }
             ]
           }
@@ -33279,7 +33279,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/kali_sticks.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using the Knife, get 3 kills while sliding in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 31,
@@ -33628,7 +33628,7 @@
             "ID": 5,
             "CategoryName": "Topo",
             "CategoryDescription": "Get Double Kills.",
-            "AmountNeeded": 15,
+            "AmountNeeded": 25,
             "CategoryCamos": [
               {
                 "CamoName": "Off-Grid",
@@ -33645,49 +33645,49 @@
               {
                 "CamoName": "Marsh Ops",
                 "Opacity": 0.5,
-                "Amount": 2,
+                "Amount": 3,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/marsh_ops.png"
               },
               {
                 "CamoName": "Forestation",
                 "Opacity": 0.5,
-                "Amount": 3,
+                "Amount": 6,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/forestation.png"
               },
               {
                 "CamoName": "Phosphor",
                 "Opacity": 0.5,
-                "Amount": 5,
+                "Amount": 9,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/phosphor.png"
               },
               {
                 "CamoName": "Vector Trails",
                 "Opacity": 0.5,
-                "Amount": 7,
+                "Amount": 12,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/vector_trails.png"
               },
               {
                 "CamoName": "Topo Trip",
                 "Opacity": 0.5,
-                "Amount": 9,
+                "Amount": 15,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/topo_trip.png"
               },
               {
                 "CamoName": "Barren",
                 "Opacity": 0.5,
-                "Amount": 11,
+                "Amount": 18,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/barren.png"
               },
               {
                 "CamoName": "Vanished",
                 "Opacity": 0.5,
-                "Amount": 13,
+                "Amount": 21,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/vanished.png"
               },
               {
                 "CamoName": "Sandstorm",
                 "Opacity": 0.5,
-                "Amount": 15,
+                "Amount": 25,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/canopy.png"
               }
             ]
@@ -33900,7 +33900,7 @@
             "ID": 9,
             "CategoryName": "Skulls",
             "CategoryDescription": "Kill 3 enemies without dying.",
-            "AmountNeeded": 25,
+            "AmountNeeded": 10,
             "CategoryCamos": [
               {
                 "CamoName": "Necropolis",
@@ -33917,49 +33917,49 @@
               {
                 "CamoName": "Ossuary",
                 "Opacity": 0.5,
-                "Amount": 3,
+                "Amount": 2,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/ossuary.png"
               },
               {
                 "CamoName": "Haunting",
                 "Opacity": 0.5,
-                "Amount": 6,
+                "Amount": 3,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/haunting.png"
               },
               {
                 "CamoName": "Phantom",
                 "Opacity": 0.5,
-                "Amount": 9,
+                "Amount": 4,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/phantom.png"
               },
               {
                 "CamoName": "Forest Wraith",
                 "Opacity": 0.5,
-                "Amount": 12,
+                "Amount": 5,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/forest_wraith.png"
               },
               {
                 "CamoName": "Hemophiliac",
                 "Opacity": 0.5,
-                "Amount": 15,
+                "Amount": 6,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/hemophiliac.png"
               },
               {
                 "CamoName": "Skullduggery",
                 "Opacity": 0.5,
-                "Amount": 18,
+                "Amount": 7,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/skullduggery.png"
               },
               {
                 "CamoName": "Cthulu",
                 "Opacity": 0.5,
-                "Amount": 21,
+                "Amount": 8,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/cthulhu.png"
               },
               {
                 "CamoName": "Lichyard",
                 "Opacity": 0.5,
-                "Amount": 25,
+                "Amount": 10,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/lichyard.png"
               }
             ]
@@ -33967,14 +33967,14 @@
           {
             "ID": 10,
             "CategoryName": "Obsidian",
-            "CategoryDescription": "Kill 15 enemies in a match 150 times",
-            "AmountNeeded": 150,
+            "CategoryDescription": "Kill 10 enemies in a match 125 times.",
+            "AmountNeeded": 125,
             "CategoryCamos": [
               {
-                "CamoName": "obsidian",
+                "CamoName": "Obsidian",
                 "Opacity": 0.5,
-                "Amount": 150,
-                "CamoURL": "https://camotracker.djr.li/Images/Camos/obsidian.png"
+                "Amount": 125,
+                "CamoURL": "https://camotracker.djr.li/Images/Camos/Obsidian.png"
               }
             ]
           }
@@ -33986,7 +33986,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/dual_kodachis.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using the Knife, get 3 Kills while behind the enemy in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 31,
@@ -34335,7 +34335,7 @@
             "ID": 5,
             "CategoryName": "Topo",
             "CategoryDescription": "Get Double Kills.",
-            "AmountNeeded": 15,
+            "AmountNeeded": 25,
             "CategoryCamos": [
               {
                 "CamoName": "Off-Grid",
@@ -34352,49 +34352,49 @@
               {
                 "CamoName": "Marsh Ops",
                 "Opacity": 0.5,
-                "Amount": 2,
+                "Amount": 3,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/marsh_ops.png"
               },
               {
                 "CamoName": "Forestation",
                 "Opacity": 0.5,
-                "Amount": 3,
+                "Amount": 6,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/forestation.png"
               },
               {
                 "CamoName": "Phosphor",
                 "Opacity": 0.5,
-                "Amount": 5,
+                "Amount": 9,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/phosphor.png"
               },
               {
                 "CamoName": "Vector Trails",
                 "Opacity": 0.5,
-                "Amount": 7,
+                "Amount": 12,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/vector_trails.png"
               },
               {
                 "CamoName": "Topo Trip",
                 "Opacity": 0.5,
-                "Amount": 9,
+                "Amount": 15,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/topo_trip.png"
               },
               {
                 "CamoName": "Barren",
                 "Opacity": 0.5,
-                "Amount": 11,
+                "Amount": 18,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/barren.png"
               },
               {
                 "CamoName": "Vanished",
                 "Opacity": 0.5,
-                "Amount": 13,
+                "Amount": 21,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/vanished.png"
               },
               {
                 "CamoName": "Sandstorm",
                 "Opacity": 0.5,
-                "Amount": 15,
+                "Amount": 25,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/canopy.png"
               }
             ]
@@ -34607,7 +34607,7 @@
             "ID": 9,
             "CategoryName": "Skulls",
             "CategoryDescription": "Kill 3 enemies without dying.",
-            "AmountNeeded": 25,
+            "AmountNeeded": 10,
             "CategoryCamos": [
               {
                 "CamoName": "Necropolis",
@@ -34624,49 +34624,49 @@
               {
                 "CamoName": "Ossuary",
                 "Opacity": 0.5,
-                "Amount": 3,
+                "Amount": 2,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/ossuary.png"
               },
               {
                 "CamoName": "Haunting",
                 "Opacity": 0.5,
-                "Amount": 6,
+                "Amount": 3,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/haunting.png"
               },
               {
                 "CamoName": "Phantom",
                 "Opacity": 0.5,
-                "Amount": 9,
+                "Amount": 4,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/phantom.png"
               },
               {
                 "CamoName": "Forest Wraith",
                 "Opacity": 0.5,
-                "Amount": 12,
+                "Amount": 5,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/forest_wraith.png"
               },
               {
                 "CamoName": "Hemophiliac",
                 "Opacity": 0.5,
-                "Amount": 15,
+                "Amount": 6,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/hemophiliac.png"
               },
               {
                 "CamoName": "Skullduggery",
                 "Opacity": 0.5,
-                "Amount": 18,
+                "Amount": 7,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/skullduggery.png"
               },
               {
                 "CamoName": "Cthulu",
                 "Opacity": 0.5,
-                "Amount": 21,
+                "Amount": 8,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/cthulhu.png"
               },
               {
                 "CamoName": "Lichyard",
                 "Opacity": 0.5,
-                "Amount": 25,
+                "Amount": 10,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/lichyard.png"
               }
             ]
@@ -34674,14 +34674,14 @@
           {
             "ID": 10,
             "CategoryName": "Obsidian",
-            "CategoryDescription": "Kill 15 enemies in a match 150 times",
-            "AmountNeeded": 150,
+            "CategoryDescription": "Kill 10 enemies in a match 125 times.",
+            "AmountNeeded": 125,
             "CategoryCamos": [
               {
-                "CamoName": "obsidian",
+                "CamoName": "Obsidian",
                 "Opacity": 0.5,
-                "Amount": 150,
-                "CamoURL": "https://camotracker.djr.li/Images/Camos/obsidian.png"
+                "Amount": 125,
+                "CamoURL": "https://camotracker.djr.li/Images/Camos/Obsidian.png"
               }
             ]
           }
@@ -38236,7 +38236,7 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/renetti.png",
         "UnlockRequirements": {
           "IsDefault": false,
-          "ChallengeDescription": "null",
+          "ChallengeDescription": "Using a Pistol, get 2 Headshot Kills in 15 different matches.",
           "UnlockLevel": 0
         },
         "MaxLevel": 46,
@@ -39659,7 +39659,7 @@
         "UnlockRequirements": {
           "IsDefault": true,
           "ChallengeDescription": null,
-          "UnlockLevel": 1
+          "UnlockLevel": 17
         },
         "MaxLevel": 31,
         "Camos": [
@@ -40366,7 +40366,7 @@
         "UnlockRequirements": {
           "IsDefault": true,
           "ChallengeDescription": null,
-          "UnlockLevel": 1
+          "UnlockLevel": 35
         },
         "MaxLevel": 31,
         "Camos": [
@@ -41073,7 +41073,7 @@
         "UnlockRequirements": {
           "IsDefault": true,
           "ChallengeDescription": null,
-          "UnlockLevel": 1
+          "UnlockLevel": 44
         },
         "MaxLevel": 31,
         "Camos": [
