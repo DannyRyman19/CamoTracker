@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<img width="200" alt="logo"  src="https://camotracker.djr.li/camo%20tracker.png" style="max-width:100%;">
+
 # Cold War Camo Tracker
 
 With Cold War Zombies and Multiplayer options, you can track each weapon, with progress tracking for Dark Aether/DM Ultra, Diamond/Plague Diamond, Gold, and Golden Viper Camos. 
