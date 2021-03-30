@@ -1,21 +1,10 @@
 ---
 layout: default
 ---
-<img width="200" alt="logo" style="display: block; margin-left: auto; margin-right: auto; width: 50%" src="https://camotracker.djr.li/icon.jpg">
-## What is the App? 
 
-With Cold War Zombies and Multiplayer options, you can track each weapon, with progress tracking for Dark Aether/DM Ultra, Diamond/Plague Diamond, Gold, and Golden Viper Camos. 
+## Our Apps
+We have apps for both Cold War and Modern Warfare!
 
-Store your player level, weapon levels, sharpshooter badge kills, camo, and reticle progression all in this handy app. 
-
-No adverts!
-New seasonal weapons added instantly with no need for an app update!
-Works offline!
-
-Please Note: This app does not automatically fetch your camo progression as it is not possible. You will have to enter your progression manually!
-
-The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are property of their respective owners. All In-Game Images are the sole property of Activision, Treyarch, Raven Software, or their respective owners. Any such Content is used for educational purposes only!
-
-## I have an issue / want to provide feedback
-If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
-
+|Modern Warfare|Cold War|
+|-|-|
+|<img width="200" alt="logo" src="https://camo.githubusercontent.com/b24fa3087e3d3e1b61f27717f8273b58b2a377f44e098985574ba3b4e7f4b2b0/68747470733a2f2f63616d6f747261636b65722e646a722e6c692f69636f6e2e6a7067" data-canonical-src="https://camotracker.djr.li/mwtracker.png" style="max-width:100%;">|<img width="200" alt="logo" src="https://camo.githubusercontent.com/b24fa3087e3d3e1b61f27717f8273b58b2a377f44e098985574ba3b4e7f4b2b0/68747470733a2f2f63616d6f747261636b65722e646a722e6c692f69636f6e2e6a7067" data-canonical-src="https://camotracker.djr.li/camo%20tracker.png" style="max-width:100%;">|
