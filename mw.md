@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<img width="200" alt="logo"  src="https://camotracker.djr.li/mwtracker.png" style="max-width:100%;">
+
 # Modern Warfare Camo Tracker
 
 You can track your progress to Damascus/100% completion with this app. With individual camos, gold, platinum and obsidian. Easily complete classes, weapons and camos with a tap of a button. Please note you will need to buy premium to gain access to all classes. The assault rifle class is included for free!
