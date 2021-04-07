@@ -9367,6 +9367,396 @@
       ],
       "SharpshooterAmount": 0,
       "SharpshooterRequired": 500
+    },
+    {
+      "ID": 3,
+      "WeaponName": "ZRG 20mm",
+      "WeaponURL": "http://camotracker.djr.li/Images/zrg_20mm.png",
+      "Category": "SniperRifle",
+      "IsDefault": false,
+      "UnlockDescription": "Using Sniper Rifles, earn 2 Longshot medals in 10 different matches.",
+      "MaxLevel": 55,
+      "CurrentLevel": 1,
+      "UnlockLevel": 55,
+      "OpacityLevel": 1,
+      "PercentComplete": 0,
+      "IsWeaponComplete": false,
+      "CurrentCamoUnlocks": 0,
+      "Camos": [
+        {
+          "ID": 0,
+          "CategoryName": "Spray",
+          "CategoryUnlockLevel": 1,
+          "CategoryDescription": "Get eliminations in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 200,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 1,
+          "CategoryCamos": [
+            {
+              "CamoName": "Shards",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "shards.jpg",
+              "CamoDescription": "Get 25 eliminations in Multiplayer."
+            },
+            {
+              "CamoName": "Ambush",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "ambush.jpg",
+              "CamoDescription": "Get 50 eliminations in Multiplayer."
+            },
+            {
+              "CamoName": "Frozen Lake",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 75,
+              "CamoURL": "frozen_lake.jpg",
+              "CamoDescription": "Get 75 eliminations in Multiplayer."
+            },
+            {
+              "CamoName": "Debris",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 125,
+              "CamoURL": "debris.jpg",
+              "CamoDescription": "Get 125 eliminations in Multiplayer."
+            },
+            {
+              "CamoName": "Prosper",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 200,
+              "CamoURL": "prosper.jpg",
+              "CamoDescription": "Get 200 eliminations in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "CategoryName": "Stripes",
+          "CategoryUnlockLevel": 5,
+          "CategoryDescription": "Get Headshot medals in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 50,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Gravel",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "gravel.jpg",
+              "CamoDescription": "Get 5 Headshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Graze",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "graze.jpg",
+              "CamoDescription": "Get 10 Headshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Frost",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "frost.jpg",
+              "CamoDescription": "Get 15 Headshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Thrash",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "thrash.jpg",
+              "CamoDescription": "Get 25 Headshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Bengal",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "bengal.jpg",
+              "CamoDescription": "Get 50 Headshot medals in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "CategoryName": "Classic",
+          "CategoryUnlockLevel": 10,
+          "CategoryDescription": "Get 5 kills without dying with all kills coming from this gun in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 20,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Platoon",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 3,
+              "CamoURL": "platoon.jpg",
+              "CamoDescription": "Get 5 kills without dying 3 times with all kills coming from this gun in Multiplayer."
+            },
+            {
+              "CamoName": "Ash",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "ash.jpg",
+              "CamoDescription": "Get 5 kills without dying 5 times with all kills coming from this gun in Multiplayer."
+            },
+            {
+              "CamoName": "Checkpoint",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "checkpoint.jpg",
+              "CamoDescription": "Get 5 kills without dying 10 times with all kills coming from this gun in Multiplayer."
+            },
+            {
+              "CamoName": "Coercion",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "coercion.jpg",
+              "CamoDescription": "Get 5 kills without dying 15 times with all kills coming from this gun in Multiplayer."
+            },
+            {
+              "CamoName": "Ransom",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 20,
+              "CamoURL": "ransom.jpg",
+              "CamoDescription": "Get 5 kills without dying 20 times with all kills coming from this gun in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "CategoryName": "Geometric",
+          "CategoryUnlockLevel": 20,
+          "CategoryDescription": "Get Longshot medals in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 50,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Blockade",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "blockade.jpg",
+              "CamoDescription": "Get 5 Longshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Warsaw",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "warsaw.jpg",
+              "CamoDescription": "Get 10 Longshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Transform",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "transform.jpg",
+              "CamoDescription": "Get 15 Longshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Fraction",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "fraction.jpg",
+              "CamoDescription": "Get 25 Longshot medals in Multiplayer."
+            },
+            {
+              "CamoName": "Bloodline",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "bloodline.jpg",
+              "CamoDescription": "Get 50 Longshot medals in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "CategoryName": "Flora",
+          "CategoryUnlockLevel": 30,
+          "CategoryDescription": "Get kills while holding your breath in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 50,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Frith",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "frith.jpg",
+              "CamoDescription": "Get 5 kills while holding your breath in Multiplayer."
+            },
+            {
+              "CamoName": "Old Growth",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "old_growth.jpg",
+              "CamoDescription": "Get 10 kills while holding your breath in Multiplayer."
+            },
+            {
+              "CamoName": "Nectar",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "nectar.jpg",
+              "CamoDescription": "Get 15 kills while holding your breath in Multiplayer."
+            },
+            {
+              "CamoName": "Lumber",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "lumber.jpg",
+              "CamoDescription": "Get 25 kills while holding your breath in Multiplayer."
+            },
+            {
+              "CamoName": "Cherry Blossom",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "cherry_blossom.jpg",
+              "CamoDescription": "Get 50 kills while holding your breath in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "CategoryName": "Science",
+          "CategoryUnlockLevel": 40,
+          "CategoryDescription": "Get One Shot Kill medals in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 50,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Teleport",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "teleport.jpg",
+              "CamoDescription": "Get 5 One Shot Kill medals in Multiplayer."
+            },
+            {
+              "CamoName": "Cosmonaut",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "cosmonaut.jpg",
+              "CamoDescription": "Get 10 One Shot Kill medals in Multiplayer."
+            },
+            {
+              "CamoName": "Decipher",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "decipher.jpg",
+              "CamoDescription": "Get 15 One Shot Kill medals in Multiplayer."
+            },
+            {
+              "CamoName": "Integer",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "integer.jpg",
+              "CamoDescription": "Get 25 One Shot Kill medals in Multiplayer."
+            },
+            {
+              "CamoName": "Policia",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "policia.jpg",
+              "CamoDescription": "Get 50 One Shot Kill medals in Multiplayer."
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "CategoryName": "Psychedelic",
+          "CategoryUnlockLevel": 50,
+          "CategoryDescription": "Kill 2 or more enemies rapidly in Multiplayer.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 25,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Groovy",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 5,
+              "CamoURL": "groovy.jpg",
+              "CamoDescription": "Kill 2 or more enemies rapidly 5 times in Multiplayer."
+            },
+            {
+              "CamoName": "Seducer",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "seducer.jpg",
+              "CamoDescription": "Kill 2 or more enemies rapidly 10 times in Multiplayer."
+            },
+            {
+              "CamoName": "Blush",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "blush.jpg",
+              "CamoDescription": "Kill 2 or more enemies rapidly 15 times in Multiplayer."
+            },
+            {
+              "CamoName": "Melancholy",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 20,
+              "CamoURL": "melancholy.jpg",
+              "CamoDescription": "Kill 2 or more enemies rapidly 20 times in Multiplayer."
+            },
+            {
+              "CamoName": "Bliss",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 25,
+              "CamoURL": "bliss.jpg",
+              "CamoDescription": "Kill 2 or more enemies rapidly 25 times in Multiplayer."
+            }
+          ]
+        }
+      ],
+      "SharpshooterAmount": 0,
+      "SharpshooterRequired": 500
     }
   ],
   "Pistols": [
