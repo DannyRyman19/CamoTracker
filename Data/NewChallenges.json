@@ -863,6 +863,438 @@
       ],
       "SeasonEnd": "2021-04-22T04:00:00.0000000Z",
       "IsSeasonFinished": true
+    },
+    {
+      "SeasonName": "Season 3",
+      "SeasonID": "1",
+      "SeasonProgress": 0,
+      "IsSeasonComplete": false,
+      "ChallengeCount": 40,
+      "ChallengesCompleted": 0,
+      "GameModes": [
+        {
+          "GameModeID": 0,
+          "GameModeName": "Multiplayer",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Three's Company",
+              "ChallengeDescription": "Earn * Triple Kill or better Medals.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Prepare & Survive",
+              "ChallengeDescription": "Get * kills while near your deployed non-lethal Field Upgrades.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Nothing Special",
+              "ChallengeDescription": "Get * Eliminations using Special Weapons.",
+              "AmountRequired": 150,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "It's a Banger",
+              "ChallengeDescription": "Get * kills with Lethal Equipment.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "On a Roll",
+              "ChallengeDescription": "Get * total kills while on a Streak.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Batteries Not Included",
+              "ChallengeDescription": "Get * kills with the RC-XD.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Lost Signal",
+              "ChallengeDescription": "Destroy * enemy deployed Field Upgrades.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Death From Above",
+              "ChallengeDescription": "Get * kills with player-targeted airborne Scorestreak or Killstreak strikes.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Top Performer",
+              "ChallengeDescription": "Complete * matches among the top 25% of players.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Let's Get Tactical",
+              "ChallengeDescription": "Get * Eliminations with Tactical Rifles.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Reduce Reuse Recycle",
+              "ChallengeDescription": "Using the Spycraft or Spotter Perk, intercept * enemy projectiles with a hacked Trophy System.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Remote Assistance",
+              "ChallengeDescription": "Call in 5 Scorestreaks or Killstreaks in a match * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Picked Off",
+              "ChallengeDescription": "Get * Longshot Headshot kills using Sniper Rifles.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Hot Air",
+              "ChallengeDescription": "Get * kills while aiming down sights using a weapon with an attached thermal scope.",
+              "AmountRequired": 300,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Second Fiddle",
+              "ChallengeDescription": "Get * Eliminations with a Primary Weapon in your Secondary Slot.",
+              "AmountRequired": 300,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Silent Assassin",
+              "ChallengeDescription": "Using Ninja or Dead Silence, kill an enemy at close range without taking damage * times.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Vehicular Warfare",
+              "ChallengeDescription": "Use a vehicle or player-controlled Scorestreak to destroy an enemy vehicle * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Beamed",
+              "ChallengeDescription": "Get * Eliminations using a weapon with a laser body attachment.",
+              "AmountRequired": 300,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Bring in the Big Guns",
+              "ChallengeDescription": "Get * kills with Scorestreak Weapons or while using Stopping Power rounds.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Merciless",
+              "ChallengeDescription": "Get 10 kills without dying.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/multiplayer/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        },
+        {
+          "GameModeID": 1,
+          "GameModeName": "Zombies",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Flock of Birds",
+              "ChallengeDescription": "Earn * kills with the Chopper Gunner at any Exfil site.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Don't Look Back",
+              "ChallengeDescription": "In Outbreak, kill * enemies with vehicle explosions.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Gun Show",
+              "ChallengeDescription": "Kill * enemies with your fists.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Hard Day's Work",
+              "ChallengeDescription": "In Outbreak, complete * Objectives and exfil successfully.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Two is Better Than One",
+              "ChallengeDescription": "Get * Eliminations using a weapon with a dual wield attachment.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Lord of the Horde",
+              "ChallengeDescription": "Have 3 brain rotted enemies under your control at once.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Electric Cherry Pop",
+              "ChallengeDescription": "Stun * enemies by reloading with the Tier V Elemental Pop Perk.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Immovable Object",
+              "ChallengeDescription": "In Outbreak, kill * Special or Elite enemies by running them over with vehicles.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Hedgehog's Dilemma",
+              "ChallengeDescription": "Kill * enemies that hit you while Tier III of Frenzied Guard is active.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Deadeye",
+              "ChallengeDescription": "Get * Eliminations with Sniper Rifles.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Untouchable",
+              "ChallengeDescription": "In Outbreak, complete an Escort Objective without the Rover taking any damage.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Crack the Shell",
+              "ChallengeDescription": "Destroy * pieces of armor with the Shatter Blast Ammo Mod.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Suppressing Fire",
+              "ChallengeDescription": "In Outbreak, kill * Hellhounds before they enter the structure during the Holdout Objective.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Rude Awakening",
+              "ChallengeDescription": "Revive yourself * times by killing an enemy while downed with the Tier V Quick Revive Perk.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Blood Transfusion",
+              "ChallengeDescription": "Heal yourself for * health using Tier V of the Melee Weapon Class Skill.",
+              "AmountRequired": 5000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Back in my Day",
+              "ChallengeDescription": "In Outbreak, complete 3 Objectives and exfil with only your loadout weapon with no upgrades.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Specially Made",
+              "ChallengeDescription": "Eliminate * Special or Elite enemies with launchers or special weapons.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Pull!",
+              "ChallengeDescription": "Shoot down * Tempest bolts.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Unshakable",
+              "ChallengeDescription": "Survive * Demented Echo ambushes.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Salvageable",
+              "ChallengeDescription": "Kill * enemies with lethal equipment.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/images/seasons/3/zombies/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        }
+      ],
+      "SeasonEnd": "2021-06-17T04:00:00.0000000Z",
+      "IsSeasonFinished": true
     }
   ]
 }
