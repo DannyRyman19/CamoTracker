@@ -17175,6 +17175,396 @@
       ],
       "SharpshooterAmount": 0,
       "SharpshooterRequired": 2500
+    },
+    {
+      "ID": 8,
+      "WeaponName": "Baseball Bat",
+      "WeaponURL": "http://camotracker.djr.li/Images/baseball_bat.png",
+      "Category": "Melee",
+      "IsDefault": false,
+      "UnlockDescription": "Using a Melee weapon, kill 100 enemies who are frozen by your Frost Blast",
+      "MaxLevel": 35,
+      "CurrentLevel": 1,
+      "UnlockLevel": 55,
+      "OpacityLevel": 1,
+      "PercentComplete": 0,
+      "IsWeaponComplete": false,
+      "CurrentCamoUnlocks": 0,
+      "Camos": [
+        {
+          "ID": 0,
+          "CategoryName": "Grunge",
+          "CategoryUnlockLevel": 1,
+          "CategoryDescription": "Get kills in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 750,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 1,
+          "CategoryCamos": [
+            {
+              "CamoName": "Stroke",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "stroke.jpg",
+              "CamoDescription": "Get 50 kills in Zombies."
+            },
+            {
+              "CamoName": "Glacier",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 125,
+              "CamoURL": "glacier.jpg",
+              "CamoDescription": "Get 125 kills in Zombies."
+            },
+            {
+              "CamoName": "Grudge",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 250,
+              "CamoURL": "grudge.jpg",
+              "CamoDescription": "Get 250 kills in Zombies."
+            },
+            {
+              "CamoName": "Bloodshed",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 500,
+              "CamoURL": "bloodshed.jpg",
+              "CamoDescription": "Get 500 kills in Zombies."
+            },
+            {
+              "CamoName": "Rotten",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 750,
+              "CamoURL": "rotten.jpg",
+              "CamoDescription": "Get 750 kills in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "CategoryName": "Liquid",
+          "CategoryUnlockLevel": 5,
+          "CategoryDescription": "Get kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 50,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Wasteland",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "wasteland.jpg",
+              "CamoDescription": "Get 10 kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies."
+            },
+            {
+              "CamoName": "Amphibian",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 20,
+              "CamoURL": "amphibian.jpg",
+              "CamoDescription": "Get 20 kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies."
+            },
+            {
+              "CamoName": "Boundary",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 30,
+              "CamoURL": "boundary.jpg",
+              "CamoDescription": "Get 30 kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies."
+            },
+            {
+              "CamoName": "Threshold",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 40,
+              "CamoURL": "threshold.jpg",
+              "CamoDescription": "Get 40 kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies."
+            },
+            {
+              "CamoName": "Banished",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "banished.jpg",
+              "CamoDescription": "Get 50 kills against enemies who are disoriented by a Stun Grenade, Monkey Bomb or Decoy in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "CategoryName": "Brushstroke",
+          "CategoryUnlockLevel": 10,
+          "CategoryDescription": "Get kills while Pack-A-Punched in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 750,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Extortion",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 50,
+              "CamoURL": "extortion.jpg",
+              "CamoDescription": "Get 50 kills while Pack-A-Punched in Zombies."
+            },
+            {
+              "CamoName": "Degeneration",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 125,
+              "CamoURL": "degeneration.jpg",
+              "CamoDescription": "Get 125 kills while Pack-A-Punched in Zombies."
+            },
+            {
+              "CamoName": "Downfall",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 250,
+              "CamoURL": "downfall.jpg",
+              "CamoDescription": "Get 250 kills while Pack-A-Punched in Zombies."
+            },
+            {
+              "CamoName": "Drench",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 500,
+              "CamoURL": "drench.jpg",
+              "CamoDescription": "Get 500 kills while Pack-A-Punched in Zombies."
+            },
+            {
+              "CamoName": "Chemical",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 750,
+              "CamoURL": "chemical.jpg",
+              "CamoDescription": "Get 750 kills while Pack-A-Punched in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "CategoryName": "Vintage",
+          "CategoryUnlockLevel": 15,
+          "CategoryDescription": "Get kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 15,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Decadence",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 3,
+              "CamoURL": "decadence.jpg",
+              "CamoDescription": "Get 3 kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies."
+            },
+            {
+              "CamoName": "Bravado",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 6,
+              "CamoURL": "bravado.jpg",
+              "CamoDescription": "Get 6 kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies."
+            },
+            {
+              "CamoName": "Funkadelic",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 9,
+              "CamoURL": "funkadelic.jpg",
+              "CamoDescription": "Get 9 kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies."
+            },
+            {
+              "CamoName": "Boutique",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 12,
+              "CamoURL": "boutique.jpg",
+              "CamoDescription": "Get 12 kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies."
+            },
+            {
+              "CamoName": "Maniac",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 15,
+              "CamoURL": "maniac.jpg",
+              "CamoDescription": "Get 15 kills with the knife against enemies who are affected by Frost Blast or Ring of Fire or while you have Aether Shroud Active in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "CategoryName": "Fauna",
+          "CategoryUnlockLevel": 20,
+          "CategoryDescription": "Get Special or Elite Eliminations in Zombies (Bosses count as 3 Eliminations).",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 10,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Growl",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 2,
+              "CamoURL": "growl.jpg",
+              "CamoDescription": "Get 2 Elite Eliminations in Zombies."
+            },
+            {
+              "CamoName": "Scavenger",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 4,
+              "CamoURL": "scavenger.jpg",
+              "CamoDescription": "Get 4 Elite Eliminations in Zombies."
+            },
+            {
+              "CamoName": "Zebra",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 6,
+              "CamoURL": "zebra.jpg",
+              "CamoDescription": "Get 6 Elite Eliminations in Zombies."
+            },
+            {
+              "CamoName": "Blue Tiger",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 8,
+              "CamoURL": "blue_tiger.jpg",
+              "CamoDescription": "Get 8 Elite Eliminations in Zombies."
+            },
+            {
+              "CamoName": "Rising Tiger",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "rising_tiger.jpg",
+              "CamoDescription": "Get 10 Elite Eliminations in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "CategoryName": "Topography",
+          "CategoryUnlockLevel": 25,
+          "CategoryDescription": "Get 10 Kills rapidly in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 10,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Acidic",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 2,
+              "CamoURL": "acidic.jpg",
+              "CamoDescription": "Get 10 kills rapidly 2 times in Zombies."
+            },
+            {
+              "CamoName": "Gunrunner",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 4,
+              "CamoURL": "gunrunner.jpg",
+              "CamoDescription": "Get 10 kills rapidly 4 times in Zombies."
+            },
+            {
+              "CamoName": "Forecast",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 6,
+              "CamoURL": "forecast.jpg",
+              "CamoDescription": "Get 10 kills rapidly 6 times in Zombies."
+            },
+            {
+              "CamoName": "Cartographer",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 8,
+              "CamoURL": "cartographer.jpg",
+              "CamoDescription": "Get 10 kills rapidly 8 times in Zombies."
+            },
+            {
+              "CamoName": "Sunder",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "sunder.jpg",
+              "CamoDescription": "Get 10 kills rapidly 10 times in Zombies."
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "CategoryName": "Infection",
+          "CategoryUnlockLevel": 30,
+          "CategoryDescription": "Get 20 or more consecutive kills without getting hit in Zombies.",
+          "PercentComplete": 0,
+          "CurrentAmount": 0,
+          "AmountNeeded": 10,
+          "IsCategoryComplete": false,
+          "OpacityLevel": 0.5,
+          "CategoryCamos": [
+            {
+              "CamoName": "Corrosion",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 2,
+              "CamoURL": "corrosion.jpg",
+              "CamoDescription": "Get 20 or more consecutive kills without getting hit 2 times in Zombies."
+            },
+            {
+              "CamoName": "Entropy",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 4,
+              "CamoURL": "corrosion1.jpg",
+              "CamoDescription": "Get 20 or more consecutive kills without getting hit 4 times in Zombies."
+            },
+            {
+              "CamoName": "Contamination",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 6,
+              "CamoURL": "entropy.jpg",
+              "CamoDescription": "Get 20 or more consecutive kills without getting hit 6 times in Zombies."
+            },
+            {
+              "CamoName": "Glitch",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 8,
+              "CamoURL": "glitch.jpg",
+              "CamoDescription": "Get 20 or more consecutive kills without getting hit 8 times in Zombies."
+            },
+            {
+              "CamoName": "Conviction",
+              "IsCamoComplete": false,
+              "OpacityLevel": 0.5,
+              "Amount": 10,
+              "CamoURL": "conviction.jpg",
+              "CamoDescription": "Get 20 or more consecutive kills without getting hit 10 times in Zombies."
+            }
+          ]
+        }
+      ],
+      "SharpshooterAmount": 0,
+      "SharpshooterRequired": 2500
     }
   ]
 }
