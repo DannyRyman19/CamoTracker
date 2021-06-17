@@ -1295,6 +1295,438 @@
       ],
       "SeasonEnd": "2021-06-17T04:00:00.0000000Z",
       "IsSeasonFinished": true
+    },
+    {
+      "SeasonName": "Season 4",
+      "SeasonID": "3",
+      "SeasonProgress": 0,
+      "IsSeasonComplete": false,
+      "ChallengeCount": 40,
+      "ChallengesCompleted": 0,
+      "GameModes": [
+        {
+          "GameModeID": 0,
+          "GameModeName": "Multiplayer",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Soldier of Fortune",
+              "ChallengeDescription": "Get * Eliminations with full-auto weapons.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Daily Grind",
+              "ChallengeDescription": "Complete * Daily Challenges in Multiplayer or Warzone.",
+              "AmountRequired": 9,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "No Camping Allowed",
+              "ChallengeDescription": "Kill an enemy that hasn't recently moved from one location * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Head Count",
+              "ChallengeDescription": "Get 2 Headshot kills in a single life * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Warlord",
+              "ChallengeDescription": "Get 5 kills with Scorestreaks or Killstreaks in a single game * times.",
+              "AmountRequired": 9,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "YOLO",
+              "ChallengeDescription": "Get * Eliminations in single-life elimination modes.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Hill to Die On",
+              "ChallengeDescription": "Kill * enemies who are at a lower elevation.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "One, Two Punch",
+              "ChallengeDescription": "Rapidly get a kill with both weapons that you are carrying * times.",
+              "AmountRequired": 30,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Double Down",
+              "ChallengeDescription": "Complete a match with at least twice the number of Eliminations than deaths * times.",
+              "AmountRequired": 9,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Below the Belt",
+              "ChallengeDescription": "Get * kills while sliding.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Nothing But the Hits",
+              "ChallengeDescription": "Using a Sniper Rifle, fire 3 consecutive shots that deal damage to enemies * time(s).",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Write Off",
+              "ChallengeDescription": "Destroy * enemy Scorestreaks or vehicles.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Just a Second",
+              "ChallengeDescription": "Get * Eliminations with Secondary weapons.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Strong Support System",
+              "ChallengeDescription": "Earn * Support Assists with Scorestreaks, Equipment, or Field Upgrades.",
+              "AmountRequired": 200,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Take a Closer Look",
+              "ChallengeDescription": "Get * kills while aiming down sights using a weapon with an attached 2x magnified scope or greater.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Far and Away",
+              "ChallengeDescription": "Using a Sniper Rifle, kill an enemy more than 250 meters away.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Tools of the Trade",
+              "ChallengeDescription": "Get a kill with both a weapon and a piece of equipment in the same life * times.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Turn the Tables",
+              "ChallengeDescription": "Kill an enemy that had previously damaged you first * times.",
+              "AmountRequired": 30,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Pumping Iron",
+              "ChallengeDescription": "Get * Headshot kills using iron sight weapons.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Top 10",
+              "ChallengeDescription": "Complete a public match with a score or placement among the top 10% of players * time(s).",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/multiplayer/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        },
+        {
+          "GameModeID": 1,
+          "GameModeName": "Zombies",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Drop The Hammer",
+              "ChallengeDescription": "In Outbreak, get * Eliminations shortly after landing from a parachute.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Weed Killer",
+              "ChallengeDescription": "Earn * Overgrowth medals (Killed 5 or more enemies rapidly with your Toxic Growth).",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Vehicular Assistance",
+              "ChallengeDescription": "Earn * Gunner medals (Killed 3 or more enemies rapidly using a vehicle's weapons).",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Harvest Time",
+              "ChallengeDescription": "In Outbreak, collect * rewards from rockets in the Secure Objective.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Infradead",
+              "ChallengeDescription": "Get * Eliminations while aiming down a thermal scope attachment.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Look Out Below",
+              "ChallengeDescription": "In Outbreak, kill an Orda with a melee finisher.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Out of Body Experience",
+              "ChallengeDescription": "Use a Chopper Gunner or Cruise Missile Support with 5 or more enemies in close proximity.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Gone Fishing",
+              "ChallengeDescription": "In Outbreak, collect * items from fishing.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Blinded By The Light",
+              "ChallengeDescription": "Kill * enemies stunned by Healing Aura.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Hipster",
+              "ChallengeDescription": "Earn * Critical Kills without aiming down sights.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "On A Budget",
+              "ChallengeDescription": "Kill * enemies distracted by a Decoy tactical equipment using a Frag or Semtex.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Pit Stop",
+              "ChallengeDescription": "Earn * Freelancer medals (Killed 3 enemies rapidly with an equipped weapon on a vehicle).",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Root Canal",
+              "ChallengeDescription": "In Outbreak, complete * Fury Crystal world events.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Growth Spurt",
+              "ChallengeDescription": "Upgrade a base weapon to Pack-A-Punch Level III in one purchase menu session.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "A Good Compromise",
+              "ChallengeDescription": "Get * Eliminations with Tactical Rifles.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "He Had to Split",
+              "ChallengeDescription": "Kill * Specials or Elites with the Tomahawk lethal equipment.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Like Butter",
+              "ChallengeDescription": "Kill * enemies with their elemental damage weakness.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "To The Bitter End",
+              "ChallengeDescription": "Earn * Loot Piñata medals (Destroy the Aether Orb in Outbreak).",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Staycation",
+              "ChallengeDescription": "In Round Based, reach Round 20 without leaving the starting area.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "My Way",
+              "ChallengeDescription": "Get 1,* Eliminations with a found Legendary rarity weapon that you applied a Blueprint to.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/4/zombies/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        }
+      ],
+      "SeasonEnd": "2021-08-11T04:00:00.0000000Z",
+      "IsSeasonFinished": true
     }
   ]
 }
