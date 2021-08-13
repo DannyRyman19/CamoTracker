@@ -1727,6 +1727,438 @@
       ],
       "SeasonEnd": "2021-08-12T04:00:00.0000000Z",
       "IsSeasonFinished": true
+    },
+    {
+      "SeasonName": "Season 5",
+      "SeasonID": "4",
+      "SeasonProgress": 0,
+      "IsSeasonComplete": false,
+      "ChallengeCount": 40,
+      "ChallengesCompleted": 0,
+      "GameModes": [
+        {
+          "GameModeID": 0,
+          "GameModeName": "Multiplayer",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Making a Killing",
+              "ChallengeDescription": "Earn * total Cold War Score or Warzone Battle Royale Cash.",
+              "AmountRequired": 125000 ,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Powder Keg",
+              "ChallengeDescription": "Kill 2 or more enemies with damage caused by a single explosion * times.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Playing the Objective",
+              "ChallengeDescription": "Complete a Warzone contract or earn a Wipeout Medal * times (cleared your objective of 2 or more attackers).",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Full-On Assault",
+              "ChallengeDescription": "Get 3 kills with Assault Rifles without dying * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "One by One",
+              "ChallengeDescription": "Get * Eliminations with semi-auto weapons.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Data Breach",
+              "ChallengeDescription": "Using the Spycraft or Spotter Perk, get * kills, assists, destructions, or interceptions with hacked Field Upgrades.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Bulwarked",
+              "ChallengeDescription": "Kill * enemies while you are protected by partial cover.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "From Downtown",
+              "ChallengeDescription": "Kill an enemy with a piece of Lethal Equipment that was thrown or dropped a long distance.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "SMG Go Brr",
+              "ChallengeDescription": "Get * Eliminations with SMGs.",
+              "AmountRequired": 500,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Run & Gun",
+              "ChallengeDescription": "Kill an enemy while you are sprinting or shortly after sprinting * times.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Wall Banger",
+              "ChallengeDescription": "Get a kill with a bullet that has penetrated through a wall or other surface * times.",
+              "AmountRequired": 3,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Bottomless Clip",
+              "ChallengeDescription": "Get * Eliminations while using a Magazine attachment that increases your weapon's Magazine Ammo Capacity.",
+              "AmountRequired": 300,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Hat Trick",
+              "ChallengeDescription": "Get 3 Headshot kills in a single game * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Splash Damage",
+              "ChallengeDescription": "Get * kills or destructions with Launchers.",
+              "AmountRequired": 30,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Adrenaline Junkie",
+              "ChallengeDescription": "Get 5 or more kills without dying while using the Stim Shot to regain health at least once * time(s).",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Top Marksman",
+              "ChallengeDescription": "Using a Sniper Rifle, kill an enemy Sniper who is sniping at you * times.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Slice & Dice",
+              "ChallengeDescription": "Get 3 Melee kills in a single game * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Follow in Their Footsteps",
+              "ChallengeDescription": "Using the Tracker Perk, kill a nearby tracked enemy from behind without receiving returning fire * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Clutch Performer",
+              "ChallengeDescription": "Win a Gunfight Match or your Gulag fight * times.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Dead Drop",
+              "ChallengeDescription": "Kill an enemy shortly after dropping nearby from a higher elevation * times.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/multiplayer/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        },
+        {
+          "GameModeID": 1,
+          "GameModeName": "Zombies",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Rooftop Escape",
+              "ChallengeDescription": "In Mauer Der Toten, successfully Exfil at Round 21 or higher * times.",
+              "AmountRequired": 3,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Trained to Kill",
+              "ChallengeDescription": "In Mauer Der Toten, use Trains to kill * enemies.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Fast Burn",
+              "ChallengeDescription": "Kill * Specials or Elites with the Flamethrower Support.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Slow Burn",
+              "ChallengeDescription": "Get * Napalm Burst Burn Kills.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Bad Ass",
+              "ChallengeDescription": "Get * Eliminations with a 3rd primary weapon using the Mule Kick Perk.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Did It Crack?",
+              "ChallengeDescription": "In Outbreak, fall a distance of 60 meters without using a parachute or Jump Pad and survive.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Bloodlust",
+              "ChallengeDescription": "Earn * Bloodbath medals using a primary melee weapon (Killed 20 enemies rapidly).",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Livin' Thing",
+              "ChallengeDescription": "In Mauer Der Toten, kill * enemies with Klaus.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Lacking Discipline",
+              "ChallengeDescription": "Kill * enemies using a Brain Rotted Disciple.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "Scope It Out",
+              "ChallengeDescription": "Get * Eliminations using a weapon with a 2x magnified scope or greater.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Limbo",
+              "ChallengeDescription": "In Mauer Der Toten, stay in 'Death Strip' for 5 consecutive Rounds.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Weather The Storm",
+              "ChallengeDescription": "Kill * enemies stunned by the Tesla Storm Field Upgrade.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Height Impaired",
+              "ChallengeDescription": "Get * Eliminations from a lower elevation of 5 meters or more.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Tormented",
+              "ChallengeDescription": "In Mauer Der Toten, kill * enemies with Tormentor explosions.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Aim For The Sky",
+              "ChallengeDescription": "Get * Critical Kills with Shotguns.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Too Hot To Handle",
+              "ChallengeDescription": "Stun * Disciples by shooting their hand while they are draining a player's health.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Suck It Up",
+              "ChallengeDescription": "Earn * Event Horizon Medals (Kill 3 or more enemies with a LT53 Kazimir portal).",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Jackalope",
+              "ChallengeDescription": "In Outbreak, earn * Jackrabbit medals during Objectives (Killed 20 or more enemies consecutively without getting hit).",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Heavy Metal",
+              "ChallengeDescription": "Earn * Scrap Metal medals (Killed a Krasny Soldat).",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Megadeath",
+              "ChallengeDescription": "Get * Eliminations with the CRBR-S Wonder Weapon.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/5/zombies/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        }
+      ],
+      "SeasonEnd": "2021-10-07T04:00:00.0000000Z",
+      "IsSeasonFinished": true
     }
   ]
 }
