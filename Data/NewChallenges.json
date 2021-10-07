@@ -2159,6 +2159,438 @@
       ],
       "SeasonEnd": "2021-10-07T04:00:00.0000000Z",
       "IsSeasonFinished": true
+    },
+    {
+      "SeasonName": "Season 6",
+      "SeasonID": "5",
+      "SeasonProgress": 0,
+      "IsSeasonComplete": false,
+      "ChallengeCount": 40,
+      "ChallengesCompleted": 0,
+      "GameModes": [
+        {
+          "GameModeID": 0,
+          "GameModeName": "Multiplayer",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "Playing For Keeps",
+              "ChallengeDescription": "Complete a Warzone Bounty Contract or finish a Multiplayer match with 5 or more objective kills * times.",
+              "AmountRequired": 15 ,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Boom Goes the Dynamite",
+              "ChallengeDescription": "Get * kills with explosives.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Two for Two",
+              "ChallengeDescription": "Rapidly earn 2 or more One Shot Kills * times (does not count in Hardcore).",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Headhunter",
+              "ChallengeDescription": "Get * Headshot Kills with Assault Rifles.",
+              "AmountRequired": 75,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "Burst Your Bubble",
+              "ChallengeDescription": "Get * Eliminations with burst fire weapons.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Fire in the Hole!",
+              "ChallengeDescription": "Use Lethal Equipment to kill an enemy that can't see you * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Eye in the Sky",
+              "ChallengeDescription": "Rapidly kill 2 or more enemies while your Spy Plane, H.A.R.P., or UAV is active * times.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Thanks for Dropping By",
+              "ChallengeDescription": "Kill * skydiving or parachuting enemies.",
+              "AmountRequired": 3,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Quick on the Draw",
+              "ChallengeDescription": "Get * kills while aiming down sights with a SMG equipped with a Handle Attachment that improves Aim Down Sight Time.",
+              "AmountRequired": 150,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "The Damage is Done",
+              "ChallengeDescription": "Deal * total damage.",
+              "AmountRequired": 30000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Fire-Breather",
+              "ChallengeDescription": "Get * kills with fire damage.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Moonshot",
+              "ChallengeDescription": "Kill an enemy at long distance with a rocket fired from a free-fire Launcher.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "Squad Wipe",
+              "ChallengeDescription": "Kill the last player alive in a Fireteam or Squad of 3 or more players.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Reel in the Big One",
+              "ChallengeDescription": "Use a Proximity Mine, Gas Mine, C4, or Claymore to kill an enemy who's recently used a zipline, rappel, or ladder.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Turn it Off and On Again",
+              "ChallengeDescription": "Use the Jammer or EMP Drone to jam or disable * enemy deployed Field Upgrades or Scorestreaks.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "Big Shot",
+              "ChallengeDescription": "Rapidly kill 2 or more enemies while using a Scorestreak Weapon or Stopping Power Rounds * times.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Shelling Out",
+              "ChallengeDescription": "Get 3 kills with Shotguns without dying * times.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Jack of All Trades",
+              "ChallengeDescription": "Get a kill with a Primary Weapon, Secondary Weapon, Lethal Equipment, and Scorestreak in the same game * times.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Hold Down the Fort",
+              "ChallengeDescription": "Get 3 kills without moving from one location * times.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Fit of Fury",
+              "ChallengeDescription": "Earn a Fury Kill or better Medal (kill 4 players rapidly).",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/multiplayer/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        },
+        {
+          "GameModeID": 1,
+          "GameModeName": "Zombies",
+          "GameModeProgress": 0,
+          "ChallengeCount": 20,
+          "ChallengesCompleted": 0,
+          "IsGameModeComplete": false,
+          "Challenges": [
+            {
+              "ChallengeID": 0,
+              "ChallengeName": "War of Attrition",
+              "ChallengeDescription": "In Forsaken, stay inside Burger Town for 5 consecutive Rounds.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/0.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 1,
+              "ChallengeName": "Explosive Finish",
+              "ChallengeDescription": "Kill * Special or Elite enemies with Equipment: Frag, Semtex, C4, or Cymbal Monkey.",
+              "AmountRequired": 15,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/1.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 2,
+              "ChallengeName": "Odd Couple",
+              "ChallengeDescription": "In Outbreak, complete * Black Chest World Events.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/2.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 3,
+              "ChallengeName": "Death From Below",
+              "ChallengeDescription": "Kill * enemies with the ARC-XD Support.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/3.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 4,
+              "ChallengeName": "High Frequency",
+              "ChallengeDescription": "Complete * Rounds with the Rampage Inducer active.",
+              "AmountRequired": 50,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/4.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 5,
+              "ChallengeName": "Hard Headed",
+              "ChallengeDescription": "Kill an Abomination while it still has all three heads.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/5.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 6,
+              "ChallengeName": "Sixth Sense",
+              "ChallengeDescription": "Open * chests with the Death Perception Tier V Perk equipped.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/6.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 7,
+              "ChallengeName": "Highest Caliber",
+              "ChallengeDescription": "Kill * Elites with the Hand Cannon Support.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/7.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 8,
+              "ChallengeName": "Sea Legs",
+              "ChallengeDescription": "In Outbreak, kill * enemies while in sea vehicles.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/8.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 9,
+              "ChallengeName": "The Radioactive Slide",
+              "ChallengeDescription": "Kill * enemies with explosions generated from the PHD Slider Perk.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/9.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 10,
+              "ChallengeName": "Under Pressure",
+              "ChallengeDescription": "In Forsaken, survive through Round 10 in the Staging Area.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/10.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 11,
+              "ChallengeName": "Coin Line",
+              "ChallengeDescription": "In Forsaken, spend * Arcade Tokens at the Arcade.",
+              "AmountRequired": 10,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/11.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 12,
+              "ChallengeName": "No Turning Back",
+              "ChallengeDescription": "Enter a LT53 Kazimir portal * times.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/12.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 13,
+              "ChallengeName": "Stunning Performance",
+              "ChallengeDescription": "Kill * Special or Elite enemies stunned by a Tesla Storm Field Upgrade.",
+              "AmountRequired": 20,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/13.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 14,
+              "ChallengeName": "Crystalline Boom",
+              "ChallengeDescription": "Earn * Melee Kills with the Chrysalax Savager Wonder Weapon.",
+              "AmountRequired": 250,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/14.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 15,
+              "ChallengeName": "10 Course Meal",
+              "ChallengeDescription": "Drink 10 different Perks in 10 consecutive Rounds.",
+              "AmountRequired": 1,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/15.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 16,
+              "ChallengeName": "Close The Gap",
+              "ChallengeDescription": "Kill * enemies shortly after using the Grapple Gun tactical equipment.",
+              "AmountRequired": 25,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/16.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 17,
+              "ChallengeName": "Overkill",
+              "ChallengeDescription": "In Outbreak, kill * enemies as the driver or gunner in a tank.",
+              "AmountRequired": 100,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/17.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 18,
+              "ChallengeName": "Pillage And Plunder",
+              "ChallengeDescription": "In Outbreak, destroy * Omega helicopters.",
+              "AmountRequired": 5,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/18.png",
+              "IsChallengeComplete": false
+            },
+            {
+              "ChallengeID": 19,
+              "ChallengeName": "Wunderbar!",
+              "ChallengeDescription": "Get * Eliminations with Packed Wonder Weapons.",
+              "AmountRequired": 1000,
+              "CurrentAmount": 0,
+              "Progression": 0,
+              "CallingCardURL": "https://camotracker.djr.li/Images/seasons/6/zombies/19.png",
+              "IsChallengeComplete": false
+            }
+          ]
+        }
+      ],
+      "SeasonEnd": "2021-12-02T04:00:00.0000000Z",
+      "IsSeasonFinished": true
     }
   ]
 }
