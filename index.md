@@ -3,7 +3,7 @@ layout: default
 ---
 
 ## Our Apps
-We have apps for both Cold War and Modern Warfare! Click on an image to learn more!
+We have apps Cold War, Modern Warfare & now Vanguard! Click on an image to learn more!
 
 |Modern Warfare|Cold War|Vanguard|
 |-|-|-|
