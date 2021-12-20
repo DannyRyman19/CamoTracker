@@ -5423,7 +5423,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unknown)",
+            "CategoryDescription": "Get ADS Kills with the 22\" Cooper Custom Barrel, Cooper Custom Padded Stock, and Hardscope Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -5492,7 +5492,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unknown)",
+            "CategoryDescription": "Get Headshot Kills with the 18\" Ragdoll G45 Barrel, 9mm 60 Round Drum Mags, and Vital Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -5561,7 +5561,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unknown)",
+            "CategoryDescription": "Get Close Range Kills with the 8\" Ragdoll Short Barrel, .30 Carbine 20 Round Mags, and Cooper 45RS Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -10359,66 +10359,66 @@
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
             "CategoryDescription": "Get Kills without taking damage from that Enemy with the Sawed-Off Barrel, 16 Gauge 7 Round Cylinder Mags, and Reisdorf Folding Stock Equipped",
-            "AmountNeeded": 100,
+            "AmountNeeded": 50,
             "CategoryCamos": [
               {
                 "CamoName": "Bloom",
                 "Opacity": 0.5,
-                "Amount": 10,
+                "Amount": 5,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/bloom.png"
               },
               {
                 "CamoName": "Lotus",
                 "Opacity": 0.5,
-                "Amount": 20,
+                "Amount": 10,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/lotus.png"
               },
               {
                 "CamoName": "Fern",
                 "Opacity": 0.5,
-                "Amount": 30,
+                "Amount": 15,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/fern.png"
               },
               {
                 "CamoName": "Flowerbed",
                 "Opacity": 0.5,
-                "Amount": 40,
+                "Amount": 20,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/flowerbed.png"
               },
               {
                 "CamoName": "Greenthumb",
                 "Opacity": 0.5,
-                "Amount": 50,
+                "Amount": 25,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/greenthumb.png"
               },
               {
                 "CamoName": "Topiaries",
                 "Opacity": 0.5,
-                "Amount": 60,
+                "Amount": 30,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/topiaries.png"
               },
               {
                 "CamoName": "New Leaf",
                 "Opacity": 0.5,
-                "Amount": 70,
+                "Amount": 35,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/new_leaf.png"
               },
               {
                 "CamoName": "Chlorphyll",
                 "Opacity": 0.5,
-                "Amount": 80,
+                "Amount": 40,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/chlorophyll.png"
               },
               {
                 "CamoName": "Harvester",
                 "Opacity": 0.5,
-                "Amount": 90,
+                "Amount": 45,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/harvester.png"
               },
               {
                 "CamoName": "Blue Palm",
                 "Opacity": 0.5,
-                "Amount": 100,
+                "Amount": 50,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Survivalist/Multiplayer/blue_palm.png"
               }
             ]
@@ -15514,66 +15514,66 @@
             "CategoryName": "Pack Tactics",
             "CategoryUnlockLevel": 2,
             "CategoryDescription": "Get Eliminations",
-            "AmountNeeded": 400,
+            "AmountNeeded": 300,
             "CategoryCamos": [
               {
                 "CamoName": "The Depths",
                 "Opacity": 0.5,
-                "Amount": 40,
+                "Amount": 30,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/the_depths.png"
               },
               {
                 "CamoName": "Osprey",
                 "Opacity": 0.5,
-                "Amount": 80,
+                "Amount": 60,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/osprey.png"
               },
               {
                 "CamoName": "Tributaries",
                 "Opacity": 0.5,
-                "Amount": 120,
+                "Amount": 90,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/tributaries.png"
               },
               {
                 "CamoName": "Candybar",
                 "Opacity": 0.5,
-                "Amount": 160,
+                "Amount": 120,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/candybar.png"
               },
               {
                 "CamoName": "Reptilia",
                 "Opacity": 0.5,
-                "Amount": 200,
+                "Amount": 150,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/reptilia.png"
               },
               {
                 "CamoName": "Snakebit",
                 "Opacity": 0.5,
-                "Amount": 240,
+                "Amount": 180,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/snakebit.png"
               },
               {
                 "CamoName": "Low Foliage",
                 "Opacity": 0.5,
-                "Amount": 280,
+                "Amount": 210,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/low_foliage.png"
               },
               {
                 "CamoName": "Sandspout",
                 "Opacity": 0.5,
-                "Amount": 320,
+                "Amount": 240,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/sandspout.png"
               },
               {
                 "CamoName": "Winter's Blood",
                 "Opacity": 0.5,
-                "Amount": 360,
+                "Amount": 270,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/winters_blood.png"
               },
               {
                 "CamoName": "Brackish",
                 "Opacity": 0.5,
-                "Amount": 400,
+                "Amount": 300,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/brackish.png"
               }
             ]
@@ -16217,66 +16217,66 @@
             "CategoryName": "Pack Tactics",
             "CategoryUnlockLevel": 2,
             "CategoryDescription": "Get Eliminations",
-            "AmountNeeded": 400,
+            "AmountNeeded": 300,
             "CategoryCamos": [
               {
                 "CamoName": "The Depths",
                 "Opacity": 0.5,
-                "Amount": 40,
+                "Amount": 30,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/the_depths.png"
               },
               {
                 "CamoName": "Osprey",
                 "Opacity": 0.5,
-                "Amount": 80,
+                "Amount": 60,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/osprey.png"
               },
               {
                 "CamoName": "Tributaries",
                 "Opacity": 0.5,
-                "Amount": 120,
+                "Amount": 90,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/tributaries.png"
               },
               {
                 "CamoName": "Candybar",
                 "Opacity": 0.5,
-                "Amount": 160,
+                "Amount": 120,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/candybar.png"
               },
               {
                 "CamoName": "Reptilia",
                 "Opacity": 0.5,
-                "Amount": 200,
+                "Amount": 150,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/reptilia.png"
               },
               {
                 "CamoName": "Snakebit",
                 "Opacity": 0.5,
-                "Amount": 240,
+                "Amount": 180,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/snakebit.png"
               },
               {
                 "CamoName": "Low Foliage",
                 "Opacity": 0.5,
-                "Amount": 280,
+                "Amount": 210,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/low_foliage.png"
               },
               {
                 "CamoName": "Sandspout",
                 "Opacity": 0.5,
-                "Amount": 320,
+                "Amount": 240,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/sandspout.png"
               },
               {
                 "CamoName": "Winter's Blood",
                 "Opacity": 0.5,
-                "Amount": 360,
+                "Amount": 270,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/winters_blood.png"
               },
               {
                 "CamoName": "Brackish",
                 "Opacity": 0.5,
-                "Amount": 400,
+                "Amount": 300,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/brackish.png"
               }
             ]
@@ -16920,66 +16920,66 @@
             "CategoryName": "Pack Tactics",
             "CategoryUnlockLevel": 2,
             "CategoryDescription": "Get Eliminations",
-            "AmountNeeded": 400,
+            "AmountNeeded": 300,
             "CategoryCamos": [
               {
                 "CamoName": "The Depths",
                 "Opacity": 0.5,
-                "Amount": 40,
+                "Amount": 30,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/the_depths.png"
               },
               {
                 "CamoName": "Osprey",
                 "Opacity": 0.5,
-                "Amount": 80,
+                "Amount": 60,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/osprey.png"
               },
               {
                 "CamoName": "Tributaries",
                 "Opacity": 0.5,
-                "Amount": 120,
+                "Amount": 90,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/tributaries.png"
               },
               {
                 "CamoName": "Candybar",
                 "Opacity": 0.5,
-                "Amount": 160,
+                "Amount": 120,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/candybar.png"
               },
               {
                 "CamoName": "Reptilia",
                 "Opacity": 0.5,
-                "Amount": 200,
+                "Amount": 150,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/reptilia.png"
               },
               {
                 "CamoName": "Snakebit",
                 "Opacity": 0.5,
-                "Amount": 240,
+                "Amount": 180,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/snakebit.png"
               },
               {
                 "CamoName": "Low Foliage",
                 "Opacity": 0.5,
-                "Amount": 280,
+                "Amount": 210,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/low_foliage.png"
               },
               {
                 "CamoName": "Sandspout",
                 "Opacity": 0.5,
-                "Amount": 320,
+                "Amount": 240,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/sandspout.png"
               },
               {
                 "CamoName": "Winter's Blood",
                 "Opacity": 0.5,
-                "Amount": 360,
+                "Amount": 270,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/winters_blood.png"
               },
               {
                 "CamoName": "Brackish",
                 "Opacity": 0.5,
-                "Amount": 400,
+                "Amount": 300,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Pack%20Tactics/Multiplayer/brackish.png"
               }
             ]
@@ -21772,7 +21772,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get Kills without taking damage from that Enemy with the Wilkie W-4 Stub Barrel, 9mm Mags, and Heavy Trigger Equipped",
+            "CategoryDescription": "Get Kills without taking damage from that Enemy with the Wilkie W-7 Barrel, 9mm Mags, and Heavy Trigger Equipped",
             "AmountNeeded": 50,
             "CategoryCamos": [
               {
@@ -24893,7 +24893,7 @@
             "ID": 3,
             "CategoryName": "Reptilian",
             "CategoryUnlockLevel": 1,
-            "CategoryDescription": "Destroy Enemy aerial Killstreaks",
+            "CategoryDescription": "Get Longshot Kills",
             "AmountNeeded": 50,
             "CategoryCamos": [
               {
