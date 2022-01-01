@@ -2611,7 +2611,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Longshot Kills with the 30\" XL Barrel, Pistol Grip Custom Stock, and Discard Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -2680,7 +2680,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Bullet Pentration Kills with the .50 BMG 20 Round Mags, Cooper SP Stock, and Driller Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -2749,7 +2749,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Kills While Moving with the 21\" Scythe Barrel, Klauser 20 Round Mags, and Acrobatic Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -3452,7 +3452,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get Kills while Crouched or Prone with 3 specific attachments. (Attachments Currently Unknown)",
+            "CategoryDescription": "Get Kills while Crouched or Prone with the Empress Falchion A Barrel, Kovalevskaya Custom Stock, and Disable Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -6836,7 +6836,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get ADS Kills with the Hockenson 248mm Burst Barrel, .45 ACP 20 Round Fast Mags, and Gawain Custom Stock Equipped ",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -6905,7 +6905,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Kills While Moving with the 7.62 Gorenko 32 Round Mags, Gawain Para Stock, and Steady Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -6974,7 +6974,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Headshot Kills with the Hockenson 348mm B13S Barrel, 9mm 20 Round Mags and Steady Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -7539,7 +7539,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge currently unknown)",
+            "CategoryDescription": "Get Kills without taking damage from that Enemy with the Chariot 2.5\" Rapid Barrel, Wire Stock and Disable Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -7608,7 +7608,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge currently unknown)",
+            "CategoryDescription": "Get Kills while Crouched or Prone with the 12\" Cooling Barrel, 50 Round 8mm Drum Mags, and Chariot SI Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -11833,67 +11833,67 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
-            "AmountNeeded": 100,
+            "CategoryDescription": "Get Headshot Kills with the Extra Range Mags, Chariot S Huntsman Stock, and Tight Grip Proficiency Equipped",
+            "AmountNeeded": 50,
             "CategoryCamos": [
               {
                 "CamoName": "Scarlet Skull",
                 "Opacity": 0.5,
-                "Amount": 10,
+                "Amount": 5,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/scarlett_skull.png"
               },
               {
                 "CamoName": "Head Collector",
                 "Opacity": 0.5,
-                "Amount": 20,
+                "Amount": 10,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/head_collector.png"
               },
               {
                 "CamoName": "Night Terrors",
                 "Opacity": 0.5,
-                "Amount": 30,
+                "Amount": 15,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/night_terrors.png"
               },
               {
                 "CamoName": "Delirium",
                 "Opacity": 0.5,
-                "Amount": 40,
+                "Amount": 20,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/delirium.png"
               },
               {
                 "CamoName": "Death Envy",
                 "Opacity": 0.5,
-                "Amount": 50,
+                "Amount": 25,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/death_envy.png"
               },
               {
                 "CamoName": "Ancient Winds",
                 "Opacity": 0.5,
-                "Amount": 60,
+                "Amount": 30,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/ancient_winds.png"
               },
               {
                 "CamoName": "Fire Haze",
                 "Opacity": 0.5,
-                "Amount": 70,
+                "Amount": 35,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/fire_haze.png"
               },
               {
                 "CamoName": "Chocolate Thunder",
                 "Opacity": 0.5,
-                "Amount": 80,
+                "Amount": 40,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/chocolate_thunder.png"
               },
               {
                 "CamoName": "Mount Olympus",
                 "Opacity": 0.5,
-                "Amount": 90,
+                "Amount": 45,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/mount_olympus.png"
               },
               {
                 "CamoName": "Hyperlapse",
                 "Opacity": 0.5,
-                "Amount": 100,
+                "Amount": 50,
                 "CamoURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Mindgames/Multiplayer/hyperlapse.png"
               }
             ]
@@ -11902,7 +11902,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get ADS Kills with the Sawed-Off Barrel, CGC H4 Stock, and Frenzy Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -13177,7 +13177,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Hipfire Kills with the 355mm Rapid Barrel, Removed Stock, and Tight Grip Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -13246,7 +13246,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get ADS Kills with the VDD 680mm Barrel, 8mm 50 Round Fast Mags, and S91 MG Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -13315,7 +13315,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Longshot Kills with the 450mm Barrel, 13mm Anti-Material Drum Mags, and Wreck Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -14583,7 +14583,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Hipfire Kills while moving with the 352mm Barrel, Skeletal Stock, and Steady Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -14652,7 +14652,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Kills while Crouched or Prone with the 6.5mm Skaura 90 Round Drum Mags, Weighted Stock, and Pressure Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -14721,7 +14721,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get ADS Kills with the Sakura 261mm Barrel, 6.5mm Sakura 30 Round Mags, and Fleet Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -15286,7 +15286,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Longshot Kills with the Queen's 775m Scepter Barrel, .303 British 100 Round Drum Mags, and Queen's Model 11 BH Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -15355,7 +15355,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get ADS Kills with the Queen's 615mm Crown Barrel, .50 BMG 50 Round Mags, and Oak & Shield 12B Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -15424,7 +15424,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments. (Challenge Currently Unknown)",
+            "CategoryDescription": "Get Longshot Kills with the Queen's 705mm Royal Barrel, Hockenson SP2B Stock, and Dismantle Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -20221,7 +20221,7 @@
             "ID": 7,
             "CategoryName": "Survivalist",
             "CategoryUnlockLevel": 60,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unkown)",
+            "CategoryDescription": "Get Kills After Recently Aiming Down Sights with the 420mm Empress Barrel, Zac Custom Precision Stock, and Discard Proficiency Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -20290,7 +20290,7 @@
             "ID": 8,
             "CategoryName": "Mindgames",
             "CategoryUnlockLevel": 65,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unkown)",
+            "CategoryDescription": "Get Kills while moving with the 240mm ZAC Rapid Barrel, 13mm AM 7 Round Mags, and Anastasia Type 3B Stoyat Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
@@ -20359,7 +20359,7 @@
             "ID": 9,
             "CategoryName": "Death Artist",
             "CategoryUnlockLevel": 70,
-            "CategoryDescription": "Get ___ Kills with 3 specific attachments (Challenge currently unkown)",
+            "CategoryDescription": "Get Kills while Crouched or Prone with the 440mm Anastasia Custom Barrel, 13mm AM 10 Round Mags, and Kovalevskaya Tpe 2 Padded Stock Equipped",
             "AmountNeeded": 100,
             "CategoryCamos": [
               {
