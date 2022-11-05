@@ -3,7 +3,7 @@ layout: default
 ---
 
 ## Our Apps
-We have apps Cold War, Modern Warfare & now Vanguard! Click on an image to learn more!
+We have apps for Modern Warfare, Modern Warfare II, Cold War & Vanguard! Click on an image to learn more!
 
 |Modern Warfare II|Modern Warfare|Cold War|Vanguard|
 |-|-|-|-|
