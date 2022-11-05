@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<img width="200" alt="logo"  src="https://camotracker.djr.li/mwtracker.png" style="max-width:100%;">
+<img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">
 
 # Modern Warfare II Camo Tracker
 
