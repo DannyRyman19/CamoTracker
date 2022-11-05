@@ -676,14 +676,14 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "CamoName": "Torn Scales",
                         "UnlockLevel": 9,
-                        "AmountRequired": 50
+                        "AmountRequired": 10
                     },
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
                         "CamoName": "Desert Cat",
                         "UnlockLevel": 15,
                         "AmountRequired": 50
@@ -2306,14 +2306,14 @@
                     },
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} one shot one kills.",
                         "CamoName": "Leafless",
                         "UnlockLevel": 15,
-                        "AmountRequired": 50
+                        "AmountRequired": 25
                     },
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
                         "CamoName": "Teal Tiger",
                         "UnlockLevel": 21,
                         "AmountRequired": 50
@@ -2358,21 +2358,21 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills while mounted.",
                         "CamoName": "Dry Field",
                         "UnlockLevel": 7,
-                        "AmountRequired": 50
+                        "AmountRequired": 20
                     },
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} one shot one kills.",
                         "CamoName": "Aspen",
                         "UnlockLevel": 13,
-                        "AmountRequired": 50
+                        "AmountRequired": 25
                     },
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
                         "CamoName": "Lichyard",
                         "UnlockLevel": 18,
                         "AmountRequired": 50
@@ -2501,28 +2501,28 @@
                         "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Sand",
                         "UnlockLevel": 2,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
                         "CamoName": "Muddied",
                         "UnlockLevel": 10,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "CamoName": "Blue Digital",
                         "UnlockLevel": 18,
-                        "AmountRequired": 50
+                        "AmountRequired": 5
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} point blank kills.",
                         "CamoName": "Pixel Land",
                         "UnlockLevel": 26,
-                        "AmountRequired": 50
+                        "AmountRequired": 10
                     }
                 ],
                 "MasteryCamos": [
@@ -2560,28 +2560,28 @@
                         "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Blades",
                         "UnlockLevel": 2,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "CamoName": "Foliage",
                         "UnlockLevel": 10,
-                        "AmountRequired": 50
+                        "AmountRequired": 5
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills while mounted.",
                         "CamoName": "Leopard",
                         "UnlockLevel": 18,
-                        "AmountRequired": 50
+                        "AmountRequired": 15
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
                         "CamoName": "8-Bit Static",
                         "UnlockLevel": 26,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
@@ -2619,28 +2619,28 @@
                         "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Bio Static Digital",
                         "UnlockLevel": 2,
-                        "AmountRequired": 50
+                        "AmountRequired": 30
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills while ADS.",
                         "CamoName": "Desert Wave",
                         "UnlockLevel": 8,
-                        "AmountRequired": 50
+                        "AmountRequired": 25
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
                         "CamoName": "Garter Snake",
                         "UnlockLevel": 13,
-                        "AmountRequired": 50
+                        "AmountRequired": 10
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
                         "CamoName": "Azul",
                         "UnlockLevel": 19,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
@@ -2737,28 +2737,28 @@
                         "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Void and Light",
                         "UnlockLevel": 2,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
                         "CamoName": "Asphalt Digital",
                         "UnlockLevel": 8,
-                        "AmountRequired": 50
+                        "AmountRequired": 10
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "CamoName": "Dark Echo",
                         "UnlockLevel": 15,
-                        "AmountRequired": 50
+                        "AmountRequired": 10
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Challenge not yet known.",
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
                         "CamoName": "Party Time",
                         "UnlockLevel": 21,
-                        "AmountRequired": 50
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
