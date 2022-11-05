@@ -2939,6 +2939,44 @@
                         "AmountRequired": 15
                     }
                 ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "RPG-8",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPG-7.png",
+                "UnlockRequirement": "Unlocks at Player Level 32",
+                "IsDefault": false,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Jungle Digital",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "AmountRequired": 15
+                    }
+                ]
             }
         ]
     }
