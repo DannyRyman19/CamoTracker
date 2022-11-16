@@ -1,0 +1,3122 @@
+[
+    {
+        "WeaponCategoryID": 0,
+        "WeaponCategoryName": "Assault Rifles",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "M4",
+                "WeaponPlatform": 1,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M4.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Scales",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Desert Hybrid",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Dark Leaves",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Urban Renewal",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "TAQ-56",
+                "WeaponPlatform": 4,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-56.png",
+                "UnlockRequirement": "Unlocks at Player Level 19",
+                "IsDefault": true,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Hidden Snake",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Iceland",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Stonewall Digital",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Back in Blue",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Kastov 762",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_762.png",
+                "UnlockRequirement": "Unlocks at Player Level 23",
+                "IsDefault": true,
+                "MaxLevel": 21,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Urban Foliage",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Rip N' Tear",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Forest Ice",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Red Tiger",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Lachmann-556",
+                "WeaponPlatform": 3,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN-556.png",
+                "UnlockRequirement": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Marshland",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Pine",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Dark Tiger Digital",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Cthulhu",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "STB 556",
+                "WeaponPlatform": 5,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/STB_556.png",
+                "UnlockRequirement": "Unlock at player level 41",
+                "IsDefault": true,
+                "MaxLevel": 21,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Sponge TAC",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Black Top",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Slate",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Neon Pink",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "M16",
+                "WeaponPlatform": 1,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M16.png",
+                "UnlockRequirement": "Unlock by leveling the 556 Icarus (LMG) to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 16,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Modern Woodland",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Marsh Digital",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Dank Forest",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Intoxicate",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 6,
+                "WeaponName": "Kastov-74u",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV-74U.png",
+                "UnlockRequirement": "Unlock by leveling the Kastov 545 (Assault Rifle) to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 21,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Ripple effect",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Jungle Digital",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Canary Stone",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Chemical Reaction",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 7,
+                "WeaponName": "Kastov 545",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_545.png",
+                "UnlockRequirement": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 10",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Snowdrift",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Mudslide",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Savannah",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Petri Digital",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 8,
+                "WeaponName": "M13B",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13B.png",
+                "UnlockRequirement": "Unlock by defeating the chemist in the radiation zone of DMZ and extracting his dropped weapon.",
+                "IsDefault": false,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Tarnished",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Field Ops",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Projectile",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Ice Cave",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 1,
+        "WeaponCategoryName": "Battle Rifles",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Lachmann-762",
+                "WeaponPlatform": 3,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png",
+                "UnlockRequirement": "Unlocks at Player Level 16",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Day Marsh",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Desert Oil Digital",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Stalking Cat",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Internal Flame",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "SO-14",
+                "WeaponPlatform": 6,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/S0-14.png",
+                "UnlockRequirement": "Unlock by leveling the EBR-14 (Marksman Rifle) to Level 12",
+                "IsDefault": true,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dune Stalker",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Reptilian",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Heavy Commando",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Tendrils",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "TAQ-V",
+                "WeaponPlatform": 4,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-V.png",
+                "UnlockRequirement": "Unlock by leveling the TAQ-56 (Assault Rfile) to Level 11",
+                "IsDefault": true,
+                "MaxLevel": 21,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dune Sea",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Faded Veil",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Anaconda",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Slime Time",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "FTAC RECON",
+                "WeaponPlatform": 1,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_RECON.png",
+                "UnlockRequirement": "Unlock by leveling the M4 (Assault Rifle) to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 23,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Beached",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Torn Scales",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Desert Cat",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Haunting",
+                        "UnlockLevel": 22,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 2,
+        "WeaponCategoryName": "SMGS",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "VEL 46",
+                "WeaponPlatform": 7,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VEL_46.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 29,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Arid Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Midnight Bay",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Tagged",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Whiteout",
+                        "UnlockLevel": 28,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "MX9",
+                "WeaponPlatform": 5,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX9.png",
+                "UnlockRequirement": "Unlock by leveling the STB 556 (Assault Rifle) to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 17,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Concrete Jungle",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Forest Digital",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Overgrown",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Rainbow Tiger",
+                        "UnlockLevel": 16,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Lachmann Sub",
+                "WeaponPlatform": 3,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SUB.png",
+                "UnlockRequirement": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 12",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Darkfall",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Arctic Digital",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Crime Scene",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Poison",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Vaznev-9k",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VAZNEV-9k.png",
+                "UnlockRequirement": "Unlock by leveling the Kastov-74u (Assault Rifle) to Level 15",
+                "IsDefault": true,
+                "MaxLevel": 14,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Snow Melt Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Kill Brush",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Forest Rain",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Omnihex",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "FSS Hurricane",
+                "WeaponPlatform": 1,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FSS_HURRICANE.png",
+                "UnlockRequirement": "Unlock by leveling the FTAC Recon (Battle Rifle) to Level 16",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Green Woods",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Python",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Moon Shadow",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Neon Loud",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Minibak",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/MINIBAK.png",
+                "UnlockRequirement": "Unlock by leveling the Vaznev-9k (SMG) to Level 14",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Timber",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Rattlesnake",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Green Digital",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Skyfire",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 6,
+                "WeaponName": "PDSW 528",
+                "WeaponPlatform": 8,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/PDSW_528.png",
+                "UnlockRequirement": "Unlock at player level 5",
+                "IsDefault": true,
+                "MaxLevel": 30,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Shadow Stalker",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Gecko",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Shale",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Power Pink",
+                        "UnlockLevel": 29,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 7,
+                "WeaponName": "Fennec 45",
+                "WeaponPlatform": 9,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FENNEC_45.png",
+                "UnlockRequirement": "Unlock at player Level 38",
+                "IsDefault": true,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Motley",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Eclipse",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Feral Beast",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "2087",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 8,
+                "WeaponName": "Bas-P",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BAS-P.png",
+                "UnlockRequirement": "Unlocked with the Season 1 Battle Pass.",
+                "IsDefault": false,
+                "MaxLevel": 24,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Grass Snake",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} hipfire kills.",
+                        "CamoName": "Bark Digital",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Urban Dusk",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Dark Violet",
+                        "UnlockLevel": 16,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 3,
+        "WeaponCategoryName": "Shotguns",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Lockwood 300",
+                "WeaponPlatform": 10,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_300.png",
+                "UnlockRequirement": "Unlocks at Player Level 36",
+                "IsDefault": true,
+                "MaxLevel": 28,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Mosswood",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Jungle Cat",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Red Cell",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Hunting Orange",
+                        "UnlockLevel": 27,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "Expedite 12",
+                "WeaponPlatform": 11,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/EXPEDITE_12.png",
+                "UnlockRequirement": "Unlock at player Level 9",
+                "IsDefault": true,
+                "MaxLevel": 30,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Forest Shadow",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Tiger Stripes",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Snowed In",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Violent Orchid",
+                        "UnlockLevel": 29,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Bryson 800",
+                "WeaponPlatform": 12,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_800.png",
+                "UnlockRequirement": "Unlock at player level 4",
+                "IsDefault": true,
+                "MaxLevel": 21,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Mud Bath",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} hipfire kills.",
+                        "CamoName": "Bamboo",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Ground Cover",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Aqua",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Bryson 890",
+                "WeaponPlatform": 12,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_890.png",
+                "UnlockRequirement": "Unlock by leveling the Bryson 800 (Shotgun) to Level 16",
+                "IsDefault": true,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "SnowStorm Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Stone Guard",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Shedding",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Arctic Chill",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 25
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 4,
+        "WeaponCategoryName": "LMGS",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Sakin MG38",
+                "WeaponPlatform": 13,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SAKIN_MG38.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Commando Paint",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Necropolis",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Fractal Mud",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Magma Detail",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "HCR 56",
+                "WeaponPlatform": 5,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/HCR_56.png",
+                "UnlockRequirement": "Unlock by leveling the STB 556 (Assault Rifle) to Level 20",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Surface Tension",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Hexeo",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Sunset",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Tessellation",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "556 Icarus",
+                "WeaponPlatform": 1,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/556_ICARUS.png",
+                "UnlockRequirement": "Unlock by leveling the M4 (Assault Rifle) to Level 18",
+                "IsDefault": true,
+                "MaxLevel": 16,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Olive",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "What Skulls?",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Night Quarry",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Autumn Dazzle",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Raal MG",
+                "WeaponPlatform": 14,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAAL_MG.png",
+                "UnlockRequirement": "Unlock at player Level 25",
+                "IsDefault": true,
+                "MaxLevel": 28,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Rocky Desert",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Trailblazer",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Night Terror",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Lodge",
+                        "UnlockLevel": 27,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "RPK",
+                "WeaponPlatform": 2,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPK.png",
+                "UnlockRequirement": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 16",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dark Rainforest",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "China Lake",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Asphalt",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Rupture",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Rapp H",
+                "WeaponPlatform": 3,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAPP_H.png",
+                "UnlockRequirement": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 16",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Desert Snake",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Classic Digital",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Quarry",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Blue Tiger",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 5,
+        "WeaponCategoryName": "Marksman Rifles",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "EBR-14",
+                "WeaponPlatform": 6,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/EBR-14.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Sandstorm Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Moss",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Autumn Return",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Sunlit Croc",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "SP-R 208",
+                "WeaponPlatform": 15,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-R_208.png",
+                "UnlockRequirement": "Unlock at player Level 7",
+                "IsDefault": true,
+                "MaxLevel": 16,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dark Canopy",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Desert Digital",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Ferns",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Crimson Streak",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Lockwood MK2",
+                "WeaponPlatform": 16,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_MK2.png",
+                "UnlockRequirement": "Unlock at player Level 28",
+                "IsDefault": true,
+                "MaxLevel": 29,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Sand Viper",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Desert Rain",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Wild Zebra",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Granite",
+                        "UnlockLevel": 28,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "LM-S",
+                "WeaponPlatform": 3,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png",
+                "UnlockRequirement": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 17",
+                "IsDefault": true,
+                "MaxLevel": 13,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Commando Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Abominable",
+                        "UnlockLevel": 5,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Autmunal",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Coral Snake",
+                        "UnlockLevel": 12,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "SA-B 50",
+                "WeaponPlatform": 15,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SA-B_50.png",
+                "UnlockRequirement": "Unlock by leveling the SP-R 208 to Level 13",
+                "IsDefault": true,
+                "MaxLevel": 23,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Urban Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Bullsnake",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Toxicity",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Splintered Asphalt",
+                        "UnlockLevel": 20,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "TAQ-M",
+                "WeaponPlatform": 4,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-M.png",
+                "UnlockRequirement": "Unlock by leveling the TAQ-56 (Assault Rfile) to Level 20",
+                "IsDefault": true,
+                "MaxLevel": 26,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dead Hive",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Forest Water",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Skin and Scales",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Chemist Digital",
+                        "UnlockLevel": 25,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 6,
+        "WeaponCategoryName": "Sniper Rifles",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "MCPR-300",
+                "WeaponPlatform": 17,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/MCPR-300.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Clay",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
+                        "CamoName": "Snow Grass",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Neon Shards",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Bloodied",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "Signal 50",
+                "WeaponPlatform": 18,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SIGNAL_50.png",
+                "UnlockRequirement": "Unlock at player Level 44",
+                "IsDefault": true,
+                "MaxLevel": 24,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Gladiator",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
+                        "CamoName": "Unearthed",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Earthbound",
+                        "UnlockLevel": 16,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Spectrums",
+                        "UnlockLevel": 23,
+                        "AmountRequired": 25
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "LA-B 330",
+                "WeaponPlatform": 15,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LA-B_330.png",
+                "UnlockRequirement": "Unlock by leveling the SA-B 50 (Marksman Rifle) to Level 16",
+                "IsDefault": true,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Shark Net",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
+                        "CamoName": "Dirt",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Leafless",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Teal Tiger",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "SP-X 80",
+                "WeaponPlatform": 15,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-X_80.png",
+                "UnlockRequirement": "Unlock by leveling the LA-B 330 (Sniper Rifle) to Level 17",
+                "IsDefault": true,
+                "MaxLevel": 19,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Scratch",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Dry Field",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Aspen",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Lichyard",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Victus XMR",
+                "WeaponPlatform": 15,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VICTUS_XMR.png",
+                "UnlockRequirement": "Unlocked with the Season 1 Battle Pass.",
+                "IsDefault": false,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Snowy Nights",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Burned Edges",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "CamoName": "Aspen",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Lichyard",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 7,
+        "WeaponCategoryName": "Melee",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Riot Shield",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RIOT_SHIELD.png",
+                "UnlockRequirement": "Unlocks at Player Level 37",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Urban Zebra",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 10
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "Combat Knife",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/COMBAT_KNIFE.png",
+                "UnlockRequirement": "Unlocks at Player Level 17",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Crimson",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 8,
+        "WeaponCategoryName": "Handguns",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "P890",
+                "WeaponPlatform": 19,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/P890.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Sand",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Muddied",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Blue Digital",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Pixel Land",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": ".50 GS",
+                "WeaponPlatform": 20,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png",
+                "UnlockRequirement": "Unlocks at Player Level 13",
+                "IsDefault": true,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Blades",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Foliage",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Leopard",
+                        "UnlockLevel": 18,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "8-Bit Static",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "X12",
+                "WeaponPlatform": 21,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/X12.png",
+                "UnlockRequirement": "Unlocks at Player Level 31",
+                "IsDefault": true,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Bio Static Digital",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Desert Wave",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Garter Snake",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "Azul",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Basilisk",
+                "WeaponPlatform": 22,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BASILISK.png",
+                "UnlockRequirement": "Unlocks at Player Level 39",
+                "IsDefault": true,
+                "MaxLevel": 29,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Outcrop",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Countryside",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Dark Denim",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "Chrysolite",
+                        "UnlockLevel": 28,
+                        "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "X13 Auto",
+                "WeaponPlatform": 21,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/X13_AUTO.png",
+                "UnlockRequirement": "Unlock by leveling the X12 (Handgun) to Level 10",
+                "IsDefault": true,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Void and Light",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Asphalt Digital",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Dark Echo",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "Party Time",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 9,
+        "WeaponCategoryName": "Launchers",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Pila",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/PILA.png",
+                "UnlockRequirement": "Unlocks at Player Level 4",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Dead Leaves",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "AmountRequired": 15
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "Strela-P",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/STRELA-P.png",
+                "UnlockRequirement": "Unlocks at Player Level 14",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Deep Jungle",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "AmountRequired": 15
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "JOKR",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/JOKR.png",
+                "UnlockRequirement": "Unlocks at Player Level 24",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Azure Fray",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "AmountRequired": 15
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "RPG-7",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPG-7.png",
+                "UnlockRequirement": "Unlocks at Player Level 32",
+                "IsDefault": true,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Jungle Digital",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} double kills.",
+                        "AmountRequired": 15
+                    }
+                ]
+            }
+        ]
+    }
+]
