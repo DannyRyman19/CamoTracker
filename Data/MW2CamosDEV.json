@@ -478,7 +478,7 @@
             {
                 "WeaponID": 8,
                 "WeaponName": "M13B",
-                "WeaponPlatform": 2,
+                "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13B.png",
                 "UnlockRequirement": "Unlock by defeating the chemist in the radiation zone of DMZ and extracting his dropped weapon.",
                 "IsDefault": false,
@@ -2518,9 +2518,9 @@
                 ]
             },
             {
-                "WeaponID": 3,
+                "WeaponID": 4,
                 "WeaponName": "Victus XMR",
-                "WeaponPlatform": 15,
+                "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VICTUS_XMR.png",
                 "UnlockRequirement": "Unlocked with the Season 1 Battle Pass.",
                 "IsDefault": false,
