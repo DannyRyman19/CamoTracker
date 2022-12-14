@@ -533,6 +533,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 9,
+                "WeaponName": "Chimera",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/Chimera.png",
+                "UnlockRequirement": "",
+                "IsDefault": false,
+                "MaxLevel": 18,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Charcoal",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Aztec",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Diabolical",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Snow Leopard",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -1272,7 +1331,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} hipfire kills.",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
                         "CamoName": "Bark Digital",
                         "UnlockLevel": 7,
                         "AmountRequired": 15
@@ -1455,7 +1514,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} hipfire kills.",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
                         "CamoName": "Bamboo",
                         "UnlockLevel": 8,
                         "AmountRequired": 15
@@ -2542,7 +2601,7 @@
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} double kills.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "CamoName": "Aspen",
                         "UnlockLevel": 18,
                         "AmountRequired": 10
@@ -2998,7 +3057,7 @@
                     {
                         "CamoName": "Polyatomic",
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} double kills.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "AmountRequired": 15
                     }
                 ]
@@ -3036,7 +3095,7 @@
                     {
                         "CamoName": "Polyatomic",
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} double kills.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "AmountRequired": 15
                     }
                 ]
@@ -3074,7 +3133,7 @@
                     {
                         "CamoName": "Polyatomic",
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} double kills.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "AmountRequired": 15
                     }
                 ]
@@ -3112,7 +3171,7 @@
                     {
                         "CamoName": "Polyatomic",
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} double kills.",
+                        "CategoryRequirement": "Get {0} Double kills.",
                         "AmountRequired": 15
                     }
                 ]
