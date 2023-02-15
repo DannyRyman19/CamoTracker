@@ -592,6 +592,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 10,
+                "WeaponName": "ISO Hemlock",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_HEMLOCK.png",
+                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Gaseous",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Cloud Hopper",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Lost Signal",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Paths of Light",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -1318,7 +1377,7 @@
                 "WeaponName": "Bas-P",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BAS-P.png",
-                "UnlockRequirement": "Unlocked with the Season 1 Battle Pass",
+                "UnlockRequirement": "Unlocked via extraction from DMZ OR 25 Headshots using SMGs",
                 "IsDefault": false,
                 "MaxLevel": 24,
                 "Camos": [
@@ -1591,6 +1650,65 @@
                         "CamoName": "Arctic Chill",
                         "UnlockLevel": 21,
                         "AmountRequired": 25
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "KV Broadside",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KV_BROADSIDE.png",
+                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Unplumbed",
+                        "UnlockLevel": 3,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Conflagration",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Ethereal Rampage",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Riot's Nest",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 20
                     }
                 ],
                 "MasteryCamos": [
@@ -2333,6 +2451,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 6,
+                "WeaponName": "Crossbow",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/CROSSBOW_png",
+                "UnlockRequirement": "Complete all 7 Path of the Ronin Event challenges",
+                "IsDefault": false,
+                "MaxLevel": 18,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Deciduous",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "H20",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Unlit Showers",
+                        "UnlockLevel": 12,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Rad n' Rancid",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -2581,7 +2758,7 @@
                 "WeaponName": "Victus XMR",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VICTUS_XMR.png",
-                "UnlockRequirement": "Unlocked with the Season 1 Battle Pass",
+                "UnlockRequirement": "Unlocked via extraction from DMZ OR 15 Headshots using Sniper Rifles",
                 "IsDefault": false,
                 "MaxLevel": 27,
                 "Camos": [
@@ -2693,6 +2870,44 @@
                         "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Crimson",
                         "UnlockLevel": 11,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Dual Kodachis",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KODACHIS.png",
+                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Rush Hour",
+                        "UnlockLevel": 14,
                         "AmountRequired": 50
                     }
                 ],
@@ -3051,7 +3266,7 @@
                     {
                         "CamoName": "Platinum",
                         "CamoID": 1,
-                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, OR Vehicles.",
                         "AmountRequired": 15
                     },
                     {
@@ -3089,7 +3304,7 @@
                     {
                         "CamoName": "Platinum",
                         "CamoID": 1,
-                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, OR Vehicles.",
                         "AmountRequired": 25
                     },
                     {
@@ -3127,7 +3342,7 @@
                     {
                         "CamoName": "Platinum",
                         "CamoID": 1,
-                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, OR Vehicles.",
                         "AmountRequired": 10
                     },
                     {
@@ -3165,7 +3380,7 @@
                     {
                         "CamoName": "Platinum",
                         "CamoID": 1,
-                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, or Vehicles.",
+                        "CategoryRequirement": "Destroy {0} Enemy Killstreaks, Equipment, OR Vehicles.",
                         "AmountRequired": 10
                     },
                     {
