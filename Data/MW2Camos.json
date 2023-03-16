@@ -2457,7 +2457,7 @@
                 "WeaponName": "Crossbow",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/CROSSBOW.png",
-                "UnlockRequirement": "Complete all 7 Path of the Ronin Event challenges",
+                "UnlockRequirement": "Get 50 Longshot kills using a Mrksman Rifle or Extract weapon from DMZ",
                 "IsDefault": false,
                 "MaxLevel": 18,
                 "Camos": [
@@ -2488,6 +2488,65 @@
                         "CamoName": "Rad n' Rancid",
                         "UnlockLevel": 17,
                         "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 7,
+                "WeaponName": "Tempus Torrent",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_TORRENT.png",
+                "UnlockRequirement": "Get 25 Double Kills using a Marksman Rifle or Extract weapon from DMZ",
+                "IsDefault": false,
+                "MaxLevel": 18,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Speckled",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Oxysporum",
+                        "UnlockLevel": 7,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Dire Growth",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Sandfall",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
