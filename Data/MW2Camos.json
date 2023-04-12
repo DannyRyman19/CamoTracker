@@ -598,7 +598,7 @@
                 "WeaponName": "ISO Hemlock",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_HEMLOCK.png",
-                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "UnlockRequirement": "Get 20 Longshot kills with Assault Rifles",
                 "IsDefault": false,
                 "MaxLevel": 27,
                 "Camos": [
@@ -871,6 +871,65 @@
                         "CamoName": "Haunting",
                         "UnlockLevel": 22,
                         "AmountRequired": 30
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "Cronen Squall",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/CRONEN_SQUALL.png",
+                "UnlockRequirement": "Unlocked with the Season 3 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 26,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Vapor Storm",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Ghastly Green",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Stone Rage",
+                        "UnlockLevel": 16,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Intergalactic",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
@@ -1678,7 +1737,7 @@
                 "WeaponName": "KV Broadside",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KV_BROADSIDE.png",
-                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "UnlockRequirement": "Get 10 one-shot kills with Shotguns",
                 "IsDefault": false,
                 "MaxLevel": 22,
                 "Camos": [
@@ -2870,6 +2929,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "FJX Imperium",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FJX_IMPERIUM.png",
+                "UnlockRequirement": "Unlocked with the Season 3 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 27,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Arctic Growth",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "CamoName": "Styx",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} while focused.",
+                        "CamoName": "Psychoactive",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "CamoName": "Bedlam",
+                        "UnlockLevel": 26,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -2958,7 +3076,7 @@
                 "WeaponName": "Dual Kodachis",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KODACHIS.png",
-                "UnlockRequirement": "Unlocked with the Season 2 Battle Pass",
+                "UnlockRequirement": "Get 20 kills with Melee weapons",
                 "IsDefault": false,
                 "MaxLevel": 15,
                 "Camos": [
