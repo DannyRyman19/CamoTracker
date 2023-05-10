@@ -3409,6 +3409,124 @@
                         "AmountRequired": 20
                     }
                 ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "FTAC Siege",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_SIEGE.png",
+                "UnlockRequirement": "Get 50 hipfire kills with Handguns.",
+                "IsDefault": false,
+                "MaxLevel": 26,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Sandpaper",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Velvet Midnight",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Painted Pig",
+                        "UnlockLevel": 17,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Fuzzy Spectrum",
+                        "UnlockLevel": 25,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 6,
+                "WeaponName": "GS Magna",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png",
+                "UnlockRequirement": "Get 30 headshot kills with the .50 GS",
+                "IsDefault": false,
+                "MaxLevel": 10,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Digital Wilds",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Rhyolitic",
+                        "UnlockLevel": 4,
+                        "AmountRequired": 510
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Cracking Oynx",
+                        "UnlockLevel": 6,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "Rad Reverb",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
             }
         ]
     },
