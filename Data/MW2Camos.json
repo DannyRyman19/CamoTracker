@@ -651,6 +651,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 11,
+                "WeaponName": "Tempus Razorback",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_RAZORBACK.png",
+                "UnlockRequirement": "Unlocked with the Season 4 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Snake Oil",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Dark Croc",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Alien Waves",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Sky Cover",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -899,7 +958,7 @@
                 "WeaponName": "Cronen Squall",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/CRONEN_SQUALL.png",
-                "UnlockRequirement": "Unlocked with the Season 3 Battle Pass",
+                "UnlockRequirement": "Get 30 headshot kills with Battle Rifles",
                 "IsDefault": false,
                 "MaxLevel": 26,
                 "Camos": [
@@ -1467,6 +1526,65 @@
                         "CamoName": "Dark Violet",
                         "UnlockLevel": 16,
                         "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 9,
+                "WeaponName": "Iso 45",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_45.png",
+                "UnlockRequirement": "Unlocked with the Season 4 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Tunnels",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Ziggurat",
+                        "UnlockLevel": 9,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Dappled Shade",
+                        "UnlockLevel": 13,
+                        "AmountRequired": 30
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Prismatic",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 20
                     }
                 ],
                 "MasteryCamos": [
@@ -2935,7 +3053,7 @@
                 "WeaponName": "FJX Imperium",
                 "WeaponPlatform": 0,
                 "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/FJX_IMPERIUM.png",
-                "UnlockRequirement": "Unlocked with the Season 3 Battle Pass",
+                "UnlockRequirement": "Get 30 one shot one kills with sniper rifles.",
                 "IsDefault": false,
                 "MaxLevel": 27,
                 "Camos": [
@@ -3086,6 +3204,44 @@
                         "CamoName": "Rush Hour",
                         "UnlockLevel": 14,
                         "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Tonfa",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TONFA.png",
+                "UnlockRequirement": "Unlocked as part of the Season 4 Vondel Event",
+                "IsDefault": false,
+                "MaxLevel": 16,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Oxidation",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 40
                     }
                 ],
                 "MasteryCamos": [
