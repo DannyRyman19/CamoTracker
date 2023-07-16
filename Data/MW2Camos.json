@@ -1908,6 +1908,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "MX Guardian",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX_GUARDIAN.png",
+                "UnlockRequirement": "Unlock challenge activated in Season 4 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 20,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Wet Sands",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Connected Dots",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Red Smoke",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Green Edges",
+                        "UnlockLevel": 19,
+                        "AmountRequired": 20
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
