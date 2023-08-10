@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Camo Tracker"
+description: Camo Tracker for Call of Duty Modern Warfare 3 MW3, Modern Warfare 2 MW2, Cold War & more.
 ---
 
 ## Our Apps
