@@ -4,7 +4,7 @@ title: "MW3 Camo Tracker"
 description : Modern Warfare III MW3 camo tracker 2023
 ---
 
-<img width="200" alt="logo"  src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" style="max-width:100%;">
+<a style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" alt="MW3 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 # MW3 Modern Warfare III Camo Tracker
 Call of Duty Modern Warfare III MW3 Camo Tracker assists with unlocking all the camos you want, you can easily track your progress to Orion/100% completion with this app. With individual camos, gold, platinum and polyatomic. 
