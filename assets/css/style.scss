@@ -24,6 +24,8 @@
   .header,
   .data {
     text-align: center;
+    font-family: hitmarkerText;
+    color: #000000;
   }
   
   /* Media query for mobile layout */
@@ -50,5 +52,13 @@
 p {
     font-family: hitmarkerText;
     color: #000000;
+  }
+
+  .project-name{
+    font-family: hitmarkerText;
+  }
+
+  .btn{
+    font-family: hitmarkerText;
   }
 
