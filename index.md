@@ -9,7 +9,7 @@ We have apps for Modern Warfare, Modern Warfare II MW2, Modern Warfare III MW3, 
   <thead>
     <tr>
       <th>Modern Warfare III MW3</th>
-      <th> Modern Warfare II MW2</th>
+      <th>Modern Warfare II  MW2</th>
       <th>Modern Warfare</th>
       <th>Cold War</th>
       <th>Vanguard</th>
