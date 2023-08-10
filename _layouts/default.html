@@ -31,18 +31,13 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner" style="display:inline; text-align: center">
-        {{ content }}
-      </section>
-    </div>
+    <main id="content" class="main-content" role="main">
+      {{ content }}
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
       <footer class="site-footer">
         <p><a href="/privacy-policy.html">Privacy Policy</a></p>
       </footer>
-    </div>
 
     {% if site.google_analytics %}
       <script>
