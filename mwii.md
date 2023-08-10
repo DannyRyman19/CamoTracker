@@ -4,11 +4,11 @@ layout: default
 
 <img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">
 
-# Modern Warfare 2 Camo Tracker
+# MW2 Modern Warfare II Camo Tracker
 
 You can track your progress to Orion/100% completion with this app. With individual camos, gold, platinum and polyatomic. 
 
-Store camo challenge progression for Modern Warfare 2 Multiplayer and Warzone all in this handy app. Please note this app does not contain Cold War/Vanguard/MW/MW3 weapons. See their respective apps for that!
+Store camo challenge progression for Modern Warfare II MW2 Multiplayer and Warzone all in this handy app. Please note this app does not contain Cold War/Vanguard/MW/MW3 weapons. See their respective apps for that!
 
 No adverts!
 New weapons added instantly with no need for an app update!

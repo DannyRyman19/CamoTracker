@@ -4,11 +4,11 @@ layout: default
 
 <img width="200" alt="logo"  src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" style="max-width:100%;">
 
-# Modern Warfare 3 Camo Tracker
+# MW3 Modern Warfare III Camo Tracker
 
-Call of Duty Modern Warfare 3 MW3 Camo Tracker assists with unlocking all the camos you want, you can easily track your progress to Orion/100% completion with this app. With individual camos, gold, platinum and polyatomic. 
+Call of Duty Modern Warfare III MW3 Camo Tracker assists with unlocking all the camos you want, you can easily track your progress to Orion/100% completion with this app. With individual camos, gold, platinum and polyatomic. 
 
-Store camo challenge progression for Modern Warfare 3 MW3 Multiplayer and Warzone all in this handy app. Please note this app does not contain Cold War/Vanguard/MW/MW2 weapons. See their respective apps for that!
+Store camo challenge progression for Modern Warfare III MW3 Multiplayer and Warzone all in this handy app. Please note this app does not contain Cold War/Vanguard/MW/MW2 weapons. See their respective apps for that!
 
 No adverts!
 New weapons added instantly with no need for an app update!
