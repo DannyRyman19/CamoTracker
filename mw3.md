@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "MW3 Camo Tracker"
+description : Modern Warfare III MW3 camo tracker 2023
 ---
 
 <img width="200" alt="logo"  src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" style="max-width:100%;">

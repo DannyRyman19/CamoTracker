@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "MW2 Camo Tracker"
+description : Modern Warfare II MW2 camo tracker 2023
 ---
 
 <img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">

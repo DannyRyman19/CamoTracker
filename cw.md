@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Cold War Camo Tracker"
+description : Cold War CW camo tracker for Zombies and Multiplayer
 ---
 
 <img width="200" alt="logo"  src="https://camotracker.djr.li/camo%20tracker.png" style="max-width:100%;">
