@@ -9,47 +9,31 @@
 }
 
 
+/* Base styles */
 .table-container {
-    overflow-x: auto; /* Add horizontal scroll on small screens */
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   
-  th, td {
+  .column {
+    flex-basis: calc(33.33% - 20px); /* Adjust this for spacing */
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
   }
   
-  /* Media query for desktop layout */
-  @media (min-width: 768px) {
-    .table-container {
-      overflow-x: initial; /* Remove horizontal scroll on larger screens */
-    }
-    table {
-      display: table;
-    }
-    tr {
-      display: table-row;
-    }
-    th, td {
-      display: table-cell;
-      border: 1px solid #ddd;
-    }
+  .header,
+  .data {
+    text-align: center;
   }
   
   /* Media query for mobile layout */
   @media (max-width: 767px) {
-    table {
+    .table-container {
+      flex-direction: column;
+    }
+    .column {
       border: none;
-    }
-    th, td {
-      display: block;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
+      margin-bottom: 20px;
     }
   }
 
