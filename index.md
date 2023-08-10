@@ -5,6 +5,7 @@ layout: default
 ## Our Apps
 We have apps for Modern Warfare, Modern Warfare II MW2, Modern Warfare III MW3, Cold War & Vanguard! Click on an image to learn more!
 
+<div class="table-container">
 <table style="display:inline; text-align: center">
   <thead>
     <tr>
@@ -26,3 +27,4 @@ We have apps for Modern Warfare, Modern Warfare II MW2, Modern Warfare III MW3, 
     </tr>
   </tbody>
 </table>
+</div>
