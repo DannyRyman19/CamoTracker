@@ -3,10 +3,11 @@ layout: default
 title: "MW2 Camo Tracker"
 description : Modern Warfare II MW2 camo tracker 2023
 ---
-
-<img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">
-
 # MW2 Modern Warfare II Camo Tracker
+<div>
+<img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">
+<a href="https://apps.apple.com/gb/app/mwii-camo-tracker/id6444090116?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1667692800" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+</div>
 
 You can track your progress to Orion/100% completion with this app. With individual camos, gold, platinum and polyatomic. 
 
