@@ -27,6 +27,11 @@
     font-family: hitmarkerText;
     color: #000000;
   }
+
+  .data
+  {
+    justify-content: end;
+  }
   
   /* Media query for mobile layout */
   @media (max-width: 767px) {
