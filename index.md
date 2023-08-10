@@ -23,7 +23,7 @@ We have apps for Modern Warfare, Modern Warfare II MW2, Modern Warfare III MW3, 
       <div class="header">Cold War</div>
     </div>
     <div class="column">
-      <div class="data"><a href="/vanguard" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/44/40/f5/4440f566-2e77-5aef-dc31-e4a2f5af42a6/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/540x540bb.jpg" alt="Vanguard Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></div>
+      <div class="data"><a href="/vanguard" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/44/40/f5/4440f566-2e77-5aef-dc31-e4a2f5af42a6/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/540x540bb.jpg" alt="Vanguard Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Vanguard</div>
     </div>
 </div>
