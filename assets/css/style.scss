@@ -3,6 +3,12 @@
 
 @import "{{ site.theme }}";
 
+@font-face {
+    font-family: hitmarkerText;
+    src: url(HitmarkerText-VF.ttf);
+}
+
+
 table * {
     display: contents;
   }
@@ -20,6 +26,12 @@ table * {
   tr > *:nth-child(4) { order:4;}
   tr > *:nth-child(5) { order:5;}
 
-  h2 {
+.main-content h2 {
     color: #D61D00;
+    font-family: hitmarkerText;
   }
+
+p {
+    font-family: hitmarkerText;
+  }
+
