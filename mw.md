@@ -18,7 +18,5 @@ Works offline!
 
 <a href="https://apps.apple.com/us/app/mw-camo-tracker/id1560239114?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1617148800" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
-The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are property of their respective owners. All In-Game Images are the sole property of Activision, Infinity Ward, Raven Software, or their respective owners. Any such Content is used for educational purposes only!
-
 # Need Help, Support or Have Feedback?
 If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>

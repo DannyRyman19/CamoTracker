@@ -15,7 +15,5 @@ No adverts!
 New weapons added instantly with no need for an app update!
 Works offline!
 
-The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are property of their respective owners. All In-Game Images are the sole property of Activision, Sledgehammer Games, Infinity Ward, Raven Software, or their respective owners. Any such Content is used for educational purposes only!
-
 # Need Help, Support or Have Feedback?
 If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
