@@ -1,0 +1,21 @@
+---
+---
+
+@import 'jekyll-theme-cayman';
+
+table * {
+    display: contents;
+  }
+  table {
+    display: flex;
+    flex-direction:column;
+  }
+  th, td {
+    display:block;
+    text-align:center;
+  }
+  tr > *:nth-child(1) { order:1;}
+  tr > *:nth-child(2) { order:2;}
+  tr > *:nth-child(3) { order:3;}
+  tr > *:nth-child(4) { order:4;}
+  tr > *:nth-child(5) { order:5;}
