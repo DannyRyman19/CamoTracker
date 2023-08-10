@@ -5,7 +5,7 @@ description : Modern Warfare II MW2 camo tracker 2023
 ---
 # MW2 Modern Warfare II Camo Tracker
 <div>
-<img width="200" alt="logo"  src="https://camotracker.djr.li/appstore.png" style="max-width:100%;">
+<a href="https://apps.apple.com/us/app/mwii-camo-tracker/id6444090116?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/b9/10/72/b91072c1-08f2-a883-6006-e6020104fc0f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/540x540bb.jpg" alt="MWII Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 <a href="https://apps.apple.com/gb/app/mwii-camo-tracker/id6444090116?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1667692800" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 </div>
 

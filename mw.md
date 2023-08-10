@@ -4,8 +4,8 @@ layout: default
 # Modern Warfare Camo Tracker
 
 <div>
-<img width="200" alt="logo"  src="https://camotracker.djr.li/mwtracker.png" style="max-width:100%;">
 <a href="https://apps.apple.com/us/app/mw-camo-tracker/id1560239114?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/27/e6/07/27e60722-d7a3-9044-b60f-314cba8401b9/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/540x540bb.jpg" alt="MW Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://apps.apple.com/us/app/mw-camo-tracker/id1560239114?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1617148800" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 </dvi>
 
 You can track your progress to Damascus/100% completion with this app. With individual camos, gold, platinum and obsidian. Easily complete classes, weapons and camos with a tap of a button. Please note you will need to buy premium to gain access to all classes. The assault rifle class is included for free!
