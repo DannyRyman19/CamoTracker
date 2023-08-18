@@ -769,6 +769,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 13,
+                "WeaponName": "M13C",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13C.png",
+                "UnlockRequirement": "Unlocked with the Season 5 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 11,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Cemented",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Poison Rivers",
+                        "UnlockLevel": 5,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Demise",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Virulent Strain",
+                        "UnlockLevel": 10,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
