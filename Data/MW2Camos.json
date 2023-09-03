@@ -1725,6 +1725,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 10,
+                "WeaponName": "Lachmann Shroud",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SHROUD.png",
+                "UnlockRequirement": "Unlocked via extraction from DMZ OR Get 45 kills without taking any damage using SMGs",
+                "IsDefault": false,
+                "MaxLevel": 11,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Mud Snake",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "CamoName": "Germinate",
+                        "UnlockLevel": 5,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Acrid Drift",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills while mounted.",
+                        "CamoName": "Goodnight Vibes",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -3491,7 +3550,45 @@
                         "CamoName": "Platinum",
                         "CamoID": 1,
                         "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "Pickaxe",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/PICKAXE.png",
+                "UnlockRequirement": "",
+                "IsDefault": false,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Zany Zebra",
+                        "UnlockLevel": 11,
+                        "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
                         "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 15
                     },
                     {
                         "CamoName": "Polyatomic",
@@ -3897,6 +3994,65 @@
                         "CamoName": "Rad Reverb",
                         "UnlockLevel": 9,
                         "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 5
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 7,
+                "WeaponName": "9MM Daemon",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/9MM_DAEMON.png",
+                "UnlockRequirement": "Unlocked via extraction from DMZ OR Get 30 headshot kills with the .50 GS",
+                "IsDefault": false,
+                "MaxLevel": 22,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Deserted",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 40
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Hunter",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while crouched.",
+                        "CamoName": "Fractal Lapse",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
+                        "CamoName": "Crosshatch",
+                        "UnlockLevel": 21,
+                        "AmountRequired": 30
                     }
                 ],
                 "MasteryCamos": [
