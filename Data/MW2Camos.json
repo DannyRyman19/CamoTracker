@@ -828,6 +828,65 @@
                         "AmountRequired": 25
                     }
                 ]
+            },
+            {
+                "WeaponID": 14,
+                "WeaponName": "TR-76 GEIST",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TR-76_GEIST.png",
+                "UnlockRequirement": "Unlocked with the Season 6 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 23,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Veldt",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Wild Funk",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills while ADS.",
+                        "CamoName": "Scratched Up",
+                        "UnlockLevel": 14,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} kills using a suppressor.",
+                        "CamoName": "Light Revisited",
+                        "UnlockLevel": 22,
+                        "AmountRequired": 50
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
             }
         ]
     },
@@ -1762,6 +1821,65 @@
                         "CamoName": "Goodnight Vibes",
                         "UnlockLevel": 11,
                         "AmountRequired": 15
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Longshot kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "AmountRequired": 25
+                    }
+                ]
+            },
+            {
+                "WeaponID": 11,
+                "WeaponName": "ISO 9mm",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_9MM.png",
+                "UnlockRequirement": "Unlocked with the Season 6 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 13,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Mud Snake",
+                        "UnlockLevel": 2,
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Foundation",
+                        "UnlockLevel": 5,
+                        "AmountRequired": 20
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} Double kills.",
+                        "CamoName": "Snow Tiger",
+                        "UnlockLevel": 8,
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} point blank kills.",
+                        "CamoName": "Neon Peaks",
+                        "UnlockLevel": 12,
+                        "AmountRequired": 25
                     }
                 ],
                 "MasteryCamos": [
@@ -3575,6 +3693,44 @@
                         "CamoName": "Zany Zebra",
                         "UnlockLevel": 11,
                         "AmountRequired": 40
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoName": "Gold",
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without dying {0} times.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Platinum",
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of eachother {0} times.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Polyatomic",
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 20
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Dual Kamas",
+                "WeaponPlatform": 0,
+                "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KAMAS.png",
+                "UnlockRequirement": "Unlocked with the Season 6 Battle Pass",
+                "IsDefault": false,
+                "MaxLevel": 15,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Cyber Plateau",
+                        "UnlockLevel": 15,
+                        "AmountRequired": 50
                     }
                 ],
                 "MasteryCamos": [
