@@ -5,7 +5,7 @@
     "Weapons": [
       {
         "WeaponID": 0,
-        "WeaponName": "SVA 545",
+        "WeaponName": "SVA 545 THIS IS A TEST",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/sva-545.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
@@ -13,11 +13,11 @@
         "Camos": [
           {
             "CamoID": 0,
-            "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 2,
-            "AmountRequired": 50
+            "CamoURL": "unknown_camo1",
+            "CategoryRequirement": "Get ____ {0} kills.",
+            "CamoName": "Unknown 55",
+            "UnlockLevel": 23,
+            "AmountRequired": 5000
           },
           {
             "CamoID": 1,
@@ -46,11 +46,11 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Gilded Test",
             "CamoID": 0,
-            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get 3 kills asdadsa without dying {0} times.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Forged",
@@ -69,10 +69,10 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Gilded Mastery Test",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
-            "AmountRequired": 100
+            "CategoryRequirement": "Get {0} testststs kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 1000
           },
           {
             "ChallengeName": "Forged Mastery",
@@ -528,6 +528,97 @@
             "ChallengeID": 0,
             "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
             "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 6,
+        "WeaponName": "NEW WEAPON ADDED WOOOOO!!!!",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/sva-545.png",
+        "UnlockRequirement": "Unlocks at Player Level 4",
+        "GameType": 0,
+        "MaxLevel": 20,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "unknown_camo1",
+            "CategoryRequirement": "Get ____ {0} kills.",
+            "CamoName": "Unknown 55",
+            "UnlockLevel": 23,
+            "AmountRequired": 5000
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CamoName": "Unknown",
+            "UnlockLevel": 8,
+            "AmountRequired": 30
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} Double kills.",
+            "CamoName": "Unknown",
+            "UnlockLevel": 13,
+            "AmountRequired": 15
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills from behind.",
+            "CamoName": "Unknown",
+            "UnlockLevel": 19,
+            "AmountRequired": 20
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded Test",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get 3 kills asdadsa without dying {0} times.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} Longshot kills.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} headshot kills.",
+            "AmountRequired": 25
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery Test",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} testststs kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 1000
           },
           {
             "ChallengeName": "Forged Mastery",
