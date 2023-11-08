@@ -548,6 +548,97 @@
             "AmountRequired": 1200
           }
         ]
+      },
+      {
+        "WeaponID": 6,
+        "WeaponName": "Test Weapon",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/fr-556.png",
+        "UnlockRequirement": "This is a test wepaon",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Puncture",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills?.",
+            "CamoName": "Digital Wildwood",
+            "UnlockLevel": 8,
+            "AmountRequired": 300
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} hellhound kills.",
+            "CamoName": "Unseen Ravager",
+            "UnlockLevel": 13,
+            "AmountRequired": 30
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Anomaly",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
       }
     ]
   },

@@ -1367,6 +1367,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 15,
+        "WeaponName": "This is a test weapon",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TR-76_GEIST.png",
+        "UnlockRequirement": "Unlocked with the Season 6 Battle Pass",
+        "GameType": 4,
+        "MaxLevel": 23,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/veldt.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Veldt",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wild-funk.png",
+            "CategoryRequirement": "Get {0} Double kills.",
+            "CamoName": "Wild Funk",
+            "UnlockLevel": 8,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scratched-up.png",
+            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CamoName": "Scratched Up",
+            "UnlockLevel": 14,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/light-revisited.png",
+            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CamoName": "Light Revisited",
+            "UnlockLevel": 22,
+            "AmountRequired": 50
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gold",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gold.png",
+            "CategoryRequirement": "Get 3 kills without dying {0} times.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Platinum",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/platinum.png",
+            "CategoryRequirement": "Get {0} Longshot kills.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Polyatomic",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
+            "CategoryRequirement": "Get {0} headshot kills.",
+            "AmountRequired": 25
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gold Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gold Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Platinum Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Platinum Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Polyatomic Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Polyatomic Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Orion Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Orion Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },
