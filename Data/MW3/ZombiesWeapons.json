@@ -9,39 +9,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/sva-545.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 20,
+        "MaxLevel": 30,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Wayward",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get 5 kills without releasing the trigger {0} times.",
+            "CamoName": "Topo Ghast",
+            "UnlockLevel": 13,
+            "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills in the medium or high threat zone.",
+            "CamoName": "Sludge",
+            "UnlockLevel": 20,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Chaos",
+            "UnlockLevel": 30,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -49,22 +49,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -100,39 +100,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/mtz-556.png",
         "UnlockRequirement": "Unlocks at Player Level 19",
         "GameType": 0,
-        "MaxLevel": 20,
+        "MaxLevel": 26,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Astray",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Murk Glitch",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "New Strain",
+            "UnlockLevel": 17,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get 20 consecutive kills {0} times without taking damage.",
+            "CamoName": "Mud",
+            "UnlockLevel": 26,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -140,22 +140,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -191,39 +191,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/holger-556.png",
         "UnlockRequirement": "Unlocks at Player Level 23",
         "GameType": 0,
-        "MaxLevel": 21,
+        "MaxLevel": 24,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Subterrranean",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Topo Gloom",
+            "UnlockLevel": 10,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Palette Cyst",
+            "UnlockLevel": 16,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 20,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Caustic River",
+            "UnlockLevel": 24,
+            "AmountRequired": 200
           }
         ],
         "CompletionistCamos": [
@@ -231,21 +231,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -282,39 +282,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/mcw.png",
         "UnlockRequirement": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 13",
         "GameType": 0,
-        "MaxLevel": 20,
+        "MaxLevel": 28,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Wyvern",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Vehement Rage",
+            "UnlockLevel": 12,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Tempest Shards",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} mimic kills.",
+            "CamoName": "Toxic Spots",
+            "UnlockLevel": 28,
+            "AmountRequired": 5
           }
         ],
         "CompletionistCamos": [
@@ -322,21 +322,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -373,39 +373,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/dg-58.png",
         "UnlockRequirement": "Unlock at player level 41",
         "GameType": 0,
-        "MaxLevel": 21,
+        "MaxLevel": 25,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Typhoon",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Hysteria",
+            "UnlockLevel": 11,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CamoName": "Hallowed Glitch",
+            "UnlockLevel": 17,
+            "AmountRequired": 100
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 20,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Petrified",
+            "UnlockLevel": 25,
+            "AmountRequired": 200
           }
         ],
         "CompletionistCamos": [
@@ -413,21 +413,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -464,39 +464,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/fr-556.png",
         "UnlockRequirement": "Unlock by leveling the 556 Icarus (LMG) to Level 13",
         "GameType": 0,
-        "MaxLevel": 16,
+        "MaxLevel": 19,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Puncture",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills?.",
+            "CamoName": "Digital Wildwood",
+            "UnlockLevel": 8,
+            "AmountRequired": 300
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
+            "CategoryRequirement": "Get {0} hellhound kills.",
+            "CamoName": "Unseen Ravager",
+            "UnlockLevel": 13,
             "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 15,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Anomaly",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -504,21 +504,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -561,38 +561,38 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/bas-b.png",
         "UnlockRequirement": "Unlocks at Player Level 16",
         "GameType": 0,
-        "MaxLevel": 19,
+        "MaxLevel": 29,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Reality Blur",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 7,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills in the medium or high threat zone.",
+            "CamoName": "Spirit Glitch",
+            "UnlockLevel": 12,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} kills with frost damage.",
+            "CamoName": "Forest Sands",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
+            "CategoryRequirement": "Get 20 consecutive kills {0} times without taking damage.",
+            "CamoName": "Black Stain",
+            "UnlockLevel": 29,
             "AmountRequired": 10
           }
         ],
@@ -601,21 +601,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -652,39 +652,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/sidewinder.png",
         "UnlockRequirement": "Unlock by leveling the EBR-14 (Marksman Rifle) to Level 12",
         "GameType": 0,
-        "MaxLevel": 22,
+        "MaxLevel": 28,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Mutated Flare",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} mangler kills.",
+            "CamoName": "Tide Surge",
+            "UnlockLevel": 12,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 15,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Cacophony",
+            "UnlockLevel": 19,
+            "AmountRequired": 200
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 21,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} point blank kills.",
+            "CamoName": "Green Satin",
+            "UnlockLevel": 28,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -692,21 +692,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -743,39 +743,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/mtz-762.png",
         "UnlockRequirement": "Unlock by leveling the TAQ-56 (Assault Rfile) to Level 11",
         "GameType": 0,
-        "MaxLevel": 21,
+        "MaxLevel": 23,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Firestorm Blur",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Topo Sickly",
+            "UnlockLevel": 10,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} mercenary kills.",
+            "CamoName": "Alert",
+            "UnlockLevel": 15,
+            "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 20,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} kills shortly after using a field upgrade.",
+            "CamoName": "Orange Satin",
+            "UnlockLevel": 23,
+            "AmountRequired": 100
           }
         ],
         "CompletionistCamos": [
@@ -783,21 +783,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -840,39 +840,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/striker.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 29,
+        "MaxLevel": 23,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Nocuous",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} hellhound kills.",
+            "CamoName": "Topo Blaze",
+            "UnlockLevel": 10,
+            "AmountRequired": 30
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Inner Demon",
+            "UnlockLevel": 15,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 28,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Living Tissue",
+            "UnlockLevel": 23,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -880,21 +880,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -931,39 +931,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/wsp-swarm.png",
         "UnlockRequirement": "Unlock by leveling the STB 556 (Assault Rifle) to Level 13",
         "GameType": 0,
-        "MaxLevel": 17,
+        "MaxLevel": 27,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Familiar",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 7,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} point blank kills.",
+            "CamoName": "Unmarked Grave",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} mimic kills.",
+            "CamoName": "Terracotta",
+            "UnlockLevel": 18,
+            "AmountRequired": 5
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 16,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills in the medium or high threat zone.",
+            "CamoName": "Death Form",
+            "UnlockLevel": 27,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -971,21 +971,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1022,39 +1022,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/amr9.png",
         "UnlockRequirement": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 12",
         "GameType": 0,
-        "MaxLevel": 19,
+        "MaxLevel": 29,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Disoriented",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 7,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with frost damage.",
+            "CamoName": "Toxic Sands",
+            "UnlockLevel": 12,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get 20 consecutive kills {0} times without taking damage.",
+            "CamoName": "Ferver",
+            "UnlockLevel": 19,
+            "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Torment Glitch",
+            "UnlockLevel": 29,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -1062,21 +1062,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1113,39 +1113,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/wsp-9.png",
         "UnlockRequirement": "Unlock by leveling the Kastov-74u (Assault Rifle) to Level 15",
         "GameType": 0,
-        "MaxLevel": 14,
+        "MaxLevel": 28,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Perilous",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills in a single match.",
+            "CamoName": "Splintered",
+            "UnlockLevel": 12,
+            "AmountRequired": 100
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 9,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Oracle",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Decrepit",
+            "UnlockLevel": 28,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -1153,21 +1153,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1204,39 +1204,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/rival-9.png",
         "UnlockRequirement": "Unlock by leveling the FTAC Recon (Battle Rifle) to Level 16",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 20,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Fading Breath",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} mimic kills.",
+            "CamoName": "Cartilage",
+            "UnlockLevel": 9,
+            "AmountRequired": 5
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills shortly after using a field upgrade.",
+            "CamoName": "Tomb Glitch",
+            "UnlockLevel": 14,
+            "AmountRequired": 100
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills with Toxic Damage.",
+            "CamoName": "Cold Snap",
+            "UnlockLevel": 20,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -1244,21 +1244,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1295,39 +1295,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/striker-9.png",
         "UnlockRequirement": "Unlock by leveling the Vaznev-9k (SMG) to Level 14",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 25,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Dire",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Topo Gargoyle",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills with Toxic Damage.",
+            "CamoName": "Midnight Sands",
+            "UnlockLevel": 17,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Illusions",
+            "UnlockLevel": 25,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -1335,21 +1335,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1392,39 +1392,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/lockwood-680.png",
         "UnlockRequirement": "Unlocks at Player Level 36",
         "GameType": 0,
-        "MaxLevel": 28,
+        "MaxLevel": 27,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Dark Sounds",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 40
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Palette Rage",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills with electric damage.",
+            "CamoName": "Magma Beast",
+            "UnlockLevel": 18,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
+            "CategoryRequirement": "Get 20 consecutive kills {0} times without taking damage.",
+            "CamoName": "Riddled",
             "UnlockLevel": 27,
-            "AmountRequired": 20
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -1432,21 +1432,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1483,39 +1483,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/haymaker.png",
         "UnlockRequirement": "Unlock at player Level 9",
         "GameType": 0,
-        "MaxLevel": 30,
+        "MaxLevel": 22,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Burnt Sands",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Below Zero",
+            "UnlockLevel": 9,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 20,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills in the medium or high threat zone.",
+            "CamoName": "Palette Buried",
+            "UnlockLevel": 15,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 29,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Inkblot",
+            "UnlockLevel": 22,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -1523,21 +1523,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1574,39 +1574,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/riveter.png",
         "UnlockRequirement": "Unlock at player level 4",
         "GameType": 0,
-        "MaxLevel": 21,
+        "MaxLevel": 24,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Marrow Sands",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Global Panic",
+            "UnlockLevel": 10,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Palette Infected",
+            "UnlockLevel": 16,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 20,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} mangler kills.",
+            "CamoName": "Melting Hope",
+            "UnlockLevel": 24,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -1614,21 +1614,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1671,39 +1671,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/pulemyot.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 20,
+        "MaxLevel": 28,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Dirt Filaments",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills in a single match.",
+            "CamoName": "Pain Glitch",
+            "UnlockLevel": 12,
+            "AmountRequired": 100
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Purple Ooze",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} mimic kills.",
+            "CamoName": "Blurred Myopia",
+            "UnlockLevel": 28,
+            "AmountRequired": 5
           }
         ],
         "CompletionistCamos": [
@@ -1711,21 +1711,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1762,39 +1762,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/dg-58-lsw.png",
         "UnlockRequirement": "Unlock by leveling the STB 556 (Assault Rifle) to Level 20",
         "GameType": 0,
-        "MaxLevel": 19,
+        "MaxLevel": 29,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Psychedelic Ridge",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 7,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Topo Spirit",
+            "UnlockLevel": 12,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Stoenwork",
+            "UnlockLevel": 19,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Spectral Sight",
+            "UnlockLevel": 29,
+            "AmountRequired": 200
           }
         ],
         "CompletionistCamos": [
@@ -1802,21 +1802,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1853,39 +1853,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/holger-26.png",
         "UnlockRequirement": "Unlock by leveling the M4 (Assault Rifle) to Level 18",
         "GameType": 0,
-        "MaxLevel": 16,
+        "MaxLevel": 20,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Archfiend",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
+            "CategoryRequirement": "Get {0} kills without reloading {0} times.",
+            "CamoName": "Drowned Snads",
+            "UnlockLevel": 9,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Patchwork",
+            "UnlockLevel": 14,
+            "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 15,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} disciple kills.",
+            "CamoName": "Dazed",
+            "UnlockLevel": 20,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -1893,21 +1893,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -1944,39 +1944,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/bruen-mk9.png",
         "UnlockRequirement": "Unlock at player Level 25",
         "GameType": 0,
-        "MaxLevel": 28,
+        "MaxLevel": 20,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Isolation",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Jagged Edges",
+            "UnlockLevel": 9,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Acaricious",
+            "UnlockLevel": 14,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 27,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Shin Rippers",
+            "UnlockLevel": 20,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -1984,21 +1984,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2043,7 +2043,7 @@
             "CategoryRequirement": "Get {0} kills.",
             "CamoName": "Unknown",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
@@ -2075,21 +2075,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2132,39 +2132,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/kvd-enforcer.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 30,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Symptomatic",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} disciple kills.",
+            "CamoName": "Palette Cursed",
+            "UnlockLevel": 13,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Grim Reaper",
+            "UnlockLevel": 20,
+            "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills in the medium or high threat zone.",
+            "CamoName": "Thanatos",
+            "UnlockLevel": 30,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2172,21 +2172,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2223,39 +2223,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/mcw-68.png",
         "UnlockRequirement": "Unlock at player Level 7",
         "GameType": 0,
-        "MaxLevel": 16,
+        "MaxLevel": 24,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Spirit Bush",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 6,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CamoName": "Topo Ooze",
+            "UnlockLevel": 10,
+            "AmountRequired": 100
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Decay",
+            "UnlockLevel": 16,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 14,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Unyielding",
+            "UnlockLevel": 24,
+            "AmountRequired": 200
           }
         ],
         "CompletionistCamos": [
@@ -2263,21 +2263,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2314,39 +2314,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/dm56.png",
         "UnlockRequirement": "Unlock at player Level 28",
         "GameType": 0,
-        "MaxLevel": 29,
+        "MaxLevel": 23,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Black Plague",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Rusted Brush",
+            "UnlockLevel": 10,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} mangler kills.",
+            "CamoName": "Golden Snads",
+            "UnlockLevel": 15,
+            "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 28,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Damned Souls",
+            "UnlockLevel": 23,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2354,21 +2354,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2405,39 +2405,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/mtz-interceptor.png",
         "UnlockRequirement": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 17",
         "GameType": 0,
-        "MaxLevel": 13,
+        "MaxLevel": 18,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Psychedelic Misery",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 5,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} kills shortly after using a field upgrade.",
+            "CamoName": "Blood Brush",
+            "UnlockLevel": 8,
+            "AmountRequired": 100
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 9,
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} hellhound kills.",
+            "CamoName": "Slash Glitch",
+            "UnlockLevel": 12,
+            "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 12,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Destiny",
+            "UnlockLevel": 18,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2445,21 +2445,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2508,33 +2508,33 @@
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Ruination",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Topo Stone",
+            "UnlockLevel": 11,
+            "AmountRequired": 200
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Palette Corpse",
+            "UnlockLevel": 17,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 26,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with frost damage.",
+            "CamoName": "Dimensional Shift",
+            "UnlockLevel": 27,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2542,21 +2542,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2593,39 +2593,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/longbow.png",
         "UnlockRequirement": "Unlock at player Level 44",
         "GameType": 0,
-        "MaxLevel": 24,
+        "MaxLevel": 31,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Calamity",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 9,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Topo Ash",
+            "UnlockLevel": 13,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 16,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Palette Adjudicator",
+            "UnlockLevel": 21,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 23,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Puzzled",
+            "UnlockLevel": 31,
+            "AmountRequired": 200
           }
         ],
         "CompletionistCamos": [
@@ -2633,21 +2633,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2684,39 +2684,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/kv-inhibitor.png",
         "UnlockRequirement": "Unlock by leveling the SA-B 50 (Marksman Rifle) to Level 16",
         "GameType": 0,
-        "MaxLevel": 22,
+        "MaxLevel": 33,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Incinerated",
             "UnlockLevel": 2,
-            "AmountRequired": 50
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get 2 Kills within 10 seconds of eachother {0} times.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} mimic kills.",
+            "CamoName": "Spoiled Eggs",
+            "UnlockLevel": 14,
+            "AmountRequired": 5
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 15,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Palette Grove",
+            "UnlockLevel": 22,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 21,
-            "AmountRequired": 50
+            "CategoryRequirement": "Get 3 kills in a single shot {0} times.",
+            "CamoName": "Strung Organs",
+            "UnlockLevel": 33,
+            "AmountRequired": 30
           }
         ],
         "CompletionistCamos": [
@@ -2724,21 +2724,21 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
             "AmountRequired": 25
           }
         ],
@@ -2781,39 +2781,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/cor-45.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 27,
+        "MaxLevel": 21,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Obsession",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 40
+            "CategoryRequirement": "Get {0} kills with fire damage.",
+            "CamoName": "Hallucinate Glitch",
+            "UnlockLevel": 9,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Haunted",
+            "UnlockLevel": 14,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 26,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Grief Manifest",
+            "UnlockLevel": 21,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2821,22 +2821,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -2872,39 +2872,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/renetti.png",
         "UnlockRequirement": "Unlocks at Player Level 13",
         "GameType": 0,
-        "MaxLevel": 27,
+        "MaxLevel": 21,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Mist Filaments",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 10,
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} disciple kills.",
+            "CamoName": "Hemoglobin",
+            "UnlockLevel": 9,
+            "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 18,
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} point blank kills.",
+            "CamoName": "Radio Waves",
+            "UnlockLevel": 14,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 26,
-            "AmountRequired": 40
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Oxidized",
+            "UnlockLevel": 21,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -2912,22 +2912,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -2963,39 +2963,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/tyr.png",
         "UnlockRequirement": "Unlocks at Player Level 31",
         "GameType": 0,
-        "MaxLevel": 20,
+        "MaxLevel": 26,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Royale Swirl",
             "UnlockLevel": 2,
-            "AmountRequired": 30
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 8,
-            "AmountRequired": 25
+            "CategoryRequirement": "Get {0} kills with frost damage.",
+            "CamoName": "Topo Grave",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 13,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} hellhound kills.",
+            "CamoName": "Sunstroke",
+            "UnlockLevel": 17,
+            "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 40
+            "CategoryRequirement": "Get 10 kills in 5 seconds {0} times.",
+            "CamoName": "Crystal Palace",
+            "UnlockLevel": 26,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -3003,22 +3003,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -3054,39 +3054,39 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/wsp-stinger.png",
         "UnlockRequirement": "Unlocks at Player Level 39",
         "GameType": 0,
-        "MaxLevel": 29,
+        "MaxLevel": 15,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Dead Sands",
             "UnlockLevel": 2,
-            "AmountRequired": 40
+            "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills with electric damage.",
+            "CamoName": "Moss Filaments",
+            "UnlockLevel": 7,
+            "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 19,
-            "AmountRequired": 10
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "Lost Transmission",
+            "UnlockLevel": 10,
+            "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "unknown_camo",
-            "CategoryRequirement": "Get {0} kills with the akimbo attachment equipped.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 28,
-            "AmountRequired": 30
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Apocalyptic",
+            "UnlockLevel": 15,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -3094,22 +3094,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -3151,15 +3151,15 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/rgl-80.png",
         "UnlockRequirement": "Unlocks at Player Level 4",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 6,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 40
+            "CamoName": "Pathosis",
+            "UnlockLevel": 4,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -3167,22 +3167,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -3224,15 +3224,15 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/gutter-knife.png",
         "UnlockRequirement": "Unlocks at Player Level 37",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 6,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
-            "UnlockLevel": 11,
-            "AmountRequired": 40
+            "CamoName": "Foam Sands",
+            "UnlockLevel": 4,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -3240,22 +3240,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -3291,15 +3291,15 @@
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MW3/karambit.png",
         "UnlockRequirement": "Unlocks at Player Level 17",
         "GameType": 0,
-        "MaxLevel": 15,
+        "MaxLevel": 6,
         "Camos": [
           {
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unknown",
+            "CamoName": "Ripped",
             "UnlockLevel": 11,
-            "AmountRequired": 50
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -3307,22 +3307,22 @@
             "CamoName": "Golden Enigma",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
-            "AmountRequired": 5
+            "CategoryRequirement": "Get {0} kills and succesfully extract in a single deployment.",
+            "AmountRequired": 100
           },
           {
             "CamoName": "Zircon Scale",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
-            "AmountRequired": 15
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
           },
           {
             "CamoName": "Serpentinite",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "AmountRequired": 20
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
