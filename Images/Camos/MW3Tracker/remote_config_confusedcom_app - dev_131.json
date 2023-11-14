@@ -1,0 +1,104 @@
+{
+  "conditions": [
+    {
+      "name": "iOS v8.4 and under",
+      "expression": "app.id == '1:637205417662:ios:b1ed9c44aefa71c267d8ef' && app.version.<=(['8.5'])",
+      "tagColor": "ORANGE"
+    },
+    {
+      "name": "This is a new condition",
+      "expression": "app.id == '1:637205417662:ios:b1ed9c44aefa71c267d8ef' && app.version.matches(['^8\\\\.5'])",
+      "tagColor": "TEAL"
+    },
+    {
+      "name": "This is a condition without a color provided",
+      "expression": "app.id == '1:637205417662:ios:b1ed9c44aefa71c267d8ef' && app.version.matches(['^8\\\\.5'])"
+    }
+  ],
+  "parameters": {
+    "SavingsAssistantEnabled": {
+      "defaultValue": {
+        "value": "false"
+      },
+      "description": "Controls the visibility of the savings assistant feature that has its own navigation bar section.",
+      "valueType": "BOOLEAN"
+    },
+    "CarFinanceEnabled": {
+      "defaultValue": {
+        "value": "false"
+      },
+      "description": "Controls the visibility of the car finance question that appears on the quick quote polling screen.",
+      "valueType": "BOOLEAN"
+    },
+    "DashboardMoreWaysToSaveEnabled": {
+      "defaultValue": {
+        "value": "false"
+      },
+      "description": "Controls the visibility of the more ways to save section that appears on the dashboard.",
+      "valueType": "BOOLEAN"
+    }
+  },
+  "version": {
+    "versionNumber": "131",
+    "updateTime": "2023-11-09T10:08:29.049339Z",
+    "updateUser": {
+      "email": "danny.ryman@dootrix.com"
+    },
+    "updateOrigin": "CONSOLE",
+    "updateType": "INCREMENTAL_UPDATE"
+  },
+  "parameterGroups": {
+    "[OBSELETE] Owned Vehicle Alert": {
+      "description": "The owned vehicle alert displays when we need to display to the user a message whilst they're using the vehicle researcher.",
+      "parameters": {
+        "OwnedVehicleAlertEnabled": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "Controls the visibility of the owned vehicle alert",
+          "valueType": "BOOLEAN"
+        },
+        "OwnedVehicleAlertTitle": {
+          "defaultValue": {
+            "value": "MOTs and COVID-19"
+          },
+          "description": "The title shown on the owned vehicle alert when OwnedVehicleAlertEnabled is true.",
+          "valueType": "STRING"
+        },
+        "OwnedVehicleAlertMessage": {
+          "defaultValue": {
+            "value": "The government has extended all MOTs by 6 months from 30 March.&#10;&#10;If your MOT has not yet expired, you’ll see your original MOT expiry date on the next screen. The new date will show once your original MOT has expired."
+          },
+          "description": "The message shown on the owned vehicle alert when OwnedVehicleAlertEnabled is true.",
+          "valueType": "STRING"
+        }
+      }
+    },
+    "Auto Insurance Renewal Question": {
+      "description": "The question appears on the QuickQuote polling screen that asks users if they would be interested in automatically renewing their insurance policy.",
+      "parameters": {
+        "AutoRenewalQuestionEnabled": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "[OBSELETE] Controls the visibility of the V1 auto insurance renewal question that appears on the QuickQuote polling screen",
+          "valueType": "BOOLEAN"
+        },
+        "AutoRenewalQuestionV2Enabled": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "Controls the visibility of the V2 auto insurance renewal question that appears on the QuickQuote polling screen",
+          "valueType": "BOOLEAN"
+        },
+        "AutoRenewalQuestionV3Enabled": {
+          "defaultValue": {
+            "value": "true"
+          },
+          "description": "Controls the visibility of the V3 auto insurance renewal question that appears on the QuickQuote polling screen",
+          "valueType": "BOOLEAN"
+        }
+      }
+    }
+  }
+}
