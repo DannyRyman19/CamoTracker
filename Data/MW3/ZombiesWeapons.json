@@ -2070,6 +2070,29 @@
             "AmountRequired": 250
           }
         ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
         "MasteryChallenges": [
           {
             "ChallengeName": "Golden Engima Mastery",
