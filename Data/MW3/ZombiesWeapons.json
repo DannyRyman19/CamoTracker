@@ -2028,6 +2028,74 @@
             "AmountRequired": 1200
           }
         ]
+      },
+      {
+        "WeaponID": 4,
+        "WeaponName": "Taq Eradicator",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/tac-eradicator.png",
+        "UnlockRequirement": "Complete any 5 challenges from week 4",
+        "GameType": 1,
+        "MaxLevel": 22,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Pestilence",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} mangler kills.",
+            "CamoName": "Unknown Visitor",
+            "UnlockLevel": 9,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get 10 kills without reloading {0} times.",
+            "CamoName": "Palette Scorched",
+            "UnlockLevel": 15,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "unknown_camo",
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Mysterious",
+            "UnlockLevel": 22,
+            "AmountRequired": 250
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
       }
     ]
   },
