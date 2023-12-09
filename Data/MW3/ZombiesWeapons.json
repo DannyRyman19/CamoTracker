@@ -559,7 +559,7 @@
         "Camos": [
           {
             "CamoID": 0,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/harbinger.png",
             "CategoryRequirement": "Get {0} kills.",
             "CamoName": "Harbinger",
             "UnlockLevel": 2,
@@ -567,7 +567,7 @@
           },
           {
             "CamoID": 1,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/decayed-sands.png",
             "CategoryRequirement": "Get {0} Hipfire kills.",
             "CamoName": "Decayed Sands",
             "UnlockLevel": 11,
@@ -575,7 +575,7 @@
           },
           {
             "CamoID": 2,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/greed-blur.png",
             "CategoryRequirement": "Get {0} kills shortly after using a field upgrade.",
             "CamoName": "Greed Blur",
             "UnlockLevel": 18,
@@ -583,7 +583,7 @@
           },
           {
             "CamoID": 3,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/incurable.png",
             "CategoryRequirement": "Get {0} critical kills.",
             "CamoName": "Incurable",
             "UnlockLevel": 27,
@@ -2124,13 +2124,13 @@
         "WeaponID": 4,
         "WeaponName": "Taq Eradicator",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/tac-eradicator.png",
-        "UnlockRequirement": "Complete any 5 challenges from week 4",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 22,
         "Camos": [
           {
             "CamoID": 0,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pestilence.png",
             "CategoryRequirement": "Get {0} kills.",
             "CamoName": "Pestilence",
             "UnlockLevel": 2,
@@ -2138,7 +2138,7 @@
           },
           {
             "CamoID": 1,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unknown-visitor.png",
             "CategoryRequirement": "Get {0} mangler kills.",
             "CamoName": "Unknown Visitor",
             "UnlockLevel": 9,
@@ -2146,7 +2146,7 @@
           },
           {
             "CamoID": 2,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-scorched.png",
             "CategoryRequirement": "Get 10 kills without reloading {0} times.",
             "CamoName": "Palette Scorched",
             "UnlockLevel": 15,
@@ -2154,7 +2154,7 @@
           },
           {
             "CamoID": 3,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mysterious.png",
             "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
             "CamoName": "Mysterious",
             "UnlockLevel": 22,
@@ -2870,7 +2870,7 @@
         "Camos": [
           {
             "CamoID": 0,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-gutter.png",
             "CategoryRequirement": "Get {0} kills.",
             "CamoName": "Blood Gutter",
             "UnlockLevel": 2,
@@ -2878,7 +2878,7 @@
           },
           {
             "CamoID": 1,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-sickly.png",
             "CategoryRequirement": "Get {0} kills with frost damage.",
             "CamoName": "Palette Sickly",
             "UnlockLevel": 9,
@@ -2886,7 +2886,7 @@
           },
           {
             "CamoID": 2,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/brimstone-brush.png",
             "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
             "CamoName": "Brimstone Brush",
             "UnlockLevel": 14,
@@ -2894,7 +2894,7 @@
           },
           {
             "CamoID": 3,
-            "CamoURL": "unknown_camo",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/trapped.png",
             "CategoryRequirement": "Get {0} critical kills.",
             "CamoName": "Trapped",
             "UnlockLevel": 21,
