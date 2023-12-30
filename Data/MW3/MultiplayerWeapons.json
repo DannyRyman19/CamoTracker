@@ -3423,7 +3423,7 @@
             "CamoName": "Forged",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles",
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles.",
             "AmountRequired": 25
           },
           {
@@ -3438,26 +3438,26 @@
           {
             "ChallengeName": "Gilded Mastery",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
-            "AmountRequired": 100
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 25
           },
           {
             "ChallengeName": "Forged Mastery",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
-            "AmountRequired": 200
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 50
           },
           {
             "ChallengeName": "Priceless Mastery",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
-            "AmountRequired": 300
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 75
           },
           {
             "ChallengeName": "Interstellar Mastery",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
-            "AmountRequired": 400
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 100
           }
         ]
       }
