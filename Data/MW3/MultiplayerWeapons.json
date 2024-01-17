@@ -1470,6 +1470,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 6,
+        "WeaponName": "HRM-9",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
+        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A21",
+        "GameType": 1,
+        "MaxLevel": 18,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/big-grins.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Big Grins",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lavender-sands.png",
+            "CategoryRequirement": "Get {0} hipfire kills.",
+            "CamoName": "Lavender Sands",
+            "UnlockLevel": 8,
+            "AmountRequired": 25
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ocean-waves.png",
+            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CamoName": "Ocean Waves",
+            "UnlockLevel": 12,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolate-ops.png",
+            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CamoName": "Overlayered",
+            "UnlockLevel": 18,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} kills while ADS shortly after sprinting.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} hipfire kills while sliding.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },
@@ -2182,6 +2273,97 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get 5 kills without dying {0} times.",
             "AmountRequired": 5
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 5,
+        "WeaponName": "Taq Evolvere",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/taq-evolvere.png",
+        "UnlockRequirement": "Complete 5 challenges from week 7",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-pop.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Psychedelic Pop",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-storm.png",
+            "CategoryRequirement": "Get {0} penetration kills.",
+            "CamoName": "Palette Storm",
+            "UnlockLevel": 8,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/swift-brush.png",
+            "CategoryRequirement": "Get {0} kills with full attachments.",
+            "CamoName": "Swift Brush",
+            "UnlockLevel": 13,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/broken-signal.png",
+            "CategoryRequirement": "Get {0} Double kills.",
+            "CamoName": "Broken Signal",
+            "UnlockLevel": 19,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} headshot kills while mounted",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} double kill while fully loaded.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
