@@ -1,7 +1,7 @@
 ﻿[
   {
     "WeaponCategoryID": 0,
-    "WeaponCategoryName": "Assault Rifles",
+    "WeaponCategoryName": "Sturmgewehre",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -14,31 +14,31 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Blue Tones",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Blautöne",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-muddy.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Topo Muddy",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Topo Matschig",
             "UnlockLevel": 13,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cinders.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Cinders",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse..",
+            "CamoName": "Asche",
             "UnlockLevel": 15,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/monarch.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer haltung.",
             "CamoName": "Monarch",
             "UnlockLevel": 30,
             "AmountRequired": 25
@@ -46,50 +46,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} multikills.",
+            "CategoryRequirement": "Erreiche {0} Mehrfachabschüsse",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} headshot kills with a magnification scope.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse, mit einem Vergrößerungsvisier.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -105,82 +105,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-tones.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Orange Tones",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Orangetöne",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/iris-glitch.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Iris Glitch",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Iris-Störung",
             "UnlockLevel": 11,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/germ-factory.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Germ Factory",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Keimfabrik",
             "UnlockLevel": 17,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Purple",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Lila",
             "UnlockLevel": 26,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while moving in tactical stance.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du dich in taktischer Haltung bewegst.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical while in tac stance.",
+            "CategoryRequirement": "Triff {0} Feinde mit taktischer Ausrüstung, während du in der taktischen Haltung 'MTZ-556' bist.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -196,82 +196,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fractal-dirt.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Fractal Dirt",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Fraktaler Dreck",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-glitch.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Topo Glitch",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Topo Störung",
             "UnlockLevel": 10,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-rosemary.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Palette Rosemary",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Palette Rosmarin",
             "UnlockLevel": 16,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/magma-heat.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Magma Heat",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Magma-Hitze",
             "UnlockLevel": 24,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills with an underbarrel attachment.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit einem Unterlauf-Aufsatz ohne Bohrladung.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} Longshot kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} aufgestützte Weitschuss-Abschüsse.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -287,82 +287,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/razor-feather.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Razor Feather",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Raisermesser-feder",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skullflagration.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Skullflagration",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Schädelflagration",
             "UnlockLevel": 12,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/abyssal-fox.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Abyssal Fox",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Abgrundtiefer Fuchs",
             "UnlockLevel": 19,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/menelaus-blue.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Menelaus Blue",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Menelaos-Blau",
             "UnlockLevel": 28,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -378,89 +378,89 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heat-map.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Heat Map",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Heatmap",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/creeplines.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Creeplines",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Schleichwege",
             "UnlockLevel": 11,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/twilight-glitch.png",
-            "CategoryRequirement": "Get {0} Headshot kills.",
-            "CamoName": "Twilight Glitch",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Dämmerungs-störung",
             "UnlockLevel": 17,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oakleaf.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Oakleaf",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Eichenblatt",
             "UnlockLevel": 25,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while ADS and strafing.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse aus der Seitwärtsbewegung heraus.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} burst kills.",
+            "CategoryRequirement": "Erreiche {0} Explosiv-Abschüsse.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
       },
       {
         "WeaponID": 5,
-        "WeaponName": "FR 5.56",
+        "WeaponName": "FR 5,56",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/fr-556.png",
         "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 0,
@@ -469,82 +469,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/get-stony.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Get Stony",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Steif",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/digital-bloodbath.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Digital Bloodbath",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Digitales Blutbad",
             "UnlockLevel": 8,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/nightshade.png",
-            "CategoryRequirement": "Get {0} Headshot kills.",
-            "CamoName": "Nightshade",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Nachtschatten",
             "UnlockLevel": 13,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tiger-blood.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Tiger Blood",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Tigerblut",
             "UnlockLevel": 19,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} 1 burst kills.",
+            "CategoryRequirement": "Erreiche {0} Explosiv-Abschüsse.",
             "AmountRequired": 20
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} headshot kills with a magnification scope.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse, mit einem Vergrößerungsvisier.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -560,82 +560,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skull-jumble.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Skull Jumble",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schädel-wirrwarr",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/brown-sands.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Brown Sands",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Brauner Sand",
             "UnlockLevel": 11,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heat-waves.png",
-            "CategoryRequirement": "Get {0} Headshot kills.",
-            "CamoName": "Heat Waves",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Hitzewellen",
             "UnlockLevel": 18,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deadly-spores.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
-            "CamoName": "Deadly Spores",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Tödliche Sporen",
             "UnlockLevel": 27,
             "AmountRequired": 25
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while ADS and sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der Zielvorrichtung beim Rutschen.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} kills while strafing in tac stance.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Seitwärtsbewegung heraus in taktischer Haltung.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -644,7 +644,7 @@
   },
   {
     "WeaponCategoryID": 1,
-    "WeaponCategoryName": "Battle Rifles",
+    "WeaponCategoryName": "Kampfgewehre",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -657,82 +657,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset-blur.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Sunset Blur",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Sonnenuntergang-unschärfe",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/phantom-glitch.png",
-            "CategoryRequirement": "Get {0} kills while fully auto.",
-            "CamoName": "Phantom Glitch",
+            "CategoryRequirement": "Erreiche {0} vollautomatische Abschüsse.",
+            "CamoName": "Phantom-störung",
             "UnlockLevel": 12,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-sands.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
-            "CamoName": "Orange Sands",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
+            "CamoName": "Orangefarbener Sand",
             "UnlockLevel": 19,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/white-satin.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "White Satin",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Weißer Satin",
             "UnlockLevel": 29,
             "AmountRequired": 15
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} multikills.",
+            "CategoryRequirement": "Erreiche {0} Mehrfachabschüsse",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} suppressed clean kills.",
+            "CategoryRequirement": "Erreiche {0} schallgedämpfte saubere Abschüsse.",
             "AmountRequired": 25
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -748,15 +748,15 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/solar-flare.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Solar Flare",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Sonneneruption",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sandzone.png",
-            "CategoryRequirement": "Get {0} kills while fully auto.",
+            "CategoryRequirement": "Erreiche {0} vollautomatische Abschüsse.",
             "CamoName": "Sandzone",
             "UnlockLevel": 12,
             "AmountRequired": 50
@@ -764,66 +764,66 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mind-peak.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
-            "CamoName": "Mind Peak",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
+            "CamoName": "Geistiger Zenit",
             "UnlockLevel": 19,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-satin.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Purple Satin",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Lila Satin",
             "UnlockLevel": 28,
             "AmountRequired": 15
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
+            "CategoryRequirement": "Erreiche {0} Weitschuss-Abschüsse.",
             "AmountRequired": 25
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -839,82 +839,82 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/aquatic-blur.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Aquatic Blur",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Aquatische Unschärfe",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-caustic.png",
-            "CategoryRequirement": "Get {0} kills while fully auto.",
-            "CamoName": "Topo Caustic",
+            "CategoryRequirement": "Erreiche {0} vollautomatische Abschüsse.",
+            "CamoName": "Topo ätzend",
             "UnlockLevel": 10,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heatwave.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
-            "CamoName": "Heatwave",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
+            "CamoName": "Hitzewelle",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-satin.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
-            "CamoName": "Blue Satin",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Blauer Satin",
             "UnlockLevel": 23,
             "AmountRequired": 15
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while ADS and Fully Loaded.",
+            "CategoryRequirement": "Erreiche {0} vollgeladene ZV-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} semi-auto headshots with a magnification scope.",
+            "CategoryRequirement": "Erreiche {0} halbautomatische Kopfschüsse mit einem Vergrößerungsvisier.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -923,7 +923,7 @@
   },
   {
     "WeaponCategoryID": 2,
-    "WeaponCategoryName": "SMGS",
+    "WeaponCategoryName": "MPS",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -936,7 +936,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ameerga.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Ameerega",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -944,15 +944,15 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-regal.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Topo Regal",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Topo Majestätisch",
             "UnlockLevel": 10,
             "AmountRequired": 25
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/absorption.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
             "CamoName": "Absorption",
             "UnlockLevel": 15,
             "AmountRequired": 10
@@ -960,58 +960,58 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/viral-invasion.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
-            "CamoName": "Viral Invasion",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
+            "CamoName": "Virale Invasion",
             "UnlockLevel": 23,
             "AmountRequired": 15
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1027,7 +1027,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/phantasmal.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Phantasmal",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1035,45 +1035,45 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/granite-pass.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Granite Pass",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Granitpass",
             "UnlockLevel": 11,
             "AmountRequired": 25
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
-            "CamoName": "Red",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
+            "CamoName": "Rot",
             "UnlockLevel": 18,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fritillary.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
-            "CamoName": "Fritillary",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
+            "CamoName": "Fleckenfalter",
             "UnlockLevel": 27,
             "AmountRequired": 15
           }
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} hipfire kills while the enemy is affected by your tactical.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} Operator Double Kills while in Tac-Stance.",
@@ -1082,27 +1082,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1118,7 +1118,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dart.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dart",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1134,7 +1134,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/microscopic.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
             "CamoName": "Microscopic",
             "UnlockLevel": 19,
             "AmountRequired": 10
@@ -1142,7 +1142,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rainfall-glitch.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "CamoName": "Rainfall Glitch",
             "UnlockLevel": 29,
             "AmountRequired": 15
@@ -1150,21 +1150,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} kills shortly after ADS.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills while being out of the enemy's line of sight.",
@@ -1173,27 +1173,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1209,7 +1209,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-poison.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Golden Poison",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1217,7 +1217,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shattered-rock.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Shattered Rock",
             "UnlockLevel": 12,
             "AmountRequired": 25
@@ -1225,7 +1225,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
             "CamoName": "Orange",
             "UnlockLevel": 19,
             "AmountRequired": 10
@@ -1233,7 +1233,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-sulphur.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "CamoName": "Orange Sulphur",
             "UnlockLevel": 28,
             "AmountRequired": 15
@@ -1241,21 +1241,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} suppressed headshot kills.",
@@ -1264,27 +1264,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1300,7 +1300,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rock-stone.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Rock Stone",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1308,7 +1308,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rock-glow.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Rock Glow",
             "UnlockLevel": 9,
             "AmountRequired": 25
@@ -1316,7 +1316,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deluge-glitch.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
             "CamoName": "Deluge Glitch",
             "UnlockLevel": 14,
             "AmountRequired": 10
@@ -1324,7 +1324,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bacterial-decay.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "CamoName": "Bacterial Decay",
             "UnlockLevel": 20,
             "AmountRequired": 15
@@ -1332,21 +1332,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} kills shortly after ADS.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} suppressed double kills.",
@@ -1355,27 +1355,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1391,7 +1391,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marbled.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Marbled",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1407,7 +1407,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/yellow-sands.png",
-            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
             "CamoName": "Yellow Sands",
             "UnlockLevel": 17,
             "AmountRequired": 10
@@ -1415,7 +1415,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolate-ops.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "CamoName": "Desolate Ops",
             "UnlockLevel": 25,
             "AmountRequired": 15
@@ -1423,21 +1423,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
+            "CategoryRequirement": "Erreiche {0} Weitschuss-Abschüsse.",
             "AmountRequired": 15
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} headshots while moving.",
@@ -1446,27 +1446,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1488,7 +1488,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Blue Sands",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1496,7 +1496,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-navy.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Palette Navy",
             "UnlockLevel": 11,
             "AmountRequired": 50
@@ -1504,7 +1504,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/descent.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Descent",
             "UnlockLevel": 18,
             "AmountRequired": 10
@@ -1520,21 +1520,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills shortly after sprinting in 1 life {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} one shot one kills while ADS.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} hipfire kills while moving.",
@@ -1543,27 +1543,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1579,7 +1579,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pink-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Pink Sands",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1587,7 +1587,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/guts.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Guts",
             "UnlockLevel": 9,
             "AmountRequired": 50
@@ -1595,7 +1595,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-tropics.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Palette Tropics",
             "UnlockLevel": 15,
             "AmountRequired": 10
@@ -1611,21 +1611,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills shortly after sprinting in 1 life {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get 3 hipfire kills with 1 magazine {0} times.",
             "AmountRequired": 15
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} double kills while in tactical stance.",
@@ -1634,27 +1634,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1670,7 +1670,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Purple Sands",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1678,7 +1678,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/80s-spheres.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "80s spheres",
             "UnlockLevel": 10,
             "AmountRequired": 50
@@ -1686,7 +1686,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-grasses.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Palette Grasses",
             "UnlockLevel": 16,
             "AmountRequired": 10
@@ -1702,50 +1702,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills shortly after sprinting in 1 life {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} multikills.",
+            "CategoryRequirement": "Erreiche {0} Mehrfachabschüsse",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 5
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1767,7 +1767,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cosmic-filaments.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Cosmic Filaments",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1799,21 +1799,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get 5 kills with 1 magazine {0} times.",
@@ -1822,27 +1822,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1858,7 +1858,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-sky.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Psychedelic Sky",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1890,21 +1890,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} kills while ADS and moving.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} hipfire kills while strafing.",
@@ -1913,27 +1913,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -1949,7 +1949,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ghastly.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Ghastly",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1981,21 +1981,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while ADS and strafing.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse aus der Seitwärtsbewegung heraus.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} hipfire kills while moving.",
@@ -2004,27 +2004,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2040,7 +2040,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dusted.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dusted",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2072,50 +2072,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} suppressed headshot kills.",
             "AmountRequired": 20
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2131,7 +2131,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spreading.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Spreading",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2163,50 +2163,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 5
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2228,7 +2228,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/viral.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Viral",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2236,7 +2236,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-garden.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "CamoName": "Palette Garden",
             "UnlockLevel": 13,
             "AmountRequired": 50
@@ -2260,21 +2260,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills using a laser attachment.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} extreme magnification kills (8x+).",
@@ -2283,27 +2283,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2319,7 +2319,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sharp-brush.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sharp Brush",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2327,7 +2327,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-lithic.png",
-            "CategoryRequirement": "Get {0} Headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "CamoName": "Topo Lithic",
             "UnlockLevel": 10,
             "AmountRequired": 50
@@ -2351,50 +2351,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills using a laser attachment.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 15
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} suppressed clean kills.",
+            "CategoryRequirement": "Erreiche {0} schallgedämpfte saubere Abschüsse.",
             "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2410,7 +2410,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/microbiology.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Microbiology",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2418,7 +2418,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/woods-brush.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "CamoName": "Woods Brush",
             "UnlockLevel": 10,
             "AmountRequired": 50
@@ -2442,21 +2442,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills using a laser attachment.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} headshot kills with iron sights.",
@@ -2465,27 +2465,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2501,7 +2501,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-loops.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Psychedelic Loops",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2509,7 +2509,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/thick-brush.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "CamoName": "Thick Brush",
             "UnlockLevel": 8,
             "AmountRequired": 50
@@ -2533,50 +2533,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills using a laser attachment.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse, ohne zu sterben.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 5
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2598,7 +2598,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/death-3d.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Death 3D",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2614,7 +2614,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-neapolitan.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "CamoName": "Palette Neapolitan",
             "UnlockLevel": 19,
             "AmountRequired": 10
@@ -2622,7 +2622,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/art-glass.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "CamoName": "Art Glass",
             "UnlockLevel": 29,
             "AmountRequired": 15
@@ -2630,21 +2630,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills while focused down sights x times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} penetration kills.",
             "AmountRequired": 15
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} suppressed headshot kills.",
@@ -2653,27 +2653,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2689,7 +2689,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crimson-skulls.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Crimson Skulls",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2705,7 +2705,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-sunrise.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "CamoName": "Palette Sunrise",
             "UnlockLevel": 21,
             "AmountRequired": 10
@@ -2721,50 +2721,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills while focused down sights x times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills while ADS and Fully Loaded.",
+            "CategoryRequirement": "Erreiche {0} vollgeladene ZV-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 3
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2780,7 +2780,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deathparency.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Deathparency",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2796,7 +2796,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-dusk.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "CamoName": "Palette Dusk",
             "UnlockLevel": 22,
             "AmountRequired": 10
@@ -2804,7 +2804,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/puzzling-tiles.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "CamoName": "Puzzling Tiles",
             "UnlockLevel": 33,
             "AmountRequired": 15
@@ -2812,21 +2812,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills while focused down sights x times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} headshot kills while moving.",
@@ -2835,27 +2835,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2871,7 +2871,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sprayed-lines.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sprayed Lines",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2887,7 +2887,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/liquid-brush.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "CamoName": "Liquid Brush",
             "UnlockLevel": 14,
             "AmountRequired": 10
@@ -2895,7 +2895,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fidget.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "CamoName": "Fidget",
             "UnlockLevel": 21,
             "AmountRequired": 15
@@ -2903,21 +2903,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills while focused down sights x times.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills shortly after sprinting.",
@@ -2926,27 +2926,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -2968,7 +2968,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deconstructed.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Deconstructed",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -2976,7 +2976,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/alert-glitch.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Alert Glitch",
             "UnlockLevel": 9,
             "AmountRequired": 50
@@ -3000,50 +3000,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} kills on injured enemies.",
             "AmountRequired": 15
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3059,7 +3059,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pyro-filaments.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Pyro Filaments",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -3067,7 +3067,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-cells.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Red Cells",
             "UnlockLevel": 9,
             "AmountRequired": 50
@@ -3091,50 +3091,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} Longshot kills.",
+            "CategoryRequirement": "Erreiche {0} Weitschuss-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} headshot kills.",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
             "AmountRequired": 25
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3150,7 +3150,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/satin-swirl.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Satin Swirl",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -3158,7 +3158,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-sandrock.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Topo Sandrock",
             "UnlockLevel": 11,
             "AmountRequired": 50
@@ -3182,50 +3182,50 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} saubere Abschüsse oder 1-Schiss-Abschüsse.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
             "AmountRequired": 25
           }
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3241,7 +3241,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Green Sands",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -3249,7 +3249,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arctic-filaments.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Arctic Filaments",
             "UnlockLevel": 7,
             "AmountRequired": 50
@@ -3273,21 +3273,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Get {0} hipfire kills while strafing.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills on enemies affected by your tactical using the akimbo attachment.",
@@ -3296,27 +3296,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3338,7 +3338,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/strain.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Strain",
             "UnlockLevel": 4,
             "AmountRequired": 25
@@ -3346,21 +3346,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Get {0} kills by hitting the enemy with a direct impact.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Destroy {0} enemy lethal equipment.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} double kills.",
@@ -3369,27 +3369,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3413,21 +3413,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
             "CategoryRequirement": "Destroy {0} enemy killstreaks.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
             "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles.",
             "AmountRequired": 25
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Affect {0} enemies with the Stormender EMP.",
@@ -3436,25 +3436,25 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Vergoldet Camo in Multiplayer.",
             "AmountRequired": 25
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Geschmiedet Camo in Multiplayer.",
             "AmountRequired": 50
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Unbezahlbar Camo in Multiplayer.",
             "AmountRequired": 75
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
             "CategoryRequirement": "Destroy {0} enemy killstreaks, equipment or vehicles while using the Interstellar Camo in Multiplayer.",
             "AmountRequired": 100
@@ -3478,7 +3478,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sea-green-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sea Green Sands",
             "UnlockLevel": 4,
             "AmountRequired": 50
@@ -3486,21 +3486,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get 5 kills without dying {0} times.",
+            "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
             "AmountRequired": 5
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} revenge kills.",
@@ -3509,27 +3509,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
@@ -3545,7 +3545,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-vision.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dark Vision",
             "UnlockLevel": 4,
             "AmountRequired": 50
@@ -3553,21 +3553,21 @@
         ],
         "CompletionistCamos": [
           {
-            "CamoName": "Gilded",
+            "CamoName": "Vergoldet",
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
             "AmountRequired": 10
           },
           {
-            "CamoName": "Forged",
+            "CamoName": "Geschmiedet",
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, ohne Schaden su erleiden.",
             "AmountRequired": 20
           },
           {
-            "CamoName": "Priceless",
+            "CamoName": "Unbezahlbar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills from behind.",
@@ -3576,27 +3576,27 @@
         ],
         "MasteryChallenges": [
           {
-            "ChallengeName": "Gilded Mastery",
+            "ChallengeName": "Vergoldet-Meisterung",
             "ChallengeID": 0,
-            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
             "AmountRequired": 100
           },
           {
-            "ChallengeName": "Forged Mastery",
+            "ChallengeName": "Geschmiedet-meisterung",
             "ChallengeID": 1,
-            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
             "AmountRequired": 200
           },
           {
-            "ChallengeName": "Priceless Mastery",
+            "ChallengeName": "Unbezahlbar-meisterung",
             "ChallengeID": 2,
-            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
             "AmountRequired": 300
           },
           {
-            "ChallengeName": "Interstellar Mastery",
+            "ChallengeName": "Interstellar-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
             "AmountRequired": 400
           }
         ]
