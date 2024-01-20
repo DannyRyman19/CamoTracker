@@ -1,7 +1,7 @@
 ﻿[
   {
     "WeaponCategoryID": 0,
-    "WeaponCategoryName": "Assault Rifles",
+    "WeaponCategoryName": "Sturmgewehr",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -14,32 +14,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scales.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Scales",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schuppen",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-hybrid.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Desert Hybrid",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Wüstenhybrid",
             "UnlockLevel": 8,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-leaves.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Dark Leaves",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Dunkle Blätter",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/new-urban.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "New Urban",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Neu-urban",
             "UnlockLevel": 19,
             "AmountRequired": 15
           }
@@ -105,32 +105,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hidden-snake.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Hidden Snake",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Versteckte Schlange",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/icepick.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Icepick",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Eispickel",
             "UnlockLevel": 8,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stonewall-digital.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Stonewall Digital",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Steinwand Digital",
             "UnlockLevel": 13,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/back-in-blue.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Back in Blue",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Zurück in blau",
             "UnlockLevel": 19,
             "AmountRequired": 15
           }
@@ -196,32 +196,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/urban-foliage.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Urban Foliage",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Stadtlaub",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rip-n-tear.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Rip N' Tear",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Aufreißen",
             "UnlockLevel": 8,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forest-ice.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Forest Ice",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Wald-eis",
             "UnlockLevel": 14,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-tiger.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Red Tiger",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Rote Tigerstreifen",
             "UnlockLevel": 20,
             "AmountRequired": 15
           }
@@ -287,31 +287,31 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marshland.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Marshland",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Slumpfgebiet",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pine.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Pine",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Kiefer",
             "UnlockLevel": 8,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-tiger-digital.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Dark Tiger Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Dunkler Tiger Digital",
             "UnlockLevel": 14,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cthulhu.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Cthulhu",
             "UnlockLevel": 19,
             "AmountRequired": 10
@@ -378,32 +378,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sponge-tac.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Sponge TAC",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schwammtaktik",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/black-top.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Black Top",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Schwarzes Top",
             "UnlockLevel": 8,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/slate.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Slate",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Schiefer",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/neon-pink.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Neon Pink",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Neonpink",
             "UnlockLevel": 20,
             "AmountRequired": 30
           }
@@ -469,32 +469,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/modern-woodland.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Modern Woodland",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Modernes Waldland",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marsh-digital.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Marsh Digital",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Sumpf Digital",
             "UnlockLevel": 6,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dank-forest.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Dank Forest",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Feuchter Wald",
             "UnlockLevel": 11,
             "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/intoxicate.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Intoxicate",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Berauschend",
             "UnlockLevel": 15,
             "AmountRequired": 20
           }
@@ -560,32 +560,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ripple-effect.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Ripple effect",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Welleneffekt",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/jungle-digital.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Jungle Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Dschungel Digital",
             "UnlockLevel": 8,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/canary-stone.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Canary Stone",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Kanarischer Stein",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/chemical-reaction.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Chemical Reaction",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Chemische Reaktion",
             "UnlockLevel": 20,
             "AmountRequired": 30
           }
@@ -651,31 +651,31 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snowdrift.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Snowdrift",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schneeverwehung",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mudslide.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Mudslide",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Schlammlawine",
             "UnlockLevel": 7,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/savannah.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Savannah",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Savanne",
             "UnlockLevel": 13,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/petri-digital.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Petri Digital",
             "UnlockLevel": 18,
             "AmountRequired": 50
@@ -742,32 +742,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tarnished.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Tarnished",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Trübe",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/field-ops.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Field Ops",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Feldoperation",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/projectile.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Projectile",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Projektil",
             "UnlockLevel": 15,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ice-cave.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Ice Cave",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Eishöhle",
             "UnlockLevel": 19,
             "AmountRequired": 15
           }
@@ -833,32 +833,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/charcoal.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Charcoal",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Holzkohle",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/aztec.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Aztec",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Azteke",
             "UnlockLevel": 9,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/diabolical.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Diabolical",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Teuflisch",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snow-leopard.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Snow Leopard",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Schneeleopard",
             "UnlockLevel": 17,
             "AmountRequired": 15
           }
@@ -924,32 +924,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gaseous.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Gaseous",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Gashal Tig",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cloud-hopper.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Cloud Hopper",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Wolkenspringer",
             "UnlockLevel": 10,
             "AmountRequired": 40
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lost-signal.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Lost Signal",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Signal Verloren",
             "UnlockLevel": 19,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/paths-of-light.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Paths of Light",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Wege Des Lichts",
             "UnlockLevel": 26,
             "AmountRequired": 40
           }
@@ -1015,32 +1015,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snake-oil.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Snake Oil",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schlangenöl",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-croc.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Dark Croc",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Dunkelkroko",
             "UnlockLevel": 9,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/alien-waves.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Alien Waves",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Alien-wellen",
             "UnlockLevel": 15,
             "AmountRequired": 40
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sky-cover.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Sky Cover",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Himmelsschutz",
             "UnlockLevel": 21,
             "AmountRequired": 15
           }
@@ -1106,8 +1106,8 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fibrous.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Fibrous",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Faserig",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
@@ -1115,22 +1115,22 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scattered-lines.png",
             "CategoryRequirement": "Erreiche {0} Kopfschüsse.",
-            "CamoName": "Scattered Lines",
+            "CamoName": "Diffuse Linien",
             "UnlockLevel": 7,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bioluminescent.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Bioluminescent",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Biolumineszent",
             "UnlockLevel": 13,
             "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/postmortem.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Postmortem",
             "UnlockLevel": 19,
             "AmountRequired": 15
@@ -1197,32 +1197,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cemented.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Cemented",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Zementiert",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/poison-rivers.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Poison Rivers",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Giftflüsse",
             "UnlockLevel": 5,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/demise.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Demise",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Ableben",
             "UnlockLevel": 8,
             "AmountRequired": 40
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/virulent-strain.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Virulent Strain",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Virenstamm",
             "UnlockLevel": 10,
             "AmountRequired": 15
           }
@@ -1288,7 +1288,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/veldt.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Veldt",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -1296,24 +1296,24 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wild-funk.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Wild Funk",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Wilder Funk",
             "UnlockLevel": 8,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scratched-up.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Scratched Up",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Aufgekratzt",
             "UnlockLevel": 14,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/light-revisited.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Light Revisited",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Licht 2",
             "UnlockLevel": 22,
             "AmountRequired": 50
           }
@@ -1372,7 +1372,7 @@
   },
   {
     "WeaponCategoryID": 1,
-    "WeaponCategoryName": "Battle Rifles",
+    "WeaponCategoryName": "Kampfgewehr",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -1385,32 +1385,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/day-marsh.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Day Marsh",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Marstag",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-oil-digital.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Desert Oil Digital",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Wüstenöl Digital",
             "UnlockLevel": 7,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stalking-cat.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Stalking Cat",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Heranpirschende Katze",
             "UnlockLevel": 13,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/internal-flame.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Internal Flame",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Innere Flamme",
             "UnlockLevel": 18,
             "AmountRequired": 10
           }
@@ -1476,32 +1476,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dune-stalker.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Dune Stalker",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dünenpirscher",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/reptilian.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Reptilian",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Reptil",
             "UnlockLevel": 8,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heavy-commando.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Heavy Commando",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Schweres Kommando",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tendrils.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Tendrils",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
+            "CamoName": "Ranken",
             "UnlockLevel": 21,
             "AmountRequired": 30
           }
@@ -1567,32 +1567,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dune-sea.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Dune Sea",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dünenmeer",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/faded-veil.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Faded Veil",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Verblassender Schleier",
             "UnlockLevel": 8,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/anaconda.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Anaconda",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Anakonda",
             "UnlockLevel": 14,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/slime-time.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Slime Time",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Giftiges Neon",
             "UnlockLevel": 20,
             "AmountRequired": 20
           }
@@ -1658,32 +1658,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/beached.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Beached",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Gestrandet",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/torn-scales.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Torn Scales",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Zerfetzte Schuppen",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-cat.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Desert Cat",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Wüstenkatze",
             "UnlockLevel": 15,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/haunting.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Haunting",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Souk",
             "UnlockLevel": 22,
             "AmountRequired": 30
           }
@@ -1749,32 +1749,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/vapor-storm.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Vapor Storm",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dampfsturm",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ghastly-green.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Ghastly Green",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Grässliches Grün",
             "UnlockLevel": 9,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-rage.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Stone Rage",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Steinkamm",
             "UnlockLevel": 16,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/intergalactic.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Intergalactic",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Intergalaktisch",
             "UnlockLevel": 25,
             "AmountRequired": 40
           }
@@ -1833,7 +1833,7 @@
   },
   {
     "WeaponCategoryID": 2,
-    "WeaponCategoryName": "SMGS",
+    "WeaponCategoryName": "MPS",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -1846,32 +1846,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arid-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Arid Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dürre Digital",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/midnight-bay.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Midnight Bay",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Mitternachtsbucht",
             "UnlockLevel": 11,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tagged.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Tagged",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Markiert",
             "UnlockLevel": 19,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/whiteout.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Whiteout",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Weißglut",
             "UnlockLevel": 28,
             "AmountRequired": 10
           }
@@ -1937,32 +1937,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/concrete-jungle.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Concrete Jungle",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Beton-Dschungel",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forest-digital.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Forest Digital",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Wald Digital",
             "UnlockLevel": 7,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/overgrown.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Overgrown",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Überwuchert",
             "UnlockLevel": 11,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rainbow-tiger.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Rainbow Tiger",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Regenbogentiger",
             "UnlockLevel": 16,
             "AmountRequired": 30
           }
@@ -2019,7 +2019,7 @@
       },
       {
         "WeaponID": 2,
-        "WeaponName": "Lachmann Sub",
+        "WeaponName": "Lachmann-mp",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SUB.png",
         "UnlockRequirement": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 12",
         "GameType": 3,
@@ -2028,32 +2028,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/darkfall.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Darkfall",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dunkelheitseinbruch",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arctic-digital.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Arctic Digital",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Arktis Digital",
             "UnlockLevel": 7,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crime-scene.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Crime Scene",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Tatort",
             "UnlockLevel": 13,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/poison.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Poison",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Gift",
             "UnlockLevel": 18,
             "AmountRequired": 10
           }
@@ -2119,31 +2119,31 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snow-melt-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Snow Melt Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schneeschmelze Digital",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/kill-brush.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Kill Brush",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Tötungspinsel",
             "UnlockLevel": 6,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forest-rain.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Forest Rain",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Waldregen",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/omnihex.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Omnihex",
             "UnlockLevel": 13,
             "AmountRequired": 15
@@ -2210,15 +2210,15 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-woods.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Green Woods",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Grüne Wälder",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/python.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Python",
             "UnlockLevel": 6,
             "AmountRequired": 50
@@ -2226,16 +2226,16 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/moon-shadow.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Moon Shadow",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Mondschatten",
             "UnlockLevel": 10,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/neon-loud.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Neon Loud",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
+            "CamoName": "Neon-Schrill",
             "UnlockLevel": 14,
             "AmountRequired": 30
           }
@@ -2301,32 +2301,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/timber.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Timber",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Holz",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rattlesnake.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Rattlesnake",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Klapperschlange",
             "UnlockLevel": 6,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-digital.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Green Digital",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Grün Digital",
             "UnlockLevel": 10,
             "AmountRequired": 50
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skyfire.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Skyfire",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Geschürte Flamme",
             "UnlockLevel": 14,
             "AmountRequired": 15
           }
@@ -2392,15 +2392,15 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shadow-stalker.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Shadow Stalker",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schattenschleicher",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gecko.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Gecko",
             "UnlockLevel": 11,
             "AmountRequired": 50
@@ -2408,16 +2408,16 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shale.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Shale",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Schiefer",
             "UnlockLevel": 20,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/power-pink.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Power Pink",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Rosafarben",
             "UnlockLevel": 29,
             "AmountRequired": 15
           }
@@ -2483,32 +2483,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/motley.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Motley",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Kunterbunt",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/eclipse.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Eclipse",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Schattentiger",
             "UnlockLevel": 10,
             "AmountRequired": 30
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/feral-beast.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Feral Beast",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Wilde Bestie",
             "UnlockLevel": 18,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/80s-fever.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "80's Fever'",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "80er-Fieber",
             "UnlockLevel": 26,
             "AmountRequired": 10
           }
@@ -2574,32 +2574,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/grass-snake.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Grass Snake",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Ringelnatter",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bark-digital.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Bark Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Rinde Digital",
             "UnlockLevel": 7,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/urban-dusk.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Urban Dusk",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Urbane Dämmerung",
             "UnlockLevel": 11,
             "AmountRequired": 15
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-violet.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Dark Violet",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Dunkles Violett",
             "UnlockLevel": 16,
             "AmountRequired": 50
           }
@@ -2665,32 +2665,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tunnels.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Tunnels",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Tunnel",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ziggurat.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Ziggurat",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Zikkurat",
             "UnlockLevel": 9,
             "AmountRequired": 40
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dappled-shade.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Dappled Shade",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Gefleckter Schatten",
             "UnlockLevel": 13,
             "AmountRequired": 30
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/prismatic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Prismatic",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Prismatisch",
             "UnlockLevel": 19,
             "AmountRequired": 20
           }
@@ -2756,32 +2756,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mud-snake.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Mud Snake",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schlammnatter",
             "UnlockLevel": 2,
             "AmountRequired": 40
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/germinate.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Germinate",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Keimung",
             "UnlockLevel": 5,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/acrid-drift.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Acrid Drift",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Säuredrift",
             "UnlockLevel": 8,
             "AmountRequired": 25
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/goodnight-vibes.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Goodnight Vibes",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Gute-Nacht-Vibes",
             "UnlockLevel": 11,
             "AmountRequired": 15
           }
@@ -2847,32 +2847,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mud-snake.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Mud Snake",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Digitaler Felsbrocken",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/foundation.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Foundation",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Grundstock",
             "UnlockLevel": 5,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/show-tiger.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Snow Tiger",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Schneetiger",
             "UnlockLevel": 8,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/neon-peaks.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Neon Peaks",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Neon-gipfel",
             "UnlockLevel": 12,
             "AmountRequired": 25
           }
@@ -2931,7 +2931,7 @@
   },
   {
     "WeaponCategoryID": 3,
-    "WeaponCategoryName": "Shotguns",
+    "WeaponCategoryName": "Schrotflinte",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -2944,32 +2944,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mosswood.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Mosswood",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Moosholz",
             "UnlockLevel": 2,
             "AmountRequired": 40
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/jungle-cat.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Jungle Cat",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Dschungelkatze",
             "UnlockLevel": 10,
             "AmountRequired": 40
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-cell.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Red Cell",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
+            "CamoName": "Rote Zelle",
             "UnlockLevel": 19,
             "AmountRequired": 25
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hunting-orange.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Hunting Orange",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Jagd-orange",
             "UnlockLevel": 27,
             "AmountRequired": 20
           }
@@ -3035,32 +3035,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forest-shadow.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Forest Shadow",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Waldschatten",
             "UnlockLevel": 2,
             "AmountRequired": 40
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tiger-stripes.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Tiger Stripes",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Tigerstreifen",
             "UnlockLevel": 11,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snowed-in.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Snowed In",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
+            "CamoName": "Eingeschneit",
             "UnlockLevel": 20,
             "AmountRequired": 25
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/violent-orchid.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Violent Orchid",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Brachiale Orchidee",
             "UnlockLevel": 29,
             "AmountRequired": 30
           }
@@ -3126,32 +3126,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mud-bath.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Mud Bath",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schlammbad",
             "UnlockLevel": 2,
             "AmountRequired": 40
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bamboo.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Bamboo",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Bambus",
             "UnlockLevel": 8,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ground-cover.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Ground Cover",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Bodendeckung",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/aqua.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Aqua",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
+            "CamoName": "Aquamarin",
             "UnlockLevel": 20,
             "AmountRequired": 20
           }
@@ -3217,32 +3217,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snowstorm-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "SnowStorm Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schneesturm Digital",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-guard.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Stone Guard",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Steinwächter",
             "UnlockLevel": 8,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shedding.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Shedding",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Häutung",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arctic-chill.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Arctic Chill",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Arktische Kühle",
             "UnlockLevel": 21,
             "AmountRequired": 25
           }
@@ -3308,32 +3308,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unplumbed.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Unplumbed",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Unverbleit",
             "UnlockLevel": 3,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/conflagration.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Conflagration",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Feuersbrunst",
             "UnlockLevel": 9,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ethereal-rampage.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Ethereal Rampage",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Ätherisches Chaos",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/riots-nest.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
-            "CamoName": "Riot's Nest",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
+            "CamoName": "Nest Des Aufstands",
             "UnlockLevel": 21,
             "AmountRequired": 20
           }
@@ -3399,32 +3399,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wet-sands.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Wet Sands",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Nasser Sand",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/connected-dots.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Connected Dots",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Verbundene Punkte",
             "UnlockLevel": 8,
             "AmountRequired": 20
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-smoke.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Red Smoke",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Roter Rauch",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-edges.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Green Edges",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Grüne Kanten",
             "UnlockLevel": 19,
             "AmountRequired": 20
           }
@@ -3496,32 +3496,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/commando-paint.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Commando Paint",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Kommando-farbe",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/necropolis.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
-            "CamoName": "Necropolis",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
+            "CamoName": "Nekropolis",
             "UnlockLevel": 8,
             "AmountRequired": 30
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fractal-mud.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Fractal Mud",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Fraktal-Schlamm",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/magma-detail.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
-            "CamoName": "Magma Detail",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
+            "CamoName": "Magma Digital",
             "UnlockLevel": 19,
             "AmountRequired": 50
           }
@@ -3587,32 +3587,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/surface-tension.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Surface Tension",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Oberflächenspannung",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hexeo.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Hexeo",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Verflucht",
             "UnlockLevel": 7,
             "AmountRequired": 50
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "Sunset",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Sonnenuntergang",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tessellation.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Tessellation",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Mosaik",
             "UnlockLevel": 18,
             "AmountRequired": 20
           }
@@ -3678,32 +3678,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/olive.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Olive",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Oliv",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/what-skulls.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "What Skulls?",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Welche Totenköpfe?",
             "UnlockLevel": 6,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/night-quarry.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Night Quarry",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Nacht-Steinbruch",
             "UnlockLevel": 11,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/autumn-dazzle.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
-            "CamoName": "Autumn Dazzle",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
+            "CamoName": "Herbsttarnung",
             "UnlockLevel": 15,
             "AmountRequired": 30
           }
@@ -3760,7 +3760,7 @@
       },
       {
         "WeaponID": 3,
-        "WeaponName": "Raal MG",
+        "WeaponName": "Lahs MG",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAAL_MG.png",
         "UnlockRequirement": "Unlock at player Level 25",
         "GameType": 3,
@@ -3769,32 +3769,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rocky-desert.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Rocky Desert",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Felsenwüste",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/trail-blazer.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
-            "CamoName": "Trailblazer",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "CamoName": "Wegbereiter",
             "UnlockLevel": 10,
             "AmountRequired": 15
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/night-terror.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Night Terror",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Nacht-Terror",
             "UnlockLevel": 19,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lodge.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
-            "CamoName": "Lodge",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Konstant",
             "UnlockLevel": 27,
             "AmountRequired": 10
           }
@@ -3860,23 +3860,23 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-rainforest.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Dark Rainforest",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Dunkler Regenwald",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/china-lake.png",
-            "CategoryRequirement": "Get {0} Double kills.",
-            "CamoName": "China Lake",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
+            "CamoName": "Granatwerfer",
             "UnlockLevel": 7,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/asphalt.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Asphalt",
             "UnlockLevel": 13,
             "AmountRequired": 50
@@ -3884,8 +3884,8 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rupture.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Rupture",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Riss",
             "UnlockLevel": 18,
             "AmountRequired": 20
           }
@@ -3951,32 +3951,32 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-snake.png",
-            "CategoryRequirement": "Get {0} kills.",
-            "CamoName": "Desert Snake",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Wüstenschlange",
             "UnlockLevel": 2,
             "AmountRequired": 50
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/classic-digital.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
-            "CamoName": "Classic Digital",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
+            "CamoName": "Klassisch Digital",
             "UnlockLevel": 7,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/quarry.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
-            "CamoName": "Quarry",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
+            "CamoName": "Steinbruch",
             "UnlockLevel": 13,
             "AmountRequired": 20
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tiger.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
-            "CamoName": "Blue Tiger",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Blaue Tigerstreifen",
             "UnlockLevel": 18,
             "AmountRequired": 50
           }
@@ -4035,7 +4035,7 @@
   },
   {
     "WeaponCategoryID": 5,
-    "WeaponCategoryName": "Marksman Rifles",
+    "WeaponCategoryName": "DMR",
     "Weapons": [
       {
         "WeaponID": 0,
@@ -4048,7 +4048,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sandstorm-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sandstorm Digital",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4056,7 +4056,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/moss.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
             "CamoName": "Moss",
             "UnlockLevel": 6,
             "AmountRequired": 30
@@ -4064,7 +4064,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/autumn-return.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Autumn Return",
             "UnlockLevel": 10,
             "AmountRequired": 20
@@ -4072,7 +4072,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunlit-croc.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Sunlit Croc",
             "UnlockLevel": 14,
             "AmountRequired": 10
@@ -4139,7 +4139,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-canopy.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dark Canopy",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4147,7 +4147,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-digital.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Desert Digital",
             "UnlockLevel": 6,
             "AmountRequired": 50
@@ -4155,7 +4155,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ferns.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
             "CamoName": "Ferns",
             "UnlockLevel": 11,
             "AmountRequired": 30
@@ -4163,7 +4163,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crimson-streak.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Crimson Streak",
             "UnlockLevel": 14,
             "AmountRequired": 20
@@ -4230,7 +4230,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sand-viper.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sand Viper",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4238,7 +4238,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-rain.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "CamoName": "Desert Rain",
             "UnlockLevel": 11,
             "AmountRequired": 15
@@ -4246,7 +4246,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wild-zebra.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Wild Zebra",
             "UnlockLevel": 19,
             "AmountRequired": 25
@@ -4254,7 +4254,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/granite.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
             "CamoName": "Granite",
             "UnlockLevel": 28,
             "AmountRequired": 10
@@ -4321,7 +4321,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/commando-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Commando Digital",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -4329,7 +4329,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/abominable.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Abominable",
             "UnlockLevel": 5,
             "AmountRequired": 20
@@ -4337,7 +4337,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/autumnal.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Autumnal",
             "UnlockLevel": 9,
             "AmountRequired": 20
@@ -4345,7 +4345,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/coral-snake.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
             "CamoName": "Coral Snake",
             "UnlockLevel": 12,
             "AmountRequired": 30
@@ -4412,7 +4412,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/urban-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Urban Digital",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4420,7 +4420,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bullsnake.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Bullsnake",
             "UnlockLevel": 8,
             "AmountRequired": 25
@@ -4428,7 +4428,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Toxicity",
             "UnlockLevel": 14,
             "AmountRequired": 10
@@ -4436,7 +4436,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/splintered-asphalt.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Splintered Asphalt",
             "UnlockLevel": 20,
             "AmountRequired": 10
@@ -4503,7 +4503,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dead-hide.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dead Hive",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4511,7 +4511,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forest-water.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Forest Water",
             "UnlockLevel": 10,
             "AmountRequired": 20
@@ -4519,7 +4519,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skin-and-scales.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Skin and Scales",
             "UnlockLevel": 17,
             "AmountRequired": 5
@@ -4527,7 +4527,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/chemist-digital.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Chemist Digital",
             "UnlockLevel": 25,
             "AmountRequired": 10
@@ -4594,7 +4594,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deciduous.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Deciduous",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4602,7 +4602,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/h20.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "H20",
             "UnlockLevel": 9,
             "AmountRequired": 5
@@ -4610,7 +4610,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unlit-showers.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "CamoName": "Unlit Showers",
             "UnlockLevel": 12,
             "AmountRequired": 15
@@ -4618,7 +4618,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rad-n-rancid.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
             "CamoName": "Rad n' Rancid",
             "UnlockLevel": 17,
             "AmountRequired": 20
@@ -4685,7 +4685,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/speckled.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Speckled",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4693,7 +4693,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oxysporum.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Oxysporum",
             "UnlockLevel": 7,
             "AmountRequired": 10
@@ -4701,7 +4701,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dire-growth.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Dire Growth",
             "UnlockLevel": 13,
             "AmountRequired": 20
@@ -4709,7 +4709,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sandfall.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Sandfall",
             "UnlockLevel": 17,
             "AmountRequired": 40
@@ -4782,7 +4782,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/clay.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Clay",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4798,7 +4798,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/neon-shards.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
             "CamoName": "Neon Shards",
             "UnlockLevel": 18,
             "AmountRequired": 30
@@ -4806,7 +4806,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bloodied.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Bloodied",
             "UnlockLevel": 26,
             "AmountRequired": 10
@@ -4873,7 +4873,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gladiator.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Gladiator",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4889,7 +4889,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/earthbound.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
             "CamoName": "Earthbound",
             "UnlockLevel": 16,
             "AmountRequired": 30
@@ -4897,7 +4897,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spectrums.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Spectrums",
             "UnlockLevel": 23,
             "AmountRequired": 25
@@ -4964,7 +4964,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shark-net.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Shark Net",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -4980,7 +4980,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/leafless.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Leafless",
             "UnlockLevel": 15,
             "AmountRequired": 25
@@ -4988,7 +4988,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/teal-tiger.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Teal Tiger",
             "UnlockLevel": 21,
             "AmountRequired": 50
@@ -5055,7 +5055,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scratch.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Scratch",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -5063,7 +5063,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dry-field.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Dry Field",
             "UnlockLevel": 7,
             "AmountRequired": 20
@@ -5071,7 +5071,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/aspen.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Aspen",
             "UnlockLevel": 13,
             "AmountRequired": 25
@@ -5079,7 +5079,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lichyard.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Lichyard",
             "UnlockLevel": 18,
             "AmountRequired": 50
@@ -5146,7 +5146,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/snowy-nights.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Snowy Nights",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -5154,7 +5154,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/burned-edges.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Burned Edges",
             "UnlockLevel": 10,
             "AmountRequired": 30
@@ -5162,7 +5162,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tangographical.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Tangographical",
             "UnlockLevel": 18,
             "AmountRequired": 10
@@ -5170,7 +5170,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/coral-reef.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
             "CamoName": "Coral Reef",
             "UnlockLevel": 26,
             "AmountRequired": 30
@@ -5237,7 +5237,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arctic-growth.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Arctic Growth",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -5261,7 +5261,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bedlam.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Bedlam",
             "UnlockLevel": 26,
             "AmountRequired": 40
@@ -5328,7 +5328,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/birch.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Birch",
             "UnlockLevel": 2,
             "AmountRequired": 50
@@ -5336,7 +5336,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cloud-static.png",
-            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CategoryRequirement": "Erreiche {0} Sofortabschüsse.",
             "CamoName": "Cloud Static",
             "UnlockLevel": 8,
             "AmountRequired": 20
@@ -5344,7 +5344,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-and-mud.png",
-            "CategoryRequirement": "Get {0} kills while prone.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Liegen.",
             "CamoName": "Blood and Mud",
             "UnlockLevel": 14,
             "AmountRequired": 15
@@ -5425,7 +5425,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/urban-zebra.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Urban Zebra",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -5450,7 +5450,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 10
           }
         ],
@@ -5492,7 +5492,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crimson.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Crimson",
             "UnlockLevel": 11,
             "AmountRequired": 50
@@ -5517,7 +5517,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 20
           }
         ],
@@ -5559,7 +5559,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rush-hour.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Rush Hour",
             "UnlockLevel": 14,
             "AmountRequired": 50
@@ -5584,7 +5584,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 20
           }
         ],
@@ -5626,7 +5626,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oxidation.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Oxidation",
             "UnlockLevel": 15,
             "AmountRequired": 40
@@ -5651,7 +5651,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 20
           }
         ],
@@ -5693,7 +5693,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zany-zebra.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Zany Zebra",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -5718,7 +5718,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 20
           }
         ],
@@ -5760,7 +5760,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cyber-plateau.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Cyber Plateau",
             "UnlockLevel": 15,
             "AmountRequired": 50
@@ -5785,7 +5785,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 20
           }
         ],
@@ -5833,7 +5833,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sand.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sand",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -5841,7 +5841,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/muddied.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Muddied",
             "UnlockLevel": 10,
             "AmountRequired": 40
@@ -5849,7 +5849,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-digital.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Blue Digital",
             "UnlockLevel": 18,
             "AmountRequired": 5
@@ -5857,7 +5857,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pixel-land.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
             "CamoName": "Pixel Land",
             "UnlockLevel": 26,
             "AmountRequired": 10
@@ -5924,7 +5924,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blades.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Blades",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -5932,7 +5932,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/foliage.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Foliage",
             "UnlockLevel": 10,
             "AmountRequired": 5
@@ -5940,7 +5940,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/leopard.png",
-            "CategoryRequirement": "Get {0} kills while mounted.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit der aufgestützten Waffe.",
             "CamoName": "Leopard",
             "UnlockLevel": 18,
             "AmountRequired": 15
@@ -6015,7 +6015,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bio-static-digital.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Bio Static Digital",
             "UnlockLevel": 2,
             "AmountRequired": 30
@@ -6023,7 +6023,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-wave.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Desert Wave",
             "UnlockLevel": 8,
             "AmountRequired": 25
@@ -6031,7 +6031,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/garter-snake.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Garter Snake",
             "UnlockLevel": 13,
             "AmountRequired": 10
@@ -6106,7 +6106,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/outcrop.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Outcrop",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -6114,7 +6114,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/countryside.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Countryside",
             "UnlockLevel": 11,
             "AmountRequired": 30
@@ -6122,7 +6122,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-denim.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
             "CamoName": "Dark Denim",
             "UnlockLevel": 19,
             "AmountRequired": 10
@@ -6197,7 +6197,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/void-and-light.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Void and Light",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -6205,7 +6205,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/asphalt-digital.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Asphalt Digital",
             "UnlockLevel": 8,
             "AmountRequired": 10
@@ -6213,7 +6213,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-echo.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Dark Echo",
             "UnlockLevel": 15,
             "AmountRequired": 10
@@ -6288,7 +6288,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sandpaper.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Sandpaper",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -6296,7 +6296,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/velvet-midnight.png",
-            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
             "CamoName": "Velvet Midnight",
             "UnlockLevel": 9,
             "AmountRequired": 15
@@ -6304,7 +6304,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/painted-pig.png",
-            "CategoryRequirement": "Get {0} kills using a suppressor.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse unter Verwendung eines Schalldämpfers.",
             "CamoName": "Painted Pig",
             "UnlockLevel": 17,
             "AmountRequired": 30
@@ -6312,7 +6312,7 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fuzzy-spectrum.png",
-            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
             "CamoName": "Fuzzy Spectrum",
             "UnlockLevel": 25,
             "AmountRequired": 20
@@ -6379,7 +6379,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/digital-wilds.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Digital Wilds",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -6387,7 +6387,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rhyolitic.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "CamoName": "Rhyolitic",
             "UnlockLevel": 4,
             "AmountRequired": 5
@@ -6395,7 +6395,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cracking-onyx.png",
-            "CategoryRequirement": "Get {0} kills from behind.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "CamoName": "Cracking Oynx",
             "UnlockLevel": 6,
             "AmountRequired": 10
@@ -6470,7 +6470,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deserted.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Deserted",
             "UnlockLevel": 2,
             "AmountRequired": 40
@@ -6478,7 +6478,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hunter.png",
-            "CategoryRequirement": "Get {0} point blank kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
             "CamoName": "Hunter",
             "UnlockLevel": 8,
             "AmountRequired": 20
@@ -6486,7 +6486,7 @@
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fractal-lapse.png",
-            "CategoryRequirement": "Get {0} kills while crouched.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken.",
             "CamoName": "Fractal Lapse",
             "UnlockLevel": 14,
             "AmountRequired": 15
@@ -6567,7 +6567,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dead-leaves.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Dead Leaves",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -6592,7 +6592,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "AmountRequired": 15
           }
         ],
@@ -6634,7 +6634,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deep-jungle.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Deep Jungle",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -6659,7 +6659,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "AmountRequired": 15
           }
         ],
@@ -6701,7 +6701,7 @@
           {
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/azure-fray.png",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Azure Fray",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -6726,7 +6726,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "AmountRequired": 15
           }
         ],
@@ -6768,7 +6768,7 @@
           {
             "CamoID": 0,
             "CamoURL": "",
-            "CategoryRequirement": "Get {0} kills.",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Jungle Digital",
             "UnlockLevel": 11,
             "AmountRequired": 40
@@ -6793,7 +6793,7 @@
             "CamoName": "Polyatomar",
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/polyatomic.png",
-            "CategoryRequirement": "Get {0} Double kills.",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse.",
             "AmountRequired": 15
           }
         ],
