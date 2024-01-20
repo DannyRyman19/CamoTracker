@@ -7,7 +7,7 @@
         "WeaponID": 0,
         "WeaponName": "SVA 545",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/sva-545.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 30,
         "Camos": [
@@ -89,7 +89,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -98,7 +98,7 @@
         "WeaponID": 1,
         "WeaponName": "MTZ-556",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/mtz-556.png",
-        "UnlockRequirement": "Unlocked at level 12",
+        "UnlockRequirement": "Freigegeben auf Stufe 12",
         "GameType": 0,
         "MaxLevel": 26,
         "Camos": [
@@ -180,7 +180,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -189,7 +189,7 @@
         "WeaponID": 2,
         "WeaponName": "HOLGER 556",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/holger-556.png",
-        "UnlockRequirement": "Unlocked at level 37",
+        "UnlockRequirement": "Freigegeben auf Stufe 37",
         "GameType": 0,
         "MaxLevel": 24,
         "Camos": [
@@ -271,7 +271,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -280,7 +280,7 @@
         "WeaponID": 3,
         "WeaponName": "MCW",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/mcw.png",
-        "UnlockRequirement": "Unlocked at level 44",
+        "UnlockRequirement": "Freigegeben auf Stufe 44",
         "GameType": 0,
         "MaxLevel": 28,
         "Camos": [
@@ -362,7 +362,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -371,7 +371,7 @@
         "WeaponID": 4,
         "WeaponName": "DG-56",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/dg-58.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 25,
         "Camos": [
@@ -453,7 +453,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -462,7 +462,7 @@
         "WeaponID": 5,
         "WeaponName": "FR 5.56",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/fr-556.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 19,
         "Camos": [
@@ -544,7 +544,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -635,7 +635,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -644,13 +644,13 @@
   },
   {
     "WeaponCategoryID": 1,
-    "WeaponCategoryName": "Battle Rifles",
+    "WeaponCategoryName": "Kampfgewehre",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "BAS-B",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/bas-b.png",
-        "UnlockRequirement": "Unlocked at level 17",
+        "UnlockRequirement": "Freigegeben auf Stufe 17",
         "GameType": 0,
         "MaxLevel": 29,
         "Camos": [
@@ -732,7 +732,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -741,7 +741,7 @@
         "WeaponID": 1,
         "WeaponName": "Sidewinder",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/sidewinder.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 28,
         "Camos": [
@@ -823,7 +823,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -832,7 +832,7 @@
         "WeaponID": 2,
         "WeaponName": "MTZ-762",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/mtz-762.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 23,
         "Camos": [
@@ -914,7 +914,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -929,7 +929,7 @@
         "WeaponID": 0,
         "WeaponName": "Striker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/striker.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 24,
         "Camos": [
@@ -1011,7 +1011,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1020,7 +1020,7 @@
         "WeaponID": 1,
         "WeaponName": "WSP swarm",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/wsp-swarm.png",
-        "UnlockRequirement": "Unlocked at level 27",
+        "UnlockRequirement": "Freigegeben auf Stufe 27",
         "GameType": 0,
         "MaxLevel": 27,
         "Camos": [
@@ -1028,7 +1028,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/familiar.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Familiar",
+            "CamoName": "Vertraut",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1036,7 +1036,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unmarked-grave.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
-            "CamoName": "Unmarked Grave",
+            "CamoName": "Namenloses Grab",
             "UnlockLevel": 11,
             "AmountRequired": 250
           },
@@ -1044,7 +1044,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/terracotta.png",
             "CategoryRequirement": "Erledige {0} mimiker.",
-            "CamoName": "Terracotta",
+            "CamoName": "Terrakotta",
             "UnlockLevel": 18,
             "AmountRequired": 5
           },
@@ -1052,7 +1052,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/death-form.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in der mittel oder stark bedrohten Gefahrenzone.",
-            "CamoName": "Death Form",
+            "CamoName": "Todesgestalt",
             "UnlockLevel": 27,
             "AmountRequired": 250
           }
@@ -1102,7 +1102,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1111,7 +1111,7 @@
         "WeaponID": 2,
         "WeaponName": "AMR9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/amr9.png",
-        "UnlockRequirement": "Unlocked at level 55",
+        "UnlockRequirement": "Freigegeben auf Stufe 55",
         "GameType": 0,
         "MaxLevel": 29,
         "Camos": [
@@ -1119,7 +1119,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/disoriented.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Disoriented",
+            "CamoName": "Deseorientiert",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1127,7 +1127,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxic-sands.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Toxic Sands",
+            "CamoName": "Giftiger Sand",
             "UnlockLevel": 12,
             "AmountRequired": 250
           },
@@ -1135,7 +1135,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ferver.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Ferver",
+            "CamoName": "Eiferer",
             "UnlockLevel": 19,
             "AmountRequired": 10
           },
@@ -1143,7 +1143,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/torment-glitch.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Torment Glitch",
+            "CamoName": "Peiniguns-störung",
             "UnlockLevel": 29,
             "AmountRequired": 250
           }
@@ -1193,7 +1193,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1202,7 +1202,7 @@
         "WeaponID": 3,
         "WeaponName": "WSP-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/wsp-9.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 28,
         "Camos": [
@@ -1210,23 +1210,23 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/perilous.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Perilous",
+            "CamoName": "Gefährlich",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/splintered.png",
-            "CategoryRequirement": "Get {0} kills in a single match.",
-            "CamoName": "Splintered",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in einem enzigen Spiel.",
+            "CamoName": "Gesplittert",
             "UnlockLevel": 12,
             "AmountRequired": 100
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oracle.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Oracle",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Orakel",
             "UnlockLevel": 19,
             "AmountRequired": 250
           },
@@ -1234,7 +1234,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/decrepit.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Decrepit",
+            "CamoName": "Altersschwach",
             "UnlockLevel": 28,
             "AmountRequired": 10
           }
@@ -1284,7 +1284,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1293,7 +1293,7 @@
         "WeaponID": 4,
         "WeaponName": "Rival-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/rival-9.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 20,
         "Camos": [
@@ -1301,7 +1301,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fading-breath.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Fading Breath",
+            "CamoName": "Verblassender Atem",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1309,7 +1309,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cartilage.png",
             "CategoryRequirement": "Erledige {0} mimiker.",
-            "CamoName": "Cartilage",
+            "CamoName": "Knorpel",
             "UnlockLevel": 9,
             "AmountRequired": 5
           },
@@ -1317,15 +1317,15 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tomb-glitch.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Einsatz einer Feldaufrüstung.",
-            "CamoName": "Tomb Glitch",
+            "CamoName": "Gruft-störung",
             "UnlockLevel": 14,
             "AmountRequired": 100
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cold-snap.png",
-            "CategoryRequirement": "Get {0} kills with Toxic Damage.",
-            "CamoName": "Cold Snap",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Giftschaden.",
+            "CamoName": "Käl Teeinbruch",
             "UnlockLevel": 20,
             "AmountRequired": 250
           }
@@ -1375,7 +1375,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1384,7 +1384,7 @@
         "WeaponID": 5,
         "WeaponName": "Striker 9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/striker-9.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 25,
         "Camos": [
@@ -1392,7 +1392,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dire.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Dire",
+            "CamoName": "Entsetzlich",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1400,15 +1400,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-gargoyle.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Topo Gargoyle",
+            "CamoName": "Topo Wasserspeier",
             "UnlockLevel": 11,
             "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/midnight-sands.png",
-            "CategoryRequirement": "Get {0} kills with Toxic Damage.",
-            "CamoName": "Midnight Sands",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Giftschaden.",
+            "CamoName": "MItternachtssand",
             "UnlockLevel": 17,
             "AmountRequired": 250
           },
@@ -1416,7 +1416,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/illusions.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
-            "CamoName": "Illusions",
+            "CamoName": "Illusionen",
             "UnlockLevel": 25,
             "AmountRequired": 250
           }
@@ -1466,7 +1466,98 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 6,
+        "WeaponName": "HRM-9",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
+        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A21",
+        "GameType": 1,
+        "MaxLevel": 18,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ceaseless-agony.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Endloses Leid",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crimson-sands.png",
+            "CategoryRequirement": "Erledige {0} Söldner.",
+            "CamoName": "Roter Sand",
+            "UnlockLevel": 8,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/burning-blur.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
+            "CamoName": "Hitzeflimmern",
+            "UnlockLevel": 12,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/illusions.png",
+            "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
+            "CamoName": "Leere Schreie",
+            "UnlockLevel": 18,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1481,7 +1572,7 @@
         "WeaponID": 0,
         "WeaponName": "Lockwood 680",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/lockwood-680.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 27,
         "Camos": [
@@ -1489,7 +1580,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-sounds.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Dark Sounds",
+            "CamoName": "Dunkler Sand",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1497,15 +1588,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-rage.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Palette Rage",
+            "CamoName": "Palette wut",
             "UnlockLevel": 11,
             "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/magma-beast.png",
-            "CategoryRequirement": "Get {0} kills with electric damage.",
-            "CamoName": "Magma Beast",
+            "CategoryRequirement": "Erreiche {0} Abschüssedurch elektrischen Schaden.",
+            "CamoName": "Magma-bestie",
             "UnlockLevel": 18,
             "AmountRequired": 250
           },
@@ -1513,7 +1604,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/riddled.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Riddled",
+            "CamoName": "Durchlöchert",
             "UnlockLevel": 27,
             "AmountRequired": 10
           }
@@ -1563,7 +1654,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1572,7 +1663,7 @@
         "WeaponID": 1,
         "WeaponName": "Haymaker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/haymaker.png",
-        "UnlockRequirement": "Unlocked at level 39",
+        "UnlockRequirement": "Freigegeben auf Stufe 39",
         "GameType": 0,
         "MaxLevel": 22,
         "Camos": [
@@ -1580,7 +1671,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/burnt-sands.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Burnt Sands",
+            "CamoName": "Verbrannter Sand",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1588,7 +1679,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/below-zero.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über oder mehr aktive Extras verfügst.",
-            "CamoName": "Below Zero",
+            "CamoName": "Unter dem Nullpunkt",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -1596,7 +1687,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-buried.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in der mittel oder stark bedrohten Gefahrenzone.",
-            "CamoName": "Palette Buried",
+            "CamoName": "Palette Begraben",
             "UnlockLevel": 15,
             "AmountRequired": 250
           },
@@ -1604,7 +1695,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/inkblot.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Inkblot",
+            "CamoName": "Tintenklecks",
             "UnlockLevel": 22,
             "AmountRequired": 10
           }
@@ -1654,16 +1745,16 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
       },
       {
         "WeaponID": 2,
-        "WeaponName": "Riveter",
+        "WeaponName": "Nieter",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/riveter.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 24,
         "Camos": [
@@ -1671,7 +1762,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marrow-sands.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Marrow Sands",
+            "CamoName": "Marksand",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1679,15 +1770,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/global-panic.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Global Panic",
+            "CamoName": "Globale Panik",
             "UnlockLevel": 10,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-infected.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Palette Infected",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Palette Infiziert",
             "UnlockLevel": 16,
             "AmountRequired": 250
           },
@@ -1695,7 +1786,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/melting-hope.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Melting Hope",
+            "CamoName": "Schmelzende Hoffnung",
             "UnlockLevel": 24,
             "AmountRequired": 10
           }
@@ -1745,7 +1836,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1760,7 +1851,7 @@
         "WeaponID": 0,
         "WeaponName": "Pulemyot 762",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/pulemyot-762.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 28,
         "Camos": [
@@ -1768,15 +1859,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dirt-filaments.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Dirt Filaments",
+            "CamoName": "Dreck-filamente",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pain-glitch.png",
-            "CategoryRequirement": "Get {0} kills in a single match.",
-            "CamoName": "Pain Glitch",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in einem enzigen Spiel.",
+            "CamoName": "Schmerz-Störung",
             "UnlockLevel": 12,
             "AmountRequired": 100
           },
@@ -1784,7 +1875,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-ooze.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Purple Ooze",
+            "CamoName": "Violetter schlamm",
             "UnlockLevel": 19,
             "AmountRequired": 250
           },
@@ -1842,7 +1933,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1851,7 +1942,7 @@
         "WeaponID": 1,
         "WeaponName": "DG-58 LSW",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/dg-58-lsw.png",
-        "UnlockRequirement": "Unlocked at level 7",
+        "UnlockRequirement": "Freigegeben auf Stufe 7",
         "GameType": 0,
         "MaxLevel": 29,
         "Camos": [
@@ -1859,7 +1950,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-ridge.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Psychedelic Ridge",
+            "CamoName": "Psychedelischer Grat",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -1867,7 +1958,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-spirit.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
-            "CamoName": "Topo Spirit",
+            "CamoName": "Topo Geist",
             "UnlockLevel": 12,
             "AmountRequired": 250
           },
@@ -1875,7 +1966,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stonework.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Stonework",
+            "CamoName": "Mauerwerk",
             "UnlockLevel": 19,
             "AmountRequired": 250
           },
@@ -1883,7 +1974,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spectral-sight.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Spectral Sight",
+            "CamoName": "Spektraler Anblick",
             "UnlockLevel": 29,
             "AmountRequired": 200
           }
@@ -1933,7 +2024,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -1942,7 +2033,7 @@
         "WeaponID": 2,
         "WeaponName": "Holger 26",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/holger-26.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 20,
         "Camos": [
@@ -1950,15 +2041,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/archfiend.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Archfiend",
+            "CamoName": "Erzfeind",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/drowned-sands.png",
-            "CategoryRequirement": "Get {0} kills without reloading {0} times.",
-            "CamoName": "Drowned Sands",
+            "CategoryRequirement": "Erreiche {0}-,al 10 Abschüsse, ohne nachzuladen.",
+            "CamoName": "Ertrunkener Sand",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
@@ -1973,8 +2064,8 @@
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dazed.png",
-            "CategoryRequirement": "Get {0} disciple kills.",
-            "CamoName": "Dazed",
+            "CategoryRequirement": "Erledige {0} Jünger.",
+            "CamoName": "Verwirrt",
             "UnlockLevel": 20,
             "AmountRequired": 10
           }
@@ -2024,7 +2115,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2033,7 +2124,7 @@
         "WeaponID": 3,
         "WeaponName": "Bruen MK9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/bruen-mk9.png",
-        "UnlockRequirement": "Unlocked at level 31",
+        "UnlockRequirement": "Freigegeben auf Stufe 31",
         "GameType": 0,
         "MaxLevel": 20,
         "Camos": [
@@ -2049,7 +2140,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/jagged-edges.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Jagged Edges",
+            "CamoName": "Zerklüftete Kanten",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -2057,15 +2148,15 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/avaricious.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über oder mehr aktive Extras verfügst.",
-            "CamoName": "Avaricious",
+            "CamoName": "Geizig",
             "UnlockLevel": 14,
             "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shin-rippers.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Shin Rippers",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Schienbeinreißer",
             "UnlockLevel": 20,
             "AmountRequired": 250
           }
@@ -2115,7 +2206,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2124,7 +2215,7 @@
         "WeaponID": 4,
         "WeaponName": "Taq Eradicator",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/tac-eradicator.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 22,
         "Camos": [
@@ -2132,7 +2223,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pestilence.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Pestilence",
+            "CamoName": "Pestilenz",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2140,15 +2231,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unknown-visitor.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Unknown Visitor",
+            "CamoName": "Unbekannter Bescucher",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-scorched.png",
-            "CategoryRequirement": "Get 10 kills without reloading {0} times.",
-            "CamoName": "Palette Scorched",
+            "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse, ohne nachzuladen.",
+            "CamoName": "Palette Verbrannt",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
@@ -2156,7 +2247,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mysterious.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Mysterious",
+            "CamoName": "Mysteriös",
             "UnlockLevel": 22,
             "AmountRequired": 250
           }
@@ -2206,7 +2297,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2215,13 +2306,13 @@
   },
   {
     "WeaponCategoryID": 5,
-    "WeaponCategoryName": "Marksman Rifles",
+    "WeaponCategoryName": "DMR",
     "Weapons": [
       {
         "WeaponID": 0,
-        "WeaponName": "KVD Enforcer",
+        "WeaponName": "KVD Vollstrecker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/kvd-enforcer.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 30,
         "Camos": [
@@ -2229,15 +2320,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/symptomatic.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Symptomatic",
+            "CamoName": "Symptomaticsch",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-cursed.png",
-            "CategoryRequirement": "Get {0} disciple kills.",
-            "CamoName": "Palette Cursed",
+            "CategoryRequirement": "Erledige {0} Jünger.",
+            "CamoName": "Palette Verflucht",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
@@ -2245,7 +2336,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/grim-reaper.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Grim Reaper",
+            "CamoName": "Witwenmacher",
             "UnlockLevel": 20,
             "AmountRequired": 10
           },
@@ -2303,7 +2394,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2312,7 +2403,7 @@
         "WeaponID": 1,
         "WeaponName": "MCW 6.8",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/mcw-68.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 24,
         "Camos": [
@@ -2320,7 +2411,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spirit-brush.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Spirit Brush",
+            "CamoName": "Geisterbürste",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2328,7 +2419,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-ooze.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Feinden.",
-            "CamoName": "Topo Ooze",
+            "CamoName": "Topo Schlamm",
             "UnlockLevel": 10,
             "AmountRequired": 100
           },
@@ -2336,7 +2427,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/decay.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Decay",
+            "CamoName": "Verfall",
             "UnlockLevel": 16,
             "AmountRequired": 250
           },
@@ -2344,7 +2435,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/unyielding.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Unyielding",
+            "CamoName": "Unnachgiebig",
             "UnlockLevel": 24,
             "AmountRequired": 200
           }
@@ -2394,7 +2485,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2403,7 +2494,7 @@
         "WeaponID": 2,
         "WeaponName": "DM56",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/dm56.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 23,
         "Camos": [
@@ -2411,7 +2502,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/black-plague.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Black Plague",
+            "CamoName": "Schwarze Pest",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2419,7 +2510,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rusted-brush.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Rusted Brush",
+            "CamoName": "Verrostete Bürste",
             "UnlockLevel": 10,
             "AmountRequired": 250
           },
@@ -2427,7 +2518,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-sands.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Golden Sands",
+            "CamoName": "Goldener Sand",
             "UnlockLevel": 15,
             "AmountRequired": 10
           },
@@ -2435,7 +2526,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/damned-souls.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
-            "CamoName": "Damned Souls",
+            "CamoName": "Verdammte Seelen",
             "UnlockLevel": 23,
             "AmountRequired": 250
           }
@@ -2485,7 +2576,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2494,7 +2585,7 @@
         "WeaponID": 3,
         "WeaponName": "MTZ Interceptor",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/mtz-interceptor.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 18,
         "Camos": [
@@ -2502,7 +2593,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-misery.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Psychedelic Misery",
+            "CamoName": "Psychedelisches Elend",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2510,7 +2601,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-brush.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Einsatz einer Feldaufrüstung.",
-            "CamoName": "Blood Brush",
+            "CamoName": "Blutpinsel",
             "UnlockLevel": 8,
             "AmountRequired": 100
           },
@@ -2518,7 +2609,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/slash-glitch.png",
             "CategoryRequirement": "Erledige {0} Höllenhunde.",
-            "CamoName": "Slash Glitch",
+            "CamoName": "Hieb-störung",
             "UnlockLevel": 12,
             "AmountRequired": 30
           },
@@ -2526,7 +2617,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/destiny.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Destiny",
+            "CamoName": "Schicksal",
             "UnlockLevel": 18,
             "AmountRequired": 250
           }
@@ -2576,7 +2667,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2585,13 +2676,13 @@
   },
   {
     "WeaponCategoryID": 6,
-    "WeaponCategoryName": "Sniper Rifles",
+    "WeaponCategoryName": "Scharfschützengewehr",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "KATT-AMR",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/katt-amr.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 29,
         "Camos": [
@@ -2599,7 +2690,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ruination.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Ruination",
+            "CamoName": "Verderben",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2607,7 +2698,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-stone.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Topo Stone",
+            "CamoName": "Topo Stein",
             "UnlockLevel": 11,
             "AmountRequired": 200
           },
@@ -2615,7 +2706,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-corpse.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Palette Corpse",
+            "CamoName": "Palette Leichnam",
             "UnlockLevel": 19,
             "AmountRequired": 250
           },
@@ -2623,7 +2714,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dimensional-shift.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Dimensional Shift",
+            "CamoName": "Dimensionale Verschiebung",
             "UnlockLevel": 29,
             "AmountRequired": 250
           }
@@ -2673,16 +2764,16 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
       },
       {
         "WeaponID": 1,
-        "WeaponName": "LONGBOW",
+        "WeaponName": "Langbogen",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/longbow.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 31,
         "Camos": [
@@ -2690,15 +2781,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/calamity.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Calamity",
+            "CamoName": "Unglück",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-ash.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Topo Ash",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Topo Asche",
             "UnlockLevel": 13,
             "AmountRequired": 250
           },
@@ -2706,7 +2797,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-adjudicator.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
-            "CamoName": "Palette Adjudicator",
+            "CamoName": "Palette Preisrichter",
             "UnlockLevel": 21,
             "AmountRequired": 250
           },
@@ -2714,7 +2805,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/puzzled.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Puzzled",
+            "CamoName": "Entgeistert",
             "UnlockLevel": 31,
             "AmountRequired": 200
           }
@@ -2764,7 +2855,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2773,7 +2864,7 @@
         "WeaponID": 2,
         "WeaponName": "KV Inhibitor",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/kv-inhibitor.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 33,
         "Camos": [
@@ -2781,7 +2872,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/incinerated.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Incinerated",
+            "CamoName": "Verbrannt",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2789,23 +2880,23 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spoiled-eggs.png",
             "CategoryRequirement": "Erledige {0} mimiker.",
-            "CamoName": "Spoiled Eggs",
+            "CamoName": "Verdirbene Eier",
             "UnlockLevel": 14,
             "AmountRequired": 5
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-grove.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Palette Grove",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Palette Hain",
             "UnlockLevel": 22,
             "AmountRequired": 250
           },
           {
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/strung-organs.png",
-            "CategoryRequirement": "Get 3 kills in a single shot {0} times.",
-            "CamoName": "Strung Organs",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit nur einem Schuss.",
+            "CamoName": "Aufgereihte Organe",
             "UnlockLevel": 33,
             "AmountRequired": 30
           }
@@ -2855,7 +2946,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2872,7 +2963,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-gutter.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Blood Gutter",
+            "CamoName": "Blutrille",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -2880,7 +2971,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-sickly.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Palette Sickly",
+            "CamoName": "Palette Kränklich",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -2888,7 +2979,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/brimstone-brush.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über oder mehr aktive Extras verfügst.",
-            "CamoName": "Brimstone Brush",
+            "CamoName": "Schwefelpinsel",
             "UnlockLevel": 14,
             "AmountRequired": 250
           },
@@ -2896,7 +2987,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/trapped.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Trapped",
+            "CamoName": "Gefangen",
             "UnlockLevel": 21,
             "AmountRequired": 200
           }
@@ -2946,7 +3037,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -2955,13 +3046,13 @@
   },
   {
     "WeaponCategoryID": 7,
-    "WeaponCategoryName": "Pistols",
+    "WeaponCategoryName": "Handfeuerwaffe",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "COR-45",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/cor-45.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 22,
         "Camos": [
@@ -2969,15 +3060,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/obsession.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Obsession",
+            "CamoName": "Besessenheit",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hallucinate-glitch.png",
-            "CategoryRequirement": "Get {0} kills with fire damage.",
-            "CamoName": "Hallucinate Glitch",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Halluzination-störung",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -2985,7 +3076,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/haunted.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über oder mehr aktive Extras verfügst.",
-            "CamoName": "Haunted",
+            "CamoName": "Heimgesucht",
             "UnlockLevel": 14,
             "AmountRequired": 250
           },
@@ -2993,7 +3084,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/grief-manifest.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Grief Manifest",
+            "CamoName": "Manifestierte Trauer",
             "UnlockLevel": 21,
             "AmountRequired": 250
           }
@@ -3043,7 +3134,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3052,7 +3143,7 @@
         "WeaponID": 1,
         "WeaponName": "Renetti",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/renetti.png",
-        "UnlockRequirement": "Unlocked at level 21",
+        "UnlockRequirement": "Freigegeben auf Stufe 21",
         "GameType": 0,
         "MaxLevel": 21,
         "Camos": [
@@ -3060,15 +3151,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mist-filaments.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Mist Filaments",
+            "CamoName": "Nebel-filamente",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hemoglobin.png",
-            "CategoryRequirement": "Get {0} disciple kills.",
-            "CamoName": "Hemoglobin",
+            "CategoryRequirement": "Erledige {0} Jünger.",
+            "CamoName": "Hämoglobin",
             "UnlockLevel": 9,
             "AmountRequired": 10
           },
@@ -3076,7 +3167,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/radio-waves.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
-            "CamoName": "Radio Waves",
+            "CamoName": "Radiowellen",
             "UnlockLevel": 14,
             "AmountRequired": 250
           },
@@ -3084,7 +3175,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oxidized.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über oder mehr aktive Extras verfügst.",
-            "CamoName": "Oxidized",
+            "CamoName": "Oxidiert",
             "UnlockLevel": 21,
             "AmountRequired": 250
           }
@@ -3134,7 +3225,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3143,7 +3234,7 @@
         "WeaponID": 2,
         "WeaponName": "TYR",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/tyr.png",
-        "UnlockRequirement": "Unlocked at level 50",
+        "UnlockRequirement": "Freigegeben auf Stufe 50",
         "GameType": 0,
         "MaxLevel": 26,
         "Camos": [
@@ -3151,7 +3242,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/royale-swirl.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Royale Swirl",
+            "CamoName": "Königlicher Strudel",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -3159,7 +3250,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-grave.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Topo Grave",
+            "CamoName": "Topo Gruft",
             "UnlockLevel": 11,
             "AmountRequired": 250
           },
@@ -3167,7 +3258,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunstroke.png",
             "CategoryRequirement": "Erledige {0} Höllenhunde.",
-            "CamoName": "Sunstroke",
+            "CamoName": "Sonnenstich",
             "UnlockLevel": 17,
             "AmountRequired": 30
           },
@@ -3175,7 +3266,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crystal-palace.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Crystal Palace",
+            "CamoName": "Kristallpalast",
             "UnlockLevel": 26,
             "AmountRequired": 10
           }
@@ -3225,7 +3316,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3234,7 +3325,7 @@
         "WeaponID": 3,
         "WeaponName": "WSP Stinger",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/wsp-stinger.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 15,
         "Camos": [
@@ -3242,15 +3333,15 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dead-sands.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Dead Sands",
+            "CamoName": "Toter Sand",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/moss-filaments.png",
-            "CategoryRequirement": "Get {0} kills with electric damage.",
-            "CamoName": "Moss Filaments",
+            "CategoryRequirement": "Erreiche {0} Abschüssedurch elektrischen Schaden.",
+            "CamoName": "Moos-filamente",
             "UnlockLevel": 7,
             "AmountRequired": 250
           },
@@ -3258,7 +3349,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lost-transmission.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Lost Transmission",
+            "CamoName": "übertragungsverlust",
             "UnlockLevel": 10,
             "AmountRequired": 250
           },
@@ -3266,7 +3357,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/apocalyptic.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Apocalyptic",
+            "CamoName": "Apokalyptisch",
             "UnlockLevel": 15,
             "AmountRequired": 250
           }
@@ -3316,7 +3407,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3325,13 +3416,13 @@
   },
   {
     "WeaponCategoryID": 8,
-    "WeaponCategoryName": "Launchers",
+    "WeaponCategoryName": "Werfer",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "RGL-80",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/rgl-80.png",
-        "UnlockRequirement": "Unlocked at level 38",
+        "UnlockRequirement": "Freigegeben auf Stufe 38",
         "GameType": 0,
         "MaxLevel": 6,
         "Camos": [
@@ -3339,7 +3430,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pathosis.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Pathosis",
+            "CamoName": "Pathose",
             "UnlockLevel": 4,
             "AmountRequired": 250
           }
@@ -3389,7 +3480,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3406,7 +3497,7 @@
             "CamoID": 0,
             "CamoURL": "unknown_camo",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Deformed",
+            "CamoName": "Deformiert",
             "UnlockLevel": 4,
             "AmountRequired": 250
           }
@@ -3456,7 +3547,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3465,13 +3556,13 @@
   },
   {
     "WeaponCategoryID": 9,
-    "WeaponCategoryName": "Melee",
+    "WeaponCategoryName": "Nahkampf",
     "Weapons": [
       {
         "WeaponID": 0,
-        "WeaponName": "Gutter Knife",
+        "WeaponName": "Ausweidemesser",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/gutter-knife.png",
-        "UnlockRequirement": "Unlocked at level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 0,
         "MaxLevel": 6,
         "Camos": [
@@ -3479,7 +3570,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/foam-sands.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Foam Sands",
+            "CamoName": "Schaumsand",
             "UnlockLevel": 4,
             "AmountRequired": 250
           }
@@ -3529,7 +3620,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
@@ -3538,7 +3629,7 @@
         "WeaponID": 1,
         "WeaponName": "Karambit",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/karambit.png",
-        "UnlockRequirement": "ARMORY UNLOCK",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 0,
         "MaxLevel": 6,
         "Camos": [
@@ -3546,7 +3637,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ripped.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Ripped",
+            "CamoName": "Zerrissen",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -3596,7 +3687,7 @@
           {
             "ChallengeName": "Borealis-meisterung",
             "ChallengeID": 3,
-            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt..",
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
             "AmountRequired": 1200
           }
         ]
