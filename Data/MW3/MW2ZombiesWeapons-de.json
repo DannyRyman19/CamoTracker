@@ -7,7 +7,7 @@
         "WeaponID": 0,
         "WeaponName": "M4",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/M4.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 20,
         "Camos": [
@@ -98,7 +98,7 @@
         "WeaponID": 1,
         "WeaponName": "TAQ-56",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-56.png",
-        "UnlockRequirement": "Unlocks at Player Level 19",
+        "UnlockRequirement": "Freigegeben auf Stufe 19",
         "GameType": 3,
         "MaxLevel": 20,
         "Camos": [
@@ -189,7 +189,7 @@
         "WeaponID": 2,
         "WeaponName": "Kastov 762",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_762.png",
-        "UnlockRequirement": "Unlocks at Player Level 23",
+        "UnlockRequirement": "Freigegeben auf Stufe 23",
         "GameType": 3,
         "MaxLevel": 21,
         "Camos": [
@@ -1378,7 +1378,7 @@
         "WeaponID": 0,
         "WeaponName": "Lachmann-762",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png",
-        "UnlockRequirement": "Unlocks at Player Level 16",
+        "UnlockRequirement": "Freigegeben auf Stufe 16",
         "GameType": 3,
         "MaxLevel": 19,
         "Camos": [
@@ -1839,7 +1839,7 @@
         "WeaponID": 0,
         "WeaponName": "VEL 46",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/VEL_46.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 29,
         "Camos": [
@@ -2937,7 +2937,7 @@
         "WeaponID": 0,
         "WeaponName": "Lockwood 300",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_900.png",
-        "UnlockRequirement": "Unlocks at Player Level 36",
+        "UnlockRequirement": "Freigegeben auf Stufe 36",
         "GameType": 3,
         "MaxLevel": 28,
         "Camos": [
@@ -3489,7 +3489,7 @@
         "WeaponID": 0,
         "WeaponName": "Sakin MG38",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/SAKIN_MG38.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 20,
         "Camos": [
@@ -4041,7 +4041,7 @@
         "WeaponID": 0,
         "WeaponName": "EBR-14",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/EBR-14.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -4049,7 +4049,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mold-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Mold Digital",
+            "CamoName": "Digitaler Schimmel",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4057,7 +4057,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spitfire.png",
             "CategoryRequirement": "Erledige {0} Jünger.",
-            "CamoName": "Spitfire",
+            "CamoName": "Hitzkopf",
             "UnlockLevel": 6,
             "AmountRequired": 10
           },
@@ -4065,7 +4065,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/poison-oak.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse, ohne nachzuladen.",
-            "CamoName": "Poison Oak",
+            "CamoName": "Gifteiche",
             "UnlockLevel": 10,
             "AmountRequired": 10
           },
@@ -4073,7 +4073,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/death-roll.png",
             "CategoryRequirement": "Erledige {0} gepanzerte Zombies.",
-            "CamoName": "Death Roll",
+            "CamoName": "Todesrolle",
             "UnlockLevel": 14,
             "AmountRequired": 50
           }
@@ -4140,7 +4140,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wretched-hollow.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Wretched Hollow",
+            "CamoName": "Elende Höhle",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4148,7 +4148,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/viscera-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Viscera Digital",
+            "CamoName": "Digitale Eingeweide",
             "UnlockLevel": 6,
             "AmountRequired": 250
           },
@@ -4156,7 +4156,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/eternal-rest.png",
             "CategoryRequirement": "Erledige {0} Höllenhunde.",
-            "CamoName": "Eternal Rest",
+            "CamoName": "Ewige Ruhe",
             "UnlockLevel": 11,
             "AmountRequired": 30
           },
@@ -4164,7 +4164,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/laceration.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in einem einzigen.",
-            "CamoName": "Laceration",
+            "CamoName": "Risswunde",
             "UnlockLevel": 14,
             "AmountRequired": 100
           }
@@ -4231,7 +4231,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cursed-serpent.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Cursed Serpent",
+            "CamoName": "Verfluchte Schlange",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4239,7 +4239,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxoid.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
-            "CamoName": "Toxoid",
+            "CamoName": "Impfstoff",
             "UnlockLevel": 11,
             "AmountRequired": 250
           },
@@ -4247,7 +4247,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dart-frog.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Dart Frog",
+            "CamoName": "Pfeilfrosch",
             "UnlockLevel": 19,
             "AmountRequired": 250
           },
@@ -4322,7 +4322,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hemorrhage-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Hemorrhage Digital",
+            "CamoName": "Digitale Hämorrhagie",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4330,7 +4330,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/abhorrent.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
-            "CamoName": "Abhorrent",
+            "CamoName": "Verabscheuungswürdig",
             "UnlockLevel": 5,
             "AmountRequired": 250
           },
@@ -4338,7 +4338,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marooned-joy.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse (Seltenheit: mindestens selten).",
-            "CamoName": "Marooned Joy",
+            "CamoName": "Verlassene Freude",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -4346,7 +4346,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hemlock.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Hemlock",
+            "CamoName": "Schierling",
             "UnlockLevel": 12,
             "AmountRequired": 200
           }
@@ -4413,7 +4413,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/plague-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Plague Digital",
+            "CamoName": "Digitale Plage",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4421,7 +4421,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/necrosis.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Necrosis",
+            "CamoName": "Nekrose",
             "UnlockLevel": 8,
             "AmountRequired": 10
           },
@@ -4429,7 +4429,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/flatfline.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Flatline",
+            "CamoName": "Herzstillstand",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
@@ -4437,7 +4437,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rive-gravel.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über 4 oder mehr aktive Extras verfügst.",
-            "CamoName": "Rive Gravel",
+            "CamoName": "Riffelkies",
             "UnlockLevel": 250,
             "AmountRequired": 10
           }
@@ -4504,7 +4504,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychopomp.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Psychopomp",
+            "CamoName": "Psychopompos",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4512,7 +4512,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sycophantism.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch elektrischen Schaden.",
-            "CamoName": "Sycophantism",
+            "CamoName": "Sykophantismus",
             "UnlockLevel": 10,
             "AmountRequired": 250
           },
@@ -4520,7 +4520,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cryonics.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Feinden.",
-            "CamoName": "Cryonics",
+            "CamoName": "Kryonik",
             "UnlockLevel": 17,
             "AmountRequired": 100
           },
@@ -4528,7 +4528,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/plasma-digital.png",
             "CategoryRequirement": "Erledige {0} Söldner.",
-            "CamoName": "Plasma Digital",
+            "CamoName": "Digitales Plasma",
             "UnlockLevel": 25,
             "AmountRequired": 50
           }
@@ -4585,7 +4585,7 @@
       },
       {
         "WeaponID": 6,
-        "WeaponName": "Crossbow",
+        "WeaponName": "Armbrust",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/CROSSBOW.png",
         "UnlockRequirement": "Unlocked via extraction from DMZ OR Get 50 Longshot kills using a Marksman Rifle",
         "GameType": 4,
@@ -4595,7 +4595,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/severed.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Severed",
+            "CamoName": "Abgetrennt",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4603,7 +4603,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/swamp.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse (Seltenheit: mindestens selten).",
-            "CamoName": "Swamp",
+            "CamoName": "Saurer Regen",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -4611,7 +4611,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/acid-rain.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Acid rain",
+            "CamoName": "Saurer Regen",
             "UnlockLevel": 12,
             "AmountRequired": 10
           },
@@ -4619,7 +4619,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/braindead.png",
             "CategoryRequirement": "Erledige {0} gepanzerte Zombies.",
-            "CamoName": "Brain Dead",
+            "CamoName": "Hirntot",
             "UnlockLevel": 17,
             "AmountRequired": 50
           }
@@ -4676,7 +4676,7 @@
       },
       {
         "WeaponID": 7,
-        "WeaponName": "Tempus Torrent",
+        "WeaponName": "Tempus-Geschütz",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_TORRENT.png",
         "UnlockRequirement": "Unlocked via extraction from DMZ OR Get 25 Double Kills using a Marksman Rifle",
         "GameType": 4,
@@ -4686,7 +4686,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/distressed.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Distressed",
+            "CamoName": "Verzweifelt",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4694,7 +4694,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/afflicted.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch elektrischen Schaden.",
-            "CamoName": "Afflicted",
+            "CamoName": "Befallen",
             "UnlockLevel": 7,
             "AmountRequired": 250
           },
@@ -4702,7 +4702,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bottomless-void.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Bottomless Void",
+            "CamoName": "Bodenlose Leere",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
@@ -4710,7 +4710,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dyspnea.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
-            "CamoName": "Dyspnea",
+            "CamoName": "Dyspnoe",
             "UnlockLevel": 17,
             "AmountRequired": 250
           }
@@ -4769,13 +4769,13 @@
   },
   {
     "WeaponCategoryID": 6,
-    "WeaponCategoryName": "Sniper Rifles",
+    "WeaponCategoryName": "Scharfschützengewehr",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "MCPR-300",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/MCPR-900.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 27,
         "Camos": [
@@ -4783,7 +4783,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sarcophagus.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Sarcophagus",
+            "CamoName": "Sarkophag",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4791,15 +4791,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pack-hunter.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch elektrischen Schaden.",
-            "CamoName": "Pack Hunter",
+            "CamoName": "Packjäger",
             "UnlockLevel": 10,
             "AmountRequired": 250
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mucus.png",
-            "CategoryRequirement": "Get 3 kills in a single shot {0} times.",
-            "CamoName": "Mucus",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit nur einem Schuss.",
+            "CamoName": "Schleim",
             "UnlockLevel": 18,
             "AmountRequired": 30
           },
@@ -4807,7 +4807,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/retch.png",
             "CategoryRequirement": "Erledige {0} Söldner.",
-            "CamoName": "Retch",
+            "CamoName": "Würgen",
             "UnlockLevel": 26,
             "AmountRequired": 50
           }
@@ -4874,7 +4874,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rough-thicket.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Rough Thicket",
+            "CamoName": "Raues Dickicht",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -4882,7 +4882,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/decomposition.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Decomposition",
+            "CamoName": "Zersetzung",
             "UnlockLevel": 9,
             "AmountRequired": 200
           },
@@ -4890,7 +4890,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shattered-hope.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Giftschaden.",
-            "CamoName": "Shattered Hope",
+            "CamoName": "Zerstörte Hoffnung",
             "UnlockLevel": 16,
             "AmountRequired": 250
           },
@@ -4898,7 +4898,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/specter.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in einem einzigen.",
-            "CamoName": "Specter",
+            "CamoName": "Schreckgespenst",
             "UnlockLevel": 23,
             "AmountRequired": 100
           }
@@ -4972,8 +4972,8 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/uncanny.png",
-            "CategoryRequirement": "Get 3 kills in a single shot {0} times.",
-            "CamoName": "Uncanny",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit nur einem Schuss.",
+            "CamoName": "Unheimlich",
             "UnlockLevel": 8,
             "AmountRequired": 30
           },
@@ -4981,7 +4981,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-moon.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Blood Moon",
+            "CamoName": "Blutmond",
             "UnlockLevel": 15,
             "AmountRequired": 250
           },
@@ -4989,7 +4989,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/seance.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über 4 oder mehr aktive Extras verfügst.",
-            "CamoName": "Seance",
+            "CamoName": "Sēance",
             "UnlockLevel": 21,
             "AmountRequired": 250
           }
@@ -5056,7 +5056,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tooth-claw.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Tooth & Claw",
+            "CamoName": "Zähne & Klauen",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5064,7 +5064,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/locust.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Einsatz einer Feldaufrüstung.",
-            "CamoName": "Locust",
+            "CamoName": "Heuschrecke",
             "UnlockLevel": 7,
             "AmountRequired": 100
           },
@@ -5072,7 +5072,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pollution.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Pollution",
+            "CamoName": "Verschmutzung",
             "UnlockLevel": 13,
             "AmountRequired": 10
           },
@@ -5147,7 +5147,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/evoke-darkness.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Evoke Darkness",
+            "CamoName": "Dunkelheit Beschwören",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5155,7 +5155,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/putrefied.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Putrefied",
+            "CamoName": "Verwesung",
             "UnlockLevel": 10,
             "AmountRequired": 200
           },
@@ -5163,7 +5163,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/amputate.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
-            "CamoName": "Amputate",
+            "CamoName": "Amputieren",
             "UnlockLevel": 18,
             "AmountRequired": 250
           },
@@ -5171,7 +5171,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/infested-waters.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse mit voller Aufsatzausstattung.",
-            "CamoName": "Infested Waters",
+            "CamoName": "Verseuchte Gewässer",
             "UnlockLevel": 26,
             "AmountRequired": 250
           }
@@ -5238,7 +5238,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stachybotrys.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Stachybotrys",
+            "CamoName": "Schimmelpilz",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5246,15 +5246,15 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spirit-guide.png",
             "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
-            "CamoName": "Spirit Guide",
+            "CamoName": "Geistführer",
             "UnlockLevel": 10,
             "AmountRequired": 10
           },
           {
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shimmering-lure.png",
-            "CategoryRequirement": "Get 3 kills in a single shot {0} times.",
-            "CamoName": "Shimmering Lure",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit nur einem Schuss.",
+            "CamoName": "Schimmernde Verlockung",
             "UnlockLevel": 17,
             "AmountRequired": 30
           },
@@ -5262,7 +5262,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mortal-wound.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Mortal Wound",
+            "CamoName": "Tödliche Wunde",
             "UnlockLevel": 26,
             "AmountRequired": 200
           }
@@ -5329,7 +5329,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scratch-marks.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Scratch Marks",
+            "CamoName": "Kratzspuren",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5337,7 +5337,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shipwreck.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Shipwreck",
+            "CamoName": "Schiffswrack",
             "UnlockLevel": 8,
             "AmountRequired": 200
           },
@@ -5345,7 +5345,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/congealed.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Feinden.",
-            "CamoName": "Congealed",
+            "CamoName": "Erstarrt",
             "UnlockLevel": 14,
             "AmountRequired": 100
           },
@@ -5353,7 +5353,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/abscess.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse, ohne nachzuladen.",
-            "CamoName": "Abscess",
+            "CamoName": "Abszess",
             "UnlockLevel": 18,
             "AmountRequired": 10
           }
@@ -5412,13 +5412,13 @@
   },
   {
     "WeaponCategoryID": 7,
-    "WeaponCategoryName": "Melee",
+    "WeaponCategoryName": "Nahkampf",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "Riot Shield",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RIOT_SHIELD.png",
-        "UnlockRequirement": "Unlocks at Player Level 37",
+        "UnlockRequirement": "Freigegeben auf Stufe 37",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -5426,7 +5426,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/iv-drip.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Iv Drip",
+            "CamoName": "IV-Tropf",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -5485,7 +5485,7 @@
         "WeaponID": 1,
         "WeaponName": "Combat Knife",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/COMBAT_KNIFE.png",
-        "UnlockRequirement": "Unlocks at Player Level 17",
+        "UnlockRequirement": "Freigegeben auf Stufe 17",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -5493,7 +5493,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/malignant.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Malignant",
+            "CamoName": "Bösartig",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -5550,7 +5550,7 @@
       },
       {
         "WeaponID": 2,
-        "WeaponName": "Dual Kodachis",
+        "WeaponName": "Doppel-Kodachis",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KODACHIS.png",
         "UnlockRequirement": "Get 20 kills with Melee weapons",
         "GameType": 4,
@@ -5560,7 +5560,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lost-souls.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Lost Souls",
+            "CamoName": "Verlorene Seelen",
             "UnlockLevel": 14,
             "AmountRequired": 250
           }
@@ -5627,7 +5627,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/consumed.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Consumed",
+            "CamoName": "Verzehrt",
             "UnlockLevel": 2,
             "AmountRequired": 250
           }
@@ -5684,7 +5684,7 @@
       },
       {
         "WeaponID": 4,
-        "WeaponName": "Pickaxe",
+        "WeaponName": "Spitzhacke",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/PICKAXE.png",
         "UnlockRequirement": "",
         "GameType": 4,
@@ -5694,7 +5694,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/poached.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Poached",
+            "CamoName": "Pochiert",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -5751,7 +5751,7 @@
       },
       {
         "WeaponID": 5,
-        "WeaponName": "Dual Kamas",
+        "WeaponName": "Doppel-Kamas",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KAMAS.png",
         "UnlockRequirement": "Unlocked with the Season 6 Battle Pass",
         "GameType": 4,
@@ -5761,7 +5761,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/flooded.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Flooded",
+            "CamoName": "überflutet",
             "UnlockLevel": 14,
             "AmountRequired": 250
           }
@@ -5820,13 +5820,13 @@
   },
   {
     "WeaponCategoryID": 8,
-    "WeaponCategoryName": "Handguns",
+    "WeaponCategoryName": "Handfeuerwaffe",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "P890",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/P890.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 27,
         "Camos": [
@@ -5834,7 +5834,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/smudging.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Smudging",
+            "CamoName": "Schmierig",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5842,7 +5842,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/open-sores.png",
             "CategoryRequirement": "Erledige {0} Söldner.",
-            "CamoName": "Open Sores",
+            "CamoName": "Offene Wunden",
             "UnlockLevel": 10,
             "AmountRequired": 50
           },
@@ -5850,7 +5850,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/surge-digital.png",
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
-            "CamoName": "Surge Digital",
+            "CamoName": "Digitale Überspannung",
             "UnlockLevel": 18,
             "AmountRequired": 10
           },
@@ -5858,7 +5858,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/binary-death.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Feinden.",
-            "CamoName": "Binary Death",
+            "CamoName": "Binärer Tod",
             "UnlockLevel": 26,
             "AmountRequired": 100
           }
@@ -5917,7 +5917,7 @@
         "WeaponID": 1,
         "WeaponName": ".50 GS",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png",
-        "UnlockRequirement": "Unlocks at Player Level 13",
+        "UnlockRequirement": "Freigegeben auf Stufe 13",
         "GameType": 3,
         "MaxLevel": 27,
         "Camos": [
@@ -5925,7 +5925,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rat-cage.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Rat Cage",
+            "CamoName": "Rattenkäfig",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -5933,7 +5933,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tarragon.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse (Seltenheit: mindestens selten).",
-            "CamoName": "Tarragon",
+            "CamoName": "Estragon",
             "UnlockLevel": 10,
             "AmountRequired": 250
           },
@@ -5941,7 +5941,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hemocyte.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Hemocyte",
+            "CamoName": "Hämozyten",
             "UnlockLevel": 18,
             "AmountRequired": 10
           },
@@ -5949,7 +5949,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/chromatism.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
-            "CamoName": "Chromatism",
+            "CamoName": "Chromatismus",
             "UnlockLevel": 26,
             "AmountRequired": 250
           }
@@ -6008,7 +6008,7 @@
         "WeaponID": 2,
         "WeaponName": "X12",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/X12.png",
-        "UnlockRequirement": "Unlocks at Player Level 31",
+        "UnlockRequirement": "Freigegeben auf Stufe 31",
         "GameType": 3,
         "MaxLevel": 20,
         "Camos": [
@@ -6016,7 +6016,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rot-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Rot Digital",
+            "CamoName": "Digitale Fäulnis",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6024,7 +6024,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/radiation.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse, während du über 4 oder mehr aktive Extras verfügst.",
-            "CamoName": "Radiation",
+            "CamoName": "Strahlung",
             "UnlockLevel": 8,
             "AmountRequired": 250
           },
@@ -6032,7 +6032,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/molten.png",
             "CategoryRequirement": "Erledige {0} Söldner.",
-            "CamoName": "Molten",
+            "CamoName": "Geschmolzen",
             "UnlockLevel": 13,
             "AmountRequired": 50
           },
@@ -6040,7 +6040,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/weeping.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Weeping",
+            "CamoName": "Weinen",
             "UnlockLevel": 19,
             "AmountRequired": 250
           }
@@ -6099,7 +6099,7 @@
         "WeaponID": 3,
         "WeaponName": "Basilisk",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/BASILISK.png",
-        "UnlockRequirement": "Unlocks at Player Level 39",
+        "UnlockRequirement": "Freigegeben auf Stufe 39",
         "GameType": 3,
         "MaxLevel": 29,
         "Camos": [
@@ -6107,7 +6107,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/grim-potent.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Grim Portent",
+            "CamoName": "Düstere Vorzeichen",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6115,7 +6115,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/frigid.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Einsatz einer Feldaufrüstung.",
-            "CamoName": "Frigid",
+            "CamoName": "Frigide",
             "UnlockLevel": 11,
             "AmountRequired": 100
           },
@@ -6123,7 +6123,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dredge.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in einem einzigen.",
-            "CamoName": "Dredge",
+            "CamoName": "Ausbaggern",
             "UnlockLevel": 19,
             "AmountRequired": 100
           },
@@ -6131,7 +6131,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/iron-hammer.png",
             "CategoryRequirement": "Erledige {0} gepanzerte Zombies.",
-            "CamoName": "Iron Hammer",
+            "CamoName": "Eisenhammer",
             "UnlockLevel": 28,
             "AmountRequired": 50
           }
@@ -6188,7 +6188,7 @@
       },
       {
         "WeaponID": 4,
-        "WeaponName": "X13 Auto",
+        "WeaponName": "X13 Automatik",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/X13_AUTO.png",
         "UnlockRequirement": "Unlock by leveling the X12 (Handgun) to Level 10",
         "GameType": 3,
@@ -6198,7 +6198,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ectoplasm.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Ectoplasm",
+            "CamoName": "Ektoplasma",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6206,7 +6206,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/write-digital.png",
             "CategoryRequirement": "Erreiche {0} kritische Abschüsse.",
-            "CamoName": "Write Digital",
+            "CamoName": "Digitales Winden",
             "UnlockLevel": 8,
             "AmountRequired": 200
           },
@@ -6214,7 +6214,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/diamond-eye.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Diamond Eye",
+            "CamoName": "Diamantauge",
             "UnlockLevel": 15,
             "AmountRequired": 250
           },
@@ -6222,7 +6222,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/delirious.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
-            "CamoName": "Delirious",
+            "CamoName": "Fantasierend",
             "UnlockLevel": 21,
             "AmountRequired": 250
           }
@@ -6289,7 +6289,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-clouds.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Dark Clouds",
+            "CamoName": "Dunkle Wolken",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6297,7 +6297,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mummified.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus nächster Nähe.",
-            "CamoName": "Mummified",
+            "CamoName": "Mumifiziert",
             "UnlockLevel": 9,
             "AmountRequired": 250
           },
@@ -6305,7 +6305,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mired.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse in einem einzigen.",
-            "CamoName": "Mired",
+            "CamoName": "Versumpft",
             "UnlockLevel": 17,
             "AmountRequired": 100
           },
@@ -6313,7 +6313,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/magnetic-field.png",
             "CategoryRequirement": "Erledige {0} Söldner.",
-            "CamoName": "Magnetic Field",
+            "CamoName": "Magnetfeld",
             "UnlockLevel": 25,
             "AmountRequired": 50
           }
@@ -6380,7 +6380,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shackled.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Shackled",
+            "CamoName": "Gefesselt",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6388,7 +6388,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cadaver.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
-            "CamoName": "Cadaver",
+            "CamoName": "Kadaver",
             "UnlockLevel": 4,
             "AmountRequired": 250
           },
@@ -6396,7 +6396,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crystallized.png",
             "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne den Abzug loszulassen.",
-            "CamoName": "Crystallized",
+            "CamoName": "Auskristallisiert",
             "UnlockLevel": 6,
             "AmountRequired": 20
           },
@@ -6404,7 +6404,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/brined-entrails.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch elektrischen Schaden.",
-            "CamoName": "Brined Entrails",
+            "CamoName": "Gepökelte Eingeweide",
             "UnlockLevel": 9,
             "AmountRequired": 250
           }
@@ -6471,7 +6471,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolation.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Desolation",
+            "CamoName": "Trostlosigkeit",
             "UnlockLevel": 2,
             "AmountRequired": 250
           },
@@ -6479,7 +6479,7 @@
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/condemned.png",
             "CategoryRequirement": "Erledige {0} gepanzerte Zombies.",
-            "CamoName": "Condemned",
+            "CamoName": "Verurteilt",
             "UnlockLevel": 8,
             "AmountRequired": 50
           },
@@ -6487,7 +6487,7 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fate-mirror.png",
             "CategoryRequirement": "Erledige {0} Mangler.",
-            "CamoName": "Fate Mirror",
+            "CamoName": "Schicksals-spiegel",
             "UnlockLevel": 14,
             "AmountRequired": 10
           },
@@ -6495,7 +6495,7 @@
             "CamoID": 3,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zeal.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse durch Giftschaden.",
-            "CamoName": "Zeal",
+            "CamoName": "Eifer",
             "UnlockLevel": 21,
             "AmountRequired": 250
           }
@@ -6554,13 +6554,13 @@
   },
   {
     "WeaponCategoryID": 9,
-    "WeaponCategoryName": "Launchers",
+    "WeaponCategoryName": "Werfer",
     "Weapons": [
       {
         "WeaponID": 0,
         "WeaponName": "Pila",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/PILA.png",
-        "UnlockRequirement": "Unlocks at Player Level 4",
+        "UnlockRequirement": "Freigegeben auf Stufe 4",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -6568,7 +6568,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/embalmed.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Embalmed",
+            "CamoName": "Einbalsamiert",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -6627,7 +6627,7 @@
         "WeaponID": 1,
         "WeaponName": "Strela-P",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/STRELA-P.png",
-        "UnlockRequirement": "Unlocks at Player Level 14",
+        "UnlockRequirement": "Freigegeben auf Stufe 14",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -6635,7 +6635,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/penumbra.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Penumbra",
+            "CamoName": "Halbschatten",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -6694,7 +6694,7 @@
         "WeaponID": 2,
         "WeaponName": "JOKR",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/JOKR.png",
-        "UnlockRequirement": "Unlocks at Player Level 24",
+        "UnlockRequirement": "Freigegeben auf Stufe 24",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -6702,7 +6702,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/foul-scab.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Foul Scab",
+            "CamoName": "Fauliger Schorf",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
@@ -6761,7 +6761,7 @@
         "WeaponID": 3,
         "WeaponName": "RPG-7",
         "WeaponImageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPG-7.png",
-        "UnlockRequirement": "Unlocks at Player Level 32",
+        "UnlockRequirement": "Freigegeben auf Stufe 32",
         "GameType": 3,
         "MaxLevel": 15,
         "Camos": [
@@ -6769,7 +6769,7 @@
             "CamoID": 0,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blood-digital.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
-            "CamoName": "Blood Digital",
+            "CamoName": "Digitales Blut",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
