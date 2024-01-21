@@ -553,7 +553,7 @@
         "WeaponID": 6,
         "WeaponName": "Ram-7",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/ram-7.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A7",
+        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A7",
         "GameType": 1,
         "MaxLevel": 27,
         "Camos": [
@@ -1475,7 +1475,7 @@
         "WeaponID": 6,
         "WeaponName": "HRM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A21",
+        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A21",
         "GameType": 1,
         "MaxLevel": 18,
         "Camos": [
@@ -2048,7 +2048,7 @@
           {
             "CamoID": 1,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/drowned-sands.png",
-            "CategoryRequirement": "Erreiche {0}-,al 10 Abschüsse, ohne nachzuladen.",
+            "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse, ohne nachzuladen.",
             "CamoName": "Ertrunkener Sand",
             "UnlockLevel": 9,
             "AmountRequired": 10
@@ -2250,6 +2250,97 @@
             "CamoName": "Mysteriös",
             "UnlockLevel": 22,
             "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 5,
+        "WeaponName": "Taq Evolvere",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/taq-evolvere.png",
+        "UnlockRequirement": "Complete 5 challenges from week 7",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-toxins.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Psychedelische Toxine",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-shade.png",
+            "CategoryRequirement": "Erreiche {0}-mal 20 aufeinanderfolgende Abschüsse, ohne Schaden zu erleiden.",
+            "CamoName": "Palette Schattiert",
+            "UnlockLevel": 8,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mummified-brush.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Feuerschaden.",
+            "CamoName": "Mumifizierter Pinsel",
+            "UnlockLevel": 13,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fluctuation.png",
+            "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse, ohne nachzuladen.",
+            "CamoName": "Fluktuation",
+            "UnlockLevel": 19,
+            "AmountRequired": 10
           }
         ],
         "CompletionistCamos": [
@@ -2955,7 +3046,7 @@
         "WeaponID": 3,
         "WeaponName": "XRK Stalker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/xrk-stalker.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A4",
+        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A4",
         "GameType": 1,
         "MaxLevel": 21,
         "Camos": [
@@ -3489,7 +3580,7 @@
         "WeaponID": 1,
         "WeaponName": "STORMENDER",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A12",
+        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A12",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
