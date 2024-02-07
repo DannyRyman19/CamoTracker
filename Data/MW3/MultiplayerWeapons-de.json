@@ -553,7 +553,7 @@
         "WeaponID": 6,
         "WeaponName": "RAM-7",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/ram-7.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A7",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 27,
         "Camos": [
@@ -610,6 +610,97 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Seitwärtsbewegung heraus in taktischer Haltung.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "BP50",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BP50.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B7",
+        "GameType": 1,
+        "MaxLevel": 20,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ice-cave.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Eishöhle",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/coiled.png",
+            "CategoryRequirement": "Erreiche {0} ZV-Abschüsse.",
+            "CamoName": "Aufgerollt",
+            "UnlockLevel": 9,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fairway.png",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Fahrwasser",
+            "UnlockLevel": 14,
+            "AmountRequired": 15
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/firmicutes.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "CamoName": "Firmicuten",
+            "UnlockLevel": 20,
+            "AmountRequired": 25
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Vergoldet",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Seitwärtsbewegung heraus.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Geschmiedet",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Unbezahlbar",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Erreiche {0} Doppelabschüsse in taktischer Haltung.",
             "AmountRequired": 15
           }
         ],
@@ -1475,7 +1566,7 @@
         "WeaponID": 6,
         "WeaponName": "HRM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A21",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 18,
         "Camos": [
@@ -1533,6 +1624,97 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte beim Rutschen.",
             "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "RAM-9",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B6",
+        "GameType": 1,
+        "MaxLevel": 24,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scoured.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Ausgespült",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gradient-globs.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Hüfte.",
+            "CamoName": "Verlauf-kleckse",
+            "UnlockLevel": 10,
+            "AmountRequired": 25
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ocean-waves.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
+            "CamoName": "Unknown",
+            "UnlockLevel": 16,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/occult.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse bei von deiner Taktikausrüstung betroffenen Operators.",
+            "CamoName": "Okkult",
+            "UnlockLevel": 24,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Vergoldet",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in taktischer Haltung.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Geschmiedet",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach Verwendung der ZV.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Unbezahlbar",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse aus der Luft heraus.",
+            "AmountRequired": 10
           }
         ],
         "MasteryChallenges": [
@@ -3046,7 +3228,7 @@
         "WeaponID": 3,
         "WeaponName": "XRK Stalker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/xrk-stalker.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A4",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 21,
         "Camos": [
@@ -3580,7 +3762,7 @@
         "WeaponID": 1,
         "WeaponName": "STORMENDER",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A12",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [

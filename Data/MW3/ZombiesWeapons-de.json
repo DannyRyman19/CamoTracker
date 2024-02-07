@@ -553,7 +553,7 @@
         "WeaponID": 6,
         "WeaponName": "Ram-7",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/ram-7.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A7",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 27,
         "Camos": [
@@ -588,6 +588,97 @@
             "CamoName": "Unheilbar",
             "UnlockLevel": 27,
             "AmountRequired": 200
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "BP50",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BP50.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B7",
+        "GameType": 1,
+        "MaxLevel": 20,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dissolver.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Auflöser",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shadow-sting.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse [Seltenheit: mindestens selten].",
+            "CamoName": "Schattenstich",
+            "UnlockLevel": 9,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/greed-blur.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
+            "CamoName": "Palettenstreuung",
+            "UnlockLevel": 14,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/microbial.png",
+            "CategoryRequirement": "Erledige {0} Söldner.",
+            "CamoName": "Mikrobiell",
+            "UnlockLevel": 20,
+            "AmountRequired": 50
           }
         ],
         "CompletionistCamos": [
@@ -1475,7 +1566,7 @@
         "WeaponID": 6,
         "WeaponName": "HRM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A21",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 18,
         "Camos": [
@@ -1509,6 +1600,97 @@
             "CategoryRequirement": "Erreiche {0}-mal 10 Abschüsse innerhalb von 5 Sekunden.",
             "CamoName": "Leere Schreie",
             "UnlockLevel": 18,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "RAM-9",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B6",
+        "GameType": 1,
+        "MaxLevel": 24,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sonic-glitch.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Schall-Störung",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/biomass.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse durch Frostschaden.",
+            "CamoName": "Biomasse",
+            "UnlockLevel": 10,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/putrid-locust.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Einsatz einer Feldaufrüstung.",
+            "CamoName": "Faulige Heuschrecke",
+            "UnlockLevel": 16,
+            "AmountRequired": 100
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mystic-wither.png",
+            "CategoryRequirement": "Erledige {0} Jünger.",
+            "CamoName": "Mystisches Verwelken",
+            "UnlockLevel": 24,
             "AmountRequired": 10
           }
         ],
@@ -2306,7 +2488,7 @@
         "WeaponID": 5,
         "WeaponName": "Taq Evolvere",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/taq-evolvere.png",
-        "UnlockRequirement": "Schließe 5 Herausforderungen aus Woche 7 ab",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 19,
         "Camos": [
@@ -3046,7 +3228,7 @@
         "WeaponID": 3,
         "WeaponName": "XRK Stalker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/xrk-stalker.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A4",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 21,
         "Camos": [
@@ -3580,7 +3762,7 @@
         "WeaponID": 1,
         "WeaponName": "STORMENDER",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 1 Battle Pass im Sektor A12",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
