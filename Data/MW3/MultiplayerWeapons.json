@@ -553,7 +553,7 @@
         "WeaponID": 6,
         "WeaponName": "RAM-7",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/ram-7.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A7",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 27,
         "Camos": [
@@ -610,6 +610,97 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills while strafing in tac stance.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "BP50",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BP-50.png",
+        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B7",
+        "GameType": 1,
+        "MaxLevel": 20,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ice-cave.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Ice Cave",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/coiled.png",
+            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CamoName": "Coiled",
+            "UnlockLevel": 9,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fairway.png",
+            "CategoryRequirement": "Get {0} Headshot kills.",
+            "CamoName": "Fairway",
+            "UnlockLevel": 14,
+            "AmountRequired": 15
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/firmicutes.png",
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Firmicutes",
+            "UnlockLevel": 20,
+            "AmountRequired": 25
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills while strafing.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} double kills while in tactical stance.",
             "AmountRequired": 15
           }
         ],
@@ -1475,7 +1566,7 @@
         "WeaponID": 6,
         "WeaponName": "HRM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A21",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 18,
         "Camos": [
@@ -1532,6 +1623,97 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} hipfire kills while sliding.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 7,
+        "WeaponName": "RAM-9",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
+        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B6",
+        "GameType": 1,
+        "MaxLevel": 24,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scoured.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Scoured",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gradient-globs.png",
+            "CategoryRequirement": "Get {0} hipfire kills.",
+            "CamoName": "Gradient Globs",
+            "UnlockLevel": 10,
+            "AmountRequired": 25
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ocean-waves.png",
+            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CamoName": "Unknown",
+            "UnlockLevel": 16,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/occult.png",
+            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CamoName": "Occult",
+            "UnlockLevel": 24,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} kills shortly after ADS.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} kills whie midair.",
             "AmountRequired": 15
           }
         ],
@@ -2306,7 +2488,7 @@
         "WeaponID": 5,
         "WeaponName": "Taq Evolvere",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/taq-evolvere.png",
-        "UnlockRequirement": "Complete 5 challenges from week 7",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 19,
         "Camos": [
@@ -3046,7 +3228,7 @@
         "WeaponID": 3,
         "WeaponName": "XRK Stalker",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/xrk-stalker.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A4",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 21,
         "Camos": [
@@ -3580,7 +3762,7 @@
         "WeaponID": 1,
         "WeaponName": "STORMENDER",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
-        "UnlockRequirement": "Unlocked with the Season 1 Battle Pass in sector A12",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
