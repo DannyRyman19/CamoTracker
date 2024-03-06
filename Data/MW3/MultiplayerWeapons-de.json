@@ -1009,6 +1009,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 3,
+        "WeaponName": "SOA Subverter",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soa-subverter.png",
+        "UnlockRequirement": "Waffenkammer freischalten",
+        "GameType": 1,
+        "MaxLevel": 17,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fjord.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Fjord",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pink.png",
+            "CategoryRequirement": "Erreiche {0} vollautomatische Abschüsse.",
+            "CamoName": "Pink",
+            "UnlockLevel": 7,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tidepool.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du durch ein Zielfernrohr schaust.",
+            "CamoName": "Gezeitenpool",
+            "UnlockLevel": 12,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-satin.png",
+            "CategoryRequirement": "Erreiche {0} Kopfschuss-Abschüsse.",
+            "CamoName": "Dopamin",
+            "UnlockLevel": 17,
+            "AmountRequired": 15
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Vergoldet",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Erreiche {0}-mal 2 Abschüsse durch Kopfschüsse, ohne zu sterben.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Geschmiedet",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Erreiche {0} schallgedämpfte saubere Abschüsse.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Unbezahlbar",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit 1 Magazin.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },
@@ -3936,6 +4027,73 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
             "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 2,
+        "WeaponName": "Seelenbringer",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soulrender.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B21",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/omnigenesis.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Omnigenese",
+            "UnlockLevel": 4,
+            "AmountRequired": 50
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Vergoldet",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse, während du außerhalb der feindlichen Sichtlinie bist.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Geschmiedet",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse im Ducken/Rutschen.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Unbezahlbar",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [

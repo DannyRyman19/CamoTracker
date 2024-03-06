@@ -1009,6 +1009,97 @@
             "AmountRequired": 1200
           }
         ]
+      },
+      {
+        "WeaponID": 3,
+        "WeaponName": "SOA Subverter",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soa-subverter.png",
+        "UnlockRequirement": "Waffenkammer freischalten",
+        "GameType": 1,
+        "MaxLevel": 17,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gloom.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Düsternis",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolation.png",
+            "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse mit nur einem Schuss.",
+            "CamoName": "Trostlosigkeit",
+            "UnlockLevel": 7,
+            "AmountRequired": 30
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/piranha.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse in einem enzigen Spiel.",
+            "CamoName": "Piranha",
+            "UnlockLevel": 12,
+            "AmountRequired": 100
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-satin.png",
+            "CategoryRequirement": "Erledige {0} mimiker.",
+            "CamoName": "Venom-prisma",
+            "UnlockLevel": 17,
+            "AmountRequired": 5
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
       }
     ]
   },
@@ -3911,6 +4002,73 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ripped.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Zerrissen",
+            "UnlockLevel": 11,
+            "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 2,
+        "WeaponName": "Seelenbringer",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soulrender.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 2 Battle Pass im Sektor B21",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/neuronic.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Neuronisch",
             "UnlockLevel": 11,
             "AmountRequired": 250
           }
