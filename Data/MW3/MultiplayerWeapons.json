@@ -644,7 +644,7 @@
         "WeaponID": 7,
         "WeaponName": "BP50",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BP50.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B7",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 20,
         "Camos": [
@@ -1748,7 +1748,7 @@
         "WeaponID": 7,
         "WeaponName": "RAM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B6",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 24,
         "Camos": [
@@ -1806,6 +1806,97 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills whie midair.",
             "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 8,
+        "WeaponName": "FJX HORUS",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/FJX-HORUS.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 8",
+        "GameType": 1,
+        "MaxLevel": 18,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blacklight.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Blacklight",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/she-bites.png",
+            "CategoryRequirement": "Get {0} hipfire kills.",
+            "CamoName": "She Bites",
+            "UnlockLevel": 8,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-veil.png",
+            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CamoName": "Desert Veil",
+            "UnlockLevel": 12,
+            "AmountRequired": 25
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/penny.png",
+            "CategoryRequirement": "Get {0} kills on stunned or blinded enemies.",
+            "CamoName": "Penny",
+            "UnlockLevel": 18,
+            "AmountRequired": 25
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills while ADS and moving.",
+            "AmountRequired": 50
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} Kills shortly after swapping weapons.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} double kills without taking any damage.",
+            "AmountRequired": 15
           }
         ],
         "MasteryChallenges": [
@@ -3405,6 +3496,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 4,
+        "WeaponName": "MORS",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/MORS.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 4",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/whats-your-sign.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "What's your sign?",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shadow.png",
+            "CategoryRequirement": "Get {0} kills shortly after ADS.",
+            "CamoName": "Shadow",
+            "UnlockLevel": 8,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/at-ease.png",
+            "CategoryRequirement": "Get {0} Longshot kills.",
+            "CamoName": "At Ease",
+            "UnlockLevel": 13,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/the-horrors.png",
+            "CategoryRequirement": "Get {0} one shot one kills.",
+            "CamoName": "The Horrors",
+            "UnlockLevel": 19,
+            "AmountRequired": 15
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills while using a magnification scope attachment.",
+            "AmountRequired": 50
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} headshot kills with the MORS Dot Sight equipped.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get 2 headshot kills in one life {0} times.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },
@@ -4060,7 +4242,7 @@
         "WeaponID": 2,
         "WeaponName": "Soulrender",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soulrender.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B21",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
@@ -4093,6 +4275,73 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Get {0} kills from behind.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 3,
+        "WeaponName": "Gladiator",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/gladiator.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 15",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bullet-hell.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Bullet Hell",
+            "UnlockLevel": 4,
+            "AmountRequired": 50
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills from behind.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} revenge kills.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
             "AmountRequired": 15
           }
         ],

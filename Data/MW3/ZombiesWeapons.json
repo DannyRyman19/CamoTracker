@@ -644,7 +644,7 @@
         "WeaponID": 7,
         "WeaponName": "BP50",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BP50.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B7",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 20,
         "Camos": [
@@ -1748,7 +1748,7 @@
         "WeaponID": 7,
         "WeaponName": "RAM-9",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B6",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 24,
         "Camos": [
@@ -1783,6 +1783,97 @@
             "CamoName": "Mystic Wither",
             "UnlockLevel": 24,
             "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 8,
+        "WeaponName": "FJX HORUS",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/FJX-HORUS.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 8",
+        "GameType": 1,
+        "MaxLevel": 18,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spectral.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Spectral",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rabid.png",
+            "CategoryRequirement": "Get {0} mangler kills.",
+            "CamoName": "Rabid",
+            "UnlockLevel": 8,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crypt.png",
+            "CategoryRequirement": "Get {0} critical kills.",
+            "CamoName": "Crypt",
+            "UnlockLevel": 12,
+            "AmountRequired": 200
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lurker.png",
+            "CategoryRequirement": "Get {0} kills at rare or higher rarity.",
+            "CamoName": "Lurker",
+            "UnlockLevel": 18,
+            "AmountRequired": 250
           }
         ],
         "CompletionistCamos": [
@@ -3405,6 +3496,97 @@
             "AmountRequired": 1200
           }
         ]
+      },
+      {
+        "WeaponID": 4,
+        "WeaponName": "MORS",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/MORS.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 4",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/necromancy.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Necromancy",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blight-hound.png",
+            "CategoryRequirement": "Get {0} kills while having at least 4 perks active.",
+            "CamoName": "Blight Hound",
+            "UnlockLevel": 8,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/apocalyptic.png",
+            "CategoryRequirement": "Get {0} mercenary kills.",
+            "CamoName": "Apocalyptic",
+            "UnlockLevel": 13,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/apparition.png",
+            "CategoryRequirement": "Get {0} kills on enemies affected by your tactical.",
+            "CamoName": "Apparition",
+            "UnlockLevel": 19,
+            "AmountRequired": 100
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
       }
     ]
   },
@@ -4060,7 +4242,7 @@
         "WeaponID": 2,
         "WeaponName": "Soulrender",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/soulrender.png",
-        "UnlockRequirement": "Unlocked with the Season 2 Battle Pass in sector B21",
+        "UnlockRequirement": "ARMORY UNLOCK",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
@@ -4071,6 +4253,73 @@
             "CamoName": "Neuronic",
             "UnlockLevel": 11,
             "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
+      },
+      {
+        "WeaponID": 3,
+        "WeaponName": "Gladiator",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/gladiator.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 15",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/Caliber.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Caliber",
+            "UnlockLevel": 4,
+            "AmountRequired": 50
           }
         ],
         "CompletionistCamos": [
