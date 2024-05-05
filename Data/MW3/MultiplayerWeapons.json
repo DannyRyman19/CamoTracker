@@ -730,6 +730,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 8,
+        "WeaponName": "BAL-27",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BAL-27.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 23",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset-waves.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Sunset Waves",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/simpler-times.png",
+            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CamoName": "Simpler Times",
+            "UnlockLevel": 8,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/electro-torrent.png",
+            "CategoryRequirement": "Get {0} Headshot kills.",
+            "CamoName": "Electro Torrent",
+            "UnlockLevel": 13,
+            "AmountRequired": 15
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunny-side.png",
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Sunny Side",
+            "UnlockLevel": 19,
+            "AmountRequired": 25
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills while ADS and full attachments.",
+            "AmountRequired": 50
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} fully auto clean kills.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get 2 kills within 2 seconds of each other 25 times.",
+            "AmountRequired": 25
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Gilded Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Forged Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Priceless Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },

@@ -730,6 +730,97 @@
             "AmountRequired": 1200
           }
         ]
+      },
+      {
+        "WeaponID": 8,
+        "WeaponName": "BAL-27",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BAL-27.png",
+        "UnlockRequirement": "Unlocked with the Season 3 Battle Pass in Sector 23",
+        "GameType": 1,
+        "MaxLevel": 19,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ethereal-revolution.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Ethereal Revolution",
+            "UnlockLevel": 2,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/decoy-drizzle.png",
+            "CategoryRequirement": "Get {0} disciple kills.",
+            "CamoName": "Decoy Drizzle",
+            "UnlockLevel": 8,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ghostware.png",
+            "CategoryRequirement": "Get {0} kills while in tactical stance.",
+            "CamoName": "Ghostware",
+            "UnlockLevel": 13,
+            "AmountRequired": 250
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/evil-spawn.png",
+            "CategoryRequirement": "Get {0} kills shortly after using a field upgrade.",
+            "CamoName": "Evil Spawn",
+            "UnlockLevel": 19,
+            "AmountRequired": 100
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Golden Enigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Get {0} kills and successfully extract in a single deployment.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zircon Scale",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Get {0} kills while Pack-A-Punched.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinite",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Get {0} special or elite zombie kills.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Golden Engima Mastery",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Get {0} kills while using the Golden Engima Camo in Zombies.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zircon Scale Mastery",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Get {0} kills while using the Zircon Scale Engima Camo in Zombies.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinite Mastery",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Get {0} kills while using the Serpentinite Camo in Zombies.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis Mastery",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Get {0} kills while using the Borealis Camo in Zombies.",
+            "AmountRequired": 1200
+          }
+        ]
       }
     ]
   },
@@ -3523,7 +3614,7 @@
           },
           {
             "CamoID": 2,
-            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/apocalyptic.png",
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/apocalyptic-mors.png",
             "CategoryRequirement": "Get {0} mercenary kills.",
             "CamoName": "Apocalyptic",
             "UnlockLevel": 13,
