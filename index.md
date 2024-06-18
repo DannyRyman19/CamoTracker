@@ -10,7 +10,7 @@ We have apps for Black Ops 6 BO6, Modern Warfare, Modern Warfare II MW2, Modern 
 <div class="table-container">
 <div class="column">
       <div class="data"><a href="/bo6" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo6.png" alt="BO6 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
-      <div class="header">Modern Warfare III MW3</div>
+      <div class="header">Black Ops 6 BO6</div>
     </div>
     <div class="column">
       <div class="data"><a href="/mw3" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" alt="MW3 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
