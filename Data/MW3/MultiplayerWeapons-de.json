@@ -735,7 +735,7 @@
         "WeaponID": 8,
         "WeaponName": "BAL-27",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/BAL-27.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 23",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 19,
         "Camos": [
@@ -1930,7 +1930,7 @@
         "WeaponID": 8,
         "WeaponName": "FJX HORUS",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/FJX-HORUS.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 8",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 18,
         "Camos": [
@@ -1987,6 +1987,97 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Erreiche {0} Doppelabschüsse ohne Schaden zu erleiden.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 9,
+        "WeaponName": "Superi 46",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/superi-46.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 6",
+        "GameType": 1,
+        "MaxLevel": 22,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/illusive-neon.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Illusive Neon",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/and-then-they-all-fell-out.png",
+            "CategoryRequirement": "Get {0} hipfire kills.",
+            "CamoName": "And Then They All Fell Out",
+            "UnlockLevel": 9,
+            "AmountRequired": 25
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lambent-streaks.png",
+            "CategoryRequirement": "Get {0} kills while crouching or sliding.",
+            "CamoName": "Lambent Streaks",
+            "UnlockLevel": 15,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/filed-and-buffed.png",
+            "CategoryRequirement": "Get {0} kills on stunned or blinded enemies.",
+            "CamoName": "Filed And Buffed",
+            "UnlockLevel": 22,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get {0} kills while ADS and strafing.",
+            "AmountRequired": 25
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} headshot kills while moving.",
             "AmountRequired": 15
           }
         ],
@@ -2266,6 +2357,97 @@
             "CamoID": 2,
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
             "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
+            "AmountRequired": 5
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 3,
+        "WeaponName": "Reclaimer 18",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/reclaimer-18.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 23",
+        "GameType": 1,
+        "MaxLevel": 15,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-sands.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Bugged Out",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hes-looking-at-you.png",
+            "CategoryRequirement": "Get {0} Hipfire kills.",
+            "CamoName": "He's Looking At You",
+            "UnlockLevel": 7,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/azure-refract.png",
+            "CategoryRequirement": "Get {0} kills while ADS.",
+            "CamoName": "Azure Refract",
+            "UnlockLevel": 10,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/donut-worry.png",
+            "CategoryRequirement": "Get {0} Double kills.",
+            "CamoName": "Donut Worry",
+            "UnlockLevel": 15,
+            "AmountRequired": 10
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get 2 kills shortly after sprinting in 1 life {0} times.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get 2 kills within 10 seconds of each other {0} times.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get 5 kills without dying {0} times.",
             "AmountRequired": 5
           }
         ],
@@ -3217,6 +3399,97 @@
             "AmountRequired": 400
           }
         ]
+      },
+      {
+        "WeaponID": 4,
+        "WeaponName": "Kar98k",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/kar98k.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 5",
+        "GameType": 1,
+        "MaxLevel": 16,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/popping-out.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Popping Out",
+            "UnlockLevel": 2,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/delighted-liquification.png",
+            "CategoryRequirement": "Get {0} headshot kills.",
+            "CamoName": "Delighted Liquification",
+            "UnlockLevel": 7,
+            "AmountRequired": 50
+          },
+          {
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wild-lines-and-wild-times.png",
+            "CategoryRequirement": "Get {0} kills with no attachments.",
+            "CamoName": "Wild Lines And Wild Times",
+            "UnlockLevel": 11,
+            "AmountRequired": 10
+          },
+          {
+            "CamoID": 3,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hey-boo.png",
+            "CategoryRequirement": "Get 2 kills without dying {0} times.",
+            "CamoName": "Hey, Boo!",
+            "UnlockLevel": 16,
+            "AmountRequired": 15
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Gilded",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Get {0} kills shortly after ADS.",
+            "AmountRequired": 50
+          },
+          {
+            "CamoName": "Forged",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Get 2 kills shortly after sprinting in 1 life {0} times.",
+            "AmountRequired": 15
+          },
+          {
+            "CamoName": "Priceless",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Get {0} headshot kills with iron sights.",
+            "AmountRequired": 20
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
       }
     ]
   },
@@ -3592,7 +3865,7 @@
         "WeaponID": 4,
         "WeaponName": "MORS",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/MORS.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 4",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 19,
         "Camos": [
@@ -4400,7 +4673,74 @@
         "WeaponID": 3,
         "WeaponName": "Gladiator",
         "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/gladiator.png",
-        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 15",
+        "UnlockRequirement": "Waffenkammer freischalten",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bullet-hell.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Kugelhölle",
+            "UnlockLevel": 4,
+            "AmountRequired": 50
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Vergoldet",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse von hinten.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Geschmiedet",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+            "CategoryRequirement": "Erreiche {0} Vergeltung-Abschüsse.",
+            "AmountRequired": 10
+          },
+          {
+            "CamoName": "Unbezahlbar",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse ohne Schaden zu erleiden.",
+            "AmountRequired": 15
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Vergoldet-Meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Vergoldet-Tarnung nutzt.",
+            "AmountRequired": 100
+          },
+          {
+            "ChallengeName": "Geschmiedet-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Geschmiedet-Tarnung nutzt.",
+            "AmountRequired": 200
+          },
+          {
+            "ChallengeName": "Unbezahlbar-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Unbezahlbar-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Interstellar-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche {0} Abschüsse während du die Interstellar-Tarnung nutzt.",
+            "AmountRequired": 400
+          }
+        ]
+      },
+      {
+        "WeaponID": 4,
+        "WeaponName": "Sledgehammer",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/sledgehammer.png",
+        "UnlockRequirement": "Waffenkammer freischalten",
         "GameType": 1,
         "MaxLevel": 6,
         "Camos": [
