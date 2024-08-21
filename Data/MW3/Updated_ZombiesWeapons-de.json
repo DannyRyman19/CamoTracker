@@ -5969,6 +5969,99 @@
             "AmountRequired": 300000
           }
         ]
+      },
+      {
+        "WeaponID": 2,
+        "WeaponName": "Torque 35",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
+        "UnlockRequirement": "Complete week 5 challenges",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forum-chaser.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse.",
+            "CamoName": "Forum Chaser",
+            "UnlockLevel": 4,
+            "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ],
+        "PrestigeChallenges": [
+          {
+            "ChallengeName": "One Trick",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 150000
+          },
+          {
+            "ChallengeName": "Molten Obsidian",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 200000
+          },
+          {
+            "ChallengeName": "Mercury",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 250000
+          },
+          {
+            "ChallengeName": "Season Six Prestige",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 300000
+          }
+        ]
       }
     ]
   },
@@ -6361,6 +6454,99 @@
             "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/caliber.png",
             "CategoryRequirement": "Erreiche {0} Abschüsse.",
             "CamoName": "Kaliber",
+            "UnlockLevel": 4,
+            "AmountRequired": 250
+          }
+        ],
+        "CompletionistCamos": [
+          {
+            "CamoName": "Goldenigma",
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-enigma.png",
+            "CategoryRequirement": "Erreiche in einem einzigen Einsatz {0} Abschüsse und evakuiere.",
+            "AmountRequired": 100
+          },
+          {
+            "CamoName": "Zirkonschuppe",
+            "CamoID": 1,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/zircon-scale.png",
+            "CategoryRequirement": "Erreiche {0} Abschüsse mit Pack-A-Punch.",
+            "AmountRequired": 300
+          },
+          {
+            "CamoName": "Serpentinit",
+            "CamoID": 2,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/serpentinite.png",
+            "CategoryRequirement": "Erledige {0} Spezial oder Elite Zombies.",
+            "AmountRequired": 10
+          }
+        ],
+        "MasteryChallenges": [
+          {
+            "ChallengeName": "Goldenigma-meisterung",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Goldenigma-Tarnung nutzt.",
+            "AmountRequired": 300
+          },
+          {
+            "ChallengeName": "Zirkonschuppe-meisterung",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Zirkonschuppe-Tarnung nutzt.",
+            "AmountRequired": 600
+          },
+          {
+            "ChallengeName": "Serpentinit-meisterung",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Serpentinit-Tarnung nutzt.",
+            "AmountRequired": 900
+          },
+          {
+            "ChallengeName": "Borealis-meisterung",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erreiche in Zombies {0} Abschüsse, während du die Borealis-Tarnung nutzt.",
+            "AmountRequired": 1200
+          }
+        ],
+        "PrestigeChallenges": [
+          {
+            "ChallengeName": "One Trick",
+            "ChallengeID": 0,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 150000
+          },
+          {
+            "ChallengeName": "Molten Obsidian",
+            "ChallengeID": 1,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 200000
+          },
+          {
+            "ChallengeName": "Mercury",
+            "ChallengeID": 2,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 250000
+          },
+          {
+            "ChallengeName": "Season Six Prestige",
+            "ChallengeID": 3,
+            "CategoryRequirement": "Erhalte {0} Waffen xp",
+            "AmountRequired": 300000
+          }
+        ]
+      },
+      {
+        "WeaponID": 5,
+        "WeaponName": "Spear",
+        "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/spear.png",
+        "UnlockRequirement": "Freigegeben mit dem Season 3 Battle Pass im Sektor 23",
+        "GameType": 1,
+        "MaxLevel": 6,
+        "Camos": [
+          {
+            "CamoID": 0,
+            "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/glitch.png",
+            "CategoryRequirement": "Get {0} kills.",
+            "CamoName": "Glitch",
             "UnlockLevel": 4,
             "AmountRequired": 250
           }

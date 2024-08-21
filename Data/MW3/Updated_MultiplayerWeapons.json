@@ -5969,6 +5969,99 @@
                         "AmountRequired": 300000
                     }
                 ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Torque 35",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/torque-35.png",
+                "UnlockRequirement": "Complete week 5 challenges",
+                "GameType": 1,
+                "MaxLevel": 6,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/the-last-post.png",
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "The Last Post",
+                        "UnlockLevel": 4,
+                        "AmountRequired": 50
+                    }
+                ],
+                "CompletionistCamos": [
+                    {
+                        "CamoName": "Gilded",
+                        "CamoID": 0,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "AmountRequired": 50
+                    },
+                    {
+                        "CamoName": "Forged",
+                        "CamoID": 1,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "AmountRequired": 25
+                    },
+                    {
+                        "CamoName": "Priceless",
+                        "CamoID": 2,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "CategoryRequirement": "Get 2 kills within 10 seconds of each other {0} times.",
+                        "AmountRequired": 10
+                    }
+                ],
+                "MasteryChallenges": [
+                    {
+                        "ChallengeName": "Gilded Mastery",
+                        "ChallengeID": 0,
+                        "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+                        "AmountRequired": 100
+                    },
+                    {
+                        "ChallengeName": "Forged Mastery",
+                        "ChallengeID": 1,
+                        "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+                        "AmountRequired": 200
+                    },
+                    {
+                        "ChallengeName": "Priceless Mastery",
+                        "ChallengeID": 2,
+                        "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+                        "AmountRequired": 300
+                    },
+                    {
+                        "ChallengeName": "Interstellar Mastery",
+                        "ChallengeID": 3,
+                        "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+                        "AmountRequired": 400
+                    }
+                ],
+                "PrestigeChallenges": [
+                    {
+                        "ChallengeName": "One Trick",
+                        "ChallengeID": 0,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 150000
+                    },
+                    {
+                        "ChallengeName": "Molten Obsidian",
+                        "ChallengeID": 1,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 200000
+                    },
+                    {
+                        "ChallengeName": "Mercury",
+                        "ChallengeID": 2,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 250000
+                    },
+                    {
+                        "ChallengeName": "Season Six Prestige",
+                        "ChallengeID": 3,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 300000
+                    }
+                ]
             }
         ]
     },
@@ -6386,6 +6479,99 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
                         "CategoryRequirement": "Get {0} kills without the enemy damaging you.",
                         "AmountRequired": 15
+                    }
+                ],
+                "MasteryChallenges": [
+                    {
+                        "ChallengeName": "Gilded Mastery",
+                        "ChallengeID": 0,
+                        "CategoryRequirement": "Get {0} kills while using the Gilded Camo in Multiplayer.",
+                        "AmountRequired": 100
+                    },
+                    {
+                        "ChallengeName": "Forged Mastery",
+                        "ChallengeID": 1,
+                        "CategoryRequirement": "Get {0} kills while using the Forged Camo in Multiplayer.",
+                        "AmountRequired": 200
+                    },
+                    {
+                        "ChallengeName": "Priceless Mastery",
+                        "ChallengeID": 2,
+                        "CategoryRequirement": "Get {0} kills while using the Priceless Camo in Multiplayer.",
+                        "AmountRequired": 300
+                    },
+                    {
+                        "ChallengeName": "Interstellar Mastery",
+                        "ChallengeID": 3,
+                        "CategoryRequirement": "Get {0} kills while using the Interstellar Camo in Multiplayer.",
+                        "AmountRequired": 400
+                    }
+                ],
+                "PrestigeChallenges": [
+                    {
+                        "ChallengeName": "One Trick",
+                        "ChallengeID": 0,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 150000
+                    },
+                    {
+                        "ChallengeName": "Molten Obsidian",
+                        "ChallengeID": 1,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 200000
+                    },
+                    {
+                        "ChallengeName": "Mercury",
+                        "ChallengeID": 2,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 250000
+                    },
+                    {
+                        "ChallengeName": "Season Six Prestige",
+                        "ChallengeID": 3,
+                        "CategoryRequirement": "Get {0} weapon xp",
+                        "AmountRequired": 300000
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Spear",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/MW3/spear.png",
+                "UnlockRequirement": "Unlocked with the Season 5 Battle Pass in Sector 23",
+                "GameType": 1,
+                "MaxLevel": 6,
+                "Camos": [
+                    {
+                        "CamoID": 0,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/color-wave.png",
+                        "CategoryRequirement": "Get {0} kills.",
+                        "CamoName": "Color Wave",
+                        "UnlockLevel": 4,
+                        "AmountRequired": 50
+                    }
+                ],
+                "CompletionistCamos": [
+                    {
+                        "CamoName": "Gilded",
+                        "CamoID": 0,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "CategoryRequirement": "Get {0} kills from behind.",
+                        "AmountRequired": 15
+                    },
+                    {
+                        "CamoName": "Forged",
+                        "CamoID": 1,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "AmountRequired": 10
+                    },
+                    {
+                        "CamoName": "Priceless",
+                        "CamoID": 2,
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "CategoryRequirement": "Get {0} one shot one kills.",
+                        "AmountRequired": 10
                     }
                 ],
                 "MasteryChallenges": [
