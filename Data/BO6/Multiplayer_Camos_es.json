@@ -1,21 +1,22 @@
 [
+    
     {
         "WeaponCategoryID": 0,
-        "WeaponCategoryName": "Warzone Assault Rifles",
+        "WeaponCategoryName": "Rifles de Asalto",
         "Weapons": [
             {
                 "WeaponID": 0,
-                "WeaponName": "XM4",
-                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
-                "UnlockRequirement": "Unlocked at level 4",
+                "WeaponName": "XM5",
+                "WeaponImageURL": "https://camotracker.djr.li/images/xm5.png",
+                "UnlockRequirement": "Unlocked at level 5",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "CategoryRequirement": "Get {0} wead kills.",
+                        "CamoName": "Blue asd",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-asd.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 5,
+                        "AmountRequired": 1000,
                         "CurrentAmount": 0
                     },
                     {
@@ -94,11 +95,11 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Unique 1",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-                        "UnlockRequirement": "Complete all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "CategoryRequirement": "Get 3 kills with 1 asd {0} times.",
+                        "CamoName": "Unique adsd1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dasd.png",
+                        "UnlockRequirement": "Complete all Military camos for this weaasdasdon.",
+                        "AmountRequired": 100,
                         "CurrentAmount": 0
                     },
                     {
@@ -114,37 +115,37 @@
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
-                        "AmountRequired": 10,
+                        "CategoryRequirement": "Get 3 kills with 1 312333 {0} times.",
+                        "CamoName": "asdasd",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/asdadas.png",
+                        "UnlockRequirement": "Complete all Unique camos for this wasdasdadapon.",
+                        "AmountRequired": 100,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -262,7 +263,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -271,27 +272,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -409,7 +410,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -418,27 +419,174 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "RPK",
+                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
+                "UnlockRequirement": "Unlocked with the season 5 battle pass",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Oro",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Diamante",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Columna Oscura",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Materia Oscura",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -448,7 +596,7 @@
     },
     {
         "WeaponCategoryID": 1,
-        "WeaponCategoryName": "SMGs",
+        "WeaponCategoryName": "Subfusiles",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -562,7 +710,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -571,27 +719,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -709,7 +857,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -718,27 +866,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -856,7 +1004,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -865,27 +1013,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -895,7 +1043,7 @@
     },
     {
         "WeaponCategoryID": 2,
-        "WeaponCategoryName": "Shotguns",
+        "WeaponCategoryName": "Escopetas",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -1009,7 +1157,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1018,27 +1166,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1048,7 +1196,7 @@
     },
     {
         "WeaponCategoryID": 3,
-        "WeaponCategoryName": "LMGs",
+        "WeaponCategoryName": "Ametralladoras Ligeras",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -1162,7 +1310,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1171,27 +1319,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1201,7 +1349,7 @@
     },
     {
         "WeaponCategoryID": 4,
-        "WeaponCategoryName": "Marksman Rifles",
+        "WeaponCategoryName": "Rifles de Tiro Designado",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -1315,7 +1463,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1324,27 +1472,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1462,7 +1610,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1471,27 +1619,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1501,7 +1649,7 @@
     },
     {
         "WeaponCategoryID": 5,
-        "WeaponCategoryName": "Sniper Rifles",
+        "WeaponCategoryName": "Rifles de Francotirador",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -1615,7 +1763,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1624,27 +1772,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1762,7 +1910,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1771,27 +1919,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -1801,7 +1949,7 @@
     },
     {
         "WeaponCategoryID": 6,
-        "WeaponCategoryName": "Handguns",
+        "WeaponCategoryName": "Pistolas",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -1915,7 +2063,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -1924,27 +2072,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -2062,7 +2210,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -2071,27 +2219,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -2101,7 +2249,7 @@
     },
     {
         "WeaponCategoryID": 7,
-        "WeaponCategoryName": "Launchers",
+        "WeaponCategoryName": "Lanzadores",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -2215,7 +2363,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -2224,27 +2372,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
@@ -2254,7 +2402,7 @@
     },
     {
         "WeaponCategoryID": 8,
-        "WeaponCategoryName": "Melee",
+        "WeaponCategoryName": "Cuerpo a Cuerpo",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -2368,7 +2516,7 @@
                     {
                         "CamoID": 0,
                         "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold Tiger",
+                        "CamoName": "Oro",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
                         "UnlockRequirement": "Complete all Unique camos for this weapon.",
                         "AmountRequired": 10,
@@ -2377,27 +2525,27 @@
                     {
                         "CamoID": 1,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "King’s Ransom",
+                        "CamoName": "Diamante",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold Tiger camo for all weapons in this weapon's class.",
+                        "UnlockRequirement": "Complete all Oro camo for all weapons in this weapon's class.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Catalyst",
+                        "CamoName": "Columna Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all King’s Ransom camo for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Diamante camo for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
                         "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Abyss",
+                        "CamoName": "Materia Oscura",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all Catalyst camos for all weapons in the game.",
+                        "UnlockRequirement": "Complete all Columna Oscura camos for all weapons in the game.",
                         "AmountRequired": 25,
                         "CurrentAmount": 0
                     }
