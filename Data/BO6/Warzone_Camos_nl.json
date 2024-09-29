@@ -1,0 +1,2408 @@
+[
+    {
+        "WeaponCategoryID": 0,
+        "WeaponCategoryName": "Aanvalsgeweren",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "XM4",
+                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "AK-74",
+                "WeaponImageURL": "https://camotracker.djr.li/images/ak-47.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Ames 85",
+                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
+                "UnlockRequirement": "Unlocked at level 40",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 1,
+        "WeaponCategoryName": "Submachinegeweren",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "C9",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "Tanto .22",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 25",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Jackal PDW",
+                "WeaponImageURL": "https://camotracker.djr.li/images/2.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 2,
+        "WeaponCategoryName": "Shotguns",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Marine SP",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 3,
+        "WeaponCategoryName": "Lichte Machinegeweren",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "XMG",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 4,
+        "WeaponCategoryName": "Scherpschuttersgeweren",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Swat 5.56",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "DM-10",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 5,
+        "WeaponCategoryName": "Snuipers",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "SVD",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "LR 7.62",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 6,
+        "WeaponCategoryName": "Handvuurwapens",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "GS45",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 1,
+                "WeaponName": "9mm PM",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 7,
+        "WeaponCategoryName": "Lanceerders",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Cigma 28",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "WeaponCategoryID": 8,
+        "WeaponCategoryName": "Close Combat",
+        "Weapons": [
+            {
+                "WeaponID": 0,
+                "WeaponName": "Knife",
+                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "UnlockRequirement": "Unlocked at level 4",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 20,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 40,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Unique 2",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gouden Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "GoudLosgeld van de Koningen Tijger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
+                        "UnlockRequirement": "Complete all Gouden Tijger camo for all weapons in this weapon's class.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Catalysator",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
+                        "UnlockRequirement": "Complete all GoudLosgeld van de Koningen Tijger camo for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} multikills.",
+                        "CamoName": "Afgrond",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
+                        "UnlockRequirement": "Complete all Catalysator camos for all weapons in the game.",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ]
+            }
+        ]
+    }
+]
