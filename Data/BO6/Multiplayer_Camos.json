@@ -1,22 +1,21 @@
 [
-    
     {
         "WeaponCategoryID": 0,
         "WeaponCategoryName": "Assault Rifles",
         "Weapons": [
             {
                 "WeaponID": 0,
-                "WeaponName": "XM5",
-                "WeaponImageURL": "https://camotracker.djr.li/images/xm5.png",
-                "UnlockRequirement": "Unlocked at level 5",
+                "WeaponName": "XM4",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/xm4.png",
+                "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} wead kills.",
-                        "CamoName": "Blue asd",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-asd.png",
+                        "CategoryRequirement": "Get {0} headshot kills.",
+                        "CamoName": "Blue Tones",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 1000,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
@@ -95,11 +94,11 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 asd {0} times.",
-                        "CamoName": "Unique adsd1",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dasd.png",
-                        "UnlockRequirement": "Complete all Military camos for this weaasdasdon.",
-                        "AmountRequired": 100,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Unique 1",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Military camos for this weapon.",
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
@@ -115,11 +114,11 @@
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 312333 {0} times.",
-                        "CamoName": "asdasd",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/asdadas.png",
-                        "UnlockRequirement": "Complete all Unique camos for this wasdasdadapon.",
-                        "AmountRequired": 100,
+                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
+                        "CamoName": "Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
+                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
@@ -154,7 +153,7 @@
             {
                 "WeaponID": 1,
                 "WeaponName": "AK-74",
-                "WeaponImageURL": "https://camotracker.djr.li/images/ak-47.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ak-74.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -301,155 +300,8 @@
             {
                 "WeaponID": 2,
                 "WeaponName": "Ames 85",
-                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ames_85.png",
                 "UnlockRequirement": "Unlocked at level 40",
-                "MilitaryCamos": [
-                    {
-                        "CamoID": 0,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 5,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 1,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 10,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 2,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 15,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 3,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 20,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 4,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 50,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 5,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 25,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 6,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 30,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 7,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 40,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 8,
-                        "CategoryRequirement": "Get {0} headshot kills.",
-                        "CamoName": "Blue Tones",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
-                        "UnlockRequirement": "",
-                        "AmountRequired": 50,
-                        "CurrentAmount": 0
-                    }
-                ],
-                "UniqueCamos": [
-                    {
-                        "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Unique 1",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-                        "UnlockRequirement": "Complete all Military camos for this weapon.",
-                        "AmountRequired": 10,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 1,
-                        "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Unique 2",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Military camos for this weapon.",
-                        "AmountRequired": 25,
-                        "CurrentAmount": 0
-                    }
-                ],
-                "MasteryCamos": [
-                    {
-                        "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills with 1 magazine {0} times.",
-                        "CamoName": "Gold",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png",
-                        "UnlockRequirement": "Complete all Unique camos for this weapon.",
-                        "AmountRequired": 10,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 1,
-                        "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Diamond",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png",
-                        "UnlockRequirement": "Complete all Gold camo for all weapons in this weapon's class.",
-                        "AmountRequired": 25,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 2,
-                        "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Dark Spine",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png",
-                        "UnlockRequirement": "Complete all diamond camo for all weapons in the game.",
-                        "AmountRequired": 25,
-                        "CurrentAmount": 0
-                    },
-                    {
-                        "CamoID": 3,
-                        "CategoryRequirement": "Get {0} multikills.",
-                        "CamoName": "Dark Matter",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png",
-                        "UnlockRequirement": "Complete all dark spine camos for all weapons in the game.",
-                        "AmountRequired": 25,
-                        "CurrentAmount": 0
-                    }
-                ]
-            },
-            {
-                "WeaponID": 3,
-                "WeaponName": "RPK",
-                "WeaponImageURL": "https://camotracker.djr.li/images/xm4.png",
-                "UnlockRequirement": "Unlocked with the season 5 battle pass",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -601,7 +453,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "C9",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/c9.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -748,7 +600,7 @@
             {
                 "WeaponID": 1,
                 "WeaponName": "Tanto .22",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/tanto_22.png",
                 "UnlockRequirement": "Unlocked at level 25",
                 "MilitaryCamos": [
                     {
@@ -895,7 +747,7 @@
             {
                 "WeaponID": 2,
                 "WeaponName": "Jackal PDW",
-                "WeaponImageURL": "https://camotracker.djr.li/images/2.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/jackal_pdw.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1048,7 +900,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "Marine SP",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/marine_sp.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1201,7 +1053,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "XMG",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/xmg.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1354,7 +1206,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "Swat 5.56",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/swat_556.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1501,7 +1353,7 @@
             {
                 "WeaponID": 1,
                 "WeaponName": "DM-10",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/dm-10.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1654,7 +1506,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "SVD",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/svd.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -1954,7 +1806,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "GS45",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/gs45.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -2101,7 +1953,7 @@
             {
                 "WeaponID": 1,
                 "WeaponName": "9mm PM",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/9mm_pm.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -2254,7 +2106,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "Cigma 28",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/cigma_28.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
@@ -2407,7 +2259,7 @@
             {
                 "WeaponID": 0,
                 "WeaponName": "Knife",
-                "WeaponImageURL": "https://camotracker.djr.li/images/1.png",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/knife.png",
                 "UnlockRequirement": "Unlocked at level 4",
                 "MilitaryCamos": [
                     {
