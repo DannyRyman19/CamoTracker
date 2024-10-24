@@ -94,27 +94,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
                         "CamoName": "Muddled",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/muddled.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Machina",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/xm4-special-2.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -123,29 +123,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -241,27 +241,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Strategist Combat Specialty is active.",
+                        "CamoName": "Whitecap",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Kills with the underbarrel launcher attached.",
+                        "CamoName": "Vengeance",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 20,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -270,29 +270,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -388,27 +388,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Heatstroke",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Burial",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -417,29 +417,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -535,27 +535,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Ambush",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Cacti Cathode",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -564,29 +564,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -682,27 +682,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Enforcer Combat Specialty is active.",
+                        "CamoName": "Cherry Blossom",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
+                        "CamoName": "Cedar",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -711,29 +711,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -829,27 +829,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Astral Cry",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Kills with the underbarrel launcher attached.",
+                        "CamoName": "Hammerhead",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 20,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -858,29 +858,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -976,20 +976,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Eliminations while the Recon Combat Specialty is active.",
+                        "CamoName": "Crimson Steppes",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Elk",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
@@ -1129,27 +1129,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Heatwave",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
+                        "CamoName": "Panther",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1158,29 +1158,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1276,8 +1276,8 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Kakapo",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
                         "AmountRequired": 10,
@@ -1285,18 +1285,18 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Throwback",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1305,29 +1305,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1423,27 +1423,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Amorphous",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Go Bananas",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1452,29 +1452,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1570,27 +1570,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Radiant Bath",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Strategist Combat Specialty is active.",
+                        "CamoName": "Midnight Prowl",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1599,29 +1599,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1717,27 +1717,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Deep End",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Point Blank Kills.",
+                        "CamoName": "Dread",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1746,29 +1746,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1864,27 +1864,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Kingfisher",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Blackthorn",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -1893,29 +1893,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 6 SMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2017,27 +2017,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Blueberry Lime",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Chromed Out",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2046,29 +2046,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Shotguns.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2164,27 +2164,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Point Blank Kills.",
+                        "CamoName": "Night Terror",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Drive-In",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2193,29 +2193,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Shotguns.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2228,8 +2228,8 @@
         "Weapons": [
             {
                 "WeaponID": 0,
-                "WeaponName": "PS-21",
-                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ps-21.png",
+                "WeaponName": "PU-21",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/pu-21.png",
                 "UnlockRequirement": "Unlock at level 1",
                 "MilitaryCamos": [
                     {
@@ -2317,27 +2317,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Neon Bath",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Vigilance",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2346,29 +2346,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 LMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2464,27 +2464,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
+                        "CamoName": "Buzz",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Snakebite",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2493,29 +2493,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 LMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2611,27 +2611,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Strategist Combat Specialty is active.",
+                        "CamoName": "Brush Stroke",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Point Blank Kills.",
+                        "CamoName": "Idyllic",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2640,29 +2640,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 LMGs.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2764,27 +2764,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a 4.0x or higher magnification scope.",
+                        "CamoName": "Ectoplasm",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Enforcer Combat Specialty is active.",
+                        "CamoName": "Lumberjack",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2793,29 +2793,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Marksman Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -2911,27 +2911,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Longshot Kills.",
+                        "CamoName": "Clear Water",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Strategist Combat Specialty is active.",
+                        "CamoName": "Concrete Jungle",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -2940,29 +2940,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Marksman Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3058,8 +3058,8 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Ablaze",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
                         "AmountRequired": 10,
@@ -3067,18 +3067,18 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a 4.0x or higher magnification scope.",
+                        "CamoName": "Mirage",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3087,29 +3087,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Marksman Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3205,27 +3205,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
+                        "CamoName": "Mellowbloom",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Longshot Kills.",
+                        "CamoName": "Cobalt",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3234,29 +3234,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Marksman Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3358,27 +3358,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Eliminations while the Recon Combat Specialty is active.",
+                        "CamoName": "Copper",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Permafrost",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3387,29 +3387,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 Sniper Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3505,27 +3505,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Eliminations while the Recon Combat Specialty is active.",
+                        "CamoName": "Pixelized",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a 4.0x or higher magnification scope.",
+                        "CamoName": "Patchwork",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3534,29 +3534,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 Sniper Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3652,27 +3652,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} One Shot Kills.",
+                        "CamoName": "Chaparral",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Longshot Kills.",
+                        "CamoName": "Nimbus",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3681,29 +3681,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 3 Sniper Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3805,27 +3805,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after switching weapons.",
+                        "CamoName": "Exabyte",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
+                        "CamoName": "Blue Ring",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3834,29 +3834,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Pistols.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -3952,27 +3952,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Hipfire kills.",
+                        "CamoName": "Spin",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Enforcer Combat Specialty is active.",
+                        "CamoName": "Demeter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -3981,29 +3981,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Pistols.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4099,27 +4099,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Point Blank Kills.",
+                        "CamoName": "Thistlevine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after switching weapons.",
+                        "CamoName": "Ragamuffin",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4128,29 +4128,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Pistols.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4246,27 +4246,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Ritual",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Eliminations while the Recon Combat Specialty is active.",
+                        "CamoName": "Transcend",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4275,29 +4275,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 4 Pistols.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4316,25 +4316,25 @@
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Headshot kills.",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions.",
                         "CamoName": "Granite",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/granite.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 5,
+                        "AmountRequired": 2,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Headshot kills (10).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (5).",
                         "CamoName": "Woodland",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/woodland.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 5,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} Headshot kills (15).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (10).",
                         "CamoName": "Savanna",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/savanna.png",
                         "UnlockRequirement": "",
@@ -4343,7 +4343,7 @@
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get {0} Headshot kills (20).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (15).",
                         "CamoName": "Splinter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splinter.png",
                         "UnlockRequirement": "",
@@ -4352,55 +4352,55 @@
                     },
                     {
                         "CamoID": 4,
-                        "CategoryRequirement": "Get {0} Headshot kills (30).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (20).",
                         "CamoName": "Moss",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/moss.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 5,
-                        "CategoryRequirement": "Get {0} Headshot kills (40).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (25).",
                         "CamoName": "Shade",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 6,
-                        "CategoryRequirement": "Get {0} Headshot kills (50).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (30).",
                         "CamoName": "Digital",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/digital.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 7,
-                        "CategoryRequirement": "Get {0} Headshot kills (75).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (40).",
                         "CamoName": "Tide",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tide.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 25,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 8,
-                        "CategoryRequirement": "Get {0} Headshot kills (100).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (50).",
                         "CamoName": "Red Tiger",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/red-tiger.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 25,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Direct Hit Kills.",
+                        "CamoName": "Policia",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
                         "AmountRequired": 10,
@@ -4408,18 +4408,18 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Destroy {0} Aerial Scorestreaks.",
+                        "CamoName": "Abstract",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Destructions (Scorestreak or Vehicle) in a single match {0} times.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4428,29 +4428,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills in a single match {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Launchers.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 5 Destructions (Scorestreak or Vehicle) in a single match {0} times.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 Kills in a single match {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4463,25 +4463,25 @@
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Headshot kills.",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions.",
                         "CamoName": "Granite",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/granite.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 5,
+                        "AmountRequired": 2,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Headshot kills (10).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (5).",
                         "CamoName": "Woodland",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/woodland.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 5,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} Headshot kills (15).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (10).",
                         "CamoName": "Savanna",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/savanna.png",
                         "UnlockRequirement": "",
@@ -4490,7 +4490,7 @@
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get {0} Headshot kills (20).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (15).",
                         "CamoName": "Splinter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splinter.png",
                         "UnlockRequirement": "",
@@ -4499,55 +4499,55 @@
                     },
                     {
                         "CamoID": 4,
-                        "CategoryRequirement": "Get {0} Headshot kills (30).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (20).",
                         "CamoName": "Moss",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/moss.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 5,
-                        "CategoryRequirement": "Get {0} Headshot kills (40).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (25).",
                         "CamoName": "Shade",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 6,
-                        "CategoryRequirement": "Get {0} Headshot kills (50).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (30).",
                         "CamoName": "Digital",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/digital.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 7,
-                        "CategoryRequirement": "Get {0} Headshot kills (75).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (40).",
                         "CamoName": "Tide",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tide.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 25,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 8,
-                        "CategoryRequirement": "Get {0} Headshot kills (100).",
+                        "CategoryRequirement": "Get {0} Kills or Scorestreak Destructions (50).",
                         "CamoName": "Red Tiger",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/red-tiger.png",
                         "UnlockRequirement": "",
-                        "AmountRequired": 25,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} Direct Hit Kills.",
+                        "CamoName": "Reboot",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
                         "AmountRequired": 10,
@@ -4555,18 +4555,18 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Destroy {0} Aerial Scorestreaks or Enemy Equipment.",
+                        "CamoName": "Dreamer",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Destructions (Scorestreak or Vehicle) in a single match {0} times.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4575,29 +4575,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills in a single match {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Launchers.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 5 Destructions (Scorestreak or Vehicle) in a single match {0} times.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 Kills in a single match {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4616,7 +4616,7 @@
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Headshot kills.",
+                        "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Granite",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/granite.png",
                         "UnlockRequirement": "",
@@ -4625,7 +4625,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Headshot kills (10).",
+                        "CategoryRequirement": "Get {0} kills (10).",
                         "CamoName": "Woodland",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/woodland.png",
                         "UnlockRequirement": "",
@@ -4634,7 +4634,7 @@
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} Headshot kills (15).",
+                        "CategoryRequirement": "Get {0} kills (15).",
                         "CamoName": "Savanna",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/savanna.png",
                         "UnlockRequirement": "",
@@ -4643,7 +4643,7 @@
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get {0} Headshot kills (20).",
+                        "CategoryRequirement": "Get {0} kills (20).",
                         "CamoName": "Splinter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splinter.png",
                         "UnlockRequirement": "",
@@ -4652,7 +4652,7 @@
                     },
                     {
                         "CamoID": 4,
-                        "CategoryRequirement": "Get {0} Headshot kills (30).",
+                        "CategoryRequirement": "Get {0} kills (30).",
                         "CamoName": "Moss",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/moss.png",
                         "UnlockRequirement": "",
@@ -4661,7 +4661,7 @@
                     },
                     {
                         "CamoID": 5,
-                        "CategoryRequirement": "Get {0} Headshot kills (40).",
+                        "CategoryRequirement": "Get {0} kills (40).",
                         "CamoName": "Shade",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
@@ -4670,7 +4670,7 @@
                     },
                     {
                         "CamoID": 6,
-                        "CategoryRequirement": "Get {0} Headshot kills (50).",
+                        "CategoryRequirement": "Get {0} kills (50).",
                         "CamoName": "Digital",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/digital.png",
                         "UnlockRequirement": "",
@@ -4679,7 +4679,7 @@
                     },
                     {
                         "CamoID": 7,
-                        "CategoryRequirement": "Get {0} Headshot kills (75).",
+                        "CategoryRequirement": "Get {0} kills (75).",
                         "CamoName": "Tide",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tide.png",
                         "UnlockRequirement": "",
@@ -4688,7 +4688,7 @@
                     },
                     {
                         "CamoID": 8,
-                        "CategoryRequirement": "Get {0} Headshot kills (100).",
+                        "CategoryRequirement": "Get {0} kills (100).",
                         "CamoName": "Red Tiger",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/red-tiger.png",
                         "UnlockRequirement": "",
@@ -4699,27 +4699,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations while the Enforcer Combat Specialty is active.",
+                        "CamoName": "Dying Envy",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Tropical Leopard",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4728,29 +4728,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Melee weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
@@ -4763,7 +4763,7 @@
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Headshot kills.",
+                        "CategoryRequirement": "Get {0} kills.",
                         "CamoName": "Granite",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/granite.png",
                         "UnlockRequirement": "",
@@ -4772,7 +4772,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Headshot kills (10).",
+                        "CategoryRequirement": "Get {0} kills (10).",
                         "CamoName": "Woodland",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/woodland.png",
                         "UnlockRequirement": "",
@@ -4781,7 +4781,7 @@
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} Headshot kills (15).",
+                        "CategoryRequirement": "Get {0} kills (15).",
                         "CamoName": "Savanna",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/savanna.png",
                         "UnlockRequirement": "",
@@ -4790,7 +4790,7 @@
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get {0} Headshot kills (20).",
+                        "CategoryRequirement": "Get {0} kills (20).",
                         "CamoName": "Splinter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splinter.png",
                         "UnlockRequirement": "",
@@ -4799,7 +4799,7 @@
                     },
                     {
                         "CamoID": 4,
-                        "CategoryRequirement": "Get {0} Headshot kills (30).",
+                        "CategoryRequirement": "Get {0} kills (30).",
                         "CamoName": "Moss",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/moss.png",
                         "UnlockRequirement": "",
@@ -4808,7 +4808,7 @@
                     },
                     {
                         "CamoID": 5,
-                        "CategoryRequirement": "Get {0} Headshot kills (40).",
+                        "CategoryRequirement": "Get {0} kills (40).",
                         "CamoName": "Shade",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
@@ -4817,7 +4817,7 @@
                     },
                     {
                         "CamoID": 6,
-                        "CategoryRequirement": "Get {0} Headshot kills (50).",
+                        "CategoryRequirement": "Get {0} kills (50).",
                         "CamoName": "Digital",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/digital.png",
                         "UnlockRequirement": "",
@@ -4826,7 +4826,7 @@
                     },
                     {
                         "CamoID": 7,
-                        "CategoryRequirement": "Get {0} Headshot kills (75).",
+                        "CategoryRequirement": "Get {0} kills (75).",
                         "CamoName": "Tide",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tide.png",
                         "UnlockRequirement": "",
@@ -4835,7 +4835,7 @@
                     },
                     {
                         "CamoID": 8,
-                        "CategoryRequirement": "Get {0} Headshot kills (100).",
+                        "CategoryRequirement": "Get {0} kills (100).",
                         "CamoName": "Red Tiger",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/red-tiger.png",
                         "UnlockRequirement": "",
@@ -4846,27 +4846,27 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} kills shortly after switching weapons.",
+                        "CamoName": "Torment",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Slip",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/unknown.png",
                         "UnlockRequirement": "Unlock all Military camos for this weapon.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     }
                 ],
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for this weapon.",
@@ -4875,29 +4875,29 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 2 Melee weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get {0} kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ]
