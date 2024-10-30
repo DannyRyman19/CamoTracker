@@ -59,7 +59,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -262,7 +262,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -438,7 +438,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -614,7 +614,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -790,7 +790,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -966,7 +966,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -1142,7 +1142,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -1199,7 +1199,7 @@
                 "MasteryCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 5 kills.",
+                        "CategoryRequirement": "Get {0} Double Kills or better.",
                         "CamoName": "Gold",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
                         "UnlockRequirement": "Unlock all Special camos for the {0}.",
@@ -1208,29 +1208,56 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get 5 kills.",
+                        "CategoryRequirement": "Get 3 Kills without dying {0} times.",
                         "CamoName": "Diamond",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
                         "UnlockRequirement": "Unlock Gold camo for 7 Assault Rifles.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 2,
-                        "CategoryRequirement": "Get 5 kills.",
+                        "CategoryRequirement": "Get {0} Triple Kills or better.",
                         "CamoName": "Dark Spine",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
                         "UnlockRequirement": "Unlock Diamond camo on 33 weapons.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 3,
-                        "CategoryRequirement": "Get x kills without dying {0} times.",
+                        "CategoryRequirement": "Get 5 kills without dying {0} times.",
                         "CamoName": "Dark Matter",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 150,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Mastery",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 250,
                         "CurrentAmount": 0
                     }
                 ]
@@ -1297,7 +1324,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -1473,7 +1500,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -1649,7 +1676,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -1825,7 +1852,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2001,7 +2028,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2177,7 +2204,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2359,7 +2386,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2535,7 +2562,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2717,7 +2744,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -2893,7 +2920,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3069,7 +3096,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3251,7 +3278,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3427,7 +3454,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3603,7 +3630,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3779,7 +3806,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -3961,7 +3988,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -4137,7 +4164,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -4313,7 +4340,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -4495,7 +4522,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -4671,7 +4698,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -4847,7 +4874,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -5023,7 +5050,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 Headshot kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -5205,7 +5232,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 25 Kills or Scorestreak Destructions.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 5,
@@ -5381,7 +5408,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 25 Kills or Scorestreak Destructions.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 5,
@@ -5563,7 +5590,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
@@ -5739,7 +5766,7 @@
                     {
                         "CamoID": 5,
                         "CategoryRequirement": "Get 40 kills.",
-                        "CamoName": "Shade",
+                        "CamoName": "Saboteur",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
                         "UnlockRequirement": "",
                         "AmountRequired": 10,
