@@ -149,6 +149,33 @@
                         "UnlockRequirement": "Unlock Dark Spine camo on 33 weapons.",
                         "AmountRequired": 3,
                         "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} eliminations with this weapon.",
+                        "CamoName": "Bronze Mastery Badge",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} eliminations with this weapon.",
+                        "CamoName": "Silver Mastery Badge",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 150,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} eliminations with this weapon.",
+                        "CamoName": "Gold Mastery Badge",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 250,
+                        "CurrentAmount": 0
                     }
                 ]
             },
