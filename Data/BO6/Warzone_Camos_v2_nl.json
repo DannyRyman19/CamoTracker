@@ -1741,7 +1741,7 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get w kills without reloading {0} times.",
+                        "CategoryRequirement": "Get 2 kills without reloading {0} times.",
                         "CamoName": "Blend",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blend.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
@@ -4770,7 +4770,7 @@
                         "CamoName": "Concept",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/concept.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 25,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],
