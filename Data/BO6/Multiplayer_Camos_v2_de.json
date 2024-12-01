@@ -5499,7 +5499,7 @@
     },
     {
         "WeaponCategoryID": 7,
-        "WeaponCategoryName": "Werfer",
+        "WeaponCategoryName": "Werfer/Spezialwaffen",
         "Weapons": [
             {
                 "WeaponID": 0,
@@ -5626,7 +5626,7 @@
                         "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse in einem einzigen Spiel.",
                         "CamoName": "Diamant",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
-                        "UnlockRequirement": "Schalte die Gold-Tarnung auf 2 Werfern frei.",
+                        "UnlockRequirement": "Schalte die Gold-Tarnung auf 2 Werfern oder Spezialwaffen frei.",
                         "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
@@ -5802,7 +5802,7 @@
                         "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse in einem einzigen Spiel.",
                         "CamoName": "Diamant",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
-                        "UnlockRequirement": "Schalte die Gold-Tarnung auf 2 Werfern frei.",
+                        "UnlockRequirement": "Schalte die Gold-Tarnung auf 2 Werfern oder Spezialwaffen frei.",
                         "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
@@ -5845,6 +5845,182 @@
                     {
                         "CamoID": 6,
                         "CategoryRequirement": "Erreiche {0} Eliminierungen/Zerstörungen mit der {1}.",
+                        "CamoName": "Meisterung",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 250,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 2,
+                "WeaponName": "Sirin 9mm",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/sirin-9mm.png",
+                "MaxLevel": 30,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Unlock as part of the Hit List Event.",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche 5 Kopfschüsse.",
+                        "CamoName": "Granit",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/granite.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche 10 Kopfschüsse.",
+                        "CamoName": "Wald",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/woodland.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 15 Kopfschüsse.",
+                        "CamoName": "Savanne",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/savanna.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche 20 Kopfschüsse.",
+                        "CamoName": "Splitter",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splinter.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche 30 Kopfschüsse.",
+                        "CamoName": "Moos",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/moss.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche 40 Kopfschüsse.",
+                        "CamoName": "Saboteur",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shade.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche 50 Kopfschüsse.",
+                        "CamoName": "Digital",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/digital.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Erreiche 75 Kopfschüsse.",
+                        "CamoName": "Gezeiten",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tide.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Erreiche 100 Kopfschüsse.",
+                        "CamoName": "Rote Tigerstreifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/red-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0} Abschüsse kurz nach dem Sprinten.",
+                        "CamoName": "Nebulon",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebulon.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen fur die Waffe {0} frei.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Abschüsse aus der Bewegung.",
+                        "CamoName": "Verzaubert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/enchanted.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen fur die Waffe {0} frei.",
+                        "AmountRequired": 50,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0} Doppelabschüsse (oder besser).",
+                        "CamoName": "Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0}-mal 3 Abschüsse, ohne zu sterben.",
+                        "CamoName": "Diamant",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/diamond.png",
+                        "UnlockRequirement": "Schalte die Gold-Tarnung auf 2 Werfern oder Spezialwaffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche {0} Dreifachabschüsse (oder besser).",
+                        "CamoName": "Dunkler Rücken",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-spine.png",
+                        "UnlockRequirement": "Schalte die Diamant-Tarnung auf 33 Waffen frei.",
+                        "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche {0}-mal 5 Abschüsse, ohne zu sterben.",
+                        "CamoName": "Dunkle Materie",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-matter.png",
+                        "UnlockRequirement": "Schalte Dunkler Rücken auf 33 Waffen frei.",
+                        "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 150,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
                         "CamoName": "Meisterung",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mastery-badge-3.png",
                         "UnlockRequirement": "",
