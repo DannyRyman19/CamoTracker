@@ -1288,18 +1288,18 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/berry-bliss.png",
+                        "CategoryRequirement": "Get {0} kills while under an enemy UAV.",
+                        "CamoName": "Fireclaw",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/fireclaw.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/baneblossom.png",
+                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
+                        "CamoName": "Ghostwarp",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/ghostwarp.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 5,
                         "CurrentAmount": 0
@@ -2486,18 +2486,18 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Hipfire kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/memento-mori.png",
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Driftfrot",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/driftfort.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 5,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dreamcurrent.png",
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Duststorm",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/duststorm.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 5,
                         "CurrentAmount": 0
@@ -3452,7 +3452,7 @@
                 "WeaponID": 3,
                 "WeaponName": "Feng 82",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/feng-82.png",
-                "MaxLevel": 48,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock with the Season 2 Battle Pass, Page 3",
                 "MilitaryCamos": [
@@ -3541,20 +3541,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 2 kills within 30 seconds {0} times.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/splattered.png",
+                        "CategoryRequirement": "Get 2 kills without taking damage {0} times.",
+                        "CamoName": "Thistledew",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/thistledew.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 5,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills while prone.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dark-paradise.png",
+                        "CategoryRequirement": "Get {0} kills while under an enemy UAV.",
+                        "CamoName": "Hellbark",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/hellbark.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 10,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],

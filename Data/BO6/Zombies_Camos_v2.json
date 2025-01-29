@@ -1504,20 +1504,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Eliminations with Cryo Freeze equipped.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/sunny-splash.png",
+                        "CategoryRequirement": "Get {0} kills shortly after using a Field Upgrade.",
+                        "CamoName": "Glacial Blast",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/glacial-blast.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 300,
+                        "AmountRequired": 100,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} enemies affected by your Tactical Equipment.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/crowsbane.png",
+                        "CategoryRequirement": "Get {0} Armored Zombies eliminations.",
+                        "CamoName": "Entropy",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/entropy.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 100,
+                        "AmountRequired": 75,
                         "CurrentAmount": 0
                     }
                 ],
@@ -2918,18 +2918,18 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} eliminations with Dead Wire equipped.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whisper.png",
+                        "CategoryRequirement": "Get {0} Armored Zombies eliminations.",
+                        "CamoName": "Cloudcrest",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/cloudcrest.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 300,
+                        "AmountRequired": 75,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Point Blank Kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/voidthorn.png",
+                        "CategoryRequirement": "Get {0} kills at rare rarity or higher.",
+                        "CamoName": "Wasteland",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/wasteland.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
@@ -4073,7 +4073,7 @@
                 "WeaponID": 3,
                 "WeaponName": "Feng 82",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/feng-82.png",
-                "MaxLevel": 48,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock with the Season 2 Battle Pass, Page 3",
                 "MilitaryCamos": [
@@ -4162,20 +4162,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Point Blank Kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/impressionist.png",
+                        "CategoryRequirement": "Get {0} Vermin Eliminations.",
+                        "CamoName": "Asterwind",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/asterwind.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 300,
+                        "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get 10 kills without reloading {0} times.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/other-world.png",
+                        "CategoryRequirement": "Get {0} eliminations with Napalm Burst equipped.",
+                        "CamoName": "Shadowfang",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shadowfang.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 15,
+                        "AmountRequired": 300,
                         "CurrentAmount": 0
                     }
                 ],

@@ -1504,20 +1504,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/monochrome.png",
+                        "CategoryRequirement": "Get a Kill without taking any damage {0} times.",
+                        "CamoName": "Scorching Slash",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/scorching-slash.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills while moving.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/dreadshade.png",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Rotmist",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rotmist.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 50,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
@@ -2918,20 +2918,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Point Blank Kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/netherworld-2.png",
+                        "CategoryRequirement": "Get 2 Kills without taking any damage {0} times.",
+                        "CamoName": "Skythrone",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/skythrone.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 30,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills while moving.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/solar-tide.png",
+                        "CategoryRequirement": "Get 5 Kills in a single match {0} times.",
+                        "CamoName": "Mirage",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mirage.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 50,
+                        "AmountRequired": 3,
                         "CurrentAmount": 0
                     }
                 ],
@@ -4073,7 +4073,7 @@
                 "WeaponID": 3,
                 "WeaponName": "Feng 82",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/feng-82.png",
-                "MaxLevel": 48,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock with the Season 2 Battle Pass, Page 3",
                 "MilitaryCamos": [
@@ -4162,8 +4162,8 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} eliminations while the Strategist Combat Specialty is active (All green perks).",
-                        "CamoName": "Unknown",
+                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
+                        "CamoName": "Sunblossom",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/brush-stroke.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 50,
@@ -4171,11 +4171,11 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Point Blank Kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/idyllic.png",
+                        "CategoryRequirement": "Get 2 kills without releasing the trigger {0} times.",
+                        "CamoName": "Bloodfang",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/bloodfang.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 30,
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],
