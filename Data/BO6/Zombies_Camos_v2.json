@@ -3543,7 +3543,7 @@
         "Weapons": [
             {
                 "WeaponID": 0,
-                "WeaponName": "PS-21",
+                "WeaponName": "PU-21",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ps-21.png",
                 "MaxLevel": 47,
                 "CurrentLevel": 1,
@@ -4959,7 +4959,7 @@
                 "WeaponID": 4,
                 "WeaponName": "TR2",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/tr2.png",
-                "MaxLevel": 39,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock as part of Shadow Hunt event",
                 "MilitaryCamos": [
@@ -5048,18 +5048,18 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 5 Critical kills rapidly {0} times.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/furybloom.png",
+                        "CategoryRequirement": "Get {0} eliminations with Brain Rot equipped.",
+                        "CamoName": "Nibbles",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nibbles.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 15,
+                        "AmountRequired": 300,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills at rare rarity or higher.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/manta.png",
+                        "CategoryRequirement": "Get {0} eliminations while Pack-A-Punched.",
+                        "CamoName": "Burrowed",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/burrowed.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0

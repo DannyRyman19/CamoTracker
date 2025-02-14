@@ -4203,7 +4203,7 @@
                 "WeaponID": 4,
                 "WeaponName": "TR2",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/tr2.png",
-                "MaxLevel": 39,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock as part of Shadow Hunt event",
                 "MilitaryCamos": [
@@ -4292,18 +4292,18 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} Longshot kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/breezebloom.png",
+                        "CategoryRequirement": "Get {0} kills against a player that recently damaged you.",
+                        "CamoName": "Munchers",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/munchers.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 5,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} kills against a player that recently damaged you.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/fox.png",
+                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
+                        "CamoName": "Vanished",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/vanished.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 5,
                         "CurrentAmount": 0

@@ -1241,7 +1241,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/krig-c.png",
                 "MaxLevel": 43,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 1, Page 6",
+                "UnlockRequirement": "Débloquer dans l'armurerie",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -1342,6 +1342,182 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/crowsbane.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires en mode Zombies pour: {0}.",
                         "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} fois 10 éliminations rapidement.",
+                        "CamoName": "Or Mystique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux en mode Zombies pour: {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie spécial.",
+                        "CamoName": "Opale",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Débloquez le camouflage Or Mystique pour 7 fusils d'assaut.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites {0} fois au moins 20 éliminations consécutives sans subir de dégâts.",
+                        "CamoName": "Post Mortem",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Débloquez le camouflage Opale pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie d'élite.",
+                        "CamoName": "Nébuleuse",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Débloquez le camouflage Post Mortem pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Maîtrise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 8,
+                "WeaponName": "Cypher 091",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/cypher-091.png",
+                "MaxLevel": 42,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 2, Page 8",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 100 éliminations par coup critique.",
+                        "CamoName": "Ardoise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 200 éliminations par coup critique.",
+                        "CamoName": "Désert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 300 éliminations par coup critique.",
+                        "CamoName": "Impérissable",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 400 éliminations par coup critique.",
+                        "CamoName": "Dentelé",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 600 éliminations par coup critique.",
+                        "CamoName": "Sombre",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 800 éliminations par coup critique.",
+                        "CamoName": "Bande furtive",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 1000 éliminations par coup critique.",
+                        "CamoName": "Océanique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 1500 éliminations par coup critique.",
+                        "CamoName": "Polaire",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 2000 éliminations par coup critique.",
+                        "CamoName": "Tigre violet",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills shortly after using a Field Upgrade.",
+                        "CamoName": "Glacial Blast",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/glacial-blast.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Armored Zombies eliminations.",
+                        "CamoName": "Entropy",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/entropy.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 75,
                         "CurrentAmount": 0
                     }
                 ],
@@ -2479,7 +2655,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/saug.png",
                 "MaxLevel": 39,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 1, Page 3",
+                "UnlockRequirement": "Débloquer dans l'armurerie",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -2579,6 +2755,182 @@
                         "CamoName": "Vague de chaux",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/voidthorn.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires en mode Zombies pour: {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} fois 10 éliminations rapidement.",
+                        "CamoName": "Or Mystique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux en mode Zombies pour: {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie spécial.",
+                        "CamoName": "Opale",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Débloquez le camouflage Or Mystique pour 6 mitraillettes.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites {0} fois au moins 20 éliminations consécutives sans subir de dégâts.",
+                        "CamoName": "Post Mortem",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Débloquez le camouflage Opale pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie d'élite.",
+                        "CamoName": "Nébuleuse",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Débloquez le camouflage Post Mortem pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Maîtrise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 7,
+                "WeaponName": "PPSh-41",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ppsh-41.png",
+                "MaxLevel": 35,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 2, Page 6",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 100 éliminations par coup critique.",
+                        "CamoName": "Ardoise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 200 éliminations par coup critique.",
+                        "CamoName": "Désert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 300 éliminations par coup critique.",
+                        "CamoName": "Impérissable",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 400 éliminations par coup critique.",
+                        "CamoName": "Dentelé",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 600 éliminations par coup critique.",
+                        "CamoName": "Sombre",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 800 éliminations par coup critique.",
+                        "CamoName": "Bande furtive",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 1000 éliminations par coup critique.",
+                        "CamoName": "Océanique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 1500 éliminations par coup critique.",
+                        "CamoName": "Polaire",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 2000 éliminations par coup critique.",
+                        "CamoName": "Tigre violet",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} Armored Zombies eliminations.",
+                        "CamoName": "Cloudcrest",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/cloudcrest.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 75,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills at rare rarity or higher.",
+                        "CamoName": "Wasteland",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/wasteland.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
                     }
@@ -3191,7 +3543,7 @@
         "Weapons": [
             {
                 "WeaponID": 0,
-                "WeaponName": "PS-21",
+                "WeaponName": "PU-21",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ps-21.png",
                 "MaxLevel": 47,
                 "CurrentLevel": 1,
@@ -3648,6 +4000,182 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/other-world.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires en mode Zombies pour: {0}.",
                         "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} fois 10 éliminations rapidement.",
+                        "CamoName": "Or Mystique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux en mode Zombies pour: {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie spécial.",
+                        "CamoName": "Opale",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Débloquez le camouflage Or Mystique pour 3 mitrailleuses.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites {0} fois au moins 20 éliminations consécutives sans subir de dégâts.",
+                        "CamoName": "Post Mortem",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Débloquez le camouflage Opale pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie d'élite.",
+                        "CamoName": "Nébuleuse",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Débloquez le camouflage Post Mortem pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Maîtrise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 3,
+                "WeaponName": "Feng 82",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/feng-82.png",
+                "MaxLevel": 38,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 2, Page 3",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 100 éliminations par coup critique.",
+                        "CamoName": "Ardoise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 200 éliminations par coup critique.",
+                        "CamoName": "Désert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 300 éliminations par coup critique.",
+                        "CamoName": "Impérissable",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 400 éliminations par coup critique.",
+                        "CamoName": "Dentelé",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 600 éliminations par coup critique.",
+                        "CamoName": "Sombre",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 800 éliminations par coup critique.",
+                        "CamoName": "Bande furtive",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 1000 éliminations par coup critique.",
+                        "CamoName": "Océanique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 1500 éliminations par coup critique.",
+                        "CamoName": "Polaire",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 2000 éliminations par coup critique.",
+                        "CamoName": "Tigre violet",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} Vermin Eliminations.",
+                        "CamoName": "Asterwind",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/asterwind.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} eliminations with Napalm Burst equipped.",
+                        "CamoName": "Shadowfang",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shadowfang.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
                         "CurrentAmount": 0
                     }
                 ],
@@ -4357,6 +4885,182 @@
                         "CamoName": "Raie Manta",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/manta.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires en mode Zombies pour: {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} fois 10 éliminations rapidement.",
+                        "CamoName": "Or Mystique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux en mode Zombies pour: {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie spécial.",
+                        "CamoName": "Opale",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Débloquez le camouflage Or Mystique pour 4 fusils tactiques.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites {0} fois au moins 20 éliminations consécutives sans subir de dégâts.",
+                        "CamoName": "Post Mortem",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Débloquez le camouflage Opale pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} éliminations de zombie d'élite.",
+                        "CamoName": "Nébuleuse",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Débloquez le camouflage Post Mortem pour 33 armes.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites {0} éliminations avec: {1}.",
+                        "CamoName": "Maîtrise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "TR2",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/tr2.png",
+                "MaxLevel": 38,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Unlock as part of Shadow Hunt event",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 100 éliminations par coup critique.",
+                        "CamoName": "Ardoise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 200 éliminations par coup critique.",
+                        "CamoName": "Désert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 300 éliminations par coup critique.",
+                        "CamoName": "Impérissable",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 400 éliminations par coup critique.",
+                        "CamoName": "Dentelé",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 600 éliminations par coup critique.",
+                        "CamoName": "Sombre",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 800 éliminations par coup critique.",
+                        "CamoName": "Bande furtive",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 1000 éliminations par coup critique.",
+                        "CamoName": "Océanique",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 1500 éliminations par coup critique.",
+                        "CamoName": "Polaire",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 2000 éliminations par coup critique.",
+                        "CamoName": "Tigre violet",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} eliminations with Brain Rot equipped.",
+                        "CamoName": "Nibbles",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nibbles.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} eliminations while Pack-A-Punched.",
+                        "CamoName": "Burrowed",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/burrowed.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
                     }

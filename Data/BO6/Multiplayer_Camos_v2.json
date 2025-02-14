@@ -4959,7 +4959,7 @@
                 "WeaponID": 4,
                 "WeaponName": "TR2",
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/tr2.png",
-                "MaxLevel": 39,
+                "MaxLevel": 38,
                 "CurrentLevel": 1,
                 "UnlockRequirement": "Unlock as part of Shadow Hunt event",
                 "MilitaryCamos": [
@@ -5048,20 +5048,20 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get {0} eliminations with a suppressor equipped.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mellowbloom.png",
+                        "CategoryRequirement": "Get {0} Eliminations while the Recon Combat Specialty is active (All blue perks).",
+                        "CamoName": "Chompers",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/chompers.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 50,
                         "CurrentAmount": 0
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Longshot Kills.",
-                        "CamoName": "Unknown",
-                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/cobalt.png",
+                        "CategoryRequirement": "Get 2 Kills without reloading {0} times.",
+                        "CamoName": "Restless",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/restless.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
-                        "AmountRequired": 15,
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
