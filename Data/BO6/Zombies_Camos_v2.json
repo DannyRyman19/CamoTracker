@@ -1593,7 +1593,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/kilo-141.png",
                 "MaxLevel": 42,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock after launching Warzone",
+                "UnlockRequirement": "Unlock in the armory",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -1769,7 +1769,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/cr-56-amax.png",
                 "MaxLevel": 42,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock with the Season 3 Battle Pass, Page 6",
+                "UnlockRequirement": "Unlock in the armory",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -1868,6 +1868,182 @@
                         "CategoryRequirement": "Get {0} enemies affected by your Tactical Equipment.",
                         "CamoName": "Everfrost",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/everfrost.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 10 Kills rapidly {0} times.",
+                        "CamoName": "Mystic Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Unlock all Special camos for the {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Special Zombie Eliminations.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Unlock Mystic Gold camo for 7 Assault Rifles.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 20 or more Consecutive Kills {0} times without taking damage.",
+                        "CamoName": "Afterlife",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Unlock Opal camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Elite Zombie Eliminations.",
+                        "CamoName": "Nebula",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Unlock Afterlife camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Mastery",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 11,
+                "WeaponName": "FFAR-1",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ffar-1.png",
+                "MaxLevel": 42,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Unlock with the Season 4 Battle Pass, Page 6",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 100 Critical Kills.",
+                        "CamoName": "Slate",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 200 Critical Kills.",
+                        "CamoName": "Desert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 300 Critical Kills.",
+                        "CamoName": "Evergreen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get 400 Critical Kills.",
+                        "CamoName": "Rugged",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get 600 Critical Kills.",
+                        "CamoName": "Grim",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get 800 Critical Kills.",
+                        "CamoName": "Stripe",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get 1000 Critical Kills.",
+                        "CamoName": "Oceanic",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get 1500 Critical Kills.",
+                        "CamoName": "Whiteout",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get 2000 Critical Kills.",
+                        "CamoName": "Purple Tiger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 5 Critical kills rapidly {0} times.",
+                        "CamoName": "Blight",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blight.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} enemies affected by your Tactical Equipment.",
+                        "CamoName": "Crease",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/crease.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 100,
                         "CurrentAmount": 0
@@ -3359,7 +3535,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ladra.png",
                 "MaxLevel": 38,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock in the High Art Event",
+                "UnlockRequirement": "Unlock in the armory",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -3458,6 +3634,182 @@
                         "CategoryRequirement": "Get {0} eliminations while Pack-A-Punched.",
                         "CamoName": "Fissure",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/fissure.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 10 Kills rapidly {0} times.",
+                        "CamoName": "Mystic Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Unlock all Special camos for the {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Special Zombie Eliminations.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Unlock Mystic Gold camo for 6 SMGs.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 20 or more Consecutive Kills {0} times without taking damage.",
+                        "CamoName": "Afterlife",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Unlock Opal camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Elite Zombie Eliminations.",
+                        "CamoName": "Nebula",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Unlock Afterlife camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Mastery",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 9,
+                "WeaponName": "LC10",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/lc10.png",
+                "MaxLevel": 38,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Unlock with the Season 4 Battle Pass, Page 3",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 100 Critical Kills.",
+                        "CamoName": "Slate",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 200 Critical Kills.",
+                        "CamoName": "Desert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 300 Critical Kills.",
+                        "CamoName": "Evergreen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get 400 Critical Kills.",
+                        "CamoName": "Rugged",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get 600 Critical Kills.",
+                        "CamoName": "Grim",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get 800 Critical Kills.",
+                        "CamoName": "Stripe",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get 1000 Critical Kills.",
+                        "CamoName": "Oceanic",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get 1500 Critical Kills.",
+                        "CamoName": "Whiteout",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get 2000 Critical Kills.",
+                        "CamoName": "Purple Tiger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} Point Blank Kills.",
+                        "CamoName": "Urban Spire",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/urban-spire.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} eliminations while Pack-A-Punched.",
+                        "CamoName": "Seethe",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/seethe.png",
                         "UnlockRequirement": "Unlock all Military camos for the {0}.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
@@ -5658,6 +6010,182 @@
                         "CurrentAmount": 0
                     }
                 ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Essex Model 07",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/essex-model-7.png",
+                "MaxLevel": 38,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Unlock in the Ballerina event",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 100 Critical Kills.",
+                        "CamoName": "Slate",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 200 Critical Kills.",
+                        "CamoName": "Desert",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 300 Critical Kills.",
+                        "CamoName": "Evergreen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get 400 Critical Kills.",
+                        "CamoName": "Rugged",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get 600 Critical Kills.",
+                        "CamoName": "Grim",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get 800 Critical Kills.",
+                        "CamoName": "Stripe",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get 1000 Critical Kills.",
+                        "CamoName": "Oceanic",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Get 1500 Critical Kills.",
+                        "CamoName": "Whiteout",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Get 2000 Critical Kills.",
+                        "CamoName": "Purple Tiger",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills at rare rarity or higher.",
+                        "CamoName": "Nettlesting",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nettlesting.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} eliminations with Brain Rot equipped.",
+                        "CamoName": "Fractal Plunge",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/fractal-plunge.png",
+                        "UnlockRequirement": "Unlock all Military camos for the {0}.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 10 Kills rapidly {0} times.",
+                        "CamoName": "Mystic Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Unlock all Special camos for the {0}.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Special Zombie Eliminations.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Unlock Mystic Gold camo for 4 Marksman Rifles.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Get 20 or more Consecutive Kills {0} times without taking damage.",
+                        "CamoName": "Afterlife",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Unlock Opal camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Get {0} Elite Zombie Eliminations.",
+                        "CamoName": "Nebula",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Unlock Afterlife camo on 33 weapons.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Badge II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Get {0} eliminations with the {1}.",
+                        "CamoName": "Mastery",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
             }
         ]
     },
@@ -6375,7 +6903,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/hdr.png",
                 "MaxLevel": 38,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock with the Season 3 Battle Pass, Page 3",
+                "UnlockRequirement": "Unlock in the armory",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -9913,7 +10441,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/kali-sticks.png",
                 "MaxLevel": 30,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock as part of the Return to Verdansk Event",
+                "UnlockRequirement": "Unlock in the armory",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
