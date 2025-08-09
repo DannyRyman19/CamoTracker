@@ -1648,7 +1648,156 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ffar-1.png",
                 "MaxLevel": 42,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 4, Page 6",
+                "UnlockRequirement": "Débloquer dans l'armurerie",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 5 éliminations.",
+                        "CamoName": "Quartz",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/quartz.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 10 éliminations.",
+                        "CamoName": "Toundra",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tundra.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 15 éliminations.",
+                        "CamoName": "Canyon",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/canyon.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 20 éliminations.",
+                        "CamoName": "Pin",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/pine.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 30 éliminations.",
+                        "CamoName": "Taillis",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/undergrowth.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 40 éliminations.",
+                        "CamoName": "Peau de serpent",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/snakeskin.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 50 éliminations.",
+                        "CamoName": "Sibérie",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/siberia.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 75 éliminations.",
+                        "CamoName": "Brûle",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/smolder.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 100 éliminations.",
+                        "CamoName": "Tigre bleu",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blue-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
+                        "CamoName": "Plague",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/plague.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Crimp",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/crimp.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} éliminations en étant la cible d'un contrat Prioritaire.",
+                        "CamoName": "Tigre doré",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold-tiger.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} fois 3 éliminations sans mourir.",
+                        "CamoName": "Rançon du roi",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/kings-ransom.png",
+                        "UnlockRequirement": "Débloquez le camouflage Tigre doré pour 7 fusils d'assaut.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Éliminez {0} ennemis affectés par votre grande paralysante, votre grenade flash ou votre charge électrique.",
+                        "CamoName": "Catalyseur",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/catalyst.png",
+                        "UnlockRequirement": "Débloquez le camouflage Rançon du roi pour 33 armes.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} fois 5 éliminations sans mourir.",
+                        "CamoName": "Abysses",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/abyss.png",
+                        "UnlockRequirement": "Débloquez Catalyseur pour 33 armes.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 12,
+                "WeaponName": "ABR A1",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/abr-a1.png",
+                "MaxLevel": 43,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 5, Page 6",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -3144,7 +3293,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/lc10.png",
                 "MaxLevel": 38,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 4, Page 3",
+                "UnlockRequirement": "Débloquer dans l'armurerie",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -4300,6 +4449,155 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/hellbark.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
                         "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} éliminations en étant la cible d'un contrat Prioritaire.",
+                        "CamoName": "Tigre doré",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold-tiger.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} fois 3 éliminations sans mourir.",
+                        "CamoName": "Rançon du roi",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/kings-ransom.png",
+                        "UnlockRequirement": "Débloquez le camouflage Tigre doré pour 3 mitrailleuses.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Éliminez {0} ennemis affectés par votre grande paralysante, votre grenade flash ou votre charge électrique.",
+                        "CamoName": "Catalyseur",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/catalyst.png",
+                        "UnlockRequirement": "Débloquez le camouflage Rançon du roi pour 33 armes.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} fois 5 éliminations sans mourir.",
+                        "CamoName": "Abysses",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/abyss.png",
+                        "UnlockRequirement": "Débloquez Catalyseur pour 33 armes.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "PML 5.56",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/pml-556.png",
+                "MaxLevel": 39,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer avec le Passe de Combat de la Saison 5, Page 3",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 5 éliminations.",
+                        "CamoName": "Quartz",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/quartz.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 10 éliminations.",
+                        "CamoName": "Toundra",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tundra.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 15 éliminations.",
+                        "CamoName": "Canyon",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/canyon.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 20 éliminations.",
+                        "CamoName": "Pin",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/pine.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 30 éliminations.",
+                        "CamoName": "Taillis",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/undergrowth.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 40 éliminations.",
+                        "CamoName": "Peau de serpent",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/snakeskin.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 50 éliminations.",
+                        "CamoName": "Sibérie",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/siberia.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 75 éliminations.",
+                        "CamoName": "Brûle",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/smolder.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 100 éliminations.",
+                        "CamoName": "Tigre bleu",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blue-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 2 kills without taking damage {0} times.",
+                        "CamoName": "Marigold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/marigold.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills while prone.",
+                        "CamoName": "Rogue",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rogue.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 10,
                         "CurrentAmount": 0
                     }
                 ],
@@ -7345,6 +7643,155 @@
                         "CurrentAmount": 0
                     }
                 ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Olympia",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/olympia.png",
+                "MaxLevel": 20,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer dans l'armurerie",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 5 éliminations.",
+                        "CamoName": "Quartz",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/quartz.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 10 éliminations.",
+                        "CamoName": "Toundra",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tundra.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 15 éliminations.",
+                        "CamoName": "Canyon",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/canyon.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 20 éliminations.",
+                        "CamoName": "Pin",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/pine.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 30 éliminations.",
+                        "CamoName": "Taillis",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/undergrowth.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 40 éliminations.",
+                        "CamoName": "Peau de serpent",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/snakeskin.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 50 éliminations.",
+                        "CamoName": "Sibérie",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/siberia.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 75 éliminations.",
+                        "CamoName": "Brûle",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/smolder.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 100 éliminations.",
+                        "CamoName": "Tigre bleu",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blue-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} kills while moving.",
+                        "CamoName": "Highrise",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/highrise.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 2 kills without taking damage {0} times.",
+                        "CamoName": "Washed",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/washed.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} éliminations en étant la cible d'un contrat Prioritaire.",
+                        "CamoName": "Tigre doré",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold-tiger.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux dans Warzone pour: {0}.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} fois 3 éliminations sans mourir.",
+                        "CamoName": "Rançon du roi",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/kings-ransom.png",
+                        "UnlockRequirement": "Débloquez le camouflage Tigre doré pour 2 Lanceurs ou armes spéciales.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Éliminez {0} ennemis affectés par votre grande paralysante, votre grenade flash ou votre charge électrique.",
+                        "CamoName": "Catalyseur",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/catalyst.png",
+                        "UnlockRequirement": "Débloquez le camouflage Rançon du roi pour 33 armes.",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} fois 5 éliminations sans mourir.",
+                        "CamoName": "Abysses",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/abyss.png",
+                        "UnlockRequirement": "Débloquez Catalyseur pour 33 armes.",
+                        "AmountRequired": 1,
+                        "CurrentAmount": 0
+                    }
+                ]
             }
         ]
     },
@@ -8800,6 +9247,155 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/charwood.png",
                         "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
                         "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites {0} éliminations en étant la cible d'un contrat Prioritaire.",
+                        "CamoName": "Tigre doré",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/gold-tiger.png",
+                        "UnlockRequirement": "Débloquez les deux camouflages spéciaux dans Warzone pour: {0}.",
+                        "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites {0} fois 3 éliminations sans mourir.",
+                        "CamoName": "Rançon du roi",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/kings-ransom.png",
+                        "UnlockRequirement": "Débloquez le camouflage Tigre doré pour 2 arme de corps à corps.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Éliminez {0} ennemis affectés par votre grande paralysante, votre grenade flash ou votre charge électrique.",
+                        "CamoName": "Catalyseur",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/catalyst.png",
+                        "UnlockRequirement": "Débloquez le camouflage Rançon du roi pour 33 armes.",
+                        "AmountRequired": 3,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites {0} fois 5 éliminations sans mourir.",
+                        "CamoName": "Abysses",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/abyss.png",
+                        "UnlockRequirement": "Débloquez Catalyseur pour 33 armes.",
+                        "AmountRequired": 1,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 10,
+                "WeaponName": "Pickaxe",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/pickaxe.png",
+                "MaxLevel": 30,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Débloquer dans l'armurerie",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Faites 5 éliminations.",
+                        "CamoName": "Quartz",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/quartz.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Faites 10 éliminations.",
+                        "CamoName": "Toundra",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/tundra.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Faites 15 éliminations.",
+                        "CamoName": "Canyon",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/canyon.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Faites 20 éliminations.",
+                        "CamoName": "Pin",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/pine.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 5,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Faites 30 éliminations.",
+                        "CamoName": "Taillis",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/undergrowth.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Faites 40 éliminations.",
+                        "CamoName": "Peau de serpent",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/snakeskin.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Faites 50 éliminations.",
+                        "CamoName": "Sibérie",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/siberia.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Faites 75 éliminations.",
+                        "CamoName": "Brûle",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/smolder.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Faites 100 éliminations.",
+                        "CamoName": "Tigre bleu",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blue-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 25,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get 3 kills in a single match {0} times.",
+                        "CamoName": "Twist",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/twist.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 2,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} kills shortly after sprinting.",
+                        "CamoName": "Bloodrot",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/bloodrot.png",
+                        "UnlockRequirement": "Débloquez tous les camouflages militaires dans Warzone pour: {0}.",
+                        "AmountRequired": 5,
                         "CurrentAmount": 0
                     }
                 ],

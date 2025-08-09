@@ -1680,7 +1680,7 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 5 Critical kills rapidly {0} times.",
+                        "CategoryRequirement": "Erreiche {0}-mal 5 schnelle kritische Abschüsse.",
                         "CamoName": "Netspore",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/netspore.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
@@ -1689,7 +1689,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Eliminations with Cryo Freeze equipped.",
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
                         "CamoName": "Jasper",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/jasper.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
@@ -1945,7 +1945,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/ffar-1.png",
                 "MaxLevel": 42,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Mit dem Battle Pass der Saison 4, Seite 6, freischalten",
+                "UnlockRequirement": "In der Waffenkammer entriegeln",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -2032,7 +2032,7 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 5 Critical kills rapidly {0} times.",
+                        "CategoryRequirement": "Erreiche {0}-mal 5 schnelle kritische Abschüsse.",
                         "CamoName": "Blight",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/blight.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
@@ -2046,6 +2046,182 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/crease.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
                         "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0}-mal 10 schnelle Abschüsse.",
+                        "CamoName": "Mystisches Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen für die waffe {0} frei.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Spezialzombie-Eliminierungen.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Schalte die mystische Gold-Tarnungen auf 7 Sturmgewehren frei.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 10-mal {0} oder mehr Abschüsse in Folge, ohne Schaden zu erleiden.",
+                        "CamoName": "Jenseits",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Schalte die Opal-Tarnung auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche {0} Elite-Zombie-Eliminierungen.",
+                        "CamoName": "Nebel",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Schalte Jenseits auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Meisterung",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 12,
+                "WeaponName": "ABR A1",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/abr-a1.png",
+                "MaxLevel": 43,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Mit dem Battle Pass der Saison 5, Seite 6, freischalten",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche 100 kritische Abschüsse.",
+                        "CamoName": "Schiefer",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche 200 kritische Abschüsse.",
+                        "CamoName": "Wüste",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 300 kritische Abschüsse.",
+                        "CamoName": "Immergrün",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche 400 kritische Abschüsse.",
+                        "CamoName": "Robust",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche 600 kritische Abschüsse.",
+                        "CamoName": "Düster",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche 800 kritische Abschüsse.",
+                        "CamoName": "Streifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche 1000 kritische Abschüsse.",
+                        "CamoName": "Ozeanisch",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Erreiche 1500 kritische Abschüsse.",
+                        "CamoName": "Weißglut",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Erreiche 2000 kritische Abschüsse.",
+                        "CamoName": "Lila Tigerstreifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} eliminations while Pack-A-Punched.",
+                        "CamoName": "Bloom",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/bloom.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
+                        "CamoName": "Current",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/current.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 300,
                         "CurrentAmount": 0
                     }
                 ],
@@ -3622,7 +3798,7 @@
                 "UniqueCamos": [
                     {
                         "CamoID": 0,
-                        "CategoryRequirement": "Get 5 Critical kills rapidly {0} times.",
+                        "CategoryRequirement": "Erreiche {0}-mal 5 schnelle kritische Abschüsse.",
                         "CamoName": "Duskcode",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/duskcode.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
@@ -3711,7 +3887,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/lc10.png",
                 "MaxLevel": 38,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Mit dem Battle Pass der Saison 4, Seite 3, freischalten",
+                "UnlockRequirement": "In der Waffenkammer entriegeln",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -5056,6 +5232,182 @@
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/shadowfang.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
                         "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0}-mal 10 schnelle Abschüsse.",
+                        "CamoName": "Mystisches Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen für die waffe {0} frei.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Spezialzombie-Eliminierungen.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Schalte die mystische Gold-Tarnung auf 3 LMGs frei.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 10-mal {0} oder mehr Abschüsse in Folge, ohne Schaden zu erleiden.",
+                        "CamoName": "Jenseits",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Schalte die Opal-Tarnung auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche {0} Elite-Zombie-Eliminierungen.",
+                        "CamoName": "Nebel",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Schalte Jenseits auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Meisterung",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 4,
+                "WeaponName": "PML 5.56",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/pml-556.png",
+                "MaxLevel": 39,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "Mit dem Battle Pass der Saison 5, Seite 3, freischalten",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche 100 kritische Abschüsse.",
+                        "CamoName": "Schiefer",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche 200 kritische Abschüsse.",
+                        "CamoName": "Wüste",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 300 kritische Abschüsse.",
+                        "CamoName": "Immergrün",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche 400 kritische Abschüsse.",
+                        "CamoName": "Robust",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche 600 kritische Abschüsse.",
+                        "CamoName": "Düster",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche 800 kritische Abschüsse.",
+                        "CamoName": "Streifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche 1000 kritische Abschüsse.",
+                        "CamoName": "Ozeanisch",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Erreiche 1500 kritische Abschüsse.",
+                        "CamoName": "Weißglut",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Erreiche 2000 kritische Abschüsse.",
+                        "CamoName": "Lila Tigerstreifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} eliminations with Napalm Burst equipped.",
+                        "CamoName": "Forest",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/forest.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get 10 kills without reloading {0} times.",
+                        "CamoName": "Revenant",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/revenant.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 15,
                         "CurrentAmount": 0
                     }
                 ],
@@ -8595,9 +8947,185 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Eliminations with Cryo Freeze equipped.",
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
                         "CamoName": "Fangflash",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/fangflash.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0}-mal 10 schnelle Abschüsse.",
+                        "CamoName": "Mystisches Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen für die waffe {0} frei.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Spezialzombie-Eliminierungen.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Schalte die mystische Gold-Tarnungen auf 2 Sturmgewehren frei.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 10-mal {0} oder mehr Abschüsse in Folge, ohne Schaden zu erleiden.",
+                        "CamoName": "Jenseits",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Schalte die Opal-Tarnung auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche {0} Elite-Zombie-Eliminierungen.",
+                        "CamoName": "Nebel",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Schalte Jenseits auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Meisterung",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 5,
+                "WeaponName": "Olympia",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/olympia.png",
+                "MaxLevel": 20,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "In der Waffenkammer entriegeln",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche 100 kritische Abschüsse.",
+                        "CamoName": "Schiefer",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche 200 kritische Abschüsse.",
+                        "CamoName": "Wüste",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 300 kritische Abschüsse.",
+                        "CamoName": "Immergrün",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche 400 kritische Abschüsse.",
+                        "CamoName": "Robust",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche 600 kritische Abschüsse.",
+                        "CamoName": "Düster",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche 800 kritische Abschüsse.",
+                        "CamoName": "Streifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche 1000 kritische Abschüsse.",
+                        "CamoName": "Ozeanisch",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Erreiche 1500 kritische Abschüsse.",
+                        "CamoName": "Weißglut",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Erreiche 2000 kritische Abschüsse.",
+                        "CamoName": "Lila Tigerstreifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} enemies affected by your Tactical Equipment.",
+                        "CamoName": "Cityscape",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/cityscape.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Get {0} Hipfire Kills.",
+                        "CamoName": "Ground",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/ground.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
@@ -9481,7 +10009,7 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Eliminations with Cryo Freeze equipped.",
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
                         "CamoName": "Brinehelm",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/brinehelm.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
@@ -10265,7 +10793,7 @@
                 "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/kali-sticks.png",
                 "MaxLevel": 30,
                 "CurrentLevel": 1,
-                "UnlockRequirement": "Unlock as part of the Return to Verdansk Event",
+                "UnlockRequirement": "In der Waffenkammer entriegeln",
                 "MilitaryCamos": [
                     {
                         "CamoID": 0,
@@ -10361,9 +10889,185 @@
                     },
                     {
                         "CamoID": 1,
-                        "CategoryRequirement": "Get {0} Eliminations with Cryo Freeze equipped.",
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
                         "CamoName": "Iceline",
                         "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/iceline.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 300,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "MasteryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche {0}-mal 10 schnelle Abschüsse.",
+                        "CamoName": "Mystisches Gold",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/mystic-gold.png",
+                        "UnlockRequirement": "Schalte beide Spezialtarnungen für die waffe {0} frei.",
+                        "AmountRequired": 15,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Spezialzombie-Eliminierungen.",
+                        "CamoName": "Opal",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/opal.png",
+                        "UnlockRequirement": "Schalte die mystische Gold-Tarnung auf 2 Nahkampfwaffen frei.",
+                        "AmountRequired": 30,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 10-mal {0} oder mehr Abschüsse in Folge, ohne Schaden zu erleiden.",
+                        "CamoName": "Jenseits",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/afterlife.png",
+                        "UnlockRequirement": "Schalte die Opal-Tarnung auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche {0} Elite-Zombie-Eliminierungen.",
+                        "CamoName": "Nebel",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/nebula.png",
+                        "UnlockRequirement": "Schalte Jenseits auf 33 Waffen frei.",
+                        "AmountRequired": 10,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen I",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-1.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Abzeichen II",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-2.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1000,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit der {1}.",
+                        "CamoName": "Meisterung",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/zm-mastery-badge-3.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 1500,
+                        "CurrentAmount": 0
+                    }
+                ]
+            },
+            {
+                "WeaponID": 10,
+                "WeaponName": "Pickaxe",
+                "WeaponImageURL": "https://camotracker.djr.li/Images/BO6/pickaxe.png",
+                "MaxLevel": 30,
+                "CurrentLevel": 1,
+                "UnlockRequirement": "In der Waffenkammer entriegeln",
+                "MilitaryCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Erreiche 100 Abschüsse.",
+                        "CamoName": "Schiefer",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche 200 Abschüsse.",
+                        "CamoName": "Wüste",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/desert.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 2,
+                        "CategoryRequirement": "Erreiche 300 Abschüsse.",
+                        "CamoName": "Immergrün",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/evergreen.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 3,
+                        "CategoryRequirement": "Erreiche 400 Abschüsse.",
+                        "CamoName": "Robust",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/rugged.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 100,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 4,
+                        "CategoryRequirement": "Erreiche 600 Abschüsse.",
+                        "CamoName": "Düster",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/grim.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 5,
+                        "CategoryRequirement": "Erreiche 800 Abschüsse.",
+                        "CamoName": "Streifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/stripe.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 6,
+                        "CategoryRequirement": "Erreiche 1000 Abschüsse.",
+                        "CamoName": "Ozeanisch",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/oceanic.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 200,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 7,
+                        "CategoryRequirement": "Erreiche 1500 Abschüsse.",
+                        "CamoName": "Weißglut",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/whiteout.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 8,
+                        "CategoryRequirement": "Erreiche 2000 Abschüsse.",
+                        "CamoName": "Lila Tigerstreifen",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/purple-tiger.png",
+                        "UnlockRequirement": "",
+                        "AmountRequired": 500,
+                        "CurrentAmount": 0
+                    }
+                ],
+                "UniqueCamos": [
+                    {
+                        "CamoID": 0,
+                        "CategoryRequirement": "Get {0} Armored Zombies eliminations.",
+                        "CamoName": "Flow",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/flow.png",
+                        "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
+                        "AmountRequired": 75,
+                        "CurrentAmount": 0
+                    },
+                    {
+                        "CamoID": 1,
+                        "CategoryRequirement": "Erreiche {0} Eliminierungen mit ausgerüsteter Kryofrost-Munitionsmodifikation.",
+                        "CamoName": "Virexia",
+                        "CamoURL": "https://camotracker.djr.li/Images/Camos/BO6/virexia.png",
                         "UnlockRequirement": "Schalte alle Zombies Militärtarnungen für die Waffe {0} frei.",
                         "AmountRequired": 300,
                         "CurrentAmount": 0
