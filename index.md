@@ -11,7 +11,8 @@ We have apps for Black Ops 7 BO7, Black Ops 6 BO6, Modern Warfare, Modern Warfar
 <div class="column">
  <div class="data"><a href="/bo7" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo7.png" alt="BO7 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Black Ops 7 BO7</div>
-    </div>
+      </div>
+<div class="column">
       <div class="data"><a href="/bo6" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo6.png" alt="BO6 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Black Ops 6 BO6</div>
     </div>
