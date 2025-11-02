@@ -536,7 +536,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the M15 MOD 0.",
                             "CamoName": "M15-MOD-0-P-2",
@@ -1084,7 +1084,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the MXR-17.",
                             "CamoName": "MXR-17-P-2",
@@ -1632,7 +1632,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the PEACEKEEPER MK1.",
                             "CamoName": "PEACEKEEPER-MK1-P-2",
@@ -2186,7 +2186,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the GRAZ 45K.",
                             "CamoName": "GRAZ-45K-P-2",
@@ -2734,7 +2734,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the DRAVEC 45.",
                             "CamoName": "DRAVEC-45-P-2",
@@ -3282,7 +3282,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the RAZOR 9MM.",
                             "CamoName": "RAZOR-9MM-P-2",
@@ -3836,7 +3836,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the M10 BREACHER.",
                             "CamoName": "M10-BREACHER-P-2",
@@ -4384,7 +4384,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the ECHO 12.",
                             "CamoName": "ECHO-12-P-2",
@@ -4938,7 +4938,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the MK.78.",
                             "CamoName": "MK-78-P-2",
@@ -5492,7 +5492,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the M8A1.",
                             "CamoName": "M8A1-P-2",
@@ -6046,7 +6046,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the VS RECON.",
                             "CamoName": "VS-RECON-P-2",
@@ -6594,7 +6594,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the XR-3 ION.",
                             "CamoName": "XR-3-ION-P-2",
@@ -7148,7 +7148,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the JÄGER 45.",
                             "CamoName": "JAGER-45-P-2",
@@ -7696,7 +7696,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the CODA 9.",
                             "CamoName": "CODA-9-P-2",
@@ -8250,555 +8250,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
-                            "CamoID": 1,
-                            "CategoryRequirement": "Reach weapon Prestige 2 with the A.R.C. M1.",
-                            "CamoName": "ARC-M1-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-2.png",
-                            "AmountRequired": 1,
-                            "CurrentAmount": 0
-                        },
-                        {
-                            "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the A.R.C. M1.",
-                            "CamoName": "ARC-M1-P-3",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-3.png",
-                            "AmountRequired": 1,
-                            "CurrentAmount": 0
-                        }
-                    ]
-                },
-                {
-                    "WeaponID": 1,
-                    "WeaponName": "New weapon",
-                    "WeaponImageURL": "https://camotracker.djr.li/Images/BO7/arc-m1.png",
-                    "MaxLevel": 30,
-                    "CurrentLevel": 1,
-                    "PrestigeLevel": 0,
-                    "UnlockRequirement": "Unlock at level 1",
-                    "Campaign": {
-                        "MilitaryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-LA-0-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 5,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-LA-1-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 5,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "CM-MIL-LA-2-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-2.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 3,
-                                "CategoryRequirement": "CM-MIL-LA-3-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-3",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-3.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 4,
-                                "CategoryRequirement": "CM-MIL-LA-4-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-4",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-4.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 5,
-                                "CategoryRequirement": "CM-MIL-LA-5-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-5",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-5.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 6,
-                                "CategoryRequirement": "CM-MIL-LA-6-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-6",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-6.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 7,
-                                "CategoryRequirement": "CM-MIL-LA-7-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-7",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-7.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-LA-8-REQ with the A.R.C M1 in Campaign",
-                                "CamoName": "CM-MIL-8",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "SpecialCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-LA-0-REQ",
-                                "CamoName": "CM-SPE-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-LA-1-REQ",
-                                "CamoName": "CM-SPE-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-LA-2-REQ",
-                                "CamoName": "CM-SPE-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "MOLTEN-GOLD-REQ",
-                                "CamoName": "Molten Gold",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
-                                "UnlockRequirement": "Unlock all Special camos for the A.R.C M1.",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "MOONSTONE-REQ",
-                                "CamoName": "Moonstone",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
-                                "UnlockRequirement": "Unlock Molten Gold camo for 2 Launchers.",
-                                "AmountRequired": 30,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "CHROMA-FLUX-REQ",
-                                "CamoName": "Chroma Flux",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
-                                "UnlockRequirement": "Unlock Moonstone camo on 30 Weapons.",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryBadges": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "CM-MAS-0-REQ with the A.R.C M1.",
-                                "CamoName": "Badge I",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 500,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "CM-MAS-1-REQ with the A.R.C M1.",
-                                "CamoName": "Badge II",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1000,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "CM-MAS-2-REQ with the A.R.C M1.",
-                                "CamoName": "Mastery",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1500,
-                                "CurrentAmount": 0
-                            }
-                        ]
-                    },
-                    "Multiplayer": {
-                        "MilitaryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "Get 5 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 5,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "Get 10 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 5,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "Get 20 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-2.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 3,
-                                "CategoryRequirement": "Get 30 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-3",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-3.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 4,
-                                "CategoryRequirement": "Get 40 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-4",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-4.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 5,
-                                "CategoryRequirement": "Get 50 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-5",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-5.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 6,
-                                "CategoryRequirement": "Get 60 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-6",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-6.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 7,
-                                "CategoryRequirement": "Get 70 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "MP-MIL-7",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-7.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 8,
-                                "CategoryRequirement": "Get 80 kills or scorestreak destructions with the A.R.C M1 in Multiplayer",
-                                "CamoName": "RUBY SNAKE",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ruby-snake.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "SpecialCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-LA-0-REQ",
-                                "CamoName": "MP-SPE-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-LA-1-REQ",
-                                "CamoName": "MP-SPE-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-LA-2-REQ",
-                                "CamoName": "MP-SPE-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "Get 3 Kills without dying 10 times.",
-                                "CamoName": "Shattered Gold",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shattered-gold.png",
-                                "UnlockRequirement": "Unlock all Special camos for the A.R.C M1.",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "ARCLIGHT-REQ",
-                                "CamoName": "Arclight",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arclight.png",
-                                "UnlockRequirement": "Unlock Shattered Gold camo for 2 Launchers.",
-                                "AmountRequired": 25,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "TEMPEST-REQ",
-                                "CamoName": "Tempest",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/tempest.png",
-                                "UnlockRequirement": "Unlock Arclight camo on 30 Weapons.",
-                                "AmountRequired": 3,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryBadges": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "MP-MAS-0-REQ with the A.R.C M1.",
-                                "CamoName": "Badge I",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 500,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "MP-MAS-1-REQ with the A.R.C M1.",
-                                "CamoName": "Badge II",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1000,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "MP-MAS-2-REQ with the A.R.C M1.",
-                                "CamoName": "Mastery",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1500,
-                                "CurrentAmount": 0
-                            }
-                        ]
-                    },
-                    "Zombies": {
-                        "MilitaryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "ZM-MIL-LA-0-REQ the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-0.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "ZM-MIL-LA-1-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-1.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "ZM-MIL-LA-2-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-2.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 3,
-                                "CategoryRequirement": "ZM-MIL-LA-3-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-3",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-3.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 4,
-                                "CategoryRequirement": "ZM-MIL-LA-4-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-4",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-4.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 5,
-                                "CategoryRequirement": "ZM-MIL-LA-5-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-5",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-5.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 6,
-                                "CategoryRequirement": "ZM-MIL-LA-6-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-6",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-6.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-LA-7-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-7",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-LA-8-REQ with the A.R.C M1 in Zombies",
-                                "CamoName": "ZM-MIL-8",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 50,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "SpecialCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-LA-0-REQ",
-                                "CamoName": "ZM-SPE-0",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-LA-1-REQ",
-                                "CamoName": "ZM-SPE-1",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-LA-2-REQ",
-                                "CamoName": "ZM-SPE-2",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
-                                "UnlockRequirement": "Unlock all Military camos for the A.R.C M1.",
-                                "AmountRequired": 1,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryCamos": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "GOLDEN-DRAGON-REQ",
-                                "CamoName": "Golden Dragon",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/golden-dragon.png",
-                                "UnlockRequirement": "Unlock all Special camos for the A.R.C M1.",
-                                "AmountRequired": 15,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "BLOODSTONE-REQ",
-                                "CamoName": "Bloodstone",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
-                                "UnlockRequirement": "Unlock Golden Dragon camo for 2 Launchers.",
-                                "AmountRequired": 30,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "DOOMSTEEL-REQ",
-                                "CamoName": "Doomsteel",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/doomsteel.png",
-                                "UnlockRequirement": "Unlock Bloodstone camo on 30 Weapons.",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            }
-                        ],
-                        "MasteryBadges": [
-                            {
-                                "CamoID": 0,
-                                "CategoryRequirement": "MP-MAS-0-REQ with the A.R.C M1.",
-                                "CamoName": "Badge I",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 500,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "MP-MAS-1-REQ with the A.R.C M1.",
-                                "CamoName": "Badge II",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1000,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 2,
-                                "CategoryRequirement": "MP-MAS-2-REQ with the A.R.C M1.",
-                                "CamoName": "Mastery",
-                                "UnlockRequirement": "",
-                                "AmountRequired": 1500,
-                                "CurrentAmount": 0
-                            }
-                        ]
-                    },
-                    "Warzone": {
-                        "MilitaryCamos": [],
-                        "SpecialCamos": [],
-                        "MasteryCamos": [],
-                        "MasteryBadges": []
-                    },
-                    "PrestigeCamos": [
-                        {
-                            "CamoID": 0,
-                            "CategoryRequirement": "Reach weapon Prestige 1 with the A.R.C. M1.",
-                            "CamoName": "ARC-M1-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-1.png",
-                            "AmountRequired": 1,
-                            "CurrentAmount": 0
-                        },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the A.R.C. M1.",
                             "CamoName": "ARC-M1-P-2",
@@ -9352,7 +8804,7 @@
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
-                        {
+                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the FLATLINE MK.II.",
                             "CamoName": "FLATLINE-MK-II-P-2",
