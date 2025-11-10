@@ -531,8 +531,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach weapon Prestige 1 with the M15 MOD 0.",
-                            "CamoName": "M15-MOD-0-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-1.png",
+                            "CamoName": "GRAFFITI",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/graffiti.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -546,7 +546,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the M15 MOD 0.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M15 MOD 0.",
                             "CamoName": "M15-MOD-0-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-3.png",
                             "AmountRequired": 1,
@@ -1094,7 +1094,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the AK-27.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AK-27.",
                             "CamoName": "AK-27-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-3.png",
                             "AmountRequired": 1,
@@ -1642,9 +1642,9 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the MXR-17.",
-                            "CamoName": "MXR-17-P-3",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mxr-17-p-3.png",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MXR-17.",
+                            "CamoName": "AFTERLIFE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/afterlife.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -2190,7 +2190,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the X9 MAVERICK.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the X9 MAVERICK.",
                             "CamoName": "X9-MAVERICK-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-3.png",
                             "AmountRequired": 1,
@@ -2738,7 +2738,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the DS20 MIRAGE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DS20 MIRAGE.",
                             "CamoName": "DS20-MIRAGE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-3.png",
                             "AmountRequired": 1,
@@ -3286,7 +3286,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the PEACEKEEPER MK1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the PEACEKEEPER MK1.",
                             "CamoName": "PEACEKEEPER-MK1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-3.png",
                             "AmountRequired": 1,
@@ -3453,7 +3453,7 @@
                         "MasteryBadges": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MAS-0-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "CM-MAS-0-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge I",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 500,
@@ -3461,7 +3461,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MAS-1-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "CM-MAS-1-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge II",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1000,
@@ -3469,7 +3469,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-MAS-2-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "CM-MAS-2-REQ with the RYDEN 45K.",
                                 "CamoName": "Mastery",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1500,
@@ -3622,7 +3622,7 @@
                         "MasteryBadges": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-MAS-0-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-0-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge I",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 500,
@@ -3630,7 +3630,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-MAS-1-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-1-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge II",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1000,
@@ -3638,7 +3638,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-MAS-2-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-2-REQ with the RYDEN 45K.",
                                 "CamoName": "Mastery",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1500,
@@ -3791,7 +3791,7 @@
                         "MasteryBadges": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-MAS-0-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-0-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge I",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 500,
@@ -3799,7 +3799,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-MAS-1-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-1-REQ with the RYDEN 45K.",
                                 "CamoName": "Badge II",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1000,
@@ -3807,7 +3807,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-MAS-2-REQ with the M15 MOD 0.",
+                                "CategoryRequirement": "MP-MAS-2-REQ with the RYDEN 45K.",
                                 "CamoName": "Mastery",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1500,
@@ -3840,7 +3840,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the RYDEN 45K.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RYDEN 45K.",
                             "CamoName": "RYDEN-45K-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-3.png",
                             "AmountRequired": 1,
@@ -4388,7 +4388,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the RK-9.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RK-9.",
                             "CamoName": "RK-9-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-3.png",
                             "AmountRequired": 1,
@@ -4936,7 +4936,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the RAZOR 9MM.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RAZOR 9MM.",
                             "CamoName": "RAZOR-9MM-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-3.png",
                             "AmountRequired": 1,
@@ -5484,7 +5484,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the DRAVEC 45.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DRAVEC 45.",
                             "CamoName": "DRAVEC-45-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-3.png",
                             "AmountRequired": 1,
@@ -6032,7 +6032,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the CARBON 57.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CARBON 57.",
                             "CamoName": "CARBON-57-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-3.png",
                             "AmountRequired": 1,
@@ -6580,9 +6580,9 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the MPC-25.",
-                            "CamoName": "MPC-25-P-3",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mpc-25-p-3.png",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MPC-25.",
+                            "CamoName": "BACON",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bacon.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -7134,7 +7134,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the M10 BREACHER.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M10 BREACHER.",
                             "CamoName": "M10-BREACHER-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-3.png",
                             "AmountRequired": 1,
@@ -7675,16 +7675,16 @@
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach weapon Prestige 2 with the ECHO 12.",
-                            "CamoName": "ECHO-12-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/echo-12-p-2.png",
+                            "CamoName": "PACK-A-PUNCH",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/pack-a-punch.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the ECHO 12.",
-                            "CamoName": "ECHO-12-P-3",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/echo-12-p-3.png",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the ECHO 12.",
+                            "CamoName": "WEAPONIZED 115",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/weaponized-115.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -8230,7 +8230,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the AKITA.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AKITA.",
                             "CamoName": "AKITA-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-3.png",
                             "AmountRequired": 1,
@@ -8784,7 +8784,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the MK.78.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MK.78.",
                             "CamoName": "MK-78-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-3.png",
                             "AmountRequired": 1,
@@ -9332,7 +9332,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the XM325.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XM325.",
                             "CamoName": "XM325-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-3.png",
                             "AmountRequired": 1,
@@ -9871,8 +9871,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach weapon Prestige 1 with the M8A1.",
-                            "CamoName": "M8A1-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-1.png",
+                            "CamoName": "CHERRY BLOSSOM",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cherry-blossom.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -9886,7 +9886,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the M8A1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M8A1.",
                             "CamoName": "M8A1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-3.png",
                             "AmountRequired": 1,
@@ -10434,7 +10434,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the WARDEN 308.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the WARDEN 308.",
                             "CamoName": "WARDEN 308-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-3.png",
                             "AmountRequired": 1,
@@ -10982,7 +10982,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the M34 NOVALINE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M34 NOVALINE.",
                             "CamoName": "M34 NOVALINE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-3.png",
                             "AmountRequired": 1,
@@ -11536,7 +11536,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the VS RECON.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VS RECON.",
                             "CamoName": "VS-RECON-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-3.png",
                             "AmountRequired": 1,
@@ -12084,7 +12084,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the SHADOW SK.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the SHADOW SK.",
                             "CamoName": "SHADOW-SK-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-3.png",
                             "AmountRequired": 1,
@@ -12632,7 +12632,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the XR-3 ION.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XR-3 ION.",
                             "CamoName": "XR-3-ION-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-3.png",
                             "AmountRequired": 1,
@@ -13186,7 +13186,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the JÄGER 45.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the JÄGER 45.",
                             "CamoName": "JAGER-45-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/jager-45-p-3.png",
                             "AmountRequired": 1,
@@ -13734,7 +13734,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the VELOX 5.7.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VELOX 5.7.",
                             "CamoName": "VELOX-5-7-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/velox-5-7-p-3.png",
                             "AmountRequired": 1,
@@ -14282,7 +14282,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the CODA 9.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CODA 9.",
                             "CamoName": "CODA-9-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/coda-9-p-3.png",
                             "AmountRequired": 1,
@@ -14836,7 +14836,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the AAROW 109.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AAROW 109.",
                             "CamoName": "AAROW-109-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/aarow-109-p-3.png",
                             "AmountRequired": 1,
@@ -15384,7 +15384,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the A.R.C. M1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the A.R.C. M1.",
                             "CamoName": "ARC-M1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-3.png",
                             "AmountRequired": 1,
@@ -15938,7 +15938,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the KNIFE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the KNIFE.",
                             "CamoName": "KNIFE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/knife-p-3.png",
                             "AmountRequired": 1,
@@ -16486,7 +16486,7 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach weapon level 250, Master Prestige with the FLATLINE MK.II.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the FLATLINE MK.II.",
                             "CamoName": "FLATLINE-MK-II-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/flatline-mk-ii-p-3.png",
                             "AmountRequired": 1,
