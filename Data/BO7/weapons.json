@@ -197,7 +197,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the M15 MOD 0 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -546,9 +546,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M15 MOD 0.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the M15 MOD 0.",
                             "CamoName": "M15-MOD-0-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the M15 MOD 0.",
+                            "CamoName": "M15-MOD-0-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the M15 MOD 0.",
+                            "CamoName": "M15-MOD-0-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M15 MOD 0.",
+                            "CamoName": "M15-MOD-0-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -745,7 +769,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the AK-27 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -1094,9 +1118,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AK-27.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the AK-27.",
                             "CamoName": "AK-27-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the AK-27.",
+                            "CamoName": "AK-27-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the AK-27.",
+                            "CamoName": "AK-27-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AK-27.",
+                            "CamoName": "AK-27-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -1293,7 +1341,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the MXR-17 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -1642,9 +1690,33 @@
                         },
                         {
                             "CamoID": 2,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the MXR-17.",
+                            "CamoName": "MXR-17-P-3",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mxr-17-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the MXR-17.",
+                            "CamoName": "MXR-17-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mxr-17-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the MXR-17.",
+                            "CamoName": "MXR-17-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mxr-17-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MXR-17.",
-                            "CamoName": "AFTERLIFE",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/afterlife.png",
+                            "CamoName": "MXR-17-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mxr-17-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -1841,7 +1913,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the X9 MAVERICK in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -2190,9 +2262,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the X9 MAVERICK.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the X9 MAVERICK.",
                             "CamoName": "X9-MAVERICK-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the X9 MAVERICK.",
+                            "CamoName": "X9-MAVERICK-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the X9 MAVERICK.",
+                            "CamoName": "X9-MAVERICK-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the X9 MAVERICK.",
+                            "CamoName": "X9-MAVERICK-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -2389,7 +2485,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the DS20 MIRAGE in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -2738,9 +2834,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DS20 MIRAGE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the DS20 MIRAGE.",
                             "CamoName": "DS20-MIRAGE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the DS20 MIRAGE.",
+                            "CamoName": "DS20-MIRAGE-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the DS20 MIRAGE.",
+                            "CamoName": "DS20-MIRAGE-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DS20 MIRAGE.",
+                            "CamoName": "DS20-MIRAGE-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -2937,7 +3057,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the PEACEKEEPER MK1 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -3286,9 +3406,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the PEACEKEEPER MK1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the PEACEKEEPER MK1.",
                             "CamoName": "PEACEKEEPER-MK1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the PEACEKEEPER MK1.",
+                            "CamoName": "PEACEKEEPER-MK1-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the PEACEKEEPER MK1.",
+                            "CamoName": "PEACEKEEPER-MK1-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the PEACEKEEPER MK1.",
+                            "CamoName": "PEACEKEEPER-MK1-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -3491,7 +3635,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the RYDEN 45K in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -3840,9 +3984,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RYDEN 45K.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the RYDEN 45K.",
                             "CamoName": "RYDEN-45K-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the RYDEN 45K.",
+                            "CamoName": "RYDEN-45K-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the RYDEN 45K.",
+                            "CamoName": "RYDEN-45K-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RYDEN 45K.",
+                            "CamoName": "RYDEN-45K-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -4039,7 +4207,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the RK-9 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -4388,9 +4556,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RK-9.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the RK-9.",
                             "CamoName": "RK-9-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the RK-9.",
+                            "CamoName": "RK-9-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the RK-9.",
+                            "CamoName": "RK-9-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RK-9.",
+                            "CamoName": "RK-9-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -4587,7 +4779,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the RAZOR 9MM in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -4936,9 +5128,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RAZOR 9MM.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the RAZOR 9MM.",
                             "CamoName": "RAZOR-9MM-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the RAZOR 9MM.",
+                            "CamoName": "RAZOR-9MM-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the RAZOR 9MM.",
+                            "CamoName": "RAZOR-9MM-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RAZOR 9MM.",
+                            "CamoName": "RAZOR-9MM-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -5135,7 +5351,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the DRAVEC 45 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -5484,9 +5700,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DRAVEC 45.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the DRAVEC 45.",
                             "CamoName": "DRAVEC-45-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the DRAVEC 45.",
+                            "CamoName": "DRAVEC-45-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the DRAVEC 45.",
+                            "CamoName": "DRAVEC-45-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DRAVEC 45.",
+                            "CamoName": "DRAVEC-45-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -5683,7 +5923,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the CARBON 57 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -6032,9 +6272,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CARBON 57.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the CARBON 57.",
                             "CamoName": "CARBON-57-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the CARBON 57.",
+                            "CamoName": "CARBON-57-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the CARBON 57.",
+                            "CamoName": "CARBON-57-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CARBON 57.",
+                            "CamoName": "CARBON-57-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -6231,7 +6495,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the MPC-25 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -6580,6 +6844,30 @@
                         },
                         {
                             "CamoID": 2,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the MPC-25.",
+                            "CamoName": "MPC-25-P-3",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mpc-25-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the MPC-25.",
+                            "CamoName": "MPC-25-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mpc-25-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the MPC-25.",
+                            "CamoName": "MPC-25-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mpc-25-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MPC-25.",
                             "CamoName": "BACON",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bacon.png",
@@ -6785,7 +7073,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Point Blank kills with the M10 BREACHER in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -7134,9 +7422,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M10 BREACHER.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the M10 BREACHER.",
                             "CamoName": "M10-BREACHER-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the M10 BREACHER.",
+                            "CamoName": "M10-BREACHER-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the M10 BREACHER.",
+                            "CamoName": "M10-BREACHER-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M10 BREACHER.",
+                            "CamoName": "M10-BREACHER-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -7333,7 +7645,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Point Blank kills with the ECHO 12 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -7682,6 +7994,30 @@
                         },
                         {
                             "CamoID": 2,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the ECHO 12.",
+                            "CamoName": "ECHO-12-P-3",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/echo-12-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the ECHO 12.",
+                            "CamoName": "ECHO-12-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/echo-12-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the ECHO 12.",
+                            "CamoName": "ECHO-12-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/echo-12-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the ECHO 12.",
                             "CamoName": "WEAPONIZED 115",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/weaponized-115.png",
@@ -7881,7 +8217,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Point Blank kills with the AKITA in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -8230,9 +8566,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AKITA.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the AKITA.",
                             "CamoName": "AKITA-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the AKITA.",
+                            "CamoName": "AKITA-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the AKITA.",
+                            "CamoName": "AKITA-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AKITA.",
+                            "CamoName": "AKITA-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -8435,7 +8795,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the MK.78 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -8784,9 +9144,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MK.78.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the MK.78.",
                             "CamoName": "MK-78-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the MK.78.",
+                            "CamoName": "MK-78-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the MK.78.",
+                            "CamoName": "MK-78-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the MK.78.",
+                            "CamoName": "MK-78-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -8983,7 +9367,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the XM325 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -9332,9 +9716,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XM325.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the XM325.",
                             "CamoName": "XM325-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the XM325.",
+                            "CamoName": "XM325-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the XM325.",
+                            "CamoName": "XM325-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XM325.",
+                            "CamoName": "XM325-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -9537,7 +9945,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the M8A1 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -9886,9 +10294,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M8A1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the M8A1.",
                             "CamoName": "M8A1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the M8A1.",
+                            "CamoName": "M8A1-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the M8A1.",
+                            "CamoName": "M8A1-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M8A1.",
+                            "CamoName": "M8A1-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m8a1-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -9896,7 +10328,7 @@
                 },
                 {
                     "WeaponID": 1,
-                    "WeaponName": "Warden 308",
+                    "WeaponName": "WARDEN 308",
                     "WeaponImageURL": "https://camotracker.djr.li/Images/BO7/warden-308.png",
                     "MaxLevel": 43,
                     "CurrentLevel": 1,
@@ -10085,7 +10517,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the WARDEN 308 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -10434,9 +10866,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the WARDEN 308.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the WARDEN 308.",
                             "CamoName": "WARDEN 308-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the WARDEN 308.",
+                            "CamoName": "WARDEN 308-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the WARDEN 308.",
+                            "CamoName": "WARDEN 308-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the WARDEN 308.",
+                            "CamoName": "WARDEN 308-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -10633,7 +11089,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the M34 NOVALINE in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -10982,9 +11438,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M34 NOVALINE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the M34 NOVALINE.",
                             "CamoName": "M34 NOVALINE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the M34 NOVALINE.",
+                            "CamoName": "M34 NOVALINE-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the M34 NOVALINE.",
+                            "CamoName": "M34 NOVALINE-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M34 NOVALINE.",
+                            "CamoName": "M34 NOVALINE-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -11187,7 +11667,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 One Shot One kills with the VS RECON in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -11536,9 +12016,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VS RECON.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the VS RECON.",
                             "CamoName": "VS-RECON-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the VS RECON.",
+                            "CamoName": "VS-RECON-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the VS RECON.",
+                            "CamoName": "VS-RECON-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VS RECON.",
+                            "CamoName": "VS-RECON-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -11735,7 +12239,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 One Shot One kills with the SHADOW SK in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -12084,9 +12588,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the SHADOW SK.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the SHADOW SK.",
                             "CamoName": "SHADOW-SK-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the SHADOW SK.",
+                            "CamoName": "SHADOW-SK-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the SHADOW SK.",
+                            "CamoName": "SHADOW-SK-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the SHADOW SK.",
+                            "CamoName": "SHADOW-SK-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -12283,7 +12811,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 One Shot One kills with the XR-3 ION in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -12632,9 +13160,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XR-3 ION.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the XR-3 ION.",
                             "CamoName": "XR-3-ION-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the XR-3 ION.",
+                            "CamoName": "XR-3-ION-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the XR-3 ION.",
+                            "CamoName": "XR-3-ION-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XR-3 ION.",
+                            "CamoName": "XR-3-ION-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -12837,7 +13389,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the JÄGER 45 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -13186,9 +13738,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the JÄGER 45.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the JÄGER 45.",
                             "CamoName": "JAGER-45-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/jager-45-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the JÄGER 45.",
+                            "CamoName": "JAGER-45-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/jager-45-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the JÄGER 45.",
+                            "CamoName": "JAGER-45-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/jager-45-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the JÄGER 45.",
+                            "CamoName": "JAGER-45-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/jager-45-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -13385,7 +13961,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the VELOX 5.7 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -13734,9 +14310,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VELOX 5.7.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the VELOX 5.7.",
                             "CamoName": "VELOX-5-7-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/velox-5-7-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the VELOX 5.7.",
+                            "CamoName": "VELOX-5-7-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/velox-5-7-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the VELOX 5.7.",
+                            "CamoName": "VELOX-5-7-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/velox-5-7-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VELOX 5.7.",
+                            "CamoName": "VELOX-5-7-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/velox-5-7-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -13933,7 +14533,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 Headshot kills with the CODA 9 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -14282,9 +14882,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CODA 9.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the CODA 9.",
                             "CamoName": "CODA-9-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/coda-9-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the CODA 9.",
+                            "CamoName": "CODA-9-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/coda-9-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the CODA 9.",
+                            "CamoName": "CODA-9-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/coda-9-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CODA 9.",
+                            "CamoName": "CODA-9-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/coda-9-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -14487,7 +15111,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 kills or scorestreak destructions with the AAROW 109 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -14836,9 +15460,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AAROW 109.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the AAROW 109.",
                             "CamoName": "AAROW-109-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/aarow-109-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the AAROW 109.",
+                            "CamoName": "AAROW-109-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/aarow-109-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the AAROW 109.",
+                            "CamoName": "AAROW-109-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/aarow-109-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AAROW 109.",
+                            "CamoName": "AAROW-109-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/aarow-109-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -15035,7 +15683,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 kills or scorestreak destructions with the A.R.C M1 in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -15384,9 +16032,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the A.R.C. M1.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the A.R.C. M1.",
                             "CamoName": "ARC-M1-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the A.R.C. M1.",
+                            "CamoName": "ARC-M1-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the A.R.C. M1.",
+                            "CamoName": "ARC-M1-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the A.R.C. M1.",
+                            "CamoName": "ARC-M1-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arc-m1-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -15589,7 +16261,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 kills with the KNIFE in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -15938,9 +16610,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the KNIFE.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the KNIFE.",
                             "CamoName": "KNIFE-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/knife-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the KNIFE.",
+                            "CamoName": "KNIFE-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/knife-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the KNIFE.",
+                            "CamoName": "KNIFE-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/knife-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the KNIFE.",
+                            "CamoName": "KNIFE-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/knife-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -16137,7 +16833,7 @@
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "Get 10 kills with the FLATLINE MK.II in Multiplayer.",
-                                "CamoName": "MP-MIL-1",
+                                "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
@@ -16486,9 +17182,33 @@
                         },
                         {
                             "CamoID": 2,
-                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the FLATLINE MK.II.",
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the FLATLINE MK.II.",
                             "CamoName": "FLATLINE-MK-II-P-3",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/flatline-mk-ii-p-3.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the FLATLINE MK.II.",
+                            "CamoName": "FLATLINE-MK-II-P-4",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/flatline-mk-ii-p-4.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the FLATLINE MK.II.",
+                            "CamoName": "FLATLINE-MK-II-P-5",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/flatline-mk-ii-p-5.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the FLATLINE MK.II.",
+                            "CamoName": "FLATLINE-MK-II-P-6",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/flatline-mk-ii-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
