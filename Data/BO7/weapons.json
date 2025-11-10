@@ -18,20 +18,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the M15 MOD 0 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the M15 MOD 0 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the M15 MOD 0 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the M15 MOD 0 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -90,8 +90,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the M15 MOD 0 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the M15 MOD 0 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -130,7 +130,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the M15 MOD 0.",
@@ -139,7 +139,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -148,7 +148,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -189,7 +189,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the M15 MOD 0 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -419,8 +419,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the M15 MOD 0 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the M15 MOD 0 in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -428,11 +428,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the M15 MOD 0 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the M15 MOD 0 in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -590,20 +590,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the AK-27 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the AK-27 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the AK-27 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the AK-27 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -662,8 +662,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the AK-27 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the AK-27 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -702,7 +702,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the AK-27.",
@@ -711,7 +711,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -720,7 +720,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -761,7 +761,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the AK-27 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -991,8 +991,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the AK-27 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the AK-27 in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -1000,11 +1000,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the AK-27 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the AK-27 in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -1162,20 +1162,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the MXR-17 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the MXR-17 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the MXR-17 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the MXR-17 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -1234,8 +1234,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the MXR-17 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the MXR-17 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -1274,7 +1274,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the MXR-17.",
@@ -1283,7 +1283,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -1292,7 +1292,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -1333,7 +1333,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the MXR-17 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -1563,8 +1563,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the MXR-17 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the MXR-17 in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -1572,11 +1572,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the MXR-17 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the MXR-17 in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -1734,20 +1734,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the X9 MAVERICK in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the X9 MAVERICK in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the X9 MAVERICK in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the X9 MAVERICK in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -1806,8 +1806,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the X9 MAVERICK in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the X9 MAVERICK in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -1846,7 +1846,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the X9 MAVERICK.",
@@ -1855,7 +1855,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -1864,7 +1864,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -1905,7 +1905,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the X9 MAVERICK in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -2135,8 +2135,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the X9 MAVERICK in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the X9 MAVERICK in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -2144,11 +2144,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the X9 MAVERICK in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the X9 MAVERICK in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2306,20 +2306,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the DS20 MIRAGE in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the DS20 MIRAGE in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the DS20 MIRAGE in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the DS20 MIRAGE in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -2378,8 +2378,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the DS20 MIRAGE in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the DS20 MIRAGE in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -2418,7 +2418,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the DS20 MIRAGE.",
@@ -2427,7 +2427,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -2436,7 +2436,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -2477,7 +2477,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the DS20 MIRAGE in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -2707,8 +2707,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the DS20 MIRAGE in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the DS20 MIRAGE in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -2716,11 +2716,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the DS20 MIRAGE in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the DS20 MIRAGE in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2878,20 +2878,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-AR-0-REQ with the PEACEKEEPER MK1 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the PEACEKEEPER MK1 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-AR-1-REQ with the PEACEKEEPER MK1 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills with the PEACEKEEPER MK1 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -2950,8 +2950,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-AR-8-REQ with the PEACEKEEPER MK1 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the PEACEKEEPER MK1 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -2990,7 +2990,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the PEACEKEEPER MK1.",
@@ -2999,7 +2999,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 Assault Rifles.",
@@ -3008,7 +3008,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -3049,7 +3049,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the PEACEKEEPER MK1 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -3279,8 +3279,8 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "ZM-MIL-AR-7-REQ with the PEACEKEEPER MK1 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CategoryRequirement": "Get 800 Critical Kills with the PEACEKEEPER MK1 in Zombies.",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -3288,11 +3288,11 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "ZM-MIL-AR-8-REQ with the PEACEKEEPER MK1 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CategoryRequirement": "Get 1000 Critical Kills with the PEACEKEEPER MK1 in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3456,20 +3456,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the RYDEN 45K in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the RYDEN 45K in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the RYDEN 45K in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the RYDEN 45K in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -3528,8 +3528,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the RYDEN 45K in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the RYDEN 45K in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -3568,7 +3568,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the RYDEN 45K.",
@@ -3577,7 +3577,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -3586,7 +3586,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -3627,7 +3627,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the RYDEN 45K in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -3858,7 +3858,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the RYDEN 45K in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -3867,10 +3867,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the RYDEN 45K in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4028,20 +4028,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the RK-9 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the RK-9 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the RK-9 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the RK-9 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -4100,8 +4100,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the RK-9 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the RK-9 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -4140,7 +4140,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the RK-9.",
@@ -4149,7 +4149,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -4158,7 +4158,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -4199,7 +4199,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the RK-9 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -4430,7 +4430,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the RK-9 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -4439,10 +4439,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the RK-9 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4600,20 +4600,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the RAZOR 9MM in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the RAZOR 9MM in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the RAZOR 9MM in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the RAZOR 9MM in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -4672,8 +4672,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the RAZOR 9MM in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the RAZOR 9MM in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -4712,7 +4712,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the RAZOR 9MM.",
@@ -4721,7 +4721,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -4730,7 +4730,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -4771,7 +4771,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the RAZOR 9MM in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -5002,7 +5002,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the RAZOR 9MM in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -5011,10 +5011,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the RAZOR 9MM in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5172,20 +5172,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the DRAVEC 45 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the DRAVEC 45 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the DRAVEC 45 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the DRAVEC 45 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -5244,8 +5244,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the DRAVEC 45 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the DRAVEC 45 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -5284,7 +5284,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the DRAVEC 45.",
@@ -5293,7 +5293,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -5302,7 +5302,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -5343,7 +5343,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the DRAVEC 45 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -5574,7 +5574,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the DRAVEC 45 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -5583,10 +5583,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the DRAVEC 45 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5744,20 +5744,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the CARBON 57 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the CARBON 57 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the CARBON 57 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the CARBON 57 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -5816,8 +5816,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the CARBON 57 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the CARBON 57 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -5856,7 +5856,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the CARBON 57.",
@@ -5865,7 +5865,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -5874,7 +5874,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -5915,7 +5915,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the CARBON 57 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -6146,7 +6146,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the CARBON 57 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -6155,10 +6155,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the CARBON 57 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -6316,20 +6316,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SMG-0-REQ with the MPC-25 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the MPC-25 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SMG-1-REQ with the MPC-25 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the MPC-25 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -6388,8 +6388,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-SMG-8-REQ with the MPC-25 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the MPC-25 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -6428,7 +6428,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the MPC-25.",
@@ -6437,7 +6437,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 6 SMGs.",
@@ -6446,7 +6446,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -6487,7 +6487,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the MPC-25 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -6718,7 +6718,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SMG-7-REQ with the MPC-25 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -6727,10 +6727,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SMG-8-REQ with the MPC-25 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -6894,20 +6894,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SHG-0-REQ with the M10 BREACHER in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the M10 BREACHER in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SHG-1-REQ with the M10 BREACHER in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the M10 BREACHER in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -6967,7 +6967,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SHG-8-REQ with the M10 BREACHER in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -7006,7 +7006,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the M10 BREACHER.",
@@ -7015,7 +7015,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Shotguns.",
@@ -7024,7 +7024,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -7065,7 +7065,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Point Blank kills with the M10 BREACHER in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -7296,7 +7296,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SHG-7-REQ with the M10 BREACHER in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -7305,10 +7305,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SHG-8-REQ with the M10 BREACHER in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7466,20 +7466,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SHG-0-REQ with the ECHO 12 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the ECHO 12 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SHG-1-REQ with the ECHO 12 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the ECHO 12 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -7539,7 +7539,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SHG-8-REQ with the ECHO 12 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -7578,7 +7578,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the ECHO 12.",
@@ -7587,7 +7587,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Shotguns.",
@@ -7596,7 +7596,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -7637,7 +7637,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Point Blank kills with the ECHO 12 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -7868,7 +7868,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SHG-7-REQ with the ECHO 12 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -7877,10 +7877,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SHG-8-REQ with the ECHO 12 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8038,20 +8038,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SHG-0-REQ with the AKITA in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the AKITA in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SHG-1-REQ with the AKITA in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the AKITA in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -8111,7 +8111,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SHG-8-REQ with the AKITA in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -8150,7 +8150,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the AKITA.",
@@ -8159,7 +8159,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Shotguns.",
@@ -8168,7 +8168,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -8209,7 +8209,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Point Blank kills with the AKITA in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -8440,7 +8440,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SHG-7-REQ with the AKITA in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -8449,10 +8449,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SHG-8-REQ with the AKITA in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8616,20 +8616,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-LMG-0-REQ with the MK.78 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the MK.78 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-LMG-1-REQ with the MK.78 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the MK.78 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -8688,8 +8688,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-LMG-8-REQ with the MK.78 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the MK.78 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -8728,7 +8728,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the MK.78.",
@@ -8737,7 +8737,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 LMGs.",
@@ -8746,7 +8746,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -8787,7 +8787,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the MK.78 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -9018,7 +9018,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-LMG-7-REQ with the MK.78 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -9027,10 +9027,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-LMG-8-REQ with the MK.78 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9188,20 +9188,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-LMG-0-REQ with the XM325 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the XM325 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-LMG-1-REQ with the XM325 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the XM325 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -9260,8 +9260,8 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "CM-MIL-LMG-8-REQ with the XM325 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CategoryRequirement": "Get 250 Critical Kills with the XM325 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -9300,7 +9300,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the XM325.",
@@ -9309,7 +9309,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 LMGs.",
@@ -9318,7 +9318,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -9359,7 +9359,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the XM325 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -9590,7 +9590,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-LMG-7-REQ with the XM325 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -9599,10 +9599,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-LMG-8-REQ with the XM325 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9766,20 +9766,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-MM-0-REQ with the M8A1 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the M8A1 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-MM-1-REQ with the M8A1 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the M8A1 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -9839,7 +9839,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-MM-8-REQ with the M8A1 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -9878,7 +9878,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the M8A1.",
@@ -9887,7 +9887,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Marksman Rifles.",
@@ -9896,7 +9896,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -9937,7 +9937,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the M8A1 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -10168,7 +10168,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-MM-7-REQ with the M8A1 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -10177,10 +10177,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-MM-8-REQ with the M8A1 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10338,20 +10338,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-MM-0-REQ with the WARDEN 308 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the WARDEN 308 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-MM-1-REQ with the WARDEN 308 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the WARDEN 308 in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -10411,7 +10411,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-MM-8-REQ with the WARDEN 308 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -10450,7 +10450,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the WARDEN 308.",
@@ -10459,7 +10459,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Marksman Rifles.",
@@ -10468,7 +10468,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -10509,7 +10509,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the WARDEN 308 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -10740,7 +10740,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-MM-7-REQ with the WARDEN 308 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -10749,10 +10749,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-MM-8-REQ with the WARDEN 308 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10910,20 +10910,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-MM-0-REQ with the M34 NOVALINE in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the M34 NOVALINE in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-MM-1-REQ with the M34 NOVALINE in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the M34 NOVALINE in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -10983,7 +10983,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-MM-8-REQ with the M34 NOVALINE in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -11022,7 +11022,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the M34 NOVALINE.",
@@ -11031,7 +11031,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Marksman Rifles.",
@@ -11040,7 +11040,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -11081,7 +11081,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the M34 NOVALINE in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -11312,7 +11312,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-MM-7-REQ with the M34 NOVALINE in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -11321,10 +11321,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-MM-8-REQ with the M34 NOVALINE in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11488,20 +11488,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SR-0-REQ with the VS RECON in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the VS RECON in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SR-1-REQ with the VS RECON in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the VS RECON in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -11561,7 +11561,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SR-8-REQ with the VS RECON in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -11600,7 +11600,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the VS RECON.",
@@ -11609,7 +11609,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Sniper Rifles.",
@@ -11618,7 +11618,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -11659,7 +11659,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 One Shot One kills with the VS RECON in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -11890,7 +11890,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SR-7-REQ with the VS RECON in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -11899,10 +11899,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SR-8-REQ with the VS RECON in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12060,20 +12060,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SR-0-REQ with the SHADOW SK in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the SHADOW SK in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SR-1-REQ with the SHADOW SK in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the SHADOW SK in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -12133,7 +12133,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SR-8-REQ with the SHADOW SK in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -12172,7 +12172,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the SHADOW SK.",
@@ -12181,7 +12181,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Sniper Rifles.",
@@ -12190,7 +12190,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -12231,7 +12231,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 One Shot One kills with the SHADOW SK in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -12462,7 +12462,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SR-7-REQ with the SHADOW SK in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -12471,10 +12471,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SR-8-REQ with the SHADOW SK in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12632,20 +12632,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-SR-0-REQ with the XR-3 ION in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the XR-3 ION in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-SR-1-REQ with the XR-3 ION in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the XR-3 ION in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -12705,7 +12705,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-SR-8-REQ with the XR-3 ION in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -12744,7 +12744,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the XR-3 ION.",
@@ -12753,7 +12753,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Sniper Rifles.",
@@ -12762,7 +12762,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -12803,7 +12803,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 One Shot One kills with the XR-3 ION in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -13034,7 +13034,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-SR-7-REQ with the XR-3 ION in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -13043,10 +13043,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-SR-8-REQ with the XR-3 ION in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -13210,20 +13210,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-PS-0-REQ with the JÄGER 45 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the JÄGER 45 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "CM-MIL-PS-1-REQ with the JÄGER 45 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -13283,7 +13283,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-PS-8-REQ with the JÄGER 45 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -13322,7 +13322,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the JÄGER 45.",
@@ -13331,7 +13331,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Pistols.",
@@ -13340,7 +13340,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -13381,7 +13381,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the JÄGER 45 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -13612,7 +13612,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-PS-7-REQ with the JÄGER 45 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -13621,10 +13621,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-PS-8-REQ with the JÄGER 45 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -13782,20 +13782,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-PS-0-REQ with the VELOX 5.7 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the VELOX 5.7 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "CM-MIL-PS-1-REQ with the VELOX 5.7 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -13855,7 +13855,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-PS-8-REQ with the VELOX 5.7 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -13894,7 +13894,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the VELOX 5.7.",
@@ -13903,7 +13903,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Pistols.",
@@ -13912,7 +13912,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -13953,7 +13953,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the VELOX 5.7 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -14184,7 +14184,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-PS-7-REQ with the VELOX 5.7 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -14193,10 +14193,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-PS-8-REQ with the VELOX 5.7 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -14354,20 +14354,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-PS-0-REQ with the CODA 9 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the CODA 9 in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "CM-MIL-PS-1-REQ with the CODA 9 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -14427,7 +14427,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-PS-8-REQ with the CODA 9 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -14466,7 +14466,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the CODA 9.",
@@ -14475,7 +14475,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Pistols.",
@@ -14484,7 +14484,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -14525,7 +14525,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 Headshot kills with the CODA 9 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -14756,7 +14756,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-PS-7-REQ with the CODA 9 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -14765,10 +14765,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-PS-8-REQ with the CODA 9 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -14933,19 +14933,19 @@
                             {
                                 "CamoID": 0,
                                 "CategoryRequirement": "CM-MIL-LA-0-REQ with the AAROW 109 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "CM-MIL-LA-1-REQ with the AAROW 109 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -15005,7 +15005,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-LA-8-REQ with the AAROW 109 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -15044,7 +15044,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the AAROW 109.",
@@ -15053,7 +15053,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers.",
@@ -15062,7 +15062,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -15103,7 +15103,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 kills or scorestreak destructions with the AAROW 109 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -15334,7 +15334,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-LA-7-REQ with the AAROW 109 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -15343,10 +15343,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-LA-8-REQ with the AAROW 109 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -15505,19 +15505,19 @@
                             {
                                 "CamoID": 0,
                                 "CategoryRequirement": "CM-MIL-LA-0-REQ with the A.R.C M1 in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
                                 "CategoryRequirement": "CM-MIL-LA-1-REQ with the A.R.C M1 in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -15577,7 +15577,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-LA-8-REQ with the A.R.C M1 in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -15616,7 +15616,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the A.R.C M1.",
@@ -15625,7 +15625,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers.",
@@ -15634,7 +15634,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -15675,7 +15675,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 kills or scorestreak destructions with the A.R.C M1 in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -15906,7 +15906,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-LA-7-REQ with the A.R.C M1 in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -15915,10 +15915,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-LA-8-REQ with the A.R.C M1 in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -16082,20 +16082,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-ME-0-REQ with the KNIFE in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the KNIFE in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-ME-1-REQ with the KNIFE in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the KNIFE in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -16155,7 +16155,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-ME-8-REQ with the KNIFE in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -16194,7 +16194,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the KNIFE.",
@@ -16203,7 +16203,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Melee.",
@@ -16212,7 +16212,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -16253,7 +16253,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 kills with the KNIFE in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -16484,7 +16484,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-ME-7-REQ with the KNIFE in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -16493,10 +16493,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-ME-8-REQ with the KNIFE in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -16654,20 +16654,20 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-MIL-ME-0-REQ with the FLATLINE MK.II in Campaign.",
-                                "CamoName": "CM-MIL-0",
+                                "CategoryRequirement": "Get 10 Critical Kills with the FLATLINE MK.II in Campaign.",
+                                "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-MIL-ME-1-REQ with the FLATLINE MK.II in Campaign.",
-                                "CamoName": "CM-MIL-1",
+                                "CategoryRequirement": "Get 25 Critical Kills  with the FLATLINE MK.II in Campaign.",
+                                "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
@@ -16727,7 +16727,7 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "CM-MIL-ME-8-REQ with the FLATLINE MK.II in Campaign.",
-                                "CamoName": "CM-MIL-8",
+                                "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 10,
@@ -16766,7 +16766,7 @@
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 20 Special Enemies.",
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
                                 "UnlockRequirement": "Unlock all SPECIAL CAMOS for the FLATLINE MK.II.",
@@ -16775,7 +16775,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 100 Zone 3 or 4 Enemies.",
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
                                 "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Melee.",
@@ -16784,7 +16784,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 10 Elite Enemies.",
+                                "CategoryRequirement": "Eliminate 10 Elite Zombies.",
                                 "CamoName": "CHROMA FLUX",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
                                 "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
@@ -16825,7 +16825,7 @@
                                 "CamoID": 0,
                                 "CategoryRequirement": "Get 5 kills with the FLATLINE MK.II in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/underbrush.png",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
@@ -17056,7 +17056,7 @@
                             {
                                 "CamoID": 7,
                                 "CategoryRequirement": "ZM-MIL-ME-7-REQ with the FLATLINE MK.II in Zombies.",
-                                "CamoName": "ZM-MIL-7",
+                                "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 50,
@@ -17065,10 +17065,10 @@
                             {
                                 "CamoID": 8,
                                 "CategoryRequirement": "ZM-MIL-ME-8-REQ with the FLATLINE MK.II in Zombies.",
-                                "CamoName": "ZM-MIL-8",
+                                "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 50,
+                                "AmountRequired": 200,
                                 "CurrentAmount": 0
                             }
                         ],
