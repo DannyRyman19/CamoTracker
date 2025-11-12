@@ -1562,6 +1562,32 @@
                                 "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
+                        ],
+                        "MasteryBadges": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 500 Eliminations with the MXR-17.",
+                                "CamoName": "Badge I",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 500,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 1500 Eliminations with the MXR-17.",
+                                "CamoName": "Badge II",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 1000,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 3000 Eliminations with the MXR-17.",
+                                "CamoName": "Mastery",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 1500,
+                                "CurrentAmount": 0
+                            }
                         ]
                     },
                     "Warzone": {
