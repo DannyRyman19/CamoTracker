@@ -101,29 +101,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the M15 MOD 0 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 100 Eliminations with the M15 MOD 0 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the M15 MOD 0 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -245,29 +245,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills while moving with the M15 MOD 0 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the M15 MOD 0 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 20 Kills with an underbarrel attachment equipped with the M15 MOD 0 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 20,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -414,29 +414,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 300 Hipfire Kills with the M15 MOD 0 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the M15 MOD 0 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 300 Kills with Fire Works activations using the M15 MOD 0 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M15 MOD 0.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -546,7 +546,7 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M15 MOD 0.",
-                            "CamoName": "M15-MOD-0-P-6",
+                            "CamoName": "OBSCURED",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m15-mod-0-p-6.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
@@ -648,25 +648,25 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the AK-27 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 50 Kills with the AK-27 while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the AK-27 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
@@ -792,29 +792,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 30 Hipfire Kills with the AK-27 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the AK-27 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 20 Kills with an underbarrel attachment equipped with the AK-27 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 20,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -961,29 +961,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 2 Critical Kills with a single shot 15 times with the AK-27 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "With the Napalm Burst Ammo Mod equipped, get 300 kills with the AK-27 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 5 times with the AK-27 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AK-27.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -1061,8 +1061,8 @@
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the AK-27.",
-                            "CamoName": "AK-27-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-2.png",
+                            "CamoName": "SHACKLED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shackled.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -1093,8 +1093,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AK-27.",
-                            "CamoName": "AK-27-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ak-27-p-6.png",
+                            "CamoName": "LOTUS",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/lotus.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -1742,29 +1742,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 3 Kills rapidly with the X9 MAVERICK 10 times in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "With the Tactical Laser equipped: get 50 Kills in the Tactical Stance with the X9 MAVERICK in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 50 Kills with the X9 MAVERICK while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -1886,29 +1886,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the X9 MAVERICK in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the X9 MAVERICK in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the X9 MAVERICK in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2055,29 +2055,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 75 Kills with Shadow Rift activations using the X9 MAVERICK in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 300 Eliminations with the X9 MAVERICK while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the X9 MAVERICK in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2147,8 +2147,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the X9 MAVERICK.",
-                            "CamoName": "X9-MAVERICK-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/x9-maverick-p-1.png",
+                            "CamoName": "STRANDS",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/strands.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -2289,29 +2289,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 3 kills rapidly with the DS20 MIRAGE 10 times in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 25 Kills with the DS20 MIRAGE shortly after sliding, diving or wall-jumping in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "With an Extended Magazine Attachment equipped: get 100 Eliminations with the DS20 MIRAGE in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2433,29 +2433,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-AR-0-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 50 Eliminations with the DS20 MIRAGE in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-AR-1-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 50 Eliminations with the DS20 MIRAGE in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-AR-2-REQ",
+                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the DS20 MIRAGE while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2602,29 +2602,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 10 times with the DS20 MIRAGE in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the DS20 MIRAGE in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 150,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 5 Eliminations with the DS20 MIRAGE in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2694,16 +2694,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the DS20 MIRAGE.",
-                            "CamoName": "DS20-MIRAGE-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-1.png",
+                            "CamoName": "FRACTURE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/fracture.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the DS20 MIRAGE.",
-                            "CamoName": "DS20-MIRAGE-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-2.png",
+                            "CamoName": "NOCTURNAL",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/nocturnal.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -2734,8 +2734,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the DS20 MIRAGE.",
-                            "CamoName": "DS20-MIRAGE-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ds20-mirage-p-6.png",
+                            "CamoName": "ONI",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/oni.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -2836,29 +2836,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 10 kills without reloading 10 times with the Peacekeeper MK1 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Eliminate 50 Guild Tech Enemies with the PEACEKEEPER MK1 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 25 Kills with the PEACEKEEPER MK1 shortly after sliding, diving or wall-jumping in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -2980,29 +2980,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-AR-0-REQ",
+                                "CategoryRequirement": "With 5 or more Attachments equipped: get 50 Eliminations with the PEACEKEEPER MK1 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the PEACEKEEPER MK1 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Get 20 Kills with an underbarrel attachment equipped with the PEACEKEEPER MK1 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 20,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3149,29 +3149,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-AR-0-REQ",
+                                "CategoryRequirement": "Get 300 Eliminations with the PEACEKEEPER MK1 at Rare Rarity or higher in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-AR-1-REQ",
+                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the PEACEKEEPER MK1 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-AR-2-REQ",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the PEACEKEEPER MK1 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3281,8 +3281,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the PEACEKEEPER MK1.",
-                            "CamoName": "PEACEKEEPER-MK1-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/peacekeeper-mk1-p-6.png",
+                            "CamoName": "CYBORG",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cyborg.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -3389,29 +3389,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "With 8 attachments equipped: get 100 Eliminations with the RYDEN 45K in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "With an Extended Magazine Attachment equipped: get 100 Eliminations with the RYDEN 45K in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 50 Point Blank Kills with the RYDEN 45K in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3533,29 +3533,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the RYDEN 45K in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 30 Kills while or shortly after sprinting with the RYDEN 45K in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the RYDEN 45K in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3702,29 +3702,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 300 Eliminations with the RYDEN 45K in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 5 Critical Kills rapidly 15 times with the RYDEN 45K in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "With the Cryo Freeze Ammo Mod equipped: get 300 Eliminations with the RYDEN 45K in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RYDEN 45K.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3834,8 +3834,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RYDEN 45K.",
-                            "CamoName": "RYDEN-45K-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/ryden-45k-p-6.png",
+                            "CamoName": "TAGGED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/tagged.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -3936,29 +3936,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "With the Tactical Laser equipped: get 50 Kills in the Tactical Stance with the RK-9 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 25 Kills shortly after switching weapons with the RK-9 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 50 Kills with the RK-9 while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4080,29 +4080,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills while moving with the RK-9 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the RK-9 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 50 Eliminations with the RK-9 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4249,29 +4249,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "With the Napalm Burst Ammo Mod equipped, get 300 kills with the RK-9 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the RK-9 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the RK-9 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4341,16 +4341,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the RK-9.",
-                            "CamoName": "RK-9-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-1.png",
+                            "CamoName": "BILLOW",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/billow.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the RK-9.",
-                            "CamoName": "RK-9-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-2.png",
+                            "CamoName": "NEON ZEBRA",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/neon-zebra.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -4381,8 +4381,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RK-9.",
-                            "CamoName": "RK-9-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/rk-9-p-6.png",
+                            "CamoName": "SPOTTED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/spotted.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -4483,29 +4483,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the RAZOR 9MM in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 25 Kills with the RAZOR 9MM shortly after sliding, diving or wall-jumping in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 50 Point Blank Kills with the RAZOR 9MM in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4627,29 +4627,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 30 Hipfire Kills with the RAZOR 9MM in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the RAZOR 9MM in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 50 Kills while moving with the RAZOR 9MM in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4796,29 +4796,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 300 Hipfire Kills with the RAZOR 9MM in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the RAZOR 9MM in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 150,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 10 Kills without reloading 15 times with the RAZOR 9MM in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RAZOR 9MM.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -4888,16 +4888,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the RAZOR 9MM.",
-                            "CamoName": "RAZOR-9MM-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-1.png",
+                            "CamoName": "LEOPARD",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/leopard.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the RAZOR 9MM.",
-                            "CamoName": "RAZOR-9MM-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-2.png",
+                            "CamoName": "SCORCH",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/scorch.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -4928,8 +4928,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the RAZOR 9MM.",
-                            "CamoName": "RAZOR-9MM-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/razor-9mm-p-6.png",
+                            "CamoName": "HEATWAVE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/heatwave.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -5030,29 +5030,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the DRAVEC 45 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "With an Extended Magazine Attachment equipped: get 100 Eliminations with the DRAVEC 45 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "With the Tactical Laser equipped: get 50 Kills in the Tactical Stance with the DRAVEC 45 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5174,29 +5174,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the DRAVEC 45 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the DRAVEC 45 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get a Kill with the DRAVEC 45 while or shortly after sliding, diving or wall running 15 times in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5343,29 +5343,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "With the Brain Rot Ammo Mod equipped, get 300 kills with the DRAVEC 45 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 5 Critical Kills rapidly 15 times with the DRAVEC 45 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the DRAVEC 45 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5435,8 +5435,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the DRAVEC 45.",
-                            "CamoName": "DRAVEC-45-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dravec-45-p-1.png",
+                            "CamoName": "KAWAII",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/kawaii.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -5577,29 +5577,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Destroy 25 Guild D.A.W.G.s, Sentry Turrets, or Drones with the CARBON 57 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 50 Hipfire Kills with the CARBON 57 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 3 kills rapidly with the CARBON 57 10 times in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -5721,25 +5721,25 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 30 Hipfire Kills with the CARBON 57 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the CARBON 57 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "With the Gunfighter Wildcard equipped: get 50 Eliminations with the CARBON 57 while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
@@ -5890,29 +5890,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SMG-0-REQ",
+                                "CategoryRequirement": "Get 300 Kills with Fire Works activations using the CARBON 57 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SMG-1-REQ",
+                                "CategoryRequirement": "Get 10 Kills without reloading 15 times with the CARBON 57 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SMG-2-REQ",
+                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the CARBON 57 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CARBON 57.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -6022,8 +6022,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the CARBON 57.",
-                            "CamoName": "CARBON-57-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/carbon-57-p-6.png",
+                            "CamoName": "SHROUDED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shrouded.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -6286,7 +6286,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 eliminations with the MPC-25 in Multiplayer.",
+                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 eliminations with the MPC-25 while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MPC-25.",
@@ -6677,29 +6677,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Destroy 25 Guild D.A.W.G.s, Sentry Turrets, or Drones with the M10 BREACHER in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "Get 25 Kills with the M10 BREACHER shortly after sliding, diving or wall-jumping in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 50 Hipfire Kills with the M10 BREACHER in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -6821,29 +6821,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the M10 BREACHER in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the M10 BREACHER in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the M10 BREACHER in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -6990,29 +6990,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 5 Critical Kills rapidly 15 times with the M10 BREACHER in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "With the Brain Rot Ammo Mod equipped, get 300 kills with the M10 BREACHER in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the M10 BREACHER in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M10 BREACHER.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7082,16 +7082,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the M10 BREACHER.",
-                            "CamoName": "M10-BREACHER-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-1.png",
+                            "CamoName": "TRADE TOOLS",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/trade-tools.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the M10 BREACHER.",
-                            "CamoName": "M10-BREACHER-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-2.png",
+                            "CamoName": "SUNSET ZEBRA",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/sunset-zebra.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -7122,8 +7122,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M10 BREACHER.",
-                            "CamoName": "M10-BREACHER-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m10-breacher-p-6.png",
+                            "CamoName": "OVERDRIVE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/overdrive.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -7224,29 +7224,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 50 Hipfire Kills with the ECHO 12 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "With the Tactical Laser equipped: get 50 Kills in the Tactical Stance with the ECHO 12 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the ECHO 12 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7368,29 +7368,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the ECHO 12 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "Get 10 Kills shortly after sprinting with the ECHO 12 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the ECHO 12 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7537,29 +7537,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 300 Point-Blank Kills with the ECHO 12 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "With the Cryo Freeze Ammo Mod equipped: get 300 Eliminations with the ECHO 12 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 5 times with the ECHO 12 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the ECHO 12.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7771,29 +7771,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 100 Kills with the AKITA at Rare Rarity or higher in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the AKITA in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 50 Hipfire Kills with the AKITA in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -7915,29 +7915,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills while moving with the AKITA in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "Get 30 Hipfire Kills with the AKITA in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get a Kill with the AKITA while or shortly after sliding, diving or wall running 15 times in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8084,29 +8084,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SHG-0-REQ",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 10 times with the AKITA in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SHG-1-REQ",
+                                "CategoryRequirement": "With the Napalm Burst Ammo Mod equipped, get 300 kills with the AKITA in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SHG-2-REQ",
+                                "CategoryRequirement": "Get 300 Point-Blank Kills with the AKITA in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AKITA.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8176,16 +8176,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the AKITA.",
-                            "CamoName": "AKITA-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-1.png",
+                            "CamoName": "FISSURE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/fissure.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the AKITA.",
-                            "CamoName": "AKITA-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-2.png",
+                            "CamoName": "SLITHER",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/slither.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -8216,8 +8216,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the AKITA.",
-                            "CamoName": "AKITA-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/akita-p-6.png",
+                            "CamoName": "HEXED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/hexed.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
