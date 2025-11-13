@@ -8324,29 +8324,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "Get 3 Kills without releasing the trigger 10 Times with the MK.78 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "With an Extended Magazine Attachment equipped: get 100 Eliminations with the MK.78 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the MK.78 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8468,29 +8468,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the MK.78 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "Get 2 Kills without releasing the trigger 10 Times with the MK.78 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "With 5 or more Attachments equipped: get 50 Eliminations with the MK.78 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8637,25 +8637,25 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the MK.78 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 150,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "Get 75 Kills with Shadow Rift activations using the MK.78 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the MK.78 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
@@ -8737,8 +8737,8 @@
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the MK.78.",
-                            "CamoName": "MK-78-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mk-78-p-2.png",
+                            "CamoName": "MITOSIS",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mitosis.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -8871,29 +8871,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "Destroy 25 Guild D.A.W.G.s, Sentry Turrets, or Drones with the XM325 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "Get 3 Kills without releasing the trigger 10 Times with the XM325 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "With 8 attachments equipped: get 100 Eliminations with the XM325 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9015,29 +9015,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the XM325 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "Get 2 Kills without releasing the trigger 10 Times with the XM325 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the XM325 while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9184,29 +9184,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-LMG-0-REQ",
+                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 300 Eliminations with the XM325 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-LMG-1-REQ",
+                                "CategoryRequirement": "Get 300 Hipfire Kills with the XM325 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-LMG-2-REQ",
+                                "CategoryRequirement": "Get 10 kills without reloading 5 times with the XM325 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9284,8 +9284,8 @@
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the XM325.",
-                            "CamoName": "XM325-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-2.png",
+                            "CamoName": "FATED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/fated.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -9316,8 +9316,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XM325.",
-                            "CamoName": "XM325-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xm325-p-6.png",
+                            "CamoName": "LACERATE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/lacerate.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -9424,29 +9424,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 100 Eliminations with the M8A1 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "Get 50 Kills with the M8A1 while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Get 100 Kills with the M8A1 at Rare Rarity or higher in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9568,29 +9568,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-MM-0-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 50 Eliminations with the M8A1 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-MM-1-REQ",
+                                "CategoryRequirement": "Get 15 Long Shot medals with the M8A1 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the M8A1 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9737,29 +9737,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 300 Eliminations with the M8A1 while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "With the Cryo Freeze Ammo Mod equipped: get 300 Eliminations with the M8A1 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the M8A1 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -9971,29 +9971,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 10 Kills without reloading 10 times with the WARDEN 308 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "Get 3 Kills rapidly with the WARDEN 308 10 times in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 100 Eliminations with the WARDEN 308 in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10115,29 +10115,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 30 Objective Kills with the WARDEN 308 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-MM-1-REQ",
+                                "CategoryRequirement": "With 5 or more Attachments equipped: get 50 Eliminations with the WARDEN 308 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Get 30 One Shot One kills with the WARDEN 308 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10284,29 +10284,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 75 Kills with Fire Works activations using the WARDEN 308 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "Get 300 Kills with the WARDEN 308 at Rare Rarity or higher in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Get 2 Critical Kills with a single shot 15 times with the WARDEN 308 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the WARDEN 308.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10376,8 +10376,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the WARDEN 308.",
-                            "CamoName": "WARDEN 308-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-1.png",
+                            "CamoName": "PSYCHEDELIC",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/psychedelic.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -10416,8 +10416,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the WARDEN 308.",
-                            "CamoName": "WARDEN 308-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/warden-308-p-6.png",
+                            "CamoName": "MARBLED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/marbled.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -10518,29 +10518,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the M34 NOVALINE in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "With 8 attachments equipped: get 100 Eliminations with the M34 NOVALINE in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 100 Eliminations with the M34 NOVALINE in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10662,29 +10662,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 15 Long Shot medals with the M34 NOVALINE in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-MM-1-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 50 Eliminations with the M34 NOVALINE in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-MM-2-REQ",
+                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the M34 NOVALINE while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10831,29 +10831,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-MM-0-REQ",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the M34 NOVALINE in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-MM-1-REQ",
+                                "CategoryRequirement": "With the Brain Rot Ammo Mod equipped, get 300 kills with the M34 NOVALINE in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-MM-2-REQ",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the M34 NOVALINE in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -10923,16 +10923,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the M34 NOVALINE.",
-                            "CamoName": "M34 NOVALINE-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-1.png",
+                            "CamoName": "SHATTERED",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shattered.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the M34 NOVALINE.",
-                            "CamoName": "M34 NOVALINE-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-2.png",
+                            "CamoName": "COHESION",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cohesion.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -10963,8 +10963,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the M34 NOVALINE.",
-                            "CamoName": "M34 NOVALINE-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/m34-novaline-p-6.png",
+                            "CamoName": "KOI POND",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/koi-pond.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -11071,29 +11071,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the VS RECON in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 100 Eliminations with the VS RECON in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "With 8 attachments equipped: get 100 Eliminations with the VS RECON in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11215,29 +11215,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SR-0-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 50 Eliminations with the VS RECON in Campaign.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 30 One Shot One kills with the VS RECON in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the VS RECON in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11384,29 +11384,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the VS RECON in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 300 Eliminations with the VS RECON in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 300 Eliminations with the VS RECON while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VS RECON.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11476,8 +11476,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the VS RECON.",
-                            "CamoName": "VS-RECON-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-1.png",
+                            "CamoName": "ARACHNID",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arachnid.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -11516,8 +11516,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the VS RECON.",
-                            "CamoName": "VS-RECON-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vs-recon-p-6.png",
+                            "CamoName": "NIGHTLIGHT",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/nightlight.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -11618,29 +11618,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Get 50 Kills with the SHADOW SK while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 10 Kills without reloading 10 times with the SHADOW SK in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Destroy 25 Guild D.A.W.G.s, Sentry Turrets, or Drones with the SHADOW SK in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11762,29 +11762,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SR-0-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 50 Eliminations with the SHADOW SK in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 15 Long Shot medals with the SHADOW SK in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the SHADOW SK in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -11931,29 +11931,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Get 5 Critical Kills rapidly 15 times with the SHADOW SK in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 75 Kills with Fire Works activations using the SHADOW SK in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 300 Kills with the SHADOW SK at Rare Rarity or higher in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SHADOW SK.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12023,8 +12023,8 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the SHADOW SK.",
-                            "CamoName": "SHADOW-SK-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-1.png",
+                            "CamoName": "FRENETIC",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/frenetic.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -12063,8 +12063,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the SHADOW SK.",
-                            "CamoName": "SHADOW-SK-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shadow-sk-p-6.png",
+                            "CamoName": "KINTSUGI",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/kintsugi.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
@@ -12165,29 +12165,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "CM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "With a 4.0x or higher magnification scope equipped: get 100 Eliminations with the XR-3 ION in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "CM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 100 Eliminations with the XR-3 ION in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "CM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the XR-3 ION in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12309,29 +12309,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "MP-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Get 15 Long Shot medals with the XR-3 ION in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "MP-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the XR-3 ION in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "MP-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the XR-3 ION in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12478,29 +12478,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "ZM-SPE-SR-0-REQ",
+                                "CategoryRequirement": "Get 2 Critical Kills with a single shot 15 times with the XR-3 ION in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "ZM-SPE-SR-1-REQ",
+                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the XR-3 ION in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "ZM-SPE-SR-2-REQ",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 5 times with the XR-3 ION in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XR-3 ION.",
-                                "AmountRequired": 1,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -12570,16 +12570,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the XR-3 ION.",
-                            "CamoName": "XR-3-ION-P-1",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-1.png",
+                            "CamoName": "BURNER",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/burner.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the XR-3 ION.",
-                            "CamoName": "XR-3-ION-P-2",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-2.png",
+                            "CamoName": "SERENITY",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/serenity.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -12610,8 +12610,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Master Level 250 with the XR-3 ION.",
-                            "CamoName": "XR-3-ION-P-6",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/xr-3-ion-p-6.png",
+                            "CamoName": "SNAKE EYES",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/snake-eyes.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
