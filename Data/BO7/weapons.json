@@ -1886,7 +1886,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the X9 MAVERICK in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical or non-lethal Scorestreak with the X9 MAVERICK in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the X9 MAVERICK.",
@@ -2620,11 +2620,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 5 Eliminations with the DS20 MIRAGE in Zombies.",
+                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 300 Eliminations with the DS20 MIRAGE in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DS20 MIRAGE.",
-                                "AmountRequired": 5,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -3158,7 +3158,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the PEACEKEEPER MK1 in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the PEACEKEEPER MK1 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
@@ -3167,7 +3167,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the PEACEKEEPER MK1 in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the PEACEKEEPER MK1 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the PEACEKEEPER MK1.",
@@ -4089,7 +4089,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the RK-9 in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical or non-lethal Scorestreak with the RK-9 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the RK-9.",
@@ -5361,7 +5361,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the DRAVEC 45 in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the DRAVEC 45 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the DRAVEC 45.",
@@ -8655,7 +8655,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the MK.78 in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the MK.78 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the MK.78.",
@@ -9015,7 +9015,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the XM325 in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical or non-lethal Scorestreak with the XM325 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the XM325.",
@@ -9755,7 +9755,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the M8A1 in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the M8A1 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M8A1.",
@@ -10849,7 +10849,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the M34 NOVALINE in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the M34 NOVALINE in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the M34 NOVALINE.",
@@ -13427,7 +13427,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical Equipment with the VELOX 5.7 in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemeies affected by your Tactical or non-lethal Scorestreak with the VELOX 5.7 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VELOX 5.7.",
@@ -14143,7 +14143,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the CODA 9 in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the CODA 9 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CODA 9.",
@@ -15796,7 +15796,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Kills shortly after using a Field Upgrade with the KNIFE in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the KNIFE in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KNIFE.",
@@ -16165,7 +16165,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Kill 30 Enemies affected by your Tactical Equipment with the FLATLINE MK.II in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemies affected by your Tactical or non-lethal Scorestreak with the FLATLINE MK.II in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the FLATLINE MK.II.",
@@ -16343,7 +16343,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical Equipment with the FLATLINE MK.II in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the FLATLINE MK.II in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the FLATLINE MK.II.",
