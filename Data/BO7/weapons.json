@@ -7688,7 +7688,7 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 10 Critical Kills with the AKITA in Campaign.",
+                                "CategoryRequirement": "Get 10 Point-Blank Kills with the AKITA in Campaign.",
                                 "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
@@ -7697,7 +7697,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 25 Critical Kills with the AKITA in Campaign.",
+                                "CategoryRequirement": "Get 25 Point-Blank Kills with the AKITA in Campaign.",
                                 "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
@@ -15816,11 +15816,11 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 5 times.",
+                                "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 2 times.",
                                 "CamoName": "BLOODSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
                                 "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Melee.",
-                                "AmountRequired": 5,
+                                "AmountRequired": 2,
                                 "CurrentAmount": 0
                             },
                             {
@@ -16363,11 +16363,11 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 5 times.",
+                                "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 2 times.",
                                 "CamoName": "BLOODSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
                                 "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Melee.",
-                                "AmountRequired": 5,
+                                "AmountRequired": 2,
                                 "CurrentAmount": 0
                             },
                             {
