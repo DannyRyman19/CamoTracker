@@ -13819,16 +13819,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Destroy 25 Guild D.A.W.G.s, Sentry Turrets, or Drones with the SOKOL 545 in Campaign.",
+                                "CategoryRequirement": "Eliminate 50 Guild Tech Enemies with the SOKOL 545 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 25,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 3 Kills without releasing the trigger 10 Times with the SOKOL 545 in Campaign.",
+                                "CategoryRequirement": "Get 10 Kills without reloading 10 Times with the SOKOL 545 in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
@@ -13837,11 +13837,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With 8 attachments equipped: get 100 Eliminations with the SOKOL 545 in Campaign.",
+                                "CategoryRequirement": "Get 50 Kills with the SOKOL 545 while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 100,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -13972,20 +13972,20 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 2 Kills without releasing the trigger 10 Times with the SOKOL 545 in Multiplayer.",
+                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the SOKOL 545 while it has 8 Attachments in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the SOKOL 545 while it has 8 Attachments in Multiplayer.",
+                                "CategoryRequirement": "Get 2 Kills without releasing the trigger 5 Times with the SOKOL 545 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 50,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -14132,16 +14132,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "With Dead Wire Ammo Mod Equipped: get 300 Eliminations with the SOKOL 545 in Zombies.",
+                                "CategoryRequirement": "Get 3 Critical kills consecutively 5 times with the SOKOL 545 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Hipfire Kills with the SOKOL 545 in Zombies.",
+                                "CategoryRequirement": "With the Brain Rot Ammo Mod equipped, get 300 kills with the SOKOL 545 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
@@ -14150,11 +14150,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 10 kills without reloading 5 times with the SOKOL 545 in Zombies.",
+                                "CategoryRequirement": "Get 10 kills without reloading 15 times with the SOKOL 545 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
-                                "AmountRequired": 5,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -14301,7 +14301,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 50 Kills while moving with the SOKOL 545 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while moving with the SOKOL 545 in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
@@ -14310,7 +14310,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 30 Objective Kills with the SOKOL 545 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations without taking damage with the SOKOL 545 in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
@@ -14319,7 +14319,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 20 Kills with an underbarrel attachment equipped with the SOKOL 545 in Warzone.",
+                                "CategoryRequirement": "Get 5 Headshot Kills the SOKOL 545 in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SOKOL 545.",
@@ -14339,7 +14339,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Kills without dying 5 times.",
+                                "CategoryRequirement": "Get 2 Kills within 90 seconds 5 times.",
                                 "CamoName": "STARGLASS",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/starglass.png",
                                 "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 LMGs.",
@@ -21419,7 +21419,7 @@
                                 "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
-                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
@@ -21563,7 +21563,7 @@
                                 "CategoryRequirement": "Get 10 Double Kills or better.",
                                 "CamoName": "ARCLIGHT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arclight.png",
-                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
@@ -21732,7 +21732,7 @@
                                 "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 5 times.",
                                 "CamoName": "BLOODSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
-                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
@@ -21901,7 +21901,7 @@
                                 "CategoryRequirement": "Get 5 Kills without dying 2 times.",
                                 "CamoName": "STARGLASS",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/starglass.png",
-                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 2,
                                 "CurrentAmount": 0
                             },
@@ -22104,7 +22104,7 @@
                                 "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
-                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
@@ -22245,10 +22245,10 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 10 Double Kills or better.",
+                                "CategoryRequirement": "Get 2 Kills with the A.R.C. M1 without dying 10 times in Multiplayer.",
                                 "CamoName": "ARCLIGHT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arclight.png",
-                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
@@ -22417,7 +22417,7 @@
                                 "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 5 times.",
                                 "CamoName": "BLOODSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
-                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
@@ -22586,7 +22586,7 @@
                                 "CategoryRequirement": "Get 5 Kills without dying 2 times.",
                                 "CamoName": "STARGLASS",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/starglass.png",
-                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 2,
                                 "CurrentAmount": 0
                             },
@@ -22665,7 +22665,7 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 10 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 10 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "FOLIAGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
                                 "UnlockRequirement": "",
@@ -22674,103 +22674,103 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 20 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 25 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "DESERT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 30 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 50 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "CITY DIGITAL",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-2.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 3,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 40 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 75 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "PINE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-3.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 4,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 50 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 100 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "FOREST",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-4.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 5,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 60 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 125 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "SLUDGE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-5.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 6,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 70 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 150 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "PLATEAU",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-6.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 80 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 200 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "NOCTURNE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-7.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 10,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "Get a Kill or destroy Guild Equipment or VTOLs 100 times with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 250 Kills with the NX RAVAGER in Campaign.",
                                 "CamoName": "TOPAZ SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
                                 "UnlockRequirement": "",
-                                "AmountRequired": 20,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 25 Kills shortly after switching weapons with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the NX RAVAGER in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 25,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 50 Kills with the NX RAVAGER while Aiming Down Sights and moving in Campaign.",
+                                "CategoryRequirement": "Get 3 kills rapidly with the NX RAVAGER 10 times in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 50,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Eliminate 50 Guild Tech Enemies with the NX RAVAGER in Campaign.",
+                                "CategoryRequirement": "Get 100 Kills with the NX RAVAGER at Rare Rarity or higher in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 50,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -22780,7 +22780,7 @@
                                 "CategoryRequirement": "Eliminate 20 Special Enemies.",
                                 "CamoName": "MOLTEN GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
-                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the A.R.C M1.",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the NX RAVAGER.",
                                 "AmountRequired": 20,
                                 "CurrentAmount": 0
                             },
@@ -22789,7 +22789,7 @@
                                 "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
                                 "CamoName": "MOONSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
-                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
@@ -22809,7 +22809,7 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 5 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 5 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "UNDERBRUSH",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
                                 "UnlockRequirement": "",
@@ -22818,7 +22818,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 10 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 10 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "WOODLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
                                 "UnlockRequirement": "",
@@ -22827,7 +22827,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 20 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 20 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "SLATE DIGITAL",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-2.png",
                                 "UnlockRequirement": "",
@@ -22836,7 +22836,7 @@
                             },
                             {
                                 "CamoID": 3,
-                                "CategoryRequirement": "Get 30 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 30 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "REDWOOD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-3.png",
                                 "UnlockRequirement": "",
@@ -22845,7 +22845,7 @@
                             },
                             {
                                 "CamoID": 4,
-                                "CategoryRequirement": "Get 40 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 40 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "POISON",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-4.png",
                                 "UnlockRequirement": "",
@@ -22854,7 +22854,7 @@
                             },
                             {
                                 "CamoID": 5,
-                                "CategoryRequirement": "Get 50 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 50 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "TOXIC",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-5.png",
                                 "UnlockRequirement": "",
@@ -22863,7 +22863,7 @@
                             },
                             {
                                 "CamoID": 6,
-                                "CategoryRequirement": "Get 60 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 60 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "MOUNTAIN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-6.png",
                                 "UnlockRequirement": "",
@@ -22872,7 +22872,7 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "Get 70 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 70 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "STALKER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-7.png",
                                 "UnlockRequirement": "",
@@ -22881,7 +22881,7 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "Get 80 kills or scorestreak Destructions with the A.R.C M1 in Multiplayer.",
+                                "CategoryRequirement": "Get 80 kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "RUBY SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-8.png",
                                 "UnlockRequirement": "",
@@ -22892,39 +22892,39 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Destroy 10 Aerial Scorestreaks with the NX RAVAGER in Multiplayer.",
+                                "CategoryRequirement": "Get 15 Objective Kills with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 10,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the NX RAVAGER in Multiplayer.",
+                                "CategoryRequirement": "Get a Kill without taking any damage 25 times with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 30,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Destory 10 Scorestreaks, Vehicles, Equipment or Field Upgrades with the NX RAVAGER in Multiplayer.",
+                                "CategoryRequirement": "Get 25 Kills while moving with the NX RAVAGER in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 10,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             }
                         ],
                         "MasteryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 3 Kills in a single match 10 times.",
+                                "CategoryRequirement": "Get 3 Kills without dying 10 times.",
                                 "CamoName": "SHATTERED GOLD",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shattered-gold.png",
-                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the A.R.C M1.",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the NX RAVAGER.",
                                 "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
@@ -22933,13 +22933,13 @@
                                 "CategoryRequirement": "Get 10 Double Kills or better.",
                                 "CamoName": "ARCLIGHT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arclight.png",
-                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 5 Kills in a single match 3 times.",
+                                "CategoryRequirement": "Get 5 Kills without dying 3 times.",
                                 "CamoName": "TEMPEST",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/tempest.png",
                                 "UnlockRequirement": "Unlock ARCLIGHT camo on 30 Weapons.",
@@ -22950,7 +22950,7 @@
                         "MasteryBadges": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 100 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 100 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Badge I",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 100,
@@ -22958,7 +22958,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 250 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 250 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Badge II",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 150,
@@ -22966,7 +22966,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 500 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 500 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Mastery",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 250,
@@ -22978,7 +22978,7 @@
                         "MilitaryCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 100 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "CHAR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-0.png",
                                 "UnlockRequirement": "",
@@ -22987,7 +22987,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 200 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 200 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "TUNDRA",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-1.png",
                                 "UnlockRequirement": "",
@@ -22996,7 +22996,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 300 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 300 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "FLOOD DIGITAL",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-2.png",
                                 "UnlockRequirement": "",
@@ -23005,7 +23005,7 @@
                             },
                             {
                                 "CamoID": 3,
-                                "CategoryRequirement": "Get 400 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 400 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "CEDAR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-3.png",
                                 "UnlockRequirement": "",
@@ -23014,7 +23014,7 @@
                             },
                             {
                                 "CamoID": 4,
-                                "CategoryRequirement": "Get 500 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 500 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "MARSHLAND",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-4.png",
                                 "UnlockRequirement": "",
@@ -23023,7 +23023,7 @@
                             },
                             {
                                 "CamoID": 5,
-                                "CategoryRequirement": "Get 600 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 600 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "MIRE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-5.png",
                                 "UnlockRequirement": "",
@@ -23032,7 +23032,7 @@
                             },
                             {
                                 "CamoID": 6,
-                                "CategoryRequirement": "Get 700 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 700 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "RAVINE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-6.png",
                                 "UnlockRequirement": "",
@@ -23041,7 +23041,7 @@
                             },
                             {
                                 "CamoID": 7,
-                                "CategoryRequirement": "Get 800 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 800 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "SKULK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
                                 "UnlockRequirement": "",
@@ -23050,7 +23050,7 @@
                             },
                             {
                                 "CamoID": 8,
-                                "CategoryRequirement": "Get 1000 Kills with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 1000 Kills with the NX RAVAGER in Zombies.",
                                 "CamoName": "EMERALD SNAKE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
                                 "UnlockRequirement": "",
@@ -23061,29 +23061,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "Get 300 Eliminations with the NX RAVAGER while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 150,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "With the Cryo Freeze Ammo Mod equipped: get 300 Eliminations with the NX RAVAGER in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 75,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 75 Kills with Fire Works activations using the A.R.C M1 in Zombies.",
+                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the NX RAVAGER in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the A.R.C M1.",
-                                "AmountRequired": 75,
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
+                                "AmountRequired": 150,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -23093,7 +23093,7 @@
                                 "CategoryRequirement": "Get 10 kills rapidly 15 times.",
                                 "CamoName": "GOLDEN DRAGON",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/golden-dragon.png",
-                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the A.R.C M1.",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the NX RAVAGER.",
                                 "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
@@ -23102,7 +23102,7 @@
                                 "CategoryRequirement": "Get 20 or more consecutive kills without taking damage 5 times.",
                                 "CamoName": "BLOODSTONE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
-                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
@@ -23119,7 +23119,7 @@
                         "MasteryBadges": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 500 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 500 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Badge I",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 500,
@@ -23127,7 +23127,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 1500 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 1500 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Badge II",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1000,
@@ -23135,7 +23135,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 3000 Eliminations with the A.R.C M1.",
+                                "CategoryRequirement": "Get 3000 Eliminations with the NX RAVAGER.",
                                 "CamoName": "Mastery",
                                 "UnlockRequirement": "",
                                 "AmountRequired": 1500,
@@ -23230,7 +23230,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 50 Kills while moving with the NX RAVAGER in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations without taking damage with the NX RAVAGER in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
@@ -23239,7 +23239,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 30 Objective Kills with the NX RAVAGER in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while moving with the NX RAVAGER in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
@@ -23248,7 +23248,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 20 Kills with an underbarrel attachment equipped with the NX RAVAGER in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while Aiming Down Sights with the NX RAVAGER in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the NX RAVAGER.",
@@ -23268,10 +23268,10 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Kills without dying 5 times.",
+                                "CategoryRequirement": "Get 2 Kills within 90 seconds 2 times.",
                                 "CamoName": "STARGLASS",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/starglass.png",
-                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers/Specials.",
+                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 2 Launchers or Special Weapons.",
                                 "AmountRequired": 5,
                                 "CurrentAmount": 0
                             },
