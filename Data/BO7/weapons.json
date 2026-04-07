@@ -1,6 +1,6 @@
 {
-    "version": "1.2",
-    "lastUpdate": "2026-02-06T14:00:00Z",
+    "version": "1.3",
+    "lastUpdate": "2026-04-07T08:50:00Z",
     "weapons": [
         {
             "WeaponCategoryID": 0,
@@ -24006,6 +24006,691 @@
                             "CategoryRequirement": "Reach Weapon Prestige Max (Level 250) with the HAWKER HX.",
                             "CamoName": "MEDLEY",
                             "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/medley.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        }
+                    ]
+                },
+                {
+                    "WeaponID": 4,
+                    "WeaponName": "STRIDER 300",
+                    "WeaponImageURL": "https://camotracker.djr.li/Images/BO7/strider-300.png",
+                    "MaxLevel": 37,
+                    "CurrentLevel": 1,
+                    "PrestigeLevel": 0,
+                    "UnlockRequirement": "Unlock as part of the Lost Outpost event.",
+                    "Campaign": {
+                        "MilitaryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 10 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "FOLIAGE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-0.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 25 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "DESERT",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-1.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 15,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 50 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "CITY DIGITAL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-2.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 25,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 3,
+                                "CategoryRequirement": "Get 75 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "PINE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-3.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 25,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 4,
+                                "CategoryRequirement": "Get 100 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "FOREST",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-4.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 25,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 5,
+                                "CategoryRequirement": "Get 125 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "SLUDGE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-5.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 25,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 6,
+                                "CategoryRequirement": "Get 150 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "PLATEAU",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-6.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 25,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 7,
+                                "CategoryRequirement": "Get 200 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "NOCTURNE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-7.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 50,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 8,
+                                "CategoryRequirement": "Get 250 Critical Kills with the STRIDER 300 in Campaign.",
+                                "CamoName": "TOPAZ SNAKE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-mil-8.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 50,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "SpecialCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 10 Kills without reloading 10 times with the STRIDER 300 in Campaign.",
+                                "CamoName": "CINDER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 100 Eliminations with the STRIDER 300 in Campaign.",
+                                "CamoName": "CAIMAN",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 3 Kills rapidly with the STRIDER 300 10 times in Campaign.",
+                                "CamoName": "NETWORK",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Eliminate 20 Special Enemies.",
+                                "CamoName": "MOLTEN GOLD",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/molten-gold.png",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the STRIDER 300.",
+                                "AmountRequired": 20,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "In Endgame eliminate 100 Zone III or Zone IV Enemies.",
+                                "CamoName": "MOONSTONE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/moonstone.png",
+                                "UnlockRequirement": "Unlock MOLTEN GOLD camo for 3 Sniper Rifles.",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Eliminate 10 Elite Enemies.",
+                                "CamoName": "CHROMA FLUX",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/chroma-flux.png",
+                                "UnlockRequirement": "Unlock MOONSTONE camo on 30 Weapons.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryBadges": []
+                    },
+                    "Multiplayer": {
+                        "MilitaryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 5 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "UNDERBRUSH",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-0.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 10 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "WOODLAND",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-1.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 20 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "SLATE DIGITAL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-2.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 3,
+                                "CategoryRequirement": "Get 30 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "REDWOOD",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-3.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 4,
+                                "CategoryRequirement": "Get 40 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "POISON",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-4.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 5,
+                                "CategoryRequirement": "Get 50 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "TOXIC",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-5.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 6,
+                                "CategoryRequirement": "Get 60 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "MOUNTAIN",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-6.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 7,
+                                "CategoryRequirement": "Get 70 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "STALKER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-7.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 8,
+                                "CategoryRequirement": "Get 80 Headshot Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "RUBY SNAKE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-mil-8.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "SpecialCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 30 Objective Kills with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "DIAMONDBACK",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 30,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 3 Kills without reloading 10 times with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "RAPTOR",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 15 Long Shot medals with the STRIDER 300 in Multiplayer.",
+                                "CamoName": "MAINFRAME",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 15,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 3 Kills without dying 10 times.",
+                                "CamoName": "SHATTERED GOLD",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/shattered-gold.png",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the STRIDER 300.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 10 Double Kills or better.",
+                                "CamoName": "ARCLIGHT",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/arclight.png",
+                                "UnlockRequirement": "Unlock SHATTERED GOLD camo for 3 Sniper Rifles.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 5 Kills without dying 3 times.",
+                                "CamoName": "TEMPEST",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/tempest.png",
+                                "UnlockRequirement": "Unlock ARCLIGHT camo on 30 Weapons.",
+                                "AmountRequired": 3,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryBadges": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 100 Eliminations with the STRIDER 300.",
+                                "CamoName": "Badge I",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 250 Eliminations with the STRIDER 300.",
+                                "CamoName": "Badge II",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 150,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 500 Eliminations with the STRIDER 300.",
+                                "CamoName": "Mastery",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 250,
+                                "CurrentAmount": 0
+                            }
+                        ]
+                    },
+                    "Zombies": {
+                        "MilitaryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 100 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "CHAR",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-0.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 200 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "TUNDRA",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-1.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 300 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "FLOOD DIGITAL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-2.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 3,
+                                "CategoryRequirement": "Get 400 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "CEDAR",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-3.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 4,
+                                "CategoryRequirement": "Get 500 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "MARSHLAND",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-4.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 5,
+                                "CategoryRequirement": "Get 600 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "MIRE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-5.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 6,
+                                "CategoryRequirement": "Get 700 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "RAVINE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-6.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 7,
+                                "CategoryRequirement": "Get 800 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "SKULK",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-7.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 100,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 8,
+                                "CategoryRequirement": "Get 1000 Critical Kills with the STRIDER 300 in Zombies.",
+                                "CamoName": "EMERALD SNAKE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-mil-8.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 200,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "SpecialCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 10 Kills without reloading 15 times with the STRIDER 300 in Zombies.",
+                                "CamoName": "MUTILATE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 15,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 300 Critical Kills in a single match with the STRIDER 300 in Zombies.",
+                                "CamoName": "SLITHER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 300,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 5 Critical Kills rapidly 15 times with the STRIDER 300 in Zombies.",
+                                "CamoName": "PATHFINDER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 15,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 10 Kills rapidly 15 times.",
+                                "CamoName": "GOLDEN DRAGON",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/golden-dragon.png",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the STRIDER 300.",
+                                "AmountRequired": 15,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 20 or more consecutive Kills without taking damage 5 times.",
+                                "CamoName": "BLOODSTONE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloodstone.png",
+                                "UnlockRequirement": "Unlock GOLDEN DRAGON camo for 3 Sniper Rifles.",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Kill 10 Elite Zombies.",
+                                "CamoName": "DOOMSTEEL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/doomsteel.png",
+                                "UnlockRequirement": "Unlock BLOODSTONE camo on 30 Weapons.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryBadges": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 500 Eliminations with the STRIDER 300.",
+                                "CamoName": "Badge I",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 500,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 1500 Eliminations with the STRIDER 300.",
+                                "CamoName": "Badge II",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 1000,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 3000 Eliminations with the STRIDER 300.",
+                                "CamoName": "Mastery",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 1500,
+                                "CurrentAmount": 0
+                            }
+                        ]
+                    },
+                    "Warzone": {
+                        "MilitaryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 5 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "AUTUMN",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-0.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 10 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "ARCTIC",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-1.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 20 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "FOREST DIGITAL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-2.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 3,
+                                "CategoryRequirement": "Get 30 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "BALSAM",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-3.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 4,
+                                "CategoryRequirement": "Get 40 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "ARID",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-4.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 5,
+                                "CategoryRequirement": "Get 50 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "OIL",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-5.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 6,
+                                "CategoryRequirement": "Get 60 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "SNOWCAP",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-6.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 7,
+                                "CategoryRequirement": "Get 80 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "HUNTER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-7.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 20,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 8,
+                                "CategoryRequirement": "Get 100 Eliminations with the STRIDER 300 in Warzone.",
+                                "CamoName": "SAPPHIRE SNAKE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-mil-8.png",
+                                "UnlockRequirement": "",
+                                "AmountRequired": 20,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "SpecialCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 5 Headshot Kills with the STRIDER 300 in Warzone.",
+                                "CamoName": "SHIMMER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 5 Kills without taking damage with the STRIDER 300 in Warzone.",
+                                "CamoName": "TYRANT",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 10 Eliminations while using a Suppressor with the STRIDER 300 in Warzone.",
+                                "CamoName": "TRACE",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the STRIDER 300.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryCamos": [
+                            {
+                                "CamoID": 0,
+                                "CategoryRequirement": "Get 3 Kills in a single match 5 times.",
+                                "CamoName": "GOLDEN DAMASCUS",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/golden-damascus.png",
+                                "UnlockRequirement": "Unlock all SPECIAL CAMOS for the STRIDER 300.",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 5 Kills without dying 5 times.",
+                                "CamoName": "STARGLASS",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/starglass.png",
+                                "UnlockRequirement": "Unlock GOLDEN DAMASCUS camo for 3 Sniper Rifles.",
+                                "AmountRequired": 5,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 2,
+                                "CategoryRequirement": "Get 10 Eliminations in the top 10.",
+                                "CamoName": "ABSOLUTE ZERO",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/absolute-zero.png",
+                                "UnlockRequirement": "Unlock STARGLASS camo on 30 Weapons.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            }
+                        ],
+                        "MasteryBadges": []
+                    },
+                    "PrestigeCamos": [
+                        {
+                            "CamoID": 0,
+                            "CategoryRequirement": "Reach Weapon Prestige 1 with the STRIDER 300.",
+                            "CamoName": "STRUCT",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/struct.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 1,
+                            "CategoryRequirement": "Reach Weapon Prestige 2 with the STRIDER 300.",
+                            "CamoName": "PASTEL",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/pastel.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 2,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 100 with the STRIDER 300.",
+                            "CamoName": "COBALT CIRCUIT",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cobalt-circuit.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 3,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 150 with the STRIDER 300.",
+                            "CamoName": "VERMILION CYPHER",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vermilion-cypher.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 4,
+                            "CategoryRequirement": "Reach Weapon Prestige Master Level 200 with the STRIDER 300.",
+                            "CamoName": "VIOLET NETWORK",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/violet-network.png",
+                            "AmountRequired": 1,
+                            "CurrentAmount": 0
+                        },
+                        {
+                            "CamoID": 5,
+                            "CategoryRequirement": "Reach Weapon Prestige Max (Level 250) with the STRIDER 300.",
+                            "CamoName": "VIVID WAVE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/vivid-wave.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
