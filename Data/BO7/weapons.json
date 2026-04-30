@@ -30181,7 +30181,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Eliminations with the GDL HAVOC while it's Pack-A-Punched in Zomies.",
+                                "CategoryRequirement": "Get 300 Eliminations with the GDL HAVOC while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GDL HAVOC.",
@@ -30547,29 +30547,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 3 Kills rapidly with the SIREN 10 times in Campaign.",
+                                "CategoryRequirement": "Get 50 Point Blank Kills with the SIREN in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 10,
-                                "CurrentAmount": 0
-                            },
-                            {
-                                "CamoID": 1,
-                                "CategoryRequirement": "Eliminate 50 Guild Tech Enemies with the SIREN in Campaign.",
-                                "CamoName": "CAIMAN",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
                                 "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Eliminate 10 HVTs or Prime Targets with the SIREN in Campaign.",
+                                "CamoName": "CAIMAN",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
+                                "AmountRequired": 10,
+                                "CurrentAmount": 0
+                            },
+                            {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Eliminations with the SIREN at Rare Rarity or higher in Campaign.",
+                                "CategoryRequirement": "Get 10 Kills without reloading 10 times with the SIREN in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 100,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -30691,29 +30691,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get a Kill without taking any damage 15 times with the SIREN in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemies affected by your Tactical or non-lethal Scorestreak with the SIREN in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 15,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Destory 10 Scorestreaks, Vehicles, Equipment or Field Upgrades with the SIREN in Multiplayer.",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the SIREN in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 15 Objective Kills with the SIREN in Multiplayer.",
+                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the SIREN in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 15,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -30863,16 +30863,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 10 Kills without taking damage 3 times with the SIREN in Zombies.",
+                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the SIREN in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 3,
+                                "AmountRequired": 75,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Eliminations with the SIREN while it's Pack-A-Punched in Zomies.",
+                                "CategoryRequirement": "Get 300 Eliminations with the SIREN at Rare Rarity or higher in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
@@ -30881,11 +30881,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the SIREN in Zombies.",
+                                "CategoryRequirement": "Get 10 Kills in 3 seconds 15 times with the SIREN in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
-                                "AmountRequired": 150,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -31035,7 +31035,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 5 Kills while crouched with the SIREN in Warzone.",
+                                "CategoryRequirement": "Get 5 Kills without taking damage with the SIREN in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
@@ -31044,7 +31044,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Kills without taking damage with the SIREN in Warzone.",
+                                "CategoryRequirement": "Get 5 Kills while moving with the SIREN in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
@@ -31053,7 +31053,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Destroy 5 Vehicles with the SIREN in Warzone.",
+                                "CategoryRequirement": "Get 5 Kills shortly after sprinting with the SIREN in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the SIREN.",
