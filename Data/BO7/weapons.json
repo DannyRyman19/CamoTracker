@@ -33805,7 +33805,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 2 Kills without taking damage with the H311-SAW in Warzone.",
+                                "CategoryRequirement": "Get 2 Kills while your Killstreak is active with the H311-SAW in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the H311-SAW.",
@@ -34008,7 +34008,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 25 Kills shortly after switching weapons with the KATANA in Campaign.",
+                                "CategoryRequirement": "Get a Kill with the KATANA while or shortly after sliding, diving or wall running 25 times in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
@@ -34017,20 +34017,20 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Eliminate 100 Human Enemies with the KATANA in Campaign.",
+                                "CategoryRequirement": "Eliminate 50 Enemies inside Command Centers or Toxin Fields with the Katana in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 100,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 50 Kills shortly after sprinting with the KATANA in Campaign.",
+                                "CategoryRequirement": "Get 100 Eliminations with the Katana at Rare Rarity or higher in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 50,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -34152,29 +34152,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 10 Kills using a Heavy Melee attack with the KATANA in Multiplayer.",
+                                "CategoryRequirement": "Get 30 Objective Kills with the Katana in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get a Kill with the KATANA while or shortly after sliding, diving or wall running 15 times in Multiplayer.",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the Katana in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 15,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 30 Objective Kills with the KATANA in Multiplayer.",
+                                "CategoryRequirement": "Get 10 Kills using a Heavy Melee attack with the Katana in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 30,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -34324,25 +34324,25 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "With the Brain Rot Ammo Mod equipped, get 300 Kills with the KATANA in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the Katana in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Eliminations with the KATANA at Rare Rarity or higher in Zombies.",
+                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the Katana in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 150,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "With the Napalm Burst Ammo Mod equipped, get 300 Kills with the KATANA in Zombies.",
+                                "CategoryRequirement": "Get 300 Eliminations with the KATANA at Rare Rarity or higher in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
@@ -34496,7 +34496,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 2 Kills without taking damage with the KATANA in Warzone.",
+                                "CategoryRequirement": "Get 2 Kills while moving with the Katana in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KATANA.",
