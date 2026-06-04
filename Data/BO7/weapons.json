@@ -14415,7 +14415,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 5 Kills without taking damage with the CBRS-3 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while moving with the CBRS-3 in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CBRS-3.",
@@ -14424,7 +14424,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Eliminations while using a suppressor with the CBRS-3 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations shortly after sprinting with the CBRS-3 in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the CBRS-3.",
@@ -22725,7 +22725,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 5 Headshot Kills with the KRS-7.62 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while using a suppressor with the KRS-7.62 in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KRS-7.62.",
@@ -22734,7 +22734,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Kills without taking damage with the KRS-7.62 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations without taking damage with the KRS-7.62 in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KRS-7.62.",
@@ -22743,7 +22743,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 5 Kills while moving with the KRS-7.62 in Warzone.",
+                                "CategoryRequirement": "Get 5 Headshot Kills with the KRS-7.62 in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the KRS-7.62.",
@@ -32620,29 +32620,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 50 Point Blank Kills with the GRIMHAWK in Campaign.",
+                                "CategoryRequirement": "Get 100 Eliminations with the GRIMHAWK at Rare Rarity or higher in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
-                                "AmountRequired": 50,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Eliminate 10 HVTs or Prime Targets with the GRIMHAWK in Campaign.",
+                                "CategoryRequirement": "Eliminate 100 Human Enemies with the GRIMHAWK in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 10 Kills without reloading 10 times with the GRIMHAWK in Campaign.",
+                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the GRIMHAWK in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -32782,7 +32782,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 2 Kills without reloading 10 times with the GRIMHAWK in Multiplayer.",
+                                "CategoryRequirement": "Get 30 Objective Kills with the GRIMHAWK in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
@@ -32936,16 +32936,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the GRIMHAWK in Zombies.",
+                                "CategoryRequirement": "With the Cryo Freeze Ammo Mod equipped, get 300 Kills with the GRIMHAWK in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
-                                "AmountRequired": 75,
+                                "AmountRequired": 300,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Eliminations with the GRIMHAWK at Rare Rarity or higher in Zombies.",
+                                "CategoryRequirement": "Get 300 Eliminations with the GRIMHAWK while it's Pack-A-Punched in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
@@ -32954,11 +32954,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 10 Kills in 3 seconds 15 times with the GRIMHAWK in Zombies.",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 3 times with the GRIMHAWK in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
-                                "AmountRequired": 15,
+                                "AmountRequired": 3,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -33126,7 +33126,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 5 Kills shortly after sprinting with the GRIMHAWK in Warzone.",
+                                "CategoryRequirement": "Get 5 Kills while crouched with the GRIMHAWK in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the GRIMHAWK.",
@@ -33169,16 +33169,16 @@
                         {
                             "CamoID": 0,
                             "CategoryRequirement": "Reach Weapon Prestige 1 with the GRIMHAWK.",
-                            "CamoName": "RACER",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/racer.png",
+                            "CamoName": "BLOOM",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/bloom.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
                         {
                             "CamoID": 1,
                             "CategoryRequirement": "Reach Weapon Prestige 2 with the GRIMHAWK.",
-                            "CamoName": "DIONAEA",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dionaea.png",
+                            "CamoName": "DRAGON DANCE",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/dragon-dance.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         },
@@ -33209,8 +33209,8 @@
                         {
                             "CamoID": 5,
                             "CategoryRequirement": "Reach Weapon Prestige Max (Level 250) with the GRIMHAWK.",
-                            "CamoName": "IT'S CORN",
-                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/its-corn.png",
+                            "CamoName": "RAINDROP",
+                            "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/raindrop.png",
                             "AmountRequired": 1,
                             "CurrentAmount": 0
                         }
