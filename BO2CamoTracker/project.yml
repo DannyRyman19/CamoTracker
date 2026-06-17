@@ -1,6 +1,6 @@
 name: BO2CamoTracker
 options:
-  bundleIdPrefix: com.camotracker
+  bundleIdPrefix: com.DannyRyman
   deploymentTarget:
     iOS: "26.0"
   createIntermediateGroups: true
@@ -21,12 +21,13 @@ targets:
         type: group
     resources:
       - path: Resources/BO2_Multiplayer_Camos.json
+      - path: Resources/BO2_Multiplayer_Challenges.json
     info:
       path: Resources/Info.plist
       properties:
         CFBundleName: BO2 Camo Tracker
         CFBundleDisplayName: BO2 Camo Tracker
-        CFBundleIdentifier: com.camotracker.bo2
+        CFBundleIdentifier: com.DannyRyman.BO2CamoTracker
         CFBundleShortVersionString: "1.0.0"
         CFBundleVersion: "1"
         LSRequiresIPhoneOS: true

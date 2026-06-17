@@ -5,8 +5,11 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            Tab("Tracker", systemImage: "list.bullet") {
+            Tab("Camos", systemImage: "star.fill") {
                 CategoryListView()
+            }
+            Tab("Challenges", systemImage: "list.bullet.clipboard.fill") {
+                ChallengesView()
             }
             Tab("Stats", systemImage: "chart.bar.fill") {
                 StatsView()

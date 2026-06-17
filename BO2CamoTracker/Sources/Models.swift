@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - Camo tracker models
+
 struct WeaponCategory: Codable, Identifiable {
     var id: Int { WeaponCategoryID }
     let WeaponCategoryID: Int
@@ -34,6 +36,7 @@ struct Weapon: Codable, Identifiable {
     var id: Int { WeaponID }
     let WeaponID: Int
     let WeaponName: String
+    let WeaponImageURL: String
     let UnlockRequirement: String
     var Camos: [Camo]
     var MasteryCamos: [MasteryCamo]
@@ -51,6 +54,7 @@ struct Camo: Codable, Identifiable {
     var id: Int { CamoID }
     let CamoID: Int
     let CamoName: String
+    let CamoImageURL: String
     let CategoryRequirement: String
     let AmountRequired: Int
     var CurrentAmount: Int
@@ -69,8 +73,45 @@ struct MasteryCamo: Codable, Identifiable {
     var id: Int { CamoID }
     let CamoID: Int
     let CamoName: String
+    let CamoImageURL: String
     let CategoryRequirement: String
     let AmountRequired: Int
     var CurrentAmount: Int
     var IsChallengeComplete: Bool
+}
+
+// MARK: - Multiplayer challenge models
+
+struct ChallengeCategory: Codable, Identifiable {
+    var id: Int { CategoryID }
+    let CategoryID: Int
+    let CategoryName: String
+    let CategoryIcon: String
+    var Challenges: [MPChallenge]
+
+    var completedCount: Int { Challenges.filter(\.IsComplete).count }
+    var totalCount: Int { Challenges.count }
+    var progress: Double {
+        guard totalCount > 0 else { return 0 }
+        return Double(completedCount) / Double(totalCount)
+    }
+    var isComplete: Bool { Challenges.allSatisfy(\.IsComplete) }
+}
+
+struct MPChallenge: Codable, Identifiable {
+    var id: Int { ChallengeID }
+    let ChallengeID: Int
+    let ChallengeName: String
+    let ChallengeDescription: String
+    let AmountRequired: Int
+    var CurrentAmount: Int
+    var IsComplete: Bool
+
+    var displayDescription: String {
+        ChallengeDescription.replacingOccurrences(of: "{0}", with: "\(AmountRequired)")
+    }
+    var progress: Double {
+        guard AmountRequired > 0 else { return 0 }
+        return min(Double(CurrentAmount) / Double(AmountRequired), 1.0)
+    }
 }

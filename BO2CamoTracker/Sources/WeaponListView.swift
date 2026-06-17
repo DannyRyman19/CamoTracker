@@ -9,7 +9,6 @@ struct WeaponListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 12) {
-                // Diamond status banner
                 if category.hasDiamond {
                     DiamondBanner(categoryName: category.WeaponCategoryName)
                         .padding(.horizontal)
@@ -38,23 +37,10 @@ struct WeaponRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            ZStack {
-                Circle()
-                    .fill(weapon.hasGold ? Color.yellow.opacity(0.2) : Color.white.opacity(0.08))
-                    .frame(width: 44, height: 44)
-                if weapon.hasGold {
-                    Image(systemName: "star.fill")
-                        .font(.title3)
-                        .foregroundStyle(.yellow)
-                } else {
-                    Text("\(weapon.completedChallenges)")
-                        .font(.headline.monospacedDigit())
-                        .foregroundStyle(.white)
-                }
-            }
+            WeaponThumbnail(url: weapon.WeaponImageURL, size: 56)
 
-            VStack(alignment: .leading, spacing: 4) {
-                HStack {
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(spacing: 6) {
                     Text(weapon.WeaponName)
                         .font(.headline)
                         .foregroundStyle(.white)
@@ -75,7 +61,7 @@ struct WeaponRow: View {
                     .foregroundStyle(.white.opacity(0.5))
             }
 
-            Spacer()
+            Spacer(minLength: 0)
 
             Image(systemName: "chevron.right")
                 .font(.caption)
@@ -108,5 +94,60 @@ struct DiamondBanner: View {
         .padding(16)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+// MARK: - Shared image components
+
+struct WeaponThumbnail: View {
+    let url: String
+    let size: CGFloat
+
+    var body: some View {
+        AsyncImage(url: URL(string: url)) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable()
+                    .aspectRatio(contentMode: .fit)
+            case .failure, .empty:
+                Image(systemName: "scope")
+                    .font(.title2)
+                    .foregroundStyle(.white.opacity(0.4))
+            @unknown default:
+                ProgressView()
+                    .tint(.white)
+            }
+        }
+        .frame(width: size, height: size * 0.6)
+    }
+}
+
+struct CamoThumbnail: View {
+    let url: String
+    let size: CGFloat
+
+    var body: some View {
+        AsyncImage(url: URL(string: url)) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: size, height: size)
+                    .clipShape(RoundedRectangle(cornerRadius: size * 0.25))
+            case .failure, .empty:
+                RoundedRectangle(cornerRadius: size * 0.25)
+                    .fill(.white.opacity(0.08))
+                    .frame(width: size, height: size)
+                    .overlay {
+                        Image(systemName: "paintpalette")
+                            .font(.caption)
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+            @unknown default:
+                RoundedRectangle(cornerRadius: size * 0.25)
+                    .fill(.white.opacity(0.08))
+                    .frame(width: size, height: size)
+            }
+        }
     }
 }

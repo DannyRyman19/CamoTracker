@@ -11,6 +11,8 @@ struct WeaponDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
+                weaponHero
+
                 MasteryStatusCard(weapon: weapon, category: category)
                     .padding(.horizontal)
 
@@ -22,7 +24,7 @@ struct WeaponDetailView: View {
 
                     ForEach(Array(weapon.Camos.enumerated()), id: \.element.id) { index, camo in
                         ChallengeRow(camo: camo) {
-                            vm.toggleChallenge(categoryIndex: categoryIndex, weaponIndex: weaponIndex, camoIndex: index)
+                            vm.toggleCamo(categoryIndex: categoryIndex, weaponIndex: weaponIndex, camoIndex: index)
                         }
                         .padding(.horizontal)
                     }
@@ -36,6 +38,33 @@ struct WeaponDetailView: View {
         .navigationTitle(weapon.WeaponName)
         .navigationBarTitleDisplayMode(.large)
         .background(.black)
+    }
+
+    private var weaponHero: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .fill(.white.opacity(0.04))
+            AsyncImage(url: URL(string: weapon.WeaponImageURL)) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(24)
+                case .failure, .empty:
+                    Image(systemName: "scope")
+                        .font(.system(size: 60))
+                        .foregroundStyle(.white.opacity(0.15))
+                        .padding(24)
+                @unknown default:
+                    ProgressView().tint(.white).padding(24)
+                }
+            }
+        }
+        .frame(height: 140)
+        .padding(.horizontal)
+        .glassEffect()
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .padding(.horizontal)
     }
 }
 
@@ -101,21 +130,8 @@ struct ChallengeRow: View {
 
     var body: some View {
         Button(action: onToggle) {
-            HStack(spacing: 14) {
-                ZStack {
-                    Circle()
-                        .fill(camo.IsChallengeComplete ? Color.yellow : Color.white.opacity(0.1))
-                        .frame(width: 32, height: 32)
-                    if camo.IsChallengeComplete {
-                        Image(systemName: "checkmark")
-                            .font(.caption.bold())
-                            .foregroundStyle(.black)
-                    } else {
-                        Text("\(camo.CamoID + 1)")
-                            .font(.caption.monospacedDigit())
-                            .foregroundStyle(.white.opacity(0.5))
-                    }
-                }
+            HStack(spacing: 12) {
+                CamoThumbnail(url: camo.CamoImageURL, size: 44)
 
                 VStack(alignment: .leading, spacing: 3) {
                     HStack {
@@ -131,12 +147,27 @@ struct ChallengeRow: View {
                                 .padding(.vertical, 2)
                                 .background(.yellow)
                                 .clipShape(Capsule())
+                        } else {
+                            Text("#\(camo.CamoID + 1)")
+                                .font(.caption2.monospacedDigit())
+                                .foregroundStyle(.white.opacity(0.3))
                         }
                     }
                     Text(camo.displayRequirement)
                         .font(.caption)
                         .foregroundStyle(.white.opacity(0.55))
                         .multilineTextAlignment(.leading)
+                }
+
+                ZStack {
+                    Circle()
+                        .fill(camo.IsChallengeComplete ? Color.yellow : Color.white.opacity(0.1))
+                        .frame(width: 28, height: 28)
+                    if camo.IsChallengeComplete {
+                        Image(systemName: "checkmark")
+                            .font(.caption.bold())
+                            .foregroundStyle(.black)
+                    }
                 }
             }
             .padding(14)

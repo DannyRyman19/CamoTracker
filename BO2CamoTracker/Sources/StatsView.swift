@@ -7,32 +7,40 @@ struct StatsView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
-                    overallCard
+                    camoOverviewCard
+                    challengeOverviewCard
                     categoryBreakdown
                 }
                 .padding(.horizontal)
                 .padding(.top, 8)
                 .padding(.bottom, 32)
             }
-            .navigationTitle("Progress")
+            .navigationTitle("Stats")
             .background(.black)
         }
     }
 
-    private var overallCard: some View {
-        VStack(spacing: 16) {
+    private var camoOverviewCard: some View {
+        VStack(spacing: 14) {
             HStack {
+                Text("Camo Progress")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Spacer()
+            }
+
+            HStack(spacing: 12) {
                 StatTile(
                     value: "\(vm.goldWeapons)",
                     total: "\(vm.totalWeapons)",
-                    label: "Gold Weapons",
+                    label: "Gold",
                     icon: "star.fill",
                     color: .yellow
                 )
                 StatTile(
                     value: "\(vm.diamondCategories)",
                     total: "\(vm.totalCategories)",
-                    label: "Diamond Classes",
+                    label: "Diamond",
                     icon: "diamond.fill",
                     color: .cyan
                 )
@@ -40,16 +48,61 @@ struct StatsView: View {
 
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Text("Overall Completion")
-                        .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.7))
+                    Text("Overall Camo Completion")
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.6))
                     Spacer()
-                    Text(String(format: "%.1f%%", vm.overallProgress * 100))
-                        .font(.subheadline.bold().monospacedDigit())
+                    Text(String(format: "%.1f%%", vm.overallCamoProgress * 100))
+                        .font(.caption.bold().monospacedDigit())
                         .foregroundStyle(.white)
                 }
-                ProgressView(value: vm.overallProgress)
+                ProgressView(value: vm.overallCamoProgress)
                     .tint(.yellow)
+            }
+        }
+        .padding(18)
+        .glassEffect()
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+    }
+
+    private var challengeOverviewCard: some View {
+        VStack(spacing: 14) {
+            HStack {
+                Text("Challenge Progress")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Spacer()
+            }
+
+            HStack(spacing: 12) {
+                StatTile(
+                    value: "\(vm.completedChallenges)",
+                    total: "\(vm.totalChallenges)",
+                    label: "Done",
+                    icon: "checkmark.seal.fill",
+                    color: .green
+                )
+                StatTile(
+                    value: "\(vm.totalChallenges - vm.completedChallenges)",
+                    total: "\(vm.totalChallenges)",
+                    label: "Remaining",
+                    icon: "clock.fill",
+                    color: .orange
+                )
+            }
+
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text("Overall Challenge Completion")
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.6))
+                    Spacer()
+                    Text(String(format: "%.1f%%", vm.overallChallengeProgress * 100))
+                        .font(.caption.bold().monospacedDigit())
+                        .foregroundStyle(.white)
+                }
+                ProgressView(value: vm.overallChallengeProgress)
+                    .tint(.green)
             }
         }
         .padding(18)
@@ -59,7 +112,7 @@ struct StatsView: View {
 
     private var categoryBreakdown: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("By Category")
+            Text("Camos by Class")
                 .font(.title3.bold())
                 .foregroundStyle(.white)
 
@@ -80,7 +133,7 @@ struct StatTile: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: icon)
-                .font(.title)
+                .font(.title2)
                 .foregroundStyle(color)
             HStack(alignment: .firstTextBaseline, spacing: 2) {
                 Text(value)
@@ -93,7 +146,6 @@ struct StatTile: View {
             Text(label)
                 .font(.caption)
                 .foregroundStyle(.white.opacity(0.6))
-                .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
