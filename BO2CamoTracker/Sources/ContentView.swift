@@ -11,6 +11,9 @@ struct ContentView: View {
             Tab("Challenges", systemImage: "list.bullet.clipboard.fill") {
                 ChallengesView()
             }
+            Tab("Reticles", systemImage: "scope") {
+                ReticlesView()
+            }
             Tab("Stats", systemImage: "chart.bar.fill") {
                 StatsView()
             }

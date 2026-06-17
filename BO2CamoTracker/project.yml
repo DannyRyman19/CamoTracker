@@ -22,6 +22,7 @@ targets:
     resources:
       - path: Resources/BO2_Multiplayer_Camos.json
       - path: Resources/BO2_Multiplayer_Challenges.json
+      - path: Resources/BO2_Reticles.json
     info:
       path: Resources/Info.plist
       properties:

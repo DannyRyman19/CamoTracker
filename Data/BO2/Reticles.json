@@ -1,0 +1,436 @@
+[
+    {
+        "OpticID": 0,
+        "OpticName": "Red Dot Sight",
+        "OpticDescription": "Close range red dot optic.",
+        "UnlockDescription": "Get kills with the Red Dot Sight equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/red-dot-sight.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Chevron",
+                "AmountRequired": 25,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/chevron.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "T-Cross",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/t-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Diamond",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/diamond.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Circle",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/circle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Circle Dot",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/circle-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Open Circle",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/open-circle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Triangle",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/triangle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Dot Cross",
+                "AmountRequired": 750,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/dot-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Snake Eye",
+                "AmountRequired": 1000,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/snake-eye.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "Skull",
+                "AmountRequired": 1500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/red-dot-sight/skull.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 1,
+        "OpticName": "Holographic Sight",
+        "OpticDescription": "Advanced holographic optic for fast target acquisition.",
+        "UnlockDescription": "Get kills with the Holographic Sight equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/holographic-sight.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Arrow",
+                "AmountRequired": 25,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/arrow.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Double Bar",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/double-bar.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "H-Cross",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/h-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Broken Cross",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/broken-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Box",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/box.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Ring",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/ring.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Atom",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/atom.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "V-Cross",
+                "AmountRequired": 750,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/v-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Psi",
+                "AmountRequired": 1000,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/psi.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "Snowflake",
+                "AmountRequired": 1500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/holographic-sight/snowflake.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 2,
+        "OpticName": "ACOG Scope",
+        "OpticDescription": "4x magnification scope for mid-range engagements.",
+        "UnlockDescription": "Get kills with the ACOG Scope equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/acog-scope.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Chevron",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/chevron.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Triangle",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/triangle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Circle",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/circle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "T-Dot",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/t-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Cross",
+                "AmountRequired": 600,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Mil-Dot",
+                "AmountRequired": 800,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/mil-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Outline",
+                "AmountRequired": 1000,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/outline.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Custom",
+                "AmountRequired": 1500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-scope/custom.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 3,
+        "OpticName": "Variable Zoom",
+        "OpticDescription": "Dual-zoom optic switchable between 3x and 9x.",
+        "UnlockDescription": "Get kills with the Variable Zoom equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/variable-zoom.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Circle Dot",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/circle-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Cross Dot",
+                "AmountRequired": 150,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/cross-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Fine Cross",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/fine-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Ranging",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/ranging.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Duplex",
+                "AmountRequired": 750,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/duplex.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Mildot",
+                "AmountRequired": 1000,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/variable-zoom/mildot.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 4,
+        "OpticName": "Target Finder",
+        "OpticDescription": "Thermal optic that highlights enemies.",
+        "UnlockDescription": "Get kills with the Target Finder equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/target-finder.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Box Bracket",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/target-finder/box-bracket.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Corner Box",
+                "AmountRequired": 150,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/target-finder/corner-box.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Cross Box",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/target-finder/cross-box.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Corner Cross",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/target-finder/corner-cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Outline",
+                "AmountRequired": 750,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/target-finder/outline.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 5,
+        "OpticName": "HAMR Scope",
+        "OpticDescription": "Combined optic with 1.5x and 4x magnification.",
+        "UnlockDescription": "Get kills with the HAMR Scope equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/hamr-scope.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Circle",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/circle.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Chevron",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/chevron.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "T-Bar",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/t-bar.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Diamond Dot",
+                "AmountRequired": 350,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/diamond-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Cross",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/cross.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Crosshair",
+                "AmountRequired": 700,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/crosshair.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Outlined",
+                "AmountRequired": 900,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/outlined.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Custom",
+                "AmountRequired": 1200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hamr-scope/custom.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 6,
+        "OpticName": "Millimeter Scanner",
+        "OpticDescription": "Thermal optic that detects enemies through walls.",
+        "UnlockDescription": "Get kills with the Millimeter Scanner equipped.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/millimeter-scanner.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Standard",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/millimeter-scanner/standard.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Open Box",
+                "AmountRequired": 150,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/millimeter-scanner/open-box.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Corner",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/millimeter-scanner/corner.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Plus",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/millimeter-scanner/plus.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Custom",
+                "AmountRequired": 750,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/millimeter-scanner/custom.png",
+                "IsUnlocked": false
+            }
+        ]
+    }
+]

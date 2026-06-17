@@ -9,6 +9,7 @@ struct StatsView: View {
                 VStack(spacing: 20) {
                     camoOverviewCard
                     challengeOverviewCard
+                    reticleOverviewCard
                     categoryBreakdown
                 }
                 .padding(.horizontal)
@@ -18,6 +19,37 @@ struct StatsView: View {
             .navigationTitle("Stats")
             .background(.black)
         }
+    }
+
+    private var reticleOverviewCard: some View {
+        VStack(spacing: 14) {
+            HStack {
+                Text("Reticle Progress")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Spacer()
+            }
+            HStack(spacing: 12) {
+                StatTile(value: "\(vm.unlockedReticles)", total: "\(vm.totalReticles)",
+                         label: "Unlocked", icon: "scope", color: .cyan)
+                StatTile(value: "\(vm.reticleOptics.filter(\.isComplete).count)",
+                         total: "\(vm.reticleOptics.count)",
+                         label: "Optics Done", icon: "checkmark.circle.fill", color: .green)
+            }
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text("Overall Reticle Completion")
+                        .font(.caption).foregroundStyle(.white.opacity(0.6))
+                    Spacer()
+                    Text(String(format: "%.1f%%", vm.overallReticleProgress * 100))
+                        .font(.caption.bold().monospacedDigit()).foregroundStyle(.white)
+                }
+                ProgressView(value: vm.overallReticleProgress).tint(.cyan)
+            }
+        }
+        .padding(18)
+        .glassEffect()
+        .clipShape(RoundedRectangle(cornerRadius: 18))
     }
 
     private var camoOverviewCard: some View {
