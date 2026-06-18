@@ -1,0 +1,1186 @@
+[
+    {
+        "CategoryID": 0,
+        "CategoryName": "Combat",
+        "CategoryIcon": "scope",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Spray and Pray",
+                "ChallengeDescription": "Get {0} kills.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Long Shot",
+                "ChallengeDescription": "Get {0} longshot kills.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Down Low",
+                "ChallengeDescription": "Get {0} kills while prone.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Half Cocked",
+                "ChallengeDescription": "Get {0} kills while crouching.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "On The Move",
+                "ChallengeDescription": "Get {0} kills while moving.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Hipfire",
+                "ChallengeDescription": "Get {0} hipfire kills.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Through The Walls",
+                "ChallengeDescription": "Get {0} penetration kills.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Finishing Move",
+                "ChallengeDescription": "Get {0} kills shortly after reloading.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Knife In The Back",
+                "ChallengeDescription": "Get {0} kills from behind.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Revenge",
+                "ChallengeDescription": "Get {0} revenge kills.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Sidearm",
+                "ChallengeDescription": "Get {0} kills with secondary weapons.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Precision",
+                "ChallengeDescription": "Get {0} headshots.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Targeting System",
+                "ChallengeDescription": "Get {0} headshots.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Sniper Elite",
+                "ChallengeDescription": "Get {0} headshots with sniper rifles.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Trigger Happy",
+                "ChallengeDescription": "Get {0} kills.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Unstoppable",
+                "ChallengeDescription": "Get 10 kills without dying {0} times.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 16,
+                "ChallengeName": "On A Roll",
+                "ChallengeDescription": "Get 5 kills without dying {0} times.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 17,
+                "ChallengeName": "Death Dealer",
+                "ChallengeDescription": "Kill {0} enemies in a single match.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 18,
+                "ChallengeName": "No Escape",
+                "ChallengeDescription": "Get {0} kills on enemies trying to flee.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 19,
+                "ChallengeName": "Close Quarters",
+                "ChallengeDescription": "Get {0} melee kills.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 1,
+        "CategoryName": "Medals",
+        "CategoryIcon": "medal.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Double Trouble",
+                "ChallengeDescription": "Earn {0} Double Kill medals.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Triple Threat",
+                "ChallengeDescription": "Earn {0} Triple Kill medals.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Fury Kill",
+                "ChallengeDescription": "Earn {0} Fury Kill medals (4 rapid kills).",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Frenzy Kill",
+                "ChallengeDescription": "Earn {0} Frenzy Kill medals (5 rapid kills).",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Bloodthirsty",
+                "ChallengeDescription": "Earn {0} Bloodthirsty medals.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Merciless",
+                "ChallengeDescription": "Earn {0} Merciless medals (10-kill streak).",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Relentless",
+                "ChallengeDescription": "Earn {0} Relentless medals (15-kill streak).",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Nuclear",
+                "ChallengeDescription": "Earn {0} Nuclear medals (30-kill streak).",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Buzzkill",
+                "ChallengeDescription": "Earn {0} Buzzkill medals (end enemy streak).",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Comeback",
+                "ChallengeDescription": "Earn {0} Comeback medals (kill after dying).",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Avenger",
+                "ChallengeDescription": "Earn {0} Avenger medals.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Defender",
+                "ChallengeDescription": "Earn {0} Defender medals.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Rescuer",
+                "ChallengeDescription": "Earn {0} Rescuer medals.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Assist",
+                "ChallengeDescription": "Earn {0} Assist medals.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Humiliation",
+                "ChallengeDescription": "Earn {0} Humiliation medals.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Longshot",
+                "ChallengeDescription": "Earn {0} Longshot medals.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 2,
+        "CategoryName": "Scorestreaks",
+        "CategoryIcon": "bolt.circle.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Remote Detonated",
+                "ChallengeDescription": "Get {0} kills with the RC-XD.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Eyes In The Sky",
+                "ChallengeDescription": "Get {0} kills assisted by UAV.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Hunter Down",
+                "ChallengeDescription": "Get {0} kills with the Hunter Killer.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Guardian Angel",
+                "ChallengeDescription": "Get {0} kills with the Guardian.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Hellstorm",
+                "ChallengeDescription": "Get {0} kills with the Hellstorm Missile.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Lightning Rod",
+                "ChallengeDescription": "Get {0} kills with the Lightning Strike.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Trigger Bot",
+                "ChallengeDescription": "Get {0} kills with the Dragonfire.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Steel Soldier",
+                "ChallengeDescription": "Get {0} kills with the AGR.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Death Machine Operator",
+                "ChallengeDescription": "Get {0} kills with the Death Machine.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Warthog Run",
+                "ChallengeDescription": "Get {0} kills with the Warthog.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Lodestar Ace",
+                "ChallengeDescription": "Get {0} kills with the Lodestar.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Warship Commander",
+                "ChallengeDescription": "Get {0} kills with the VTOL Warship.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "K9 Handler",
+                "ChallengeDescription": "Get {0} kills with the K9 Unit.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Swarm Commander",
+                "ChallengeDescription": "Get {0} kills with the Swarm.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Escort Pilot",
+                "ChallengeDescription": "Get {0} kills with the Escort Drone.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Jammer",
+                "ChallengeDescription": "Earn {0} assists with Counter-UAV.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 16,
+                "ChallengeName": "EMP Strike",
+                "ChallengeDescription": "Destroy {0} enemy scorestreaks with EMP Systems.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 17,
+                "ChallengeName": "Air Superiority",
+                "ChallengeDescription": "Destroy {0} enemy aircraft.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 3,
+        "CategoryName": "Equipment",
+        "CategoryIcon": "wrench.and.screwdriver.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Grenadier",
+                "ChallengeDescription": "Get {0} kills with Frag Grenades.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Sticky Situation",
+                "ChallengeDescription": "Get {0} kills with Semtex.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Trip Wire",
+                "ChallengeDescription": "Get {0} kills with Claymores.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Bouncy Castle",
+                "ChallengeDescription": "Get {0} kills with Bouncing Betties.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Remote Control",
+                "ChallengeDescription": "Get {0} kills with C4.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Axeman",
+                "ChallengeDescription": "Get {0} kills with the Combat Axe.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Explosive Expert",
+                "ChallengeDescription": "Get {0} kills with lethal equipment.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Flash Mob",
+                "ChallengeDescription": "Get {0} flashbang assists.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Concussion Protocol",
+                "ChallengeDescription": "Get {0} concussion grenade assists.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Shocked",
+                "ChallengeDescription": "Get {0} shock charge assists.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Sensor Net",
+                "ChallengeDescription": "Get {0} kills with Sensor Grenade spots.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Hacker",
+                "ChallengeDescription": "Hack {0} enemy equipment with Black Hat PDA.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Smoke Screen",
+                "ChallengeDescription": "Get {0} kills while in smoke.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 4,
+        "CategoryName": "Game Modes",
+        "CategoryIcon": "gamecontroller.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Team Player",
+                "ChallengeDescription": "Win {0} Team Deathmatch matches.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Dominant Force",
+                "ChallengeDescription": "Win {0} Team Deathmatch matches.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Lone Wolf",
+                "ChallengeDescription": "Win {0} Free-for-All matches.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Solo Supremacy",
+                "ChallengeDescription": "Win {0} Free-for-All matches.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Flag Bearer",
+                "ChallengeDescription": "Capture {0} flags in Domination.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Zone Control",
+                "ChallengeDescription": "Defend {0} flags in Domination.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Objective Master",
+                "ChallengeDescription": "Win {0} Domination matches.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Tag Collector",
+                "ChallengeDescription": "Collect {0} dog tags in Kill Confirmed.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Tag Denier",
+                "ChallengeDescription": "Deny {0} enemy dog tags in Kill Confirmed.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Bomb Squad",
+                "ChallengeDescription": "Plant {0} bombs in Search & Destroy.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Defusal Expert",
+                "ChallengeDescription": "Defuse {0} bombs in Search & Destroy.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Search Master",
+                "ChallengeDescription": "Win {0} Search & Destroy matches.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Hardpoint Hero",
+                "ChallengeDescription": "Capture {0} Hardpoints.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Hold The Hill",
+                "ChallengeDescription": "Earn {0} time in Hardpoint.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Flag Runner",
+                "ChallengeDescription": "Capture {0} flags in Capture the Flag.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Return Policy",
+                "ChallengeDescription": "Return {0} flags in Capture the Flag.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 16,
+                "ChallengeName": "HQ Specialist",
+                "ChallengeDescription": "Capture {0} Headquarters.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 17,
+                "ChallengeName": "All Rounder",
+                "ChallengeDescription": "Win {0} matches across any 3 different modes.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 18,
+                "ChallengeName": "MVP",
+                "ChallengeDescription": "Finish 1st on the scoreboard {0} times.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 5,
+        "CategoryName": "Perks",
+        "CategoryIcon": "figure.run",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Ghost",
+                "ChallengeDescription": "Kill {0} enemies while Ghost is active.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Flak Jacket",
+                "ChallengeDescription": "Survive {0} explosive hits with Flak Jacket.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Blind Eye",
+                "ChallengeDescription": "Destroy {0} enemy scorestreaks with Blind Eye.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Hardline",
+                "ChallengeDescription": "Earn {0} scorestreak killstreaks using Hardline.",
+                "AmountRequired": 25,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Lightweight",
+                "ChallengeDescription": "Travel {0} km while Lightweight is active.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Toughness",
+                "ChallengeDescription": "Get {0} kills while being shot at.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Cold Blooded",
+                "ChallengeDescription": "Get {0} kills while Cold Blooded is active.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Fast Hands",
+                "ChallengeDescription": "Get {0} kills after a fast switch.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Scavenger",
+                "ChallengeDescription": "Resupply {0} times using Scavenger.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Extreme Conditioning",
+                "ChallengeDescription": "Sprint {0} km while Extreme Conditioning is active.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Dead Silence",
+                "ChallengeDescription": "Get {0} kills while Dead Silence is active.",
+                "AmountRequired": 200,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Engineer",
+                "ChallengeDescription": "Spot {0} enemy equipment with Engineer.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Dexterity",
+                "ChallengeDescription": "Get {0} kills while climbing or mantling.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Tactical Mask",
+                "ChallengeDescription": "Survive {0} flashbang/concussion/stun effects.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 6,
+        "CategoryName": "Weapon Mastery",
+        "CategoryIcon": "star.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "AR Specialist",
+                "ChallengeDescription": "Get {0} kills with Assault Rifles.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "AR Expert",
+                "ChallengeDescription": "Get {0} kills with Assault Rifles.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "AR Master",
+                "ChallengeDescription": "Get {0} kills with Assault Rifles.",
+                "AmountRequired": 2500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "SMG Specialist",
+                "ChallengeDescription": "Get {0} kills with SMGs.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "SMG Expert",
+                "ChallengeDescription": "Get {0} kills with SMGs.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "SMG Master",
+                "ChallengeDescription": "Get {0} kills with SMGs.",
+                "AmountRequired": 2500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "LMG Specialist",
+                "ChallengeDescription": "Get {0} kills with LMGs.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "LMG Expert",
+                "ChallengeDescription": "Get {0} kills with LMGs.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Shotgun Specialist",
+                "ChallengeDescription": "Get {0} kills with Shotguns.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Shotgun Expert",
+                "ChallengeDescription": "Get {0} kills with Shotguns.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "Sniper Specialist",
+                "ChallengeDescription": "Get {0} kills with Sniper Rifles.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "Sniper Expert",
+                "ChallengeDescription": "Get {0} kills with Sniper Rifles.",
+                "AmountRequired": 1000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "Pistol Specialist",
+                "ChallengeDescription": "Get {0} kills with Pistols.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Pistol Expert",
+                "ChallengeDescription": "Get {0} kills with Pistols.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Launcher Specialist",
+                "ChallengeDescription": "Get {0} kills with Launchers.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Launcher Expert",
+                "ChallengeDescription": "Get {0} kills with Launchers.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 16,
+                "ChallengeName": "Melee Specialist",
+                "ChallengeDescription": "Get {0} kills with Special weapons.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 17,
+                "ChallengeName": "Melee Expert",
+                "ChallengeDescription": "Get {0} kills with Special weapons.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    },
+    {
+        "CategoryID": 7,
+        "CategoryName": "Operations",
+        "CategoryIcon": "trophy.fill",
+        "Challenges": [
+            {
+                "ChallengeID": 0,
+                "ChallengeName": "Soldier I",
+                "ChallengeDescription": "Play {0} multiplayer matches.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 1,
+                "ChallengeName": "Soldier II",
+                "ChallengeDescription": "Play {0} multiplayer matches.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 2,
+                "ChallengeName": "Soldier III",
+                "ChallengeDescription": "Play {0} multiplayer matches.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 3,
+                "ChallengeName": "Soldier IV",
+                "ChallengeDescription": "Play {0} multiplayer matches.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 4,
+                "ChallengeName": "Soldier V",
+                "ChallengeDescription": "Play {0} multiplayer matches.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 5,
+                "ChallengeName": "Veteran I",
+                "ChallengeDescription": "Win {0} multiplayer matches.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 6,
+                "ChallengeName": "Veteran II",
+                "ChallengeDescription": "Win {0} multiplayer matches.",
+                "AmountRequired": 50,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 7,
+                "ChallengeName": "Veteran III",
+                "ChallengeDescription": "Win {0} multiplayer matches.",
+                "AmountRequired": 100,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 8,
+                "ChallengeName": "Veteran IV",
+                "ChallengeDescription": "Win {0} multiplayer matches.",
+                "AmountRequired": 250,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 9,
+                "ChallengeName": "Combat Veteran",
+                "ChallengeDescription": "Win {0} multiplayer matches.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 10,
+                "ChallengeName": "XP Grinder I",
+                "ChallengeDescription": "Earn {0} total XP in multiplayer.",
+                "AmountRequired": 10000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 11,
+                "ChallengeName": "XP Grinder II",
+                "ChallengeDescription": "Earn {0} total XP in multiplayer.",
+                "AmountRequired": 50000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 12,
+                "ChallengeName": "XP Grinder III",
+                "ChallengeDescription": "Earn {0} total XP in multiplayer.",
+                "AmountRequired": 100000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 13,
+                "ChallengeName": "Kill Leader I",
+                "ChallengeDescription": "Get {0} total kills in multiplayer.",
+                "AmountRequired": 500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 14,
+                "ChallengeName": "Kill Leader II",
+                "ChallengeDescription": "Get {0} total kills in multiplayer.",
+                "AmountRequired": 2500,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 15,
+                "ChallengeName": "Kill Leader III",
+                "ChallengeDescription": "Get {0} total kills in multiplayer.",
+                "AmountRequired": 5000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 16,
+                "ChallengeName": "Kill Leader IV",
+                "ChallengeDescription": "Get {0} total kills in multiplayer.",
+                "AmountRequired": 10000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 17,
+                "ChallengeName": "Kill Leader V",
+                "ChallengeDescription": "Get {0} total kills in multiplayer.",
+                "AmountRequired": 25000,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 18,
+                "ChallengeName": "Prestige",
+                "ChallengeDescription": "Prestige {0} time(s).",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 19,
+                "ChallengeName": "Prestige Master",
+                "ChallengeDescription": "Reach the maximum Prestige level.",
+                "AmountRequired": 1,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 20,
+                "ChallengeName": "Gold Collector",
+                "ChallengeDescription": "Unlock Gold camo on {0} weapons.",
+                "AmountRequired": 10,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 21,
+                "ChallengeName": "Diamond Collector",
+                "ChallengeDescription": "Unlock Diamond camo on {0} weapon classes.",
+                "AmountRequired": 4,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            },
+            {
+                "ChallengeID": 22,
+                "ChallengeName": "Camo Collector",
+                "ChallengeDescription": "Unlock Gold camo on all {0} base weapons.",
+                "AmountRequired": 38,
+                "CurrentAmount": 0,
+                "IsComplete": false
+            }
+        ]
+    }
+]

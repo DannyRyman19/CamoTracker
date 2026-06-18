@@ -1,0 +1,322 @@
+[
+    {
+        "OpticID": 0,
+        "OpticName": "Reflex Sight",
+        "OpticDescription": "Close range reflex optic.",
+        "UnlockDescription": "Get kills while ADS with the Reflex Sight.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/reflex-sight.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Plus",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/plus.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Dot",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Target Drop",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/target-drop.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Valley",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/valley.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Drop Shot",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/drop-shot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Peak",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/peak.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Steve",
+                "AmountRequired": 600,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/steve.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Smile",
+                "AmountRequired": 700,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/smile.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Diamond",
+                "AmountRequired": 800,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/diamond.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "Predator",
+                "AmountRequired": 900,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/reflex-sight/predator.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 1,
+        "OpticName": "ACOG Sight",
+        "OpticDescription": "4x magnification ACOG optic.",
+        "UnlockDescription": "Get kills while ADS with the ACOG Sight.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/acog-sight.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Precision",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/precision.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Ranger",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/ranger.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Target Range Drop",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/target-range-drop.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Ranger Drop",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/ranger-drop.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Trilux",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/trilux.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Pyramid",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/pyramid.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Hall of Flame",
+                "AmountRequired": 600,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/hall-of-flame.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Scarecrow",
+                "AmountRequired": 700,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/scarecrow.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Spades",
+                "AmountRequired": 800,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/spades.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "3ARC",
+                "AmountRequired": 900,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/acog-sight/3arc.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 2,
+        "OpticName": "Hybrid Optic",
+        "OpticDescription": "Dual-zoom hybrid optic.",
+        "UnlockDescription": "Get kills while ADS with the Hybrid Optic.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/hybrid-optic.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Plus & Precision",
+                "AmountRequired": 10,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/plus-precision.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Dot & Ranger",
+                "AmountRequired": 25,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/dot-ranger.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Target & Drop",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/target-drop.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "Valley & Ranger Drop",
+                "AmountRequired": 75,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/valley-ranger-drop.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Drop Shot & Trilux",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/drop-shot-trilux.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Peak & Pyramid",
+                "AmountRequired": 125,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/peak-pyramid.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Steve & Hall of Flame",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/steve-hall-of-flame.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Smile & Scarecrow",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/smile-scarecrow.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Hearts",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/hearts.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "Predator & 3ARC",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/hybrid-optic/predator-3arc.png",
+                "IsUnlocked": false
+            }
+        ]
+    },
+    {
+        "OpticID": 3,
+        "OpticName": "EOTech Sight",
+        "OpticDescription": "Advanced EOTech holographic optic.",
+        "UnlockDescription": "Get kills while ADS with the EOTech Sight.",
+        "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/optics/eotech-sight.png",
+        "CurrentAmount": 0,
+        "Reticles": [
+            {
+                "ReticleID": 0,
+                "ReticleName": "Udot",
+                "AmountRequired": 10,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/udot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 1,
+                "ReticleName": "Center Trilux 2",
+                "AmountRequired": 25,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/center-trilux-2.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 2,
+                "ReticleName": "Hit Mark",
+                "AmountRequired": 50,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/hit-mark.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 3,
+                "ReticleName": "EO DOT",
+                "AmountRequired": 75,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/eo-dot.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 4,
+                "ReticleName": "Double Delta",
+                "AmountRequired": 100,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/double-delta.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 5,
+                "ReticleName": "Spray",
+                "AmountRequired": 125,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/spray.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 6,
+                "ReticleName": "Rocker",
+                "AmountRequired": 200,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/rocker.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 7,
+                "ReticleName": "Skull",
+                "AmountRequired": 300,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/skull.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 8,
+                "ReticleName": "Clubs",
+                "AmountRequired": 400,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/clubs.png",
+                "IsUnlocked": false
+            },
+            {
+                "ReticleID": 9,
+                "ReticleName": "EOTech Zombie Stopper",
+                "AmountRequired": 500,
+                "ImageURL": "https://camotracker.djr.li/Images/BO2/Reticles/eotech-sight/eotech-zombie-stopper.png",
+                "IsUnlocked": false
+            }
+        ]
+    }
+]
