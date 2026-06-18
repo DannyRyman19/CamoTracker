@@ -6,7 +6,7 @@ struct ReticlesView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 14) {
+                LazyVStack(spacing: 12) {
                     reticleSummary
                         .padding(.horizontal)
                         .padding(.top, 4)
@@ -23,7 +23,7 @@ struct ReticlesView: View {
                 .padding(.bottom, 24)
             }
             .navigationTitle("Reticles")
-            .background(.black)
+            .background(AppBackground())
         }
     }
 
@@ -31,41 +31,45 @@ struct ReticlesView: View {
         HStack(spacing: 0) {
             VStack(spacing: 4) {
                 Text("\(vm.unlockedReticles)")
-                    .font(.title.bold().monospacedDigit())
+                    .font(.agency(22))
                     .foregroundStyle(.white)
                 Text("Unlocked")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.5))
             }
             .frame(maxWidth: .infinity)
 
-            Divider().frame(height: 40).background(.white.opacity(0.15))
+            Divider().frame(height: 40).background(.white.opacity(0.12))
 
             VStack(spacing: 4) {
                 Text("\(vm.totalReticles)")
-                    .font(.title.bold().monospacedDigit())
+                    .font(.agency(22))
                     .foregroundStyle(.white)
                 Text("Total")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.5))
             }
             .frame(maxWidth: .infinity)
 
-            Divider().frame(height: 40).background(.white.opacity(0.15))
+            Divider().frame(height: 40).background(.white.opacity(0.12))
 
             VStack(spacing: 4) {
                 Text(String(format: "%.0f%%", vm.overallReticleProgress * 100))
-                    .font(.title.bold().monospacedDigit())
+                    .font(.agency(22))
                     .foregroundStyle(.white)
                 Text("Complete")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.5))
             }
             .frame(maxWidth: .infinity)
         }
-        .padding(.vertical, 12)
+        .padding(.vertical, 14)
         .glassEffect()
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(Color.accent.opacity(0.25), lineWidth: 1)
+        )
     }
 }
 
@@ -74,23 +78,23 @@ struct ReticleOpticCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 12) {
+            HStack(spacing: 14) {
                 ZStack {
                     Circle()
-                        .fill(optic.isComplete ? Color.green.opacity(0.2) : Color.white.opacity(0.08))
+                        .fill(optic.isComplete ? Color.accentMuted : Color.white.opacity(0.07))
                         .frame(width: 44, height: 44)
                     Image(systemName: optic.isComplete ? "checkmark.circle.fill" : "scope")
-                        .font(.title3)
-                        .foregroundStyle(optic.isComplete ? .green : .white.opacity(0.6))
+                        .font(.agencyReg(20))
+                        .foregroundStyle(optic.isComplete ? Color.accent : .white.opacity(0.55))
                 }
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(optic.OpticName)
-                        .font(.headline)
+                        .font(.agency(17))
                         .foregroundStyle(.white)
                     Text(optic.UnlockDescription)
-                        .font(.caption)
-                        .foregroundStyle(.white.opacity(0.5))
+                        .font(.agencyReg(13))
+                        .foregroundStyle(.white.opacity(0.45))
                         .lineLimit(1)
                 }
 
@@ -98,24 +102,32 @@ struct ReticleOpticCard: View {
 
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("\(optic.unlockedCount)/\(optic.totalCount)")
-                        .font(.subheadline.bold().monospacedDigit())
-                        .foregroundStyle(optic.isComplete ? .green : .white.opacity(0.7))
+                        .font(.agency(15))
+                        .foregroundStyle(optic.isComplete ? Color.accent : .white.opacity(0.6))
                     Text("reticles")
-                        .font(.caption2)
-                        .foregroundStyle(.white.opacity(0.4))
+                        .font(.agencyReg(11))
+                        .foregroundStyle(.white.opacity(0.35))
                 }
 
                 Image(systemName: "chevron.right")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.3))
             }
 
             ProgressView(value: optic.progress)
-                .tint(optic.isComplete ? .green : .cyan)
+                .tint(optic.isComplete ? .accent : Color.accent.opacity(0.6))
         }
         .padding(16)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(
+                    optic.isComplete ? Color.accent.opacity(0.45) :
+                    optic.progress > 0 ? Color.accent.opacity(0.15) : Color.clear,
+                    lineWidth: 1
+                )
+        )
     }
 }
 
@@ -129,13 +141,13 @@ struct ReticleOpticDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
+            VStack(spacing: 14) {
                 killCountCard
                     .padding(.horizontal)
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Reticles")
-                        .font(.title3.bold())
+                        .font(.agency(22))
                         .foregroundStyle(.white)
                         .padding(.horizontal)
 
@@ -145,14 +157,14 @@ struct ReticleOpticDetailView: View {
                     }
                 }
 
-                Spacer(minLength: 32)
+                Spacer(minLength: 24)
             }
             .padding(.top, 8)
             .padding(.bottom, 24)
         }
         .navigationTitle(optic.OpticName)
         .navigationBarTitleDisplayMode(.large)
-        .background(.black)
+        .background(AppBackground())
     }
 
     private var killCountCard: some View {
@@ -160,10 +172,10 @@ struct ReticleOpticDetailView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Kills with \(optic.OpticName)")
-                        .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.7))
+                        .font(.agencyReg(15))
+                        .foregroundStyle(.white.opacity(0.6))
                     Text("\(optic.CurrentAmount)")
-                        .font(.title.bold().monospacedDigit())
+                        .font(.agency(28))
                         .foregroundStyle(.white)
                 }
                 Spacer()
@@ -174,17 +186,17 @@ struct ReticleOpticDetailView: View {
             }
 
             ProgressView(value: optic.progress)
-                .tint(.cyan)
+                .tint(.accent)
 
             HStack {
                 Text("\(optic.unlockedCount)/\(optic.totalCount) reticles unlocked")
-                    .font(.caption)
-                    .foregroundStyle(.white.opacity(0.5))
+                    .font(.agencyReg(13))
+                    .foregroundStyle(.white.opacity(0.45))
                 Spacer()
                 if let next = optic.Reticles.first(where: { !$0.IsUnlocked }) {
                     Text("\(next.AmountRequired - optic.CurrentAmount) kills to \(next.ReticleName)")
-                        .font(.caption)
-                        .foregroundStyle(.cyan.opacity(0.8))
+                        .font(.agencyReg(13))
+                        .foregroundStyle(Color.accent.opacity(0.85))
                 }
             }
         }
@@ -202,7 +214,7 @@ struct ReticleRow: View {
         HStack(spacing: 14) {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(reticle.IsUnlocked ? Color.cyan.opacity(0.15) : Color.white.opacity(0.06))
+                    .fill(reticle.IsUnlocked ? Color.accentMuted : Color.white.opacity(0.05))
                     .frame(width: 44, height: 44)
                 if let url = reticle.ImageURL {
                     AsyncImage(url: URL(string: url)) { phase in
@@ -219,39 +231,43 @@ struct ReticleRow: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(reticle.ReticleName)
-                    .font(.subheadline.bold())
-                    .foregroundStyle(reticle.IsUnlocked ? .cyan : .white.opacity(0.6))
+                    .font(.agency(15))
+                    .foregroundStyle(reticle.IsUnlocked ? Color.accent : .white.opacity(0.6))
                 Text("Requires \(reticle.AmountRequired) kills")
-                    .font(.caption)
-                    .foregroundStyle(.white.opacity(0.4))
+                    .font(.agencyReg(13))
+                    .foregroundStyle(.white.opacity(0.35))
             }
 
             Spacer()
 
             if reticle.IsUnlocked {
                 Text("Unlocked")
-                    .font(.caption2.bold())
+                    .font(.agency(11))
                     .foregroundStyle(.black)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 3)
-                    .background(.cyan)
+                    .background(Color.accent)
                     .clipShape(Capsule())
             } else {
                 let remaining = reticle.AmountRequired - currentKills
                 Text("\(remaining) left")
-                    .font(.caption2.monospacedDigit())
+                    .font(.agencyReg(11))
                     .foregroundStyle(.white.opacity(0.3))
             }
         }
         .padding(12)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 14))
+        .overlay(
+            RoundedRectangle(cornerRadius: 14)
+                .strokeBorder(reticle.IsUnlocked ? Color.accent.opacity(0.35) : Color.clear, lineWidth: 1)
+        )
     }
 
     private var reticleIcon: some View {
-        Image(systemName: reticle.IsUnlocked ? "scope" : "scope")
-            .font(.title3)
-            .foregroundStyle(reticle.IsUnlocked ? .cyan : .white.opacity(0.2))
+        Image(systemName: "scope")
+            .font(.agencyReg(20))
+            .foregroundStyle(reticle.IsUnlocked ? Color.accent : .white.opacity(0.18))
     }
 }
 
@@ -272,8 +288,8 @@ struct KillStepper: View {
                 onChange(v)
             } label: {
                 Image(systemName: "minus.circle.fill")
-                    .font(.title2)
-                    .foregroundStyle(.white.opacity(0.6))
+                    .font(.agencyReg(22))
+                    .foregroundStyle(Color.accent.opacity(0.8))
             }
             .buttonStyle(.plain)
 
@@ -281,7 +297,7 @@ struct KillStepper: View {
                 .keyboardType(.numberPad)
                 .focused($focused)
                 .multilineTextAlignment(.center)
-                .font(.headline.monospacedDigit())
+                .font(.agencyReg(17))
                 .foregroundStyle(.white)
                 .frame(width: 64)
                 .padding(.vertical, 6)
@@ -298,8 +314,8 @@ struct KillStepper: View {
                 onChange(v)
             } label: {
                 Image(systemName: "plus.circle.fill")
-                    .font(.title2)
-                    .foregroundStyle(.white.opacity(0.6))
+                    .font(.agencyReg(22))
+                    .foregroundStyle(Color.accent.opacity(0.8))
             }
             .buttonStyle(.plain)
         }

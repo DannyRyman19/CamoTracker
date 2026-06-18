@@ -6,7 +6,7 @@ struct ChallengesView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 14) {
+                LazyVStack(spacing: 12) {
                     challengesSummary
                         .padding(.horizontal)
                         .padding(.top, 4)
@@ -23,38 +23,42 @@ struct ChallengesView: View {
                 .padding(.bottom, 24)
             }
             .navigationTitle("Challenges")
-            .background(.black)
+            .background(AppBackground())
         }
     }
 
     private var challengesSummary: some View {
         HStack(spacing: 0) {
             summaryCell(value: vm.completedChallenges, label: "Done")
-            Divider().frame(height: 40).background(.white.opacity(0.15))
+            Divider().frame(height: 40).background(.white.opacity(0.12))
             summaryCell(value: vm.totalChallenges, label: "Total")
-            Divider().frame(height: 40).background(.white.opacity(0.15))
+            Divider().frame(height: 40).background(.white.opacity(0.12))
             VStack(spacing: 4) {
                 Text(String(format: "%.0f%%", vm.overallChallengeProgress * 100))
-                    .font(.title.bold().monospacedDigit())
+                    .font(.agency(22))
                     .foregroundStyle(.white)
                 Text("Progress")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.5))
             }
             .frame(maxWidth: .infinity)
         }
-        .padding(.vertical, 12)
+        .padding(.vertical, 14)
         .glassEffect()
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(Color.accent.opacity(0.25), lineWidth: 1)
+        )
     }
 
     private func summaryCell(value: Int, label: String) -> some View {
         VStack(spacing: 4) {
             Text("\(value)")
-                .font(.title.bold().monospacedDigit())
+                .font(.agency(22))
                 .foregroundStyle(.white)
             Text(label)
-                .font(.caption)
+                .font(.agencyReg(13))
                 .foregroundStyle(.white.opacity(0.5))
         }
         .frame(maxWidth: .infinity)
@@ -66,43 +70,57 @@ struct ChallengeCategoryCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 12) {
-                Image(systemName: category.CategoryIcon)
-                    .font(.title2)
-                    .foregroundStyle(category.isComplete ? .yellow : .white.opacity(0.7))
-                    .frame(width: 32)
+            HStack(spacing: 14) {
+                ZStack {
+                    Circle()
+                        .fill(category.isComplete ? Color.accentMuted : Color.white.opacity(0.07))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: category.CategoryIcon)
+                        .font(.agencyReg(20))
+                        .foregroundStyle(category.isComplete ? Color.accent : .white.opacity(0.6))
+                }
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(category.CategoryName)
-                        .font(.headline)
+                        .font(.agency(17))
                         .foregroundStyle(.white)
                     Text("\(category.totalCount) challenges")
-                        .font(.caption)
+                        .font(.agencyReg(13))
                         .foregroundStyle(.white.opacity(0.5))
                 }
 
                 Spacer()
 
-                Text("\(category.completedCount)/\(category.totalCount)")
-                    .font(.subheadline.bold().monospacedDigit())
-                    .foregroundStyle(category.isComplete ? .yellow : .white.opacity(0.6))
-
-                if category.isComplete {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundStyle(.yellow)
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text("\(category.completedCount)/\(category.totalCount)")
+                        .font(.agency(15))
+                        .foregroundStyle(category.isComplete ? Color.accent : .white.opacity(0.5))
+                    if category.isComplete {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.agencyReg(13))
+                            .foregroundStyle(Color.accent)
+                    }
                 }
 
                 Image(systemName: "chevron.right")
-                    .font(.caption)
+                    .font(.agencyReg(13))
                     .foregroundStyle(.white.opacity(0.3))
             }
 
             ProgressView(value: category.progress)
-                .tint(category.isComplete ? .yellow : .white.opacity(0.5))
+                .tint(category.isComplete ? .accent : Color.accent.opacity(0.6))
         }
         .padding(16)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(
+                    category.isComplete ? Color.accent.opacity(0.45) :
+                    category.progress > 0 ? Color.accent.opacity(0.15) : Color.clear,
+                    lineWidth: 1
+                )
+        )
     }
 }
 
@@ -137,7 +155,7 @@ struct ChallengeCategoryView: View {
         }
         .navigationTitle(category.CategoryName)
         .navigationBarTitleDisplayMode(.large)
-        .background(.black)
+        .background(AppBackground())
     }
 }
 
@@ -151,32 +169,35 @@ struct TieredChallengeGroup: View {
 
     private var seriesName: String { group.first?.SeriesName ?? "" }
     private var completedCount: Int { group.filter(\.IsComplete).count }
-    private var highestUnlocked: MPChallenge? { group.filter(\.IsComplete).max(by: { ($0.Tier ?? 0) < ($1.Tier ?? 0) }) }
+    private var highestUnlocked: MPChallenge? {
+        group.filter(\.IsComplete).max(by: { ($0.Tier ?? 0) < ($1.Tier ?? 0) })
+    }
+    private var allDone: Bool { completedCount == group.count }
 
     var body: some View {
         VStack(spacing: 0) {
             Button { withAnimation(.spring(duration: 0.3)) { expanded.toggle() } } label: {
-                HStack(spacing: 12) {
+                HStack(spacing: 14) {
                     ZStack {
                         Circle()
-                            .fill(completedCount == group.count ? Color.yellow.opacity(0.2) : Color.white.opacity(0.08))
-                            .frame(width: 36, height: 36)
-                        Image(systemName: completedCount == group.count ? "checkmark" : "list.number")
-                            .font(.caption.bold())
-                            .foregroundStyle(completedCount == group.count ? .yellow : .white.opacity(0.5))
+                            .fill(allDone ? Color.accentMuted : Color.white.opacity(0.07))
+                            .frame(width: 40, height: 40)
+                        Image(systemName: allDone ? "checkmark" : "list.number")
+                            .font(.agency(13))
+                            .foregroundStyle(allDone ? Color.accent : .white.opacity(0.5))
                     }
 
                     VStack(alignment: .leading, spacing: 3) {
                         Text(seriesName)
-                            .font(.subheadline.bold())
+                            .font(.agency(15))
                             .foregroundStyle(.white)
                         if let top = highestUnlocked {
                             Text("Reached Tier \(top.tierLabel ?? "")")
-                                .font(.caption)
-                                .foregroundStyle(.yellow.opacity(0.7))
+                                .font(.agencyReg(13))
+                                .foregroundStyle(Color.accent.opacity(0.8))
                         } else {
                             Text("\(group.count) tiers")
-                                .font(.caption)
+                                .font(.agencyReg(13))
                                 .foregroundStyle(.white.opacity(0.4))
                         }
                     }
@@ -184,11 +205,11 @@ struct TieredChallengeGroup: View {
                     Spacer()
 
                     Text("\(completedCount)/\(group.count)")
-                        .font(.caption.bold().monospacedDigit())
-                        .foregroundStyle(completedCount == group.count ? .yellow : .white.opacity(0.5))
+                        .font(.agency(13))
+                        .foregroundStyle(allDone ? Color.accent : .white.opacity(0.45))
 
                     Image(systemName: expanded ? "chevron.up" : "chevron.down")
-                        .font(.caption)
+                        .font(.agencyReg(13))
                         .foregroundStyle(.white.opacity(0.3))
                 }
                 .padding(14)
@@ -196,7 +217,7 @@ struct TieredChallengeGroup: View {
             .buttonStyle(.plain)
 
             if expanded {
-                Divider().background(.white.opacity(0.1)).padding(.horizontal, 14)
+                Divider().background(.white.opacity(0.08)).padding(.horizontal, 14)
 
                 VStack(spacing: 6) {
                     ForEach(group) { challenge in
@@ -211,7 +232,11 @@ struct TieredChallengeGroup: View {
             }
         }
         .glassEffect()
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(allDone ? Color.accent.opacity(0.4) : Color.clear, lineWidth: 1)
+        )
     }
 }
 
@@ -224,52 +249,50 @@ struct MPChallengeRow: View {
             HStack(spacing: 14) {
                 ZStack {
                     Circle()
-                        .fill(challenge.IsComplete ? Color.yellow : Color.white.opacity(0.08))
+                        .fill(challenge.IsComplete ? Color.accent : Color.white.opacity(0.07))
                         .frame(width: 36, height: 36)
                     if challenge.IsComplete {
                         Image(systemName: "checkmark")
-                            .font(.subheadline.bold())
+                            .font(.agency(15))
                             .foregroundStyle(.black)
                     } else {
                         Image(systemName: "circle")
-                            .font(.subheadline)
-                            .foregroundStyle(.white.opacity(0.3))
+                            .font(.agencyReg(15))
+                            .foregroundStyle(.white.opacity(0.25))
                     }
                 }
 
                 VStack(alignment: .leading, spacing: 3) {
                     HStack(spacing: 6) {
                         Text(challenge.ChallengeName)
-                            .font(.subheadline.bold())
-                            .foregroundStyle(challenge.IsComplete ? .yellow : .white)
+                            .font(.agency(15))
+                            .foregroundStyle(challenge.IsComplete ? Color.accent : .white)
 
                         if let label = challenge.tierLabel {
                             Text(label)
-                                .font(.caption2.bold())
-                                .foregroundStyle(challenge.IsComplete ? .black : .white.opacity(0.6))
+                                .font(.agency(11))
+                                .foregroundStyle(challenge.IsComplete ? .black : .white.opacity(0.5))
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
-                                .background(challenge.IsComplete ? Color.yellow : Color.white.opacity(0.15))
+                                .background(challenge.IsComplete ? Color.accent : Color.white.opacity(0.12))
                                 .clipShape(Capsule())
                         }
 
                         Spacer()
-
-                        if challenge.IsComplete {
-                            Image(systemName: "checkmark.seal.fill")
-                                .font(.caption)
-                                .foregroundStyle(.yellow)
-                        }
                     }
                     Text(challenge.displayDescription)
-                        .font(.caption)
-                        .foregroundStyle(.white.opacity(0.5))
+                        .font(.agencyReg(13))
+                        .foregroundStyle(.white.opacity(0.45))
                         .multilineTextAlignment(.leading)
                 }
             }
             .padding(14)
             .glassEffect()
             .clipShape(RoundedRectangle(cornerRadius: 14))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .strokeBorder(challenge.IsComplete ? Color.accent.opacity(0.35) : Color.clear, lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
     }

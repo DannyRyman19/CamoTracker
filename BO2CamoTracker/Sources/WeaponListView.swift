@@ -8,7 +8,7 @@ struct WeaponListView: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 12) {
+            LazyVStack(spacing: 10) {
                 if category.hasDiamond {
                     DiamondBanner(categoryName: category.WeaponCategoryName)
                         .padding(.horizontal)
@@ -28,7 +28,7 @@ struct WeaponListView: View {
         }
         .navigationTitle(category.WeaponCategoryName)
         .navigationBarTitleDisplayMode(.large)
-        .background(.black)
+        .background(AppBackground())
     }
 }
 
@@ -39,37 +39,43 @@ struct WeaponRow: View {
         HStack(spacing: 14) {
             WeaponThumbnail(url: weapon.WeaponImageURL, size: 56)
 
-            VStack(alignment: .leading, spacing: 5) {
-                HStack(spacing: 6) {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 8) {
                     Text(weapon.WeaponName)
-                        .font(.headline)
+                        .font(.agency(17))
                         .foregroundStyle(.white)
                     if weapon.hasGold {
                         Text("GOLD")
-                            .font(.caption2.bold())
+                            .font(.agency(11))
                             .foregroundStyle(.black)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(.yellow)
+                            .padding(.horizontal, 7)
+                            .padding(.vertical, 3)
+                            .background(Color.accent)
                             .clipShape(Capsule())
                     }
                 }
+
                 ProgressView(value: weapon.progress)
-                    .tint(weapon.hasGold ? .yellow : .white.opacity(0.6))
+                    .tint(weapon.hasGold ? .accent : .white.opacity(0.5))
+
                 Text("\(weapon.completedChallenges)/\(weapon.totalChallenges) challenges")
-                    .font(.caption)
-                    .foregroundStyle(.white.opacity(0.5))
+                    .font(.agencyReg(13))
+                    .foregroundStyle(.white.opacity(0.45))
             }
 
             Spacer(minLength: 0)
 
             Image(systemName: "chevron.right")
-                .font(.caption)
+                .font(.agencyReg(13))
                 .foregroundStyle(.white.opacity(0.3))
         }
         .padding(14)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(weapon.hasGold ? Color.accent.opacity(0.45) : Color.clear, lineWidth: 1)
+        )
     }
 }
 
@@ -77,23 +83,30 @@ struct DiamondBanner: View {
     let categoryName: String
 
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 12) {
             Image(systemName: "diamond.fill")
-                .font(.title2)
+                .font(.agencyReg(22))
                 .foregroundStyle(.cyan)
             VStack(alignment: .leading, spacing: 2) {
                 Text("Diamond Unlocked!")
-                    .font(.headline.bold())
+                    .font(.agency(17))
                     .foregroundStyle(.cyan)
-                Text("Gold on all \(categoryName)")
-                    .font(.caption)
+                Text("All \(categoryName) at Gold")
+                    .font(.agencyReg(13))
                     .foregroundStyle(.cyan.opacity(0.7))
             }
             Spacer()
+            Image(systemName: "sparkles")
+                .font(.agencyReg(20))
+                .foregroundStyle(.cyan.opacity(0.6))
         }
         .padding(16)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(Color.cyan.opacity(0.5), lineWidth: 1)
+        )
     }
 }
 
@@ -111,11 +124,10 @@ struct WeaponThumbnail: View {
                     .aspectRatio(contentMode: .fit)
             case .failure, .empty:
                 Image(systemName: "scope")
-                    .font(.title2)
-                    .foregroundStyle(.white.opacity(0.4))
+                    .font(.agencyReg(22))
+                    .foregroundStyle(.white.opacity(0.3))
             @unknown default:
-                ProgressView()
-                    .tint(.white)
+                ProgressView().tint(.white)
             }
         }
         .frame(width: size, height: size * 0.6)
@@ -136,16 +148,16 @@ struct CamoThumbnail: View {
                     .clipShape(RoundedRectangle(cornerRadius: size * 0.25))
             case .failure, .empty:
                 RoundedRectangle(cornerRadius: size * 0.25)
-                    .fill(.white.opacity(0.08))
+                    .fill(.white.opacity(0.07))
                     .frame(width: size, height: size)
                     .overlay {
                         Image(systemName: "paintpalette")
-                            .font(.caption)
-                            .foregroundStyle(.white.opacity(0.3))
+                            .font(.agencyReg(13))
+                            .foregroundStyle(.white.opacity(0.25))
                     }
             @unknown default:
                 RoundedRectangle(cornerRadius: size * 0.25)
-                    .fill(.white.opacity(0.08))
+                    .fill(.white.opacity(0.07))
                     .frame(width: size, height: size)
             }
         }

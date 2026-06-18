@@ -19,10 +19,16 @@ targets:
     sources:
       - path: Sources
         type: group
-    resources:
       - path: Resources/BO2_Multiplayer_Camos.json
+        buildPhase: resources
       - path: Resources/BO2_Multiplayer_Challenges.json
+        buildPhase: resources
       - path: Resources/BO2_Reticles.json
+        buildPhase: resources
+      - path: Resources/AGENCYB.ttf
+        buildPhase: resources
+      - path: Resources/agency-fb-regular.ttf
+        buildPhase: resources
     info:
       path: Resources/Info.plist
       properties:
@@ -35,6 +41,9 @@ targets:
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
           UISceneConfigurations: {}
+        UIAppFonts:
+          - AGENCYB.ttf
+          - agency-fb-regular.ttf
         UILaunchScreen:
           UIColorName: ""
           UIImageName: ""

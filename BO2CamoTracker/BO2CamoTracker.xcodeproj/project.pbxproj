@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DCF5EFA4C152E949003A33 /* BO2CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C9CB2E5A4612CFE134C23 /* BO2CamoTrackerApp.swift */; };
+		28FEF77556FCD024B2A62365 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CE918D4FE3E007C69B1FD /* ChallengesView.swift */; };
+		2DE04DA4F691AEA6AE3CEDA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AE293DC46A174A8014FC92 /* ContentView.swift */; };
+		4EAAA13E9CB1D0A80308CBDA /* BO2_Reticles.json in Resources */ = {isa = PBXBuildFile; fileRef = A7AD04C6B368CC559649B055 /* BO2_Reticles.json */; };
+		570A39F41F5B16DA0216B888 /* AGENCYB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE4CBE750D571170EB188F69 /* AGENCYB.ttf */; };
+		5778A64B6EBAE9799935B30D /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13CC583027A2FA4A5C0CB6C /* WeaponDetailView.swift */; };
+		62A84F1DCA703A81A06EA968 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5A045610599247E556AF90 /* StatsView.swift */; };
+		6BB4D76CD4FD4E8564ABE4DB /* agency-fb-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF5FACFA007F304D76E0AD85 /* agency-fb-regular.ttf */; };
+		728FE87C801BA569493A6F4D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2471863370A9EEDEEF571609 /* Theme.swift */; };
+		7A490460BA32894C7467E1A0 /* BO2_Multiplayer_Camos.json in Resources */ = {isa = PBXBuildFile; fileRef = E919016FBA86B3939330AA50 /* BO2_Multiplayer_Camos.json */; };
+		91CBD33D134D1EC521C4F98C /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1D66C5D7236579BE395C48 /* CategoryListView.swift */; };
+		92D3DA87CA750D30511899D0 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FF759C3D7F58C0D597874 /* WeaponListView.swift */; };
+		A1F471FA69338C9D55A5441E /* ReticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9CF34C1E183A4FEA0FFA7 /* ReticlesView.swift */; };
+		BEB978311D6BE03B71DAE7C7 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFB4314CBA3056EC75F874 /* TrackerViewModel.swift */; };
+		C4C4DB14144E02E5833086FE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A0A1D318C010AC18B50FF /* Models.swift */; };
+		E929FF4DFDFEB6BE0EB99D7E /* BO2_Multiplayer_Challenges.json in Resources */ = {isa = PBXBuildFile; fileRef = 12133036F22D8017FAEC9B2A /* BO2_Multiplayer_Challenges.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EE9CF34C1E183A4FEA0FFA7 /* ReticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReticlesView.swift; sourceTree = "<group>"; };
+		12133036F22D8017FAEC9B2A /* BO2_Multiplayer_Challenges.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BO2_Multiplayer_Challenges.json; sourceTree = "<group>"; };
+		1D5A045610599247E556AF90 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		2471863370A9EEDEEF571609 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3D3FF759C3D7F58C0D597874 /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
+		445C9CB2E5A4612CFE134C23 /* BO2CamoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BO2CamoTrackerApp.swift; sourceTree = "<group>"; };
+		63EFB4314CBA3056EC75F874 /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
+		93BE28448B9F281F55578E7C /* BO2CamoTracker.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BO2CamoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1D66C5D7236579BE395C48 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		A7AD04C6B368CC559649B055 /* BO2_Reticles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BO2_Reticles.json; sourceTree = "<group>"; };
+		B13CC583027A2FA4A5C0CB6C /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
+		E919016FBA86B3939330AA50 /* BO2_Multiplayer_Camos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BO2_Multiplayer_Camos.json; sourceTree = "<group>"; };
+		F65CE918D4FE3E007C69B1FD /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		F68A0A1D318C010AC18B50FF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F9AE293DC46A174A8014FC92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FE4CBE750D571170EB188F69 /* AGENCYB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGENCYB.ttf; sourceTree = "<group>"; };
+		FF5FACFA007F304D76E0AD85 /* agency-fb-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "agency-fb-regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		6344EE48EF03677C9723200D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FACFA007F304D76E0AD85 /* agency-fb-regular.ttf */,
+				FE4CBE750D571170EB188F69 /* AGENCYB.ttf */,
+				E919016FBA86B3939330AA50 /* BO2_Multiplayer_Camos.json */,
+				12133036F22D8017FAEC9B2A /* BO2_Multiplayer_Challenges.json */,
+				A7AD04C6B368CC559649B055 /* BO2_Reticles.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7918F76892D6799FCB390833 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				445C9CB2E5A4612CFE134C23 /* BO2CamoTrackerApp.swift */,
+				9F1D66C5D7236579BE395C48 /* CategoryListView.swift */,
+				F65CE918D4FE3E007C69B1FD /* ChallengesView.swift */,
+				F9AE293DC46A174A8014FC92 /* ContentView.swift */,
+				F68A0A1D318C010AC18B50FF /* Models.swift */,
+				0EE9CF34C1E183A4FEA0FFA7 /* ReticlesView.swift */,
+				1D5A045610599247E556AF90 /* StatsView.swift */,
+				2471863370A9EEDEEF571609 /* Theme.swift */,
+				63EFB4314CBA3056EC75F874 /* TrackerViewModel.swift */,
+				B13CC583027A2FA4A5C0CB6C /* WeaponDetailView.swift */,
+				3D3FF759C3D7F58C0D597874 /* WeaponListView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BB2D0025237CC3C4804B4010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93BE28448B9F281F55578E7C /* BO2CamoTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF489BD1D952CE2CEA5A3E8E = {
+			isa = PBXGroup;
+			children = (
+				6344EE48EF03677C9723200D /* Resources */,
+				7918F76892D6799FCB390833 /* Sources */,
+				BB2D0025237CC3C4804B4010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		668E8DB19B16FED8C0CA5D60 /* BO2CamoTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4414155CB486E54AF1CD1C /* Build configuration list for PBXNativeTarget "BO2CamoTracker" */;
+			buildPhases = (
+				3F53014A79014A9D813DB892 /* Sources */,
+				D549CFC1B6CC2E2D43A834E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BO2CamoTracker;
+			packageProductDependencies = (
+			);
+			productName = BO2CamoTracker;
+			productReference = 93BE28448B9F281F55578E7C /* BO2CamoTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDCC96324BA9A9A8E6A5D3D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 9B538C28F990DEC36BC5FB48 /* Build configuration list for PBXProject "BO2CamoTracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = DF489BD1D952CE2CEA5A3E8E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BB2D0025237CC3C4804B4010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				668E8DB19B16FED8C0CA5D60 /* BO2CamoTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D549CFC1B6CC2E2D43A834E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				570A39F41F5B16DA0216B888 /* AGENCYB.ttf in Resources */,
+				7A490460BA32894C7467E1A0 /* BO2_Multiplayer_Camos.json in Resources */,
+				E929FF4DFDFEB6BE0EB99D7E /* BO2_Multiplayer_Challenges.json in Resources */,
+				4EAAA13E9CB1D0A80308CBDA /* BO2_Reticles.json in Resources */,
+				6BB4D76CD4FD4E8564ABE4DB /* agency-fb-regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F53014A79014A9D813DB892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DCF5EFA4C152E949003A33 /* BO2CamoTrackerApp.swift in Sources */,
+				91CBD33D134D1EC521C4F98C /* CategoryListView.swift in Sources */,
+				28FEF77556FCD024B2A62365 /* ChallengesView.swift in Sources */,
+				2DE04DA4F691AEA6AE3CEDA8 /* ContentView.swift in Sources */,
+				C4C4DB14144E02E5833086FE /* Models.swift in Sources */,
+				A1F471FA69338C9D55A5441E /* ReticlesView.swift in Sources */,
+				62A84F1DCA703A81A06EA968 /* StatsView.swift in Sources */,
+				728FE87C801BA569493A6F4D /* Theme.swift in Sources */,
+				BEB978311D6BE03B71DAE7C7 /* TrackerViewModel.swift in Sources */,
+				5778A64B6EBAE9799935B30D /* WeaponDetailView.swift in Sources */,
+				92D3DA87CA750D30511899D0 /* WeaponListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		025FCA357F44C6320484A9F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.BO2CamoTracker;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		340E0F14D772D4DC78009DE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		567F09867A43561C17744659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.BO2CamoTracker;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62FDF03CE761F48867F255F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C4414155CB486E54AF1CD1C /* Build configuration list for PBXNativeTarget "BO2CamoTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				567F09867A43561C17744659 /* Debug */,
+				025FCA357F44C6320484A9F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9B538C28F990DEC36BC5FB48 /* Build configuration list for PBXProject "BO2CamoTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62FDF03CE761F48867F255F7 /* Debug */,
+				340E0F14D772D4DC78009DE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDCC96324BA9A9A8E6A5D3D3 /* Project object */;
+}

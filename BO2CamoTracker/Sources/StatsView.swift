@@ -6,7 +6,7 @@ struct StatsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: 16) {
                     camoOverviewCard
                     challengeOverviewCard
                     reticleOverviewCard
@@ -17,135 +17,114 @@ struct StatsView: View {
                 .padding(.bottom, 32)
             }
             .navigationTitle("Stats")
-            .background(.black)
+            .background(AppBackground())
         }
-    }
-
-    private var reticleOverviewCard: some View {
-        VStack(spacing: 14) {
-            HStack {
-                Text("Reticle Progress")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                Spacer()
-            }
-            HStack(spacing: 12) {
-                StatTile(value: "\(vm.unlockedReticles)", total: "\(vm.totalReticles)",
-                         label: "Unlocked", icon: "scope", color: .cyan)
-                StatTile(value: "\(vm.reticleOptics.filter(\.isComplete).count)",
-                         total: "\(vm.reticleOptics.count)",
-                         label: "Optics Done", icon: "checkmark.circle.fill", color: .green)
-            }
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text("Overall Reticle Completion")
-                        .font(.caption).foregroundStyle(.white.opacity(0.6))
-                    Spacer()
-                    Text(String(format: "%.1f%%", vm.overallReticleProgress * 100))
-                        .font(.caption.bold().monospacedDigit()).foregroundStyle(.white)
-                }
-                ProgressView(value: vm.overallReticleProgress).tint(.cyan)
-            }
-        }
-        .padding(18)
-        .glassEffect()
-        .clipShape(RoundedRectangle(cornerRadius: 18))
     }
 
     private var camoOverviewCard: some View {
         VStack(spacing: 14) {
             HStack {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(Color.accent)
                 Text("Camo Progress")
-                    .font(.headline)
+                    .font(.agency(17))
                     .foregroundStyle(.white)
                 Spacer()
+                Text(String(format: "%.1f%%", vm.overallCamoProgress * 100))
+                    .font(.agency(15))
+                    .foregroundStyle(Color.accent)
             }
 
             HStack(spacing: 12) {
-                StatTile(
-                    value: "\(vm.goldWeapons)",
-                    total: "\(vm.totalWeapons)",
-                    label: "Gold",
-                    icon: "star.fill",
-                    color: .yellow
-                )
-                StatTile(
-                    value: "\(vm.diamondCategories)",
-                    total: "\(vm.totalCategories)",
-                    label: "Diamond",
-                    icon: "diamond.fill",
-                    color: .cyan
-                )
+                StatTile(value: "\(vm.goldWeapons)", total: "\(vm.totalWeapons)",
+                         label: "Gold", icon: "star.fill", color: .accent)
+                StatTile(value: "\(vm.diamondCategories)", total: "\(vm.totalCategories)",
+                         label: "Diamond", icon: "diamond.fill", color: .cyan)
             }
 
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text("Overall Camo Completion")
-                        .font(.caption)
-                        .foregroundStyle(.white.opacity(0.6))
-                    Spacer()
-                    Text(String(format: "%.1f%%", vm.overallCamoProgress * 100))
-                        .font(.caption.bold().monospacedDigit())
-                        .foregroundStyle(.white)
-                }
-                ProgressView(value: vm.overallCamoProgress)
-                    .tint(.yellow)
-            }
+            ProgressView(value: vm.overallCamoProgress)
+                .tint(.accent)
         }
         .padding(18)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(Color.accent.opacity(0.2), lineWidth: 1)
+        )
     }
 
     private var challengeOverviewCard: some View {
         VStack(spacing: 14) {
             HStack {
+                Image(systemName: "list.bullet.clipboard.fill")
+                    .foregroundStyle(Color.accent)
                 Text("Challenge Progress")
-                    .font(.headline)
+                    .font(.agency(17))
                     .foregroundStyle(.white)
                 Spacer()
+                Text(String(format: "%.1f%%", vm.overallChallengeProgress * 100))
+                    .font(.agency(15))
+                    .foregroundStyle(Color.accent)
             }
 
             HStack(spacing: 12) {
-                StatTile(
-                    value: "\(vm.completedChallenges)",
-                    total: "\(vm.totalChallenges)",
-                    label: "Done",
-                    icon: "checkmark.seal.fill",
-                    color: .green
-                )
-                StatTile(
-                    value: "\(vm.totalChallenges - vm.completedChallenges)",
-                    total: "\(vm.totalChallenges)",
-                    label: "Remaining",
-                    icon: "clock.fill",
-                    color: .orange
-                )
+                StatTile(value: "\(vm.completedChallenges)", total: "\(vm.totalChallenges)",
+                         label: "Done", icon: "checkmark.seal.fill", color: .accent)
+                StatTile(value: "\(vm.totalChallenges - vm.completedChallenges)", total: "\(vm.totalChallenges)",
+                         label: "Remaining", icon: "clock.fill", color: .white.opacity(0.5))
             }
 
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text("Overall Challenge Completion")
-                        .font(.caption)
-                        .foregroundStyle(.white.opacity(0.6))
-                    Spacer()
-                    Text(String(format: "%.1f%%", vm.overallChallengeProgress * 100))
-                        .font(.caption.bold().monospacedDigit())
-                        .foregroundStyle(.white)
-                }
-                ProgressView(value: vm.overallChallengeProgress)
-                    .tint(.green)
-            }
+            ProgressView(value: vm.overallChallengeProgress)
+                .tint(.accent)
         }
         .padding(18)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(Color.accent.opacity(0.2), lineWidth: 1)
+        )
+    }
+
+    private var reticleOverviewCard: some View {
+        VStack(spacing: 14) {
+            HStack {
+                Image(systemName: "scope")
+                    .foregroundStyle(Color.accent)
+                Text("Reticle Progress")
+                    .font(.agency(17))
+                    .foregroundStyle(.white)
+                Spacer()
+                Text(String(format: "%.1f%%", vm.overallReticleProgress * 100))
+                    .font(.agency(15))
+                    .foregroundStyle(Color.accent)
+            }
+
+            HStack(spacing: 12) {
+                StatTile(value: "\(vm.unlockedReticles)", total: "\(vm.totalReticles)",
+                         label: "Unlocked", icon: "scope", color: .accent)
+                StatTile(value: "\(vm.reticleOptics.filter(\.isComplete).count)",
+                         total: "\(vm.reticleOptics.count)",
+                         label: "Optics Done", icon: "checkmark.circle.fill", color: .cyan)
+            }
+
+            ProgressView(value: vm.overallReticleProgress)
+                .tint(.accent)
+        }
+        .padding(18)
+        .glassEffect()
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18)
+                .strokeBorder(Color.accent.opacity(0.2), lineWidth: 1)
+        )
     }
 
     private var categoryBreakdown: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 10) {
             Text("Camos by Class")
-                .font(.title3.bold())
+                .font(.agency(22))
                 .foregroundStyle(.white)
 
             ForEach(vm.categories) { category in
@@ -165,22 +144,22 @@ struct StatTile: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: icon)
-                .font(.title2)
+                .font(.agencyReg(22))
                 .foregroundStyle(color)
             HStack(alignment: .firstTextBaseline, spacing: 2) {
                 Text(value)
-                    .font(.title.bold().monospacedDigit())
+                    .font(.agency(22))
                     .foregroundStyle(.white)
                 Text("/\(total)")
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.4))
+                    .font(.agencyReg(15))
+                    .foregroundStyle(.white.opacity(0.35))
             }
             Text(label)
-                .font(.caption)
-                .foregroundStyle(.white.opacity(0.6))
+                .font(.agencyReg(13))
+                .foregroundStyle(.white.opacity(0.5))
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 12)
+        .padding(.vertical, 14)
         .glassEffect()
         .clipShape(RoundedRectangle(cornerRadius: 14))
     }
@@ -191,29 +170,33 @@ struct CategoryStatRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: category.categoryIcon)
-                .font(.subheadline)
-                .foregroundStyle(category.hasDiamond ? .cyan : .yellow)
-                .frame(width: 24)
+            ZStack {
+                Circle()
+                    .fill(category.hasDiamond ? Color.cyan.opacity(0.18) : Color.accentMuted)
+                    .frame(width: 36, height: 36)
+                Image(systemName: category.categoryIcon)
+                    .font(.agencyReg(15))
+                    .foregroundStyle(category.hasDiamond ? .cyan : .accent)
+            }
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     Text(category.WeaponCategoryName)
-                        .font(.subheadline.bold())
+                        .font(.agency(15))
                         .foregroundStyle(.white)
                     Spacer()
                     if category.hasDiamond {
                         Label("Diamond", systemImage: "diamond.fill")
-                            .font(.caption2.bold())
+                            .font(.agency(11))
                             .foregroundStyle(.cyan)
                     } else {
                         Text("\(category.goldCount)/\(category.Weapons.count) Gold")
-                            .font(.caption2.bold())
-                            .foregroundStyle(.yellow)
+                            .font(.agency(11))
+                            .foregroundStyle(category.goldCount > 0 ? Color.accent : .white.opacity(0.4))
                     }
                 }
                 ProgressView(value: category.overallProgress)
-                    .tint(category.hasDiamond ? .cyan : .yellow)
+                    .tint(category.hasDiamond ? .cyan : .accent)
             }
         }
         .padding(14)
