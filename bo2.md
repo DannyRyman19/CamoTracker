@@ -33,6 +33,32 @@ No adverts! Data stored on-device — no account required.
 - **Launchers** — SMAW, FHJ-18 AA, RPG-7
 - **Specials** — Combat Knife, Ballistic Knife, Crossbow, Assault Shield
 
+## Multiplayer Challenges
+
+Track every multiplayer challenge in Black Ops 2, organised by section:
+
+- **Primary Weapons** — Marksman, Expert and Mastery challenges for every AR, SMG, LMG, Sniper, and Shotgun
+- **Secondary Weapons** — Pistol, Launcher and Special weapon challenges
+- **Optics** — Reflex Sight, ACOG, Hybrid Optic and EOTech master challenges
+- **Scorestreaks** — Air Assault, Ground Assault, Support and Return Fire
+- **Assignments** — Boot Camp, Killer, Humiliation, Field Specialist and Precision
+- **Game Modes** — TDM, FFA, Domination, Search & Destroy, CTF, Headquarters, Demolition, Hardpoint, Kill Confirmed, Sharpshooter, Sticks and Stones, One in the Chamber, Gun Game
+- **Career** — Total Mastery, Operations and Combat stats
+- **Prestige** — Broken into four sub-sections: Specialized Optics, Combat Efficiency, Equipment, Perks and Wildcards
+
+Each challenge shows your current progress, the reward emblem or calling card you're working towards, and highlights tiered challenge series so you can see exactly which tier to aim for next.
+
+## Reticle Challenges
+
+Unlock every reticle across all four optics in Black Ops 2:
+
+- **Reflex Sight** — 6 base reticles (50–500 kills) plus 4 bonus reticles for Headshots, Double Kills, Longshots and Bloodthirsty medals
+- **ACOG Sight** — 6 base reticles (50–500 kills) plus 4 bonus reticles
+- **Hybrid Optic** — 6 base reticle pairs (10–125 kills) plus 4 bonus pairs
+- **EOTech Sight** — 6 base reticles (10–125 kills) plus 4 bonus reticles
+
+Each optic has a kill counter with stepper controls so you can log your progress as you play. Base reticles unlock automatically based on your kill count. Bonus reticles are toggled individually for medal-based challenges. Track overall completion across all 40 reticles.
+
 The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are the property of their respective owners. All In-Game Images are the sole property of Activision, Treyarch or their respective owners. Any such Content is used for educational purposes only!
 
 # Need Help, Support or Have Feedback?
