@@ -7159,7 +7159,7 @@
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the VX COMPACT.",
-                                "AmountRequired": 20,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
@@ -7702,7 +7702,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "With an Extended Magazine Attachment equipped: get 100 Eliminations with the AN-94 in Campaign.",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 100 Eliminations with the AN-94 in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -7711,16 +7711,16 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Eliminate 100 Fear Enemies with the AN-94 in Campaign.",
+                                "CategoryRequirement": "Get 3 Kills rapidly with the AN-94 10 times in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 100,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Eliminate 50 Enemies inside Command Centers or Toxin Fields with the AN-94 in Campaign.",
+                                "CategoryRequirement": "Get 50 Kills with the AN-94 while Aiming Down Sights and moving in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -7846,16 +7846,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 30 Kills shortly after sprinting with the AN-94 in Multiplayer.",
+                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the AN-94 in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 20,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "With the Gunfighter Wildard equipped: get 50 Eliminations with the AN-94 while it has 8 Attachments in Multiplayer.",
+                                "CategoryRequirement": "With a Suppressor Attachment equipped: get 50 Eliminations with the AN-94 in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -7864,11 +7864,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Use an Underbarrel Launcher Attachment on the AN-94 to Kill 20 enemies.",
+                                "CategoryRequirement": "Get 50 Eliminations without any attachments equipped with the AN-94 in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 20,
+                                "AmountRequired": 50,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8018,29 +8018,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 300 Critical Kills in a single match with the AN-94 in Zombies.",
+                                "CategoryRequirement": "Get 25 Kills during a single T.E.D.D task 15 times with the AN-94 in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 300 Eliminations with the AN-94 while it's Pack-A-Punched in Zombies.",
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the AN-94 in Zombies.",
                                 "CamoName": "SLITHER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 75 Armored Zombie Eliminations with the AN-94 in Zombies.",
+                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the AN-94 in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
-                                "AmountRequired": 75,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -8190,7 +8190,7 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 5 Eliminations while using a suppressor with the AN-94 in Warzone.",
+                                "CategoryRequirement": "Get 5 Kills without taking damage with the AN-94 in Warzone.",
                                 "CamoName": "SHIMMER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -8199,7 +8199,7 @@
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get 5 Headshot Kills the AN-94 in Warzone.",
+                                "CategoryRequirement": "Get 5 Eliminations while using a suppressor with the AN-94 in Warzone.",
                                 "CamoName": "TYRANT",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -8208,7 +8208,7 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 5 Kills shortly after sprinting with the AN-94 in Warzone.",
+                                "CategoryRequirement": "Get 5 Headshot Kills the AN-94 in Warzone.",
                                 "CamoName": "TRACE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/wz-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the AN-94.",
@@ -38154,16 +38154,16 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get a Kill with the EXECUTIONER'S DUET while or shortly after sliding, diving or wall running 25 times in Campaign.",
+                                "CategoryRequirement": "Get 100 Eliminations with the EXECUTIONER'S DUET at Rare Rarity or higher in Campaign.",
                                 "CamoName": "CINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 25,
+                                "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Eliminate 50 Enemies inside Command Centers or Toxin Fields with the EXECUTIONER'S DUET in Campaign.",
+                                "CategoryRequirement": "Eliminate 50 Guild Tech Enemies with the EXECUTIONER'S DUET in Campaign.",
                                 "CamoName": "CAIMAN",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
@@ -38172,11 +38172,11 @@
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 100 Eliminations with the EXECUTIONER'S DUET at Rare Rarity or higher in Campaign.",
+                                "CategoryRequirement": "Get 25 Kills shortly after switching weapons with the EXECUTIONER'S DUET in Campaign.",
                                 "CamoName": "NETWORK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/cm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 100,
+                                "AmountRequired": 25,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -38298,29 +38298,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Get 30 Objective Kills with the EXECUTIONER'S DUET in Multiplayer.",
+                                "CategoryRequirement": "Get 15 Kills shortly after switching weapons with the EXECUTIONER'S DUET in Multiplayer.",
                                 "CamoName": "DIAMONDBACK",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-0.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 30,
+                                "AmountRequired": 15,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 1,
-                                "CategoryRequirement": "Get a Kill without taking any damage 30 times with the EXECUTIONER'S DUET in Multiplayer.",
+                                "CategoryRequirement": "Get 10 Kills using a Heavy Melee attack with the EXECUTIONER'S DUET in Multiplayer.",
                                 "CamoName": "RAPTOR",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 30,
+                                "AmountRequired": 10,
                                 "CurrentAmount": 0
                             },
                             {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 10 Kills using a Heavy Melee attack with the EXECUTIONER'S DUET in Multiplayer.",
+                                "CategoryRequirement": "Kill 30 Enemies affected by your Tactical or non-lethal Scorestreak with the EXECUTIONER'S DUET in Multiplayer.",
                                 "CamoName": "MAINFRAME",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/mp-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 10,
+                                "AmountRequired": 30,
                                 "CurrentAmount": 0
                             }
                         ],
@@ -38470,29 +38470,29 @@
                         "SpecialCamos": [
                             {
                                 "CamoID": 0,
-                                "CategoryRequirement": "Kill 100 Enemies affected by your Tactical with the EXECUTIONER'S DUET in Zombies.",
+                                "CategoryRequirement": "Get 500 Eliminations in a single match with the EXECUTIONER'S DUET in Zombies.",
                                 "CamoName": "MUTILATE",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-0.png",
+                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
+                                "AmountRequired": 500,
+                                "CurrentAmount": 0
+                            },
+                            {
+                                "CamoID": 1,
+                                "CategoryRequirement": "Get 100 Kills while a Field Upgrade is active with the EXECUTIONER'S DUET in Zombies.",
+                                "CamoName": "SLITHER",
+                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
                                 "AmountRequired": 100,
                                 "CurrentAmount": 0
                             },
                             {
-                                "CamoID": 1,
-                                "CategoryRequirement": "With Tier 2 or higher Armor equipped: get 150 Eliminations with the EXECUTIONER'S DUET in Zombies.",
-                                "CamoName": "SLITHER",
-                                "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-1.png",
-                                "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 150,
-                                "CurrentAmount": 0
-                            },
-                            {
                                 "CamoID": 2,
-                                "CategoryRequirement": "Get 300 Eliminations with the EXECUTIONER'S DUET at Rare Rarity or higher in Zombies.",
+                                "CategoryRequirement": "Get 10 Kills without taking damage 3 times with the EXECUTIONER'S DUET in Zombies.",
                                 "CamoName": "PATHFINDER",
                                 "CamoImageURL": "https://camotracker.djr.li/Images/BO7/Camos/zm-spe-2.png",
                                 "UnlockRequirement": "Unlock all MILITARY CAMOS for the EXECUTIONER'S DUET.",
-                                "AmountRequired": 300,
+                                "AmountRequired": 3,
                                 "CurrentAmount": 0
                             }
                         ],
