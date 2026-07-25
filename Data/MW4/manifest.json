@@ -1,0 +1,16 @@
+{
+  "modes": {
+    "multiplayer": {
+      "version": "0.1.0",
+      "path": "multiplayer.json"
+    },
+    "campaign": {
+      "version": "0.1.0",
+      "path": "campaign.json"
+    },
+    "dmz": {
+      "version": "0.1.0",
+      "path": "dmz.json"
+    }
+  }
+}

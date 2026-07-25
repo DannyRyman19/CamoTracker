@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "mode": "dmz",
+  "categories": [
+    {
+      "categoryId": 0,
+      "nameKey": "mw4.dmz.category.hajin",
+      "items": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.dmz.objective.placeholder.name",
+          "imageRef": null,
+          "tier": 1,
+          "requirement": { "amount": 3, "unit": "extractions", "descriptionKey": "mw4.dmz.objective.placeholder.desc" },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "_note": "Placeholder seed data. DMZ is confirmed for MW4 (map: Hajin) but its exact objective/challenge structure is not yet public — replace once known. Uses the same schema as multiplayer.json and campaign.json on purpose."
+}
