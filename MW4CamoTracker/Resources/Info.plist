@@ -30,6 +30,14 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.DannyRyman.MW4CamoTracker.refresh</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HitmarkerText-VF.ttf</string>

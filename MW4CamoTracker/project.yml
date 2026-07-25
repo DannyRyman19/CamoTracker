@@ -55,6 +55,10 @@ targets:
           - de
           - nl
         LSRequiresIPhoneOS: true
+        UIBackgroundModes:
+          - fetch
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.DannyRyman.MW4CamoTracker.refresh
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
           UISceneConfigurations: {}

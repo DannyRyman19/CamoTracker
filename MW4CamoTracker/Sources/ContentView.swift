@@ -47,6 +47,9 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView {
+                if !hasOnboarded {
+                    BackgroundRefreshCoordinator.requestNotificationPermission()
+                }
                 hasOnboarded = true
                 showOnboarding = false
             }
