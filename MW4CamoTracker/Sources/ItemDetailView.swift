@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// Shows a weapon's camo tiers, or a DMZ objective's sub-tiers — whichever
-/// `children` the selected item happens to carry.
+/// Shows a mode-exclusive objective's sub-tiers (e.g. a DMZ extraction goal's
+/// stages) — whichever `children` the selected item happens to carry.
 struct ItemDetailView: View {
     let mode: AppMode
     let category: Category
@@ -33,12 +33,12 @@ private struct ChallengeRow: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     private var done: Bool {
-        viewModel.isComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
+        viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
     }
 
     var body: some View {
         Button {
-            viewModel.toggleComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
+            viewModel.toggleObjective(mode: mode.rawValue, categoryId: category.categoryId, item: item)
         } label: {
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 4) {

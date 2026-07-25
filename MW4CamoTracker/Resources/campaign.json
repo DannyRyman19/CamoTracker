@@ -1,21 +1,21 @@
 {
   "version": "0.1.0",
   "mode": "campaign",
-  "categories": [
+  "weaponCamos": [
     {
-      "categoryId": 0,
-      "nameKey": "mw4.campaign.category.missions",
-      "items": [
+      "weaponId": 0,
+      "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.campaign.mission.placeholder.name",
-          "imageRef": null,
-          "tier": null,
-          "requirement": { "amount": 1, "unit": "completion", "descriptionKey": "mw4.campaign.mission.placeholder.desc" },
+          "nameKey": "mw4.campaign.camo.placeholder.name",
+          "imageRef": "camo-campaign-placeholder.png",
+          "tier": 1,
+          "requirement": { "amount": 25, "unit": "critical_kills", "descriptionKey": "mw4.campaign.camo.placeholder.desc" },
           "children": []
         }
       ]
     }
   ],
-  "_note": "Placeholder seed data. Campaign mastery camo track for MW4 (Korea setting) is unconfirmed — replace once known."
+  "objectives": [],
+  "_note": "Placeholder seed data. Campaign mastery camos are per-weapon (like Multiplayer's), earned through Campaign-mode challenges — weaponId 0 refers to the same catalog entry in weapons.json."
 }

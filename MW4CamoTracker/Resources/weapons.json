@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "categories": [
+    {
+      "categoryId": 0,
+      "nameKey": "mw4.weapon.category.assault_rifles",
+      "weapons": [
+        {
+          "weaponId": 0,
+          "nameKey": "mw4.weapon.placeholder_ar.name",
+          "imageRef": "placeholder-ar.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.placeholder_ar.unlock"
+        }
+      ]
+    }
+  ],
+  "_note": "Placeholder seed data. Weapon identity, category grouping, and max level live here once — Multiplayer, Campaign, and DMZ camo files reference weapons by weaponId instead of redeclaring them, and weapon level is tracked globally by weaponId so it matches across every mode."
+}

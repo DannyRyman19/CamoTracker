@@ -3,20 +3,22 @@
 "mw4.mode.campaign" = "Campaign";
 "mw4.mode.dmz" = "DMZ";
 
-/* Multiplayer — placeholder seed data, replace once MW4 weapons/camos are public */
-"mw4.mp.category.assault_rifles" = "Assault Rifles";
-"mw4.mp.weapon.placeholder_ar.name" = "Placeholder AR";
+/* Weapon catalog — shared across every mode, placeholder pending MW4's real weapon list */
+"mw4.weapon.category.assault_rifles" = "Assault Rifles";
+"mw4.weapon.placeholder_ar.name" = "Placeholder AR";
+"mw4.weapon.placeholder_ar.unlock" = "Unlock at level 1.";
+
+/* Multiplayer camos — placeholder seed data, replace once MW4's are public */
 "mw4.mp.camo.military_1.name" = "Foliage";
 "mw4.mp.camo.military_1.desc" = "Get 10 kills with this weapon.";
 "mw4.mp.camo.gold.name" = "Gold";
 "mw4.mp.camo.gold.desc" = "Complete all military camos for this weapon.";
 
-/* Campaign — placeholder, MW4's mastery camo track is unconfirmed */
-"mw4.campaign.category.missions" = "Missions";
-"mw4.campaign.mission.placeholder.name" = "Placeholder Mission";
-"mw4.campaign.mission.placeholder.desc" = "Complete this mission on any difficulty.";
+/* Campaign camos — placeholder, MW4's mastery camo track is unconfirmed */
+"mw4.campaign.camo.placeholder.name" = "Placeholder Campaign Camo";
+"mw4.campaign.camo.placeholder.desc" = "Get 25 critical kills with this weapon in Campaign.";
 
-/* DMZ — confirmed mode (map: Hajin), exact objectives unconfirmed */
+/* DMZ objectives — confirmed mode (map: Hajin), exact objectives unconfirmed */
 "mw4.dmz.category.hajin" = "Hajin";
 "mw4.dmz.objective.placeholder.name" = "Placeholder Objective";
 "mw4.dmz.objective.placeholder.desc" = "Extract 3 times with this objective active.";

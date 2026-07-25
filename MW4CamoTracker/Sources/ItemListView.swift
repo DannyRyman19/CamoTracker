@@ -1,7 +1,8 @@
 import SwiftUI
 
-/// Lists the top-level items in a category — weapons in Multiplayer/Campaign,
-/// objectives in DMZ. Same view for every mode; only the data differs.
+/// Lists the top-level items in a mode-exclusive objective category
+/// (e.g. DMZ's Hajin extraction objectives) — content with no weapon-catalog
+/// equivalent, unlike the camo tracks covered by WeaponListView/WeaponDetailView.
 struct ItemListView: View {
     let mode: AppMode
     let category: Category
@@ -34,7 +35,7 @@ private struct ItemRow: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     private var done: Bool {
-        viewModel.isComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
+        viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
     }
 
     var body: some View {
@@ -45,7 +46,7 @@ private struct ItemRow: View {
                     .foregroundStyle(Color.appInk)
                 if !item.isLeaf {
                     ProgressBar(
-                        fraction: viewModel.progressFraction(of: item, mode: mode.rawValue, categoryId: category.categoryId),
+                        fraction: viewModel.objectiveProgressFraction(of: item, mode: mode.rawValue, categoryId: category.categoryId),
                         accent: mode.accent
                     )
                 }

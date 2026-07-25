@@ -1,38 +1,29 @@
 {
   "version": "0.1.0",
   "mode": "multiplayer",
-  "categories": [
+  "weaponCamos": [
     {
-      "categoryId": 0,
-      "nameKey": "mw4.mp.category.assault_rifles",
-      "items": [
+      "weaponId": 0,
+      "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.weapon.placeholder_ar.name",
-          "imageRef": "placeholder-ar.png",
-          "tier": null,
-          "requirement": null,
-          "children": [
-            {
-              "itemId": 0,
-              "nameKey": "mw4.mp.camo.military_1.name",
-              "imageRef": "camo-military-1.png",
-              "tier": 1,
-              "requirement": { "amount": 10, "unit": "kills", "descriptionKey": "mw4.mp.camo.military_1.desc" },
-              "children": []
-            },
-            {
-              "itemId": 1,
-              "nameKey": "mw4.mp.camo.gold.name",
-              "imageRef": "camo-gold.png",
-              "tier": 2,
-              "requirement": { "amount": 1, "unit": "all_military_camos", "descriptionKey": "mw4.mp.camo.gold.desc" },
-              "children": []
-            }
-          ]
+          "nameKey": "mw4.mp.camo.military_1.name",
+          "imageRef": "camo-military-1.png",
+          "tier": 1,
+          "requirement": { "amount": 10, "unit": "kills", "descriptionKey": "mw4.mp.camo.military_1.desc" },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-gold.png",
+          "tier": 2,
+          "requirement": { "amount": 1, "unit": "all_military_camos", "descriptionKey": "mw4.mp.camo.gold.desc" },
+          "children": []
         }
       ]
     }
   ],
-  "_note": "Placeholder seed data. MW4 weapon list, mastery camo names, and challenge requirements are not yet public — replace once confirmed, no schema change needed."
+  "objectives": [],
+  "_note": "Placeholder seed data. weaponId 0 refers to the catalog entry in weapons.json — no weapon name/image/level duplicated here."
 }

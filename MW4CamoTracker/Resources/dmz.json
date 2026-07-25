@@ -1,7 +1,8 @@
 {
   "version": "0.1.0",
   "mode": "dmz",
-  "categories": [
+  "weaponCamos": [],
+  "objectives": [
     {
       "categoryId": 0,
       "nameKey": "mw4.dmz.category.hajin",
@@ -17,5 +18,5 @@
       ]
     }
   ],
-  "_note": "Placeholder seed data. DMZ is confirmed for MW4 (map: Hajin) but its exact objective/challenge structure is not yet public — replace once known. Uses the same schema as multiplayer.json and campaign.json on purpose."
+  "_note": "Placeholder seed data. DMZ is confirmed for MW4 (map: Hajin) but it's unconfirmed whether it gets its own weapon-camo track — weaponCamos is left empty here, ready to populate with entries keyed by the same weaponId from weapons.json if it turns out DMZ does. The Hajin objectives below are DMZ-exclusive and have no weapon-catalog equivalent."
 }
