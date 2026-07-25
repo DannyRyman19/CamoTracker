@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -14,7 +14,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -27,7 +26,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -38,7 +38,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -51,7 +50,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -62,7 +62,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -75,7 +74,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -86,7 +86,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -99,7 +98,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -110,7 +110,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -123,7 +122,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -139,7 +139,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -152,7 +151,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -163,7 +163,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -176,7 +175,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -187,7 +187,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -200,7 +199,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -211,7 +211,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -224,7 +223,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -235,7 +235,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -248,7 +247,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -264,7 +264,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -277,7 +276,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -288,7 +288,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -301,7 +300,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -312,7 +312,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -325,7 +324,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -336,7 +336,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -349,7 +348,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -360,7 +360,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -373,7 +372,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -389,7 +389,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -402,7 +401,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -413,7 +413,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -426,7 +425,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -437,7 +437,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -450,7 +449,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -461,7 +461,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -474,7 +473,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -485,7 +485,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -498,7 +497,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -514,7 +514,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -527,7 +526,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -538,7 +538,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -551,7 +550,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -562,7 +562,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -575,7 +574,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -586,7 +586,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -599,7 +598,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -610,7 +610,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -623,7 +622,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -639,7 +639,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -652,7 +651,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -663,7 +663,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -676,7 +675,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -687,7 +687,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -700,7 +699,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -711,7 +711,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -724,7 +723,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -735,7 +735,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -748,7 +747,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -764,7 +764,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -777,7 +776,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -788,7 +788,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -801,7 +800,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -812,7 +812,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -825,7 +824,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -836,7 +836,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -849,7 +848,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -860,7 +860,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -873,7 +872,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -889,7 +889,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -902,7 +901,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -913,7 +913,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -926,7 +925,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -937,7 +937,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -950,7 +949,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -961,7 +961,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -974,7 +973,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -985,7 +985,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -998,7 +997,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1014,7 +1014,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1027,7 +1026,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1038,7 +1038,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1051,7 +1050,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1062,7 +1062,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1075,7 +1074,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1086,7 +1086,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1099,7 +1098,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1110,7 +1110,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1123,7 +1122,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1139,7 +1139,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1152,7 +1151,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1163,7 +1163,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1176,7 +1175,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1187,7 +1187,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1200,7 +1199,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1211,7 +1211,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1224,7 +1223,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1235,7 +1235,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1248,7 +1247,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1264,7 +1264,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1277,7 +1276,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1288,7 +1288,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1301,7 +1300,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1312,7 +1312,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1325,7 +1324,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1336,7 +1336,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1349,7 +1348,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1360,7 +1360,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1373,7 +1372,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1389,7 +1389,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1402,7 +1401,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1413,7 +1413,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1426,7 +1425,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1437,7 +1437,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1450,7 +1449,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1461,7 +1461,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1474,7 +1473,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1485,7 +1485,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1498,7 +1497,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1514,7 +1514,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1527,7 +1526,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1538,7 +1538,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1551,7 +1550,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1562,7 +1562,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1575,7 +1574,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1586,7 +1586,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1599,7 +1598,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1610,7 +1610,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1623,7 +1622,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1639,7 +1639,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1652,7 +1651,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1663,7 +1663,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1676,7 +1675,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1687,7 +1687,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1700,7 +1699,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1711,7 +1711,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1724,7 +1723,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1735,7 +1735,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1748,7 +1747,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1764,7 +1764,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1777,7 +1776,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1788,7 +1788,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1801,7 +1800,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1812,7 +1812,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1825,7 +1824,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1836,7 +1836,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1849,7 +1848,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1860,7 +1860,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1873,7 +1872,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -1889,7 +1889,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -1902,7 +1901,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -1913,7 +1913,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -1926,7 +1925,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -1937,7 +1937,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -1950,7 +1949,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -1961,7 +1961,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -1974,7 +1973,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -1985,7 +1985,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -1998,7 +1997,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -2014,7 +2014,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -2027,7 +2026,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -2038,7 +2038,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -2051,7 +2050,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -2062,7 +2062,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -2075,7 +2074,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -2086,7 +2086,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -2099,7 +2098,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -2110,7 +2110,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -2123,7 +2122,8 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     },
@@ -2139,7 +2139,6 @@
             "de": "Schiefer",
             "nl": "Leisteen"
           },
-          "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
@@ -2152,7 +2151,8 @@
               "nl": "Behaal 10 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-slate.png"
         },
         {
           "itemId": 1,
@@ -2163,7 +2163,6 @@
             "de": "Gebirgskamm",
             "nl": "Bergkam"
           },
-          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
@@ -2176,7 +2175,8 @@
               "nl": "Behaal 25 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-ridgeline.png"
         },
         {
           "itemId": 2,
@@ -2187,7 +2187,6 @@
             "de": "Einbruch der Nacht",
             "nl": "Invallende Nacht"
           },
-          "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
@@ -2200,7 +2199,8 @@
               "nl": "Behaal 50 kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-nightfall.png"
         },
         {
           "itemId": 3,
@@ -2211,7 +2211,6 @@
             "de": "Erfrierung",
             "nl": "Bevriezing"
           },
-          "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
@@ -2224,7 +2223,8 @@
               "nl": "Behaal 75 headshot-kills met dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-frostbite.png"
         },
         {
           "itemId": 4,
@@ -2235,7 +2235,6 @@
             "de": "Gold",
             "nl": "Goud"
           },
-          "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
@@ -2248,11 +2247,12 @@
               "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
             }
           },
-          "children": []
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/MW4/Camos/camo-mp-gold.png"
         }
       ]
     }
   ],
   "objectives": [],
-  "_note": "Fake/placeholder camo tiers, styled after this repo's BO7 progressive-camo-name pattern, shared across every weapon. Names/descriptions are inline per-language text, not bundle keys. Replace once MW4's real mastery camo names are announced."
+  "_note": "Fake/placeholder camo tiers, styled after BO7 progressive-camo-name pattern. Image URLs point at camotracker.djr.li/Images/MW4/Camos (no real art there yet — placeholder icon shows until assets are uploaded). Names/descriptions are inline per-language text, not bundle keys."
 }

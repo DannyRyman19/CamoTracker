@@ -116,7 +116,7 @@ private struct MarkProgressPage: View {
             item: ChallengeItem(
                 itemId: 0,
                 name: LocalizedText(name),
-                imageRef: nil,
+                imageURL: nil,
                 tier: nil,
                 requirement: Requirement(amount: required, unit: "kills", description: LocalizedText("Get \(required) kills with this weapon.")),
                 children: []

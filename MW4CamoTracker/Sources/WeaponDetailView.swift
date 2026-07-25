@@ -15,6 +15,14 @@ struct WeaponDetailView: View {
             AppBackground(accent: mode.accent)
             List {
                 Section {
+                    HStack {
+                        Spacer()
+                        WeaponThumbnail(urlString: weapon.imageURL, size: 88)
+                        Spacer()
+                    }
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+
                     LevelControl(weapon: weapon)
                 }
                 .listRowBackground(Color.appSurface)

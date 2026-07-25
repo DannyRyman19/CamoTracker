@@ -11,6 +11,57 @@ extension String {
     }
 }
 
+/// Weapon thumbnails — same `AsyncImage` + graceful-fallback pattern the BO2
+/// app already uses, just themed with an app-token background instead of a
+/// hardcoded color. A `nil` or unreachable URL (there's no real MW4 art yet)
+/// falls straight to the placeholder icon rather than showing a broken image.
+struct WeaponThumbnail: View {
+    let urlString: String?
+    let size: CGFloat
+
+    private var url: URL? { urlString.flatMap(URL.init(string:)) }
+
+    var body: some View {
+        AsyncImage(url: url) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable().aspectRatio(contentMode: .fit)
+            default:
+                Image(systemName: "scope")
+                    .font(.system(size: size * 0.4))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+        }
+        .frame(width: size, height: size)
+        .background(Color.appSurface2)
+        .clipShape(RoundedRectangle(cornerRadius: size * 0.2))
+    }
+}
+
+/// Same idea as `WeaponThumbnail`, sized and clipped for a small camo swatch.
+struct CamoThumbnail: View {
+    let urlString: String?
+    let size: CGFloat
+
+    private var url: URL? { urlString.flatMap(URL.init(string:)) }
+
+    var body: some View {
+        AsyncImage(url: url) { phase in
+            switch phase {
+            case .success(let image):
+                image.resizable().aspectRatio(contentMode: .fill)
+            default:
+                Image(systemName: "paintpalette")
+                    .font(.system(size: size * 0.4))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+        }
+        .frame(width: size, height: size)
+        .background(Color.appSurface2)
+        .clipShape(RoundedRectangle(cornerRadius: size * 0.25))
+    }
+}
+
 struct ProgressBar: View {
     let fraction: Double
     let accent: Color
@@ -50,6 +101,10 @@ struct ChallengeRow: View {
                     .foregroundStyle(isDone ? accent : Color.appInkMuted)
             }
             .buttonStyle(.plain)
+
+            if item.imageURL != nil {
+                CamoThumbnail(urlString: item.imageURL, size: 34)
+            }
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name.resolved())

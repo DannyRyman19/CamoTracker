@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "categories": [
     {
       "categoryId": 0,
@@ -20,7 +20,6 @@
             "de": "M4",
             "nl": "M4"
           },
-          "imageRef": "assault_rifles-0.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -28,7 +27,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/assault_rifles-0.png"
         },
         {
           "weaponId": 1,
@@ -39,7 +39,6 @@
             "de": "Kastov 762",
             "nl": "Kastov 762"
           },
-          "imageRef": "assault_rifles-1.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -47,7 +46,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/assault_rifles-1.png"
         },
         {
           "weaponId": 2,
@@ -58,7 +58,6 @@
             "de": "FTAC Rectifier",
             "nl": "FTAC Rectifier"
           },
-          "imageRef": "assault_rifles-2.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -66,7 +65,8 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/assault_rifles-2.png"
         }
       ]
     },
@@ -89,7 +89,6 @@
             "de": "Vaznev-9K",
             "nl": "Vaznev-9K"
           },
-          "imageRef": "smgs-3.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -97,7 +96,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/smgs-3.png"
         },
         {
           "weaponId": 4,
@@ -108,7 +108,6 @@
             "de": "MP7",
             "nl": "MP7"
           },
-          "imageRef": "smgs-4.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -116,7 +115,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/smgs-4.png"
         },
         {
           "weaponId": 5,
@@ -127,7 +127,6 @@
             "de": "Superi 46",
             "nl": "Superi 46"
           },
-          "imageRef": "smgs-5.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -135,7 +134,8 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/smgs-5.png"
         }
       ]
     },
@@ -158,7 +158,6 @@
             "de": "RPK",
             "nl": "RPK"
           },
-          "imageRef": "lmgs-6.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -166,7 +165,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/lmgs-6.png"
         },
         {
           "weaponId": 7,
@@ -177,7 +177,6 @@
             "de": "Bruen Mk9",
             "nl": "Bruen Mk9"
           },
-          "imageRef": "lmgs-7.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -185,7 +184,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/lmgs-7.png"
         },
         {
           "weaponId": 8,
@@ -196,7 +196,6 @@
             "de": "Death Machine",
             "nl": "Death Machine"
           },
-          "imageRef": "lmgs-8.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -204,7 +203,8 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/lmgs-8.png"
         }
       ]
     },
@@ -227,7 +227,6 @@
             "de": "Model 680",
             "nl": "Model 680"
           },
-          "imageRef": "shotguns-9.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -235,7 +234,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/shotguns-9.png"
         },
         {
           "weaponId": 10,
@@ -246,7 +246,6 @@
             "de": "KV Broadside",
             "nl": "KV Broadside"
           },
-          "imageRef": "shotguns-10.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -254,7 +253,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/shotguns-10.png"
         },
         {
           "weaponId": 11,
@@ -265,7 +265,6 @@
             "de": "Expedite 12",
             "nl": "Expedite 12"
           },
-          "imageRef": "shotguns-11.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -273,7 +272,8 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/shotguns-11.png"
         }
       ]
     },
@@ -296,7 +296,6 @@
             "de": "SP-R 208",
             "nl": "SP-R 208"
           },
-          "imageRef": "sniper_rifles-12.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -304,7 +303,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/sniper_rifles-12.png"
         },
         {
           "weaponId": 13,
@@ -315,7 +315,6 @@
             "de": "MCPR-300",
             "nl": "MCPR-300"
           },
-          "imageRef": "sniper_rifles-13.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -323,7 +322,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/sniper_rifles-13.png"
         },
         {
           "weaponId": 14,
@@ -334,7 +334,6 @@
             "de": "Signal 50",
             "nl": "Signal 50"
           },
-          "imageRef": "sniper_rifles-14.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -342,7 +341,8 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/sniper_rifles-14.png"
         }
       ]
     },
@@ -365,7 +365,6 @@
             "de": "X12",
             "nl": "X12"
           },
-          "imageRef": "pistols-15.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 1.",
@@ -373,7 +372,8 @@
             "es": "Se desbloquea en el nivel 1.",
             "de": "Freischaltung auf Stufe 1.",
             "nl": "Ontgrendel op niveau 1."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/pistols-15.png"
         },
         {
           "weaponId": 16,
@@ -384,7 +384,6 @@
             "de": "Basilisk",
             "nl": "Basilisk"
           },
-          "imageRef": "pistols-16.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 4.",
@@ -392,7 +391,8 @@
             "es": "Se desbloquea en el nivel 4.",
             "de": "Freischaltung auf Stufe 4.",
             "nl": "Ontgrendel op niveau 4."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/pistols-16.png"
         },
         {
           "weaponId": 17,
@@ -403,7 +403,6 @@
             "de": "Renetti",
             "nl": "Renetti"
           },
-          "imageRef": "pistols-17.png",
           "maxLevel": 55,
           "unlockRequirement": {
             "en": "Unlock at level 16.",
@@ -411,10 +410,11 @@
             "es": "Se desbloquea en el nivel 16.",
             "de": "Freischaltung auf Stufe 16.",
             "nl": "Ontgrendel op niveau 16."
-          }
+          },
+          "imageURL": "https://camotracker.djr.li/Images/MW4/pistols-17.png"
         }
       ]
     }
   ],
-  "_note": "Fake/placeholder roster styled after this repo's own BO7 and BO6 data. Every display string is inline per-language text (not a bundle key), so a new weapon dropped into this file shows up correctly translated the moment the CDN file updates — no app update required. MW4's real weapon list is unannounced; replace wholesale once known."
+  "_note": "Fake/placeholder roster styled after this repo's own BO7 and BO6 data. Image URLs point at camotracker.djr.li/Images/MW4 (same Cloudflare-fronted host the other titles use) but no real art exists there yet, so these will resolve as missing images until assets are uploaded — the app falls back to a placeholder icon. Every display string is inline per-language text, so new content shows up correctly translated the moment the CDN file updates. MW4's real weapon list is unannounced; replace wholesale once known."
 }

@@ -59,7 +59,7 @@ struct WeaponCategory: Codable, Identifiable {
 struct WeaponEntry: Codable, Identifiable {
     let weaponId: Int
     let name: LocalizedText
-    let imageRef: String?
+    let imageURL: String?
     let maxLevel: Int
     let unlockRequirement: LocalizedText?
     var id: Int { weaponId }
@@ -98,7 +98,7 @@ struct Category: Codable, Identifiable {
 struct ChallengeItem: Codable, Identifiable {
     let itemId: Int
     let name: LocalizedText
-    let imageRef: String?
+    let imageURL: String?
     let tier: Int?
     let requirement: Requirement?
     var children: [ChallengeItem]

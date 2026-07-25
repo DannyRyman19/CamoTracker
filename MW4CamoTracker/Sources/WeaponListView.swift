@@ -33,6 +33,8 @@ private struct WeaponRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
+            WeaponThumbnail(urlString: weapon.imageURL, size: 44)
+
             VStack(alignment: .leading, spacing: 6) {
                 Text(weapon.name.resolved())
                     .font(.system(size: 15, weight: .semibold))
