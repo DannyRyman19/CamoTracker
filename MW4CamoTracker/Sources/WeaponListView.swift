@@ -22,7 +22,7 @@ struct WeaponListView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .navigationTitle(category.nameKey.localized())
+        .navigationTitle(category.name.resolved())
     }
 }
 
@@ -34,7 +34,7 @@ private struct WeaponRow: View {
     var body: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
-                Text(weapon.nameKey.localized())
+                Text(weapon.name.resolved())
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.appInk)
                 ProgressBar(

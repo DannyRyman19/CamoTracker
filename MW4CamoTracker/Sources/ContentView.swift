@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
 
                 NavigationStack { StatsView() }
-                    .tabItem { Label("Stats", systemImage: "chart.bar.fill") }
+                    .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
                     .tag(AppMode.allCases.count)
             }
             .tint(currentAccent)

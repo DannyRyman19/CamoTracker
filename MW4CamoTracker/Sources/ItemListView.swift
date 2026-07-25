@@ -24,7 +24,7 @@ struct ItemListView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .navigationTitle(category.nameKey.localized())
+        .navigationTitle(category.name.resolved())
     }
 }
 
@@ -41,7 +41,7 @@ private struct ItemRow: View {
     var body: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
-                Text(item.nameKey.localized())
+                Text(item.name.resolved())
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.appInk)
                 if !item.isLeaf {

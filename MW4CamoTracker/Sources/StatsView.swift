@@ -13,13 +13,13 @@ struct StatsView: View {
                     Section(mode.displayNameKey.localized()) {
                         ForEach(weaponCategories) { category in
                             statRow(
-                                name: category.nameKey.localized(),
+                                name: category.name.resolved(),
                                 fraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue)
                             )
                         }
                         ForEach(viewModel.modes[mode.rawValue]?.objectives ?? []) { category in
                             statRow(
-                                name: category.nameKey.localized(),
+                                name: category.name.resolved(),
                                 fraction: viewModel.objectiveProgressFraction(of: category, mode: mode.rawValue)
                             )
                         }
@@ -30,7 +30,7 @@ struct StatsView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .navigationTitle("Stats")
+        .navigationTitle("mw4.ui.tab.stats".localized())
     }
 
     private func statRow(name: String, fraction: Double) -> some View {

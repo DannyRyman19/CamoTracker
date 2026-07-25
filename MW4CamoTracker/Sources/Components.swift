@@ -1,9 +1,11 @@
 import SwiftUI
 
 extension String {
-    /// Looks up display text in the bundled `Localizable.strings` — nameKeys from
-    /// the network JSON are never rendered directly, so translations ship with
-    /// the app instead of duplicating whole data files per locale.
+    /// Looks up static app chrome (tab names, button labels, onboarding copy)
+    /// in the bundled `Localizable.strings`. Content that arrives over the air
+    /// — weapon names, camo text, DMZ objectives — uses `LocalizedText`
+    /// instead (see Models.swift), since a bundle key can't resolve until the
+    /// next app update ships a matching entry.
     func localized() -> String {
         NSLocalizedString(self, bundle: .main, comment: "")
     }
@@ -50,11 +52,11 @@ struct ChallengeRow: View {
             .buttonStyle(.plain)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(item.nameKey.localized())
+                Text(item.name.resolved())
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.appInk)
                 if let requirement = item.requirement {
-                    Text(requirement.descriptionKey.localized())
+                    Text(requirement.description.resolved())
                         .font(.system(size: 13))
                         .foregroundStyle(Color.appInkMuted)
                 }
@@ -78,16 +80,16 @@ struct ChallengeRow: View {
             }
         }
         .padding(.vertical, 5)
-        .alert("Set Amount", isPresented: $showAmountEntry) {
-            TextField("Amount", text: $amountText)
+        .alert("mw4.ui.set_amount.title".localized(), isPresented: $showAmountEntry) {
+            TextField("mw4.ui.set_amount.field".localized(), text: $amountText)
                 .keyboardType(.numberPad)
-            Button("Cancel", role: .cancel) {}
-            Button("Save") {
+            Button("mw4.ui.cancel".localized(), role: .cancel) {}
+            Button("mw4.ui.save".localized()) {
                 if let value = Int(amountText) { onSetAmount(value) }
             }
         } message: {
             if let requirement = item.requirement {
-                Text("Out of \(requirement.amount) required.")
+                Text(String(format: "mw4.ui.set_amount.message".localized(), requirement.amount))
             }
         }
     }

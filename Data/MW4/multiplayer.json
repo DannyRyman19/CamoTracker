@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -7,61 +7,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -72,61 +132,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -137,61 +257,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -202,61 +382,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -267,61 +507,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -332,61 +632,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -397,61 +757,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -462,61 +882,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -527,61 +1007,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -592,61 +1132,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -657,61 +1257,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -722,61 +1382,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -787,61 +1507,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -852,61 +1632,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -917,61 +1757,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -982,61 +1882,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -1047,61 +2007,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -1112,61 +2132,121 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.slate.name",
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
           "imageRef": "camo-mp-slate.png",
           "tier": 1,
           "requirement": {
             "amount": 10,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.slate.desc"
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
           "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
           "requirement": {
             "amount": 25,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 2,
-          "nameKey": "mw4.mp.camo.nightfall.name",
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
           "imageRef": "camo-mp-nightfall.png",
           "tier": 3,
           "requirement": {
             "amount": 50,
             "unit": "kills",
-            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 3,
-          "nameKey": "mw4.mp.camo.frostbite.name",
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
           "imageRef": "camo-mp-frostbite.png",
           "tier": 4,
           "requirement": {
             "amount": 75,
             "unit": "headshots",
-            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
           },
           "children": []
         },
         {
           "itemId": 4,
-          "nameKey": "mw4.mp.camo.gold.name",
+          "name": {
+            "en": "Gold",
+            "fr": "Or",
+            "es": "Oro",
+            "de": "Gold",
+            "nl": "Goud"
+          },
           "imageRef": "camo-mp-gold.png",
           "tier": 5,
           "requirement": {
             "amount": 1,
             "unit": "all_tiers",
-            "descriptionKey": "mw4.mp.camo.gold.desc"
+            "description": {
+              "en": "Complete every camo above for this weapon.",
+              "fr": "Terminez tous les camouflages ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes anteriores para esta arma.",
+              "de": "Schließe alle obigen Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande camouflages voor dit wapen."
+            }
           },
           "children": []
         }
@@ -1174,5 +2254,5 @@
     }
   ],
   "objectives": [],
-  "_note": "Fake/placeholder camo tiers, styled after this repo's BO7 progressive-camo-name pattern, shared across every weapon in the roster. Replace once MW4's real mastery camo names are announced."
+  "_note": "Fake/placeholder camo tiers, styled after this repo's BO7 progressive-camo-name pattern, shared across every weapon. Names/descriptions are inline per-language text, not bundle keys. Replace once MW4's real mastery camo names are announced."
 }

@@ -20,12 +20,12 @@ struct WeaponDetailView: View {
                 .listRowBackground(Color.appSurface)
 
                 if camos.isEmpty {
-                    Text("No \(mode.displayNameKey.localized()) camo data for this weapon yet.")
+                    Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
                         .font(.system(size: 13))
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.appSurface)
                 } else {
-                    Section("Camos") {
+                    Section("mw4.ui.section.camos".localized()) {
                         ForEach(camos) { camo in
                             ChallengeRow(
                                 item: camo,
@@ -43,7 +43,7 @@ struct WeaponDetailView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .navigationTitle(weapon.nameKey.localized())
+        .navigationTitle(weapon.name.resolved())
     }
 }
 
@@ -60,7 +60,7 @@ private struct LevelControl: View {
             in: 0...weapon.maxLevel
         ) {
             HStack {
-                Text("Weapon Level")
+                Text("mw4.ui.weapon_level".localized())
                     .foregroundStyle(Color.appInk)
                 Spacer()
                 Text("\(viewModel.level(for: weapon.weaponId)) / \(weapon.maxLevel)")

@@ -1,168 +1,420 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "categories": [
     {
       "categoryId": 0,
-      "nameKey": "mw4.weapon.category.assault_rifles",
+      "name": {
+        "en": "Assault Rifles",
+        "fr": "Fusils d'Assaut",
+        "es": "Fusiles de Asalto",
+        "de": "Sturmgewehre",
+        "nl": "Aanvalsgeweren"
+      },
       "weapons": [
         {
           "weaponId": 0,
-          "nameKey": "mw4.weapon.assault_rifles.0.name",
+          "name": {
+            "en": "M4",
+            "fr": "M4",
+            "es": "M4",
+            "de": "M4",
+            "nl": "M4"
+          },
           "imageRef": "assault_rifles-0.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.assault_rifles.0.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 1,
-          "nameKey": "mw4.weapon.assault_rifles.1.name",
+          "name": {
+            "en": "Kastov 762",
+            "fr": "Kastov 762",
+            "es": "Kastov 762",
+            "de": "Kastov 762",
+            "nl": "Kastov 762"
+          },
           "imageRef": "assault_rifles-1.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.assault_rifles.1.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 2,
-          "nameKey": "mw4.weapon.assault_rifles.2.name",
+          "name": {
+            "en": "FTAC Rectifier",
+            "fr": "FTAC Rectifier",
+            "es": "FTAC Rectifier",
+            "de": "FTAC Rectifier",
+            "nl": "FTAC Rectifier"
+          },
           "imageRef": "assault_rifles-2.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.assault_rifles.2.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     },
     {
       "categoryId": 1,
-      "nameKey": "mw4.weapon.category.smgs",
+      "name": {
+        "en": "SMGs",
+        "fr": "Pistolets-Mitrailleurs",
+        "es": "Subfusiles",
+        "de": "Maschinenpistolen",
+        "nl": "Pistoolmitrailleurs"
+      },
       "weapons": [
         {
           "weaponId": 3,
-          "nameKey": "mw4.weapon.smgs.3.name",
+          "name": {
+            "en": "Vaznev-9K",
+            "fr": "Vaznev-9K",
+            "es": "Vaznev-9K",
+            "de": "Vaznev-9K",
+            "nl": "Vaznev-9K"
+          },
           "imageRef": "smgs-3.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.smgs.3.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 4,
-          "nameKey": "mw4.weapon.smgs.4.name",
+          "name": {
+            "en": "MP7",
+            "fr": "MP7",
+            "es": "MP7",
+            "de": "MP7",
+            "nl": "MP7"
+          },
           "imageRef": "smgs-4.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.smgs.4.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 5,
-          "nameKey": "mw4.weapon.smgs.5.name",
+          "name": {
+            "en": "Superi 46",
+            "fr": "Superi 46",
+            "es": "Superi 46",
+            "de": "Superi 46",
+            "nl": "Superi 46"
+          },
           "imageRef": "smgs-5.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.smgs.5.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     },
     {
       "categoryId": 2,
-      "nameKey": "mw4.weapon.category.lmgs",
+      "name": {
+        "en": "LMGs",
+        "fr": "Mitrailleuses Légères",
+        "es": "Ametralladoras Ligeras",
+        "de": "Leichte MGs",
+        "nl": "Lichte Mitrailleurs"
+      },
       "weapons": [
         {
           "weaponId": 6,
-          "nameKey": "mw4.weapon.lmgs.6.name",
+          "name": {
+            "en": "RPK",
+            "fr": "RPK",
+            "es": "RPK",
+            "de": "RPK",
+            "nl": "RPK"
+          },
           "imageRef": "lmgs-6.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.lmgs.6.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 7,
-          "nameKey": "mw4.weapon.lmgs.7.name",
+          "name": {
+            "en": "Bruen Mk9",
+            "fr": "Bruen Mk9",
+            "es": "Bruen Mk9",
+            "de": "Bruen Mk9",
+            "nl": "Bruen Mk9"
+          },
           "imageRef": "lmgs-7.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.lmgs.7.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 8,
-          "nameKey": "mw4.weapon.lmgs.8.name",
+          "name": {
+            "en": "Death Machine",
+            "fr": "Death Machine",
+            "es": "Death Machine",
+            "de": "Death Machine",
+            "nl": "Death Machine"
+          },
           "imageRef": "lmgs-8.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.lmgs.8.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     },
     {
       "categoryId": 3,
-      "nameKey": "mw4.weapon.category.shotguns",
+      "name": {
+        "en": "Shotguns",
+        "fr": "Fusils à Pompe",
+        "es": "Escopetas",
+        "de": "Schrotflinten",
+        "nl": "Shotguns"
+      },
       "weapons": [
         {
           "weaponId": 9,
-          "nameKey": "mw4.weapon.shotguns.9.name",
+          "name": {
+            "en": "Model 680",
+            "fr": "Model 680",
+            "es": "Model 680",
+            "de": "Model 680",
+            "nl": "Model 680"
+          },
           "imageRef": "shotguns-9.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.shotguns.9.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 10,
-          "nameKey": "mw4.weapon.shotguns.10.name",
+          "name": {
+            "en": "KV Broadside",
+            "fr": "KV Broadside",
+            "es": "KV Broadside",
+            "de": "KV Broadside",
+            "nl": "KV Broadside"
+          },
           "imageRef": "shotguns-10.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.shotguns.10.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 11,
-          "nameKey": "mw4.weapon.shotguns.11.name",
+          "name": {
+            "en": "Expedite 12",
+            "fr": "Expedite 12",
+            "es": "Expedite 12",
+            "de": "Expedite 12",
+            "nl": "Expedite 12"
+          },
           "imageRef": "shotguns-11.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.shotguns.11.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     },
     {
       "categoryId": 4,
-      "nameKey": "mw4.weapon.category.sniper_rifles",
+      "name": {
+        "en": "Sniper Rifles",
+        "fr": "Fusils de Précision",
+        "es": "Rifles de Francotirador",
+        "de": "Scharfschützengewehre",
+        "nl": "Sluipschuttersgeweren"
+      },
       "weapons": [
         {
           "weaponId": 12,
-          "nameKey": "mw4.weapon.sniper_rifles.12.name",
+          "name": {
+            "en": "SP-R 208",
+            "fr": "SP-R 208",
+            "es": "SP-R 208",
+            "de": "SP-R 208",
+            "nl": "SP-R 208"
+          },
           "imageRef": "sniper_rifles-12.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.sniper_rifles.12.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 13,
-          "nameKey": "mw4.weapon.sniper_rifles.13.name",
+          "name": {
+            "en": "MCPR-300",
+            "fr": "MCPR-300",
+            "es": "MCPR-300",
+            "de": "MCPR-300",
+            "nl": "MCPR-300"
+          },
           "imageRef": "sniper_rifles-13.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.sniper_rifles.13.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 14,
-          "nameKey": "mw4.weapon.sniper_rifles.14.name",
+          "name": {
+            "en": "Signal 50",
+            "fr": "Signal 50",
+            "es": "Signal 50",
+            "de": "Signal 50",
+            "nl": "Signal 50"
+          },
           "imageRef": "sniper_rifles-14.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.sniper_rifles.14.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     },
     {
       "categoryId": 5,
-      "nameKey": "mw4.weapon.category.pistols",
+      "name": {
+        "en": "Pistols",
+        "fr": "Pistolets",
+        "es": "Pistolas",
+        "de": "Pistolen",
+        "nl": "Pistolen"
+      },
       "weapons": [
         {
           "weaponId": 15,
-          "nameKey": "mw4.weapon.pistols.15.name",
+          "name": {
+            "en": "X12",
+            "fr": "X12",
+            "es": "X12",
+            "de": "X12",
+            "nl": "X12"
+          },
           "imageRef": "pistols-15.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.pistols.15.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 1.",
+            "fr": "Débloqué au niveau 1.",
+            "es": "Se desbloquea en el nivel 1.",
+            "de": "Freischaltung auf Stufe 1.",
+            "nl": "Ontgrendel op niveau 1."
+          }
         },
         {
           "weaponId": 16,
-          "nameKey": "mw4.weapon.pistols.16.name",
+          "name": {
+            "en": "Basilisk",
+            "fr": "Basilisk",
+            "es": "Basilisk",
+            "de": "Basilisk",
+            "nl": "Basilisk"
+          },
           "imageRef": "pistols-16.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.pistols.16.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 4.",
+            "fr": "Débloqué au niveau 4.",
+            "es": "Se desbloquea en el nivel 4.",
+            "de": "Freischaltung auf Stufe 4.",
+            "nl": "Ontgrendel op niveau 4."
+          }
         },
         {
           "weaponId": 17,
-          "nameKey": "mw4.weapon.pistols.17.name",
+          "name": {
+            "en": "Renetti",
+            "fr": "Renetti",
+            "es": "Renetti",
+            "de": "Renetti",
+            "nl": "Renetti"
+          },
           "imageRef": "pistols-17.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.pistols.17.unlock"
+          "unlockRequirement": {
+            "en": "Unlock at level 16.",
+            "fr": "Débloqué au niveau 16.",
+            "es": "Se desbloquea en el nivel 16.",
+            "de": "Freischaltung auf Stufe 16.",
+            "nl": "Ontgrendel op niveau 16."
+          }
         }
       ]
     }
   ],
-  "_note": "Fake/placeholder roster styled after this repo's own BO7 and BO6 data (category breakdown, progressive camo-tier naming) so the app has enough content to actually browse and feel real. MW4's real weapon list is unannounced — replace wholesale once known, no schema change needed."
+  "_note": "Fake/placeholder roster styled after this repo's own BO7 and BO6 data. Every display string is inline per-language text (not a bundle key), so a new weapon dropped into this file shows up correctly translated the moment the CDN file updates — no app update required. MW4's real weapon list is unannounced; replace wholesale once known."
 }

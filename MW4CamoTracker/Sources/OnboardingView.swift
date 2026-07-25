@@ -29,7 +29,7 @@ struct OnboardingView: View {
                         onFinish()
                     }
                 } label: {
-                    Text(page < pageCount - 1 ? "Next" : "Get Started")
+                    Text(page < pageCount - 1 ? "mw4.onboarding.next".localized() : "mw4.onboarding.get_started".localized())
                         .font(.system(size: 16, weight: .semibold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -39,7 +39,7 @@ struct OnboardingView: View {
                 .padding(.horizontal, 24)
 
                 if page < pageCount - 1 {
-                    Button("Skip", action: onFinish)
+                    Button("mw4.onboarding.skip".localized(), action: onFinish)
                         .font(.system(size: 13))
                         .foregroundStyle(Color.appInkMuted)
                 }
@@ -77,12 +77,12 @@ private struct OnboardingScaffold<Content: View>: View {
 
 private struct WelcomePage: View {
     var body: some View {
-        OnboardingScaffold("MW4 Camo Tracker") {
+        OnboardingScaffold("mw4.onboarding.welcome.title".localized()) {
             VStack(spacing: 14) {
                 Image(systemName: "scope")
                     .font(.system(size: 44))
                     .foregroundStyle(Color.accentMultiplayer)
-                Text("Track every weapon, camo challenge, and DMZ objective — Multiplayer, Warzone, and DMZ each get their own tab.")
+                Text("mw4.onboarding.welcome.body".localized())
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
@@ -93,17 +93,17 @@ private struct WelcomePage: View {
 
 private struct MarkProgressPage: View {
     var body: some View {
-        OnboardingScaffold("Two ways to log progress") {
+        OnboardingScaffold("mw4.onboarding.mark.title".localized()) {
             VStack(alignment: .leading, spacing: 18) {
                 VStack(alignment: .leading, spacing: 6) {
                     demoRow(done: true, amount: 10, required: 10, name: "Foliage")
-                    Label("Tap the circle to mark a camo done or not done.", systemImage: "hand.tap.fill")
+                    Label("mw4.onboarding.mark.tap_circle".localized(), systemImage: "hand.tap.fill")
                         .font(.system(size: 12.5))
                         .foregroundStyle(Color.appInkMuted)
                 }
                 VStack(alignment: .leading, spacing: 6) {
                     demoRow(done: false, amount: 6, required: 10, name: "Gold")
-                    Label("Tap the number to type an exact amount — handy for challenges like \"200 kills.\"", systemImage: "hand.tap.fill")
+                    Label("mw4.onboarding.mark.tap_pill".localized(), systemImage: "hand.tap.fill")
                         .font(.system(size: 12.5))
                         .foregroundStyle(Color.appInkMuted)
                 }
@@ -115,10 +115,10 @@ private struct MarkProgressPage: View {
         ChallengeRow(
             item: ChallengeItem(
                 itemId: 0,
-                nameKey: name,
+                name: LocalizedText(name),
                 imageRef: nil,
                 tier: nil,
-                requirement: Requirement(amount: required, unit: "kills", descriptionKey: "Get \(required) kills with this weapon."),
+                requirement: Requirement(amount: required, unit: "kills", description: LocalizedText("Get \(required) kills with this weapon.")),
                 children: []
             ),
             accent: .accentMultiplayer,
@@ -135,17 +135,17 @@ private struct MarkProgressPage: View {
 
 private struct WeaponLevelPage: View {
     var body: some View {
-        OnboardingScaffold("One level, every mode") {
+        OnboardingScaffold("mw4.onboarding.level.title".localized()) {
             VStack(alignment: .leading, spacing: 14) {
                 HStack {
-                    Text("Weapon Level").foregroundStyle(Color.appInk)
+                    Text("mw4.ui.weapon_level".localized()).foregroundStyle(Color.appInk)
                     Spacer()
                     Text("34 / 55").font(.system(size: 14, design: .monospaced)).foregroundStyle(Color.appInkMuted)
                 }
                 .padding(12)
                 .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
 
-                Text("A weapon's level is the same everywhere — set it once from any mode's tab and it shows up on the others too, since it's the same gun.")
+                Text("mw4.onboarding.level.body".localized())
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
             }
@@ -155,7 +155,7 @@ private struct WeaponLevelPage: View {
 
 private struct SuggestedPage: View {
     var body: some View {
-        OnboardingScaffold("We'll tell you what's next") {
+        OnboardingScaffold("mw4.onboarding.suggested.title".localized()) {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(spacing: 10) {
                     Image(systemName: "diamond.fill").foregroundStyle(Color.camoDiamond)
@@ -167,13 +167,13 @@ private struct SuggestedPage: View {
                 .padding(12)
                 .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
 
-                Text("Every tab has a Suggested section that points at the weapon closest to Gold — or, like here, the last one standing between a category and Diamond.")
+                Text("mw4.onboarding.suggested.body1".localized())
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
 
                 MilestoneBannerView(banner: MilestoneBanner(id: UUID(), title: "💎 Diamond unlocked", subtitle: "Assault Rifles — every weapon just went Gold."))
 
-                Text("Finish that last weapon and we'll celebrate right there.")
+                Text("mw4.onboarding.suggested.body2".localized())
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
             }

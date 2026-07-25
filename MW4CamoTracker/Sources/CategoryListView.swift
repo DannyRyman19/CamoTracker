@@ -16,7 +16,7 @@ struct CategoryListView: View {
             AppBackground(accent: mode.accent)
             List {
                 if !suggestions.isEmpty {
-                    Section("Suggested") {
+                    Section("mw4.ui.section.suggested".localized()) {
                         ForEach(suggestions) { suggestion in
                             NavigationLink(value: Route.weapon(suggestion.weaponId)) {
                                 SuggestionRow(mode: mode, suggestion: suggestion)
@@ -27,7 +27,7 @@ struct CategoryListView: View {
                 }
 
                 if !weaponCategories.isEmpty {
-                    Section("Weapons") {
+                    Section("mw4.ui.section.weapons".localized()) {
                         ForEach(weaponCategories) { category in
                             NavigationLink(value: Route.weaponCategory(category.categoryId)) {
                                 WeaponCategoryRow(mode: mode, category: category)
@@ -38,7 +38,7 @@ struct CategoryListView: View {
                 }
 
                 if !objectiveCategories.isEmpty {
-                    Section("Objectives") {
+                    Section("mw4.ui.section.objectives".localized()) {
                         ForEach(objectiveCategories) { category in
                             NavigationLink(value: Route.objectiveCategory(category.categoryId)) {
                                 ObjectiveCategoryRow(mode: mode, category: category)
@@ -84,7 +84,7 @@ private struct WeaponCategoryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(category.nameKey.localized())
+            Text(category.name.resolved())
                 .font(.hitmarker(16))
                 .foregroundStyle(Color.appInk)
             ProgressBar(fraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), accent: mode.accent)
@@ -100,7 +100,7 @@ private struct ObjectiveCategoryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(category.nameKey.localized())
+            Text(category.name.resolved())
                 .font(.hitmarker(16))
                 .foregroundStyle(Color.appInk)
             ProgressBar(fraction: viewModel.objectiveProgressFraction(of: category, mode: mode.rawValue), accent: mode.accent)

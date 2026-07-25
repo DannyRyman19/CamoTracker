@@ -29,6 +29,6 @@ struct ItemDetailView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .navigationTitle(item.nameKey.localized())
+        .navigationTitle(item.name.resolved())
     }
 }

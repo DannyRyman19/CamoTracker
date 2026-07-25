@@ -34,8 +34,8 @@ extension TrackerViewModel {
                 guard remaining > 0 else { continue }
                 diamondCritical.append(Suggestion(
                     weaponId: weapon.weaponId,
-                    title: weapon.nameKey.localized(),
-                    subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") from Diamond in \(category.nameKey.localized())",
+                    title: weapon.name.resolved(),
+                    subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") from Diamond in \(category.name.resolved())",
                     isDiamondCritical: true
                 ))
                 continue
@@ -46,7 +46,7 @@ extension TrackerViewModel {
                 guard remaining > 0 else { continue }
                 closeToGold.append((Suggestion(
                     weaponId: weapon.weaponId,
-                    title: weapon.nameKey.localized(),
+                    title: weapon.name.resolved(),
                     subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") from Gold",
                     isDiamondCritical: false
                 ), remaining))
@@ -65,11 +65,11 @@ extension TrackerViewModel {
     func checkMilestone(weaponId: Int, mode: String, wasGold: Bool) {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
 
-        let weaponName = weapon(id: weaponId)?.nameKey.localized() ?? "This weapon"
+        let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
         if let category = category(containingWeaponId: weaponId), categoryIsDiamond(category, mode: mode) {
             announce(
                 title: "💎 Diamond unlocked",
-                subtitle: "\(category.nameKey.localized()) — every weapon just went Gold."
+                subtitle: "\(category.name.resolved()) — every weapon just went Gold."
             )
         } else {
             announce(title: "🥇 Gold unlocked", subtitle: "\(weaponName) is fully camo'd.")
