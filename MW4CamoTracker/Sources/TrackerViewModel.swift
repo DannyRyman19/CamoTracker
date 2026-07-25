@@ -9,6 +9,11 @@ final class TrackerViewModel: ObservableObject {
     @Published private(set) var isRefreshing = false
     @Published var refreshError: String?
 
+    /// A transient Gold/Diamond celebration — see `Suggestions.swift`. Not
+    /// `private(set)` because the `checkMilestone`/`announce` pair that drives
+    /// it lives in an extension in that file.
+    @Published var milestoneBanner: MilestoneBanner?
+
     private let dataService: DataService
 
     /// Weapon level is the one thing genuinely global: keyed by `weaponId` alone,
@@ -68,6 +73,10 @@ final class TrackerViewModel: ObservableObject {
         modes[mode]?.weaponCamos.first { $0.weaponId == weaponId }?.camos ?? []
     }
 
+    func camoAmount(mode: String, weaponId: Int, camo: ChallengeItem) -> Int {
+        amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0
+    }
+
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         let k = camoKey(mode, weaponId, camo.itemId)
         guard let req = camo.requirement else { return completed.contains(k) }
@@ -75,13 +84,16 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
+        let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let req = camo.requirement?.amount ?? 1
         amounts[camoKey(mode, weaponId, camo.itemId)] = max(0, min(newAmount, req))
         saveProgress()
         objectWillChange.send()
+        checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
     }
 
     func toggleCamo(mode: String, weaponId: Int, camo: ChallengeItem) {
+        let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let k = camoKey(mode, weaponId, camo.itemId)
         if let req = camo.requirement {
             let done = (amounts[k] ?? 0) >= req.amount
@@ -93,6 +105,32 @@ final class TrackerViewModel: ObservableObject {
         }
         saveProgress()
         objectWillChange.send()
+        checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
+    }
+
+    /// Whether every camo for this weapon, in this mode, is complete — "Gold."
+    func allCamosComplete(weaponId: Int, mode: String) -> Bool {
+        let leaves = camos(weaponId: weaponId, mode: mode).flatMap(leafItems)
+        return !leaves.isEmpty && leaves.allSatisfy { isCamoComplete(mode: mode, weaponId: weaponId, camo: $0) }
+    }
+
+    /// How many camos are left before this weapon goes Gold, in this mode.
+    func remainingCamoCount(weaponId: Int, mode: String) -> Int {
+        camos(weaponId: weaponId, mode: mode).flatMap(leafItems)
+            .filter { !isCamoComplete(mode: mode, weaponId: weaponId, camo: $0) }.count
+    }
+
+    /// Whether every weapon in a category is Gold, in this mode — "Diamond."
+    func categoryIsDiamond(_ category: WeaponCategory, mode: String) -> Bool {
+        !category.weapons.isEmpty && category.weapons.allSatisfy { allCamosComplete(weaponId: $0.weaponId, mode: mode) }
+    }
+
+    func weapon(id: Int) -> WeaponEntry? {
+        catalog?.categories.flatMap(\.weapons).first { $0.weaponId == id }
+    }
+
+    func category(containingWeaponId weaponId: Int) -> WeaponCategory? {
+        catalog?.categories.first { $0.weapons.contains { $0.weaponId == weaponId } }
     }
 
     func camoProgressFraction(weaponId: Int, mode: String) -> Double {
@@ -115,10 +153,21 @@ final class TrackerViewModel: ObservableObject {
 
     // MARK: - Objectives (mode-exclusive, non-weapon — DMZ extraction goals etc.)
 
+    func objectiveAmount(mode: String, categoryId: Int, item: ChallengeItem) -> Int {
+        amounts[objectiveKey(mode, categoryId, item.itemId)] ?? 0
+    }
+
     func isObjectiveComplete(mode: String, categoryId: Int, item: ChallengeItem) -> Bool {
         let k = objectiveKey(mode, categoryId, item.itemId)
         guard let req = item.requirement else { return completed.contains(k) }
         return (amounts[k] ?? 0) >= req.amount
+    }
+
+    func setObjectiveAmount(mode: String, categoryId: Int, item: ChallengeItem, amount newAmount: Int) {
+        let req = item.requirement?.amount ?? 1
+        amounts[objectiveKey(mode, categoryId, item.itemId)] = max(0, min(newAmount, req))
+        saveProgress()
+        objectWillChange.send()
     }
 
     func toggleObjective(mode: String, categoryId: Int, item: ChallengeItem) {

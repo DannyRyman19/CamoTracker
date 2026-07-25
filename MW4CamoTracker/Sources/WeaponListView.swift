@@ -13,9 +13,7 @@ struct WeaponListView: View {
             AppBackground(accent: mode.accent)
             List {
                 ForEach(category.weapons) { weapon in
-                    NavigationLink {
-                        WeaponDetailView(mode: mode, weapon: weapon)
-                    } label: {
+                    NavigationLink(value: Route.weapon(weapon.weaponId)) {
                         WeaponRow(mode: mode, weapon: weapon)
                     }
                     .listRowBackground(Color.appSurface)

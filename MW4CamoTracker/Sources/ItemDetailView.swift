@@ -15,48 +15,20 @@ struct ItemDetailView: View {
             AppBackground(accent: mode.accent)
             List {
                 ForEach(rows) { row in
-                    ChallengeRow(mode: mode, category: category, item: row)
-                        .listRowBackground(Color.appSurface)
+                    ChallengeRow(
+                        item: row,
+                        accent: mode.accent,
+                        amount: viewModel.objectiveAmount(mode: mode.rawValue, categoryId: category.categoryId, item: row),
+                        isDone: viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: row),
+                        onToggle: { viewModel.toggleObjective(mode: mode.rawValue, categoryId: category.categoryId, item: row) },
+                        onSetAmount: { viewModel.setObjectiveAmount(mode: mode.rawValue, categoryId: category.categoryId, item: row, amount: $0) }
+                    )
+                    .listRowBackground(Color.appSurface)
                 }
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
         .navigationTitle(item.nameKey.localized())
-    }
-}
-
-private struct ChallengeRow: View {
-    let mode: AppMode
-    let category: Category
-    let item: ChallengeItem
-    @EnvironmentObject private var viewModel: TrackerViewModel
-
-    private var done: Bool {
-        viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: item)
-    }
-
-    var body: some View {
-        Button {
-            viewModel.toggleObjective(mode: mode.rawValue, categoryId: category.categoryId, item: item)
-        } label: {
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(item.nameKey.localized())
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(Color.appInk)
-                    if let requirement = item.requirement {
-                        Text(requirement.descriptionKey.localized())
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.appInkMuted)
-                    }
-                }
-                Spacer()
-                Image(systemName: done ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(done ? mode.accent : Color.appInkMuted)
-            }
-        }
-        .buttonStyle(.plain)
-        .padding(.vertical, 4)
     }
 }

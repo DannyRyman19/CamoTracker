@@ -27,7 +27,14 @@ struct WeaponDetailView: View {
                 } else {
                     Section("Camos") {
                         ForEach(camos) { camo in
-                            CamoRow(mode: mode, weaponId: weapon.weaponId, camo: camo)
+                            ChallengeRow(
+                                item: camo,
+                                accent: mode.accent,
+                                amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                                isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                                onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
+                                onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
+                            )
                         }
                     }
                     .listRowBackground(Color.appSurface)
@@ -62,40 +69,5 @@ private struct LevelControl: View {
             }
         }
         .tint(.accentMultiplayer)
-    }
-}
-
-private struct CamoRow: View {
-    let mode: AppMode
-    let weaponId: Int
-    let camo: ChallengeItem
-    @EnvironmentObject private var viewModel: TrackerViewModel
-
-    private var done: Bool {
-        viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weaponId, camo: camo)
-    }
-
-    var body: some View {
-        Button {
-            viewModel.toggleCamo(mode: mode.rawValue, weaponId: weaponId, camo: camo)
-        } label: {
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(camo.nameKey.localized())
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(Color.appInk)
-                    if let requirement = camo.requirement {
-                        Text(requirement.descriptionKey.localized())
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.appInkMuted)
-                    }
-                }
-                Spacer()
-                Image(systemName: done ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(done ? mode.accent : Color.appInkMuted)
-            }
-        }
-        .buttonStyle(.plain)
-        .padding(.vertical, 4)
     }
 }
