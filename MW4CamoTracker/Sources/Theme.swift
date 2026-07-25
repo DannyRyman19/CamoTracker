@@ -3,13 +3,13 @@ import SwiftUI
 /// Modes each carry their own accent so the shared component shell (row, chip, tab)
 /// reads as a different mode without any layout changes. See design-system v0.1.
 enum AppMode: String, CaseIterable, Identifiable {
-    case multiplayer, campaign, dmz
+    case multiplayer, warzone, dmz
     var id: String { rawValue }
 
     var displayNameKey: String {
         switch self {
         case .multiplayer: return "mw4.mode.multiplayer"
-        case .campaign:    return "mw4.mode.campaign"
+        case .warzone:     return "mw4.mode.warzone"
         case .dmz:         return "mw4.mode.dmz"
         }
     }
@@ -17,7 +17,7 @@ enum AppMode: String, CaseIterable, Identifiable {
     var symbol: String {
         switch self {
         case .multiplayer: return "scope"
-        case .campaign:    return "film"
+        case .warzone:     return "aqi.medium"
         case .dmz:         return "shippingbox"
         }
     }
@@ -25,7 +25,7 @@ enum AppMode: String, CaseIterable, Identifiable {
     var accent: Color {
         switch self {
         case .multiplayer: return .accentMultiplayer
-        case .campaign:    return .accentCampaign
+        case .warzone:     return .accentWarzone
         case .dmz:         return .accentDMZ
         }
     }
@@ -34,7 +34,8 @@ enum AppMode: String, CaseIterable, Identifiable {
 extension Color {
     /// Task Force red — primary brand accent, distinct from the BO-line apps' orange.
     static let accentMultiplayer = Color(red: 0.882, green: 0.267, blue: 0.204) // #E14434
-    static let accentCampaign    = Color(red: 0.243, green: 0.431, blue: 0.525) // #3E6E86
+    /// Toxic gas green — Warzone's shrinking circle.
+    static let accentWarzone     = Color(red: 0.561, green: 0.749, blue: 0.247) // #8FBF3F
     static let accentDMZ         = Color(red: 0.788, green: 0.635, blue: 0.153) // #C9A227
 
     /// Established CoD tier colors — fixed regardless of which mode's accent is active.

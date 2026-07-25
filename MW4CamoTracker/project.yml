@@ -4,6 +4,7 @@ options:
   deploymentTarget:
     iOS: "16.0"
   createIntermediateGroups: true
+  developmentLanguage: en
 
 settings:
   SWIFT_VERSION: "6.0"
@@ -23,13 +24,21 @@ targets:
         buildPhase: resources
       - path: Resources/multiplayer.json
         buildPhase: resources
-      - path: Resources/campaign.json
+      - path: Resources/warzone.json
         buildPhase: resources
       - path: Resources/dmz.json
         buildPhase: resources
       - path: Resources/HitmarkerText-VF.ttf
         buildPhase: resources
       - path: Resources/en.lproj
+        buildPhase: resources
+      - path: Resources/fr.lproj
+        buildPhase: resources
+      - path: Resources/es.lproj
+        buildPhase: resources
+      - path: Resources/de.lproj
+        buildPhase: resources
+      - path: Resources/nl.lproj
         buildPhase: resources
     info:
       path: Resources/Info.plist
@@ -39,6 +48,12 @@ targets:
         CFBundleIdentifier: com.DannyRyman.MW4CamoTracker
         CFBundleShortVersionString: "1.0.0"
         CFBundleVersion: "1"
+        CFBundleLocalizations:
+          - en
+          - fr
+          - es
+          - de
+          - nl
         LSRequiresIPhoneOS: true
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false

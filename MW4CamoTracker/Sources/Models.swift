@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Weapon catalog (shared across every mode)
 
 /// The one place a weapon's identity lives — name, image, category, max level.
-/// Multiplayer, Campaign, and DMZ all reference these by `weaponId` instead of
+/// Multiplayer, Warzone, and DMZ all reference these by `weaponId` instead of
 /// re-declaring the weapon, so leveling a gun up means the same thing everywhere.
 struct WeaponCatalog: Codable {
     let version: String
@@ -26,14 +26,14 @@ struct WeaponEntry: Codable, Identifiable {
     var id: Int { weaponId }
 }
 
-// MARK: - Per-mode data (multiplayer.json / campaign.json / dmz.json)
+// MARK: - Per-mode data (multiplayer.json / warzone.json / dmz.json)
 
 /// A mode contributes two independent things:
 /// - `weaponCamos`: that mode's camo challenge tree for each weapon it covers,
 ///   looked up by `weaponId` against the shared catalog above.
-/// - `objectives`: mode-exclusive, non-weapon content (DMZ extraction
-///   objectives, campaign story beats) that has no equivalent in other modes.
-/// Multiplayer/Campaign currently only populate `weaponCamos`; DMZ can use either
+/// - `objectives`: mode-exclusive, non-weapon content (DMZ's Hajin extraction
+///   objectives) that has no equivalent in other modes.
+/// Multiplayer/Warzone currently only populate `weaponCamos`; DMZ can use either
 /// or both, depending on whether it ends up with its own weapon-camo track.
 struct ModeFile: Codable {
     let version: String

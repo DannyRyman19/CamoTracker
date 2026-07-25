@@ -1,24 +1,82 @@
-/* Tab / mode names */
 "mw4.mode.multiplayer" = "Multiplayer";
-"mw4.mode.campaign" = "Campaign";
+"mw4.mode.warzone" = "Warzone";
 "mw4.mode.dmz" = "DMZ";
-
-/* Weapon catalog — shared across every mode, placeholder pending MW4's real weapon list */
 "mw4.weapon.category.assault_rifles" = "Assault Rifles";
-"mw4.weapon.placeholder_ar.name" = "Placeholder AR";
-"mw4.weapon.placeholder_ar.unlock" = "Unlock at level 1.";
-
-/* Multiplayer camos — placeholder seed data, replace once MW4's are public */
-"mw4.mp.camo.military_1.name" = "Foliage";
-"mw4.mp.camo.military_1.desc" = "Get 10 kills with this weapon.";
+"mw4.weapon.assault_rifles.0.name" = "M4";
+"mw4.weapon.assault_rifles.0.unlock" = "Unlock at level 1.";
+"mw4.weapon.assault_rifles.1.name" = "Kastov 762";
+"mw4.weapon.assault_rifles.1.unlock" = "Unlock at level 4.";
+"mw4.weapon.assault_rifles.2.name" = "FTAC Rectifier";
+"mw4.weapon.assault_rifles.2.unlock" = "Unlock at level 16.";
+"mw4.weapon.category.smgs" = "SMGs";
+"mw4.weapon.smgs.3.name" = "Vaznev-9K";
+"mw4.weapon.smgs.3.unlock" = "Unlock at level 1.";
+"mw4.weapon.smgs.4.name" = "MP7";
+"mw4.weapon.smgs.4.unlock" = "Unlock at level 4.";
+"mw4.weapon.smgs.5.name" = "Superi 46";
+"mw4.weapon.smgs.5.unlock" = "Unlock at level 16.";
+"mw4.weapon.category.lmgs" = "LMGs";
+"mw4.weapon.lmgs.6.name" = "RPK";
+"mw4.weapon.lmgs.6.unlock" = "Unlock at level 1.";
+"mw4.weapon.lmgs.7.name" = "Bruen Mk9";
+"mw4.weapon.lmgs.7.unlock" = "Unlock at level 4.";
+"mw4.weapon.lmgs.8.name" = "Death Machine";
+"mw4.weapon.lmgs.8.unlock" = "Unlock at level 16.";
+"mw4.weapon.category.shotguns" = "Shotguns";
+"mw4.weapon.shotguns.9.name" = "Model 680";
+"mw4.weapon.shotguns.9.unlock" = "Unlock at level 1.";
+"mw4.weapon.shotguns.10.name" = "KV Broadside";
+"mw4.weapon.shotguns.10.unlock" = "Unlock at level 4.";
+"mw4.weapon.shotguns.11.name" = "Expedite 12";
+"mw4.weapon.shotguns.11.unlock" = "Unlock at level 16.";
+"mw4.weapon.category.sniper_rifles" = "Sniper Rifles";
+"mw4.weapon.sniper_rifles.12.name" = "SP-R 208";
+"mw4.weapon.sniper_rifles.12.unlock" = "Unlock at level 1.";
+"mw4.weapon.sniper_rifles.13.name" = "MCPR-300";
+"mw4.weapon.sniper_rifles.13.unlock" = "Unlock at level 4.";
+"mw4.weapon.sniper_rifles.14.name" = "Signal 50";
+"mw4.weapon.sniper_rifles.14.unlock" = "Unlock at level 16.";
+"mw4.weapon.category.pistols" = "Pistols";
+"mw4.weapon.pistols.15.name" = "X12";
+"mw4.weapon.pistols.15.unlock" = "Unlock at level 1.";
+"mw4.weapon.pistols.16.name" = "Basilisk";
+"mw4.weapon.pistols.16.unlock" = "Unlock at level 4.";
+"mw4.weapon.pistols.17.name" = "Renetti";
+"mw4.weapon.pistols.17.unlock" = "Unlock at level 16.";
+"mw4.mp.camo.slate.name" = "Slate";
+"mw4.mp.camo.slate.desc" = "Get 10 kills with this weapon.";
+"mw4.mp.camo.ridgeline.name" = "Ridgeline";
+"mw4.mp.camo.ridgeline.desc" = "Get 25 kills with this weapon.";
+"mw4.mp.camo.nightfall.name" = "Nightfall";
+"mw4.mp.camo.nightfall.desc" = "Get 50 kills with this weapon.";
+"mw4.mp.camo.frostbite.name" = "Frostbite";
+"mw4.mp.camo.frostbite.desc" = "Get 75 headshot kills with this weapon.";
 "mw4.mp.camo.gold.name" = "Gold";
-"mw4.mp.camo.gold.desc" = "Complete all military camos for this weapon.";
-
-/* Campaign camos — placeholder, MW4's mastery camo track is unconfirmed */
-"mw4.campaign.camo.placeholder.name" = "Placeholder Campaign Camo";
-"mw4.campaign.camo.placeholder.desc" = "Get 25 critical kills with this weapon in Campaign.";
-
-/* DMZ objectives — confirmed mode (map: Hajin), exact objectives unconfirmed */
-"mw4.dmz.category.hajin" = "Hajin";
-"mw4.dmz.objective.placeholder.name" = "Placeholder Objective";
-"mw4.dmz.objective.placeholder.desc" = "Extract 3 times with this objective active.";
+"mw4.mp.camo.gold.desc" = "Complete every camo above for this weapon.";
+"mw4.wz.camo.verdant.name" = "Verdant";
+"mw4.wz.camo.verdant.desc" = "Win 3 matches with this weapon equipped.";
+"mw4.wz.camo.toxic.name" = "Toxic";
+"mw4.wz.camo.toxic.desc" = "Get 10 kills while the gas is closing in.";
+"mw4.wz.camo.irradiated.name" = "Irradiated";
+"mw4.wz.camo.irradiated.desc" = "Complete every Warzone camo above for this weapon.";
+"mw4.dmz.category.faction_missions" = "Faction Missions";
+"mw4.dmz.objective.recon.name" = "Recon the Chemical Plant";
+"mw4.dmz.objective.recon.desc" = "Investigate the chemical plant and extract.";
+"mw4.dmz.objective.recover_data.name" = "Recover Black Mous Intel";
+"mw4.dmz.objective.recover_data.desc" = "Recover the data drive from a Black Mous convoy.";
+"mw4.dmz.objective.eliminate_leader.name" = "Eliminate the Konni Cell Leader";
+"mw4.dmz.objective.eliminate_leader.desc" = "Locate and eliminate the Konni cell leader.";
+"mw4.dmz.category.exfil_contracts" = "Exfil Contracts";
+"mw4.dmz.objective.supply_drops.name" = "Secure Supply Drops";
+"mw4.dmz.objective.supply_drops.desc" = "Secure 3 supply drops in a single deployment.";
+"mw4.dmz.objective.rare_weapon.name" = "Extract a Rare Weapon";
+"mw4.dmz.objective.rare_weapon.desc" = "Extract with a rare or higher rarity weapon.";
+"mw4.dmz.objective.recon_contract.name" = "Complete a Recon Contract";
+"mw4.dmz.objective.recon_contract.desc" = "Complete a Recon contract without dying.";
+"mw4.dmz.category.stronghold_assaults" = "Stronghold Assaults";
+"mw4.dmz.objective.breach_strongholds.name" = "Breach Strongholds";
+"mw4.dmz.objective.breach_strongholds.desc" = "Breach 2 strongholds in Hajin.";
+"mw4.dmz.objective.steal_blueprint.name" = "Steal a Blueprint";
+"mw4.dmz.objective.steal_blueprint.desc" = "Steal a weapon blueprint from a Black Mous cache.";
+"mw4.dmz.objective.extract_squad.name" = "Extract as a Full Squad";
+"mw4.dmz.objective.extract_squad.desc" = "Extract with your entire squad alive.";

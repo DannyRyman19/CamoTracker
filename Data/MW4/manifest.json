@@ -1,19 +1,19 @@
 {
   "catalog": {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "path": "weapons.json"
   },
   "modes": {
     "multiplayer": {
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "multiplayer.json"
     },
-    "campaign": {
-      "version": "0.1.0",
-      "path": "campaign.json"
+    "warzone": {
+      "version": "0.2.0",
+      "path": "warzone.json"
     },
     "dmz": {
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "dmz.json"
     }
   }

@@ -82,7 +82,7 @@ private struct WelcomePage: View {
                 Image(systemName: "scope")
                     .font(.system(size: 44))
                     .foregroundStyle(Color.accentMultiplayer)
-                Text("Track every weapon, camo challenge, and DMZ objective — Multiplayer, Campaign, and DMZ each get their own tab.")
+                Text("Track every weapon, camo challenge, and DMZ objective — Multiplayer, Warzone, and DMZ each get their own tab.")
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)

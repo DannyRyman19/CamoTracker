@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "categories": [
     {
       "categoryId": 0,
@@ -7,13 +7,162 @@
       "weapons": [
         {
           "weaponId": 0,
-          "nameKey": "mw4.weapon.placeholder_ar.name",
-          "imageRef": "placeholder-ar.png",
+          "nameKey": "mw4.weapon.assault_rifles.0.name",
+          "imageRef": "assault_rifles-0.png",
           "maxLevel": 55,
-          "unlockRequirementKey": "mw4.weapon.placeholder_ar.unlock"
+          "unlockRequirementKey": "mw4.weapon.assault_rifles.0.unlock"
+        },
+        {
+          "weaponId": 1,
+          "nameKey": "mw4.weapon.assault_rifles.1.name",
+          "imageRef": "assault_rifles-1.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.assault_rifles.1.unlock"
+        },
+        {
+          "weaponId": 2,
+          "nameKey": "mw4.weapon.assault_rifles.2.name",
+          "imageRef": "assault_rifles-2.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.assault_rifles.2.unlock"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "nameKey": "mw4.weapon.category.smgs",
+      "weapons": [
+        {
+          "weaponId": 3,
+          "nameKey": "mw4.weapon.smgs.3.name",
+          "imageRef": "smgs-3.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.smgs.3.unlock"
+        },
+        {
+          "weaponId": 4,
+          "nameKey": "mw4.weapon.smgs.4.name",
+          "imageRef": "smgs-4.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.smgs.4.unlock"
+        },
+        {
+          "weaponId": 5,
+          "nameKey": "mw4.weapon.smgs.5.name",
+          "imageRef": "smgs-5.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.smgs.5.unlock"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "nameKey": "mw4.weapon.category.lmgs",
+      "weapons": [
+        {
+          "weaponId": 6,
+          "nameKey": "mw4.weapon.lmgs.6.name",
+          "imageRef": "lmgs-6.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.lmgs.6.unlock"
+        },
+        {
+          "weaponId": 7,
+          "nameKey": "mw4.weapon.lmgs.7.name",
+          "imageRef": "lmgs-7.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.lmgs.7.unlock"
+        },
+        {
+          "weaponId": 8,
+          "nameKey": "mw4.weapon.lmgs.8.name",
+          "imageRef": "lmgs-8.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.lmgs.8.unlock"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "nameKey": "mw4.weapon.category.shotguns",
+      "weapons": [
+        {
+          "weaponId": 9,
+          "nameKey": "mw4.weapon.shotguns.9.name",
+          "imageRef": "shotguns-9.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.shotguns.9.unlock"
+        },
+        {
+          "weaponId": 10,
+          "nameKey": "mw4.weapon.shotguns.10.name",
+          "imageRef": "shotguns-10.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.shotguns.10.unlock"
+        },
+        {
+          "weaponId": 11,
+          "nameKey": "mw4.weapon.shotguns.11.name",
+          "imageRef": "shotguns-11.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.shotguns.11.unlock"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "nameKey": "mw4.weapon.category.sniper_rifles",
+      "weapons": [
+        {
+          "weaponId": 12,
+          "nameKey": "mw4.weapon.sniper_rifles.12.name",
+          "imageRef": "sniper_rifles-12.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.sniper_rifles.12.unlock"
+        },
+        {
+          "weaponId": 13,
+          "nameKey": "mw4.weapon.sniper_rifles.13.name",
+          "imageRef": "sniper_rifles-13.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.sniper_rifles.13.unlock"
+        },
+        {
+          "weaponId": 14,
+          "nameKey": "mw4.weapon.sniper_rifles.14.name",
+          "imageRef": "sniper_rifles-14.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.sniper_rifles.14.unlock"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "nameKey": "mw4.weapon.category.pistols",
+      "weapons": [
+        {
+          "weaponId": 15,
+          "nameKey": "mw4.weapon.pistols.15.name",
+          "imageRef": "pistols-15.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.pistols.15.unlock"
+        },
+        {
+          "weaponId": 16,
+          "nameKey": "mw4.weapon.pistols.16.name",
+          "imageRef": "pistols-16.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.pistols.16.unlock"
+        },
+        {
+          "weaponId": 17,
+          "nameKey": "mw4.weapon.pistols.17.name",
+          "imageRef": "pistols-17.png",
+          "maxLevel": 55,
+          "unlockRequirementKey": "mw4.weapon.pistols.17.unlock"
         }
       ]
     }
   ],
-  "_note": "Placeholder seed data. Weapon identity, category grouping, and max level live here once — Multiplayer, Campaign, and DMZ camo files reference weapons by weaponId instead of redeclaring them, and weapon level is tracked globally by weaponId so it matches across every mode."
+  "_note": "Fake/placeholder roster styled after this repo's own BO7 and BO6 data (category breakdown, progressive camo-tier naming) so the app has enough content to actually browse and feel real. MW4's real weapon list is unannounced — replace wholesale once known, no schema change needed."
 }

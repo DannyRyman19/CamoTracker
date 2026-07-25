@@ -31,7 +31,7 @@ final class TrackerViewModel: ObservableObject {
         self.dataService = dataService
         loadProgress()
         catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
-        for mode in ["multiplayer", "campaign", "dmz"] {
+        for mode in ["multiplayer", "warzone", "dmz"] {
             modes[mode] = dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode)
         }
     }

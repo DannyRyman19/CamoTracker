@@ -1,0 +1,746 @@
+{
+  "version": "0.2.0",
+  "mode": "warzone",
+  "weaponCamos": [
+    {
+      "weaponId": 0,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 1,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 2,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 3,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 4,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 5,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 6,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 7,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 8,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 9,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 10,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 11,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 12,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 13,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 14,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 15,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 16,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 17,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.wz.camo.verdant.name",
+          "imageRef": "camo-wz-verdant.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "descriptionKey": "mw4.wz.camo.verdant.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.wz.camo.toxic.name",
+          "imageRef": "camo-wz-toxic.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "descriptionKey": "mw4.wz.camo.toxic.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.wz.camo.irradiated.name",
+          "imageRef": "camo-wz-irradiated.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.wz.camo.irradiated.desc"
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "objectives": [],
+  "_note": "Fake/placeholder Warzone-specific camo tiers — this repo's own Data/BO6 already keeps Warzone camos in a separate file from Multiplayer's for the same guns, so this mirrors that precedent rather than reusing Multiplayer's tiers. Replace once MW4's Warzone plans are announced."
+}

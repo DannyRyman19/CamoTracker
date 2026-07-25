@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -7,23 +7,1172 @@
       "camos": [
         {
           "itemId": 0,
-          "nameKey": "mw4.mp.camo.military_1.name",
-          "imageRef": "camo-military-1.png",
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
           "tier": 1,
-          "requirement": { "amount": 10, "unit": "kills", "descriptionKey": "mw4.mp.camo.military_1.desc" },
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
           "children": []
         },
         {
           "itemId": 1,
-          "nameKey": "mw4.mp.camo.gold.name",
-          "imageRef": "camo-gold.png",
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
           "tier": 2,
-          "requirement": { "amount": 1, "unit": "all_military_camos", "descriptionKey": "mw4.mp.camo.gold.desc" },
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 1,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 2,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 3,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 4,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 5,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 6,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 7,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 8,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 9,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 10,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 11,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 12,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 13,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 14,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 15,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 16,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "weaponId": 17,
+      "camos": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.mp.camo.slate.name",
+          "imageRef": "camo-mp-slate.png",
+          "tier": 1,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.slate.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.mp.camo.ridgeline.name",
+          "imageRef": "camo-mp-ridgeline.png",
+          "tier": 2,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.ridgeline.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.mp.camo.nightfall.name",
+          "imageRef": "camo-mp-nightfall.png",
+          "tier": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "descriptionKey": "mw4.mp.camo.nightfall.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "nameKey": "mw4.mp.camo.frostbite.name",
+          "imageRef": "camo-mp-frostbite.png",
+          "tier": 4,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "descriptionKey": "mw4.mp.camo.frostbite.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "nameKey": "mw4.mp.camo.gold.name",
+          "imageRef": "camo-mp-gold.png",
+          "tier": 5,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "descriptionKey": "mw4.mp.camo.gold.desc"
+          },
           "children": []
         }
       ]
     }
   ],
   "objectives": [],
-  "_note": "Placeholder seed data. weaponId 0 refers to the catalog entry in weapons.json — no weapon name/image/level duplicated here."
+  "_note": "Fake/placeholder camo tiers, styled after this repo's BO7 progressive-camo-name pattern, shared across every weapon in the roster. Replace once MW4's real mastery camo names are announced."
 }

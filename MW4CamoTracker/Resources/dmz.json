@@ -1,22 +1,134 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mode": "dmz",
   "weaponCamos": [],
   "objectives": [
     {
       "categoryId": 0,
-      "nameKey": "mw4.dmz.category.hajin",
+      "nameKey": "mw4.dmz.category.faction_missions",
       "items": [
         {
           "itemId": 0,
-          "nameKey": "mw4.dmz.objective.placeholder.name",
+          "nameKey": "mw4.dmz.objective.recon.name",
           "imageRef": null,
           "tier": 1,
-          "requirement": { "amount": 3, "unit": "extractions", "descriptionKey": "mw4.dmz.objective.placeholder.desc" },
+          "requirement": {
+            "amount": 1,
+            "unit": "missions",
+            "descriptionKey": "mw4.dmz.objective.recon.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.dmz.objective.recover_data.name",
+          "imageRef": null,
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "missions",
+            "descriptionKey": "mw4.dmz.objective.recover_data.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.dmz.objective.eliminate_leader.name",
+          "imageRef": null,
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "eliminations",
+            "descriptionKey": "mw4.dmz.objective.eliminate_leader.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "nameKey": "mw4.dmz.category.exfil_contracts",
+      "items": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.dmz.objective.supply_drops.name",
+          "imageRef": null,
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "supply_drops",
+            "descriptionKey": "mw4.dmz.objective.supply_drops.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.dmz.objective.rare_weapon.name",
+          "imageRef": null,
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "descriptionKey": "mw4.dmz.objective.rare_weapon.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.dmz.objective.recon_contract.name",
+          "imageRef": null,
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "contracts",
+            "descriptionKey": "mw4.dmz.objective.recon_contract.desc"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "nameKey": "mw4.dmz.category.stronghold_assaults",
+      "items": [
+        {
+          "itemId": 0,
+          "nameKey": "mw4.dmz.objective.breach_strongholds.name",
+          "imageRef": null,
+          "tier": 1,
+          "requirement": {
+            "amount": 2,
+            "unit": "strongholds",
+            "descriptionKey": "mw4.dmz.objective.breach_strongholds.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "nameKey": "mw4.dmz.objective.steal_blueprint.name",
+          "imageRef": null,
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "descriptionKey": "mw4.dmz.objective.steal_blueprint.desc"
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "nameKey": "mw4.dmz.objective.extract_squad.name",
+          "imageRef": null,
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "descriptionKey": "mw4.dmz.objective.extract_squad.desc"
+          },
           "children": []
         }
       ]
     }
   ],
-  "_note": "Placeholder seed data. DMZ is confirmed for MW4 (map: Hajin) but it's unconfirmed whether it gets its own weapon-camo track — weaponCamos is left empty here, ready to populate with entries keyed by the same weaponId from weapons.json if it turns out DMZ does. The Hajin objectives below are DMZ-exclusive and have no weapon-catalog equivalent."
+  "_note": "Fake/placeholder Hajin objectives (map confirmed for MW4, exact objectives not yet public). weaponCamos stays empty pending confirmation of whether DMZ gets its own weapon-camo track."
 }
