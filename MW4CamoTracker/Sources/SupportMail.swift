@@ -13,6 +13,15 @@ import UIKit
 enum SupportMail {
     static let address = "support@camotracker.djr.li"
 
+    /// A Mastery tier, which is not a `ChallengeItem` -- those come from the
+    /// mode JSON, while Mastery camos are defined in Theme.swift -- so it needs
+    /// its own way into a report.
+    struct MasteryRef {
+        let name: String
+        let tier: Int
+        let requirement: Int?
+    }
+
     /// The kinds of data problem worth a one-tap report. Raw values are the
     /// subject line suffix, so they stay readable in an inbox.
     enum Kind: String, CaseIterable, Identifiable {
@@ -55,6 +64,7 @@ enum SupportMail {
     /// names, just the image filename.
     static func url(kind: Kind, weapon: WeaponEntry, mode: AppMode,
                     category: String? = nil, camo: ChallengeItem? = nil,
+                    mastery: MasteryRef? = nil,
                     correctedMaxLevel: Int? = nil) -> URL? {
         var lines = [
             "Issue type: \(kind.rawValue)",
@@ -79,6 +89,13 @@ enum SupportMail {
             lines.append("Camo ID: \(camo.itemId)")
             if let requirement = camo.requirement {
                 lines.append("Requirement in app: \(requirement.amount) \(requirement.unit)")
+            }
+        }
+        if let mastery {
+            lines.append("Mastery camo: \(mastery.name)")
+            lines.append("Mastery tier: \(mastery.tier)")
+            if let requirement = mastery.requirement {
+                lines.append("Requirement in app: \(requirement)")
             }
         }
         return url(subject: "MW4 Camo Tracker: \(kind.rawValue)",
@@ -130,10 +147,14 @@ struct ReportIssueMenu: View {
     var body: some View {
         Menu {
             ForEach(SupportMail.Kind.allCases) { kind in
-                if kind == .challenge, !camos.isEmpty {
+                if kind == .challenge, !camos.isEmpty || !masteryRefs.isEmpty {
                     Menu {
                         ForEach(camos) { camo in
                             Button(camo.name.resolved()) { send(kind, camo: camo) }
+                        }
+                        if !camos.isEmpty && !masteryRefs.isEmpty { Divider() }
+                        ForEach(masteryRefs, id: \.tier) { mastery in
+                            Button(mastery.name) { send(kind, mastery: mastery) }
                         }
                     } label: {
                         Label(kind.labelKey.localized(), systemImage: kind.symbol)
@@ -170,10 +191,22 @@ struct ReportIssueMenu: View {
         }
     }
 
+    /// This mode's three Mastery camos, in tier order. tier3 has no challenge
+    /// of its own (its gate is tier2), so it carries no requirement.
+    private var masteryRefs: [SupportMail.MasteryRef] {
+        let tiers = mode.masteryCamos
+        return [
+            .init(name: tiers.tier1.name, tier: 1, requirement: tiers.tier1.requirement?.amount),
+            .init(name: tiers.tier2.name, tier: 2, requirement: tiers.tier2.requirement?.amount),
+            .init(name: tiers.tier3.name, tier: 3, requirement: tiers.tier3.requirement?.amount),
+        ]
+    }
+
     private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil,
+                      mastery: SupportMail.MasteryRef? = nil,
                       correctedMaxLevel: Int? = nil) {
         if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
-                                     category: category, camo: camo,
+                                     category: category, camo: camo, mastery: mastery,
                                      correctedMaxLevel: correctedMaxLevel) {
             openURL(url)
         }
