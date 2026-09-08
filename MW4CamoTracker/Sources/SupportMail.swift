@@ -54,7 +54,8 @@ enum SupportMail {
     /// mode, and what the app currently stores. Deliberately no URLs or host
     /// names, just the image filename.
     static func url(kind: Kind, weapon: WeaponEntry, mode: AppMode,
-                    category: String? = nil, camo: ChallengeItem? = nil) -> URL? {
+                    category: String? = nil, camo: ChallengeItem? = nil,
+                    correctedMaxLevel: Int? = nil) -> URL? {
         var lines = [
             "Issue type: \(kind.rawValue)",
             "Weapon: \(weapon.name.resolved())",
@@ -67,6 +68,11 @@ enum SupportMail {
         // layout in every report, and the name alone is enough to find the asset.
         let imageName = weapon.imageURL.flatMap { URL(string: $0)?.lastPathComponent } ?? "none"
         lines.append("Image: \(imageName)")
+        // The whole point of a max level report is the number it should be, so
+        // ask for it up front rather than trading emails to find out.
+        if let correctedMaxLevel {
+            lines.append("Should be: \(correctedMaxLevel)")
+        }
 
         if let camo {
             lines.append("Camo: \(camo.name.resolved())")
@@ -114,6 +120,10 @@ struct ReportIssueMenu: View {
     /// then behaves like every other kind.
     var camos: [ChallengeItem] = []
     var compact = false
+    /// Called instead of sending when "Wrong max level" is chosen, so the host
+    /// can ask for the correct number first. A `.alert` attached inside a
+    /// `ToolbarItem` is unreliable, so the prompt lives on the view body.
+    var onRequestMaxLevel: (() -> Void)? = nil
 
     @Environment(\.openURL) private var openURL
 
@@ -130,7 +140,11 @@ struct ReportIssueMenu: View {
                     }
                 } else {
                     Button {
-                        send(kind)
+                        if kind == .maxLevel, let onRequestMaxLevel {
+                            onRequestMaxLevel()
+                        } else {
+                            send(kind)
+                        }
                     } label: {
                         Label(kind.labelKey.localized(), systemImage: kind.symbol)
                     }
@@ -156,9 +170,11 @@ struct ReportIssueMenu: View {
         }
     }
 
-    private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil) {
+    private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil,
+                      correctedMaxLevel: Int? = nil) {
         if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
-                                     category: category, camo: camo) {
+                                     category: category, camo: camo,
+                                     correctedMaxLevel: correctedMaxLevel) {
             openURL(url)
         }
     }

@@ -13,6 +13,12 @@ struct WeaponDetailView: View {
 
     private var isPinned: Bool { viewModel.pinnedWeaponId == weapon.weaponId }
 
+    /// Hosted here rather than inside the toolbar's menu: a `.alert` attached
+    /// to `ToolbarItem` content does not reliably present.
+    @State private var askingMaxLevel = false
+    @State private var maxLevelText = ""
+    @Environment(\.openURL) private var openURL
+
     var body: some View {
         ZStack {
             AppBackground(accent: mode.accent)
@@ -98,6 +104,21 @@ struct WeaponDetailView: View {
             .listStyle(.plain)
         }
         .navigationTitle(weapon.name.resolved())
+        .alert("mw4.ui.report.max_level".localized(), isPresented: $askingMaxLevel) {
+            TextField("mw4.ui.report.max_level.field".localized(), text: $maxLevelText)
+                .keyboardType(.numberPad)
+            Button("mw4.ui.cancel".localized(), role: .cancel) {}
+            // An empty field still sends: a vaguer report beats no report.
+            Button("mw4.ui.report.send".localized()) {
+                if let url = SupportMail.url(kind: .maxLevel, weapon: weapon, mode: mode,
+                                             category: category?.name.resolved(),
+                                             correctedMaxLevel: Int(maxLevelText)) {
+                    openURL(url)
+                }
+            }
+        } message: {
+            Text(String(format: "mw4.ui.report.max_level.message".localized(), weapon.maxLevel))
+        }
         .toolbar {
             // Camo data is hand-entered from a game that keeps changing, so a
             // pre-filled report is worth reaching easily. At the foot of the
@@ -105,7 +126,11 @@ struct WeaponDetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 ReportIssueMenu(weapon: weapon, mode: mode,
                                 category: category?.name.resolved(), camos: camos,
-                                compact: true)
+                                compact: true,
+                                onRequestMaxLevel: {
+                                    maxLevelText = ""
+                                    askingMaxLevel = true
+                                })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
