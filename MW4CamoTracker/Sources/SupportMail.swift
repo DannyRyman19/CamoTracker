@@ -99,24 +99,37 @@ enum SupportMail {
 
 /// The "Report an issue" control on a weapon's page. A menu rather than a
 /// single mailto so the subject line arrives already sorted by kind.
+///
+/// "Wrong challenge" opens a submenu of the weapon's camos, because a report
+/// saying a challenge is wrong is not actionable without knowing which one,
+/// and picking it here beats asking for it in a reply.
 struct ReportIssueMenu: View {
     let weapon: WeaponEntry
     let mode: AppMode
     var category: String? = nil
-    var camo: ChallengeItem? = nil
+    /// This mode's camos for this weapon. Empty is fine; the challenge entry
+    /// then behaves like every other kind.
+    var camos: [ChallengeItem] = []
 
     @Environment(\.openURL) private var openURL
 
     var body: some View {
         Menu {
             ForEach(SupportMail.Kind.allCases) { kind in
-                Button {
-                    if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
-                                                 category: category, camo: camo) {
-                        openURL(url)
+                if kind == .challenge, !camos.isEmpty {
+                    Menu {
+                        ForEach(camos) { camo in
+                            Button(camo.name.resolved()) { send(kind, camo: camo) }
+                        }
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
                     }
-                } label: {
-                    Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                } else {
+                    Button {
+                        send(kind)
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                    }
                 }
             }
         } label: {
@@ -131,6 +144,13 @@ struct ReportIssueMenu: View {
             .padding(12)
             .contentShape(Rectangle())
             .borderedCard()
+        }
+    }
+
+    private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil) {
+        if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
+                                     category: category, camo: camo) {
+            openURL(url)
         }
     }
 }
