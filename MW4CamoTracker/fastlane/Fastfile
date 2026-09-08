@@ -1,0 +1,117 @@
+# MW4 Camo Tracker - CI archive + TestFlight upload.
+#
+# Runs on a GitHub-hosted macOS runner (see .github/workflows/testflight.yml).
+# Auth is an App Store Connect API key; the distribution certificate is
+# imported from a base64 secret into a throwaway CI keychain. The provisioning
+# profile is created/refreshed on the fly through the same API key, so there is
+# no second "certificates" repo to keep in sync the way `match` needs.
+#
+# Simpler than the Vinewood Vault lane this is modelled on: one target, no app
+# extension (so no second profile and no CFBundleVersion to keep in step), and
+# the .xcodeproj is committed rather than generated, so there is no xcodegen
+# step to run first.
+
+default_platform(:ios)
+
+APP_IDENTIFIER = "com.DannyRyman.MW4CamoTracker"
+PROFILE_NAME   = "MW4 Camo Tracker CI App Store"
+XCODE_PROJECT  = "MW4CamoTracker.xcodeproj"
+XCODE_SCHEME   = "MW4CamoTracker"
+TEAM_ID        = "44G72CWWEW"
+
+platform :ios do
+  desc "Archive a Release build and ship it to TestFlight"
+  lane :beta do
+    # On CI (CI=true) this makes a temporary keychain and marks it default,
+    # exporting MATCH_KEYCHAIN_NAME / MATCH_KEYCHAIN_PASSWORD. No-op locally.
+    setup_ci
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_P8"),   # base64 of the AuthKey_XXXX.p8
+      is_key_content_base64: true,
+      in_house: false
+    )
+
+    # Distribution certificate -> CI keychain. The workflow decodes
+    # DIST_CERT_P12 to fastlane/dist_cert.p12 just before this lane runs.
+    if is_ci
+      import_certificate(
+        certificate_path: File.expand_path("dist_cert.p12", __dir__),
+        certificate_password: ENV.fetch("DIST_CERT_PASSWORD"),
+        keychain_name: ENV.fetch("MATCH_KEYCHAIN_NAME"),
+        keychain_password: ENV.fetch("MATCH_KEYCHAIN_PASSWORD")
+      )
+    end
+
+    version = ENV["APP_VERSION"].to_s.strip
+    version = get_version_number(xcodeproj: XCODE_PROJECT, target: XCODE_SCHEME) if version.empty?
+
+    # One above the highest build already on TestFlight for this version
+    # string: no local counter to drift, and it resets cleanly when the
+    # marketing version bumps.
+    build_number = latest_testflight_build_number(
+      app_identifier: APP_IDENTIFIER,
+      version: version,
+      api_key: api_key,
+      initial_build_number: 0
+    ) + 1
+
+    UI.important("Building #{version} (#{build_number})")
+
+    # Fetch (creating if absent) an App Store provisioning profile via the
+    # API. This is the reliable path -- `xcodebuild -exportArchive
+    # -allowProvisioningUpdates` throws "Cloud signing permission error" even
+    # with a valid App Manager key. The name is pinned so the export below can
+    # reference it without guessing an env var.
+    get_provisioning_profile(
+      api_key: api_key, app_identifier: APP_IDENTIFIER,
+      provisioning_name: PROFILE_NAME,
+      fail_on_name_taken: false, readonly: false
+    )
+
+    # The archive can still sign automatically; it just needs the API key
+    # passed to xcodebuild directly, since gym does not forward it to the
+    # archive invocation.
+    p8 = File.expand_path("AuthKey.p8", __dir__)
+    p8 = api_key[:key_filepath] if !File.exist?(p8) && api_key[:key_filepath]
+    archive_auth = "-allowProvisioningUpdates " \
+                   "-authenticationKeyPath #{p8} " \
+                   "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')} " \
+                   "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}"
+
+    build_app(
+      project: XCODE_PROJECT,
+      scheme: XCODE_SCHEME,
+      configuration: "Release",
+      export_method: "app-store",
+      xcargs: "#{archive_auth} CURRENT_PROJECT_VERSION=#{build_number}",
+      export_xcargs: "",
+      export_options: {
+        signingStyle: "manual",
+        teamID: TEAM_ID,
+        signingCertificate: "Apple Distribution",
+        provisioningProfiles: { APP_IDENTIFIER => PROFILE_NAME }
+      },
+      output_directory: "build",
+      output_name: "MW4CamoTracker.ipa",
+      clean: true
+    )
+
+    # A changelog forces fastlane to wait for the build to appear on ASC (so
+    # it can attach it), which adds ~5 min of runner time. Only pay that when
+    # a changelog was actually supplied via "Run workflow"; otherwise
+    # skip_waiting truly skips and testers see notes once processing ends.
+    changelog = ENV["CHANGELOG"].to_s.strip
+    upload_to_testflight(
+      api_key: api_key,
+      app_identifier: APP_IDENTIFIER,
+      skip_waiting_for_build_processing: true,
+      distribute_external: false,
+      changelog: changelog.empty? ? nil : changelog
+    )
+
+    UI.success("#{version} (#{build_number}) uploaded. It appears in TestFlight once Apple finishes processing.")
+  end
+end

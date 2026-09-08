@@ -24,3 +24,19 @@ Splitgate/Images/sniper_scrap.jpg
 Splitgate/Images/sniper_softpurple.jpg
 Splitgate/Images/sniper_sunflower.jpg
 Splitgate/Images/Untitled-1.psd
+
+# Signing material. The TestFlight workflow decodes secrets into these paths on
+# the runner, and a local `fastlane beta` does the same, so keep them out of git.
+*.p12
+*.p8
+AuthKey_*.p8
+**/fastlane/dist_cert.p12
+**/fastlane/AuthKey.p8
+**/fastlane/report.xml
+**/fastlane/README.md
+
+# Xcode build output (357 MB of derived data under MW4CamoTracker/build alone)
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/

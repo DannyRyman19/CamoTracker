@@ -1,0 +1,116 @@
+name: TestFlight
+
+# Triggers:
+#  - push a tag like v1.0.3  -> release build
+#  - "Run workflow" button   -> ad-hoc beta, with an optional changelog
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      changelog:
+        description: "What testers should know (optional)"
+        required: false
+        default: ""
+
+# Never let two runs upload the same build number.
+concurrency:
+  group: testflight
+  cancel-in-progress: false
+
+jobs:
+  testflight:
+    runs-on: macos-15
+    timeout-minutes: 45
+    # Signing material lives in this environment's secrets, not the repo's, so
+    # only runs on an allowed ref can read it. Add a required reviewer to the
+    # environment for a manual "ship it" gate.
+    environment: testflight
+    defaults:
+      run:
+        working-directory: MW4CamoTracker
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          # Match the version the project is developed against. If the runner
+          # image doesn't carry it yet, pin to the closest it lists at
+          # https://github.com/actions/runner-images.
+          xcode-version: "26.1"
+
+      - name: Xcode build identity
+        id: xcode
+        run: |
+          # The image can carry a point release (26.1.1) under the 26.1 pin,
+          # and a restored module cache built against the previous SDK fails
+          # the archive outright ("module.modulemap has been modified since
+          # the module file was built"), so the exact build goes in the
+          # DerivedData cache key.
+          id=$(xcodebuild -version | tr '\n' ' ' | tr -cd '[:alnum:] .' | tr ' ' '-')
+          echo "id=$id" >> "$GITHUB_OUTPUT"
+          echo "Xcode: $id"
+
+      - name: Read marketing version
+        id: ver
+        run: |
+          # The .xcodeproj is committed (no XcodeGen here), so the version
+          # comes straight out of the build settings.
+          v=$(grep -m1 'MARKETING_VERSION' MW4CamoTracker.xcodeproj/project.pbxproj \
+              | sed -E 's/.*= *([0-9.]+);.*/\1/')
+          test -n "$v" || { echo "could not read MARKETING_VERSION"; exit 1; }
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "App version: $v"
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true   # bundle install + cache from Gemfile.lock
+          working-directory: MW4CamoTracker
+
+      - name: Cache DerivedData
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData
+          key: deriveddata-${{ runner.os }}-${{ steps.xcode.outputs.id }}-${{ hashFiles('MW4CamoTracker/**/*.swift') }}
+          restore-keys: |
+            deriveddata-${{ runner.os }}-${{ steps.xcode.outputs.id }}-
+
+      - name: Decode signing secrets
+        env:
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          echo "$DIST_CERT_P12" | base64 --decode > fastlane/dist_cert.p12
+          test -s fastlane/dist_cert.p12 || { echo "DIST_CERT_P12 secret is empty"; exit 1; }
+          echo "$ASC_KEY_P8" | base64 --decode > fastlane/AuthKey.p8
+          test -s fastlane/AuthKey.p8 || { echo "ASC_KEY_P8 secret is empty"; exit 1; }
+
+      - name: Build and upload to TestFlight
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          APP_VERSION: ${{ steps.ver.outputs.version }}
+          CHANGELOG: ${{ github.event.inputs.changelog }}
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "180"
+          FASTLANE_SKIP_UPDATE_CHECK: "1"
+        run: bundle exec fastlane beta
+
+      - name: Clean up signing material
+        if: always()
+        run: rm -f fastlane/dist_cert.p12 fastlane/AuthKey.p8
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fastlane-logs
+          path: |
+            ~/Library/Logs/gym
+            MW4CamoTracker/fastlane/report.xml
+          if-no-files-found: ignore
+          retention-days: 7

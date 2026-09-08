@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
+		061AF3F322A05D82472AD02D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00C36E336BC0A943B5CBFB /* SplashView.swift */; };
+		05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613DA0B92D98434F953C3144 /* StatsView.swift */; };
+		0D06644637814F96A8671ADB /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F5D24163231262425B4C4 /* ItemDetailView.swift */; };
+		0EC35E8B8AA5FC37FC6C0D45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B68295CC227225DC6C73D4 /* ContentView.swift */; };
+		17C918F4298306D3B088A35A /* multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = D6D4CDA89124982F18FDAA90 /* multiplayer.json */; };
+		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
+		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
+		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
+		3A69BB325248C404557D3503 /* warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B063F6E81EF142F5E8BE3A /* warzone.json */; };
+		50ABA7D24D1C051E2996042A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E53AF5B26DF707884D61 /* Components.swift */; };
+		57E1E10B61A7903CDC964565 /* dmz.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE30F4DD23978D03C51021E /* dmz.json */; };
+		64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A420378B1E88B956B09DD1 /* AppDelegate.swift */; };
+		6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */; };
+		79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E6BE0838A8B785F45509FD /* WeaponListView.swift */; };
+		7A977FF5DB06808FC339171C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159B423149587E45D2B5F5A /* Navigation.swift */; };
+		7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A39FDC7376E2120B670A81 /* Models.swift */; };
+		817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 721F171FEBB0173685265D18 /* es.lproj */; };
+		99B580FC66079179AA15A449 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AE483D41E3B50947797343F0 /* de.lproj */; };
+		9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */; };
+		A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 82971534ADD2CA7EFF592137 /* weapons.json */; };
+		B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */; };
+		B5901F3F78BA7F7BA03893A4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D4216871DE1E40B303C87 /* OnboardingView.swift */; };
+		C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66A60FEF15496240122166 /* WeaponDetailView.swift */; };
+		CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D260791573B9EE8356EAC22 /* Theme.swift */; };
+		D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 895B374FC30B3DC7C15333E3 /* en.lproj */; };
+		D5F090744B737F258FDDFFA3 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 87E24B1D1EBDC96E0CE57DEE /* nl.lproj */; };
+		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
+		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
+		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		89EFA2A972DD69632EC339FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F00C36E336BC0A943B5CBFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		09E7E53AF5B26DF707884D61 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		1007D568D6EF400D6F8D97AB /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		1159B423149587E45D2B5F5A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		1F4D4216871DE1E40B303C87 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
+		4C66A60FEF15496240122166 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
+		55033CAA3C16581897393815 /* MW4CamoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MW4CamoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B063F6E81EF142F5E8BE3A /* warzone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = warzone.json; sourceTree = "<group>"; };
+		5D260791573B9EE8356EAC22 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		613DA0B92D98434F953C3144 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		61A420378B1E88B956B09DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		721F171FEBB0173685265D18 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
+		782CE3E33B1F795FA8614EBD /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
+		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
+		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
+		895B374FC30B3DC7C15333E3 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW4CamoTrackerApp.swift; sourceTree = "<group>"; };
+		97A39FDC7376E2120B670A81 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		AAE30F4DD23978D03C51021E /* dmz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dmz.json; sourceTree = "<group>"; };
+		AE483D41E3B50947797343F0 /* de.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
+		BB2F5D24163231262425B4C4 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefreshCoordinator.swift; sourceTree = "<group>"; };
+		D6D4CDA89124982F18FDAA90 /* multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = multiplayer.json; sourceTree = "<group>"; };
+		D712A377EABACE253BE27F61 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		362BB9C9C2DAE800B50DD628 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89EFA2A972DD69632EC339FF /* Assets.xcassets */,
+				AE483D41E3B50947797343F0 /* de.lproj */,
+				AAE30F4DD23978D03C51021E /* dmz.json */,
+				895B374FC30B3DC7C15333E3 /* en.lproj */,
+				721F171FEBB0173685265D18 /* es.lproj */,
+				D98CA8F37ED7635FBE6BF567 /* fr.lproj */,
+				E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */,
+				D6D4CDA89124982F18FDAA90 /* multiplayer.json */,
+				87E24B1D1EBDC96E0CE57DEE /* nl.lproj */,
+				55B063F6E81EF142F5E8BE3A /* warzone.json */,
+				82971534ADD2CA7EFF592137 /* weapons.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6C807CD8FE7BFAEC6E23B808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55033CAA3C16581897393815 /* MW4CamoTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C15235309C8F30D2EC1263E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				61A420378B1E88B956B09DD1 /* AppDelegate.swift */,
+				C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */,
+				9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */,
+				09E7E53AF5B26DF707884D61 /* Components.swift */,
+				E0B68295CC227225DC6C73D4 /* ContentView.swift */,
+				1007D568D6EF400D6F8D97AB /* DataService.swift */,
+				BB2F5D24163231262425B4C4 /* ItemDetailView.swift */,
+				D712A377EABACE253BE27F61 /* ItemListView.swift */,
+				97A39FDC7376E2120B670A81 /* Models.swift */,
+				9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */,
+				1159B423149587E45D2B5F5A /* Navigation.swift */,
+				1F4D4216871DE1E40B303C87 /* OnboardingView.swift */,
+				0F00C36E336BC0A943B5CBFB /* SplashView.swift */,
+				613DA0B92D98434F953C3144 /* StatsView.swift */,
+				782CE3E33B1F795FA8614EBD /* Suggestions.swift */,
+				5D260791573B9EE8356EAC22 /* Theme.swift */,
+				205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */,
+				4C66A60FEF15496240122166 /* WeaponDetailView.swift */,
+				82E6BE0838A8B785F45509FD /* WeaponListView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90A2718410341479B980B883 = {
+			isa = PBXGroup;
+			children = (
+				362BB9C9C2DAE800B50DD628 /* Resources */,
+				7C15235309C8F30D2EC1263E /* Sources */,
+				6C807CD8FE7BFAEC6E23B808 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D364569050CC8B19A2FF9A0 /* Build configuration list for PBXNativeTarget "MW4CamoTracker" */;
+			buildPhases = (
+				A0E0F70D53E5549FD19A3251 /* Sources */,
+				AC7EE0278A1B27F1D16C7CF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MW4CamoTracker;
+			packageProductDependencies = (
+			);
+			productName = MW4CamoTracker;
+			productReference = 55033CAA3C16581897393815 /* MW4CamoTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AE362CDEF8A5066AE2289CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 5AE66FB02B2850C1B301D422 /* Build configuration list for PBXProject "MW4CamoTracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 90A2718410341479B980B883;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C807CD8FE7BFAEC6E23B808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC7EE0278A1B27F1D16C7CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */,
+				E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */,
+				99B580FC66079179AA15A449 /* de.lproj in Resources */,
+				57E1E10B61A7903CDC964565 /* dmz.json in Resources */,
+				D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */,
+				817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */,
+				F175596303EDBA4F183B0D26 /* fr.lproj in Resources */,
+				17C918F4298306D3B088A35A /* multiplayer.json in Resources */,
+				D5F090744B737F258FDDFFA3 /* nl.lproj in Resources */,
+				3A69BB325248C404557D3503 /* warzone.json in Resources */,
+				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0E0F70D53E5549FD19A3251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */,
+				9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */,
+				B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */,
+				50ABA7D24D1C051E2996042A /* Components.swift in Sources */,
+				0EC35E8B8AA5FC37FC6C0D45 /* ContentView.swift in Sources */,
+				DEB65782F8907846529AFAB8 /* DataService.swift in Sources */,
+				0D06644637814F96A8671ADB /* ItemDetailView.swift in Sources */,
+				2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */,
+				258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */,
+				7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */,
+				7A977FF5DB06808FC339171C /* Navigation.swift in Sources */,
+				B5901F3F78BA7F7BA03893A4 /* OnboardingView.swift in Sources */,
+				061AF3F322A05D82472AD02D /* SplashView.swift in Sources */,
+				05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */,
+				2988474E82544904AE8410B8 /* Suggestions.swift in Sources */,
+				CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */,
+				6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */,
+				C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */,
+				79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		329645BF0A7F3FB43ABFB114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 44G72CWWEW;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65E0B083353C2C2840FB6C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		6FC6C1F4F4C5B934B3A1966A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		D561B2E6EC3BCA88E46906CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 44G72CWWEW;
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D364569050CC8B19A2FF9A0 /* Build configuration list for PBXNativeTarget "MW4CamoTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329645BF0A7F3FB43ABFB114 /* Debug */,
+				D561B2E6EC3BCA88E46906CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5AE66FB02B2850C1B301D422 /* Build configuration list for PBXProject "MW4CamoTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E0B083353C2C2840FB6C54 /* Debug */,
+				6FC6C1F4F4C5B934B3A1966A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AE362CDEF8A5066AE2289CE /* Project object */;
+}

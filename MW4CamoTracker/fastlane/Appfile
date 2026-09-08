@@ -1,0 +1,5 @@
+# Auth is via the App Store Connect API key (see Fastfile / CI secrets), so
+# no `apple_id` is needed here, only the identifiers.
+app_identifier("com.DannyRyman.MW4CamoTracker")
+itc_team_id(nil)
+team_id("44G72CWWEW")
