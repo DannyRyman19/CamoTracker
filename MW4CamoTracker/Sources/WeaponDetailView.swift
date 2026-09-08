@@ -93,6 +93,14 @@ struct WeaponDetailView: View {
                     MasteryTier3Row(mode: mode, weapon: weapon)
                 }
                 .listRowBackground(Color.appSurface)
+
+                // Camo data is hand-entered from a game that keeps changing,
+                // so a one-tap report with the weapon and mode already filled
+                // in is the difference between a fixable report and "one of
+                // the guns is wrong".
+                ReportIssueMenu(weapon: weapon, mode: mode, category: category?.name.resolved())
+                    .listRowInsets(EdgeInsets(top: 14, leading: 12, bottom: 24, trailing: 12))
+                    .listRowBackground(Color.clear)
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)

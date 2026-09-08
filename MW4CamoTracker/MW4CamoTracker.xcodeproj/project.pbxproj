@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D69692F3FBBF248C85FC8F56 /* SupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE011B12DC06CD3532E4EFB /* SupportMail.swift */; };
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 		061AF3F322A05D82472AD02D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00C36E336BC0A943B5CBFB /* SplashView.swift */; };
 		05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613DA0B92D98434F953C3144 /* StatsView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6FE011B12DC06CD3532E4EFB /* SupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMail.swift; sourceTree = "<group>"; };
 		89EFA2A972DD69632EC339FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F00C36E336BC0A943B5CBFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		09E7E53AF5B26DF707884D61 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				1159B423149587E45D2B5F5A /* Navigation.swift */,
 				1F4D4216871DE1E40B303C87 /* OnboardingView.swift */,
 				0F00C36E336BC0A943B5CBFB /* SplashView.swift */,
+				6FE011B12DC06CD3532E4EFB /* SupportMail.swift */,
 				613DA0B92D98434F953C3144 /* StatsView.swift */,
 				782CE3E33B1F795FA8614EBD /* Suggestions.swift */,
 				5D260791573B9EE8356EAC22 /* Theme.swift */,
@@ -223,6 +226,7 @@
 				7A977FF5DB06808FC339171C /* Navigation.swift in Sources */,
 				B5901F3F78BA7F7BA03893A4 /* OnboardingView.swift in Sources */,
 				061AF3F322A05D82472AD02D /* SplashView.swift in Sources */,
+				D69692F3FBBF248C85FC8F56 /* SupportMail.swift in Sources */,
 				05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */,
 				2988474E82544904AE8410B8 /* Suggestions.swift in Sources */,
 				CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */,
