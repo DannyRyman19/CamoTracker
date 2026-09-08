@@ -114,4 +114,33 @@ platform :ios do
 
     UI.success("#{version} (#{build_number}) uploaded. It appears in TestFlight once Apple finishes processing.")
   end
+
+  desc "Push App Store listing text and screenshots (no binary)"
+  lane :metadata do
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_P8"),
+      is_key_content_base64: true,
+      in_house: false
+    )
+
+    # Screenshots are optional so this lane still works before
+    # Tools/screenshots/make.sh has been run.
+    shots = File.expand_path("screenshots", __dir__)
+    has_shots = Dir.exist?(shots) && !Dir.glob("#{shots}/**/*.png").empty?
+    UI.important("No screenshots in fastlane/screenshots, skipping those") unless has_shots
+
+    upload_to_app_store(
+      api_key: api_key,
+      app_identifier: APP_IDENTIFIER,
+      skip_binary_upload: true,
+      skip_screenshots: !has_shots,
+      overwrite_screenshots: has_shots,
+      # Nothing here submits for review; it only updates the draft listing.
+      submit_for_review: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+  end
 end

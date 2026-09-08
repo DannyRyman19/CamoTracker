@@ -6,59 +6,163 @@
 @font-face {
     font-family: hitmarkerText;
     src: url(HitmarkerText-VF.ttf);
+    font-display: swap;
 }
 
+/* Tokens mirror the apps' Theme.swift so the site and the trackers read as one
+   family. The accent stays the established Camo Tracker orange rather than any
+   one game's colour, since this site covers all of them. */
+:root {
+    --ct-bg:      #0B0F0D;
+    --ct-surface: #151A17;
+    --ct-border:  rgba(139, 149, 141, 0.25);
+    --ct-ink:     #EDEFEA;
+    --ct-muted:   #8B958D;
+    --ct-accent:  #e9712d;
+}
 
-/* Base styles */
+/* The nebula sits fixed behind everything and heavily darkened, so long pages
+   scroll over a steady backdrop instead of dragging a busy image with them. */
+body {
+    background-color: var(--ct-bg);
+    background-image:
+        linear-gradient(rgba(11, 15, 13, 0.82), rgba(11, 15, 13, 0.94)),
+        url("/assets/img/nebula.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    color: var(--ct-ink);
+}
+
+/* Cayman ships a light page; repaint the shell it wraps content in. */
+.main-content {
+    background: transparent;
+    color: var(--ct-ink);
+
+    h1, h2, h3, h4 {
+        font-family: hitmarkerText;
+        color: var(--ct-ink);
+        letter-spacing: 0.01em;
+    }
+    h1, h2 { color: var(--ct-accent); }
+
+    a { color: var(--ct-accent); }
+    a:hover { color: #ff8f52; }
+
+    blockquote {
+        color: var(--ct-muted);
+        border-left-color: var(--ct-accent);
+    }
+    code, pre {
+        background-color: var(--ct-surface);
+        color: var(--ct-ink);
+        border-radius: 8px;
+    }
+    table {
+        th, td { border-color: var(--ct-border); }
+        th { background: var(--ct-surface); color: var(--ct-ink); }
+        td { background: rgba(21, 26, 23, 0.6); }
+    }
+    hr { background-color: var(--ct-border); }
+}
+
+p, li {
+    font-family: hitmarkerText;
+    color: var(--ct-ink);
+}
+
+/* Header: the nebula again, cropped tighter, with a dark wash so nav reads. */
+.page-header {
+    background-color: var(--ct-bg);
+    background-image:
+        linear-gradient(rgba(11, 15, 13, 0.55), rgba(11, 15, 13, 0.9)),
+        url("/assets/img/nebula.jpg");
+    background-size: cover;
+    background-position: center 35%;
+    border-bottom: 1px solid var(--ct-border);
+    padding: 2.5rem 1rem 2rem;
+}
+
+.project-name {
+    font-family: hitmarkerText;
+    color: var(--ct-ink);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.2rem;
+}
+
+.project-tagline {
+    color: var(--ct-muted);
+    font-family: hitmarkerText;
+    opacity: 1;
+}
+
+/* Nav buttons as squared-off panels rather than Cayman's translucent pills. */
+.btn {
+    font-family: hitmarkerText;
+    color: var(--ct-ink);
+    background: rgba(21, 26, 23, 0.75);
+    border: 1px solid var(--ct-border);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    margin: 0.25rem 0.15rem;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+        background: rgba(233, 113, 45, 0.14);
+        border-color: rgba(233, 113, 45, 0.55);
+        color: var(--ct-ink);
+    }
+}
+
+/* App grid. Was a rigid 3-across flex row that squeezed every new game
+   thinner; wrapping keeps the tiles one size however many there are. */
 .table-container {
     display: flex;
-    justify-content: space-between;
-  }
-  
-  .column {
-    flex-basis: calc(33.33% - 20px); /* Adjust this for spacing */
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  .header,
-  .data {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 8px 0;
+}
+
+.column {
+    flex: 0 0 200px;
+    padding: 14px 10px;
+    background: var(--ct-surface);
+    border: 1px solid var(--ct-border);
+    border-radius: 8px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+        border-color: rgba(233, 113, 45, 0.55);
+        transform: translateY(-2px);
+    }
+}
+
+.header, .data {
     text-align: center;
     font-family: hitmarkerText;
-    color: #000000;
-  }
-  
-  /* Media query for mobile layout */
-  @media (max-width: 767px) {
-    .table-container {
-      flex-direction: column;
-    }
-    .column {
-      border: none;
-      margin-bottom: 20px;
-    }
-  }
+    color: var(--ct-ink);
+}
 
-.main-content h2 {
-    color: #e9712d;
+.header {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.site-footer {
+    border-top: 1px solid var(--ct-border);
+    color: var(--ct-muted);
     font-family: hitmarkerText;
-  }
 
-.main-content h1 {
-    color: #e9712d;
-    font-family: hitmarkerText;
-  }
+    a { color: var(--ct-accent); }
+}
+.site-footer-owner, .site-footer-credits { color: var(--ct-muted); }
 
-p {
-    font-family: hitmarkerText;
-    color: #000000;
-  }
-
-  .project-name{
-    font-family: hitmarkerText;
-  }
-
-  .btn{
-    font-family: hitmarkerText;
-  }
-
+@media (max-width: 767px) {
+    .table-container { flex-direction: row; }
+    .column { flex: 0 0 45%; }
+    /* background-attachment: fixed is janky on iOS Safari and forces a
+       full-size repaint on every scroll frame. */
+    body { background-attachment: scroll; }
+}
