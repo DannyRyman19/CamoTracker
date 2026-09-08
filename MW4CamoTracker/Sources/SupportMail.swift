@@ -103,6 +103,9 @@ enum SupportMail {
 /// "Wrong challenge" opens a submenu of the weapon's camos, because a report
 /// saying a challenge is wrong is not actionable without knowing which one,
 /// and picking it here beats asking for it in a reply.
+///
+/// `compact` renders just the glyph for a toolbar; the full-width card form is
+/// kept for anywhere it sits inline in a list.
 struct ReportIssueMenu: View {
     let weapon: WeaponEntry
     let mode: AppMode
@@ -110,6 +113,7 @@ struct ReportIssueMenu: View {
     /// This mode's camos for this weapon. Empty is fine; the challenge entry
     /// then behaves like every other kind.
     var camos: [ChallengeItem] = []
+    var compact = false
 
     @Environment(\.openURL) private var openURL
 
@@ -133,17 +137,22 @@ struct ReportIssueMenu: View {
                 }
             }
         } label: {
-            HStack(spacing: 8) {
+            if compact {
                 Image(systemName: "exclamationmark.bubble")
-                    .font(.system(size: 12, weight: .semibold))
-                Text("mw4.ui.report.title".localized())
-                    .font(.system(size: 12, weight: .semibold))
-                Spacer()
+                    .accessibilityLabel("mw4.ui.report.title".localized())
+            } else {
+                HStack(spacing: 8) {
+                    Image(systemName: "exclamationmark.bubble")
+                        .font(.system(size: 12, weight: .semibold))
+                    Text("mw4.ui.report.title".localized())
+                        .font(.system(size: 12, weight: .semibold))
+                    Spacer()
+                }
+                .foregroundStyle(Color.appInkMuted)
+                .padding(12)
+                .contentShape(Rectangle())
+                .borderedCard()
             }
-            .foregroundStyle(Color.appInkMuted)
-            .padding(12)
-            .contentShape(Rectangle())
-            .borderedCard()
         }
     }
 
