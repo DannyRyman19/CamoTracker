@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "MW4 Camo Tracker"
+accent: "#ffd000"
 description : Modern Warfare 4, MW4, Warzone, DMZ, Multiplayer, camo tracker 2026, Mercurial Drift, Polyatomic Reforged, Orion Reforged, Parallax, Damascus Reforged, Empyros, Chiral, Ripple Tide, Helio
 ---
 <a href="https://camotracker.djr.li/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="MW4 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
@@ -32,6 +33,6 @@ Available in English, French, Spanish, German and Dutch.
 The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are the property of their respective owners. All In-Game Images are the sole property of Activision, Sledgehammer Games, Infinity Ward, Raven Software, Treyarch or their respective owners. Any such Content is used for educational purposes only!
 
 # Need Help, Support or Have Feedback?
-Email [rymandanny@gmail.com](mailto:rymandanny@gmail.com) and I will get back to you.
+If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
 
 [Privacy Policy](/privacy-policy)

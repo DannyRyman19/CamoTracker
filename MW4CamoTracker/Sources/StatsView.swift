@@ -21,6 +21,10 @@ struct StatsView: View {
                         .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
                         .listRowBackground(Color.clear)
                 }
+
+                SupportRow()
+                    .listRowInsets(EdgeInsets(top: 14, leading: 12, bottom: 24, trailing: 12))
+                    .listRowBackground(Color.clear)
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
@@ -73,6 +77,34 @@ private struct OverallStatsHero: View {
         }
         .padding(.vertical, 20)
         .borderedCard()
+    }
+}
+
+/// Support contact, parked at the foot of Stats. It lives here rather than on
+/// a mode tab because those are for tracking and this is housekeeping, and the
+/// list already ends in a natural gap.
+private struct SupportRow: View {
+    private static let address = "support@camotracker.djr.li"
+
+    var body: some View {
+        Link(destination: URL(string: "mailto:\(Self.address)")!) {
+            HStack(spacing: 8) {
+                Image(systemName: "envelope")
+                    .font(.system(size: 12, weight: .semibold))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("mw4.ui.support".localized())
+                        .font(.system(size: 12, weight: .semibold))
+                    Text(Self.address)
+                        .font(.system(size: 12, design: .monospaced))
+                }
+                Spacer()
+            }
+            .foregroundStyle(Color.appInkMuted)
+            .padding(12)
+            .contentShape(Rectangle())
+            .borderedCard()
+        }
+        .buttonStyle(.plain)
     }
 }
 
