@@ -51,7 +51,8 @@ enum SupportMail {
     }
 
     /// Pre-filled with everything needed to fix the row: which weapon, which
-    /// mode, what the app currently stores, and where its art comes from.
+    /// mode, and what the app currently stores. Deliberately no URLs or host
+    /// names, just the image filename.
     static func url(kind: Kind, weapon: WeaponEntry, mode: AppMode,
                     category: String? = nil, camo: ChallengeItem? = nil) -> URL? {
         var lines = [
@@ -62,7 +63,10 @@ enum SupportMail {
         ]
         if let category { lines.append("Category: \(category)") }
         lines.append("Max level in app: \(weapon.maxLevel)")
-        lines.append("Image URL: \(weapon.imageURL ?? "none")")
+        // Filename only. The full URL would put the CDN's host and directory
+        // layout in every report, and the name alone is enough to find the asset.
+        let imageName = weapon.imageURL.flatMap { URL(string: $0)?.lastPathComponent } ?? "none"
+        lines.append("Image: \(imageName)")
 
         if let camo {
             lines.append("Camo: \(camo.name.resolved())")
