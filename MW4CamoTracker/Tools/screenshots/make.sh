@@ -40,7 +40,12 @@ done
 # capture onto the 2048x2732 canvas Apple asks for.
 if [[ $DEVICE == ipad ]]; then
   SIM_NAME_OVERRIDE="iPad Pro 13-inch (M4)"
-  SHOT_PREFIX="ipad_"
+  # The 12.9" 2nd-gen and 3rd-gen App Store slots are BOTH 2048x2732, so
+  # deliver cannot tell them apart by size and resolves the tie on the
+  # filename (see Deliver::AppScreenshot.resolve_ipadpro_conflict_if_needed).
+  # Without this marker the shots land in APP_IPAD_PRO_129 and the submission
+  # is still refused for a missing APP_IPAD_PRO_3GEN_129.
+  SHOT_PREFIX="IPAD_PRO_3GEN_129_"
 else
   SIM_NAME_OVERRIDE=""
   SHOT_PREFIX=""
