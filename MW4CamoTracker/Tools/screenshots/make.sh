@@ -1,20 +1,49 @@
 #!/bin/bash
 # make.sh - build App Store screenshots end to end.
 #
-#   Tools/screenshots/make.sh [out-dir]
+#   Tools/screenshots/make.sh [out-dir]              English only (default)
+#   Tools/screenshots/make.sh --all-languages        every shipped locale
+#   Tools/screenshots/make.sh --lang de [out-dir]    one language
 #
 # Builds the app for the simulator, boots an iPhone 17 Pro Max, seeds a
 # realistic save, drives the DEBUG screenshot harness (SS_SCREEN launch env,
 # see ContentView.swift) to four screens, captures each, and composites them
 # into 1284x2778 marketing shots via frame.swift.
 #
-# Raw captures land in <out>/raw, framed shots in <out>/framed.
+# The app is launched with `-AppleLanguages (<code>)`, the same lever Xcode's
+# "Application Language" scheme option pulls, so the UI comes out in that
+# language (the camo/weapon data is localised through Localizable.strings).
+#
+# --all-languages writes straight into fastlane/screenshots/<locale>/, numbered
+# so `fastlane metadata` uploads them in the order the shots are listed rather
+# than alphabetically. Anything else keeps <out>/raw and <out>/framed.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
-OUT="${1:-$HOME/Desktop/MW4CamoTracker-screenshots}"
-RAW="$OUT/raw"; FRAMED="$OUT/framed"
-mkdir -p "$RAW" "$FRAMED"
+LANGS=(en)
+ALL=0
+OUT=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --all-languages) LANGS=(en de es fr nl); ALL=1; shift ;;
+    --lang) LANGS=("$2"); shift 2 ;;
+    *) OUT="$1"; shift ;;
+  esac
+done
+OUT="${OUT:-$HOME/Desktop/MW4CamoTracker-screenshots}"
+
+asc_locale () { # <lang> -> App Store Connect locale directory
+  case "$1" in
+    en) echo "en-US" ;; de) echo "de-DE" ;; es) echo "es-ES" ;;
+    fr) echo "fr-FR" ;; nl) echo "nl-NL" ;; *) echo "$1" ;;
+  esac
+}
+posix_locale () { # <lang> -> the AppleLocale the region formats follow
+  case "$1" in
+    en) echo "en_US" ;; de) echo "de_DE" ;; es) echo "es_ES" ;;
+    fr) echo "fr_FR" ;; nl) echo "nl_NL" ;; *) echo "$1" ;;
+  esac
+}
 
 SIM_NAME="iPhone 17 Pro Max"
 BID="com.DannyRyman.MW4CamoTracker"
@@ -63,24 +92,44 @@ xcrun simctl spawn "$UDID" launchctl stop com.apple.cfprefsd.xpc.daemon 2>/dev/n
 sleep 2
 /usr/bin/python3 Tools/screenshots/seed.py "$DATA/Library/Preferences/$BID.plist"
 
-shot () { # <screen> <name> [category-id] [weapon-id]
-  xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true; sleep 1
-  env SIMCTL_CHILD_SS_SCREEN="$1" SIMCTL_CHILD_SS_CAT="${3:-}" SIMCTL_CHILD_SS_WEAPON="${4:-}" \
-    xcrun simctl launch "$UDID" "$BID" >/dev/null
-  # Long enough for the weapon art to come down off the CDN; a half-loaded
-  # list of placeholder scopes is the one thing that ruins these shots.
-  sleep 12
-  xcrun simctl io "$UDID" screenshot "$RAW/$2.png" >/dev/null
-  echo "    $2"
-}
-echo "==> capture"
-shot multiplayer multiplayer
-shot stats       stats
-shot warzone     warzone
-shot dmz         dmz
-shot multiplayer category 0 ""    # Assault Rifles list
-shot multiplayer weapon   "" 3    # Kastov 762 detail
+for LANG_CODE in "${LANGS[@]}"; do
+  if [[ $ALL -eq 1 ]]; then
+    RAW="build/screenshots-raw/$LANG_CODE"
+    FRAMED="fastlane/screenshots/$(asc_locale "$LANG_CODE")"
+  else
+    RAW="$OUT/raw"; FRAMED="$OUT/framed"
+  fi
+  mkdir -p "$RAW" "$FRAMED"
 
-echo "==> frame"
-swift Tools/screenshots/frame.swift "$RAW" "$FRAMED"
-echo "==> done -> $FRAMED"
+  shot () { # <screen> <name> [category-id] [weapon-id]
+    xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true; sleep 1
+    env SIMCTL_CHILD_SS_SCREEN="$1" SIMCTL_CHILD_SS_CAT="${3:-}" SIMCTL_CHILD_SS_WEAPON="${4:-}" \
+      xcrun simctl launch "$UDID" "$BID" \
+        -AppleLanguages "($LANG_CODE)" -AppleLocale "$(posix_locale "$LANG_CODE")" >/dev/null
+    # Long enough for the weapon art to come down off the CDN; a half-loaded
+    # list of placeholder scopes is the one thing that ruins these shots.
+    sleep 12
+    xcrun simctl io "$UDID" screenshot "$RAW/$2.png" >/dev/null
+    echo "    $2"
+  }
+  echo "==> capture [$LANG_CODE]"
+  shot multiplayer multiplayer
+  shot stats       stats
+  shot warzone     warzone
+  shot dmz         dmz
+  shot multiplayer category 0 ""    # Assault Rifles list
+  shot multiplayer weapon   "" 3    # Kastov 762 detail
+
+  echo "==> frame [$LANG_CODE] -> $FRAMED"
+  swift Tools/screenshots/frame.swift "$RAW" "$FRAMED" "$LANG_CODE"
+
+  if [[ $ALL -eq 1 ]]; then
+    i=1
+    for n in multiplayer stats warzone dmz category weapon; do
+      mv "$FRAMED/$n.png" "$FRAMED/${i}_$n.png"
+      i=$((i + 1))
+    done
+  fi
+done
+
+echo "==> done"

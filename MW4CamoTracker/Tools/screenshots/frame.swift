@@ -2,7 +2,12 @@
 // shots: a Hitmarker headline over the logo's own amber nebula, with the screen
 // floated on a rounded card.
 //
-//   swift Tools/screenshots/frame.swift <rawDir> <outDir>
+//   swift Tools/screenshots/frame.swift <rawDir> <outDir> [lang]
+//
+// `lang` (en/de/es/fr/nl, default en) picks the headline set. Hitmarker is
+// condensed but not infinitely so, and the translated lines run longer than
+// the English, so each shot is measured and its pair scaled down together
+// when either line would otherwise cross the margin.
 //
 // Expects <rawDir>/{multiplayer,warzone,dmz,stats}.png from an iPhone 17 Pro
 // Max. Writes 1284x2778 PNGs (App Store 6.7"), exact pixels.
@@ -23,8 +28,11 @@ let W = 1284, H = 2778
 let Wf = CGFloat(W), Hf = CGFloat(H)
 
 let args = CommandLine.arguments
-guard args.count == 3 else { fputs("usage: swift frame.swift <rawDir> <outDir>\n", stderr); exit(1) }
+guard args.count == 3 || args.count == 4 else {
+    fputs("usage: swift frame.swift <rawDir> <outDir> [lang]\n", stderr); exit(1)
+}
 let rawDir = args[1], outDir = args[2]
+let lang = args.count == 4 ? args[3] : "en"
 try? FileManager.default.createDirectory(atPath: outDir, withIntermediateDirectories: true)
 
 func rgb(_ hex: UInt32, _ a: CGFloat = 1) -> CGColor {
@@ -122,18 +130,56 @@ let backdrop: CGImage = {
 
 struct Shot {
     let name: String
-    let headline: [String]
     var cropTop: CGFloat = 0     // fraction trimmed off the top of the raw shot
     var cropBot: CGFloat = 0     // fraction trimmed off the bottom
 }
 let shots = [
-    Shot(name: "multiplayer", headline: ["EVERY WEAPON", "EVERY CAMO"]),
-    Shot(name: "stats",       headline: ["WATCH IT", "ALL ADD UP"]),
-    Shot(name: "warzone",     headline: ["ONE APP", "ALL THREE MODES"]),
-    Shot(name: "dmz",         headline: ["DMZ OBJECTIVES", "COVERED TOO"]),
-    Shot(name: "category",    headline: ["BROWSE BY", "WEAPON CLASS"]),
-    Shot(name: "weapon",      headline: ["EVERY CHALLENGE", "PER GUN"]),
+    Shot(name: "multiplayer"),
+    Shot(name: "stats"),
+    Shot(name: "warzone"),
+    Shot(name: "dmz"),
+    Shot(name: "category"),
+    Shot(name: "weapon"),
 ]
+
+// Two lines per shot, upper case, kept as short as each language allows so
+// the type stays at full size. Same order as `shots`.
+let headlines: [String: [[String]]] = [
+    "en": [["EVERY WEAPON", "EVERY CAMO"],
+           ["WATCH IT", "ALL ADD UP"],
+           ["ONE APP", "ALL THREE MODES"],
+           ["DMZ OBJECTIVES", "COVERED TOO"],
+           ["BROWSE BY", "WEAPON CLASS"],
+           ["EVERY CHALLENGE", "PER GUN"]],
+    "de": [["JEDE WAFFE", "JEDE TARNUNG"],
+           ["SIEH ZU", "WIE ES AUFGEHT"],
+           ["EINE APP", "ALLE DREI MODI"],
+           ["DMZ-ZIELE", "AUCH DABEI"],
+           ["NACH KLASSE", "STÖBERN"],
+           ["JEDE AUFGABE", "PRO WAFFE"]],
+    "es": [["CADA ARMA", "CADA CAMO"],
+           ["MIRA CÓMO", "TODO SUMA"],
+           ["UNA APP", "LOS TRES MODOS"],
+           ["OBJETIVOS DMZ", "TAMBIÉN"],
+           ["EXPLORA POR", "CLASE DE ARMA"],
+           ["CADA RETO", "POR ARMA"]],
+    "fr": [["CHAQUE ARME", "CHAQUE CAMO"],
+           ["REGARDEZ", "TOUT MONTER"],
+           ["UNE APP", "LES TROIS MODES"],
+           ["OBJECTIFS DMZ", "AUSSI"],
+           ["PARCOURIR PAR", "CLASSE D'ARME"],
+           ["CHAQUE DÉFI", "PAR ARME"]],
+    "nl": [["ELK WAPEN", "ELKE CAMO"],
+           ["ZIE HET", "ALLEMAAL OPTELLEN"],
+           ["ÉÉN APP", "ALLE DRIE MODI"],
+           ["DMZ-DOELEN", "OOK ERBIJ"],
+           ["BLADER PER", "WAPENKLASSE"],
+           ["ELKE UITDAGING", "PER WAPEN"]],
+]
+guard let langHeadlines = headlines[lang], langHeadlines.count == shots.count else {
+    fputs("no headline set for \(lang) (have: \(headlines.keys.sorted().joined(separator: ", ")))\n", stderr)
+    exit(1)
+}
 
 func makeFont(_ size: CGFloat) -> CTFont {
     let base = CTFontCreateWithGraphicsFont(cgFont, size, nil, nil)
@@ -143,7 +189,28 @@ func makeFont(_ size: CGFloat) -> CTFont {
     return CTFontCreateCopyWithAttributes(base, size, nil, desc)
 }
 
-func render(_ shot: Shot) {
+/// Every character has to exist in Hitmarker: CoreText would otherwise
+/// silently substitute another face for the accented caps and one word would
+/// come out in the wrong type. Cheaper to catch here than on the upload.
+func checkGlyphs() {
+    let probe = makeFont(96)
+    for (i, lines) in langHeadlines.enumerated() {
+        for line in lines {
+            for ch in line.unicodeScalars where ch != " " {
+                var chars = Array(String(ch).utf16)
+                var glyphs = [CGGlyph](repeating: 0, count: chars.count)
+                let ok = CTFontGetGlyphsForCharacters(probe, &chars, &glyphs, chars.count)
+                if !ok || glyphs.contains(0) {
+                    fputs("Hitmarker has no glyph for '\(ch)' in \(shots[i].name) (\(lang))\n", stderr)
+                    exit(1)
+                }
+            }
+        }
+    }
+}
+checkGlyphs()
+
+func render(_ shot: Shot, _ headline: [String]) {
     guard let rawFull = loadCG("\(rawDir)/\(shot.name).png") else {
         fputs("missing \(shot.name).png\n", stderr); return
     }
@@ -154,10 +221,20 @@ func render(_ shot: Shot) {
 
     // Headline: Hitmarker at 700, centred, with the second line in gold so the
     // pair reads as one lockup rather than two equal-weight lines.
-    let font = makeFont(96)
-    let lineH: CGFloat = 108
+    // Sized as a pair so both lines keep the same type size, shrunk together
+    // only as far as the longest needs to clear the margin.
+    let baseSize: CGFloat = 96
+    let maxTextW = Wf - 2 * 72
+    let probe = makeFont(baseSize)
+    let widest = headline.map { line -> CGFloat in
+        let a = NSAttributedString(string: line, attributes: [.font: probe, .kern: 1.5])
+        return CTLineGetBoundsWithOptions(CTLineCreateWithAttributedString(a), .useOpticalBounds).width
+    }.max() ?? 0
+    let scale = widest > maxTextW ? maxTextW / widest : 1
+    let font = makeFont(baseSize * scale)
+    let lineH: CGFloat = 108 * scale
     var y = Hf - 210
-    for (index, line) in shot.headline.enumerated() {
+    for (index, line) in headline.enumerated() {
         let attr = NSAttributedString(string: line, attributes: [
             .font: font,
             .foregroundColor: index == 0 ? appInk : accent,
@@ -211,4 +288,4 @@ func render(_ shot: Shot) {
     print("wrote \(outDir)/\(shot.name).png  \(out.width)x\(out.height)")
 }
 
-for s in shots { render(s) }
+for (i, s) in shots.enumerated() { render(s, langHeadlines[i]) }
