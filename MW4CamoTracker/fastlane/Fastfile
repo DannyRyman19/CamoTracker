@@ -71,22 +71,26 @@ platform :ios do
       fail_on_name_taken: false, readonly: false
     )
 
-    # The archive can still sign automatically; it just needs the API key
-    # passed to xcodebuild directly, since gym does not forward it to the
-    # archive invocation.
-    p8 = File.expand_path("AuthKey.p8", __dir__)
-    p8 = api_key[:key_filepath] if !File.exist?(p8) && api_key[:key_filepath]
-    archive_auth = "-allowProvisioningUpdates " \
-                   "-authenticationKeyPath #{p8} " \
-                   "-authenticationKeyID #{ENV.fetch('ASC_KEY_ID')} " \
-                   "-authenticationKeyIssuerID #{ENV.fetch('ASC_ISSUER_ID')}"
+    # The archive signs manually, against the profile fetched just above.
+    # It used to archive under `-allowProvisioningUpdates` with the project's
+    # automatic signing, and because every CI run starts on a fresh empty
+    # keychain, each one provisioned itself a NEW development certificate.
+    # The sibling VinewoodVault app filled its account cap that way (ten
+    # "Created via API" certificates) until the archive started failing with
+    # "Choose a certificate to revoke". Nothing here can mint one now.
+    #
+    # This app has a single target, so these settings can be passed as build
+    # settings for the whole archive without needing per-target pinning.
+    signing = "CODE_SIGN_STYLE=Manual " \
+              "CODE_SIGN_IDENTITY=\"Apple Distribution\" " \
+              "PROVISIONING_PROFILE_SPECIFIER=\"#{PROFILE_NAME}\""
 
     build_app(
       project: XCODE_PROJECT,
       scheme: XCODE_SCHEME,
       configuration: "Release",
       export_method: "app-store",
-      xcargs: "#{archive_auth} CURRENT_PROJECT_VERSION=#{build_number}",
+      xcargs: "#{signing} CURRENT_PROJECT_VERSION=#{build_number}",
       export_xcargs: "",
       export_options: {
         signingStyle: "manual",
