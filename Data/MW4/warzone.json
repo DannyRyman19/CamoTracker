@@ -1,0 +1,1548 @@
+{
+  "version": "0.6.1",
+  "mode": "warzone",
+  "weaponCamos": [
+    {
+      "weaponId": 0,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 1,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 2,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 3,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 4,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 5,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 6,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 7,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 8,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 9,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 10,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 11,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 12,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 13,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 14,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 15,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 16,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 17,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 18,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 19,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Verdant",
+            "fr": "Verdoyant",
+            "es": "Verde",
+            "de": "Grün",
+            "nl": "Groen"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "wins",
+            "description": {
+              "en": "Win 3 matches with this weapon equipped.",
+              "fr": "Remportez 3 matchs avec cette arme équipée.",
+              "es": "Gana 3 partidas con esta arma equipada.",
+              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
+              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Toxic",
+            "fr": "Toxique",
+            "es": "Tóxico",
+            "de": "Toxisch",
+            "nl": "Toxisch"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 10,
+            "unit": "gas_kills",
+            "description": {
+              "en": "Get 10 kills while the gas is closing in.",
+              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
+              "es": "Consigue 10 bajas mientras el gas se cierra.",
+              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
+              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Irradiated",
+            "fr": "Irradié",
+            "es": "Irradiado",
+            "de": "Verstrahlt",
+            "nl": "Bestraald"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "all_tiers",
+            "description": {
+              "en": "Complete every Warzone camo above for this weapon.",
+              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
+              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
+              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
+              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+        }
+      ]
+    }
+  ],
+  "objectives": [],
+  "_note": "Fake/placeholder camo tiers, shared across every weapon in the real MW4 roster. Replace once MW4's real Warzone camo names (and art) are announced."
+}

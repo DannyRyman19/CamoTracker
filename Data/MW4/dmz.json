@@ -1,0 +1,260 @@
+{
+  "version": "0.5.0",
+  "mode": "dmz",
+  "weaponCamos": [],
+  "objectives": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Faction Missions",
+        "fr": "Missions de Faction",
+        "es": "Misiones de Facción",
+        "de": "Fraktionsmissionen",
+        "nl": "Factiemissies"
+      },
+      "items": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Recon the Chemical Plant",
+            "fr": "Reconnaître l'Usine Chimique",
+            "es": "Reconocer la Planta Química",
+            "de": "Die Chemiefabrik aufklären",
+            "nl": "Verken de Chemische Fabriek"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 1,
+            "unit": "missions",
+            "description": {
+              "en": "Investigate the chemical plant and extract.",
+              "fr": "Enquêtez sur l'usine chimique et exfiltrez-vous.",
+              "es": "Investiga la planta química y extrae.",
+              "de": "Untersuche die Chemiefabrik und exfiltriere.",
+              "nl": "Onderzoek de chemische fabriek en exfiltreer."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Recover Black Mous Intel",
+            "fr": "Récupérer les Renseignements de Black Mous",
+            "es": "Recuperar Inteligencia de Black Mous",
+            "de": "Black-Mous-Informationen bergen",
+            "nl": "Herstel Black Mous-inlichtingen"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "missions",
+            "description": {
+              "en": "Recover the data drive from a Black Mous convoy.",
+              "fr": "Récupérez le disque de données d'un convoi Black Mous.",
+              "es": "Recupera la unidad de datos de un convoy de Black Mous.",
+              "de": "Birg das Datenlaufwerk aus einem Black-Mous-Konvoi.",
+              "nl": "Herstel de gegevensdrive uit een Black Mous-konvooi."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Eliminate the Konni Cell Leader",
+            "fr": "Éliminer le Chef de Cellule Konni",
+            "es": "Eliminar al Líder de Célula Konni",
+            "de": "Den Konni-Zellenführer eliminieren",
+            "nl": "Elimineer de Konni-celleider"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "eliminations",
+            "description": {
+              "en": "Locate and eliminate the Konni cell leader.",
+              "fr": "Localisez et éliminez le chef de cellule Konni.",
+              "es": "Localiza y elimina al líder de célula Konni.",
+              "de": "Finde und eliminiere den Konni-Zellenführer.",
+              "nl": "Lokaliseer en elimineer de Konni-celleider."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "Exfil Contracts",
+        "fr": "Contrats d'Exfiltration",
+        "es": "Contratos de Exfiltración",
+        "de": "Exfil-Aufträge",
+        "nl": "Exfil-Contracten"
+      },
+      "items": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Secure Supply Drops",
+            "fr": "Sécuriser des Ravitaillements",
+            "es": "Asegurar Suministros",
+            "de": "Versorgungsabwürfe sichern",
+            "nl": "Beveilig Bevoorradingsdroppings"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 3,
+            "unit": "supply_drops",
+            "description": {
+              "en": "Secure 3 supply drops in a single deployment.",
+              "fr": "Sécurisez 3 ravitaillements en un seul déploiement.",
+              "es": "Asegura 3 suministros en un solo despliegue.",
+              "de": "Sichere 3 Versorgungsabwürfe in einem einzigen Einsatz.",
+              "nl": "Beveilig 3 bevoorradingsdroppings in één inzet."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Extract a Rare Weapon",
+            "fr": "Exfiltrer une Arme Rare",
+            "es": "Extraer un Arma Rara",
+            "de": "Eine seltene Waffe exfiltrieren",
+            "nl": "Exfiltreer een Zeldzaam Wapen"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "description": {
+              "en": "Extract with a rare or higher rarity weapon.",
+              "fr": "Exfiltrez-vous avec une arme rare ou de rareté supérieure.",
+              "es": "Extrae con un arma de rareza rara o superior.",
+              "de": "Exfiltriere mit einer seltenen oder selteneren Waffe.",
+              "nl": "Exfiltreer met een zeldzaam of beter wapen."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Complete a Recon Contract",
+            "fr": "Terminer un Contrat de Reconnaissance",
+            "es": "Completar un Contrato de Reconocimiento",
+            "de": "Einen Aufklärungsauftrag abschließen",
+            "nl": "Voltooi een Verkenningscontract"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "contracts",
+            "description": {
+              "en": "Complete a Recon contract without dying.",
+              "fr": "Terminez un contrat de reconnaissance sans mourir.",
+              "es": "Completa un contrato de reconocimiento sin morir.",
+              "de": "Schließe einen Aufklärungsauftrag ab, ohne zu sterben.",
+              "nl": "Voltooi een verkenningscontract zonder te sterven."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Stronghold Assaults",
+        "fr": "Assauts de Bastion",
+        "es": "Asaltos a Bastiones",
+        "de": "Bollwerk-Angriffe",
+        "nl": "Bolwerk-Aanvallen"
+      },
+      "items": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Breach Strongholds",
+            "fr": "Prendre d'Assaut des Bastions",
+            "es": "Asaltar Bastiones",
+            "de": "Bollwerke stürmen",
+            "nl": "Bestorm Bolwerken"
+          },
+          "tier": 1,
+          "requirement": {
+            "amount": 2,
+            "unit": "strongholds",
+            "description": {
+              "en": "Breach 2 strongholds in Hajin.",
+              "fr": "Prenez d'assaut 2 bastions à Hajin.",
+              "es": "Asalta 2 bastiones en Hajin.",
+              "de": "Stürme 2 Bollwerke in Hajin.",
+              "nl": "Bestorm 2 bolwerken in Hajin."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Steal a Blueprint",
+            "fr": "Voler un Plan",
+            "es": "Robar un Plano",
+            "de": "Einen Bauplan stehlen",
+            "nl": "Steel een Blauwdruk"
+          },
+          "tier": 2,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "description": {
+              "en": "Steal a weapon blueprint from a Black Mous cache.",
+              "fr": "Volez un plan d'arme dans une cache Black Mous.",
+              "es": "Roba un plano de arma de un alijo de Black Mous.",
+              "de": "Stiehl einen Waffenbauplan aus einem Black-Mous-Lager.",
+              "nl": "Steel een wapenblauwdruk uit een Black Mous-cache."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Extract as a Full Squad",
+            "fr": "Exfiltrer avec l'Escouade au Complet",
+            "es": "Extraer con el Escuadrón Completo",
+            "de": "Als vollständiges Team exfiltrieren",
+            "nl": "Exfiltreer als Volledig Team"
+          },
+          "tier": 3,
+          "requirement": {
+            "amount": 1,
+            "unit": "extractions",
+            "description": {
+              "en": "Extract with your entire squad alive.",
+              "fr": "Exfiltrez-vous avec toute votre escouade en vie.",
+              "es": "Extrae con todo tu escuadrón con vida.",
+              "de": "Exfiltriere mit deinem gesamten Team am Leben.",
+              "nl": "Exfiltreer met je hele team in leven."
+            }
+          },
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    }
+  ],
+  "_note": "Fake/placeholder Hajin objectives (map confirmed for MW4, exact objectives not yet public). Names/descriptions are inline per-language text. weaponCamos stays empty pending confirmation of whether DMZ gets its own weapon-camo track."
+}

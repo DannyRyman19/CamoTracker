@@ -1,0 +1,20 @@
+{
+  "catalog": {
+    "version": "0.6.1",
+    "path": "weapons.json"
+  },
+  "modes": {
+    "multiplayer": {
+      "version": "0.6.1",
+      "path": "multiplayer.json"
+    },
+    "warzone": {
+      "version": "0.6.1",
+      "path": "warzone.json"
+    },
+    "dmz": {
+      "version": "0.5.0",
+      "path": "dmz.json"
+    }
+  }
+}
