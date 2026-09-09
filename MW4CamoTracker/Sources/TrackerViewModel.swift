@@ -14,6 +14,11 @@ final class TrackerViewModel: ObservableObject {
     /// it lives in an extension in that file.
     @Published var milestoneBanner: MilestoneBanner?
 
+    /// Bumped when a weapon finishing its base camos earns a rating prompt.
+    /// `ContentView` owns the presentation, since `requestReview` needs a
+    /// SwiftUI environment value.
+    @Published private(set) var reviewRequestToken = 0
+
     /// The one weapon pinned for quick access at the top of every mode tab —
     /// global like weapon level, not per-mode, since you pin a weapon, not a
     /// mode-specific track.
@@ -46,6 +51,12 @@ final class TrackerViewModel: ObservableObject {
     }
 
     /// Checks the CDN manifest and pulls only the catalog/mode files whose version changed.
+    /// Raised from `checkMilestone` (which lives in Suggestions.swift) once a
+    /// weapon has actually just finished. The token itself stays
+    /// `private(set)` so nothing else can nudge the prompt.
+    @MainActor
+    func raiseReviewRequest() { reviewRequestToken += 1 }
+
     func refresh() async {
         isRefreshing = true
         defer { isRefreshing = false }
@@ -169,6 +180,21 @@ final class TrackerViewModel: ObservableObject {
     /// the old (DLC-unaware) behavior rather than under- or over-counting.
     var baseWeaponCount: Int {
         catalog?.baseWeaponCount ?? totalWeaponCount
+    }
+
+    /// Weapons whose base camo track is finished in at least one mode that
+    /// has one. Counted per weapon rather than per mode, so a gun taken all
+    /// the way in both Multiplayer and Warzone is one finished weapon, not
+    /// two - which is what "5 weapons done" means to someone playing.
+    var weaponsWithBaseCamosComplete: Int {
+        guard let catalog else { return 0 }
+        let tracked = modes.keys.filter(modeHasWeaponTrack)
+        guard !tracked.isEmpty else { return 0 }
+        return catalog.categories.reduce(0) { running, category in
+            running + category.weapons.filter { weapon in
+                tracked.contains { allCamosComplete(weaponId: weapon.weaponId, mode: $0) }
+            }.count
+        }
     }
 
     func totalGoldWeaponCount(mode: String) -> Int {

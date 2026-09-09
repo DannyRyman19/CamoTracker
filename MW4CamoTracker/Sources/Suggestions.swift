@@ -74,6 +74,13 @@ extension TrackerViewModel {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
         let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
         announce(title: "Camos complete", subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill")
+
+        // Finishing a weapon is the high point worth asking on. The gate
+        // reads the real count, and nothing is spent until the prompt is
+        // actually handed over (see ReviewPrompt / ContentView).
+        if ReviewPrompt.shouldAsk(weaponsComplete: weaponsWithBaseCamosComplete) {
+            raiseReviewRequest()
+        }
     }
 
     /// Called right after a weapon's tier1/tier2 Mastery challenge amount

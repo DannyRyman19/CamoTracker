@@ -16,6 +16,7 @@
 		17C918F4298306D3B088A35A /* multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = D6D4CDA89124982F18FDAA90 /* multiplayer.json */; };
 		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
 		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
+		3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
 		3A69BB325248C404557D3503 /* warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B063F6E81EF142F5E8BE3A /* warzone.json */; };
 		50ABA7D24D1C051E2996042A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E53AF5B26DF707884D61 /* Components.swift */; };
@@ -57,6 +58,7 @@
 		61A420378B1E88B956B09DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		721F171FEBB0173685265D18 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		782CE3E33B1F795FA8614EBD /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPrompt.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				6FE011B12DC06CD3532E4EFB /* SupportMail.swift */,
 				613DA0B92D98434F953C3144 /* StatsView.swift */,
 				782CE3E33B1F795FA8614EBD /* Suggestions.swift */,
+				5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */,
 				5D260791573B9EE8356EAC22 /* Theme.swift */,
 				205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */,
 				4C66A60FEF15496240122166 /* WeaponDetailView.swift */,
@@ -229,6 +232,7 @@
 				D69692F3FBBF248C85FC8F56 /* SupportMail.swift in Sources */,
 				05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */,
 				2988474E82544904AE8410B8 /* Suggestions.swift in Sources */,
+				3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */,
 				CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */,
 				6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */,
 				C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */,

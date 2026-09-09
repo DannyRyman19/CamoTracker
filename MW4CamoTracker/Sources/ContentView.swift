@@ -1,7 +1,9 @@
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @Environment(\.requestReview) private var requestReview
     @State private var selectedTab = 0
     @State private var showOnboarding = false
     @AppStorage("mw4_has_onboarded") private var hasOnboarded = false
@@ -106,6 +108,45 @@ struct ContentView: View {
                         try? await Task.sleep(nanoseconds: 600_000_000)
                         splashDone = true
                     }
+            }
+        }
+        #if DEBUG
+        // Completes a weapon's remaining base camos through the real
+        // toggleCamo path, so the whole rating chain (checkMilestone ->
+        // shouldAsk -> token -> guard -> requestReview) can be driven from
+        // the command line. Seed a save a weapon short of a milestone, then
+        // launch with MW4_FORCE_COMPLETE=<weaponId>.
+        .task {
+            guard let raw = ProcessInfo.processInfo.environment["MW4_FORCE_COMPLETE"],
+                  let weaponId = Int(raw) else { return }
+            var waited = 0
+            while viewModel.catalog == nil, waited < 200 {
+                try? await Task.sleep(for: .milliseconds(50)); waited += 1
+            }
+            try? await Task.sleep(for: .seconds(1))
+            let mode = AppMode.multiplayer.rawValue
+            let before = viewModel.weaponsWithBaseCamosComplete
+            for camo in viewModel.camos(weaponId: weaponId, mode: mode)
+            where !viewModel.isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) {
+                viewModel.toggleCamo(mode: mode, weaponId: weaponId, camo: camo)
+            }
+            print("MW4REVIEW forced weapon \(weaponId): complete \(before) -> \(viewModel.weaponsWithBaseCamosComplete), token \(viewModel.reviewRequestToken)")
+        }
+        #endif
+        .onChange(of: viewModel.reviewRequestToken) { token in
+            // 0 is the initial value, not a request; the token only ever
+            // counts up from a weapon actually being finished.
+            guard token > 0 else { return }
+            Task {
+                // Let the celebration land first: the milestone banner and
+                // its confetti are up for 3.5s, and a system rating sheet on
+                // top of that is both ugly and a worse moment to ask.
+                try? await Task.sleep(for: .seconds(4))
+                guard viewModel.milestoneBanner == nil, !showOnboarding, splashDone else { return }
+                // Only spend the milestone once the prompt is really handed
+                // over, so a suppressed one is retried on the next weapon.
+                ReviewPrompt.markPrompted(weaponsComplete: viewModel.weaponsWithBaseCamosComplete)
+                requestReview()
             }
         }
         .fullScreenCover(isPresented: $showOnboarding) {
