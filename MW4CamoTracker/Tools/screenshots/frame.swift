@@ -24,8 +24,16 @@ import ImageIO
 import UniformTypeIdentifiers
 import AppKit
 
-let W = 1284, H = 2778
+/// App Store canvases. `iphone` is the 6.7" slot; `ipad` is the 12.9"
+/// (3rd gen) slot Apple demands for a universal app. The iPad raw captures
+/// come off a 13-inch simulator at 2064x2752 - these are composites, so the
+/// capture is fitted onto the required canvas rather than having to match it.
+let device = ProcessInfo.processInfo.environment["SS_DEVICE"] ?? "iphone"
+let (W, H) = device == "ipad" ? (2048, 2732) : (1284, 2778)
 let Wf = CGFloat(W), Hf = CGFloat(H)
+/// Layout is tuned against the 6.7" canvas; everything scales off its width
+/// so the iPad shot is the same design rather than the same absolute sizes.
+let uiScale = Wf / 1284
 
 let args = CommandLine.arguments
 guard args.count == 3 || args.count == 4 else {
@@ -223,8 +231,8 @@ func render(_ shot: Shot, _ headline: [String]) {
     // pair reads as one lockup rather than two equal-weight lines.
     // Sized as a pair so both lines keep the same type size, shrunk together
     // only as far as the longest needs to clear the margin.
-    let baseSize: CGFloat = 96
-    let maxTextW = Wf - 2 * 72
+    let baseSize: CGFloat = 96 * uiScale
+    let maxTextW = Wf - 2 * 72 * uiScale
     let probe = makeFont(baseSize)
     let widest = headline.map { line -> CGFloat in
         let a = NSAttributedString(string: line, attributes: [.font: probe, .kern: 1.5])
@@ -232,8 +240,8 @@ func render(_ shot: Shot, _ headline: [String]) {
     }.max() ?? 0
     let scale = widest > maxTextW ? maxTextW / widest : 1
     let font = makeFont(baseSize * scale)
-    let lineH: CGFloat = 108 * scale
-    var y = Hf - 210
+    let lineH: CGFloat = 108 * uiScale * scale
+    var y = Hf - 210 * uiScale
     for (index, line) in headline.enumerated() {
         let attr = NSAttributedString(string: line, attributes: [
             .font: font,
@@ -243,13 +251,13 @@ func render(_ shot: Shot, _ headline: [String]) {
         let ctLine = CTLineCreateWithAttributedString(attr)
         let bounds = CTLineGetBoundsWithOptions(ctLine, .useOpticalBounds)
         ctx.saveGState()
-        ctx.setShadow(offset: CGSize(width: 0, height: -5), blur: 16, color: rgb(0x000000, 0.6))
+        ctx.setShadow(offset: CGSize(width: 0, height: -5 * uiScale), blur: 16 * uiScale, color: rgb(0x000000, 0.6))
         ctx.textPosition = CGPoint(x: (Wf - bounds.width) / 2 - bounds.minX, y: y)
         CTLineDraw(ctLine, ctx)
         ctx.restoreGState()
         y -= lineH
     }
-    let headlineBottom = y + lineH - 34
+    let headlineBottom = y + lineH - 34 * uiScale
 
     var src = rawFull
     var srcW = CGFloat(rawFull.width), srcH = CGFloat(rawFull.height)
@@ -261,15 +269,25 @@ func render(_ shot: Shot, _ headline: [String]) {
             src = c; srcH = CGFloat(keptH); srcW = CGFloat(c.width)
         }
     }
-    let cardW: CGFloat = 1040
-    let cardH = srcH * (cardW / srcW)
+    // Fit the capture inside the box under the headline, constrained by both
+    // width and height. The 6.7" capture is tall and narrow so width always
+    // binds; an iPad capture is nearly 4:3 and would run off the bottom if
+    // width were the only constraint.
+    let boxTop = headlineBottom - 84 * uiScale
+    let boxBottom = 96 * uiScale
+    let maxCardW = 1040 * uiScale
+    let maxCardH = boxTop - boxBottom
+    let fit = min(maxCardW / srcW, maxCardH / srcH)
+    let cardW = srcW * fit
+    let cardH = srcH * fit
     let cardX = (Wf - cardW) / 2
-    let cardY = headlineBottom - 84 - cardH
+    let cardY = boxTop - cardH
     let cardRect = CGRect(x: cardX, y: cardY, width: cardW, height: cardH)
-    let clip = CGPath(roundedRect: cardRect, cornerWidth: 52, cornerHeight: 52, transform: nil)
+    let corner = 52 * uiScale
+    let clip = CGPath(roundedRect: cardRect, cornerWidth: corner, cornerHeight: corner, transform: nil)
 
     ctx.saveGState()
-    ctx.setShadow(offset: CGSize(width: 0, height: -22), blur: 55, color: rgb(0x000000, 0.6))
+    ctx.setShadow(offset: CGSize(width: 0, height: -22 * uiScale), blur: 55 * uiScale, color: rgb(0x000000, 0.6))
     ctx.addPath(clip); ctx.setFillColor(rgb(0x000000)); ctx.fillPath()
     ctx.restoreGState()
 

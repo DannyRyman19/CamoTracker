@@ -121,6 +121,47 @@ platform :ios do
     UI.success("#{version} (#{build_number}) uploaded. It appears in TestFlight once Apple finishes processing.")
   end
 
+  desc "Attach a build to the current version and submit it for review"
+  lane :submit do |options|
+    #   bundle exec fastlane submit build:4
+    #
+    # Metadata and screenshots come from the `metadata` lane; this only
+    # attaches a build and submits. Release stays MANUAL, so approval does
+    # not put it on sale and there is a deliberate moment to look first.
+    build = options[:build].to_s.strip
+    UI.user_error!("pass the build, e.g. `fastlane submit build:4`") if build.empty?
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_P8"),
+      is_key_content_base64: true,
+      in_house: false
+    )
+
+    upload_to_app_store(
+      api_key: api_key,
+      app_identifier: APP_IDENTIFIER,
+      build_number: build,
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: true,
+      automatic_release: false,
+      precheck_include_in_app_purchases: false,
+      run_precheck_before_submit: false,
+      force: true,
+      submission_information: {
+        # Info.plist declares ITSAppUsesNonExemptEncryption false, and the app
+        # has no ads, no ATT prompt and no ad identifier.
+        export_compliance_uses_encryption: false,
+        add_id_info_uses_idfa: false
+      }
+    )
+
+    UI.success("Build #{build} submitted for review. Release is manual.")
+  end
+
   desc "Push App Store listing text and screenshots (no binary)"
   lane :metadata do
     api_key = app_store_connect_api_key(

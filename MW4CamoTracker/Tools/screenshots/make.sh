@@ -4,6 +4,7 @@
 #   Tools/screenshots/make.sh [out-dir]              English only (default)
 #   Tools/screenshots/make.sh --all-languages        every shipped locale
 #   Tools/screenshots/make.sh --lang de [out-dir]    one language
+#   Tools/screenshots/make.sh --ipad --all-languages the iPad Pro 12.9" set
 #
 # Builds the app for the simulator, boots an iPhone 17 Pro Max, seeds a
 # realistic save, drives the DEBUG screenshot harness (SS_SCREEN launch env,
@@ -23,13 +24,27 @@ cd "$(dirname "$0")/../.."
 LANGS=(en)
 ALL=0
 OUT=""
+DEVICE=iphone
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --all-languages) LANGS=(en de es fr nl); ALL=1; shift ;;
     --lang) LANGS=("$2"); shift 2 ;;
+    --ipad) DEVICE=ipad; shift ;;
     *) OUT="$1"; shift ;;
   esac
 done
+
+# A universal app needs an iPad Pro 12.9" set as well as the 6.7" iPhone one,
+# or App Store Connect refuses the submission. Only 13-inch iPad simulators
+# exist now (2064x2752), but these are composites, so frame.swift fits the
+# capture onto the 2048x2732 canvas Apple asks for.
+if [[ $DEVICE == ipad ]]; then
+  SIM_NAME_OVERRIDE="iPad Pro 13-inch (M4)"
+  SHOT_PREFIX="ipad_"
+else
+  SIM_NAME_OVERRIDE=""
+  SHOT_PREFIX=""
+fi
 OUT="${OUT:-$HOME/Desktop/MW4CamoTracker-screenshots}"
 
 asc_locale () { # <lang> -> App Store Connect locale directory
@@ -45,7 +60,7 @@ posix_locale () { # <lang> -> the AppleLocale the region formats follow
   esac
 }
 
-SIM_NAME="iPhone 17 Pro Max"
+SIM_NAME="${SIM_NAME_OVERRIDE:-iPhone 17 Pro Max}"
 BID="com.DannyRyman.MW4CamoTracker"
 DD="build/ss"
 
@@ -94,7 +109,7 @@ sleep 2
 
 for LANG_CODE in "${LANGS[@]}"; do
   if [[ $ALL -eq 1 ]]; then
-    RAW="build/screenshots-raw/$LANG_CODE"
+    RAW="build/screenshots-raw/$DEVICE/$LANG_CODE"
     FRAMED="fastlane/screenshots/$(asc_locale "$LANG_CODE")"
   else
     RAW="$OUT/raw"; FRAMED="$OUT/framed"
@@ -120,13 +135,13 @@ for LANG_CODE in "${LANGS[@]}"; do
   shot multiplayer category 0 ""    # Assault Rifles list
   shot multiplayer weapon   "" 3    # Kastov 762 detail
 
-  echo "==> frame [$LANG_CODE] -> $FRAMED"
-  swift Tools/screenshots/frame.swift "$RAW" "$FRAMED" "$LANG_CODE"
+  echo "==> frame [$LANG_CODE, $DEVICE] -> $FRAMED"
+  SS_DEVICE="$DEVICE" swift Tools/screenshots/frame.swift "$RAW" "$FRAMED" "$LANG_CODE"
 
   if [[ $ALL -eq 1 ]]; then
     i=1
     for n in multiplayer stats warzone dmz category weapon; do
-      mv "$FRAMED/$n.png" "$FRAMED/${i}_$n.png"
+      mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n.png"
       i=$((i + 1))
     done
   fi
