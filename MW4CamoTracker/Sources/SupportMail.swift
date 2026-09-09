@@ -13,6 +13,24 @@ import UIKit
 enum SupportMail {
     static let address = "support@camotracker.djr.li"
 
+    /// What a weapon's unlock should actually be. The app stores it as a
+    /// sentence ("Unlock at level 25.") and derives the number, so a report
+    /// needs to say which *kind* of unlock it is, not just a number.
+    enum UnlockRef {
+        case playerLevel(Int?)
+        case challenge
+        case byDefault
+
+        var describedForMail: String {
+            switch self {
+            case .playerLevel(let level):
+                return level.map { "Player level \($0)" } ?? "A player level (number not given)"
+            case .challenge:  return "A challenge (described above)"
+            case .byDefault:  return "Unlocked by default"
+            }
+        }
+    }
+
     /// A Mastery tier, which is not a `ChallengeItem` -- those come from the
     /// mode JSON, while Mastery camos are defined in Theme.swift -- so it needs
     /// its own way into a report.
@@ -26,6 +44,7 @@ enum SupportMail {
     /// subject line suffix, so they stay readable in an inbox.
     enum Kind: String, CaseIterable, Identifiable {
         case maxLevel = "Wrong max level"
+        case unlock = "Wrong unlock requirement"
         case challenge = "Wrong challenge"
         case missingImage = "Missing or wrong image"
         case name = "Wrong name"
@@ -36,6 +55,7 @@ enum SupportMail {
         var symbol: String {
             switch self {
             case .maxLevel:     return "chevron.up.square"
+            case .unlock:       return "lock.open"
             case .challenge:    return "checklist"
             case .missingImage: return "photo"
             case .name:         return "textformat"
@@ -46,6 +66,7 @@ enum SupportMail {
         var labelKey: String {
             switch self {
             case .maxLevel:     return "mw4.ui.report.max_level"
+            case .unlock:       return "mw4.ui.report.unlock"
             case .challenge:    return "mw4.ui.report.challenge"
             case .missingImage: return "mw4.ui.report.image"
             case .name:         return "mw4.ui.report.name"
@@ -64,7 +85,7 @@ enum SupportMail {
     /// names, just the image filename.
     static func url(kind: Kind, weapon: WeaponEntry, mode: AppMode,
                     category: String? = nil, camo: ChallengeItem? = nil,
-                    mastery: MasteryRef? = nil,
+                    mastery: MasteryRef? = nil, unlock: UnlockRef? = nil,
                     correctedMaxLevel: Int? = nil) -> URL? {
         var lines = [
             "Issue type: \(kind.rawValue)",
@@ -74,6 +95,7 @@ enum SupportMail {
         ]
         if let category { lines.append("Category: \(category)") }
         lines.append("Max level in app: \(weapon.maxLevel)")
+        lines.append("Unlock in app: " + (weapon.unlockLevel.map { "Player level \($0)" } ?? "Unlocked by default"))
         // Filename only. The full URL would put the CDN's host and directory
         // layout in every report, and the name alone is enough to find the asset.
         let imageName = weapon.imageURL.flatMap { URL(string: $0)?.lastPathComponent } ?? "none"
@@ -90,6 +112,9 @@ enum SupportMail {
             if let requirement = camo.requirement {
                 lines.append("Requirement in app: \(requirement.amount) \(requirement.unit)")
             }
+        }
+        if let unlock {
+            lines.append("Should be: \(unlock.describedForMail)")
         }
         if let mastery {
             lines.append("Mastery camo: \(mastery.name)")
@@ -141,13 +166,31 @@ struct ReportIssueMenu: View {
     /// can ask for the correct number first. A `.alert` attached inside a
     /// `ToolbarItem` is unreliable, so the prompt lives on the view body.
     var onRequestMaxLevel: (() -> Void)? = nil
+    /// Same reason as `onRequestMaxLevel`: the player-level branch needs a
+    /// number, and the prompt cannot live inside the toolbar item.
+    var onRequestUnlockLevel: (() -> Void)? = nil
 
     @Environment(\.openURL) private var openURL
 
     var body: some View {
         Menu {
             ForEach(SupportMail.Kind.allCases) { kind in
-                if kind == .challenge, !camos.isEmpty || !masteryRefs.isEmpty {
+                if kind == .unlock {
+                    Menu {
+                        Button("mw4.ui.report.unlock.level".localized()) {
+                            if let onRequestUnlockLevel { onRequestUnlockLevel() }
+                            else { send(kind, unlock: .playerLevel(nil)) }
+                        }
+                        Button("mw4.ui.report.unlock.challenge".localized()) {
+                            send(kind, unlock: .challenge)
+                        }
+                        Button("mw4.ui.report.unlock.default".localized()) {
+                            send(kind, unlock: .byDefault)
+                        }
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                    }
+                } else if kind == .challenge, !camos.isEmpty || !masteryRefs.isEmpty {
                     Menu {
                         ForEach(camos) { camo in
                             Button(camo.name.resolved()) { send(kind, camo: camo) }
@@ -204,10 +247,11 @@ struct ReportIssueMenu: View {
 
     private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil,
                       mastery: SupportMail.MasteryRef? = nil,
+                      unlock: SupportMail.UnlockRef? = nil,
                       correctedMaxLevel: Int? = nil) {
         if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
                                      category: category, camo: camo, mastery: mastery,
-                                     correctedMaxLevel: correctedMaxLevel) {
+                                     unlock: unlock, correctedMaxLevel: correctedMaxLevel) {
             openURL(url)
         }
     }

@@ -17,6 +17,8 @@ struct WeaponDetailView: View {
     /// to `ToolbarItem` content does not reliably present.
     @State private var askingMaxLevel = false
     @State private var maxLevelText = ""
+    @State private var askingUnlockLevel = false
+    @State private var unlockLevelText = ""
     @Environment(\.openURL) private var openURL
 
     var body: some View {
@@ -119,6 +121,21 @@ struct WeaponDetailView: View {
         } message: {
             Text(String(format: "mw4.ui.report.max_level.message".localized(), weapon.maxLevel))
         }
+        .alert("mw4.ui.report.unlock".localized(), isPresented: $askingUnlockLevel) {
+            TextField("mw4.ui.report.unlock.field".localized(), text: $unlockLevelText)
+                .keyboardType(.numberPad)
+            Button("mw4.ui.cancel".localized(), role: .cancel) {}
+            Button("mw4.ui.report.send".localized()) {
+                if let url = SupportMail.url(kind: .unlock, weapon: weapon, mode: mode,
+                                             category: category?.name.resolved(),
+                                             unlock: .playerLevel(Int(unlockLevelText))) {
+                    openURL(url)
+                }
+            }
+        } message: {
+            Text(String(format: "mw4.ui.report.unlock.message".localized(),
+                        weapon.unlockLevel.map(String.init) ?? "-"))
+        }
         .toolbar {
             // Camo data is hand-entered from a game that keeps changing, so a
             // pre-filled report is worth reaching easily. At the foot of the
@@ -130,6 +147,10 @@ struct WeaponDetailView: View {
                                 onRequestMaxLevel: {
                                     maxLevelText = ""
                                     askingMaxLevel = true
+                                },
+                                onRequestUnlockLevel: {
+                                    unlockLevelText = ""
+                                    askingUnlockLevel = true
                                 })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
