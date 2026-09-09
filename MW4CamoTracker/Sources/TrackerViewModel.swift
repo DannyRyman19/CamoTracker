@@ -61,15 +61,33 @@ final class TrackerViewModel: ObservableObject {
         isRefreshing = true
         defer { isRefreshing = false }
         do {
+            #if DEBUG
+            // MW4_FORCE_FULL_REFRESH pretends nothing is cached, so the whole
+            // download/decode/apply path runs against the real CDN even when
+            // the bundled seed is already current.
+            let forceFull = ProcessInfo.processInfo.environment["MW4_FORCE_FULL_REFRESH"] != nil
+            #else
+            let forceFull = false
+            #endif
             let result = try await dataService.refreshIfNeeded(
-                knownCatalogVersion: catalog?.version,
-                knownModeVersions: modes.mapValues { $0.version }
+                knownCatalogVersion: forceFull ? nil : catalog?.version,
+                knownModeVersions: forceFull ? [:] : modes.mapValues { $0.version }
             )
             if let newCatalog = result.catalog { catalog = newCatalog }
             for (mode, file) in result.modes { modes[mode] = file }
             refreshError = nil
+            #if DEBUG
+            // `refreshError` is not shown anywhere, so a broken feed is
+            // invisible: Data/MW4 did not exist on the CDN for the app's
+            // whole life and every refresh threw without anyone noticing.
+            let took = (result.catalog != nil ? ["catalog"] : []) + result.modes.keys.sorted()
+            print("MW4DATA refresh ok, updated: \(took.isEmpty ? "nothing (all versions current)" : took.joined(separator: ", "))")
+            #endif
         } catch {
             refreshError = error.localizedDescription
+            #if DEBUG
+            print("MW4DATA refresh FAILED: \(error)")
+            #endif
         }
     }
 
