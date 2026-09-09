@@ -48,12 +48,14 @@ platform :ios do
     version = ENV["APP_VERSION"].to_s.strip
     version = get_version_number(xcodeproj: XCODE_PROJECT, target: XCODE_SCHEME) if version.empty?
 
-    # One above the highest build already on TestFlight for this version
-    # string: no local counter to drift, and it resets cleanly when the
-    # marketing version bumps.
+    # One above the highest build already on TestFlight for the whole app,
+    # deliberately NOT scoped to this version string. App Store Connect
+    # normalises version numbers, so builds uploaded as "1.0.0" collide with
+    # "1.0" - but a per-version lookup finds nothing under "1.0", resets to 1
+    # and the upload is rejected as a redundant binary. Counting app-wide
+    # means the number only ever goes up, which is all Apple requires.
     build_number = latest_testflight_build_number(
       app_identifier: APP_IDENTIFIER,
-      version: version,
       api_key: api_key,
       initial_build_number: 0
     ) + 1
