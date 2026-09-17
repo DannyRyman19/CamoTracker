@@ -73,7 +73,8 @@ extension TrackerViewModel {
     func checkMilestone(weaponId: Int, mode: String, wasGold: Bool) {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
         let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
-        announce(title: "Camos complete", subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill")
+        announce(title: "mw4.ui.milestone.camos_complete_title".localized(),
+                 subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill")
 
         // Finishing a weapon is the high point worth asking on. The gate
         // reads the real count, and nothing is spent until the prompt is
@@ -100,7 +101,8 @@ extension TrackerViewModel {
 
         let camo = tier == 1 ? tiers.tier1 : tiers.tier2
         let icon = tier == 1 ? "diamond.fill" : "hexagon.fill"
-        announce(title: "\(camo.name) unlocked", subtitle: weaponName, titleGradient: camo.gradient, icon: icon)
+        announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
+                 subtitle: weaponName, titleGradient: camo.gradient, icon: icon)
 
         if tier == 2, isMasteryTier3Achieved(mode: mode) {
             if wasTier3Achieved {
@@ -111,9 +113,13 @@ extension TrackerViewModel {
                 // capstone the mode already has, not a fresh unlock, so it
                 // gets its own name instead of repeating the original
                 // "Total Mastery" celebration verbatim.
-                announce(title: "\(tiers.tier3.name) unlocked", subtitle: "\(weaponName) joins Total Mastery.", titleGradient: tiers.tier3.gradient, icon: "star.fill")
+                announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tiers.tier3.name),
+                         subtitle: String(format: "mw4.ui.milestone.tier3_joins_subtitle".localized(), weaponName),
+                         titleGradient: tiers.tier3.gradient, icon: "star.fill")
             } else {
-                announce(title: "\(tiers.tier3.name) unlocked", subtitle: "Every weapon, every camo. Total Mastery.", titleGradient: tiers.tier3.gradient, icon: "star.fill")
+                announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tiers.tier3.name),
+                         subtitle: "mw4.ui.milestone.tier3_subtitle".localized(),
+                         titleGradient: tiers.tier3.gradient, icon: "star.fill")
             }
         }
 

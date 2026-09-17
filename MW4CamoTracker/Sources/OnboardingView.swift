@@ -202,8 +202,8 @@ private struct MarkProgressPage: View {
                 if showCelebration {
                     MilestoneBannerView(banner: MilestoneBanner(
                         id: UUID(),
-                        title: "Camos complete",
-                        subtitle: "You'll see this for real when it lands.",
+                        title: "mw4.ui.milestone.camos_complete_title".localized(),
+                        subtitle: "mw4.onboarding.mark.celebration_subtitle".localized(),
                         titleGradient: .gold,
                         icon: "medal.fill"
                     ))
@@ -328,7 +328,12 @@ private struct SuggestedPage: View {
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
 
-                MilestoneBannerView(banner: MilestoneBanner(id: UUID(), title: "Mercurial Drift unlocked", subtitle: "Every Assault Rifle is now Gold.", titleGradient: .mercurialDrift, icon: "diamond.fill"))
+                MilestoneBannerView(banner: MilestoneBanner(
+                    id: UUID(),
+                    title: String(format: "mw4.ui.milestone.unlocked_title".localized(),
+                                  AppMode.multiplayer.masteryCamos.tier1.name),
+                    subtitle: "mw4.onboarding.suggested.banner_subtitle".localized(),
+                    titleGradient: .mercurialDrift, icon: "diamond.fill"))
 
                 Text("mw4.onboarding.suggested.body2".localized())
                     .font(.system(size: 15))
