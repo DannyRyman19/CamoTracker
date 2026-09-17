@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write a believable in-progress save into the simulator's app defaults.
 
-    seed.py <path-to-com.DannyRyman.MW4CamoTracker.plist>
+    seed.py [--preview] <path-to-com.DannyRyman.MW4CamoTracker.plist>
 
 Empty rings and 0/20 everywhere make for dead marketing shots, so this fills in
 a save that looks like a few weeks of play:
@@ -17,6 +17,11 @@ Everything is derived from the shipped JSON rather than hardcoded, because the
 modes genuinely differ: Multiplayer has 4 camos per weapon at 10/25/50/75,
 Warzone has 3 at 1/3/10, and DMZ has no weapon camos at all, only objectives.
 Assuming a uniform shape here silently seeds keys nothing reads.
+
+`--preview` is the same save with one change for the preview video
+(Tools/preview): the Warzone track of weapon PREVIEW_WEAPON is left one camo
+short, with the camo before it part-filled, so the `grind` take can fill that
+bar and tick the last camo on camera and earn the real Gold celebration.
 
 Run with /usr/bin/python3. Homebrew's python currently fails to import plistlib
 (pyexpat links against a libexpat that lacks a symbol it wants).
@@ -42,6 +47,9 @@ PINNED_KEY = "mw4_pinned_weapon_v1"
 TIER1_AMOUNT = 3
 TIER2_AMOUNT = 5
 
+PREVIEW_WEAPON = 3             # Kastov 762, also the pinned weapon
+PREVIEW_MODE = "warzone"
+
 MAXED = {1, 3, 5, 13}          # M4, Kastov 762, ISO Nightshade, KG-7 Vulcan
 PINNED_WEAPON = 3              # Kastov 762, so the Pinned card is populated
 
@@ -66,7 +74,7 @@ def objective_key(mode, category_id, item_id):
     return f"obj|{mode}|{category_id}|{item_id}"
 
 
-def build():
+def build(preview=False):
     rng = random.Random(20260908)  # stable output, so shots are reproducible
     amounts, completed = {}, []
 
@@ -119,6 +127,25 @@ def build():
     for weapon_id in assault_rifles[:4]:
         mastery("warzone", weapon_id, 1)
 
+    if preview:
+        # Undo the random Warzone plan for this one weapon: all camos but the
+        # last complete, the second part-filled, so the take has both a bar to
+        # fill and a last camo to tick.
+        data = load(f"{PREVIEW_MODE}.json")
+        entry = next(e for e in data["weaponCamos"] if e["weaponId"] == PREVIEW_WEAPON)
+        camos = entry["camos"]
+        for index, camo in enumerate(camos):
+            required = (camo.get("requirement") or {}).get("amount", 1)
+            key = camo_key(PREVIEW_MODE, PREVIEW_WEAPON, camo["itemId"])
+            completed[:] = [k for k in completed if k != key]
+            if index < len(camos) - 2:
+                amounts[key] = required
+                completed.append(key)
+            elif index == len(camos) - 2:
+                amounts[key] = max(1, required - 3)
+            else:
+                amounts.pop(key, None)
+
     levels = {}
     for weapon_id in sorted(weapons):
         max_level = weapons[weapon_id]["maxLevel"]
@@ -128,16 +155,18 @@ def build():
 
 
 def main():
-    if len(sys.argv) < 2:
-        sys.exit("usage: seed.py <plist path>")
-    path = sys.argv[1]
+    args = [a for a in sys.argv[1:] if a != "--preview"]
+    preview = "--preview" in sys.argv
+    if not args:
+        sys.exit("usage: seed.py [--preview] <plist path>")
+    path = args[0]
     try:
         with open(path, "rb") as fh:
             defaults = plistlib.load(fh)
     except (FileNotFoundError, plistlib.InvalidFileException):
         defaults = {}
 
-    store = build()
+    store = build(preview=preview)
     defaults[STORE_KEY] = json.dumps(store, separators=(",", ":")).encode()
     defaults[PINNED_KEY] = PINNED_WEAPON
     defaults["mw4_has_onboarded"] = True

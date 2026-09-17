@@ -35,6 +35,23 @@ struct ContentView: View {
         #endif
     }
 
+    /// Preview-video harness: `SS_DEMO=<take>` plays that take's scripted run
+    /// for `Tools/preview/make.sh`. DEBUG-only, like the screenshot harness it
+    /// sits on top of.
+    private static var demoTake: String? {
+        #if DEBUG
+        let v = ProcessInfo.processInfo.environment["SS_DEMO"]
+        return (v?.isEmpty == false) ? v : nil
+        #else
+        return nil
+        #endif
+    }
+
+    /// The weapon the `grind` take finishes on camera: Kastov 762, which
+    /// `seed.py --preview` leaves one camo short in Warzone and which is the
+    /// pinned weapon, so the Suggested card points at it too.
+    private static let demoWeaponId = 3
+
     /// One navigation path per mode tab. Only ever non-empty under the
     /// screenshot harness; normal navigation pushes onto it as usual.
     @State private var paths: [Int: NavigationPath] = [:]
@@ -132,11 +149,43 @@ struct ContentView: View {
             }
             print("MW4REVIEW forced weapon \(weaponId): complete \(before) -> \(viewModel.weaponsWithBaseCamosComplete), token \(viewModel.reviewRequestToken)")
         }
+        // Preview video: wait for make.sh to start recording (it drops `ss_go`
+        // in the app's tmp dir), then play the take. Every change goes through
+        // the real setCamoAmount / toggleCamo path, so the progress bars, the
+        // milestone banner and its confetti are the app's own behaviour and not
+        // a mock-up. `suggest` and `stats` are stills: the harness only has to
+        // leave them alone on a settled screen.
+        .task {
+            guard let take = Self.demoTake else { return }
+            var waited = 0
+            while viewModel.catalog == nil, waited < 200 {
+                try? await Task.sleep(for: .milliseconds(50)); waited += 1
+            }
+            let go = (NSTemporaryDirectory() as NSString).appendingPathComponent("ss_go")
+            while !FileManager.default.fileExists(atPath: go) {
+                try? await Task.sleep(for: .milliseconds(50))
+            }
+            guard take == "grind" else { return }
+            let mode = AppMode.warzone.rawValue
+            let camos = viewModel.camos(weaponId: Self.demoWeaponId, mode: mode)
+            guard camos.count >= 3 else { return }
+            // The times here and the segment times in
+            // Tools/preview/assemble.py describe the same clock: recording
+            // time = this time + 1.0s. Change one, change the other.
+            try? await Task.sleep(for: .seconds(2.5))
+            viewModel.setCamoAmount(mode: mode, weaponId: Self.demoWeaponId, camo: camos[1],
+                                    amount: camos[1].requirement?.amount ?? 1)
+            try? await Task.sleep(for: .seconds(3))
+            viewModel.toggleCamo(mode: mode, weaponId: Self.demoWeaponId, camo: camos[2])
+        }
         #endif
         .onChange(of: viewModel.reviewRequestToken) { token in
             // 0 is the initial value, not a request; the token only ever
             // counts up from a weapon actually being finished.
             guard token > 0 else { return }
+            // A system rating sheet in the middle of a take would end up in
+            // the App Store preview.
+            guard Self.demoTake == nil else { return }
             Task {
                 // Let the celebration land first: the milestone banner and
                 // its confetti are up for 3.5s, and a system rating sheet on

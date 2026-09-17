@@ -18,6 +18,13 @@ PROFILE_NAME   = "MW4 Camo Tracker CI App Store"
 XCODE_PROJECT  = "MW4CamoTracker.xcodeproj"
 XCODE_SCHEME   = "MW4CamoTracker"
 TEAM_ID        = "44G72CWWEW"
+# App Store listing locales. en-US is the primary language; the rest match the
+# app's own translations (Resources/<lang>.lproj).
+LOCALES        = %w[en-US de-DE es-ES fr-FR nl-NL].freeze
+# App preview poster frame, HH:MM:SS:FF at 30 fps: the Gold "Camos complete"
+# celebration in Tools/preview's cut, the most distinctive still in it. The
+# poster is what shows wherever the video does not autoplay.
+PREVIEW_POSTER_FRAME = "00:00:07:15"
 
 platform :ios do
   desc "Archive a Release build and ship it to TestFlight"
@@ -189,5 +196,56 @@ platform :ios do
       precheck_include_in_app_purchases: false,
       force: true
     )
+  end
+
+  desc "Upload the app preview videos to the version being prepared"
+  lane :previews do
+    # deliver has no support for app previews, so this talks to the App Store
+    # Connect API directly. Each locale's iPhone 6.7"/6.9" preview set is
+    # emptied and refilled, so a rerun replaces the video rather than adding a
+    # second one.
+    #
+    #   fastlane previews
+    #
+    # The videos come from fastlane/previews/<locale>/, which
+    # `Tools/preview/make.sh --all-languages` fills.
+    app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_P8"),
+      is_key_content_base64: true,
+      in_house: false
+    )
+
+    dir = File.expand_path("previews", __dir__)
+    missing = LOCALES.reject { |l| File.exist?("#{dir}/#{l}/mw4-camo-tracker-preview.mp4") }
+    UI.user_error!("no preview for: #{missing.join(', ')}") if missing.any?
+
+    app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    version = app.get_edit_app_store_version(platform: Spaceship::ConnectAPI::Platform::IOS)
+    UI.user_error!("no version in an editable state on App Store Connect") if version.nil?
+    localizations = version.get_app_store_version_localizations
+    type = Spaceship::ConnectAPI::AppPreviewSet::PreviewType::IPHONE_67
+
+    LOCALES.each do |locale|
+      loc = localizations.find { |l| l.locale == locale }
+      UI.user_error!("#{version.version_string} has no #{locale} localisation; run `fastlane metadata` first") if loc.nil?
+      # Not `loc.get_app_preview_sets`: that lists /v1/appPreviewSets, which
+      # Apple refuses ("does not allow GET_COLLECTION"). The sets hang off the
+      # localisation the same way screenshot sets do.
+      sets = Spaceship::ConnectAPI::Models.parse(
+        Spaceship::ConnectAPI.client.tunes_request_client
+                             .get("v1/appStoreVersionLocalizations/#{loc.id}/appPreviewSets",
+                                  { include: "appPreviews" }).body
+      )
+      set = sets.find { |s| s.preview_type == type } ||
+            loc.create_app_preview_set(attributes: { previewType: type })
+      (set.app_previews || []).each(&:delete!)
+      set.upload_preview(path: "#{dir}/#{locale}/mw4-camo-tracker-preview.mp4",
+                         frame_time_code: PREVIEW_POSTER_FRAME)
+      UI.message("#{locale}: preview uploaded")
+    end
+
+    UI.success("Previews uploaded for #{version.version_string}. Apple keeps processing for a few minutes.")
   end
 end
