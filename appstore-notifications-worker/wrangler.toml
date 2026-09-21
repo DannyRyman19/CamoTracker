@@ -2,6 +2,9 @@ name = "camotracker-appstore-notifications"
 main = "src/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+# Identifies which Cloudflare account to deploy to — not a credential on its own (that's the API
+# token / login), so it's fine to commit even though this repo is public.
+account_id = "20fce1fae0c7fbe6cdc2eeb0d51515c6"
 
 [vars]
 # This repo is public, so only genuinely non-sensitive values belong here — both of these are
