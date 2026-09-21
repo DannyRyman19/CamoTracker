@@ -1,0 +1,20 @@
+name = "camotracker-appstore-notifications"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# The app's bundle identifier, e.g. from Xcode's PRODUCT_BUNDLE_IDENTIFIER.
+APP_BUNDLE_ID = "com.DannyRyman.MW4CamoTracker"
+
+# The app's numeric Apple ID (App Store Connect > App Information > Apple ID / "General Information").
+# Only required to verify PRODUCTION notifications; sandbox testing works without it.
+APP_APPLE_ID = ""
+
+# Where to send the notification emails, and the "from" address Resend should send as
+# (must be on a domain verified in your Resend account).
+NOTIFY_EMAIL = ""
+NOTIFY_FROM_EMAIL = ""
+
+# Secrets (do NOT put real values here — set them with `wrangler secret put <NAME>`):
+#   RESEND_API_KEY
