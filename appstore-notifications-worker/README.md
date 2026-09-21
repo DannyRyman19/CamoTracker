@@ -7,6 +7,11 @@ signature, and emails a summary via [Resend](https://resend.com).
 GitHub Pages (where the rest of this repo is hosted) can't run server code, so this lives in its
 own small deployable project.
 
+> **This repo is public.** Only `APP_BUNDLE_ID` and `APP_APPLE_ID` — both already publicly visible
+> via the App Store listing — go in the committed `wrangler.toml`. Your notify/from email addresses
+> and the Resend API key are set as Cloudflare Worker **secrets** (`wrangler secret put`), which are
+> stored encrypted on Cloudflare and never appear in this repo or its git history.
+
 ## One-time setup
 
 1. **Install dependencies**
@@ -23,18 +28,21 @@ own small deployable project.
 3. **Create a Resend account and API key** at https://resend.com, and verify a sending domain (or
    use their shared test domain while you're getting this working). Create an API key.
 
-4. **Fill in `wrangler.toml`**
+4. **Fill in `wrangler.toml`** (only the non-sensitive `[vars]` — this repo is public, so nothing
+   that identifies you personally belongs in a committed file)
    - `APP_BUNDLE_ID` is already set to `com.DannyRyman.MW4CamoTracker`.
    - `APP_APPLE_ID`: the app's numeric Apple ID, found in App Store Connect under
      **App Information → General Information → Apple ID**. Only needed to verify *production*
-     notifications — sandbox testing works without it.
-   - `NOTIFY_EMAIL`: where you want the alerts sent.
-   - `NOTIFY_FROM_EMAIL`: the "from" address Resend should send as (must be on a domain verified
-     in your Resend account).
+     notifications — sandbox testing works without it. This is already public (it's in every
+     App Store URL for the app), so it's fine as a plain var.
 
-5. **Set the Resend API key as a secret** (never put this in `wrangler.toml`):
+5. **Set the rest as secrets** — these never get written to any file, so they never end up in
+   git history on this public repo:
    ```sh
    npx wrangler secret put RESEND_API_KEY
+   npx wrangler secret put NOTIFY_EMAIL       # where alerts get sent
+   npx wrangler secret put NOTIFY_FROM_EMAIL  # the "from" address (must be on a domain verified
+                                               # in Resend, or onboarding@resend.dev for testing)
    ```
 
 6. **Deploy**

@@ -4,6 +4,9 @@ compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
+# This repo is public, so only genuinely non-sensitive values belong here — both of these are
+# already publicly visible via the App Store listing / the committed Xcode project.
+
 # The app's bundle identifier, e.g. from Xcode's PRODUCT_BUNDLE_IDENTIFIER.
 APP_BUNDLE_ID = "com.DannyRyman.MW4CamoTracker"
 
@@ -11,10 +14,9 @@ APP_BUNDLE_ID = "com.DannyRyman.MW4CamoTracker"
 # Only required to verify PRODUCTION notifications; sandbox testing works without it.
 APP_APPLE_ID = ""
 
-# Where to send the notification emails, and the "from" address Resend should send as
-# (must be on a domain verified in your Resend account).
-NOTIFY_EMAIL = ""
-NOTIFY_FROM_EMAIL = ""
-
-# Secrets (do NOT put real values here — set them with `wrangler secret put <NAME>`):
+# Everything else — where emails get sent, the "from" address, and the Resend API key — is a
+# secret set with `wrangler secret put <NAME>`, never written here, so it never lands in git
+# history on this public repo:
 #   RESEND_API_KEY
+#   NOTIFY_EMAIL
+#   NOTIFY_FROM_EMAIL
