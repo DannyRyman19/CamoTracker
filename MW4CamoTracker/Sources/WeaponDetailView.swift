@@ -21,89 +21,194 @@ struct WeaponDetailView: View {
     @State private var askingUnlockLevel = false
     @State private var unlockLevelText = ""
     @Environment(\.openURL) private var openURL
+    @State private var width: CGFloat = 0
+
+    @ViewBuilder private var headerSection: some View {
+        // Camo tracking is the actual point of this app — the hero
+        // image (a placeholder; no real art exists) and the level
+        // control are context, not content, so both are compact and
+        // share one card instead of each claiming a full screen's
+        // worth of attention before the Camos list even starts.
+        Section {
+            VStack(alignment: .leading, spacing: 12) {
+                WeaponHeroImage(urlString: weapon.imageURL)
+
+                titleBlock(nameSize: 20)
+
+                Divider().overlay(Color.appInkMuted.opacity(0.2))
+
+                CompactLevelRow(mode: mode, weapon: weapon)
+            }
+            .padding(12)
+            .borderedCard()
+            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            .listRowBackground(Color.clear)
+        }
+        .listRowBackground(Color.appSurface)
+    }
+
+    @ViewBuilder private var challengeSections: some View {
+        if camos.isEmpty {
+            noCamoData
+            .listRowBackground(Color.appSurface)
+        } else {
+            Section("mw4.ui.section.camos".localized()) {
+                ForEach(camos) { camo in
+                    camoRow(camo)
+                }
+            }
+            .listRowBackground(Color.appSurface)
+        }
+
+        // Finishing this mode's track above opens this mode's own
+        // Mastery challenges.
+        Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
+            if !camos.isEmpty {
+                MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
+                MasteryTierRow(mode: mode, weapon: weapon, tier: 2)
+            }
+            MasteryTier3Row(mode: mode, weapon: weapon)
+        }
+        .listRowBackground(Color.appSurface)
+    }
+
+    private var noCamoData: some View {
+        VStack(spacing: 6) {
+            Image(systemName: "paintpalette")
+                .font(.system(size: 21))
+                .foregroundStyle(Color.appInkMuted)
+            Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
+                .font(.system(size: 13))
+                .foregroundStyle(Color.appInkMuted)
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
+    }
+
+    private func titleBlock(nameSize: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            if let category {
+                Text(category.name.resolved())
+                    .font(.system(size: 11, weight: .bold))
+                    .textCase(.uppercase)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            Text(weapon.name.resolved())
+                .font(.hitmarker(nameSize))
+                .foregroundStyle(Color.appInk)
+            AcquiredByLabel(weapon: weapon)
+        }
+    }
+
+    private func camoRow(_ camo: ChallengeItem) -> some View {
+        ChallengeRow(
+            item: camo,
+            accent: mode.accent,
+            amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+            isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+            isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+            lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
+            onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
+            onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
+        )
+    }
+
+    private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
+
+    /// iPad: the weapon's art beside its name, level and Prestige in one
+    /// wide card, then the camos and the Mastery trio as tiles, so the
+    /// screen is filled rather than one phone-width column on a big canvas.
+    /// A camo tile needs about 400pt to keep its sentence and its stepper on
+    /// good terms, so an unfolded iPhone Duo held upright (about 670pt) gets
+    /// the wide header over full-width tiles, and only wider screens a grid.
+    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 840 ? 2 : 1) }
+    private var masteryInOneRow: Bool { width >= 1000 }
+
+    @ViewBuilder private var wideSections: some View {
+        let columns = tileColumns
+        HStack(alignment: .center, spacing: 20) {
+            WeaponHeroImage(urlString: weapon.imageURL, height: 210)
+            VStack(alignment: .leading, spacing: 14) {
+                titleBlock(nameSize: 28)
+                Divider().overlay(Color.appInkMuted.opacity(0.2))
+                CompactLevelRow(mode: mode, weapon: weapon)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(16)
+        .borderedCard()
+        .listRowInsets(Self.rowInsets)
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+
+        if camos.isEmpty {
+            noCamoData
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+        } else {
+            Section("mw4.ui.section.camos".localized()) {
+                ForEach(Array(stride(from: 0, to: camos.count, by: columns)), id: \.self) { start in
+                    HStack(alignment: .top, spacing: 12) {
+                        ForEach(0..<columns, id: \.self) { offset in
+                            if start + offset < camos.count {
+                                camoRow(camos[start + offset]).modifier(DetailTile())
+                            } else {
+                                Color.clear.frame(maxWidth: .infinity)
+                            }
+                        }
+                    }
+                    .listRowInsets(Self.rowInsets)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                }
+            }
+        }
+
+        Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
+            if masteryInOneRow {
+                HStack(alignment: .top, spacing: 12) {
+                    if !camos.isEmpty {
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+                    }
+                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
+                }
+                .listRowInsets(Self.rowInsets)
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            } else {
+                Group {
+                    if !camos.isEmpty {
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+                    }
+                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
+                }
+                .listRowInsets(Self.rowInsets)
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            }
+        }
+    }
 
     var body: some View {
         ZStack {
             AppBackground(accent: mode.accent)
-            List {
-                // Camo tracking is the actual point of this app — the hero
-                // image (a placeholder; no real art exists) and the level
-                // control are context, not content, so both are compact and
-                // share one card instead of each claiming a full screen's
-                // worth of attention before the Camos list even starts.
-                Section {
-                    VStack(alignment: .leading, spacing: 12) {
-                        WeaponHeroImage(urlString: weapon.imageURL)
-
-                        VStack(alignment: .leading, spacing: 3) {
-                            if let category {
-                                Text(category.name.resolved())
-                                    .font(.system(size: 11, weight: .bold))
-                                    .textCase(.uppercase)
-                                    .foregroundStyle(Color.appInkMuted)
-                            }
-                            Text(weapon.name.resolved())
-                                .font(.hitmarker(20))
-                                .foregroundStyle(Color.appInk)
-                            AcquiredByLabel(weapon: weapon)
-                        }
-
-                        Divider().overlay(Color.appInkMuted.opacity(0.2))
-
-                        CompactLevelRow(mode: mode, weapon: weapon)
-                    }
-                    .padding(12)
-                    .borderedCard()
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                    .listRowBackground(Color.clear)
+            if WideLayout.columns(for: width) >= 2 {
+                List { wideSections }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
+            } else {
+                List {
+                    headerSection
+                    challengeSections
                 }
-                .listRowBackground(Color.appSurface)
-
-                if camos.isEmpty {
-                    VStack(spacing: 6) {
-                        Image(systemName: "paintpalette")
-                            .font(.system(size: 21))
-                            .foregroundStyle(Color.appInkMuted)
-                        Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.appInkMuted)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                    .listRowBackground(Color.appSurface)
-                } else {
-                    Section("mw4.ui.section.camos".localized()) {
-                        ForEach(camos) { camo in
-                            ChallengeRow(
-                                item: camo,
-                                accent: mode.accent,
-                                amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
-                                onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
-                                onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
-                            )
-                        }
-                    }
-                    .listRowBackground(Color.appSurface)
-                }
-
-                // Finishing this mode's track above opens this mode's own
-                // Mastery challenges.
-                Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
-                    if !camos.isEmpty {
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2)
-                    }
-                    MasteryTier3Row(mode: mode, weapon: weapon)
-                }
-                .listRowBackground(Color.appSurface)
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
             }
-            .scrollContentBackground(.hidden)
-            .listStyle(.plain)
         }
+        .readingWidth($width)
         .navigationTitle(weapon.name.resolved())
         .alert("mw4.ui.report.max_level".localized(), isPresented: $askingMaxLevel) {
             TextField("mw4.ui.report.max_level.field".localized(), text: $maxLevelText)
@@ -402,11 +507,15 @@ private struct CompactLevelRow: View {
     private var levelLine: some View {
         VStack(spacing: 8) {
             HStack(spacing: 10) {
+                // Longer in French and Spanish than the room beside the stepper
+                // on a narrow header: shrink a little before truncating.
                 Text("mw4.ui.weapon_level".localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
 
-                Spacer(minLength: 8)
+                Spacer(minLength: 4)
 
                 stepButton(systemName: "minus", enabled: level > 0, size: 26, accent: mode.accent) {
                     viewModel.setLevel(level - 1, for: weapon)
@@ -433,6 +542,8 @@ private struct CompactLevelRow: View {
                 } label: {
                     Text("mw4.ui.max".localized())
                         .font(.system(size: 10, weight: .bold))
+                        .lineLimit(1)
+                        .fixedSize()
                         .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
                         .padding(.horizontal, 8)
                         .frame(height: 26)
@@ -454,5 +565,17 @@ private struct CompactLevelRow: View {
             .animation(.snappy, value: level)
             .animation(.snappy, value: maxLevel)
         }
+    }
+}
+
+/// A camo or Mastery row as a tile in the iPad grid: the same row, on its own
+/// rounded surface, stretched so a row of tiles shares one height.
+private struct DetailTile: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
     }
 }

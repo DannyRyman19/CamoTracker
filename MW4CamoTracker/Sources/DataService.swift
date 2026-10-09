@@ -21,12 +21,16 @@ final class DataService: Sendable {
 
     init(
         baseURL: URL = URL(string: "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/")!,
-        session: URLSession = .shared
+        session: URLSession = .shared,
+        cacheDir: URL? = nil
     ) {
         self.baseURL = baseURL
         self.session = session
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        self.cacheDir = support.appendingPathComponent("MW4CamoTracker", isDirectory: true)
+        // Tests pass their own directory so they never read or write the
+        // app's real cache.
+        let cacheDir = cacheDir ?? support.appendingPathComponent("MW4CamoTracker", isDirectory: true)
+        self.cacheDir = cacheDir
         try? FileManager.default.createDirectory(at: cacheDir, withIntermediateDirectories: true)
     }
 
