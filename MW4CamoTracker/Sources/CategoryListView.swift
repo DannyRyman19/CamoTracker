@@ -258,8 +258,7 @@ private struct WeaponCategoryRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("\(category.weapons.count) \("mw4.ui.section.weapons".localized())")
-                .font(.system(size: 10, weight: .semibold))
-                .tracking(1.2)
+                .font(.system(size: 11, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 
@@ -298,8 +297,7 @@ private struct ObjectiveCategoryRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("\(category.items.count) \("mw4.ui.section.objectives".localized())")
-                .font(.system(size: 10, weight: .semibold))
-                .tracking(1.2)
+                .font(.system(size: 11, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
             Text(category.name.resolved())

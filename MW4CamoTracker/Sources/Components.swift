@@ -464,7 +464,6 @@ struct StatSummaryCard: View {
                                     .foregroundStyle(Color.appInkMuted)
                             }
                         }
-                        .tracking(1.0)
                         .textCase(.uppercase)
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
@@ -754,8 +753,7 @@ struct FilterSortMenu<T: Hashable>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
-                .font(.system(size: 10, weight: .semibold))
-                .tracking(1.0)
+                .font(.system(size: 11, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
             Menu {

@@ -147,8 +147,7 @@ struct WeaponRow: View {
             if showsCamoCount {
                 let counts = viewModel.camoCounts(weaponId: weapon.weaponId, mode: mode.rawValue)
                 Text("\(counts.done)/\(counts.total) \("mw4.ui.section.camos".localized())")
-                    .font(.system(size: 10, weight: .semibold))
-                    .tracking(1.2)
+                    .font(.system(size: 11, weight: .bold))
                     .textCase(.uppercase)
                     .foregroundStyle(Color.appInkMuted)
             }

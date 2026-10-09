@@ -72,7 +72,7 @@ DD="build/ss"
 echo "==> build"
 xcodebuild -project MW4CamoTracker.xcodeproj -scheme MW4CamoTracker \
   -sdk iphonesimulator -configuration Debug \
-  -destination "platform=iOS Simulator,name=$SIM_NAME" \
+  -destination "generic/platform=iOS Simulator" \
   -derivedDataPath "$DD" build >/dev/null
 APP="$DD/Build/Products/Debug-iphonesimulator/MW4CamoTracker.app"
 

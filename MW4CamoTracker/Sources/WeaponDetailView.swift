@@ -38,8 +38,7 @@ struct WeaponDetailView: View {
                         VStack(alignment: .leading, spacing: 3) {
                             if let category {
                                 Text(category.name.resolved())
-                                    .font(.system(size: 10, weight: .semibold))
-                                    .tracking(1.2)
+                                    .font(.system(size: 11, weight: .bold))
                                     .textCase(.uppercase)
                                     .foregroundStyle(Color.appInkMuted)
                             }
@@ -199,7 +198,7 @@ private struct MasteryTierRow: View {
             imageURL: nil,
             tier: nil,
             unlockLevel: nil,
-            requirement: requirement.map { Requirement(amount: $0.amount, unit: "headshots", description: LocalizedText($0.description(camoName: camo.name))) },
+            requirement: requirement.map { Requirement(amount: $0.amount, unit: $0.unit, description: LocalizedText($0.description(camoName: camo.name))) },
             children: []
         )
     }
@@ -296,7 +295,7 @@ private struct CompactLevelRow: View {
     private var stageCount: Int { viewModel.prestigeStages.count }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 12) {
             levelLine
             if stageCount > 0 {
                 prestigeLine
@@ -314,32 +313,81 @@ private struct CompactLevelRow: View {
         }
     }
 
+    /// Stage pips and the current stage's name on the left; on the right one
+    /// button named after the stage it moves to, so it reads as "go to
+    /// Prestige 1" rather than a bare +. It only lights up once the current
+    /// stage is maxed. The small undo beside it steps back a mistaken tap.
     private var prestigeLine: some View {
-        VStack(alignment: .leading, spacing: 3) {
+        VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 10) {
-                Text("mw4.ui.prestige".localized())
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(Color.appInkMuted)
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("mw4.ui.prestige".localized())
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(Color.appInkMuted)
+                    HStack(spacing: 6) {
+                        if stageCount <= 8 {
+                            HStack(spacing: 3) {
+                                ForEach(0..<stageCount, id: \.self) { index in
+                                    Capsule()
+                                        .fill(index < prestige ? mode.accent : Color.appInkMuted.opacity(0.25))
+                                        .frame(width: 14, height: 5)
+                                }
+                            }
+                        } else {
+                            Text("\(prestige)/\(stageCount)")
+                                .font(.system(size: 10, weight: .bold, design: .monospaced))
+                                .foregroundStyle(Color.appInkMuted)
+                        }
+                        Text(viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.prestige.none".localized())
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                }
 
                 Spacer(minLength: 8)
 
-                stepButton(systemName: "minus", enabled: prestige > 0, size: 24, accent: mode.accent) {
-                    viewModel.prestigeDown(weapon)
+                if prestige > 0 {
+                    Button {
+                        withAnimation(.snappy) { viewModel.prestigeDown(weapon) }
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(Color.appInkMuted)
+                            .frame(width: 28, height: 28)
+                            .background(Circle().stroke(Color.appInkMuted.opacity(0.35), lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("mw4.ui.prestige.undo".localized())
                 }
 
-                Text(viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.prestige.none".localized())
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
-                    .lineLimit(1)
-                    .frame(minWidth: 56)
-
-                stepButton(systemName: "plus", enabled: viewModel.canPrestige(weapon), size: 24, accent: mode.accent) {
-                    viewModel.prestigeUp(weapon)
+                if prestige < stageCount {
+                    let ready = viewModel.canPrestige(weapon)
+                    Button {
+                        withAnimation(.snappy) { viewModel.prestigeUp(weapon) }
+                    } label: {
+                        HStack(spacing: 5) {
+                            Image(systemName: ready ? "chevron.up.2" : "lock.fill")
+                                .font(.system(size: 10, weight: .bold))
+                            Text(viewModel.prestigeStages[prestige].name.resolved())
+                                .font(.system(size: 12, weight: .bold))
+                                .lineLimit(1)
+                        }
+                        .foregroundStyle(ready ? Color.appBackground : Color.appInkMuted)
+                        .padding(.horizontal, 11)
+                        .frame(height: 28)
+                        .background(
+                            Capsule().fill(ready ? mode.accent : Color.appInkMuted.opacity(0.14))
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(!ready)
+                } else {
+                    Image(systemName: "checkmark.seal.fill")
+                        .font(.system(size: 18))
+                        .foregroundStyle(mode.accent)
                 }
-
-                Text("\(prestige)/\(stageCount)")
-                    .font(.system(size: 10, weight: .bold, design: .monospaced))
-                    .foregroundStyle(Color.appInkMuted)
             }
             if prestige < stageCount, level < maxLevel {
                 Text(String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
@@ -349,41 +397,62 @@ private struct CompactLevelRow: View {
         }
     }
 
+    /// The stepper, with a thin bar under it so how far through the current
+    /// stage the weapon is reads at a glance.
     private var levelLine: some View {
-        HStack(spacing: 10) {
-            Text("mw4.ui.weapon_level".localized())
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.appInkMuted)
+        VStack(spacing: 8) {
+            HStack(spacing: 10) {
+                Text("mw4.ui.weapon_level".localized())
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
 
-            Spacer(minLength: 8)
+                Spacer(minLength: 8)
 
-            stepButton(systemName: "minus", enabled: level > 0, size: 24, accent: mode.accent) {
-                viewModel.setLevel(level - 1, for: weapon)
+                stepButton(systemName: "minus", enabled: level > 0, size: 26, accent: mode.accent) {
+                    viewModel.setLevel(level - 1, for: weapon)
+                }
+
+                Button {
+                    valueText = "\(level)"
+                    showValueEntry = true
+                } label: {
+                    Text("\(level)/\(maxLevel)")
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
+                        .foregroundStyle(mode.accent)
+                        .contentTransition(.numericText())
+                        .frame(minWidth: 56)
+                }
+                .buttonStyle(.plain)
+
+                stepButton(systemName: "plus", enabled: level < maxLevel, size: 26, accent: mode.accent) {
+                    viewModel.setLevel(level + 1, for: weapon)
+                }
+
+                Button {
+                    withAnimation(.snappy) { viewModel.setLevel(maxLevel, for: weapon) }
+                } label: {
+                    Text("mw4.ui.max".localized())
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
+                        .padding(.horizontal, 8)
+                        .frame(height: 26)
+                        .background(Capsule().stroke(level == maxLevel ? Color.appInkMuted.opacity(0.3) : mode.accent.opacity(0.6), lineWidth: 1))
+                }
+                .buttonStyle(.plain)
+                .disabled(level == maxLevel)
             }
 
-            Button {
-                valueText = "\(level)"
-                showValueEntry = true
-            } label: {
-                Text("\(level)/\(maxLevel)")
-                    .font(.system(size: 14, weight: .bold, design: .monospaced))
-                    .foregroundStyle(mode.accent)
-                    .frame(minWidth: 56)
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Capsule().fill(Color.appInkMuted.opacity(0.2))
+                    Capsule()
+                        .fill(mode.accent)
+                        .frame(width: maxLevel > 0 ? proxy.size.width * CGFloat(level) / CGFloat(maxLevel) : 0)
+                }
             }
-            .buttonStyle(.plain)
-
-            stepButton(systemName: "plus", enabled: level < maxLevel, size: 24, accent: mode.accent) {
-                viewModel.setLevel(level + 1, for: weapon)
-            }
-
-            Button("mw4.ui.max".localized()) {
-                viewModel.setLevel(maxLevel, for: weapon)
-            }
-            .font(.system(size: 10, weight: .bold))
-            .tracking(0.5)
-            .foregroundStyle(mode.accent)
-            .opacity(level == maxLevel ? 0.35 : 1)
-            .disabled(level == maxLevel)
+            .frame(height: 4)
+            .animation(.snappy, value: level)
+            .animation(.snappy, value: maxLevel)
         }
     }
 }

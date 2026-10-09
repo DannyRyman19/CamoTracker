@@ -57,6 +57,14 @@ enum AppMode: String, CaseIterable, Identifiable {
     /// entirely and gates Mastery on Prestige instead, a genuinely different
     /// mechanic that doesn't apply here.
     var masteryCamos: (tier1: MasteryCamo, tier2: MasteryCamo, tier3: MasteryCamo) {
+        let base = builtInMasteryCamos
+        guard let config = MasteryOverrides.byMode[rawValue] else { return base }
+        return (base.tier1.applying(config.tier1), base.tier2.applying(config.tier2), base.tier3.applying(config.tier3))
+    }
+
+    /// The trio as shipped in this build — what `masteryCamos` falls back to
+    /// wherever the mode JSON has no `mastery` override.
+    private var builtInMasteryCamos: (tier1: MasteryCamo, tier2: MasteryCamo, tier3: MasteryCamo) {
         switch self {
         case .multiplayer:
             return (
@@ -91,7 +99,32 @@ struct MasteryCamo {
     let color: Color
     let gradient: [Color]
     let requirement: MasteryRequirement?
-    var name: String { nameKey.localized() }
+    var nameOverride: LocalizedText? = nil
+    var name: String { nameOverride?.resolved() ?? nameKey.localized() }
+
+    /// This camo with a mode JSON's `MasteryTierConfig` laid over it — only
+    /// the fields the config actually sets change.
+    func applying(_ config: MasteryTierConfig?) -> MasteryCamo {
+        guard let config else { return self }
+        let colors = (config.colors ?? []).compactMap(Color.init(hex:))
+        return MasteryCamo(
+            nameKey: nameKey,
+            color: colors.first ?? color,
+            gradient: colors.isEmpty ? gradient : colors,
+            requirement: requirement.map {
+                MasteryRequirement(amount: max(1, config.amount ?? $0.amount), unit: config.unit ?? $0.unit, descriptionOverride: config.description)
+            },
+            nameOverride: config.name ?? nameOverride
+        )
+    }
+}
+
+/// The `mastery` block of each loaded mode file, keyed by mode. `AppMode` is a
+/// plain enum with no route to the view model, so `TrackerViewModel` pushes
+/// the overrides here whenever it (re)loads mode files — always *before* it
+/// publishes the new `modes`, so the redraw that follows already sees them.
+enum MasteryOverrides {
+    nonisolated(unsafe) static var byMode: [String: MasteryConfig] = [:]
 }
 
 /// A per-weapon Mastery tier's own challenge, on top of its availability gate
@@ -102,14 +135,27 @@ struct MasteryCamo {
 /// asking for a handful of headshots on each gun), not invented from nothing.
 struct MasteryRequirement {
     let amount: Int
+    var unit: String = "headshots"
+    var descriptionOverride: LocalizedText? = nil
     /// Names the camo it earns — "Get 3 headshot kills with this weapon to
-    /// earn Mercurial Drift," not a generic amount with no context.
+    /// earn Mercurial Drift," not a generic amount with no context. A mode
+    /// JSON's own sentence wins when it has one.
     func description(camoName: String) -> String {
-        String(format: "mw4.ui.mastery_requirement".localized(), amount, camoName)
+        descriptionOverride?.resolved() ?? String(format: "mw4.ui.mastery_requirement".localized(), amount, camoName)
     }
 
     static let tier1 = MasteryRequirement(amount: 3)
     static let tier2 = MasteryRequirement(amount: 5)
+}
+
+extension Color {
+    /// "#RRGGBB" or "RRGGBB"; nil for anything else, so a typo in the mode
+    /// JSON falls back to the built-in color instead of rendering black.
+    init?(hex: String) {
+        let digits = hex.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: "#", with: "")
+        guard digits.count == 6, let value = UInt32(digits, radix: 16) else { return nil }
+        self.init(red: Double((value >> 16) & 0xFF) / 255, green: Double((value >> 8) & 0xFF) / 255, blue: Double(value & 0xFF) / 255)
+    }
 }
 
 extension [Color] {
