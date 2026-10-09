@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "Camo Tracker: Mastery Grind"
+title: "Camo Tracker Warfare 4"
 accent: "#ffd000"
 description : Modern Warfare 4, MW4, Warzone, DMZ, Multiplayer, camo tracker 2026, Mercurial Drift, Polyatomic Reforged, Orion Reforged, Parallax, Damascus Reforged, Empyros, Chiral, Ripple Tide, Helio
 ---
-<a href="https://camotracker.djr.li/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="Camo Tracker: Mastery Grind" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://camotracker.djr.li/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="Camo Tracker Warfare 4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
-# Camo Tracker: Mastery Grind
+# Camo Tracker Warfare 4
 Please Note: This app does not automatically fetch your camo progression as it is impossible. You will have to enter your progression manually!
 
 Camo Tracker keeps every camo challenge in one place so you always know what to grind next. Track Multiplayer, Warzone and DMZ, each in its own tab, with the exact challenge and unlock level listed for every weapon.

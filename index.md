@@ -9,7 +9,7 @@ We have apps for Modern Warfare 4 MW4, Black Ops 7 BO7, Black Ops 6 BO6, Black O
 
 <div class="table-container">
 <div class="column">
- <div class="data"><a href="/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="Camo Tracker: Mastery Grind" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+ <div class="data"><a href="/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="Camo Tracker Warfare 4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Modern Warfare 4 MW4</div>
       </div>
 <div class="column">
