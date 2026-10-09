@@ -21,89 +21,112 @@ struct WeaponDetailView: View {
     @State private var askingUnlockLevel = false
     @State private var unlockLevelText = ""
     @Environment(\.openURL) private var openURL
+    @State private var width: CGFloat = 0
+
+    @ViewBuilder private var headerSection: some View {
+        // Camo tracking is the actual point of this app — the hero
+        // image (a placeholder; no real art exists) and the level
+        // control are context, not content, so both are compact and
+        // share one card instead of each claiming a full screen's
+        // worth of attention before the Camos list even starts.
+        Section {
+            VStack(alignment: .leading, spacing: 12) {
+                WeaponHeroImage(urlString: weapon.imageURL)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    if let category {
+                        Text(category.name.resolved())
+                            .font(.system(size: 11, weight: .bold))
+                            .textCase(.uppercase)
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                    Text(weapon.name.resolved())
+                        .font(.hitmarker(20))
+                        .foregroundStyle(Color.appInk)
+                    AcquiredByLabel(weapon: weapon)
+                }
+
+                Divider().overlay(Color.appInkMuted.opacity(0.2))
+
+                CompactLevelRow(mode: mode, weapon: weapon)
+            }
+            .padding(12)
+            .borderedCard()
+            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            .listRowBackground(Color.clear)
+        }
+        .listRowBackground(Color.appSurface)
+    }
+
+    @ViewBuilder private var challengeSections: some View {
+        if camos.isEmpty {
+            VStack(spacing: 6) {
+                Image(systemName: "paintpalette")
+                    .font(.system(size: 21))
+                    .foregroundStyle(Color.appInkMuted)
+                Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.appInkMuted)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 8)
+            .listRowBackground(Color.appSurface)
+        } else {
+            Section("mw4.ui.section.camos".localized()) {
+                ForEach(camos) { camo in
+                    ChallengeRow(
+                        item: camo,
+                        accent: mode.accent,
+                        amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                        isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                        isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                        lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
+                        onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
+                        onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
+                    )
+                }
+            }
+            .listRowBackground(Color.appSurface)
+        }
+
+        // Finishing this mode's track above opens this mode's own
+        // Mastery challenges.
+        Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
+            if !camos.isEmpty {
+                MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
+                MasteryTierRow(mode: mode, weapon: weapon, tier: 2)
+            }
+            MasteryTier3Row(mode: mode, weapon: weapon)
+        }
+        .listRowBackground(Color.appSurface)
+    }
 
     var body: some View {
         ZStack {
             AppBackground(accent: mode.accent)
-            List {
-                // Camo tracking is the actual point of this app — the hero
-                // image (a placeholder; no real art exists) and the level
-                // control are context, not content, so both are compact and
-                // share one card instead of each claiming a full screen's
-                // worth of attention before the Camos list even starts.
-                Section {
-                    VStack(alignment: .leading, spacing: 12) {
-                        WeaponHeroImage(urlString: weapon.imageURL)
-
-                        VStack(alignment: .leading, spacing: 3) {
-                            if let category {
-                                Text(category.name.resolved())
-                                    .font(.system(size: 11, weight: .bold))
-                                    .textCase(.uppercase)
-                                    .foregroundStyle(Color.appInkMuted)
-                            }
-                            Text(weapon.name.resolved())
-                                .font(.hitmarker(20))
-                                .foregroundStyle(Color.appInk)
-                            AcquiredByLabel(weapon: weapon)
-                        }
-
-                        Divider().overlay(Color.appInkMuted.opacity(0.2))
-
-                        CompactLevelRow(mode: mode, weapon: weapon)
-                    }
-                    .padding(12)
-                    .borderedCard()
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                    .listRowBackground(Color.clear)
+            if WideLayout.columns(for: width) >= 2 {
+                // iPad: the weapon and its level stay put on the left while
+                // the camo list scrolls beside them.
+                HStack(alignment: .top, spacing: 0) {
+                    List { headerSection.listRowSeparator(.hidden) }
+                        .scrollContentBackground(.hidden)
+                        .listStyle(.plain)
+                        .frame(width: min(440, width * 0.42))
+                    List { challengeSections }
+                        .scrollContentBackground(.hidden)
+                        .listStyle(.plain)
                 }
-                .listRowBackground(Color.appSurface)
-
-                if camos.isEmpty {
-                    VStack(spacing: 6) {
-                        Image(systemName: "paintpalette")
-                            .font(.system(size: 21))
-                            .foregroundStyle(Color.appInkMuted)
-                        Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.appInkMuted)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                    .listRowBackground(Color.appSurface)
-                } else {
-                    Section("mw4.ui.section.camos".localized()) {
-                        ForEach(camos) { camo in
-                            ChallengeRow(
-                                item: camo,
-                                accent: mode.accent,
-                                amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-                                lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
-                                onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
-                                onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
-                            )
-                        }
-                    }
-                    .listRowBackground(Color.appSurface)
+            } else {
+                List {
+                    headerSection
+                    challengeSections
                 }
-
-                // Finishing this mode's track above opens this mode's own
-                // Mastery challenges.
-                Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
-                    if !camos.isEmpty {
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2)
-                    }
-                    MasteryTier3Row(mode: mode, weapon: weapon)
-                }
-                .listRowBackground(Color.appSurface)
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
             }
-            .scrollContentBackground(.hidden)
-            .listStyle(.plain)
         }
+        .readingWidth($width)
         .navigationTitle(weapon.name.resolved())
         .alert("mw4.ui.report.max_level".localized(), isPresented: $askingMaxLevel) {
             TextField("mw4.ui.report.max_level.field".localized(), text: $maxLevelText)

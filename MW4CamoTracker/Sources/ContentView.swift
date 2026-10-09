@@ -79,6 +79,11 @@ struct ContentView: View {
                                 }
                             }
                     }
+                    .environment(\.pushRoute) { route in
+                        var path = paths[index] ?? NavigationPath()
+                        path.append(route)
+                        paths[index] = path
+                    }
                     .tabItem { Label(mode.displayNameKey.localized(), systemImage: mode.symbol) }
                     .tag(index)
                 }

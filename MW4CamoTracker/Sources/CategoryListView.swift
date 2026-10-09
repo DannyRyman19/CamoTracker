@@ -7,6 +7,8 @@ struct CategoryListView: View {
     let mode: AppMode
     @EnvironmentObject private var viewModel: TrackerViewModel
     @State private var searchQuery = ""
+    @State private var width: CGFloat = 0
+    private var columns: Int { WideLayout.columns(for: width) }
 
     /// Shared across every mode tab (same idea as the sibling BO7 Camo
     /// Tracker app's `FilterContext`, minus the cross-screen sync it needs
@@ -78,12 +80,8 @@ struct CategoryListView: View {
             AppBackground(accent: mode.accent)
             List {
                 if !searchQuery.isEmpty {
-                    ForEach(searchResults) { weapon in
-                        NavigationLink(value: Route.weapon(weapon.weaponId)) {
-                            WeaponRow(mode: mode, weapon: weapon)
-                        }
-                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                        .listRowBackground(Color.clear)
+                    CardGrid(items: searchResults, columns: columns, route: { .weapon($0.weaponId) }) { weapon in
+                        WeaponRow(mode: mode, weapon: weapon)
                     }
                 } else {
                     // No separate leading hero ring — with Gold/tier1/tier2/
@@ -123,22 +121,16 @@ struct CategoryListView: View {
 
                     if let pinnedWeapon {
                         Section("mw4.ui.section.pinned".localized()) {
-                            NavigationLink(value: Route.weapon(pinnedWeapon.weaponId)) {
-                                WeaponRow(mode: mode, weapon: pinnedWeapon)
+                            CardGrid(items: [pinnedWeapon], columns: columns, route: { .weapon($0.weaponId) }) { weapon in
+                                WeaponRow(mode: mode, weapon: weapon)
                             }
-                            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                            .listRowBackground(Color.clear)
                         }
                     }
 
                     if !suggestions.isEmpty {
                         Section("mw4.ui.section.suggested".localized()) {
-                            ForEach(suggestions) { suggestion in
-                                NavigationLink(value: Route.weapon(suggestion.weaponId)) {
-                                    SuggestionRow(mode: mode, suggestion: suggestion)
-                                }
-                                .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                                .listRowBackground(Color.clear)
+                            CardGrid(items: suggestions, columns: columns, route: { .weapon($0.weaponId) }) { suggestion in
+                                SuggestionRow(mode: mode, suggestion: suggestion)
                             }
                         }
                     }
@@ -157,12 +149,8 @@ struct CategoryListView: View {
                                     .listRowInsets(EdgeInsets())
                                     .listRowBackground(Color.clear)
                             } else {
-                                ForEach(displayedCategories) { category in
-                                    NavigationLink(value: Route.weaponCategory(category.categoryId)) {
-                                        WeaponCategoryRow(mode: mode, category: category)
-                                    }
-                                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                                    .listRowBackground(Color.clear)
+                                CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
+                                    WeaponCategoryRow(mode: mode, category: category)
                                 }
                             }
                         }
@@ -170,12 +158,8 @@ struct CategoryListView: View {
 
                     if !objectiveCategories.isEmpty {
                         Section("mw4.ui.section.objectives".localized()) {
-                            ForEach(objectiveCategories) { category in
-                                NavigationLink(value: Route.objectiveCategory(category.categoryId)) {
-                                    ObjectiveCategoryRow(mode: mode, category: category)
-                                }
-                                .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                                .listRowBackground(Color.clear)
+                            CardGrid(items: objectiveCategories, columns: columns, route: { .objectiveCategory($0.categoryId) }) { category in
+                                ObjectiveCategoryRow(mode: mode, category: category)
                             }
                         }
                     }
@@ -184,6 +168,7 @@ struct CategoryListView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
+        .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
         .navigationTitle(mode.displayNameKey.localized())
         .refreshable { await viewModel.refresh() }

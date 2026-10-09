@@ -7,6 +7,7 @@ import SwiftUI
 /// "how close am I" and "here's every category's percentage."
 struct StatsView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @State private var width: CGFloat = 0
 
     var body: some View {
         ZStack {
@@ -16,10 +17,22 @@ struct StatsView: View {
                     .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
                     .listRowBackground(Color.clear)
 
-                ForEach(AppMode.allCases) { mode in
-                    ModeStatsCard(mode: mode)
-                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                        .listRowBackground(Color.clear)
+                if width >= 950 {
+                    HStack(alignment: .top, spacing: 12) {
+                        ForEach(AppMode.allCases) { mode in
+                            ModeStatsCard(mode: mode)
+                                .frame(maxWidth: .infinity, alignment: .top)
+                        }
+                    }
+                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                } else {
+                    ForEach(AppMode.allCases) { mode in
+                        ModeStatsCard(mode: mode)
+                            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                            .listRowBackground(Color.clear)
+                    }
                 }
 
                 SupportRow()
@@ -29,6 +42,7 @@ struct StatsView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
+        .readingWidth($width)
         .navigationTitle("mw4.ui.tab.stats".localized())
     }
 }
