@@ -116,6 +116,33 @@ struct ModeFile: Codable {
     let mode: String
     var weaponCamos: [WeaponCamoEntry]
     var objectives: [Category]
+    /// Optional over-the-air override of this mode's Mastery trio. Absent
+    /// (every file before launch, and any older cached copy) means the
+    /// built-in names/amounts/colors in `AppMode.builtInMasteryCamos` stand.
+    var mastery: MasteryConfig? = nil
+}
+
+/// Per-tier Mastery overrides from the mode JSON. Every field is optional and
+/// only replaces what it names, so a file can correct just tier1's amount at
+/// launch without restating names or colors. tier3 is a pure aggregate gate:
+/// its `amount`/`unit`/`description` are ignored.
+struct MasteryConfig: Codable {
+    var tier1: MasteryTierConfig?
+    var tier2: MasteryTierConfig?
+    var tier3: MasteryTierConfig?
+}
+
+struct MasteryTierConfig: Codable {
+    var name: LocalizedText?
+    var amount: Int?
+    var unit: String?
+    /// The full per-language sentence, amount included ("Get 5 longshot
+    /// kills…") — replaces the bundled "headshot kills" string, so the
+    /// challenge itself can change without an app update.
+    var description: LocalizedText?
+    /// "#RRGGBB" hex; the first is the badge/pip swatch, all of them together
+    /// the animated gradient.
+    var colors: [String]?
 }
 
 struct WeaponCamoEntry: Codable, Identifiable {

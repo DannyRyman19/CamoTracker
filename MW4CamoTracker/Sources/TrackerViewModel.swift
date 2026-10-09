@@ -47,9 +47,12 @@ final class TrackerViewModel: ObservableObject {
         self.dataService = dataService
         loadProgress()
         catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
+        var loaded: [String: ModeFile] = [:]
         for mode in ["multiplayer", "warzone", "dmz"] {
-            modes[mode] = dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode)
+            loaded[mode] = dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode)
         }
+        MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
+        modes = loaded
         if UserDefaults.standard.object(forKey: pinnedWeaponKey) != nil {
             pinnedWeaponId = UserDefaults.standard.integer(forKey: pinnedWeaponKey)
         }
@@ -79,7 +82,11 @@ final class TrackerViewModel: ObservableObject {
                 knownModeVersions: forceFull ? [:] : modes.mapValues { $0.version }
             )
             if let newCatalog = result.catalog { catalog = newCatalog }
-            for (mode, file) in result.modes { modes[mode] = file }
+            if !result.modes.isEmpty {
+                let merged = modes.merging(result.modes) { _, new in new }
+                MasteryOverrides.byMode = merged.compactMapValues(\.mastery)
+                modes = merged
+            }
             refreshError = nil
             #if DEBUG
             // `refreshError` is not shown anywhere, so a broken feed is
@@ -166,8 +173,12 @@ final class TrackerViewModel: ObservableObject {
         modes[mode]?.weaponCamos.first { $0.weaponId == weaponId }?.camos ?? []
     }
 
+    /// Capped at the current requirement on read, not on save: a requirement
+    /// lowered over the air (10 → 5) must not show "8/5" or make − jump
+    /// straight to 5, but the stored 8 stays, so raising it again later
+    /// gives the player their real progress back.
     func camoAmount(mode: String, weaponId: Int, camo: ChallengeItem) -> Int {
-        amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0
+        min(amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0, camo.requirement?.amount ?? .max)
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
@@ -302,8 +313,9 @@ final class TrackerViewModel: ObservableObject {
     }
 
     /// This weapon's progress on its own tier1 or tier2 Mastery challenge.
+    /// Capped at the current requirement on read — see `camoAmount`.
     func weaponMasteryAmount(mode: String, weaponId: Int, tier: Int) -> Int {
-        amounts[weaponMasteryKey(mode, weaponId, tier)] ?? 0
+        min(amounts[weaponMasteryKey(mode, weaponId, tier)] ?? 0, masteryRequirement(mode: mode, tier: tier)?.amount ?? .max)
     }
 
     func setWeaponMasteryAmount(mode: String, weaponId: Int, tier: Int, amount newAmount: Int) {
@@ -499,8 +511,9 @@ final class TrackerViewModel: ObservableObject {
 
     // MARK: - Objectives (mode-exclusive, non-weapon — DMZ extraction goals etc.)
 
+    /// Capped at the current requirement on read — see `camoAmount`.
     func objectiveAmount(mode: String, categoryId: Int, item: ChallengeItem) -> Int {
-        amounts[objectiveKey(mode, categoryId, item.itemId)] ?? 0
+        min(amounts[objectiveKey(mode, categoryId, item.itemId)] ?? 0, item.requirement?.amount ?? .max)
     }
 
     func isObjectiveComplete(mode: String, categoryId: Int, item: ChallengeItem) -> Bool {
