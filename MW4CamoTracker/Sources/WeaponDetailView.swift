@@ -507,11 +507,15 @@ private struct CompactLevelRow: View {
     private var levelLine: some View {
         VStack(spacing: 8) {
             HStack(spacing: 10) {
+                // Longer in French and Spanish than the room beside the stepper
+                // on a narrow header: shrink a little before truncating.
                 Text("mw4.ui.weapon_level".localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
 
-                Spacer(minLength: 8)
+                Spacer(minLength: 4)
 
                 stepButton(systemName: "minus", enabled: level > 0, size: 26, accent: mode.accent) {
                     viewModel.setLevel(level - 1, for: weapon)
@@ -538,6 +542,8 @@ private struct CompactLevelRow: View {
                 } label: {
                     Text("mw4.ui.max".localized())
                         .font(.system(size: 10, weight: .bold))
+                        .lineLimit(1)
+                        .fixedSize()
                         .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
                         .padding(.horizontal, 8)
                         .frame(height: 26)
