@@ -106,8 +106,7 @@ private struct ItemRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(category.name.resolved())
-                .font(.system(size: 10, weight: .semibold))
-                .tracking(1.2)
+                .font(.system(size: 11, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 

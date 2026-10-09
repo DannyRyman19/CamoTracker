@@ -38,8 +38,7 @@ struct WeaponDetailView: View {
                         VStack(alignment: .leading, spacing: 3) {
                             if let category {
                                 Text(category.name.resolved())
-                                    .font(.system(size: 10, weight: .semibold))
-                                    .tracking(1.2)
+                                    .font(.system(size: 11, weight: .bold))
                                     .textCase(.uppercase)
                                     .foregroundStyle(Color.appInkMuted)
                             }
@@ -434,7 +433,6 @@ private struct CompactLevelRow: View {
                 } label: {
                     Text("mw4.ui.max".localized())
                         .font(.system(size: 10, weight: .bold))
-                        .tracking(0.5)
                         .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
                         .padding(.horizontal, 8)
                         .frame(height: 26)

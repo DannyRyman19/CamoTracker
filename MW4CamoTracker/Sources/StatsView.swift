@@ -53,8 +53,7 @@ private struct OverallStatsHero: View {
             ProgressRing(fraction: overallFraction, accent: .camoGold, lineWidth: 10, size: 110)
 
             Text("mw4.ui.stats.overall".localized())
-                .font(.system(size: 11, weight: .semibold))
-                .tracking(1.2)
+                .font(.system(size: 12, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 

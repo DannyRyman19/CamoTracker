@@ -71,8 +71,7 @@ struct OnboardingView: View {
     private var header: some View {
         VStack(spacing: 12) {
             Text("\("mw4.onboarding.step".localized()) \(page + 1)/\(pageCount)")
-                .font(.system(size: 10, weight: .semibold))
-                .tracking(1.4)
+                .font(.system(size: 11, weight: .bold))
                 .textCase(.uppercase)
                 .foregroundStyle(accent)
 
@@ -137,8 +136,7 @@ private struct OnboardingScaffold<Content: View>: View {
                 VStack(spacing: 8) {
                     if let kicker {
                         Text(kicker)
-                            .font(.system(size: 10, weight: .semibold))
-                            .tracking(1.4)
+                            .font(.system(size: 11, weight: .bold))
                             .textCase(.uppercase)
                             .foregroundStyle(Color.appInkMuted)
                     }
