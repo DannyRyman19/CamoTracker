@@ -39,9 +39,19 @@
 		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
+		B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */; };
 		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
-		B60C185149378A2DDDF51A66 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9D0A1C3E5F7092B4D6E8F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE362CDEF8A5066AE2289CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB35CFA37F02A0D21E89FFA2;
+			remoteInfo = MW4CamoTracker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6FE011B12DC06CD3532E4EFB /* SupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMail.swift; sourceTree = "<group>"; };
@@ -77,6 +87,7 @@
 		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
+		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
 		B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
 		B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +161,7 @@
 		B3D9F52E16046F83AAC2E733 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
 			);
 			path = Tests;
@@ -185,6 +197,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9D0A1C3E5F7092B4D6E8F11 /* PBXTargetDependency */,
 			);
 			name = MW4CamoTrackerTests;
 			productName = MW4CamoTrackerTests;
@@ -274,12 +287,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
-				B60C185149378A2DDDF51A66 /* ReviewPrompt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9D0A1C3E5F7092B4D6E8F11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */;
+			targetProxy = B9D0A1C3E5F7092B4D6E8F10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		329645BF0A7F3FB43ABFB114 /* Debug */ = {
@@ -447,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -456,6 +478,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MW4CamoTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MW4CamoTracker";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -464,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -473,6 +497,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MW4CamoTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MW4CamoTracker";
 			};
 			name = Release;
 		};

@@ -42,9 +42,13 @@ final class TrackerViewModel: ObservableObject {
     private var completed: Set<String> = []
 
     private let storeKey = "mw4_progress_v2"
+    private let defaults: UserDefaults
 
-    init(dataService: DataService = DataService()) {
+    /// `defaults` is where progress and the pin are kept; tests pass a
+    /// throwaway suite.
+    init(dataService: DataService = DataService(), defaults: UserDefaults = .standard) {
         self.dataService = dataService
+        self.defaults = defaults
         loadProgress()
         catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
         var loaded: [String: ModeFile] = [:]
@@ -53,8 +57,8 @@ final class TrackerViewModel: ObservableObject {
         }
         MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
         modes = loaded
-        if UserDefaults.standard.object(forKey: pinnedWeaponKey) != nil {
-            pinnedWeaponId = UserDefaults.standard.integer(forKey: pinnedWeaponKey)
+        if defaults.object(forKey: pinnedWeaponKey) != nil {
+            pinnedWeaponId = defaults.integer(forKey: pinnedWeaponKey)
         }
     }
 
@@ -465,12 +469,12 @@ final class TrackerViewModel: ObservableObject {
 
     func pin(weaponId: Int) {
         pinnedWeaponId = weaponId
-        UserDefaults.standard.set(weaponId, forKey: pinnedWeaponKey)
+        defaults.set(weaponId, forKey: pinnedWeaponKey)
     }
 
     func unpin() {
         pinnedWeaponId = nil
-        UserDefaults.standard.removeObject(forKey: pinnedWeaponKey)
+        defaults.removeObject(forKey: pinnedWeaponKey)
     }
 
     func weapon(id: Int) -> WeaponEntry? {
@@ -572,7 +576,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     private func loadProgress() {
-        guard let data = UserDefaults.standard.data(forKey: storeKey),
+        guard let data = defaults.data(forKey: storeKey),
               let store = try? JSONDecoder().decode(ProgressStore.self, from: data) else { return }
         weaponLevels = store.weaponLevels
         weaponPrestige = store.weaponPrestige ?? [:]
@@ -583,7 +587,7 @@ final class TrackerViewModel: ObservableObject {
     private func saveProgress() {
         let store = ProgressStore(weaponLevels: weaponLevels, weaponPrestige: weaponPrestige, amounts: amounts, completed: Array(completed))
         if let data = try? JSONEncoder().encode(store) {
-            UserDefaults.standard.set(data, forKey: storeKey)
+            defaults.set(data, forKey: storeKey)
         }
     }
 }
