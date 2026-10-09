@@ -48,4 +48,39 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["Multiplayer"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["Assault Rifles"].exists)
     }
+
+    /// The iPad weapon screen puts two camo tiles in one List row. Nudging
+    /// one camo's amount must leave its neighbour alone.
+    func testNudgingOneCamoLeavesItsNeighbourAlone() {
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["SS_WEAPON"] = "3" // Kastov 762
+        app.launchArguments += ["-AppleLanguages", "(en)"]
+        app.launch()
+
+        func amount(outOf total: Int) -> XCUIElement {
+            app.descendants(matching: .any)
+                .matching(NSPredicate(format: "label MATCHES %@", "[0-9]+/\(total)")).firstMatch
+        }
+        let slate = amount(outOf: 10), ridgeline = amount(outOf: 25)
+        XCTAssertTrue(slate.waitForExistence(timeout: 15))
+        XCTAssertTrue(ridgeline.exists)
+        let before = Int(slate.label.split(separator: "/")[0])!
+        let neighbour = ridgeline.label
+
+        // Plus sits just right of the amount, minus just left.
+        let up = before < 10
+        let edge = slate.coordinate(withNormalizedOffset: CGVector(dx: up ? 1 : 0, dy: 0.5))
+        edge.withOffset(CGVector(dx: up ? 18 : -18, dy: 0)).tap()
+
+        let after = before + (up ? 1 : -1)
+        XCTAssertTrue(app.descendants(matching: .any)["\(after)/10"].waitForExistence(timeout: 5))
+        XCTAssertEqual(amount(outOf: 25).label, neighbour)
+
+        // Put it back.
+        let changed = amount(outOf: 10)
+        changed.coordinate(withNormalizedOffset: CGVector(dx: up ? 0 : 1, dy: 0.5))
+            .withOffset(CGVector(dx: up ? -18 : 18, dy: 0)).tap()
+        XCTAssertTrue(app.descendants(matching: .any)["\(before)/10"].waitForExistence(timeout: 5))
+    }
 }
