@@ -279,6 +279,9 @@ private struct MasteryTier3Row: View {
 /// A single-line level readout. Level opens the base camos below it (each
 /// camo's `unlockLevel`, in every mode), so changing it here unlocks rows
 /// straight away. Tap the number to type an exact level, +/- to nudge, MAX to jump to cap.
+/// Under it, when the catalog defines any Weapon Prestige stages, a second
+/// line steps through them: + once the current stage is maxed (level goes
+/// back to 1), - to undo a mistaken tap.
 private struct CompactLevelRow: View {
     let mode: AppMode
     let weapon: WeaponEntry
@@ -288,8 +291,65 @@ private struct CompactLevelRow: View {
     @State private var valueText = ""
 
     private var level: Int { viewModel.level(for: weapon.weaponId) }
+    private var maxLevel: Int { viewModel.maxLevel(for: weapon) }
+    private var prestige: Int { viewModel.prestige(for: weapon.weaponId) }
+    private var stageCount: Int { viewModel.prestigeStages.count }
 
     var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            levelLine
+            if stageCount > 0 {
+                prestigeLine
+            }
+        }
+        .alert("mw4.ui.set_level.title".localized(), isPresented: $showValueEntry) {
+            TextField("mw4.ui.set_amount.field".localized(), text: $valueText)
+                .keyboardType(.numberPad)
+            Button("mw4.ui.cancel".localized(), role: .cancel) {}
+            Button("mw4.ui.save".localized()) {
+                if let entered = Int(valueText) { viewModel.setLevel(entered, for: weapon) }
+            }
+        } message: {
+            Text(String(format: "mw4.ui.set_level.message".localized(), 0, maxLevel))
+        }
+    }
+
+    private var prestigeLine: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            HStack(spacing: 10) {
+                Text("mw4.ui.prestige".localized())
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
+
+                Spacer(minLength: 8)
+
+                stepButton(systemName: "minus", enabled: prestige > 0, size: 24, accent: mode.accent) {
+                    viewModel.prestigeDown(weapon)
+                }
+
+                Text(viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.prestige.none".localized())
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
+                    .lineLimit(1)
+                    .frame(minWidth: 56)
+
+                stepButton(systemName: "plus", enabled: viewModel.canPrestige(weapon), size: 24, accent: mode.accent) {
+                    viewModel.prestigeUp(weapon)
+                }
+
+                Text("\(prestige)/\(stageCount)")
+                    .font(.system(size: 10, weight: .bold, design: .monospaced))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            if prestige < stageCount, level < maxLevel {
+                Text(String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
+                    .font(.system(size: 11))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+        }
+    }
+
+    private var levelLine: some View {
         HStack(spacing: 10) {
             Text("mw4.ui.weapon_level".localized())
                 .font(.system(size: 12, weight: .semibold))
@@ -305,35 +365,25 @@ private struct CompactLevelRow: View {
                 valueText = "\(level)"
                 showValueEntry = true
             } label: {
-                Text("\(level)/\(weapon.maxLevel)")
+                Text("\(level)/\(maxLevel)")
                     .font(.system(size: 14, weight: .bold, design: .monospaced))
                     .foregroundStyle(mode.accent)
                     .frame(minWidth: 56)
             }
             .buttonStyle(.plain)
 
-            stepButton(systemName: "plus", enabled: level < weapon.maxLevel, size: 24, accent: mode.accent) {
+            stepButton(systemName: "plus", enabled: level < maxLevel, size: 24, accent: mode.accent) {
                 viewModel.setLevel(level + 1, for: weapon)
             }
 
             Button("mw4.ui.max".localized()) {
-                viewModel.setLevel(weapon.maxLevel, for: weapon)
+                viewModel.setLevel(maxLevel, for: weapon)
             }
             .font(.system(size: 10, weight: .bold))
             .tracking(0.5)
             .foregroundStyle(mode.accent)
-            .opacity(level == weapon.maxLevel ? 0.35 : 1)
-            .disabled(level == weapon.maxLevel)
-        }
-        .alert("mw4.ui.set_level.title".localized(), isPresented: $showValueEntry) {
-            TextField("mw4.ui.set_amount.field".localized(), text: $valueText)
-                .keyboardType(.numberPad)
-            Button("mw4.ui.cancel".localized(), role: .cancel) {}
-            Button("mw4.ui.save".localized()) {
-                if let entered = Int(valueText) { viewModel.setLevel(entered, for: weapon) }
-            }
-        } message: {
-            Text(String(format: "mw4.ui.set_level.message".localized(), 0, weapon.maxLevel))
+            .opacity(level == maxLevel ? 0.35 : 1)
+            .disabled(level == maxLevel)
         }
     }
 }

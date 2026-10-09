@@ -56,7 +56,21 @@ struct WeaponCatalog: Codable {
     /// older cached catalog that predates this field) — `TrackerViewModel`
     /// falls back to the live weapon count when absent.
     let baseWeaponCount: Int?
+    /// Weapon Prestige, as the stages that come *after* a weapon's normal
+    /// levels, in order — so its count is how many times a weapon can
+    /// prestige. Kept in the network JSON so the count and each stage's
+    /// level cap can change without an app update. Optional: no prestige
+    /// at all when absent.
+    let weaponPrestige: [PrestigeStage]?
     let categories: [WeaponCategory]
+}
+
+/// One Weapon Prestige stage. `maxLevel` is that stage's level cap; `nil`
+/// means "the weapon's own `maxLevel` again", the usual case. A one-off
+/// stage like BO7's Prestige Master (250 levels) sets it explicitly.
+struct PrestigeStage: Codable {
+    let name: LocalizedText
+    let maxLevel: Int?
 }
 
 struct WeaponCategory: Codable, Identifiable {

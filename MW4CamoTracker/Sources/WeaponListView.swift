@@ -53,8 +53,11 @@ struct WeaponListView: View {
         return weapons
     }
 
+    /// Prestige first, then progress through the current stage, so a
+    /// prestiged weapon at level 3 still sorts above an unprestiged one at 60.
     private func levelFraction(_ weapon: WeaponEntry) -> Double {
-        Double(viewModel.level(for: weapon.weaponId)) / Double(max(weapon.maxLevel, 1))
+        Double(viewModel.prestige(for: weapon.weaponId))
+            + Double(viewModel.level(for: weapon.weaponId)) / Double(max(viewModel.maxLevel(for: weapon), 1))
     }
 
     var body: some View {
@@ -176,7 +179,8 @@ struct WeaponRow: View {
                         )
                     }
                     // Weapon level is global — the same number shows up under every mode tab.
-                    Text("LVL \(viewModel.level(for: weapon.weaponId))/\(weapon.maxLevel)")
+                    let prestige = viewModel.prestige(for: weapon.weaponId)
+                    Text("\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))")
                         .font(.system(size: 11, design: .monospaced))
                         .foregroundStyle(Color.appInkMuted)
                 }

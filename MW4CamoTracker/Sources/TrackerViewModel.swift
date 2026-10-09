@@ -31,6 +31,11 @@ final class TrackerViewModel: ObservableObject {
     /// so it reads the same from the Multiplayer tab or the DMZ tab.
     private var weaponLevels: [Int: Int] = [:]
 
+    /// Weapon Prestige reached, per weapon — global like level. 0 is the
+    /// weapon's normal levels; n is `prestigeStages[n - 1]`. `weaponLevels`
+    /// is always the level *within* the current stage.
+    private var weaponPrestige: [Int: Int] = [:]
+
     /// Camo and objective completion, keyed by mode — each mode has its own
     /// camo track for the same weapon.
     private var amounts: [String: Int] = [:]
@@ -98,7 +103,57 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func setLevel(_ level: Int, for weapon: WeaponEntry) {
-        weaponLevels[weapon.weaponId] = max(0, min(level, weapon.maxLevel))
+        weaponLevels[weapon.weaponId] = max(0, min(level, maxLevel(for: weapon)))
+        saveProgress()
+        objectWillChange.send()
+    }
+
+    // MARK: - Weapon Prestige (global, like level)
+
+    var prestigeStages: [PrestigeStage] {
+        catalog?.weaponPrestige ?? []
+    }
+
+    /// Clamped, so a stage dropped from the JSON never indexes past the end.
+    func prestige(for weaponId: Int) -> Int {
+        min(weaponPrestige[weaponId] ?? 0, prestigeStages.count)
+    }
+
+    /// The current stage's name ("Prestige 1"), or `nil` before prestiging.
+    func prestigeName(for weaponId: Int) -> String? {
+        let stage = prestige(for: weaponId)
+        return stage > 0 ? prestigeStages[stage - 1].name.resolved() : nil
+    }
+
+    /// The level cap of the stage this weapon is currently in.
+    func maxLevel(for weapon: WeaponEntry) -> Int {
+        let stage = prestige(for: weapon.weaponId)
+        guard stage > 0 else { return weapon.maxLevel }
+        return prestigeStages[stage - 1].maxLevel ?? weapon.maxLevel
+    }
+
+    /// Prestiging needs the current stage maxed and a stage left to go to.
+    func canPrestige(_ weapon: WeaponEntry) -> Bool {
+        prestige(for: weapon.weaponId) < prestigeStages.count
+            && level(for: weapon.weaponId) >= maxLevel(for: weapon)
+    }
+
+    /// Moves to the next stage, back at level 1 the way the game resets it.
+    func prestigeUp(_ weapon: WeaponEntry) {
+        guard canPrestige(weapon) else { return }
+        weaponPrestige[weapon.weaponId] = prestige(for: weapon.weaponId) + 1
+        weaponLevels[weapon.weaponId] = 1
+        saveProgress()
+        objectWillChange.send()
+    }
+
+    /// Undoes a prestige tapped by mistake, landing on the previous stage
+    /// maxed — which it must have been to prestige in the first place.
+    func prestigeDown(_ weapon: WeaponEntry) {
+        let stage = prestige(for: weapon.weaponId)
+        guard stage > 0 else { return }
+        weaponPrestige[weapon.weaponId] = stage - 1
+        weaponLevels[weapon.weaponId] = maxLevel(for: weapon)
         saveProgress()
         objectWillChange.send()
     }
@@ -151,11 +206,13 @@ final class TrackerViewModel: ObservableObject {
     /// MW4 gates its base camos; one without falls back to the cascading
     /// chain (first tier open, each later tier needs the one before it).
     /// A camo already earned stays open, so lowering the level afterwards
-    /// doesn't lock something the player has.
+    /// doesn't lock something the player has. Gates are on the weapon's
+    /// normal levels, so a prestiged weapon has passed every one of them
+    /// even though its level has reset.
     func isCamoAvailable(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
         if let unlockLevel = camo.unlockLevel {
-            return level(for: weaponId) >= unlockLevel
+            return prestige(for: weaponId) > 0 || level(for: weaponId) >= unlockLevel
         }
         let siblings = camos(weaponId: weaponId, mode: mode)
         guard let index = siblings.firstIndex(where: { $0.itemId == camo.itemId }), index > 0 else { return true }
@@ -505,12 +562,13 @@ final class TrackerViewModel: ObservableObject {
         guard let data = UserDefaults.standard.data(forKey: storeKey),
               let store = try? JSONDecoder().decode(ProgressStore.self, from: data) else { return }
         weaponLevels = store.weaponLevels
+        weaponPrestige = store.weaponPrestige ?? [:]
         amounts = store.amounts
         completed = Set(store.completed)
     }
 
     private func saveProgress() {
-        let store = ProgressStore(weaponLevels: weaponLevels, amounts: amounts, completed: Array(completed))
+        let store = ProgressStore(weaponLevels: weaponLevels, weaponPrestige: weaponPrestige, amounts: amounts, completed: Array(completed))
         if let data = try? JSONEncoder().encode(store) {
             UserDefaults.standard.set(data, forKey: storeKey)
         }
@@ -519,6 +577,8 @@ final class TrackerViewModel: ObservableObject {
 
 private struct ProgressStore: Codable {
     var weaponLevels: [Int: Int]
+    /// Optional so a save from before Weapon Prestige existed still decodes.
+    var weaponPrestige: [Int: Int]?
     var amounts: [String: Int]
     var completed: [String]
 }
