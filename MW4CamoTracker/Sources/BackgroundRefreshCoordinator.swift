@@ -72,8 +72,16 @@ enum BackgroundRefreshCoordinator {
 
         let changedModes = result.modes.keys.sorted()
         guard result.catalog != nil || !changedModes.isEmpty else { return }
+        // The data is already downloaded and cached by now; a silent update
+        // only skips telling anyone.
+        guard shouldNotify(result.notification) else { return }
 
         await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes, announcement: result.notification)
+    }
+
+    /// An update notifies unless the manifest marks it silent.
+    static func shouldNotify(_ announcement: Manifest.Announcement?) -> Bool {
+        announcement?.silent != true
     }
 
     /// The notification's words: the manifest's own where it supplies them,

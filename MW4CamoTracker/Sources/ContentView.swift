@@ -204,7 +204,7 @@ struct ContentView: View {
             }
         }
         .fullScreenCover(isPresented: $showOnboarding) {
-            OnboardingView {
+            OnboardingView(asksForNotifications: !hasOnboarded) {
                 if !hasOnboarded {
                     BackgroundRefreshCoordinator.requestNotificationPermission()
                 }

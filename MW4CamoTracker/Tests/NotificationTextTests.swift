@@ -65,4 +65,11 @@ struct NotificationTextTests {
         let manifest = try JSONDecoder().decode(Manifest.self, from: Data(live.utf8))
         #expect(manifest.modes["multiplayer"]?.version == "0.7.0")
     }
+
+    @Test func anUpdateNotifiesUnlessTheManifestSaysSilent() throws {
+        #expect(BackgroundRefreshCoordinator.shouldNotify(nil))
+        #expect(BackgroundRefreshCoordinator.shouldNotify(try announcement(#"{"title": {"en": "Season 1"}}"#)))
+        #expect(BackgroundRefreshCoordinator.shouldNotify(try announcement(#"{"silent": false}"#)))
+        #expect(BackgroundRefreshCoordinator.shouldNotify(try announcement(#"{"silent": true}"#)) == false)
+    }
 }

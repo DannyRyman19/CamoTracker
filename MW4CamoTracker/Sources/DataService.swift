@@ -13,12 +13,19 @@ struct Manifest: Codable {
     ///     }
     ///
     /// Either field can be left out, and so can the whole block: whatever is
-    /// missing falls back to the app's built-in wording. It is read at the
-    /// moment an update is detected, so change or remove it with the next
-    /// update, or that one is announced in these words too.
+    /// missing falls back to the app's built-in wording.
+    ///
+    /// For an update nobody needs telling about (a corrected challenge, a
+    /// typo), `"notification": { "silent": true }` lets the data go out with
+    /// no notification at all.
+    ///
+    /// The block is read at the moment an update is detected, so it describes
+    /// whatever update is live: change or remove it with the next one, or
+    /// that one is announced in these words (or kept silent) too.
     struct Announcement: Codable {
         let title: LocalizedText?
         let body: LocalizedText?
+        let silent: Bool?
     }
     let catalog: Entry
     let modes: [String: Entry]
