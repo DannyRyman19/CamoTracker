@@ -871,6 +871,10 @@ extension EnvironmentValues {
 struct CardGrid<Item: Identifiable, Card: View>: View {
     let items: [Item]
     let columns: Int
+    /// One card to a row even in a grid, for a card that stands alone (the
+    /// pinned weapon). It still gets the grid's plain look, with no
+    /// disclosure chevron, so its edge lines up with the cards below it.
+    var fillsRow = false
     let route: (Item) -> Route
     @ViewBuilder let card: (Item) -> Card
     @Environment(\.pushRoute) private var pushRoute
@@ -878,6 +882,7 @@ struct CardGrid<Item: Identifiable, Card: View>: View {
     private static var insets: EdgeInsets { EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12) }
 
     var body: some View {
+        let perRow = fillsRow ? 1 : columns
         if columns <= 1 || pushRoute == nil {
             ForEach(items) { item in
                 NavigationLink(value: route(item)) { card(item) }
@@ -885,9 +890,9 @@ struct CardGrid<Item: Identifiable, Card: View>: View {
                     .listRowBackground(Color.clear)
             }
         } else {
-            ForEach(Array(stride(from: 0, to: items.count, by: columns)), id: \.self) { start in
+            ForEach(Array(stride(from: 0, to: items.count, by: perRow)), id: \.self) { start in
                 HStack(alignment: .top, spacing: 12) {
-                    ForEach(0..<columns, id: \.self) { offset in
+                    ForEach(0..<perRow, id: \.self) { offset in
                         if start + offset < items.count {
                             let item = items[start + offset]
                             Button {

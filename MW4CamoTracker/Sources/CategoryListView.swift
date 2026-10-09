@@ -121,7 +121,9 @@ struct CategoryListView: View {
 
                     if let pinnedWeapon {
                         Section("mw4.ui.section.pinned".localized()) {
-                            CardGrid(items: [pinnedWeapon], columns: columns, route: { .weapon($0.weaponId) }) { weapon in
+                            // Always the full row, even in a grid: it is one
+                            // card, and half a row beside a gap looks lost.
+                            CardGrid(items: [pinnedWeapon], columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
                                 WeaponRow(mode: mode, weapon: weapon)
                             }
                         }
