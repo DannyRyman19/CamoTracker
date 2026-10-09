@@ -123,7 +123,7 @@ enum SupportMail {
                 lines.append("Requirement in app: \(requirement)")
             }
         }
-        return url(subject: "MW4 Camo Tracker: \(kind.rawValue)",
+        return url(subject: "Camo Tracker: \(kind.rawValue)",
                    body: lines.joined(separator: "\n") + "\n\n" + diagnosticsFooter())
     }
 
