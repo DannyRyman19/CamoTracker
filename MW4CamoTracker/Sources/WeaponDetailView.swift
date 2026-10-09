@@ -1,9 +1,9 @@
 import SwiftUI
 
-/// The level control and the camo list are both shared across modes: MW4 has
-/// one Camo Track per weapon, and the weapon's level decides which of those
-/// camos are open. Only the Mastery section below them is specific to
-/// whichever mode tab got you here.
+/// The level control at the top is global — change it here while looking at
+/// Multiplayer and it reads the same when you check this weapon from DMZ,
+/// and it opens level-gated camos in every mode at once. The camo list and
+/// Mastery below it are specific to whichever mode tab got you here.
 struct WeaponDetailView: View {
     let mode: AppMode
     let weapon: WeaponEntry
@@ -91,8 +91,8 @@ struct WeaponDetailView: View {
                     .listRowBackground(Color.appSurface)
                 }
 
-                // Finishing the shared track above opens this mode's own
-                // Mastery challenges — the point where the modes split.
+                // Finishing this mode's track above opens this mode's own
+                // Mastery challenges.
                 Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
                     if !camos.isEmpty {
                         MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
@@ -277,8 +277,8 @@ private struct MasteryTier3Row: View {
 }
 
 /// A single-line level readout. Level opens the base camos below it (each
-/// camo's `unlockLevel`), so changing it here unlocks rows straight away.
-/// Tap the number to type an exact level, +/- to nudge, MAX to jump to cap.
+/// camo's `unlockLevel`, in every mode), so changing it here unlocks rows
+/// straight away. Tap the number to type an exact level, +/- to nudge, MAX to jump to cap.
 private struct CompactLevelRow: View {
     let mode: AppMode
     let weapon: WeaponEntry

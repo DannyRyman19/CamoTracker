@@ -6,24 +6,24 @@
 Empty rings and 0/20 everywhere make for dead marketing shots, so this fills in
 a save that looks like a few weeks of play:
 
-  * Base camos  -- every weapon Gold. MW4 has one Camo Track per weapon,
-                   shared by every mode, so this shows in all three tabs.
-  * Multiplayer -- Mercurial Drift (tier1) on every weapon and Polyatomic
-                   Reforged (tier2) on the Assault Rifles, so the Mastery
-                   track shows real movement.
-  * Warzone     -- Parallax (tier1) on four Assault Rifles.
-  * DMZ         -- Chiral (tier1) on two weapons, a few objectives ticked.
-  * Levels      -- four weapons maxed, the rest scattered but high enough to
-                   have opened every base camo (each camo's `unlockLevel`).
+  * Multiplayer -- every weapon Gold, Mercurial Drift (tier1) earned on all of
+                   them and Polyatomic Reforged (tier2) on the Assault Rifles,
+                   so the Mastery track shows real movement.
+  * Warzone     -- a mid-grind, roughly two thirds of the way.
+  * DMZ         -- early, with a few objectives ticked.
+  * Levels      -- four weapons maxed, the rest scattered but never below the
+                   highest camo `unlockLevel`, so a Gold weapon isn't shown
+                   at a level that couldn't have opened its camos.
 
-Camos and levels are derived from the shipped weapons.json rather than
-hardcoded, so a data change can't silently seed keys nothing reads.
+Everything is derived from the shipped JSON rather than hardcoded, because the
+modes genuinely differ: Multiplayer and DMZ have 4 camos per weapon at
+10/25/50/75, Warzone has 3, and only DMZ carries objectives.
+Assuming a uniform shape here silently seeds keys nothing reads.
 
 `--preview` is the same save with one change for the preview video
-(Tools/preview): weapon PREVIEW_WEAPON's base track is left one camo short,
-with the camo before it part-filled, and it gets no Mastery, so the `grind`
-take (filmed on the PREVIEW_MODE tab) can fill that bar and tick the last camo
-on camera and earn the real Gold celebration.
+(Tools/preview): the Warzone track of weapon PREVIEW_WEAPON is left one camo
+short, with the camo before it part-filled, so the `grind` take can fill that
+bar and tick the last camo on camera and earn the real Gold celebration.
 
 Run with /usr/bin/python3. Homebrew's python currently fails to import plistlib
 (pyexpat links against a libexpat that lacks a symbol it wants).
@@ -64,8 +64,8 @@ def load(name):
         return json.load(fh)
 
 
-def camo_key(weapon_id, camo_id):
-    return f"camo|{weapon_id}|{camo_id}"   # no mode: the track is shared
+def camo_key(mode, weapon_id, camo_id):
+    return f"camo|{mode}|{weapon_id}|{camo_id}"
 
 
 def wmastery_key(mode, weapon_id, tier):
@@ -84,50 +84,81 @@ def build(preview=False):
     weapons = {w["weaponId"]: w for c in catalog["categories"] for w in c["weapons"]}
     assault_rifles = [w["weaponId"] for w in catalog["categories"][0]["weapons"]]
 
+    def apply(mode, weapon_id, camos, done_count):
+        """Complete `done_count` of this weapon's camos, part-fill the next."""
+        for index, camo in enumerate(camos):
+            required = (camo.get("requirement") or {}).get("amount", 1)
+            key = camo_key(mode, weapon_id, camo["itemId"])
+            if index < done_count:
+                amounts[key] = required
+                completed.append(key)
+            elif index == done_count and required > 1:
+                amounts[key] = rng.randint(1, max(1, required - 1))
+
     def mastery(mode, weapon_id, tier):
-        if preview and weapon_id == PREVIEW_WEAPON:
-            return  # not Gold yet in the preview save, so no Mastery either
         key = wmastery_key(mode, weapon_id, tier)
         amounts[key] = TIER1_AMOUNT if tier == 1 else TIER2_AMOUNT
         completed.append(key)
 
-    # Base track: every weapon Gold, except the preview weapon in --preview,
-    # which stops one camo short with the camo before it part-filled.
-    for weapon_id, weapon in weapons.items():
-        camos = weapon.get("camos") or []
-        for index, camo in enumerate(camos):
-            required = (camo.get("requirement") or {}).get("amount", 1)
-            key = camo_key(weapon_id, camo["itemId"])
-            if not (preview and weapon_id == PREVIEW_WEAPON) or index < len(camos) - 2:
-                amounts[key] = required
-                completed.append(key)
-            elif index == len(camos) - 2:
-                amounts[key] = max(1, required - 3)
+    # How far into each mode's camo list to go, per weapon.
+    plans = {
+        "multiplayer": lambda n: n,                                  # all Gold
+        "warzone": lambda n: rng.choice([n - 1, n - 1, n, n - 2]),   # mid-grind
+        "dmz": lambda n: rng.choice([0, 1, 1, 2]),                   # early
+    }
 
-    # Objectives (DMZ is the only mode carrying any today).
-    for mode in ("multiplayer", "warzone", "dmz"):
-        for category in load(f"{mode}.json").get("objectives", []):
+    for mode, depth in plans.items():
+        data = load(f"{mode}.json")
+        for entry in data.get("weaponCamos", []):
+            weapon_id, camos = entry["weaponId"], entry["camos"]
+            apply(mode, weapon_id, camos, max(0, min(len(camos), depth(len(camos)))))
+
+        # Objectives (DMZ is the only mode carrying any today).
+        for category in data.get("objectives", []):
             for item in category["items"][: rng.randint(1, len(category["items"]))]:
                 required = (item.get("requirement") or {}).get("amount", 1)
                 key = objective_key(mode, category["categoryId"], item["itemId"])
                 amounts[key] = required
                 completed.append(key)
 
+    # Mastery: Multiplayer fully tier1 and its ARs tier2; Warzone part-way.
     for weapon_id in weapons:
         mastery("multiplayer", weapon_id, 1)
     for weapon_id in assault_rifles:
         mastery("multiplayer", weapon_id, 2)
     for weapon_id in assault_rifles[:4]:
         mastery("warzone", weapon_id, 1)
-    for weapon_id in assault_rifles[:2]:
-        mastery("dmz", weapon_id, 1)
+
+    if preview:
+        # Undo the random Warzone plan for this one weapon: all camos but the
+        # last complete, the second part-filled, so the take has both a bar to
+        # fill and a last camo to tick.
+        data = load(f"{PREVIEW_MODE}.json")
+        entry = next(e for e in data["weaponCamos"] if e["weaponId"] == PREVIEW_WEAPON)
+        camos = entry["camos"]
+        for index, camo in enumerate(camos):
+            required = (camo.get("requirement") or {}).get("amount", 1)
+            key = camo_key(PREVIEW_MODE, PREVIEW_WEAPON, camo["itemId"])
+            completed[:] = [k for k in completed if k != key]
+            if index < len(camos) - 2:
+                amounts[key] = required
+                completed.append(key)
+            elif index == len(camos) - 2:
+                amounts[key] = max(1, required - 3)
+            else:
+                amounts.pop(key, None)
+
+    # Highest camo unlockLevel per weapon, across every mode.
+    gates = {}
+    for mode in plans:
+        for entry in load(f"{mode}.json").get("weaponCamos", []):
+            gates.setdefault(entry["weaponId"], []).extend(
+                c.get("unlockLevel") or 0 for c in entry["camos"])
 
     levels = {}
     for weapon_id in sorted(weapons):
-        weapon = weapons[weapon_id]
-        max_level = weapon["maxLevel"]
-        # Gold needs every base camo open, so never below the highest gate.
-        floor = max([c.get("unlockLevel") or 0 for c in weapon.get("camos") or []] + [4])
+        max_level = weapons[weapon_id]["maxLevel"]
+        floor = max(gates.get(weapon_id, [4]) + [4])
         levels[str(weapon_id)] = max_level if weapon_id in MAXED else rng.randint(floor, max(floor, max_level - 6))
 
     return {"weaponLevels": levels, "amounts": amounts, "completed": completed}
@@ -156,8 +187,7 @@ def main():
 
     per_mode = {}
     for key in store["completed"]:
-        bucket = "base camos" if key.startswith("camo|") else key.split("|")[1]
-        per_mode[bucket] = per_mode.get(bucket, 0) + 1
+        per_mode[key.split("|")[1]] = per_mode.get(key.split("|")[1], 0) + 1
     print(f"    seeded {len(store['completed'])} completed keys "
           f"({', '.join(f'{m} {n}' for m, n in sorted(per_mode.items()))}), "
           f"{len(store['weaponLevels'])} weapon levels")

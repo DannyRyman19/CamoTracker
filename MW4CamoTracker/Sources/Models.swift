@@ -72,12 +72,6 @@ struct WeaponEntry: Codable, Identifiable {
     let imageURL: String?
     let maxLevel: Int
     let unlockRequirement: LocalizedText?
-    /// This weapon's base camo track. MW4 has one Camo Track per weapon,
-    /// progressed from Multiplayer, Warzone and DMZ alike, so it lives here
-    /// with the weapon rather than in any mode file. Finishing it is what
-    /// opens each mode's own Mastery challenges. Optional so an older
-    /// cached catalog without it still decodes.
-    let camos: [ChallengeItem]?
     var id: Int { weaponId }
 
     /// The level this weapon unlocks at, pulled out of `unlockRequirement`'s
@@ -95,14 +89,25 @@ struct WeaponEntry: Codable, Identifiable {
 
 // MARK: - Per-mode data (multiplayer.json / warzone.json / dmz.json)
 
-/// What a mode has that no other mode does: today that's DMZ's Hajin
-/// objectives. Weapon camos aren't here: the base track is shared (see
-/// `WeaponEntry.camos`) and each mode's Mastery trio is defined in-app
-/// (`AppMode.masteryCamos`).
+/// A mode contributes two independent things:
+/// - `weaponCamos`: that mode's own base camo track for each weapon, looked
+///   up by `weaponId` against the shared catalog above. Every mode
+///   (Multiplayer, Warzone, DMZ) has one; finishing it opens that mode's
+///   Mastery camos (`AppMode.masteryCamos`).
+/// - `objectives`: mode-exclusive, non-weapon content (DMZ's Hajin extraction
+///   objectives) that has no equivalent in other modes and doesn't feed
+///   Mastery.
 struct ModeFile: Codable {
     let version: String
     let mode: String
+    var weaponCamos: [WeaponCamoEntry]
     var objectives: [Category]
+}
+
+struct WeaponCamoEntry: Codable, Identifiable {
+    let weaponId: Int
+    var camos: [ChallengeItem]
+    var id: Int { weaponId }
 }
 
 struct Category: Codable, Identifiable {
@@ -120,6 +125,7 @@ struct ChallengeItem: Codable, Identifiable {
     let tier: Int?
     /// The weapon level this camo's challenge opens at. MW4 locks base camos
     /// behind weapon level; `nil` falls back to "finish the tier above".
+    /// Weapon level is global, so one level opens camos in every mode.
     let unlockLevel: Int?
     let requirement: Requirement?
     var children: [ChallengeItem]
