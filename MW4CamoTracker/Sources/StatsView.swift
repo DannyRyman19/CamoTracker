@@ -9,28 +9,50 @@ struct StatsView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @State private var width: CGFloat = 0
 
+    private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
+
+    private func cardRow<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
+        HStack(alignment: .top, spacing: 12, content: content)
+            .listRowInsets(Self.rowInsets)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+    }
+
     var body: some View {
         ZStack {
             AppBackground(accent: .accentMultiplayer)
             List {
-                OverallStatsHero()
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                    .listRowBackground(Color.clear)
-
+                let modes = AppMode.allCases
                 if width >= 950 {
-                    HStack(alignment: .top, spacing: 12) {
-                        ForEach(AppMode.allCases) { mode in
-                            ModeStatsCard(mode: mode)
-                                .frame(maxWidth: .infinity, alignment: .top)
+                    // iPad: the overall ring, then the three modes in a row.
+                    OverallStatsHero()
+                        .listRowInsets(Self.rowInsets)
+                        .listRowBackground(Color.clear)
+                    cardRow {
+                        ForEach(modes) { mode in
+                            ModeStatsCard(mode: mode).frame(maxWidth: .infinity, alignment: .top)
                         }
                     }
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
+                } else if width >= 600, modes.count == 3 {
+                    // An unfolded iPhone Duo, either way up, or a small
+                    // iPad: three mode cards do not fit across and two
+                    // leave one alone, so the overall ring takes the fourth
+                    // place in a two by two.
+                    cardRow {
+                        OverallStatsHero(fillsHeight: true).frame(maxWidth: .infinity)
+                        ModeStatsCard(mode: modes[0]).frame(maxWidth: .infinity, alignment: .top)
+                    }
+                    cardRow {
+                        ModeStatsCard(mode: modes[1]).frame(maxWidth: .infinity, alignment: .top)
+                        ModeStatsCard(mode: modes[2]).frame(maxWidth: .infinity, alignment: .top)
+                    }
                 } else {
-                    ForEach(AppMode.allCases) { mode in
+                    OverallStatsHero()
+                        .listRowInsets(Self.rowInsets)
+                        .listRowBackground(Color.clear)
+                    ForEach(modes) { mode in
                         ModeStatsCard(mode: mode)
-                            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                            .listRowInsets(Self.rowInsets)
                             .listRowBackground(Color.clear)
                     }
                 }
@@ -51,6 +73,8 @@ struct StatsView: View {
 /// — plus a quick per-mode glance row underneath so you can see at once
 /// which mode is dragging the average down.
 private struct OverallStatsHero: View {
+    /// Stretch to the height of the card beside it, ring centred.
+    var fillsHeight = false
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     private var perMode: [(mode: AppMode, fraction: Double)] {
@@ -89,6 +113,7 @@ private struct OverallStatsHero: View {
             }
         }
         .padding(.vertical, 20)
+        .frame(maxHeight: fillsHeight ? .infinity : nil)
         .borderedCard()
     }
 }
