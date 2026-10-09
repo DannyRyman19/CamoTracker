@@ -21,7 +21,12 @@ enum BackgroundRefreshCoordinator {
     /// after onboarding — asking right after the user has seen what the app
     /// does reads better than a cold-launch permission prompt.
     static func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
+        // The async form, not a completion closure: an empty closure created
+        // on the main actor still gets Swift 6's main-queue check, and the
+        // system calls it back on a background queue.
+        Task {
+            _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+        }
     }
 
     /// Asks iOS to wake the app sometime in the next several hours to check
@@ -48,10 +53,14 @@ enum BackgroundRefreshCoordinator {
 
     private static func checkForUpdates() async {
         let dataService = DataService()
-        let knownCatalogVersion = dataService.loadCachedCatalog()?.version
+        // Fall back to the bundled seed exactly as `TrackerViewModel` does.
+        // Nothing is cached until a version actually changes, so comparing
+        // against the cache alone made every fresh install treat the whole
+        // feed as new and post a bogus "New Content Available".
+        let knownCatalogVersion = (dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog())?.version
         let knownModeVersions = Dictionary(uniqueKeysWithValues:
             ["multiplayer", "warzone", "dmz"].compactMap { mode -> (String, String)? in
-                guard let version = dataService.loadCached(mode: mode)?.version else { return nil }
+                guard let version = (dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode))?.version else { return nil }
                 return (mode, version)
             }
         )
