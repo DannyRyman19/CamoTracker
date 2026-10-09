@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://silo48.p7cloud.net/if.html?gdpr=false&gdprConsent=false&tpd=true&md=false -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    </head>
+    <body data-new-gr-c-s-check-loaded="14.1322.0" data-gr-ext-installed="">
+        <script>
+        silo={arcobj:{},gdpr:!1,gdpr_consent:!1,debug:!1,dlog:o=>{silo.debug&&console.log(o)},syncEvent:(o,e)=>{var s=Date.now(),t=encodeURIComponent(o),t=`${silo.syncloc}/p.png?visit=${e}&arcid=${silo.arcobj.arcid}&ed=${t}&cb=`+s;(new Image).src=t},sendMessage:(o,e)=>{parent.postMessage(o,e)},messageHandler:o=>{var e,s,t=o.origin;"string"==typeof o.data&&("getobj"===o.data?(silo.dlog(silo.arcobj),silo.sendMessage(JSON.stringify(silo.arcobj),t)):-1!==(t=o.data.indexOf(":"))&&(e=o.data.substring(0,t),t=o.data.substring(t+1),(s={obj:o=>{silo.arcobj=JSON.parse(o);try{silo.storeLocal(silo.arcobj)}catch(o){silo.dlog(o)}},page:o=>silo.syncEvent(o,"page"),cohort:o=>silo.syncEvent(o,"cohort"),error:o=>silo.syncEvent(o,"error"),custid:o=>silo.syncEvent(o,"custid"),xandrsync:o=>silo.syncEvent(o,"xandrsync"),idsource:o=>silo.syncEvent(o,"idsource"),custdata:o=>silo.syncEvent(o,"custdata"),custpageattr:o=>silo.syncEvent(o,"pagedata"),setprebid:o=>silo.syncEvent("setprebid:"+o,"prebid"),custom:o=>silo.syncEvent(o,"custom"),perf:o=>silo.syncEvent(o,"perf"),vwbt:o=>silo.syncEvent(o,"vwbt")})[e])&&s[e](t))},storeLocal:o=>{var e=o.arcid,s=o.cohorts;silo.arcobj.tpenabled&&(silo.setCookie("arcid",e,129600),silo.setCookie("cohorts",JSON.stringify(Object.fromEntries(Object.entries(s).slice(0,20))),129600))},setCookie:(o,e,s)=>{var t=new Date,t=(t.setTime(t.getTime()+60*s*1e3),"expires="+t.toUTCString());document.cookie=o+"="+e+";"+t+";path=/; samesite=none; secure=true"},getCookie:o=>{var e=o+"=",s=decodeURIComponent(document.cookie).split(";");for(let t=0;t<s.length;t++){let o=s[t];for(;" "==o.charAt(0);)o=o.substring(1);if(0==o.indexOf(e))return o.substring(e.length,o.length)}return""},init:()=>{silo.arcobj={},silo.arcobj.cohorts={},silo.arcobj.compcohorts=[],silo.arcobj.tpenabled=0,silo.syncloc=new URL(location.href).origin;var o=new URL(location.href).searchParams;silo.gdpr="true"==(o.get("gdpr")||"false"),silo.gdpr_consent=o.get("gdpr_consent")||!1,silo.tapad="true"==(o.get("tpd")||"false"),silo.md="true"==(o.get("md")||"false"),window.onmessage=silo.messageHandler;try{if(silo.setCookie("_t","777",4),"777"==silo.getCookie("_t")&&(silo.arcobj.tpenabled=1),silo.arcobj.tpenabled&&(silo.getCookie("arcid")&&(silo.arcobj.arcid=silo.getCookie("arcid")),silo.getCookie("cohorts")))for(var[e,s]of Object.entries(JSON.parse(silo.getCookie("cohorts"))))silo.arcobj.cohorts[e]=s;silo.arcobj.compcohorts=[]}catch(o){silo.dlog(o)}},dDiff:o=>Math.round(((new Date).getTime()-o)/864e5)};try{silo.init()}catch(o){silo.dlog(o)}
+        </script>
+    
+    
+    </body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

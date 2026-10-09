@@ -3,8 +3,26 @@ import Foundation
 /// `manifest.json` — one small file the app checks before pulling any data.
 struct Manifest: Codable {
     struct Entry: Codable { let version: String; let path: String }
+    /// What the "new content" notification says for the update the manifest
+    /// currently describes, per language, so a season can be announced in
+    /// its own words without an app update:
+    ///
+    ///     "notification": {
+    ///       "title": { "en": "Season 1 is live", "de": "Season 1 ist da" },
+    ///       "body":  { "en": "New weapons and camos to track." }
+    ///     }
+    ///
+    /// Either field can be left out, and so can the whole block: whatever is
+    /// missing falls back to the app's built-in wording. It is read at the
+    /// moment an update is detected, so change or remove it with the next
+    /// update, or that one is announced in these words too.
+    struct Announcement: Codable {
+        let title: LocalizedText?
+        let body: LocalizedText?
+    }
     let catalog: Entry
     let modes: [String: Entry]
+    let notification: Announcement?
 }
 
 /// Fetches the weapon catalog and mode JSON from the CDN, versioned through
@@ -61,7 +79,7 @@ final class DataService: Sendable {
     func refreshIfNeeded(
         knownCatalogVersion: String?,
         knownModeVersions: [String: String]
-    ) async throws -> (catalog: WeaponCatalog?, modes: [String: ModeFile]) {
+    ) async throws -> (catalog: WeaponCatalog?, modes: [String: ModeFile], notification: Manifest.Announcement?) {
         let (data, _) = try await session.data(from: baseURL.appendingPathComponent("manifest.json"))
         let manifest = try JSONDecoder().decode(Manifest.self, from: data)
 
@@ -80,7 +98,7 @@ final class DataService: Sendable {
             try modeData.write(to: cacheFileURL(name: mode), options: .atomic)
             updatedModes[mode] = modeFile
         }
-        return (newCatalog, updatedModes)
+        return (newCatalog, updatedModes, manifest.notification)
     }
 
     private func cacheFileURL(name: String) -> URL {

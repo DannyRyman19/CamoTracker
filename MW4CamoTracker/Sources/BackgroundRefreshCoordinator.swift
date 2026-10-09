@@ -73,22 +73,35 @@ enum BackgroundRefreshCoordinator {
         let changedModes = result.modes.keys.sorted()
         guard result.catalog != nil || !changedModes.isEmpty else { return }
 
-        await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes)
+        await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes, announcement: result.notification)
     }
 
-    private static func postNotification(catalogChanged: Bool, changedModes: [String]) async {
-        let center = UNUserNotificationCenter.current()
-        guard await center.notificationSettings().authorizationStatus == .authorized else { return }
-
+    /// The notification's words: the manifest's own where it supplies them,
+    /// otherwise the built-in title and a body naming what changed. An empty
+    /// string in the manifest counts as not supplied.
+    static func notificationText(catalogChanged: Bool, changedModes: [String], announcement: Manifest.Announcement?) -> (title: String, body: String) {
         var changedAreas: [String] = []
         if catalogChanged { changedAreas.append("mw4.ui.section.weapons".localized()) }
         changedAreas += changedModes.map { "mw4.mode.\($0)".localized() }
-
-        let content = UNMutableNotificationContent()
-        content.title = "mw4.notif.title".localized()
-        content.body = changedAreas.isEmpty
+        let builtInBody = changedAreas.isEmpty
             ? "mw4.notif.generic_body".localized()
             : String(format: "mw4.notif.body_format".localized(), changedAreas.joined(separator: ", "))
+
+        func supplied(_ text: LocalizedText?) -> String? {
+            guard let value = text?.resolved().trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else { return nil }
+            return value
+        }
+        return (supplied(announcement?.title) ?? "mw4.notif.title".localized(), supplied(announcement?.body) ?? builtInBody)
+    }
+
+    private static func postNotification(catalogChanged: Bool, changedModes: [String], announcement: Manifest.Announcement?) async {
+        let center = UNUserNotificationCenter.current()
+        guard await center.notificationSettings().authorizationStatus == .authorized else { return }
+
+        let text = notificationText(catalogChanged: catalogChanged, changedModes: changedModes, announcement: announcement)
+        let content = UNMutableNotificationContent()
+        content.title = text.title
+        content.body = text.body
         content.sound = .default
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)

@@ -41,6 +41,7 @@
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
 		B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */; };
 		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
+		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
 		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTapUITests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTextTests.swift; sourceTree = "<group>"; };
 		B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
 		B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */,
+				B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
 			);
 			path = Tests;
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */,
+				B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
