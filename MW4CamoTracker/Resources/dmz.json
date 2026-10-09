@@ -1,7 +1,6 @@
 {
-  "version": "0.5.0",
+  "version": "0.7.0",
   "mode": "dmz",
-  "weaponCamos": [],
   "objectives": [
     {
       "categoryId": 0,
@@ -256,5 +255,5 @@
       ]
     }
   ],
-  "_note": "Fake/placeholder Hajin objectives (map confirmed for MW4, exact objectives not yet public). Names/descriptions are inline per-language text. weaponCamos stays empty pending confirmation of whether DMZ gets its own weapon-camo track."
+  "_note": "Fake/placeholder Hajin objectives (map confirmed for MW4, exact objectives not yet public). Names/descriptions are inline per-language text. These are DMZ-only extra content and don't feed Mastery: DMZ weapons use the shared Camo Track in weapons.json, then DMZ's own Mastery (Chiral / Ripple Tide / Helio, defined in Theme.swift)."
 }

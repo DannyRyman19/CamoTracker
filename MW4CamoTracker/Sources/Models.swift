@@ -72,6 +72,12 @@ struct WeaponEntry: Codable, Identifiable {
     let imageURL: String?
     let maxLevel: Int
     let unlockRequirement: LocalizedText?
+    /// This weapon's base camo track. MW4 has one Camo Track per weapon,
+    /// progressed from Multiplayer, Warzone and DMZ alike, so it lives here
+    /// with the weapon rather than in any mode file. Finishing it is what
+    /// opens each mode's own Mastery challenges. Optional so an older
+    /// cached catalog without it still decodes.
+    let camos: [ChallengeItem]?
     var id: Int { weaponId }
 
     /// The level this weapon unlocks at, pulled out of `unlockRequirement`'s
@@ -89,24 +95,14 @@ struct WeaponEntry: Codable, Identifiable {
 
 // MARK: - Per-mode data (multiplayer.json / warzone.json / dmz.json)
 
-/// A mode contributes two independent things:
-/// - `weaponCamos`: that mode's camo challenge tree for each weapon it covers,
-///   looked up by `weaponId` against the shared catalog above.
-/// - `objectives`: mode-exclusive, non-weapon content (DMZ's Hajin extraction
-///   objectives) that has no equivalent in other modes.
-/// Multiplayer/Warzone currently only populate `weaponCamos`; DMZ can use either
-/// or both, depending on whether it ends up with its own weapon-camo track.
+/// What a mode has that no other mode does: today that's DMZ's Hajin
+/// objectives. Weapon camos aren't here: the base track is shared (see
+/// `WeaponEntry.camos`) and each mode's Mastery trio is defined in-app
+/// (`AppMode.masteryCamos`).
 struct ModeFile: Codable {
     let version: String
     let mode: String
-    var weaponCamos: [WeaponCamoEntry]
     var objectives: [Category]
-}
-
-struct WeaponCamoEntry: Codable, Identifiable {
-    let weaponId: Int
-    var camos: [ChallengeItem]
-    var id: Int { weaponId }
 }
 
 struct Category: Codable, Identifiable {
@@ -122,6 +118,9 @@ struct ChallengeItem: Codable, Identifiable {
     let name: LocalizedText
     let imageURL: String?
     let tier: Int?
+    /// The weapon level this camo's challenge opens at. MW4 locks base camos
+    /// behind weapon level; `nil` falls back to "finish the tier above".
+    let unlockLevel: Int?
     let requirement: Requirement?
     var children: [ChallengeItem]
     var id: Int { itemId }

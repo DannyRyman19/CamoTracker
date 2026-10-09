@@ -31,6 +31,7 @@
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Aucune donnée de camouflage %@ pour cette arme pour le moment.";
 "mw4.ui.locked" = "Terminez d'abord le niveau précédent.";
+"mw4.ui.camo_level_locked" = "Se débloque au niveau d'arme %d.";
 "mw4.ui.set_amount.title" = "Définir la Quantité";
 "mw4.ui.set_amount.field" = "Quantité";
 "mw4.ui.set_amount.message" = "Sur %d requis.";
@@ -45,7 +46,7 @@
 "mw4.onboarding.mark.tap_circle" = "Appuyez sur le cercle pour marquer un camouflage comme terminé.";
 "mw4.onboarding.mark.tap_pill" = "Appuyez sur le nombre pour saisir une quantité exacte. Pratique pour les défis longs comme 200 éliminations.";
 "mw4.onboarding.level.title" = "Un seul niveau, tous les modes";
-"mw4.onboarding.level.body" = "Le niveau d'une arme est partagé. Réglez-le une fois dans n'importe quel onglet, les autres suivent. C'est la même arme.";
+"mw4.onboarding.level.body" = "Le niveau d'une arme et ses camouflages sont partagés. Réglez-le une fois dans n'importe quel onglet, les autres suivent, et il débloque les camouflages de base de cette arme.";
 "mw4.onboarding.suggested.title" = "Sachez quoi enchaîner";
 "mw4.onboarding.suggested.body1" = "Chaque onglet vous indique l'arme la plus proche de l'Or. Parfois c'est la dernière qui bloque toute une catégorie.";
 "mw4.onboarding.suggested.body2" = "Terminez-la et le déblocage s'affiche aussitôt.";

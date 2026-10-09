@@ -31,8 +31,8 @@ final class TrackerViewModel: ObservableObject {
     /// so it reads the same from the Multiplayer tab or the DMZ tab.
     private var weaponLevels: [Int: Int] = [:]
 
-    /// Camo and objective completion, keyed by mode — a camo track (or a DMZ
-    /// objective) can legitimately differ per mode even for the same weapon.
+    /// Camo, Mastery and objective completion. Base camos are keyed by weapon
+    /// alone (one shared track); Mastery and objectives are keyed by mode.
     private var amounts: [String: Int] = [:]
     private var completed: Set<String> = []
 
@@ -103,20 +103,24 @@ final class TrackerViewModel: ObservableObject {
         objectWillChange.send()
     }
 
-    // MARK: - Camo challenges (per mode, per weapon)
+    // MARK: - Base camo track (per weapon, shared by every mode)
+    //
+    // MW4 gives each weapon one Camo Track, progressed from Multiplayer,
+    // Warzone and DMZ alike, so these ignore `mode` for storage: a camo done
+    // from the DMZ tab is done on the Multiplayer tab too. `mode` stays in the
+    // signatures because the callers are mode tabs and the Gold milestone
+    // banner names that tab's Mastery camo.
 
-    /// That mode's camo tree for a weapon — empty if the mode doesn't cover it
-    /// (e.g. DMZ before it has its own weapon-camo track).
     func camos(weaponId: Int, mode: String) -> [ChallengeItem] {
-        modes[mode]?.weaponCamos.first { $0.weaponId == weaponId }?.camos ?? []
+        weapon(id: weaponId)?.camos ?? []
     }
 
     func camoAmount(mode: String, weaponId: Int, camo: ChallengeItem) -> Int {
-        amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0
+        amounts[camoKey(weaponId, camo.itemId)] ?? 0
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
-        let k = camoKey(mode, weaponId, camo.itemId)
+        let k = camoKey(weaponId, camo.itemId)
         guard let req = camo.requirement else { return completed.contains(k) }
         return (amounts[k] ?? 0) >= req.amount
     }
@@ -124,7 +128,7 @@ final class TrackerViewModel: ObservableObject {
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let req = camo.requirement?.amount ?? 1
-        amounts[camoKey(mode, weaponId, camo.itemId)] = max(0, min(newAmount, req))
+        amounts[camoKey(weaponId, camo.itemId)] = max(0, min(newAmount, req))
         saveProgress()
         objectWillChange.send()
         checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
@@ -132,7 +136,7 @@ final class TrackerViewModel: ObservableObject {
 
     func toggleCamo(mode: String, weaponId: Int, camo: ChallengeItem) {
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
-        let k = camoKey(mode, weaponId, camo.itemId)
+        let k = camoKey(weaponId, camo.itemId)
         if let req = camo.requirement {
             let done = (amounts[k] ?? 0) >= req.amount
             amounts[k] = done ? 0 : req.amount
@@ -146,14 +150,17 @@ final class TrackerViewModel: ObservableObject {
         checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
     }
 
-    /// Whether this camo tier is open to progress yet. Mirrors the real
-    /// family's own cascading unlock chain — your BO7 Camo Tracker's
-    /// `ProgressionService.isCamoAvailable` gates each tier on the one before
-    /// it (first tier always open; every tier after requires its predecessor
-    /// complete). This app didn't enforce that at all before: any tier could
-    /// be toggled in any order, which doesn't match how camo grinding
-    /// actually works in-game.
+    /// Whether this camo's challenge is open yet. A camo with an
+    /// `unlockLevel` opens when the weapon reaches that level, which is how
+    /// MW4 gates its base camos; one without falls back to the cascading
+    /// chain (first tier open, each later tier needs the one before it).
+    /// A camo already earned stays open, so lowering the level afterwards
+    /// doesn't lock something the player has.
     func isCamoAvailable(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
+        if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
+        if let unlockLevel = camo.unlockLevel {
+            return level(for: weaponId) >= unlockLevel
+        }
         let siblings = camos(weaponId: weaponId, mode: mode)
         guard let index = siblings.firstIndex(where: { $0.itemId == camo.itemId }), index > 0 else { return true }
         return isCamoComplete(mode: mode, weaponId: weaponId, camo: siblings[index - 1])
@@ -165,19 +172,20 @@ final class TrackerViewModel: ObservableObject {
         return isObjectiveComplete(mode: mode, categoryId: categoryId, item: siblings[index - 1])
     }
 
-    /// Whether every camo for this weapon, in this mode, is complete — "Gold."
+    /// Whether this weapon's whole base track is complete — "Gold." The same
+    /// answer in every mode, since the track is shared.
     func allCamosComplete(weaponId: Int, mode: String) -> Bool {
         let leaves = camos(weaponId: weaponId, mode: mode).flatMap(leafItems)
         return !leaves.isEmpty && leaves.allSatisfy { isCamoComplete(mode: mode, weaponId: weaponId, camo: $0) }
     }
 
-    /// How many camos are left before this weapon goes Gold, in this mode.
+    /// How many camos are left before this weapon goes Gold.
     func remainingCamoCount(weaponId: Int, mode: String) -> Int {
         camos(weaponId: weaponId, mode: mode).flatMap(leafItems)
             .filter { !isCamoComplete(mode: mode, weaponId: weaponId, camo: $0) }.count
     }
 
-    /// How many weapons in a category are already Gold, in this mode.
+    /// How many weapons in a category are already Gold.
     func goldWeaponCount(in category: WeaponCategory, mode: String) -> Int {
         category.weapons.filter { allCamosComplete(weaponId: $0.weaponId, mode: mode) }.count
     }
@@ -200,47 +208,29 @@ final class TrackerViewModel: ObservableObject {
         catalog?.baseWeaponCount ?? totalWeaponCount
     }
 
-    /// Weapons whose base camo track is finished in at least one mode that
-    /// has one. Counted per weapon rather than per mode, so a gun taken all
-    /// the way in both Multiplayer and Warzone is one finished weapon, not
-    /// two - which is what "5 weapons done" means to someone playing.
+    /// Weapons whose (shared) base camo track is finished.
     var weaponsWithBaseCamosComplete: Int {
-        guard let catalog else { return 0 }
-        let tracked = modes.keys.filter(modeHasWeaponTrack)
-        guard !tracked.isEmpty else { return 0 }
-        return catalog.categories.reduce(0) { running, category in
-            running + category.weapons.filter { weapon in
-                tracked.contains { allCamosComplete(weaponId: weapon.weaponId, mode: $0) }
-            }.count
-        }
+        totalGoldWeaponCount(mode: AppMode.multiplayer.rawValue)
     }
 
     func totalGoldWeaponCount(mode: String) -> Int {
         catalog?.categories.reduce(0) { $0 + goldWeaponCount(in: $1, mode: mode) } ?? 0
     }
 
-    /// Whether this mode has its own per-weapon camo track (Multiplayer,
-    /// Warzone) or is objectives-only (DMZ, which has no weapon Mastery
-    /// chain of its own — see the DMZ branches below).
-    func modeHasWeaponTrack(_ mode: String) -> Bool {
-        !(modes[mode]?.weaponCamos.isEmpty ?? true)
-    }
-
-    // MARK: - Weapon Mastery — the real BO7 Camo Tracker shape
+    // MARK: - Weapon Mastery (per mode)
     //
-    // Base track (Slate…Gold, above) is per weapon with no aggregate gate.
-    // Past Gold, MW4's own Mercurial Drift → Polyatomic Reforged → Orion
-    // Reforged (per mode) work the way BO7's Gold → Diamond → Tempest →
-    // Singularity actually does:
+    // The base track (above) is shared. Finishing it opens each mode's own
+    // Mastery trio — Multiplayer's Mercurial Drift → Polyatomic Reforged →
+    // Orion Reforged, Warzone's Parallax → Damascus Reforged → Empyros,
+    // DMZ's Chiral → Ripple Tide → Helio — and from there the modes split:
     //   tier1: per weapon, opens once *that weapon's* Gold is done.
     //   tier2: per weapon, but only opens once *every weapon in that
     //          weapon's category* has earned tier1 — a category-wide gate.
     //   tier3: not per weapon at all — the single mode-wide capstone that
     //          unlocks once *every weapon in every category* has earned
     //          tier2. That's the whole requirement, no leveling condition.
-    // DMZ has no weapon-camo track to hang any of this on, so its three
-    // named camos fall back to counting fully-extracted objective
-    // categories instead — the real content that track actually has.
+    // DMZ follows the same chain as the other two; its Hajin objectives
+    // are tracked separately and don't feed Mastery.
 
     private func weaponMasteryKey(_ mode: String, _ weaponId: Int, _ tier: Int) -> String {
         "wmastery|\(mode)|\(weaponId)|\(tier)"
@@ -316,11 +306,6 @@ final class TrackerViewModel: ObservableObject {
     /// roster with more tier1-complete weapons than the threshold (once DLC
     /// weapons are also finished) still reads as "fully done," not over 100%.
     func masteryTier1Progress(mode: String) -> (done: Int, total: Int) {
-        guard modeHasWeaponTrack(mode) else {
-            let categories = modes[mode]?.objectives ?? []
-            let done = categories.filter { !$0.items.isEmpty && objectiveProgressFraction(of: $0, mode: mode) >= 1 }.count
-            return (done, categories.count)
-        }
         let done = catalog?.categories.reduce(0) { $0 + categoryMasteryTier1Count($1, mode: mode) } ?? 0
         let total = min(totalWeaponCount, baseWeaponCount)
         return (min(done, total), total)
@@ -329,12 +314,6 @@ final class TrackerViewModel: ObservableObject {
     /// Same launch-roster-sized gate as `masteryTier1Progress`, for tier2 —
     /// this is what `isMasteryTier3Achieved` actually checks against.
     func masteryTier2Progress(mode: String) -> (done: Int, total: Int) {
-        guard modeHasWeaponTrack(mode) else {
-            // DMZ has no per-weapon track to gate tier2 on; fall back to the
-            // same all-objective-categories-extracted signal as tier1's gate.
-            let progress = masteryTier1Progress(mode: mode)
-            return progress.total > 0 && progress.done == progress.total ? (1, 1) : (0, 1)
-        }
         let total = min(totalWeaponCount, baseWeaponCount)
         return (min(tier2CompleteCount(mode: mode), total), total)
     }
@@ -351,7 +330,6 @@ final class TrackerViewModel: ObservableObject {
     /// lands on the exact same number as `masteryTier2Progress`; it only
     /// diverges once the roster grows past the launch count.
     func fullRosterTier2Progress(mode: String) -> (done: Int, total: Int) {
-        guard modeHasWeaponTrack(mode) else { return masteryTier2Progress(mode: mode) }
         return (tier2CompleteCount(mode: mode), totalWeaponCount)
     }
 
@@ -373,7 +351,7 @@ final class TrackerViewModel: ObservableObject {
         return progress.total > 0 && progress.done == progress.total
     }
 
-    /// Overall camo completion across every weapon in every category, for this mode.
+    /// Overall base camo completion across every weapon in every category.
     func overallProgressFraction(mode: String) -> Double {
         guard let categories = catalog?.categories else { return 0 }
         let leaves = categories.flatMap { $0.weapons.flatMap { camos(weaponId: $0.weaponId, mode: mode).flatMap(leafItems) } }
@@ -390,15 +368,13 @@ final class TrackerViewModel: ObservableObject {
     /// True completionist percentage toward the mode's final Mastery camo —
     /// every base camo leaf *and* every weapon's tier1/tier2 Mastery
     /// challenge, not just the base track `overallProgressFraction` counts.
+    /// The base leaves are shared, so they count toward every mode.
     /// Computed fresh from the current catalog every call (nothing cached to
     /// a fixed total), so it automatically accounts for new weapons the
     /// moment a content update adds them — a completionist who's already
     /// hit 100% today sees the percentage move again once there's more to do.
     func trueCompletionFraction(mode: String) -> Double {
-        guard modeHasWeaponTrack(mode), let categories = catalog?.categories, !categories.isEmpty else {
-            let progress = masteryTier1Progress(mode: mode)
-            return progress.total > 0 ? Double(progress.done) / Double(progress.total) : 0
-        }
+        guard let categories = catalog?.categories, !categories.isEmpty else { return 0 }
         var done = 0
         var total = 0
         for category in categories {
@@ -515,8 +491,9 @@ final class TrackerViewModel: ObservableObject {
 
     // MARK: - Persistence
 
-    private func camoKey(_ mode: String, _ weaponId: Int, _ camoId: Int) -> String {
-        "camo|\(mode)|\(weaponId)|\(camoId)"
+    /// No mode in the key: the base track is shared.
+    private func camoKey(_ weaponId: Int, _ camoId: Int) -> String {
+        "camo|\(weaponId)|\(camoId)"
     }
 
     private func objectiveKey(_ mode: String, _ categoryId: Int, _ itemId: Int) -> String {

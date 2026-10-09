@@ -586,14 +586,14 @@ struct ChallengeRow: View {
     let accent: Color
     let amount: Int
     let isDone: Bool
-    /// Whether the *previous* tier in this chain is complete yet — mirrors
-    /// the real family's cascading unlock (see `TrackerViewModel.isCamoAvailable`).
-    /// A locked tier shows a lock glyph instead of a checkbox and can't be
-    /// toggled or nudged, so you can't jump ahead out of order.
+    /// Whether this row is open yet — a base camo opens at its weapon level,
+    /// anything else once the tier before it is done (see
+    /// `TrackerViewModel.isCamoAvailable`). A locked row shows a lock glyph
+    /// instead of a checkbox and can't be toggled or nudged.
     var isAvailable: Bool = true
     /// Overrides the default "Finish the tier above first." locked message —
-    /// used by weapon Mastery's tier2 row, which is gated by a whole
-    /// category rather than the row directly above it.
+    /// used by level-gated base camos and by weapon Mastery's tier2 row,
+    /// which is gated by a whole category rather than the row above it.
     var lockedReason: String? = nil
     /// When set and `isDone`, the title shimmers through these colors
     /// instead of sitting in flat text — used by weapon Mastery rows, not

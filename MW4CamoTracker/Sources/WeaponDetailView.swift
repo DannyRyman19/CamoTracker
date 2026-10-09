@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// The level control at the top is global — change it here while looking at
-/// Multiplayer and it reads the same when you check this weapon from DMZ.
-/// The camo list below it is specific to whichever mode tab got you here.
+/// The level control and the camo list are both shared across modes: MW4 has
+/// one Camo Track per weapon, and the weapon's level decides which of those
+/// camos are open. Only the Mastery section below them is specific to
+/// whichever mode tab got you here.
 struct WeaponDetailView: View {
     let mode: AppMode
     let weapon: WeaponEntry
@@ -81,6 +82,7 @@ struct WeaponDetailView: View {
                                 amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
                                 isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
                                 isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
+                                lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
                                 onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
                                 onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
                             )
@@ -89,10 +91,8 @@ struct WeaponDetailView: View {
                     .listRowBackground(Color.appSurface)
                 }
 
-                // Shown in every mode, even DMZ (which has no per-weapon camo
-                // track of its own) — the mode-wide capstone still applies,
-                // so every weapon's page reflects where that mode's grind
-                // actually stands, not just weapons with a base camo track.
+                // Finishing the shared track above opens this mode's own
+                // Mastery challenges — the point where the modes split.
                 Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
                     if !camos.isEmpty {
                         MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
@@ -198,6 +198,7 @@ private struct MasteryTierRow: View {
             name: LocalizedText(camo.name),
             imageURL: nil,
             tier: nil,
+            unlockLevel: nil,
             requirement: requirement.map { Requirement(amount: $0.amount, unit: "headshots", description: LocalizedText($0.description(camoName: camo.name))) },
             children: []
         )
@@ -227,8 +228,8 @@ private struct MasteryTierRow: View {
 }
 
 /// The mode-wide capstone (tier3) — read-only, since it isn't earned per
-/// weapon, but shown on every weapon's page (all modes, even DMZ) so this
-/// screen always reflects where that mode's whole Mastery chain stands.
+/// weapon, but shown on every weapon's page so this screen always reflects
+/// where that mode's whole Mastery chain stands.
 private struct MasteryTier3Row: View {
     let mode: AppMode
     let weapon: WeaponEntry
@@ -241,11 +242,8 @@ private struct MasteryTier3Row: View {
     /// hit tier3 via 19 other weapons while a brand-new DLC weapon (this
     /// one) hasn't itself finished its own tier2 yet, and showing "Mastery
     /// complete" on a weapon nobody's touched would be actively misleading.
-    /// DMZ has no per-weapon Mastery track to check against, so it keeps the
-    /// mode-wide-only rule.
     private var achieved: Bool {
-        guard viewModel.modeHasWeaponTrack(mode.rawValue) else { return modeAchieved }
-        return modeAchieved && viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: 2)
+        modeAchieved && viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: 2)
     }
     private var progress: (done: Int, total: Int) { viewModel.masteryTier2Progress(mode: mode.rawValue) }
     private var lockedReason: String {
@@ -278,11 +276,9 @@ private struct MasteryTier3Row: View {
     }
 }
 
-/// A single-line level readout instead of the old full-width stepper card —
-/// leveling doesn't gate any camo or Mastery progress, so it doesn't need
-/// the same visual weight as the checklist that actually does. Still every
-/// bit as functional: tap the number to type an exact level, +/- to nudge,
-/// MAX to jump straight to cap.
+/// A single-line level readout. Level opens the base camos below it (each
+/// camo's `unlockLevel`), so changing it here unlocks rows straight away.
+/// Tap the number to type an exact level, +/- to nudge, MAX to jump to cap.
 private struct CompactLevelRow: View {
     let mode: AppMode
     let weapon: WeaponEntry

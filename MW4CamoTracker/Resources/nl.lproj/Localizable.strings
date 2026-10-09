@@ -31,6 +31,7 @@
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Nog geen %@-camouflagegegevens voor dit wapen.";
 "mw4.ui.locked" = "Maak eerst de vorige tier af.";
+"mw4.ui.camo_level_locked" = "Ontgrendelt op wapenniveau %d.";
 "mw4.ui.set_amount.title" = "Aantal Instellen";
 "mw4.ui.set_amount.field" = "Aantal";
 "mw4.ui.set_amount.message" = "Van %d vereist.";
@@ -45,7 +46,7 @@
 "mw4.onboarding.mark.tap_circle" = "Tik op de cirkel om een camouflage als voltooid te markeren.";
 "mw4.onboarding.mark.tap_pill" = "Tik op het getal om een exact aantal in te typen. Handig bij lange uitdagingen zoals 200 kills.";
 "mw4.onboarding.level.title" = "Eén niveau, elke modus";
-"mw4.onboarding.level.body" = "Wapenniveaus zijn gedeeld. Stel het één keer in op een tabblad, de rest volgt. Het is hetzelfde wapen.";
+"mw4.onboarding.level.body" = "Wapenniveaus en camo’s zijn gedeeld. Stel een niveau één keer in op een tabblad, de rest volgt, en het ontgrendelt de basis-camo’s van dat wapen.";
 "mw4.onboarding.suggested.title" = "Weet wat je hierna moet doen";
 "mw4.onboarding.suggested.body1" = "Elk tabblad wijst je het wapen aan dat het dichtst bij Goud is. Soms is dat het laatste dat een hele categorie tegenhoudt.";
 "mw4.onboarding.suggested.body2" = "Maak het af en je ziet de unlock meteen.";

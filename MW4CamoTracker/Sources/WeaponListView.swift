@@ -1,8 +1,8 @@
 import SwiftUI
 
-/// Weapons within a catalog category. The weapon list itself is identical in
-/// every mode (it's the shared catalog) — only each row's camo progress bar
-/// changes, pulled from the active mode's `weaponCamos`.
+/// Weapons within a catalog category. The list and each row's camo progress
+/// bar are identical in every mode (shared catalog, shared base track); only
+/// the Mastery pips change with the active mode.
 struct WeaponListView: View {
     let mode: AppMode
     let category: WeaponCategory

@@ -31,8 +31,8 @@ enum SupportMail {
         }
     }
 
-    /// A Mastery tier, which is not a `ChallengeItem` -- those come from the
-    /// mode JSON, while Mastery camos are defined in Theme.swift -- so it needs
+    /// A Mastery tier, which is not a `ChallengeItem` -- base camos come from
+    /// the weapon catalog, while Mastery camos are defined in Theme.swift -- so it needs
     /// its own way into a report.
     struct MasteryRef {
         let name: String
@@ -112,6 +112,9 @@ enum SupportMail {
             if let requirement = camo.requirement {
                 lines.append("Requirement in app: \(requirement.amount) \(requirement.unit)")
             }
+            if let unlockLevel = camo.unlockLevel {
+                lines.append("Unlocks in app: Weapon level \(unlockLevel)")
+            }
         }
         if let unlock {
             lines.append("Should be: \(unlock.describedForMail)")
@@ -158,7 +161,7 @@ struct ReportIssueMenu: View {
     let weapon: WeaponEntry
     let mode: AppMode
     var category: String? = nil
-    /// This mode's camos for this weapon. Empty is fine; the challenge entry
+    /// This weapon's (shared) base camos. Empty is fine; the challenge entry
     /// then behaves like every other kind.
     var camos: [ChallengeItem] = []
     var compact = false
