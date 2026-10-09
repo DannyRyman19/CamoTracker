@@ -3,8 +3,33 @@ import Foundation
 /// `manifest.json` — one small file the app checks before pulling any data.
 struct Manifest: Codable {
     struct Entry: Codable { let version: String; let path: String }
+    /// What the "new content" notification says for the update the manifest
+    /// currently describes, per language, so a season can be announced in
+    /// its own words without an app update:
+    ///
+    ///     "notification": {
+    ///       "title": { "en": "Season 1 is live", "de": "Season 1 ist da" },
+    ///       "body":  { "en": "New weapons and camos to track." }
+    ///     }
+    ///
+    /// Either field can be left out, and so can the whole block: whatever is
+    /// missing falls back to the app's built-in wording.
+    ///
+    /// For an update nobody needs telling about (a corrected challenge, a
+    /// typo), `"notification": { "silent": true }` lets the data go out with
+    /// no notification at all.
+    ///
+    /// The block is read at the moment an update is detected, so it describes
+    /// whatever update is live: change or remove it with the next one, or
+    /// that one is announced in these words (or kept silent) too.
+    struct Announcement: Codable {
+        let title: LocalizedText?
+        let body: LocalizedText?
+        let silent: Bool?
+    }
     let catalog: Entry
     let modes: [String: Entry]
+    let notification: Announcement?
 }
 
 /// Fetches the weapon catalog and mode JSON from the CDN, versioned through
@@ -21,12 +46,16 @@ final class DataService: Sendable {
 
     init(
         baseURL: URL = URL(string: "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/")!,
-        session: URLSession = .shared
+        session: URLSession = .shared,
+        cacheDir: URL? = nil
     ) {
         self.baseURL = baseURL
         self.session = session
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        self.cacheDir = support.appendingPathComponent("MW4CamoTracker", isDirectory: true)
+        // Tests pass their own directory so they never read or write the
+        // app's real cache.
+        let cacheDir = cacheDir ?? support.appendingPathComponent("MW4CamoTracker", isDirectory: true)
+        self.cacheDir = cacheDir
         try? FileManager.default.createDirectory(at: cacheDir, withIntermediateDirectories: true)
     }
 
@@ -57,7 +86,7 @@ final class DataService: Sendable {
     func refreshIfNeeded(
         knownCatalogVersion: String?,
         knownModeVersions: [String: String]
-    ) async throws -> (catalog: WeaponCatalog?, modes: [String: ModeFile]) {
+    ) async throws -> (catalog: WeaponCatalog?, modes: [String: ModeFile], notification: Manifest.Announcement?) {
         let (data, _) = try await session.data(from: baseURL.appendingPathComponent("manifest.json"))
         let manifest = try JSONDecoder().decode(Manifest.self, from: data)
 
@@ -76,7 +105,7 @@ final class DataService: Sendable {
             try modeData.write(to: cacheFileURL(name: mode), options: .atomic)
             updatedModes[mode] = modeFile
         }
-        return (newCatalog, updatedModes)
+        return (newCatalog, updatedModes, manifest.notification)
     }
 
     private func cacheFileURL(name: String) -> URL {

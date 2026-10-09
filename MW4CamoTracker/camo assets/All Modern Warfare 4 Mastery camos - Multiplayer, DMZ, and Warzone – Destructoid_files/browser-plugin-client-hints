@@ -1,0 +1,8 @@
+/*!
+ * Attaches Client Hints to Snowplow events v4.10.1 (http://bit.ly/sp-js)
+ * Copyright 2022 Snowplow Analytics Ltd, 2010 Anthon Pang
+ * Licensed under BSD-3-Clause
+ */
+
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self).snowplowClientHints={})}(this,(function(e){"use strict";var t;e.ClientHintsPlugin=function(e){var n=function(){var n,r,o,i,a=navigator.userAgentData;a&&(n={isMobile:a.mobile,brands:(i=a.brands,o=Array.isArray(i)?i:"[object Object]"===Object.prototype.toString.call(i)?Object.keys(i).map((function(e){return i[e]})):[],o.map((function(e){return{brand:e.brand,version:e.version}})))},e&&a.getHighEntropyValues&&a.getHighEntropyValues(["platform","platformVersion","architecture","model","uaFullVersion"]).then((function(e){n.architecture=e.architecture,n.model=e.model,n.platform=e.platform,n.uaFullVersion=e.uaFullVersion,n.platformVersion=e.platformVersion})),(r=n)&&"boolean"==typeof r.isMobile&&Array.isArray(r.brands)&&0!==r.brands.length&&!r.brands.some((function(e){return"string"!=typeof e.brand||"string"!=typeof e.version}))&&(t=n))};return{activateBrowserPlugin:function(){t||n()},contexts:function(){return t?[{schema:"iglu:org.ietf/http_client_hints/jsonschema/1-0-0",data:t}]:[]}}},Object.defineProperty(e,"__esModule",{value:!0})}));
+//# sourceMappingURL=index.umd.min.js.map

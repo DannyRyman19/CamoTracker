@@ -7,6 +7,7 @@ struct WeaponListView: View {
     let mode: AppMode
     let category: WeaponCategory
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @State private var width: CGFloat = 0
 
     /// Shared across every category screen (global, not per-category) so the
     /// choice sticks as you move between categories — same persisted-filter
@@ -93,18 +94,15 @@ struct WeaponListView: View {
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.clear)
                 } else {
-                    ForEach(displayedWeapons) { weapon in
-                        NavigationLink(value: Route.weapon(weapon.weaponId)) {
-                            WeaponRow(mode: mode, weapon: weapon, showsCamoCount: false)
-                        }
-                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                        .listRowBackground(Color.clear)
+                    CardGrid(items: displayedWeapons, columns: WideLayout.columns(for: width), route: { .weapon($0.weaponId) }) { weapon in
+                        WeaponRow(mode: mode, weapon: weapon, showsCamoCount: false)
                     }
                 }
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
+        .readingWidth($width)
         .navigationTitle(category.name.resolved())
     }
 }

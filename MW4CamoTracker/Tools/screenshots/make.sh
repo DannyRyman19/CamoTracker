@@ -5,6 +5,8 @@
 #   Tools/screenshots/make.sh --all-languages        every shipped locale
 #   Tools/screenshots/make.sh --lang de [out-dir]    one language
 #   Tools/screenshots/make.sh --ipad --all-languages the iPad Pro 12.9" set
+#   Tools/screenshots/make.sh --duo --all-languages  the iPhone Duo, opened flat
+#   Tools/screenshots/make.sh --duo-outer ...        the iPhone Duo, folded
 #
 # Builds the app for the simulator, boots an iPhone 17 Pro Max, seeds a
 # realistic save, drives the DEBUG screenshot harness (SS_SCREEN launch env,
@@ -30,6 +32,8 @@ while [[ $# -gt 0 ]]; do
     --all-languages) LANGS=(en de es fr nl); ALL=1; shift ;;
     --lang) LANGS=("$2"); shift 2 ;;
     --ipad) DEVICE=ipad; shift ;;
+    --duo) DEVICE=duo; shift ;;
+    --duo-outer) DEVICE=duoouter; shift ;;
     *) OUT="$1"; shift ;;
   esac
 done
@@ -49,6 +53,24 @@ if [[ $DEVICE == ipad ]]; then
 else
   SIM_NAME_OVERRIDE=""
   SHOT_PREFIX=""
+fi
+
+# The iPhone Duo's two screens, at the sizes its simulator captures them
+# (2007x2853 opened flat, 1398x2034 folded), into fastlane/screenshots-duo/.
+# App Store Connect has no Duo slot yet and deliver rejects the sizes, so
+# these are kept apart from the set `fastlane metadata` uploads, ready to be
+# added by hand once there is one.
+#
+# simctl cannot fold or turn the simulator: open it flat and upright for
+# --duo, folded and upright for --duo-outer, before running. The script uses
+# the booted Duo as it finds it and never restarts it, which could fold it.
+DISPLAY_ID=""; EXPECT=""; SHOT_SUFFIX=""; SHOTS_DIR="fastlane/screenshots"
+if [[ $DEVICE == duo ]]; then
+  SIM_NAME_OVERRIDE="iPhone Duo"; DISPLAY_ID=3; EXPECT="2007x2853"; SHOT_SUFFIX="_DUO_INNER"
+  SHOTS_DIR="fastlane/screenshots-duo"
+elif [[ $DEVICE == duoouter ]]; then
+  SIM_NAME_OVERRIDE="iPhone Duo"; DISPLAY_ID=1; EXPECT="1398x2034"; SHOT_SUFFIX="_DUO_OUTER"
+  SHOTS_DIR="fastlane/screenshots-duo"
 fi
 OUT="${OUT:-$HOME/Desktop/MW4CamoTracker-screenshots}"
 
@@ -87,35 +109,82 @@ for runtime, devices in json.load(sys.stdin)['devices'].items():
             print(d['udid']); raise SystemExit
 sys.exit('no available simulator named ' + name)
 " "$SIM_NAME")
-echo "==> sim $UDID"
-# Erase first: a signed-in Apple account on the device throws an "Apple Account
-# Verification" alert over the app a few seconds after launch, right into the
-# capture window, and leftover state from previous runs shows up too.
-xcrun simctl shutdown "$UDID" 2>/dev/null || true
-xcrun simctl erase "$UDID"
-xcrun simctl boot "$UDID" 2>/dev/null || true
-sleep 8
-xcrun simctl install "$UDID" "$APP"
-xcrun simctl status_bar "$UDID" override --time "9:41" \
-  --dataNetwork wifi --wifiMode active --wifiBars 3 \
-  --cellularMode active --cellularBars 4 --batteryState discharging --batteryLevel 100
 
-# One launch so the data container exists, then seed it and drop the prefs
-# cache so the app re-reads what we wrote rather than its own last snapshot.
-xcrun simctl launch "$UDID" "$BID" >/dev/null; sleep 5
-xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
-DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
-# cfprefsd goes down BEFORE the write, not after: it holds the domain in memory
-# from that first launch and flushes its own copy over the file on the way out,
-# which silently discards everything seed.py just wrote.
-xcrun simctl spawn "$UDID" launchctl stop com.apple.cfprefsd.xpc.daemon 2>/dev/null || true
-sleep 2
-/usr/bin/python3 Tools/screenshots/seed.py "$DATA/Library/Preferences/$BID.plist"
+# An unlit screen captures as an all-black PNG, which compresses to a couple
+# of bytes per hundred pixels; anything drawn is many times that.
+screen_is_lit () { # <png>
+  local px bytes
+  px=$(sips -g pixelWidth -g pixelHeight "$1" | awk '/pixel/ {n = (n ? n : 1) * $2} END {print n}')
+  bytes=$(stat -f %z "$1")
+  [[ $((bytes * 100 / px)) -ge 5 ]]
+}
+if [[ -n "$DISPLAY_ID" ]]; then
+  # More than one Duo may be booted, in different states. Use the one whose
+  # wanted screen is lit, and say so now rather than after the captures.
+  PROBE=$(mktemp -d); LIT=""
+  for CANDIDATE in $(xcrun simctl list devices available -j | /usr/bin/python3 -c "
+import json, sys
+print(' '.join(d['udid'] for devs in json.load(sys.stdin)['devices'].values() for d in devs
+               if d['name'] == sys.argv[1] and d['state'] == 'Booted'))" "$SIM_NAME"); do
+    xcrun simctl io "$CANDIDATE" screenshot --display=$DISPLAY_ID "$PROBE/p.png" >/dev/null 2>&1 || continue
+    if screen_is_lit "$PROBE/p.png"; then UDID="$CANDIDATE"; LIT=1; break; fi
+  done
+  rm -rf "$PROBE"
+  if [[ -z "$LIT" ]]; then
+    if [[ $DEVICE == duo ]]; then
+      echo "error: no booted iPhone Duo simulator has its inner screen on. Boot one, open it flat (unfold it), and run again." >&2
+    else
+      echo "error: no booted iPhone Duo simulator has its outer screen on. Boot one, fold it, hold it upright, and run again." >&2
+    fi
+    exit 1
+  fi
+fi
+echo "==> sim $UDID"
+if [[ -n "$DISPLAY_ID" ]]; then
+  # Not for the Duo: an erase or a restart could fold it again. Install over
+  # what is there and load the seed through cfprefsd, which is what holds
+  # the save while the simulator is booted.
+  xcrun simctl install "$UDID" "$APP"
+  xcrun simctl status_bar "$UDID" override --time "9:41" \
+    --dataNetwork wifi --wifiMode active --wifiBars 3 \
+    --cellularMode active --cellularBars 4 --batteryState discharging --batteryLevel 100
+  xcrun simctl launch "$UDID" "$BID" >/dev/null; sleep 5
+  xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
+  SEED_TMP=$(mktemp -d)
+  xcrun simctl spawn "$UDID" defaults export "$BID" "$SEED_TMP/seed.plist"
+  /usr/bin/python3 Tools/screenshots/seed.py "$SEED_TMP/seed.plist"
+  xcrun simctl spawn "$UDID" defaults import "$BID" "$SEED_TMP/seed.plist"
+  rm -rf "$SEED_TMP"
+else
+  # Erase first: a signed-in Apple account on the device throws an "Apple Account
+  # Verification" alert over the app a few seconds after launch, right into the
+  # capture window, and leftover state from previous runs shows up too.
+  xcrun simctl shutdown "$UDID" 2>/dev/null || true
+  xcrun simctl erase "$UDID"
+  xcrun simctl boot "$UDID" 2>/dev/null || true
+  sleep 8
+  xcrun simctl install "$UDID" "$APP"
+  xcrun simctl status_bar "$UDID" override --time "9:41" \
+    --dataNetwork wifi --wifiMode active --wifiBars 3 \
+    --cellularMode active --cellularBars 4 --batteryState discharging --batteryLevel 100
+
+  # One launch so the data container exists, then seed it and drop the prefs
+  # cache so the app re-reads what we wrote rather than its own last snapshot.
+  xcrun simctl launch "$UDID" "$BID" >/dev/null; sleep 5
+  xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
+  DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
+  # cfprefsd goes down BEFORE the write, not after: it holds the domain in memory
+  # from that first launch and flushes its own copy over the file on the way out,
+  # which silently discards everything seed.py just wrote.
+  xcrun simctl spawn "$UDID" launchctl stop com.apple.cfprefsd.xpc.daemon 2>/dev/null || true
+  sleep 2
+  /usr/bin/python3 Tools/screenshots/seed.py "$DATA/Library/Preferences/$BID.plist"
+fi
 
 for LANG_CODE in "${LANGS[@]}"; do
   if [[ $ALL -eq 1 ]]; then
     RAW="build/screenshots-raw/$DEVICE/$LANG_CODE"
-    FRAMED="fastlane/screenshots/$(asc_locale "$LANG_CODE")"
+    FRAMED="$SHOTS_DIR/$(asc_locale "$LANG_CODE")"
   else
     RAW="$OUT/raw"; FRAMED="$OUT/framed"
   fi
@@ -129,7 +198,21 @@ for LANG_CODE in "${LANGS[@]}"; do
     # Long enough for the weapon art to come down off the CDN; a half-loaded
     # list of placeholder scopes is the one thing that ruins these shots.
     sleep 12
-    xcrun simctl io "$UDID" screenshot "$RAW/$2.png" >/dev/null
+    xcrun simctl io "$UDID" screenshot ${DISPLAY_ID:+--display=$DISPLAY_ID} "$RAW/$2.png" >/dev/null
+    if [[ -n "$EXPECT" ]]; then
+      # The Duo screen being captured has to be the lit one, held upright:
+      # anything else gives a black image or a sideways one.
+      local size
+      size="$(sips -g pixelWidth -g pixelHeight "$RAW/$2.png" | awk '/pixel/ {print $2}' | paste -sd x -)"
+      if [[ "$size" != "$EXPECT" ]]; then
+        echo "error: the Duo's screen is ${size}, expected ${EXPECT}. Hold the simulator upright (portrait) and run again." >&2
+        exit 1
+      fi
+      if ! screen_is_lit "$RAW/$2.png"; then
+        echo "error: that Duo screen is off. Open the simulator flat for --duo, fold it for --duo-outer, and run again." >&2
+        exit 1
+      fi
+    fi
     echo "    $2"
   }
   echo "==> capture [$LANG_CODE]"
@@ -146,7 +229,7 @@ for LANG_CODE in "${LANGS[@]}"; do
   if [[ $ALL -eq 1 ]]; then
     i=1
     for n in multiplayer stats warzone dmz category weapon; do
-      mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n.png"
+      mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n${SHOT_SUFFIX}.png"
       i=$((i + 1))
     done
   fi

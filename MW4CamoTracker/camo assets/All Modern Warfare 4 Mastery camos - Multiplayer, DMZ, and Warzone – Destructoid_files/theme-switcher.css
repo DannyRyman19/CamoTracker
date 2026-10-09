@@ -1,0 +1,16 @@
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+}
+[data-theme="light"] .sun-icon,
+.theme-light .sun-icon {
+    display: none;
+}
+[data-theme="dark"] .moon-icon,
+.theme-dark .moon-icon {
+    display: none;
+}
+.sun-icon,
+.moon-icon {
+    transition: var(--transition-base);
+}

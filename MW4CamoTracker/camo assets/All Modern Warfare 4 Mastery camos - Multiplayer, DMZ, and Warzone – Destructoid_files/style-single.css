@@ -1,0 +1,796 @@
+/* Connatix video */
+article.single-post .post-content .video-player-container {
+	background-color: #ffffff10;
+	padding: 15px;
+	margin: 0 0 15px 0;
+}
+article.single-post .post-content .video-player-container .video-player-title {
+	font-family: var(--font-family-2);
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+	margin: 0 0 15px 0;
+}
+article.single-post .post-content .wp-block-gamurs-ad.has-wrapper {
+	padding: 0;
+	gap: 0;
+}
+/* ============================================= */
+/* In-content Connatix slot — ported from        */
+/* gamurs-wordpress-blocks/build/ad/style-index  */
+/* so the plugin can be retired from this site.  */
+/* CLS fix appended at bottom.                   */
+/* ============================================= */
+.wp-block-gamurs-ad {
+	--mobile-header-ad--height: 0px;
+	--wp-admin-bar--height: 0px;
+	--site-header--height: 64px;
+	--table-of-contents--height: 0px;
+	--primis--height: 0px;
+}
+@media (max-width: 991px) {
+	.wp-block-gamurs-ad {
+		--site-header--height: 64px;
+	}
+}
+body.admin-bar .wp-block-gamurs-ad {
+	--wp-admin-bar--height: 32px;
+}
+@media (max-width: 782px) {
+	body.admin-bar .wp-block-gamurs-ad {
+		--wp-admin-bar--height: 0px;
+	}
+}
+.primis-player-container:has(.cnx-main-container.cnx-in-mobile .cnx-float)~* .wp-block-gamurs-ad,
+.primis-player-container:has(.cnx-main-container.cnx-in-mobile .cnx-float)~.wp-block-gamurs-ad {
+	--primis--height: 120px;
+}
+.wp-block-gamurs-ad {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.wp-block-gamurs-ad.has-wrapper {
+	background-color: var(--blocks-ad-wrapper-bg);
+}
+@media (max-width: 991px) {
+	.wp-block-gamurs-ad.has-wrapper {
+		gap: 16px;
+		padding: 16px 16px 16px 16px;
+	}
+}
+@media (min-width: 992px) {
+	.wp-block-gamurs-ad.has-wrapper {
+		gap: 16px;
+		padding: 16px 24px 16px 24px;
+	}
+}
+.wp-block-gamurs-ad.position-sticky .wp-block-gamurs-ad__creative {
+	position: relative;
+}
+.wp-block-gamurs-ad.position-sticky .wp-block-gamurs-ad__creative>* {
+	height: min-content;
+	position: sticky !important;
+	top: calc(var(--mobile-header-ad--height) + var(--wp-admin-bar--height) + var(--site-header--height) + var(--table-of-contents--height) + var(--primis--height));
+	transition: top 0.3s linear;
+}
+.wp-block-gamurs-ad__creative {
+	min-height: 300px;
+	width: 100%;
+}
+.wp-block-gamurs-ad__creative>* {
+	margin: 0 auto !important;
+	width: 100%;
+}
+.wp-block-gamurs-ad.is-video-ad {
+	z-index: 1;
+}
+.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+@media (max-width: 991px) {
+	.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative {
+		gap: 16px;
+	}
+}
+@media (min-width: 992px) {
+	.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative {
+		gap: 16px;
+	}
+}
+.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative .video-player-title {
+	color: var(--blocks-ad-wrapper-fg);
+	font-family: 'Titillium Web', Tahoma, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.07em;
+	line-height: 18px;
+	text-decoration: none;
+	text-indent: 0px;
+	text-transform: uppercase;
+}
+/* CLS fix: reserve actual rendered Connatix space (16:9 of width)           */
+/* The legacy 300px floor on __creative was 60–150px short of Connatix's     */
+/* 360–450px desktop player; pushing post content downward and shifting the  */
+/* #post-{id} wrapper. aspect-ratio scales correctly across viewport widths. */
+.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative {
+	min-height: 0;
+}
+.wp-block-gamurs-ad.is-video-ad .video-player {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+}
+/* a11y utility — ported from gamurs-wordpress-blocks crit-style.css.        */
+/* gamurs/button render.php emits <span class="screen-reader">…</span> for   */
+/* screen-reader-only labels. Keep this rule so SR-only text isn't visible.  */
+.screen-reader {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	font-size: 0;
+	text-indent: -100%;
+}
+/* Article content */
+article.single-post .post-content {
+	overflow: hidden;
+}
+article.single-post h1,
+article.single-post h2,
+article.single-post h3,
+article.single-post h4,
+article.single-post h5,
+article.single-post h6 {
+	font-family: var(--font-family-2);
+	font-weight: bold;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+article.single-post h2,
+article.single-post h3,
+article.single-post h4,
+article.single-post h5,
+article.single-post h6 {
+	font-size: 20px;
+	line-height: 34px;
+}
+article.single-post h1[id],
+article.single-post h2[id],
+article.single-post h3[id],
+article.single-post h4[id],
+article.single-post h5[id],
+article.single-post h6[id] {
+	scroll-margin-top: 30px;
+}
+article.single-post .featured-image-container img.featured-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	aspect-ratio: 16 / 9;
+}
+article.single-post h1.post-title {
+	font-family: var(--font-family-2);
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 130%;
+}
+article.single-post .post-summary {
+	font-family: var(--font-family-2);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 100%;
+	color: var(--text2);
+}
+article.single-post .post-meta .post-published,
+article.single-post .post-meta .post-modified {
+	font-size: 12px;
+	color: var(--text2);
+	white-space: nowrap;
+}
+article.single-post .post-meta a.author-name {
+	color: var(--primary-green-darker);
+	font-weight: 600;
+	font-family: var(--font-family-1);
+	display: inline-block;
+}
+article.single-post .post-content>p:first-child:before {
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 20px;
+	margin-right: 5px;
+	background-image: url("data:image/svg+xml,%3csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect y='0.000244141' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect y='12' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect y='4.00024' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect x='3.99951' y='4.00024' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect x='3.99951' y='8' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect x='7.99951' y='6.00049' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3crect y='8' width='3.99982' height='3.99982' fill='%23DE0606' /%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-size: 12px 16px;
+	vertical-align: middle;
+}
+article.single-post .post-content strong,
+article.single-post .post-content p {
+	margin-bottom: 1.5rem;
+	font-size: 20px;
+	line-height: 34px;
+}
+figure.wp-block-table table *,
+article.single-post .wp-block-details summary {
+	font-size: 16px !important;
+	line-height: 26px !important;
+	border-color: var(--text1);
+}
+figure.wp-block-table table thead tr th {
+	background-color: #E3E898;
+	color: #10321D;
+}
+body.theme-dark .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background: rgb(255 255 255 / 20%);
+}
+article.single-post .wp-block-list {
+	margin: 1rem 0 1.5rem 0;
+	font-size: 18px;
+	line-height: 25px;
+}
+article.single-post .wp-block-list li {
+	margin-bottom: .5rem;
+}
+article.single-post .post-content a:hover,
+article.single-post .post-content a {
+	color: var(--text-link);
+	transition: var(--transition-base);
+}
+article.single-post .post-content figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+article.single-post .featured-image-caption,
+article.single-post .post-content figcaption {
+	text-align: center;
+	font-size: 12px;
+	color: var(--text1);
+	margin-top: 10px;
+}
+article.single-post .post-content blockquote.wp-block-quote {
+	border: none;
+	background-color: var(--bg2);
+	margin: 2rem 0;
+	padding: 1rem;
+}
+article.single-post .post-content blockquote.wp-block-quote p {
+	text-align: center;
+	line-height: 28px;
+	font-size: 18px;
+}
+article.single-post .post-content blockquote.wp-block-quote::before {
+	content: "";
+	display: block;
+	margin: 0 auto 20px auto;
+	width: 27px;
+	height: 24px;
+	background-image: url("data:image/svg+xml,%3csvg width='27' height='24' viewBox='0 0 27 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16.1686 24V12.0463C16.1686 10.471 16.4302 9.00386 16.9535 7.64479C17.4767 6.3166 18.2093 5.12741 19.1512 4.07722C20.093 3.05791 21.2267 2.19305 22.5523 1.48263C23.8779 0.803089 25.3605 0.30888 27 0V5.09653C26.0233 5.40541 25.2209 5.77606 24.593 6.2085C23.9651 6.64093 23.4767 7.13514 23.1279 7.69112C22.7442 8.27799 22.5 8.92664 22.3953 9.63706C22.2558 10.3475 22.186 11.1506 22.186 12.0463V13.2973H27V24H16.1686ZM-1.90735e-06 24V12.0463C-1.90735e-06 10.471 0.261625 9.00386 0.784882 7.64479C1.30814 6.3166 2.0407 5.12741 2.98256 4.07722C3.92442 3.05791 5.05814 2.19305 6.38372 1.48263C7.7093 0.803089 9.19186 0.30888 10.8314 0V5.09653C9.85465 5.40541 9.05232 5.77606 8.42442 6.2085C7.79651 6.64093 7.32558 7.13514 7.01163 7.69112C6.66279 8.27799 6.43604 8.92664 6.33139 9.63706C6.19186 10.3475 6.12209 11.1506 6.12209 12.0463V13.2973H10.8314V24H-1.90735e-06Z' fill='%23FAFAFA'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-size: 27px 24px;
+}
+body.theme-light article.single-post .post-content blockquote.wp-block-quote::before {
+	background-image: url("data:image/svg+xml,%3csvg width='27' height='24' viewBox='0 0 27 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16.1686 24V12.0463C16.1686 10.471 16.4302 9.00386 16.9535 7.64479C17.4767 6.3166 18.2093 5.12741 19.1512 4.07722C20.093 3.05791 21.2267 2.19305 22.5523 1.48263C23.8779 0.803089 25.3605 0.30888 27 0V5.09653C26.0233 5.40541 25.2209 5.77606 24.593 6.2085C23.9651 6.64093 23.4767 7.13514 23.1279 7.69112C22.7442 8.27799 22.5 8.92664 22.3953 9.63706C22.2558 10.3475 22.186 11.1506 22.186 12.0463V13.2973H27V24H16.1686ZM-1.90735e-06 24V12.0463C-1.90735e-06 10.471 0.261625 9.00386 0.784882 7.64479C1.30814 6.3166 2.0407 5.12741 2.98256 4.07722C3.92442 3.05791 5.05814 2.19305 6.38372 1.48263C7.7093 0.803089 9.19186 0.30888 10.8314 0V5.09653C9.85465 5.40541 9.05232 5.77606 8.42442 6.2085C7.79651 6.64093 7.32558 7.13514 7.01163 7.69112C6.66279 8.27799 6.43604 8.92664 6.33139 9.63706C6.19186 10.3475 6.12209 11.1506 6.12209 12.0463V13.2973H10.8314V24H-1.90735e-06Z' fill='%230C0C0C'/%3e%3c/svg%3e");
+}
+article.single-post .post-content iframe:not([data-test-id="beehiiv-embed"]):not([id^="google_ads_iframe"]) {
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+article.single-post .post-content figure.wp-block-embed.beehiiv-embed-wrap {
+	margin: 1rem 0;
+}
+article.single-post .affiliate-policy {
+	font-size: 14px;
+	line-height: 150%;
+	color: var(--text2);
+	margin-top: 2rem;
+}
+article.single-post .affiliate-policy a:active,
+article.single-post .affiliate-policy a:focus,
+article.single-post .affiliate-policy a {
+	color: var(--text-link);
+	text-decoration: underline;
+	transition: var(--transition-base);
+}
+article.single-post #social-interactions-sidebar {
+	z-index: 9999;
+}
+article.single-post #social-interactions .simplefavorite-button-count,
+article.single-post #social-interactions .disqus-comment-count {
+	line-height: 1 !important;
+	color: var(--text1);
+	font-size: 14px;
+	font-family: var(--font-family-2);
+}
+article.single-post #social-interactions>* {
+	height: 60px;
+	background-color: var(--bg2);
+}
+article.single-post #sharing {
+	height: 60px;
+	background-color: var(--bg2);
+}
+.addtoany_shortcode {
+	margin-top: 4px;
+}
+.addtoany_list a {
+	display: inline-flex;
+}
+.addtoany_list a span svg path {
+	fill: var(--icon1) !important;
+}
+.addtoany_list a:hover span svg path {
+	fill: var(--text-link) !important;
+}
+.addtoany_list a span,
+.addtoany_list a:active span,
+.addtoany_list a:focus span,
+.addtoany_list a:hover span {
+	opacity: 1 !important;
+}
+body.single .divider {
+	position: relative;
+	z-index: 1;
+	min-height: 1px;
+	overflow: hidden;
+}
+body.single .divider.main {
+	overflow: visible;
+}
+body.single .divider:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	height: 1px;
+	background: var(--border1);
+}
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_pagination.swiper-pagination-custom .swiper-pagination-simple {
+	text-align: center !important;
+}
+.post-tags a {
+	background-color: var(--tag2);
+	color: var(--text1);
+	font-size: 12px;
+}
+article.single-post .author-info .author-name {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-link);
+	transition: var(--transition-base);
+	font-family: var(--font-family-2);
+}
+article.single-post .author-info .author-bio {
+	font-size: 14px;
+	line-height: 150%;
+	color: var(--text1);
+}
+article.single-post .author-info .author-job {
+	font-size: 12px;
+	color: var(--text2);
+	display: block;
+	line-height: 1;
+}
+article.single-post .author-info .social a {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid;
+}
+body.theme-dark article.single-post .author-info .social a {
+	border-color: var(--white1);
+}
+body.theme-light article.single-post .author-info .social a {
+	border-color: var(--black2);
+}
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_slide figure {
+	flex-direction: column;
+}
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_caption.gallery-caption {
+	text-align: center !important;
+	position: relative !important;
+	background: none !important;
+}
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_pagination.swiper-pagination-bullets,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_pagination.swiper-pagination-custom {
+	justify-content: center !important;
+}
+.wp-block-jetpack-slideshow .amp-carousel-button:focus,
+.wp-block-jetpack-slideshow .amp-carousel-button:hover,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-next:focus,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-next:hover,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-pause:focus,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-pause:hover,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-play:focus,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-play:hover,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-prev:focus,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-prev:hover,
+.wp-block-jetpack-slideshow .amp-carousel-button,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-next,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-pause,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-play,
+.wp-block-jetpack-slideshow .wp-block-jetpack-slideshow_button-prev {
+	background-color: var(--white2) !important;
+	border-radius: 0 !important;
+	opacity: 1 !important;
+}
+#after-footer-content {
+	margin-right: calc(var(--bs-gutter-x) * -.5);
+	margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+#table-of-contents-container .wp-block-yoast-seo-table-of-contents h2,
+article.single-post .wp-block-yoast-seo-table-of-contents h2 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0 0 1rem 0;
+}
+.wp-block-yoast-seo-table-of-contents ul {
+	padding-left: 1rem;
+}
+article.single-post .post-content .wp-block-yoast-seo-table-of-contents ul li a,
+article.single-post .post-content .wp-block-yoast-seo-table-of-contents ul li a:active,
+article.single-post .post-content .wp-block-yoast-seo-table-of-contents ul li a:focus,
+.wp-block-yoast-seo-table-of-contents ul li a,
+.wp-block-yoast-seo-table-of-contents ul li a:active,
+.wp-block-yoast-seo-table-of-contents ul li a:focus {
+	font-size: 18px;
+	line-height: 150%;
+	color: var(--text2);
+	transition: var(--transition-base);
+}
+.wp-block-yoast-seo-table-of-contents {
+	padding: 20px;
+	background-color: var(--bg2);
+	margin-bottom: 3rem;
+}
+article.single-post .post-content .wp-block-yoast-seo-table-of-contents {
+	margin-bottom: 2rem;
+}
+.wp-block-yoast-seo-table-of-contents ul li {
+	list-style: none;
+	color: var(--text2);
+	margin-bottom: 1rem;
+}
+.wp-block-yoast-seo-table-of-contents ul li:before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 17px;
+	margin-right: 8px;
+	background-image: url("data:image/svg+xml,%3csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='5.3335' y='0.5' width='5.33333' height='5.33333' fill='%23DE0606'/%3e%3crect x='5.3335' y='11.166' width='5.33333' height='5.33333' fill='%23DE0606'/%3e%3crect y='5.83398' width='5.33333' height='5.33333' fill='%23DE0606'/%3e%3crect x='10.6665' y='5.83398' width='5.33333' height='5.33333' fill='%23DE0606'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-size: 16px 17px;
+	vertical-align: middle;
+}
+.wp-block-yoast-seo-table-of-contents ul li:not(:last-child) a {
+	margin: 0 0 15px 0;
+}
+article.single-post .post-content .wp-block-yoast-seo-table-of-contents ul li a.current-title,
+.wp-block-yoast-seo-table-of-contents ul li a:hover {
+	color: var(--primary-red);
+}
+body.theme-dark .wp-lightbox-overlay.zoom.active .scrim {
+	background-color: var(--bg2) !important;
+}
+article.single-post .post-content mark {
+	padding: 0;
+}
+/* RESPONSIVE */
+@media (min-width: 992px) {
+	/* article.single-post .post-content .wp-block-yoast-seo-table-of-contents {
+		display: none !important;
+	} */
+	article.single-post .post-content .wp-block-yoast-seo-table-of-contents ul li a:hover,
+	.wp-block-yoast-seo-table-of-contents ul li a.current-title {
+		color: var(--primary-red);
+	}
+	#after-footer-content {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	#back-to-top-sidebar {
+		/* Lift above the bottom ad adhesion unit so it isn't hidden behind it. */
+		top: calc(100% - 150px);
+	}
+	#social-interactions-sidebar {
+		/* Height of the top bar nav + 15 px */
+		top: 75px;
+		/* Buffer for #back-to-top-sidebar */
+		margin-bottom: 40px;
+	}
+	#social-interactions-sidebar .icon {
+		width: 40px;
+		height: 40px;
+		background-color: var(--bg2);
+	}
+	#back-to-top-sidebar a:hover,
+	#back-to-top-sidebar a {
+		color: var(--text1);
+		cursor: pointer;
+		font-family: var(--font-family-2);
+		font-weight: 600;
+		font-size: 16px;
+	}
+	article.single-post .author-info .social a {
+		transition: var(--transition-base);
+	}
+	article.single-post .author-info .social a:hover {
+		border-color: var(--primary-green);
+	}
+	article.single-post .author-info .author-bio {
+		font-size: 16px;
+	}
+	article.single-post .author-info .author-name {
+		font-size: 20px;
+	}
+	article.single-post .author-info .author-avatar {
+		width: 48px;
+		height: 48px;
+	}
+	article.single-post .affiliate-policy {
+		font-size: 16px;
+	}
+	article.single-post .affiliate-policy a:hover {
+		color: var(--primary-green-darker);
+	}
+	article.single-post .post-content blockquote.wp-block-quote {
+		padding: 2rem;
+	}
+	article.single-post .wp-block-list {
+		margin-bottom: 2rem;
+	}
+	article.single-post .wp-block-list li {
+		margin-bottom: 1rem;
+	}
+	article.single-post .featured-image-container {
+		position: relative;
+	}
+	article.single-post .featured-image-container::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		display: block;
+		pointer-events: none;
+		background: linear-gradient(180deg, rgba(18, 18, 18, 0) 50%, rgba(18, 18, 18, 0.7) 80%, #121212 100%);
+	}
+	body.theme-light article.single-post .featured-image-container::before {
+		display: none;
+	}
+	article.single-post .post-summary {
+		font-size: 20px;
+		line-height: 150%;
+	}
+}
+#comment-section .view-comments-toggle {
+	background-color: var(--primary-red);
+	border: none;
+	color: var(--text1);
+	font-family: var(--font-family-2);
+	font-weight: bold;
+	padding: 12px 28px;
+	transition: var(--transition-base);
+	min-width: 220px;
+	cursor: pointer;
+}
+#comment-section .view-comments-toggle:hover {
+	background-color: var(--primary-red-dark);
+	color: var(--text1);
+}
+#comment-section .view-comments-toggle .disqus-comment-count {
+	color: inherit;
+	font: inherit;
+}
+/* GAMURS author E-E-A-T (Phase 2) */
+.author-job-inline {
+	color: var(--text2, #6c757d);
+}
+.article-byline {
+	gap: 0.65rem;
+}
+.article-byline-avatar {
+	border-radius: 50%;
+	flex-shrink: 0;
+	object-fit: cover;
+}
+.article-byline-text {
+	min-width: 0;
+	line-height: 1.3;
+}
+.author-topics {
+	color: var(--text2, #6c757d);
+	font-size: 0.95em;
+	line-height: 1.5;
+}
+.author-topics strong {
+	color: var(--text1, inherit);
+}
+
+/* === Desktop article layout: 64px icon strip + flex content (>=728px for leaderboards) + fixed 400px rail === */
+@media (min-width: 992px) {
+	/* Widen the single-post shell so the content column can reach the 728px in-content leaderboard minimum.
+	   Fluid so it never exceeds the viewport (no horizontal scroll); capped at the xxl container width. */
+	article.single-post > .container,
+	body.single-post #related-posts > .container,
+	body.single-post #newsletter-section > .container,
+	body.single-post #posts-all > .container,
+	body.single-eg_reviews #related-posts > .container,
+	body.single-eg_reviews #newsletter-section > .container,
+	body.single-eg_reviews #posts-all > .container {
+		max-width: min(97vw, 1320px);
+	}
+
+	/* Keep the article + content/rail rows on a single line (no wrap) so the
+	   flex-grow columns shrink instead of dropping the rail to the next line. */
+	article.single-post > .container > .row,
+	article.single-post .col-lg-11 > .row {
+		flex-wrap: nowrap;
+	}
+
+	/* Left social-icon strip: fixed narrow column (back-to-top is icon-only). */
+	article.single-post > .container > .row > .col-lg-1 {
+		flex: 0 0 64px;
+		width: 64px;
+		max-width: 64px;
+	}
+
+	/* Main column takes whatever the strip leaves (zero basis -> no max-content claim). */
+	article.single-post > .container > .row > .col-lg-11 {
+		flex: 1 1 0;
+		width: auto;
+		max-width: none;
+		min-width: 0;
+	}
+
+	/* Staged content/rail sizing (priority: content reaches 728px usable, THEN rail gives back width):
+	   - wide: rail at 400px, content grows past 728px
+	   - medium: content held at 728px usable (752px box incl. 24px padding), rail shrinks 400 -> 300
+	   - narrow: rail floored at 300px, content dips below 728px (no horizontal scroll)
+	   The rail's large shrink factor (1000 vs content's 1) makes it surrender width before content. */
+	article.single-post .col-lg-11 > .row > .col-lg-7 {
+		flex: 1 1 752px;
+		width: auto;
+		max-width: none;
+		min-width: 0;
+	}
+	article.single-post .col-lg-11 > .row > .col-lg-5 {
+		flex: 0 1000 400px;
+		width: auto;
+		min-width: 300px;
+		max-width: 400px;
+		/* No column padding: the full column width is usable ad width. */
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	/* After-footer (review/comments) zone: match the main split — content flex-grows,
+	   rail-scroll-parent-2 fixed at 400px. No nowrap here: the full-width .col-12 divider
+	   must stay on its own line above; content+rail fit one line on their own (basis 0 + 400). */
+	article.single-post #after-footer-content > .row > .col-lg-8 {
+		flex: 1 1 752px;
+		width: auto;
+		max-width: none;
+		min-width: 0;
+	}
+	article.single-post #after-footer-content > .row > .col-lg-4 {
+		flex: 0 1000 400px;
+		width: auto;
+		min-width: 300px;
+		max-width: 400px;
+		/* No column padding: the full column width is usable ad width. */
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+/* Dynamic rail (rail-fill.js): the rail column stacks up to 3 sticky ad units on tall
+   articles. Filled boxes flex-distribute down the column; any unfilled box collapses to
+   0px so we never reserve blank space. Desktop only (matches rail-fill.js matchMedia). */
+@media (min-width: 992px) {
+	.dto-rail-column {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	/* Seed (#rail-scroll-parent) + any filled .dto-rail-slot. */
+	.dto-rail-column .gamurs-ad-container:not(:empty) {
+		flex: 1 1 0;
+		min-height: 50vh; /* travel floor so a filled box sticks even on a short column */
+		margin-bottom: 24px;
+	}
+	/* Added-but-not-yet-filled slot -> reserve nothing (seed is never collapsed). */
+	.dto-rail-column .dto-rail-slot:empty {
+		flex: 0 0 0;
+		min-height: 0;
+		height: 0;
+		margin: 0;
+	}
+}
+
+/* In-content ad slots: subtle tint + "ADVERTISEMENT" label. The wrapper is client-injected
+   by BigCrunch only when a slot is FILLED (class carries the slot name), so [class*="incontent"]
+   never frames empty space and covers both desktop (_dt_) and mobile (_m_) units. Translucent
+   tint + --text3 label so it reads correctly in both theme-light and theme-dark. */
+.gamurs-ad-slot[class*="incontent"] {
+	margin: 1rem 0;
+	background: rgba(128, 128, 128, 0.06);
+	border-radius: 8px;
+	padding: 8px 0 12px;
+}
+.gamurs-ad-slot[class*="incontent"]::before {
+	content: "ADVERTISEMENT";
+	display: block;
+	margin-bottom: 6px;
+	text-align: center;
+	font-size: 10px;
+	line-height: 1;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text3);
+}
+/* In-table ad slots (tier-list / ranking tables). A full-width <tr> the mu-plugin
+   injects inside big tables so deep readers don't hit a long ad-free void. */
+
+/* Always: strip the table-cell chrome (border, zebra stripe, padding) so the ad row
+   never reads as a broken ranking row. */
+tr.gamurs-ad-slot-row,
+tr.gamurs-ad-slot-row > td {
+	background: none !important;
+	border: 0 !important;
+	padding: 0 !important;
+}
+
+/* Framed + labelled ONLY when Big Crunch fills the slot (it adds the *incontent* slot
+   name to the class on fill, like the body in-content slots). On production an UNFILLED
+   in-table slot collapses to nothing — it never leaves an empty labelled box mid-table. */
+.gamurs-ad-slot--table[class*="incontent"] {
+	display: block;
+	margin: 4px auto;
+	padding: 8px 0 12px;
+	background: rgba(128, 128, 128, 0.06);
+	border-radius: 8px;
+	text-align: center;
+}
+
+/* Non-production only (body.gamurs-ad-debug, added by the mu-plugin off prod): also
+   frame + reserve height for UNFILLED slots so the cadence is inspectable on
+   develop/preprod even when BC has no demand. Never visible on production. */
+body.gamurs-ad-debug .gamurs-ad-slot--table {
+	display: block;
+	margin: 4px auto;
+	padding: 8px 0 12px;
+	background: rgba(128, 128, 128, 0.06);
+	border-radius: 8px;
+	min-height: 90px;
+	text-align: center;
+}
+.gamurs-ad-slot--table[class*="incontent"]::before,
+body.gamurs-ad-debug .gamurs-ad-slot--table::before {
+	content: "ADVERTISEMENT";
+	display: block;
+	margin-bottom: 6px;
+	text-align: center;
+	font-size: 10px !important; /* beat figure.wp-block-table table * { font-size:16px!important } */
+	line-height: 1;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text3);
+}

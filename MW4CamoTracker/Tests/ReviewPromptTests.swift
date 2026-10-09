@@ -1,5 +1,6 @@
 import Testing
 import Foundation
+@testable import MW4CamoTracker
 
 @Suite("Rating prompt gate")
 struct ReviewPromptTests {

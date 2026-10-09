@@ -39,9 +39,28 @@
 		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
+		B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */; };
+		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
+		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
 		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
-		B60C185149378A2DDDF51A66 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9D0A1C3E5F7092B4D6E8F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE362CDEF8A5066AE2289CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB35CFA37F02A0D21E89FFA2;
+			remoteInfo = MW4CamoTracker;
+		};
+		B9D0A1C3E5F7092B4D6E8F26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AE362CDEF8A5066AE2289CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB35CFA37F02A0D21E89FFA2;
+			remoteInfo = MW4CamoTracker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6FE011B12DC06CD3532E4EFB /* SupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMail.swift; sourceTree = "<group>"; };
@@ -77,6 +96,10 @@
 		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
+		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
+		B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTapUITests.swift; sourceTree = "<group>"; };
+		B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTextTests.swift; sourceTree = "<group>"; };
 		B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
 		B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */,
+				B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */,
 				55033CAA3C16581897393815 /* MW4CamoTracker.app */,
 			);
 			name = Products;
@@ -141,15 +165,26 @@
 			isa = PBXGroup;
 			children = (
 				B3D9F52E16046F83AAC2E733 /* Tests */,
+				B9D0A1C3E5F7092B4D6E8F23 /* UITests */,
 				362BB9C9C2DAE800B50DD628 /* Resources */,
 				7C15235309C8F30D2EC1263E /* Sources */,
 				6C807CD8FE7BFAEC6E23B808 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		B9D0A1C3E5F7092B4D6E8F23 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		B3D9F52E16046F83AAC2E733 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */,
+				B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
 			);
 			path = Tests;
@@ -185,11 +220,28 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9D0A1C3E5F7092B4D6E8F11 /* PBXTargetDependency */,
 			);
 			name = MW4CamoTrackerTests;
 			productName = MW4CamoTrackerTests;
 			productReference = B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B9D0A1C3E5F7092B4D6E8F24 /* MW4CamoTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9D0A1C3E5F7092B4D6E8F28 /* Build configuration list for PBXNativeTarget "MW4CamoTrackerUITests" */;
+			buildPhases = (
+				B9D0A1C3E5F7092B4D6E8F25 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9D0A1C3E5F7092B4D6E8F27 /* PBXTargetDependency */,
+			);
+			name = MW4CamoTrackerUITests;
+			productName = MW4CamoTrackerUITests;
+			productReference = B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -216,6 +268,7 @@
 			targets = (
 				AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */,
 				B1A7F30C94E24D6188A0C511 /* MW4CamoTrackerTests */,
+				B9D0A1C3E5F7092B4D6E8F24 /* MW4CamoTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,12 +327,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */,
+				B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
-				B60C185149378A2DDDF51A66 /* ReviewPrompt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9D0A1C3E5F7092B4D6E8F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9D0A1C3E5F7092B4D6E8F11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */;
+			targetProxy = B9D0A1C3E5F7092B4D6E8F10 /* PBXContainerItemProxy */;
+		};
+		B9D0A1C3E5F7092B4D6E8F27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB35CFA37F02A0D21E89FFA2 /* MW4CamoTracker */;
+			targetProxy = B9D0A1C3E5F7092B4D6E8F26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		329645BF0A7F3FB43ABFB114 /* Debug */ = {
@@ -447,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -456,6 +532,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MW4CamoTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MW4CamoTracker";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -464,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -473,6 +551,41 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MW4CamoTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MW4CamoTracker";
+			};
+			name = Release;
+		};
+		B9D0A1C3E5F7092B4D6E8F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44G72CWWEW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MW4CamoTracker;
+			};
+			name = Debug;
+		};
+		B9D0A1C3E5F7092B4D6E8F2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44G72CWWEW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MW4CamoTracker;
 			};
 			name = Release;
 		};
@@ -502,6 +615,15 @@
 			buildConfigurations = (
 				B93F4B84725B1BC000184D99 /* Debug */,
 				BA405C95836C2CD111295EAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9D0A1C3E5F7092B4D6E8F28 /* Build configuration list for PBXNativeTarget "MW4CamoTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9D0A1C3E5F7092B4D6E8F29 /* Debug */,
+				B9D0A1C3E5F7092B4D6E8F2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

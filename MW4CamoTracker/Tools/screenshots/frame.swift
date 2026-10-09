@@ -28,8 +28,13 @@ import AppKit
 /// (3rd gen) slot Apple demands for a universal app. The iPad raw captures
 /// come off a 13-inch simulator at 2064x2752 - these are composites, so the
 /// capture is fitted onto the required canvas rather than having to match it.
+///
+/// `duo` and `duoouter` are the iPhone Duo's two screens, at the sizes its
+/// simulator captures them: 2007x2853 opened flat, 1398x2034 folded. App
+/// Store Connect has no slot for either yet, so these are made ahead of it.
 let device = ProcessInfo.processInfo.environment["SS_DEVICE"] ?? "iphone"
-let (W, H) = device == "ipad" ? (2048, 2732) : (1284, 2778)
+let isDuo = device == "duo" || device == "duoouter"
+let (W, H) = device == "ipad" ? (2048, 2732) : device == "duo" ? (2007, 2853) : device == "duoouter" ? (1398, 2034) : (1284, 2778)
 let Wf = CGFloat(W), Hf = CGFloat(H)
 /// Layout is tuned against the 6.7" canvas; everything scales off its width
 /// so the iPad shot is the same design rather than the same absolute sizes.
@@ -59,6 +64,36 @@ guard let dp = CGDataProvider(url: URL(fileURLWithPath: fontPath) as CFURL), let
 func loadCG(_ path: String) -> CGImage? {
     guard let src = CGImageSourceCreateWithURL(URL(fileURLWithPath: path) as CFURL, nil) else { return nil }
     return CGImageSourceCreateImageAtIndex(src, 0, nil)
+}
+
+/// Cuts the system's black status band off a Duo capture: the Duo draws its
+/// clock and signal in a strip of its own, outside the app, along the top
+/// when opened flat and down the side when folded. A row or column counts as
+/// band while nearly all of it is pure black (the app's darkest background
+/// sits well above that); the glyphs in the band are too few pixels to
+/// matter. Other devices come back untouched.
+func trimSystemBand(_ image: CGImage) -> CGImage {
+    guard isDuo else { return image }
+    let w = image.width, h = image.height
+    guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                              space: CGColorSpace(name: CGColorSpace.sRGB)!,
+                              bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue),
+          let data = ctx.data else { return image }
+    ctx.draw(image, in: CGRect(x: 0, y: 0, width: w, height: h))
+    let px = data.bindMemory(to: UInt8.self, capacity: w * h * 4)
+    func black(_ x: Int, _ y: Int) -> Bool {          // y from the top
+        let i = (y * w + x) * 4                        // bitmap memory runs top row first
+        return Int(px[i]) + Int(px[i + 1]) + Int(px[i + 2]) < 12
+    }
+    func bandRow(_ y: Int) -> Bool { stride(from: 0, to: w, by: 7).filter { black($0, y) }.count * 100 >= (w / 7) * 85 }
+    func bandCol(_ x: Int) -> Bool { stride(from: 0, to: h, by: 7).filter { black(x, $0) }.count * 100 >= (h / 7) * 85 }
+    var top = 0, bottom = h, left = 0, right = w
+    while top < h / 3, bandRow(top) { top += 1 }
+    while bottom > h * 2 / 3, bandRow(bottom - 1) { bottom -= 1 }
+    while left < w / 3, bandCol(left) { left += 1 }
+    while right > w * 2 / 3, bandCol(right - 1) { right -= 1 }
+    guard top > 0 || bottom < h || left > 0 || right < w else { return image }
+    return image.cropping(to: CGRect(x: left, y: top, width: right - left, height: bottom - top)) ?? image
 }
 
 // ─── value-noise fBm (same as tools-mw4-logo.swift) ────────────────────
@@ -219,9 +254,10 @@ func checkGlyphs() {
 checkGlyphs()
 
 func render(_ shot: Shot, _ headline: [String]) {
-    guard let rawFull = loadCG("\(rawDir)/\(shot.name).png") else {
+    guard let loaded = loadCG("\(rawDir)/\(shot.name).png") else {
         fputs("missing \(shot.name).png\n", stderr); return
     }
+    let rawFull = trimSystemBand(loaded)
     guard let ctx = CGContext(data: nil, width: W, height: H, bitsPerComponent: 8, bytesPerRow: 0,
                               space: space, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return }
 

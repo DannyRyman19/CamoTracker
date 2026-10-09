@@ -13,7 +13,13 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: Self.refreshTaskIdentifier, using: nil) { task in
+        // `using: .main`, not `nil`: this closure is written inside a
+        // main-actor method, so Swift 6 treats it as main-actor isolated and
+        // traps (EXC_BREAKPOINT in `dispatch_assert_queue`) if BGTaskScheduler
+        // calls it on its own background queue — which it does with `nil`,
+        // and only when iOS actually wakes the app, so it crashed in the
+        // background and never under the debugger.
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: Self.refreshTaskIdentifier, using: .main) { task in
             guard let refreshTask = task as? BGAppRefreshTask else { return }
             BackgroundRefreshCoordinator.handle(task: refreshTask)
         }

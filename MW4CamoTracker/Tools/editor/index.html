@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MW4 Data Editor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --bg: #0e1014; --panel: #161920; --panel2: #1c2029; --line: #2a303c; --line2: #353c4b;
+  --text: #e7e9ee; --muted: #8d95a6; --dim: #5d6576;
+  --accent: #f5a524; --accent-ink: #1a1204; --good: #4cc38a; --bad: #ef5b5b; --warn: #e8b339; --info: #6ea8fe;
+  --r: 8px; font-size: 13px;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 13px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: var(--panel2); border: 1px solid var(--line2); border-radius: 6px; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+button:hover:not(:disabled) { border-color: var(--muted); }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button.danger { color: var(--bad); }
+button.ghost { background: none; border-color: transparent; color: var(--muted); padding: 2px 6px; }
+button.ghost:hover:not(:disabled) { color: var(--text); border-color: var(--line2); }
+button.small { padding: 2px 7px; font-size: 12px; }
+input, select, textarea { background: #0b0d11; border: 1px solid var(--line2); border-radius: 6px; padding: 5px 8px; min-width: 0; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+textarea { resize: vertical; width: 100%; }
+input[type=number] { width: 90px; }
+input[type=checkbox] { accent-color: var(--accent); }
+label { color: var(--muted); font-size: 12px; }
+
+/* top bar */
+#top { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; }
+#top h1 { font-size: 14px; margin: 0 8px 0 0; letter-spacing: .02em; }
+#top h1 span { color: var(--accent); }
+.tabs { display: flex; gap: 2px; background: #0b0d11; border-radius: 8px; padding: 3px; }
+.tabs button { border: none; background: none; color: var(--muted); padding: 5px 12px; }
+.tabs button.on { background: var(--panel2); color: var(--text); }
+.tabs button .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: 6px; vertical-align: middle; }
+.spacer { flex: 1; }
+.chips { display: flex; gap: 6px; }
+.chip { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 20px; padding: 2px 8px; cursor: pointer; background: none; }
+.chip.dirty { color: var(--accent); border-color: var(--accent); }
+.probs { font-size: 12px; }
+.probs .e { color: var(--bad); } .probs .w { color: var(--warn); } .probs .i { color: var(--info); }
+
+/* layout */
+#app { flex: 1; display: flex; min-height: 0; }
+#side { width: 300px; overflow-x: hidden; flex-shrink: 0; border-right: 1px solid var(--line); overflow-y: auto; background: var(--panel); padding: 10px 0 30px; }
+#main { flex: 1; overflow-y: auto; padding: 16px 22px 80px; }
+.sidehead { padding: 0 12px 8px; display: flex; flex-direction: column; gap: 8px; }
+.sidehead .row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.cat { margin-top: 6px; }
+.cathead { display: flex; align-items: center; gap: 6px; padding: 5px 12px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; cursor: pointer; }
+.cathead:hover { color: var(--text); }
+.cathead.sel { color: var(--accent); }
+.wrow { display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 16px; cursor: pointer; border-left: 2px solid transparent; }
+.wrow:hover { background: var(--panel2); }
+.wrow.sel { background: var(--panel2); border-left-color: var(--accent); }
+.wrow .nm { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wrow .ct { color: var(--dim); font-size: 11px; }
+.wrow.missing .nm { color: var(--dim); font-style: italic; }
+.wrow img { width: 38px; height: 18px; object-fit: contain; }
+.setdot { width: 16px; height: 16px; border-radius: 4px; font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; color: #111; flex-shrink: 0; }
+.segment { display: flex; gap: 2px; background: #0b0d11; border-radius: 7px; padding: 2px; }
+.segment button { flex: 1 1 auto; min-width: 0; border: none; background: none; color: var(--muted); padding: 4px 6px; font-size: 12px; }
+.segment button.on { background: var(--panel2); color: var(--text); }
+
+/* main */
+h2 { font-size: 18px; margin: 0; }
+.hdr { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.hdrimg { height: 40px; max-width: 120px; object-fit: contain; }
+.hdr .id { color: var(--dim); font-family: ui-monospace, Menlo, monospace; }
+.toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.banner { background: rgba(245,165,36,.09); border: 1px solid rgba(245,165,36,.35); border-radius: var(--r); padding: 8px 12px; margin-bottom: 12px; color: #f3d39a; font-size: 12px; }
+.banner.info { background: rgba(110,168,254,.08); border-color: rgba(110,168,254,.3); color: #bcd4ff; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin-bottom: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 14px; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+.field > .lbl { display: flex; align-items: center; gap: 6px; }
+.field input:not([type=checkbox]), .field select { width: 100%; }
+.miss { font-size: 10px; padding: 1px 6px; border-radius: 10px; background: rgba(110,168,254,.15); color: var(--info); }
+.miss.ok { background: rgba(76,195,138,.12); color: var(--good); }
+.tr { display: grid; grid-template-columns: 26px 1fr; gap: 4px 8px; align-items: center; padding: 6px 0 0 4px; }
+.tr span { color: var(--dim); font-size: 11px; text-transform: uppercase; font-family: ui-monospace, Menlo, monospace; }
+.tr .empty { border-color: rgba(110,168,254,.5); }
+.imgfield { display: flex; gap: 10px; align-items: flex-start; }
+.imgfield .prev { width: 110px; height: 62px; border-radius: 6px; background: #0b0d11 repeating-conic-gradient(#14171d 0 25%, #0b0d11 0 50%) 50% / 12px 12px; border: 1px dashed var(--line2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; color: var(--dim); font-size: 11px; text-align: center; }
+.imgfield .prev img { max-width: 100%; max-height: 100%; }
+.imgfield.drag .prev { border-color: var(--accent); }
+.imgfield .col { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.imgfield .btns { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* item cards */
+.item { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); margin-bottom: 8px; }
+.item .item { background: var(--panel2); }
+.ihead { display: flex; align-items: center; gap: 10px; padding: 7px 10px; cursor: pointer; }
+.ihead .id { color: var(--dim); font: 11px ui-monospace, Menlo, monospace; width: 28px; }
+.ihead img, .ihead .noimg { width: 34px; height: 34px; object-fit: cover; border-radius: 5px; background: #0b0d11; flex-shrink: 0; }
+.ihead .nm { font-weight: 600; }
+.ihead .meta { color: var(--muted); font-size: 12px; flex: 1; }
+.ihead .acts { display: flex; gap: 2px; }
+.ibody { border-top: 1px solid var(--line); padding: 12px 14px 4px; }
+.kids { margin: 4px 0 10px; padding-left: 14px; border-left: 2px solid var(--line); }
+.diff { font-size: 11px; color: var(--warn); border: 1px solid rgba(232,179,57,.4); border-radius: 10px; padding: 1px 7px; background: none; }
+.same { font-size: 11px; color: var(--good); }
+.empty-state { color: var(--muted); padding: 40px 0; text-align: center; }
+.cover { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* modal + toast */
+#modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: flex-start; justify-content: center; padding-top: 8vh; z-index: 10; }
+#modal .box { background: var(--panel); border: 1px solid var(--line2); border-radius: 12px; width: min(760px, 92vw); max-height: 80vh; display: flex; flex-direction: column; }
+#modal .box > header { padding: 12px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+#modal .box > header h3 { margin: 0; font-size: 14px; flex: 1; }
+#modal .box > .bd { padding: 12px 16px; overflow-y: auto; }
+.plist div { padding: 5px 8px; border-radius: 5px; cursor: pointer; display: flex; gap: 8px; }
+.plist div:hover { background: var(--panel2); }
+.plist b { width: 44px; flex-shrink: 0; font-size: 11px; text-transform: uppercase; }
+pre.out { background: #0b0d11; padding: 10px; border-radius: 6px; white-space: pre-wrap; font-size: 12px; margin: 0; }
+#toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--panel2); border: 1px solid var(--line2); border-radius: 8px; padding: 8px 14px; z-index: 20; box-shadow: 0 6px 24px rgba(0,0,0,.4); }
+#toast.bad { border-color: var(--bad); color: #ffb4b4; }
+.note { width: 100%; font-size: 12px; color: var(--muted); }
+kbd { font: 11px ui-monospace, Menlo, monospace; color: var(--muted); border: 1px solid var(--line2); border-radius: 4px; padding: 0 4px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="app"><nav id="side"></nav><main id="main"><div class="empty-state">Loading…</div></main></div>
+<datalist id="units"></datalist>
+<div id="modal" hidden></div>
+<div id="toast" hidden></div>
+
+<script>
+"use strict";
+const LANGS = ["en", "fr", "es", "de", "nl"];
+const MODES = ["multiplayer", "warzone", "dmz"];
+const FILES = ["weapons", ...MODES];
+const SITE = "https://camotracker.djr.li/";
+const TITLES = { weapons: "Weapons", multiplayer: "Multiplayer", warzone: "Warzone", dmz: "DMZ" };
+const SET_COLORS = ["#f5a524", "#6ea8fe", "#4cc38a", "#e879b9", "#b69cff", "#5fd4d4", "#ef8b5b", "#c9d16a"];
+// Mirrors the sentences weapons.json already uses, so WeaponEntry.unlockLevel keeps parsing them.
+const UNLOCK = {
+  none: { en: "Unlocked by default.", fr: "Débloqué par défaut.", es: "Desbloqueada por defecto.", de: "Standardmäßig freigeschaltet.", nl: "Standaard ontgrendeld." },
+  level: n => ({ en: `Unlock at level ${n}.`, fr: `Débloqué au niveau ${n}.`, es: `Se desbloquea en el nivel ${n}.`, de: `Freischaltung auf Stufe ${n}.`, nl: `Ontgrendel op niveau ${n}.` }),
+};
+
+// The Mastery trio each build ships with (Theme.swift / Localizable.strings) —
+// what the app shows for any tier the mode JSON's `mastery` block doesn't override.
+const MASTERY_BUILTIN = {
+  multiplayer: [["Mercurial Drift", ["#E0157F", "#FFB247", "#FF4FA3"]], ["Polyatomic Reforged", ["#5B62E0", "#4FD9E8", "#A35CE0"]], ["Orion Reforged", ["#C11D07", "#FFB84C", "#BF296B"]]],
+  warzone:     [["Parallax", ["#8DD071", "#F5D45E", "#70E8C4"]], ["Damascus Reforged", ["#1541C6", "#FF8A5C", "#E0479E"]], ["Empyros", ["#26A0B5", "#F06BA8", "#4FE0D1"]]],
+  dmz:         [["Chiral", ["#C10101", "#FF4036", "#7A0000"]], ["Ripple Tide", ["#C3952A", "#FFD44F", "#8C4512"]], ["Helio", ["#C42437", "#FF6B82", "#7A0F1C"]]],
+};
+const MASTERY_AMOUNTS = [3, 5, null];
+const MASTERY_DESC = {
+  en: "Get %d headshot kills with this weapon to earn %@.",
+  fr: "Obtenez %d éliminations à la tête avec cette arme pour obtenir %@.",
+  es: "Consigue %d bajas con disparo a la cabeza con esta arma para conseguir %@.",
+  de: "Erziele %d Kopfschuss-Abschüsse mit dieser Waffe, um %@ zu erhalten.",
+  nl: "Behaal %d headshot-kills met dit wapen om %@ te verdienen.",
+};
+const MASTERY_HELP = [
+  "Per weapon. Unlocks once that weapon's camo list is complete, then needs its own challenge.",
+  "Per weapon. Unlocks once every weapon in that weapon's category has tier 1, then needs its own challenge.",
+  "Mode-wide capstone: earned once baseWeaponCount weapons have tier 2. It has no challenge of its own.",
+];
+
+let D = null, ORIG = {};
+let hist = [], fut = [], lastKey = null, lastTime = 0;
+const ui = {
+  tab: "weapons",
+  wsel: null,                    // {type:'weapon'|'category', id}
+  mode: Object.fromEntries(MODES.map(m => [m, { focus: null, checked: new Set(), sync: true, section: null, cat: null }])),
+  open: new Set(), trOpen: new Set(), bump: true,
+};
+
+// ---------- tiny DOM helper ----------
+function h(tag, a, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(a || {})) {
+    if (v == null || v === false) continue;
+    if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if (k === "class") el.className = v;
+    else if (k === "value") el.value = v;
+    else if (k === "checked") el.checked = v;
+    else if (k === "style") el.style.cssText = v;
+    else el.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat(9)) if (c != null && c !== false) el.append(c instanceof Node ? c : String(c));
+  return el;
+}
+const clone = o => JSON.parse(JSON.stringify(o));
+const $ = s => document.querySelector(s);
+
+// ---------- undo ----------
+function snap(key) {
+  const now = Date.now();
+  if (key && key === lastKey && now - lastTime < 1500) { lastTime = now; return; }
+  hist.push(JSON.stringify(D)); if (hist.length > 300) hist.shift();
+  fut = []; lastKey = key || null; lastTime = now;
+}
+function undo() { if (!hist.length) return; fut.push(JSON.stringify(D)); D = JSON.parse(hist.pop()); lastKey = null; renderAll(); toast("Undone"); }
+function redo() { if (!fut.length) return; hist.push(JSON.stringify(D)); D = JSON.parse(fut.pop()); lastKey = null; renderAll(); toast("Redone"); }
+
+// ---------- data helpers ----------
+const dirty = n => D && JSON.stringify(D[n]) !== ORIG[n];
+const anyDirty = () => FILES.some(dirty);
+const cats = () => D.weapons.categories;
+const allWeapons = () => cats().flatMap(c => c.weapons.map(w => ({ w, c })));
+const weaponById = id => allWeapons().find(x => x.w.weaponId === id)?.w;
+const wname = id => weaponById(id)?.name?.en ?? `#${id} (not in catalog)`;
+const camoEntry = (mode, id) => D[mode].weaponCamos.find(e => e.weaponId === id);
+
+function setLoc(obj, lang, v) {
+  // A translation that still equals the old English (weapon names, "HAN 86")
+  // follows English as it's edited; real translations are left alone.
+  if (lang === "en" && obj.en) for (const l of LANGS.slice(1)) if (obj[l] === obj.en) obj[l] = v;
+  obj[lang] = v;
+  // Never write "": LocalizedText.resolved() would show it as blank instead of falling back to English.
+  const entries = [...LANGS, ...Object.keys(obj).filter(k => !LANGS.includes(k))]
+    .filter(k => obj[k] != null && obj[k] !== "").map(k => [k, obj[k]]);
+  for (const k of Object.keys(obj)) delete obj[k];
+  for (const [k, val] of entries) obj[k] = val;
+}
+const missing = obj => obj ? LANGS.filter(l => !obj[l] || !String(obj[l]).trim()) : LANGS.slice();
+
+function findItem(list, path) {
+  let cur = null, l = list;
+  for (const id of path) { cur = (l || []).find(i => i.itemId === id); if (!cur) return null; l = cur.children; }
+  return cur;
+}
+const childList = (list, path) => path.length ? findItem(list, path)?.children : list;
+function maxItemId(list) { let m = -1; const walk = a => (a || []).forEach(i => { m = Math.max(m, i.itemId); walk(i.children); }); walk(list); return m; }
+function walkItems(list, fn, path = []) { (list || []).forEach(i => { fn(i, [...path, i.itemId]); walkItems(i.children, fn, [...path, i.itemId]); }); }
+
+function units() {
+  const s = new Set();
+  for (const m of MODES) { D[m].weaponCamos.forEach(e => walkItems(e.camos, i => i.requirement && s.add(i.requirement.unit))); D[m].objectives.forEach(c => walkItems(c.items, i => i.requirement && s.add(i.requirement.unit))); }
+  return [...s].filter(Boolean).sort();
+}
+// Description templates learnt from the data itself: the first item of each
+// unit whose English text contains its amount becomes "{n}"-templated.
+function templates() {
+  const t = {};
+  const learn = i => {
+    const r = i.requirement; if (!r || t[r.unit]) return;
+    const re = new RegExp(`(?<!\\d)${r.amount}(?!\\d)`);
+    if (!re.test(r.description?.en || "")) return;
+    t[r.unit] = Object.fromEntries(Object.entries(r.description).map(([l, s]) => [l, s.replace(re, "{n}")]));
+  };
+  for (const m of MODES) { D[m].weaponCamos.forEach(e => walkItems(e.camos, learn)); D[m].objectives.forEach(c => walkItems(c.items, learn)); }
+  return t;
+}
+function setSignature(mode) {
+  const groups = new Map();
+  for (const e of D[mode].weaponCamos) { const s = JSON.stringify(e.camos); if (!groups.has(s)) groups.set(s, []); groups.get(s).push(e.weaponId); }
+  const sorted = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+  const byId = new Map();
+  sorted.forEach(([sig, ids], i) => ids.forEach(id => byId.set(id, { letter: String.fromCharCode(65 + i), color: SET_COLORS[i % SET_COLORS.length], size: ids.length, sig })));
+  return { byId, common: sorted[0] ? JSON.parse(sorted[0][0]) : [] };
+}
+const bumpVersion = v => /\d+$/.test(v) ? v.replace(/\d+$/, n => String(+n + 1)) : v;
+function previewSrc(url) { return url && url.startsWith(SITE) ? "/site/" + url.slice(SITE.length) : url; }
+function imgEl(url, cls) {
+  if (!url) return h("div", { class: cls || "noimg" });
+  const el = h("img", { src: previewSrc(url), class: cls, loading: "lazy" });
+  el.onerror = () => { if (el.src !== url && url.startsWith(SITE)) el.src = url; else el.onerror = null; };
+  return el;
+}
+
+// ---------- problems ----------
+function problems() {
+  const P = [], add = (lvl, msg, go) => P.push({ lvl, msg, go });
+  const ids = new Map();
+  for (const { w, c } of allWeapons()) {
+    const go = () => nav("weapons", { wsel: { type: "weapon", id: w.weaponId } });
+    if (ids.has(w.weaponId)) add("error", `Duplicate weaponId ${w.weaponId}`, go); ids.set(w.weaponId, 1);
+    if (!w.name?.en) add("error", `Weapon #${w.weaponId} has no English name`, go);
+    if (!(w.maxLevel >= 1)) add("error", `${w.name.en}: maxLevel must be ≥ 1`, go);
+    if (!w.imageURL) add("warn", `${w.name.en}: no image`, go);
+    if (missing(w.name).length) add("info", `${w.name.en}: name missing ${missing(w.name).join(", ")}`, go);
+    if (w.unlockRequirement && missing(w.unlockRequirement).length) add("info", `${w.name.en}: unlock text missing ${missing(w.unlockRequirement).join(", ")}`, go);
+  }
+  for (const c of cats()) if (missing(c.name).length) add("info", `Category "${c.name.en}": missing ${missing(c.name).join(", ")}`, () => nav("weapons", { wsel: { type: "category", id: c.categoryId } }));
+  const total = allWeapons().length, base = D.weapons.baseWeaponCount;
+  if (base != null && base > total) add("warn", `baseWeaponCount (${base}) is more than the ${total} weapons in the catalog`, () => nav("weapons", {}));
+  for (const m of MODES) {
+    const f = D[m], seen = new Set();
+    const checkTree = (list, where, go) => {
+      const s = new Set();
+      walkItems(list, (i, p) => {
+        const nm = `${where} › ${i.name?.en || "#" + i.itemId}`;
+        if (s.has(i.itemId)) add("error", `${nm}: duplicate itemId ${i.itemId}`, () => go(p)); s.add(i.itemId);
+        if (!i.name?.en) add("error", `${where} › #${i.itemId}: no English name`, () => go(p));
+        if (i.requirement) {
+          if (!(i.requirement.amount >= 1)) add("error", `${nm}: amount must be ≥ 1`, () => go(p));
+          if (!i.requirement.unit) add("error", `${nm}: no unit`, () => go(p));
+          if (!i.requirement.description?.en) add("error", `${nm}: no English description`, () => go(p));
+          else if (missing(i.requirement.description).length) add("info", `${nm}: description missing ${missing(i.requirement.description).join(", ")}`, () => go(p));
+        }
+        if (i.name?.en && missing(i.name).length) add("info", `${nm}: name missing ${missing(i.name).join(", ")}`, () => go(p));
+      });
+    };
+    for (const e of f.weaponCamos) {
+      const go = p => nav(m, { section: "camos", focus: e.weaponId, open: p });
+      if (seen.has(e.weaponId)) add("error", `${TITLES[m]}: two camo lists for weapon #${e.weaponId}`, go); seen.add(e.weaponId);
+      if (!weaponById(e.weaponId)) add("error", `${TITLES[m]}: camo list for #${e.weaponId}, which isn't in weapons.json`, go);
+      if (!e.camos.length) add("warn", `${TITLES[m]} › ${wname(e.weaponId)}: empty camo list`, go);
+      checkTree(e.camos, `${TITLES[m]} › ${wname(e.weaponId)}`, go);
+    }
+    if (f.weaponCamos.length) for (const { w } of allWeapons()) if (!seen.has(w.weaponId))
+      add("warn", `${TITLES[m]}: ${w.name.en} has no camo list`, () => nav(m, { section: "camos", focus: w.weaponId }));
+    const cids = new Set();
+    for (const c of f.objectives) {
+      const go = p => nav(m, { section: "objectives", cat: c.categoryId, open: p });
+      if (cids.has(c.categoryId)) add("error", `${TITLES[m]}: duplicate objective categoryId ${c.categoryId}`, go); cids.add(c.categoryId);
+      checkTree(c.items, `${TITLES[m]} › ${c.name?.en}`, go);
+    }
+    for (const t of [1, 2]) {
+      const c = f.mastery?.[`tier${t}`], amt = c?.amount ?? MASTERY_AMOUNTS[t - 1];
+      if (c?.description && !new RegExp(`(?<!\\d)${amt}(?!\\d)`).test(c.description.en || "")) add("warn", `${TITLES[m]} Mastery tier ${t}: challenge text doesn't mention the amount (${amt})`, () => nav(m, { section: "mastery" }));
+      if (c?.description && missing(c.description).length) add("info", `${TITLES[m]} Mastery tier ${t}: challenge text missing ${missing(c.description).join(", ")}`, () => nav(m, { section: "mastery" }));
+    }
+    if (/placeholder|fake/i.test(f._note || "")) add("info", `${TITLES[m]}: _note still says the data is placeholder`, () => nav(m, {}));
+  }
+  const order = { error: 0, warn: 1, info: 2 };
+  return P.sort((a, b) => order[a.lvl] - order[b.lvl]);
+}
+
+function nav(tab, o) {
+  ui.tab = tab;
+  if (o.wsel) ui.wsel = o.wsel;
+  if (MODES.includes(tab)) {
+    const st = ui.mode[tab];
+    if (o.section) st.section = o.section;
+    if (o.focus != null) st.focus = o.focus;
+    if (o.cat != null) st.cat = o.cat;
+    if (o.open) { const key = o.section === "objectives" ? `${tab}:obj:${o.cat}` : `${tab}:camo`; for (let i = 1; i <= o.open.length; i++) ui.open.add(`${key}:${o.open.slice(0, i).join(".")}`); }
+  }
+  closeModal(); renderAll();
+}
+
+// ---------- rendering ----------
+function renderAll() { renderTop(); renderSide(); renderMain(); }
+
+function renderTop() {
+  const P = problems(), cnt = l => P.filter(p => p.lvl === l).length;
+  const top = $("#top"); top.replaceChildren(
+    h("h1", null, "MW4 ", h("span", null, "Data Editor")),
+    h("div", { class: "tabs" }, FILES.map(n => h("button", { class: ui.tab === n ? "on" : "", onclick: () => { ui.tab = n; renderAll(); } }, TITLES[n], dirty(n) && h("span", { class: "dot" })))),
+    h("div", { class: "spacer" }),
+    h("button", { class: "ghost probs", title: "Problems", onclick: showProblems },
+      h("span", { class: "e" }, `● ${cnt("error")}`), "  ", h("span", { class: "w" }, `▲ ${cnt("warn")}`), "  ", h("span", { class: "i" }, `◌ ${cnt("info")}`)),
+    h("div", { class: "chips" }, FILES.map(n => h("button", { class: "chip" + (dirty(n) ? " dirty" : ""), title: "Click to set version", onclick: () => editVersion(n) }, `${n} ${D[n].version}`))),
+    h("button", { class: "ghost", title: "Undo (⌘Z)", disabled: !hist.length, onclick: undo }, "↶"),
+    h("button", { class: "ghost", title: "Redo (⇧⌘Z)", disabled: !fut.length, onclick: redo }, "↷"),
+    h("label", { title: "Bump the last number of each changed file's version on save, so installed apps pick it up" },
+      h("input", { type: "checkbox", checked: ui.bump, onchange: e => ui.bump = e.target.checked }), " bump versions"),
+    h("button", { onclick: reload, title: "Discard unsaved edits and reload from disk" }, "Reload"),
+    h("button", { class: "primary", disabled: !anyDirty(), onclick: save, title: "⌘S" }, "Save"),
+    h("button", { onclick: publish, title: "Run Tools/publish_data.py" }, "Publish…"),
+  );
+}
+function refresh() { renderTop(); }   // cheap per-keystroke refresh
+
+function renderSide() {
+  const side = $("#side"); const top = side.scrollTop;
+  side.replaceChildren(ui.tab === "weapons" ? sideWeapons() : sideMode(ui.tab));
+  side.scrollTop = top;
+  $("#units").replaceChildren(...units().map(u => h("option", { value: u })));
+}
+function renderMain() {
+  const main = $("#main"); const top = main.scrollTop;
+  main.replaceChildren(ui.tab === "weapons" ? mainWeapons() : mainMode(ui.tab));
+  main.scrollTop = top;
+}
+
+// ---------- reusable fields ----------
+function locField(label, id, getObj, onSet, opts = {}) {
+  const obj0 = getObj() || {};
+  const open = ui.trOpen.has(id);
+  const mk = (lang, big) => {
+    const a = { value: obj0[lang] || "", placeholder: lang === "en" ? (opts.placeholder || "") : (obj0.en || ""), "data-lang": lang,
+      class: lang !== "en" && !obj0[lang] ? "empty" : null,
+      oninput: e => { onSet(lang, e.target.value.trim() === "" ? "" : e.target.value); sync(); refresh(); opts.after?.(); },
+      onchange: () => renderSide() };
+    return opts.multiline && big ? h("textarea", { ...a, rows: 2 }) : h("input", a);
+  };
+  const badge = h("span", { class: "miss" });
+  const trs = h("div", { class: "tr", hidden: !open }, LANGS.slice(1).map(l => [h("span", null, l), mk(l, false)]));
+  const en = mk("en", true);
+  const wrap = h("div", { class: "field" },
+    h("div", { class: "lbl" }, h("label", null, label), badge,
+      h("button", { class: "ghost small", onclick: () => { open ? ui.trOpen.delete(id) : ui.trOpen.add(id); trs.hidden = !trs.hidden; } }, "translations ▾"),
+      h("button", { class: "ghost small", title: "Copy English into every empty language (so the app shows it instead of falling back)", onclick: () => {
+        snap(); const o = getObj(); for (const l of LANGS.slice(1)) if (!o?.[l] && o?.en) onSet(l, o.en); sync(); refresh(); opts.after?.(); } }, "EN → empty"),
+      opts.extra),
+    en, trs);
+  function sync() {
+    const o = getObj() || {};
+    wrap.querySelectorAll("[data-lang]").forEach(el => {
+      const l = el.dataset.lang;
+      if (document.activeElement !== el) el.value = o[l] || "";
+      if (l !== "en") { el.classList.toggle("empty", !o[l]); el.placeholder = o.en || ""; }
+    });
+    const m = missing(o).filter(l => l !== "en");
+    if (opts.unsetLabel && !getObj()) { badge.textContent = opts.unsetLabel; badge.className = "miss ok"; return; }
+    badge.textContent = m.length ? `${m.length} missing` : "all 5"; badge.className = "miss" + (m.length ? "" : " ok");
+  }
+  wrap.sync = sync; sync();
+  return wrap;
+}
+
+function imageField(getUrl, setUrl, kind, suggest) {
+  const prev = h("div", { class: "prev" });
+  const input = h("input", { value: getUrl() || "", placeholder: "https://… (blank = no image)",
+    oninput: e => { setUrl(e.target.value.trim() || null); paint(); refresh(); }, onchange: () => renderSide() });
+  const file = h("input", { type: "file", accept: "image/*", hidden: true, onchange: e => e.target.files[0] && upload({ file: e.target.files[0] }) });
+  function paint() { const u = getUrl(); prev.replaceChildren(u ? imgEl(u) : "no image"); }
+  async function upload({ file: f, url }) {
+    const name = prompt(`Save into ${kind === "guns" ? "Images/Guns/MW4/" : "Images/Camos/MW4/"} as:`, suggest());
+    if (!name) return;
+    const body = { kind, filename: name };
+    if (f) { body.sourceName = f.name; body.data = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result.split(",")[1]); fr.readAsDataURL(f); }); }
+    else body.url = url;
+    let res = await post("/api/image", body);
+    if (res.status === 409 && confirm(`${res.body.url} already exists. Overwrite it?`)) res = await post("/api/image", { ...body, overwrite: true });
+    else if (res.status === 409) { if (confirm("Use the existing file instead?")) { snap(); setUrl(res.body.url); input.value = res.body.url; paint(); refresh(); } return; }
+    if (!res.ok) return toast(res.body.error || "Upload failed", true);
+    snap(); setUrl(res.body.url); input.value = res.body.url; paint(); refresh(); renderSide();
+    toast(`Saved image (${Math.round(res.body.bytes / 1024)} KB) — it goes live when the repo is pushed`);
+  }
+  const wrap = h("div", { class: "field" }, h("label", null, "Image"),
+    h("div", { class: "imgfield",
+      ondragover: e => { e.preventDefault(); wrap.firstChild.nextSibling.classList.add("drag"); },
+      ondragleave: () => wrap.firstChild.nextSibling.classList.remove("drag"),
+      ondrop: e => { e.preventDefault(); wrap.firstChild.nextSibling.classList.remove("drag");
+        const f = e.dataTransfer.files[0]; if (f) return upload({ file: f });
+        const u = e.dataTransfer.getData("text/uri-list") || e.dataTransfer.getData("text/plain"); if (u) upload({ url: u.trim() }); } },
+      prev,
+      h("div", { class: "col" }, input,
+        h("div", { class: "btns" },
+          h("button", { class: "small", onclick: () => file.click() }, "Upload file…"),
+          h("button", { class: "small", title: "Download the image at the URL above into the repo and point at the hosted copy", onclick: () => {
+            const u = input.value.trim(); if (!u) return toast("Paste an image URL first", true);
+            if (u.startsWith(SITE)) return toast("That's already hosted on camotracker.djr.li");
+            upload({ url: u }); } }, "Host this URL in repo"),
+          h("span", { style: "color:var(--dim);font-size:11px;align-self:center" }, "or drop an image / image link here"), file))));
+  paint();
+  return wrap;
+}
+
+function numField(label, value, onSet, attrs = {}) {
+  return h("div", { class: "field" }, h("label", null, label),
+    h("input", { type: "number", value: value ?? "", ...attrs, oninput: e => { onSet(e.target.value === "" ? null : parseInt(e.target.value, 10)); refresh(); }, onchange: () => renderSide() }));
+}
+
+// ---------- weapons tab ----------
+function sideWeapons() {
+  const sel = ui.wsel;
+  return h("div", null,
+    h("div", { class: "sidehead" },
+      h("div", { class: "row" },
+        h("label", { title: "The launch roster size, frozen forever after — the Mastery tier-3 capstone is gated on this many weapons. Don't raise it for DLC weapons." }, "baseWeaponCount"),
+        h("input", { type: "number", value: D.weapons.baseWeaponCount ?? "", style: "width:70px",
+          oninput: e => { snap("base"); D.weapons.baseWeaponCount = e.target.value === "" ? null : +e.target.value; refresh(); } }),
+        h("span", { style: "color:var(--dim);font-size:11px" }, `${allWeapons().length} weapons`)),
+      h("div", { class: "row" }, h("button", { class: "small", onclick: addCategory }, "+ Category"))),
+    cats().map(c => h("div", { class: "cat" },
+      h("div", { class: "cathead" + (sel?.type === "category" && sel.id === c.categoryId ? " sel" : ""), onclick: () => { ui.wsel = { type: "category", id: c.categoryId }; renderSide(); renderMain(); } },
+        h("span", { style: "flex:1" }, c.name.en), h("span", null, c.weapons.length),
+        h("button", { class: "ghost small", title: "Add weapon to this category", onclick: e => { e.stopPropagation(); addWeapon(c); } }, "+")),
+      c.weapons.map(w => h("div", { class: "wrow" + (sel?.type === "weapon" && sel.id === w.weaponId ? " sel" : ""), onclick: () => { ui.wsel = { type: "weapon", id: w.weaponId }; renderSide(); renderMain(); } },
+        imgEl(w.imageURL), h("span", { class: "nm" }, w.name.en), h("span", { class: "ct" }, `#${w.weaponId}`))))));
+}
+
+function mainWeapons() {
+  const sel = ui.wsel;
+  if (sel?.type === "category") { const c = cats().find(c => c.categoryId === sel.id); if (c) return categoryForm(c); }
+  if (sel?.type === "weapon") { const x = allWeapons().find(x => x.w.weaponId === sel.id); if (x) return weaponForm(x.w, x.c); }
+  return h("div", { class: "empty-state" }, "Pick a weapon or category on the left, or ", h("b", null, "+"), " to add a weapon.");
+}
+
+function categoryForm(c) {
+  const i = cats().indexOf(c);
+  return h("div", null,
+    h("div", { class: "hdr" }, h("h2", null, c.name.en), h("span", { class: "id" }, `categoryId ${c.categoryId}`)),
+    h("div", { class: "card" },
+      locField("Category name", `cat-${c.categoryId}`, () => c.name, (l, v) => { snap(`cat-${c.categoryId}-${l}`); setLoc(c.name, l, v); }),
+      h("div", { class: "toolbar" },
+        h("button", { disabled: i === 0, onclick: () => { snap(); cats().splice(i - 1, 0, cats().splice(i, 1)[0]); renderAll(); } }, "↑ Move up"),
+        h("button", { disabled: i === cats().length - 1, onclick: () => { snap(); cats().splice(i + 1, 0, cats().splice(i, 1)[0]); renderAll(); } }, "↓ Move down"),
+        h("button", { onclick: () => addWeapon(c) }, "+ Weapon in this category"),
+        h("button", { class: "danger", disabled: c.weapons.length > 0, title: c.weapons.length ? "Move or delete its weapons first" : "", onclick: () => {
+          if (!confirm(`Delete category "${c.name.en}"?`)) return; snap(); cats().splice(i, 1); ui.wsel = null; renderAll(); } }, "Delete category"))));
+}
+
+function weaponForm(w, c) {
+  const i = c.weapons.indexOf(w);
+  const lvl = (w.unlockRequirement?.en || "").match(/\d+/)?.[0];
+  let unlockBox;
+  const setUnlock = v => { snap(`unlock-${w.weaponId}`); w.unlockRequirement = v == null ? clone(UNLOCK.none) : UNLOCK.level(v); unlockBox.sync(); refresh(); };
+  unlockBox = locField("Unlock text", `unlock-${w.weaponId}`, () => w.unlockRequirement,
+    (l, v) => { snap(`unlockt-${w.weaponId}-${l}`); w.unlockRequirement ??= {}; setLoc(w.unlockRequirement, l, v); });
+  const coverage = MODES.map(m => {
+    const e = camoEntry(m, w.weaponId);
+    return h("button", { class: "small", onclick: () => nav(m, { section: "camos", focus: w.weaponId }) },
+      `${TITLES[m]}: ${e ? `${e.camos.length} camo${e.camos.length === 1 ? "" : "s"}` : "—"} →`);
+  });
+  return h("div", null,
+    h("div", { class: "hdr" }, imgEl(w.imageURL, "hdrimg"), h("h2", null, w.name.en), h("span", { class: "id", title: "Saved progress is keyed by this id — it never changes" }, `weaponId ${w.weaponId}`)),
+    h("div", { class: "card" },
+      locField("Name", `wname-${w.weaponId}`, () => w.name, (l, v) => { snap(`wname-${w.weaponId}-${l}`); setLoc(w.name, l, v); },
+        { after: () => { const t = $("#main h2"); if (t) t.textContent = w.name.en; } }),
+      h("div", { class: "grid" },
+        h("div", { class: "field" }, h("label", null, "Category"),
+          h("select", { onchange: e => { snap(); c.weapons.splice(i, 1); cats().find(x => x.categoryId === +e.target.value).weapons.push(w); renderAll(); } },
+            cats().map(x => h("option", { value: x.categoryId, selected: x === c }, x.name.en)))),
+        numField("Max level", w.maxLevel, v => { snap(`max-${w.weaponId}`); w.maxLevel = v ?? 0; }, { min: 1 }),
+        h("div", { class: "field" }, h("label", null, "Unlock level (blank = default)"),
+          h("input", { type: "number", min: 1, value: lvl ?? "", oninput: e => setUnlock(e.target.value === "" ? null : +e.target.value) })),
+        h("div", { class: "field" }, h("label", null, "Order in category"),
+          h("div", { style: "display:flex;gap:6px" },
+            h("button", { disabled: i === 0, onclick: () => { snap(); c.weapons.splice(i - 1, 0, c.weapons.splice(i, 1)[0]); renderAll(); } }, "↑"),
+            h("button", { disabled: i === c.weapons.length - 1, onclick: () => { snap(); c.weapons.splice(i + 1, 0, c.weapons.splice(i, 1)[0]); renderAll(); } }, "↓")))),
+      unlockBox,
+      imageField(() => w.imageURL, u => { snap(`wimg-${w.weaponId}`); w.imageURL = u; }, "guns", () => w.name.en.toUpperCase().replace(/\s+/g, "_") + ".png")),
+    h("div", { class: "card" }, h("label", null, "Camo lists"), h("div", { class: "cover", style: "margin-top:6px" }, coverage)),
+    h("button", { class: "danger", onclick: () => deleteWeapon(w, c) }, "Delete weapon"));
+}
+
+function addCategory() {
+  snap(); const id = Math.max(-1, ...cats().map(c => c.categoryId)) + 1;
+  cats().push({ categoryId: id, name: { en: "New Category" }, weapons: [] });
+  ui.wsel = { type: "category", id }; ui.trOpen.add(`cat-${id}`); renderAll();
+}
+function addWeapon(c) {
+  snap();
+  const used = [...allWeapons().map(x => x.w.weaponId), ...MODES.flatMap(m => D[m].weaponCamos.map(e => e.weaponId))];
+  const id = Math.max(-1, ...used) + 1;
+  const name = "New Weapon";
+  c.weapons.push({ weaponId: id, name: Object.fromEntries(LANGS.map(l => [l, name])), maxLevel: c.weapons[0]?.maxLevel ?? 50, unlockRequirement: clone(UNLOCK.none), imageURL: null });
+  const added = [];
+  for (const m of MODES) if (D[m].weaponCamos.length) { D[m].weaponCamos.push({ weaponId: id, camos: clone(setSignature(m).common) }); added.push(TITLES[m]); }
+  ui.wsel = { type: "weapon", id }; renderAll();
+  const inp = $("#main input[data-lang=en]"); inp?.focus(); inp?.select();
+  toast(`Added weapon #${id}` + (added.length ? ` — gave it the most common camo list in ${added.join(" & ")}` : ""));
+}
+function deleteWeapon(w, c) {
+  const modes = MODES.filter(m => camoEntry(m, w.weaponId));
+  if (!confirm(`Delete ${w.name.en} (#${w.weaponId})?` + (modes.length ? `\n\nThis also removes its camo list from ${modes.map(m => TITLES[m]).join(", ")}.` : "") +
+    "\n\nAnyone's saved progress on it stays on their device but won't show.")) return;
+  snap(); c.weapons.splice(c.weapons.indexOf(w), 1);
+  for (const m of modes) D[m].weaponCamos = D[m].weaponCamos.filter(e => e.weaponId !== w.weaponId);
+  ui.wsel = null; renderAll();
+}
+
+// ---------- mode tabs ----------
+function modeState(mode) {
+  const st = ui.mode[mode], f = D[mode];
+  if (!st.section) st.section = f.weaponCamos.length || !f.objectives.length ? "camos" : "objectives";
+  if (st.focus == null) st.focus = f.weaponCamos[0]?.weaponId ?? allWeapons()[0]?.w.weaponId;
+  if (st.cat == null) st.cat = f.objectives[0]?.categoryId;
+  return st;
+}
+
+function sideMode(mode) {
+  const st = modeState(mode), f = D[mode];
+  const head = h("div", { class: "sidehead" },
+    h("div", { class: "segment" },
+      h("button", { class: st.section === "camos" ? "on" : "", onclick: () => { st.section = "camos"; renderSide(); renderMain(); } }, `Camos (${f.weaponCamos.length})`),
+      h("button", { class: st.section === "objectives" ? "on" : "", onclick: () => { st.section = "objectives"; renderSide(); renderMain(); } }, `Objectives (${f.objectives.length})`),
+      h("button", { class: st.section === "mastery" ? "on" : "", onclick: () => { st.section = "mastery"; renderSide(); renderMain(); } }, "Mastery" + (f.mastery ? " •" : ""))));
+  if ("_note" in f) head.append(h("details", null, h("summary", { style: "color:var(--dim);font-size:11px;cursor:pointer" }, "_note (internal, the app ignores it)"),
+    h("textarea", { class: "note", rows: 5, value: f._note, oninput: e => { snap(`note-${mode}`); f._note = e.target.value; refresh(); } }),
+    h("button", { class: "small danger", onclick: () => { snap(); delete f._note; renderAll(); } }, "Remove _note")));
+  if (st.section === "mastery") return h("div", null, head, h("div", { class: "sidehead", style: "color:var(--muted);font-size:12px" },
+    h("p", null, "Anything left blank uses what the app build ships with, so you only need to fill in what's different at launch."),
+    h("p", null, "Only app builds that include JSON-driven Mastery read this block. Older builds ignore it and keep their built-in values.")));
+  if (st.section === "objectives") {
+    head.append(h("div", { class: "row" }, h("button", { class: "small", onclick: () => {
+      snap(); const id = Math.max(-1, ...f.objectives.map(c => c.categoryId)) + 1;
+      f.objectives.push({ categoryId: id, name: { en: "New Category" }, items: [] }); st.cat = id; renderAll(); } }, "+ Objective category")));
+    return h("div", null, head, f.objectives.map(c => h("div", { class: "wrow" + (c.categoryId === st.cat ? " sel" : ""), onclick: () => { st.cat = c.categoryId; renderSide(); renderMain(); } },
+      h("span", { class: "nm" }, c.name.en), h("span", { class: "ct" }, `${c.items.length} · #${c.categoryId}`))));
+  }
+  const { byId } = setSignature(mode);
+  const focusSet = byId.get(st.focus);
+  const toggle = (id, on) => { on ? st.checked.add(id) : st.checked.delete(id); };
+  head.append(h("div", { class: "row" },
+    h("span", { style: "color:var(--dim);font-size:11px" }, "Tick:"),
+    h("button", { class: "small", onclick: () => { allWeapons().forEach(x => st.checked.add(x.w.weaponId)); renderSide(); renderMain(); } }, "All"),
+    h("button", { class: "small", onclick: () => { st.checked.clear(); renderSide(); renderMain(); } }, "None"),
+    focusSet && h("button", { class: "small", title: "Tick every weapon whose camo list is identical to the one you're viewing", onclick: () => {
+      byId.forEach((v, id) => { if (v.sig === focusSet.sig) st.checked.add(id); }); renderSide(); renderMain(); } }, `Same set (${focusSet.size})`)));
+  const orphans = f.weaponCamos.filter(e => !weaponById(e.weaponId));
+  const row = (id, label, img) => {
+    const e = camoEntry(mode, id), s = byId.get(id);
+    return h("div", { class: "wrow" + (id === st.focus ? " sel" : "") + (e ? "" : " missing"), onclick: () => { st.focus = id; renderSide(); renderMain(); } },
+      h("input", { type: "checkbox", checked: st.checked.has(id), onclick: ev => ev.stopPropagation(), onchange: ev => { toggle(id, ev.target.checked); renderSide(); renderMain(); } }),
+      s ? h("span", { class: "setdot", style: `background:${s.color}`, title: `Camo set ${s.letter} — shared by ${s.size} weapon(s)` }, s.letter) : h("span", { class: "setdot", style: "border:1px dashed var(--line2)" }),
+      img, h("span", { class: "nm" }, label), h("span", { class: "ct" }, e ? e.camos.length : "none"));
+  };
+  return h("div", null, head,
+    cats().map(c => {
+      const ids = c.weapons.map(w => w.weaponId), all = ids.length && ids.every(id => st.checked.has(id));
+      return h("div", { class: "cat" },
+        h("div", { class: "cathead" }, h("input", { type: "checkbox", checked: all, title: "Tick the whole category", onchange: ev => { ids.forEach(id => toggle(id, ev.target.checked)); renderSide(); renderMain(); } }),
+          h("span", { style: "flex:1" }, c.name.en)),
+        c.weapons.map(w => row(w.weaponId, w.name.en, imgEl(w.imageURL))));
+    }),
+    orphans.length && h("div", { class: "cat" }, h("div", { class: "cathead", style: "color:var(--bad)" }, "Not in weapons.json"), orphans.map(e => row(e.weaponId, `#${e.weaponId}`, null))));
+}
+
+function mainMode(mode) {
+  const st = modeState(mode);
+  return st.section === "objectives" ? mainObjectives(mode, st) : st.section === "mastery" ? mainMastery(mode) : mainCamos(mode, st);
+}
+
+function mainCamos(mode, st) {
+  const f = D[mode], id = st.focus, entry = camoEntry(mode, id), w = weaponById(id);
+  const others = [...st.checked].filter(x => x !== id);
+  const hdr = h("div", { class: "hdr" }, w && imgEl(w.imageURL, "hdrimg"), h("h2", null, `${w ? w.name.en : "#" + id} — ${TITLES[mode]} camos`), h("span", { class: "id" }, `weaponId ${id}`));
+  if (id == null) return h("div", { class: "empty-state" }, "No weapons yet — add some on the Weapons tab.");
+  if (!entry) {
+    const sources = [];
+    for (const m of MODES) for (const e of D[m].weaponCamos) sources.push({ m, e });
+    let pick = h("select", null, sources.map(({ m, e }, i) => h("option", { value: i, selected: m === mode && sources.findIndex(s => s.m === mode) === i }, `${TITLES[m]} › ${wname(e.weaponId)} (${e.camos.length})`)));
+    return h("div", null, hdr, h("div", { class: "card" },
+      h("p", null, `${w ? w.name.en : "This weapon"} has no ${TITLES[mode]} camo list yet.`),
+      h("div", { class: "toolbar" },
+        h("button", { onclick: () => { snap(); f.weaponCamos.push({ weaponId: id, camos: [] }); renderAll(); } }, "Create empty list"),
+        sources.length && [h("span", { style: "color:var(--muted)" }, "or copy from"), pick,
+          h("button", { class: "primary", onclick: () => { snap(); f.weaponCamos.push({ weaponId: id, camos: clone(sources[+pick.value].e.camos) }); renderAll(); } }, "Copy")])));
+  }
+  const ctx = { key: `${mode}:camo`, kind: "camos", mode, lists: () => [entry.camos, ...(st.sync ? others.map(o => camoEntry(mode, o)?.camos).filter(Boolean) : [])], others, st, imgKind: "camos" };
+  const syncing = st.sync && others.length;
+  return h("div", null, hdr,
+    others.length ? h("div", { class: "banner" + (syncing ? "" : " info") },
+      h("label", { style: "color:inherit;font-size:inherit" }, h("input", { type: "checkbox", checked: st.sync, onchange: e => { st.sync = e.target.checked; renderMain(); } }),
+        ` Apply every edit here to the ${others.length} other ticked weapon${others.length === 1 ? "" : "s"} too`),
+      h("div", { style: "margin-top:4px;opacity:.8" }, others.map(wname).join(", ")),
+      h("div", { style: "margin-top:4px;opacity:.7" }, "Edits match camos by itemId, so a weapon that doesn't have a given camo is skipped for it.")) :
+      h("div", { class: "banner info" }, "Tick weapons on the left to edit them together (or ", h("b", null, "Same set"), " for every weapon sharing this list)."),
+    h("div", { class: "toolbar" },
+      h("button", { class: "primary", onclick: () => addItem(ctx, []) }, "+ Camo"),
+      others.length > 0 && h("button", { title: "Replace the whole camo list on every ticked weapon with this one (creates it where missing)", onclick: () => {
+        if (!confirm(`Replace the ${TITLES[mode]} camo list on ${others.length} weapon(s) with ${wname(id)}'s ${entry.camos.length} camos?`)) return;
+        snap(); for (const o of others) { const e = camoEntry(mode, o); if (e) e.camos = clone(entry.camos); else f.weaponCamos.push({ weaponId: o, camos: clone(entry.camos) }); }
+        renderAll(); toast(`Copied to ${others.length} weapon(s)`); } }, `Copy whole list → ${others.length} ticked`),
+      h("button", { class: "ghost", onclick: () => { walkItems(entry.camos, (_, p) => ui.open.add(`${ctx.key}:${p.join(".")}`)); renderMain(); } }, "Expand all"),
+      h("button", { class: "ghost", onclick: () => { [...ui.open].filter(k => k.startsWith(ctx.key + ":")).forEach(k => ui.open.delete(k)); renderMain(); } }, "Collapse all"),
+      h("div", { class: "spacer" }),
+      h("button", { class: "ghost danger", onclick: () => { if (!confirm(`Remove ${wname(id)}'s whole ${TITLES[mode]} camo list?`)) return; snap(); f.weaponCamos.splice(f.weaponCamos.indexOf(entry), 1); renderAll(); } }, "Remove list")),
+    entry.camos.length ? itemList(ctx, entry.camos, []) : h("div", { class: "empty-state" }, "No camos yet."));
+}
+
+function mainObjectives(mode, st) {
+  const f = D[mode], c = f.objectives.find(c => c.categoryId === st.cat);
+  if (!c) return h("div", { class: "empty-state" }, "No objective categories — add one on the left.");
+  const i = f.objectives.indexOf(c);
+  const ctx = { key: `${mode}:obj:${c.categoryId}`, kind: "obj", mode, lists: () => [c.items], others: [], st, imgKind: "camos" };
+  return h("div", null,
+    h("div", { class: "hdr" }, h("h2", null, `${c.name.en} — ${TITLES[mode]} objectives`), h("span", { class: "id" }, `categoryId ${c.categoryId}`)),
+    h("div", { class: "card" },
+      locField("Category name", `ocat-${mode}-${c.categoryId}`, () => c.name, (l, v) => { snap(`ocat-${mode}-${c.categoryId}-${l}`); setLoc(c.name, l, v); }),
+      h("div", { class: "toolbar" },
+        h("button", { disabled: i === 0, onclick: () => { snap(); f.objectives.splice(i - 1, 0, f.objectives.splice(i, 1)[0]); renderAll(); } }, "↑ Move up"),
+        h("button", { disabled: i === f.objectives.length - 1, onclick: () => { snap(); f.objectives.splice(i + 1, 0, f.objectives.splice(i, 1)[0]); renderAll(); } }, "↓ Move down"),
+        h("button", { class: "danger", onclick: () => { if (!confirm(`Delete "${c.name.en}" and its ${c.items.length} objectives?`)) return; snap(); f.objectives.splice(i, 1); st.cat = null; renderAll(); } }, "Delete category"))),
+    h("div", { class: "toolbar" }, h("button", { class: "primary", onclick: () => addItem(ctx, []) }, "+ Objective")),
+    itemList(ctx, c.items, []));
+}
+
+function mainMastery(mode) {
+  const f = D[mode];
+  const cfg = t => f.mastery?.[`tier${t}`];
+  const ensure = t => { f.mastery ??= {}; return (f.mastery[`tier${t}`] ??= {}); };
+  const prune = () => {
+    if (!f.mastery) return;
+    for (const [k, v] of Object.entries(f.mastery)) {
+      for (const [fk, fv] of Object.entries(v || {})) if (fv == null || (typeof fv === "object" && !Array.isArray(fv) && !Object.keys(fv).length)) delete v[fk];
+      if (!v || !Object.keys(v).length) delete f.mastery[k];
+    }
+    if (!Object.keys(f.mastery).length) delete f.mastery;
+  };
+  const card = t => {
+    const [bname, bcolors] = MASTERY_BUILTIN[mode][t - 1];
+    const c = cfg(t) || {};
+    const name = l => cfg(t)?.name?.[l] || cfg(t)?.name?.en || bname;
+    const amount = () => cfg(t)?.amount ?? MASTERY_AMOUNTS[t - 1];
+    const colors = c.colors || bcolors;
+    const builtinDesc = () => Object.fromEntries(LANGS.map(l => [l, MASTERY_DESC[l].replace("%d", amount()).replace("%@", name(l))]));
+    const title = h("h3", { style: "margin:0;font-size:15px" });
+    const strip = h("div", { style: "width:56px;height:22px;border-radius:6px" });
+    const badge = h("span");
+    const resetBtn = h("button", { class: "ghost danger small", onclick: () => { snap(); delete f.mastery[`tier${t}`]; prune(); renderAll(); } }, "Reset tier to built-in");
+    // Header reflects the tier's state after every keystroke, not just on re-render.
+    const head = () => {
+      title.textContent = `Tier ${t} · ${name("en")}`;
+      strip.style.background = `linear-gradient(90deg,${(cfg(t)?.colors || bcolors).join(",")})`;
+      badge.textContent = cfg(t) ? "overridden" : "built-in"; badge.className = cfg(t) ? "miss" : "miss ok";
+      resetBtn.hidden = !cfg(t);
+    };
+    let descBox;
+    const kids = [
+      locField("Name", `mastery-${mode}-${t}-name`, () => cfg(t)?.name, (l, v) => {
+        snap(`mastery-${mode}-${t}-name-${l}`);
+        const before = Object.fromEntries(LANGS.map(x => [x, name(x)]));
+        const c = ensure(t); c.name ??= {}; setLoc(c.name, l, v); prune();
+        // Keep the camo's name inside its challenge text in step, per language.
+        const d = cfg(t)?.description;
+        if (d) for (const x of Object.keys(d)) if (before[x] && before[x] !== name(x)) d[x] = d[x].split(before[x]).join(name(x));
+        descBox?.sync();
+      }, { placeholder: `${bname} (built-in)`, unsetLabel: "built-in", after: head }),
+    ];
+    if (t < 3) {
+      kids.push(h("div", { class: "grid" },
+        numField(`Amount (built-in ${MASTERY_AMOUNTS[t - 1]})`, cfg(t)?.amount, v => {
+          if (v != null && !(v >= 1)) return;
+          snap(`mastery-${mode}-${t}-amount`); const c = ensure(t);
+          const re = new RegExp(`(?<!\\d)${amount()}(?!\\d)`);
+          if (c.description && v != null) for (const l of Object.keys(c.description)) c.description[l] = c.description[l].replace(re, v);
+          c.amount = v; prune(); descBox?.sync(); head();
+        }, { min: 1, placeholder: MASTERY_AMOUNTS[t - 1] }),
+        h("div", { class: "field" }, h("label", null, "Unit (built-in headshots)"),
+          h("input", { list: "units", value: c.unit || "", placeholder: "headshots", oninput: e => { snap(`mastery-${mode}-${t}-unit`); ensure(t).unit = e.target.value.trim() || null; prune(); head(); refresh(); } }))));
+      descBox = locField("Challenge text (blank = built-in headshot wording)", `mastery-${mode}-${t}-desc`, () => cfg(t)?.description, (l, v) => {
+        snap(`mastery-${mode}-${t}-desc-${l}`); const c = ensure(t); c.description ??= {}; setLoc(c.description, l, v); prune();
+      }, { multiline: true, unsetLabel: "built-in", after: head, placeholder: builtinDesc().en, extra: h("button", { class: "ghost small", title: "Start from the built-in sentence in all 5 languages, with this amount and name filled in", onclick: () => {
+        snap(); ensure(t).description = builtinDesc(); descBox.sync(); head(); refresh(); } }, "start from built-in wording") });
+      kids.push(descBox);
+    }
+    const swatches = colors.map((col, i) => h("input", { type: "color", value: col, style: "width:46px;height:30px;padding:2px", title: i ? `Gradient stop ${i + 1}` : "Swatch (badges, pips) + gradient start",
+      onchange: e => { snap(); const c = ensure(t); c.colors = [...(c.colors || bcolors)]; c.colors[i] = e.target.value.toUpperCase(); renderMain(); refresh(); } }));
+    kids.push(h("div", { class: "field" }, h("label", null, "Colors (first = swatch, all three = the shimmer gradient)"),
+      h("div", { style: "display:flex;gap:8px;align-items:center" }, swatches,
+        c.colors && h("button", { class: "ghost small", onclick: () => { snap(); delete ensure(t).colors; prune(); renderMain(); refresh(); } }, "reset to built-in"))));
+    head();
+    return h("div", { class: "card" },
+      h("div", { class: "hdr", style: "margin-bottom:6px" }, strip, title, badge, h("div", { class: "spacer" }), resetBtn),
+      h("p", { style: "color:var(--muted);margin:0 0 12px;font-size:12px" }, MASTERY_HELP[t - 1]),
+      kids);
+  };
+  return h("div", null,
+    h("div", { class: "hdr" }, h("h2", null, `${TITLES[mode]} Mastery`)),
+    h("div", { class: "banner info" }, "Saved progress is keyed by tier number, so renaming a tier or changing its amount keeps everyone's progress. Lowering an amount can complete a tier for players who were part-way."),
+    [1, 2, 3].map(card));
+}
+
+// ---------- item (camo / objective) editor ----------
+// Every edit is an operation on an item *path* (itemIds from the root) and is
+// replayed on each target list — the focused weapon, plus the ticked weapons
+// when syncing. Ids never get renumbered: progress is saved per itemId.
+function eachItem(ctx, path, fn) { for (const l of ctx.lists()) { const it = findItem(l, path); if (it) fn(it); } }
+function newItemProto(ctx, parentPath) {
+  const sibs = childList(ctx.lists()[0], parentPath) || [], last = sibs[sibs.length - 1];
+  const unit = last?.requirement?.unit || (ctx.kind === "camos" ? "kills" : "missions");
+  const amount = last?.requirement?.amount || 1;
+  const t = templates()[unit];
+  return {
+    name: { en: ctx.kind === "camos" ? "New Camo" : "New Objective" },
+    tier: last ? (last.tier ?? 0) + 1 : 1,
+    requirement: { amount, unit, description: t ? Object.fromEntries(Object.entries(t).map(([l, s]) => [l, s.replace("{n}", amount)])) : { en: "Describe the challenge." } },
+    children: [], imageURL: null,
+  };
+}
+function addItem(ctx, parentPath, proto) {
+  snap();
+  const lists = ctx.lists(), id = Math.max(...lists.map(maxItemId)) + 1;
+  const p = proto || newItemProto(ctx, parentPath);
+  const item = { itemId: id, name: p.name, tier: p.tier, requirement: p.requirement, children: p.children, imageURL: p.imageURL };
+  let n = 0;
+  for (const l of lists) { const c = childList(l, parentPath); if (c) { c.push(clone(item)); n++; } }
+  ui.open.add(`${ctx.key}:${[...parentPath, id].join(".")}`);
+  renderAll();
+  if (n > 1) toast(`Added to ${n} weapons`);
+  const card = document.querySelector(`[data-key="${ctx.key}:${[...parentPath, id].join(".")}"]`);
+  card?.scrollIntoView({ block: "center" }); const inp = card?.querySelector("input[data-lang=en]"); inp?.focus(); inp?.select();
+}
+function removeItem(ctx, path) {
+  snap(); const parent = path.slice(0, -1), id = path[path.length - 1];
+  for (const l of ctx.lists()) { const c = childList(l, parent); const k = c?.findIndex(i => i.itemId === id); if (k >= 0) c.splice(k, 1); }
+  renderAll();
+}
+function moveItem(ctx, path, dir) {
+  snap(); const parent = path.slice(0, -1), id = path[path.length - 1];
+  for (const l of ctx.lists()) { const c = childList(l, parent); const k = c?.findIndex(i => i.itemId === id); if (k >= 0 && c[k + dir]) [c[k], c[k + dir]] = [c[k + dir], c[k]]; }
+  renderMain();
+}
+
+function itemList(ctx, list, parentPath) {
+  return h("div", null, list.map((it, idx) => itemCard(ctx, it, [...parentPath, it.itemId], idx, list.length)));
+}
+
+function itemCard(ctx, item, path, idx, count) {
+  const key = `${ctx.key}:${path.join(".")}`, open = ui.open.has(key);
+  const fk = f => `${key}:${f}`;
+  const nm = h("span", { class: "nm" }), meta = h("span", { class: "meta" });
+  const head = () => {
+    nm.textContent = item.name?.en || "(no name)";
+    const r = item.requirement;
+    meta.textContent = [item.tier != null && `T${item.tier}`, r && `${r.amount} ${r.unit}`, item.children?.length && `${item.children.length} sub-tiers`].filter(Boolean).join(" · ");
+  };
+  head();
+  // Differences vs the same camo on the ticked weapons.
+  let diff = null;
+  if (ctx.kind === "camos" && path.length === 1 && ctx.others.length) {
+    const mine = JSON.stringify(item);
+    const off = ctx.others.filter(o => { const e = camoEntry(ctx.mode, o); const t = e && e.camos.find(i => i.itemId === item.itemId); return !t || JSON.stringify(t) !== mine; });
+    diff = off.length
+      ? h("button", { class: "diff", title: `Differs on / missing from: ${off.map(wname).join(", ")}\nClick to push this exact camo to them`, onclick: e => {
+          e.stopPropagation();
+          if (!confirm(`Overwrite "${item.name.en}" (#${item.itemId}) on ${off.length} weapon(s) with this version?`)) return;
+          snap();
+          for (const o of off) { const e = camoEntry(ctx.mode, o) || (D[ctx.mode].weaponCamos.push({ weaponId: o, camos: [] }), camoEntry(ctx.mode, o));
+            const k = e.camos.findIndex(i => i.itemId === item.itemId);
+            if (k >= 0) e.camos[k] = clone(item); else e.camos.splice(Math.min(idx, e.camos.length), 0, clone(item)); }
+          renderAll(); } }, `≠ ${off.length}`)
+      : h("span", { class: "same", title: "Identical on every ticked weapon" }, "= all");
+  }
+  const card = h("div", { class: "item", "data-key": key },
+    h("div", { class: "ihead", onclick: () => { open ? ui.open.delete(key) : ui.open.add(key); renderMain(); } },
+      h("span", { class: "id", title: "itemId — saved progress is keyed by it" }, `#${item.itemId}`),
+      imgEl(item.imageURL), nm, meta, diff,
+      h("span", { class: "acts", onclick: e => e.stopPropagation() },
+        h("button", { class: "ghost", disabled: idx === 0, title: "Move up (order = unlock order)", onclick: () => moveItem(ctx, path, -1) }, "↑"),
+        h("button", { class: "ghost", disabled: idx === count - 1, title: "Move down", onclick: () => moveItem(ctx, path, 1) }, "↓"),
+        h("button", { class: "ghost", title: "Duplicate (gets a new itemId)", onclick: () => {
+          const p = clone(item);
+          const lists = ctx.lists(); let next = Math.max(...lists.map(maxItemId)) + 2;
+          const fix = a => a.forEach(ch => { ch.itemId = next++; fix(ch.children || []); }); fix(p.children || []);
+          p.name = clone(p.name); setLoc(p.name, "en", `${p.name.en} copy`);
+          addItem(ctx, path.slice(0, -1), p); } }, "⧉"),
+        h("button", { class: "ghost danger", title: "Delete", onclick: () => { if (confirm(`Delete "${item.name?.en}"` + (ctx.lists().length > 1 ? ` from ${ctx.lists().length} weapons` : "") + "?")) removeItem(ctx, path); } }, "✕"))));
+  if (!open) return card;
+
+  const tpl = templates();
+  let descBox;
+  const nameBox = locField("Name", fk("name"), () => item.name, (l, v) => { snap(fk("name") + l); eachItem(ctx, path, it => setLoc(it.name, l, v)); }, { after: head });
+  const r = item.requirement;
+  const reqGrid = h("div", { class: "grid" },
+    numField("Tier (blank = none)", item.tier, v => { snap(fk("tier")); eachItem(ctx, path, it => it.tier = v); head(); }),
+    h("div", { class: "field" }, h("label", null, "Requirement"),
+      h("label", { style: "color:var(--text);font-size:13px;padding:5px 0" }, h("input", { type: "checkbox", checked: !!r, onchange: e => {
+        snap(); eachItem(ctx, path, it => { it.requirement = e.target.checked ? clone(newItemProto(ctx, path.slice(0, -1)).requirement) : null; }); renderMain(); } }), " has a requirement")),
+    r && numField("Amount", r.amount, v => {
+      if (!(v >= 1)) return;
+      snap(fk("amount"));
+      // Keep the number inside each description in step with the amount.
+      eachItem(ctx, path, it => { const q = it.requirement; if (!q) return; const re = new RegExp(`(?<!\\d)${q.amount}(?!\\d)`);
+        for (const l of Object.keys(q.description || {})) q.description[l] = q.description[l].replace(re, v); q.amount = v; });
+      descBox?.sync(); head();
+    }, { min: 1 }),
+    r && h("div", { class: "field" }, h("label", null, "Unit"),
+      h("input", { list: "units", value: r.unit, oninput: e => { snap(fk("unit")); eachItem(ctx, path, it => it.requirement && (it.requirement.unit = e.target.value.trim())); head(); refresh(); } })));
+  if (r) descBox = locField("Description", fk("desc"), () => item.requirement?.description,
+    (l, v) => { snap(fk("desc") + l); eachItem(ctx, path, it => it.requirement && setLoc(it.requirement.description, l, v)); },
+    { multiline: true, extra: h("button", { class: "ghost small", title: "Rewrite all 5 languages from the wording other items of this unit already use", onclick: () => {
+        const t = templates()[item.requirement.unit];
+        if (!t) return toast(`No existing "${item.requirement.unit}" description to copy the wording from — write the English and translate`, true);
+        snap(); eachItem(ctx, path, it => { if (it.requirement) it.requirement.description = Object.fromEntries(Object.entries(t).map(([l, s]) => [l, s.replace("{n}", it.requirement.amount)])); });
+        descBox.sync(); refresh(); } }, `fill from “${r.unit}” wording${tpl[r.unit] ? "" : " (none yet)"}`) });
+  const body = h("div", { class: "ibody" }, nameBox, reqGrid, descBox,
+    imageField(() => item.imageURL, u => { snap(fk("img")); eachItem(ctx, path, it => it.imageURL = u); }, ctx.imgKind,
+      () => (item.name?.en || "camo").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "") + ".png"),
+    h("div", { class: "field" }, h("div", { class: "lbl" }, h("label", null, `Sub-tiers (${item.children?.length || 0})`),
+      h("button", { class: "ghost small", onclick: () => addItem(ctx, path) }, "+ Sub-tier")),
+      item.children?.length ? h("div", { class: "kids" }, itemList(ctx, item.children, path)) : null));
+  card.append(body);
+  return card;
+}
+
+// ---------- modals, IO ----------
+function modal(title, ...content) {
+  const m = $("#modal"); m.hidden = false;
+  m.replaceChildren(h("div", { class: "box", onclick: e => e.stopPropagation() },
+    h("header", null, h("h3", null, title), h("button", { class: "ghost", onclick: closeModal }, "✕")), h("div", { class: "bd" }, content)));
+  m.onclick = closeModal;
+}
+function closeModal() { $("#modal").hidden = true; }
+function showProblems() {
+  const P = problems(), filt = { error: true, warn: true, info: false };
+  const list = h("div", { class: "plist" });
+  const paint = () => list.replaceChildren(...P.filter(p => filt[p.lvl]).map(p =>
+    h("div", { onclick: p.go }, h("b", { style: `color:var(--${p.lvl === "error" ? "bad" : p.lvl})` }, p.lvl), p.msg)),
+    P.some(p => filt[p.lvl]) ? "" : h("div", { style: "color:var(--muted)" }, "Nothing here."));
+  paint();
+  modal(`Problems`, h("div", { class: "toolbar" }, ["error", "warn", "info"].map(l => h("label", null,
+    h("input", { type: "checkbox", checked: filt[l], onchange: e => { filt[l] = e.target.checked; paint(); } }), ` ${l} (${P.filter(p => p.lvl === l).length})`)),
+    h("span", { style: "color:var(--dim);font-size:11px" }, "info = missing translations etc. Click one to jump to it.")), list);
+}
+function editVersion(n) {
+  const v = prompt(`${n}.json version:`, D[n].version);
+  if (v && v !== D[n].version) { snap(); D[n].version = v.trim(); renderTop(); }
+}
+async function post(url, body) {
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+  let b = {}; try { b = await r.json(); } catch {}
+  return { ok: r.ok, status: r.status, body: b };
+}
+async function load() {
+  const r = await fetch("/api/data"); D = await r.json();
+  for (const n of FILES) ORIG[n] = JSON.stringify(D[n]);
+  hist = []; fut = []; renderAll();
+}
+async function reload() { if (anyDirty() && !confirm("Discard unsaved edits?")) return; await load(); toast("Reloaded from disk"); }
+async function save() {
+  const errs = problems().filter(p => p.lvl === "error");
+  if (errs.length && !confirm(`${errs.length} error(s):\n\n${errs.slice(0, 8).map(e => "• " + e.msg).join("\n")}\n\nSave anyway?`)) return;
+  const files = {};
+  snap();
+  for (const n of FILES) if (dirty(n)) {
+    if (ui.bump && D[n].version === JSON.parse(ORIG[n]).version) D[n].version = bumpVersion(D[n].version);
+    files[n] = D[n];
+  }
+  if (!Object.keys(files).length) return toast("Nothing to save");
+  const res = await post("/api/save", { files });
+  if (!res.ok) return toast(res.body.error || "Save failed", true);
+  for (const n of Object.keys(files)) ORIG[n] = JSON.stringify(D[n]);
+  renderAll();
+  toast(`Saved ${Object.keys(files).map(n => `${n}.json (${D[n].version})`).join(", ")}`);
+}
+async function publish() {
+  if (anyDirty()) { if (!confirm("Save first, then publish?")) return; await save(); if (anyDirty()) return; }
+  if (!confirm("Copy the JSON into Data/MW4/ and regenerate the manifest?\n\n(Installed apps only see it once you commit + push.)")) return;
+  const res = await post("/api/publish");
+  modal(res.ok ? "Published" : "Publish failed", h("pre", { class: "out" }, res.body.output || res.body.error || ""),
+    res.ok && h("p", { style: "color:var(--muted)" }, "Next: commit + push, then purge jsDelivr if you need it live before its ~12h cache expires."));
+}
+let toastT;
+function toast(msg, bad) { const t = $("#toast"); t.textContent = msg; t.className = bad ? "bad" : ""; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, bad ? 5000 : 2600); }
+
+document.addEventListener("keydown", e => {
+  const mod = e.metaKey || e.ctrlKey;
+  if (mod && e.key === "s") { e.preventDefault(); save(); }
+  const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName);
+  if (mod && e.key.toLowerCase() === "z" && !typing) { e.preventDefault(); e.shiftKey ? redo() : undo(); }
+  if (e.key === "Escape") closeModal();
+});
+window.addEventListener("beforeunload", e => { if (anyDirty()) { e.preventDefault(); e.returnValue = ""; } });
+load().catch(err => { $("#main").replaceChildren(h("div", { class: "empty-state" }, "Couldn't load data — is serve.py running? ", String(err))); });
+</script>
+</body>
+</html>

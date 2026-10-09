@@ -21,7 +21,12 @@ enum BackgroundRefreshCoordinator {
     /// after onboarding — asking right after the user has seen what the app
     /// does reads better than a cold-launch permission prompt.
     static func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
+        // The async form, not a completion closure: an empty closure created
+        // on the main actor still gets Swift 6's main-queue check, and the
+        // system calls it back on a background queue.
+        Task {
+            _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+        }
     }
 
     /// Asks iOS to wake the app sometime in the next several hours to check
@@ -48,10 +53,14 @@ enum BackgroundRefreshCoordinator {
 
     private static func checkForUpdates() async {
         let dataService = DataService()
-        let knownCatalogVersion = dataService.loadCachedCatalog()?.version
+        // Fall back to the bundled seed exactly as `TrackerViewModel` does.
+        // Nothing is cached until a version actually changes, so comparing
+        // against the cache alone made every fresh install treat the whole
+        // feed as new and post a bogus "New Content Available".
+        let knownCatalogVersion = (dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog())?.version
         let knownModeVersions = Dictionary(uniqueKeysWithValues:
             ["multiplayer", "warzone", "dmz"].compactMap { mode -> (String, String)? in
-                guard let version = dataService.loadCached(mode: mode)?.version else { return nil }
+                guard let version = (dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode))?.version else { return nil }
                 return (mode, version)
             }
         )
@@ -63,23 +72,44 @@ enum BackgroundRefreshCoordinator {
 
         let changedModes = result.modes.keys.sorted()
         guard result.catalog != nil || !changedModes.isEmpty else { return }
+        // The data is already downloaded and cached by now; a silent update
+        // only skips telling anyone.
+        guard shouldNotify(result.notification) else { return }
 
-        await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes)
+        await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes, announcement: result.notification)
     }
 
-    private static func postNotification(catalogChanged: Bool, changedModes: [String]) async {
-        let center = UNUserNotificationCenter.current()
-        guard await center.notificationSettings().authorizationStatus == .authorized else { return }
+    /// An update notifies unless the manifest marks it silent.
+    static func shouldNotify(_ announcement: Manifest.Announcement?) -> Bool {
+        announcement?.silent != true
+    }
 
+    /// The notification's words: the manifest's own where it supplies them,
+    /// otherwise the built-in title and a body naming what changed. An empty
+    /// string in the manifest counts as not supplied.
+    static func notificationText(catalogChanged: Bool, changedModes: [String], announcement: Manifest.Announcement?) -> (title: String, body: String) {
         var changedAreas: [String] = []
         if catalogChanged { changedAreas.append("mw4.ui.section.weapons".localized()) }
         changedAreas += changedModes.map { "mw4.mode.\($0)".localized() }
-
-        let content = UNMutableNotificationContent()
-        content.title = "mw4.notif.title".localized()
-        content.body = changedAreas.isEmpty
+        let builtInBody = changedAreas.isEmpty
             ? "mw4.notif.generic_body".localized()
             : String(format: "mw4.notif.body_format".localized(), changedAreas.joined(separator: ", "))
+
+        func supplied(_ text: LocalizedText?) -> String? {
+            guard let value = text?.resolved().trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else { return nil }
+            return value
+        }
+        return (supplied(announcement?.title) ?? "mw4.notif.title".localized(), supplied(announcement?.body) ?? builtInBody)
+    }
+
+    private static func postNotification(catalogChanged: Bool, changedModes: [String], announcement: Manifest.Announcement?) async {
+        let center = UNUserNotificationCenter.current()
+        guard await center.notificationSettings().authorizationStatus == .authorized else { return }
+
+        let text = notificationText(catalogChanged: catalogChanged, changedModes: changedModes, announcement: announcement)
+        let content = UNMutableNotificationContent()
+        content.title = text.title
+        content.body = text.body
         content.sound = .default
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)

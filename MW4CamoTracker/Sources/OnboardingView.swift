@@ -10,10 +10,26 @@ import SwiftUI
 /// nebula carried through at low opacity so launch → onboarding → app reads as
 /// one continuous surface rather than three unrelated screens.
 struct OnboardingView: View {
+    /// True on the first run only. It adds a last page that says what the
+    /// app's one notification is for, and its button is what leads to the
+    /// system's permission prompt. Per Apple's guidance for a screen shown
+    /// before a permission request, that page has a single action, titled
+    /// "Continue", and it previews the notification, never the system alert.
+    var asksForNotifications = false
     let onFinish: () -> Void
-    @State private var page = 0
+    @State private var page = OnboardingView.firstPage
 
-    private let pageCount = 4
+    /// Screenshot harness: `SS_ONBOARDING_PAGE=<index>` opens the walkthrough
+    /// on that page. DEBUG-only; a normal launch starts at the beginning.
+    private static var firstPage: Int {
+        #if DEBUG
+        return Int(ProcessInfo.processInfo.environment["SS_ONBOARDING_PAGE"] ?? "") ?? 0
+        #else
+        return 0
+        #endif
+    }
+
+    private var pageCount: Int { asksForNotifications ? 5 : 4 }
 
     /// Each page borrows the accent of whatever it's actually demoing, so the
     /// walkthrough previews the app's multi-mode palette instead of painting
@@ -23,7 +39,8 @@ struct OnboardingView: View {
         case 0:  return .camoGold
         case 1:  return .accentMultiplayer
         case 2:  return .accentWarzone
-        default: return .camoMercurialDrift
+        case 3:  return .camoMercurialDrift
+        default: return .camoGold
         }
     }
 
@@ -36,6 +53,9 @@ struct OnboardingView: View {
                 MarkProgressPage().tag(1)
                 WeaponLevelPage(accent: accent).tag(2)
                 SuggestedPage().tag(3)
+                if asksForNotifications {
+                    NotificationsPage().tag(4)
+                }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
 
@@ -96,7 +116,8 @@ struct OnboardingView: View {
                     onFinish()
                 }
             } label: {
-                Text(page < pageCount - 1 ? "mw4.onboarding.next".localized() : "mw4.onboarding.get_started".localized())
+                Text(page < pageCount - 1 ? "mw4.onboarding.next".localized()
+                     : (asksForNotifications ? "mw4.onboarding.continue" : "mw4.onboarding.get_started").localized())
                     .font(.hitmarker(16))
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
@@ -106,7 +127,16 @@ struct OnboardingView: View {
             .buttonStyle(.plain)
 
             if page < pageCount - 1 {
-                Button("mw4.onboarding.skip".localized(), action: onFinish)
+                // Skipping the walkthrough still lands on the notifications
+                // page when there is one, so the system prompt never arrives
+                // with no explanation in front of it.
+                Button("mw4.onboarding.skip".localized()) {
+                    if asksForNotifications {
+                        withAnimation { page = pageCount - 1 }
+                    } else {
+                        onFinish()
+                    }
+                }
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
             }
@@ -337,6 +367,54 @@ private struct SuggestedPage: View {
                 Text("mw4.onboarding.suggested.body2".localized())
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
+            }
+        }
+    }
+}
+
+/// The last first-run page: what the notification is for, with a preview of
+/// the notification itself built from the app's real wording.
+private struct NotificationsPage: View {
+    var body: some View {
+        OnboardingScaffold("mw4.onboarding.notif.title".localized(), accent: .camoGold) {
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(alignment: .top, spacing: 11) {
+                    Image("SplashBackground")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .overlay {
+                            Image("SplashForeground").resizable().scaledToFit().padding(4)
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 9))
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text("mw4.notif.title".localized())
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(Color.appInk)
+                            Spacer(minLength: 8)
+                            Text("mw4.onboarding.notif.now".localized())
+                                .font(.system(size: 12))
+                                .foregroundStyle(Color.appInkMuted)
+                        }
+                        Text("mw4.notif.generic_body".localized())
+                            .font(.system(size: 13.5))
+                            .foregroundStyle(Color.appInkMuted)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .padding(13)
+                .background(RoundedRectangle(cornerRadius: 20).fill(Color.appSurface2))
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appInkMuted.opacity(0.25), lineWidth: 1))
+
+                Text("mw4.onboarding.notif.body".localized())
+                    .font(.system(size: 15))
+                    .foregroundStyle(Color.appInkMuted)
+
+                Text("mw4.onboarding.notif.next_step".localized())
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.appInkMuted.opacity(0.8))
             }
         }
     }
