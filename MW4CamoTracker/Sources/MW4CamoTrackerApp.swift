@@ -18,6 +18,7 @@ struct MW4CamoTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .screenshotWidth()
                 .environmentObject(viewModel)
                 .preferredColorScheme(.dark)
                 .task {

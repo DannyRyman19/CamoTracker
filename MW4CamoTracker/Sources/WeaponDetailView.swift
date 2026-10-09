@@ -119,7 +119,14 @@ struct WeaponDetailView: View {
     /// iPad: the weapon's art beside its name, level and Prestige in one
     /// wide card, then the camos and the Mastery trio as tiles, so the
     /// screen is filled rather than one phone-width column on a big canvas.
-    @ViewBuilder private func wideSections(columns: Int) -> some View {
+    /// A camo tile needs about 400pt to keep its sentence and its stepper on
+    /// good terms, so an unfolded iPhone Duo held upright (about 670pt) gets
+    /// the wide header over full-width tiles, and only wider screens a grid.
+    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 840 ? 2 : 1) }
+    private var masteryInOneRow: Bool { width >= 1000 }
+
+    @ViewBuilder private var wideSections: some View {
+        let columns = tileColumns
         HStack(alignment: .center, spacing: 20) {
             WeaponHeroImage(urlString: weapon.imageURL, height: 210)
             VStack(alignment: .leading, spacing: 14) {
@@ -159,16 +166,29 @@ struct WeaponDetailView: View {
         }
 
         Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
-            HStack(alignment: .top, spacing: 12) {
-                if !camos.isEmpty {
-                    MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
-                    MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+            if masteryInOneRow {
+                HStack(alignment: .top, spacing: 12) {
+                    if !camos.isEmpty {
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+                    }
+                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
                 }
-                MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
+                .listRowInsets(Self.rowInsets)
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            } else {
+                Group {
+                    if !camos.isEmpty {
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
+                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+                    }
+                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
+                }
+                .listRowInsets(Self.rowInsets)
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
             }
-            .listRowInsets(Self.rowInsets)
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
         }
     }
 
@@ -176,7 +196,7 @@ struct WeaponDetailView: View {
         ZStack {
             AppBackground(accent: mode.accent)
             if WideLayout.columns(for: width) >= 2 {
-                List { wideSections(columns: WideLayout.columns(for: width)) }
+                List { wideSections }
                     .scrollContentBackground(.hidden)
                     .listStyle(.plain)
             } else {

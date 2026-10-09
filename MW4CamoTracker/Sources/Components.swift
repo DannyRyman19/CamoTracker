@@ -650,6 +650,9 @@ struct ChallengeRow: View {
                         Text("\(amount)/\(requirement.amount)")
                             .font(.system(size: 12.5, design: .monospaced))
                             .foregroundStyle(Color.appInkMuted)
+                            // The count never wraps; the description beside it gives way.
+                            .lineLimit(1)
+                            .fixedSize()
                             .padding(.horizontal, 9)
                             .padding(.vertical, 5)
                             .background(Capsule().fill(Color.appSurface2))
@@ -827,10 +830,11 @@ struct MilestoneBannerView: View {
 // MARK: - Wide layouts (iPad)
 
 /// How many cards sit side by side at a given width: one on a phone, two on
-/// an iPad in portrait, three once there is room (an iPad in landscape).
+/// an iPad in portrait or an unfolded iPhone Duo (about 670pt upright), three
+/// once there is room (an iPad in landscape).
 enum WideLayout {
     static func columns(for width: CGFloat) -> Int {
-        width >= 1150 ? 3 : (width >= 700 ? 2 : 1)
+        width >= 1150 ? 3 : (width >= 600 ? 2 : 1)
     }
 }
 
@@ -903,5 +907,23 @@ struct CardGrid<Item: Identifiable, Card: View>: View {
                 .listRowSeparator(.hidden)
             }
         }
+    }
+}
+
+extension View {
+    /// Screenshot harness: `SS_WIDTH=<points>` lays the whole app out at that
+    /// width, centred, so a layout for a width no simulator can be put into
+    /// from the command line (an unfolded iPhone Duo) can still be looked at
+    /// on an iPad. DEBUG-only; a normal launch never reads it.
+    @ViewBuilder func screenshotWidth() -> some View {
+        #if DEBUG
+        if let raw = ProcessInfo.processInfo.environment["SS_WIDTH"], let width = Double(raw) {
+            frame(width: width).frame(maxWidth: .infinity).background(Color.black)
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
     }
 }
