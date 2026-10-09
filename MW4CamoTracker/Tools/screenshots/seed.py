@@ -11,11 +11,13 @@ a save that looks like a few weeks of play:
                    so the Mastery track shows real movement.
   * Warzone     -- a mid-grind, roughly two thirds of the way.
   * DMZ         -- early, with a few objectives ticked.
-  * Levels      -- four weapons maxed, the rest scattered.
+  * Levels      -- four weapons maxed, the rest scattered but never below the
+                   highest camo `unlockLevel`, so a Gold weapon isn't shown
+                   at a level that couldn't have opened its camos.
 
 Everything is derived from the shipped JSON rather than hardcoded, because the
-modes genuinely differ: Multiplayer has 4 camos per weapon at 10/25/50/75,
-Warzone has 3 at 1/3/10, and DMZ has no weapon camos at all, only objectives.
+modes genuinely differ: Multiplayer and DMZ have 4 camos per weapon at
+10/25/50/75, Warzone has 3, and only DMZ carries objectives.
 Assuming a uniform shape here silently seeds keys nothing reads.
 
 `--preview` is the same save with one change for the preview video
@@ -146,10 +148,18 @@ def build(preview=False):
             else:
                 amounts.pop(key, None)
 
+    # Highest camo unlockLevel per weapon, across every mode.
+    gates = {}
+    for mode in plans:
+        for entry in load(f"{mode}.json").get("weaponCamos", []):
+            gates.setdefault(entry["weaponId"], []).extend(
+                c.get("unlockLevel") or 0 for c in entry["camos"])
+
     levels = {}
     for weapon_id in sorted(weapons):
         max_level = weapons[weapon_id]["maxLevel"]
-        levels[str(weapon_id)] = max_level if weapon_id in MAXED else rng.randint(4, max_level - 6)
+        floor = max(gates.get(weapon_id, [4]) + [4])
+        levels[str(weapon_id)] = max_level if weapon_id in MAXED else rng.randint(floor, max(floor, max_level - 6))
 
     return {"weaponLevels": levels, "amounts": amounts, "completed": completed}
 

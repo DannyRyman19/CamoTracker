@@ -1,7 +1,2108 @@
 {
-  "version": "0.5.0",
+  "version": "0.7.0",
   "mode": "dmz",
-  "weaponCamos": [],
+  "weaponCamos": [
+    {
+      "weaponId": 0,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 1,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 2,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 3,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 4,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 5,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 6,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 7,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 8,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 9,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 10,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 11,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 12,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 13,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 14,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 15,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 16,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 17,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 18,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    },
+    {
+      "weaponId": 19,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Slate",
+            "fr": "Ardoise",
+            "es": "Pizarra",
+            "de": "Schiefer",
+            "nl": "Leisteen"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with this weapon.",
+              "fr": "Obtenez 10 éliminations avec cette arme.",
+              "es": "Consigue 10 bajas con esta arma.",
+              "de": "Erziele 10 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 10 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/BO6/slate.png"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ridgeline",
+            "fr": "Crête",
+            "es": "Cresta",
+            "de": "Gebirgskamm",
+            "nl": "Bergkam"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with this weapon.",
+              "fr": "Obtenez 25 éliminations avec cette arme.",
+              "es": "Consigue 25 bajas con esta arma.",
+              "de": "Erziele 25 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 25 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/stone-ridge.png"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightfall",
+            "fr": "Tombée de la Nuit",
+            "es": "Anochecer",
+            "de": "Einbruch der Nacht",
+            "nl": "Invallende Nacht"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills with this weapon.",
+              "fr": "Obtenez 50 éliminations avec cette arme.",
+              "es": "Consigue 50 bajas con esta arma.",
+              "de": "Erziele 50 Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 50 kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/nightfall.png"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Frostbite",
+            "fr": "Gelure",
+            "es": "Congelación",
+            "de": "Erfrierung",
+            "nl": "Bevriezing"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills with this weapon.",
+              "fr": "Obtenez 75 éliminations à la tête avec cette arme.",
+              "es": "Consigue 75 bajas con disparo a la cabeza con esta arma.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse mit dieser Waffe.",
+              "nl": "Behaal 75 headshot-kills met dit wapen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/frostbite.png"
+        }
+      ]
+    }
+  ],
   "objectives": [
     {
       "categoryId": 0,
@@ -256,5 +2357,5 @@
       ]
     }
   ],
-  "_note": "Fake/placeholder Hajin objectives (map confirmed for MW4, exact objectives not yet public). Names/descriptions are inline per-language text. weaponCamos stays empty pending confirmation of whether DMZ gets its own weapon-camo track."
+  "_note": "Fake/placeholder data. weaponCamos mirrors Multiplayer's placeholder track (names, kill counts, unlockLevel gates) until DMZ's real per-weapon camos are visible in-game; its Mastery (Chiral / Ripple Tide / Helio) is defined in Theme.swift and works like Multiplayer's. objectives are placeholder Hajin objectives (map confirmed, exact objectives not yet public): DMZ-only extras that don't feed Mastery."
 }

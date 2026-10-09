@@ -235,6 +235,7 @@ private struct MarkProgressPage: View {
                 name: LocalizedText(demoNames[index]),
                 imageURL: nil,
                 tier: nil,
+                unlockLevel: nil,
                 requirement: Requirement(amount: demoRequired[index], unit: "kills", description: LocalizedText("Get \(demoRequired[index]) kills with this weapon.")),
                 children: []
             ),

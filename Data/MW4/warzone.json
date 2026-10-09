@@ -1,5 +1,5 @@
 {
-  "version": "0.6.1",
+  "version": "0.7.0",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -15,6 +15,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -39,6 +40,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -92,6 +94,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -116,6 +119,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -169,6 +173,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -193,6 +198,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -246,6 +252,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -270,6 +277,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -323,6 +331,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -347,6 +356,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -400,6 +410,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -424,6 +435,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -477,6 +489,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -501,6 +514,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -554,6 +568,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -578,6 +593,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -631,6 +647,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -655,6 +672,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -708,6 +726,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -732,6 +751,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -785,6 +805,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -809,6 +830,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -862,6 +884,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -886,6 +909,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -939,6 +963,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -963,6 +988,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1016,6 +1042,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1040,6 +1067,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1093,6 +1121,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1117,6 +1146,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1170,6 +1200,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1194,6 +1225,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1247,6 +1279,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1271,6 +1304,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1324,6 +1358,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1348,6 +1383,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1401,6 +1437,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1425,6 +1462,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",
@@ -1478,6 +1516,7 @@
             "nl": "Groen"
           },
           "tier": 1,
+          "unlockLevel": 4,
           "requirement": {
             "amount": 3,
             "unit": "wins",
@@ -1502,6 +1541,7 @@
             "nl": "Toxisch"
           },
           "tier": 2,
+          "unlockLevel": 12,
           "requirement": {
             "amount": 10,
             "unit": "gas_kills",

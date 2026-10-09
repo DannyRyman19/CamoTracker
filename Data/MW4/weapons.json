@@ -1,6 +1,38 @@
 {
-  "version": "0.6.1",
+  "version": "0.8.0",
   "baseWeaponCount": 19,
+  "weaponPrestige": [
+    {
+      "name": {
+        "en": "Prestige 1",
+        "fr": "Prestige 1",
+        "es": "Prestigio 1",
+        "de": "Prestige 1",
+        "nl": "Prestige 1"
+      },
+      "maxLevel": null
+    },
+    {
+      "name": {
+        "en": "Prestige 2",
+        "fr": "Prestige 2",
+        "es": "Prestigio 2",
+        "de": "Prestige 2",
+        "nl": "Prestige 2"
+      },
+      "maxLevel": null
+    },
+    {
+      "name": {
+        "en": "Prestige Master",
+        "fr": "Maître Prestige",
+        "es": "Maestro de Prestigio",
+        "de": "Prestige-Meister",
+        "nl": "Prestige Master"
+      },
+      "maxLevel": 250
+    }
+  ],
   "categories": [
     {
       "categoryId": 0,
@@ -490,5 +522,6 @@
         }
       ]
     }
-  ]
+  ],
+  "_note": "weaponPrestige is a placeholder copied from BO7's shape (Prestige 1, Prestige 2, then Prestige Master to 250) until MW4's real stages are visible in-game. Add or remove entries to change how many times a weapon can prestige; maxLevel null means the weapon's own maxLevel."
 }

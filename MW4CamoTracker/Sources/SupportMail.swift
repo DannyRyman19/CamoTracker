@@ -112,6 +112,9 @@ enum SupportMail {
             if let requirement = camo.requirement {
                 lines.append("Requirement in app: \(requirement.amount) \(requirement.unit)")
             }
+            if let unlockLevel = camo.unlockLevel {
+                lines.append("Unlocks in app: Weapon level \(unlockLevel)")
+            }
         }
         if let unlock {
             lines.append("Should be: \(unlock.describedForMail)")

@@ -28,9 +28,13 @@
 "mw4.ui.unpin" = "Desfijar";
 "mw4.ui.tab.stats" = "Estadísticas";
 "mw4.ui.weapon_level" = "Nivel del Arma";
+"mw4.ui.prestige" = "Prestigio";
+"mw4.ui.prestige.none" = "Ninguno aún";
+"mw4.ui.prestige.hint" = "Alcanza el nivel %d para subir de prestigio.";
 "mw4.ui.max_level" = "Máx %d";
 "mw4.ui.no_camo_data" = "Aún no hay datos de camuflaje de %@ para esta arma.";
 "mw4.ui.locked" = "Termina primero el nivel anterior.";
+"mw4.ui.camo_level_locked" = "Se desbloquea en el nivel de arma %d.";
 "mw4.ui.set_amount.title" = "Establecer Cantidad";
 "mw4.ui.set_amount.field" = "Cantidad";
 "mw4.ui.set_amount.message" = "De %d requeridos.";
@@ -45,7 +49,7 @@
 "mw4.onboarding.mark.tap_circle" = "Toca el círculo para marcar un camuflaje como hecho.";
 "mw4.onboarding.mark.tap_pill" = "Toca el número para escribir una cantidad exacta. Útil para los desafíos largos como 200 bajas.";
 "mw4.onboarding.level.title" = "Un nivel, todos los modos";
-"mw4.onboarding.level.body" = "El nivel del arma es compartido. Configúralo una vez en cualquier pestaña y las demás se actualizan. Es la misma arma.";
+"mw4.onboarding.level.body" = "El nivel del arma es compartido. Configúralo una vez en cualquier pestaña y las demás se actualizan, y desbloquea los camuflajes por nivel de esa arma en todos los modos.";
 "mw4.onboarding.suggested.title" = "Sabe qué toca después";
 "mw4.onboarding.suggested.body1" = "Cada pestaña te señala el arma más cercana al Oro. A veces es la última que frena a toda una categoría.";
 "mw4.onboarding.suggested.body2" = "Termínala y verás el desbloqueo al instante.";

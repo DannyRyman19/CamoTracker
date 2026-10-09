@@ -28,9 +28,13 @@
 "mw4.ui.unpin" = "Unpin";
 "mw4.ui.tab.stats" = "Stats";
 "mw4.ui.weapon_level" = "Weapon Level";
+"mw4.ui.prestige" = "Prestige";
+"mw4.ui.prestige.none" = "None yet";
+"mw4.ui.prestige.hint" = "Reach level %d to prestige.";
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "No %@ camo data for this weapon yet.";
 "mw4.ui.locked" = "Finish the tier above first.";
+"mw4.ui.camo_level_locked" = "Unlocks at weapon level %d.";
 "mw4.ui.set_amount.title" = "Set Amount";
 "mw4.ui.set_amount.field" = "Amount";
 "mw4.ui.set_amount.message" = "Out of %d required.";
@@ -45,7 +49,7 @@
 "mw4.onboarding.mark.tap_circle" = "Tap the circle to mark a camo done.";
 "mw4.onboarding.mark.tap_pill" = "Tap the number to type an exact amount. Handy for the grindy ones like 200 kills.";
 "mw4.onboarding.level.title" = "One level, every mode";
-"mw4.onboarding.level.body" = "Weapon levels are shared. Set it once in any tab and the rest catch up, because it's the same gun.";
+"mw4.onboarding.level.body" = "Weapon levels are shared. Set it once in any tab and the rest catch up, and it opens that gun's level-locked camos in every mode.";
 "mw4.onboarding.suggested.title" = "Know what to grind next";
 "mw4.onboarding.suggested.body1" = "Every tab points you at the weapon closest to Gold. Sometimes that's the last one holding up a whole category.";
 "mw4.onboarding.suggested.body2" = "Finish it and you'll see the unlock right away.";

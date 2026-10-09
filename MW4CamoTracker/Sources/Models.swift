@@ -56,7 +56,21 @@ struct WeaponCatalog: Codable {
     /// older cached catalog that predates this field) — `TrackerViewModel`
     /// falls back to the live weapon count when absent.
     let baseWeaponCount: Int?
+    /// Weapon Prestige, as the stages that come *after* a weapon's normal
+    /// levels, in order — so its count is how many times a weapon can
+    /// prestige. Kept in the network JSON so the count and each stage's
+    /// level cap can change without an app update. Optional: no prestige
+    /// at all when absent.
+    let weaponPrestige: [PrestigeStage]?
     let categories: [WeaponCategory]
+}
+
+/// One Weapon Prestige stage. `maxLevel` is that stage's level cap; `nil`
+/// means "the weapon's own `maxLevel` again", the usual case. A one-off
+/// stage like BO7's Prestige Master (250 levels) sets it explicitly.
+struct PrestigeStage: Codable {
+    let name: LocalizedText
+    let maxLevel: Int?
 }
 
 struct WeaponCategory: Codable, Identifiable {
@@ -90,12 +104,13 @@ struct WeaponEntry: Codable, Identifiable {
 // MARK: - Per-mode data (multiplayer.json / warzone.json / dmz.json)
 
 /// A mode contributes two independent things:
-/// - `weaponCamos`: that mode's camo challenge tree for each weapon it covers,
-///   looked up by `weaponId` against the shared catalog above.
+/// - `weaponCamos`: that mode's own base camo track for each weapon, looked
+///   up by `weaponId` against the shared catalog above. Every mode
+///   (Multiplayer, Warzone, DMZ) has one; finishing it opens that mode's
+///   Mastery camos (`AppMode.masteryCamos`).
 /// - `objectives`: mode-exclusive, non-weapon content (DMZ's Hajin extraction
-///   objectives) that has no equivalent in other modes.
-/// Multiplayer/Warzone currently only populate `weaponCamos`; DMZ can use either
-/// or both, depending on whether it ends up with its own weapon-camo track.
+///   objectives) that has no equivalent in other modes and doesn't feed
+///   Mastery.
 struct ModeFile: Codable {
     let version: String
     let mode: String
@@ -122,6 +137,10 @@ struct ChallengeItem: Codable, Identifiable {
     let name: LocalizedText
     let imageURL: String?
     let tier: Int?
+    /// The weapon level this camo's challenge opens at. MW4 locks base camos
+    /// behind weapon level; `nil` falls back to "finish the tier above".
+    /// Weapon level is global, so one level opens camos in every mode.
+    let unlockLevel: Int?
     let requirement: Requirement?
     var children: [ChallengeItem]
     var id: Int { itemId }
