@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Vanguard Camo Tracker"
-description : Vanguard camo tracker for Zombies and Multiplayer
+description: "Track every Call of Duty: Vanguard camo challenge in Multiplayer and Zombies, from Gold to Atomic and Etheric. Unofficial iPhone and iPad app."
+app_id: "1594861329"
 ---
 
 <a href="https://apps.apple.com/us/app/vanguard-camo-tracker/id1594861329?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/44/40/f5/4440f566-2e77-5aef-dc31-e4a2f5af42a6/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/540x540bb.jpg" alt="Vanguard Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>

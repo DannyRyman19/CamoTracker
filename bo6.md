@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "BO6 Camo Tracker"
-description : Black Ops 6 BO6 WZ Warzone Zombies camo tracker 2024 Gold Diamond Dark Spine Dark Matter Mystic Gold Opal Afterlife Nebula Gold Tiger King's Ransom Catalyst Abyss
+description: "Track every Black Ops 6 camo challenge in Multiplayer, Zombies and Warzone, from Gold to Dark Matter, Nebula and Abyss. Unofficial iPhone and iPad app."
+app_id: "6733240293"
+image: "/bo6.png"
 ---
 <a href="https://apps.apple.com/us/app/bo6-camo-tracker/id6733240293" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 

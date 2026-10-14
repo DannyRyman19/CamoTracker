@@ -1,7 +1,10 @@
 ---
 layout: default
 title: "MW2 Camo Tracker"
-description : Modern Warfare II MW2 camo tracker 2023
+description: "Track every Modern Warfare II camo challenge on your way to Gold, Platinum, Polyatomic and Orion. Unofficial iPhone and iPad app."
+app_id: "6444090116"
+canonical_url: "https://camotracker.djr.li/mw2.html"
+sitemap: false
 ---
 
 <a href="https://apps.apple.com/us/app/mwii-camo-tracker/id6444090116?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/b9/10/72/b91072c1-08f2-a883-6006-e6020104fc0f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/540x540bb.jpg" alt="MWII Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
