@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "BO7 Camo Tracker"
-description : Black Ops 7, BO7, WZ, Warzone, Campaign, Multiplayer, Zombies, camo tracker 2025, Molten Gold, Moonstone, Chroma Flux, Genesis, Shattered Gold, Arclight, Singularity, Tempest, Golden Dragon, Bloodstone, Doomsteel, Infestation
+description: "Track every Black Ops 7 camo challenge in Multiplayer, Zombies, Warzone and Campaign, from Shattered Gold to Singularity, Genesis and Infestation. Unofficial iPhone and iPad app."
+app_id: "6754783254"
+image: "/bo7.png"
 ---
 <a href="https://apps.apple.com/us/app/bo7-camo-tracker/id6754783254" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 

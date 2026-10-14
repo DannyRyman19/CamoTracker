@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Cold War Camo Tracker"
-description : MW 2019 Camo tracker for Damascus
+title: "MW Camo Tracker: Modern Warfare 2019 Damascus"
+description: "Track every Modern Warfare (2019) camo challenge on your way to Gold, Platinum and Damascus. Unofficial iPhone and iPad app."
+app_id: "1560239114"
 ---
 
 <a href="https://apps.apple.com/us/app/mw-camo-tracker/id1560239114?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/27/e6/07/27e60722-d7a3-9044-b60f-314cba8401b9/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/540x540bb.jpg" alt="MW Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>

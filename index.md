@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Camo Tracker"
-description: Camo Tracker for Call of Duty Modern Warfare 4 MW4, Black Ops 7 BO7, Black Ops 6 BO6, Modern Warfare 3 MW3, Modern Warfare 2 MW2, Cold War & more.
+title: "Camo Tracker: Call of Duty Camo Challenge Apps"
+description: "Unofficial camo tracker apps for Call of Duty: Modern Warfare 4, Black Ops 7, Black Ops 6, Black Ops 2, Modern Warfare III, Modern Warfare II, Cold War and Vanguard."
+image: "/mw4.png"
 ---
 
 ## Our Apps

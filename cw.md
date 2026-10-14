@@ -1,7 +1,8 @@
 ---
 layout: default
 title: "Cold War Camo Tracker"
-description : Cold War CW camo tracker for Zombies and Multiplayer
+description: "Track every Black Ops Cold War camo challenge in Multiplayer and Zombies, from Gold to Diamond, Dark Matter and Dark Aether. Unofficial iPhone and iPad app."
+app_id: "1542484781"
 ---
 
 <a href="https://apps.apple.com/us/app/cold-war-camo-tracker/id1542484781?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/63/64/b7/6364b707-b714-0113-f3e1-e49a9780eed9/AppIcon-1x_U007emarketing-0-7-0-0-85-220.png/540x540bb.jpg" alt="Cold War Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>

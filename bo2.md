@@ -1,7 +1,9 @@
 ---
 layout: default
 title: "BO2 Camo Tracker"
-description: Black Ops 2, BO2, camo tracker, Gold, Diamond, Devgru, ATACS, ERDL, Siberia, Choco, Blue Tiger, Bloodshot, Ghostex, Kryptek, Carbon Fiber, Cherry Blossom, Art of War, Ronin, Skulls, multiplayer challenges, reticles, prestige
+description: "Track every Black Ops 2 camo, from Devgru and Kryptek to Gold and Diamond, plus multiplayer challenges, reticles and prestige. Unofficial iPhone and iPad app."
+app_id: "6781461500"
+image: "/bo2.png"
 ---
 <a href="https://apps.apple.com/us/app/bo2-camo-tracker/id6781461500" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
