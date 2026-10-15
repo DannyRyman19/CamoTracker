@@ -146,11 +146,22 @@ struct WeaponDetailView: View {
             amount: viewModel.camoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
-            lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
-            detail: viewModel.isEarnedByLevel(camo) ? camo.unlockLevel.map { String(format: "mw4.ui.camo_level_earned".localized(), $0) } : nil,
+            lockedReason: camo.group == "special"
+                && !viewModel.allMilitaryComplete(mode: mode.rawValue, weaponId: weapon.weaponId)
+                ? "mw4.ui.special_locked".localized()
+                : camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
+            detail: militaryDetail(camo),
             onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
             onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
         )
+    }
+
+    /// "Earned at weapon level 18." or "Unlocks at weapon level 18." under
+    /// a Military camo, whose level is all there is to it.
+    private func militaryDetail(_ camo: ChallengeItem) -> String? {
+        guard let level = viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) else { return nil }
+        let earned = viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
+        return String(format: (earned ? "mw4.ui.camo_level_earned" : "mw4.ui.camo_level_locked").localized(), level)
     }
 
     private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)

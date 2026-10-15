@@ -198,16 +198,33 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
-        if isEarnedByLevel(camo), hasReached(camo.unlockLevel ?? 0, weaponId: weaponId) { return true }
+        if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
+            return hasReached(level, weaponId: weaponId)
+        }
         let k = camoKey(mode, weaponId, camo.itemId)
         guard let req = camo.requirement else { return completed.contains(k) }
         return (amounts[k] ?? 0) >= req.amount
     }
 
-    /// A Military camo with an unlock level and no challenge: reaching the
-    /// level is the whole of earning it, so the weapon level ticks it.
-    func isEarnedByLevel(_ camo: ChallengeItem) -> Bool {
-        camo.group == "military" && camo.unlockLevel != nil && camo.requirement == nil
+    /// The weapon level that earns this Military camo, or nil for any other
+    /// camo. Military camos have no challenge: reaching the level is the
+    /// whole of it. Until the mode file gives the real `unlockLevel`, the
+    /// weapon's Military camos are spread evenly up to its max level, so the
+    /// last one lands on max.
+    func militaryLevel(mode: String, weaponId: Int, camo: ChallengeItem) -> Int? {
+        guard camo.group == "military", camo.requirement == nil else { return nil }
+        if let level = camo.unlockLevel { return level }
+        let military = camos(weaponId: weaponId, mode: mode).filter { $0.group == "military" }
+        guard let index = military.firstIndex(where: { $0.itemId == camo.itemId }),
+              let weapon = weapon(id: weaponId) else { return nil }
+        let max = maxLevel(for: weapon)
+        return Swift.max(1, Int((Double(max) * Double(index + 1) / Double(military.count)).rounded(.up)))
+    }
+
+    /// Every Military camo on this weapon is earned: what opens its Specials.
+    func allMilitaryComplete(mode: String, weaponId: Int) -> Bool {
+        camos(weaponId: weaponId, mode: mode).filter { $0.group == "military" }
+            .allSatisfy { isCamoComplete(mode: mode, weaponId: weaponId, camo: $0) }
     }
 
     /// Level gates are on the weapon's normal levels, so a prestiged weapon
@@ -226,8 +243,14 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func toggleCamo(mode: String, weaponId: Int, camo: ChallengeItem) {
-        // Earned by the weapon level, not by hand: there is nothing to untick.
-        if isEarnedByLevel(camo), isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return }
+        // A Military camo is the weapon level: tapping one sets the level to
+        // it, tapping an earned one steps back to just below it. A prestiged
+        // weapon has them all, so there is nothing to change.
+        if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
+            guard prestige(for: weaponId) == 0, let weapon = weapon(id: weaponId) else { return }
+            setLevel(isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) ? level - 1 : level, for: weapon)
+            return
+        }
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let k = camoKey(mode, weaponId, camo.itemId)
         if let req = camo.requirement {
@@ -253,6 +276,14 @@ final class TrackerViewModel: ObservableObject {
     /// even though its level has reset.
     func isCamoAvailable(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
+        // Always tappable: a tap sets the weapon level.
+        if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil { return true }
+        // Specials stay shut until every Military camo is earned, then also
+        // wait for their own level if they have one.
+        if camo.group == "special" {
+            guard allMilitaryComplete(mode: mode, weaponId: weaponId) else { return false }
+            return camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
+        }
         if let unlockLevel = camo.unlockLevel {
             return hasReached(unlockLevel, weaponId: weaponId)
         }
