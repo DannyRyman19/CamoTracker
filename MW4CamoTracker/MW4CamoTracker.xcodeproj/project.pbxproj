@@ -40,6 +40,7 @@
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
 		B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */; };
 		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
 		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
 		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
@@ -97,6 +98,7 @@
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTapUITests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTextTests.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */,
+				C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */,
 				B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
 			);
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */,
+				C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */,
 				B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
 			);
