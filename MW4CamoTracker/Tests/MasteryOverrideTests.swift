@@ -305,27 +305,87 @@ struct TrackerViewModelTests {
         #expect(model.categoryTrueCompletionFraction(category, mode: mp) > afterCamos)
     }
 
-    /// A Military camo with an unlock level and no challenge is earned by the
-    /// weapon level alone, and can't be unticked while the level stands.
-    @Test func aMilitaryCamoIsEarnedByLevel() throws {
+    private func split(_ model: TrackerViewModel, _ weaponId: Int) -> (military: [ChallengeItem], special: [ChallengeItem]) {
+        let camos = model.camos(weaponId: weaponId, mode: mp)
+        return (camos.filter { $0.group == "military" }, camos.filter { $0.group == "special" })
+    }
+
+    /// With no published levels, the Military camos are spread up to the
+    /// weapon's max level, the last one on max itself.
+    @Test func militaryLevelsAreSpreadUpToMaxUntilPublished() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let military = split(model, weapon.weaponId).military
+        try #require(military.count == 8)
+        let max = model.maxLevel(for: weapon)
+        #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!) == max)
+        #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military[0]) == Int((Double(max) / 8).rounded(.up)))
+    }
+
+    /// Tapping a Military camo sets the weapon level to it; tapping an earned
+    /// one steps the level back to just below it.
+    @Test func tappingAMilitaryCamoSetsTheWeaponLevel() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let military = split(model, weapon.weaponId).military
+        let third = military[2]
+        let level = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: third))
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: third)
+        #expect(model.level(for: weapon.weaponId) == level)
+        #expect(military.prefix(3).allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[3]) == false)
+
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: third)
+        #expect(model.level(for: weapon.weaponId) == level - 1)
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: third) == false)
+    }
+
+    /// Max level earns every Military camo and opens the Specials, which
+    /// stay shut until then.
+    @Test func maxLevelEarnsMilitaryAndOpensSpecials() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let (military, special) = split(model, weapon.weaponId)
+        model.setLevel(model.maxLevel(for: weapon) - 1, for: weapon)
+        #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+
+        model.setLevel(model.maxLevel(for: weapon), for: weapon)
+        #expect(military.allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(special.allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        // Open, not earned: Specials still need ticking.
+        #expect(special.allSatisfy { !model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+    }
+
+    /// A prestiged weapon has passed every level, so nothing Military locks
+    /// even though its level has gone back to 1, and a tap changes nothing.
+    @Test func aPrestigedWeaponKeepsEveryMilitaryCamo() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let (military, special) = split(model, weapon.weaponId)
+        model.setLevel(model.maxLevel(for: weapon), for: weapon)
+        model.prestigeUp(weapon)
+        #expect(model.level(for: weapon.weaponId) == 1)
+        #expect(military.allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(special.allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[4])
+        #expect(model.level(for: weapon.weaponId) == 1)
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
+    }
+
+    /// A published level wins over the spread.
+    @Test func aPublishedMilitaryLevelWins() throws {
         let base = try model()
         let weapon = try anyWeapon(base)
         let camos = #"""
             [{"weaponId": \#(weapon.weaponId), "camos": [
                 {"itemId": 0, "name": {"en": "Military 1"}, "tier": 1, "unlockLevel": 5, "children": [], "group": "military"},
-                {"itemId": 8, "name": {"en": "Special 1"}, "tier": 9, "unlockLevel": 5, "children": [], "group": "special"}]}]
+                {"itemId": 8, "name": {"en": "Special 1"}, "tier": 9, "children": [], "group": "special"}]}]
             """#
         let model = try model(["weaponCamos": camos])
         let military = try #require(model.camos(weaponId: weapon.weaponId, mode: mp).first)
-        let special = try #require(model.camos(weaponId: weapon.weaponId, mode: mp).last)
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military) == false)
+        #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military) == 5)
         model.setLevel(5, for: weapon)
         #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military))
-        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military)
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military))
-        // A Special camo is only opened by the level, not earned.
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: special) == false)
-        #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special))
     }
 
     @Test func prestigeNeedsAMaxedStageAndResetsTheLevel() throws {
