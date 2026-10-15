@@ -409,6 +409,21 @@ struct TrackerViewModelTests {
         #expect(Set(all.weapons.map(\.weaponId)).count == all.weapons.count)
     }
 
+    /// Prestige stages with their own max (Prestige Master to 250) don't
+    /// move the Military levels: they stay on the weapon's normal max.
+    @Test func militaryLevelsIgnoreThePrestigeStagesMax() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let last = try #require(split(model, weapon.weaponId).military.last)
+        let before = model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: last)
+        for _ in 0..<model.prestigeStages.count {
+            model.setLevel(model.maxLevel(for: weapon), for: weapon)
+            model.prestigeUp(weapon)
+        }
+        #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: last) == before)
+        #expect(before == weapon.maxLevel)
+    }
+
     /// A published level wins over the spread.
     @Test func aPublishedMilitaryLevelWins() throws {
         let base = try model()

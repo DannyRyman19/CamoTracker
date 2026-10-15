@@ -217,7 +217,9 @@ final class TrackerViewModel: ObservableObject {
         let military = camos(weaponId: weaponId, mode: mode).filter { $0.group == "military" }
         guard let index = military.firstIndex(where: { $0.itemId == camo.itemId }),
               let weapon = weapon(id: weaponId) else { return nil }
-        let max = maxLevel(for: weapon)
+        // The weapon's own normal max, never the current prestige stage's
+        // (Prestige Master runs to 250), so the levels don't move on prestige.
+        let max = weapon.maxLevel
         return Swift.max(1, Int((Double(max) * Double(index + 1) / Double(military.count)).rounded(.up)))
     }
 
