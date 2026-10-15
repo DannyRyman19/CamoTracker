@@ -156,8 +156,9 @@ struct WeaponRow: View {
                             isComplete: { viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) },
                             filledColor: mode.accent,
                             // One diamond per Completionist camo: Gold,
-                            // Platinum, Harmonic Break, final.
-                            masteryTiers: (0...TrackerViewModel.completionistStepCount).map { index in
+                            // Platinum, Harmonic Break, and the final camo
+                            // when the track has one.
+                            masteryTiers: mode.completionistCamos.indices.map { index in
                                 .init(achieved: (highest ?? -1) >= index, color: color(ofCompletionist: index))
                             }
                         )

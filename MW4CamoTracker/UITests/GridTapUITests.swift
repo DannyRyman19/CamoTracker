@@ -112,5 +112,10 @@ final class GridTapUITests: XCTestCase {
         // Plus sits just right of the count.
         count.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)).withOffset(CGVector(dx: 18, dy: 0)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["1/50"].waitForExistence(timeout: 5))
+
+        // The tick box still completes it in one tap, no typing 50.
+        let name = app.staticTexts["Platinum"]
+        name.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 1)).withOffset(CGVector(dx: -22, dy: 0)).tap()
+        XCTAssertTrue(app.descendants(matching: .any)["50/50"].waitForExistence(timeout: 5))
     }
 }

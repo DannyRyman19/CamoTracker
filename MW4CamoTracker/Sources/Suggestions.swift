@@ -42,7 +42,23 @@ extension TrackerViewModel {
                     // The next Completionist camo still to earn, if any.
                     guard let next = (0..<Self.completionistStepCount).first(where: {
                         !isCompletionistComplete(mode: mode, weaponId: weaponId, step: $0)
-                    }) else { continue }
+                    }) else {
+                        // Past Harmonic Break: an open Mastery challenge, if any.
+                        let tiers = appMode.masteryCamos
+                        if let tier = (1...3).first(where: {
+                            !isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: $0)
+                                && isWeaponMasteryAvailable(mode: mode, weaponId: weaponId, tier: $0)
+                        }) {
+                            let camo = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
+                            onCompletionist.append((Suggestion(
+                                weaponId: weaponId,
+                                title: weapon.name.resolved(),
+                                subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), camo.name),
+                                highlight: camo.color
+                            ), Self.completionistStepCount + tier))
+                        }
+                        continue
+                    }
                     onCompletionist.append((Suggestion(
                         weaponId: weaponId,
                         title: weapon.name.resolved(),
@@ -114,19 +130,28 @@ extension TrackerViewModel {
 
         let tiers = appMode.masteryCamos
         let tierCamos = [tiers.tier1, tiers.tier2, tiers.tier3]
+        // A challenge Mastery tier on this weapon.
+        for tier in (1...3).reversed()
+        where !before.weaponMastery[tier - 1] && isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) {
+            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
+                     subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill")
+            break
+        }
         for tier in (1...3).reversed() where !before.mastery[tier - 1] && isMasteryAchieved(mode: mode, tier: tier) {
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
                      subtitle: tier == 3
                         ? "mw4.ui.milestone.tier3_subtitle".localized()
                         : String(format: "mw4.ui.milestone.mastery_subtitle".localized(),
-                                 masteryWeaponsNeeded(mode: mode, tier: tier), completionist.final.name),
+                                 masteryProgress(mode: mode, tier: tier).total,
+                                 masteryUsesChallenges(mode: mode) ? tierCamos[tier - 1].name : appMode.lastCompletionist.name),
                      titleGradient: tierCamos[tier - 1].gradient, icon: tier == 3 ? "star.fill" : "diamond.fill")
             break
         }
 
         if !before.is100Plus, is100PlusAchieved(mode: mode) {
             announce(title: "mw4.ui.milestone.100_plus_title".localized(),
-                     subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(), completionist.final.name),
+                     subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(),
+                                      masteryUsesChallenges(mode: mode) ? tierCamos[2].name : appMode.lastCompletionist.name),
                      titleGradient: .platinum, icon: "crown.fill")
         }
     }

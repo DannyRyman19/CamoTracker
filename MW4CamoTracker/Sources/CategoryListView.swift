@@ -108,9 +108,11 @@ struct CategoryListView: View {
                             var stats: [StatSummaryCard.Stat] = [
                                 .init(value: "\(completeCount)/\(total)", label: "mw4.ui.gold".localized(), ringFraction: fraction(completeCount, total), ringColor: .camoGold),
                                 .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient),
-                                .init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient),
                                 .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient)
                             ]
+                            if mode.hasFinalCamo {
+                                stats.insert(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient), at: 2)
+                            }
                             // Only worth showing once the last Mastery camo is
                             // earned; before then "100%+" is a goal past one
                             // not reached yet.
@@ -235,7 +237,7 @@ private struct WeaponCategoryRow: View {
     private var categoryAccent: Color? {
         guard !category.weapons.isEmpty else { return nil }
         let count = category.weapons.count
-        if viewModel.categoryFinalCount(category, mode: mode.rawValue) == count { return mode.completionist.final.color }
+        if mode.hasFinalCamo, viewModel.categoryFinalCount(category, mode: mode.rawValue) == count { return mode.completionist.final.color }
         if viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2) == count { return mode.completionist.steps[2].color }
         return nil
     }
@@ -300,10 +302,14 @@ enum CategoryStats {
         let harmonicCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2)
         let final = mode.completionist.final
         let finalCount = viewModel.categoryFinalCount(category, mode: mode.rawValue)
-        return [
+        var stats: [StatSummaryCard.Stat] = [
             .init(value: "\(viewModel.goldWeaponCount(in: category, mode: mode.rawValue))/\(count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
-            .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient),
-            .init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient)
+            .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient)
         ]
+        // The final camo's ring, when the track has one.
+        if mode.hasFinalCamo {
+            stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient))
+        }
+        return stats
     }
 }

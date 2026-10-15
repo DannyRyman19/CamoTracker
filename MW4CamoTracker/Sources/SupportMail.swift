@@ -248,11 +248,15 @@ struct ReportIssueMenu: View {
             SupportMail.MasteryRef(name: camo.name, tier: index + 1,
                                    requirement: viewModel.completionistRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, step: index)?.amount)
         }
-        return steps + [
-            .init(name: completionist.final.name, tier: 4, requirement: nil),
-            .init(name: tiers.tier1.name, tier: 5, requirement: nil),
-            .init(name: tiers.tier2.name, tier: 6, requirement: nil),
-            .init(name: tiers.tier3.name, tier: 7, requirement: nil),
+        let final: [SupportMail.MasteryRef] = mode.hasFinalCamo ? [.init(name: completionist.final.name, tier: 4, requirement: nil)] : []
+        let challenges = viewModel.masteryUsesChallenges(mode: mode.rawValue)
+        func masteryAmount(_ tier: Int) -> Int? {
+            challenges ? viewModel.masteryRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier)?.amount : nil
+        }
+        return steps + final + [
+            .init(name: tiers.tier1.name, tier: 5, requirement: masteryAmount(1)),
+            .init(name: tiers.tier2.name, tier: 6, requirement: masteryAmount(2)),
+            .init(name: tiers.tier3.name, tier: 7, requirement: masteryAmount(3)),
         ]
     }
 

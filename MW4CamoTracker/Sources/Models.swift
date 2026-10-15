@@ -126,6 +126,11 @@ struct ModeFile: Codable {
     /// then the final camo. Absent means plain tick boxes under the built-in
     /// names, and a final camo that needs only the weapon's own Harmonic Break.
     var completionist: CompletionistConfig? = nil
+    /// Another mode whose camo list and Completionist progress this mode
+    /// shares ("multiplayer"), for a grind that's one track across modes:
+    /// a Harmonic Break earned anywhere counts everywhere. Mastery stays
+    /// this mode's own. Absent: this mode tracks its own.
+    var trackFrom: String? = nil
 }
 
 /// The `completionist` block of a mode file.
@@ -157,6 +162,9 @@ struct CompletionistStepConfig: Codable {
 /// challenge: a weapon earns it once it has its own Harmonic Break and
 /// `harmonicBreaksNeeded` Harmonic Breaks are done across the mode.
 struct CompletionistFinalConfig: Codable {
+    /// false drops the final camo: the track ends at Harmonic Break, and
+    /// Mastery counts Harmonic Breaks instead. Absent means it's there.
+    var enabled: Bool?
     var name: LocalizedText?
     var colors: [String]?
     var imageURL: String?
@@ -167,6 +175,10 @@ struct CompletionistFinalConfig: Codable {
 /// only replaces what it names, so a file can correct just tier1's threshold
 /// at launch without restating names or colors.
 struct MasteryConfig: Codable {
+    /// "count" (absent): each tier unlocks for the mode once `weaponsNeeded`
+    /// weapons have the last Completionist camo. "challenge": each tier is a
+    /// per-weapon challenge, like Platinum, opened by its `unlock` gate.
+    var unlock: String?
     var tier1: MasteryTierConfig?
     var tier2: MasteryTierConfig?
     var tier3: MasteryTierConfig?
@@ -181,6 +193,14 @@ struct MasteryTierConfig: Codable {
     /// the animated gradient.
     var colors: [String]?
     var imageURL: String?
+    /// "challenge" Mastery only: the tier's challenge, and per weapon class.
+    var requirement: Requirement?
+    var byCategory: [String: Requirement]?
+    /// "challenge" Mastery only: what opens this tier on a weapon beyond the
+    /// tier before on it (or, for tier 1, its last Completionist camo):
+    /// "weapon", "category" or "mode". Absent: tier 1 "mode" (the whole
+    /// launch roster), later tiers "weapon".
+    var unlock: String?
 }
 
 struct WeaponCamoEntry: Codable, Identifiable {

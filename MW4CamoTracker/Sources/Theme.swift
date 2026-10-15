@@ -76,7 +76,9 @@ enum AppMode: String, CaseIterable, Identifiable {
     /// Harmonic Break, then the final camo. Names and colors come from the
     /// mode file's `completionist` block where it sets them.
     var completionist: (steps: [MasteryCamo], final: MasteryCamo) {
-        let config = CompletionistOverrides.byMode[rawValue]
+        // A mode sharing another's track shows that track's camos.
+        let source = AppMode(rawValue: TrackSharing.byMode[rawValue] ?? rawValue) ?? self
+        let config = CompletionistOverrides.byMode[source.rawValue]
         let builtIn = [
             MasteryCamo(nameKey: "mw4.ui.completionist.gold", color: .camoGold, gradient: .gold),
             MasteryCamo(nameKey: "mw4.ui.completionist.platinum", color: .camoPlatinum, gradient: .platinum),
@@ -89,10 +91,27 @@ enum AppMode: String, CaseIterable, Identifiable {
         // Multiplayer's is Divergence; the other modes' haven't been shown,
         // so they read "Final camo" until their mode file names them.
         let builtInFinal = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence,
-                                       nameOverride: self == .multiplayer ? LocalizedText("Divergence") : nil)
+                                       nameOverride: source == .multiplayer ? LocalizedText("Divergence") : nil)
         let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors, imageURL: config?.final?.imageURL)
         return (steps, final)
     }
+}
+
+extension AppMode {
+    /// Whether the track has the final camo after Harmonic Break.
+    var hasFinalCamo: Bool {
+        let source = TrackSharing.byMode[rawValue] ?? rawValue
+        return CompletionistOverrides.byMode[source]?.final?.enabled ?? true
+    }
+
+    /// Gold, Platinum, Harmonic Break, and the final camo when there is one.
+    var completionistCamos: [MasteryCamo] {
+        let track = completionist
+        return track.steps + (hasFinalCamo ? [track.final] : [])
+    }
+
+    /// The end of the Completionist track: what Mastery builds on.
+    var lastCompletionist: MasteryCamo { completionistCamos.last ?? completionist.final }
 }
 
 /// One named camo with its colors: a Mastery tier or a Completionist step.
@@ -140,6 +159,19 @@ struct MasteryCamo {
 /// publishes the new `modes`, so the redraw that follows already sees them.
 enum MasteryOverrides {
     nonisolated(unsafe) static var byMode: [String: MasteryConfig] = [:]
+}
+
+/// Which modes share another's camo track (`trackFrom`), kept the same way
+/// as `MasteryOverrides`. A name that isn't a loaded mode, or a mode that
+/// itself shares, is ignored rather than chained.
+enum TrackSharing {
+    nonisolated(unsafe) static var byMode: [String: String] = [:]
+
+    static func update(from files: [String: ModeFile]) {
+        byMode = files.compactMapValues(\.trackFrom).filter { mode, source in
+            source != mode && files[source] != nil && files[source]?.trackFrom == nil
+        }
+    }
 }
 
 /// The `completionist` block of each loaded mode file, kept the same way as

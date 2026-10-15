@@ -100,7 +100,7 @@ struct WeaponDetailView: View {
         where group.camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
             return .camos(index)
         }
-        return viewModel.hasFinalCamo(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
+        return viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
     }
 
     private var partPicker: some View {
@@ -137,10 +137,12 @@ struct WeaponDetailView: View {
                 ForEach(0..<TrackerViewModel.completionistStepCount, id: \.self) { step in
                     CompletionistStepRow(mode: mode, weapon: weapon, step: step)
                 }
-                FinalCamoRow(mode: mode, weapon: weapon)
+                if mode.hasFinalCamo {
+                    FinalCamoRow(mode: mode, weapon: weapon)
+                }
             case .mastery:
                 ForEach(1...3, id: \.self) { tier in
-                    MasteryModeRow(mode: mode, tier: tier)
+                    masteryRow(tier)
                 }
             }
         }
@@ -242,14 +244,26 @@ struct WeaponDetailView: View {
         }
 
         Section(completionistTitle) {
-            tileRows((0..<TrackerViewModel.completionistStepCount).map { step in
+            let steps = (0..<TrackerViewModel.completionistStepCount).map { step in
                 AnyView(CompletionistStepRow(mode: mode, weapon: weapon, step: step))
-            } + [AnyView(FinalCamoRow(mode: mode, weapon: weapon))], columns: masteryInOneRow ? 4 : columns)
+            }
+            let final = mode.hasFinalCamo ? [AnyView(FinalCamoRow(mode: mode, weapon: weapon))] : []
+            tileRows(steps + final, columns: masteryInOneRow ? steps.count + final.count : columns)
         }
 
         Section(masteryTitle) {
-            tileRows((1...3).map { tier in AnyView(MasteryModeRow(mode: mode, tier: tier)) },
+            tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
                      columns: masteryInOneRow ? 3 : columns)
+        }
+    }
+
+    /// A Mastery tier: this weapon's own challenge when the mode's Mastery
+    /// is challenges, else the mode-wide count.
+    @ViewBuilder private func masteryRow(_ tier: Int) -> some View {
+        if viewModel.masteryUsesChallenges(mode: mode.rawValue) {
+            MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        } else {
+            MasteryModeRow(mode: mode, tier: tier)
         }
     }
 
@@ -464,8 +478,66 @@ private struct MasteryModeRow: View {
             achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
             color: camo.color,
             gradient: camo.gradient,
-            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.completionist.final.name),
+            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.lastCompletionist.name),
             imageURL: camo.imageURL
+        )
+    }
+}
+
+/// A Mastery tier as this weapon's own challenge (`mastery.unlock` is
+/// "challenge"), ticked and counted like Platinum.
+private struct MasteryChallengeRow: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    let tier: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camos: [MasteryCamo] {
+        let tiers = mode.masteryCamos
+        return [tiers.tier1, tiers.tier2, tiers.tier3]
+    }
+    private var camo: MasteryCamo { camos[tier - 1] }
+    /// What this tier builds on: the last Completionist camo, or the tier before.
+    private var before: MasteryCamo { tier == 1 ? mode.lastCompletionist : camos[tier - 2] }
+
+    private var item: ChallengeItem {
+        ChallengeItem(itemId: -(10 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
+                      tier: nil, unlockLevel: nil,
+                      requirement: viewModel.masteryRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier),
+                      children: [])
+    }
+
+    private var lockedReason: String {
+        let ownDone = tier == 1
+            ? viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId)
+            : viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier - 1)
+        guard ownDone else {
+            return String(format: "mw4.ui.completionist.locked_previous".localized(), before.name)
+        }
+        switch viewModel.masteryGate(mode: mode.rawValue, tier: tier) {
+        case .weapon:
+            return "mw4.ui.locked".localized()
+        case .category:
+            guard let category = viewModel.category(containingWeaponId: weapon.weaponId) else { return "mw4.ui.locked".localized() }
+            let progress = viewModel.masteryGateProgress(mode: mode.rawValue, tier: tier, category: category)
+            return String(format: "mw4.ui.completionist.locked_class".localized(), before.name, progress.total, category.name.resolved(), progress.done)
+        case .mode:
+            let progress = viewModel.masteryGateProgress(mode: mode.rawValue, tier: tier)
+            return String(format: "mw4.ui.completionist.locked_mode".localized(), before.name, progress.total, progress.done)
+        }
+    }
+
+    var body: some View {
+        ChallengeRow(
+            item: item,
+            accent: camo.color,
+            amount: viewModel.weaponMasteryAmount(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier),
+            isDone: viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier),
+            isAvailable: viewModel.isWeaponMasteryAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier),
+            lockedReason: lockedReason,
+            titleGradient: camo.gradient,
+            onToggle: { viewModel.toggleWeaponMastery(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier) },
+            onSetAmount: { viewModel.setWeaponMasteryAmount(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier, amount: $0) }
         )
     }
 }

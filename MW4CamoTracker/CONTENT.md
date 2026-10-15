@@ -140,10 +140,29 @@ The publish script enforces the first two.
   Multiplayer): `name`, `colors`, `harmonicBreaksNeeded` (Harmonic Breaks
   across the mode before any weapon with its own gets it; absent means the
   weapon's own is enough).
-- `mastery` (optional): the mode's three Mastery camos, unlocked one after
-  another as weapons earn the final Completionist camo. Each of `tier1`,
-  `tier2`, `tier3` may set `name`, `colors` and `weaponsNeeded`; absent
-  counts are a third, two thirds and all of the launch roster.
+- `trackFrom` (optional): another mode's name (`"multiplayer"`). This mode
+  then uses that mode's camo list, Completionist camos and progress, so the
+  grind is one track across modes (a Harmonic Break earned in Warzone counts
+  in Multiplayer too). Mastery stays this mode's own. Absent: its own track.
+- `completionist.final.enabled`: `false` drops the final camo, so the track
+  ends at Harmonic Break and Mastery builds on Harmonic Break instead.
+- `mastery` (optional): the mode's three Mastery camos. `unlock` picks how:
+  - `"count"` (default): one tier at a time for the mode, once
+    `weaponsNeeded` weapons have the last Completionist camo (absent counts
+    are a third, two thirds and all of the launch roster).
+  - `"challenge"`: each tier is a per-weapon challenge like Platinum: set
+    `requirement` and/or `byCategory` on `tier1`..`tier3`, and `unlock`
+    (`weapon`, `category` or `mode`) for what opens it beyond the tier
+    before on the weapon. Defaults: tier 1 `mode` (the last Completionist
+    camo on the whole launch roster), tiers 2 and 3 `weapon`.
+  Each tier may also set `name`, `colors` and `imageURL`.
+
+Example, the "Harmonic Break on everything opens the Mastery challenges,
+one shared grind" reading: in `warzone.json` and `dmz.json` set
+`"trackFrom": "multiplayer"`; in every mode file set
+`"completionist": {"final": {"enabled": false}}` (Multiplayer: add it to
+its existing block) and `"mastery": {"unlock": "challenge", "tier1":
+{"requirement": {...}}, ...}`.
 
 `manifest.json` is generated. Do not edit it by hand. Its `notification`
 block is what the publish flags write:
@@ -161,7 +180,8 @@ or `"notification": { "silent": true }`.
 
 - A new mode, or a new kind of content the app has no screen for.
 - New interface text (anything in `Localizable.strings`).
-- A fourth Mastery tier or Completionist step, or a new kind of unlock rule.
+- A fourth Mastery tier or Completionist step, or an unlock rule beyond the
+  switches above.
 - New built-in notification wording. (Custom wording per update does not.)
 
 When an app update does ship, the `Resources/` copies go out inside it as

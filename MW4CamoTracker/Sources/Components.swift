@@ -782,7 +782,7 @@ enum WeaponFilter: String, CaseIterable, Hashable {
         case .onMilitary: return "mw4.ui.filter.on_military".localized()
         case .onSpecial: return "mw4.ui.filter.on_special".localized()
         case .inCompletionist: return "mw4.ui.filter.in_completionist".localized()
-        case .hasFinal: return String(format: "mw4.ui.filter.has_final".localized(), mode.completionist.final.name)
+        case .hasFinal: return String(format: "mw4.ui.filter.has_final".localized(), mode.lastCompletionist.name)
         }
     }
 }
