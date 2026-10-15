@@ -34,6 +34,11 @@ struct MW4CamoTrackerApp: App {
             if newPhase == .background {
                 BackgroundRefreshCoordinator.scheduleNext()
             }
+            // Coming back to the app checks again, so an update published
+            // while it sat in the background shows without a relaunch.
+            if newPhase == .active, !viewModel.isRefreshing {
+                Task { await viewModel.refresh() }
+            }
         }
     }
 }

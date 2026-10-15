@@ -87,12 +87,12 @@ final class DataService: Sendable {
         knownCatalogVersion: String?,
         knownModeVersions: [String: String]
     ) async throws -> (catalog: WeaponCatalog?, modes: [String: ModeFile], notification: Manifest.Announcement?) {
-        let (data, _) = try await session.data(from: baseURL.appendingPathComponent("manifest.json"))
+        let data = try await fetch("manifest.json")
         let manifest = try JSONDecoder().decode(Manifest.self, from: data)
 
         var newCatalog: WeaponCatalog?
         if manifest.catalog.version != knownCatalogVersion {
-            let (catalogData, _) = try await session.data(from: baseURL.appendingPathComponent(manifest.catalog.path))
+            let catalogData = try await fetch(manifest.catalog.path)
             newCatalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
             try catalogData.write(to: cacheFileURL(name: "weapons"), options: .atomic)
         }
@@ -100,12 +100,24 @@ final class DataService: Sendable {
         var updatedModes: [String: ModeFile] = [:]
         for (mode, entry) in manifest.modes {
             guard entry.version != knownModeVersions[mode] else { continue }
-            let (modeData, _) = try await session.data(from: baseURL.appendingPathComponent(entry.path))
+            let modeData = try await fetch(entry.path)
             let modeFile = try JSONDecoder().decode(ModeFile.self, from: modeData)
             try modeData.write(to: cacheFileURL(name: mode), options: .atomic)
             updatedModes[mode] = modeFile
         }
         return (newCatalog, updatedModes, manifest.notification)
+    }
+
+    /// Always asks the server. jsDelivr sends `max-age=604800`, and a plain
+    /// `session.data(from:)` honours it, so a phone that had fetched the
+    /// manifest once kept reading its own week-old copy and missed every
+    /// update published in between. The files are tiny; the CDN still
+    /// answers from its edge cache, so this costs nothing.
+    private func fetch(_ path: String) async throws -> Data {
+        var request = URLRequest(url: baseURL.appendingPathComponent(path))
+        request.cachePolicy = .reloadIgnoringLocalCacheData
+        let (data, _) = try await session.data(for: request)
+        return data
     }
 
     private func cacheFileURL(name: String) -> URL {
