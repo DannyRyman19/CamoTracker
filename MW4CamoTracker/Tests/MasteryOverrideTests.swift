@@ -173,6 +173,27 @@ struct TrackerViewModelTests {
         #expect(model.isCompletionistAvailable(mode: mp, weaponId: other, step: 1) == false)
     }
 
+    /// Platinum counts against the class's launch roster, so a DLC weapon
+    /// can stand in for a launch one: with only one launch Assault Rifle,
+    /// Gold on any one Assault Rifle opens Platinum for the class.
+    @Test func platinumCountsTheClassLaunchRoster() throws {
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let seed = try #require(Bundle.main.url(forResource: "weapons", withExtension: "json"))
+        var catalog = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: seed)) as? [String: Any])
+        catalog["baseWeaponCount"] = 1
+        try JSONSerialization.data(withJSONObject: catalog).write(to: cache.appendingPathComponent("weapons.json"))
+        defer { try? FileManager.default.removeItem(at: cache.appendingPathComponent("weapons.json")) }
+
+        let model = try model()
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 })
+        try #require(rifles.weapons.count > 1)
+        let dlcStandIn = rifles.weapons[1].weaponId
+        finishCamos(model, dlcStandIn)
+        model.toggleCompletionist(mode: mp, weaponId: dlcStandIn, step: 0)
+        #expect(model.completionistCategoryGateProgress(rifles, mode: mp, step: 1) == (1, 1))
+        #expect(model.isCompletionistAvailable(mode: mp, weaponId: dlcStandIn, step: 1))
+    }
+
     /// Harmonic Break opens once the whole launch roster has Platinum.
     @Test func harmonicBreakWaitsForPlatinumOnEveryWeapon() throws {
         let model = try model()
@@ -265,6 +286,23 @@ struct TrackerViewModelTests {
         harmonicBreak(model, ids[1])
         harmonicBreak(model, ids[2])
         #expect(model.isMasteryAchieved(mode: mp, tier: 3))
+    }
+
+    /// Stats counts each Completionist camo across the mode, and a class's
+    /// full-track figure moves with Completionist, not just its camo lists.
+    @Test func statsCountTheCompletionistTrack() throws {
+        let model = try model(["completionist": #"{"final": {"harmonicBreaksNeeded": 0}}"#])
+        let category = try #require(model.catalog?.categories.first)
+        let weapon = try #require(category.weapons.first).weaponId
+        finishCamos(model, weapon)
+        let afterCamos = model.categoryTrueCompletionFraction(category, mode: mp)
+        #expect(model.completionistCount(mode: mp, step: 0) == 0)
+
+        harmonicBreak(model, weapon)
+        #expect(model.completionistCount(mode: mp, step: 0) == 1)
+        #expect(model.completionistCount(mode: mp, step: 2) == 1)
+        #expect(model.completionistCount(mode: mp, step: TrackerViewModel.completionistStepCount) == 1)
+        #expect(model.categoryTrueCompletionFraction(category, mode: mp) > afterCamos)
     }
 
     /// A Military camo with an unlock level and no challenge is earned by the

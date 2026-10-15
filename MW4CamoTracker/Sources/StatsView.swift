@@ -157,6 +157,18 @@ private struct ModeStatsCard: View {
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
     private var completion: Double { viewModel.trueCompletionFraction(mode: mode.rawValue) }
 
+    /// Gold, Platinum, Harmonic Break and the final camo: how many of the
+    /// mode's weapons have each.
+    private var completionistNodes: [MasteryTrack.Node] {
+        let completionist = mode.completionist
+        let total = viewModel.totalWeaponCount
+        return (completionist.steps + [completionist.final]).enumerated().map { index, camo in
+            let done = viewModel.completionistCount(mode: mode.rawValue, step: index)
+            return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
+                         achieved: total > 0 && done >= total, detail: "\(done)/\(total)")
+        }
+    }
+
     /// The mode's three Mastery camos, each with how many weapons have the
     /// final Completionist camo out of the count it needs.
     private var masteryNodes: [MasteryTrack.Node] {
@@ -198,7 +210,15 @@ private struct ModeStatsCard: View {
                     )
             }
 
-            MasteryTrack(nodes: masteryNodes)
+            VStack(spacing: 8) {
+                trackTitle("mw4.ui.section.completionist".localized())
+                MasteryTrack(nodes: completionistNodes)
+            }
+
+            VStack(spacing: 8) {
+                trackTitle("mw4.ui.section.mastery".localized())
+                MasteryTrack(nodes: masteryNodes)
+            }
 
             if !weaponCategories.isEmpty || !objectiveCategories.isEmpty {
                 // A manual toggle instead of `DisclosureGroup` — inside a
@@ -230,8 +250,11 @@ private struct ModeStatsCard: View {
                         ForEach(weaponCategories) { category in
                             statRow(
                                 name: category.name.resolved(),
-                                fraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue),
-                                count: "\(viewModel.goldWeaponCount(in: category, mode: mode.rawValue))/\(category.weapons.count)"
+                                // The whole track: camos and Completionist,
+                                // so a class at Divergence reads as further
+                                // on than one that has only done its camos.
+                                fraction: viewModel.categoryTrueCompletionFraction(category, mode: mode.rawValue),
+                                count: "\(viewModel.categoryFinalCount(category, mode: mode.rawValue))/\(category.weapons.count) \(mode.completionist.final.name)"
                             )
                         }
                         ForEach(objectiveCategories) { category in
@@ -247,6 +270,13 @@ private struct ModeStatsCard: View {
         }
         .padding(14)
         .borderedCard(accent: mode.accent)
+    }
+
+    private func trackTitle(_ title: String) -> some View {
+        Text(title)
+            .font(.system(size: 12, weight: .semibold))
+            .foregroundStyle(Color.appInkMuted)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func statRow(name: String, fraction: Double, count: String? = nil) -> some View {

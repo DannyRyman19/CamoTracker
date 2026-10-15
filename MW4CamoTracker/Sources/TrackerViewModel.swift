@@ -389,6 +389,17 @@ final class TrackerViewModel: ObservableObject {
         return (min(done, total), total)
     }
 
+    /// For a "category" gate: weapons in the class with the step before, out
+    /// of how many the class had at launch. Launch weapons are the ones with
+    /// ids below `baseWeaponCount` (ids are handed out in order), so a DLC
+    /// weapon added later can stand in for a launch one left unfinished.
+    func completionistCategoryGateProgress(_ category: WeaponCategory, mode: String, step: Int) -> (done: Int, total: Int) {
+        let launch = category.weapons.filter { $0.weaponId < baseWeaponCount }.count
+        let total = max(1, launch)
+        let done = category.weapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
+        return (min(done, total), total)
+    }
+
     /// Open once this weapon has the step before (its camo list for Gold)
     /// and the gate's wider condition holds. Earned stays open.
     func isCompletionistAvailable(mode: String, weaponId: Int, step: Int) -> Bool {
@@ -399,7 +410,8 @@ final class TrackerViewModel: ObservableObject {
             return true
         case .category:
             guard let category = category(containingWeaponId: weaponId) else { return true }
-            return category.weapons.allSatisfy { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }
+            let progress = completionistCategoryGateProgress(category, mode: mode, step: step)
+            return progress.done >= progress.total
         case .mode:
             let progress = completionistModeGateProgress(mode: mode, step: step)
             return progress.done >= progress.total
@@ -545,17 +557,31 @@ final class TrackerViewModel: ObservableObject {
     /// from the current catalog every call, so new weapons count the moment
     /// a content update adds them.
     func trueCompletionFraction(mode: String) -> Double {
-        guard let categories = catalog?.categories, !categories.isEmpty else { return 0 }
+        fullTrackFraction(of: catalog?.categories.flatMap(\.weapons) ?? [], mode: mode)
+    }
+
+    /// The same full-track measure for one weapon class, for the Stats
+    /// breakdown: its camo lists and its Completionist camos together.
+    func categoryTrueCompletionFraction(_ category: WeaponCategory, mode: String) -> Double {
+        fullTrackFraction(of: category.weapons, mode: mode)
+    }
+
+    /// How many weapons in this mode have this Completionist step, or the
+    /// final camo for `step == completionistStepCount`.
+    func completionistCount(mode: String, step: Int) -> Int {
+        guard step < Self.completionistStepCount else { return finalCamoCount(mode: mode) }
+        return allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: step) }.count
+    }
+
+    private func fullTrackFraction(of weapons: [WeaponEntry], mode: String) -> Double {
         var done = 0
         var total = 0
-        for category in categories {
-            for weapon in category.weapons {
-                let leaves = camos(weaponId: weapon.weaponId, mode: mode).flatMap(leafItems)
-                total += leaves.count + Self.completionistStepCount + 1
-                done += leaves.filter { isCamoComplete(mode: mode, weaponId: weapon.weaponId, camo: $0) }.count
-                done += (0..<Self.completionistStepCount).filter { isCompletionistComplete(mode: mode, weaponId: weapon.weaponId, step: $0) }.count
-                if hasFinalCamo(mode: mode, weaponId: weapon.weaponId) { done += 1 }
-            }
+        for weapon in weapons {
+            let leaves = camos(weaponId: weapon.weaponId, mode: mode).flatMap(leafItems)
+            total += leaves.count + Self.completionistStepCount + 1
+            done += leaves.filter { isCamoComplete(mode: mode, weaponId: weapon.weaponId, camo: $0) }.count
+            done += (0..<Self.completionistStepCount).filter { isCompletionistComplete(mode: mode, weaponId: weapon.weaponId, step: $0) }.count
+            if hasFinalCamo(mode: mode, weaponId: weapon.weaponId) { done += 1 }
         }
         guard total > 0 else { return 0 }
         return Double(done) / Double(total)

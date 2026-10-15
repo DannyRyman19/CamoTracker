@@ -86,8 +86,11 @@ enum AppMode: String, CaseIterable, Identifiable {
             let step = config?.steps.flatMap { $0.indices.contains(index) ? $0[index] : nil }
             return camo.overriding(name: step?.name, colors: step?.colors)
         }
-        let final = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence)
-            .overriding(name: config?.final?.name, colors: config?.final?.colors)
+        // Multiplayer's is Divergence; the other modes' haven't been shown,
+        // so they read "Final camo" until their mode file names them.
+        let builtInFinal = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence,
+                                       nameOverride: self == .multiplayer ? LocalizedText("Divergence") : nil)
+        let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors)
         return (steps, final)
     }
 }

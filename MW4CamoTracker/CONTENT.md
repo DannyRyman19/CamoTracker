@@ -131,8 +131,9 @@ The publish script enforces the first two.
   `steps` is Gold, Platinum, Harmonic Break in order; each may set `name`,
   `colors`, `requirement` (the default challenge), `byCategory` (a challenge
   per `categoryId`, as a string key) and `unlock`: `"weapon"` (opens once
-  this weapon has the step before), `"category"` (once every weapon in its
-  class has it) or `"mode"` (once the launch roster has it). Defaults:
+  this weapon has the step before), `"category"` (once as many weapons in
+  its class have it as the class had at launch, so a DLC weapon can stand
+  in) or `"mode"` (once the launch roster has it). Defaults:
   Gold `weapon`, Platinum `category`, Harmonic Break `mode`. A step with no
   challenge is a tick box. `final` is the fourth camo (Divergence in
   Multiplayer): `name`, `colors`, `harmonicBreaksNeeded` (Harmonic Breaks
