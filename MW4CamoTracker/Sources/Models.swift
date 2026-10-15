@@ -139,6 +139,8 @@ struct CompletionistConfig: Codable {
 struct CompletionistStepConfig: Codable {
     var name: LocalizedText?
     var colors: [String]?
+    /// The camo's picture, shown beside its name like a camo-list camo's.
+    var imageURL: String?
     /// The challenge for every weapon category without its own below.
     var requirement: Requirement?
     /// Per weapon category, keyed by `categoryId` as a string ("0").
@@ -157,6 +159,7 @@ struct CompletionistStepConfig: Codable {
 struct CompletionistFinalConfig: Codable {
     var name: LocalizedText?
     var colors: [String]?
+    var imageURL: String?
     var harmonicBreaksNeeded: Int?
 }
 
@@ -177,6 +180,7 @@ struct MasteryTierConfig: Codable {
     /// "#RRGGBB" hex; the first is the badge/pip swatch, all of them together
     /// the animated gradient.
     var colors: [String]?
+    var imageURL: String?
 }
 
 struct WeaponCamoEntry: Codable, Identifiable {

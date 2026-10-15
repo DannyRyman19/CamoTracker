@@ -367,7 +367,7 @@ private struct CompletionistStepRow: View {
         ChallengeItem(
             itemId: -(step + 1),
             name: LocalizedText(camo.name),
-            imageURL: nil,
+            imageURL: camo.imageURL,
             tier: nil,
             unlockLevel: nil,
             requirement: viewModel.completionistRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
@@ -440,7 +440,7 @@ private struct FinalCamoRow: View {
     }
 
     var body: some View {
-        StatusRow(name: camo.name, achieved: achieved, color: camo.color, gradient: camo.gradient, detail: detail)
+        StatusRow(name: camo.name, achieved: achieved, color: camo.color, gradient: camo.gradient, detail: detail, imageURL: camo.imageURL)
     }
 }
 
@@ -464,7 +464,8 @@ private struct MasteryModeRow: View {
             achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
             color: camo.color,
             gradient: camo.gradient,
-            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.completionist.final.name)
+            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.completionist.final.name),
+            imageURL: camo.imageURL
         )
     }
 }
@@ -477,6 +478,7 @@ private struct StatusRow: View {
     let color: Color
     let gradient: [Color]
     let detail: String
+    var imageURL: String? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -484,6 +486,12 @@ private struct StatusRow: View {
                 .font(.system(size: achieved ? 21 : 17))
                 .foregroundStyle(achieved ? color : Color.appInkMuted.opacity(0.5))
                 .frame(width: 21, height: 21)
+
+            // Same picture slot as the camo list's rows.
+            if imageURL != nil {
+                CamoThumbnail(urlString: imageURL, size: 34)
+                    .opacity(achieved ? 1 : 0.4)
+            }
 
             VStack(alignment: .leading, spacing: 4) {
                 if achieved {

@@ -84,13 +84,13 @@ enum AppMode: String, CaseIterable, Identifiable {
         ]
         let steps = builtIn.enumerated().map { index, camo in
             let step = config?.steps.flatMap { $0.indices.contains(index) ? $0[index] : nil }
-            return camo.overriding(name: step?.name, colors: step?.colors)
+            return camo.overriding(name: step?.name, colors: step?.colors, imageURL: step?.imageURL)
         }
         // Multiplayer's is Divergence; the other modes' haven't been shown,
         // so they read "Final camo" until their mode file names them.
         let builtInFinal = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence,
                                        nameOverride: self == .multiplayer ? LocalizedText("Divergence") : nil)
-        let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors)
+        let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors, imageURL: config?.final?.imageURL)
         return (steps, final)
     }
 }
@@ -108,25 +108,28 @@ struct MasteryCamo {
     /// Mastery only: weapons with the final Completionist camo this tier
     /// needs, when the mode file sets it.
     var weaponsNeeded: Int? = nil
+    /// The camo's picture, when its mode file gives one.
+    var imageURL: String? = nil
     var name: String { nameOverride?.resolved() ?? nameKey.localized() }
 
     /// This camo with a mode JSON's `MasteryTierConfig` laid over it — only
     /// the fields the config actually sets change.
     func applying(_ config: MasteryTierConfig?) -> MasteryCamo {
         guard let config else { return self }
-        var camo = overriding(name: config.name, colors: config.colors)
+        var camo = overriding(name: config.name, colors: config.colors, imageURL: config.imageURL)
         camo.weaponsNeeded = config.weaponsNeeded.map { max(1, $0) } ?? weaponsNeeded
         return camo
     }
 
-    func overriding(name: LocalizedText?, colors: [String]?) -> MasteryCamo {
+    func overriding(name: LocalizedText?, colors: [String]?, imageURL: String? = nil) -> MasteryCamo {
         let parsed = (colors ?? []).compactMap(Color.init(hex:))
         return MasteryCamo(
             nameKey: nameKey,
             color: parsed.first ?? color,
             gradient: parsed.isEmpty ? gradient : parsed,
             nameOverride: name ?? nameOverride,
-            weaponsNeeded: weaponsNeeded
+            weaponsNeeded: weaponsNeeded,
+            imageURL: imageURL ?? self.imageURL
         )
     }
 }

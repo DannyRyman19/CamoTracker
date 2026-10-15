@@ -134,7 +134,8 @@ The publish script enforces the first two.
   this weapon has the step before), `"category"` (once as many weapons in
   its class have it as the class had at launch, so a DLC weapon can stand
   in) or `"mode"` (once the launch roster has it). Defaults:
-  Gold `weapon`, Platinum `category`, Harmonic Break `mode`. A step with no
+  Gold `weapon`, Platinum `category`, Harmonic Break `mode`. Every step,
+  `final` and Mastery tier can also take an `imageURL` for its picture. A step with no
   challenge is a tick box. `final` is the fourth camo (Divergence in
   Multiplayer): `name`, `colors`, `harmonicBreaksNeeded` (Harmonic Breaks
   across the mode before any weapon with its own gets it; absent means the
