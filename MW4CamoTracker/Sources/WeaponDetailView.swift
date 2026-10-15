@@ -77,34 +77,71 @@ struct WeaponDetailView: View {
         "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())"
     }
 
+    /// The parts of this screen the picker switches between: each camo
+    /// group (Military, Special), then Completionist, then Mastery.
+    private enum Part: Hashable {
+        case camos(Int)
+        case completionist
+        case mastery
+    }
+
+    private var parts: [(part: Part, title: String)] {
+        camoGroups.indices.map { (Part.camos($0), camoGroups[$0].title) }
+            + [(.completionist, "mw4.ui.section.completionist".localized()),
+               (.mastery, "mw4.ui.section.mastery".localized())]
+    }
+
+    /// Picked by hand, else the first part with something still to do.
+    @State private var pickedPart: Part?
+
+    private var shownPart: Part {
+        if let pickedPart, parts.contains(where: { $0.part == pickedPart }) { return pickedPart }
+        for (index, group) in camoGroups.enumerated()
+        where group.camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
+            return .camos(index)
+        }
+        return viewModel.hasFinalCamo(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
+    }
+
+    private var partPicker: some View {
+        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { pickedPart = $0 })) {
+            ForEach(parts, id: \.part) { entry in
+                Text(entry.title).tag(entry.part)
+            }
+        }
+        .pickerStyle(.segmented)
+        .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+
+    /// iPhone: one part at a time, chosen with the picker above it, rather
+    /// than Military, Special, Completionist and Mastery in one long scroll.
     @ViewBuilder private var challengeSections: some View {
         if camos.isEmpty {
             noCamoData
             .listRowBackground(Color.appSurface)
-        } else {
-            ForEach(camoGroups, id: \.title) { group in
-                Section(group.title) {
-                    ForEach(group.camos) { camo in
-                        camoRow(camo)
-                    }
+        }
+
+        partPicker
+
+        Section {
+            switch shownPart {
+            case .camos(let index):
+                ForEach(camoGroups[index].camos) { camo in
+                    camoRow(camo)
                 }
-                .listRowBackground(Color.appSurface)
-            }
-        }
-
-        // Finishing the camo list above opens this weapon's Completionist
-        // camos, and those feed the mode's Mastery camos.
-        Section(completionistTitle) {
-            ForEach(0..<TrackerViewModel.completionistStepCount, id: \.self) { step in
-                CompletionistStepRow(mode: mode, weapon: weapon, step: step)
-            }
-            FinalCamoRow(mode: mode, weapon: weapon)
-        }
-        .listRowBackground(Color.appSurface)
-
-        Section(masteryTitle) {
-            ForEach(1...3, id: \.self) { tier in
-                MasteryModeRow(mode: mode, tier: tier)
+            case .completionist:
+                // Finishing the camo list opens this weapon's Completionist
+                // camos, and those feed the mode's Mastery camos.
+                ForEach(0..<TrackerViewModel.completionistStepCount, id: \.self) { step in
+                    CompletionistStepRow(mode: mode, weapon: weapon, step: step)
+                }
+                FinalCamoRow(mode: mode, weapon: weapon)
+            case .mastery:
+                ForEach(1...3, id: \.self) { tier in
+                    MasteryModeRow(mode: mode, tier: tier)
+                }
             }
         }
         .listRowBackground(Color.appSurface)
