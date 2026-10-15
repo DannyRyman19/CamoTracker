@@ -285,20 +285,24 @@ struct CamoPipRow: View {
     let filledColor: Color
     let masteryTiers: [MasteryTier]
 
+    /// MW4 has 11 camos a gun before its Completionist diamonds, so a long
+    /// row packs tighter to leave the weapon's name its room.
+    private var dense: Bool { camos.count > 8 }
+
     var body: some View {
-        HStack(spacing: 3) {
+        HStack(spacing: dense ? 2 : 3) {
             ForEach(camos) { camo in
                 Circle()
                     .fill(isComplete(camo) ? filledColor : Color.clear)
                     .overlay(Circle().strokeBorder(Color.appInkMuted.opacity(0.5), lineWidth: isComplete(camo) ? 0 : 1))
-                    .frame(width: 6, height: 6)
+                    .frame(width: dense ? 5 : 6, height: dense ? 5 : 6)
                     .scaleEffect(isComplete(camo) ? 1 : 0.85)
                     .animation(.spring(response: 0.3, dampingFraction: 0.5), value: isComplete(camo))
             }
             ForEach(masteryTiers.indices, id: \.self) { index in
                 let tier = masteryTiers[index]
                 Image(systemName: tier.achieved ? "diamond.fill" : "diamond")
-                    .font(.system(size: 9, weight: .bold))
+                    .font(.system(size: dense ? 7.5 : 9, weight: .bold))
                     .foregroundStyle(tier.achieved ? tier.color : Color.appInkMuted.opacity(0.5))
                     .padding(.leading, index == 0 ? 1 : 0)
                     .animation(.spring(response: 0.3, dampingFraction: 0.5), value: tier.achieved)
@@ -599,6 +603,9 @@ struct ChallengeRow: View {
     /// the plain per-weapon camo tiers, same "shimmer means earned" rule as
     /// everywhere else this appears.
     var titleGradient: [Color]? = nil
+    /// The line under the name for a camo with no challenge sentence, once
+    /// it's open ("Earned at weapon level 12.").
+    var detail: String? = nil
     let onToggle: () -> Void
     let onSetAmount: (Int) -> Void
 
@@ -631,6 +638,12 @@ struct ChallengeRow: View {
                 }
                 if let requirement = item.requirement {
                     Text(isAvailable ? requirement.description.resolved() : (lockedReason ?? "mw4.ui.locked".localized()))
+                        .font(.system(size: 13))
+                        .foregroundStyle(Color.appInkMuted)
+                } else if let line = isAvailable ? detail : lockedReason {
+                    // No challenge to describe: say what opens it while
+                    // locked, and how it was earned once open.
+                    Text(line)
                         .font(.system(size: 13))
                         .foregroundStyle(Color.appInkMuted)
                 }

@@ -17,10 +17,6 @@
 "mw4.ui.ripple_tide" = "Ripple Tide";
 "mw4.ui.helio" = "Helio";
 "mw4.ui.section.mastery" = "Mastery";
-"mw4.ui.mastery_requirement" = "Behaal %d headshot-kills met dit wapen om %@ te verdienen.";
-"mw4.ui.mastery_tier2_locked" = "Ontgrendelt zodra elk wapen in deze categorie %@ heeft.";
-"mw4.ui.mastery_tier3_locked" = "Ontgrendelt zodra elk wapen in %@ %@ heeft.";
-"mw4.ui.mastery_tier3_locked_weapon" = "Rond eerst de eigen Mastery-reeks van dit wapen af.";
 "mw4.ui.weapons_unit" = "wapens";
 "mw4.ui.done" = "Klaar";
 "mw4.ui.search_weapons" = "Wapens zoeken…";
@@ -86,7 +82,6 @@
 "mw4.ui.milestone.camos_complete_title" = "Camos compleet";
 "mw4.ui.milestone.unlocked_title" = "%@ vrijgespeeld";
 "mw4.ui.milestone.tier3_subtitle" = "Elk wapen, elke camo. Volledige beheersing.";
-"mw4.ui.milestone.tier3_joins_subtitle" = "%@ hoort nu bij de volledige beheersing.";
 "mw4.ui.milestone.100_plus_title" = "100%+ Behaald";
 "mw4.ui.milestone.100_plus_subtitle" = "Elk wapen heeft %@ verdiend, DLC-wapens inbegrepen. Niets meer te bemeesteren.";
 "mw4.onboarding.step" = "Stap";
@@ -106,3 +101,24 @@
 "mw4.ui.report.unlock.default" = "Standaard ontgrendeld";
 "mw4.ui.report.unlock.field" = "Juiste ontgrendelniveau";
 "mw4.ui.report.unlock.message" = "De app heeft nu niveau %@.";
+
+/* Completionist and mode-wide Mastery (1.0.1) */
+"mw4.ui.section.military" = "Militair";
+"mw4.ui.section.special" = "Speciaal";
+"mw4.ui.section.completionist" = "Completist";
+"mw4.ui.completionist.gold" = "Goud";
+"mw4.ui.completionist.platinum" = "Platina";
+"mw4.ui.completionist.harmonic_break" = "Harmonic Break";
+"mw4.ui.completionist.final" = "Laatste camo";
+"mw4.ui.completionist.locked_camos" = "Voltooi eerst de Militaire en Speciale camo's van dit wapen.";
+"mw4.ui.completionist.locked_previous" = "Verdien eerst %@ met dit wapen.";
+"mw4.ui.completionist.final_locked_count" = "Verdien %1$@ met dit wapen, met in totaal %2$d voltooide %1$@-uitdagingen (nu %3$d).";
+"mw4.ui.completionist.final_count" = "%1$d/%2$d %3$@-uitdagingen voltooid.";
+"mw4.ui.mastery.weapons_needed" = "%1$d/%2$d wapens met %3$@";
+"mw4.ui.camo_level_earned" = "Verdiend op wapenniveau %d.";
+"mw4.ui.suggestion.next_camo" = "Volgende: %@";
+"mw4.ui.milestone.final_many" = "%d wapens hebben hem nu.";
+"mw4.ui.milestone.mastery_subtitle" = "%1$d wapens met %2$@.";
+"mw4.ui.completionist.locked_class" = "Verdien eerst %1$@ met elk wapen in %2$@.";
+"mw4.ui.completionist.locked_class_camos" = "Voltooi eerst de camo's van elk wapen in %@.";
+"mw4.ui.completionist.locked_mode" = "Verdien eerst %1$@ met %2$d wapens (nu %3$d).";

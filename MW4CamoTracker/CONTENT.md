@@ -120,15 +120,28 @@ The publish script enforces the first two.
 `multiplayer.json`, `warzone.json`, `dmz.json` (one per mode):
 
 - `weaponCamos[]`: `weaponId` and its `camos[]`. Each camo has `itemId`,
-  `name`, `tier`, `unlockLevel` (the weapon level it opens at), `imageURL`
-  and a `requirement` with `amount`, `unit` and a `description` sentence.
+  `name`, `tier`, `group` (`"military"` or `"special"`, which section it
+  shows in), `unlockLevel` (the weapon level it opens at), `imageURL` and an
+  optional `requirement` with `amount`, `unit` and a `description`
+  sentence. A Military camo with an `unlockLevel` and no `requirement` is
+  ticked automatically once the weapon reaches that level.
 - `objectives[]`: mode-only, non-weapon content (DMZ's missions and
   contracts).
-- `mastery` (optional): overrides that mode's three Mastery camos. Each of
-  `tier1`, `tier2`, `tier3` may set `name`, `amount`, `unit`, `description`
-  and `colors` (hex strings); anything left out keeps the app's built-in
-  value. Lowering an amount never shows a player "8/5": progress is capped
-  on read and kept on disk.
+- `completionist` (optional): the four camos after a weapon's camo list.
+  `steps` is Gold, Platinum, Harmonic Break in order; each may set `name`,
+  `colors`, `requirement` (the default challenge), `byCategory` (a challenge
+  per `categoryId`, as a string key) and `unlock`: `"weapon"` (opens once
+  this weapon has the step before), `"category"` (once every weapon in its
+  class has it) or `"mode"` (once the launch roster has it). Defaults:
+  Gold `weapon`, Platinum `category`, Harmonic Break `mode`. A step with no
+  challenge is a tick box. `final` is the fourth camo (Divergence in
+  Multiplayer): `name`, `colors`, `harmonicBreaksNeeded` (Harmonic Breaks
+  across the mode before any weapon with its own gets it; absent means the
+  weapon's own is enough).
+- `mastery` (optional): the mode's three Mastery camos, unlocked one after
+  another as weapons earn the final Completionist camo. Each of `tier1`,
+  `tier2`, `tier3` may set `name`, `colors` and `weaponsNeeded`; absent
+  counts are a third, two thirds and all of the launch roster.
 
 `manifest.json` is generated. Do not edit it by hand. Its `notification`
 block is what the publish flags write:
@@ -146,7 +159,7 @@ or `"notification": { "silent": true }`.
 
 - A new mode, or a new kind of content the app has no screen for.
 - New interface text (anything in `Localizable.strings`).
-- A fourth Mastery tier, or a change to how tiers unlock.
+- A fourth Mastery tier or Completionist step, or a new kind of unlock rule.
 - New built-in notification wording. (Custom wording per update does not.)
 
 When an app update does ship, the `Resources/` copies go out inside it as
