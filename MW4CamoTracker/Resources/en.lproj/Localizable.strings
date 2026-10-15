@@ -17,10 +17,6 @@
 "mw4.ui.ripple_tide" = "Ripple Tide";
 "mw4.ui.helio" = "Helio";
 "mw4.ui.section.mastery" = "Mastery";
-"mw4.ui.mastery_requirement" = "Get %d headshot kills with this weapon to earn %@.";
-"mw4.ui.mastery_tier2_locked" = "Unlocks once every weapon in this category has %@.";
-"mw4.ui.mastery_tier3_locked" = "Unlocks once every weapon in %@ has %@.";
-"mw4.ui.mastery_tier3_locked_weapon" = "Finish this weapon's own Mastery track first.";
 "mw4.ui.weapons_unit" = "weapons";
 "mw4.ui.done" = "Done";
 "mw4.ui.search_weapons" = "Search weapons…";
@@ -86,7 +82,6 @@
 "mw4.ui.milestone.camos_complete_title" = "Camos complete";
 "mw4.ui.milestone.unlocked_title" = "%@ unlocked";
 "mw4.ui.milestone.tier3_subtitle" = "Every weapon, every camo. Total Mastery.";
-"mw4.ui.milestone.tier3_joins_subtitle" = "%@ joins Total Mastery.";
 "mw4.ui.milestone.100_plus_title" = "100%+ Achieved";
 "mw4.ui.milestone.100_plus_subtitle" = "Every weapon has earned %@, DLC drops included. Nothing left to master.";
 "mw4.onboarding.step" = "Step";
@@ -106,3 +101,24 @@
 "mw4.ui.report.unlock.default" = "Unlocked by default";
 "mw4.ui.report.unlock.field" = "Correct unlock level";
 "mw4.ui.report.unlock.message" = "The app currently has level %@.";
+
+/* Completionist and mode-wide Mastery (1.0.1) */
+"mw4.ui.section.military" = "Military";
+"mw4.ui.section.special" = "Special";
+"mw4.ui.section.completionist" = "Completionist";
+"mw4.ui.completionist.gold" = "Gold";
+"mw4.ui.completionist.platinum" = "Platinum";
+"mw4.ui.completionist.harmonic_break" = "Harmonic Break";
+"mw4.ui.completionist.final" = "Final camo";
+"mw4.ui.completionist.locked_camos" = "Finish this weapon's Military and Special camos first.";
+"mw4.ui.completionist.locked_previous" = "Earn %@ on this weapon first.";
+"mw4.ui.completionist.final_locked_count" = "Earn %1$@ on this weapon, with %2$d %1$@ challenges done in total (%3$d so far).";
+"mw4.ui.completionist.final_count" = "%1$d/%2$d %3$@ challenges done.";
+"mw4.ui.mastery.weapons_needed" = "%1$d/%2$d weapons with %3$@";
+"mw4.ui.camo_level_earned" = "Earned at weapon level %d.";
+"mw4.ui.suggestion.next_camo" = "Next: %@";
+"mw4.ui.milestone.final_many" = "%d weapons have it now.";
+"mw4.ui.milestone.mastery_subtitle" = "%1$d weapons with %2$@.";
+"mw4.ui.completionist.locked_class" = "Earn %1$@ on every weapon in %2$@ first.";
+"mw4.ui.completionist.locked_class_camos" = "Finish the camos on every weapon in %@ first.";
+"mw4.ui.completionist.locked_mode" = "Earn %1$@ on %2$d weapons first (%3$d so far).";

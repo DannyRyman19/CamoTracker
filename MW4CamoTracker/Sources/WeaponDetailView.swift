@@ -47,27 +47,65 @@ struct WeaponDetailView: View {
         .listRowBackground(Color.appSurface)
     }
 
+    /// The camo list split the way the game shows it: Military, then
+    /// Special. Camos with no group (older data) stay one "Camos" list.
+    private var camoGroups: [(title: String, camos: [ChallengeItem])] {
+        var groups: [(key: String?, camos: [ChallengeItem])] = []
+        for camo in camos {
+            if let last = groups.indices.last, groups[last].key == camo.group {
+                groups[last].camos.append(camo)
+            } else {
+                groups.append((camo.group, [camo]))
+            }
+        }
+        return groups.map { group in
+            let title: String
+            switch group.key {
+            case "military": title = "mw4.ui.section.military".localized()
+            case "special": title = "mw4.ui.section.special".localized()
+            default: title = "mw4.ui.section.camos".localized()
+            }
+            return (title, group.camos)
+        }
+    }
+
+    private var completionistTitle: String {
+        "\(mode.displayNameKey.localized()) \("mw4.ui.section.completionist".localized())"
+    }
+
+    private var masteryTitle: String {
+        "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())"
+    }
+
     @ViewBuilder private var challengeSections: some View {
         if camos.isEmpty {
             noCamoData
             .listRowBackground(Color.appSurface)
         } else {
-            Section("mw4.ui.section.camos".localized()) {
-                ForEach(camos) { camo in
-                    camoRow(camo)
+            ForEach(camoGroups, id: \.title) { group in
+                Section(group.title) {
+                    ForEach(group.camos) { camo in
+                        camoRow(camo)
+                    }
                 }
+                .listRowBackground(Color.appSurface)
             }
-            .listRowBackground(Color.appSurface)
         }
 
-        // Finishing this mode's track above opens this mode's own
-        // Mastery challenges.
-        Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
-            if !camos.isEmpty {
-                MasteryTierRow(mode: mode, weapon: weapon, tier: 1)
-                MasteryTierRow(mode: mode, weapon: weapon, tier: 2)
+        // Finishing the camo list above opens this weapon's Completionist
+        // camos, and those feed the mode's Mastery camos.
+        Section(completionistTitle) {
+            ForEach(0..<TrackerViewModel.completionistStepCount, id: \.self) { step in
+                CompletionistStepRow(mode: mode, weapon: weapon, step: step)
             }
-            MasteryTier3Row(mode: mode, weapon: weapon)
+            FinalCamoRow(mode: mode, weapon: weapon)
+        }
+        .listRowBackground(Color.appSurface)
+
+        Section(masteryTitle) {
+            ForEach(1...3, id: \.self) { tier in
+                MasteryModeRow(mode: mode, tier: tier)
+            }
         }
         .listRowBackground(Color.appSurface)
     }
@@ -109,6 +147,7 @@ struct WeaponDetailView: View {
             isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             lockedReason: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
+            detail: viewModel.isEarnedByLevel(camo) ? camo.unlockLevel.map { String(format: "mw4.ui.camo_level_earned".localized(), $0) } : nil,
             onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
             onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
         )
@@ -147,48 +186,40 @@ struct WeaponDetailView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
         } else {
-            Section("mw4.ui.section.camos".localized()) {
-                ForEach(Array(stride(from: 0, to: camos.count, by: columns)), id: \.self) { start in
-                    HStack(alignment: .top, spacing: 12) {
-                        ForEach(0..<columns, id: \.self) { offset in
-                            if start + offset < camos.count {
-                                camoRow(camos[start + offset]).modifier(DetailTile())
-                            } else {
-                                Color.clear.frame(maxWidth: .infinity)
-                            }
-                        }
-                    }
-                    .listRowInsets(Self.rowInsets)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
+            ForEach(camoGroups, id: \.title) { group in
+                Section(group.title) {
+                    tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: columns)
                 }
             }
         }
 
-        Section("\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())") {
-            if masteryInOneRow {
-                HStack(alignment: .top, spacing: 12) {
-                    if !camos.isEmpty {
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
+        Section(completionistTitle) {
+            tileRows((0..<TrackerViewModel.completionistStepCount).map { step in
+                AnyView(CompletionistStepRow(mode: mode, weapon: weapon, step: step))
+            } + [AnyView(FinalCamoRow(mode: mode, weapon: weapon))], columns: masteryInOneRow ? 4 : columns)
+        }
+
+        Section(masteryTitle) {
+            tileRows((1...3).map { tier in AnyView(MasteryModeRow(mode: mode, tier: tier)) },
+                     columns: masteryInOneRow ? 3 : columns)
+        }
+    }
+
+    /// Rows of `columns` tiles, the last row padded so tiles keep one width.
+    @ViewBuilder private func tileRows(_ tiles: [AnyView], columns: Int) -> some View {
+        ForEach(Array(stride(from: 0, to: tiles.count, by: columns)), id: \.self) { start in
+            HStack(alignment: .top, spacing: 12) {
+                ForEach(0..<columns, id: \.self) { offset in
+                    if start + offset < tiles.count {
+                        tiles[start + offset].modifier(DetailTile())
+                    } else {
+                        Color.clear.frame(maxWidth: .infinity)
                     }
-                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
                 }
-                .listRowInsets(Self.rowInsets)
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-            } else {
-                Group {
-                    if !camos.isEmpty {
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 1).modifier(DetailTile())
-                        MasteryTierRow(mode: mode, weapon: weapon, tier: 2).modifier(DetailTile())
-                    }
-                    MasteryTier3Row(mode: mode, weapon: weapon).modifier(DetailTile())
-                }
-                .listRowInsets(Self.rowInsets)
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
             }
+            .listRowInsets(Self.rowInsets)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
         }
     }
 
@@ -273,105 +304,146 @@ struct WeaponDetailView: View {
     }
 }
 
-/// This weapon's own tier1 or tier2 Mastery challenge — the piece that was
-/// missing entirely before: every weapon needs its own trackable Mastery
-/// camo, not just an abstract account-wide counter. Reuses `ChallengeRow`'s
-/// lock/available/tap-to-type machinery by wrapping the tier's requirement
-/// as a synthetic `ChallengeItem`, same UI language as the camo list above.
-private struct MasteryTierRow: View {
+/// Gold, Platinum or Harmonic Break on this weapon: its own challenge
+/// (which can differ by weapon category), as a `ChallengeRow` like the camo
+/// list above, so it locks, ticks and counts the same way.
+private struct CompletionistStepRow: View {
     let mode: AppMode
     let weapon: WeaponEntry
-    let tier: Int
+    let step: Int
     @EnvironmentObject private var viewModel: TrackerViewModel
 
-    private var camo: MasteryCamo {
-        let tiers = mode.masteryCamos
-        return tier == 1 ? tiers.tier1 : tiers.tier2
-    }
-
-    private var isAvailable: Bool {
-        tier == 1
-            ? viewModel.isWeaponMasteryTier1Available(weaponId: weapon.weaponId, mode: mode.rawValue)
-            : viewModel.isWeaponMasteryTier2Available(weaponId: weapon.weaponId, mode: mode.rawValue)
-    }
+    private var camo: MasteryCamo { mode.completionist.steps[step] }
 
     private var item: ChallengeItem {
-        let requirement = camo.requirement
-        return ChallengeItem(
-            itemId: -tier,
+        ChallengeItem(
+            itemId: -(step + 1),
             name: LocalizedText(camo.name),
             imageURL: nil,
             tier: nil,
             unlockLevel: nil,
-            requirement: requirement.map { Requirement(amount: $0.amount, unit: $0.unit, description: LocalizedText($0.description(camoName: camo.name))) },
+            requirement: viewModel.completionistRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
             children: []
         )
     }
 
-    private var amount: Int { viewModel.weaponMasteryAmount(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier) }
+    /// What still stands in the way: this weapon's own step before first,
+    /// then the class- or mode-wide gate.
+    private var lockedReason: String {
+        let before = step == 0 ? nil : mode.completionist.steps[step - 1].name
+        let ownDone = step == 0
+            ? viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue)
+            : viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: step - 1)
+        guard ownDone else {
+            return before.map { String(format: "mw4.ui.completionist.locked_previous".localized(), $0) }
+                ?? "mw4.ui.completionist.locked_camos".localized()
+        }
+        switch viewModel.completionistGate(mode: mode.rawValue, step: step) {
+        case .weapon:
+            return "mw4.ui.locked".localized()
+        case .category:
+            let className = viewModel.category(containingWeaponId: weapon.weaponId)?.name.resolved() ?? ""
+            return before.map { String(format: "mw4.ui.completionist.locked_class".localized(), $0, className) }
+                ?? String(format: "mw4.ui.completionist.locked_class_camos".localized(), className)
+        case .mode:
+            let progress = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: step)
+            return String(format: "mw4.ui.completionist.locked_mode".localized(), before ?? "", progress.total, progress.done)
+        }
+    }
 
     var body: some View {
         ChallengeRow(
             item: item,
             accent: camo.color,
-            amount: amount,
-            isDone: viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier),
-            isAvailable: isAvailable,
-            lockedReason: tier == 2 ? String(format: "mw4.ui.mastery_tier2_locked".localized(), mode.masteryCamos.tier1.name) : nil,
+            amount: viewModel.completionistAmount(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
+            isDone: viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
+            isAvailable: viewModel.isCompletionistAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
+            lockedReason: lockedReason,
             titleGradient: camo.gradient,
-            // Tap the circle to instantly toggle full/none — the same quick-
-            // complete gesture every other checklist in this app supports;
-            // this row was silently missing it before.
-            onToggle: {
-                let full = camo.requirement?.amount ?? 0
-                viewModel.setWeaponMasteryAmount(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier, amount: amount >= full ? 0 : full)
-            },
-            onSetAmount: { viewModel.setWeaponMasteryAmount(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier, amount: $0) }
+            onToggle: { viewModel.toggleCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId, step: step) },
+            onSetAmount: { viewModel.setCompletionistAmount(mode: mode.rawValue, weaponId: weapon.weaponId, step: step, amount: $0) }
         )
     }
 }
 
-/// The mode-wide capstone (tier3) — read-only, since it isn't earned per
-/// weapon, but shown on every weapon's page so this screen always reflects
-/// where that mode's whole Mastery chain stands.
-private struct MasteryTier3Row: View {
+/// The final Completionist camo (Divergence in Multiplayer). Read-only: it
+/// has no challenge, the weapon earns it once it has its own Harmonic Break
+/// and the mode has enough Harmonic Breaks overall.
+private struct FinalCamoRow: View {
     let mode: AppMode
     let weapon: WeaponEntry
     @EnvironmentObject private var viewModel: TrackerViewModel
 
-    private var camo: MasteryCamo { mode.masteryCamos.tier3 }
-    private var modeAchieved: Bool { viewModel.isMasteryTier3Achieved(mode: mode.rawValue) }
-    /// Mode-wide achievement alone doesn't make *this weapon's* row read as
-    /// achieved — with the launch-roster-sized capstone gate, the mode can
-    /// hit tier3 via 19 other weapons while a brand-new DLC weapon (this
-    /// one) hasn't itself finished its own tier2 yet, and showing "Mastery
-    /// complete" on a weapon nobody's touched would be actively misleading.
-    private var achieved: Bool {
-        modeAchieved && viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: 2)
+    private var camo: MasteryCamo { mode.completionist.final }
+    private var harmonicBreak: MasteryCamo { mode.completionist.steps[2] }
+    private var achieved: Bool { viewModel.hasFinalCamo(mode: mode.rawValue, weaponId: weapon.weaponId) }
+
+    private var detail: String {
+        let needed = viewModel.harmonicBreaksNeeded(mode: mode.rawValue)
+        let done = viewModel.harmonicBreakCount(mode: mode.rawValue)
+        if !viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: 2) {
+            return needed > 1
+                ? String(format: "mw4.ui.completionist.final_locked_count".localized(), harmonicBreak.name, needed, min(done, needed))
+                : String(format: "mw4.ui.completionist.locked_previous".localized(), harmonicBreak.name)
+        }
+        return String(format: "mw4.ui.completionist.final_count".localized(), min(done, max(needed, 1)), max(needed, 1), harmonicBreak.name)
     }
-    private var progress: (done: Int, total: Int) { viewModel.masteryTier2Progress(mode: mode.rawValue) }
-    private var lockedReason: String {
-        modeAchieved
-            ? "mw4.ui.mastery_tier3_locked_weapon".localized()
-            : String(format: "mw4.ui.mastery_tier3_locked".localized(), mode.displayNameKey.localized(), mode.masteryCamos.tier2.name)
+
+    var body: some View {
+        StatusRow(name: camo.name, achieved: achieved, color: camo.color, gradient: camo.gradient, detail: detail)
     }
+}
+
+/// One of the mode's three Mastery camos: earned once enough weapons have
+/// the final Completionist camo. Mode-wide, so it reads the same on every
+/// weapon in the mode.
+private struct MasteryModeRow: View {
+    let mode: AppMode
+    let tier: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camo: MasteryCamo {
+        let tiers = mode.masteryCamos
+        return [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
+    }
+
+    var body: some View {
+        let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+        StatusRow(
+            name: camo.name,
+            achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
+            color: camo.color,
+            gradient: camo.gradient,
+            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.completionist.final.name)
+        )
+    }
+}
+
+/// A camo earned by reaching a count rather than by hand: a check once
+/// earned, a lock until then, with the count under its name.
+private struct StatusRow: View {
+    let name: String
+    let achieved: Bool
+    let color: Color
+    let gradient: [Color]
+    let detail: String
 
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: achieved ? "checkmark.circle.fill" : "lock.fill")
                 .font(.system(size: achieved ? 21 : 17))
-                .foregroundStyle(achieved ? camo.color : Color.appInkMuted.opacity(0.5))
+                .foregroundStyle(achieved ? color : Color.appInkMuted.opacity(0.5))
                 .frame(width: 21, height: 21)
 
             VStack(alignment: .leading, spacing: 4) {
                 if achieved {
-                    AnimatedGradientText(text: camo.name, colors: camo.gradient, font: .hitmarker(15))
+                    AnimatedGradientText(text: name, colors: gradient, font: .hitmarker(15))
                 } else {
-                    Text(camo.name)
+                    Text(name)
                         .font(.hitmarker(15))
                         .foregroundStyle(Color.appInkMuted)
                 }
-                Text(achieved ? "\(progress.done)/\(progress.total) \("mw4.ui.weapons_unit".localized())" : lockedReason)
+                Text(detail)
                     .font(.system(size: 13))
                     .foregroundStyle(Color.appInkMuted)
             }

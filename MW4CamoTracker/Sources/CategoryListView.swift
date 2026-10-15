@@ -91,27 +91,32 @@ struct CategoryListView: View {
                     // distinct number worth acting on.
                     StatSummaryCard(
                         stats: {
-                            let goldCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
-                            let tier1 = viewModel.masteryTier1Progress(mode: mode.rawValue)
-                            let tier2 = viewModel.masteryTier2Progress(mode: mode.rawValue)
-                            // tier3 has no weapon count of its own — its gate
-                            // *is* `tier2` (capped at the launch roster) — so
-                            // its ring/count mirror tier2's exactly, just in
-                            // the capstone camo's own color.
-                            let tier3Achieved = viewModel.isMasteryTier3Achieved(mode: mode.rawValue)
+                            let total = viewModel.totalWeaponCount
+                            let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
+                            let completeCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
+                            let harmonic = mode.completionist.steps[2]
+                            let harmonicCount = viewModel.harmonicBreakCount(mode: mode.rawValue)
+                            let final = mode.completionist.final
+                            let finalCount = viewModel.finalCamoCount(mode: mode.rawValue)
+                            // The Mastery tier being worked on: the first not
+                            // yet earned, or the last once all three are.
+                            let tier = (1...3).first { !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: $0) } ?? 3
+                            let tiers = mode.masteryCamos
+                            let mastery = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
+                            let masteryProgress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+                            let masteryDone = viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier)
                             var stats: [StatSummaryCard.Stat] = [
-                                .init(value: "\(goldCount)/\(viewModel.totalWeaponCount)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.totalWeaponCount > 0 ? Double(goldCount) / Double(viewModel.totalWeaponCount) : 0, ringColor: .camoGold),
-                                .init(value: "\(tier1.done)/\(tier1.total)", label: mode.masteryCamos.tier1.name, labelGradient: tier1FullyEarned(mode) ? mode.masteryCamos.tier1.gradient : nil, ringFraction: tier1.total > 0 ? Double(tier1.done) / Double(tier1.total) : 0, ringColor: mode.masteryCamos.tier1.color, ringGradient: mode.masteryCamos.tier1.gradient),
-                                .init(value: "\(tier2.done)/\(tier2.total)", label: mode.masteryCamos.tier2.name, labelGradient: tier2FullyEarned(mode) ? mode.masteryCamos.tier2.gradient : nil, ringFraction: tier2.total > 0 ? Double(tier2.done) / Double(tier2.total) : 0, ringColor: mode.masteryCamos.tier2.color, ringGradient: mode.masteryCamos.tier2.gradient),
-                                .init(value: "\(tier2.done)/\(tier2.total)", label: mode.masteryCamos.tier3.name, labelGradient: tier3Achieved ? mode.masteryCamos.tier3.gradient : nil, ringFraction: tier2.total > 0 ? Double(tier2.done) / Double(tier2.total) : 0, ringColor: mode.masteryCamos.tier3.color, ringGradient: mode.masteryCamos.tier3.gradient)
+                                .init(value: "\(completeCount)/\(total)", label: "mw4.ui.gold".localized(), ringFraction: fraction(completeCount, total), ringColor: .camoGold),
+                                .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient),
+                                .init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient),
+                                .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient)
                             ]
-                            // Only worth showing once the real capstone is
-                            // actually earned — before then it's just noise
-                            // ("100%+ of what?") on top of a goal not even
-                            // reached yet.
-                            if tier3Achieved {
-                                let fullRoster = viewModel.fullRosterTier2Progress(mode: mode.rawValue)
-                                stats.append(.init(value: "\(fullRoster.done)/\(fullRoster.total)", label: "mw4.ui.stats.100_plus".localized(), labelGradient: viewModel.is100PlusAchieved(mode: mode.rawValue) ? .platinum : nil, ringFraction: fullRoster.total > 0 ? Double(fullRoster.done) / Double(fullRoster.total) : 0, ringColor: .camoPlatinum, ringGradient: .platinum))
+                            // Only worth showing once the last Mastery camo is
+                            // earned; before then "100%+" is a goal past one
+                            // not reached yet.
+                            if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
+                                let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
+                                stats.append(.init(value: "\(fullRoster.done)/\(fullRoster.total)", label: "mw4.ui.stats.100_plus".localized(), labelGradient: viewModel.is100PlusAchieved(mode: mode.rawValue) ? .platinum : nil, ringFraction: fraction(fullRoster.done, fullRoster.total), ringColor: .camoPlatinum, ringGradient: .platinum))
                             }
                             return stats
                         }()
@@ -176,18 +181,6 @@ struct CategoryListView: View {
         .refreshable { await viewModel.refresh() }
     }
 
-    /// The shimmer only means something once it's actually earned — while
-    /// tier1 is still in progress this stays plain text, same rule as the
-    /// per-weapon Mastery rows and the Stats tab.
-    private func tier1FullyEarned(_ mode: AppMode) -> Bool {
-        let progress = viewModel.masteryTier1Progress(mode: mode.rawValue)
-        return progress.total > 0 && progress.done == progress.total
-    }
-
-    private func tier2FullyEarned(_ mode: AppMode) -> Bool {
-        let progress = viewModel.masteryTier2Progress(mode: mode.rawValue)
-        return progress.total > 0 && progress.done == progress.total
-    }
 }
 
 private struct SuggestionRow: View {
@@ -199,11 +192,11 @@ private struct SuggestionRow: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            Image(systemName: suggestion.isMasteryTier1Critical ? "diamond.fill" : "arrow.up.forward")
+            Image(systemName: suggestion.highlight != nil ? "diamond.fill" : "arrow.up.forward")
                 .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(Color.appBackground)
                 .frame(width: 30, height: 30)
-                .background(Circle().fill(suggestion.isMasteryTier1Critical ? mode.masteryCamos.tier1.color : mode.accent))
+                .background(Circle().fill(suggestion.highlight ?? mode.accent))
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(suggestion.title)
@@ -230,15 +223,14 @@ private struct WeaponCategoryRow: View {
     let category: WeaponCategory
     @EnvironmentObject private var viewModel: TrackerViewModel
 
-    private var goldCount: Int { viewModel.goldWeaponCount(in: category, mode: mode.rawValue) }
 
-    /// The highest Mastery tier this category has fully earned, if any —
-    /// tier2 takes precedence over tier1 when both are true, so the badge
-    /// always reflects the category's best standing, not just its first rung.
-    private var highestTierAchieved: MasteryCamo? {
-        let tiers = mode.masteryCamos
-        if viewModel.categoryHasMasteryTier2(category, mode: mode.rawValue) { return tiers.tier2 }
-        if viewModel.categoryHasMasteryTier1(category, mode: mode.rawValue) { return tiers.tier1 }
+    /// The best Completionist camo every weapon in this category has, for
+    /// the card's border: the final camo, else Harmonic Break, else none.
+    private var categoryAccent: Color? {
+        guard !category.weapons.isEmpty else { return nil }
+        let count = category.weapons.count
+        if viewModel.categoryFinalCount(category, mode: mode.rawValue) == count { return mode.completionist.final.color }
+        if viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2) == count { return mode.completionist.steps[2].color }
         return nil
     }
 
@@ -253,23 +245,16 @@ private struct WeaponCategoryRow: View {
                 .font(.hitmarker(16))
                 .foregroundStyle(Color.appInk)
 
-            // Same ring-and-count treatment as the mode root tab's header and
-            // this category's own weapon-list header — Gold/tier1/tier2 read
-            // the same way everywhere they show up now, not a one-off badge
-            // here and rings elsewhere.
+            // The same rings as this category's own weapon-list header.
             StatSummaryCard(
-                stats: [
-                    .init(value: "\(goldCount)/\(category.weapons.count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
-                    .init(value: "\(viewModel.categoryMasteryTier1Count(category, mode: mode.rawValue))/\(category.weapons.count)", label: mode.masteryCamos.tier1.name, labelGradient: viewModel.categoryHasMasteryTier1(category, mode: mode.rawValue) ? mode.masteryCamos.tier1.gradient : nil, ringFraction: category.weapons.isEmpty ? 0 : Double(viewModel.categoryMasteryTier1Count(category, mode: mode.rawValue)) / Double(category.weapons.count), ringColor: mode.masteryCamos.tier1.color, ringGradient: mode.masteryCamos.tier1.gradient),
-                    .init(value: "\(viewModel.categoryMasteryTier2Count(category, mode: mode.rawValue))/\(category.weapons.count)", label: mode.masteryCamos.tier2.name, labelGradient: viewModel.categoryHasMasteryTier2(category, mode: mode.rawValue) ? mode.masteryCamos.tier2.gradient : nil, ringFraction: category.weapons.isEmpty ? 0 : Double(viewModel.categoryMasteryTier2Count(category, mode: mode.rawValue)) / Double(category.weapons.count), ringColor: mode.masteryCamos.tier2.color, ringGradient: mode.masteryCamos.tier2.gradient)
-                ],
+                stats: CategoryStats.stats(viewModel: viewModel, category: category, mode: mode),
                 bordered: false,
                 horizontalPadding: 0,
                 verticalPadding: 4
             )
         }
         .padding(12)
-        .borderedCard(accent: highestTierAchieved?.color)
+        .borderedCard(accent: categoryAccent)
     }
 }
 
@@ -297,3 +282,22 @@ private struct ObjectiveCategoryRow: View {
     }
 }
 
+
+/// A weapon category's three rings, on its card here and atop its own weapon
+/// list: camo lists complete, Harmonic Break, and the final camo.
+enum CategoryStats {
+    @MainActor
+    static func stats(viewModel: TrackerViewModel, category: WeaponCategory, mode: AppMode) -> [StatSummaryCard.Stat] {
+        let count = category.weapons.count
+        let fraction: (Int) -> Double = { count > 0 ? Double($0) / Double(count) : 0 }
+        let harmonic = mode.completionist.steps[2]
+        let harmonicCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2)
+        let final = mode.completionist.final
+        let finalCount = viewModel.categoryFinalCount(category, mode: mode.rawValue)
+        return [
+            .init(value: "\(viewModel.goldWeaponCount(in: category, mode: mode.rawValue))/\(count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
+            .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient),
+            .init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient)
+        ]
+    }
+}

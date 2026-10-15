@@ -157,23 +157,20 @@ private struct ModeStatsCard: View {
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
     private var completion: Double { viewModel.trueCompletionFraction(mode: mode.rawValue) }
 
+    /// The mode's three Mastery camos, each with how many weapons have the
+    /// final Completionist camo out of the count it needs.
     private var masteryNodes: [MasteryTrack.Node] {
         let tiers = mode.masteryCamos
-        let tier1 = viewModel.masteryTier1Progress(mode: mode.rawValue)
-        let tier2 = viewModel.masteryTier2Progress(mode: mode.rawValue)
-        let tier3Achieved = viewModel.isMasteryTier3Achieved(mode: mode.rawValue)
-        // tier3 itself has no separate weapon count of its own — its gate
-        // *is* `tier2` (capped at the launch roster) — so its node shows
-        // that same "x/y weapons" rather than just a bare "Done."
-        var nodes: [MasteryTrack.Node] = [
-            .init(name: tiers.tier1.name, color: tiers.tier1.color, gradient: tiers.tier1.gradient, achieved: tier1.total > 0 && tier1.done == tier1.total, detail: "\(tier1.done)/\(tier1.total)"),
-            .init(name: tiers.tier2.name, color: tiers.tier2.color, gradient: tiers.tier2.gradient, achieved: tier2.total > 0 && tier2.done == tier2.total, detail: "\(tier2.done)/\(tier2.total)"),
-            .init(name: tiers.tier3.name, color: tiers.tier3.color, gradient: tiers.tier3.gradient, achieved: tier3Achieved, detail: "\(tier2.done)/\(tier2.total)")
-        ]
-        // Only once the real capstone is earned — before then "100%+" is a
-        // goal past one you haven't reached yet, not useful information.
-        if tier3Achieved {
-            let fullRoster = viewModel.fullRosterTier2Progress(mode: mode.rawValue)
+        var nodes: [MasteryTrack.Node] = [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
+            let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: index + 1)
+            return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
+                         achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: index + 1),
+                         detail: "\(progress.done)/\(progress.total)")
+        }
+        // Only once the last Mastery camo is earned — before then "100%+" is
+        // a goal past one you haven't reached yet, not useful information.
+        if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
+            let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
             nodes.append(.init(name: "mw4.ui.stats.100_plus".localized(), color: .camoPlatinum, gradient: .platinum, achieved: viewModel.is100PlusAchieved(mode: mode.rawValue), detail: "\(fullRoster.done)/\(fullRoster.total)"))
         }
         return nodes

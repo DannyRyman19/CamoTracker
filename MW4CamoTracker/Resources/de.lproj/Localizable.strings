@@ -17,10 +17,6 @@
 "mw4.ui.ripple_tide" = "Ripple Tide";
 "mw4.ui.helio" = "Helio";
 "mw4.ui.section.mastery" = "Meisterschaft";
-"mw4.ui.mastery_requirement" = "Erziele %d Kopfschuss-Abschüsse mit dieser Waffe, um %@ zu erhalten.";
-"mw4.ui.mastery_tier2_locked" = "Wird freigeschaltet, sobald jede Waffe dieser Kategorie %@ hat.";
-"mw4.ui.mastery_tier3_locked" = "Wird freigeschaltet, sobald jede Waffe in %@ %@ hat.";
-"mw4.ui.mastery_tier3_locked_weapon" = "Schließe zuerst die eigene Meisterschaftsreihe dieser Waffe ab.";
 "mw4.ui.weapons_unit" = "Waffen";
 "mw4.ui.done" = "Fertig";
 "mw4.ui.search_weapons" = "Waffen suchen…";
@@ -86,7 +82,6 @@
 "mw4.ui.milestone.camos_complete_title" = "Tarnungen komplett";
 "mw4.ui.milestone.unlocked_title" = "%@ freigeschaltet";
 "mw4.ui.milestone.tier3_subtitle" = "Jede Waffe, jede Tarnung. Vollständige Meisterschaft.";
-"mw4.ui.milestone.tier3_joins_subtitle" = "%@ gehört jetzt zur vollständigen Meisterschaft.";
 "mw4.ui.milestone.100_plus_title" = "100%+ erreicht";
 "mw4.ui.milestone.100_plus_subtitle" = "Jede Waffe hat %@ erhalten, DLC-Waffen eingeschlossen. Nichts bleibt mehr zu meistern.";
 "mw4.onboarding.step" = "Schritt";
@@ -106,3 +101,24 @@
 "mw4.ui.report.unlock.default" = "Standardmäßig freigeschaltet";
 "mw4.ui.report.unlock.field" = "Korrekte Freischaltstufe";
 "mw4.ui.report.unlock.message" = "Die App hat derzeit Stufe %@.";
+
+/* Completionist and mode-wide Mastery (1.0.1) */
+"mw4.ui.section.military" = "Militär";
+"mw4.ui.section.special" = "Spezial";
+"mw4.ui.section.completionist" = "Komplettierer";
+"mw4.ui.completionist.gold" = "Gold";
+"mw4.ui.completionist.platinum" = "Platin";
+"mw4.ui.completionist.harmonic_break" = "Harmonic Break";
+"mw4.ui.completionist.final" = "Finale Tarnung";
+"mw4.ui.completionist.locked_camos" = "Schließe zuerst die Militär- und Spezial-Tarnungen dieser Waffe ab.";
+"mw4.ui.completionist.locked_previous" = "Verdiene zuerst %@ mit dieser Waffe.";
+"mw4.ui.completionist.final_locked_count" = "Verdiene %1$@ mit dieser Waffe, bei insgesamt %2$d abgeschlossenen %1$@-Herausforderungen (bisher %3$d).";
+"mw4.ui.completionist.final_count" = "%1$d/%2$d %3$@-Herausforderungen abgeschlossen.";
+"mw4.ui.mastery.weapons_needed" = "%1$d/%2$d Waffen mit %3$@";
+"mw4.ui.camo_level_earned" = "Erhalten auf Waffenstufe %d.";
+"mw4.ui.suggestion.next_camo" = "Als Nächstes: %@";
+"mw4.ui.milestone.final_many" = "%d Waffen haben sie jetzt.";
+"mw4.ui.milestone.mastery_subtitle" = "%1$d Waffen mit %2$@.";
+"mw4.ui.completionist.locked_class" = "Verdiene zuerst %1$@ mit jeder Waffe der Kategorie %2$@.";
+"mw4.ui.completionist.locked_class_camos" = "Schließe zuerst die Tarnungen aller Waffen der Kategorie %@ ab.";
+"mw4.ui.completionist.locked_mode" = "Verdiene zuerst %1$@ mit %2$d Waffen (bisher %3$d).";
