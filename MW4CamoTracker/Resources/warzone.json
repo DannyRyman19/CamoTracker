@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.1",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8,76 +8,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -87,76 +178,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -166,76 +348,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -245,76 +518,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -324,76 +688,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -403,76 +858,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -482,76 +1028,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -561,76 +1198,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -640,76 +1368,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -719,76 +1538,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -798,76 +1708,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -877,76 +1878,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -956,76 +2048,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1035,76 +2218,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1114,76 +2388,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1193,76 +2558,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1272,76 +2728,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1351,76 +2898,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1430,76 +3068,167 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     },
@@ -1509,80 +3238,2381 @@
         {
           "itemId": 0,
           "name": {
-            "en": "Verdant",
-            "fr": "Verdoyant",
-            "es": "Verde",
-            "de": "Grün",
-            "nl": "Groen"
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
           },
           "tier": 1,
-          "unlockLevel": 4,
-          "requirement": {
-            "amount": 3,
-            "unit": "wins",
-            "description": {
-              "en": "Win 3 matches with this weapon equipped.",
-              "fr": "Remportez 3 matchs avec cette arme équipée.",
-              "es": "Gana 3 partidas con esta arma equipada.",
-              "de": "Gewinne 3 Matches mit dieser ausgerüsteten Waffe.",
-              "nl": "Win 3 wedstrijden met dit wapen uitgerust."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/Vanguard/Reptilian/Multiplayer/verdant.png"
+          "imageURL": null
         },
         {
           "itemId": 1,
           "name": {
-            "en": "Toxic",
-            "fr": "Toxique",
-            "es": "Tóxico",
-            "de": "Toxisch",
-            "nl": "Toxisch"
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
           },
           "tier": 2,
-          "unlockLevel": 12,
-          "requirement": {
-            "amount": 10,
-            "unit": "gas_kills",
-            "description": {
-              "en": "Get 10 kills while the gas is closing in.",
-              "fr": "Obtenez 10 éliminations pendant que le gaz se referme.",
-              "es": "Consigue 10 bajas mientras el gas se cierra.",
-              "de": "Erziele 10 Abschüsse, während sich das Gas schließt.",
-              "nl": "Behaal 10 kills terwijl het gas dichterbij komt."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/toxicity.png"
+          "imageURL": null
         },
         {
           "itemId": 2,
           "name": {
-            "en": "Irradiated",
-            "fr": "Irradié",
-            "es": "Irradiado",
-            "de": "Verstrahlt",
-            "nl": "Bestraald"
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
           },
           "tier": 3,
-          "requirement": {
-            "amount": 1,
-            "unit": "all_tiers",
-            "description": {
-              "en": "Complete every Warzone camo above for this weapon.",
-              "fr": "Terminez tous les camouflages Warzone ci-dessus pour cette arme.",
-              "es": "Completa todos los camuflajes de Warzone anteriores para esta arma.",
-              "de": "Schließe alle obigen Warzone-Tarnungen für diese Waffe ab.",
-              "nl": "Voltooi alle bovenstaande Warzone-camouflages voor dit wapen."
-            }
-          },
+          "unlockLevel": null,
+          "requirement": null,
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hazardous-waste.png"
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 20,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 21,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 22,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 23,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 24,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 25,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 26,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 27,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 28,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 29,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 30,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 31,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        }
+      ]
+    },
+    {
+      "weaponId": 32,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null
         }
       ]
     }
   ],
   "objectives": [],
-  "_note": "Fake/placeholder camo tiers, shared across every weapon in the real MW4 roster. Replace once MW4's real Warzone camo names (and art) are announced."
+  "_note": "Placeholder slots until MW4's real camos are known: every weapon has 8 Military camos (itemId 0-7: the same set on every weapon in this mode, unlocked by weapon level, no challenge) then 3 Special camos (itemId 8-10: unique per weapon, a weapon level then a challenge). Fill in names, unlockLevel, requirement and imageURL as they are announced; keep the itemIds. Completionist (Gold, Platinum, Harmonic Break, final camo) is the Mastery section, reworked in 1.0.1."
 }

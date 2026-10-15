@@ -1,6 +1,6 @@
 {
-  "version": "0.8.0",
-  "baseWeaponCount": 19,
+  "version": "0.9.1",
+  "baseWeaponCount": 33,
   "weaponPrestige": [
     {
       "name": {
@@ -53,7 +53,7 @@
             "de": "HAN 86",
             "nl": "HAN 86"
           },
-          "maxLevel": 68,
+          "maxLevel": 72,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -72,7 +72,7 @@
             "de": "M4",
             "nl": "M4"
           },
-          "maxLevel": 68,
+          "maxLevel": 72,
           "unlockRequirement": {
             "en": "Unlock at level 9.",
             "fr": "Débloqué au niveau 9.",
@@ -148,7 +148,7 @@
             "de": "Axion",
             "nl": "Axion"
           },
-          "maxLevel": 67,
+          "maxLevel": 69,
           "unlockRequirement": {
             "en": "Unlock at level 30.",
             "fr": "Débloqué au niveau 30.",
@@ -157,6 +157,28 @@
             "nl": "Ontgrendel op niveau 30."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/AXION.png"
+        },
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "Oden",
+            "fr": "Oden",
+            "es": "Oden",
+            "de": "Oden",
+            "nl": "Oden"
+          },
+          "maxLevel": 65
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "Cronen Squall",
+            "fr": "Cronen Squall",
+            "es": "Cronen Squall",
+            "de": "Cronen Squall",
+            "nl": "Cronen Squall"
+          },
+          "maxLevel": 67
         }
       ]
     },
@@ -179,7 +201,7 @@
             "de": "ISO Nightshade",
             "nl": "ISO Nightshade"
           },
-          "maxLevel": 56,
+          "maxLevel": 64,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -192,13 +214,13 @@
         {
           "weaponId": 6,
           "name": {
-            "en": "PPSh",
-            "fr": "PPSh",
-            "es": "PPSh",
-            "de": "PPSh",
-            "nl": "PPSh"
+            "en": "PPSh-41",
+            "fr": "PPSh-41",
+            "es": "PPSh-41",
+            "de": "PPSh-41",
+            "nl": "PPSh-41"
           },
-          "maxLevel": 54,
+          "maxLevel": 62,
           "unlockRequirement": {
             "en": "Unlock at level 11.",
             "fr": "Débloqué au niveau 11.",
@@ -217,7 +239,7 @@
             "de": "X-58 Nyx",
             "nl": "X-58 Nyx"
           },
-          "maxLevel": 56,
+          "maxLevel": 53,
           "unlockRequirement": {
             "en": "Unlock at level 27.",
             "fr": "Débloqué au niveau 27.",
@@ -226,6 +248,28 @@
             "nl": "Ontgrendel op niveau 27."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/X-58_NYX.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "VEL 46",
+            "fr": "VEL 46",
+            "es": "VEL 46",
+            "de": "VEL 46",
+            "nl": "VEL 46"
+          },
+          "maxLevel": 60
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "WZ.55 Striga",
+            "fr": "WZ.55 Striga",
+            "es": "WZ.55 Striga",
+            "de": "WZ.55 Striga",
+            "nl": "WZ.55 Striga"
+          },
+          "maxLevel": 60
         }
       ]
     },
@@ -257,6 +301,17 @@
             "nl": "Standaard ontgrendeld."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/REZI_12.png"
+        },
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "Warlord",
+            "fr": "Warlord",
+            "es": "Warlord",
+            "de": "Warlord",
+            "nl": "Warlord"
+          },
+          "maxLevel": 60
         }
       ]
     },
@@ -279,7 +334,7 @@
             "de": "FINN LMG",
             "nl": "FINN LMG"
           },
-          "maxLevel": 52,
+          "maxLevel": 60,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -298,7 +353,7 @@
             "de": "Type 73",
             "nl": "Type 73"
           },
-          "maxLevel": 57,
+          "maxLevel": 65,
           "unlockRequirement": {
             "en": "Unlock at level 5.",
             "fr": "Débloqué au niveau 5.",
@@ -307,6 +362,17 @@
             "nl": "Ontgrendel op niveau 5."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/TYPE_73.png"
+        },
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "APOC-338",
+            "fr": "APOC-338",
+            "es": "APOC-338",
+            "de": "APOC-338",
+            "nl": "APOC-338"
+          },
+          "maxLevel": 56
         }
       ]
     },
@@ -329,7 +395,7 @@
             "de": "MAR-9",
             "nl": "MAR-9"
           },
-          "maxLevel": 67,
+          "maxLevel": 73,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -348,7 +414,7 @@
             "de": "ORIS 8.6",
             "nl": "ORIS 8.6"
           },
-          "maxLevel": 68,
+          "maxLevel": 70,
           "unlockRequirement": {
             "en": "Unlock at level 14.",
             "fr": "Débloqué au niveau 14.",
@@ -357,6 +423,17 @@
             "nl": "Ontgrendel op niveau 14."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ORIS_8.6.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "Mosin-Nagant",
+            "fr": "Mosin-Nagant",
+            "es": "Mosin-Nagant",
+            "de": "Mosin-Nagant",
+            "nl": "Mosin-Nagant"
+          },
+          "maxLevel": 69
         }
       ]
     },
@@ -379,7 +456,7 @@
             "de": "KG-7 Vulcan",
             "nl": "KG-7 Vulcan"
           },
-          "maxLevel": 72,
+          "maxLevel": 75,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -398,7 +475,7 @@
             "de": "Signal 50",
             "nl": "Signal 50"
           },
-          "maxLevel": 72,
+          "maxLevel": 74,
           "unlockRequirement": {
             "en": "Unlock at level 30.",
             "fr": "Débloqué au niveau 30.",
@@ -407,6 +484,17 @@
             "nl": "Ontgrendel op niveau 30."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/SIGNAL_50.png"
+        },
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "Astaroth .57",
+            "fr": "Astaroth .57",
+            "es": "Astaroth .57",
+            "de": "Astaroth .57",
+            "nl": "Astaroth .57"
+          },
+          "maxLevel": 54
         }
       ]
     },
@@ -429,7 +517,7 @@
             "de": "Krait P68",
             "nl": "Krait P68"
           },
-          "maxLevel": 34,
+          "maxLevel": 38,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -448,7 +536,7 @@
             "de": ".50 GS",
             "nl": ".50 GS"
           },
-          "maxLevel": 34,
+          "maxLevel": 50,
           "unlockRequirement": {
             "en": "Unlock at level 23.",
             "fr": "Débloqué au niveau 23.",
@@ -457,6 +545,28 @@
             "nl": "Ontgrendel op niveau 23."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/50_GS.png"
+        },
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "Sang 9mm",
+            "fr": "Sang 9mm",
+            "es": "Sang 9mm",
+            "de": "Sang 9mm",
+            "nl": "Sang 9mm"
+          },
+          "maxLevel": 38
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "Mojave .357",
+            "fr": "Mojave .357",
+            "es": "Mojave .357",
+            "de": "Mojave .357",
+            "nl": "Mojave .357"
+          },
+          "maxLevel": 44
         }
       ]
     },
@@ -479,7 +589,7 @@
             "de": "PILA",
             "nl": "PILA"
           },
-          "maxLevel": 36,
+          "maxLevel": 46,
           "unlockRequirement": {
             "en": "Unlocked by default.",
             "fr": "Débloqué par défaut.",
@@ -488,6 +598,39 @@
             "nl": "Standaard ontgrendeld."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PILA.png"
+        },
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "RPG-8",
+            "fr": "RPG-8",
+            "es": "RPG-8",
+            "de": "RPG-8",
+            "nl": "RPG-8"
+          },
+          "maxLevel": 46
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "JOKR",
+            "fr": "JOKR",
+            "es": "JOKR",
+            "de": "JOKR",
+            "nl": "JOKR"
+          },
+          "maxLevel": 46
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "PM-40 Anvil",
+            "fr": "PM-40 Anvil",
+            "es": "PM-40 Anvil",
+            "de": "PM-40 Anvil",
+            "nl": "PM-40 Anvil"
+          },
+          "maxLevel": 46
         }
       ]
     },
