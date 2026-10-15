@@ -1,13 +1,15 @@
 import SwiftUI
 
-/// "Grind this next" — a weapon close to Gold, or (highest priority) the one
-/// weapon standing between a category and that mode's Mastery tier 1.
+/// "Grind this next": a weapon close to finishing its camo list, or one
+/// working through its Completionist camos (highlighted in that camo's color).
 struct Suggestion: Identifiable {
     let id = UUID()
     let weaponId: Int
     let title: String
     let subtitle: String
-    let isMasteryTier1Critical: Bool
+    /// The Completionist camo this weapon is on, for its badge; nil for a
+    /// weapon still on its camo list.
+    let highlight: Color?
 }
 
 /// A brief celebration shown when a weapon, category, or the whole roster
@@ -24,52 +26,49 @@ struct MilestoneBanner: Identifiable, Equatable {
 }
 
 extension TrackerViewModel {
-    /// Ranks weapons by how close they are to a milestone. A weapon that is the
-    /// last one needed for a category's Mastery tier 1 always sorts first;
-    /// everything else is ordered by fewest camos remaining until Gold.
+    /// Ranks weapons by how close they are to their next camo. Weapons
+    /// already into their Completionist camos come first, furthest along
+    /// first; then weapons by fewest camos left on their list.
     func suggestions(mode: String, limit: Int = 3) -> [Suggestion] {
-        guard let categories = catalog?.categories else { return [] }
-        var tier1Critical: [Suggestion] = []
-        var closeToGold: [(Suggestion, Int)] = []
-        let tier1Name = AppMode(rawValue: mode)?.masteryCamos.tier1.name ?? "Mastery"
+        guard let categories = catalog?.categories, let appMode = AppMode(rawValue: mode) else { return [] }
+        let steps = appMode.completionist.steps
+        var onCompletionist: [(Suggestion, Int)] = []
+        var onCamoList: [(Suggestion, Int)] = []
 
         for category in categories {
-            let notGold = category.weapons.filter { !allCamosComplete(weaponId: $0.weaponId, mode: mode) }
-
-            if notGold.count == 1, let weapon = notGold.first {
-                let remaining = remainingCamoCount(weaponId: weapon.weaponId, mode: mode)
-                guard remaining > 0 else { continue }
-                tier1Critical.append(Suggestion(
-                    weaponId: weapon.weaponId,
-                    title: weapon.name.resolved(),
-                    subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") from \(tier1Name) in \(category.name.resolved())",
-                    isMasteryTier1Critical: true
-                ))
-                continue
-            }
-
-            for weapon in notGold {
-                let remaining = remainingCamoCount(weaponId: weapon.weaponId, mode: mode)
-                guard remaining > 0 else { continue }
-                closeToGold.append((Suggestion(
-                    weaponId: weapon.weaponId,
-                    title: weapon.name.resolved(),
-                    subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") to complete",
-                    isMasteryTier1Critical: false
-                ), remaining))
+            for weapon in category.weapons {
+                let weaponId = weapon.weaponId
+                if allCamosComplete(weaponId: weaponId, mode: mode) {
+                    // The next Completionist camo still to earn, if any.
+                    guard let next = (0..<Self.completionistStepCount).first(where: {
+                        !isCompletionistComplete(mode: mode, weaponId: weaponId, step: $0)
+                    }) else { continue }
+                    onCompletionist.append((Suggestion(
+                        weaponId: weaponId,
+                        title: weapon.name.resolved(),
+                        subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), steps[next].name),
+                        highlight: steps[next].color
+                    ), next))
+                } else {
+                    let remaining = remainingCamoCount(weaponId: weaponId, mode: mode)
+                    guard remaining > 0 else { continue }
+                    onCamoList.append((Suggestion(
+                        weaponId: weaponId,
+                        title: weapon.name.resolved(),
+                        subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") to complete",
+                        highlight: nil
+                    ), remaining))
+                }
             }
         }
 
-        closeToGold.sort { $0.1 < $1.1 }
-        let remainingSlots = max(0, limit - tier1Critical.count)
-        return tier1Critical + closeToGold.prefix(remainingSlots).map(\.0)
+        onCompletionist.sort { $0.1 > $1.1 }
+        onCamoList.sort { $0.1 < $1.1 }
+        return Array((onCompletionist.map(\.0) + onCamoList.map(\.0)).prefix(limit))
     }
 
-    /// Called right after a camo mutation with the weapon's Gold status from
-    /// *before* the change. Just the plain Gold banner — the Mastery
-    /// tier1/tier2 celebrations fire separately, from
-    /// `checkWeaponMasteryMilestone`, once their own challenge is actually
-    /// finished (Gold alone only *opens* tier1, it isn't earning it).
+    /// Called right after a camo or level change with whether the weapon's
+    /// camo list was finished *before* it. Finishing the list opens Gold.
     func checkMilestone(weaponId: Int, mode: String, wasGold: Bool) {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
         let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
@@ -84,57 +83,51 @@ extension TrackerViewModel {
         }
     }
 
-    /// Called right after a weapon's tier1/tier2 Mastery challenge amount
-    /// changes, with whether *that weapon* had already earned *that tier*
-    /// before the change, and whether the mode-wide tier3 capstone was
-    /// already achieved before the change. Three things can newly become
-    /// true from one nudge: this weapon's own tier, its whole category's
-    /// tier1 gate (opening tier2 for every weapon in that category), and the
-    /// mode-wide tier3 capstone — checked in that order so a single
-    /// celebration doesn't get buried by a bigger one.
-    func checkWeaponMasteryMilestone(mode: String, weaponId: Int, tier: Int, wasComplete: Bool, wasTier3Achieved: Bool, was100PlusAchieved: Bool) {
-        guard !wasComplete, isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier),
-              let tiers = AppMode(rawValue: mode)?.masteryCamos,
+    /// Called right after a Completionist change with the state from before
+    /// it. One tap can earn this weapon's step, unlock the final camo on
+    /// several weapons at once (the mode's Harmonic Break count just reached
+    /// the number needed), reach a Mastery tier, and reach 100%+: announced
+    /// in that order, each only if it is new.
+    func checkCompletionistMilestone(mode: String, weaponId: Int, before: CompletionistSnapshot) {
+        guard let appMode = AppMode(rawValue: mode),
               let weaponName = weapon(id: weaponId)?.name.resolved() else { return }
+        let completionist = appMode.completionist
+        let icons = ["medal.fill", "seal.fill", "waveform.path"]
 
-        if tier == 3 { return } // tier3 has no per-weapon challenge; see below
-
-        let camo = tier == 1 ? tiers.tier1 : tiers.tier2
-        let icon = tier == 1 ? "diamond.fill" : "hexagon.fill"
-        announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
-                 subtitle: weaponName, titleGradient: camo.gradient, icon: icon)
-
-        if tier == 2, isMasteryTier3Achieved(mode: mode) {
-            if wasTier3Achieved {
-                // The capstone gate only needs `baseWeaponCount` weapons at
-                // tier2 (see `masteryTier2Progress`), so it can already be
-                // true before every weapon — including a DLC one — has
-                // actually finished. This weapon just caught up to a
-                // capstone the mode already has, not a fresh unlock, so it
-                // gets its own name instead of repeating the original
-                // "Total Mastery" celebration verbatim.
-                announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tiers.tier3.name),
-                         subtitle: String(format: "mw4.ui.milestone.tier3_joins_subtitle".localized(), weaponName),
-                         titleGradient: tiers.tier3.gradient, icon: "star.fill")
-            } else {
-                announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tiers.tier3.name),
-                         subtitle: "mw4.ui.milestone.tier3_subtitle".localized(),
-                         titleGradient: tiers.tier3.gradient, icon: "star.fill")
-            }
+        for step in (0..<Self.completionistStepCount).reversed()
+        where !before.steps[step] && isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) {
+            let camo = completionist.steps[step]
+            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
+                     subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step])
+            break
         }
 
-        // The flex milestone past tier3 itself — literally every weapon that
-        // currently exists, DLC included, at tier2 (see `is100PlusAchieved`).
-        // Distinct from the tier3 celebration above: tier3 only ever needs
-        // `baseWeaponCount` of them, so this can land well after that one,
-        // once a DLC weapon closes the gap.
-        if tier == 2, !was100PlusAchieved, is100PlusAchieved(mode: mode) {
-            announce(
-                title: "mw4.ui.milestone.100_plus_title".localized(),
-                subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(), tiers.tier2.name),
-                titleGradient: .platinum,
-                icon: "crown.fill"
-            )
+        let finals = finalCamoCount(mode: mode)
+        if finals > before.finalCamoCount {
+            let gained = finals - before.finalCamoCount
+            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), completionist.final.name),
+                     subtitle: gained == 1 && hasFinalCamo(mode: mode, weaponId: weaponId)
+                        ? weaponName
+                        : String(format: "mw4.ui.milestone.final_many".localized(), gained),
+                     titleGradient: completionist.final.gradient, icon: "sparkles")
+        }
+
+        let tiers = appMode.masteryCamos
+        let tierCamos = [tiers.tier1, tiers.tier2, tiers.tier3]
+        for tier in (1...3).reversed() where !before.mastery[tier - 1] && isMasteryAchieved(mode: mode, tier: tier) {
+            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
+                     subtitle: tier == 3
+                        ? "mw4.ui.milestone.tier3_subtitle".localized()
+                        : String(format: "mw4.ui.milestone.mastery_subtitle".localized(),
+                                 masteryWeaponsNeeded(mode: mode, tier: tier), completionist.final.name),
+                     titleGradient: tierCamos[tier - 1].gradient, icon: tier == 3 ? "star.fill" : "diamond.fill")
+            break
+        }
+
+        if !before.is100Plus, is100PlusAchieved(mode: mode) {
+            announce(title: "mw4.ui.milestone.100_plus_title".localized(),
+                     subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(), completionist.final.name),
+                     titleGradient: .platinum, icon: "crown.fill")
         }
     }
 

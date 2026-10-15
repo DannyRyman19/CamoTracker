@@ -25,9 +25,6 @@ struct WeaponListView: View {
         Binding(get: { filter }, set: { filterRaw = $0.rawValue })
     }
 
-    private var goldCount: Int { viewModel.goldWeaponCount(in: category, mode: mode.rawValue) }
-    private var hasMasteryTier1: Bool { viewModel.categoryHasMasteryTier1(category, mode: mode.rawValue) }
-    private var hasMasteryTier2: Bool { viewModel.categoryHasMasteryTier2(category, mode: mode.rawValue) }
 
     private var displayedWeapons: [WeaponEntry] {
         var weapons = category.weapons
@@ -72,11 +69,7 @@ struct WeaponListView: View {
                     // same number, unlike the root tab's blended completion
                     // metric (which really is distinct from any one column).
                     StatSummaryCard(
-                        stats: [
-                            .init(value: "\(goldCount)/\(category.weapons.count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
-                            .init(value: "\(viewModel.categoryMasteryTier1Count(category, mode: mode.rawValue))/\(category.weapons.count)", label: mode.masteryCamos.tier1.name, labelGradient: hasMasteryTier1 ? mode.masteryCamos.tier1.gradient : nil, ringFraction: category.weapons.isEmpty ? 0 : Double(viewModel.categoryMasteryTier1Count(category, mode: mode.rawValue)) / Double(category.weapons.count), ringColor: mode.masteryCamos.tier1.color, ringGradient: mode.masteryCamos.tier1.gradient),
-                            .init(value: "\(viewModel.categoryMasteryTier2Count(category, mode: mode.rawValue))/\(category.weapons.count)", label: mode.masteryCamos.tier2.name, labelGradient: hasMasteryTier2 ? mode.masteryCamos.tier2.gradient : nil, ringFraction: category.weapons.isEmpty ? 0 : Double(viewModel.categoryMasteryTier2Count(category, mode: mode.rawValue)) / Double(category.weapons.count), ringColor: mode.masteryCamos.tier2.color, ringGradient: mode.masteryCamos.tier2.gradient)
-                        ]
+                        stats: CategoryStats.stats(viewModel: viewModel, category: category, mode: mode)
                     )
                 }
                 .listRowInsets(EdgeInsets())
@@ -126,14 +119,12 @@ struct WeaponRow: View {
 
     private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
     private var isGold: Bool { viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue) }
-    /// This weapon's own tier1/tier2 Mastery — each diamond glyph reflects
-    /// the individual weapon's status now (BO7's Mastery camos are earned
-    /// per weapon), not the whole category's.
-    private var hasMasteryTier1: Bool {
-        viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: 1)
-    }
-    private var hasMasteryTier2: Bool {
-        viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: 2)
+    /// The best Completionist camo this weapon has in this mode, if any.
+    private var highest: Int? { viewModel.highestCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) }
+
+    private func color(ofCompletionist index: Int) -> Color {
+        let completionist = mode.completionist
+        return index < completionist.steps.count ? completionist.steps[index].color : completionist.final.color
     }
 
     var body: some View {
@@ -158,6 +149,8 @@ struct WeaponRow: View {
                         .foregroundStyle(Color.appInk)
                         .lineLimit(1)
                     AcquiredByLabel(weapon: weapon, font: .system(size: 10.5), color: .appInkMuted)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                 }
                 Spacer(minLength: 8)
                 // Pips stay right-aligned above the level, out of the name's
@@ -169,10 +162,11 @@ struct WeaponRow: View {
                             camos: camos,
                             isComplete: { viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) },
                             filledColor: mode.accent,
-                            masteryTiers: [
-                                .init(achieved: hasMasteryTier1, color: mode.masteryCamos.tier1.color),
-                                .init(achieved: hasMasteryTier2, color: mode.masteryCamos.tier2.color)
-                            ]
+                            // One diamond per Completionist camo: Gold,
+                            // Platinum, Harmonic Break, final.
+                            masteryTiers: (0...TrackerViewModel.completionistStepCount).map { index in
+                                .init(achieved: (highest ?? -1) >= index, color: color(ofCompletionist: index))
+                            }
                         )
                     }
                     // Weapon level is global — the same number shows up under every mode tab.
@@ -184,6 +178,6 @@ struct WeaponRow: View {
             }
         }
         .padding(12)
-        .borderedCard(accent: isGold ? .camoGold : nil)
+        .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil))
     }
 }

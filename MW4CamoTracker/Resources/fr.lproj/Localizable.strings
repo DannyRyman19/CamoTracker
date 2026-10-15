@@ -17,10 +17,6 @@
 "mw4.ui.ripple_tide" = "Ripple Tide";
 "mw4.ui.helio" = "Helio";
 "mw4.ui.section.mastery" = "Maîtrise";
-"mw4.ui.mastery_requirement" = "Obtenez %d éliminations à la tête avec cette arme pour obtenir %@.";
-"mw4.ui.mastery_tier2_locked" = "Se débloque une fois que chaque arme de cette catégorie a %@.";
-"mw4.ui.mastery_tier3_locked" = "Se débloque une fois que chaque arme dans %@ a %@.";
-"mw4.ui.mastery_tier3_locked_weapon" = "Terminez d'abord la propre série de Maîtrise de cette arme.";
 "mw4.ui.weapons_unit" = "armes";
 "mw4.ui.done" = "Terminé";
 "mw4.ui.search_weapons" = "Rechercher des armes…";
@@ -86,7 +82,6 @@
 "mw4.ui.milestone.camos_complete_title" = "Camos terminés";
 "mw4.ui.milestone.unlocked_title" = "%@ débloqué";
 "mw4.ui.milestone.tier3_subtitle" = "Chaque arme, chaque camo. Maîtrise totale.";
-"mw4.ui.milestone.tier3_joins_subtitle" = "%@ rejoint la maîtrise totale.";
 "mw4.ui.milestone.100_plus_title" = "100%+ Atteint";
 "mw4.ui.milestone.100_plus_subtitle" = "Chaque arme a obtenu %@, armes DLC comprises. Il ne reste plus rien à maîtriser.";
 "mw4.onboarding.step" = "Étape";
@@ -106,3 +101,24 @@
 "mw4.ui.report.unlock.default" = "Débloqué par défaut";
 "mw4.ui.report.unlock.field" = "Niveau de déblocage correct";
 "mw4.ui.report.unlock.message" = "L'app indique actuellement le niveau %@.";
+
+/* Completionist and mode-wide Mastery (1.0.1) */
+"mw4.ui.section.military" = "Militaire";
+"mw4.ui.section.special" = "Spécial";
+"mw4.ui.section.completionist" = "Complétionniste";
+"mw4.ui.completionist.gold" = "Or";
+"mw4.ui.completionist.platinum" = "Platine";
+"mw4.ui.completionist.harmonic_break" = "Harmonic Break";
+"mw4.ui.completionist.final" = "Camouflage final";
+"mw4.ui.completionist.locked_camos" = "Terminez d'abord les camouflages Militaires et Spéciaux de cette arme.";
+"mw4.ui.completionist.locked_previous" = "Obtenez d'abord %@ sur cette arme.";
+"mw4.ui.completionist.final_locked_count" = "Obtenez %1$@ sur cette arme, avec %2$d défis %1$@ réussis au total (%3$d pour l'instant).";
+"mw4.ui.completionist.final_count" = "%1$d/%2$d défis %3$@ réussis.";
+"mw4.ui.mastery.weapons_needed" = "%1$d/%2$d armes avec %3$@";
+"mw4.ui.camo_level_earned" = "Obtenu au niveau d'arme %d.";
+"mw4.ui.suggestion.next_camo" = "Suivant : %@";
+"mw4.ui.milestone.final_many" = "%d armes l'ont désormais.";
+"mw4.ui.milestone.mastery_subtitle" = "%1$d armes avec %2$@.";
+"mw4.ui.completionist.locked_class" = "Obtenez d'abord %1$@ sur toutes les armes de la catégorie %2$@.";
+"mw4.ui.completionist.locked_class_camos" = "Terminez d'abord les camouflages de toutes les armes de la catégorie %@.";
+"mw4.ui.completionist.locked_mode" = "Obtenez d'abord %1$@ sur %2$d armes (%3$d pour l'instant).";

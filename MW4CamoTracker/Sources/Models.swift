@@ -106,8 +106,9 @@ struct WeaponEntry: Codable, Identifiable {
 /// A mode contributes two independent things:
 /// - `weaponCamos`: that mode's own base camo track for each weapon, looked
 ///   up by `weaponId` against the shared catalog above. Every mode
-///   (Multiplayer, Warzone, DMZ) has one; finishing it opens that mode's
-///   Mastery camos (`AppMode.masteryCamos`).
+///   (Multiplayer, Warzone, DMZ) has one; finishing it opens that weapon's
+///   Completionist camos (`AppMode.completionist`), which in turn feed the
+///   mode's Mastery camos (`AppMode.masteryCamos`).
 /// - `objectives`: mode-exclusive, non-weapon content (DMZ's Hajin extraction
 ///   objectives) that has no equivalent in other modes and doesn't feed
 ///   Mastery.
@@ -118,14 +119,50 @@ struct ModeFile: Codable {
     var objectives: [Category]
     /// Optional over-the-air override of this mode's Mastery trio. Absent
     /// (every file before launch, and any older cached copy) means the
-    /// built-in names/amounts/colors in `AppMode.builtInMasteryCamos` stand.
+    /// built-in names/colors/thresholds in `AppMode.builtInMasteryCamos` stand.
     var mastery: MasteryConfig? = nil
+    /// This mode's Completionist camos: Gold, Platinum and Harmonic Break
+    /// (each with its own challenge, which can differ by weapon category),
+    /// then the final camo. Absent means plain tick boxes under the built-in
+    /// names, and a final camo that needs only the weapon's own Harmonic Break.
+    var completionist: CompletionistConfig? = nil
+}
+
+/// The `completionist` block of a mode file.
+struct CompletionistConfig: Codable {
+    /// Gold, Platinum, Harmonic Break, in that order. Fewer entries leave the
+    /// rest on their built-in names with no challenge.
+    var steps: [CompletionistStepConfig]?
+    var final: CompletionistFinalConfig?
+}
+
+struct CompletionistStepConfig: Codable {
+    var name: LocalizedText?
+    var colors: [String]?
+    /// The challenge for every weapon category without its own below.
+    var requirement: Requirement?
+    /// Per weapon category, keyed by `categoryId` as a string ("0").
+    var byCategory: [String: Requirement]?
+    /// What has to be done before this step opens on a weapon, beyond the
+    /// step before it on that weapon: "weapon" (nothing more), "category"
+    /// (the step before on every weapon in its class) or "mode" (the step
+    /// before on the whole launch roster). Absent: Gold "weapon", Platinum
+    /// "category", Harmonic Break "mode".
+    var unlock: String?
+}
+
+/// The fourth Completionist camo (Divergence in Multiplayer). It has no
+/// challenge: a weapon earns it once it has its own Harmonic Break and
+/// `harmonicBreaksNeeded` Harmonic Breaks are done across the mode.
+struct CompletionistFinalConfig: Codable {
+    var name: LocalizedText?
+    var colors: [String]?
+    var harmonicBreaksNeeded: Int?
 }
 
 /// Per-tier Mastery overrides from the mode JSON. Every field is optional and
-/// only replaces what it names, so a file can correct just tier1's amount at
-/// launch without restating names or colors. tier3 is a pure aggregate gate:
-/// its `amount`/`unit`/`description` are ignored.
+/// only replaces what it names, so a file can correct just tier1's threshold
+/// at launch without restating names or colors.
 struct MasteryConfig: Codable {
     var tier1: MasteryTierConfig?
     var tier2: MasteryTierConfig?
@@ -134,12 +171,9 @@ struct MasteryConfig: Codable {
 
 struct MasteryTierConfig: Codable {
     var name: LocalizedText?
-    var amount: Int?
-    var unit: String?
-    /// The full per-language sentence, amount included ("Get 5 longshot
-    /// kills…") — replaces the bundled "headshot kills" string, so the
-    /// challenge itself can change without an app update.
-    var description: LocalizedText?
+    /// How many weapons need this mode's final Completionist camo for this
+    /// tier. Absent means a third, two thirds and all of the launch roster.
+    var weaponsNeeded: Int?
     /// "#RRGGBB" hex; the first is the badge/pip swatch, all of them together
     /// the animated gradient.
     var colors: [String]?
@@ -170,6 +204,10 @@ struct ChallengeItem: Codable, Identifiable {
     let unlockLevel: Int?
     let requirement: Requirement?
     var children: [ChallengeItem]
+    /// "military" or "special": which section of a weapon's camo list this
+    /// camo sits in. A Military camo with an `unlockLevel` and no challenge
+    /// is earned by reaching that level. Absent means the plain "Camos" list.
+    var group: String? = nil
     var id: Int { itemId }
 
     var isLeaf: Bool { children.isEmpty }

@@ -37,25 +37,10 @@ enum AppMode: String, CaseIterable, Identifiable {
 
     /// This mode's own 3-tier Mastery camo progression — the real MW4 names
     /// and colors, not invented (see Theme.swift's `Color` extension for how
-    /// each color was sampled). This is the real BO7 Camo Tracker shape
-    /// (Gold → Diamond → Tempest → Singularity — every step past Gold has
-    /// its own per-weapon challenge, gated by aggregate completion of the
-    /// step before it), assumed identical across Multiplayer/Warzone/DMZ:
-    ///
-    /// - **tier1** is per-weapon: available once that weapon's base track
-    ///   (Slate…Gold) is done, earned via its own small challenge.
-    /// - **tier2** is also per-weapon, but only *available* on a weapon once
-    ///   every weapon in that weapon's category has earned tier1 — a
-    ///   category-wide gate, not an individual one.
-    /// - **tier3** is the single mode-wide capstone: unlocks once every
-    ///   weapon in the whole mode (every category) has earned tier2. That's
-    ///   the whole requirement — no leveling condition on top.
-    ///
-    /// See `TrackerViewModel`'s "Weapon Mastery" section for the actual
-    /// per-weapon tracking this drives. Deliberately *not* modeled after
-    /// BO2's tracker — Black Ops 2 predates this challenge-tier system
-    /// entirely and gates Mastery on Prestige instead, a genuinely different
-    /// mechanic that doesn't apply here.
+    /// each color was sampled). Mastery is mode-wide, not per weapon: the
+    /// tiers unlock one after another as more weapons earn this mode's final
+    /// Completionist camo (Divergence in Multiplayer), at the counts in
+    /// `weaponsNeeded` (see `TrackerViewModel`'s Mastery section).
     var masteryCamos: (tier1: MasteryCamo, tier2: MasteryCamo, tier3: MasteryCamo) {
         let base = builtInMasteryCamos
         guard let config = MasteryOverrides.byMode[rawValue] else { return base }
@@ -68,53 +53,77 @@ enum AppMode: String, CaseIterable, Identifiable {
         switch self {
         case .multiplayer:
             return (
-                MasteryCamo(nameKey: "mw4.ui.mercurial_drift", color: .camoMercurialDrift, gradient: .mercurialDrift, requirement: .tier1),
-                MasteryCamo(nameKey: "mw4.ui.polyatomic_reforged", color: .camoPolyatomicReforged, gradient: .polyatomicReforged, requirement: .tier2),
-                MasteryCamo(nameKey: "mw4.ui.orion_reforged", color: .camoOrionReforged, gradient: .orionReforged, requirement: nil)
+                MasteryCamo(nameKey: "mw4.ui.mercurial_drift", color: .camoMercurialDrift, gradient: .mercurialDrift),
+                MasteryCamo(nameKey: "mw4.ui.polyatomic_reforged", color: .camoPolyatomicReforged, gradient: .polyatomicReforged),
+                MasteryCamo(nameKey: "mw4.ui.orion_reforged", color: .camoOrionReforged, gradient: .orionReforged)
             )
         case .warzone:
             return (
-                MasteryCamo(nameKey: "mw4.ui.parallax", color: .camoParallax, gradient: .parallax, requirement: .tier1),
-                MasteryCamo(nameKey: "mw4.ui.damascus_reforged", color: .camoDamascusReforged, gradient: .damascusReforged, requirement: .tier2),
-                MasteryCamo(nameKey: "mw4.ui.empyros", color: .camoEmpyros, gradient: .empyros, requirement: nil)
+                MasteryCamo(nameKey: "mw4.ui.parallax", color: .camoParallax, gradient: .parallax),
+                MasteryCamo(nameKey: "mw4.ui.damascus_reforged", color: .camoDamascusReforged, gradient: .damascusReforged),
+                MasteryCamo(nameKey: "mw4.ui.empyros", color: .camoEmpyros, gradient: .empyros)
             )
         case .dmz:
             return (
-                MasteryCamo(nameKey: "mw4.ui.chiral", color: .camoChiral, gradient: .chiral, requirement: .tier1),
-                MasteryCamo(nameKey: "mw4.ui.ripple_tide", color: .camoRippleTide, gradient: .rippleTide, requirement: .tier2),
-                MasteryCamo(nameKey: "mw4.ui.helio", color: .camoHelio, gradient: .helio, requirement: nil)
+                MasteryCamo(nameKey: "mw4.ui.chiral", color: .camoChiral, gradient: .chiral),
+                MasteryCamo(nameKey: "mw4.ui.ripple_tide", color: .camoRippleTide, gradient: .rippleTide),
+                MasteryCamo(nameKey: "mw4.ui.helio", color: .camoHelio, gradient: .helio)
             )
         }
     }
+
+    /// This mode's Completionist camos for every weapon: Gold, Platinum and
+    /// Harmonic Break, then the final camo. Names and colors come from the
+    /// mode file's `completionist` block where it sets them.
+    var completionist: (steps: [MasteryCamo], final: MasteryCamo) {
+        let config = CompletionistOverrides.byMode[rawValue]
+        let builtIn = [
+            MasteryCamo(nameKey: "mw4.ui.completionist.gold", color: .camoGold, gradient: .gold),
+            MasteryCamo(nameKey: "mw4.ui.completionist.platinum", color: .camoPlatinum, gradient: .platinum),
+            MasteryCamo(nameKey: "mw4.ui.completionist.harmonic_break", color: .camoHarmonicBreak, gradient: .harmonicBreak),
+        ]
+        let steps = builtIn.enumerated().map { index, camo in
+            let step = config?.steps.flatMap { $0.indices.contains(index) ? $0[index] : nil }
+            return camo.overriding(name: step?.name, colors: step?.colors)
+        }
+        let final = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence)
+            .overriding(name: config?.final?.name, colors: config?.final?.colors)
+        return (steps, final)
+    }
 }
 
-/// One entry in a mode's Mastery camo trio — a localization key (camo names
-/// are proper nouns and aren't translated, same convention as weapon names),
-/// the single color-matched swatch used for badges/pips, a multi-stop
-/// `gradient` for the animated title treatment (see `AnimatedGradientText`),
-/// and (for tier1/tier2 only — tier3 is a pure aggregate gate, `nil` here)
-/// its own per-weapon `requirement`.
+/// One named camo with its colors: a Mastery tier or a Completionist step.
+/// A localization key (camo names are proper nouns and aren't translated,
+/// same convention as weapon names), the single color-matched swatch used
+/// for badges/pips, and a multi-stop `gradient` for the animated title
+/// treatment (see `AnimatedGradientText`).
 struct MasteryCamo {
     let nameKey: String
     let color: Color
     let gradient: [Color]
-    let requirement: MasteryRequirement?
     var nameOverride: LocalizedText? = nil
+    /// Mastery only: weapons with the final Completionist camo this tier
+    /// needs, when the mode file sets it.
+    var weaponsNeeded: Int? = nil
     var name: String { nameOverride?.resolved() ?? nameKey.localized() }
 
     /// This camo with a mode JSON's `MasteryTierConfig` laid over it — only
     /// the fields the config actually sets change.
     func applying(_ config: MasteryTierConfig?) -> MasteryCamo {
         guard let config else { return self }
-        let colors = (config.colors ?? []).compactMap(Color.init(hex:))
+        var camo = overriding(name: config.name, colors: config.colors)
+        camo.weaponsNeeded = config.weaponsNeeded.map { max(1, $0) } ?? weaponsNeeded
+        return camo
+    }
+
+    func overriding(name: LocalizedText?, colors: [String]?) -> MasteryCamo {
+        let parsed = (colors ?? []).compactMap(Color.init(hex:))
         return MasteryCamo(
             nameKey: nameKey,
-            color: colors.first ?? color,
-            gradient: colors.isEmpty ? gradient : colors,
-            requirement: requirement.map {
-                MasteryRequirement(amount: max(1, config.amount ?? $0.amount), unit: config.unit ?? $0.unit, descriptionOverride: config.description)
-            },
-            nameOverride: config.name ?? nameOverride
+            color: parsed.first ?? color,
+            gradient: parsed.isEmpty ? gradient : parsed,
+            nameOverride: name ?? nameOverride,
+            weaponsNeeded: weaponsNeeded
         )
     }
 }
@@ -127,25 +136,10 @@ enum MasteryOverrides {
     nonisolated(unsafe) static var byMode: [String: MasteryConfig] = [:]
 }
 
-/// A per-weapon Mastery tier's own challenge, on top of its availability gate
-/// (see `TrackerViewModel`'s Weapon Mastery section). Amounts are
-/// placeholders — MW4 hasn't published real numbers for these — but a small
-/// escalating headshot-kill count *per weapon* is the real family's own
-/// pattern (BO7 Camo Tracker's own per-tier `AmountRequired`, e.g. Diamond
-/// asking for a handful of headshots on each gun), not invented from nothing.
-struct MasteryRequirement {
-    let amount: Int
-    var unit: String = "headshots"
-    var descriptionOverride: LocalizedText? = nil
-    /// Names the camo it earns — "Get 3 headshot kills with this weapon to
-    /// earn Mercurial Drift," not a generic amount with no context. A mode
-    /// JSON's own sentence wins when it has one.
-    func description(camoName: String) -> String {
-        descriptionOverride?.resolved() ?? String(format: "mw4.ui.mastery_requirement".localized(), amount, camoName)
-    }
-
-    static let tier1 = MasteryRequirement(amount: 3)
-    static let tier2 = MasteryRequirement(amount: 5)
+/// The `completionist` block of each loaded mode file, kept the same way as
+/// `MasteryOverrides`.
+enum CompletionistOverrides {
+    nonisolated(unsafe) static var byMode: [String: CompletionistConfig] = [:]
 }
 
 extension Color {
@@ -183,6 +177,13 @@ extension [Color] {
     /// mode-agnostic platinum/chrome sweep instead of borrowing another
     /// tier's colors.
     static let platinum: [Color] = [.camoPlatinum, Color(red: 0.96, green: 0.98, blue: 1.00), Color(red: 0.62, green: 0.68, blue: 0.74)]
+
+    /// Harmonic Break and the final Completionist camo (Divergence in
+    /// Multiplayer). No art has been shown yet, so these are stand-ins
+    /// picked to sit apart from Gold, Platinum and the Mastery camos; a mode
+    /// file's `colors` replaces them once the real finishes are known.
+    static let harmonicBreak: [Color] = [.camoHarmonicBreak, Color(red: 0.62, green: 0.95, blue: 0.92), Color(red: 0.36, green: 0.30, blue: 0.86)]
+    static let divergence: [Color] = [.camoDivergence, Color(red: 0.98, green: 0.55, blue: 0.86), Color(red: 0.20, green: 0.10, blue: 0.48)]
 }
 
 extension Color {
@@ -199,6 +200,9 @@ extension Color {
     /// The "100%+" flex-milestone color — a cool platinum/chrome, deliberately
     /// distinct from any camo's own palette since it isn't one.
     static let camoPlatinum = Color(red: 0.78, green: 0.82, blue: 0.86) // #C7D1DB
+    /// Stand-ins until the real finishes are shown; see `[Color].harmonicBreak`.
+    static let camoHarmonicBreak = Color(red: 0.36, green: 0.78, blue: 0.86) // #5CC7DB
+    static let camoDivergence    = Color(red: 0.69, green: 0.31, blue: 0.91) // #B04FE8
 
     /// MW4's real Mastery camo tier colors — all 9 of them (3 per mode),
     /// sampled directly from the camo art itself (Destructoid's "All MW4

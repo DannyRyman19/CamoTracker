@@ -158,6 +158,7 @@ enum SupportMail {
 /// `compact` renders just the glyph for a toolbar; the full-width card form is
 /// kept for anywhere it sits inline in a list.
 struct ReportIssueMenu: View {
+    @EnvironmentObject private var viewModel: TrackerViewModel
     let weapon: WeaponEntry
     let mode: AppMode
     var category: String? = nil
@@ -237,14 +238,21 @@ struct ReportIssueMenu: View {
         }
     }
 
-    /// This mode's three Mastery camos, in tier order. tier3 has no challenge
-    /// of its own (its gate is tier2), so it carries no requirement.
+    /// This weapon's Completionist camos then the mode's Mastery camos, as
+    /// report targets. Only Gold, Platinum and Harmonic Break carry a
+    /// challenge; the final camo and Mastery are earned by counts.
     private var masteryRefs: [SupportMail.MasteryRef] {
+        let completionist = mode.completionist
         let tiers = mode.masteryCamos
-        return [
-            .init(name: tiers.tier1.name, tier: 1, requirement: tiers.tier1.requirement?.amount),
-            .init(name: tiers.tier2.name, tier: 2, requirement: tiers.tier2.requirement?.amount),
-            .init(name: tiers.tier3.name, tier: 3, requirement: tiers.tier3.requirement?.amount),
+        let steps = completionist.steps.enumerated().map { index, camo in
+            SupportMail.MasteryRef(name: camo.name, tier: index + 1,
+                                   requirement: viewModel.completionistRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, step: index)?.amount)
+        }
+        return steps + [
+            .init(name: completionist.final.name, tier: 4, requirement: nil),
+            .init(name: tiers.tier1.name, tier: 5, requirement: nil),
+            .init(name: tiers.tier2.name, tier: 6, requirement: nil),
+            .init(name: tiers.tier3.name, tier: 7, requirement: nil),
         ]
     }
 
