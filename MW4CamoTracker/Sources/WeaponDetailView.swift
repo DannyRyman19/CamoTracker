@@ -342,8 +342,10 @@ private struct CompletionistStepRow: View {
         case .weapon:
             return "mw4.ui.locked".localized()
         case .category:
-            let className = viewModel.category(containingWeaponId: weapon.weaponId)?.name.resolved() ?? ""
-            return before.map { String(format: "mw4.ui.completionist.locked_class".localized(), $0, className) }
+            guard let category = viewModel.category(containingWeaponId: weapon.weaponId) else { return "mw4.ui.locked".localized() }
+            let progress = viewModel.completionistCategoryGateProgress(category, mode: mode.rawValue, step: step)
+            let className = category.name.resolved()
+            return before.map { String(format: "mw4.ui.completionist.locked_class".localized(), $0, progress.total, className, progress.done) }
                 ?? String(format: "mw4.ui.completionist.locked_class_camos".localized(), className)
         case .mode:
             let progress = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: step)
