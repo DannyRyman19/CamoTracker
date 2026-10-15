@@ -28,6 +28,7 @@ struct ContentView: View {
         #if DEBUG
         let env = ProcessInfo.processInfo.environment
         if let raw = env["SS_WEAPON"], let id = Int(raw) { return .weapon(id) }
+        if env["SS_CAT"] == "all" { return .allWeapons }
         if let raw = env["SS_CAT"], let id = Int(raw) { return .weaponCategory(id) }
         return nil
         #else

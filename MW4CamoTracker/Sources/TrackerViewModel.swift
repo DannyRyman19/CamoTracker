@@ -513,6 +513,56 @@ final class TrackerViewModel: ObservableObject {
 
     private var allWeapons: [WeaponEntry] { catalog?.categories.flatMap(\.weapons) ?? [] }
 
+    // MARK: - Where a weapon is on its track (filters)
+
+    enum WeaponStage { case military, special, completionist, finished }
+
+    /// The part of the track this weapon is working through in this mode.
+    func stage(mode: String, weaponId: Int) -> WeaponStage {
+        if hasFinalCamo(mode: mode, weaponId: weaponId) { return .finished }
+        if allCamosComplete(weaponId: weaponId, mode: mode) { return .completionist }
+        let hasMilitary = camos(weaponId: weaponId, mode: mode).contains { $0.group == "military" }
+        return hasMilitary && !allMilitaryComplete(mode: mode, weaponId: weaponId) ? .military : .special
+    }
+
+    /// A Special camo or Completionist challenge that's unlocked but not
+    /// done: something to work on in the next match.
+    func hasOpenChallenge(mode: String, weaponId: Int) -> Bool {
+        let openSpecial = camos(weaponId: weaponId, mode: mode).contains { camo in
+            militaryLevel(mode: mode, weaponId: weaponId, camo: camo) == nil
+                && !isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
+                && isCamoAvailable(mode: mode, weaponId: weaponId, camo: camo)
+        }
+        if openSpecial { return true }
+        return (0..<Self.completionistStepCount).contains { step in
+            !isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
+                && isCompletionistAvailable(mode: mode, weaponId: weaponId, step: step)
+        }
+    }
+
+    func matches(_ filter: WeaponFilter, mode: String, weaponId: Int) -> Bool {
+        switch filter {
+        case .all: return true
+        case .incomplete: return !allCamosComplete(weaponId: weaponId, mode: mode)
+        case .complete: return allCamosComplete(weaponId: weaponId, mode: mode)
+        case .ready: return hasOpenChallenge(mode: mode, weaponId: weaponId)
+        case .onMilitary: return stage(mode: mode, weaponId: weaponId) == .military
+        case .onSpecial: return stage(mode: mode, weaponId: weaponId) == .special
+        case .inCompletionist: return stage(mode: mode, weaponId: weaponId) == .completionist
+        case .hasFinal: return stage(mode: mode, weaponId: weaponId) == .finished
+        }
+    }
+
+    /// Every weapon as one list, for the "All weapons" screen.
+    var allWeaponsCategory: WeaponCategory? {
+        guard let catalog else { return nil }
+        return WeaponCategory(categoryId: Self.allWeaponsCategoryId,
+                              name: LocalizedText("mw4.ui.all_weapons".localized()),
+                              weapons: catalog.categories.flatMap(\.weapons))
+    }
+
+    static let allWeaponsCategoryId = -1
+
     // MARK: - Mastery (per mode, not per weapon)
     //
     // Each mode's trio (Mercurial Drift → Polyatomic Reforged → Orion

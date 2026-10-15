@@ -753,6 +753,31 @@ enum CompletionFilter: String, CaseIterable, Hashable {
     }
 }
 
+/// What a weapon list can be narrowed to. A superset of `CompletionFilter`
+/// (same raw values for the first three, so a saved choice carries over),
+/// with the camo track's stages and "ready to grind" on top.
+enum WeaponFilter: String, CaseIterable, Hashable {
+    case all, incomplete, complete
+    /// Something open to work on now: a Special camo or Completionist
+    /// challenge unlocked but not done. Military camos don't count, since
+    /// those are just playing the weapon.
+    case ready
+    case onMilitary, onSpecial, inCompletionist, hasFinal
+
+    func label(mode: AppMode) -> String {
+        switch self {
+        case .all: return "mw4.ui.filter.all".localized()
+        case .incomplete: return "mw4.ui.filter.incomplete".localized()
+        case .complete: return "mw4.ui.filter.complete".localized()
+        case .ready: return "mw4.ui.filter.ready".localized()
+        case .onMilitary: return "mw4.ui.filter.on_military".localized()
+        case .onSpecial: return "mw4.ui.filter.on_special".localized()
+        case .inCompletionist: return "mw4.ui.filter.in_completionist".localized()
+        case .hasFinal: return String(format: "mw4.ui.filter.has_final".localized(), mode.completionist.final.name)
+        }
+    }
+}
+
 /// A labeled control that opens the standard iOS menu of choices on tap —
 /// a `Picker` inside a `Menu` gets the system's own checkmarked dropdown
 /// list for free (the same furniture Files/Photos use for their Sort menus),

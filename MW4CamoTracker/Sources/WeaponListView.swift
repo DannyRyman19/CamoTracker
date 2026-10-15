@@ -13,29 +13,22 @@ struct WeaponListView: View {
     /// choice sticks as you move between categories — same persisted-filter
     /// idea as the sibling BO7 Camo Tracker app's `FilterContext`.
     @AppStorage("mw4_weapon_sort") private var sortRaw = ProgressSort.natural.rawValue
-    @AppStorage("mw4_weapon_filter") private var filterRaw = CompletionFilter.all.rawValue
+    @AppStorage("mw4_weapon_filter") private var filterRaw = WeaponFilter.all.rawValue
     private static let sortOptions: [ProgressSort] = [.natural, .alphabetical, .progressDesc, .progressAsc, .level]
 
     private var sort: ProgressSort { ProgressSort(rawValue: sortRaw) ?? .natural }
-    private var filter: CompletionFilter { CompletionFilter(rawValue: filterRaw) ?? .all }
+    private var filter: WeaponFilter { WeaponFilter(rawValue: filterRaw) ?? .all }
     private var sortBinding: Binding<ProgressSort> {
         Binding(get: { sort }, set: { sortRaw = $0.rawValue })
     }
-    private var filterBinding: Binding<CompletionFilter> {
+    private var filterBinding: Binding<WeaponFilter> {
         Binding(get: { filter }, set: { filterRaw = $0.rawValue })
     }
 
 
     private var displayedWeapons: [WeaponEntry] {
         var weapons = category.weapons
-        switch filter {
-        case .all:
-            break
-        case .incomplete:
-            weapons = weapons.filter { !viewModel.allCamosComplete(weaponId: $0.weaponId, mode: mode.rawValue) }
-        case .complete:
-            weapons = weapons.filter { viewModel.allCamosComplete(weaponId: $0.weaponId, mode: mode.rawValue) }
-        }
+        weapons = weapons.filter { viewModel.matches(filter, mode: mode.rawValue, weaponId: $0.weaponId) }
         switch sort {
         case .natural:
             break
@@ -76,7 +69,7 @@ struct WeaponListView: View {
                 .listRowBackground(Color.clear)
 
                 HStack(spacing: 8) {
-                    FilterSortMenu(title: "mw4.ui.filter".localized(), options: CompletionFilter.allCases, label: { $0.label }, accent: mode.accent, selection: filterBinding)
+                    FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: filterBinding)
                     FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
                 }
                 .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))

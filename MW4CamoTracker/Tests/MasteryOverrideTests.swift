@@ -372,6 +372,43 @@ struct TrackerViewModelTests {
         #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
     }
 
+    /// A weapon moves Military → Special → Completionist → finished, and the
+    /// stage filters follow it.
+    @Test func stageFiltersFollowTheTrack() throws {
+        let model = try model(["completionist": #"{"final": {"harmonicBreaksNeeded": 0}, "steps": [{"unlock": "weapon"}, {"unlock": "weapon"}, {"unlock": "weapon"}]}"#])
+        let weapon = try anyWeapon(model)
+        let id = weapon.weaponId
+        #expect(model.matches(.onMilitary, mode: mp, weaponId: id))
+        model.setLevel(model.maxLevel(for: weapon), for: weapon)
+        #expect(model.matches(.onSpecial, mode: mp, weaponId: id))
+        finishCamos(model, id)
+        #expect(model.matches(.inCompletionist, mode: mp, weaponId: id))
+        #expect(model.matches(.complete, mode: mp, weaponId: id))
+        harmonicBreak(model, id)
+        #expect(model.matches(.hasFinal, mode: mp, weaponId: id))
+        #expect(model.matches(.onMilitary, mode: mp, weaponId: id) == false)
+    }
+
+    /// "Ready to grind" means an open Special or Completionist challenge,
+    /// not just levelling: a fresh weapon isn't ready, a maxed one is.
+    @Test func readyToGrindNeedsAnOpenChallenge() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        #expect(model.matches(.ready, mode: mp, weaponId: weapon.weaponId) == false)
+        model.setLevel(model.maxLevel(for: weapon), for: weapon)
+        #expect(model.matches(.ready, mode: mp, weaponId: weapon.weaponId))
+        // All camos done and Gold open: still something to do.
+        finishCamos(model, weapon.weaponId)
+        #expect(model.matches(.ready, mode: mp, weaponId: weapon.weaponId))
+    }
+
+    @Test func allWeaponsListsEveryWeaponOnce() throws {
+        let model = try model()
+        let all = try #require(model.allWeaponsCategory)
+        #expect(all.weapons.count == model.totalWeaponCount)
+        #expect(Set(all.weapons.map(\.weaponId)).count == all.weapons.count)
+    }
+
     /// A published level wins over the spread.
     @Test func aPublishedMilitaryLevelWins() throws {
         let base = try model()
