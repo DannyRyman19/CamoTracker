@@ -8,6 +8,8 @@ enum Route: Hashable {
     case weaponCategory(Int)
     case weapon(Int)
     case objectiveCategory(Int)
+    /// Every weapon in one list, across classes.
+    case allWeapons
 }
 
 struct RouteDestinationView: View {
@@ -24,6 +26,10 @@ struct RouteDestinationView: View {
         case .weapon(let weaponId):
             if let weapon = viewModel.weapon(id: weaponId) {
                 WeaponDetailView(mode: mode, weapon: weapon)
+            }
+        case .allWeapons:
+            if let all = viewModel.allWeaponsCategory {
+                WeaponListView(mode: mode, category: all)
             }
         case .objectiveCategory(let categoryId):
             if let category = viewModel.modes[mode.rawValue]?.objectives.first(where: { $0.categoryId == categoryId }) {

@@ -156,6 +156,12 @@ struct CategoryListView: View {
                                     .listRowInsets(EdgeInsets())
                                     .listRowBackground(Color.clear)
                             } else {
+                                // Every weapon in one list first, then each class.
+                                if let all = viewModel.allWeaponsCategory {
+                                    CardGrid(items: [all], columns: columns, fillsRow: true, route: { _ in .allWeapons }) { category in
+                                        WeaponCategoryRow(mode: mode, category: category)
+                                    }
+                                }
                                 CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
                                     WeaponCategoryRow(mode: mode, category: category)
                                 }
