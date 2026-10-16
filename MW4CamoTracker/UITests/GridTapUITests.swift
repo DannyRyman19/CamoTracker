@@ -55,6 +55,36 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["HAN 86"].exists)
     }
 
+    /// Customise: switching Suggested off takes it off the tab, and Reset
+    /// brings it back (which also leaves the layout clean for other tests).
+    func testCustomiseHidesASection() {
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
+        app.launch()
+
+        func customise(_ change: () -> Void) {
+            XCTAssertTrue(app.buttons["customiseHome"].waitForExistence(timeout: 15))
+            app.buttons["customiseHome"].tap()
+            XCTAssertTrue(app.switches["Suggested"].waitForExistence(timeout: 5))
+            change()
+            app.navigationBars.buttons["Done"].tap()
+            XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 5))
+        }
+
+        customise { app.buttons["Reset to default"].tap() }
+        XCTAssertTrue(app.staticTexts["Suggested"].exists)
+
+        customise {
+            app.switches["Suggested"].coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+        }
+        XCTAssertFalse(app.staticTexts["Suggested"].exists)
+
+        customise { app.buttons["Reset to default"].tap() }
+        XCTAssertTrue(app.staticTexts["Suggested"].exists)
+    }
+
     func testTappingACategoryCardOpensThatCategoryOnly() {
         let app = launch()
         XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 15))
