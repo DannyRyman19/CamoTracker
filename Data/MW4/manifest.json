@@ -9,12 +9,15 @@
       "path": "multiplayer.json"
     },
     "warzone": {
-      "version": "0.8.4",
+      "version": "0.8.5",
       "path": "warzone.json"
     },
     "dmz": {
-      "version": "0.8.5",
+      "version": "0.8.6",
       "path": "dmz.json"
     }
+  },
+  "notification": {
+    "silent": true
   }
 }
