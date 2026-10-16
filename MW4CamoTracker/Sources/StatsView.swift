@@ -160,9 +160,8 @@ private struct ModeStatsCard: View {
     /// Gold, Platinum, Harmonic Break and the final camo: how many of the
     /// mode's weapons have each.
     private var completionistNodes: [MasteryTrack.Node] {
-        let completionist = mode.completionist
         let total = viewModel.totalWeaponCount
-        return (completionist.steps + [completionist.final]).enumerated().map { index, camo in
+        return mode.completionistCamos.enumerated().map { index, camo in
             let done = viewModel.completionistCount(mode: mode.rawValue, step: index)
             return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
                          achieved: total > 0 && done >= total, detail: "\(done)/\(total)")
@@ -254,7 +253,7 @@ private struct ModeStatsCard: View {
                                 // so a class at Divergence reads as further
                                 // on than one that has only done its camos.
                                 fraction: viewModel.categoryTrueCompletionFraction(category, mode: mode.rawValue),
-                                count: "\(viewModel.categoryFinalCount(category, mode: mode.rawValue))/\(category.weapons.count) \(mode.completionist.final.name)"
+                                count: "\(viewModel.categoryLastCompletionistCount(category, mode: mode.rawValue))/\(category.weapons.count) \(mode.lastCompletionist.name)"
                             )
                         }
                         ForEach(objectiveCategories) { category in

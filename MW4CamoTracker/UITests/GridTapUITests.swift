@@ -6,12 +6,18 @@ import XCTest
 /// phone the same taps go through the ordinary one-card rows.
 final class GridTapUITests: XCTestCase {
 
+    /// An empty save, whatever earlier tests left behind (as hex for the
+    /// arguments domain).
+    private static let emptySave = Data(#"{"weaponLevels":{},"weaponPrestige":{},"amounts":{},"completed":[]}"#.utf8)
+        .map { String(format: "%02x", $0) }.joined()
+
     private func launch(category: Int? = nil) -> XCUIApplication {
         let app = XCUIApplication()
         // The screenshot harness: straight to a tab, no splash or onboarding.
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         if let category { app.launchEnvironment["SS_CAT"] = "\(category)" }
-        app.launchArguments += ["-AppleLanguages", "(en)"]
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
         app.launch()
         return app
     }
@@ -38,8 +44,10 @@ final class GridTapUITests: XCTestCase {
 
     func testTappingACategoryCardOpensThatCategoryOnly() {
         let app = launch()
+        XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 15))
+        // Below Suggested and the filter row: scroll it into view.
         let second = app.staticTexts["SMGs"]
-        XCTAssertTrue(second.waitForExistence(timeout: 15))
+        for _ in 0..<4 where !second.isHittable { app.swipeUp() }
         second.tap()
         XCTAssertTrue(app.navigationBars["SMGs"].waitForExistence(timeout: 5))
 
@@ -49,38 +57,72 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Assault Rifles"].exists)
     }
 
-    /// The iPad weapon screen puts two camo tiles in one List row. Nudging
-    /// one camo's amount must leave its neighbour alone.
-    func testNudgingOneCamoLeavesItsNeighbourAlone() {
+    /// A save where every Assault Rifle has Gold, so HAN 86's Platinum
+    /// (a 50-headshot counter) is open, passed in through the arguments
+    /// domain so the test needs no setup screens.
+    private func launchWithPlatinumOpen() -> XCUIApplication {
+        let rifles = [0, 1, 2, 3, 4, 19, 20, 21]
+        var amounts: [String: Int] = [:]
+        for weapon in rifles { amounts["comp|multiplayer|\(weapon)|0"] = 1 }
+        // The HAN 86's Specials are counters (20, 50 and 15).
+        for (item, amount) in [8: 20, 9: 50, 10: 15] { amounts["camo|multiplayer|0|\(item)"] = amount }
+        let completed = rifles.flatMap { weapon in (8...10).map { "camo|multiplayer|\(weapon)|\($0)" } }
+        let store: [String: Any] = [
+            "weaponLevels": Dictionary(uniqueKeysWithValues: rifles.map { ("\($0)", 72) }),
+            "weaponPrestige": [String: Int](),
+            "amounts": amounts,
+            "completed": completed,
+        ]
+        let json = try! JSONSerialization.data(withJSONObject: store)
+        let hex = json.map { String(format: "%02x", $0) }.joined()
+
         let app = XCUIApplication()
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
-        app.launchEnvironment["SS_WEAPON"] = "3" // Kastov 762
-        app.launchArguments += ["-AppleLanguages", "(en)"]
+        app.launchEnvironment["SS_WEAPON"] = "0" // HAN 86
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(hex)>"]
+        app.launch()
+        return app
+    }
+
+    /// Tapping anywhere on a tick-box camo's card ticks it: here a Military
+    /// camo, whose tick sets the weapon level to it.
+    func testTappingATickBoxCardCompletesIt() {
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["SS_WEAPON"] = "1" // M4, max 72
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
         app.launch()
 
-        func amount(outOf total: Int) -> XCUIElement {
-            app.descendants(matching: .any)
-                .matching(NSPredicate(format: "label MATCHES %@", "[0-9]+/\(total)")).firstMatch
-        }
-        let slate = amount(outOf: 10), ridgeline = amount(outOf: 25)
-        XCTAssertTrue(slate.waitForExistence(timeout: 15))
-        XCTAssertTrue(ridgeline.exists)
-        let before = Int(slate.label.split(separator: "/")[0])!
-        let neighbour = ridgeline.label
+        let detail = app.staticTexts["Unlocks at weapon level 10."]
+        XCTAssertTrue(detail.waitForExistence(timeout: 15))
+        detail.tap()
+        XCTAssertTrue(app.staticTexts["Earned at weapon level 10."].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["10/72"].exists)
+    }
 
-        // Plus sits just right of the amount, minus just left.
-        let up = before < 10
-        let edge = slate.coordinate(withNormalizedOffset: CGVector(dx: up ? 1 : 0, dy: 0.5))
-        edge.withOffset(CGVector(dx: up ? 18 : -18, dy: 0)).tap()
+    /// A camo with a counter isn't completed by a tap on its card, but its
+    /// + still counts one up.
+    func testTappingACounterCardLeavesItAlone() {
+        let app = launchWithPlatinumOpen()
+        let tab = app.segmentedControls.buttons["Completionist"]
+        XCTAssertTrue(tab.waitForExistence(timeout: 15))
+        tab.tap()
 
-        let after = before + (up ? 1 : -1)
-        XCTAssertTrue(app.descendants(matching: .any)["\(after)/10"].waitForExistence(timeout: 5))
-        XCTAssertEqual(amount(outOf: 25).label, neighbour)
+        let count = app.descendants(matching: .any)["0/50"]
+        XCTAssertTrue(count.waitForExistence(timeout: 5))
+        app.staticTexts["Get 50 headshot kills against players."].tap()
+        XCTAssertTrue(app.descendants(matching: .any)["0/50"].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.descendants(matching: .any)["50/50"].exists)
 
-        // Put it back.
-        let changed = amount(outOf: 10)
-        changed.coordinate(withNormalizedOffset: CGVector(dx: up ? 0 : 1, dy: 0.5))
-            .withOffset(CGVector(dx: up ? -18 : 18, dy: 0)).tap()
-        XCTAssertTrue(app.descendants(matching: .any)["\(before)/10"].waitForExistence(timeout: 5))
+        // Plus sits just right of the count.
+        count.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)).withOffset(CGVector(dx: 18, dy: 0)).tap()
+        XCTAssertTrue(app.descendants(matching: .any)["1/50"].waitForExistence(timeout: 5))
+
+        // The tick box still completes it in one tap, no typing 50.
+        let name = app.staticTexts["Platinum"]
+        name.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 1)).withOffset(CGVector(dx: -22, dy: 0)).tap()
+        XCTAssertTrue(app.descendants(matching: .any)["50/50"].waitForExistence(timeout: 5))
     }
 }

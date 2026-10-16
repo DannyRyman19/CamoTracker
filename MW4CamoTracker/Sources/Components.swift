@@ -612,6 +612,8 @@ struct ChallengeRow: View {
     @State private var showAmountEntry = false
     @State private var amountText = ""
 
+    private var hasCounter: Bool { (item.requirement?.amount ?? 0) > 1 }
+
     var body: some View {
         HStack(spacing: 12) {
             Button(action: onToggle) {
@@ -678,6 +680,13 @@ struct ChallengeRow: View {
             }
         }
         .padding(.vertical, 5)
+        // The whole card ticks a tick-box camo. A camo with a counter is
+        // left to its tick box, −/+ and count, so a stray tap on the card
+        // can't max it out; those buttons take their own taps first.
+        .contentShape(Rectangle())
+        .onTapGesture {
+            if isAvailable, !hasCounter { onToggle() }
+        }
         .alert("mw4.ui.set_amount.title".localized(), isPresented: $showAmountEntry) {
             TextField("mw4.ui.set_amount.field".localized(), text: $amountText)
                 .keyboardType(.numberPad)
@@ -773,7 +782,7 @@ enum WeaponFilter: String, CaseIterable, Hashable {
         case .onMilitary: return "mw4.ui.filter.on_military".localized()
         case .onSpecial: return "mw4.ui.filter.on_special".localized()
         case .inCompletionist: return "mw4.ui.filter.in_completionist".localized()
-        case .hasFinal: return String(format: "mw4.ui.filter.has_final".localized(), mode.completionist.final.name)
+        case .hasFinal: return String(format: "mw4.ui.filter.has_final".localized(), mode.lastCompletionist.name)
         }
     }
 }

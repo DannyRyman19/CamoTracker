@@ -84,19 +84,25 @@ struct TrackerViewModelTests {
 
     /// A view model whose Multiplayer file is the bundled one with `blocks`
     /// (top-level key to JSON) laid over it.
-    private func model(_ blocks: [String: String] = [:]) throws -> TrackerViewModel {
+    private func model(_ blocks: [String: String] = [:], warzone: [String: String] = [:]) throws -> TrackerViewModel {
         try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
-        let target = cache.appendingPathComponent("multiplayer.json")
-        try? FileManager.default.removeItem(at: target)
-        if !blocks.isEmpty {
-            let seed = try #require(Bundle.main.url(forResource: "multiplayer", withExtension: "json"))
-            var object = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: seed)) as? [String: Any])
-            for (key, json) in blocks {
-                object[key] = try JSONSerialization.jsonObject(with: Data(json.utf8))
-            }
-            try JSONSerialization.data(withJSONObject: object).write(to: target)
-        }
+        try write("multiplayer", blocks)
+        try write("warzone", warzone)
         return TrackerViewModel(dataService: DataService(cacheDir: cache), defaults: defaults)
+    }
+
+    /// The bundled mode file with `blocks` (top-level key to JSON) laid
+    /// over it in the cache, or no cached copy at all for none.
+    private func write(_ mode: String, _ blocks: [String: String]) throws {
+        let target = cache.appendingPathComponent("\(mode).json")
+        try? FileManager.default.removeItem(at: target)
+        guard !blocks.isEmpty else { return }
+        let seed = try #require(Bundle.main.url(forResource: mode, withExtension: "json"))
+        var object = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: seed)) as? [String: Any])
+        for (key, json) in blocks {
+            object[key] = try JSONSerialization.jsonObject(with: Data(json.utf8), options: .fragmentsAllowed)
+        }
+        try JSONSerialization.data(withJSONObject: object).write(to: target)
     }
 
     private func anyWeapon(_ model: TrackerViewModel) throws -> WeaponEntry {
@@ -305,6 +311,15 @@ struct TrackerViewModelTests {
         #expect(model.categoryTrueCompletionFraction(category, mode: mp) > afterCamos)
     }
 
+    /// A `weaponCamos` block giving the weapon 8 Military camos with no
+    /// published levels, so the spread fallback is what's tested.
+    private func unpublishedMilitary(_ weaponId: Int) -> String {
+        let slots = (0..<8).map {
+            #"{"itemId": \#($0), "name": {"en": "Military \#($0 + 1)"}, "tier": \#($0 + 1), "children": [], "group": "military"}"#
+        }
+        return #"[{"weaponId": \#(weaponId), "camos": [\#(slots.joined(separator: ","))]}]"#
+    }
+
     private func split(_ model: TrackerViewModel, _ weaponId: Int) -> (military: [ChallengeItem], special: [ChallengeItem]) {
         let camos = model.camos(weaponId: weaponId, mode: mp)
         return (camos.filter { $0.group == "military" }, camos.filter { $0.group == "special" })
@@ -314,10 +329,7 @@ struct TrackerViewModelTests {
     /// weapon's max level, the last one on max itself.
     @Test func militaryLevelsAreSpreadUpToMaxUntilPublished() throws {
         let weapon = try anyWeapon(try model())
-        let slots = (0..<8).map {
-            #"{"itemId": \#($0), "name": {"en": "Military \#($0 + 1)"}, "tier": \#($0 + 1), "children": [], "group": "military"}"#
-        }
-        let model = try model(["weaponCamos": #"[{"weaponId": \#(weapon.weaponId), "camos": [\#(slots.joined(separator: ","))]}]"#])
+        let model = try model(["weaponCamos": unpublishedMilitary(weapon.weaponId)])
         let military = split(model, weapon.weaponId).military
         try #require(military.count == 8)
         let max = model.maxLevel(for: weapon)
@@ -356,21 +368,41 @@ struct TrackerViewModelTests {
         #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: third) == false)
     }
 
-    /// Max level earns every Military camo and opens the Specials, which
-    /// stay shut until the last Military camo.
-    @Test func maxLevelEarnsMilitaryAndOpensSpecials() throws {
+    /// By default each Special opens at its own level, Military or not:
+    /// the HAN 86's Smoke at 25 while Military 4 (34) is still to come.
+    @Test func specialsOpenAtTheirOwnLevel() throws {
         let model = try model()
         let weapon = try anyWeapon(model)
         let (military, special) = split(model, weapon.weaponId)
-        let last = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!))
-        model.setLevel(last - 1, for: weapon)
-        #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(!model.specialsWaitForMilitary(mode: mp))
+        model.setLevel(24, for: weapon)
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[0]))
+        model.setLevel(25, for: weapon)
+        #expect(!model.allMilitaryComplete(mode: mp, weaponId: weapon.weaponId))
+        #expect(!model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[3]))
+        #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[0]))
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[1]))
 
         model.setLevel(model.maxLevel(for: weapon), for: weapon)
         #expect(military.allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
         #expect(special.allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
-        // Open, not earned: Specials still need ticking.
+        // Open, not earned: Specials still need their challenge.
         #expect(special.allSatisfy { !model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+    }
+
+    /// `specialsAfterMilitary` keeps every Special shut until the last
+    /// Military camo, whatever its own level.
+    @Test func theSwitchKeepsSpecialsForAfterMilitary() throws {
+        let model = try model(["specialsAfterMilitary": "true"])
+        let weapon = try anyWeapon(model)
+        let (military, special) = split(model, weapon.weaponId)
+        #expect(model.specialsWaitForMilitary(mode: mp))
+        let last = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!))
+        model.setLevel(last - 1, for: weapon)
+        #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        model.setLevel(last, for: weapon)
+        #expect(special.prefix(2).allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[2]))
     }
 
     /// A prestiged weapon has passed every level, so nothing Military locks
@@ -424,6 +456,98 @@ struct TrackerViewModelTests {
         let all = try #require(model.allWeaponsCategory)
         #expect(all.weapons.count == model.totalWeaponCount)
         #expect(Set(all.weapons.map(\.weaponId)).count == all.weapons.count)
+    }
+
+    /// Prestige stages with their own max (Prestige Master to 250) don't
+    /// move the Military levels: they stay on the weapon's normal max.
+    @Test func militaryLevelsIgnoreThePrestigeStagesMax() throws {
+        let weapon = try anyWeapon(try model())
+        let model = try model(["weaponCamos": unpublishedMilitary(weapon.weaponId)])
+        let last = try #require(split(model, weapon.weaponId).military.last)
+        let before = model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: last)
+        for _ in 0..<model.prestigeStages.count {
+            model.setLevel(model.maxLevel(for: weapon), for: weapon)
+            model.prestigeUp(weapon)
+        }
+        #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: last) == before)
+        #expect(before == weapon.maxLevel)
+    }
+
+    // MARK: Rule switches
+
+    /// `trackFrom`: Warzone sharing Multiplayer's track sees its camos and
+    /// Completionist progress, both ways; Mastery stays Warzone's own.
+    @Test func aSharedTrackCountsInEveryModeThatSharesIt() throws {
+        let model = try model(warzone: ["trackFrom": #""multiplayer""#])
+        let weapon = try anyWeapon(model)
+        let id = weapon.weaponId
+        #expect(model.trackMode("warzone") == mp)
+        model.setLevel(model.maxLevel(for: weapon), for: weapon)
+        for camo in model.camos(weaponId: id, mode: "warzone") where !model.isCamoComplete(mode: "warzone", weaponId: id, camo: camo) {
+            model.toggleCamo(mode: "warzone", weaponId: id, camo: camo)
+        }
+        #expect(model.allCamosComplete(weaponId: id, mode: mp))
+        model.toggleCompletionist(mode: mp, weaponId: id, step: 0)
+        #expect(model.isCompletionistComplete(mode: "warzone", weaponId: id, step: 0))
+        // Gold's challenge in Warzone is Multiplayer's.
+        #expect(model.completionistRequirement(mode: "warzone", weaponId: id, step: 0)?.amount
+                == model.completionistRequirement(mode: mp, weaponId: id, step: 0)?.amount)
+        // DMZ still has its own.
+        #expect(model.isCompletionistComplete(mode: "dmz", weaponId: id, step: 0) == false)
+    }
+
+    /// `final.enabled: false`: no final camo, and Mastery counts Harmonic Breaks.
+    @Test func turningTheFinalCamoOffEndsTheTrackAtHarmonicBreak() throws {
+        let model = try model([
+            "completionist": #"{"final": {"enabled": false}}"#,
+            "mastery": #"{"tier1": {"weaponsNeeded": 1}}"#,
+        ])
+        let id = try anyWeapon(model).weaponId
+        harmonicBreak(model, id)
+        #expect(model.hasFinalCamo(mode: mp, weaponId: id) == false)
+        #expect(model.hasLastCompletionist(mode: mp, weaponId: id))
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1))
+        #expect(AppMode.multiplayer.completionistCamos.count == 3)
+        #expect(AppMode.multiplayer.lastCompletionist.name == AppMode.multiplayer.completionist.steps[2].name)
+    }
+
+    /// `mastery.unlock: "challenge"`: tier 1 is a per-weapon challenge that
+    /// opens once the whole launch roster has the last Completionist camo,
+    /// and later tiers on the tier before.
+    @Test func challengeMasteryOpensOnTheWholeRoster() throws {
+        let model = try model([
+            "completionist": #"{"final": {"enabled": false}}"#,
+            "mastery": #"""
+                {"unlock": "challenge",
+                 "tier1": {"requirement": {"amount": 30, "unit": "kills", "description": {"en": "Get 30 kills."}},
+                           "byCategory": {"0": {"amount": 40, "unit": "kills", "description": {"en": "Rifles."}}}}}
+                """#,
+        ])
+        let all = weapons(model)
+        let rifle = try #require(model.catalog?.categories.first { $0.categoryId == 0 }?.weapons.first).weaponId
+        let other = try #require(model.catalog?.categories.first { $0.categoryId != 0 }?.weapons.first).weaponId
+        #expect(model.masteryRequirement(mode: mp, weaponId: rifle, tier: 1)?.amount == 40)
+        #expect(model.masteryRequirement(mode: mp, weaponId: other, tier: 1)?.amount == 30)
+
+        for weapon in all.dropLast() { model.toggleCompletionist(mode: mp, weaponId: weapon.weaponId, step: 2) }
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: rifle, tier: 1) == false)
+        model.toggleCompletionist(mode: mp, weaponId: all.last!.weaponId, step: 2)
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: rifle, tier: 1))
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: rifle, tier: 2) == false)
+
+        model.setWeaponMasteryAmount(mode: mp, weaponId: rifle, tier: 1, amount: 40)
+        #expect(model.isWeaponMasteryComplete(mode: mp, weaponId: rifle, tier: 1))
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: rifle, tier: 2))
+        #expect(model.masteryProgress(mode: mp, tier: 1).done == 1)
+        #expect(model.matches(.ready, mode: mp, weaponId: other))
+    }
+
+    /// Count Mastery (the default) has no per-weapon challenges.
+    @Test func countMasteryHasNoWeaponChallenges() throws {
+        let model = try model()
+        let id = try anyWeapon(model).weaponId
+        #expect(model.masteryUsesChallenges(mode: mp) == false)
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: id, tier: 1) == false)
     }
 
     /// A published level wins over the spread.
