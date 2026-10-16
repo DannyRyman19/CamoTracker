@@ -1,5 +1,5 @@
 {
-  "version": "0.8.4",
+  "version": "0.8.5",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -6967,7 +6967,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is 50 hipfire kills in game, not the Shotguns' 125 (no per-weapon override yet). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 'Get &&2 kills in a match &&1 times', tier 3 'Get &&2 kills without taking damage &&1 times': the game's own numbers are still placeholders, so unlocking stays count-based. Divergence's final.harmonicBreaksNeeded (33) is an assumption.",
+  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is its own (byWeapon \"24\": 50 hipfire kills, not the Shotguns' 125). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 'Get &&2 kills in a match &&1 times', tier 3 'Get &&2 kills without taking damage &&1 times': the game's own numbers are still placeholders (&&1, &&2), so each tier is a tick box (mastery.unlock \"mode\") until they're shown; then give each its amount, and tier 1 unit \"harmonic_breaks\" to count itself. Divergence's final.harmonicBreaksNeeded (33) is an assumption.",
   "completionist": {
     "steps": [
       {
@@ -7088,7 +7088,20 @@
           }
         },
         "unlock": "category",
-        "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/platinum.png"
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/platinum.png",
+        "byWeapon": {
+          "24": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 hipfire kills against players.",
+              "fr": "Obtenez 50 éliminations sans viser contre des joueurs.",
+              "es": "Consigue 50 bajas disparando desde la cadera contra jugadores.",
+              "de": "Erziele 50 Abschüsse aus der Hüfte gegen Spieler.",
+              "nl": "Behaal 50 heupvuurkills tegen spelers."
+            }
+          }
+        }
       },
       {
         "byCategory": {
@@ -7210,13 +7223,47 @@
   },
   "mastery": {
     "tier1": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mercurial_drift.png"
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mercurial_drift.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Complete Harmonic Break challenges (the game hasn't shown the numbers yet).",
+          "fr": "Relevez des défis Harmonic Break (le jeu n'affiche pas encore les chiffres).",
+          "es": "Completa desafíos de Harmonic Break (el juego aún no muestra las cifras).",
+          "de": "Schließe Harmonic-Break-Herausforderungen ab (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Voltooi Harmonic Break-uitdagingen (de game toont de aantallen nog niet)."
+        }
+      }
     },
     "tier2": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/polyatomic_reforged.png"
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/polyatomic_reforged.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Get kills in a match, a set number of times (the game hasn't shown the numbers yet).",
+          "fr": "Obtenez des éliminations en une partie, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
+          "es": "Consigue bajas en una partida un número determinado de veces (el juego aún no muestra las cifras).",
+          "de": "Erziele eine bestimmte Anzahl Male Abschüsse in einem Match (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Behaal een bepaald aantal keer kills in één wedstrijd (de game toont de aantallen nog niet)."
+        }
+      }
     },
     "tier3": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/orion_reforged.png"
-    }
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/orion_reforged.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Get kills without taking damage, a set number of times (the game hasn't shown the numbers yet).",
+          "fr": "Obtenez des éliminations sans subir de dégâts, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
+          "es": "Consigue bajas sin recibir daño un número determinado de veces (el juego aún no muestra las cifras).",
+          "de": "Erziele eine bestimmte Anzahl Male Abschüsse, ohne Schaden zu nehmen (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Behaal een bepaald aantal keer kills zonder schade op te lopen (de game toont de aantallen nog niet)."
+        }
+      }
+    },
+    "unlock": "mode"
   }
 }

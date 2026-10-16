@@ -1,5 +1,5 @@
 {
-  "version": "0.8.5",
+  "version": "0.8.6",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -5980,13 +5980,47 @@
   "_note": "Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 kills in a match &&1 times', 'Get &&2 kills without plating &&1 times'.",
   "mastery": {
     "tier1": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png"
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Complete Harmonic Break challenges (the game hasn't shown the numbers yet).",
+          "fr": "Relevez des défis Harmonic Break (le jeu n'affiche pas encore les chiffres).",
+          "es": "Completa desafíos de Harmonic Break (el juego aún no muestra las cifras).",
+          "de": "Schließe Harmonic-Break-Herausforderungen ab (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Voltooi Harmonic Break-uitdagingen (de game toont de aantallen nog niet)."
+        }
+      }
     },
     "tier2": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/damascus_reforged.png"
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/damascus_reforged.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Get kills in a match, a set number of times (the game hasn't shown the numbers yet).",
+          "fr": "Obtenez des éliminations en une partie, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
+          "es": "Consigue bajas en una partida un número determinado de veces (el juego aún no muestra las cifras).",
+          "de": "Erziele eine bestimmte Anzahl Male Abschüsse in einem Match (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Behaal een bepaald aantal keer kills in één wedstrijd (de game toont de aantallen nog niet)."
+        }
+      }
     },
     "tier3": {
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/empyros.png"
-    }
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/empyros.png",
+      "requirement": {
+        "amount": 1,
+        "unit": "times",
+        "description": {
+          "en": "Get kills without plating, a set number of times (the game hasn't shown the numbers yet).",
+          "fr": "Obtenez des éliminations sans poser de plaques, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
+          "es": "Consigue bajas sin ponerte placas un número determinado de veces (el juego aún no muestra las cifras).",
+          "de": "Erziele eine bestimmte Anzahl Male Abschüsse, ohne Platten einzusetzen (das Spiel zeigt die Zahlen noch nicht).",
+          "nl": "Behaal een bepaald aantal keer kills zonder platen te plaatsen (de game toont de aantallen nog niet)."
+        }
+      }
+    },
+    "unlock": "mode"
   }
 }
