@@ -145,7 +145,7 @@ struct CategoryListView: View {
                     }
 
                     if !weaponCategories.isEmpty {
-                        Section("mw4.ui.section.weapons".localized()) {
+                        Section {
                             HStack(spacing: 8) {
                                 FilterSortMenu(title: "mw4.ui.filter".localized(), options: CompletionFilter.allCases, label: { $0.label }, accent: mode.accent, selection: filterBinding)
                                 FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
@@ -158,14 +158,18 @@ struct CategoryListView: View {
                                     .listRowInsets(EdgeInsets())
                                     .listRowBackground(Color.clear)
                             } else {
-                                // Every weapon in one list first, then each class.
-                                if let all = viewModel.allWeaponsCategory {
-                                    CardGrid(items: [all], columns: columns, fillsRow: true, route: { _ in .allWeapons }) { category in
-                                        WeaponCategoryRow(mode: mode, category: category)
-                                    }
-                                }
                                 CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
                                     WeaponCategoryRow(mode: mode, category: category)
+                                }
+                            }
+                        } header: {
+                            // Every weapon in one list is a way of looking at
+                            // the classes, not a class: a link, not a card.
+                            HStack {
+                                Text("mw4.ui.section.weapons".localized())
+                                Spacer()
+                                if let all = viewModel.allWeaponsCategory {
+                                    SeeAllLink(accent: mode.accent, count: all.weapons.count)
                                 }
                             }
                         }
@@ -311,5 +315,34 @@ enum CategoryStats {
             stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient))
         }
         return stats
+    }
+}
+
+/// "See all 33 ›" beside the Weapons header: every weapon in one list.
+private struct SeeAllLink: View {
+    let accent: Color
+    let count: Int
+    @Environment(\.pushRoute) private var pushRoute
+
+    var body: some View {
+        Group {
+            if let pushRoute {
+                Button { pushRoute(.allWeapons) } label: { label }
+            } else {
+                NavigationLink(value: Route.allWeapons) { label }
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("seeAllWeapons")
+    }
+
+    private var label: some View {
+        HStack(spacing: 3) {
+            Text(String(format: "mw4.ui.see_all".localized(), count))
+            Image(systemName: "chevron.right").imageScale(.small)
+        }
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(accent)
+        .textCase(nil)
     }
 }

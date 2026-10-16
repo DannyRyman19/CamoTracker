@@ -42,6 +42,19 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Weapon Level"].exists)
     }
 
+    /// "See all" in the Weapons header opens every weapon in one list, and
+    /// no "All weapons" card sits among the classes any more.
+    func testSeeAllOpensEveryWeapon() {
+        let app = launch()
+        let link = app.buttons["seeAllWeapons"]
+        XCTAssertTrue(link.waitForExistence(timeout: 15))
+        XCTAssertFalse(app.staticTexts["All weapons"].exists)
+        for _ in 0..<3 where !link.isHittable { app.swipeUp() }
+        link.tap()
+        XCTAssertTrue(app.navigationBars["All weapons"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["HAN 86"].exists)
+    }
+
     func testTappingACategoryCardOpensThatCategoryOnly() {
         let app = launch()
         XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 15))
