@@ -75,6 +75,123 @@ struct CategoryListView: View {
         viewModel.pinnedWeaponId.flatMap { viewModel.weapon(id: $0) }
     }
 
+
+    /// The tab's sections in the order and with the visibility the player
+    /// chose in Customise.
+    @AppStorage(HomeLayout.orderKey) private var layoutOrder = ""
+    @AppStorage(HomeLayout.hiddenKey) private var layoutHidden = ""
+    @State private var isCustomising = false
+    private var layout: HomeLayout { HomeLayout(order: layoutOrder, hidden: layoutHidden) }
+
+    @ViewBuilder
+    private func sectionView(_ section: HomeSection) -> some View {
+        switch section {
+        case .summary:
+            // No separate leading hero ring — with Gold/tier1/tier2/
+            // tier3 (and, once earned, 100%+) all shown as their own
+            // labeled rings below, an extra unlabeled blended ring
+            // next to them read as redundant clutter rather than a
+            // distinct number worth acting on.
+            StatSummaryCard(
+                stats: {
+                    let total = viewModel.totalWeaponCount
+                    let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
+                    let completeCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
+                    let harmonic = mode.completionist.steps[2]
+                    let harmonicCount = viewModel.harmonicBreakCount(mode: mode.rawValue)
+                    let final = mode.completionist.final
+                    let finalCount = viewModel.finalCamoCount(mode: mode.rawValue)
+                    // The Mastery tier being worked on: the first not
+                    // yet earned, or the last once all three are.
+                    let tier = (1...3).first { !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: $0) } ?? 3
+                    let tiers = mode.masteryCamos
+                    let mastery = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
+                    let masteryProgress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+                    let masteryDone = viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier)
+                    var stats: [StatSummaryCard.Stat] = [
+                        .init(value: "\(completeCount)/\(total)", label: "mw4.ui.gold".localized(), ringFraction: fraction(completeCount, total), ringColor: .camoGold),
+                        .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient),
+                        .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient)
+                    ]
+                    if mode.hasFinalCamo {
+                        stats.insert(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient), at: 2)
+                    }
+                    // Only worth showing once the last Mastery camo is
+                    // earned; before then "100%+" is a goal past one
+                    // not reached yet.
+                    if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
+                        let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
+                        stats.append(.init(value: "\(fullRoster.done)/\(fullRoster.total)", label: "mw4.ui.stats.100_plus".localized(), labelGradient: viewModel.is100PlusAchieved(mode: mode.rawValue) ? .platinum : nil, ringFraction: fraction(fullRoster.done, fullRoster.total), ringColor: .camoPlatinum, ringGradient: .platinum))
+                    }
+                    return stats
+                }()
+            )
+            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            .listRowBackground(Color.clear)
+
+        case .pinned:
+            if let pinnedWeapon {
+                Section("mw4.ui.section.pinned".localized()) {
+                    // Always the full row, even in a grid: it is one
+                    // card, and half a row beside a gap looks lost.
+                    CardGrid(items: [pinnedWeapon], columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
+                        WeaponRow(mode: mode, weapon: weapon)
+                    }
+                }
+            }
+
+        case .suggested:
+            if !suggestions.isEmpty {
+                Section("mw4.ui.section.suggested".localized()) {
+                    CardGrid(items: suggestions, columns: columns, route: { .weapon($0.weaponId) }) { suggestion in
+                        SuggestionRow(mode: mode, suggestion: suggestion)
+                    }
+                }
+            }
+
+        case .weapons:
+            if !weaponCategories.isEmpty {
+                Section {
+                    HStack(spacing: 8) {
+                        FilterSortMenu(title: "mw4.ui.filter".localized(), options: CompletionFilter.allCases, label: { $0.label }, accent: mode.accent, selection: filterBinding)
+                        FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
+                    }
+                    .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 6, trailing: 12))
+                    .listRowBackground(Color.clear)
+
+                    if displayedCategories.isEmpty {
+                        FilterEmptyRow()
+                            .listRowInsets(EdgeInsets())
+                            .listRowBackground(Color.clear)
+                    } else {
+                        CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
+                            WeaponCategoryRow(mode: mode, category: category)
+                        }
+                    }
+                } header: {
+                    // Every weapon in one list is a way of looking at
+                    // the classes, not a class: a link, not a card.
+                    HStack {
+                        Text("mw4.ui.section.weapons".localized())
+                        Spacer()
+                        if let all = viewModel.allWeaponsCategory {
+                            SeeAllLink(accent: mode.accent, count: all.weapons.count)
+                        }
+                    }
+                }
+            }
+
+        case .objectives:
+            if !objectiveCategories.isEmpty {
+                Section("mw4.ui.section.objectives".localized()) {
+                    CardGrid(items: objectiveCategories, columns: columns, route: { .objectiveCategory($0.categoryId) }) { category in
+                        ObjectiveCategoryRow(mode: mode, category: category)
+                    }
+                }
+            }
+        }
+    }
+
     var body: some View {
         ZStack {
             AppBackground(accent: mode.accent)
@@ -84,99 +201,8 @@ struct CategoryListView: View {
                         WeaponRow(mode: mode, weapon: weapon)
                     }
                 } else {
-                    // No separate leading hero ring — with Gold/tier1/tier2/
-                    // tier3 (and, once earned, 100%+) all shown as their own
-                    // labeled rings below, an extra unlabeled blended ring
-                    // next to them read as redundant clutter rather than a
-                    // distinct number worth acting on.
-                    StatSummaryCard(
-                        stats: {
-                            let total = viewModel.totalWeaponCount
-                            let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
-                            let completeCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
-                            let harmonic = mode.completionist.steps[2]
-                            let harmonicCount = viewModel.harmonicBreakCount(mode: mode.rawValue)
-                            let final = mode.completionist.final
-                            let finalCount = viewModel.finalCamoCount(mode: mode.rawValue)
-                            // The Mastery tier being worked on: the first not
-                            // yet earned, or the last once all three are.
-                            let tier = (1...3).first { !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: $0) } ?? 3
-                            let tiers = mode.masteryCamos
-                            let mastery = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
-                            let masteryProgress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
-                            let masteryDone = viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier)
-                            var stats: [StatSummaryCard.Stat] = [
-                                .init(value: "\(completeCount)/\(total)", label: "mw4.ui.gold".localized(), ringFraction: fraction(completeCount, total), ringColor: .camoGold),
-                                .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient),
-                                .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient)
-                            ]
-                            if mode.hasFinalCamo {
-                                stats.insert(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient), at: 2)
-                            }
-                            // Only worth showing once the last Mastery camo is
-                            // earned; before then "100%+" is a goal past one
-                            // not reached yet.
-                            if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
-                                let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
-                                stats.append(.init(value: "\(fullRoster.done)/\(fullRoster.total)", label: "mw4.ui.stats.100_plus".localized(), labelGradient: viewModel.is100PlusAchieved(mode: mode.rawValue) ? .platinum : nil, ringFraction: fraction(fullRoster.done, fullRoster.total), ringColor: .camoPlatinum, ringGradient: .platinum))
-                            }
-                            return stats
-                        }()
-                    )
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                    .listRowBackground(Color.clear)
-
-                    if let pinnedWeapon {
-                        Section("mw4.ui.section.pinned".localized()) {
-                            // Always the full row, even in a grid: it is one
-                            // card, and half a row beside a gap looks lost.
-                            CardGrid(items: [pinnedWeapon], columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
-                                WeaponRow(mode: mode, weapon: weapon)
-                            }
-                        }
-                    }
-
-                    if !suggestions.isEmpty {
-                        Section("mw4.ui.section.suggested".localized()) {
-                            CardGrid(items: suggestions, columns: columns, route: { .weapon($0.weaponId) }) { suggestion in
-                                SuggestionRow(mode: mode, suggestion: suggestion)
-                            }
-                        }
-                    }
-
-                    if !weaponCategories.isEmpty {
-                        Section("mw4.ui.section.weapons".localized()) {
-                            HStack(spacing: 8) {
-                                FilterSortMenu(title: "mw4.ui.filter".localized(), options: CompletionFilter.allCases, label: { $0.label }, accent: mode.accent, selection: filterBinding)
-                                FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
-                            }
-                            .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 6, trailing: 12))
-                            .listRowBackground(Color.clear)
-
-                            if displayedCategories.isEmpty {
-                                FilterEmptyRow()
-                                    .listRowInsets(EdgeInsets())
-                                    .listRowBackground(Color.clear)
-                            } else {
-                                // Every weapon in one list first, then each class.
-                                if let all = viewModel.allWeaponsCategory {
-                                    CardGrid(items: [all], columns: columns, fillsRow: true, route: { _ in .allWeapons }) { category in
-                                        WeaponCategoryRow(mode: mode, category: category)
-                                    }
-                                }
-                                CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
-                                    WeaponCategoryRow(mode: mode, category: category)
-                                }
-                            }
-                        }
-                    }
-
-                    if !objectiveCategories.isEmpty {
-                        Section("mw4.ui.section.objectives".localized()) {
-                            CardGrid(items: objectiveCategories, columns: columns, route: { .objectiveCategory($0.categoryId) }) { category in
-                                ObjectiveCategoryRow(mode: mode, category: category)
-                            }
-                        }
+                    ForEach(layout.visible) { section in
+                        sectionView(section)
                     }
                 }
             }
@@ -187,6 +213,24 @@ struct CategoryListView: View {
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
         .navigationTitle(mode.displayNameKey.localized())
         .refreshable { await viewModel.refresh() }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button { isCustomising = true } label: {
+                    Image(systemName: "slider.horizontal.3")
+                }
+                .accessibilityLabel("mw4.ui.customise".localized())
+                .accessibilityIdentifier("customiseHome")
+            }
+        }
+        .onAppear {
+            #if DEBUG
+            // `SS_CUSTOMISE=1` opens Customise for a screenshot.
+            if ProcessInfo.processInfo.environment["SS_CUSTOMISE"] == "1" { isCustomising = true }
+            #endif
+        }
+        .sheet(isPresented: $isCustomising) {
+            CustomiseHomeSheet(order: $layoutOrder, hidden: $layoutHidden, accent: mode.accent)
+        }
     }
 
 }
@@ -311,5 +355,164 @@ enum CategoryStats {
             stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient))
         }
         return stats
+    }
+}
+
+/// "See all 33 ›" beside the Weapons header: every weapon in one list.
+private struct SeeAllLink: View {
+    let accent: Color
+    let count: Int
+    @Environment(\.pushRoute) private var pushRoute
+
+    var body: some View {
+        Group {
+            if let pushRoute {
+                Button { pushRoute(.allWeapons) } label: { label }
+            } else {
+                NavigationLink(value: Route.allWeapons) { label }
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("seeAllWeapons")
+    }
+
+    private var label: some View {
+        HStack(spacing: 3) {
+            Text(String(format: "mw4.ui.see_all".localized(), count))
+            Image(systemName: "chevron.right").imageScale(.small)
+        }
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(accent)
+        .textCase(nil)
+    }
+}
+
+// MARK: - Customise
+
+/// A section of a mode tab, in the order Customise lists them by default.
+enum HomeSection: String, CaseIterable, Identifiable {
+    case summary, pinned, suggested, weapons, objectives
+
+    var id: String { rawValue }
+
+    var titleKey: String {
+        switch self {
+        case .summary: return "mw4.ui.section.summary"
+        case .pinned: return "mw4.ui.section.pinned"
+        case .suggested: return "mw4.ui.section.suggested"
+        case .weapons: return "mw4.ui.section.weapons"
+        case .objectives: return "mw4.ui.section.objectives"
+        }
+    }
+
+    var symbol: String {
+        switch self {
+        case .summary: return "chart.pie"
+        case .pinned: return "pin"
+        case .suggested: return "arrow.up.right.circle"
+        case .weapons: return "square.grid.2x2"
+        case .objectives: return "checklist"
+        }
+    }
+
+    /// Weapons is what the tab is for, so it can move but not go.
+    var canHide: Bool { self != .weapons }
+}
+
+/// The order and visibility of a mode tab's sections, stored as two
+/// comma-separated strings so `@AppStorage` can hold them. The same layout
+/// applies on every mode tab; a section a tab has nothing for (Objectives
+/// outside DMZ, Pinned with nothing pinned) simply doesn't draw.
+struct HomeLayout {
+    static let orderKey = "mw4_home_order"
+    static let hiddenKey = "mw4_home_hidden"
+
+    let order: [HomeSection]
+    let hidden: Set<HomeSection>
+
+    init(order: String, hidden: String) {
+        let saved = order.split(separator: ",").compactMap { HomeSection(rawValue: String($0)) }
+        var seen = Set<HomeSection>()
+        let unique = saved.filter { seen.insert($0).inserted }
+        // Anything new since the order was saved goes in its default place.
+        var full = unique
+        for section in HomeSection.allCases where !full.contains(section) {
+            let before = HomeSection.allCases.prefix { $0 != section }.last { full.contains($0) }
+            let at = before.flatMap { full.firstIndex(of: $0) }.map { $0 + 1 } ?? 0
+            full.insert(section, at: at)
+        }
+        self.order = full
+        self.hidden = Set(hidden.split(separator: ",").compactMap { HomeSection(rawValue: String($0)) }.filter(\.canHide))
+    }
+
+    var visible: [HomeSection] { order.filter { !hidden.contains($0) } }
+
+    static func encode(_ sections: [HomeSection]) -> String { sections.map(\.rawValue).joined(separator: ",") }
+    static func encode(_ sections: Set<HomeSection>) -> String { encode(HomeSection.allCases.filter(sections.contains)) }
+}
+
+/// Show, hide and reorder a mode tab's sections.
+struct CustomiseHomeSheet: View {
+    @Binding var order: String
+    @Binding var hidden: String
+    let accent: Color
+    @Environment(\.dismiss) private var dismiss
+
+    private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    ForEach(layout.order) { section in
+                        HStack(spacing: 12) {
+                            Image(systemName: section.symbol)
+                                .foregroundStyle(accent)
+                                .frame(width: 24)
+                            Toggle(section.titleKey.localized(), isOn: binding(for: section))
+                                .tint(accent)
+                                .disabled(!section.canHide)
+                        }
+                        .accessibilityIdentifier("customise.\(section.rawValue)")
+                    }
+                    .onMove { from, to in
+                        var sections = layout.order
+                        sections.move(fromOffsets: from, toOffset: to)
+                        order = HomeLayout.encode(sections)
+                    }
+                } footer: {
+                    Text("mw4.ui.customise.footer".localized())
+                }
+
+                Section {
+                    Button("mw4.ui.customise.reset".localized()) {
+                        order = ""
+                        hidden = ""
+                    }
+                    .foregroundStyle(accent)
+                }
+            }
+            .environment(\.editMode, .constant(.active))
+            .navigationTitle("mw4.ui.customise".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("mw4.ui.done".localized()) { dismiss() }
+                        .foregroundStyle(accent)
+                }
+            }
+        }
+        .presentationDetents([.medium, .large])
+    }
+
+    private func binding(for section: HomeSection) -> Binding<Bool> {
+        Binding(
+            get: { !layout.hidden.contains(section) },
+            set: { shown in
+                var set = layout.hidden
+                if shown { set.remove(section) } else { set.insert(section) }
+                hidden = HomeLayout.encode(set)
+            }
+        )
     }
 }

@@ -622,3 +622,36 @@ struct TrackerViewModelTests {
         #expect(second.level(for: weapon.weaponId) == 7)
     }
 }
+
+/// The mode tab's Customise layout as `@AppStorage` saves it.
+@Suite("Home layout")
+struct HomeLayoutTests {
+
+    @Test func nothingSavedIsTheDefaultOrderAllShown() {
+        let layout = HomeLayout(order: "", hidden: "")
+        #expect(layout.order == HomeSection.allCases)
+        #expect(layout.visible == HomeSection.allCases)
+    }
+
+    @Test func aSavedOrderAndHiddenSetComeBack() {
+        let order: [HomeSection] = [.weapons, .suggested, .summary, .pinned, .objectives]
+        let layout = HomeLayout(order: HomeLayout.encode(order), hidden: HomeLayout.encode([.suggested, .pinned]))
+        #expect(layout.order == order)
+        #expect(layout.visible == [.weapons, .summary, .objectives])
+    }
+
+    /// An order saved before a section existed gets it in its default place:
+    /// straight after the section it follows by default.
+    @Test func aNewSectionSlotsInWhereItBelongs() {
+        let layout = HomeLayout(order: "weapons,summary,suggested", hidden: "")
+        #expect(layout.order == [.weapons, .objectives, .summary, .pinned, .suggested])
+    }
+
+    @Test func weaponsCannotBeHiddenAndJunkIsIgnored() {
+        let layout = HomeLayout(order: "weapons,weapons,nonsense,summary", hidden: "weapons,nonsense,summary")
+        #expect(layout.order.filter { $0 == .weapons }.count == 1)
+        #expect(layout.order.count == HomeSection.allCases.count)
+        #expect(layout.visible.contains(.weapons))
+        #expect(!layout.visible.contains(.summary))
+    }
+}
