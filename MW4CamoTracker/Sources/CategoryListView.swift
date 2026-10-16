@@ -229,7 +229,11 @@ struct CategoryListView: View {
             #endif
         }
         .sheet(isPresented: $isCustomising) {
-            CustomiseHomeSheet(order: $layoutOrder, hidden: $layoutHidden, accent: mode.accent)
+            CustomiseHomeSheet(
+                order: $layoutOrder, hidden: $layoutHidden, accent: mode.accent,
+                // Objectives only when some mode has any (none at launch).
+                offered: HomeSection.allCases.filter { $0 != .objectives || viewModel.modes.values.contains { !$0.objectives.isEmpty } }
+            )
         }
     }
 
@@ -456,15 +460,18 @@ struct CustomiseHomeSheet: View {
     @Binding var order: String
     @Binding var hidden: String
     let accent: Color
+    /// The sections worth listing; the rest keep their saved place unseen.
+    var offered: [HomeSection] = HomeSection.allCases
     @Environment(\.dismiss) private var dismiss
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
+    private var rows: [HomeSection] { layout.order.filter(offered.contains) }
 
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(layout.order) { section in
+                    ForEach(rows) { section in
                         HStack(spacing: 12) {
                             Image(systemName: section.symbol)
                                 .foregroundStyle(accent)
@@ -476,8 +483,12 @@ struct CustomiseHomeSheet: View {
                         .accessibilityIdentifier("customise.\(section.rawValue)")
                     }
                     .onMove { from, to in
-                        var sections = layout.order
+                        var sections = rows
                         sections.move(fromOffsets: from, toOffset: to)
+                        // Unlisted sections go back where they were.
+                        for (index, section) in layout.order.enumerated() where !offered.contains(section) {
+                            sections.insert(section, at: min(index, sections.count))
+                        }
                         order = HomeLayout.encode(sections)
                     }
                 } footer: {
