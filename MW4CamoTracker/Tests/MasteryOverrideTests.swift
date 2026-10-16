@@ -313,13 +313,29 @@ struct TrackerViewModelTests {
     /// With no published levels, the Military camos are spread up to the
     /// weapon's max level, the last one on max itself.
     @Test func militaryLevelsAreSpreadUpToMaxUntilPublished() throws {
-        let model = try model()
-        let weapon = try anyWeapon(model)
+        let weapon = try anyWeapon(try model())
+        let slots = (0..<8).map {
+            #"{"itemId": \#($0), "name": {"en": "Military \#($0 + 1)"}, "tier": \#($0 + 1), "children": [], "group": "military"}"#
+        }
+        let model = try model(["weaponCamos": #"[{"weaponId": \#(weapon.weaponId), "camos": [\#(slots.joined(separator: ","))]}]"#])
         let military = split(model, weapon.weaponId).military
         try #require(military.count == 8)
         let max = model.maxLevel(for: weapon)
         #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!) == max)
         #expect(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military[0]) == Int((Double(max) / 8).rounded(.up)))
+    }
+
+    /// The HAN 86's levels as seen in game, and its named Specials with a
+    /// level and then a challenge.
+    @Test func theHan86HasItsRealLevels() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        try #require(weapon.name.values["en"] == "HAN 86")
+        let (military, special) = split(model, weapon.weaponId)
+        #expect(military.compactMap { model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: $0) } == [10, 18, 25, 34, 42, 50, 57, 65])
+        #expect(special.map { $0.name.values["en"] } == ["Smoke", "Stormwave", "Red"])
+        #expect(special.map(\.unlockLevel) == [25, 46, 72])
+        #expect(special.map { $0.requirement?.amount } == [20, 50, 15])
     }
 
     /// Tapping a Military camo sets the weapon level to it; tapping an earned
@@ -341,12 +357,13 @@ struct TrackerViewModelTests {
     }
 
     /// Max level earns every Military camo and opens the Specials, which
-    /// stay shut until then.
+    /// stay shut until the last Military camo.
     @Test func maxLevelEarnsMilitaryAndOpensSpecials() throws {
         let model = try model()
         let weapon = try anyWeapon(model)
         let (military, special) = split(model, weapon.weaponId)
-        model.setLevel(model.maxLevel(for: weapon) - 1, for: weapon)
+        let last = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!))
+        model.setLevel(last - 1, for: weapon)
         #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
 
         model.setLevel(model.maxLevel(for: weapon), for: weapon)
