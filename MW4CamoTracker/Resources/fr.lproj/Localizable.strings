@@ -115,6 +115,10 @@
 "mw4.ui.completionist.final_locked_count" = "Obtenez %1$@ sur cette arme, avec %2$d défis %1$@ réussis au total (%3$d/%2$d).";
 "mw4.ui.completionist.final_count" = "%1$d/%2$d défis %3$@ réussis.";
 "mw4.ui.mastery.weapons_needed" = "%1$d/%2$d armes avec %3$@";
+"mw4.ui.mastery.mode_locked_first" = "Obtenez d'abord %@ sur une arme.";
+"mw4.ui.mastery.mode_locked" = "Obtenez d'abord %@.";
+"mw4.ui.mastery.harmonic_breaks" = "Défis %3$@ : %1$d/%2$d";
+"mw4.ui.milestone.mode_mastery_subtitle" = "Camouflage universel : utilisable sur toutes les armes.";
 "mw4.ui.camo_level_earned" = "Obtenu au niveau d'arme %d.";
 "mw4.ui.suggestion.next_camo" = "Suivant : %@";
 "mw4.ui.milestone.final_many" = "%d armes l'ont désormais.";
@@ -134,3 +138,5 @@
 "mw4.ui.customise" = "Personnaliser";
 "mw4.ui.customise.footer" = "Faites glisser pour réorganiser, désactivez ce que vous n'utilisez pas. La même disposition s'applique à chaque mode. Les armes restent toujours affichées.";
 "mw4.ui.customise.reset" = "Rétablir par défaut";
+"mw4.ui.customise.locked_title" = "Afficher les défis des camouflages verrouillés";
+"mw4.ui.customise.locked_footer" = "Un camouflage verrouillé affiche son défi au lieu de sa condition de déblocage. Le cadenas reste affiché.";

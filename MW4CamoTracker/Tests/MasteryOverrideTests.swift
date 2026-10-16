@@ -542,9 +542,81 @@ struct TrackerViewModelTests {
         #expect(model.matches(.ready, mode: mp, weaponId: other))
     }
 
-    /// Count Mastery (the default) has no per-weapon challenges.
-    @Test func countMasteryHasNoWeaponChallenges() throws {
+    /// A weapon's own challenge beats its class's (the Warlord's Platinum).
+    @Test func aWeaponCanHaveItsOwnChallenge() throws {
+        let model = try model(["completionist": #"""
+            {"steps": [{}, {"byCategory": {"0": {"amount": 50, "unit": "headshots", "description": {"en": "Rifles."}}},
+                            "byWeapon": {"1": {"amount": 7, "unit": "kills", "description": {"en": "Mine."}}}}]}
+            """#])
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 }?.weapons)
+        let own = try #require(rifles.first { $0.weaponId == 1 }).weaponId
+        let other = try #require(rifles.first { $0.weaponId != 1 }).weaponId
+        #expect(model.completionistRequirement(mode: mp, weaponId: own, step: 1)?.amount == 7)
+        #expect(model.completionistRequirement(mode: mp, weaponId: other, step: 1)?.amount == 50)
+    }
+
+    /// The shipped Multiplayer file gives the Warlord its own Platinum.
+    @Test func theWarlordsPlatinumIsItsOwn() throws {
         let model = try model()
+        #expect(model.completionistRequirement(mode: mp, weaponId: 24, step: 1)?.amount == 50)
+        #expect(model.completionistRequirement(mode: mp, weaponId: 8, step: 1)?.amount == 125)
+    }
+
+    /// Mode Mastery: one challenge per tier for the whole mode, tier 1
+    /// after the last Completionist camo on any weapon, then in order.
+    @Test func modeMasteryIsOneChallengePerTier() throws {
+        let model = try model([
+            "completionist": #"{"final": {"harmonicBreaksNeeded": 0}}"#,
+            "mastery": #"""
+                {"unlock": "mode",
+                 "tier1": {"requirement": {"amount": 1, "unit": "times", "description": {"en": "Tick."}}},
+                 "tier2": {"requirement": {"amount": 5, "unit": "times", "description": {"en": "Five."}}}}
+                """#,
+        ])
+        let ids = weapons(model).prefix(2).map(\.weaponId)
+        #expect(model.masteryIsModeChallenge(mode: mp))
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 1) == false)
+        harmonicBreak(model, ids[0])
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 1))
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1) == false)
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 2) == false)
+
+        model.toggleModeMastery(mode: mp, tier: 1, weaponId: ids[0])
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1))
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 2))
+        model.setModeMasteryAmount(mode: mp, tier: 2, weaponId: ids[1], amount: 4)
+        #expect(model.masteryProgress(mode: mp, tier: 2).done == 4)
+        #expect(model.masteryProgress(mode: mp, tier: 2).total == 5)
+        model.setModeMasteryAmount(mode: mp, tier: 2, weaponId: ids[1], amount: 9)
+        #expect(model.isMasteryAchieved(mode: mp, tier: 2))
+        // Tier 3 has no requirement: a plain tick box.
+        model.toggleModeMastery(mode: mp, tier: 3, weaponId: ids[0])
+        #expect(model.isMasteryAchieved(mode: mp, tier: 3))
+        // Nothing per weapon.
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: ids[0], tier: 1) == false)
+    }
+
+    /// A tier counted in Harmonic Breaks counts itself and can't be ticked.
+    @Test func aHarmonicBreakTierCountsItself() throws {
+        let model = try model([
+            "completionist": #"{"final": {"harmonicBreaksNeeded": 0}}"#,
+            "mastery": #"""
+                {"unlock": "mode",
+                 "tier1": {"requirement": {"amount": 2, "unit": "harmonic_breaks", "description": {"en": "Two."}}}}
+                """#,
+        ])
+        let ids = weapons(model).prefix(2).map(\.weaponId)
+        harmonicBreak(model, ids[0])
+        model.toggleModeMastery(mode: mp, tier: 1, weaponId: ids[0])
+        #expect(model.masteryProgress(mode: mp, tier: 1).done == 1)
+        #expect(model.masteryProgress(mode: mp, tier: 1).total == 2)
+        harmonicBreak(model, ids[1])
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1))
+    }
+
+
+    @Test func countMasteryHasNoWeaponChallenges() throws {
+        let model = try model(["mastery": "{}"])
         let id = try anyWeapon(model).weaponId
         #expect(model.masteryUsesChallenges(mode: mp) == false)
         #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: id, tier: 1) == false)

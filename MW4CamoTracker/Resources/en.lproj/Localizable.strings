@@ -115,6 +115,10 @@
 "mw4.ui.completionist.final_locked_count" = "Earn %1$@ on this weapon, with %2$d %1$@ challenges done in total (%3$d/%2$d).";
 "mw4.ui.completionist.final_count" = "%1$d/%2$d %3$@ challenges done.";
 "mw4.ui.mastery.weapons_needed" = "%1$d/%2$d weapons with %3$@";
+"mw4.ui.mastery.mode_locked_first" = "Earn %@ on any weapon first.";
+"mw4.ui.mastery.mode_locked" = "Earn %@ first.";
+"mw4.ui.mastery.harmonic_breaks" = "%1$d/%2$d %3$@ challenges";
+"mw4.ui.milestone.mode_mastery_subtitle" = "Universal camo: equip it on any weapon.";
 "mw4.ui.camo_level_earned" = "Earned at weapon level %d.";
 "mw4.ui.suggestion.next_camo" = "Next: %@";
 "mw4.ui.milestone.final_many" = "%d weapons have it now.";
@@ -134,3 +138,5 @@
 "mw4.ui.customise" = "Customise";
 "mw4.ui.customise.footer" = "Drag to reorder, switch off what you don't use. The same layout applies on every mode tab. Weapons always stays.";
 "mw4.ui.customise.reset" = "Reset to default";
+"mw4.ui.customise.locked_title" = "Show challenges on locked camos";
+"mw4.ui.customise.locked_footer" = "A locked camo shows its challenge instead of what unlocks it. The lock icon stays.";

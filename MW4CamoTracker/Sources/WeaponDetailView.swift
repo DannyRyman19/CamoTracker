@@ -104,7 +104,7 @@ struct WeaponDetailView: View {
     }
 
     private var partPicker: some View {
-        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { pickedPart = $0 })) {
+        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { if $0 != shownPart { Haptics.step() }; pickedPart = $0 })) {
             ForEach(parts, id: \.part) { entry in
                 Text(entry.title).tag(entry.part)
             }
@@ -263,6 +263,8 @@ struct WeaponDetailView: View {
     @ViewBuilder private func masteryRow(_ tier: Int) -> some View {
         if viewModel.masteryUsesChallenges(mode: mode.rawValue) {
             MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        } else if viewModel.masteryIsModeChallenge(mode: mode.rawValue) {
+            MasteryModeChallengeRow(mode: mode, weapon: weapon, tier: tier)
         } else {
             MasteryModeRow(mode: mode, tier: tier)
         }
@@ -482,6 +484,63 @@ private struct MasteryModeRow: View {
             detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.lastCompletionist.name),
             imageURL: camo.imageURL
         )
+    }
+}
+
+/// A Mastery tier as one challenge for the whole mode (`mastery.unlock` is
+/// "mode"). It reads the same on every weapon's page; ticking it on one
+/// ticks it for the mode.
+private struct MasteryModeChallengeRow: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    let tier: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camos: [MasteryCamo] {
+        let tiers = mode.masteryCamos
+        return [tiers.tier1, tiers.tier2, tiers.tier3]
+    }
+    private var camo: MasteryCamo { camos[tier - 1] }
+    private var before: MasteryCamo { tier == 1 ? mode.lastCompletionist : camos[tier - 2] }
+    private var requirement: Requirement? { viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier) }
+
+    private var item: ChallengeItem {
+        ChallengeItem(itemId: -(20 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
+                      tier: nil, unlockLevel: nil, requirement: requirement, children: [])
+    }
+
+    private var lockedReason: String {
+        tier == 1
+            ? String(format: "mw4.ui.mastery.mode_locked_first".localized(), before.name)
+            : String(format: "mw4.ui.mastery.mode_locked".localized(), before.name)
+    }
+
+    var body: some View {
+        if viewModel.modeMasteryCountsItself(mode: mode.rawValue, tier: tier) {
+            let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+            StatusRow(
+                name: camo.name,
+                achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
+                color: camo.color,
+                gradient: camo.gradient,
+                detail: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier)
+                    ? String(format: "mw4.ui.mastery.harmonic_breaks".localized(), progress.done, progress.total, mode.completionist.steps[2].name)
+                    : lockedReason,
+                imageURL: camo.imageURL
+            )
+        } else {
+            ChallengeRow(
+                item: item,
+                accent: camo.color,
+                amount: viewModel.modeMasteryAmount(mode: mode.rawValue, tier: tier),
+                isDone: viewModel.isModeMasteryComplete(mode: mode.rawValue, tier: tier),
+                isAvailable: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier),
+                lockedReason: lockedReason,
+                titleGradient: camo.gradient,
+                onToggle: { viewModel.toggleModeMastery(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId) },
+                onSetAmount: { viewModel.setModeMasteryAmount(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId, amount: $0) }
+            )
+        }
     }
 }
 

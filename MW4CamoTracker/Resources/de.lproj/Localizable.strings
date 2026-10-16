@@ -115,6 +115,10 @@
 "mw4.ui.completionist.final_locked_count" = "Verdiene %1$@ mit dieser Waffe, bei insgesamt %2$d abgeschlossenen %1$@-Herausforderungen (%3$d/%2$d).";
 "mw4.ui.completionist.final_count" = "%1$d/%2$d %3$@-Herausforderungen abgeschlossen.";
 "mw4.ui.mastery.weapons_needed" = "%1$d/%2$d Waffen mit %3$@";
+"mw4.ui.mastery.mode_locked_first" = "Verdiene zuerst %@ mit einer beliebigen Waffe.";
+"mw4.ui.mastery.mode_locked" = "Verdiene zuerst %@.";
+"mw4.ui.mastery.harmonic_breaks" = "%3$@-Herausforderungen: %1$d/%2$d";
+"mw4.ui.milestone.mode_mastery_subtitle" = "Universelle Tarnung: für jede Waffe verfügbar.";
 "mw4.ui.camo_level_earned" = "Erhalten auf Waffenstufe %d.";
 "mw4.ui.suggestion.next_camo" = "Als Nächstes: %@";
 "mw4.ui.milestone.final_many" = "%d Waffen haben sie jetzt.";
@@ -134,3 +138,5 @@
 "mw4.ui.customise" = "Anpassen";
 "mw4.ui.customise.footer" = "Zum Umordnen ziehen, Ungenutztes ausschalten. Das Layout gilt für jeden Modus. Waffen bleiben immer sichtbar.";
 "mw4.ui.customise.reset" = "Zurücksetzen";
+"mw4.ui.customise.locked_title" = "Herausforderungen gesperrter Tarnungen zeigen";
+"mw4.ui.customise.locked_footer" = "Eine gesperrte Tarnung zeigt ihre Herausforderung statt ihrer Freischaltbedingung. Das Schloss bleibt sichtbar.";

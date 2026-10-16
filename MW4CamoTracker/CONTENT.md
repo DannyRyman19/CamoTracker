@@ -130,7 +130,9 @@ The publish script enforces the first two.
 - `completionist` (optional): the four camos after a weapon's camo list.
   `steps` is Gold, Platinum, Harmonic Break in order; each may set `name`,
   `colors`, `requirement` (the default challenge), `byCategory` (a challenge
-  per `categoryId`, as a string key) and `unlock`: `"weapon"` (opens once
+  per `categoryId`, as a string key), `byWeapon` (a challenge per
+  `weaponId`, as a string key, which beats its class's: the Warlord's
+  Platinum is `"24"`) and `unlock`: `"weapon"` (opens once
   this weapon has the step before), `"category"` (once as many weapons in
   its class have it as the class had at launch, so a DLC weapon can stand
   in) or `"mode"` (once the launch roster has it). Defaults:
@@ -159,7 +161,16 @@ The publish script enforces the first two.
     (`weapon`, `category` or `mode`) for what opens it beyond the tier
     before on the weapon. Defaults: tier 1 `mode` (the last Completionist
     camo on the whole launch roster), tiers 2 and 3 `weapon`.
-  Each tier may also set `name`, `colors` and `imageURL`.
+  - `"mode"`: each tier is one challenge for the whole mode, as the game
+    shows them: `requirement` on `tier1`..`tier3` (a tick box without
+    one, or with `amount` 1). Tier 1 opens once any weapon has the last
+    Completionist camo (Divergence), later tiers once the tier before is
+    earned. A `requirement` with `unit` `"harmonic_breaks"` counts the
+    mode's Harmonic Breaks by itself. This is what the files use now; the
+    game's numbers are still `&&1` placeholders, so every tier is a tick
+    box until they show. Older app builds read `"mode"` as `"count"`.
+  Each tier may also set `name`, `colors` (`"#RRGGBB"` hex: the first is
+  the badge colour, all of them the animated gradient) and `imageURL`.
 
 Example, the "Harmonic Break on everything opens the Mastery challenges,
 one shared grind" reading: in `warzone.json` and `dmz.json` set

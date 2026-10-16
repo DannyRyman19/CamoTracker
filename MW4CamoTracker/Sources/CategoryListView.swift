@@ -462,6 +462,7 @@ struct CustomiseHomeSheet: View {
     let accent: Color
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
+    @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
     @Environment(\.dismiss) private var dismiss
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
@@ -493,6 +494,14 @@ struct CustomiseHomeSheet: View {
                     }
                 } footer: {
                     Text("mw4.ui.customise.footer".localized())
+                }
+
+                Section {
+                    Toggle("mw4.ui.customise.locked_title".localized(), isOn: $showLockedChallenges)
+                        .tint(accent)
+                        .accessibilityIdentifier("customise.showLocked")
+                } footer: {
+                    Text("mw4.ui.customise.locked_footer".localized())
                 }
 
                 Section {

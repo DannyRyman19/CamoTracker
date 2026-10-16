@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 extension String {
     /// Looks up static app chrome (tab names, button labels, onboarding copy)
@@ -611,6 +612,10 @@ struct ChallengeRow: View {
 
     @State private var showAmountEntry = false
     @State private var amountText = ""
+    /// Set in Customise: a locked camo shows its challenge rather than what
+    /// unlocks it (the lock glyph still says it's shut).
+    @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    static let showLockedKey = "mw4_show_locked_challenges"
 
     private var hasCounter: Bool { (item.requirement?.amount ?? 0) > 1 }
 
@@ -639,7 +644,9 @@ struct ChallengeRow: View {
                         .foregroundStyle(isAvailable ? Color.appInk : Color.appInkMuted)
                 }
                 if let requirement = item.requirement {
-                    Text(isAvailable ? requirement.description.resolved() : (lockedReason ?? "mw4.ui.locked".localized()))
+                    Text(isAvailable || showLockedChallenges
+                         ? requirement.description.resolved()
+                         : (lockedReason ?? "mw4.ui.locked".localized()))
                         .font(.system(size: 13))
                         .foregroundStyle(Color.appInkMuted)
                 } else if let line = isAvailable ? detail : lockedReason {
@@ -807,7 +814,7 @@ struct FilterSortMenu<T: Hashable>: View {
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
             Menu {
-                Picker(title, selection: $selection) {
+                Picker(title, selection: Binding(get: { selection }, set: { if $0 != selection { Haptics.step() }; selection = $0 })) {
                     ForEach(options, id: \.self) { option in
                         Text(label(option)).tag(option)
                     }
@@ -977,5 +984,45 @@ extension View {
         #else
         self
         #endif
+    }
+}
+
+/// Taps under the finger as progress changes: a firm one for earning
+/// something, a soft one for undoing it, a click for a counter or level
+/// step, a heavy one for prestige and the success buzz with a milestone
+/// banner. iOS's own System Haptics switch turns them all off.
+enum Haptics {
+    nonisolated(unsafe) private static var lastSuccess = Date.distantPast
+
+    static func earned() { impact(.medium) }
+    static func undone() { impact(.soft) }
+    static func heavy() { impact(.heavy) }
+    static func light() { impact(.light) }
+
+    static func step() {
+        onMain { UISelectionFeedbackGenerator().selectionChanged() }
+    }
+
+    static func milestone() {
+        lastSuccess = Date()
+        onMain { UINotificationFeedbackGenerator().notificationOccurred(.success) }
+    }
+
+    /// Earned or undone, or a step when the change finished nothing. Says
+    /// nothing right after a milestone, which has had its own buzz.
+    static func change(wasDone: Bool, isDone: Bool) {
+        guard Date().timeIntervalSince(lastSuccess) > 0.3 else { return }
+        if isDone, !wasDone { earned() } else if wasDone, !isDone { undone() } else { step() }
+    }
+
+    private static func impact(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        onMain { UIImpactFeedbackGenerator(style: style).impactOccurred() }
+    }
+
+    /// Feedback generators are main-thread only; progress changes come from
+    /// taps, so anything else is skipped rather than hopped.
+    private static func onMain(_ body: @MainActor () -> Void) {
+        guard Thread.isMainThread else { return }
+        MainActor.assumeIsolated(body)
     }
 }

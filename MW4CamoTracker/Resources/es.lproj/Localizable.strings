@@ -115,6 +115,10 @@
 "mw4.ui.completionist.final_locked_count" = "Consigue %1$@ con esta arma, con %2$d desafíos de %1$@ completados en total (%3$d/%2$d).";
 "mw4.ui.completionist.final_count" = "%1$d/%2$d desafíos de %3$@ completados.";
 "mw4.ui.mastery.weapons_needed" = "%1$d/%2$d armas con %3$@";
+"mw4.ui.mastery.mode_locked_first" = "Consigue primero %@ en cualquier arma.";
+"mw4.ui.mastery.mode_locked" = "Consigue primero %@.";
+"mw4.ui.mastery.harmonic_breaks" = "Desafíos de %3$@: %1$d/%2$d";
+"mw4.ui.milestone.mode_mastery_subtitle" = "Camuflaje universal: equípalo en cualquier arma.";
 "mw4.ui.camo_level_earned" = "Se consigue en el nivel de arma %d.";
 "mw4.ui.suggestion.next_camo" = "Siguiente: %@";
 "mw4.ui.milestone.final_many" = "%d armas ya lo tienen.";
@@ -134,3 +138,5 @@
 "mw4.ui.customise" = "Personalizar";
 "mw4.ui.customise.footer" = "Arrastra para reordenar y desactiva lo que no uses. La misma disposición se aplica en cada modo. Las armas siempre se muestran.";
 "mw4.ui.customise.reset" = "Restablecer";
+"mw4.ui.customise.locked_title" = "Mostrar desafíos de camuflajes bloqueados";
+"mw4.ui.customise.locked_footer" = "Un camuflaje bloqueado muestra su desafío en lugar de cómo se desbloquea. El candado sigue visible.";

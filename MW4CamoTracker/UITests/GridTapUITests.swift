@@ -64,6 +64,14 @@ final class GridTapUITests: XCTestCase {
         app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
         app.launch()
 
+        // Below the layout list and the locked-challenges switch: lift the
+        // sheet to its full height first.
+        func reset() {
+            let button = app.buttons["Reset to default"]
+            for _ in 0..<3 where !button.isHittable { app.swipeUp() }
+            button.tap()
+        }
+
         func customise(_ change: () -> Void) {
             XCTAssertTrue(app.buttons["customiseHome"].waitForExistence(timeout: 15))
             app.buttons["customiseHome"].tap()
@@ -73,7 +81,7 @@ final class GridTapUITests: XCTestCase {
             XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 5))
         }
 
-        customise { app.buttons["Reset to default"].tap() }
+        customise(reset)
         XCTAssertTrue(app.staticTexts["Suggested"].exists)
 
         customise {
@@ -81,7 +89,7 @@ final class GridTapUITests: XCTestCase {
         }
         XCTAssertFalse(app.staticTexts["Suggested"].exists)
 
-        customise { app.buttons["Reset to default"].tap() }
+        customise(reset)
         XCTAssertTrue(app.staticTexts["Suggested"].exists)
     }
 
@@ -163,9 +171,11 @@ final class GridTapUITests: XCTestCase {
         count.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)).withOffset(CGVector(dx: 18, dy: 0)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["1/50"].waitForExistence(timeout: 5))
 
-        // The tick box still completes it in one tap, no typing 50.
+        // The tick box still completes it in one tap, no typing 50. It sits
+        // at the row's left edge, level with the name (a camo picture can
+        // sit between them).
         let name = app.staticTexts["Platinum"]
-        name.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 1)).withOffset(CGVector(dx: -22, dy: 0)).tap()
+        app.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: 27, dy: name.frame.maxY)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["50/50"].waitForExistence(timeout: 5))
     }
 }

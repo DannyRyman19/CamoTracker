@@ -141,6 +141,8 @@ extension TrackerViewModel {
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
                      subtitle: tier == 3
                         ? "mw4.ui.milestone.tier3_subtitle".localized()
+                        : masteryIsModeChallenge(mode: mode)
+                        ? "mw4.ui.milestone.mode_mastery_subtitle".localized()
                         : String(format: "mw4.ui.milestone.mastery_subtitle".localized(),
                                  masteryProgress(mode: mode, tier: tier).total,
                                  masteryUsesChallenges(mode: mode) ? tierCamos[tier - 1].name : appMode.lastCompletionist.name),
@@ -159,6 +161,7 @@ extension TrackerViewModel {
     private func announce(title: String, subtitle: String, titleGradient: [Color], icon: String) {
         let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon)
         milestoneBanner = banner
+        Haptics.milestone()
         Task { [weak self] in
             try? await Task.sleep(nanoseconds: 3_500_000_000)
             if self?.milestoneBanner?.id == banner.id {
