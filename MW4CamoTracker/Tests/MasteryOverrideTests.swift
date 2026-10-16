@@ -311,6 +311,15 @@ struct TrackerViewModelTests {
         #expect(model.categoryTrueCompletionFraction(category, mode: mp) > afterCamos)
     }
 
+    /// A `weaponCamos` block giving the weapon 8 Military camos with no
+    /// published levels, so the spread fallback is what's tested.
+    private func unpublishedMilitary(_ weaponId: Int) -> String {
+        let slots = (0..<8).map {
+            #"{"itemId": \#($0), "name": {"en": "Military \#($0 + 1)"}, "tier": \#($0 + 1), "children": [], "group": "military"}"#
+        }
+        return #"[{"weaponId": \#(weaponId), "camos": [\#(slots.joined(separator: ","))]}]"#
+    }
+
     private func split(_ model: TrackerViewModel, _ weaponId: Int) -> (military: [ChallengeItem], special: [ChallengeItem]) {
         let camos = model.camos(weaponId: weaponId, mode: mp)
         return (camos.filter { $0.group == "military" }, camos.filter { $0.group == "special" })
@@ -320,10 +329,7 @@ struct TrackerViewModelTests {
     /// weapon's max level, the last one on max itself.
     @Test func militaryLevelsAreSpreadUpToMaxUntilPublished() throws {
         let weapon = try anyWeapon(try model())
-        let slots = (0..<8).map {
-            #"{"itemId": \#($0), "name": {"en": "Military \#($0 + 1)"}, "tier": \#($0 + 1), "children": [], "group": "military"}"#
-        }
-        let model = try model(["weaponCamos": #"[{"weaponId": \#(weapon.weaponId), "camos": [\#(slots.joined(separator: ","))]}]"#])
+        let model = try model(["weaponCamos": unpublishedMilitary(weapon.weaponId)])
         let military = split(model, weapon.weaponId).military
         try #require(military.count == 8)
         let max = model.maxLevel(for: weapon)
@@ -362,21 +368,41 @@ struct TrackerViewModelTests {
         #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: third) == false)
     }
 
-    /// Max level earns every Military camo and opens the Specials, which
-    /// stay shut until the last Military camo.
-    @Test func maxLevelEarnsMilitaryAndOpensSpecials() throws {
+    /// By default each Special opens at its own level, Military or not:
+    /// the HAN 86's Smoke at 25 while Military 4 (34) is still to come.
+    @Test func specialsOpenAtTheirOwnLevel() throws {
         let model = try model()
         let weapon = try anyWeapon(model)
         let (military, special) = split(model, weapon.weaponId)
-        let last = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!))
-        model.setLevel(last - 1, for: weapon)
-        #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(!model.specialsWaitForMilitary(mode: mp))
+        model.setLevel(24, for: weapon)
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[0]))
+        model.setLevel(25, for: weapon)
+        #expect(!model.allMilitaryComplete(mode: mp, weaponId: weapon.weaponId))
+        #expect(!model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[3]))
+        #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[0]))
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[1]))
 
         model.setLevel(model.maxLevel(for: weapon), for: weapon)
         #expect(military.allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
         #expect(special.allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
-        // Open, not earned: Specials still need ticking.
+        // Open, not earned: Specials still need their challenge.
         #expect(special.allSatisfy { !model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+    }
+
+    /// `specialsAfterMilitary` keeps every Special shut until the last
+    /// Military camo, whatever its own level.
+    @Test func theSwitchKeepsSpecialsForAfterMilitary() throws {
+        let model = try model(["specialsAfterMilitary": "true"])
+        let weapon = try anyWeapon(model)
+        let (military, special) = split(model, weapon.weaponId)
+        #expect(model.specialsWaitForMilitary(mode: mp))
+        let last = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military.last!))
+        model.setLevel(last - 1, for: weapon)
+        #expect(special.allSatisfy { !model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        model.setLevel(last, for: weapon)
+        #expect(special.prefix(2).allSatisfy { model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(!model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[2]))
     }
 
     /// A prestiged weapon has passed every level, so nothing Military locks
@@ -435,8 +461,8 @@ struct TrackerViewModelTests {
     /// Prestige stages with their own max (Prestige Master to 250) don't
     /// move the Military levels: they stay on the weapon's normal max.
     @Test func militaryLevelsIgnoreThePrestigeStagesMax() throws {
-        let model = try model()
-        let weapon = try anyWeapon(model)
+        let weapon = try anyWeapon(try model())
+        let model = try model(["weaponCamos": unpublishedMilitary(weapon.weaponId)])
         let last = try #require(split(model, weapon.weaponId).military.last)
         let before = model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: last)
         for _ in 0..<model.prestigeStages.count {

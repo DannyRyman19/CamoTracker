@@ -58,6 +58,7 @@ final class TrackerViewModel: ObservableObject {
         MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
         CompletionistOverrides.byMode = loaded.compactMapValues(\.completionist)
         TrackSharing.update(from: loaded)
+        SpecialRule.update(from: loaded)
         modes = loaded
         if defaults.object(forKey: pinnedWeaponKey) != nil {
             pinnedWeaponId = defaults.integer(forKey: pinnedWeaponKey)
@@ -97,6 +98,7 @@ final class TrackerViewModel: ObservableObject {
                 MasteryOverrides.byMode = merged.compactMapValues(\.mastery)
                 CompletionistOverrides.byMode = merged.compactMapValues(\.completionist)
                 TrackSharing.update(from: merged)
+                SpecialRule.update(from: merged)
                 modes = merged
             }
             refreshError = nil
@@ -282,10 +284,10 @@ final class TrackerViewModel: ObservableObject {
         if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
         // Always tappable: a tap sets the weapon level.
         if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil { return true }
-        // Specials stay shut until every Military camo is earned, then also
-        // wait for their own level if they have one.
+        // Specials open at their own level; with `specialsAfterMilitary`
+        // they also wait for every Military camo.
         if camo.group == "special" {
-            guard allMilitaryComplete(mode: mode, weaponId: weaponId) else { return false }
+            if specialsWaitForMilitary(mode: mode), !allMilitaryComplete(mode: mode, weaponId: weaponId) { return false }
             return camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
         }
         if let unlockLevel = camo.unlockLevel {
@@ -370,6 +372,12 @@ final class TrackerViewModel: ObservableObject {
     /// itself, or the one its file's `trackFrom` names for a grind shared
     /// across modes. Mastery is always the mode's own.
     func trackMode(_ mode: String) -> String { TrackSharing.byMode[mode] ?? mode }
+
+    /// Whether this mode's Specials stay shut until every Military camo is
+    /// earned, rather than opening at their own level.
+    func specialsWaitForMilitary(mode: String) -> Bool {
+        SpecialRule.afterMilitary.contains(trackMode(mode))
+    }
 
     /// Whether this mode's track has the final camo after Harmonic Break.
     func finalEnabled(mode: String) -> Bool {

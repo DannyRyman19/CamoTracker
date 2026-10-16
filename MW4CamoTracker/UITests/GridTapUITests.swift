@@ -6,12 +6,18 @@ import XCTest
 /// phone the same taps go through the ordinary one-card rows.
 final class GridTapUITests: XCTestCase {
 
+    /// An empty save, whatever earlier tests left behind (as hex for the
+    /// arguments domain).
+    private static let emptySave = Data(#"{"weaponLevels":{},"weaponPrestige":{},"amounts":{},"completed":[]}"#.utf8)
+        .map { String(format: "%02x", $0) }.joined()
+
     private func launch(category: Int? = nil) -> XCUIApplication {
         let app = XCUIApplication()
         // The screenshot harness: straight to a tab, no splash or onboarding.
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         if let category { app.launchEnvironment["SS_CAT"] = "\(category)" }
-        app.launchArguments += ["-AppleLanguages", "(en)"]
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
         app.launch()
         return app
     }
@@ -38,8 +44,10 @@ final class GridTapUITests: XCTestCase {
 
     func testTappingACategoryCardOpensThatCategoryOnly() {
         let app = launch()
+        XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 15))
+        // Below Suggested and the filter row: scroll it into view.
         let second = app.staticTexts["SMGs"]
-        XCTAssertTrue(second.waitForExistence(timeout: 15))
+        for _ in 0..<4 where !second.isHittable { app.swipeUp() }
         second.tap()
         XCTAssertTrue(app.navigationBars["SMGs"].waitForExistence(timeout: 5))
 
@@ -56,6 +64,8 @@ final class GridTapUITests: XCTestCase {
         let rifles = [0, 1, 2, 3, 4, 19, 20, 21]
         var amounts: [String: Int] = [:]
         for weapon in rifles { amounts["comp|multiplayer|\(weapon)|0"] = 1 }
+        // The HAN 86's Specials are counters (20, 50 and 15).
+        for (item, amount) in [8: 20, 9: 50, 10: 15] { amounts["camo|multiplayer|0|\(item)"] = amount }
         let completed = rifles.flatMap { weapon in (8...10).map { "camo|multiplayer|\(weapon)|\($0)" } }
         let store: [String: Any] = [
             "weaponLevels": Dictionary(uniqueKeysWithValues: rifles.map { ("\($0)", 72) }),
@@ -82,17 +92,14 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["SS_WEAPON"] = "1" // M4, max 72
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        // An empty save, whatever earlier tests left behind.
-        let empty = #"{"weaponLevels":{},"weaponPrestige":{},"amounts":{},"completed":[]}"#
-        let hex = Data(empty.utf8).map { String(format: "%02x", $0) }.joined()
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(hex)>"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
         app.launch()
 
-        let detail = app.staticTexts["Unlocks at weapon level 9."]
+        let detail = app.staticTexts["Unlocks at weapon level 10."]
         XCTAssertTrue(detail.waitForExistence(timeout: 15))
         detail.tap()
-        XCTAssertTrue(app.staticTexts["Earned at weapon level 9."].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any)["9/72"].exists)
+        XCTAssertTrue(app.staticTexts["Earned at weapon level 10."].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["10/72"].exists)
     }
 
     /// A camo with a counter isn't completed by a tap on its card, but its

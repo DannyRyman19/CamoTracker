@@ -131,6 +131,11 @@ struct ModeFile: Codable {
     /// a Harmonic Break earned anywhere counts everywhere. Mastery stays
     /// this mode's own. Absent: this mode tracks its own.
     var trackFrom: String? = nil
+    /// `true` keeps every Special camo shut until all the weapon's Military
+    /// camos are earned. Absent or `false`: each Special opens at its own
+    /// `unlockLevel`, as the in-game camo screens show (Smoke on the HAN 86
+    /// opens at level 25, before Military 4).
+    var specialsAfterMilitary: Bool? = nil
 }
 
 /// The `completionist` block of a mode file.

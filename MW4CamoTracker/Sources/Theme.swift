@@ -174,6 +174,16 @@ enum TrackSharing {
     }
 }
 
+/// The modes whose Specials wait for every Military camo
+/// (`specialsAfterMilitary`), kept the same way as `MasteryOverrides`.
+enum SpecialRule {
+    nonisolated(unsafe) static var afterMilitary: Set<String> = []
+
+    static func update(from files: [String: ModeFile]) {
+        afterMilitary = Set(files.filter { $0.value.specialsAfterMilitary == true }.keys)
+    }
+}
+
 /// The `completionist` block of each loaded mode file, kept the same way as
 /// `MasteryOverrides`.
 enum CompletionistOverrides {

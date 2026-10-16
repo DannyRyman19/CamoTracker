@@ -144,6 +144,10 @@ The publish script enforces the first two.
   then uses that mode's camo list, Completionist camos and progress, so the
   grind is one track across modes (a Harmonic Break earned in Warzone counts
   in Multiplayer too). Mastery stays this mode's own. Absent: its own track.
+- `specialsAfterMilitary` (optional): `true` keeps a weapon's Specials shut
+  until all its Military camos are earned. Absent or `false`: each Special
+  opens at its own `unlockLevel` (what the in-game screens show: the HAN 86's
+  Smoke opens at level 25, before Military 4).
 - `completionist.final.enabled`: `false` drops the final camo, so the track
   ends at Harmonic Break and Mastery builds on Harmonic Break instead.
 - `mastery` (optional): the mode's three Mastery camos. `unlock` picks how:

@@ -186,6 +186,7 @@ struct WeaponDetailView: View {
             isDone: viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             isAvailable: viewModel.isCamoAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             lockedReason: camo.group == "special"
+                && viewModel.specialsWaitForMilitary(mode: mode.rawValue)
                 && !viewModel.allMilitaryComplete(mode: mode.rawValue, weaponId: weapon.weaponId)
                 ? "mw4.ui.special_locked".localized()
                 : camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), $0) },
