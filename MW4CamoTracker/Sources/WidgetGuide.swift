@@ -9,8 +9,18 @@ struct WidgetTipCard: View {
     @AppStorage(WidgetTipCard.dismissedKey) private var dismissed = false
     @State private var showGuide = false
 
+    /// The screenshot and UI-test harness (`SS_SCREEN`) never shows it, so
+    /// the store shots and the tests see the tab as it normally looks.
+    private var harness: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.environment["SS_SCREEN"] != nil
+        #else
+        false
+        #endif
+    }
+
     var body: some View {
-        if #available(iOS 17, *), !dismissed {
+        if #available(iOS 17, *), !dismissed, !harness {
             Button {
                 showGuide = true
             } label: {
