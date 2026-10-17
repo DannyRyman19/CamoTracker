@@ -1,5 +1,5 @@
 {
-  "version": "0.8.9",
+  "version": "0.8.10",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -6967,7 +6967,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is its own (byWeapon \"24\": 50 hipfire kills, not the Shotguns' 125). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 (Polyatomic Reforged) 10 kills in a match 250 times and tier 3 (Orion Reforged) 3 kills without taking damage 250 times, from @cs_buh on 17 Oct 2026 (that post names them a tier early; the recording shows Mercurial Drift needs Divergence). Tier 1's Harmonic Break count is still the game's placeholder &&1, so it's a tick box. Mastery is per weapon (unlock \"challenge\"): tier 1 opens on a weapon once it has Divergence, tiers 2 and 3 after the tier before on it. Divergence's final.harmonicBreaksNeeded (33, every weapon) is confirmed by @cs_buh.",
+  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is its own (byWeapon \"24\": 50 hipfire kills, not the Shotguns' 125). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 (Polyatomic Reforged) 10 kills in a match 250 times and tier 3 (Orion Reforged) 5 kills without dying 250 times (user, correcting @cs_buh's '3 kills without taking damage'), tier 2 from @cs_buh on 17 Oct 2026 (that post names them a tier early; the recording shows Mercurial Drift needs Divergence). Tier 1's Harmonic Break count is still the game's placeholder &&1, so it's a tick box. Mastery is per weapon (unlock \"challenge\"): tier 1 opens on a weapon once it has Divergence, tiers 2 and 3 after the tier before on it. Divergence's final.harmonicBreaksNeeded (33, every weapon) is confirmed by @cs_buh.",
   "completionist": {
     "steps": [
       {
@@ -7257,11 +7257,11 @@
         "amount": 250,
         "unit": "times",
         "description": {
-          "en": "Get 3 kills without taking damage 250 times.",
-          "fr": "Obtenez 3 éliminations sans subir de dégâts 250 fois.",
-          "es": "Consigue 3 bajas sin recibir daño 250 veces.",
-          "de": "Erziele 3 Abschüsse, ohne Schaden zu nehmen, 250-mal.",
-          "nl": "Maak 3 kills zonder schade op te lopen, 250 keer."
+          "en": "Get 5 kills without dying 250 times.",
+          "fr": "Obtenez 5 éliminations sans mourir 250 fois.",
+          "es": "Consigue 5 bajas sin morir 250 veces.",
+          "de": "Erziele 5 Abschüsse, ohne zu sterben, 250-mal.",
+          "nl": "Maak 5 kills zonder dood te gaan, 250 keer."
         }
       }
     },

@@ -1,5 +1,5 @@
 {
-  "version": "0.8.8",
+  "version": "0.8.9",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -5977,7 +5977,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'.",
+  "_note": "Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/chiral.png",
@@ -5997,28 +5997,28 @@
     "tier2": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ripple_tide.png",
       "requirement": {
-        "amount": 1,
+        "amount": 25,
         "unit": "times",
         "description": {
-          "en": "Get Tier 3+ enemy kills and then exfil successfully, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Éliminez des ennemis de niveau 3+ puis réussissez l'exfiltration, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas de enemigos de nivel 3+ y luego extráete con éxito un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele Abschüsse gegen Gegner der Stufe 3+ und exfiltriere danach erfolgreich, eine bestimmte Anzahl Male (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal kills op vijanden van niveau 3+ en exfiltreer daarna succesvol, een bepaald aantal keer (de game toont de aantallen nog niet)."
+          "en": "Exfil with 2 LT dog tags in a single deployment 25 times.",
+          "fr": "Exfiltrez-vous avec 2 plaques d'identité de lieutenant en un seul déploiement 25 fois.",
+          "es": "Extrae con 2 placas de identificación de teniente en un mismo despliegue 25 veces.",
+          "de": "Exfiltriere mit 2 Leutnants-Erkennungsmarken in einem einzigen Einsatz, 25-mal.",
+          "nl": "Exfiltreer met 2 LT-dog tags in één inzet, 25 keer."
         }
       }
     },
     "tier3": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/helio.png",
       "requirement": {
-        "amount": 1,
-        "unit": "times",
+        "amount": 2500,
+        "unit": "kills",
         "description": {
-          "en": "Get one-shot headshot kills on max-level operators and then exfil successfully, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Éliminez des agents de niveau max d'un tir à la tête puis réussissez l'exfiltration, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas de un disparo a la cabeza a operadores de nivel máximo y luego extráete con éxito un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele Kopfschuss-Abschüsse mit einem Schuss gegen Operator der Höchststufe und exfiltriere danach erfolgreich, eine bestimmte Anzahl Male (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal kills met één headshot op operators van maximaal niveau en exfiltreer daarna succesvol, een bepaald aantal keer (de game toont de aantallen nog niet)."
+          "en": "Get 2500 kills with a Legendary weapon and a maxed-out Operator.",
+          "fr": "Obtenez 2500 éliminations avec une arme légendaire et un agent au niveau maximum.",
+          "es": "Consigue 2500 bajas con un arma legendaria y un operador al nivel máximo.",
+          "de": "Erziele 2500 Abschüsse mit einer legendären Waffe und einem Operator auf Maximalstufe.",
+          "nl": "Maak 2500 kills met een legendarisch wapen en een operator op maximaal niveau."
         }
       }
     },
