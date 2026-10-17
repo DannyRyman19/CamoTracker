@@ -36,6 +36,7 @@
 		CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D260791573B9EE8356EAC22 /* Theme.swift */; };
 		D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 895B374FC30B3DC7C15333E3 /* en.lproj */; };
 		D5F090744B737F258FDDFFA3 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 87E24B1D1EBDC96E0CE57DEE /* nl.lproj */; };
+		1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C3E9F2B4D5F6071829305 /* it.lproj */; };
 		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
@@ -84,6 +85,7 @@
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
+		1A7C3E9F2B4D5F6071829305 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
 		895B374FC30B3DC7C15333E3 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW4CamoTrackerApp.swift; sourceTree = "<group>"; };
 		97A39FDC7376E2120B670A81 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */,
 				D6D4CDA89124982F18FDAA90 /* multiplayer.json */,
 				87E24B1D1EBDC96E0CE57DEE /* nl.lproj */,
+				1A7C3E9F2B4D5F6071829305 /* it.lproj */,
 				55B063F6E81EF142F5E8BE3A /* warzone.json */,
 				82971534ADD2CA7EFF592137 /* weapons.json */,
 			);
@@ -290,6 +293,7 @@
 				F175596303EDBA4F183B0D26 /* fr.lproj in Resources */,
 				17C918F4298306D3B088A35A /* multiplayer.json in Resources */,
 				D5F090744B737F258FDDFFA3 /* nl.lproj in Resources */,
+				1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */,
 				3A69BB325248C404557D3503 /* warzone.json in Resources */,
 				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
 			);

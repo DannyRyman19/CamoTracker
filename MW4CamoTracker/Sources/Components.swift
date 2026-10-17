@@ -8,7 +8,82 @@ extension String {
     /// instead (see Models.swift), since a bundle key can't resolve until the
     /// next app update ships a matching entry.
     func localized() -> String {
-        NSLocalizedString(self, bundle: .main, comment: "")
+        NSLocalizedString(self, bundle: AppLanguage.bundle, comment: "")
+    }
+}
+
+/// The language picked in Customise, over the iPhone's own. `nil` follows
+/// the iPhone. Both the bundled strings and the data's `LocalizedText`
+/// read it, and the root view rebuilds when it changes, so a switch shows
+/// at once without a relaunch.
+enum AppLanguage {
+    static let key = "mw4_language"
+    /// Every language the app is translated into, as shown in its own name.
+    static let supported: [(code: String, name: String)] = [
+        ("en", "English"), ("de", "Deutsch"), ("es", "Español"),
+        ("fr", "Français"), ("it", "Italiano"), ("nl", "Nederlands"),
+    ]
+
+    static var override: String? {
+        guard let code = UserDefaults.standard.string(forKey: key),
+              supported.contains(where: { $0.code == code }) else { return nil }
+        return code
+    }
+
+    /// One bundle per language, looked up once; strings are read from any
+    /// thread, so the cache is behind a lock.
+    nonisolated(unsafe) private static var bundles: [String: Bundle] = [:]
+    private static let lock = NSLock()
+
+    static var bundle: Bundle {
+        guard let code = override else { return .main }
+        lock.lock(); defer { lock.unlock() }
+        if let cached = bundles[code] { return cached }
+        let found = Bundle.main.path(forResource: code, ofType: "lproj").flatMap(Bundle.init(path:)) ?? .main
+        bundles[code] = found
+        return found
+    }
+
+    /// Language codes to try in order: the picked one, else the iPhone's.
+    static var preferred: [String] {
+        if let code = override { return [code] }
+        return Locale.preferredLanguages.compactMap { Locale(identifier: $0).language.languageCode?.identifier }
+    }
+}
+
+/// Multiplayer, Warzone and DMZ as switches, for picking the modes you
+/// play. One always stays on.
+struct PlayedModesPicker: View {
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
+
+    var body: some View {
+        let played = AppMode.played(playedRaw)
+        HStack(spacing: 8) {
+            ForEach(AppMode.allCases) { mode in
+                let on = played.contains(mode)
+                Button {
+                    let next = AppMode.toggling(mode, in: playedRaw)
+                    if next != playedRaw { Haptics.light(); playedRaw = next }
+                } label: {
+                    VStack(spacing: 5) {
+                        Image(systemName: mode.symbol)
+                            .font(.system(size: 17, weight: .semibold))
+                        Text(mode.displayNameKey.localized())
+                            .font(.system(size: 12, weight: .bold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .foregroundStyle(on ? mode.accent : Color.appInkMuted)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .borderedCard(accent: on ? mode.accent : nil)
+                    .opacity(on ? 1 : 0.6)
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(on ? .isSelected : [])
+                .accessibilityIdentifier("mode.\(mode.rawValue)")
+            }
+        }
     }
 }
 

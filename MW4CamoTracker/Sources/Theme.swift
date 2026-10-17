@@ -6,6 +6,31 @@ enum AppMode: String, CaseIterable, Identifiable {
     case multiplayer, warzone, dmz
     var id: String { rawValue }
 
+    /// The modes the player picked in onboarding or Customise, as a
+    /// comma-separated list. Empty means all of them.
+    static let playedKey = "mw4_played_modes"
+
+    /// The modes that get a tab and count in Stats, in their usual order.
+    /// Never empty: a list that names none of them means all.
+    static func played(_ raw: String) -> [AppMode] {
+        let picked = Set(raw.split(separator: ",").map(String.init))
+        let modes = allCases.filter { picked.contains($0.rawValue) }
+        return modes.isEmpty ? allCases : modes
+    }
+
+    /// The same list after switching `mode` on or off; the last one left
+    /// can't be switched off.
+    static func toggling(_ mode: AppMode, in raw: String) -> String {
+        var modes = Set(played(raw))
+        if modes.contains(mode) {
+            guard modes.count > 1 else { return raw }
+            modes.remove(mode)
+        } else {
+            modes.insert(mode)
+        }
+        return modes.count == allCases.count ? "" : allCases.filter(modes.contains).map(\.rawValue).joined(separator: ",")
+    }
+
     var displayNameKey: String {
         switch self {
         case .multiplayer: return "mw4.mode.multiplayer"

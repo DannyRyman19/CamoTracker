@@ -208,6 +208,13 @@ private struct WelcomePage: View {
                     .multilineTextAlignment(.center)
                     .padding(14)
                     .borderedCard()
+
+                VStack(spacing: 8) {
+                    Text("mw4.ui.modes".localized())
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(Color.appInk)
+                    PlayedModesPicker()
+                }
             }
         }
     }

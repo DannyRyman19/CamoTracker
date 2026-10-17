@@ -55,6 +55,8 @@ struct ContentView: View {
 
     /// One navigation path per mode tab. Only ever non-empty under the
     /// screenshot harness; normal navigation pushes onto it as usual.
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
+    @AppStorage(AppLanguage.key) private var languageRaw = ""
     @State private var paths: [Int: NavigationPath] = [:]
 
     private func pathBinding(_ index: Int) -> Binding<NavigationPath> {
@@ -64,7 +66,10 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .top) {
             TabView(selection: $selectedTab) {
-                ForEach(Array(AppMode.allCases.enumerated()), id: \.offset) { index, mode in
+                // Only the modes the player picked; each keeps its own index
+                // as its tag so a tab's place in `paths` never moves.
+                ForEach(AppMode.played(playedRaw), id: \.self) { mode in
+                    let index = AppMode.allCases.firstIndex(of: mode) ?? 0
                     NavigationStack(path: pathBinding(index)) {
                         CategoryListView(mode: mode)
                             .navigationDestination(for: Route.self) { route in
@@ -94,6 +99,14 @@ struct ContentView: View {
                     .tag(AppMode.allCases.count)
             }
             .tint(currentAccent)
+            // A language switch redraws every screen in the new language.
+            .id(languageRaw)
+            .onChange(of: playedRaw) { _ in
+                let shown = AppMode.played(playedRaw).compactMap { AppMode.allCases.firstIndex(of: $0) }
+                if selectedTab < AppMode.allCases.count, !shown.contains(selectedTab) {
+                    selectedTab = shown.first ?? 0
+                }
+            }
 
             if let banner = viewModel.milestoneBanner {
                 ConfettiBurst(colors: banner.titleGradient)

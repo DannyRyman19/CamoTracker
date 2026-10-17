@@ -23,15 +23,12 @@
 		<string>es</string>
 		<string>de</string>
 		<string>nl</string>
+		<string>it</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>Camo Tracker</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<!-- Reference the build settings. Hardcoded literals here silently
-	     outrank MARKETING_VERSION / CURRENT_PROJECT_VERSION, so the CI
-	     lane's build-number override did nothing and every archive went
-	     up as build 1, which App Store Connect rejects as already used. -->
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>

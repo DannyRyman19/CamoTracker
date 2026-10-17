@@ -29,11 +29,8 @@ struct LocalizedText: Codable {
     /// then to whatever translation exists — so a missing language never
     /// surfaces blank text or a raw key to the player.
     func resolved() -> String {
-        for identifier in Locale.preferredLanguages {
-            if let code = Locale(identifier: identifier).language.languageCode?.identifier,
-               let value = values[code] {
-                return value
-            }
+        for code in AppLanguage.preferred {
+            if let value = values[code] { return value }
         }
         return values["en"] ?? values.values.first ?? ""
     }

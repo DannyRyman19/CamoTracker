@@ -102,8 +102,8 @@ The publish script enforces the first two.
   mode-wide Mastery capstone is gated on it, so a player can finish a new
   weapon in place of a launch one they skipped. Adding weapons does not
   change it.
-- **Every piece of text needs all five languages** (`en`, `fr`, `es`, `de`,
-  `nl`). A missing one falls back to English in the app. Weapon and Mastery
+- **Every piece of text needs all six languages** (`en`, `fr`, `es`, `de`,
+  `it`, `nl`). A missing one falls back to English in the app. Weapon and Mastery
   camo names are proper nouns and are the same in every language.
 
 ## What the files hold

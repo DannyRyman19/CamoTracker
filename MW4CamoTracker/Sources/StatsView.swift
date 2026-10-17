@@ -6,6 +6,7 @@ import SwiftUI
 /// old flat list-of-sections layout, which had no visual hierarchy between
 /// "how close am I" and "here's every category's percentage."
 struct StatsView: View {
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @State private var width: CGFloat = 0
 
@@ -22,7 +23,7 @@ struct StatsView: View {
         ZStack {
             AppBackground(accent: .accentMultiplayer)
             List {
-                let modes = AppMode.allCases
+                let modes = AppMode.played(playedRaw)
                 if width >= 950 {
                     // iPad: the overall ring, then the three modes in a row.
                     OverallStatsHero()
@@ -77,8 +78,10 @@ private struct OverallStatsHero: View {
     var fillsHeight = false
     @EnvironmentObject private var viewModel: TrackerViewModel
 
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
+
     private var perMode: [(mode: AppMode, fraction: Double)] {
-        AppMode.allCases.map { ($0, viewModel.trueCompletionFraction(mode: $0.rawValue)) }
+        AppMode.played(playedRaw).map { ($0, viewModel.trueCompletionFraction(mode: $0.rawValue)) }
     }
     private var overallFraction: Double {
         let values = perMode.map(\.fraction)

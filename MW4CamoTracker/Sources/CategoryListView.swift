@@ -464,6 +464,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
 
@@ -496,6 +497,27 @@ struct CustomiseHomeSheet: View {
                     }
                 } footer: {
                     Text("mw4.ui.customise.footer".localized())
+                }
+
+                Section {
+                    PlayedModesPicker()
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                } header: {
+                    Text("mw4.ui.modes".localized())
+                } footer: {
+                    Text("mw4.ui.modes.footer".localized())
+                }
+
+                Section {
+                    Picker("mw4.ui.language".localized(), selection: $languageRaw) {
+                        Text("mw4.ui.language.system".localized()).tag("")
+                        ForEach(AppLanguage.supported, id: \.code) { language in
+                            Text(verbatim: language.name).tag(language.code)
+                        }
+                    }
+                    .tint(accent)
+                    .accessibilityIdentifier("customise.language")
                 }
 
                 Section {
