@@ -52,38 +52,77 @@ enum AppLanguage {
 }
 
 /// Multiplayer, Warzone and DMZ as switches, for picking the modes you
-/// play. One always stays on.
+/// play. One always stays on. A picked mode is filled in its colour with a
+/// tick; one left out is a dim outline with an empty circle, so the two
+/// can't be mistaken for each other. With more than one picked, `showsStart`
+/// adds the choice of which one the app opens on.
 struct PlayedModesPicker: View {
+    var showsStart = true
     @AppStorage(AppMode.playedKey) private var playedRaw = ""
+    @AppStorage(AppMode.startKey) private var startRaw = ""
 
     var body: some View {
         let played = AppMode.played(playedRaw)
-        HStack(spacing: 8) {
-            ForEach(AppMode.allCases) { mode in
-                let on = played.contains(mode)
-                Button {
-                    let next = AppMode.toggling(mode, in: playedRaw)
-                    if next != playedRaw { Haptics.light(); playedRaw = next }
-                } label: {
-                    VStack(spacing: 5) {
-                        Image(systemName: mode.symbol)
-                            .font(.system(size: 17, weight: .semibold))
-                        Text(mode.displayNameKey.localized())
-                            .font(.system(size: 12, weight: .bold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.8)
-                    }
-                    .foregroundStyle(on ? mode.accent : Color.appInkMuted)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-                    .borderedCard(accent: on ? mode.accent : nil)
-                    .opacity(on ? 1 : 0.6)
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ForEach(AppMode.allCases) { mode in
+                    chip(mode, on: played.contains(mode))
                 }
-                .buttonStyle(.plain)
-                .accessibilityAddTraits(on ? .isSelected : [])
-                .accessibilityIdentifier("mode.\(mode.rawValue)")
+            }
+            if showsStart, played.count > 1 {
+                HStack {
+                    Text("mw4.ui.opens_to".localized())
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.appInkMuted)
+                    Spacer(minLength: 8)
+                    Picker("mw4.ui.opens_to".localized(), selection: Binding(
+                        get: { AppMode.start(startRaw, played: playedRaw) },
+                        set: { Haptics.step(); startRaw = $0.rawValue })) {
+                        ForEach(played) { mode in
+                            Text(mode.displayNameKey.localized()).tag(mode)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .fixedSize()
+                    .accessibilityIdentifier("mode.start")
+                }
             }
         }
+        .animation(.snappy, value: playedRaw)
+    }
+
+    private func chip(_ mode: AppMode, on: Bool) -> some View {
+        Button {
+            let next = AppMode.toggling(mode, in: playedRaw)
+            if next != playedRaw { Haptics.light(); playedRaw = next }
+        } label: {
+            VStack(spacing: 5) {
+                Image(systemName: mode.symbol)
+                    .font(.system(size: 17, weight: .semibold))
+                Text(mode.displayNameKey.localized())
+                    .font(.system(size: 12, weight: .bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .foregroundStyle(on ? mode.accent : Color.appInkMuted.opacity(0.7))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(RoundedRectangle(cornerRadius: 14).fill(on ? mode.accent.opacity(0.18) : Color.clear))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .strokeBorder(on ? mode.accent : Color.appInkMuted.opacity(0.3),
+                                  style: StrokeStyle(lineWidth: on ? 2 : 1, dash: on ? [] : [4, 3]))
+            )
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(on ? mode.accent : Color.appInkMuted.opacity(0.5))
+                    .padding(6)
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("mode.\(mode.rawValue)")
     }
 }
 

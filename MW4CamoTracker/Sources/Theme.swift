@@ -18,6 +18,17 @@ enum AppMode: String, CaseIterable, Identifiable {
         return modes.isEmpty ? allCases : modes
     }
 
+    /// The mode the app opens on (a raw value; empty means the first one
+    /// played). Only offered when more than one mode is played.
+    static let startKey = "mw4_start_mode"
+
+    /// Where the app opens: the picked mode if it's still played, else the
+    /// first played one.
+    static func start(_ raw: String, played playedRaw: String) -> AppMode {
+        let played = played(playedRaw)
+        return AppMode(rawValue: raw).flatMap { played.contains($0) ? $0 : nil } ?? played[0]
+    }
+
     /// The same list after switching `mode` on or off; the last one left
     /// can't be switched off.
     static func toggling(_ mode: AppMode, in raw: String) -> String {

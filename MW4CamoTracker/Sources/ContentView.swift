@@ -57,6 +57,7 @@ struct ContentView: View {
     /// screenshot harness; normal navigation pushes onto it as usual.
     @AppStorage(AppMode.playedKey) private var playedRaw = ""
     @AppStorage(AppLanguage.key) private var languageRaw = ""
+    @AppStorage(AppMode.startKey) private var startRaw = ""
     @State private var paths: [Int: NavigationPath] = [:]
 
     private func pathBinding(_ index: Int) -> Binding<NavigationPath> {
@@ -129,6 +130,10 @@ struct ContentView: View {
                 }
                 splashDone = true
                 return
+            }
+            // Open on the mode the player picked (Customise > Opens to).
+            if let index = AppMode.allCases.firstIndex(of: AppMode.start(startRaw, played: playedRaw)) {
+                selectedTab = index
             }
             if !hasOnboarded { showOnboarding = true }
         }

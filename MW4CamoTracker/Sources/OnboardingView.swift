@@ -209,10 +209,14 @@ private struct WelcomePage: View {
                     .padding(14)
                     .borderedCard()
 
-                VStack(spacing: 8) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text("mw4.ui.modes".localized())
                         .font(.system(size: 13, weight: .bold))
                         .foregroundStyle(Color.appInk)
+                    Text("mw4.onboarding.modes.hint".localized())
+                        .font(.system(size: 12.5))
+                        .foregroundStyle(Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
                     PlayedModesPicker()
                 }
             }
