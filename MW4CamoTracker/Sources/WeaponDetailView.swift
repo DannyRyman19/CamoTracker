@@ -81,19 +81,21 @@ struct WeaponDetailView: View {
 
     /// The parts of this screen the picker switches between: each camo
     /// group (Military, Special), then Completionist, then Mastery.
-    /// Three parts, so the picker's labels fit: every camo the weapon has
-    /// (Military, Special and Prestige under their own headers), then its
-    /// Completionist camos, then Mastery.
+    /// The mode's camos (Military and Special under their own headers),
+    /// its Completionist camos, Mastery, then the Prestige camos, which are
+    /// the same in every mode.
     private enum Part: Hashable {
         case camos
         case completionist
         case mastery
+        case prestige
     }
 
     private var parts: [(part: Part, title: String)] {
         [(.camos, "mw4.ui.section.camos".localized()),
          (.completionist, "mw4.ui.section.completionist".localized()),
          (.mastery, "mw4.ui.section.mastery".localized())]
+            + (viewModel.prestigeCamos.isEmpty ? [] : [(.prestige, "mw4.ui.prestige".localized())])
     }
 
     /// Picked by hand, else the first part with something still to do.
@@ -101,8 +103,6 @@ struct WeaponDetailView: View {
 
     private var shownPart: Part {
         if let pickedPart, parts.contains(where: { $0.part == pickedPart }) { return pickedPart }
-        // Prestige camos are a long-term grind, so they don't hold the
-        // screen on Camos once the mode's own camos are done.
         if camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
             return .camos
         }
@@ -132,19 +132,11 @@ struct WeaponDetailView: View {
         partPicker
 
         if shownPart == .camos {
-            // Military, Special and Prestige, each under its own header.
+            // Military and Special, each under its own header.
             ForEach(camoGroups, id: \.title) { group in
                 Section(group.title) {
                     ForEach(group.camos) { camo in
                         camoRow(camo)
-                    }
-                }
-                .listRowBackground(Color.appSurface)
-            }
-            if !viewModel.prestigeCamos.isEmpty {
-                Section("mw4.ui.prestige".localized()) {
-                    ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
-                        prestigeCamoRow(index)
                     }
                 }
                 .listRowBackground(Color.appSurface)
@@ -155,6 +147,10 @@ struct WeaponDetailView: View {
             switch shownPart {
             case .camos:
                 EmptyView()
+            case .prestige:
+                ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
+                    prestigeCamoRow(index)
+                }
             case .completionist:
                 // Finishing the camo list opens this weapon's Completionist
                 // camos, and those feed the mode's Mastery camos.

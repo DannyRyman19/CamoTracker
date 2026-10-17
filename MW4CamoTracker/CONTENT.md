@@ -174,6 +174,8 @@ The publish script enforces the first two.
     (`weapon`, `category` or `mode`, with an optional `needed` count) for
     what opens it beyond the tier before. Defaults: tier 1 `mode` (the last
     Completionist camo on the whole launch roster), later tiers `weapon`.
+    This is what the files use now, with tier 1 `unlock` `weapon` so it
+    opens on each weapon once that weapon has Divergence.
   - `"mode"`: the tier is one challenge for the whole mode, as the game
     shows them: `requirement` (a tick box without one, or with `amount`
     1). It opens once the tier before is earned and `weaponsNeeded`
@@ -182,9 +184,8 @@ The publish script enforces the first two.
     whose `unit` is `"golds"`, `"platinums"`, `"harmonic_breaks"` or
     `"finals"` counts those across the mode by itself ("Complete 20
     Harmonic Break Challenges"); any other unit is ticked or counted by the
-    player. This is what the files use now; the game's numbers are still
-    `&&1` placeholders, so every tier is a tick box until they show. App
-    builds before 1.0.1 read `"mode"` as `"count"` and ignore `kind`.
+    player. App builds before 1.0.1 read `"mode"` as `"count"` and ignore
+    `kind`.
   Each tier may also set `name`, `colors` (`"#RRGGBB"` hex: the first is
   the badge colour, all of them the animated gradient) and `imageURL`.
 
