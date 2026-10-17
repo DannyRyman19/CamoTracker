@@ -1,5 +1,5 @@
 {
-  "version": "0.8.7",
+  "version": "0.8.8",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -5991,7 +5991,8 @@
           "de": "Schließe Harmonic-Break-Herausforderungen ab (das Spiel zeigt die Zahlen noch nicht).",
           "nl": "Voltooi Harmonic Break-uitdagingen (de game toont de aantallen nog niet)."
         }
-      }
+      },
+      "unlock": "weapon"
     },
     "tier2": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ripple_tide.png",
@@ -6021,6 +6022,6 @@
         }
       }
     },
-    "unlock": "mode"
+    "unlock": "challenge"
   }
 }
