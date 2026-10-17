@@ -116,6 +116,13 @@ The publish script enforces the first two.
 - `weaponPrestige[]`: the prestige stages after a weapon's normal levels, in
   order. Each has a `name` and a `maxLevel` (`null` means the weapon's own).
   Add or remove entries to change how many times a weapon can prestige.
+- `prestigeCamos[]`: the Weapon Prestige camos, the same in every mode, in
+  order. Each has a `name` and ticks itself once the weapon reaches its
+  `stage` (counting from 1; leave it out for the last stage) and, within it,
+  its `level`. `"afterWeaponMaxLevel": true` uses the level after the
+  weapon's own `maxLevel` instead (73 on the HAN 86). No level means
+  reaching the stage is enough (Pyroclast). `byWeapon` (keyed by `weaponId`
+  as a string) can give one weapon its own `name`, `imageURL` or `level`.
 
 `multiplayer.json`, `warzone.json`, `dmz.json` (one per mode):
 
@@ -130,11 +137,16 @@ The publish script enforces the first two.
 - `completionist` (optional): the four camos after a weapon's camo list.
   `steps` is Gold, Platinum, Harmonic Break in order; each may set `name`,
   `colors`, `requirement` (the default challenge), `byCategory` (a challenge
-  per `categoryId`, as a string key) and `unlock`: `"weapon"` (opens once
+  per `categoryId`, as a string key), `byWeapon` (a challenge per
+  `weaponId`, as a string key, which beats its class's: the Warlord's
+  Platinum is `"24"`) and `unlock`: `"weapon"` (opens once
   this weapon has the step before), `"category"` (once as many weapons in
   its class have it as the class had at launch, so a DLC weapon can stand
   in) or `"mode"` (once the launch roster has it). Defaults:
-  Gold `weapon`, Platinum `category`, Harmonic Break `mode`. Every step,
+  Gold `weapon`, Platinum `category`, Harmonic Break `mode`. `needed`
+  sets how many weapons a `"category"` or `"mode"` gate needs, capped at
+  the class or roster size: when the game's "Complete &&1 Gold Camo
+  Challenges using Assault Rifles" gets its number, put it here. Every step,
   `final` and Mastery tier can also take an `imageURL` for its picture. A step with no
   challenge is a tick box. `final` is the fourth camo (Divergence in
   Multiplayer): `name`, `colors`, `harmonicBreaksNeeded` (Harmonic Breaks
@@ -150,16 +162,32 @@ The publish script enforces the first two.
   Smoke opens at level 25, before Military 4).
 - `completionist.final.enabled`: `false` drops the final camo, so the track
   ends at Harmonic Break and Mastery builds on Harmonic Break instead.
-- `mastery` (optional): the mode's three Mastery camos. `unlock` picks how:
+- `mastery` (optional): the mode's three Mastery camos. `unlock` picks how
+  they work, and any `tier1`..`tier3` can pick its own with `kind` (same
+  values), so the tiers can differ: tier 1 per weapon, tiers 2 and 3 for
+  the mode.
   - `"count"` (default): one tier at a time for the mode, once
     `weaponsNeeded` weapons have the last Completionist camo (absent counts
     are a third, two thirds and all of the launch roster).
-  - `"challenge"`: each tier is a per-weapon challenge like Platinum: set
-    `requirement` and/or `byCategory` on `tier1`..`tier3`, and `unlock`
-    (`weapon`, `category` or `mode`) for what opens it beyond the tier
-    before on the weapon. Defaults: tier 1 `mode` (the last Completionist
-    camo on the whole launch roster), tiers 2 and 3 `weapon`.
-  Each tier may also set `name`, `colors` and `imageURL`.
+  - `"challenge"`: the tier is a per-weapon challenge like Platinum: set
+    `requirement`, `byCategory` and/or `byWeapon`, and `unlock`
+    (`weapon`, `category` or `mode`, with an optional `needed` count) for
+    what opens it beyond the tier before. Defaults: tier 1 `mode` (the last
+    Completionist camo on the whole launch roster), later tiers `weapon`.
+  - `"mode"`: the tier is one challenge for the whole mode, as the game
+    shows them: `requirement` (a tick box without one, or with `amount`
+    1). It opens once the tier before is earned and `weaponsNeeded`
+    weapons have the last Completionist camo (tier 1: one, the game's
+    "Divergence" line; later tiers: none, unless set). A `requirement`
+    whose `unit` is `"golds"`, `"platinums"`, `"harmonic_breaks"` or
+    `"finals"` counts those across the mode by itself ("Complete 20
+    Harmonic Break Challenges"); any other unit is ticked or counted by the
+    player. This is what the files use now: Harmonic Break on every weapon
+    is the weapon side, and after it the three Mastery challenges count
+    with any weapon. App builds before 1.0.1 read `"mode"` as `"count"`
+    and ignore `kind`.
+  Each tier may also set `name`, `colors` (`"#RRGGBB"` hex: the first is
+  the badge colour, all of them the animated gradient) and `imageURL`.
 
 Example, the "Harmonic Break on everything opens the Mastery challenges,
 one shared grind" reading: in `warzone.json` and `dmz.json` set
@@ -200,5 +228,8 @@ the starting data, which is why they and `Data/MW4/` are kept identical.
   after you publish, and it may never run for someone who rarely opens the
   app. There is no server, so there is no "send now".
 - **One notification per update per device**, however many files changed.
+- **Players in quick tick** (a setting) don't keep weapon levels: every
+  `unlockLevel` is shown ("Reach weapon level 25.") but locks nothing, and
+  every counter is one tap. The data needs nothing different for them.
 - Versions of the app before 1.0 build 8 crashed in the background check and
   never notified. None of those reached the App Store.

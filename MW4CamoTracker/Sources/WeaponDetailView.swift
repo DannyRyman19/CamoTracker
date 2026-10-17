@@ -33,11 +33,13 @@ struct WeaponDetailView: View {
             VStack(alignment: .leading, spacing: 12) {
                 WeaponHeroImage(urlString: weapon.imageURL)
 
-                titleBlock(nameSize: 20)
+                titleBlock
 
-                Divider().overlay(Color.appInkMuted.opacity(0.2))
+                if !viewModel.quickTick {
+                    Divider().overlay(Color.appInkMuted.opacity(0.2))
 
-                CompactLevelRow(mode: mode, weapon: weapon)
+                    CompactLevelRow(mode: mode, weapon: weapon)
+                }
             }
             .padding(12)
             .borderedCard()
@@ -79,16 +81,21 @@ struct WeaponDetailView: View {
 
     /// The parts of this screen the picker switches between: each camo
     /// group (Military, Special), then Completionist, then Mastery.
+    /// The mode's camos (Military and Special under their own headers),
+    /// its Completionist camos, Mastery, then the Prestige camos, which are
+    /// the same in every mode.
     private enum Part: Hashable {
-        case camos(Int)
+        case camos
         case completionist
         case mastery
+        case prestige
     }
 
     private var parts: [(part: Part, title: String)] {
-        camoGroups.indices.map { (Part.camos($0), camoGroups[$0].title) }
-            + [(.completionist, "mw4.ui.section.completionist".localized()),
-               (.mastery, "mw4.ui.section.mastery".localized())]
+        [(.camos, "mw4.ui.section.camos".localized()),
+         (.completionist, "mw4.ui.section.completionist".localized()),
+         (.mastery, "mw4.ui.section.mastery".localized())]
+            + (viewModel.prestigeCamos.isEmpty ? [] : [(.prestige, "mw4.ui.prestige".localized())])
     }
 
     /// Picked by hand, else the first part with something still to do.
@@ -96,15 +103,14 @@ struct WeaponDetailView: View {
 
     private var shownPart: Part {
         if let pickedPart, parts.contains(where: { $0.part == pickedPart }) { return pickedPart }
-        for (index, group) in camoGroups.enumerated()
-        where group.camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
-            return .camos(index)
+        if camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
+            return .camos
         }
         return viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
     }
 
     private var partPicker: some View {
-        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { pickedPart = $0 })) {
+        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { if $0 != shownPart { Haptics.step() }; pickedPart = $0 })) {
             ForEach(parts, id: \.part) { entry in
                 Text(entry.title).tag(entry.part)
             }
@@ -125,11 +131,25 @@ struct WeaponDetailView: View {
 
         partPicker
 
+        if shownPart == .camos {
+            // Military and Special, each under its own header.
+            ForEach(camoGroups, id: \.title) { group in
+                Section(group.title) {
+                    ForEach(group.camos) { camo in
+                        camoRow(camo)
+                    }
+                }
+                .listRowBackground(Color.appSurface)
+            }
+        }
+
         Section {
             switch shownPart {
-            case .camos(let index):
-                ForEach(camoGroups[index].camos) { camo in
-                    camoRow(camo)
+            case .camos:
+                EmptyView()
+            case .prestige:
+                ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
+                    prestigeCamoRow(index)
                 }
             case .completionist:
                 // Finishing the camo list opens this weapon's Completionist
@@ -163,7 +183,9 @@ struct WeaponDetailView: View {
         .padding(.vertical, 8)
     }
 
-    private func titleBlock(nameSize: CGFloat) -> some View {
+    /// Class and how it's acquired. The name itself is the screen's title,
+    /// so it isn't repeated here.
+    private var titleBlock: some View {
         VStack(alignment: .leading, spacing: 3) {
             if let category {
                 Text(category.name.resolved())
@@ -171,9 +193,6 @@ struct WeaponDetailView: View {
                     .textCase(.uppercase)
                     .foregroundStyle(Color.appInkMuted)
             }
-            Text(weapon.name.resolved())
-                .font(.hitmarker(nameSize))
-                .foregroundStyle(Color.appInk)
             AcquiredByLabel(weapon: weapon)
         }
     }
@@ -196,10 +215,42 @@ struct WeaponDetailView: View {
         )
     }
 
+    /// A Weapon Prestige camo, earned by the weapon's Prestige and level in
+    /// every mode at once, so it's ticked the way a Military camo is.
+    private func prestigeCamoRow(_ index: Int) -> some View {
+        let camo = viewModel.prestigeCamos[index]
+        let item = ChallengeItem(itemId: -1 - index,
+                                 name: viewModel.prestigeCamoName(camo, weaponId: weapon.weaponId),
+                                 imageURL: viewModel.prestigeCamoImageURL(camo, weaponId: weapon.weaponId),
+                                 tier: nil, unlockLevel: nil, requirement: nil, children: [], group: "prestige")
+        return ChallengeRow(
+            item: item,
+            accent: mode.accent,
+            amount: 0,
+            isDone: viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: index),
+            detail: prestigeCamoDetail(camo),
+            onToggle: { viewModel.togglePrestigeCamo(weaponId: weapon.weaponId, index: index) },
+            onSetAmount: { _ in }
+        )
+    }
+
+    /// "Prestige the HAN 86." or "Reach Prestige Master level 73."
+    private func prestigeCamoDetail(_ camo: PrestigeCamo) -> String? {
+        guard let stage = viewModel.prestigeCamoStage(camo) else { return nil }
+        guard let level = viewModel.prestigeCamoLevel(camo, weaponId: weapon.weaponId) else {
+            return String(format: "mw4.ui.prestige_camo.enter".localized(), weapon.name.resolved())
+        }
+        return String(format: "mw4.ui.prestige_camo.level".localized(),
+                      viewModel.prestigeStages[stage - 1].name.resolved(), level)
+    }
+
     /// "Earned at weapon level 18." or "Unlocks at weapon level 18." under
-    /// a Military camo, whose level is all there is to it.
+    /// a Military camo, whose level is all there is to it ("Reach weapon
+    /// level 18." in quick tick).
     private func militaryDetail(_ camo: ChallengeItem) -> String? {
         guard let level = viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) else { return nil }
+        // Quick tick has no levels to unlock by: say what the game asks.
+        guard !viewModel.quickTick else { return String(format: "mw4.ui.camo_level_reach".localized(), level) }
         let earned = viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
         return String(format: (earned ? "mw4.ui.camo_level_earned" : "mw4.ui.camo_level_locked").localized(), level)
     }
@@ -220,9 +271,11 @@ struct WeaponDetailView: View {
         HStack(alignment: .center, spacing: 20) {
             WeaponHeroImage(urlString: weapon.imageURL, height: 210)
             VStack(alignment: .leading, spacing: 14) {
-                titleBlock(nameSize: 28)
-                Divider().overlay(Color.appInkMuted.opacity(0.2))
-                CompactLevelRow(mode: mode, weapon: weapon)
+                titleBlock
+                if !viewModel.quickTick {
+                    Divider().overlay(Color.appInkMuted.opacity(0.2))
+                    CompactLevelRow(mode: mode, weapon: weapon)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -256,15 +309,21 @@ struct WeaponDetailView: View {
             tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
                      columns: masteryInOneRow ? 3 : columns)
         }
+
+        if !viewModel.prestigeCamos.isEmpty {
+            Section("mw4.ui.prestige".localized()) {
+                tileRows(viewModel.prestigeCamos.indices.map { AnyView(prestigeCamoRow($0)) }, columns: columns)
+            }
+        }
     }
 
     /// A Mastery tier: this weapon's own challenge when the mode's Mastery
     /// is challenges, else the mode-wide count.
     @ViewBuilder private func masteryRow(_ tier: Int) -> some View {
-        if viewModel.masteryUsesChallenges(mode: mode.rawValue) {
-            MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
-        } else {
-            MasteryModeRow(mode: mode, tier: tier)
+        switch viewModel.masteryKind(mode: mode.rawValue, tier: tier) {
+        case .challenge: MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        case .mode: MasteryModeChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        case .count: MasteryModeRow(mode: mode, tier: tier)
         }
     }
 
@@ -485,6 +544,71 @@ private struct MasteryModeRow: View {
     }
 }
 
+/// A Mastery tier as one challenge for the whole mode (`mastery.unlock` is
+/// "mode"). It reads the same on every weapon's page; ticking it on one
+/// ticks it for the mode.
+private struct MasteryModeChallengeRow: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    let tier: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camos: [MasteryCamo] {
+        let tiers = mode.masteryCamos
+        return [tiers.tier1, tiers.tier2, tiers.tier3]
+    }
+    private var camo: MasteryCamo { camos[tier - 1] }
+    private var before: MasteryCamo { tier == 1 ? mode.lastCompletionist : camos[tier - 2] }
+    private var requirement: Requirement? { viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier) }
+
+    private var item: ChallengeItem {
+        ChallengeItem(itemId: -(20 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
+                      tier: nil, unlockLevel: nil, requirement: requirement, children: [])
+    }
+
+    /// The tier before first, then the weapons it waits for.
+    private var lockedReason: String {
+        if tier > 1, !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier - 1) {
+            return String(format: "mw4.ui.mastery.mode_locked".localized(), before.name)
+        }
+        let needed = viewModel.modeMasteryWeaponsNeeded(mode: mode.rawValue, tier: tier)
+        if needed <= 1 {
+            return String(format: "mw4.ui.mastery.mode_locked_first".localized(), mode.lastCompletionist.name)
+        }
+        return String(format: "mw4.ui.mastery.weapons_needed".localized(),
+                      min(viewModel.lastCompletionistCount(mode: mode.rawValue), needed), needed, mode.lastCompletionist.name)
+    }
+
+    var body: some View {
+        if viewModel.modeMasteryCountsItself(mode: mode.rawValue, tier: tier) {
+            let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+            StatusRow(
+                name: camo.name,
+                achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
+                color: camo.color,
+                gradient: camo.gradient,
+                detail: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier)
+                    ? String(format: "mw4.ui.mastery.self_count".localized(), progress.done, progress.total,
+                             (viewModel.modeMasteryCountedCamo(mode: mode.rawValue, tier: tier) ?? mode.completionist.steps[2]).name)
+                    : lockedReason,
+                imageURL: camo.imageURL
+            )
+        } else {
+            ChallengeRow(
+                item: item,
+                accent: camo.color,
+                amount: viewModel.modeMasteryAmount(mode: mode.rawValue, tier: tier),
+                isDone: viewModel.isModeMasteryComplete(mode: mode.rawValue, tier: tier),
+                isAvailable: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier),
+                lockedReason: lockedReason,
+                titleGradient: camo.gradient,
+                onToggle: { viewModel.toggleModeMastery(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId) },
+                onSetAmount: { viewModel.setModeMasteryAmount(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId, amount: $0) }
+            )
+        }
+    }
+}
+
 /// A Mastery tier as this weapon's own challenge (`mastery.unlock` is
 /// "challenge"), ticked and counted like Platinum.
 private struct MasteryChallengeRow: View {
@@ -511,9 +635,10 @@ private struct MasteryChallengeRow: View {
     private var lockedReason: String {
         let ownDone = tier == 1
             ? viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId)
-            : viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier - 1)
+            : viewModel.hasTierBefore(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier)
         guard ownDone else {
-            return String(format: "mw4.ui.completionist.locked_previous".localized(), before.name)
+            let forTheMode = tier > 1 && viewModel.masteryKind(mode: mode.rawValue, tier: tier - 1) != .challenge
+            return String(format: (forTheMode ? "mw4.ui.mastery.mode_locked" : "mw4.ui.completionist.locked_previous").localized(), before.name)
         }
         switch viewModel.masteryGate(mode: mode.rawValue, tier: tier) {
         case .weapon:
@@ -625,6 +750,9 @@ private struct CompactLevelRow: View {
     /// button named after the stage it moves to, so it reads as "go to
     /// Prestige 1" rather than a bare +. It only lights up once the current
     /// stage is maxed. The small undo beside it steps back a mistaken tap.
+    /// With a single stage (MW4's Prestige Master) there's nothing to count:
+    /// no pips and no "None yet", just a Prestige button, then the stage's
+    /// name once the weapon is in it.
     private var prestigeLine: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 10) {
@@ -632,6 +760,15 @@ private struct CompactLevelRow: View {
                     Text("mw4.ui.prestige".localized())
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(Color.appInkMuted)
+                    if stageCount == 1 {
+                        if prestige > 0, let name = viewModel.prestigeName(for: weapon.weaponId) {
+                            Text(name)
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundStyle(mode.accent)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.8)
+                        }
+                    } else {
                     HStack(spacing: 6) {
                         if stageCount <= 8 {
                             HStack(spacing: 3) {
@@ -651,6 +788,7 @@ private struct CompactLevelRow: View {
                             .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
+                    }
                     }
                 }
 
@@ -678,7 +816,7 @@ private struct CompactLevelRow: View {
                         HStack(spacing: 5) {
                             Image(systemName: ready ? "chevron.up.2" : "lock.fill")
                                 .font(.system(size: 10, weight: .bold))
-                            Text(viewModel.prestigeStages[prestige].name.resolved())
+                            Text(stageCount == 1 ? "mw4.ui.prestige".localized() : viewModel.prestigeStages[prestige].name.resolved())
                                 .font(.system(size: 12, weight: .bold))
                                 .lineLimit(1)
                         }
@@ -712,7 +850,8 @@ private struct CompactLevelRow: View {
             HStack(spacing: 10) {
                 // Longer in French and Spanish than the room beside the stepper
                 // on a narrow header: shrink a little before truncating.
-                Text("mw4.ui.weapon_level".localized())
+                Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
+                                  : "mw4.ui.weapon_level".localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1)
