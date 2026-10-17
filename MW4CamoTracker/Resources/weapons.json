@@ -1,27 +1,7 @@
 {
-  "version": "0.9.2",
+  "version": "0.9.3",
   "baseWeaponCount": 33,
   "weaponPrestige": [
-    {
-      "name": {
-        "en": "Prestige 1",
-        "fr": "Prestige 1",
-        "es": "Prestigio 1",
-        "de": "Prestige 1",
-        "nl": "Prestige 1"
-      },
-      "maxLevel": null
-    },
-    {
-      "name": {
-        "en": "Prestige 2",
-        "fr": "Prestige 2",
-        "es": "Prestigio 2",
-        "de": "Prestige 2",
-        "nl": "Prestige 2"
-      },
-      "maxLevel": null
-    },
     {
       "name": {
         "en": "Prestige Master",
@@ -31,6 +11,47 @@
         "nl": "Prestige Master"
       },
       "maxLevel": 250
+    }
+  ],
+  "prestigeCamos": [
+    {
+      "name": {
+        "en": "Pyroclast",
+        "fr": "Pyroclast",
+        "es": "Pyroclast",
+        "de": "Pyroclast",
+        "nl": "Pyroclast"
+      }
+    },
+    {
+      "name": {
+        "en": "Pyroclast Terminus",
+        "fr": "Pyroclast Terminus",
+        "es": "Pyroclast Terminus",
+        "de": "Pyroclast Terminus",
+        "nl": "Pyroclast Terminus"
+      },
+      "afterWeaponMaxLevel": true
+    },
+    {
+      "name": {
+        "en": "Pyroclast Scatter",
+        "fr": "Pyroclast Scatter",
+        "es": "Pyroclast Scatter",
+        "de": "Pyroclast Scatter",
+        "nl": "Pyroclast Scatter"
+      },
+      "level": 150
+    },
+    {
+      "name": {
+        "en": "Pyroclast Cascade",
+        "fr": "Pyroclast Cascade",
+        "es": "Pyroclast Cascade",
+        "de": "Pyroclast Cascade",
+        "nl": "Pyroclast Cascade"
+      },
+      "level": 250
     }
   ],
   "categories": [
