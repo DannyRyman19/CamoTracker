@@ -128,7 +128,7 @@ struct ModeProgressView: View {
                     ForEach(Array(mode.steps.enumerated()), id: \.offset) { _, step in
                         StepRow(step: step)
                     }
-                    MasteryPips(steps: mode.mastery)
+                    MasteryPips(steps: mode.mastery, label: snapshot?.masteryLabel)
                         .padding(.top, 2)
                 }
             }
@@ -147,15 +147,17 @@ struct ModeProgressView: View {
                         ForEach(Array(mode.steps.prefix(3).enumerated()), id: \.offset) { _, step in
                             HStack(spacing: 4) {
                                 Circle().fill(Color(widgetHex: step.colorHex) ?? .white).frame(width: 6, height: 6)
-                                Text("\(step.done)")
-                                    .font(.system(size: 11, weight: .bold, design: .monospaced))
+                                Text("\(step.done)/\(step.total)")
+                                    .font(.system(size: 10.5, weight: .bold, design: .monospaced))
                                     .foregroundStyle(.white)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
                             }
                         }
                     }
                 }
                 Spacer(minLength: 0)
-                MasteryPips(steps: mode.mastery, compact: true)
+                MasteryPips(steps: mode.mastery, label: snapshot?.masteryLabel, compact: true)
             }
         }
     }
@@ -179,20 +181,36 @@ private struct StepRow: View {
     }
 }
 
-/// The three Mastery camos as pips, filled once earned.
+/// The mode's three Mastery camos under a "Mastery" label: a bar each in
+/// the camo's colour, filling as its challenge counts up (250 kills, say)
+/// and solid once earned.
 private struct MasteryPips: View {
     let steps: [WidgetSnapshot.Step]
+    var label: String?
     var compact = false
 
     var body: some View {
-        HStack(spacing: 4) {
-            ForEach(Array(steps.enumerated()), id: \.offset) { _, step in
-                let color = Color(widgetHex: step.colorHex) ?? .white
-                let earned = step.total > 0 && step.done >= step.total
-                Capsule()
-                    .fill(earned ? color : color.opacity(0.22))
+        VStack(alignment: .leading, spacing: 3) {
+            if let label {
+                Text(label.uppercased())
+                    .font(.system(size: compact ? 8.5 : 9, weight: .heavy))
+                    .foregroundStyle(.white.opacity(0.55))
+                    .lineLimit(1)
+            }
+            HStack(spacing: 4) {
+                ForEach(Array(steps.enumerated()), id: \.offset) { _, step in
+                    let color = Color(widgetHex: step.colorHex) ?? .white
+                    let fraction = step.total > 0 ? min(Double(step.done) / Double(step.total), 1) : 0
+                    GeometryReader { proxy in
+                        ZStack(alignment: .leading) {
+                            Capsule().fill(color.opacity(0.22))
+                            Capsule().fill(color).frame(width: proxy.size.width * fraction)
+                        }
+                    }
                     .frame(height: compact ? 5 : 6)
-                    .overlay(Capsule().strokeBorder(color.opacity(0.6), lineWidth: earned ? 0 : 1))
+                    .overlay(Capsule().strokeBorder(color.opacity(0.6), lineWidth: fraction >= 1 ? 0 : 1))
+                    .accessibilityLabel("\(step.name) \(step.done)/\(step.total)")
+                }
             }
         }
     }
@@ -315,6 +333,6 @@ extension WidgetSnapshot {
                             nextName: "Stormwave", nextDetail: "Get 40 headshot kills against players.",
                             nextDone: 26, nextTotal: 40)
         return WidgetSnapshot(modes: [mode], pinned: pinned, overall: 0.42, overallLabel: "Overall Completion",
-                              pinPrompt: "", allDoneLabel: "")
+                              pinPrompt: "", allDoneLabel: "", masteryLabel: "Mastery")
     }()
 }

@@ -55,6 +55,9 @@ struct WidgetSnapshot: Codable, Equatable {
     let overallLabel: String
     let pinPrompt: String
     let allDoneLabel: String
+    /// "Mastery", over the three Mastery bars. Optional so a snapshot
+    /// written before it existed still reads.
+    var masteryLabel: String? = nil
 
     static let appGroup = "group.com.DannyRyman.MW4CamoTracker"
     static let fileName = "widget-snapshot.json"

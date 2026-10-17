@@ -55,7 +55,8 @@ extension TrackerViewModel {
         return WidgetSnapshot(modes: modes, pinned: pinned, overall: overall,
                               overallLabel: "mw4.ui.stats.overall".localized(),
                               pinPrompt: "mw4.widget.pin_prompt".localized(),
-                              allDoneLabel: "mw4.widget.all_done".localized())
+                              allDoneLabel: "mw4.widget.all_done".localized(),
+                              masteryLabel: "mw4.ui.section.mastery".localized())
     }
 
     /// The pinned weapon in `mode`: its camo count and the next thing to
