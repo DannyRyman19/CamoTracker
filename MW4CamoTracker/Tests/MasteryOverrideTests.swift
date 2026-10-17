@@ -574,7 +574,7 @@ struct TrackerViewModelTests {
                 """#,
         ])
         let ids = weapons(model).prefix(2).map(\.weaponId)
-        #expect(model.masteryIsModeChallenge(mode: mp))
+        #expect(model.masteryKind(mode: mp, tier: 1) == .mode)
         #expect(model.isModeMasteryAvailable(mode: mp, tier: 1) == false)
         harmonicBreak(model, ids[0])
         #expect(model.isModeMasteryAvailable(mode: mp, tier: 1))
@@ -614,7 +614,113 @@ struct TrackerViewModelTests {
         #expect(model.isMasteryAchieved(mode: mp, tier: 1))
     }
 
+    /// Tiers can differ: tier 1 per weapon, tiers 2 and 3 for the mode.
+    @Test func eachTierCanPickItsOwnKind() throws {
+        let model = try model([
+            "completionist": #"{"final": {"enabled": false}}"#,
+            "mastery": #"""
+                {"unlock": "mode",
+                 "tier1": {"kind": "challenge", "unlock": "weapon",
+                           "requirement": {"amount": 1, "unit": "times", "description": {"en": "Per gun."}}},
+                 "tier2": {"requirement": {"amount": 1, "unit": "times", "description": {"en": "Mode."}}}}
+                """#,
+        ])
+        let id = try anyWeapon(model).weaponId
+        #expect(model.masteryKind(mode: mp, tier: 1) == .challenge)
+        #expect(model.masteryKind(mode: mp, tier: 2) == .mode)
+        #expect(model.masteryKind(mode: mp, tier: 3) == .mode)
+        model.toggleCompletionist(mode: mp, weaponId: id, step: 2)
+        #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: id, tier: 1))
+        model.toggleWeaponMastery(mode: mp, weaponId: id, tier: 1)
+        // Tier 1 is per gun, so the mode's tier 2 waits for every launch gun.
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 2) == false)
+        for weapon in weapons(model) {
+            if !model.isCompletionistComplete(mode: mp, weaponId: weapon.weaponId, step: 2) {
+                model.toggleCompletionist(mode: mp, weaponId: weapon.weaponId, step: 2)
+            }
+            if !model.isWeaponMasteryComplete(mode: mp, weaponId: weapon.weaponId, tier: 1) {
+                model.toggleWeaponMastery(mode: mp, weaponId: weapon.weaponId, tier: 1)
+            }
+        }
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1))
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 2))
+    }
 
+    /// "Complete 2 Gold Camo Challenges using Assault Rifles": a gate can
+    /// need fewer than the whole class, capped at the class's size.
+    @Test func aGateCanNeedACount() throws {
+        let model = try model(["completionist": #"{"steps": [{}, {"needed": 2}]}"#])
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 })
+        let melee = try #require(model.catalog?.categories.first { $0.weapons.count == 1 })
+        #expect(model.completionistCategoryGateProgress(rifles, mode: mp, step: 1).total == 2)
+        #expect(model.completionistCategoryGateProgress(melee, mode: mp, step: 1).total == 1)
+        let ids = rifles.weapons.map(\.weaponId)
+        model.toggleCompletionist(mode: mp, weaponId: ids[0], step: 0)
+        model.toggleCompletionist(mode: mp, weaponId: ids[1], step: 0)
+        #expect(model.isCompletionistAvailable(mode: mp, weaponId: ids[0], step: 1))
+        // Its own Gold is still needed.
+        #expect(model.isCompletionistAvailable(mode: mp, weaponId: ids[2], step: 1) == false)
+    }
+
+    /// A mode tier counted in Platinums counts itself; one can wait for more
+    /// than one weapon with the final camo before it opens.
+    @Test func aModeTierCanCountPlatinumsAndWaitForWeapons() throws {
+        let model = try model([
+            "completionist": #"{"final": {"harmonicBreaksNeeded": 0}}"#,
+            "mastery": #"""
+                {"unlock": "mode",
+                 "tier1": {"weaponsNeeded": 2,
+                           "requirement": {"amount": 3, "unit": "platinums", "description": {"en": "Three."}}}}
+                """#,
+        ])
+        let ids = weapons(model).prefix(3).map(\.weaponId)
+        harmonicBreak(model, ids[0])
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 1) == false)
+        harmonicBreak(model, ids[1])
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 1))
+        #expect(model.masteryProgress(mode: mp, tier: 1).done == 2)
+        model.toggleCompletionist(mode: mp, weaponId: ids[2], step: 1)
+        #expect(model.isMasteryAchieved(mode: mp, tier: 1))
+    }
+
+    /// Quick tick: Military camos are plain ticks, nothing waits for a
+    /// level, and switching back keeps every tick.
+    @Test func quickTickTicksWithoutLevels() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let (military, special) = split(model, weapon.weaponId)
+        #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[2]) == false)
+
+        model.setQuickTick(true)
+        #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[2]))
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[4])
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[3]) == false)
+        #expect(model.level(for: weapon.weaponId) == 0)
+
+        model.setQuickTick(false)
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
+        // Unticking one only ticked by hand leaves the level alone.
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[4])
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]) == false)
+        #expect(model.level(for: weapon.weaponId) == 0)
+    }
+
+    /// In quick tick, unticking a camo earned by level steps the level
+    /// below it, as it does with levels on.
+    @Test func quickTickUntickingALevelledCamoLowersTheLevel() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let military = split(model, weapon.weaponId).military
+        let level = try #require(model.militaryLevel(mode: mp, weaponId: weapon.weaponId, camo: military[2]))
+        model.setLevel(level, for: weapon)
+        model.setQuickTick(true)
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[2])
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[2]) == false)
+        #expect(model.level(for: weapon.weaponId) == level - 1)
+    }
+
+    /// Count Mastery (the default) has no per-weapon challenges.
     @Test func countMasteryHasNoWeaponChallenges() throws {
         let model = try model(["mastery": "{}"])
         let id = try anyWeapon(model).weaponId

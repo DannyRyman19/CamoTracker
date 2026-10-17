@@ -164,6 +164,10 @@ struct CompletionistStepConfig: Codable {
     /// before on the whole launch roster). Absent: Gold "weapon", Platinum
     /// "category", Harmonic Break "mode".
     var unlock: String?
+    /// How many weapons a "category" or "mode" gate needs with the step
+    /// before ("Complete 5 Gold Camo Challenges using Assault Rifles"),
+    /// capped at the class or roster size. Absent: all of its launch weapons.
+    var needed: Int?
 }
 
 /// The fourth Completionist camo (Divergence in Multiplayer). It has no
@@ -187,9 +191,11 @@ struct MasteryConfig: Codable {
     /// weapons have the last Completionist camo. "challenge": each tier is a
     /// per-weapon challenge, like Platinum, opened by its `unlock` gate.
     /// "mode": each tier is one challenge for the whole mode (`requirement`,
-    /// a tick box without one), opened by the last Completionist camo on
-    /// any weapon (tier 1) or the tier before. A requirement whose `unit` is
-    /// "harmonic_breaks" counts the mode's Harmonic Breaks by itself.
+    /// a tick box without one), opened by the tier before and by
+    /// `weaponsNeeded` weapons with the last Completionist camo (tier 1:
+    /// one, unless set). A requirement whose `unit` is "golds",
+    /// "platinums", "harmonic_breaks" or "finals" counts those across the
+    /// mode by itself. Any tier can pick its own with `kind`.
     var unlock: String?
     var tier1: MasteryTierConfig?
     var tier2: MasteryTierConfig?
@@ -197,6 +203,10 @@ struct MasteryConfig: Codable {
 }
 
 struct MasteryTierConfig: Codable {
+    /// This tier's own "count", "challenge" or "mode", over the mode's
+    /// `unlock`, so the tiers can differ (tier 1 per weapon, 2 and 3 for
+    /// the mode).
+    var kind: String?
     var name: LocalizedText?
     /// How many weapons need this mode's final Completionist camo for this
     /// tier. Absent means a third, two thirds and all of the launch roster.
@@ -215,6 +225,9 @@ struct MasteryTierConfig: Codable {
     /// "weapon", "category" or "mode". Absent: tier 1 "mode" (the whole
     /// launch roster), later tiers "weapon".
     var unlock: String?
+    /// "challenge" Mastery only: how many weapons a "category" or "mode"
+    /// gate needs, as for a Completionist step.
+    var needed: Int?
 }
 
 struct WeaponCamoEntry: Codable, Identifiable {

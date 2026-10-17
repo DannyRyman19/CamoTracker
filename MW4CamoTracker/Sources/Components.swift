@@ -616,8 +616,10 @@ struct ChallengeRow: View {
     /// unlocks it (the lock glyph still says it's shut).
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
     static let showLockedKey = "mw4_show_locked_challenges"
+    /// Quick tick: every challenge is one tap, no counter.
+    @AppStorage(TrackerViewModel.quickTickKey) private var quickTick = false
 
-    private var hasCounter: Bool { (item.requirement?.amount ?? 0) > 1 }
+    private var hasCounter: Bool { !quickTick && (item.requirement?.amount ?? 0) > 1 }
 
     var body: some View {
         HStack(spacing: 12) {
@@ -660,7 +662,7 @@ struct ChallengeRow: View {
 
             Spacer(minLength: 8)
 
-            if let requirement = item.requirement, requirement.amount > 1, isAvailable {
+            if let requirement = item.requirement, hasCounter, isAvailable {
                 HStack(spacing: 6) {
                     stepButton(systemName: "minus", enabled: amount > 0, size: 22, accent: accent) {
                         onSetAmount(max(0, amount - 1))

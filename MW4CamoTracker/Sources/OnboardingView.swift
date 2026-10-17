@@ -1,9 +1,10 @@
 import SwiftUI
 
 /// First-launch walkthrough (and replayable via the "?" toolbar button).
-/// Shows the two real interactions — tap-to-complete and tap-the-pill for an
-/// exact amount — plus the shared weapon level and the Suggested feature,
-/// each demoed with the actual row components rather than described in text.
+/// Picks how to track (full, with weapon levels and counts, or quick tick),
+/// shows the real interactions for that choice, then Suggested, the ways to
+/// make the app your own, and reporting wrong data, each demoed with the
+/// actual row components rather than described in text.
 ///
 /// Styled to the same loadout-panel language as the rest of the app: 8pt
 /// `borderedCard` panels, Hitmarker for titles and labels only, and the splash
@@ -29,7 +30,7 @@ struct OnboardingView: View {
         #endif
     }
 
-    private var pageCount: Int { asksForNotifications ? 5 : 4 }
+    private var pageCount: Int { asksForNotifications ? 6 : 5 }
 
     /// Each page borrows the accent of whatever it's actually demoing, so the
     /// walkthrough previews the app's multi-mode palette instead of painting
@@ -37,9 +38,10 @@ struct OnboardingView: View {
     private var accent: Color {
         switch page {
         case 0:  return .camoGold
-        case 1:  return .accentMultiplayer
-        case 2:  return .accentWarzone
-        case 3:  return .camoMercurialDrift
+        case 1:  return .accentWarzone
+        case 2:  return .accentMultiplayer
+        case 3:  return .camoPlatinum
+        case 4:  return .camoMercurialDrift
         default: return .camoGold
         }
     }
@@ -50,11 +52,12 @@ struct OnboardingView: View {
 
             TabView(selection: $page) {
                 WelcomePage(accent: accent).tag(0)
-                MarkProgressPage().tag(1)
-                WeaponLevelPage(accent: accent).tag(2)
+                TrackingStylePage(accent: accent).tag(1)
+                MarkProgressPage().tag(2)
                 SuggestedPage().tag(3)
+                MakeItYoursPage(accent: accent).tag(4)
                 if asksForNotifications {
-                    NotificationsPage().tag(4)
+                    NotificationsPage().tag(5)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -216,8 +219,11 @@ private struct WelcomePage: View {
 /// the circle, type a pill amount, and — once both camos are done — see the
 /// exact "Camos complete" celebration the real app fires.
 private struct MarkProgressPage: View {
-    private let demoNames = ["Foliage", "Frostbite"]
+    private let demoNames = ["Smoke", "Stormwave"]
     private let demoRequired = [10, 10]
+    /// The style picked on the page before: in quick tick every card is one
+    /// tap, so the second hint says that instead of the counter.
+    @AppStorage(TrackerViewModel.quickTickKey) private var quickTick = false
 
     @State private var amounts = [10, 6]
     @State private var showCelebration = false
@@ -225,7 +231,7 @@ private struct MarkProgressPage: View {
     private var isGold: Bool { zip(amounts, demoRequired).allSatisfy { $0 >= $1 } }
 
     var body: some View {
-        OnboardingScaffold("mw4.onboarding.mark.title".localized(), accent: .accentMultiplayer) {
+        OnboardingScaffold((quickTick ? "mw4.onboarding.mark.quick_title" : "mw4.onboarding.mark.title").localized(), accent: .accentMultiplayer) {
             VStack(alignment: .leading, spacing: 16) {
                 if showCelebration {
                     MilestoneBannerView(banner: MilestoneBanner(
@@ -240,7 +246,7 @@ private struct MarkProgressPage: View {
                 }
 
                 demoBlock(index: 0, hint: "mw4.onboarding.mark.tap_circle".localized())
-                demoBlock(index: 1, hint: "mw4.onboarding.mark.tap_pill".localized())
+                demoBlock(index: 1, hint: (quickTick ? "mw4.onboarding.mark.quick_hint" : "mw4.onboarding.mark.tap_pill").localized())
             }
         }
     }
@@ -264,7 +270,8 @@ private struct MarkProgressPage: View {
                 imageURL: nil,
                 tier: nil,
                 unlockLevel: nil,
-                requirement: Requirement(amount: demoRequired[index], unit: "kills", description: LocalizedText("Get \(demoRequired[index]) kills with this weapon.")),
+                requirement: Requirement(amount: demoRequired[index], unit: "kills",
+                                         description: LocalizedText(String(format: "mw4.onboarding.mark.demo_challenge".localized(), demoRequired[index]))),
                 children: []
             ),
             accent: .accentMultiplayer,
@@ -294,64 +301,114 @@ private struct MarkProgressPage: View {
     }
 }
 
-private struct WeaponLevelPage: View {
+/// Full tracking or quick tick, picked here and changeable in Customise.
+private struct TrackingStylePage: View {
     let accent: Color
-    @State private var level = 34
-    private let maxLevel = 55
+    @EnvironmentObject private var viewModel: TrackerViewModel
 
     var body: some View {
-        OnboardingScaffold("mw4.onboarding.level.title".localized(), accent: accent) {
-            VStack(alignment: .leading, spacing: 16) {
-                VStack(spacing: 12) {
-                    Stepper(value: $level, in: 0...maxLevel) {
-                        HStack {
-                            Text("mw4.ui.weapon_level".localized())
-                                .font(.system(size: 14))
-                                .foregroundStyle(Color.appInk)
-                            Spacer()
-                            Text("\(level)/\(maxLevel)")
-                                .font(.system(size: 14, weight: .bold, design: .monospaced))
-                                .foregroundStyle(accent)
-                        }
-                    }
-                    .tint(accent)
-
-                    ProgressBar(fraction: Double(level) / Double(maxLevel), accent: accent)
-                }
-                .padding(12)
-                .borderedCard(accent: level >= maxLevel ? accent : nil)
-
-                Text("mw4.onboarding.level.body".localized())
-                    .font(.system(size: 15))
+        OnboardingScaffold("mw4.onboarding.tracking.title".localized(), accent: accent) {
+            VStack(alignment: .leading, spacing: 14) {
+                option(quick: false, symbol: "chart.bar.fill",
+                       title: "mw4.onboarding.tracking.full.title".localized(),
+                       body: "mw4.onboarding.tracking.full.body".localized())
+                option(quick: true, symbol: "checkmark.circle.fill",
+                       title: "mw4.ui.quick_tick.title".localized(),
+                       body: "mw4.onboarding.tracking.quick.body".localized())
+                Text("mw4.onboarding.tracking.footer".localized())
+                    .font(.system(size: 13))
                     .foregroundStyle(Color.appInkMuted)
-                    .padding(14)
-                    .borderedCard()
             }
         }
+    }
+
+    private func option(quick: Bool, symbol: String, title: String, body: String) -> some View {
+        let picked = viewModel.quickTick == quick
+        return Button {
+            viewModel.setQuickTick(quick)
+        } label: {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: symbol)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(picked ? accent : Color.appInkMuted)
+                    .frame(width: 26)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.hitmarker(16))
+                        .foregroundStyle(Color.appInk)
+                    Text(body)
+                        .font(.system(size: 13.5))
+                        .foregroundStyle(Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: picked ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 21))
+                    .foregroundStyle(picked ? accent : Color.appInkMuted)
+            }
+            .padding(14)
+            .contentShape(Rectangle())
+            .borderedCard(accent: picked ? accent : nil)
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(picked ? .isSelected : [])
+    }
+}
+
+/// The ways to make the app your own, and how wrong data gets fixed.
+private struct MakeItYoursPage: View {
+    let accent: Color
+
+    var body: some View {
+        OnboardingScaffold("mw4.onboarding.yours.title".localized(), accent: accent) {
+            VStack(alignment: .leading, spacing: 12) {
+                row("pin.fill", "mw4.onboarding.yours.pin".localized())
+                row("slider.horizontal.3", "mw4.onboarding.yours.customise".localized())
+                row("exclamationmark.bubble.fill", "mw4.onboarding.yours.report".localized())
+            }
+        }
+    }
+
+    private func row(_ symbol: String, _ text: String) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: symbol)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(accent)
+                .frame(width: 26)
+            Text(text)
+                .font(.system(size: 14.5))
+                .foregroundStyle(Color.appInk)
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .borderedCard()
     }
 }
 
 private struct SuggestedPage: View {
     var body: some View {
-        OnboardingScaffold("mw4.onboarding.suggested.title".localized(), accent: .camoMercurialDrift) {
+        let platinum = AppMode.multiplayer.completionist.steps[1]
+        OnboardingScaffold("mw4.onboarding.suggested.title".localized(), accent: .camoPlatinum) {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(spacing: 10) {
-                    Image(systemName: "diamond.fill")
+                    Image(systemName: "medal.fill")
                         .font(.system(size: 13, weight: .bold))
                         .foregroundStyle(Color.appBackground)
                         .frame(width: 30, height: 30)
-                        .background(Circle().fill(Color.camoMercurialDrift))
+                        .background(Circle().fill(Color.camoGold))
                     VStack(alignment: .leading, spacing: 3) {
                         Text("Kastov 762")
                             .font(.hitmarker(15))
                             .foregroundStyle(Color.appInk)
-                        Text("1 camo from Mercurial Drift in Assault Rifles")
+                        Text("mw4.onboarding.suggested.demo".localized())
                             .font(.system(size: 12.5))
                             .foregroundStyle(Color.appInkMuted)
                     }
+                    Spacer(minLength: 0)
                 }
                 .padding(12)
-                .borderedCard(accent: .camoMercurialDrift)
+                .borderedCard(accent: .camoGold)
 
                 Text("mw4.onboarding.suggested.body1".localized())
                     .font(.system(size: 15))
@@ -359,10 +416,9 @@ private struct SuggestedPage: View {
 
                 MilestoneBannerView(banner: MilestoneBanner(
                     id: UUID(),
-                    title: String(format: "mw4.ui.milestone.unlocked_title".localized(),
-                                  AppMode.multiplayer.masteryCamos.tier1.name),
+                    title: String(format: "mw4.ui.milestone.unlocked_title".localized(), platinum.name),
                     subtitle: "mw4.onboarding.suggested.banner_subtitle".localized(),
-                    titleGradient: .mercurialDrift, icon: "diamond.fill"))
+                    titleGradient: platinum.gradient, icon: "diamond.fill"))
 
                 Text("mw4.onboarding.suggested.body2".localized())
                     .font(.system(size: 15))

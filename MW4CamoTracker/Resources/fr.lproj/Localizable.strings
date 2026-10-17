@@ -32,6 +32,7 @@
 "mw4.ui.no_camo_data" = "Aucune donnée de camouflage %@ pour cette arme pour le moment.";
 "mw4.ui.locked" = "Terminez d'abord le niveau précédent.";
 "mw4.ui.camo_level_locked" = "Se débloque au niveau d'arme %d.";
+"mw4.ui.camo_level_reach" = "Atteignez le niveau d'arme %d.";
 "mw4.ui.set_amount.title" = "Définir la Quantité";
 "mw4.ui.set_amount.field" = "Quantité";
 "mw4.ui.set_amount.message" = "Sur %d requis.";
@@ -45,8 +46,19 @@
 "mw4.onboarding.mark.title" = "Deux façons de suivre votre progression";
 "mw4.onboarding.mark.tap_circle" = "Appuyez sur le cercle pour marquer un camouflage comme terminé.";
 "mw4.onboarding.mark.tap_pill" = "Appuyez sur le nombre pour saisir une quantité exacte. Pratique pour les défis longs comme 200 éliminations.";
-"mw4.onboarding.level.title" = "Un seul niveau, tous les modes";
-"mw4.onboarding.level.body" = "Le niveau d'une arme est partagé. Réglez-le une fois dans n'importe quel onglet, les autres suivent, et il débloque les camouflages liés au niveau de cette arme dans tous les modes.";
+"mw4.onboarding.tracking.title" = "Suivez à votre façon";
+"mw4.onboarding.tracking.full.title" = "Suivi complet";
+"mw4.onboarding.tracking.full.body" = "Suivez le niveau des armes et comptez chaque élimination. Les camouflages militaires se cochent seuls en montant de niveau, et un niveau compte dans tous les modes.";
+"mw4.onboarding.tracking.quick.body" = "Cochez simplement ce que vous avez fait. Pas de niveaux, pas de comptage : chaque camouflage se coche d'un geste.";
+"mw4.onboarding.tracking.footer" = "Modifiable à tout moment dans Personnaliser. Rien n'est perdu en changeant.";
+"mw4.onboarding.mark.quick_title" = "Un geste par camouflage";
+"mw4.onboarding.mark.quick_hint" = "Ou touchez n'importe où sur une carte. Pas besoin de compter.";
+"mw4.onboarding.mark.demo_challenge" = "Obtenez %d éliminations avec cette arme.";
+"mw4.onboarding.suggested.demo" = "À 1 camouflage de l'Or";
+"mw4.onboarding.yours.title" = "À votre image";
+"mw4.onboarding.yours.pin" = "Épinglez l'arme que vous montez : elle reste en haut de chaque onglet.";
+"mw4.onboarding.yours.customise" = "Personnaliser réorganise ou masque les sections de l'accueil, active ou désactive la coche rapide et peut afficher les défis des camouflages verrouillés.";
+"mw4.onboarding.yours.report" = "Un défi, un niveau ou un nom est faux ? Signalez-le depuis la page de l'arme : la correction arrive chez tout le monde sans mise à jour de l'app.";
 "mw4.onboarding.suggested.title" = "Sachez quoi enchaîner";
 "mw4.onboarding.suggested.body1" = "Chaque onglet vous indique l'arme la plus proche de l'Or. Parfois c'est la dernière qui bloque toute une catégorie.";
 "mw4.onboarding.suggested.body2" = "Terminez-la et le déblocage s'affiche aussitôt.";
@@ -117,7 +129,7 @@
 "mw4.ui.mastery.weapons_needed" = "%1$d/%2$d armes avec %3$@";
 "mw4.ui.mastery.mode_locked_first" = "Obtenez d'abord %@ sur une arme.";
 "mw4.ui.mastery.mode_locked" = "Obtenez d'abord %@.";
-"mw4.ui.mastery.harmonic_breaks" = "Défis %3$@ : %1$d/%2$d";
+"mw4.ui.mastery.self_count" = "Défis %3$@ : %1$d/%2$d";
 "mw4.ui.milestone.mode_mastery_subtitle" = "Camouflage universel : utilisable sur toutes les armes.";
 "mw4.ui.camo_level_earned" = "Obtenu au niveau d'arme %d.";
 "mw4.ui.suggestion.next_camo" = "Suivant : %@";
@@ -140,3 +152,6 @@
 "mw4.ui.customise.reset" = "Rétablir par défaut";
 "mw4.ui.customise.locked_title" = "Afficher les défis des camouflages verrouillés";
 "mw4.ui.customise.locked_footer" = "Un camouflage verrouillé affiche son défi au lieu de sa condition de déblocage. Le cadenas reste affiché.";
+"mw4.ui.tracking" = "Suivi";
+"mw4.ui.quick_tick.title" = "Coche rapide";
+"mw4.ui.quick_tick.footer" = "Cochez ce que vous avez fait sans suivre le niveau des armes ni compter les éliminations. Chaque camouflage se coche d'un geste et rien n'attend un niveau. Revenez en arrière quand vous voulez, rien n'est perdu.";

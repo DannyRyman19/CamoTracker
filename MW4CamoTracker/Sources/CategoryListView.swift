@@ -234,6 +234,7 @@ struct CategoryListView: View {
                 // Objectives only when some mode has any (none at launch).
                 offered: HomeSection.allCases.filter { $0 != .objectives || viewModel.modes.values.contains { !$0.objectives.isEmpty } }
             )
+            .environmentObject(viewModel)
         }
     }
 
@@ -463,6 +464,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
@@ -494,6 +496,18 @@ struct CustomiseHomeSheet: View {
                     }
                 } footer: {
                     Text("mw4.ui.customise.footer".localized())
+                }
+
+                Section {
+                    Toggle("mw4.ui.quick_tick.title".localized(), isOn: Binding(
+                        get: { viewModel.quickTick },
+                        set: { viewModel.setQuickTick($0) }))
+                        .tint(accent)
+                        .accessibilityIdentifier("customise.quickTick")
+                } header: {
+                    Text("mw4.ui.tracking".localized())
+                } footer: {
+                    Text("mw4.ui.quick_tick.footer".localized())
                 }
 
                 Section {

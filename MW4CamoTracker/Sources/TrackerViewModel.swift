@@ -117,6 +117,23 @@ final class TrackerViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Quick tick (no weapon levels)
+
+    /// Quick tick: the player ticks what they've done rather than keeping
+    /// weapon levels and counts. Military camos are tick boxes, nothing
+    /// waits for a level and every counter is one tap. Anything already
+    /// earned by level stays earned, and switching back loses nothing.
+    static let quickTickKey = "mw4_quick_tick"
+
+    var quickTick: Bool { defaults.bool(forKey: Self.quickTickKey) }
+
+    func setQuickTick(_ on: Bool) {
+        guard on != quickTick else { return }
+        defaults.set(on, forKey: Self.quickTickKey)
+        objectWillChange.send()
+        Haptics.change(wasDone: false, isDone: false)
+    }
+
     // MARK: - Weapon level (global — same value in every mode)
 
     func level(for weaponId: Int) -> Int {
@@ -211,7 +228,8 @@ final class TrackerViewModel: ObservableObject {
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
-            return hasReached(level, weaponId: weaponId)
+            // By level, or ticked by hand in quick tick.
+            return hasReached(level, weaponId: weaponId) || completed.contains(camoKey(mode, weaponId, camo.itemId))
         }
         let k = camoKey(mode, weaponId, camo.itemId)
         guard let req = camo.requirement else { return completed.contains(k) }
@@ -260,13 +278,26 @@ final class TrackerViewModel: ObservableObject {
 
     func toggleCamo(mode: String, weaponId: Int, camo: ChallengeItem) {
         // A Military camo is the weapon level: tapping one sets the level to
-        // it, tapping an earned one steps back to just below it. A prestiged
-        // weapon has them all, so there is nothing to change.
+        // it, tapping an earned one steps back to just below it. In quick
+        // tick it's a plain tick instead. A prestiged weapon has them all.
         if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
             guard prestige(for: weaponId) == 0, let weapon = weapon(id: weaponId) else { return }
+            let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
             let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-            applyLevel(wasDone ? level - 1 : level, for: weapon)
-            Haptics.change(wasDone: wasDone, isDone: !wasDone)
+            let k = camoKey(mode, weaponId, camo.itemId)
+            // A level change checks its own milestones, in every mode.
+            if wasDone {
+                completed.remove(k)
+                if hasReached(level, weaponId: weaponId) { applyLevel(level - 1, for: weapon) }
+            } else if !quickTick {
+                applyLevel(level, for: weapon)
+            } else {
+                completed.insert(k)
+                checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
+            }
+            saveProgress()
+            objectWillChange.send()
+            Haptics.change(wasDone: wasDone, isDone: isCamoComplete(mode: mode, weaponId: weaponId, camo: camo))
             return
         }
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
@@ -302,10 +333,10 @@ final class TrackerViewModel: ObservableObject {
         // they also wait for every Military camo.
         if camo.group == "special" {
             if specialsWaitForMilitary(mode: mode), !allMilitaryComplete(mode: mode, weaponId: weaponId) { return false }
-            return camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
+            return quickTick || camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
         }
         if let unlockLevel = camo.unlockLevel {
-            return hasReached(unlockLevel, weaponId: weaponId)
+            return quickTick || hasReached(unlockLevel, weaponId: weaponId)
         }
         let siblings = camos(weaponId: weaponId, mode: mode)
         guard let index = siblings.firstIndex(where: { $0.itemId == camo.itemId }), index > 0 else { return true }
@@ -444,9 +475,19 @@ final class TrackerViewModel: ObservableObject {
     /// Harmonic Break once every weapon has Platinum. The mode file can
     /// change any of them.
     func completionistGate(mode: String, step: Int) -> CompletionistGate {
+        completionistStepConfig(mode: mode, step: step)?.unlock.flatMap(CompletionistGate.init(rawValue:))
+            ?? [.weapon, .category, .mode][min(step, 2)]
+    }
+
+    private func completionistStepConfig(mode: String, step: Int) -> CompletionistStepConfig? {
         let steps = CompletionistOverrides.byMode[trackMode(mode)]?.steps
-        let configured = steps.flatMap { $0.indices.contains(step) ? $0[step].unlock : nil }
-        return configured.flatMap(CompletionistGate.init(rawValue:)) ?? [.weapon, .category, .mode][min(step, 2)]
+        return steps.flatMap { $0.indices.contains(step) ? $0[step] : nil }
+    }
+
+    /// A gate's count: `needed` capped at what's there to count, else the
+    /// launch count it defaults to.
+    private func gateTotal(needed: Int?, available: Int, launch: Int) -> Int {
+        needed.map { max(1, min($0, max(1, available))) } ?? max(1, launch)
     }
 
     /// Whether this weapon has done what opens `step`: its camo list for
@@ -460,7 +501,8 @@ final class TrackerViewModel: ObservableObject {
     /// For a "mode" gate: weapons with the step before, out of the launch
     /// roster (a finished DLC weapon can stand in for a launch one).
     func completionistModeGateProgress(mode: String, step: Int) -> (done: Int, total: Int) {
-        let total = max(1, min(totalWeaponCount, baseWeaponCount))
+        let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
+                              available: totalWeaponCount, launch: min(totalWeaponCount, baseWeaponCount))
         let done = allWeapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
         return (min(done, total), total)
     }
@@ -471,7 +513,8 @@ final class TrackerViewModel: ObservableObject {
     /// weapon added later can stand in for a launch one left unfinished.
     func completionistCategoryGateProgress(_ category: WeaponCategory, mode: String, step: Int) -> (done: Int, total: Int) {
         let launch = category.weapons.filter { $0.weaponId < baseWeaponCount }.count
-        let total = max(1, launch)
+        let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
+                              available: category.weapons.count, launch: launch)
         let done = category.weapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
         return (min(done, total), total)
     }
@@ -605,7 +648,7 @@ final class TrackerViewModel: ObservableObject {
                 && isCompletionistAvailable(mode: mode, weaponId: weaponId, step: step)
         }
         if openStep { return true }
-        return masteryUsesChallenges(mode: mode) && (1...3).contains { tier in
+        return (1...3).contains { tier in
             !isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier)
                 && isWeaponMasteryAvailable(mode: mode, weaponId: weaponId, tier: tier)
         }
@@ -648,14 +691,18 @@ final class TrackerViewModel: ObservableObject {
     //   launch roster; later tiers: the tier before on the weapon).
     //   "mode": each tier is one challenge for the whole mode, as the game
     //   shows them (tier 1 after Divergence, then each after the last).
+    // A tier's own `kind` beats the mode's `unlock`, so they can be mixed.
 
-    func masteryUsesChallenges(mode: String) -> Bool {
-        MasteryOverrides.byMode[mode]?.unlock == "challenge"
+    enum MasteryKind: String { case count, challenge, mode }
+
+    func masteryKind(mode: String, tier: Int) -> MasteryKind {
+        let raw = masteryTierConfig(mode: mode, tier: tier)?.kind ?? MasteryOverrides.byMode[mode]?.unlock
+        return raw.flatMap(MasteryKind.init(rawValue:)) ?? .count
     }
 
-    /// Each tier one challenge for the whole mode (`mastery.unlock` "mode").
-    func masteryIsModeChallenge(mode: String) -> Bool {
-        MasteryOverrides.byMode[mode]?.unlock == "mode"
+    /// Whether any tier is a per-weapon challenge.
+    func masteryUsesChallenges(mode: String) -> Bool {
+        (1...3).contains { masteryKind(mode: mode, tier: $0) == .challenge }
     }
 
     private func masteryTierConfig(mode: String, tier: Int) -> MasteryTierConfig? {
@@ -675,18 +722,27 @@ final class TrackerViewModel: ObservableObject {
     /// tier's count. Challenge Mastery: weapons with this tier out of the
     /// launch roster.
     func masteryProgress(mode: String, tier: Int) -> (done: Int, total: Int) {
-        if masteryIsModeChallenge(mode: mode) {
+        switch masteryKind(mode: mode, tier: tier) {
+        case .mode:
             guard let requirement = modeMasteryRequirement(mode: mode, tier: tier) else {
                 return (isModeMasteryComplete(mode: mode, tier: tier) ? 1 : 0, 1)
             }
             return (modeMasteryAmount(mode: mode, tier: tier), max(1, requirement.amount))
-        }
-        if masteryUsesChallenges(mode: mode) {
+        case .challenge:
             let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
             return (min(done, launchRoster), launchRoster)
+        case .count:
+            let needed = masteryWeaponsNeeded(mode: mode, tier: tier)
+            return (min(lastCompletionistCount(mode: mode), needed), needed)
         }
-        let needed = masteryWeaponsNeeded(mode: mode, tier: tier)
-        return (min(lastCompletionistCount(mode: mode), needed), needed)
+    }
+
+    /// The tier before is done as far as this weapon is concerned: on the
+    /// weapon itself for a per-weapon tier, for the mode otherwise.
+    func hasTierBefore(mode: String, weaponId: Int, tier: Int) -> Bool {
+        masteryKind(mode: mode, tier: tier - 1) == .challenge
+            ? isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier - 1)
+            : isMasteryAchieved(mode: mode, tier: tier - 1)
     }
 
     func isMasteryAchieved(mode: String, tier: Int) -> Bool {
@@ -705,35 +761,56 @@ final class TrackerViewModel: ObservableObject {
         masteryTierConfig(mode: mode, tier: tier)?.requirement
     }
 
-    /// A tier the app counts by itself (its unit is "harmonic_breaks")
-    /// rather than one the player ticks or counts.
+    /// The Completionist camo a unit counts across the mode, for a tier the
+    /// app counts by itself: "golds", "platinums", "harmonic_breaks" or
+    /// "finals" (the final camo). Nil for a unit the player counts.
+    static let selfCountingUnits = ["golds": 0, "platinums": 1, "harmonic_breaks": 2, "finals": 3]
+
+    /// What a self-counting tier counts, for its line ("12/20 Platinum").
+    func modeMasteryCountedCamo(mode: String, tier: Int) -> MasteryCamo? {
+        guard let unit = modeMasteryRequirement(mode: mode, tier: tier)?.unit,
+              let step = Self.selfCountingUnits[unit], let appMode = AppMode(rawValue: mode) else { return nil }
+        return appMode.completionistCamos.indices.contains(step) ? appMode.completionistCamos[step] : appMode.lastCompletionist
+    }
+
     func modeMasteryCountsItself(mode: String, tier: Int) -> Bool {
-        modeMasteryRequirement(mode: mode, tier: tier)?.unit == "harmonic_breaks"
+        modeMasteryRequirement(mode: mode, tier: tier).flatMap { Self.selfCountingUnits[$0.unit] } != nil
     }
 
     /// Capped at the requirement on read, like every other count.
     func modeMasteryAmount(mode: String, tier: Int) -> Int {
         let cap = modeMasteryRequirement(mode: mode, tier: tier)?.amount ?? 1
-        let raw = modeMasteryCountsItself(mode: mode, tier: tier)
-            ? harmonicBreakCount(mode: mode)
-            : amounts[modeMasteryKey(mode, tier)] ?? (completed.contains(modeMasteryKey(mode, tier)) ? 1 : 0)
+        let raw: Int
+        if let unit = modeMasteryRequirement(mode: mode, tier: tier)?.unit, let step = Self.selfCountingUnits[unit] {
+            raw = completionistCount(mode: mode, step: step)
+        } else {
+            raw = amounts[modeMasteryKey(mode, tier)] ?? (completed.contains(modeMasteryKey(mode, tier)) ? 1 : 0)
+        }
         return min(raw, cap)
     }
 
     func isModeMasteryComplete(mode: String, tier: Int) -> Bool {
-        guard masteryIsModeChallenge(mode: mode) else { return false }
+        guard masteryKind(mode: mode, tier: tier) == .mode else { return false }
         guard let requirement = modeMasteryRequirement(mode: mode, tier: tier) else {
             return completed.contains(modeMasteryKey(mode, tier))
         }
         return modeMasteryAmount(mode: mode, tier: tier) >= requirement.amount
     }
 
-    /// Tier 1 opens once any weapon has the last Completionist camo (the
-    /// game's "Divergence" line), later tiers once the tier before is earned.
+    /// Weapons with the last Completionist camo this tier waits for: its
+    /// `weaponsNeeded`, else one for tier 1 (the game's "Divergence" line)
+    /// and none after it.
+    func modeMasteryWeaponsNeeded(mode: String, tier: Int) -> Int {
+        max(0, masteryTierConfig(mode: mode, tier: tier)?.weaponsNeeded ?? (tier == 1 ? 1 : 0))
+    }
+
+    /// Open once the tier before is earned (for the mode) and enough
+    /// weapons have the last Completionist camo.
     func isModeMasteryAvailable(mode: String, tier: Int) -> Bool {
-        guard masteryIsModeChallenge(mode: mode) else { return false }
+        guard masteryKind(mode: mode, tier: tier) == .mode else { return false }
         if isModeMasteryComplete(mode: mode, tier: tier) { return true }
-        return tier == 1 ? lastCompletionistCount(mode: mode) > 0 : isMasteryAchieved(mode: mode, tier: tier - 1)
+        guard tier == 1 || isMasteryAchieved(mode: mode, tier: tier - 1) else { return false }
+        return lastCompletionistCount(mode: mode) >= modeMasteryWeaponsNeeded(mode: mode, tier: tier)
     }
 
     /// `weaponId` is the weapon whose page the change came from, for the
@@ -785,7 +862,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func isWeaponMasteryComplete(mode: String, weaponId: Int, tier: Int) -> Bool {
-        guard masteryUsesChallenges(mode: mode) else { return false }
+        guard masteryKind(mode: mode, tier: tier) == .challenge else { return false }
         let key = masteryKey(mode, weaponId, tier)
         guard let requirement = masteryRequirement(mode: mode, weaponId: weaponId, tier: tier) else {
             return completed.contains(key)
@@ -798,25 +875,28 @@ final class TrackerViewModel: ObservableObject {
             ?? (tier == 1 ? .mode : .weapon)
     }
 
-    /// Tier 1 builds on the last Completionist camo, later tiers on the
-    /// tier before, each on the weapon itself.
+    /// Tier 1 builds on the last Completionist camo on the weapon, later
+    /// tiers on the tier before (on the weapon when that one is per weapon).
     private func hasMasteryPrerequisite(mode: String, weaponId: Int, tier: Int) -> Bool {
         tier == 1
             ? hasLastCompletionist(mode: mode, weaponId: weaponId)
-            : isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier - 1)
+            : hasTierBefore(mode: mode, weaponId: weaponId, tier: tier)
     }
 
     /// Weapons with what this tier builds on, out of the launch roster
     /// ("mode" gate) or the class's launch count (pass its category).
     func masteryGateProgress(mode: String, tier: Int, category: WeaponCategory? = nil) -> (done: Int, total: Int) {
         let weapons = category?.weapons ?? allWeapons
-        let total = category.map { max(1, $0.weapons.filter { $0.weaponId < baseWeaponCount }.count) } ?? launchRoster
+        let needed = masteryTierConfig(mode: mode, tier: tier)?.needed
+        let total = category.map {
+            gateTotal(needed: needed, available: $0.weapons.count, launch: $0.weapons.filter { $0.weaponId < baseWeaponCount }.count)
+        } ?? gateTotal(needed: needed, available: totalWeaponCount, launch: launchRoster)
         let done = weapons.filter { hasMasteryPrerequisite(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
         return (min(done, total), total)
     }
 
     func isWeaponMasteryAvailable(mode: String, weaponId: Int, tier: Int) -> Bool {
-        guard masteryUsesChallenges(mode: mode) else { return false }
+        guard masteryKind(mode: mode, tier: tier) == .challenge else { return false }
         if isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) { return true }
         guard hasMasteryPrerequisite(mode: mode, weaponId: weaponId, tier: tier) else { return false }
         switch masteryGate(mode: mode, tier: tier) {
@@ -863,7 +943,7 @@ final class TrackerViewModel: ObservableObject {
     /// The last thing on every weapon that currently exists (DLC included):
     /// the "100%+" flex milestone past the third Mastery tier.
     func fullRosterFinalProgress(mode: String) -> (done: Int, total: Int) {
-        if masteryUsesChallenges(mode: mode) {
+        if masteryKind(mode: mode, tier: 3) == .challenge {
             let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: 3) }.count
             return (done, totalWeaponCount)
         }
@@ -937,14 +1017,12 @@ final class TrackerViewModel: ObservableObject {
         for weapon in weapons {
             let leaves = camos(weaponId: weapon.weaponId, mode: mode).flatMap(leafItems)
             let hasFinal = finalEnabled(mode: mode)
-            let masteryTiers = masteryUsesChallenges(mode: mode) ? 3 : 0
-            total += leaves.count + Self.completionistStepCount + (hasFinal ? 1 : 0) + masteryTiers
+            let weaponTiers = (1...3).filter { masteryKind(mode: mode, tier: $0) == .challenge }
+            total += leaves.count + Self.completionistStepCount + (hasFinal ? 1 : 0) + weaponTiers.count
             done += leaves.filter { isCamoComplete(mode: mode, weaponId: weapon.weaponId, camo: $0) }.count
             done += (0..<Self.completionistStepCount).filter { isCompletionistComplete(mode: mode, weaponId: weapon.weaponId, step: $0) }.count
             if hasFinalCamo(mode: mode, weaponId: weapon.weaponId) { done += 1 }
-            if masteryTiers > 0 {
-                done += (1...3).filter { isWeaponMasteryComplete(mode: mode, weaponId: weapon.weaponId, tier: $0) }.count
-            }
+            done += weaponTiers.filter { isWeaponMasteryComplete(mode: mode, weaponId: weapon.weaponId, tier: $0) }.count
         }
         guard total > 0 else { return 0 }
         return Double(done) / Double(total)
