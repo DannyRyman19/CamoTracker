@@ -127,6 +127,10 @@ struct ContentView: View {
                 }
             }
 
+            #if DEBUG
+            if Self.screenshotScreen == "widgets" { WidgetScreenshotView() }
+            #endif
+
             if let banner = viewModel.milestoneBanner {
                 ConfettiBurst(colors: banner.titleGradient)
                     .frame(height: 260)

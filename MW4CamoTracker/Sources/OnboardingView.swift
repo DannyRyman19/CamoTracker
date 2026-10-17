@@ -415,6 +415,9 @@ private struct MakeItYoursPage: View {
                 row("pin.fill", "mw4.onboarding.yours.pin".localized())
                 row("slider.horizontal.3", "mw4.onboarding.yours.customise".localized())
                 row("exclamationmark.bubble.fill", "mw4.onboarding.yours.report".localized())
+                if #available(iOS 17, *) {
+                    row("square.grid.2x2.fill", "mw4.onboarding.yours.widget".localized())
+                }
             }
         }
     }

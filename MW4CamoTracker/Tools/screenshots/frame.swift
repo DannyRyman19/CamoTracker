@@ -4,12 +4,12 @@
 //
 //   swift Tools/screenshots/frame.swift <rawDir> <outDir> [lang]
 //
-// `lang` (en/de/es/fr/nl, default en) picks the headline set. Hitmarker is
+// `lang` (en/de/es/fr/it/nl, default en) picks the headline set. Hitmarker is
 // condensed but not infinitely so, and the translated lines run longer than
 // the English, so each shot is measured and its pair scaled down together
 // when either line would otherwise cross the margin.
 //
-// Expects <rawDir>/{multiplayer,warzone,dmz,stats}.png from an iPhone 17 Pro
+// Expects <rawDir>/{multiplayer,stats,warzone,widgets,category,weapon}.png from an iPhone 17 Pro
 // Max. Writes 1284x2778 PNGs (App Store 6.7"), exact pixels.
 //
 // The backdrop is generated here rather than loaded from Assets.xcassets: the
@@ -180,7 +180,7 @@ let shots = [
     Shot(name: "multiplayer"),
     Shot(name: "stats"),
     Shot(name: "warzone"),
-    Shot(name: "dmz"),
+    Shot(name: "widgets"),
     Shot(name: "category"),
     Shot(name: "weapon"),
 ]
@@ -191,33 +191,39 @@ let headlines: [String: [[String]]] = [
     "en": [["EVERY WEAPON", "EVERY CAMO"],
            ["WATCH IT", "ALL ADD UP"],
            ["ONE APP", "ALL THREE MODES"],
-           ["DMZ OBJECTIVES", "COVERED TOO"],
+           ["YOUR GRIND", "ON YOUR HOME SCREEN"],
            ["BROWSE BY", "WEAPON CLASS"],
            ["EVERY CHALLENGE", "PER GUN"]],
     "de": [["JEDE WAFFE", "JEDE TARNUNG"],
            ["SIEH ZU", "WIE ES AUFGEHT"],
            ["EINE APP", "ALLE DREI MODI"],
-           ["DMZ-ZIELE", "AUCH DABEI"],
+           ["DEIN GRIND", "AUF DEM HOMESCREEN"],
            ["NACH KLASSE", "STÖBERN"],
            ["JEDE AUFGABE", "PRO WAFFE"]],
     "es": [["CADA ARMA", "CADA CAMO"],
            ["MIRA CÓMO", "TODO SUMA"],
            ["UNA APP", "LOS TRES MODOS"],
-           ["OBJETIVOS DMZ", "TAMBIÉN"],
+           ["TU PROGRESO", "EN TU INICIO"],
            ["EXPLORA POR", "CLASE DE ARMA"],
            ["CADA RETO", "POR ARMA"]],
     "fr": [["CHAQUE ARME", "CHAQUE CAMO"],
            ["REGARDEZ", "TOUT MONTER"],
            ["UNE APP", "LES TROIS MODES"],
-           ["OBJECTIFS DMZ", "AUSSI"],
+           ["VOTRE GRIND", "SUR L'ACCUEIL"],
            ["PARCOURIR PAR", "CLASSE D'ARME"],
            ["CHAQUE DÉFI", "PAR ARME"]],
     "nl": [["ELK WAPEN", "ELKE CAMO"],
            ["ZIE HET", "ALLEMAAL OPTELLEN"],
            ["ÉÉN APP", "ALLE DRIE MODI"],
-           ["DMZ-DOELEN", "OOK ERBIJ"],
+           ["JE GRIND", "OP JE BEGINSCHERM"],
            ["BLADER PER", "WAPENKLASSE"],
            ["ELKE UITDAGING", "PER WAPEN"]],
+    "it": [["OGNI ARMA", "OGNI MIMETICA"],
+           ["GUARDA COME", "TUTTO SI SOMMA"],
+           ["UN'APP", "TRE MODALITÀ"],
+           ["I PROGRESSI", "SULLA HOME"],
+           ["SFOGLIA PER", "CLASSE D'ARMA"],
+           ["OGNI SFIDA", "PER ARMA"]],
 ]
 guard let langHeadlines = headlines[lang], langHeadlines.count == shots.count else {
     fputs("no headline set for \(lang) (have: \(headlines.keys.sorted().joined(separator: ", ")))\n", stderr)

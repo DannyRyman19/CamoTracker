@@ -201,6 +201,10 @@ struct CategoryListView: View {
                         WeaponRow(mode: mode, weapon: weapon)
                     }
                 } else {
+                    WidgetTipCard(accent: mode.accent)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     ForEach(layout.visible) { section in
                         sectionView(section)
                     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */; };
 		05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613DA0B92D98434F953C3144 /* StatsView.swift */; };
 		061AF3F322A05D82472AD02D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00C36E336BC0A943B5CBFB /* SplashView.swift */; };
 		0D06644637814F96A8671ADB /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F5D24163231262425B4C4 /* ItemDetailView.swift */; };
@@ -27,6 +28,7 @@
 		5F42960D56A68847BDCB8E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C093C55B6D15F2A2B624938 /* Foundation.framework */; };
 		64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A420378B1E88B956B09DD1 /* AppDelegate.swift */; };
 		6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */; };
+		6E8364C1C424CB6D064C1A42 /* WidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0444E41EF781730B5B9B23 /* WidgetViews.swift */; };
 		79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E6BE0838A8B785F45509FD /* WeaponListView.swift */; };
 		7A977FF5DB06808FC339171C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159B423149587E45D2B5F5A /* Navigation.swift */; };
 		7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A39FDC7376E2120B670A81 /* Models.swift */; };
@@ -45,6 +47,7 @@
 		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
 		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
 		C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */; };
+		C7DBE44742D8CD7A76F93F78 /* WidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0444E41EF781730B5B9B23 /* WidgetViews.swift */; };
 		C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66A60FEF15496240122166 /* WeaponDetailView.swift */; };
 		CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D260791573B9EE8356EAC22 /* Theme.swift */; };
 		D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 895B374FC30B3DC7C15333E3 /* en.lproj */; };
@@ -105,6 +108,7 @@
 		1159B423149587E45D2B5F5A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		168914AE193FC3A43CA6E617 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		1A7C3E9F2B4D5F6071829305 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
+		1F0444E41EF781730B5B9B23 /* WidgetViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetViews.swift; sourceTree = "<group>"; };
 		1F4D4216871DE1E40B303C87 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		240B67BB78B0DE3B4C8C0228 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		E63CAA2281D717492836A497 /* MW4CamoTrackerWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MW4CamoTrackerWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
 		ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = MW4CamoTracker.entitlements; sourceTree = "<group>"; };
+		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +236,7 @@
 				4C66A60FEF15496240122166 /* WeaponDetailView.swift */,
 				82E6BE0838A8B785F45509FD /* WeaponListView.swift */,
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
+				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */,
+				1F0444E41EF781730B5B9B23 /* WidgetViews.swift */,
 			);
 			name = Shared;
 			path = Shared;
@@ -466,6 +473,8 @@
 				79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */,
 				8BBCDAC269D29D4792A3AF9F /* WidgetSync.swift in Sources */,
 				DD8DA57611E4F76BB696DC1B /* WidgetSnapshot.swift in Sources */,
+				C7DBE44742D8CD7A76F93F78 /* WidgetViews.swift in Sources */,
+				03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +503,7 @@
 			files = (
 				4110D8C761A17F70A42E12E1 /* MW4Widgets.swift in Sources */,
 				515902E4FC12F771B0982C14 /* WidgetSnapshot.swift in Sources */,
+				6E8364C1C424CB6D064C1A42 /* WidgetViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
