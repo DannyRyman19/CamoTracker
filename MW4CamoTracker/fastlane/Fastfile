@@ -6,15 +6,19 @@
 # profile is created/refreshed on the fly through the same API key, so there is
 # no second "certificates" repo to keep in sync the way `match` needs.
 #
-# Simpler than the Vinewood Vault lane this is modelled on: one target, no app
-# extension (so no second profile and no CFBundleVersion to keep in step), and
-# the .xcodeproj is committed rather than generated, so there is no xcodegen
-# step to run first.
+# Modelled on the Vinewood Vault lane: two signed targets, the app and its
+# widget extension, each with its own App Store profile, pinned by name in the
+# project's Release configuration. The .xcodeproj is committed rather than
+# generated, so there is no xcodegen step to run first. The widget's
+# MARKETING_VERSION has to match the app's; CURRENT_PROJECT_VERSION is passed
+# to both below.
 
 default_platform(:ios)
 
 APP_IDENTIFIER = "com.DannyRyman.MW4CamoTracker"
 PROFILE_NAME   = "MW4 Camo Tracker CI App Store"
+WIDGET_IDENTIFIER   = "com.DannyRyman.MW4CamoTracker.Widgets"
+WIDGET_PROFILE_NAME = "MW4 Camo Tracker Widgets CI App Store"
 XCODE_PROJECT  = "MW4CamoTracker.xcodeproj"
 XCODE_SCHEME   = "MW4CamoTracker"
 TEAM_ID        = "44G72CWWEW"
@@ -74,9 +78,26 @@ platform :ios do
     # -allowProvisioningUpdates` throws "Cloud signing permission error" even
     # with a valid App Manager key. The name is pinned so the export below can
     # reference it without guessing an env var.
+    #
+    # Adding a capability (App Groups, for the widgets) turns existing
+    # profiles INVALID, and sigh would then make a replacement under a
+    # timestamped name the pinned PROVISIONING_PROFILE_SPECIFIER never finds,
+    # so drop an invalid profile holding one of our names first.
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.from(hash: api_key)
+    Spaceship::ConnectAPI::Profile.all.each do |profile|
+      next unless [PROFILE_NAME, WIDGET_PROFILE_NAME].include?(profile.name)
+      next unless profile.profile_state == "INVALID"
+      UI.important("Replacing invalid profile '#{profile.name}'")
+      profile.delete!
+    end
     get_provisioning_profile(
       api_key: api_key, app_identifier: APP_IDENTIFIER,
       provisioning_name: PROFILE_NAME,
+      fail_on_name_taken: false, readonly: false
+    )
+    get_provisioning_profile(
+      api_key: api_key, app_identifier: WIDGET_IDENTIFIER,
+      provisioning_name: WIDGET_PROFILE_NAME,
       fail_on_name_taken: false, readonly: false
     )
 
@@ -88,24 +109,25 @@ platform :ios do
     # "Created via API" certificates) until the archive started failing with
     # "Choose a certificate to revoke". Nothing here can mint one now.
     #
-    # This app has a single target, so these settings can be passed as build
-    # settings for the whole archive without needing per-target pinning.
-    signing = "CODE_SIGN_STYLE=Manual " \
-              "CODE_SIGN_IDENTITY=\"Apple Distribution\" " \
-              "PROVISIONING_PROFILE_SPECIFIER=\"#{PROFILE_NAME}\""
-
+    # Each target's Release configuration pins CODE_SIGN_STYLE=Manual,
+    # "Apple Distribution" and its profile by name, so nothing signing-related
+    # is passed here (a global PROVISIONING_PROFILE_SPECIFIER would hand the
+    # app's profile to the widget too).
     build_app(
       project: XCODE_PROJECT,
       scheme: XCODE_SCHEME,
       configuration: "Release",
       export_method: "app-store",
-      xcargs: "#{signing} CURRENT_PROJECT_VERSION=#{build_number}",
+      xcargs: "CURRENT_PROJECT_VERSION=#{build_number}",
       export_xcargs: "",
       export_options: {
         signingStyle: "manual",
         teamID: TEAM_ID,
         signingCertificate: "Apple Distribution",
-        provisioningProfiles: { APP_IDENTIFIER => PROFILE_NAME }
+        provisioningProfiles: {
+          APP_IDENTIFIER    => PROFILE_NAME,
+          WIDGET_IDENTIFIER => WIDGET_PROFILE_NAME
+        }
       },
       output_directory: "build",
       output_name: "MW4CamoTracker.ipa",

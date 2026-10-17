@@ -102,7 +102,25 @@ struct ContentView: View {
             .tint(currentAccent)
             // A language switch redraws every screen in the new language.
             .id(languageRaw)
+            // A widget tap: mw4camo://mode/<mode>[/weapon/<id>] opens that
+            // mode's tab, and the weapon on it when there is one.
+            .onOpenURL { url in
+                guard url.scheme == "mw4camo", url.host == "mode" else { return }
+                let parts = url.pathComponents.filter { $0 != "/" }
+                guard let mode = parts.first.flatMap(AppMode.init(rawValue:)),
+                      AppMode.played(playedRaw).contains(mode),
+                      let index = AppMode.allCases.firstIndex(of: mode) else { return }
+                selectedTab = index
+                var path = NavigationPath()
+                if parts.count >= 3, parts[1] == "weapon", let id = Int(parts[2]) {
+                    path.append(Route.weapon(id))
+                }
+                paths[index] = path
+            }
+            .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
+            .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
             .onChange(of: playedRaw) { _ in
+                viewModel.refreshWidgets()
                 let shown = AppMode.played(playedRaw).compactMap { AppMode.allCases.firstIndex(of: $0) }
                 if selectedTab < AppMode.allCases.count, !shown.contains(selectedTab) {
                     selectedTab = shown.first ?? 0

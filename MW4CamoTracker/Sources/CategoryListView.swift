@@ -475,6 +475,30 @@ struct CustomiseHomeSheet: View {
         NavigationStack {
             List {
                 Section {
+                    // Inset from the row's edges: flush, the List clipped the
+                    // chips' rounded borders at the corners.
+                    PlayedModesPicker()
+                        .padding(.vertical, 4)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                } header: {
+                    Text("mw4.ui.modes".localized())
+                } footer: {
+                    Text("mw4.ui.modes.footer".localized())
+                }
+
+                Section {
+                    Picker("mw4.ui.language".localized(), selection: $languageRaw) {
+                        Text("mw4.ui.language.system".localized()).tag("")
+                        ForEach(AppLanguage.supported, id: \.code) { language in
+                            Text(verbatim: language.name).tag(language.code)
+                        }
+                    }
+                    .tint(accent)
+                    .accessibilityIdentifier("customise.language")
+                }
+
+                Section {
                     ForEach(rows) { section in
                         HStack(spacing: 12) {
                             Image(systemName: section.symbol)
@@ -497,27 +521,6 @@ struct CustomiseHomeSheet: View {
                     }
                 } footer: {
                     Text("mw4.ui.customise.footer".localized())
-                }
-
-                Section {
-                    PlayedModesPicker()
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                } header: {
-                    Text("mw4.ui.modes".localized())
-                } footer: {
-                    Text("mw4.ui.modes.footer".localized())
-                }
-
-                Section {
-                    Picker("mw4.ui.language".localized(), selection: $languageRaw) {
-                        Text("mw4.ui.language.system".localized()).tag("")
-                        ForEach(AppLanguage.supported, id: \.code) { language in
-                            Text(verbatim: language.name).tag(language.code)
-                        }
-                    }
-                    .tint(accent)
-                    .accessibilityIdentifier("customise.language")
                 }
 
                 Section {

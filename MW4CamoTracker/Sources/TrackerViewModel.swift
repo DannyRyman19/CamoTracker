@@ -25,6 +25,10 @@ final class TrackerViewModel: ObservableObject {
     @Published private(set) var pinnedWeaponId: Int?
     private let pinnedWeaponKey = "mw4_pinned_weapon_v1"
 
+    /// The pending widget refresh (see WidgetSync.swift), so a burst of
+    /// ticks writes the snapshot once.
+    var widgetTask: Task<Void, Never>?
+
     private let dataService: DataService
 
     /// Weapon level is the one thing genuinely global: keyed by `weaponId` alone,
@@ -102,6 +106,9 @@ final class TrackerViewModel: ObservableObject {
                 modes = merged
             }
             refreshError = nil
+            // Every launch passes through here, and new data can rename or
+            // add camos, so the widgets get a fresh snapshot.
+            refreshWidgets()
             #if DEBUG
             // `refreshError` is not shown anywhere, so a broken feed is
             // invisible: Data/MW4 did not exist on the CDN for the app's
@@ -726,7 +733,7 @@ final class TrackerViewModel: ObservableObject {
         return (0..<Self.completionistStepCount).last { isCompletionistComplete(mode: mode, weaponId: weaponId, step: $0) }
     }
 
-    private var allWeapons: [WeaponEntry] { catalog?.categories.flatMap(\.weapons) ?? [] }
+    var allWeapons: [WeaponEntry] { catalog?.categories.flatMap(\.weapons) ?? [] }
 
     // MARK: - Where a weapon is on its track (filters)
 
@@ -1132,12 +1139,14 @@ final class TrackerViewModel: ObservableObject {
     func pin(weaponId: Int) {
         pinnedWeaponId = weaponId
         defaults.set(weaponId, forKey: pinnedWeaponKey)
+        refreshWidgets()
         Haptics.light()
     }
 
     func unpin() {
         pinnedWeaponId = nil
         defaults.removeObject(forKey: pinnedWeaponKey)
+        refreshWidgets()
         Haptics.undone()
     }
 
@@ -1225,7 +1234,7 @@ final class TrackerViewModel: ObservableObject {
         return Double(done) / Double(leaves.count)
     }
 
-    private func leafItems(_ item: ChallengeItem) -> [ChallengeItem] {
+    func leafItems(_ item: ChallengeItem) -> [ChallengeItem] {
         item.isLeaf ? [item] : item.children.flatMap(leafItems)
     }
 
@@ -1257,6 +1266,7 @@ final class TrackerViewModel: ObservableObject {
         if let data = try? JSONEncoder().encode(store) {
             defaults.set(data, forKey: storeKey)
         }
+        refreshWidgets()
     }
 }
 

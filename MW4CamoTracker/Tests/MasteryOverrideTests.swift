@@ -878,6 +878,25 @@ struct TrackerViewModelTests {
         #expect(model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 0))
         #expect(!model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 3))
     }
+
+    /// The widgets' snapshot: every played mode with its Completionist and
+    /// Mastery steps, and the pinned weapon's next camo.
+    @Test func widgetSnapshotCarriesModesAndThePinnedWeapon() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        model.pin(weaponId: weapon.weaponId)
+        let snapshot = try #require(model.widgetSnapshot())
+        #expect(snapshot.modes.count == AppMode.played(UserDefaults.standard.string(forKey: AppMode.playedKey) ?? "").count)
+        let mp = try #require(snapshot.modes.first { $0.id == "multiplayer" })
+        #expect(mp.steps.count == AppMode.multiplayer.completionistCamos.count)
+        #expect(mp.mastery.count == 3)
+        #expect(mp.steps.allSatisfy { $0.total == mp.weaponCount })
+        let pinned = try #require(snapshot.pinned)
+        #expect(pinned.weaponId == weapon.weaponId)
+        #expect(pinned.nextName != nil)
+        #expect(pinned.camosDone == 0)
+        #expect(pinned.accentHex.hasPrefix("#") && pinned.accentHex.count == 7)
+    }
 }
 
 /// The mode tab's Customise layout as `@AppStorage` saves it.
