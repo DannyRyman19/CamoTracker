@@ -85,12 +85,14 @@ struct WeaponDetailView: View {
         case camos(Int)
         case completionist
         case mastery
+        case prestige
     }
 
     private var parts: [(part: Part, title: String)] {
         camoGroups.indices.map { (Part.camos($0), camoGroups[$0].title) }
             + [(.completionist, "mw4.ui.section.completionist".localized()),
                (.mastery, "mw4.ui.section.mastery".localized())]
+            + (viewModel.prestigeCamos.isEmpty ? [] : [(.prestige, "mw4.ui.prestige".localized())])
     }
 
     /// Picked by hand, else the first part with something still to do.
@@ -146,6 +148,10 @@ struct WeaponDetailView: View {
                 ForEach(1...3, id: \.self) { tier in
                     masteryRow(tier)
                 }
+            case .prestige:
+                ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
+                    prestigeCamoRow(index)
+                }
             }
         }
         .listRowBackground(Color.appSurface)
@@ -196,6 +202,35 @@ struct WeaponDetailView: View {
             onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
             onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
         )
+    }
+
+    /// A Weapon Prestige camo, earned by the weapon's Prestige and level in
+    /// every mode at once, so it's ticked the way a Military camo is.
+    private func prestigeCamoRow(_ index: Int) -> some View {
+        let camo = viewModel.prestigeCamos[index]
+        let item = ChallengeItem(itemId: -1 - index,
+                                 name: viewModel.prestigeCamoName(camo, weaponId: weapon.weaponId),
+                                 imageURL: viewModel.prestigeCamoImageURL(camo, weaponId: weapon.weaponId),
+                                 tier: nil, unlockLevel: nil, requirement: nil, children: [], group: "prestige")
+        return ChallengeRow(
+            item: item,
+            accent: mode.accent,
+            amount: 0,
+            isDone: viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: index),
+            detail: prestigeCamoDetail(camo),
+            onToggle: { viewModel.togglePrestigeCamo(weaponId: weapon.weaponId, index: index) },
+            onSetAmount: { _ in }
+        )
+    }
+
+    /// "Prestige the HAN 86." or "Reach Prestige Master level 73."
+    private func prestigeCamoDetail(_ camo: PrestigeCamo) -> String? {
+        guard let stage = viewModel.prestigeCamoStage(camo) else { return nil }
+        guard let level = viewModel.prestigeCamoLevel(camo, weaponId: weapon.weaponId) else {
+            return String(format: "mw4.ui.prestige_camo.enter".localized(), weapon.name.resolved())
+        }
+        return String(format: "mw4.ui.prestige_camo.level".localized(),
+                      viewModel.prestigeStages[stage - 1].name.resolved(), level)
     }
 
     /// "Earned at weapon level 18." or "Unlocks at weapon level 18." under
@@ -262,6 +297,12 @@ struct WeaponDetailView: View {
         Section(masteryTitle) {
             tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
                      columns: masteryInOneRow ? 3 : columns)
+        }
+
+        if !viewModel.prestigeCamos.isEmpty {
+            Section("mw4.ui.prestige".localized()) {
+                tileRows(viewModel.prestigeCamos.indices.map { AnyView(prestigeCamoRow($0)) }, columns: columns)
+            }
         }
     }
 

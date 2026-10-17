@@ -116,6 +116,13 @@ The publish script enforces the first two.
 - `weaponPrestige[]`: the prestige stages after a weapon's normal levels, in
   order. Each has a `name` and a `maxLevel` (`null` means the weapon's own).
   Add or remove entries to change how many times a weapon can prestige.
+- `prestigeCamos[]`: the Weapon Prestige camos, the same in every mode, in
+  order. Each has a `name` and ticks itself once the weapon reaches its
+  `stage` (counting from 1; leave it out for the last stage) and, within it,
+  its `level`. `"afterWeaponMaxLevel": true` uses the level after the
+  weapon's own `maxLevel` instead (73 on the HAN 86). No level means
+  reaching the stage is enough (Pyroclast). `byWeapon` (keyed by `weaponId`
+  as a string) can give one weapon its own `name`, `imageURL` or `level`.
 
 `multiplayer.json`, `warzone.json`, `dmz.json` (one per mode):
 

@@ -827,6 +827,57 @@ struct TrackerViewModelTests {
         #expect(second.prestige(for: weapon.weaponId) == 1)
         #expect(second.level(for: weapon.weaponId) == 7)
     }
+
+    /// Weapon Prestige camos: Pyroclast for entering Prestige, then one at
+    /// the level after the weapon's own max and two at fixed Prestige Master levels.
+    @Test func prestigeCamosTickThemselvesFromPrestigeAndLevel() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let id = weapon.weaponId
+        #expect(model.prestigeCamos.count == 4)
+        #expect(model.prestigeCamoLevel(model.prestigeCamos[1], weaponId: id) == weapon.maxLevel + 1)
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 0))
+
+        model.setLevel(weapon.maxLevel, for: weapon)
+        model.prestigeUp(weapon)
+        #expect(model.isPrestigeCamoComplete(weaponId: id, index: 0))
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 1))
+
+        model.setLevel(150, for: weapon)
+        #expect(model.isPrestigeCamoComplete(weaponId: id, index: 1))
+        #expect(model.isPrestigeCamoComplete(weaponId: id, index: 2))
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 3))
+    }
+
+    /// Tapping one sets Prestige and level to it; tapping it again steps
+    /// back to just below it, and Pyroclast's undo un-prestiges.
+    @Test func tappingAPrestigeCamoSetsPrestigeAndLevel() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        let id = weapon.weaponId
+        model.togglePrestigeCamo(weaponId: id, index: 2)
+        #expect(model.prestige(for: id) == 1)
+        #expect(model.level(for: id) == 150)
+        #expect((0...2).allSatisfy { model.isPrestigeCamoComplete(weaponId: id, index: $0) })
+
+        model.togglePrestigeCamo(weaponId: id, index: 2)
+        #expect(model.level(for: id) == 149)
+        model.togglePrestigeCamo(weaponId: id, index: 0)
+        #expect(model.prestige(for: id) == 0)
+        #expect(model.level(for: id) == weapon.maxLevel)
+    }
+
+    @Test func quickTickTicksAPrestigeRunWithoutLevels() throws {
+        let model = try model()
+        let weapon = try anyWeapon(model)
+        model.setQuickTick(true)
+        model.togglePrestigeCamo(weaponId: weapon.weaponId, index: 3)
+        #expect((0...3).allSatisfy { model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0) })
+        #expect(model.prestige(for: weapon.weaponId) == 0)
+        model.togglePrestigeCamo(weaponId: weapon.weaponId, index: 1)
+        #expect(model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 0))
+        #expect(!model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 3))
+    }
 }
 
 /// The mode tab's Customise layout as `@AppStorage` saves it.
