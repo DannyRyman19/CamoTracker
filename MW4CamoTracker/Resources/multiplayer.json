@@ -1,5 +1,5 @@
 {
-  "version": "0.8.5",
+  "version": "0.8.8",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -6967,7 +6967,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is its own (byWeapon \"24\": 50 hipfire kills, not the Shotguns' 125). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 'Get &&2 kills in a match &&1 times', tier 3 'Get &&2 kills without taking damage &&1 times': the game's own numbers are still placeholders (&&1, &&2), so each tier is a tick box (mastery.unlock \"mode\") until they're shown; then give each its amount, and tier 1 unit \"harmonic_breaks\" to count itself. Divergence's final.harmonicBreaksNeeded (33) is an assumption.",
+  "_note": "Every weapon's Military levels, Special names, levels and challenges, and the Completionist challenges, are from the in-game Multiplayer camo screens (screen recording, 16 Oct 2026). The game shows no level for the Mosin-Nagant's Brown and Gunmetal, so they have none here; FINN LMG's Thunderhead reads 'Get 0 Player Kills without Dying 30 times' in game and is copied as shown. The Warlord's Platinum is its own (byWeapon \"24\": 50 hipfire kills, not the Shotguns' 125). Mastery: tier 1 opens after Divergence ('Complete &&1 Harmonic Break Challenges'), tier 2 (Polyatomic Reforged) 10 kills in a match 250 times and tier 3 (Orion Reforged) 3 kills without taking damage 250 times, from @cs_buh on 17 Oct 2026 (that post names them a tier early; the recording shows Mercurial Drift needs Divergence). Tier 1's Harmonic Break count is still the game's placeholder &&1, so it's a tick box. Divergence's final.harmonicBreaksNeeded (33, every weapon) is confirmed by @cs_buh.",
   "completionist": {
     "steps": [
       {
@@ -7239,28 +7239,28 @@
     "tier2": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/polyatomic_reforged.png",
       "requirement": {
-        "amount": 1,
+        "amount": 250,
         "unit": "times",
         "description": {
-          "en": "Get kills in a match, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Obtenez des éliminations en une partie, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas en una partida un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele eine bestimmte Anzahl Male Abschüsse in einem Match (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal een bepaald aantal keer kills in één wedstrijd (de game toont de aantallen nog niet)."
+          "en": "Get 10 kills in a match 250 times.",
+          "fr": "Obtenez 10 éliminations en une partie 250 fois.",
+          "es": "Consigue 10 bajas en una partida 250 veces.",
+          "de": "Erziele 10 Abschüsse in einem Match, 250-mal.",
+          "nl": "Maak 10 kills in één wedstrijd, 250 keer."
         }
       }
     },
     "tier3": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/orion_reforged.png",
       "requirement": {
-        "amount": 1,
+        "amount": 250,
         "unit": "times",
         "description": {
-          "en": "Get kills without taking damage, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Obtenez des éliminations sans subir de dégâts, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas sin recibir daño un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele eine bestimmte Anzahl Male Abschüsse, ohne Schaden zu nehmen (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal een bepaald aantal keer kills zonder schade op te lopen (de game toont de aantallen nog niet)."
+          "en": "Get 3 kills without taking damage 250 times.",
+          "fr": "Obtenez 3 éliminations sans subir de dégâts 250 fois.",
+          "es": "Consigue 3 bajas sin recibir daño 250 veces.",
+          "de": "Erziele 3 Abschüsse, ohne Schaden zu nehmen, 250-mal.",
+          "nl": "Maak 3 kills zonder schade op te lopen, 250 keer."
         }
       }
     },
