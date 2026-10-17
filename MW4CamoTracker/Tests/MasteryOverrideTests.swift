@@ -683,8 +683,9 @@ struct TrackerViewModelTests {
         #expect(model.isMasteryAchieved(mode: mp, tier: 1))
     }
 
-    /// Quick tick: Military camos are plain ticks, nothing waits for a
-    /// level, and switching back keeps every tick.
+    /// Quick tick: Military camos are plain ticks, a tick takes the ones
+    /// before it with it, nothing is locked, and switching back keeps every
+    /// tick.
     @Test func quickTickTicksWithoutLevels() throws {
         let model = try model()
         let weapon = try anyWeapon(model)
@@ -694,16 +695,43 @@ struct TrackerViewModelTests {
         model.setQuickTick(true)
         #expect(model.isCamoAvailable(mode: mp, weaponId: weapon.weaponId, camo: special[2]))
         model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[4])
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[3]) == false)
+        #expect(military.prefix(5).allSatisfy { model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[5]) == false)
         #expect(model.level(for: weapon.weaponId) == 0)
 
         model.setQuickTick(false)
         #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]))
-        // Unticking one only ticked by hand leaves the level alone.
-        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[4])
-        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[4]) == false)
+        // Unticking clears it and the ones after, leaving the level alone.
+        model.toggleCamo(mode: mp, weaponId: weapon.weaponId, camo: military[2])
+        #expect(model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: military[1]))
+        #expect(military[2...].allSatisfy { !model.isCamoComplete(mode: mp, weaponId: weapon.weaponId, camo: $0) })
         #expect(model.level(for: weapon.weaponId) == 0)
+    }
+
+    /// Quick tick: Harmonic Break takes Gold and Platinum with it, nothing
+    /// waits for the class, and unticking Gold clears the rest but leaves a
+    /// half-done count from full tracking alone.
+    @Test func quickTickCascadesTheCompletionistRun() throws {
+        let model = try model(["mastery": #"{"unlock": "mode", "tier2": {"requirement": {"amount": 1, "unit": "times", "description": {"en": "x"}}}}"#])
+        let ids = weapons(model).prefix(2).map(\.weaponId)
+        model.setCompletionistAmount(mode: mp, weaponId: ids[1], step: 0, amount: 1)
+        model.setQuickTick(true)
+        #expect(model.isCompletionistAvailable(mode: mp, weaponId: ids[0], step: 2))
+        #expect(model.isModeMasteryAvailable(mode: mp, tier: 3))
+
+        model.toggleCompletionist(mode: mp, weaponId: ids[0], step: 2)
+        #expect((0...2).allSatisfy { model.isCompletionistComplete(mode: mp, weaponId: ids[0], step: $0) })
+        model.toggleCompletionist(mode: mp, weaponId: ids[0], step: 0)
+        #expect((0...2).allSatisfy { !model.isCompletionistComplete(mode: mp, weaponId: ids[0], step: $0) })
+
+        model.setQuickTick(false)
+        model.setCompletionistAmount(mode: mp, weaponId: ids[1], step: 1, amount: 10)
+        model.setQuickTick(true)
+        model.toggleCompletionist(mode: mp, weaponId: ids[1], step: 0)
+        #expect(model.completionistAmount(mode: mp, weaponId: ids[1], step: 1) == 10)
+
+        model.toggleModeMastery(mode: mp, tier: 3, weaponId: ids[0])
+        #expect((1...3).allSatisfy { model.isMasteryAchieved(mode: mp, tier: $0) })
     }
 
     /// In quick tick, unticking a camo earned by level steps the level

@@ -120,9 +120,11 @@ final class TrackerViewModel: ObservableObject {
     // MARK: - Quick tick (no weapon levels)
 
     /// Quick tick: the player ticks what they've done rather than keeping
-    /// weapon levels and counts. Military camos are tick boxes, nothing
-    /// waits for a level and every counter is one tap. Anything already
-    /// earned by level stays earned, and switching back loses nothing.
+    /// weapon levels and counts. Military camos are tick boxes, nothing is
+    /// locked, every counter is one tap, and ticking one in a run (Military,
+    /// Completionist, Mastery) ticks the ones before it, as unticking clears
+    /// the ones after. Anything already earned by level stays earned, and
+    /// switching back loses nothing.
     static let quickTickKey = "mw4_quick_tick"
 
     var quickTick: Bool { defaults.bool(forKey: Self.quickTickKey) }
@@ -132,6 +134,33 @@ final class TrackerViewModel: ObservableObject {
         defaults.set(on, forKey: Self.quickTickKey)
         objectWillChange.send()
         Haptics.change(wasDone: false, isDone: false)
+    }
+
+    /// The indices (0-based, of `count`) a tick at `index` changes: just it,
+    /// or in quick tick it and everything before it when ticking, it and
+    /// everything after it when unticking.
+    private func run(_ index: Int, through count: Int, done: Bool) -> [Int] {
+        guard quickTick else { return [index] }
+        return done ? Array(0...index) : Array(index..<count)
+    }
+
+    /// Ticks or clears one challenge: its count up to the requirement or
+    /// back to zero, or the tick for one without a count. Clearing leaves a
+    /// count that isn't finished alone, so unticking an earlier step in
+    /// quick tick never wipes progress kept in full tracking.
+    private func mark(_ key: String, requirement: Requirement?, done: Bool) {
+        if let requirement {
+            let current = amounts[key] ?? 0
+            if done {
+                amounts[key] = max(current, requirement.amount)
+            } else if current >= requirement.amount {
+                amounts[key] = 0
+            }
+        } else if done {
+            completed.insert(key)
+        } else {
+            completed.remove(key)
+        }
     }
 
     // MARK: - Weapon level (global — same value in every mode)
@@ -284,15 +313,17 @@ final class TrackerViewModel: ObservableObject {
             guard prestige(for: weaponId) == 0, let weapon = weapon(id: weaponId) else { return }
             let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
             let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-            let k = camoKey(mode, weaponId, camo.itemId)
+            let military = camos(weaponId: weaponId, mode: mode).filter { $0.group == "military" }
+            let index = military.firstIndex { $0.itemId == camo.itemId } ?? 0
             // A level change checks its own milestones, in every mode.
             if wasDone {
-                completed.remove(k)
+                // This one and every one after it, as lowering the level would.
+                for later in military[index...] { completed.remove(camoKey(mode, weaponId, later.itemId)) }
                 if hasReached(level, weaponId: weaponId) { applyLevel(level - 1, for: weapon) }
             } else if !quickTick {
                 applyLevel(level, for: weapon)
             } else {
-                completed.insert(k)
+                for earlier in military[...index] { completed.insert(camoKey(mode, weaponId, earlier.itemId)) }
                 checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
             }
             saveProgress()
@@ -326,17 +357,17 @@ final class TrackerViewModel: ObservableObject {
     /// normal levels, so a prestiged weapon has passed every one of them
     /// even though its level has reset.
     func isCamoAvailable(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
-        if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
+        if quickTick || isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
         // Always tappable: a tap sets the weapon level.
         if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil { return true }
         // Specials open at their own level; with `specialsAfterMilitary`
         // they also wait for every Military camo.
         if camo.group == "special" {
             if specialsWaitForMilitary(mode: mode), !allMilitaryComplete(mode: mode, weaponId: weaponId) { return false }
-            return quickTick || camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
+            return camo.unlockLevel.map { hasReached($0, weaponId: weaponId) } ?? true
         }
         if let unlockLevel = camo.unlockLevel {
-            return quickTick || hasReached(unlockLevel, weaponId: weaponId)
+            return hasReached(unlockLevel, weaponId: weaponId)
         }
         let siblings = camos(weaponId: weaponId, mode: mode)
         guard let index = siblings.firstIndex(where: { $0.itemId == camo.itemId }), index > 0 else { return true }
@@ -522,7 +553,7 @@ final class TrackerViewModel: ObservableObject {
     /// Open once this weapon has the step before (its camo list for Gold)
     /// and the gate's wider condition holds. Earned stays open.
     func isCompletionistAvailable(mode: String, weaponId: Int, step: Int) -> Bool {
-        if isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) { return true }
+        if quickTick || isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) { return true }
         guard hasPrerequisite(mode: mode, weaponId: weaponId, step: step) else { return false }
         switch completionistGate(mode: mode, step: step) {
         case .weapon:
@@ -551,13 +582,9 @@ final class TrackerViewModel: ObservableObject {
     func toggleCompletionist(mode: String, weaponId: Int, step: Int) {
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
-        let key = completionistKey(mode, weaponId, step)
-        if let requirement = completionistRequirement(mode: mode, weaponId: weaponId, step: step) {
-            amounts[key] = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) ? 0 : requirement.amount
-        } else if completed.contains(key) {
-            completed.remove(key)
-        } else {
-            completed.insert(key)
+        for each in run(step, through: Self.completionistStepCount, done: !wasDone) {
+            mark(completionistKey(mode, weaponId, each),
+                 requirement: completionistRequirement(mode: mode, weaponId: weaponId, step: each), done: !wasDone)
         }
         saveProgress()
         objectWillChange.send()
@@ -808,7 +835,7 @@ final class TrackerViewModel: ObservableObject {
     /// weapons have the last Completionist camo.
     func isModeMasteryAvailable(mode: String, tier: Int) -> Bool {
         guard masteryKind(mode: mode, tier: tier) == .mode else { return false }
-        if isModeMasteryComplete(mode: mode, tier: tier) { return true }
+        if quickTick || isModeMasteryComplete(mode: mode, tier: tier) { return true }
         guard tier == 1 || isMasteryAchieved(mode: mode, tier: tier - 1) else { return false }
         return lastCompletionistCount(mode: mode) >= modeMasteryWeaponsNeeded(mode: mode, tier: tier)
     }
@@ -831,13 +858,9 @@ final class TrackerViewModel: ObservableObject {
         guard !modeMasteryCountsItself(mode: mode, tier: tier) else { return }
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isModeMasteryComplete(mode: mode, tier: tier)
-        let key = modeMasteryKey(mode, tier)
-        if let requirement = modeMasteryRequirement(mode: mode, tier: tier) {
-            amounts[key] = isModeMasteryComplete(mode: mode, tier: tier) ? 0 : requirement.amount
-        } else if completed.contains(key) {
-            completed.remove(key)
-        } else {
-            completed.insert(key)
+        for each in run(tier - 1, through: 3, done: !wasDone).map({ $0 + 1 })
+        where masteryKind(mode: mode, tier: each) == .mode && !modeMasteryCountsItself(mode: mode, tier: each) {
+            mark(modeMasteryKey(mode, each), requirement: modeMasteryRequirement(mode: mode, tier: each), done: !wasDone)
         }
         saveProgress()
         objectWillChange.send()
@@ -897,7 +920,7 @@ final class TrackerViewModel: ObservableObject {
 
     func isWeaponMasteryAvailable(mode: String, weaponId: Int, tier: Int) -> Bool {
         guard masteryKind(mode: mode, tier: tier) == .challenge else { return false }
-        if isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) { return true }
+        if quickTick || isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) { return true }
         guard hasMasteryPrerequisite(mode: mode, weaponId: weaponId, tier: tier) else { return false }
         switch masteryGate(mode: mode, tier: tier) {
         case .weapon:
@@ -926,13 +949,10 @@ final class TrackerViewModel: ObservableObject {
     func toggleWeaponMastery(mode: String, weaponId: Int, tier: Int) {
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier)
-        let key = masteryKey(mode, weaponId, tier)
-        if let requirement = masteryRequirement(mode: mode, weaponId: weaponId, tier: tier) {
-            amounts[key] = isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) ? 0 : requirement.amount
-        } else if completed.contains(key) {
-            completed.remove(key)
-        } else {
-            completed.insert(key)
+        for each in run(tier - 1, through: 3, done: !wasDone).map({ $0 + 1 })
+        where masteryKind(mode: mode, tier: each) == .challenge {
+            mark(masteryKey(mode, weaponId, each),
+                 requirement: masteryRequirement(mode: mode, weaponId: weaponId, tier: each), done: !wasDone)
         }
         saveProgress()
         objectWillChange.send()

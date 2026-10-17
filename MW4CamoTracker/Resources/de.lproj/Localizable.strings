@@ -49,10 +49,10 @@
 "mw4.onboarding.tracking.title" = "Dein Weg, dein Fortschritt";
 "mw4.onboarding.tracking.full.title" = "Vollständig verfolgen";
 "mw4.onboarding.tracking.full.body" = "Halte Waffenstufen fest und zähle jeden Abschuss. Militärtarnungen haken sich beim Aufleveln selbst ab, und eine Stufe gilt in jedem Modus.";
-"mw4.onboarding.tracking.quick.body" = "Hake einfach ab, was du geschafft hast. Keine Stufen, kein Zählen: jede Tarnung ist ein Tipp.";
+"mw4.onboarding.tracking.quick.body" = "Hake einfach ab, was du geschafft hast. Keine Stufen, kein Zählen, keine Sperren: tippe auf die höchste Tarnung, die du hast, und alle davor werden mit abgehakt.";
 "mw4.onboarding.tracking.footer" = "Jederzeit in Anpassen änderbar. Beim Wechseln geht nichts verloren.";
 "mw4.onboarding.mark.quick_title" = "Ein Tipp pro Tarnung";
-"mw4.onboarding.mark.quick_hint" = "Oder tippe irgendwo auf eine Karte. Kein Zählen nötig.";
+"mw4.onboarding.mark.quick_hint" = "Tippe auf die höchste, die du hast, und die davor werden mit abgehakt. Kein Zählen nötig.";
 "mw4.onboarding.mark.demo_challenge" = "Erziele %d Abschüsse mit dieser Waffe.";
 "mw4.onboarding.suggested.demo" = "1 Tarnung bis Gold";
 "mw4.onboarding.yours.title" = "Mach sie zu deiner";
@@ -151,7 +151,7 @@
 "mw4.ui.customise.footer" = "Zum Umordnen ziehen, Ungenutztes ausschalten. Das Layout gilt für jeden Modus. Waffen bleiben immer sichtbar.";
 "mw4.ui.customise.reset" = "Zurücksetzen";
 "mw4.ui.customise.locked_title" = "Herausforderungen gesperrter Tarnungen zeigen";
-"mw4.ui.customise.locked_footer" = "Eine gesperrte Tarnung zeigt ihre Herausforderung statt ihrer Freischaltbedingung. Das Schloss bleibt sichtbar.";
+"mw4.ui.customise.locked_footer" = "Eine gesperrte Tarnung zeigt ihre Herausforderung und zusätzlich, wie sie freigeschaltet wird.";
 "mw4.ui.tracking" = "Fortschritt";
 "mw4.ui.quick_tick.title" = "Schnell abhaken";
-"mw4.ui.quick_tick.footer" = "Hake ab, was du geschafft hast, ohne Waffenstufen oder Abschüsse zu zählen. Jede Tarnung ist ein Tipp, nichts wartet auf eine Stufe. Jederzeit zurückschaltbar, nichts geht verloren.";
+"mw4.ui.quick_tick.footer" = "Hake ab, was du geschafft hast, ohne Waffenstufen oder Abschüsse zu zählen. Jede Tarnung ist ein Tipp, nichts ist gesperrt, und eine abzuhaken hakt alle davor mit ab. Jederzeit zurückschaltbar, nichts geht verloren.";

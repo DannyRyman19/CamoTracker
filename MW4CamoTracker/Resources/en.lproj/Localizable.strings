@@ -49,10 +49,10 @@
 "mw4.onboarding.tracking.title" = "Track it your way";
 "mw4.onboarding.tracking.full.title" = "Full tracking";
 "mw4.onboarding.tracking.full.body" = "Keep weapon levels and count every kill. Military camos tick themselves as you level up, and one level counts in every mode.";
-"mw4.onboarding.tracking.quick.body" = "Just tick what you've done. No levels, no counting: every camo is one tap.";
+"mw4.onboarding.tracking.quick.body" = "Just tick what you've done. No levels, no counting, no locks: tap the highest camo you have and everything before it ticks too.";
 "mw4.onboarding.tracking.footer" = "Change it any time in Customise. Nothing is lost when you switch.";
 "mw4.onboarding.mark.quick_title" = "One tap per camo";
-"mw4.onboarding.mark.quick_hint" = "Or tap anywhere on a card. No counting needed.";
+"mw4.onboarding.mark.quick_hint" = "Tap the highest one you have and the ones before it tick too. No counting needed.";
 "mw4.onboarding.mark.demo_challenge" = "Get %d kills with this weapon.";
 "mw4.onboarding.suggested.demo" = "1 camo from Gold";
 "mw4.onboarding.yours.title" = "Make it yours";
@@ -151,7 +151,7 @@
 "mw4.ui.customise.footer" = "Drag to reorder, switch off what you don't use. The same layout applies on every mode tab. Weapons always stays.";
 "mw4.ui.customise.reset" = "Reset to default";
 "mw4.ui.customise.locked_title" = "Show challenges on locked camos";
-"mw4.ui.customise.locked_footer" = "A locked camo shows its challenge instead of what unlocks it. The lock icon stays.";
+"mw4.ui.customise.locked_footer" = "A locked camo shows its challenge as well as what unlocks it.";
 "mw4.ui.tracking" = "Tracking";
 "mw4.ui.quick_tick.title" = "Quick tick";
-"mw4.ui.quick_tick.footer" = "Tick off what you've done without keeping weapon levels or counting kills. Every camo is one tap and nothing waits for a level. Switch back any time; nothing is lost.";
+"mw4.ui.quick_tick.footer" = "Tick off what you've done without keeping weapon levels or counting kills. Every camo is one tap, nothing is locked, and ticking one ticks everything before it. Switch back any time; nothing is lost.";

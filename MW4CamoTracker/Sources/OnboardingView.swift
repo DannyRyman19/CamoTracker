@@ -221,9 +221,17 @@ private struct WelcomePage: View {
 private struct MarkProgressPage: View {
     private let demoNames = ["Smoke", "Stormwave"]
     private let demoRequired = [10, 10]
-    /// The style picked on the page before: in quick tick every card is one
-    /// tap, so the second hint says that instead of the counter.
+    /// The style picked on the page before. In quick tick the demo is the
+    /// HAN 86's last two Military camos from the real data, where ticking
+    /// the second ticks the first too, as it does in the app.
     @AppStorage(TrackerViewModel.quickTickKey) private var quickTick = false
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var quickDemo: [ChallengeItem] {
+        let military = viewModel.camos(weaponId: 0, mode: AppMode.multiplayer.rawValue).filter { $0.group == "military" }
+        return military.count >= 2 ? Array(military.suffix(2)) : []
+    }
+    private var showsQuickDemo: Bool { quickTick && quickDemo.count == 2 }
 
     @State private var amounts = [10, 6]
     @State private var showCelebration = false
@@ -262,7 +270,38 @@ private struct MarkProgressPage: View {
         .borderedCard()
     }
 
-    private func demoRow(index: Int) -> some View {
+    @ViewBuilder private func demoRow(index: Int) -> some View {
+        if showsQuickDemo {
+            quickRow(index: index)
+        } else {
+            countedRow(index: index)
+        }
+    }
+
+    /// Quick tick: plain ticks, the second taking the first with it.
+    private func quickRow(index: Int) -> some View {
+        let camo = quickDemo[index]
+        let done = amounts[index] >= demoRequired[index]
+        return ChallengeRow(
+            item: camo,
+            accent: .accentMultiplayer,
+            amount: amounts[index],
+            isDone: done,
+            detail: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_reach".localized(), $0) },
+            onToggle: {
+                withAnimation {
+                    // Ticking ticks the ones before; unticking clears the ones after.
+                    let range = done ? Array(index..<amounts.count) : Array(0...index)
+                    for each in range { amounts[each] = done ? 0 : demoRequired[each] }
+                    checkCelebration()
+                }
+                Haptics.change(wasDone: done, isDone: !done)
+            },
+            onSetAmount: { _ in }
+        )
+    }
+
+    private func countedRow(index: Int) -> some View {
         ChallengeRow(
             item: ChallengeItem(
                 itemId: index,

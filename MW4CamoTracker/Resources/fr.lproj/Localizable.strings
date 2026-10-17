@@ -49,10 +49,10 @@
 "mw4.onboarding.tracking.title" = "Suivez à votre façon";
 "mw4.onboarding.tracking.full.title" = "Suivi complet";
 "mw4.onboarding.tracking.full.body" = "Suivez le niveau des armes et comptez chaque élimination. Les camouflages militaires se cochent seuls en montant de niveau, et un niveau compte dans tous les modes.";
-"mw4.onboarding.tracking.quick.body" = "Cochez simplement ce que vous avez fait. Pas de niveaux, pas de comptage : chaque camouflage se coche d'un geste.";
+"mw4.onboarding.tracking.quick.body" = "Cochez simplement ce que vous avez fait. Pas de niveaux, pas de comptage, pas de verrous : touchez le camouflage le plus élevé que vous avez et tous ceux d'avant se cochent aussi.";
 "mw4.onboarding.tracking.footer" = "Modifiable à tout moment dans Personnaliser. Rien n'est perdu en changeant.";
 "mw4.onboarding.mark.quick_title" = "Un geste par camouflage";
-"mw4.onboarding.mark.quick_hint" = "Ou touchez n'importe où sur une carte. Pas besoin de compter.";
+"mw4.onboarding.mark.quick_hint" = "Touchez le plus élevé que vous avez et ceux d'avant se cochent aussi. Pas besoin de compter.";
 "mw4.onboarding.mark.demo_challenge" = "Obtenez %d éliminations avec cette arme.";
 "mw4.onboarding.suggested.demo" = "À 1 camouflage de l'Or";
 "mw4.onboarding.yours.title" = "À votre image";
@@ -151,7 +151,7 @@
 "mw4.ui.customise.footer" = "Faites glisser pour réorganiser, désactivez ce que vous n'utilisez pas. La même disposition s'applique à chaque mode. Les armes restent toujours affichées.";
 "mw4.ui.customise.reset" = "Rétablir par défaut";
 "mw4.ui.customise.locked_title" = "Afficher les défis des camouflages verrouillés";
-"mw4.ui.customise.locked_footer" = "Un camouflage verrouillé affiche son défi au lieu de sa condition de déblocage. Le cadenas reste affiché.";
+"mw4.ui.customise.locked_footer" = "Un camouflage verrouillé affiche son défi ainsi que sa condition de déblocage.";
 "mw4.ui.tracking" = "Suivi";
 "mw4.ui.quick_tick.title" = "Coche rapide";
-"mw4.ui.quick_tick.footer" = "Cochez ce que vous avez fait sans suivre le niveau des armes ni compter les éliminations. Chaque camouflage se coche d'un geste et rien n'attend un niveau. Revenez en arrière quand vous voulez, rien n'est perdu.";
+"mw4.ui.quick_tick.footer" = "Cochez ce que vous avez fait sans suivre le niveau des armes ni compter les éliminations. Chaque camouflage se coche d'un geste, rien n'est verrouillé, et cocher un camouflage coche tous ceux d'avant. Revenez en arrière quand vous voulez, rien n'est perdu.";

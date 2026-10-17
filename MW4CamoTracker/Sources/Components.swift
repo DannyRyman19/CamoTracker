@@ -612,8 +612,8 @@ struct ChallengeRow: View {
 
     @State private var showAmountEntry = false
     @State private var amountText = ""
-    /// Set in Customise: a locked camo shows its challenge rather than what
-    /// unlocks it (the lock glyph still says it's shut).
+    /// Set in Customise: a locked camo shows its challenge as well as what
+    /// unlocks it, rather than only what unlocks it.
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
     static let showLockedKey = "mw4_show_locked_challenges"
     /// Quick tick: every challenge is one tap, no counter.
@@ -646,11 +646,25 @@ struct ChallengeRow: View {
                         .foregroundStyle(isAvailable ? Color.appInk : Color.appInkMuted)
                 }
                 if let requirement = item.requirement {
-                    Text(isAvailable || showLockedChallenges
-                         ? requirement.description.resolved()
-                         : (lockedReason ?? "mw4.ui.locked".localized()))
-                        .font(.system(size: 13))
-                        .foregroundStyle(Color.appInkMuted)
+                    if isAvailable || showLockedChallenges {
+                        Text(requirement.description.resolved())
+                            .font(.system(size: 13))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                    if !isAvailable {
+                        // With the challenge shown too, what unlocks it sits
+                        // under it with a small lock.
+                        Group {
+                            if showLockedChallenges {
+                                Text("\(Image(systemName: "lock.fill")) \(lockedReason ?? "mw4.ui.locked".localized())")
+                                    .font(.system(size: 11.5))
+                            } else {
+                                Text(lockedReason ?? "mw4.ui.locked".localized())
+                                    .font(.system(size: 13))
+                            }
+                        }
+                        .foregroundStyle(Color.appInkMuted.opacity(showLockedChallenges ? 0.75 : 1))
+                    }
                 } else if let line = isAvailable ? detail : lockedReason {
                     // No challenge to describe: say what opens it while
                     // locked, and how it was earned once open.
