@@ -489,7 +489,7 @@ private struct FinalCamoRow: View {
 /// One of the mode's three Mastery camos: earned once enough weapons have
 /// the final Completionist camo. Mode-wide, so it reads the same on every
 /// weapon in the mode.
-private struct MasteryModeRow: View {
+struct MasteryModeRow: View {
     let mode: AppMode
     let tier: Int
     @EnvironmentObject private var viewModel: TrackerViewModel
@@ -500,8 +500,41 @@ private struct MasteryModeRow: View {
     }
 
     var body: some View {
+        if viewModel.masteryIsModeWide(mode: mode.rawValue) {
+            modeWideRow
+        } else {
+            countRow
+        }
+    }
+
+    /// One challenge for the whole mode, counted with any weapon.
+    private var modeWideRow: some View {
+        let tiers = mode.masteryCamos
+        let all = [tiers.tier1, tiers.tier2, tiers.tier3]
+        let item = ChallengeItem(itemId: -(20 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
+                                 tier: nil, unlockLevel: nil,
+                                 requirement: viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier),
+                                 children: [])
+        let gate = viewModel.modeMasteryGateProgress(mode: mode.rawValue)
+        let locked = tier == 1
+            ? String(format: "mw4.ui.completionist.locked_mode".localized(), mode.lastCompletionist.name, gate.total, gate.done)
+            : String(format: "mw4.ui.mastery.locked_previous_mode".localized(), all[tier - 2].name)
+        return ChallengeRow(
+            item: item,
+            accent: camo.color,
+            amount: viewModel.modeMasteryAmount(mode: mode.rawValue, tier: tier),
+            isDone: viewModel.isModeMasteryComplete(mode: mode.rawValue, tier: tier),
+            isAvailable: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier),
+            lockedReason: locked,
+            titleGradient: camo.gradient,
+            onToggle: { viewModel.toggleModeMastery(mode: mode.rawValue, tier: tier) },
+            onSetAmount: { viewModel.setModeMasteryAmount(mode: mode.rawValue, tier: tier, amount: $0) }
+        )
+    }
+
+    private var countRow: some View {
         let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
-        StatusRow(
+        return StatusRow(
             name: camo.name,
             achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
             color: camo.color,

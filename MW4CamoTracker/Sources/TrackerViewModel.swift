@@ -680,7 +680,68 @@ final class TrackerViewModel: ObservableObject {
     /// Count Mastery: weapons with the last Completionist camo out of the
     /// tier's count. Challenge Mastery: weapons with this tier out of the
     /// launch roster.
+    // MARK: - Mode-wide Mastery challenges
+
+    /// Mastery as three challenges for the whole mode (`unlock` "mode" with
+    /// the tiers' requirements set): any weapon counts toward them. Tier 1
+    /// opens once every weapon has the last Completionist camo (Divergence
+    /// on all 33), each later tier once the one before is done.
+    func masteryIsModeWide(mode: String) -> Bool {
+        MasteryOverrides.byMode[mode]?.unlock == "mode" && masteryTierConfig(mode: mode, tier: 1)?.requirement != nil
+    }
+
+    /// Mode-wide progress is kept under this stand-in weapon id.
+    private static let anyWeapon = -1
+
+    func modeMasteryRequirement(mode: String, tier: Int) -> Requirement? {
+        masteryRequirement(mode: mode, weaponId: Self.anyWeapon, tier: tier)
+    }
+
+    func modeMasteryAmount(mode: String, tier: Int) -> Int {
+        min(amounts[masteryKey(mode, Self.anyWeapon, tier)] ?? 0, modeMasteryRequirement(mode: mode, tier: tier)?.amount ?? .max)
+    }
+
+    func isModeMasteryComplete(mode: String, tier: Int) -> Bool {
+        let key = masteryKey(mode, Self.anyWeapon, tier)
+        guard let requirement = modeMasteryRequirement(mode: mode, tier: tier) else { return completed.contains(key) }
+        return (amounts[key] ?? 0) >= requirement.amount
+    }
+
+    func isModeMasteryAvailable(mode: String, tier: Int) -> Bool {
+        if isModeMasteryComplete(mode: mode, tier: tier) { return true }
+        return tier == 1 ? lastCompletionistCount(mode: mode) >= launchRoster : isModeMasteryComplete(mode: mode, tier: tier - 1)
+    }
+
+    /// Weapons with the last Completionist camo, out of the launch roster:
+    /// what tier 1 is waiting on.
+    func modeMasteryGateProgress(mode: String) -> (done: Int, total: Int) {
+        (min(lastCompletionistCount(mode: mode), launchRoster), launchRoster)
+    }
+
+    func setModeMasteryAmount(mode: String, tier: Int, amount newAmount: Int) {
+        let cap = modeMasteryRequirement(mode: mode, tier: tier)?.amount ?? 1
+        amounts[masteryKey(mode, Self.anyWeapon, tier)] = max(0, min(newAmount, cap))
+        saveProgress()
+        objectWillChange.send()
+    }
+
+    func toggleModeMastery(mode: String, tier: Int) {
+        let key = masteryKey(mode, Self.anyWeapon, tier)
+        if let requirement = modeMasteryRequirement(mode: mode, tier: tier) {
+            amounts[key] = isModeMasteryComplete(mode: mode, tier: tier) ? 0 : requirement.amount
+        } else if completed.contains(key) {
+            completed.remove(key)
+        } else {
+            completed.insert(key)
+        }
+        saveProgress()
+        objectWillChange.send()
+    }
+
     func masteryProgress(mode: String, tier: Int) -> (done: Int, total: Int) {
+        if masteryIsModeWide(mode: mode) {
+            return (isModeMasteryComplete(mode: mode, tier: tier) ? 1 : 0, 1)
+        }
         if masteryUsesChallenges(mode: mode) {
             let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
             return (min(done, launchRoster), launchRoster)
