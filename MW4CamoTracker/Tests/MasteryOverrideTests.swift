@@ -493,8 +493,9 @@ struct TrackerViewModelTests {
         // Gold's challenge in Warzone is Multiplayer's.
         #expect(model.completionistRequirement(mode: "warzone", weaponId: id, step: 0)?.amount
                 == model.completionistRequirement(mode: mp, weaponId: id, step: 0)?.amount)
-        // DMZ still has its own.
-        #expect(model.isCompletionistComplete(mode: "dmz", weaponId: id, step: 0) == false)
+        // And in DMZ, which keeps its own track: a camo done in any mode
+        // counts in all of them (see SharedCamoTests)
+        #expect(model.isCompletionistComplete(mode: "dmz", weaponId: id, step: 0))
     }
 
     /// `final.enabled: false`: no final camo, and Mastery counts Harmonic Breaks.

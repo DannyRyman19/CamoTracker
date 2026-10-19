@@ -201,10 +201,30 @@ final class TrackerViewModel: ObservableObject {
         min(amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0, camo.requirement?.amount ?? .max)
     }
 
+    /// MW4 has one camo grind per weapon across modes: a camo finished in
+    /// any mode is unlocked in all of them (the launch blog, 19 Oct 2026).
+    /// Each mode still keeps its own count against its own requirement, so
+    /// this reads every mode's progress as it was saved, including progress
+    /// from before the rule.
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
             return hasReached(level, weaponId: weaponId)
         }
+        return camoTrackModes.contains { other in
+            let own = trackMode(other) == trackMode(mode) ? camo
+                : camos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
+            return own.map { isCamoDone(in: other, weaponId: weaponId, camo: $0) } ?? false
+        }
+    }
+
+    /// Every mode with its own camo track (a mode sharing another's counts
+    /// as that one).
+    private var camoTrackModes: [String] {
+        Array(Set(modes.keys.map(trackMode))).sorted()
+    }
+
+    /// Finished in this mode's own count.
+    private func isCamoDone(in mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         let k = camoKey(mode, weaponId, camo.itemId)
         guard let req = camo.requirement else { return completed.contains(k) }
         return (amounts[k] ?? 0) >= req.amount
@@ -258,14 +278,17 @@ final class TrackerViewModel: ObservableObject {
             return
         }
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
-        let k = camoKey(mode, weaponId, camo.itemId)
-        if let req = camo.requirement {
-            let done = (amounts[k] ?? 0) >= req.amount
-            amounts[k] = done ? 0 : req.amount
-        } else if completed.contains(k) {
-            completed.remove(k)
+        if isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) {
+            // Unticking clears it in every mode, or a finish elsewhere would
+            // keep it ticked here
+            for other in camoTrackModes {
+                let k = camoKey(other, weaponId, camo.itemId)
+                amounts[k] = nil
+                completed.remove(k)
+            }
         } else {
-            completed.insert(k)
+            let k = camoKey(mode, weaponId, camo.itemId)
+            if let req = camo.requirement { amounts[k] = req.amount } else { completed.insert(k) }
         }
         saveProgress()
         objectWillChange.send()
@@ -406,7 +429,13 @@ final class TrackerViewModel: ObservableObject {
             completionistRequirement(mode: mode, weaponId: weaponId, step: step)?.amount ?? .max)
     }
 
+    /// Like camos, Gold, Platinum and Harmonic Break count in every mode
+    /// once done in one ("wholly or partly in Multiplayer or DMZ").
     func isCompletionistComplete(mode: String, weaponId: Int, step: Int) -> Bool {
+        camoTrackModes.contains { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
+    }
+
+    private func isCompletionistDone(in mode: String, weaponId: Int, step: Int) -> Bool {
         let key = completionistKey(mode, weaponId, step)
         guard let requirement = completionistRequirement(mode: mode, weaponId: weaponId, step: step) else {
             return completed.contains(key)
@@ -482,13 +511,19 @@ final class TrackerViewModel: ObservableObject {
 
     func toggleCompletionist(mode: String, weaponId: Int, step: Int) {
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
-        let key = completionistKey(mode, weaponId, step)
-        if let requirement = completionistRequirement(mode: mode, weaponId: weaponId, step: step) {
-            amounts[key] = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) ? 0 : requirement.amount
-        } else if completed.contains(key) {
-            completed.remove(key)
+        if isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) {
+            for other in camoTrackModes {
+                let key = completionistKey(other, weaponId, step)
+                amounts[key] = nil
+                completed.remove(key)
+            }
         } else {
-            completed.insert(key)
+            let key = completionistKey(mode, weaponId, step)
+            if let requirement = completionistRequirement(mode: mode, weaponId: weaponId, step: step) {
+                amounts[key] = requirement.amount
+            } else {
+                completed.insert(key)
+            }
         }
         saveProgress()
         objectWillChange.send()
