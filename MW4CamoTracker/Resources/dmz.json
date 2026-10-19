@@ -1,5 +1,5 @@
 {
-  "version": "0.8.13",
+  "version": "0.8.14",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -18,7 +18,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -34,7 +34,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -50,7 +50,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -66,7 +66,7 @@
           "unlockLevel": 34,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -82,7 +82,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -98,7 +98,7 @@
           "unlockLevel": 50,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -114,7 +114,7 @@
           "unlockLevel": 57,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -130,55 +130,85 @@
           "unlockLevel": 65,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Smoke",
+            "fr": "Smoke",
+            "es": "Smoke",
+            "de": "Smoke",
+            "nl": "Smoke"
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_smoke.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Stormwave",
+            "fr": "Stormwave",
+            "es": "Stormwave",
+            "de": "Stormwave",
+            "nl": "Stormwave"
           },
           "tier": 10,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while using a silencer.",
+              "fr": "Obtenez 125 éliminations d’ennemis avec un silencieux.",
+              "es": "Consigue 125 bajas de enemigos usando un silenciador.",
+              "de": "Erziele 125 Abschüsse gegen Gegner mit Schalldämpfer.",
+              "nl": "Behaal 125 vijandkills met een geluiddemper."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_stormwave.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Red",
+            "fr": "Red",
+            "es": "Red",
+            "de": "Red",
+            "nl": "Red"
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 enemy kills without taking damage, 50 times.",
+              "fr": "Obtenez 3 éliminations d’ennemis sans subir de dégâts, 50 fois.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño, 50 veces.",
+              "de": "Erziele 50-mal 3 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 50 keer 3 vijandkills zonder schade op te lopen."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_red.png",
           "group": "special"
         }
       ]
@@ -199,7 +229,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -215,7 +245,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -231,7 +261,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -247,7 +277,7 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -263,7 +293,7 @@
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -279,7 +309,7 @@
           "unlockLevel": 51,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -295,7 +325,7 @@
           "unlockLevel": 59,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -311,55 +341,55 @@
           "unlockLevel": 64,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Myriad",
+            "fr": "Myriad",
+            "es": "Myriad",
+            "de": "Myriad",
+            "nl": "Myriad"
           },
           "tier": 9,
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_myriad.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Night Ops",
+            "fr": "Night Ops",
+            "es": "Night Ops",
+            "de": "Night Ops",
+            "nl": "Night Ops"
           },
           "tier": 10,
           "unlockLevel": 51,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_night_ops.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Green",
+            "fr": "Green",
+            "es": "Green",
+            "de": "Green",
+            "nl": "Green"
           },
           "tier": 11,
           "unlockLevel": 72,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_green.png",
           "group": "special"
         }
       ]
@@ -380,7 +410,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -396,7 +426,7 @@
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -412,7 +442,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -428,7 +458,7 @@
           "unlockLevel": 32,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -444,7 +474,7 @@
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -460,7 +490,7 @@
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -476,7 +506,7 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -492,55 +522,55 @@
           "unlockLevel": 62,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Ponderosa",
+            "fr": "Ponderosa",
+            "es": "Ponderosa",
+            "de": "Ponderosa",
+            "nl": "Ponderosa"
           },
           "tier": 9,
           "unlockLevel": 23,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_ponderosa.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Red Rain",
+            "fr": "Red Rain",
+            "es": "Red Rain",
+            "de": "Red Rain",
+            "nl": "Red Rain"
           },
           "tier": 10,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_red_rain.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Kitty Kaos",
+            "fr": "Kitty Kaos",
+            "es": "Kitty Kaos",
+            "de": "Kitty Kaos",
+            "nl": "Kitty Kaos"
           },
           "tier": 11,
           "unlockLevel": 68,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_kitty_kaos.png",
           "group": "special"
         }
       ]
@@ -561,7 +591,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -577,7 +607,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -593,7 +623,7 @@
           "unlockLevel": 27,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -609,7 +639,7 @@
           "unlockLevel": 37,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -625,7 +655,7 @@
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -641,7 +671,7 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -657,7 +687,7 @@
           "unlockLevel": 61,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -673,55 +703,55 @@
           "unlockLevel": 67,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Samnim",
+            "fr": "Samnim",
+            "es": "Samnim",
+            "de": "Samnim",
+            "nl": "Samnim"
           },
           "tier": 9,
           "unlockLevel": 24,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_samnim.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Raster Aux",
+            "fr": "Raster Aux",
+            "es": "Raster Aux",
+            "de": "Raster Aux",
+            "nl": "Raster Aux"
           },
           "tier": 10,
           "unlockLevel": 48,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_raster_aux.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Yellow",
+            "fr": "Yellow",
+            "es": "Yellow",
+            "de": "Yellow",
+            "nl": "Yellow"
           },
           "tier": 11,
           "unlockLevel": 71,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_yellow.png",
           "group": "special"
         }
       ]
@@ -742,7 +772,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -758,7 +788,7 @@
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -774,7 +804,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -790,7 +820,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -806,7 +836,7 @@
           "unlockLevel": 43,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -822,7 +852,7 @@
           "unlockLevel": 52,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -838,7 +868,7 @@
           "unlockLevel": 59,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -854,55 +884,55 @@
           "unlockLevel": 66,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Dune Sea",
+            "fr": "Dune Sea",
+            "es": "Dune Sea",
+            "de": "Dune Sea",
+            "nl": "Dune Sea"
           },
           "tier": 9,
           "unlockLevel": 24,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_dune_sea.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Scorch",
+            "fr": "Scorch",
+            "es": "Scorch",
+            "de": "Scorch",
+            "nl": "Scorch"
           },
           "tier": 10,
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_scorch.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Disperse",
+            "fr": "Disperse",
+            "es": "Disperse",
+            "de": "Disperse",
+            "nl": "Disperse"
           },
           "tier": 11,
           "unlockLevel": 72,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_disperse.png",
           "group": "special"
         }
       ]
@@ -923,7 +953,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -939,7 +969,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -955,7 +985,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -971,7 +1001,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -987,7 +1017,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1003,7 +1033,7 @@
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1019,7 +1049,7 @@
           "unlockLevel": 50,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1035,55 +1065,55 @@
           "unlockLevel": 57,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Asphalt",
+            "fr": "Asphalt",
+            "es": "Asphalt",
+            "de": "Asphalt",
+            "nl": "Asphalt"
           },
           "tier": 9,
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_asphalt.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Black Topo",
+            "fr": "Black Topo",
+            "es": "Black Topo",
+            "de": "Black Topo",
+            "nl": "Black Topo"
           },
           "tier": 10,
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_black_topo.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Brown",
+            "fr": "Brown",
+            "es": "Brown",
+            "de": "Brown",
+            "nl": "Brown"
           },
           "tier": 11,
           "unlockLevel": 64,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_brown.png",
           "group": "special"
         }
       ]
@@ -1104,7 +1134,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -1120,7 +1150,7 @@
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -1136,7 +1166,7 @@
           "unlockLevel": 23,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -1152,7 +1182,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -1168,7 +1198,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1184,7 +1214,7 @@
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1200,7 +1230,7 @@
           "unlockLevel": 51,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1216,55 +1246,55 @@
           "unlockLevel": 57,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Blackwell",
+            "fr": "Blackwell",
+            "es": "Blackwell",
+            "de": "Blackwell",
+            "nl": "Blackwell"
           },
           "tier": 9,
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_blackwell.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Iron",
+            "fr": "Iron",
+            "es": "Iron",
+            "de": "Iron",
+            "nl": "Iron"
           },
           "tier": 10,
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_iron.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Currents",
+            "fr": "Currents",
+            "es": "Currents",
+            "de": "Currents",
+            "nl": "Currents"
           },
           "tier": 11,
           "unlockLevel": 62,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_currents.png",
           "group": "special"
         }
       ]
@@ -1285,7 +1315,7 @@
           "unlockLevel": 9,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -1301,7 +1331,7 @@
           "unlockLevel": 15,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -1317,7 +1347,7 @@
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -1333,7 +1363,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -1349,7 +1379,7 @@
           "unlockLevel": 29,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1365,7 +1395,7 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1381,7 +1411,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1397,55 +1427,55 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Sniper Veil",
+            "fr": "Sniper Veil",
+            "es": "Sniper Veil",
+            "de": "Sniper Veil",
+            "nl": "Sniper Veil"
           },
           "tier": 9,
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_sniper_veil.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Carbonated",
+            "fr": "Carbonated",
+            "es": "Carbonated",
+            "de": "Carbonated",
+            "nl": "Carbonated"
           },
           "tier": 10,
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_carbonated.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Lime",
+            "fr": "Lime",
+            "es": "Lime",
+            "de": "Lime",
+            "nl": "Lime"
           },
           "tier": 11,
           "unlockLevel": 53,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_lime.png",
           "group": "special"
         }
       ]
@@ -1466,7 +1496,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -1482,7 +1512,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -1498,7 +1528,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -1514,7 +1544,7 @@
           "unlockLevel": 30,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -1530,7 +1560,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1546,7 +1576,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1562,7 +1592,7 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1578,55 +1608,55 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Struck Oil",
+            "fr": "Struck Oil",
+            "es": "Struck Oil",
+            "de": "Struck Oil",
+            "nl": "Struck Oil"
           },
           "tier": 9,
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_struck_oil.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Brushstroke",
+            "fr": "Brushstroke",
+            "es": "Brushstroke",
+            "de": "Brushstroke",
+            "nl": "Brushstroke"
           },
           "tier": 10,
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_brushstroke.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "White Pine",
+            "fr": "White Pine",
+            "es": "White Pine",
+            "de": "White Pine",
+            "nl": "White Pine"
           },
           "tier": 11,
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_white_pine.png",
           "group": "special"
         }
       ]
@@ -1647,7 +1677,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -1663,7 +1693,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -1679,7 +1709,7 @@
           "unlockLevel": 24,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -1695,7 +1725,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -1711,7 +1741,7 @@
           "unlockLevel": 37,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1727,7 +1757,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1743,7 +1773,7 @@
           "unlockLevel": 48,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1759,55 +1789,55 @@
           "unlockLevel": 53,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Desert Tactics",
+            "fr": "Desert Tactics",
+            "es": "Desert Tactics",
+            "de": "Desert Tactics",
+            "nl": "Desert Tactics"
           },
           "tier": 9,
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_desert_tactics.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Green Tiger",
+            "fr": "Green Tiger",
+            "es": "Green Tiger",
+            "de": "Green Tiger",
+            "nl": "Green Tiger"
           },
           "tier": 10,
           "unlockLevel": 39,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_green_tiger.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Thunderhead",
+            "fr": "Thunderhead",
+            "es": "Thunderhead",
+            "de": "Thunderhead",
+            "nl": "Thunderhead"
           },
           "tier": 11,
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_thunderhead.png",
           "group": "special"
         }
       ]
@@ -1828,7 +1858,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -1844,7 +1874,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -1860,7 +1890,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -1876,7 +1906,7 @@
           "unlockLevel": 34,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -1892,7 +1922,7 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -1908,7 +1938,7 @@
           "unlockLevel": 48,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -1924,7 +1954,7 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -1940,55 +1970,55 @@
           "unlockLevel": 61,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Ash Pine",
+            "fr": "Ash Pine",
+            "es": "Ash Pine",
+            "de": "Ash Pine",
+            "nl": "Ash Pine"
           },
           "tier": 9,
           "unlockLevel": 23,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_ash_pine.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Outcrop",
+            "fr": "Outcrop",
+            "es": "Outcrop",
+            "de": "Outcrop",
+            "nl": "Outcrop"
           },
           "tier": 10,
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_outcrop.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Foxtrail",
+            "fr": "Foxtrail",
+            "es": "Foxtrail",
+            "de": "Foxtrail",
+            "nl": "Foxtrail"
           },
           "tier": 11,
           "unlockLevel": 65,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_foxtrail.png",
           "group": "special"
         }
       ]
@@ -2009,7 +2039,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2025,7 +2055,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2041,7 +2071,7 @@
           "unlockLevel": 29,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2057,7 +2087,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2073,7 +2103,7 @@
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2089,7 +2119,7 @@
           "unlockLevel": 52,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -2105,7 +2135,7 @@
           "unlockLevel": 58,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -2121,55 +2151,55 @@
           "unlockLevel": 69,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Mangrove",
+            "fr": "Mangrove",
+            "es": "Mangrove",
+            "de": "Mangrove",
+            "nl": "Mangrove"
           },
           "tier": 9,
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_mangrove.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Fungal Grid",
+            "fr": "Fungal Grid",
+            "es": "Fungal Grid",
+            "de": "Fungal Grid",
+            "nl": "Fungal Grid"
           },
           "tier": 10,
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_fungal_grid.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "White",
+            "fr": "White",
+            "es": "White",
+            "de": "White",
+            "nl": "White"
           },
           "tier": 11,
           "unlockLevel": 73,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_white.png",
           "group": "special"
         }
       ]
@@ -2190,7 +2220,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2206,7 +2236,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2222,7 +2252,7 @@
           "unlockLevel": 27,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2238,7 +2268,7 @@
           "unlockLevel": 33,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2254,7 +2284,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2270,7 +2300,7 @@
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -2286,7 +2316,7 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -2302,55 +2332,55 @@
           "unlockLevel": 61,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Hibiscus",
+            "fr": "Hibiscus",
+            "es": "Hibiscus",
+            "de": "Hibiscus",
+            "nl": "Hibiscus"
           },
           "tier": 9,
           "unlockLevel": 27,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_hibiscus.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Fire Topo",
+            "fr": "Fire Topo",
+            "es": "Fire Topo",
+            "de": "Fire Topo",
+            "nl": "Fire Topo"
           },
           "tier": 10,
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_fire_topo.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Deep Space",
+            "fr": "Deep Space",
+            "es": "Deep Space",
+            "de": "Deep Space",
+            "nl": "Deep Space"
           },
           "tier": 11,
           "unlockLevel": 70,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_deep_space.png",
           "group": "special"
         }
       ]
@@ -2371,7 +2401,7 @@
           "unlockLevel": 13,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2387,7 +2417,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2403,7 +2433,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2419,7 +2449,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2435,7 +2465,7 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2451,7 +2481,7 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -2467,7 +2497,7 @@
           "unlockLevel": 61,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -2483,55 +2513,55 @@
           "unlockLevel": 69,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Treeline",
+            "fr": "Treeline",
+            "es": "Treeline",
+            "de": "Treeline",
+            "nl": "Treeline"
           },
           "tier": 9,
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_treeline.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Spidersilk",
+            "fr": "Spidersilk",
+            "es": "Spidersilk",
+            "de": "Spidersilk",
+            "nl": "Spidersilk"
           },
           "tier": 10,
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_spidersilk.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Tension",
+            "fr": "Tension",
+            "es": "Tension",
+            "de": "Tension",
+            "nl": "Tension"
           },
           "tier": 11,
           "unlockLevel": 75,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_tension.png",
           "group": "special"
         }
       ]
@@ -2552,7 +2582,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2568,7 +2598,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2584,7 +2614,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2600,7 +2630,7 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2616,7 +2646,7 @@
           "unlockLevel": 43,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2632,7 +2662,7 @@
           "unlockLevel": 52,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -2648,7 +2678,7 @@
           "unlockLevel": 57,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -2664,55 +2694,55 @@
           "unlockLevel": 67,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Anaconda",
+            "fr": "Anaconda",
+            "es": "Anaconda",
+            "de": "Anaconda",
+            "nl": "Anaconda"
           },
           "tier": 9,
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_anaconda.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Ripplewave",
+            "fr": "Ripplewave",
+            "es": "Ripplewave",
+            "de": "Ripplewave",
+            "nl": "Ripplewave"
           },
           "tier": 10,
           "unlockLevel": 52,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_ripplewave.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Sunburn",
+            "fr": "Sunburn",
+            "es": "Sunburn",
+            "de": "Sunburn",
+            "nl": "Sunburn"
           },
           "tier": 11,
           "unlockLevel": 74,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_sunburn.png",
           "group": "special"
         }
       ]
@@ -2733,7 +2763,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2749,7 +2779,7 @@
           "unlockLevel": 14,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2765,7 +2795,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2781,7 +2811,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2797,7 +2827,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2813,7 +2843,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -2829,7 +2859,7 @@
           "unlockLevel": 32,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -2845,55 +2875,55 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Off Grid",
+            "fr": "Off Grid",
+            "es": "Off Grid",
+            "de": "Off Grid",
+            "nl": "Off Grid"
           },
           "tier": 9,
           "unlockLevel": 13,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_off_grid.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Urban Flamingo",
+            "fr": "Urban Flamingo",
+            "es": "Urban Flamingo",
+            "de": "Urban Flamingo",
+            "nl": "Urban Flamingo"
           },
           "tier": 10,
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_urban_flamingo.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Smokescreen",
+            "fr": "Smokescreen",
+            "es": "Smokescreen",
+            "de": "Smokescreen",
+            "nl": "Smokescreen"
           },
           "tier": 11,
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_smokescreen.png",
           "group": "special"
         }
       ]
@@ -2914,7 +2944,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -2930,7 +2960,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -2946,7 +2976,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -2962,7 +2992,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -2978,7 +3008,7 @@
           "unlockLevel": 32,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -2994,7 +3024,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3010,7 +3040,7 @@
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3026,55 +3056,55 @@
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Frosted",
+            "fr": "Frosted",
+            "es": "Frosted",
+            "de": "Frosted",
+            "nl": "Frosted"
           },
           "tier": 9,
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_frosted.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Splatter Ops",
+            "fr": "Splatter Ops",
+            "es": "Splatter Ops",
+            "de": "Splatter Ops",
+            "nl": "Splatter Ops"
           },
           "tier": 10,
           "unlockLevel": 34,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_splatter_ops.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Red Tiger",
+            "fr": "Red Tiger",
+            "es": "Red Tiger",
+            "de": "Red Tiger",
+            "nl": "Red Tiger"
           },
           "tier": 11,
           "unlockLevel": 50,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_red_tiger.png",
           "group": "special"
         }
       ]
@@ -3095,7 +3125,7 @@
           "unlockLevel": 6,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -3111,7 +3141,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -3127,7 +3157,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -3143,7 +3173,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -3159,7 +3189,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -3175,7 +3205,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3191,7 +3221,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3207,55 +3237,55 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Frontier",
+            "fr": "Frontier",
+            "es": "Frontier",
+            "de": "Frontier",
+            "nl": "Frontier"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_frontier.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Sandwash",
+            "fr": "Sandwash",
+            "es": "Sandwash",
+            "de": "Sandwash",
+            "nl": "Sandwash"
           },
           "tier": 10,
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_sandwash.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Digital Fall",
+            "fr": "Digital Fall",
+            "es": "Digital Fall",
+            "de": "Digital Fall",
+            "nl": "Digital Fall"
           },
           "tier": 11,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_digital_fall.png",
           "group": "special"
         }
       ]
@@ -3276,7 +3306,7 @@
           "unlockLevel": 6,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -3292,7 +3322,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -3308,7 +3338,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -3324,7 +3354,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -3340,7 +3370,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -3356,7 +3386,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3372,7 +3402,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3388,55 +3418,55 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Raster Lite",
+            "fr": "Raster Lite",
+            "es": "Raster Lite",
+            "de": "Raster Lite",
+            "nl": "Raster Lite"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_raster_lite.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Stockpile",
+            "fr": "Stockpile",
+            "es": "Stockpile",
+            "de": "Stockpile",
+            "nl": "Stockpile"
           },
           "tier": 10,
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_stockpile.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Deathbed",
+            "fr": "Deathbed",
+            "es": "Deathbed",
+            "de": "Deathbed",
+            "nl": "Deathbed"
           },
           "tier": 11,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_deathbed.png",
           "group": "special"
         }
       ]
@@ -3457,7 +3487,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -3473,7 +3503,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -3489,7 +3519,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -3505,7 +3535,7 @@
           "unlockLevel": 34,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -3521,7 +3551,7 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -3537,7 +3567,7 @@
           "unlockLevel": 48,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3553,7 +3583,7 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3569,55 +3599,55 @@
           "unlockLevel": 62,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Splinter Rock",
+            "fr": "Splinter Rock",
+            "es": "Splinter Rock",
+            "de": "Splinter Rock",
+            "nl": "Splinter Rock"
           },
           "tier": 9,
           "unlockLevel": 23,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_splinter_rock.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Sunset Tropic",
+            "fr": "Sunset Tropic",
+            "es": "Sunset Tropic",
+            "de": "Sunset Tropic",
+            "nl": "Sunset Tropic"
           },
           "tier": 10,
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_sunset_tropic.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Cyan",
+            "fr": "Cyan",
+            "es": "Cyan",
+            "de": "Cyan",
+            "nl": "Cyan"
           },
           "tier": 11,
           "unlockLevel": 69,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_cyan.png",
           "group": "special"
         }
       ]
@@ -3638,7 +3668,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -3654,7 +3684,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -3670,7 +3700,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -3686,7 +3716,7 @@
           "unlockLevel": 33,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -3702,7 +3732,7 @@
           "unlockLevel": 39,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -3718,7 +3748,7 @@
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3734,7 +3764,7 @@
           "unlockLevel": 53,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3750,55 +3780,55 @@
           "unlockLevel": 59,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Dark Moss",
+            "fr": "Dark Moss",
+            "es": "Dark Moss",
+            "de": "Dark Moss",
+            "nl": "Dark Moss"
           },
           "tier": 9,
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_dark_moss.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Shale",
+            "fr": "Shale",
+            "es": "Shale",
+            "de": "Shale",
+            "nl": "Shale"
           },
           "tier": 10,
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_shale.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Hot Rod",
+            "fr": "Hot Rod",
+            "es": "Hot Rod",
+            "de": "Hot Rod",
+            "nl": "Hot Rod"
           },
           "tier": 11,
           "unlockLevel": 65,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_hot_rod.png",
           "group": "special"
         }
       ]
@@ -3819,7 +3849,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -3835,7 +3865,7 @@
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -3851,7 +3881,7 @@
           "unlockLevel": 24,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -3867,7 +3897,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -3883,7 +3913,7 @@
           "unlockLevel": 39,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -3899,7 +3929,7 @@
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -3915,7 +3945,7 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -3931,55 +3961,55 @@
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Oni",
+            "fr": "Oni",
+            "es": "Oni",
+            "de": "Oni",
+            "nl": "Oni"
           },
           "tier": 9,
           "unlockLevel": 24,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_oni.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Urban Smoke",
+            "fr": "Urban Smoke",
+            "es": "Urban Smoke",
+            "de": "Urban Smoke",
+            "nl": "Urban Smoke"
           },
           "tier": 10,
           "unlockLevel": 45,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_urban_smoke.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Optical Reverb",
+            "fr": "Optical Reverb",
+            "es": "Optical Reverb",
+            "de": "Optical Reverb",
+            "nl": "Optical Reverb"
           },
           "tier": 11,
           "unlockLevel": 67,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_optical_reverb.png",
           "group": "special"
         }
       ]
@@ -4000,7 +4030,7 @@
           "unlockLevel": 9,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4016,7 +4046,7 @@
           "unlockLevel": 15,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4032,7 +4062,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4048,7 +4078,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4064,7 +4094,7 @@
           "unlockLevel": 33,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4080,7 +4110,7 @@
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -4096,7 +4126,7 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -4112,55 +4142,55 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Jungle Shadow",
+            "fr": "Jungle Shadow",
+            "es": "Jungle Shadow",
+            "de": "Jungle Shadow",
+            "nl": "Jungle Shadow"
           },
           "tier": 9,
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_jungle_shadow.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Ghast",
+            "fr": "Ghast",
+            "es": "Ghast",
+            "de": "Ghast",
+            "nl": "Ghast"
           },
           "tier": 10,
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_ghast.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Gunmetal",
+            "fr": "Gunmetal",
+            "es": "Gunmetal",
+            "de": "Gunmetal",
+            "nl": "Gunmetal"
           },
           "tier": 11,
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_gunmetal.png",
           "group": "special"
         }
       ]
@@ -4181,7 +4211,7 @@
           "unlockLevel": 12,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4197,7 +4227,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4213,7 +4243,7 @@
           "unlockLevel": 23,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4229,7 +4259,7 @@
           "unlockLevel": 29,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4245,7 +4275,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4261,7 +4291,7 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -4277,7 +4307,7 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -4293,55 +4323,55 @@
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Stellation",
+            "fr": "Stellation",
+            "es": "Stellation",
+            "de": "Stellation",
+            "nl": "Stellation"
           },
           "tier": 9,
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_stellation.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Rattlesnake",
+            "fr": "Rattlesnake",
+            "es": "Rattlesnake",
+            "de": "Rattlesnake",
+            "nl": "Rattlesnake"
           },
           "tier": 10,
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_rattlesnake.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Dark Tan",
+            "fr": "Dark Tan",
+            "es": "Dark Tan",
+            "de": "Dark Tan",
+            "nl": "Dark Tan"
           },
           "tier": 11,
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_dark_tan.png",
           "group": "special"
         }
       ]
@@ -4362,7 +4392,7 @@
           "unlockLevel": 13,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4378,7 +4408,7 @@
           "unlockLevel": 19,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4394,7 +4424,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4410,7 +4440,7 @@
           "unlockLevel": 30,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4426,7 +4456,7 @@
           "unlockLevel": 37,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4442,7 +4472,7 @@
           "unlockLevel": 43,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -4458,7 +4488,7 @@
           "unlockLevel": 49,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -4474,55 +4504,55 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Redshift",
+            "fr": "Redshift",
+            "es": "Redshift",
+            "de": "Redshift",
+            "nl": "Redshift"
           },
           "tier": 9,
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_redshift.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Corrupted Clay",
+            "fr": "Corrupted Clay",
+            "es": "Corrupted Clay",
+            "de": "Corrupted Clay",
+            "nl": "Corrupted Clay"
           },
           "tier": 10,
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_corrupted_clay.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Magma Ire",
+            "fr": "Magma Ire",
+            "es": "Magma Ire",
+            "de": "Magma Ire",
+            "nl": "Magma Ire"
           },
           "tier": 11,
           "unlockLevel": 60,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_magma_ire.png",
           "group": "special"
         }
       ]
@@ -4543,7 +4573,7 @@
           "unlockLevel": 9,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4559,7 +4589,7 @@
           "unlockLevel": 15,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4575,7 +4605,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4591,7 +4621,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4607,7 +4637,7 @@
           "unlockLevel": 33,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4623,7 +4653,7 @@
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -4639,7 +4669,7 @@
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -4655,55 +4685,55 @@
           "unlockLevel": 51,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Phantom Flux",
+            "fr": "Phantom Flux",
+            "es": "Phantom Flux",
+            "de": "Phantom Flux",
+            "nl": "Phantom Flux"
           },
           "tier": 9,
           "unlockLevel": 15,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_phantom_flux.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Mineral",
+            "fr": "Mineral",
+            "es": "Mineral",
+            "de": "Mineral",
+            "nl": "Mineral"
           },
           "tier": 10,
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_mineral.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Tiger Swipe",
+            "fr": "Tiger Swipe",
+            "es": "Tiger Swipe",
+            "de": "Tiger Swipe",
+            "nl": "Tiger Swipe"
           },
           "tier": 11,
           "unlockLevel": 56,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_tiger_swipe.png",
           "group": "special"
         }
       ]
@@ -4724,7 +4754,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4740,7 +4770,7 @@
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4756,7 +4786,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4772,7 +4802,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4788,7 +4818,7 @@
           "unlockLevel": 38,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4804,7 +4834,7 @@
           "unlockLevel": 47,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -4820,7 +4850,7 @@
           "unlockLevel": 55,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -4836,55 +4866,55 @@
           "unlockLevel": 61,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Ice Sheer",
+            "fr": "Ice Sheer",
+            "es": "Ice Sheer",
+            "de": "Ice Sheer",
+            "nl": "Ice Sheer"
           },
           "tier": 9,
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_ice_sheer.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Brown",
+            "fr": "Brown",
+            "es": "Brown",
+            "de": "Brown",
+            "nl": "Brown"
           },
           "tier": 10,
           "unlockLevel": null,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_brown.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Gunmetal",
+            "fr": "Gunmetal",
+            "es": "Gunmetal",
+            "de": "Gunmetal",
+            "nl": "Gunmetal"
           },
           "tier": 11,
           "unlockLevel": null,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_gunmetal.png",
           "group": "special"
         }
       ]
@@ -4905,7 +4935,7 @@
           "unlockLevel": 10,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -4921,7 +4951,7 @@
           "unlockLevel": 15,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -4937,7 +4967,7 @@
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -4953,7 +4983,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -4969,7 +4999,7 @@
           "unlockLevel": 32,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -4985,7 +5015,7 @@
           "unlockLevel": 37,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5001,7 +5031,7 @@
           "unlockLevel": 42,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5017,55 +5047,55 @@
           "unlockLevel": 48,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Dry Brush",
+            "fr": "Dry Brush",
+            "es": "Dry Brush",
+            "de": "Dry Brush",
+            "nl": "Dry Brush"
           },
           "tier": 9,
           "unlockLevel": 20,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dry_brush.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Backcountry",
+            "fr": "Backcountry",
+            "es": "Backcountry",
+            "de": "Backcountry",
+            "nl": "Backcountry"
           },
           "tier": 10,
           "unlockLevel": 37,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_backcountry.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Dread Plague",
+            "fr": "Dread Plague",
+            "es": "Dread Plague",
+            "de": "Dread Plague",
+            "nl": "Dread Plague"
           },
           "tier": 11,
           "unlockLevel": 54,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dread_plague.png",
           "group": "special"
         }
       ]
@@ -5086,7 +5116,7 @@
           "unlockLevel": 9,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -5102,7 +5132,7 @@
           "unlockLevel": 13,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -5118,7 +5148,7 @@
           "unlockLevel": 17,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -5134,7 +5164,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -5150,7 +5180,7 @@
           "unlockLevel": 25,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -5166,7 +5196,7 @@
           "unlockLevel": 28,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5182,7 +5212,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5198,55 +5228,85 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Autumn",
+            "fr": "Autumn",
+            "es": "Autumn",
+            "de": "Autumn",
+            "nl": "Autumn"
           },
           "tier": 9,
           "unlockLevel": 13,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while aiming down sights.",
+              "fr": "Obtenez 75 éliminations d’ennemis en visant.",
+              "es": "Consigue 75 bajas de enemigos apuntando.",
+              "de": "Erziele 75 Abschüsse gegen Gegner beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 75 vijandkills terwijl je richt."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_autumn.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Snakeskin",
+            "fr": "Snakeskin",
+            "es": "Snakeskin",
+            "de": "Snakeskin",
+            "nl": "Snakeskin"
           },
           "tier": 10,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 enemy kills without taking damage, 15 times.",
+              "fr": "Obtenez 3 éliminations d’ennemis sans subir de dégâts, 15 fois.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño, 15 veces.",
+              "de": "Erziele 15-mal 3 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 15 keer 3 vijandkills zonder schade op te lopen."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_snakeskin.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Space Time",
+            "fr": "Space Time",
+            "es": "Space Time",
+            "de": "Space Time",
+            "nl": "Space Time"
           },
           "tier": 11,
           "unlockLevel": 38,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while using Akimbo.",
+              "fr": "Obtenez 125 éliminations d’ennemis en Akimbo.",
+              "es": "Consigue 125 bajas de enemigos usando Akimbo.",
+              "de": "Erziele 125 Abschüsse gegen Gegner mit Akimbo.",
+              "nl": "Behaal 125 vijandkills met Akimbo."
+            }
+          },
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_space_time.png",
           "group": "special"
         }
       ]
@@ -5267,7 +5327,7 @@
           "unlockLevel": 9,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -5283,7 +5343,7 @@
           "unlockLevel": 13,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -5299,7 +5359,7 @@
           "unlockLevel": 18,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -5315,7 +5375,7 @@
           "unlockLevel": 22,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -5331,7 +5391,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -5347,7 +5407,7 @@
           "unlockLevel": 30,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5363,7 +5423,7 @@
           "unlockLevel": 35,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5379,55 +5439,55 @@
           "unlockLevel": 40,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Miami",
+            "fr": "Miami",
+            "es": "Miami",
+            "de": "Miami",
+            "nl": "Miami"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_miami.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Wallpaper",
+            "fr": "Wallpaper",
+            "es": "Wallpaper",
+            "de": "Wallpaper",
+            "nl": "Wallpaper"
           },
           "tier": 10,
           "unlockLevel": 30,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_wallpaper.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Garland",
+            "fr": "Garland",
+            "es": "Garland",
+            "de": "Garland",
+            "nl": "Garland"
           },
           "tier": 11,
           "unlockLevel": 44,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_garland.png",
           "group": "special"
         }
       ]
@@ -5448,7 +5508,7 @@
           "unlockLevel": 6,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -5464,7 +5524,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -5480,7 +5540,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -5496,7 +5556,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -5512,7 +5572,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -5528,7 +5588,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5544,7 +5604,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5560,55 +5620,55 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Digi Bark",
+            "fr": "Digi Bark",
+            "es": "Digi Bark",
+            "de": "Digi Bark",
+            "nl": "Digi Bark"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_digi_bark.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Stone Bits",
+            "fr": "Stone Bits",
+            "es": "Stone Bits",
+            "de": "Stone Bits",
+            "nl": "Stone Bits"
           },
           "tier": 10,
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_stone_bits.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Bubblegum Ops",
+            "fr": "Bubblegum Ops",
+            "es": "Bubblegum Ops",
+            "de": "Bubblegum Ops",
+            "nl": "Bubblegum Ops"
           },
           "tier": 11,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_bubblegum_ops.png",
           "group": "special"
         }
       ]
@@ -5629,7 +5689,7 @@
           "unlockLevel": 6,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -5645,7 +5705,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -5661,7 +5721,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -5677,7 +5737,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -5693,7 +5753,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -5709,7 +5769,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5725,7 +5785,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5741,55 +5801,55 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Thicket",
+            "fr": "Thicket",
+            "es": "Thicket",
+            "de": "Thicket",
+            "nl": "Thicket"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_thicket.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Tectonic",
+            "fr": "Tectonic",
+            "es": "Tectonic",
+            "de": "Tectonic",
+            "nl": "Tectonic"
           },
           "tier": 10,
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_tectonic.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Blue Tiger",
+            "fr": "Blue Tiger",
+            "es": "Blue Tiger",
+            "de": "Blue Tiger",
+            "nl": "Blue Tiger"
           },
           "tier": 11,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_blue_tiger.png",
           "group": "special"
         }
       ]
@@ -5810,7 +5870,7 @@
           "unlockLevel": 6,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
           "group": "military"
         },
         {
@@ -5826,7 +5886,7 @@
           "unlockLevel": 11,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
           "group": "military"
         },
         {
@@ -5842,7 +5902,7 @@
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
           "group": "military"
         },
         {
@@ -5858,7 +5918,7 @@
           "unlockLevel": 21,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
           "group": "military"
         },
         {
@@ -5874,7 +5934,7 @@
           "unlockLevel": 26,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
           "group": "military"
         },
         {
@@ -5890,7 +5950,7 @@
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
           "group": "military"
         },
         {
@@ -5906,7 +5966,7 @@
           "unlockLevel": 36,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
           "group": "military"
         },
         {
@@ -5922,55 +5982,55 @@
           "unlockLevel": 41,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
           "group": "military"
         },
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1"
+            "en": "Night Snow",
+            "fr": "Night Snow",
+            "es": "Night Snow",
+            "de": "Night Snow",
+            "nl": "Night Snow"
           },
           "tier": 9,
           "unlockLevel": 16,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_night_snow.png",
           "group": "special"
         },
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2"
+            "en": "Recursive",
+            "fr": "Recursive",
+            "es": "Recursive",
+            "de": "Recursive",
+            "nl": "Recursive"
           },
           "tier": 10,
           "unlockLevel": 31,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_recursive.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3"
+            "en": "Urban Standard",
+            "fr": "Urban Standard",
+            "es": "Urban Standard",
+            "de": "Urban Standard",
+            "nl": "Urban Standard"
           },
           "tier": 11,
           "unlockLevel": 46,
           "requirement": null,
           "children": [],
-          "imageURL": null,
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_urban_standard.png",
           "group": "special"
         }
       ]
@@ -5985,11 +6045,11 @@
         "amount": 2500,
         "unit": "kills",
         "description": {
-          "en": "Get 2,500 Tier 3+ enemy kills.",
-          "fr": "Éliminez 2 500 ennemis de niveau 3 ou plus.",
-          "es": "Consigue 2500 bajas de enemigos de nivel 3 o superior.",
-          "de": "Erziele 2.500 Abschüsse gegen Gegner ab Stufe 3.",
-          "nl": "Behaal 2.500 kills op vijanden van Tier 3 of hoger."
+          "en": "Unlock Divergence, then get 2,500 Tier 3+ enemy kills.",
+          "fr": "Débloquez Divergence, puis éliminez 2 500 ennemis de niveau 3 ou plus.",
+          "es": "Desbloquea Divergence y luego consigue 2500 bajas de enemigos de nivel 3 o superior.",
+          "de": "Schalte Divergence frei, dann erziele 2.500 Abschüsse gegen Gegner ab Stufe 3.",
+          "nl": "Ontgrendel Divergence en behaal 2.500 kills op vijanden van Tier 3 of hoger."
         }
       }
     },
@@ -6034,6 +6094,57 @@
       },
       "harmonicBreaksNeeded": 33,
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/divergence.png"
-    }
+    },
+    "steps": [
+      {
+        "unlock": "weapon",
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/gold.png",
+        "requirement": {
+          "amount": 1,
+          "unit": "times",
+          "description": {
+            "en": "Get 100 kills in a single DMZ match.",
+            "fr": "Obtenez 100 éliminations en une seule partie de DMZ.",
+            "es": "Consigue 100 bajas en una sola partida de DMZ.",
+            "de": "Erziele 100 Abschüsse in einem einzigen DMZ-Match.",
+            "nl": "Behaal 100 kills in één DMZ-wedstrijd."
+          }
+        }
+      },
+      {
+        "unlock": "category",
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/platinum.png",
+        "byCategory": {
+          "0": {
+            "amount": 100,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 100 headshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à la tête contre des ennemis.",
+              "es": "Consigue 100 bajas con disparo a la cabeza contra enemigos.",
+              "de": "Erziele 100 Kopfschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 headshotkills tegen vijanden."
+            }
+          }
+        }
+      },
+      {
+        "unlock": "mode",
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/harmonic_break.png",
+        "byCategory": {
+          "0": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 double kills against enemies.",
+              "fr": "Obtenez 50 doubles éliminations contre des ennemis.",
+              "es": "Consigue 50 bajas dobles contra enemigos.",
+              "de": "Erziele 50 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 50 dubbele kills tegen vijanden."
+            }
+          }
+        }
+      }
+    ]
   }
 }
