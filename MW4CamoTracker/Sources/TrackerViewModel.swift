@@ -740,7 +740,10 @@ final class TrackerViewModel: ObservableObject {
 
     func masteryProgress(mode: String, tier: Int) -> (done: Int, total: Int) {
         if masteryIsModeWide(mode: mode) {
-            return (isModeMasteryComplete(mode: mode, tier: tier) ? 1 : 0, 1)
+            // The challenge's own count (1/250), or a tick box's 0/1
+            let target = modeMasteryRequirement(mode: mode, tier: tier)?.amount ?? 1
+            let done = isModeMasteryComplete(mode: mode, tier: tier) ? target : modeMasteryAmount(mode: mode, tier: tier)
+            return (min(done, target), target)
         }
         if masteryUsesChallenges(mode: mode) {
             let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
