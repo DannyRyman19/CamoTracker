@@ -1,5 +1,5 @@
 {
-  "version": "0.8.10",
+  "version": "0.8.12",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -5977,47 +5977,47 @@
     }
   ],
   "objectives": [],
-  "_note": "Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
+  "_note": "Mastery is DMZ's own, from the same blog: Chiral 2,500 Tier 3+ enemy kills, Ripple Tide exfil 2 LT dog tags in one deployment 50 times, Helio 25,000 Legendary weapon kills on a max-level Operator. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/chiral.png",
       "requirement": {
-        "amount": 1,
-        "unit": "times",
+        "amount": 2500,
+        "unit": "kills",
         "description": {
-          "en": "Complete Harmonic Break challenges (the game hasn't shown the numbers yet).",
-          "fr": "Relevez des défis Harmonic Break (le jeu n'affiche pas encore les chiffres).",
-          "es": "Completa desafíos de Harmonic Break (el juego aún no muestra las cifras).",
-          "de": "Schließe Harmonic-Break-Herausforderungen ab (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Voltooi Harmonic Break-uitdagingen (de game toont de aantallen nog niet)."
+          "en": "Get 2,500 Tier 3+ enemy kills.",
+          "fr": "Éliminez 2 500 ennemis de niveau 3 ou plus.",
+          "es": "Consigue 2500 bajas de enemigos de nivel 3 o superior.",
+          "de": "Erziele 2.500 Abschüsse gegen Gegner ab Stufe 3.",
+          "nl": "Behaal 2.500 kills op vijanden van Tier 3 of hoger."
         }
       }
     },
     "tier2": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ripple_tide.png",
       "requirement": {
-        "amount": 25,
+        "amount": 50,
         "unit": "times",
         "description": {
-          "en": "Exfil with 2 LT dog tags in a single deployment 25 times.",
-          "fr": "Exfiltrez-vous avec 2 plaques d'identité de lieutenant en un seul déploiement 25 fois.",
-          "es": "Extrae con 2 placas de identificación de teniente en un mismo despliegue 25 veces.",
-          "de": "Exfiltriere mit 2 Leutnants-Erkennungsmarken in einem einzigen Einsatz, 25-mal.",
-          "nl": "Exfiltreer met 2 LT-dog tags in één inzet, 25 keer."
+          "en": "Exfil with 2 LT dog tags in a single deployment 50 times.",
+          "fr": "Exfiltrez-vous avec 2 plaques d'identité de lieutenant en un seul déploiement 50 fois.",
+          "es": "Extrae 2 placas de identificación de teniente en un solo despliegue 50 veces.",
+          "de": "Exfiltriere 50-mal mit 2 LT-Erkennungsmarken in einem einzigen Einsatz.",
+          "nl": "Exfil 50 keer met 2 LT-dogtags in één inzet."
         }
       }
     },
     "tier3": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/helio.png",
       "requirement": {
-        "amount": 2500,
+        "amount": 25000,
         "unit": "kills",
         "description": {
-          "en": "Get 2500 kills with a Legendary weapon and a maxed-out Operator.",
-          "fr": "Obtenez 2500 éliminations avec une arme légendaire et un agent au niveau maximum.",
-          "es": "Consigue 2500 bajas con un arma legendaria y un operador al nivel máximo.",
-          "de": "Erziele 2500 Abschüsse mit einer legendären Waffe und einem Operator auf Maximalstufe.",
-          "nl": "Maak 2500 kills met een legendarisch wapen en een operator op maximaal niveau."
+          "en": "Get 25,000 kills with Legendary weapons on a max-level Operator.",
+          "fr": "Obtenez 25 000 éliminations avec des armes légendaires sur un Opérateur de niveau maximum.",
+          "es": "Consigue 25 000 bajas con armas legendarias con un Operador de nivel máximo.",
+          "de": "Erziele 25.000 Abschüsse mit legendären Waffen mit einem Operator auf Maximalstufe.",
+          "nl": "Behaal 25.000 kills met legendarische wapens met een Operator op maximaal niveau."
         }
       }
     },
