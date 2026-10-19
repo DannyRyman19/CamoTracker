@@ -1,5 +1,5 @@
 {
-  "version": "0.9.4",
+  "version": "0.9.5",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -632,7 +632,14 @@
             "de": "Sang 9mm",
             "nl": "Sang 9mm"
           },
-          "maxLevel": 38
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlocked by default.",
+            "fr": "Débloqué par défaut.",
+            "es": "Desbloqueada por defecto.",
+            "de": "Standardmäßig freigeschaltet.",
+            "nl": "Standaard ontgrendeld."
+          }
         },
         {
           "weaponId": 29,

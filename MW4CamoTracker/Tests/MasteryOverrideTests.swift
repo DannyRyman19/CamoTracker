@@ -136,8 +136,9 @@ struct TrackerViewModelTests {
         #expect(AppMode.multiplayer.masteryCamos.tier1.name == "Override Drift")
         #expect(configured.masteryWeaponsNeeded(mode: mp, tier: 1) == 2)
         #expect(AppMode.multiplayer.completionist.final.name == "Divergence")
-        // Untouched modes keep what the build ships with.
-        #expect(AppMode.warzone.completionist.final.name != "Divergence")
+        // Untouched modes keep what the build ships with (Warzone's file
+        // names Divergence too since the launch blog)
+        #expect(AppMode.warzone.completionist.final.name == "Divergence")
 
         _ = try model()
         #expect(AppMode.multiplayer.masteryCamos.tier1.name != "Override Drift")

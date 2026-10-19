@@ -1,5 +1,5 @@
 {
-  "version": "0.8.10",
+  "version": "0.8.11",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -6022,5 +6022,18 @@
       }
     },
     "unlock": "mode"
+  },
+  "completionist": {
+    "final": {
+      "name": {
+        "en": "Divergence",
+        "fr": "Divergence",
+        "es": "Divergence",
+        "de": "Divergence",
+        "nl": "Divergence"
+      },
+      "harmonicBreaksNeeded": 33,
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/divergence.png"
+    }
   }
 }
