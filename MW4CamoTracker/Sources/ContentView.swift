@@ -64,7 +64,7 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .top) {
             TabView(selection: $selectedTab) {
-                ForEach(Array(AppMode.allCases.enumerated()), id: \.offset) { index, mode in
+                ForEach(Array(viewModel.visibleModes.enumerated()), id: \.element) { index, mode in
                     NavigationStack(path: pathBinding(index)) {
                         CategoryListView(mode: mode)
                             .navigationDestination(for: Route.self) { route in
@@ -91,7 +91,7 @@ struct ContentView: View {
 
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
-                    .tag(AppMode.allCases.count)
+                    .tag(viewModel.visibleModes.count)
             }
             .tint(currentAccent)
 
@@ -107,7 +107,8 @@ struct ContentView: View {
         }
         .onAppear {
             if let screen = Self.screenshotScreen {
-                let index = ["multiplayer": 0, "warzone": 1, "dmz": 2, "stats": 3][screen] ?? 0
+                let shown = viewModel.visibleModes.map(\.rawValue)
+                let index = screen == "stats" ? shown.count : shown.firstIndex(of: screen) ?? 0
                 selectedTab = index
                 if let route = Self.screenshotRoute {
                     var path = NavigationPath()
@@ -216,6 +217,6 @@ struct ContentView: View {
     }
 
     private var currentAccent: Color {
-        AppMode.allCases.indices.contains(selectedTab) ? AppMode.allCases[selectedTab].accent : .accentMultiplayer
+        viewModel.visibleModes.indices.contains(selectedTab) ? viewModel.visibleModes[selectedTab].accent : .accentMultiplayer
     }
 }

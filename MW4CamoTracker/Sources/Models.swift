@@ -136,6 +136,10 @@ struct ModeFile: Codable {
     /// `unlockLevel`, as the in-game camo screens show (Smoke on the HAN 86
     /// opens at level 25, before Military 4).
     var specialsAfterMilitary: Bool? = nil
+    /// `true` hides this mode's tab and leaves it out of Stats, for a mode
+    /// that isn't playable yet (Warzone until Season 1). Flip it over the
+    /// air to bring the tab back; progress is kept either way.
+    var hidden: Bool? = nil
 }
 
 /// The `completionist` block of a mode file.

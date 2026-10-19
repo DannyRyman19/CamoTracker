@@ -396,6 +396,11 @@ final class TrackerViewModel: ObservableObject {
     /// across modes. Mastery is always the mode's own.
     func trackMode(_ mode: String) -> String { TrackSharing.byMode[mode] ?? mode }
 
+    /// The mode tabs to show: every mode its file doesn't mark `hidden`.
+    var visibleModes: [AppMode] {
+        AppMode.allCases.filter { modes[$0.rawValue]?.hidden != true }
+    }
+
     /// Whether this mode's Specials stay shut until every Military camo is
     /// earned, rather than opening at their own level.
     func specialsWaitForMilitary(mode: String) -> Bool {

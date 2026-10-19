@@ -60,4 +60,11 @@ struct SharedCamoTests {
         vm.toggleCompletionist(mode: "multiplayer", weaponId: 0, step: 0)
         #expect(!vm.isCompletionistComplete(mode: "dmz", weaponId: 0, step: 0))
     }
+
+    @Test func aHiddenModeHasNoTab() {
+        // The shipped Warzone file is hidden until Season 1
+        let vm = model()
+        #expect(!vm.visibleModes.contains(.warzone))
+        #expect(vm.visibleModes.contains(.multiplayer) && vm.visibleModes.contains(.dmz))
+    }
 }
