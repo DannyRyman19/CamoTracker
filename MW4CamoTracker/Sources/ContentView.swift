@@ -78,17 +78,27 @@ struct ContentView: View {
                         .navigationDestination(for: Route.self) { route in
                             RouteDestinationView(mode: mode, route: route)
                         }
+                        .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
+                            // The title is the mode, with a ▾ to change it
+                            ToolbarItem(placement: .principal) {
                                 Menu {
                                     Picker("mw4.ui.mostly_play".localized(), selection: $primaryModeRaw) {
                                         ForEach(viewModel.visibleModes) { m in
-                                            Text(m.displayNameKey.localized()).tag(m.rawValue)
+                                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m.rawValue)
                                         }
                                     }
                                 } label: {
-                                    Label(mode.displayNameKey.localized(), systemImage: mode.symbol)
+                                    HStack(spacing: 6) {
+                                        Text(mode.displayNameKey.localized())
+                                            .font(.hitmarker(22))
+                                            .foregroundStyle(Color.appInk)
+                                        Image(systemName: "chevron.down.circle.fill")
+                                            .font(.system(size: 16, weight: .semibold))
+                                            .foregroundStyle(mode.accent)
+                                    }
                                 }
+                                .accessibilityLabel("mw4.ui.mostly_play".localized())
                             }
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button {
