@@ -246,6 +246,7 @@ struct ContentView: View {
                 hasOnboarded = true
                 showOnboarding = false
             }
+            .environmentObject(viewModel)
         }
     }
 

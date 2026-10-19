@@ -5,34 +5,9 @@ import SwiftUI
 /// and it opens level-gated camos in every mode at once. The camo list and
 /// Mastery below it are specific to whichever mode tab got you here.
 struct WeaponDetailView: View {
-    /// The mode whose challenge counts and Mastery this screen shows. Camos
-    /// are one track per weapon across modes, so switching it changes the
-    /// numbers and wording, never what's ticked.
-    @State private var mode: AppMode
+    let mode: AppMode
     let weapon: WeaponEntry
     @EnvironmentObject private var viewModel: TrackerViewModel
-
-    init(mode: AppMode, weapon: WeaponEntry) {
-        _mode = State(initialValue: mode)
-        self.weapon = weapon
-    }
-
-    /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
-    @ViewBuilder private var modeSwitch: some View {
-        if viewModel.visibleModes.count > 1 {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("mw4.ui.counts_for".localized())
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(Color.appInkMuted)
-                Picker("mw4.ui.counts_for".localized(), selection: $mode) {
-                    ForEach(viewModel.visibleModes) { m in
-                        Text(m.displayNameKey.localized()).tag(m)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
-        }
-    }
 
     private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
     private var category: WeaponCategory? { viewModel.category(containingWeaponId: weapon.weaponId) }
@@ -60,11 +35,11 @@ struct WeaponDetailView: View {
 
                 titleBlock(nameSize: 20)
 
-                Divider().overlay(Color.appInkMuted.opacity(0.2))
+                if !viewModel.quickTick {
+                    Divider().overlay(Color.appInkMuted.opacity(0.2))
 
-                CompactLevelRow(mode: mode, weapon: weapon)
-
-                modeSwitch
+                    CompactLevelRow(mode: mode, weapon: weapon)
+                }
             }
             .padding(12)
             .borderedCard()
@@ -131,7 +106,7 @@ struct WeaponDetailView: View {
     }
 
     private var partPicker: some View {
-        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { pickedPart = $0 })) {
+        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { if $0 != shownPart { Haptics.step() }; pickedPart = $0 })) {
             ForEach(parts, id: \.part) { entry in
                 Text(entry.title).tag(entry.part)
             }
@@ -224,9 +199,12 @@ struct WeaponDetailView: View {
     }
 
     /// "Earned at weapon level 18." or "Unlocks at weapon level 18." under
-    /// a Military camo, whose level is all there is to it.
+    /// a Military camo, whose level is all there is to it ("Reach weapon
+    /// level 18." in quick tick).
     private func militaryDetail(_ camo: ChallengeItem) -> String? {
         guard let level = viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) else { return nil }
+        // Quick tick has no levels to unlock by: say what the game asks.
+        guard !viewModel.quickTick else { return String(format: "mw4.ui.camo_level_reach".localized(), level) }
         let earned = viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
         return String(format: (earned ? "mw4.ui.camo_level_earned" : "mw4.ui.camo_level_locked").localized(), level)
     }
@@ -248,8 +226,10 @@ struct WeaponDetailView: View {
             WeaponHeroImage(urlString: weapon.imageURL, height: 210)
             VStack(alignment: .leading, spacing: 14) {
                 titleBlock(nameSize: 28)
-                Divider().overlay(Color.appInkMuted.opacity(0.2))
-                CompactLevelRow(mode: mode, weapon: weapon)
+                if !viewModel.quickTick {
+                    Divider().overlay(Color.appInkMuted.opacity(0.2))
+                    CompactLevelRow(mode: mode, weapon: weapon)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -288,10 +268,10 @@ struct WeaponDetailView: View {
     /// A Mastery tier: this weapon's own challenge when the mode's Mastery
     /// is challenges, else the mode-wide count.
     @ViewBuilder private func masteryRow(_ tier: Int) -> some View {
-        if viewModel.masteryUsesChallenges(mode: mode.rawValue) {
-            MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
-        } else {
-            MasteryModeRow(mode: mode, tier: tier)
+        switch viewModel.masteryKind(mode: mode.rawValue, tier: tier) {
+        case .challenge: MasteryChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        case .mode: MasteryModeChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        case .count: MasteryModeRow(mode: mode, tier: tier)
         }
     }
 
@@ -500,48 +480,90 @@ struct MasteryModeRow: View {
     }
 
     var body: some View {
-        if viewModel.masteryIsModeWide(mode: mode.rawValue) {
-            modeWideRow
-        } else {
-            countRow
-        }
-    }
-
-    /// One challenge for the whole mode, counted with any weapon.
-    private var modeWideRow: some View {
-        let tiers = mode.masteryCamos
-        let all = [tiers.tier1, tiers.tier2, tiers.tier3]
-        let item = ChallengeItem(itemId: -(20 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
-                                 tier: nil, unlockLevel: nil,
-                                 requirement: viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier),
-                                 children: [])
-        let gate = viewModel.modeMasteryGateProgress(mode: mode.rawValue)
-        let locked = tier == 1
-            ? String(format: "mw4.ui.completionist.locked_mode".localized(), mode.lastCompletionist.name, gate.total, gate.done)
-            : String(format: "mw4.ui.mastery.locked_previous_mode".localized(), all[tier - 2].name)
-        return ChallengeRow(
-            item: item,
-            accent: camo.color,
-            amount: viewModel.modeMasteryAmount(mode: mode.rawValue, tier: tier),
-            isDone: viewModel.isModeMasteryComplete(mode: mode.rawValue, tier: tier),
-            isAvailable: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier),
-            lockedReason: locked,
-            titleGradient: camo.gradient,
-            onToggle: { viewModel.toggleModeMastery(mode: mode.rawValue, tier: tier) },
-            onSetAmount: { viewModel.setModeMasteryAmount(mode: mode.rawValue, tier: tier, amount: $0) }
-        )
-    }
-
-    private var countRow: some View {
         let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
-        return StatusRow(
+        StatusRow(
             name: camo.name,
             achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
             color: camo.color,
             gradient: camo.gradient,
-            detail: String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.lastCompletionist.name),
+            detail: detail(progress),
             imageURL: camo.imageURL
         )
+    }
+
+    /// A mode-wide challenge reads as itself with its count (1/250); the
+    /// older count rule as weapons with the last Completionist camo.
+    private func detail(_ progress: (done: Int, total: Int)) -> String {
+        if viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode,
+           let requirement = viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier) {
+            return "\(requirement.description.resolved()) \(progress.done)/\(progress.total)"
+        }
+        return String(format: "mw4.ui.mastery.weapons_needed".localized(), progress.done, progress.total, mode.lastCompletionist.name)
+    }
+}
+
+/// A Mastery tier as one challenge for the whole mode (`mastery.unlock` is
+/// "mode"). It reads the same on every weapon's page; ticking it on one
+/// ticks it for the mode.
+private struct MasteryModeChallengeRow: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    let tier: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camos: [MasteryCamo] {
+        let tiers = mode.masteryCamos
+        return [tiers.tier1, tiers.tier2, tiers.tier3]
+    }
+    private var camo: MasteryCamo { camos[tier - 1] }
+    private var before: MasteryCamo { tier == 1 ? mode.lastCompletionist : camos[tier - 2] }
+    private var requirement: Requirement? { viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier) }
+
+    private var item: ChallengeItem {
+        ChallengeItem(itemId: -(20 + tier), name: LocalizedText(camo.name), imageURL: camo.imageURL,
+                      tier: nil, unlockLevel: nil, requirement: requirement, children: [])
+    }
+
+    /// The tier before first, then the weapons it waits for.
+    private var lockedReason: String {
+        if tier > 1, !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier - 1) {
+            return String(format: "mw4.ui.mastery.mode_locked".localized(), before.name)
+        }
+        let needed = viewModel.modeMasteryWeaponsNeeded(mode: mode.rawValue, tier: tier)
+        if needed <= 1 {
+            return String(format: "mw4.ui.mastery.mode_locked_first".localized(), mode.lastCompletionist.name)
+        }
+        return String(format: "mw4.ui.mastery.weapons_needed".localized(),
+                      min(viewModel.lastCompletionistCount(mode: mode.rawValue), needed), needed, mode.lastCompletionist.name)
+    }
+
+    var body: some View {
+        if viewModel.modeMasteryCountsItself(mode: mode.rawValue, tier: tier) {
+            let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
+            StatusRow(
+                name: camo.name,
+                achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier),
+                color: camo.color,
+                gradient: camo.gradient,
+                detail: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier)
+                    ? String(format: "mw4.ui.mastery.self_count".localized(), progress.done, progress.total,
+                             (viewModel.modeMasteryCountedCamo(mode: mode.rawValue, tier: tier) ?? mode.completionist.steps[2]).name)
+                    : lockedReason,
+                imageURL: camo.imageURL
+            )
+        } else {
+            ChallengeRow(
+                item: item,
+                accent: camo.color,
+                amount: viewModel.modeMasteryAmount(mode: mode.rawValue, tier: tier),
+                isDone: viewModel.isModeMasteryComplete(mode: mode.rawValue, tier: tier),
+                isAvailable: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier),
+                lockedReason: lockedReason,
+                titleGradient: camo.gradient,
+                onToggle: { viewModel.toggleModeMastery(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId) },
+                onSetAmount: { viewModel.setModeMasteryAmount(mode: mode.rawValue, tier: tier, weaponId: weapon.weaponId, amount: $0) }
+            )
+        }
     }
 }
 
@@ -571,9 +593,10 @@ private struct MasteryChallengeRow: View {
     private var lockedReason: String {
         let ownDone = tier == 1
             ? viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId)
-            : viewModel.isWeaponMasteryComplete(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier - 1)
+            : viewModel.hasTierBefore(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier)
         guard ownDone else {
-            return String(format: "mw4.ui.completionist.locked_previous".localized(), before.name)
+            let forTheMode = tier > 1 && viewModel.masteryKind(mode: mode.rawValue, tier: tier - 1) != .challenge
+            return String(format: (forTheMode ? "mw4.ui.mastery.mode_locked" : "mw4.ui.completionist.locked_previous").localized(), before.name)
         }
         switch viewModel.masteryGate(mode: mode.rawValue, tier: tier) {
         case .weapon:
