@@ -653,7 +653,8 @@ struct ChallengeRow: View {
 
             Spacer(minLength: 8)
 
-            if let requirement = item.requirement, requirement.amount > 1, isAvailable {
+            // Done is done (here or in another mode): the tick says it, no count
+            if let requirement = item.requirement, requirement.amount > 1, isAvailable, !isDone {
                 HStack(spacing: 6) {
                     stepButton(systemName: "minus", enabled: amount > 0, size: 22, accent: accent) {
                         onSetAmount(max(0, amount - 1))

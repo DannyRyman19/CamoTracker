@@ -22,7 +22,7 @@ struct StatsView: View {
         ZStack {
             AppBackground(accent: .accentMultiplayer)
             List {
-                let modes = AppMode.allCases
+                let modes = viewModel.visibleModes
                 if width >= 950 {
                     // iPad: the overall ring, then the three modes in a row.
                     OverallStatsHero()
@@ -78,7 +78,7 @@ private struct OverallStatsHero: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     private var perMode: [(mode: AppMode, fraction: Double)] {
-        AppMode.allCases.map { ($0, viewModel.trueCompletionFraction(mode: $0.rawValue)) }
+        viewModel.visibleModes.map { ($0, viewModel.trueCompletionFraction(mode: $0.rawValue)) }
     }
     private var overallFraction: Double {
         let values = perMode.map(\.fraction)

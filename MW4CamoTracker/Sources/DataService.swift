@@ -90,22 +90,42 @@ final class DataService: Sendable {
         let data = try await fetch("manifest.json")
         let manifest = try JSONDecoder().decode(Manifest.self, from: data)
 
+        // Only ever forward: the CDN can serve an older manifest or file for
+        // a while after a push, and an app update ships newer data than the
+        // CDN may have yet, so an older copy never replaces a newer one.
         var newCatalog: WeaponCatalog?
-        if manifest.catalog.version != knownCatalogVersion {
+        if Self.isNewer(manifest.catalog.version, than: knownCatalogVersion) {
             let catalogData = try await fetch(manifest.catalog.path)
-            newCatalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
-            try catalogData.write(to: cacheFileURL(name: "weapons"), options: .atomic)
+            let catalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
+            if Self.isNewer(catalog.version, than: knownCatalogVersion) {
+                newCatalog = catalog
+                try catalogData.write(to: cacheFileURL(name: "weapons"), options: .atomic)
+            }
         }
 
         var updatedModes: [String: ModeFile] = [:]
         for (mode, entry) in manifest.modes {
-            guard entry.version != knownModeVersions[mode] else { continue }
+            guard Self.isNewer(entry.version, than: knownModeVersions[mode]) else { continue }
             let modeData = try await fetch(entry.path)
             let modeFile = try JSONDecoder().decode(ModeFile.self, from: modeData)
+            guard Self.isNewer(modeFile.version, than: knownModeVersions[mode]) else { continue }
             try modeData.write(to: cacheFileURL(name: mode), options: .atomic)
             updatedModes[mode] = modeFile
         }
         return (newCatalog, updatedModes, manifest.notification)
+    }
+
+    /// Dotted versions compared number by number ("0.8.12" > "0.8.9"); any
+    /// version beats none.
+    static func isNewer(_ version: String, than known: String?) -> Bool {
+        guard let known else { return true }
+        let a = version.split(separator: ".").map { Int($0) ?? 0 }
+        let b = known.split(separator: ".").map { Int($0) ?? 0 }
+        for i in 0..<max(a.count, b.count) {
+            let x = i < a.count ? a[i] : 0, y = i < b.count ? b[i] : 0
+            if x != y { return x > y }
+        }
+        return false
     }
 
     /// Always asks the server. jsDelivr sends `max-age=604800`, and a plain
