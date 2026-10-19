@@ -1,5 +1,5 @@
 {
-  "version": "0.9.3",
+  "version": "0.9.4",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -95,11 +95,11 @@
           },
           "maxLevel": 72,
           "unlockRequirement": {
-            "en": "Unlock at level 9.",
-            "fr": "Débloqué au niveau 9.",
-            "es": "Se desbloquea en el nivel 9.",
-            "de": "Freischaltung auf Stufe 9.",
-            "nl": "Ontgrendel op niveau 9."
+            "en": "Unlock at level 14.",
+            "fr": "Débloqué au niveau 14.",
+            "es": "Se desbloquea en el nivel 14.",
+            "de": "Freischaltung auf Stufe 14.",
+            "nl": "Ontgrendel op niveau 14."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/M4.png"
         },
@@ -114,11 +114,11 @@
           },
           "maxLevel": 68,
           "unlockRequirement": {
-            "en": "Unlock at level 18.",
-            "fr": "Débloqué au niveau 18.",
-            "es": "Se desbloquea en el nivel 18.",
-            "de": "Freischaltung auf Stufe 18.",
-            "nl": "Ontgrendel op niveau 18."
+            "en": "Unlock at level 21.",
+            "fr": "Débloqué au niveau 21.",
+            "es": "Se desbloquea en el nivel 21.",
+            "de": "Freischaltung auf Stufe 21.",
+            "nl": "Ontgrendel op niveau 21."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/HYEON_BURST.png"
         },
@@ -133,11 +133,11 @@
           },
           "maxLevel": 71,
           "unlockRequirement": {
-            "en": "Unlock at level 21.",
-            "fr": "Débloqué au niveau 21.",
-            "es": "Se desbloquea en el nivel 21.",
-            "de": "Freischaltung auf Stufe 21.",
-            "nl": "Ontgrendel op niveau 21."
+            "en": "Unlock at level 34.",
+            "fr": "Débloqué au niveau 34.",
+            "es": "Se desbloquea en el nivel 34.",
+            "de": "Freischaltung auf Stufe 34.",
+            "nl": "Ontgrendel op niveau 34."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/KASTOV_762.png"
         },
@@ -152,11 +152,11 @@
           },
           "maxLevel": 72,
           "unlockRequirement": {
-            "en": "Unlock at level 25.",
-            "fr": "Débloqué au niveau 25.",
-            "es": "Se desbloquea en el nivel 25.",
-            "de": "Freischaltung auf Stufe 25.",
-            "nl": "Ontgrendel op niveau 25."
+            "en": "Unlock at level 27.",
+            "fr": "Débloqué au niveau 27.",
+            "es": "Se desbloquea en el nivel 27.",
+            "de": "Freischaltung auf Stufe 27.",
+            "nl": "Ontgrendel op niveau 27."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PATRIOT_XMR.png"
         },
@@ -171,11 +171,11 @@
           },
           "maxLevel": 69,
           "unlockRequirement": {
-            "en": "Unlock at level 30.",
-            "fr": "Débloqué au niveau 30.",
-            "es": "Se desbloquea en el nivel 30.",
-            "de": "Freischaltung auf Stufe 30.",
-            "nl": "Ontgrendel op niveau 30."
+            "en": "Unlock at level 52.",
+            "fr": "Débloqué au niveau 52.",
+            "es": "Se desbloquea en el nivel 52.",
+            "de": "Freischaltung auf Stufe 52.",
+            "nl": "Ontgrendel op niveau 52."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/AXION.png"
         },
@@ -188,7 +188,14 @@
             "de": "Oden",
             "nl": "Oden"
           },
-          "maxLevel": 65
+          "maxLevel": 65,
+          "unlockRequirement": {
+            "en": "Unlock at level 39.",
+            "fr": "Débloqué au niveau 39.",
+            "es": "Se desbloquea en el nivel 39.",
+            "de": "Freischaltung auf Stufe 39.",
+            "nl": "Ontgrendel op niveau 39."
+          }
         },
         {
           "weaponId": 21,
@@ -199,7 +206,14 @@
             "de": "Cronen Squall",
             "nl": "Cronen Squall"
           },
-          "maxLevel": 67
+          "maxLevel": 67,
+          "unlockRequirement": {
+            "en": "Unlock at level 55.",
+            "fr": "Débloqué au niveau 55.",
+            "es": "Se desbloquea en el nivel 55.",
+            "de": "Freischaltung auf Stufe 55.",
+            "nl": "Ontgrendel op niveau 55."
+          }
         }
       ]
     },
@@ -243,11 +257,11 @@
           },
           "maxLevel": 62,
           "unlockRequirement": {
-            "en": "Unlock at level 11.",
-            "fr": "Débloqué au niveau 11.",
-            "es": "Se desbloquea en el nivel 11.",
-            "de": "Freischaltung auf Stufe 11.",
-            "nl": "Ontgrendel op niveau 11."
+            "en": "Unlock at level 30.",
+            "fr": "Débloqué au niveau 30.",
+            "es": "Se desbloquea en el nivel 30.",
+            "de": "Freischaltung auf Stufe 30.",
+            "nl": "Ontgrendel op niveau 30."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PPSH.png"
         },
@@ -262,11 +276,11 @@
           },
           "maxLevel": 53,
           "unlockRequirement": {
-            "en": "Unlock at level 27.",
-            "fr": "Débloqué au niveau 27.",
-            "es": "Se desbloquea en el nivel 27.",
-            "de": "Freischaltung auf Stufe 27.",
-            "nl": "Ontgrendel op niveau 27."
+            "en": "Unlock at level 46.",
+            "fr": "Débloqué au niveau 46.",
+            "es": "Se desbloquea en el nivel 46.",
+            "de": "Freischaltung auf Stufe 46.",
+            "nl": "Ontgrendel op niveau 46."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/X-58_NYX.png"
         },
@@ -279,7 +293,14 @@
             "de": "VEL 46",
             "nl": "VEL 46"
           },
-          "maxLevel": 60
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlock at level 5.",
+            "fr": "Débloqué au niveau 5.",
+            "es": "Se desbloquea en el nivel 5.",
+            "de": "Freischaltung auf Stufe 5.",
+            "nl": "Ontgrendel op niveau 5."
+          }
         },
         {
           "weaponId": 23,
@@ -290,7 +311,14 @@
             "de": "WZ.55 Striga",
             "nl": "WZ.55 Striga"
           },
-          "maxLevel": 60
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlock at level 18.",
+            "fr": "Débloqué au niveau 18.",
+            "es": "Se desbloquea en el nivel 18.",
+            "de": "Freischaltung auf Stufe 18.",
+            "nl": "Ontgrendel op niveau 18."
+          }
         }
       ]
     },
@@ -332,7 +360,14 @@
             "de": "Warlord",
             "nl": "Warlord"
           },
-          "maxLevel": 60
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlock at level 31.",
+            "fr": "Débloqué au niveau 31.",
+            "es": "Se desbloquea en el nivel 31.",
+            "de": "Freischaltung auf Stufe 31.",
+            "nl": "Ontgrendel op niveau 31."
+          }
         }
       ]
     },
@@ -376,11 +411,11 @@
           },
           "maxLevel": 65,
           "unlockRequirement": {
-            "en": "Unlock at level 5.",
-            "fr": "Débloqué au niveau 5.",
-            "es": "Se desbloquea en el nivel 5.",
-            "de": "Freischaltung auf Stufe 5.",
-            "nl": "Ontgrendel op niveau 5."
+            "en": "Unlock at level 9.",
+            "fr": "Débloqué au niveau 9.",
+            "es": "Se desbloquea en el nivel 9.",
+            "de": "Freischaltung auf Stufe 9.",
+            "nl": "Ontgrendel op niveau 9."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/TYPE_73.png"
         },
@@ -393,7 +428,14 @@
             "de": "APOC-338",
             "nl": "APOC-338"
           },
-          "maxLevel": 56
+          "maxLevel": 56,
+          "unlockRequirement": {
+            "en": "Unlock at level 44.",
+            "fr": "Débloqué au niveau 44.",
+            "es": "Se desbloquea en el nivel 44.",
+            "de": "Freischaltung auf Stufe 44.",
+            "nl": "Ontgrendel op niveau 44."
+          }
         }
       ]
     },
@@ -437,11 +479,11 @@
           },
           "maxLevel": 70,
           "unlockRequirement": {
-            "en": "Unlock at level 14.",
-            "fr": "Débloqué au niveau 14.",
-            "es": "Se desbloquea en el nivel 14.",
-            "de": "Freischaltung auf Stufe 14.",
-            "nl": "Ontgrendel op niveau 14."
+            "en": "Unlock at level 11.",
+            "fr": "Débloqué au niveau 11.",
+            "es": "Se desbloquea en el nivel 11.",
+            "de": "Freischaltung auf Stufe 11.",
+            "nl": "Ontgrendel op niveau 11."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ORIS_8.6.png"
         },
@@ -454,7 +496,14 @@
             "de": "Mosin-Nagant",
             "nl": "Mosin-Nagant"
           },
-          "maxLevel": 69
+          "maxLevel": 69,
+          "unlockRequirement": {
+            "en": "Unlock at level 36.",
+            "fr": "Débloqué au niveau 36.",
+            "es": "Se desbloquea en el nivel 36.",
+            "de": "Freischaltung auf Stufe 36.",
+            "nl": "Ontgrendel op niveau 36."
+          }
         }
       ]
     },
@@ -498,11 +547,11 @@
           },
           "maxLevel": 74,
           "unlockRequirement": {
-            "en": "Unlock at level 30.",
-            "fr": "Débloqué au niveau 30.",
-            "es": "Se desbloquea en el nivel 30.",
-            "de": "Freischaltung auf Stufe 30.",
-            "nl": "Ontgrendel op niveau 30."
+            "en": "Unlock at level 50.",
+            "fr": "Débloqué au niveau 50.",
+            "es": "Se desbloquea en el nivel 50.",
+            "de": "Freischaltung auf Stufe 50.",
+            "nl": "Ontgrendel op niveau 50."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/SIGNAL_50.png"
         },
@@ -515,7 +564,14 @@
             "de": "Astaroth .57",
             "nl": "Astaroth .57"
           },
-          "maxLevel": 54
+          "maxLevel": 54,
+          "unlockRequirement": {
+            "en": "Unlock at level 25.",
+            "fr": "Débloqué au niveau 25.",
+            "es": "Se desbloquea en el nivel 25.",
+            "de": "Freischaltung auf Stufe 25.",
+            "nl": "Ontgrendel op niveau 25."
+          }
         }
       ]
     },
@@ -540,11 +596,11 @@
           },
           "maxLevel": 38,
           "unlockRequirement": {
-            "en": "Unlocked by default.",
-            "fr": "Débloqué par défaut.",
-            "es": "Desbloqueada por defecto.",
-            "de": "Standardmäßig freigeschaltet.",
-            "nl": "Standaard ontgrendeld."
+            "en": "Unlock at level 7.",
+            "fr": "Débloqué au niveau 7.",
+            "es": "Se desbloquea en el nivel 7.",
+            "de": "Freischaltung auf Stufe 7.",
+            "nl": "Ontgrendel op niveau 7."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/KRAIT_P68.png"
         },
@@ -559,11 +615,11 @@
           },
           "maxLevel": 50,
           "unlockRequirement": {
-            "en": "Unlock at level 23.",
-            "fr": "Débloqué au niveau 23.",
-            "es": "Se desbloquea en el nivel 23.",
-            "de": "Freischaltung auf Stufe 23.",
-            "nl": "Ontgrendel op niveau 23."
+            "en": "Unlock at level 41.",
+            "fr": "Débloqué au niveau 41.",
+            "es": "Se desbloquea en el nivel 41.",
+            "de": "Freischaltung auf Stufe 41.",
+            "nl": "Ontgrendel op niveau 41."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/50_GS.png"
         },
@@ -587,7 +643,14 @@
             "de": "Mojave .357",
             "nl": "Mojave .357"
           },
-          "maxLevel": 44
+          "maxLevel": 44,
+          "unlockRequirement": {
+            "en": "Unlock at level 48.",
+            "fr": "Débloqué au niveau 48.",
+            "es": "Se desbloquea en el nivel 48.",
+            "de": "Freischaltung auf Stufe 48.",
+            "nl": "Ontgrendel op niveau 48."
+          }
         }
       ]
     },
@@ -629,7 +692,14 @@
             "de": "RPG-8",
             "nl": "RPG-8"
           },
-          "maxLevel": 46
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 23.",
+            "fr": "Débloqué au niveau 23.",
+            "es": "Se desbloquea en el nivel 23.",
+            "de": "Freischaltung auf Stufe 23.",
+            "nl": "Ontgrendel op niveau 23."
+          }
         },
         {
           "weaponId": 31,
@@ -640,7 +710,14 @@
             "de": "JOKR",
             "nl": "JOKR"
           },
-          "maxLevel": 46
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 43.",
+            "fr": "Débloqué au niveau 43.",
+            "es": "Se desbloquea en el nivel 43.",
+            "de": "Freischaltung auf Stufe 43.",
+            "nl": "Ontgrendel op niveau 43."
+          }
         },
         {
           "weaponId": 32,
@@ -651,7 +728,14 @@
             "de": "PM-40 Anvil",
             "nl": "PM-40 Anvil"
           },
-          "maxLevel": 46
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 54.",
+            "fr": "Débloqué au niveau 54.",
+            "es": "Se desbloquea en el nivel 54.",
+            "de": "Freischaltung auf Stufe 54.",
+            "nl": "Ontgrendel op niveau 54."
+          }
         }
       ]
     },
@@ -687,5 +771,5 @@
       ]
     }
   ],
-  "_note": "weaponPrestige is a placeholder copied from BO7's shape (Prestige 1, Prestige 2, then Prestige Master to 250) until MW4's real stages are visible in-game. Add or remove entries to change how many times a weapon can prestige; maxLevel null means the weapon's own maxLevel."
+  "_note": "weaponPrestige is a placeholder copied from BO7's shape (Prestige 1, Prestige 2, then Prestige Master to 250) until MW4's real stages are visible in-game. Add or remove entries to change how many times a weapon can prestige; maxLevel null means the weapon's own maxLevel. Unlock levels from the official launch blog's Multiplayer Level Unlocks appendix (19 Oct 2026); weapons not in it keep their entry."
 }
