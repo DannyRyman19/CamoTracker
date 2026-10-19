@@ -5,9 +5,34 @@ import SwiftUI
 /// and it opens level-gated camos in every mode at once. The camo list and
 /// Mastery below it are specific to whichever mode tab got you here.
 struct WeaponDetailView: View {
-    let mode: AppMode
+    /// The mode whose challenge counts and Mastery this screen shows. Camos
+    /// are one track per weapon across modes, so switching it changes the
+    /// numbers and wording, never what's ticked.
+    @State private var mode: AppMode
     let weapon: WeaponEntry
     @EnvironmentObject private var viewModel: TrackerViewModel
+
+    init(mode: AppMode, weapon: WeaponEntry) {
+        _mode = State(initialValue: mode)
+        self.weapon = weapon
+    }
+
+    /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
+    @ViewBuilder private var modeSwitch: some View {
+        if viewModel.visibleModes.count > 1 {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("mw4.ui.counts_for".localized())
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
+                Picker("mw4.ui.counts_for".localized(), selection: $mode) {
+                    ForEach(viewModel.visibleModes) { m in
+                        Text(m.displayNameKey.localized()).tag(m)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+        }
+    }
 
     private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
     private var category: WeaponCategory? { viewModel.category(containingWeaponId: weapon.weaponId) }
@@ -38,6 +63,8 @@ struct WeaponDetailView: View {
                 Divider().overlay(Color.appInkMuted.opacity(0.2))
 
                 CompactLevelRow(mode: mode, weapon: weapon)
+
+                modeSwitch
             }
             .padding(12)
             .borderedCard()
