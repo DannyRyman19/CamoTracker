@@ -24,6 +24,7 @@
 		64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A420378B1E88B956B09DD1 /* AppDelegate.swift */; };
 		6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */; };
 		79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E6BE0838A8B785F45509FD /* WeaponListView.swift */; };
+		C3D5E7F9A1B2C4D6E8F0A1B1 /* MasteryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */; };
 		7A977FF5DB06808FC339171C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159B423149587E45D2B5F5A /* Navigation.swift */; };
 		7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A39FDC7376E2120B670A81 /* Models.swift */; };
 		817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 721F171FEBB0173685265D18 /* es.lproj */; };
@@ -84,6 +85,7 @@
 		5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPrompt.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
+		C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryTabView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		895B374FC30B3DC7C15333E3 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW4CamoTrackerApp.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */,
 				4C66A60FEF15496240122166 /* WeaponDetailView.swift */,
 				82E6BE0838A8B785F45509FD /* WeaponListView.swift */,
+				C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */,
 				C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */,
 				79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */,
+				C3D5E7F9A1B2C4D6E8F0A1B1 /* MasteryTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

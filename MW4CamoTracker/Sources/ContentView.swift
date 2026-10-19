@@ -5,6 +5,12 @@ struct ContentView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.requestReview) private var requestReview
     @State private var selectedTab = 0
+    /// "I mostly play": the mode the Weapons tab opens in.
+    @AppStorage("mw4.primaryMode") private var primaryModeRaw = AppMode.multiplayer.rawValue
+    private var primaryMode: AppMode {
+        let m = AppMode(rawValue: primaryModeRaw) ?? .multiplayer
+        return viewModel.visibleModes.contains(m) ? m : viewModel.visibleModes.first ?? .multiplayer
+    }
     @State private var showOnboarding = false
     @AppStorage("mw4_has_onboarded") private var hasOnboarded = false
     @State private var splashFinishing = false
@@ -64,34 +70,61 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .top) {
             TabView(selection: $selectedTab) {
-                ForEach(Array(viewModel.visibleModes.enumerated()), id: \.element) { index, mode in
-                    NavigationStack(path: pathBinding(index)) {
-                        CategoryListView(mode: mode)
-                            .navigationDestination(for: Route.self) { route in
-                                RouteDestinationView(mode: mode, route: route)
-                            }
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button {
-                                        showOnboarding = true
-                                    } label: {
-                                        Image(systemName: "questionmark.circle")
+                // Weapons first: one list, in the mode you mostly play;
+                // each weapon switches modes for its own counts
+                let index = 0, mode = primaryMode
+                NavigationStack(path: pathBinding(index)) {
+                    CategoryListView(mode: mode)
+                        .navigationDestination(for: Route.self) { route in
+                            RouteDestinationView(mode: mode, route: route)
+                        }
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            // The title is the mode, with a ▾ to change it
+                            ToolbarItem(placement: .principal) {
+                                Menu {
+                                    Picker("mw4.ui.mostly_play".localized(), selection: $primaryModeRaw) {
+                                        ForEach(viewModel.visibleModes) { m in
+                                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m.rawValue)
+                                        }
+                                    }
+                                } label: {
+                                    HStack(spacing: 6) {
+                                        Text(mode.displayNameKey.localized())
+                                            .font(.hitmarker(22))
+                                            .foregroundStyle(Color.appInk)
+                                        Image(systemName: "chevron.down.circle.fill")
+                                            .font(.system(size: 16, weight: .semibold))
+                                            .foregroundStyle(mode.accent)
                                     }
                                 }
+                                .accessibilityLabel("mw4.ui.mostly_play".localized())
                             }
-                    }
-                    .environment(\.pushRoute) { route in
-                        var path = paths[index] ?? NavigationPath()
-                        path.append(route)
-                        paths[index] = path
-                    }
-                    .tabItem { Label(mode.displayNameKey.localized(), systemImage: mode.symbol) }
-                    .tag(index)
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button {
+                                    showOnboarding = true
+                                } label: {
+                                    Image(systemName: "questionmark.circle")
+                                }
+                            }
+                        }
                 }
+                .id(mode)
+                .environment(\.pushRoute) { route in
+                    var path = paths[index] ?? NavigationPath()
+                    path.append(route)
+                    paths[index] = path
+                }
+                .tabItem { Label("mw4.ui.section.weapons".localized(), systemImage: "scope") }
+                .tag(index)
+
+                NavigationStack { MasteryTabView(startMode: primaryMode) }
+                    .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
+                    .tag(2)
 
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
-                    .tag(viewModel.visibleModes.count)
+                    .tag(1)
             }
             .tint(currentAccent)
 
@@ -107,8 +140,8 @@ struct ContentView: View {
         }
         .onAppear {
             if let screen = Self.screenshotScreen {
-                let shown = viewModel.visibleModes.map(\.rawValue)
-                let index = screen == "stats" ? shown.count : shown.firstIndex(of: screen) ?? 0
+                if let m = AppMode(rawValue: screen) { primaryModeRaw = m.rawValue }
+                let index = screen == "stats" ? 1 : 0
                 selectedTab = index
                 if let route = Self.screenshotRoute {
                     var path = NavigationPath()
@@ -213,10 +246,11 @@ struct ContentView: View {
                 hasOnboarded = true
                 showOnboarding = false
             }
+            .environmentObject(viewModel)
         }
     }
 
     private var currentAccent: Color {
-        viewModel.visibleModes.indices.contains(selectedTab) ? viewModel.visibleModes[selectedTab].accent : .accentMultiplayer
+        primaryMode.accent
     }
 }

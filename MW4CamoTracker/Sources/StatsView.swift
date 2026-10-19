@@ -23,35 +23,25 @@ struct StatsView: View {
             AppBackground(accent: .accentMultiplayer)
             List {
                 let modes = viewModel.visibleModes
-                if width >= 950 {
-                    // iPad: the overall ring, then the three modes in a row.
-                    OverallStatsHero()
+                // Camos are one track per weapon, so the weapons are shown
+                // once; only Mastery is per mode
+                OverallStatsHero()
+                    .listRowInsets(Self.rowInsets)
+                    .listRowBackground(Color.clear)
+                if let first = modes.first {
+                    ModeStatsCard(mode: first, part: .weapons)
                         .listRowInsets(Self.rowInsets)
                         .listRowBackground(Color.clear)
+                }
+                if width >= 600 {
                     cardRow {
                         ForEach(modes) { mode in
-                            ModeStatsCard(mode: mode).frame(maxWidth: .infinity, alignment: .top)
+                            ModeStatsCard(mode: mode, part: .mastery).frame(maxWidth: .infinity, alignment: .top)
                         }
                     }
-                } else if width >= 600, modes.count == 3 {
-                    // An unfolded iPhone Duo, either way up, or a small
-                    // iPad: three mode cards do not fit across and two
-                    // leave one alone, so the overall ring takes the fourth
-                    // place in a two by two.
-                    cardRow {
-                        OverallStatsHero(fillsHeight: true).frame(maxWidth: .infinity)
-                        ModeStatsCard(mode: modes[0]).frame(maxWidth: .infinity, alignment: .top)
-                    }
-                    cardRow {
-                        ModeStatsCard(mode: modes[1]).frame(maxWidth: .infinity, alignment: .top)
-                        ModeStatsCard(mode: modes[2]).frame(maxWidth: .infinity, alignment: .top)
-                    }
                 } else {
-                    OverallStatsHero()
-                        .listRowInsets(Self.rowInsets)
-                        .listRowBackground(Color.clear)
                     ForEach(modes) { mode in
-                        ModeStatsCard(mode: mode)
+                        ModeStatsCard(mode: mode, part: .mastery)
                             .listRowInsets(Self.rowInsets)
                             .listRowBackground(Color.clear)
                     }
@@ -149,7 +139,11 @@ private struct SupportRow: View {
 /// One mode's whole dashboard card: header + hero ring, the Mastery track,
 /// and a collapsible breakdown of every category/objective in that mode.
 private struct ModeStatsCard: View {
+    /// The weapons (shared by every mode: Completionist, 100%+ and each
+    /// class), or one mode's own part (Mastery and its objectives).
+    enum Part { case weapons, mastery }
     let mode: AppMode
+    let part: Part
     @EnvironmentObject private var viewModel: TrackerViewModel
     @State private var breakdownExpanded = true
 
@@ -161,28 +155,31 @@ private struct ModeStatsCard: View {
     /// mode's weapons have each.
     private var completionistNodes: [MasteryTrack.Node] {
         let total = viewModel.totalWeaponCount
-        return mode.completionistCamos.enumerated().map { index, camo in
+        var nodes: [MasteryTrack.Node] = mode.completionistCamos.enumerated().map { index, camo in
             let done = viewModel.completionistCount(mode: mode.rawValue, step: index)
             return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
                          achieved: total > 0 && done >= total, detail: "\(done)/\(total)")
         }
+        // 100%+: the last Completionist camo on every weapon, new ones too,
+        // shown once it's on the launch roster
+        if nodes.last?.achieved == true {
+            let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
+            nodes.append(.init(name: "mw4.ui.stats.100_plus".localized(), color: .camoPlatinum, gradient: .platinum,
+                               achieved: fullRoster.total > 0 && fullRoster.done >= fullRoster.total,
+                               detail: "\(fullRoster.done)/\(fullRoster.total)"))
+        }
+        return nodes
     }
 
     /// The mode's three Mastery camos, each with how many weapons have the
     /// final Completionist camo out of the count it needs.
     private var masteryNodes: [MasteryTrack.Node] {
         let tiers = mode.masteryCamos
-        var nodes: [MasteryTrack.Node] = [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
+        let nodes: [MasteryTrack.Node] = [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
             let progress = viewModel.masteryProgress(mode: mode.rawValue, tier: index + 1)
             return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
                          achieved: viewModel.isMasteryAchieved(mode: mode.rawValue, tier: index + 1),
                          detail: "\(progress.done)/\(progress.total)")
-        }
-        // Only once the last Mastery camo is earned — before then "100%+" is
-        // a goal past one you haven't reached yet, not useful information.
-        if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
-            let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
-            nodes.append(.init(name: "mw4.ui.stats.100_plus".localized(), color: .camoPlatinum, gradient: .platinum, achieved: viewModel.is100PlusAchieved(mode: mode.rawValue), detail: "\(fullRoster.done)/\(fullRoster.total)"))
         }
         return nodes
     }
@@ -190,10 +187,11 @@ private struct ModeStatsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 10) {
-                Image(systemName: mode.symbol)
+                Image(systemName: part == .weapons ? "scope" : mode.symbol)
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(mode.accent)
-                Text(mode.displayNameKey.localized())
+                Text(part == .weapons ? "mw4.ui.section.weapons".localized()
+                     : "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())")
                     .font(.hitmarker(17))
                     .foregroundStyle(Color.appInk)
                 Spacer()
@@ -209,17 +207,19 @@ private struct ModeStatsCard: View {
                     )
             }
 
-            VStack(spacing: 8) {
-                trackTitle("mw4.ui.section.completionist".localized())
-                MasteryTrack(nodes: completionistNodes)
+            if part == .weapons {
+                VStack(spacing: 8) {
+                    trackTitle("mw4.ui.section.completionist".localized())
+                    MasteryTrack(nodes: completionistNodes)
+                }
+            } else {
+                VStack(spacing: 8) {
+                    trackTitle("mw4.ui.section.mastery".localized())
+                    MasteryTrack(nodes: masteryNodes)
+                }
             }
 
-            VStack(spacing: 8) {
-                trackTitle("mw4.ui.section.mastery".localized())
-                MasteryTrack(nodes: masteryNodes)
-            }
-
-            if !weaponCategories.isEmpty || !objectiveCategories.isEmpty {
+            if (part == .weapons && !weaponCategories.isEmpty) || (part == .mastery && !objectiveCategories.isEmpty) {
                 // A manual toggle instead of `DisclosureGroup` — inside a
                 // custom `List` row, `DisclosureGroup`'s own expand/collapse
                 // animation fought with the row's height change and made the
@@ -246,7 +246,7 @@ private struct ModeStatsCard: View {
 
                 if breakdownExpanded {
                     VStack(spacing: 10) {
-                        ForEach(weaponCategories) { category in
+                        ForEach(part == .weapons ? weaponCategories : []) { category in
                             statRow(
                                 name: category.name.resolved(),
                                 // The whole track: camos and Completionist,
@@ -256,7 +256,7 @@ private struct ModeStatsCard: View {
                                 count: "\(viewModel.categoryLastCompletionistCount(category, mode: mode.rawValue))/\(category.weapons.count) \(mode.lastCompletionist.name)"
                             )
                         }
-                        ForEach(objectiveCategories) { category in
+                        ForEach(part == .mastery ? objectiveCategories : []) { category in
                             statRow(
                                 name: category.name.resolved(),
                                 fraction: viewModel.objectiveProgressFraction(of: category, mode: mode.rawValue)

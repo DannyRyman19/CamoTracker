@@ -141,9 +141,11 @@ extension TrackerViewModel {
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
                      subtitle: tier == 3
                         ? "mw4.ui.milestone.tier3_subtitle".localized()
+                        : masteryKind(mode: mode, tier: tier) == .mode
+                        ? "mw4.ui.milestone.mode_mastery_subtitle".localized()
                         : String(format: "mw4.ui.milestone.mastery_subtitle".localized(),
                                  masteryProgress(mode: mode, tier: tier).total,
-                                 masteryUsesChallenges(mode: mode) ? tierCamos[tier - 1].name : appMode.lastCompletionist.name),
+                                 masteryKind(mode: mode, tier: tier) == .challenge ? tierCamos[tier - 1].name : appMode.lastCompletionist.name),
                      titleGradient: tierCamos[tier - 1].gradient, icon: tier == 3 ? "star.fill" : "diamond.fill")
             break
         }
@@ -151,7 +153,7 @@ extension TrackerViewModel {
         if !before.is100Plus, is100PlusAchieved(mode: mode) {
             announce(title: "mw4.ui.milestone.100_plus_title".localized(),
                      subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(),
-                                      masteryUsesChallenges(mode: mode) ? tierCamos[2].name : appMode.lastCompletionist.name),
+                                      masteryKind(mode: mode, tier: 3) == .challenge ? tierCamos[2].name : appMode.lastCompletionist.name),
                      titleGradient: .platinum, icon: "crown.fill")
         }
     }
@@ -159,6 +161,7 @@ extension TrackerViewModel {
     private func announce(title: String, subtitle: String, titleGradient: [Color], icon: String) {
         let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon)
         milestoneBanner = banner
+        Haptics.milestone()
         Task { [weak self] in
             try? await Task.sleep(nanoseconds: 3_500_000_000)
             if self?.milestoneBanner?.id == banner.id {

@@ -15,8 +15,13 @@ struct WeaponListView: View {
     @AppStorage("mw4_weapon_sort") private var sortRaw = ProgressSort.natural.rawValue
     @AppStorage("mw4_weapon_filter") private var filterRaw = WeaponFilter.all.rawValue
     private static let sortOptions: [ProgressSort] = [.natural, .alphabetical, .progressDesc, .progressAsc, .level]
+    /// No level sort in quick tick, where there are no levels.
+    private var sortOptions: [ProgressSort] { viewModel.quickTick ? Self.sortOptions.filter { $0 != .level } : Self.sortOptions }
 
-    private var sort: ProgressSort { ProgressSort(rawValue: sortRaw) ?? .natural }
+    private var sort: ProgressSort {
+        let saved = ProgressSort(rawValue: sortRaw) ?? .natural
+        return sortOptions.contains(saved) ? saved : .natural
+    }
     private var filter: WeaponFilter { WeaponFilter(rawValue: filterRaw) ?? .all }
     private var sortBinding: Binding<ProgressSort> {
         Binding(get: { sort }, set: { sortRaw = $0.rawValue })
@@ -70,7 +75,7 @@ struct WeaponListView: View {
 
                 HStack(spacing: 8) {
                     FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: filterBinding)
-                    FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
+                    FilterSortMenu(title: "mw4.ui.sort".localized(), options: sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
                 }
                 .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
                 .listRowBackground(Color.clear)
@@ -164,10 +169,12 @@ struct WeaponRow: View {
                         )
                     }
                     // Weapon level is global — the same number shows up under every mode tab.
-                    let prestige = viewModel.prestige(for: weapon.weaponId)
-                    Text("\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))")
-                        .font(.system(size: 11, design: .monospaced))
-                        .foregroundStyle(Color.appInkMuted)
+                    if !viewModel.quickTick {
+                        let prestige = viewModel.prestige(for: weapon.weaponId)
+                        Text("\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))")
+                            .font(.system(size: 11, design: .monospaced))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
                 }
             }
         }
