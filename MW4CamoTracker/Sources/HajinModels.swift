@@ -257,6 +257,16 @@ final class HajinStore: ObservableObject {
             }
             self.cloud = cloud
             cloud.start(current: Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) }))
+            #if DEBUG
+            // One-shot wipe like the progress store's, with its own file
+            let wipe = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("mw4_wipe_hajin")
+            if FileManager.default.fileExists(atPath: wipe.path) {
+                try? FileManager.default.removeItem(at: wipe)
+                checked = []
+                defaults.set([String](), forKey: Self.checkedKey)
+                cloud.recordLocal([:])
+            }
+            #endif
         }
     }
 

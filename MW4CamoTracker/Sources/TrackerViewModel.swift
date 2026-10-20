@@ -62,6 +62,7 @@ final class TrackerViewModel: ObservableObject {
             cloud.onRemoteChange = { [weak self] values in self?.applySynced(values) }
             self.cloud = cloud
             cloud.start(current: syncValues())
+            wipeIfAsked()
         }
         catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
         var loaded: [String: ModeFile] = [:]
@@ -1320,6 +1321,23 @@ final class TrackerViewModel: ObservableObject {
             defaults.set(data, forKey: storeKey)
         }
         refreshWidgets()
+    }
+
+    /// DEBUG: a `Documents/mw4_wipe` file clears all progress once. Saved
+    /// as a change, so iCloud carries the deletions to every other device
+    /// instead of their old copies coming back.
+    private func wipeIfAsked() {
+        #if DEBUG
+        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("mw4_wipe")
+        guard FileManager.default.fileExists(atPath: file.path) else { return }
+        try? FileManager.default.removeItem(at: file)
+        objectWillChange.send()
+        weaponLevels = [:]
+        weaponPrestige = [:]
+        amounts = [:]
+        completed = []
+        saveProgress()
+        #endif
     }
 
     // MARK: - iCloud sync
