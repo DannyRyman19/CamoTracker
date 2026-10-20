@@ -68,6 +68,11 @@ struct HajinGuide: Codable {
         let value: GuideText?
         let subtitle: GuideText?
         let level: Int?
+
+        /// Whether any of its text contains `needle` (already lowercased).
+        func matches(_ needle: String) -> Bool {
+            [title, value, subtitle].contains { $0?.resolved.lowercased().contains(needle) ?? false }
+        }
     }
 
     struct Section: Codable, Identifiable, Hashable {
@@ -163,6 +168,11 @@ final class HajinStore: ObservableObject {
             objectWillChange.send()
             defaults.set(Array(newValue).sorted(), forKey: Self.hiddenKey)
         }
+    }
+
+    /// Makes sure a marker's category is showing before flying to it.
+    func reveal(_ marker: HajinGuide.Marker) {
+        if hiddenCategories.contains(marker.cat) { hiddenCategories.remove(marker.cat) }
     }
 
     /// Checks the CDN once per launch for a newer guide.
