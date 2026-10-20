@@ -311,7 +311,7 @@ struct HajinItemView: View {
                         if item.kind != "FOB Upgrade" {
                             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
                         }
-                        if let cost = item.cost, !cost.isEmpty { recipe(item, cost) }
+                        if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
                         facts(item)
                         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
                         let users = guide.usedIn(item.id)

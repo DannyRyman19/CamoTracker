@@ -1,5 +1,5 @@
 {
- "version": "0.8.3",
+ "version": "0.8.4",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2514,6 +2514,20 @@
      "check": "upgrade-mia-recovery-discount-i"
     },
     {
+     "title": "Bank Upgrade I",
+     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "value": "$25,000",
+     "item": "bank-upgrade-i",
+     "check": "upgrade-bank-upgrade-i"
+    },
+    {
+     "title": "Bank Upgrade II",
+     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "value": "$50,000",
+     "item": "bank-upgrade-ii",
+     "check": "upgrade-bank-upgrade-ii"
+    },
+    {
      "title": "Bank Upgrade III",
      "subtitle": "5 Infantry Invasion Plans. Your Bank holds up to $1 million",
      "value": "$100,000",
@@ -3887,6 +3901,24 @@
    "rarity": "Rare",
    "note": "The cash vaults of South Korean bank branches",
    "value": 100
+  },
+  {
+   "id": "bank-upgrade-i",
+   "name": "Bank Upgrade I",
+   "kind": "FOB Upgrade",
+   "note": "Ingredients not confirmed yet",
+   "cash": 25000,
+   "effect": "Raises your Bank's cash cap",
+   "symbol": "building.columns.fill"
+  },
+  {
+   "id": "bank-upgrade-ii",
+   "name": "Bank Upgrade II",
+   "kind": "FOB Upgrade",
+   "note": "Ingredients not confirmed yet",
+   "cash": 50000,
+   "effect": "Raises your Bank's cash cap",
+   "symbol": "building.columns.fill"
   },
   {
    "id": "bank-upgrade-iii",
