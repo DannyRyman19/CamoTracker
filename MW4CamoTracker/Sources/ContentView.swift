@@ -71,13 +71,18 @@ struct ContentView: View {
     }
 
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @State private var rootWidth: CGFloat = 0
+
+    /// Room for Mastery beside the weapons: an iPad, or an unfolded iPhone
+    /// Duo held sideways. Upright the Duo (about 670pt) keeps the tab.
+    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 }
 
     /// iPad: Mastery in a column beside the weapons, shown or hidden from
     /// the toolbar. It stands in for the Mastery tab, which iPad drops.
     @AppStorage("mw4.masteryColumn") private var showsMasteryColumn = true
 
     @ViewBuilder private func homeRoot(mode: AppMode) -> some View {
-        if sizeClass == .regular {
+        if hasMasteryColumn {
             HStack(spacing: 0) {
                 CategoryListView(mode: mode)
                     .frame(maxWidth: .infinity)
@@ -97,6 +102,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
+            Color.clear.readingWidth($rootWidth)
             TabView(selection: $selectedTab) {
                 // Weapons first: one list, in the mode you mostly play;
                 // each weapon switches modes for its own counts
@@ -135,7 +141,7 @@ struct ContentView: View {
                                     Image(systemName: "questionmark.circle")
                                 }
                             }
-                            if sizeClass == .regular {
+                            if hasMasteryColumn {
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     Button {
                                         Haptics.step()
@@ -158,7 +164,7 @@ struct ContentView: View {
                 .tag(index)
 
                 // iPad has Mastery beside the weapons instead
-                if sizeClass != .regular {
+                if !hasMasteryColumn {
                     NavigationStack { MasteryTabView() }
                         .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
                         .tag(2)
@@ -188,8 +194,8 @@ struct ContentView: View {
                 paths[0] = path
             }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
-            .onChange(of: sizeClass) { size in
-                if size == .regular, selectedTab == 2 { selectedTab = 0 }
+            .onChange(of: hasMasteryColumn) { column in
+                if column, selectedTab == 2 { selectedTab = 0 }
             }
             .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
             // The title's mode is where the app opens next time, and what
