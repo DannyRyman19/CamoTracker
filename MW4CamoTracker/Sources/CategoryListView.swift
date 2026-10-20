@@ -579,6 +579,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
@@ -656,6 +657,14 @@ struct CustomiseHomeSheet: View {
                         .accessibilityIdentifier("customise.showLocked")
                 } footer: {
                     Text("mw4.ui.customise.locked_footer".localized())
+                }
+
+                Section {
+                    Toggle("mw4.ui.icloud.title".localized(), isOn: $iCloudSync)
+                        .tint(accent)
+                        .accessibilityIdentifier("customise.iCloudSync")
+                } footer: {
+                    Text("mw4.ui.icloud.footer".localized())
                 }
 
                 Section {

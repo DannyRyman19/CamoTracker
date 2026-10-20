@@ -1,5 +1,5 @@
 {
- "version": "0.5.0",
+ "version": "0.6.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2568,75 +2568,87 @@
    "id": "bosses",
    "title": "Bosses",
    "symbol": "scope",
-   "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients.",
+   "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients. Tick a boss once you've taken it down.",
    "rows": [
     {
      "title": "Gorani",
-     "value": "Lieutenant",
-     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village"
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village",
+     "group": "Lieutenants",
+     "check": "boss-gorani"
     },
     {
      "title": "Bale",
-     "value": "Lieutenant",
      "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract",
      "links": [
       "bales-dog-tag"
-     ]
+     ],
+     "group": "Lieutenants",
+     "check": "boss-bale"
     },
     {
      "title": "Jang-ui",
-     "value": "Lieutenant",
-     "subtitle": "Camp in the NuriGO Mall shopping district"
+     "subtitle": "Camp in the NuriGO Mall shopping district",
+     "group": "Lieutenants",
+     "check": "boss-jang-ui"
     },
     {
      "title": "The Doctor",
-     "value": "Lieutenant",
-     "subtitle": "Pays $10,000"
+     "subtitle": "Pays $10,000",
+     "group": "Lieutenants",
+     "check": "boss-the-doctor"
     },
     {
      "title": "Jin-Tae",
-     "value": "Lieutenant",
      "subtitle": "The target in Operation Critical Extraction. Drops Radiation Blockers. Pays $10,000",
      "links": [
       "radiation-blockers"
-     ]
+     ],
+     "group": "Lieutenants",
+     "check": "boss-jin-tae"
     },
     {
      "title": "Scavenger",
-     "value": "Lieutenant",
      "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000",
      "links": [
       "scavengers-dog-tag"
-     ]
+     ],
+     "group": "Lieutenants",
+     "check": "boss-scavenger"
     },
     {
      "title": "Iskra",
-     "value": "Lieutenant",
-     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Pays $10,000"
+     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Pays $10,000",
+     "group": "Lieutenants",
+     "check": "boss-iskra"
     },
     {
      "title": "Roze",
-     "value": "Lieutenant"
+     "group": "Lieutenants",
+     "check": "boss-roze"
     },
     {
      "title": "The Warden",
-     "value": "Lieutenant",
-     "subtitle": "Northern hills. Drops a key to a sealed door under NuriGO Mall"
+     "subtitle": "Northern hills. Drops a key to a sealed door under NuriGO Mall",
+     "group": "Lieutenants",
+     "check": "boss-the-warden"
     },
     {
      "title": "Colossus",
-     "value": "Commander",
-     "subtitle": "A seven-foot armored soldier with a minigun"
+     "subtitle": "A seven-foot armored soldier with a minigun",
+     "group": "Commanders",
+     "check": "boss-colossus"
     },
     {
      "title": "Deathstalker",
-     "value": "Commander",
-     "subtitle": "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it"
+     "subtitle": "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it",
+     "group": "Commanders",
+     "check": "boss-deathstalker"
     },
     {
      "title": "NK Battle Tank",
-     "value": "Commander",
-     "subtitle": "Roams Hajin"
+     "subtitle": "Roams Hajin",
+     "group": "Commanders",
+     "check": "boss-nk-battle-tank"
     }
    ]
   },

@@ -79,6 +79,8 @@ struct HajinGuide: Codable {
         /// A weapon in the camo catalog (`weaponId`), for its picture and
         /// a link to its camos.
         let weapon: Int?
+        /// Gives the row a checkbox, saved (and synced) under this key.
+        let check: String?
 
         /// Whether any of its text contains `needle` (already lowercased).
         func matches(_ needle: String) -> Bool {
@@ -215,12 +217,16 @@ enum HajinThreat {
 @MainActor
 final class HajinStore: ObservableObject {
     static let pinsKey = "mw4_hajin_pins"
+    static let checkedKey = "mw4_hajin_checked"
     static let hiddenKey = "mw4_hajin_hidden_categories"
 
     @Published private(set) var guide: HajinGuide?
     @Published var pins: [HajinPin] = [] {
         didSet { savePins() }
     }
+    /// Ticked rows (bosses taken down), synced over iCloud with progress.
+    @Published private(set) var checked: Set<String> = []
+    private var cloud: CloudSync?
 
     private let dataService: DataService
     private let defaults: UserDefaults
@@ -241,6 +247,23 @@ final class HajinStore: ObservableObject {
            let saved = try? JSONDecoder().decode([HajinPin].self, from: data) {
             pins = saved
         }
+        checked = Set(defaults.stringArray(forKey: Self.checkedKey) ?? [])
+        if defaults == .standard {
+            let cloud = CloudSync(cloudKey: "mw4_hajin_sync", defaults: defaults)
+            cloud.onRemoteChange = { [weak self] values in
+                guard let self else { return }
+                self.checked = Set(values.keys)
+                self.defaults.set(Array(self.checked).sorted(), forKey: Self.checkedKey)
+            }
+            self.cloud = cloud
+            cloud.start(current: Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) }))
+        }
+    }
+
+    func toggle(_ key: String) {
+        if checked.contains(key) { checked.remove(key) } else { checked.insert(key) }
+        defaults.set(Array(checked).sorted(), forKey: Self.checkedKey)
+        cloud?.recordLocal(Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) }))
     }
 
     /// Categories the player switched off on the map. Starts from each

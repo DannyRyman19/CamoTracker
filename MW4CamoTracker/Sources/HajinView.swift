@@ -372,6 +372,20 @@ struct GuideRowView: View {
 
     private var plainRow: some View {
         HStack(alignment: .top, spacing: 12) {
+            if let key = row.check {
+                let done = store.checked.contains(key)
+                Button {
+                    Haptics.step()
+                    store.toggle(key)
+                } label: {
+                    Image(systemName: done ? "checkmark.square.fill" : "square")
+                        .font(.title2)
+                        .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(row.title.resolved)
+                .accessibilityAddTraits(done ? .isSelected : [])
+            }
             if let image = row.image, let url = URL(string: image) {
                 AsyncImage(url: url) { phase in
                     if let picture = phase.image {
