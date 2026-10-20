@@ -222,6 +222,14 @@ struct CategoryListView: View {
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
+                    // A class picked: its Gold, Platinum, Harmonic Break
+                    // and Divergence, as on the class's own page
+                    if let picked = weaponCategories.first(where: { $0.categoryId == classId }) {
+                        StatSummaryCard(stats: CategoryStats.stats(viewModel: viewModel, category: picked, mode: mode))
+                            .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 34))
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                    }
                     // Lined up with the cards below (whose chevron sits
                     // outside the card), no rules either side
                     HStack(spacing: 8) {
@@ -433,12 +441,16 @@ enum CategoryStats {
     static func stats(viewModel: TrackerViewModel, category: WeaponCategory, mode: AppMode) -> [StatSummaryCard.Stat] {
         let count = category.weapons.count
         let fraction: (Int) -> Double = { count > 0 ? Double($0) / Double(count) : 0 }
+        let platinum = mode.completionist.steps[1]
+        let platinumCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 1)
         let harmonic = mode.completionist.steps[2]
         let harmonicCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2)
         let final = mode.completionist.final
         let finalCount = viewModel.categoryFinalCount(category, mode: mode.rawValue)
         var stats: [StatSummaryCard.Stat] = [
             .init(value: "\(viewModel.goldWeaponCount(in: category, mode: mode.rawValue))/\(count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
+            // Platinum opens when every weapon in the class has Gold
+            .init(value: "\(platinumCount)/\(count)", label: platinum.name, labelGradient: count > 0 && platinumCount == count ? platinum.gradient : nil, ringFraction: fraction(platinumCount), ringColor: platinum.color, ringGradient: platinum.gradient),
             .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient)
         ]
         // The final camo's ring, when the track has one.
