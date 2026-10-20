@@ -29,12 +29,28 @@ struct StatsView: View {
                 OverallStatsHero()
                     .listRowInsets(Self.rowInsets)
                     .listRowBackground(Color.clear)
-                if let first = modes.first {
+                if width >= 840, let first = modes.first {
+                    // iPad: the weapons on the left, each mode's Mastery
+                    // stacked beside them
+                    cardRow {
+                        ModeStatsCard(mode: first, part: .weapons)
+                            .frame(maxWidth: .infinity, alignment: .top)
+                        VStack(spacing: 12) {
+                            ForEach(modes) { mode in
+                                ModeStatsCard(mode: mode, part: .mastery)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .top)
+                    }
+                } else if let first = modes.first {
                     ModeStatsCard(mode: first, part: .weapons)
                         .listRowInsets(Self.rowInsets)
                         .listRowBackground(Color.clear)
                 }
-                if width >= 600 {
+                if width >= 840 {
+                    // Mastery is in the row above
+                    EmptyView()
+                } else if width >= 600 {
                     cardRow {
                         ForEach(modes) { mode in
                             ModeStatsCard(mode: mode, part: .mastery).frame(maxWidth: .infinity, alignment: .top)
