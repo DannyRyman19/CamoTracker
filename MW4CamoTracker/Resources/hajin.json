@@ -1,5 +1,5 @@
 {
- "version": "0.3.0",
+ "version": "0.4.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -1163,17 +1163,32 @@
     {
      "title": "Level 2",
      "subtitle": "3D Printer station; recipes: 1-Plate Armor Vest, 2-Plate Armor Vest, Bandage, Medkit, Small Backpack, Medium Backpack",
-     "level": 2
+     "level": 2,
+     "links": [
+      "1-plate-armor-vest",
+      "2-plate-armor-vest",
+      "medium-backpack",
+      "small-backpack",
+      "bandage",
+      "medkit"
+     ]
     },
     {
      "title": "Level 3",
      "subtitle": "Sedative Inhaler recipe",
-     "level": 3
+     "level": 3,
+     "links": [
+      "sedative-inhaler"
+     ]
     },
     {
      "title": "Level 4",
      "subtitle": "Reece operator skin; Tacticals print upgrade; Smoke Grenade and Concussion Grenade recipes",
-     "level": 4
+     "level": 4,
+     "links": [
+      "concussion-grenade",
+      "smoke-grenade"
+     ]
     },
     {
      "title": "Level 5",
@@ -1183,12 +1198,19 @@
     {
      "title": "Level 6",
      "subtitle": "Rigid Synthetics x2; Basic Armor Kit",
-     "level": 6
+     "level": 6,
+     "links": [
+      "rigid-synthetics"
+     ]
     },
     {
      "title": "Level 7",
      "subtitle": "Lethals print upgrade; Frag Grenade and Throwing Knife recipes",
-     "level": 7
+     "level": 7,
+     "links": [
+      "throwing-knife",
+      "frag-grenade"
+     ]
     },
     {
      "title": "Level 8",
@@ -1198,7 +1220,10 @@
     {
      "title": "Level 9",
      "subtitle": "Coffey operator skin; Snapshot Grenade recipe",
-     "level": 9
+     "level": 9,
+     "links": [
+      "snapshot-grenade"
+     ]
     },
     {
      "title": "Level 10",
@@ -1208,22 +1233,35 @@
     {
      "title": "Level 11",
      "subtitle": "Reactive Metals x2; Basic Triage Kit",
-     "level": 11
+     "level": 11,
+     "links": [
+      "reactive-metals"
+     ]
     },
     {
      "title": "Level 12",
      "subtitle": "Field Upgrades print upgrade; Ammo Box and Spotter Scope recipes",
-     "level": 12
+     "level": 12,
+     "links": [
+      "spotter-scope",
+      "ammo-box"
+     ]
     },
     {
      "title": "Level 13",
      "subtitle": "UAV (Epic Fire Support)",
-     "level": 13
+     "level": 13,
+     "links": [
+      "uav"
+     ]
     },
     {
      "title": "Level 14",
      "subtitle": "Armor Box recipe",
-     "level": 14
+     "level": 14,
+     "links": [
+      "armor-box"
+     ]
     },
     {
      "title": "Level 15",
@@ -1238,7 +1276,10 @@
     {
      "title": "Level 17",
      "subtitle": "Shock Stick recipe",
-     "level": 17
+     "level": 17,
+     "links": [
+      "shock-stick"
+     ]
     },
     {
      "title": "Level 18",
@@ -1268,7 +1309,10 @@
     {
      "title": "Level 23",
      "subtitle": "Sticky Grenade recipe",
-     "level": 23
+     "level": 23,
+     "links": [
+      "sticky-grenade"
+     ]
     },
     {
      "title": "Level 24",
@@ -1283,7 +1327,10 @@
     {
      "title": "Level 26",
      "subtitle": "Gas Mask recipe",
-     "level": 26
+     "level": 26,
+     "links": [
+      "gas-mask"
+     ]
     },
     {
      "title": "Level 27",
@@ -1293,12 +1340,18 @@
     {
      "title": "Level 28",
      "subtitle": "Fire Support print upgrade; Care Package recipe",
-     "level": 28
+     "level": 28,
+     "links": [
+      "care-package"
+     ]
     },
     {
      "title": "Level 29",
      "subtitle": "Detonators x2",
-     "level": 29
+     "level": 29,
+     "links": [
+      "detonators"
+     ]
     },
     {
      "title": "Level 30",
@@ -1308,7 +1361,10 @@
     {
      "title": "Level 31",
      "subtitle": "UAV recipe",
-     "level": 31
+     "level": 31,
+     "links": [
+      "uav"
+     ]
     },
     {
      "title": "Level 32",
@@ -1333,7 +1389,10 @@
     {
      "title": "Level 36",
      "subtitle": "Molotov Cocktail recipe",
-     "level": 36
+     "level": 36,
+     "links": [
+      "molotov-cocktail"
+     ]
     },
     {
      "title": "Level 37",
@@ -1343,12 +1402,18 @@
     {
      "title": "Level 38",
      "subtitle": "Control Unit x2",
-     "level": 38
+     "level": 38,
+     "links": [
+      "control-unit"
+     ]
     },
     {
      "title": "Level 39",
      "subtitle": "Biomaterials x2",
-     "level": 39
+     "level": 39,
+     "links": [
+      "biomaterials"
+     ]
     },
     {
      "title": "Level 40",
@@ -1358,7 +1423,10 @@
     {
      "title": "Level 41",
      "subtitle": "Thermite recipe",
-     "level": 41
+     "level": 41,
+     "links": [
+      "thermite"
+     ]
     },
     {
      "title": "Level 42",
@@ -1368,12 +1436,18 @@
     {
      "title": "Level 43",
      "subtitle": "Structural Alloy x2 (Rare)",
-     "level": 43
+     "level": 43,
+     "links": [
+      "structural-alloy"
+     ]
     },
     {
      "title": "Level 44",
      "subtitle": "CPU x2 (Rare)",
-     "level": 44
+     "level": 44,
+     "links": [
+      "cpu"
+     ]
     },
     {
      "title": "Level 45",
@@ -1388,17 +1462,26 @@
     {
      "title": "Level 47",
      "subtitle": "Nitro Compounds x2 (Rare)",
-     "level": 47
+     "level": 47,
+     "links": [
+      "nitro-compounds"
+     ]
     },
     {
      "title": "Level 48",
      "subtitle": "Self-Revive Kit recipe",
-     "level": 48
+     "level": 48,
+     "links": [
+      "self-revive-kit"
+     ]
     },
     {
      "title": "Level 49",
      "subtitle": "Binding Catalyst x2 (Rare)",
-     "level": 49
+     "level": 49,
+     "links": [
+      "binding-catalyst"
+     ]
     },
     {
      "title": "Level 50",
@@ -1408,17 +1491,26 @@
     {
      "title": "Level 51",
      "subtitle": "Stock Rod x2 (Rare)",
-     "level": 51
+     "level": 51,
+     "links": [
+      "stock-rod"
+     ]
     },
     {
      "title": "Level 52",
      "subtitle": "Inflatable Decoy recipe",
-     "level": 52
+     "level": 52,
+     "links": [
+      "inflatable-decoy"
+     ]
     },
     {
      "title": "Level 53",
      "subtitle": "High-Tenacity Fibers x2 (Rare)",
-     "level": 53
+     "level": 53,
+     "links": [
+      "high-tenacity-fibers"
+     ]
     },
     {
      "title": "Level 54",
@@ -1428,22 +1520,34 @@
     {
      "title": "Level 55",
      "subtitle": "Disposable Parachute recipe",
-     "level": 55
+     "level": 55,
+     "links": [
+      "disposable-parachute"
+     ]
     },
     {
      "title": "Level 56",
      "subtitle": "Printed Circuit Board x2 (Rare)",
-     "level": 56
+     "level": 56,
+     "links": [
+      "printed-circuit-board"
+     ]
     },
     {
      "title": "Level 57",
      "subtitle": "Nylon Cloth x2 (Rare)",
-     "level": 57
+     "level": 57,
+     "links": [
+      "nylon-cloth"
+     ]
     },
     {
      "title": "Level 58",
      "subtitle": "Care Package (Rare Fire Support)",
-     "level": 58
+     "level": 58,
+     "links": [
+      "care-package"
+     ]
     },
     {
      "title": "Level 59",
@@ -1463,22 +1567,34 @@
     {
      "title": "Level 62",
      "subtitle": "Door Breacher Charge (Ultra consumable)",
-     "level": 62
+     "level": 62,
+     "links": [
+      "door-breacher-charge"
+     ]
     },
     {
      "title": "Level 63",
      "subtitle": "2-Plate Helmet Armor Vest (Epic)",
-     "level": 63
+     "level": 63,
+     "links": [
+      "2-plate-helmet-armor-vest"
+     ]
     },
     {
      "title": "Level 64",
      "subtitle": "Revive Pistol (Field Upgrade)",
-     "level": 64
+     "level": 64,
+     "links": [
+      "revive-pistol"
+     ]
     },
     {
      "title": "Level 65",
      "subtitle": "UAV (Epic Fire Support)",
-     "level": 65
+     "level": 65,
+     "links": [
+      "uav"
+     ]
     },
     {
      "title": "Level 66",
@@ -1488,17 +1604,26 @@
     {
      "title": "Level 67",
      "subtitle": "Defibrillator",
-     "level": 67
+     "level": 67,
+     "links": [
+      "defibrillator"
+     ]
     },
     {
      "title": "Level 68",
      "subtitle": "Durable Gas Mask (Epic)",
-     "level": 68
+     "level": 68,
+     "links": [
+      "gas-mask"
+     ]
     },
     {
      "title": "Level 69",
      "subtitle": "Parachute (Legendary)",
-     "level": 69
+     "level": 69,
+     "links": [
+      "parachute"
+     ]
     },
     {
      "title": "Level 70",
@@ -2149,12 +2274,18 @@
     {
      "title": "Vendor",
      "value": "Lv 5",
-     "subtitle": "Sells weapons and gear for DMZ Cash, restocking daily. More slots unlock with DMZ level and Vendor Item Upgrades. Seen on day one: night vision goggles $7,000, a built rifle $46,250"
+     "subtitle": "Sells weapons and gear for DMZ Cash, restocking daily. More slots unlock with DMZ level and Vendor Item Upgrades. Seen on day one: night vision goggles $7,000, a built rifle $46,250",
+     "links": [
+      "night-vision-goggles"
+     ]
     },
     {
      "title": "Gunsmith",
      "value": "Lv 10",
-     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I"
+     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I",
+     "links": [
+      "gunsmith-upgrade-i"
+     ]
     },
     {
      "title": "Dog Tag Case",
@@ -2172,7 +2303,10 @@
     },
     {
      "title": "Bank",
-     "subtitle": "Holds your DMZ Cash; cash you extract goes here. Bank Upgrade III raises the cap to $1 million"
+     "subtitle": "Holds your DMZ Cash; cash you extract goes here. Bank Upgrade III raises the cap to $1 million",
+     "links": [
+      "bank-upgrade-iii"
+     ]
     },
     {
      "title": "Firing Range",
@@ -2250,157 +2384,183 @@
      "title": "Han 86",
      "value": "$6,000",
      "group": "Assault Rifles",
-     "subtitle": "Unlocked from the start"
+     "subtitle": "Unlocked from the start",
+     "weapon": 0
     },
     {
      "title": "M4",
      "value": "$6,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 1
     },
     {
      "title": "Hyeon Burst",
      "value": "$5,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 2
     },
     {
      "title": "Kastov 762",
      "value": "$5,500",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 3
     },
     {
      "title": "Patriot XMR",
      "value": "$6,500",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 4
     },
     {
      "title": "Oden",
      "value": "$6,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 20
     },
     {
      "title": "Axion",
      "value": "$5,750",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 19
     },
     {
      "title": "Cronen Squall",
      "value": "$6,750",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 21
     },
     {
      "title": "ISO Nightshade",
      "value": "$4,250",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 5
     },
     {
      "title": "VEL 46",
      "value": "$4,500",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 22
     },
     {
      "title": "Wz.55 Striga",
      "value": "$3,500",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 23
     },
     {
      "title": "PPSh-41",
      "value": "$3,750",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 6
     },
     {
      "title": "X-58 Nyx",
      "value": "$4,000",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 7
     },
     {
      "title": "Rezi 12",
      "value": "$4,000",
      "group": "Shotguns",
-     "subtitle": "Unlocked from the start"
+     "subtitle": "Unlocked from the start",
+     "weapon": 8
     },
     {
      "title": "Warlord",
      "value": "$3,500",
      "group": "Shotguns",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 24
     },
     {
      "title": "FiNN LMG",
      "value": "$8,000",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 9
     },
     {
      "title": "Type 73",
      "value": "$7,500",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 10
     },
     {
      "title": "APOC-338",
      "value": "$7,750",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 25
     },
     {
      "title": "MAR-9",
      "value": "$6,500",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 11
     },
     {
      "title": "Oris 8.6",
      "value": "$7,000",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 12
     },
     {
      "title": "Mosin-Nagant",
      "value": "$7,500",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 26
     },
     {
      "title": "Sang 9mm",
      "value": "$1,000",
      "group": "Pistols",
-     "subtitle": "Unlocked from the start"
+     "subtitle": "Unlocked from the start",
+     "weapon": 28
     },
     {
      "title": "Krait P68",
      "value": "$1,000",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 15
     },
     {
      "title": ".50 GS",
      "value": "$4,000",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 16
     },
     {
      "title": "Mojave .357",
      "value": "$2,500",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock"
+     "subtitle": "Extract its Manual to unlock",
+     "weapon": 29
     },
     {
      "title": "FSS Carbon Edge 1095",
      "value": "$250",
      "group": "Melee",
-     "subtitle": "Unlocked from the start"
+     "subtitle": "Unlocked from the start",
+     "weapon": 18
     }
    ]
   },
@@ -2418,7 +2578,10 @@
     {
      "title": "Bale",
      "value": "Lieutenant",
-     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract"
+     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract",
+     "links": [
+      "bales-dog-tag"
+     ]
     },
     {
      "title": "Jang-ui",
@@ -2433,12 +2596,18 @@
     {
      "title": "Jin-Tae",
      "value": "Lieutenant",
-     "subtitle": "The target in Operation Critical Extraction. Drops Radiation Blockers. Pays $10,000"
+     "subtitle": "The target in Operation Critical Extraction. Drops Radiation Blockers. Pays $10,000",
+     "links": [
+      "radiation-blockers"
+     ]
     },
     {
      "title": "Scavenger",
      "value": "Lieutenant",
-     "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000"
+     "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000",
+     "links": [
+      "scavengers-dog-tag"
+     ]
     },
     {
      "title": "Iskra",
@@ -2671,17 +2840,26 @@
     {
      "title": "Critical Extraction",
      "value": "$25,000",
-     "subtitle": "Mirae General Hospital. Get General Kang out alive. Also rewards a Defibrillator"
+     "subtitle": "Mirae General Hospital. Get General Kang out alive. Also rewards a Defibrillator",
+     "links": [
+      "defibrillator"
+     ]
     },
     {
      "title": "Silent Ledger",
      "value": "$25,000",
-     "subtitle": "Cheongun Village. Also a Gold Bar and a Polaris Dagor"
+     "subtitle": "Cheongun Village. Also a Gold Bar and a Polaris Dagor",
+     "links": [
+      "gold-bar"
+     ]
     },
     {
      "title": "Shopping Hacks",
      "value": "$25,000",
-     "subtitle": "NuriGO Mall. Also Night Vision"
+     "subtitle": "NuriGO Mall. Also Night Vision Goggles",
+     "links": [
+      "night-vision-goggles"
+     ]
     },
     {
      "title": "Robbery",
@@ -2727,7 +2905,11 @@
     },
     {
      "title": "Radiation",
-     "subtitle": "The Reactor needs radiation gear and a gas mask. Radiation Blockers help in irradiated areas"
+     "subtitle": "The Reactor needs radiation gear and a gas mask. Radiation Blockers help in irradiated areas",
+     "links": [
+      "radiation-blockers",
+      "gas-mask"
+     ]
     }
    ]
   },
@@ -2757,41 +2939,11 @@
    "id": "traits",
    "title": "Traits",
    "symbol": "brain.head.profile",
-   "intro": "Each operator spends trait points across three trees: Warfighter, Scout and Survivalist. Dog tags level up from Steel to Onyx III, one point per level. The Scout tree so far:",
+   "intro": "Each operator spends trait points across three trees: Warfighter, Scout and Survivalist. Points come from levelling your operator's dog tag (Steel to Onyx III; about 1,900 XP for a point at Silver). The full Scout tree, top to bottom, and what's known of Warfighter:",
    "rows": [
     {
-     "title": "Pack Rat",
-     "subtitle": "20% more printer resource capacity. Stacks with Resource Hoarder",
-     "group": "Scout"
-    },
-    {
-     "title": "Resource Pockets",
-     "subtitle": "Scrapped items give 20% more printer resources",
-     "group": "Scout"
-    },
-    {
-     "title": "Ammo Scavenger",
-     "subtitle": "Double ammo from ammo packs",
-     "group": "Scout"
-    },
-    {
-     "title": "Quick Knife",
-     "subtitle": "Your weapon bash becomes a knife attack",
-     "group": "Scout"
-    },
-    {
-     "title": "Field Medic",
-     "subtitle": "Revive allies faster",
-     "group": "Scout"
-    },
-    {
-     "title": "Key Cash",
-     "subtitle": "Opening a locked room with a key pays cash; rarer keys pay more",
-     "group": "Scout"
-    },
-    {
-     "title": "Investor",
-     "subtitle": "A little more cash when you extract",
+     "title": "Thermal Padding",
+     "subtitle": "Hides you from UAVs and drops Advanced UAVs to normal UAV detection",
      "group": "Scout"
     },
     {
@@ -2800,8 +2952,109 @@
      "group": "Scout"
     },
     {
+     "title": "Resource Hoarder",
+     "subtitle": "20% more printer resource capacity. Stacks with Pack Rat",
+     "group": "Scout"
+    },
+    {
+     "title": "Investor",
+     "subtitle": "A little more cash when you extract",
+     "group": "Scout"
+    },
+    {
+     "title": "Final Intel",
+     "subtitle": "The final exfil is marked on your Tac Map from the start",
+     "group": "Scout"
+    },
+    {
+     "title": "Mini Tracker",
+     "subtitle": "Looting an unopened container has a 50% chance to send out a radar pulse",
+     "group": "Scout"
+    },
+    {
+     "title": "Key Cash",
+     "subtitle": "Opening a locked room with a key pays cash; rarer keys pay more",
+     "group": "Scout"
+    },
+    {
+     "title": "Fast Learner",
+     "subtitle": "A little more operator XP",
+     "group": "Scout"
+    },
+    {
+     "title": "Field Crafting",
+     "subtitle": "Craft items from Common printer resources while deployed",
+     "group": "Scout"
+    },
+    {
+     "title": "UAV Upgrade",
+     "subtitle": "Longer range and duration for UAVs, and they become Advanced UAVs",
+     "group": "Scout"
+    },
+    {
+     "title": "Ammo Scavenger",
+     "subtitle": "Double ammo from ammo packs",
+     "group": "Scout"
+    },
+    {
+     "title": "Stealthy",
+     "subtitle": "Kill more enemies before a Hunt Squad comes after you",
+     "group": "Scout"
+    },
+    {
+     "title": "Resupply",
+     "subtitle": "More ammo from restocks and ammo crates; Armor Boxes give 2 extra plates",
+     "group": "Scout"
+    },
+    {
+     "title": "Resource Pockets",
+     "subtitle": "Scrapped items give 20% more printer resources",
+     "group": "Scout"
+    },
+    {
+     "title": "Resource Management",
+     "subtitle": "Resources you pick up past your cap top up whichever you have least of",
+     "group": "Scout"
+    },
+    {
+     "title": "Field Medic",
+     "subtitle": "Revive allies faster",
+     "group": "Scout"
+    },
+    {
+     "title": "Hostile Looter",
+     "subtitle": "Enemies sometimes drop an Uncommon printer ingredient, and very rarely a Rare one",
+     "group": "Scout"
+    },
+    {
+     "title": "Container Looter",
+     "subtitle": "A chance of an extra piece of loot in containers",
+     "group": "Scout"
+    },
+    {
+     "title": "Pack Rat",
+     "subtitle": "20% more printer resource capacity. Stacks with Resource Hoarder",
+     "group": "Scout"
+    },
+    {
+     "title": "Cash Ops",
+     "subtitle": "20% more cash from completing Ops",
+     "group": "Scout"
+    },
+    {
+     "title": "Quick Knife",
+     "subtitle": "Your weapon bash becomes a knife attack",
+     "group": "Scout"
+    },
+    {
+     "title": "Popcorn Tacticals",
+     "subtitle": "Enemies hit by your Tacticals are more likely to drop Tacticals",
+     "group": "Warfighter"
+    },
+    {
      "title": "Randomized Trait",
-     "subtitle": "Revealed once you take a trait from the row before"
+     "subtitle": "Revealed once you take a trait from the row before",
+     "group": "Warfighter"
     }
    ]
   }
@@ -2943,6 +3196,13 @@
     }
    ],
    "effect": "Armor plates for you and your squad"
+  },
+  {
+   "id": "bales-dog-tag",
+   "name": "Bale's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract"
   },
   {
    "id": "ballistic-fabric",
@@ -3151,6 +3411,14 @@
     }
    ],
    "effect": "Knocks out electronics and sensors nearby for a short time"
+  },
+  {
+   "id": "defibrillator",
+   "name": "Defibrillator",
+   "kind": "Gear",
+   "rarity": "Uncommon",
+   "note": "A reward from Operation Critical Extraction; DMZ level 67 gives one",
+   "image": "https://camotracker.djr.li/Images/DMZ/defibrillator.png?v=1"
   },
   {
    "id": "detonators",
@@ -3543,6 +3811,12 @@
    "value": 100
   },
   {
+   "id": "night-vision-goggles",
+   "name": "Night Vision Goggles",
+   "kind": "Gear",
+   "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"
+  },
+  {
    "id": "nitro-compounds",
    "name": "Nitro Compounds",
    "rarity": "Rare",
@@ -3779,6 +4053,13 @@
     }
    ],
    "effect": "A placeable shield to hold a position"
+  },
+  {
+   "id": "scavengers-dog-tag",
+   "name": "Scavenger's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Scavenger"
   },
   {
    "id": "secure-scavenger-backpack",

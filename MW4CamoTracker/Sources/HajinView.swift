@@ -350,8 +350,13 @@ struct GuideRowView: View {
     var body: some View {
         if let id = row.item, let item = store.guide?.item(id) {
             HajinItemRow(item: item, row: row)
+        } else if let weaponId = row.weapon {
+            HajinWeaponRow(row: row, weaponId: weaponId)
         } else {
-            plainRow
+            VStack(alignment: .leading, spacing: 8) {
+                plainRow
+                if let links = row.links, !links.isEmpty { HajinLinkChips(ids: links) }
+            }
         }
     }
 

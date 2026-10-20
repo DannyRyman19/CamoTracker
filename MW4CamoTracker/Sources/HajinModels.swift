@@ -74,6 +74,11 @@ struct HajinGuide: Codable {
         let group: GuideText?
         /// The item this row is about, for its own screen and links.
         let item: String?
+        /// Items the row mentions (a boss's drop, a mission's reward).
+        let links: [String]?
+        /// A weapon in the camo catalog (`weaponId`), for its picture and
+        /// a link to its camos.
+        let weapon: Int?
 
         /// Whether any of its text contains `needle` (already lowercased).
         func matches(_ needle: String) -> Bool {
@@ -143,6 +148,13 @@ struct HajinGuide: Codable {
     }
 
     func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
+
+    /// Guide rows that mention this item: where it drops, what rewards it.
+    func mentions(_ id: String) -> [(section: Section, row: Row)] {
+        guide.flatMap { section in
+            section.rows.filter { $0.links?.contains(id) ?? false }.map { (section, $0) }
+        }
+    }
 
     func threatName(_ level: Int) -> String? {
         threatLevels.indices.contains(level - 1) ? threatLevels[level - 1].resolved : nil

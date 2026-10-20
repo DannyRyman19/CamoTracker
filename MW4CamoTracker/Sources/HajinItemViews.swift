@@ -241,6 +241,8 @@ struct HajinItemView: View {
                         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
                         let users = guide.usedIn(item.id)
                         if !users.isEmpty { usedIn(users) }
+                        let mentions = guide.mentions(item.id)
+                        if !mentions.isEmpty { whereFrom(mentions) }
                     }
                     .padding(16)
                     .frame(maxWidth: 640, alignment: .leading)
@@ -377,6 +379,37 @@ struct HajinItemView: View {
         }
     }
 
+    /// Rows that mention the item: the boss that drops it, the mission that
+    /// rewards it, the level that hands it out.
+    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            panelTitle("mw4.ui.hajin.where_from".localized())
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(Array(mentions.enumerated()), id: \.offset) { index, mention in
+                    HStack(alignment: .top, spacing: 12) {
+                        Image(systemName: mention.section.symbol)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                            .frame(width: 28)
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack {
+                                Text(mention.row.title.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                                Spacer()
+                                if let value = mention.row.value {
+                                    Text(value.resolved).font(.caption.weight(.semibold).monospacedDigit()).foregroundStyle(Color.accentDMZ)
+                                }
+                            }
+                            Text(mention.section.title.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
+                        }
+                    }
+                    .padding(12)
+                    if index < mentions.count - 1 { Divider().overlay(Color.appInkMuted.opacity(0.2)) }
+                }
+            }
+            .background(panel)
+        }
+    }
+
     private func panelTitle(_ text: String) -> some View {
         Text(text.uppercased())
             .font(.caption.weight(.heavy))
@@ -388,5 +421,82 @@ struct HajinItemView: View {
         RoundedRectangle(cornerRadius: 8)
             .fill(Color.appSurface.opacity(0.9))
             .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.appInkMuted.opacity(0.2), lineWidth: 1))
+    }
+}
+
+// MARK: - Mentions and weapons
+
+/// The items a plain row mentions, as tappable chips: a boss's drop, a
+/// mission's reward, a level's unlocks.
+struct HajinLinkChips: View {
+    let ids: [String]
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 6) {
+                ForEach(ids, id: \.self) { id in
+                    if let item = store.guide?.item(id) {
+                        HajinItemLink(id: id) {
+                            HStack(spacing: 6) {
+                                HajinItemTile(item: item, size: 24)
+                                Text(item.name.resolved)
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(Color.appInk)
+                                    .lineLimit(1)
+                            }
+                            .padding(.leading, 3)
+                            .padding(.trailing, 9)
+                            .padding(.vertical, 3)
+                            .background(
+                                Capsule().fill(Color.appSurface2)
+                                    .overlay(Capsule().strokeBorder(HajinRarity.color(item.rarity).opacity(0.5), lineWidth: 1))
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// A Gunsmith price with the weapon's picture from the camo catalog,
+/// linking to that weapon's camos.
+struct HajinWeaponRow: View {
+    let row: HajinGuide.Row
+    let weaponId: Int
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    var body: some View {
+        let weapon = viewModel.weapon(id: weaponId)
+        let content = HStack(spacing: 12) {
+            WeaponThumbnail(urlString: weapon?.imageURL, size: 64, inset: 4)
+                .frame(width: 92, height: 52)
+                .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2))
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+            VStack(alignment: .leading, spacing: 3) {
+                Text(row.title.resolved)
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color.appInk)
+                if let subtitle = row.subtitle {
+                    Text(subtitle.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
+                }
+            }
+            Spacer(minLength: 6)
+            if let value = row.value {
+                Text(value.resolved)
+                    .font(.footnote.weight(.semibold).monospacedDigit())
+                    .foregroundStyle(Color.accentDMZ)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
+            }
+        }
+        .padding(.vertical, 2)
+        if let weapon {
+            NavigationLink { WeaponDetailView(mode: .dmz, weapon: weapon) } label: { content }
+        } else {
+            content
+        }
     }
 }
