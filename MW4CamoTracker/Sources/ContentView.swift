@@ -150,6 +150,11 @@ struct ContentView: View {
             }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
             .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
+            // The title's mode is where the app opens next time, and what
+            // the widgets follow
+            .onChange(of: primaryModeRaw) { raw in
+                if startRaw != raw { startRaw = raw }
+            }
             // A mode no longer played falls back in `primaryMode` itself
             .onChange(of: playedRaw) { _ in viewModel.refreshWidgets() }
 
@@ -180,7 +185,7 @@ struct ContentView: View {
                 splashDone = true
                 return
             }
-            // Weapons opens in the mode the player picked (Customise > Opens to)
+            // Weapons opens in the mode last picked in its title
             if !startRaw.isEmpty {
                 primaryModeRaw = AppMode.start(startRaw, played: playedRaw).rawValue
             }
