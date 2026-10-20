@@ -1,5 +1,5 @@
 {
-  "version": "0.8.15",
+  "version": "0.8.16",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -378,7 +378,18 @@
           },
           "tier": 9,
           "unlockLevel": 26,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_myriad.png",
           "group": "special"
@@ -395,7 +406,18 @@
           },
           "tier": 10,
           "unlockLevel": 51,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is.",
+              "it": "Ottieni 75 uccisioni di nemici con l’arma appoggiata."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_night_ops.png",
           "group": "special"
@@ -412,7 +434,18 @@
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 enemy kills from behind.",
+              "fr": "Obtenez 100 éliminations d’ennemis par derrière.",
+              "es": "Consigue 100 bajas de enemigos por la espalda.",
+              "de": "Erziele 100 Abschüsse gegen Gegner von hinten.",
+              "nl": "Behaal 100 vijandkills van achteren.",
+              "it": "Ottieni 100 uccisioni di nemici alle spalle."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_green.png",
           "group": "special"
@@ -570,7 +603,18 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 30 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 30 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 30 veces.",
+              "de": "Erziele 30-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 30 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 30 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_ponderosa.png",
           "group": "special"
@@ -587,7 +631,18 @@
           },
           "tier": 10,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 75 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 75 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_red_rain.png",
           "group": "special"
@@ -604,7 +659,18 @@
           },
           "tier": 11,
           "unlockLevel": 68,
-          "requirement": null,
+          "requirement": {
+            "amount": 250,
+            "unit": "kills",
+            "description": {
+              "en": "Get 250 enemy kills while using a silencer.",
+              "fr": "Obtenez 250 éliminations d’ennemis avec un silencieux.",
+              "es": "Consigue 250 bajas de enemigos usando un silenciador.",
+              "de": "Erziele 250 Abschüsse gegen Gegner mit Schalldämpfer.",
+              "nl": "Behaal 250 vijandkills met een geluiddemper.",
+              "it": "Ottieni 250 uccisioni di nemici usando un silenziatore."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_kitty_kaos.png",
           "group": "special"
@@ -762,7 +828,18 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 enemy kills without taking damage, 25 times.",
+              "fr": "Obtenez 5 éliminations d’ennemis sans subir de dégâts, 25 fois.",
+              "es": "Consigue 5 bajas de enemigos sin recibir daño, 25 veces.",
+              "de": "Erziele 25-mal 5 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 25 keer 5 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 5 uccisioni di nemici senza subire danni, 25 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_samnim.png",
           "group": "special"
@@ -779,7 +856,18 @@
           },
           "tier": 10,
           "unlockLevel": 48,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 75 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 75 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_raster_aux.png",
           "group": "special"
@@ -796,7 +884,18 @@
           },
           "tier": 11,
           "unlockLevel": 71,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 hipfire kills against enemies.",
+              "fr": "Obtenez 100 éliminations sans viser contre des ennemis.",
+              "es": "Consigue 100 bajas disparando desde la cadera contra enemigos.",
+              "de": "Erziele 100 Abschüsse aus der Hüfte gegen Gegner.",
+              "nl": "Behaal 100 heupvuurkills tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici senza mirare."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_yellow.png",
           "group": "special"
@@ -954,7 +1053,18 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 hipfire kills against enemies.",
+              "fr": "Obtenez 75 éliminations sans viser contre des ennemis.",
+              "es": "Consigue 75 bajas disparando desde la cadera contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus der Hüfte gegen Gegner.",
+              "nl": "Behaal 75 heupvuurkills tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici senza mirare."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_dune_sea.png",
           "group": "special"
@@ -971,7 +1081,18 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while using a silencer.",
+              "fr": "Obtenez 125 éliminations d’ennemis avec un silencieux.",
+              "es": "Consigue 125 bajas de enemigos usando un silenciador.",
+              "de": "Erziele 125 Abschüsse gegen Gegner mit Schalldämpfer.",
+              "nl": "Behaal 125 vijandkills met een geluiddemper.",
+              "it": "Ottieni 125 uccisioni di nemici usando un silenziatore."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_scorch.png",
           "group": "special"
@@ -988,7 +1109,18 @@
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 longshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 100 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 100 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_disperse.png",
           "group": "special"
@@ -1146,7 +1278,18 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 kills while aiming down sights.",
+              "fr": "Obtenez 125 éliminations en visant.",
+              "es": "Consigue 125 bajas apuntando con la mira.",
+              "de": "Erziele 125 Abschüsse beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 125 kills terwijl je richt.",
+              "it": "Ottieni 125 uccisioni mirando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_asphalt.png",
           "group": "special"
@@ -1163,7 +1306,18 @@
           },
           "tier": 10,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 double kills against enemies.",
+              "fr": "Réalisez 30 doubles éliminations contre des ennemis.",
+              "es": "Consigue 30 bajas dobles contra enemigos.",
+              "de": "Erziele 30 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 30 dubbele kills tegen vijanden.",
+              "it": "Ottieni 30 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_black_topo.png",
           "group": "special"
@@ -1180,7 +1334,18 @@
           },
           "tier": 11,
           "unlockLevel": 64,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 enemy kills without taking damage, 50 times.",
+              "fr": "Obtenez 3 éliminations d’ennemis sans subir de dégâts, 50 fois.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño, 50 veces.",
+              "de": "Erziele 50-mal 3 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 50 keer 3 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 3 uccisioni di nemici senza subire danni, 50 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_brown.png",
           "group": "special"
@@ -1338,7 +1503,18 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 double kills against players.",
+              "fr": "Réalisez 30 doubles éliminations contre des joueurs.",
+              "es": "Consigue 30 bajas dobles contra jugadores.",
+              "de": "Erziele 30 Doppelabschüsse gegen Spieler.",
+              "nl": "Behaal 30 dubbele kills tegen spelers.",
+              "it": "Ottieni 30 uccisioni doppie di giocatori."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_blackwell.png",
           "group": "special"
@@ -1355,7 +1531,18 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills.",
+              "fr": "Obtenez 75 éliminations à longue distance.",
+              "es": "Consigue 75 bajas a larga distancia.",
+              "de": "Erziele 75 Weitschuss-Abschüsse.",
+              "nl": "Behaal 75 kills van lange afstand.",
+              "it": "Ottieni 75 uccisioni a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_iron.png",
           "group": "special"
@@ -1372,7 +1559,18 @@
           },
           "tier": 11,
           "unlockLevel": 62,
-          "requirement": null,
+          "requirement": {
+            "amount": 250,
+            "unit": "kills",
+            "description": {
+              "en": "Get 250 kills while aiming down sights.",
+              "fr": "Obtenez 250 éliminations en visant.",
+              "es": "Consigue 250 bajas apuntando con la mira.",
+              "de": "Erziele 250 Abschüsse beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 250 kills terwijl je richt.",
+              "it": "Ottieni 250 uccisioni mirando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_currents.png",
           "group": "special"
@@ -1530,7 +1728,18 @@
           },
           "tier": 9,
           "unlockLevel": 17,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 kills while moving.",
+              "fr": "Obtenez 75 éliminations en mouvement.",
+              "es": "Consigue 75 bajas en movimiento.",
+              "de": "Erziele 75 Abschüsse in Bewegung.",
+              "nl": "Behaal 75 kills terwijl je beweegt.",
+              "it": "Ottieni 75 uccisioni in movimento."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_sniper_veil.png",
           "group": "special"
@@ -1547,7 +1756,18 @@
           },
           "tier": 10,
           "unlockLevel": 35,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 75 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 75 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_carbonated.png",
           "group": "special"
@@ -1564,7 +1784,18 @@
           },
           "tier": 11,
           "unlockLevel": 53,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 longshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 100 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 100 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_lime.png",
           "group": "special"
@@ -1722,7 +1953,18 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_struck_oil.png",
           "group": "special"
@@ -1739,7 +1981,18 @@
           },
           "tier": 10,
           "unlockLevel": 42,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 longshot kills against enemies.",
+              "fr": "Obtenez 50 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 50 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 50 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 50 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 50 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_brushstroke.png",
           "group": "special"
@@ -1756,7 +2009,18 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 enemy kills while jumping.",
+              "fr": "Obtenez 100 éliminations d’ennemis en sautant.",
+              "es": "Consigue 100 bajas de enemigos mientras saltas.",
+              "de": "Erziele 100 Abschüsse gegen Gegner im Sprung.",
+              "nl": "Behaal 100 vijandkills terwijl je springt.",
+              "it": "Ottieni 100 uccisioni di nemici saltando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_white_pine.png",
           "group": "special"
@@ -1914,7 +2178,18 @@
           },
           "tier": 9,
           "unlockLevel": 18,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_desert_tactics.png",
           "group": "special"
@@ -1931,7 +2206,18 @@
           },
           "tier": 10,
           "unlockLevel": 39,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 30 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 30 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 30 veces.",
+              "de": "Erziele 30-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 30 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 30 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_green_tiger.png",
           "group": "special"
@@ -1948,7 +2234,18 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 longshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 100 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 100 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_thunderhead.png",
           "group": "special"
@@ -2106,7 +2403,18 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is.",
+              "it": "Ottieni 75 uccisioni di nemici con l’arma appoggiata."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_ash_pine.png",
           "group": "special"
@@ -2123,7 +2431,18 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 double kills against enemies.",
+              "fr": "Réalisez 30 doubles éliminations contre des ennemis.",
+              "es": "Consigue 30 bajas dobles contra enemigos.",
+              "de": "Erziele 30 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 30 dubbele kills tegen vijanden.",
+              "it": "Ottieni 30 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_outcrop.png",
           "group": "special"
@@ -2140,7 +2459,18 @@
           },
           "tier": 11,
           "unlockLevel": 65,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 100 headshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à la tête contre des ennemis.",
+              "es": "Consigue 100 bajas con disparo a la cabeza contra enemigos.",
+              "de": "Erziele 100 Kopfschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 headshotkills tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici con colpi alla testa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_foxtrail.png",
           "group": "special"
@@ -2298,7 +2628,18 @@
           },
           "tier": 9,
           "unlockLevel": 26,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is.",
+              "it": "Ottieni 75 uccisioni di nemici con l’arma appoggiata."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_mangrove.png",
           "group": "special"
@@ -2315,7 +2656,18 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while crouched.",
+              "fr": "Obtenez 75 éliminations d’ennemis accroupi.",
+              "es": "Consigue 75 bajas de enemigos agachado.",
+              "de": "Erziele 75 Abschüsse gegen Gegner in der Hocke.",
+              "nl": "Behaal 75 vijandkills terwijl je hurkt.",
+              "it": "Ottieni 75 uccisioni di nemici da accovacciato."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_fungal_grid.png",
           "group": "special"
@@ -2332,7 +2684,18 @@
           },
           "tier": 11,
           "unlockLevel": 73,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 longshot kills against enemies.",
+              "fr": "Obtenez 100 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 100 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 100 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 100 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 100 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_white.png",
           "group": "special"
@@ -2490,7 +2853,18 @@
           },
           "tier": 9,
           "unlockLevel": 27,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 quickscope kills against enemies.",
+              "fr": "Obtenez 50 éliminations en visée rapide contre des ennemis.",
+              "es": "Consigue 50 bajas con apuntado rápido contra enemigos.",
+              "de": "Erziele 50 Quickscope-Abschüsse gegen Gegner.",
+              "nl": "Behaal 50 quickscopekills tegen vijanden.",
+              "it": "Ottieni 50 uccisioni di nemici con mira rapida."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_hibiscus.png",
           "group": "special"
@@ -2507,7 +2881,18 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 double kills against enemies.",
+              "fr": "Réalisez 50 doubles éliminations contre des ennemis.",
+              "es": "Consigue 50 bajas dobles contra enemigos.",
+              "de": "Erziele 50 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 50 dubbele kills tegen vijanden.",
+              "it": "Ottieni 50 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_fire_topo.png",
           "group": "special"
@@ -2524,7 +2909,18 @@
           },
           "tier": 11,
           "unlockLevel": 70,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 enemy kills without taking damage, 50 times.",
+              "fr": "Obtenez 3 éliminations d’ennemis sans subir de dégâts, 50 fois.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño, 50 veces.",
+              "de": "Erziele 50-mal 3 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 50 keer 3 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 3 uccisioni di nemici senza subire danni, 50 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_deep_space.png",
           "group": "special"
@@ -2682,7 +3078,18 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 0 enemy kills without taking damage, 25 times.",
+              "fr": "Obtenez 0 éliminations d’ennemis sans subir de dégâts, 25 fois.",
+              "es": "Consigue 0 bajas de enemigos sin recibir daño, 25 veces.",
+              "de": "Erziele 25-mal 0 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 25 keer 0 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 0 uccisioni di nemici senza subire danni, 25 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_treeline.png",
           "group": "special"
@@ -2699,7 +3106,18 @@
           },
           "tier": 10,
           "unlockLevel": 47,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 kills while focused.",
+              "fr": "Obtenez 75 éliminations en mode Concentration.",
+              "es": "Consigue 75 bajas con Concentración.",
+              "de": "Erziele 75 Abschüsse im Fokus.",
+              "nl": "Behaal 75 kills terwijl je gefocust bent.",
+              "it": "Ottieni 75 uccisioni in Concentrazione."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_spidersilk.png",
           "group": "special"
@@ -2716,7 +3134,18 @@
           },
           "tier": 11,
           "unlockLevel": 75,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without taking damage, 30 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans subir de dégâts, 30 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recibir daño, 30 veces.",
+              "de": "Erziele 30-mal 2 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 30 keer 2 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 2 uccisioni di nemici senza subire danni, 30 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_tension.png",
           "group": "special"
@@ -2874,7 +3303,18 @@
           },
           "tier": 9,
           "unlockLevel": 28,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills within 5 seconds, 25 times.",
+              "fr": "Obtenez 2 éliminations en 5 secondes, 25 fois.",
+              "es": "Consigue 2 bajas en 5 segundos, 25 veces.",
+              "de": "Erziele 25-mal 2 Abschüsse innerhalb von 5 Sekunden.",
+              "nl": "Behaal 25 keer 2 kills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni entro 5 secondi, 25 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_anaconda.png",
           "group": "special"
@@ -2891,7 +3331,18 @@
           },
           "tier": 10,
           "unlockLevel": 52,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 quickscope kills against enemies.",
+              "fr": "Obtenez 30 éliminations en visée rapide contre des ennemis.",
+              "es": "Consigue 30 bajas con apuntado rápido contra enemigos.",
+              "de": "Erziele 30 Quickscope-Abschüsse gegen Gegner.",
+              "nl": "Behaal 30 quickscopekills tegen vijanden.",
+              "it": "Ottieni 30 uccisioni di nemici con mira rapida."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_ripplewave.png",
           "group": "special"
@@ -2908,7 +3359,18 @@
           },
           "tier": 11,
           "unlockLevel": 74,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 one-shot kills.",
+              "fr": "Obtenez 100 éliminations en un tir.",
+              "es": "Consigue 100 bajas de un disparo.",
+              "de": "Erziele 100 Abschüsse mit einem Schuss.",
+              "nl": "Behaal 100 kills met één schot.",
+              "it": "Ottieni 100 uccisioni con un colpo solo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_sunburn.png",
           "group": "special"
@@ -3066,7 +3528,18 @@
           },
           "tier": 9,
           "unlockLevel": 13,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 enemy kills while ledge hanging.",
+              "fr": "Obtenez 50 éliminations d’ennemis en étant suspendu à une corniche.",
+              "es": "Consigue 50 bajas de enemigos colgado de un saliente.",
+              "de": "Erziele 50 Abschüsse gegen Gegner, während du an einer Kante hängst.",
+              "nl": "Behaal 50 vijandkills terwijl je aan een richel hangt.",
+              "it": "Ottieni 50 uccisioni di nemici appeso a un bordo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_off_grid.png",
           "group": "special"
@@ -3083,7 +3556,18 @@
           },
           "tier": 10,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 point blank kills against enemies.",
+              "fr": "Obtenez 50 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 50 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 50 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 50 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 50 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_urban_flamingo.png",
           "group": "special"
@@ -3100,7 +3584,18 @@
           },
           "tier": 11,
           "unlockLevel": 38,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while using a silencer.",
+              "fr": "Obtenez 125 éliminations d’ennemis avec un silencieux.",
+              "es": "Consigue 125 bajas de enemigos usando un silenciador.",
+              "de": "Erziele 125 Abschüsse gegen Gegner mit Schalldämpfer.",
+              "nl": "Behaal 125 vijandkills met een geluiddemper.",
+              "it": "Ottieni 125 uccisioni di nemici usando un silenziatore."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_smokescreen.png",
           "group": "special"
@@ -3258,7 +3753,18 @@
           },
           "tier": 9,
           "unlockLevel": 18,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à la tête contre des ennemis.",
+              "es": "Consigue 75 bajas con disparo a la cabeza contra enemigos.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 headshotkills tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici con colpi alla testa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_frosted.png",
           "group": "special"
@@ -3275,7 +3781,18 @@
           },
           "tier": 10,
           "unlockLevel": 34,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 double kills against enemies.",
+              "fr": "Réalisez 20 doubles éliminations contre des ennemis.",
+              "es": "Consigue 20 bajas dobles contra enemigos.",
+              "de": "Erziele 20 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 20 dubbele kills tegen vijanden.",
+              "it": "Ottieni 20 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_splatter_ops.png",
           "group": "special"
@@ -3292,7 +3809,18 @@
           },
           "tier": 11,
           "unlockLevel": 50,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_red_tiger.png",
           "group": "special"
@@ -3450,7 +3978,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 direct shot kills against enemies.",
+              "fr": "Obtenez 25 éliminations par tir direct contre des ennemis.",
+              "es": "Consigue 25 bajas con impacto directo contra enemigos.",
+              "de": "Erziele 25 Abschüsse durch Direkttreffer gegen Gegner.",
+              "nl": "Behaal 25 kills met een voltreffer tegen vijanden.",
+              "it": "Ottieni 25 uccisioni di nemici con colpo diretto."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_frontier.png",
           "group": "special"
@@ -3467,7 +4006,18 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 double kills against enemies.",
+              "fr": "Réalisez 100 doubles éliminations contre des ennemis.",
+              "es": "Consigue 100 bajas dobles contra enemigos.",
+              "de": "Erziele 100 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 100 dubbele kills tegen vijanden.",
+              "it": "Ottieni 100 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_sandwash.png",
           "group": "special"
@@ -3484,7 +4034,18 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 50 killstreaks or vehicles.",
+              "fr": "Détruisez 50 séries d'éliminations ou véhicules.",
+              "es": "Destruye 50 rachas de bajas o vehículos.",
+              "de": "Zerstöre 50 Abschussserien oder Fahrzeuge.",
+              "nl": "Vernietig 50 killstreaks of voertuigen.",
+              "it": "Distruggi 50 serie di uccisioni o veicoli."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_digital_fall.png",
           "group": "special"
@@ -3642,7 +4203,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 enemy kills while jumping.",
+              "fr": "Obtenez 100 éliminations d’ennemis en sautant.",
+              "es": "Consigue 100 bajas de enemigos mientras saltas.",
+              "de": "Erziele 100 Abschüsse gegen Gegner im Sprung.",
+              "nl": "Behaal 100 vijandkills terwijl je springt.",
+              "it": "Ottieni 100 uccisioni di nemici saltando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_raster_lite.png",
           "group": "special"
@@ -3659,7 +4231,18 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills using the heavy melee finisher.",
+              "fr": "Obtenez 75 éliminations d’ennemis avec l'achèvement au corps à corps lourd.",
+              "es": "Consigue 75 bajas de enemigos con el remate cuerpo a cuerpo pesado.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit dem schweren Nahkampf-Finisher.",
+              "nl": "Behaal 75 vijandkills met de zware melee-finisher.",
+              "it": "Ottieni 75 uccisioni di nemici con il colpo finale corpo a corpo pesante."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_stockpile.png",
           "group": "special"
@@ -3676,7 +4259,18 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills within 5 seconds, 50 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis en 5 secondes, 50 fois.",
+              "es": "Consigue 2 bajas de enemigos en 5 segundos, 50 veces.",
+              "de": "Erziele 50-mal 2 Abschüsse gegen Gegner innerhalb von 5 Sekunden.",
+              "nl": "Behaal 50 keer 2 vijandkills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni di nemici entro 5 secondi, 50 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_deathbed.png",
           "group": "special"
@@ -3834,7 +4428,18 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 75 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 75 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_splinter_rock.png",
           "group": "special"
@@ -3851,7 +4456,18 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills with the Miri 40MM grenade launcher.",
+              "fr": "Obtenez 75 éliminations d’ennemis avec le lance-grenades Miri 40 mm.",
+              "es": "Consigue 75 bajas de enemigos con el lanzagranadas Miri 40 mm.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit dem Miri-40-mm-Granatwerfer.",
+              "nl": "Behaal 75 vijandkills met de Miri 40MM-granaatwerper.",
+              "it": "Ottieni 75 uccisioni di nemici con il lanciagranate Miri 40MM."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_sunset_tropic.png",
           "group": "special"
@@ -3868,7 +4484,18 @@
           },
           "tier": 11,
           "unlockLevel": 69,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 50 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 50 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 50 veces.",
+              "de": "Erziele 50-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 50 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 50 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_cyan.png",
           "group": "special"
@@ -4026,7 +4653,18 @@
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills with the Miri 40MM grenade launcher.",
+              "fr": "Obtenez 75 éliminations d’ennemis avec le lance-grenades Miri 40 mm.",
+              "es": "Consigue 75 bajas de enemigos con el lanzagranadas Miri 40 mm.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit dem Miri-40-mm-Granatwerfer.",
+              "nl": "Behaal 75 vijandkills met de Miri 40MM-granaatwerper.",
+              "it": "Ottieni 75 uccisioni di nemici con il lanciagranate Miri 40MM."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_dark_moss.png",
           "group": "special"
@@ -4043,7 +4681,18 @@
           },
           "tier": 10,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 30 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 30 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 30 veces.",
+              "de": "Erziele 30-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 30 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 30 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_shale.png",
           "group": "special"
@@ -4060,7 +4709,18 @@
           },
           "tier": 11,
           "unlockLevel": 65,
-          "requirement": null,
+          "requirement": {
+            "amount": 250,
+            "unit": "kills",
+            "description": {
+              "en": "Get 250 kills while aiming down sights.",
+              "fr": "Obtenez 250 éliminations en visant.",
+              "es": "Consigue 250 bajas apuntando con la mira.",
+              "de": "Erziele 250 Abschüsse beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 250 kills terwijl je richt.",
+              "it": "Ottieni 250 uccisioni mirando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_hot_rod.png",
           "group": "special"
@@ -4218,7 +4878,18 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_oni.png",
           "group": "special"
@@ -4235,7 +4906,18 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is.",
+              "it": "Ottieni 75 uccisioni di nemici con l’arma appoggiata."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_urban_smoke.png",
           "group": "special"
@@ -4252,7 +4934,18 @@
           },
           "tier": 11,
           "unlockLevel": 67,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while aiming down sights.",
+              "fr": "Obtenez 50 éliminations en visant.",
+              "es": "Consigue 50 bajas apuntando con la mira.",
+              "de": "Erziele 50 Abschüsse beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 50 kills terwijl je richt.",
+              "it": "Ottieni 50 uccisioni mirando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_optical_reverb.png",
           "group": "special"
@@ -4410,7 +5103,18 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while aiming down sights.",
+              "fr": "Obtenez 125 éliminations d’ennemis en visant.",
+              "es": "Consigue 125 bajas de enemigos apuntando con la mira.",
+              "de": "Erziele 125 Abschüsse gegen Gegner beim Zielen über Kimme und Korn.",
+              "nl": "Behaal 125 vijandkills terwijl je richt.",
+              "it": "Ottieni 125 uccisioni di nemici mirando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_jungle_shadow.png",
           "group": "special"
@@ -4427,7 +5131,18 @@
           },
           "tier": 10,
           "unlockLevel": 40,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 enemy kills while prone.",
+              "fr": "Obtenez 100 éliminations d’ennemis en position allongée.",
+              "es": "Consigue 100 bajas de enemigos cuerpo a tierra.",
+              "de": "Erziele 100 Abschüsse gegen Gegner im Liegen.",
+              "nl": "Behaal 100 vijandkills terwijl je ligt.",
+              "it": "Ottieni 100 uccisioni di nemici da prono."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_ghast.png",
           "group": "special"
@@ -4444,7 +5159,18 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à la tête contre des ennemis.",
+              "es": "Consigue 75 bajas con disparo a la cabeza contra enemigos.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 headshotkills tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici con colpi alla testa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_gunmetal.png",
           "group": "special"
@@ -4602,7 +5328,18 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while using a silencer.",
+              "fr": "Obtenez 125 éliminations d’ennemis avec un silencieux.",
+              "es": "Consigue 125 bajas de enemigos usando un silenciador.",
+              "de": "Erziele 125 Abschüsse gegen Gegner mit Schalldämpfer.",
+              "nl": "Behaal 125 vijandkills met een geluiddemper.",
+              "it": "Ottieni 125 uccisioni di nemici usando un silenziatore."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_stellation.png",
           "group": "special"
@@ -4619,7 +5356,18 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 enemy kills while jumping.",
+              "fr": "Obtenez 50 éliminations d’ennemis en sautant.",
+              "es": "Consigue 50 bajas de enemigos mientras saltas.",
+              "de": "Erziele 50 Abschüsse gegen Gegner im Sprung.",
+              "nl": "Behaal 50 vijandkills terwijl je springt.",
+              "it": "Ottieni 50 uccisioni di nemici saltando."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_rattlesnake.png",
           "group": "special"
@@ -4636,7 +5384,18 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 point blank kills.",
+              "fr": "Obtenez 100 éliminations à bout portant.",
+              "es": "Consigue 100 bajas a quemarropa.",
+              "de": "Erziele 100 Abschüsse aus nächster Nähe.",
+              "nl": "Behaal 100 kills van dichtbij.",
+              "it": "Ottieni 100 uccisioni a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_dark_tan.png",
           "group": "special"
@@ -4794,7 +5553,18 @@
           },
           "tier": 9,
           "unlockLevel": 21,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while moving.",
+              "fr": "Obtenez 75 éliminations d’ennemis en mouvement.",
+              "es": "Consigue 75 bajas de enemigos en movimiento.",
+              "de": "Erziele 75 Abschüsse gegen Gegner in Bewegung.",
+              "nl": "Behaal 75 vijandkills terwijl je beweegt.",
+              "it": "Ottieni 75 uccisioni di nemici in movimento."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_redshift.png",
           "group": "special"
@@ -4811,7 +5581,18 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 double kills against enemies.",
+              "fr": "Réalisez 30 doubles éliminations contre des ennemis.",
+              "es": "Consigue 30 bajas dobles contra enemigos.",
+              "de": "Erziele 30 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 30 dubbele kills tegen vijanden.",
+              "it": "Ottieni 30 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_corrupted_clay.png",
           "group": "special"
@@ -4828,7 +5609,18 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 enemy kills while prone.",
+              "fr": "Obtenez 125 éliminations d’ennemis en position allongée.",
+              "es": "Consigue 125 bajas de enemigos cuerpo a tierra.",
+              "de": "Erziele 125 Abschüsse gegen Gegner im Liegen.",
+              "nl": "Behaal 125 vijandkills terwijl je ligt.",
+              "it": "Ottieni 125 uccisioni di nemici da prono."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_magma_ire.png",
           "group": "special"
@@ -4986,7 +5778,18 @@
           },
           "tier": 9,
           "unlockLevel": 15,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 hipfire kills against enemies.",
+              "fr": "Obtenez 75 éliminations sans viser contre des ennemis.",
+              "es": "Consigue 75 bajas disparando desde la cadera contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus der Hüfte gegen Gegner.",
+              "nl": "Behaal 75 heupvuurkills tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici senza mirare."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_phantom_flux.png",
           "group": "special"
@@ -5003,7 +5806,18 @@
           },
           "tier": 10,
           "unlockLevel": 36,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 longshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 75 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 75 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_mineral.png",
           "group": "special"
@@ -5020,7 +5834,18 @@
           },
           "tier": 11,
           "unlockLevel": 56,
-          "requirement": null,
+          "requirement": {
+            "amount": 250,
+            "unit": "kills",
+            "description": {
+              "en": "Get 250 enemy kills while prone.",
+              "fr": "Obtenez 250 éliminations d’ennemis en position allongée.",
+              "es": "Consigue 250 bajas de enemigos cuerpo a tierra.",
+              "de": "Erziele 250 Abschüsse gegen Gegner im Liegen.",
+              "nl": "Behaal 250 vijandkills terwijl je ligt.",
+              "it": "Ottieni 250 uccisioni di nemici da prono."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_tiger_swipe.png",
           "group": "special"
@@ -5178,7 +6003,18 @@
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 75 headshot kills against enemies.",
+              "fr": "Obtenez 75 éliminations à la tête contre des ennemis.",
+              "es": "Consigue 75 bajas con disparo a la cabeza contra enemigos.",
+              "de": "Erziele 75 Kopfschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 75 headshotkills tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici con colpi alla testa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_ice_sheer.png",
           "group": "special"
@@ -5195,7 +6031,18 @@
           },
           "tier": 10,
           "unlockLevel": null,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 30 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 30 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 30 veces.",
+              "de": "Erziele 30-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 30 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 30 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_brown.png",
           "group": "special"
@@ -5212,7 +6059,18 @@
           },
           "tier": 11,
           "unlockLevel": null,
-          "requirement": null,
+          "requirement": {
+            "amount": 250,
+            "unit": "kills",
+            "description": {
+              "en": "Get 250 enemy kills while focused.",
+              "fr": "Obtenez 250 éliminations d’ennemis en mode Concentration.",
+              "es": "Consigue 250 bajas de enemigos con Concentración.",
+              "de": "Erziele 250 Abschüsse gegen Gegner im Fokus.",
+              "nl": "Behaal 250 vijandkills terwijl je gefocust bent.",
+              "it": "Ottieni 250 uccisioni di nemici in Concentrazione."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_gunmetal.png",
           "group": "special"
@@ -5370,7 +6228,18 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 enemy kills without taking damage, 25 times.",
+              "fr": "Obtenez 3 éliminations d’ennemis sans subir de dégâts, 25 fois.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño, 25 veces.",
+              "de": "Erziele 25-mal 3 Abschüsse gegen Gegner, ohne Schaden zu nehmen.",
+              "nl": "Behaal 25 keer 3 vijandkills zonder schade op te lopen.",
+              "it": "Ottieni 3 uccisioni di nemici senza subire danni, 25 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dry_brush.png",
           "group": "special"
@@ -5387,7 +6256,18 @@
           },
           "tier": 10,
           "unlockLevel": 37,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 enemy kills while mounted.",
+              "fr": "Obtenez 75 éliminations d’ennemis en position appuyée.",
+              "es": "Consigue 75 bajas de enemigos con el arma apoyada.",
+              "de": "Erziele 75 Abschüsse gegen Gegner mit aufgelegter Waffe.",
+              "nl": "Behaal 75 vijandkills terwijl je wapen gemonteerd is.",
+              "it": "Ottieni 75 uccisioni di nemici con l’arma appoggiata."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_backcountry.png",
           "group": "special"
@@ -5404,7 +6284,18 @@
           },
           "tier": 11,
           "unlockLevel": 54,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills within 5 seconds, 50 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis en 5 secondes, 50 fois.",
+              "es": "Consigue 2 bajas de enemigos en 5 segundos, 50 veces.",
+              "de": "Erziele 50-mal 2 Abschüsse gegen Gegner innerhalb von 5 Sekunden.",
+              "nl": "Behaal 50 keer 2 vijandkills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni di nemici entro 5 secondi, 50 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dread_plague.png",
           "group": "special"
@@ -5787,7 +6678,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 one-shot kills against enemies.",
+              "fr": "Obtenez 50 éliminations en un tir contre des ennemis.",
+              "es": "Consigue 50 bajas de un disparo contra enemigos.",
+              "de": "Erziele 50 Abschüsse mit einem Schuss gegen Gegner.",
+              "nl": "Behaal 50 kills met één schot tegen vijanden.",
+              "it": "Ottieni 50 uccisioni di nemici con un colpo solo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_miami.png",
           "group": "special"
@@ -5804,7 +6706,18 @@
           },
           "tier": 10,
           "unlockLevel": 30,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 20 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 20 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 20 veces.",
+              "de": "Erziele 20-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 20 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 20 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_wallpaper.png",
           "group": "special"
@@ -5821,7 +6734,18 @@
           },
           "tier": 11,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 point blank kills against enemies.",
+              "fr": "Obtenez 75 éliminations à bout portant contre des ennemis.",
+              "es": "Consigue 75 bajas a quemarropa contra enemigos.",
+              "de": "Erziele 75 Abschüsse aus nächster Nähe gegen Gegner.",
+              "nl": "Behaal 75 kills van dichtbij tegen vijanden.",
+              "it": "Ottieni 75 uccisioni di nemici a bruciapelo."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_garland.png",
           "group": "special"
@@ -5979,7 +6903,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 enemy kills while prone.",
+              "fr": "Obtenez 25 éliminations d’ennemis en position allongée.",
+              "es": "Consigue 25 bajas de enemigos cuerpo a tierra.",
+              "de": "Erziele 25 Abschüsse gegen Gegner im Liegen.",
+              "nl": "Behaal 25 vijandkills terwijl je ligt.",
+              "it": "Ottieni 25 uccisioni di nemici da prono."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_digi_bark.png",
           "group": "special"
@@ -5996,7 +6931,18 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 longshot kills against enemies.",
+              "fr": "Obtenez 25 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 25 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 25 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 25 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 25 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_stone_bits.png",
           "group": "special"
@@ -6013,7 +6959,18 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 50 killstreaks or vehicles.",
+              "fr": "Détruisez 50 séries d'éliminations ou véhicules.",
+              "es": "Destruye 50 rachas de bajas o vehículos.",
+              "de": "Zerstöre 50 Abschussserien oder Fahrzeuge.",
+              "nl": "Vernietig 50 killstreaks of voertuigen.",
+              "it": "Distruggi 50 serie di uccisioni o veicoli."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_bubblegum_ops.png",
           "group": "special"
@@ -6171,7 +7128,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 double kills against enemies.",
+              "fr": "Réalisez 15 doubles éliminations contre des ennemis.",
+              "es": "Consigue 15 bajas dobles contra enemigos.",
+              "de": "Erziele 15 Doppelabschüsse gegen Gegner.",
+              "nl": "Behaal 15 dubbele kills tegen vijanden.",
+              "it": "Ottieni 15 uccisioni doppie di nemici."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_thicket.png",
           "group": "special"
@@ -6188,7 +7156,18 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 longshot kills against enemies.",
+              "fr": "Obtenez 25 éliminations à longue distance contre des ennemis.",
+              "es": "Consigue 25 bajas a larga distancia contra enemigos.",
+              "de": "Erziele 25 Weitschuss-Abschüsse gegen Gegner.",
+              "nl": "Behaal 25 kills van lange afstand tegen vijanden.",
+              "it": "Ottieni 25 uccisioni di nemici a lunga distanza."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_tectonic.png",
           "group": "special"
@@ -6205,7 +7184,18 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 50 killstreaks or vehicles.",
+              "fr": "Détruisez 50 séries d'éliminations ou véhicules.",
+              "es": "Destruye 50 rachas de bajas o vehículos.",
+              "de": "Zerstöre 50 Abschussserien oder Fahrzeuge.",
+              "nl": "Vernietig 50 killstreaks of voertuigen.",
+              "it": "Distruggi 50 serie di uccisioni o veicoli."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_blue_tiger.png",
           "group": "special"
@@ -6363,7 +7353,18 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 direct shot kills against enemies.",
+              "fr": "Obtenez 25 éliminations par tir direct contre des ennemis.",
+              "es": "Consigue 25 bajas con impacto directo contra enemigos.",
+              "de": "Erziele 25 Abschüsse durch Direkttreffer gegen Gegner.",
+              "nl": "Behaal 25 kills met een voltreffer tegen vijanden.",
+              "it": "Ottieni 25 uccisioni di nemici con colpo diretto."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_night_snow.png",
           "group": "special"
@@ -6380,7 +7381,18 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 enemy kills without reloading, 20 times.",
+              "fr": "Obtenez 2 éliminations d’ennemis sans recharger, 20 fois.",
+              "es": "Consigue 2 bajas de enemigos sin recargar, 20 veces.",
+              "de": "Erziele 20-mal 2 Abschüsse gegen Gegner, ohne nachzuladen.",
+              "nl": "Behaal 20 keer 2 vijandkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di nemici senza ricaricare, 20 volte."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_recursive.png",
           "group": "special"
@@ -6397,7 +7409,18 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 enemy kills while moving.",
+              "fr": "Obtenez 100 éliminations d’ennemis en mouvement.",
+              "es": "Consigue 100 bajas de enemigos en movimiento.",
+              "de": "Erziele 100 Abschüsse gegen Gegner in Bewegung.",
+              "nl": "Behaal 100 vijandkills terwijl je beweegt.",
+              "it": "Ottieni 100 uccisioni di nemici in movimento."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_urban_standard.png",
           "group": "special"
@@ -6406,7 +7429,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Mastery is DMZ's own, from the same blog: Chiral 2,500 Tier 3+ enemy kills, Ripple Tide exfil 2 LT dog tags in one deployment 50 times, Helio 25,000 Legendary weapon kills on a max-level Operator. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
+  "_note": "Mastery is DMZ's own, from the same blog: Chiral 2,500 Tier 3+ enemy kills, Ripple Tide exfil 2 LT dog tags in one deployment 50 times, Helio 25,000 Legendary weapon kills on a max-level Operator. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special challenges read off DMZ's own camo screens (video, 20 Oct 2026). Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/chiral.png",
