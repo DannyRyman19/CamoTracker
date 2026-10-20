@@ -143,14 +143,23 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
             let minZoom: CGFloat
             if category.isLabel {
                 let area = category.id == "area"
+                // Area names take their threat colour, Low green to Extreme red
+                let colour = marker.threat.map { UIColor(HajinThreat.color($0)) }
+                    ?? (area ? .white : UIColor(white: 0.85, alpha: 1))
                 view = label(marker.name.resolved, size: area ? 14 : 11, weight: area ? .heavy : .semibold,
-                             colour: area ? .white : UIColor(white: 0.85, alpha: 1), selected: selected)
+                             colour: colour, selected: selected)
                 minZoom = area ? 0 : 2.5
             } else {
                 view = badge(symbol: category.symbol, tint: UIColor(category.tint), selected: selected)
                 minZoom = 0
             }
             place(view, x: marker.x, y: marker.y, tag: .marker(marker), minZoom: minZoom)
+            if category.id == "fortress", let threat = marker.threat {
+                let name = label(marker.name.resolved, size: 10, weight: .bold, colour: UIColor(HajinThreat.color(threat)), selected: selected)
+                name.isUserInteractionEnabled = false
+                // Sits under the icon; offset in map points at the zoom it shows from
+                place(name, x: marker.x, y: marker.y + 0.012, tag: .marker(marker), minZoom: 3)
+            }
         }
         for pin in pins {
             let view = badge(symbol: "mappin", tint: UIColor(red: 1, green: 0.85, blue: 0.2, alpha: 1),

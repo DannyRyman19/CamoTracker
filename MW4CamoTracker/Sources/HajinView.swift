@@ -282,9 +282,23 @@ struct GuideSectionView: View {
         return section.rows.filter { $0.matches(needle) }
     }
 
+    @EnvironmentObject private var store: HajinStore
+
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
+            if section.id == "traits", query.isEmpty, let trees = store.guide?.traitTrees {
+                HajinTraitsView(trees: trees)
+            } else {
+                rowList
+            }
+        }
+        .searchable(text: $query, prompt: "mw4.ui.hajin.search_section".localized())
+        .navigationTitle(section.title.resolved)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var rowList: some View {
             List {
                 if let intro = section.intro, query.isEmpty {
                     Text(intro.resolved)
@@ -301,10 +315,6 @@ struct GuideSectionView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
-            .searchable(text: $query, prompt: "mw4.ui.hajin.search_section".localized())
-        }
-        .navigationTitle(section.title.resolved)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -429,6 +439,14 @@ struct HajinMapPane: View {
                         newPin = HajinPin(x: point.x, y: point.y, title: "", note: "")
                     }
                 )
+
+                // iPhone: top right, clear of the tab bar; iPad: bottom right,
+                // clear of the filter chips and the marker card
+                ThreatLegend(guide: guide)
+                    .padding(10)
+                    .padding(.top, inline ? 0 : 36)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: inline ? .bottomTrailing : .topTrailing)
+                    .allowsHitTesting(false)
 
                 VStack(spacing: 8) {
                     if inline { FilterChips(guide: guide) }
@@ -687,7 +705,9 @@ struct HajinGuidePanel: View {
             .padding(.horizontal, 12)
             .padding(.bottom, 6)
 
-            if let guide = store.guide {
+            if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
+                HajinTraitsView(trees: trees)
+            } else if let guide = store.guide {
                 List {
                     if let section = open {
                         sectionRows(section)
@@ -955,5 +975,27 @@ private extension View {
         } else {
             self
         }
+    }
+}
+
+/// The threat colours the map's area names use, Low to Extreme.
+private struct ThreatLegend: View {
+    let guide: HajinGuide
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text("mw4.ui.hajin.threat_legend".localized().uppercased())
+                .font(.system(size: 9, weight: .heavy))
+                .tracking(0.8)
+                .foregroundStyle(.white.opacity(0.7))
+            ForEach(Array(guide.threatLevels.enumerated()), id: \.offset) { index, level in
+                HStack(spacing: 5) {
+                    Circle().fill(HajinThreat.color(index + 1)).frame(width: 7, height: 7)
+                    Text(level.resolved).font(.system(size: 10, weight: .semibold)).foregroundStyle(.white.opacity(0.9))
+                }
+            }
+        }
+        .padding(8)
+        .background(RoundedRectangle(cornerRadius: 8).fill(.black.opacity(0.6)))
     }
 }

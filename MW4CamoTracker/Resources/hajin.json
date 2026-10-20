@@ -1,5 +1,5 @@
 {
- "version": "0.4.0",
+ "version": "0.5.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2939,8 +2939,48 @@
    "id": "traits",
    "title": "Traits",
    "symbol": "brain.head.profile",
-   "intro": "Each operator spends trait points across three trees: Warfighter, Scout and Survivalist. Points come from levelling your operator's dog tag (Steel to Onyx III; about 1,900 XP for a point at Silver). The full Scout tree, top to bottom, and what's known of Warfighter:",
+   "intro": "Each operator has three trees: Warfighter, Scout and Survivalist. You pick one trait per row, 9 per tree and 18 at most, with points from levelling your operator's dog tag (about 1,900 XP a point at Silver). The two-choice rows are fixed; the three-choice rows are random for each operator and show once you take a trait from the row above. Scout is shown as seen on Ghost; tap any trait to see what it does.",
    "rows": [
+    {
+     "title": "Popcorn Tacticals",
+     "subtitle": "Enemies hit by your Tacticals are more likely to drop Tacticals",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Randomized Trait",
+     "subtitle": "Revealed once you take a trait from the row before",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Possum",
+     "subtitle": "Once per match, self-revive from death into Last Stand with full health",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Adaptive Restock",
+     "subtitle": "Enemies drop one extra item",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Viper Sense",
+     "subtitle": "Warns you when enemy operators are nearby",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Quick Fix",
+     "subtitle": "Shorter health regen delay after you kill an enemy operator or hostile",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Equipment Professional",
+     "subtitle": "Lethals and Tacticals slowly recharge after use, up to the slot's max",
+     "group": "Warfighter"
+    },
+    {
+     "title": "Combat Resistance",
+     "subtitle": "Less damage from explosives and weaker enemy tactical effects",
+     "group": "Warfighter"
+    },
     {
      "title": "Thermal Padding",
      "subtitle": "Hides you from UAVs and drops Advanced UAVs to normal UAV detection",
@@ -3047,14 +3087,59 @@
      "group": "Scout"
     },
     {
-     "title": "Popcorn Tacticals",
-     "subtitle": "Enemies hit by your Tacticals are more likely to drop Tacticals",
-     "group": "Warfighter"
+     "title": "Die Hard",
+     "subtitle": "In Last Stand, reaching an exfil calls it for you, and you never bleed out",
+     "group": "Survivalist"
     },
     {
-     "title": "Randomized Trait",
-     "subtitle": "Revealed once you take a trait from the row before",
-     "group": "Warfighter"
+     "title": "Impact Smokes",
+     "subtitle": "Releases smoke when you're downed",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Killing Spree",
+     "subtitle": "Kills extend your active effects, up to twice as long",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Metabolism",
+     "subtitle": "Slowly regenerate health lost to a tourniquet",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Adrenaline Burst",
+     "subtitle": "A kill resets Tactical Sprint",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Air Superiority",
+     "subtitle": "UAV Towers and SAM sites last longer",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Combat Scavenger",
+     "subtitle": "Hostiles have a small chance to drop an ingredient or valuable",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Consumable Duration",
+     "subtitle": "Consumables last longer",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Free Revive",
+     "subtitle": "Your first Wound repairs itself",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "LT Hunter",
+     "subtitle": "Lieutenant Towers give extra paid intel",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Numb the Pain",
+     "subtitle": "Revives also give Pain Killers and Smelling Salts effects",
+     "group": "Not placed in a tree yet"
     }
    ]
   }
@@ -4530,6 +4615,394 @@
     }
    ],
    "effect": "Single-shot pistol for close range"
+  }
+ ],
+ "traitTrees": [
+  {
+   "id": "warfighter",
+   "name": "Warfighter",
+   "color": "#E0575B",
+   "shape": "hexagon",
+   "rows": [
+    [
+     "possum",
+     "adaptive-restock"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     "viper-sense",
+     "quick-fix"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     "equipment-professional",
+     "combat-resistance"
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "emblem": "popcorn-tacticals"
+  },
+  {
+   "id": "scout",
+   "name": "Scout",
+   "color": "#D8B44A",
+   "shape": "circle",
+   "rows": [
+    [
+     "overwatch",
+     "thermal-padding"
+    ],
+    [
+     "resource-hoarder",
+     "investor",
+     "final-intel"
+    ],
+    [
+     "mini-tracker",
+     "key-cash",
+     "fast-learner"
+    ],
+    [
+     "field-crafting",
+     "uav-upgrade"
+    ],
+    [
+     "ammo-scavenger",
+     "stealthy",
+     "resupply"
+    ],
+    [
+     "resource-pockets",
+     "resource-management",
+     "field-medic"
+    ],
+    [
+     "hostile-looter",
+     "container-looter"
+    ],
+    [
+     "pack-rat",
+     "cash-ops",
+     "quick-knife"
+    ]
+   ],
+   "emblem": "scout-emblem"
+  },
+  {
+   "id": "survivalist",
+   "name": "Survivalist",
+   "color": "#8FB0C4",
+   "shape": "square",
+   "rows": [
+    [
+     "surv-r1a",
+     "die-hard"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     "impact-smokes",
+     "surv-r4b"
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null
+    ],
+    [
+     "surv-r7a",
+     "surv-r7b"
+    ],
+    [
+     null,
+     null,
+     null
+    ]
+   ],
+   "emblem": "surv-emblem"
+  }
+ ],
+ "traits": [
+  {
+   "id": "adaptive-restock",
+   "tree": "Warfighter",
+   "name": "Adaptive Restock",
+   "effect": "Enemies drop one extra item",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/adaptive-restock.png?v=2"
+  },
+  {
+   "id": "ammo-scavenger",
+   "name": "Ammo Scavenger",
+   "tree": "Scout",
+   "effect": "Double ammo from ammo packs",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/ammo-scavenger.png?v=2"
+  },
+  {
+   "id": "cash-ops",
+   "name": "Cash Ops",
+   "tree": "Scout",
+   "effect": "20% more cash from completing Ops",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/cash-ops.png?v=2"
+  },
+  {
+   "id": "combat-resistance",
+   "tree": "Warfighter",
+   "name": "Combat Resistance",
+   "effect": "Less damage from explosives and weaker enemy tactical effects",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/combat-resistance.png?v=2"
+  },
+  {
+   "id": "container-looter",
+   "name": "Container Looter",
+   "tree": "Scout",
+   "effect": "A chance of an extra piece of loot in containers",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/container-looter.png?v=2"
+  },
+  {
+   "id": "die-hard",
+   "tree": "Survivalist",
+   "name": "Die Hard",
+   "effect": "In Last Stand, reaching an exfil calls it for you, and you never bleed out",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/die-hard.png?v=2"
+  },
+  {
+   "id": "equipment-professional",
+   "tree": "Warfighter",
+   "name": "Equipment Professional",
+   "effect": "Lethals and Tacticals slowly recharge after use, up to the slot's max",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/equipment-professional.png?v=2"
+  },
+  {
+   "id": "fast-learner",
+   "name": "Fast Learner",
+   "tree": "Scout",
+   "effect": "A little more operator XP",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/fast-learner.png?v=2"
+  },
+  {
+   "id": "field-crafting",
+   "name": "Field Crafting",
+   "tree": "Scout",
+   "effect": "Craft items from Common printer resources while deployed",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/field-crafting.png?v=2"
+  },
+  {
+   "id": "field-medic",
+   "name": "Field Medic",
+   "tree": "Scout",
+   "effect": "Revive allies faster",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/field-medic.png?v=2"
+  },
+  {
+   "id": "final-intel",
+   "name": "Final Intel",
+   "tree": "Scout",
+   "effect": "The final exfil is marked on your Tac Map from the start",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/final-intel.png?v=2"
+  },
+  {
+   "id": "hostile-looter",
+   "name": "Hostile Looter",
+   "tree": "Scout",
+   "effect": "Enemies sometimes drop an Uncommon printer ingredient, and very rarely a Rare one",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/hostile-looter.png?v=2"
+  },
+  {
+   "id": "impact-smokes",
+   "tree": "Survivalist",
+   "name": "Impact Smokes",
+   "effect": "Releases smoke when you're downed",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/impact-smokes.png?v=2"
+  },
+  {
+   "id": "investor",
+   "name": "Investor",
+   "tree": "Scout",
+   "effect": "A little more cash when you extract",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/investor.png?v=2"
+  },
+  {
+   "id": "key-cash",
+   "name": "Key Cash",
+   "tree": "Scout",
+   "effect": "Opening a locked room with a key pays cash; rarer keys pay more",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/key-cash.png?v=2"
+  },
+  {
+   "id": "mini-tracker",
+   "name": "Mini Tracker",
+   "tree": "Scout",
+   "effect": "Looting an unopened container has a 50% chance to send out a radar pulse",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/mini-tracker.png?v=2"
+  },
+  {
+   "id": "overwatch",
+   "name": "Overwatch",
+   "tree": "Scout",
+   "effect": "UAV Towers you activate never expire",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/overwatch.png?v=2"
+  },
+  {
+   "id": "pack-rat",
+   "name": "Pack Rat",
+   "tree": "Scout",
+   "effect": "20% more printer resource capacity. Stacks with Resource Hoarder",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/pack-rat.png?v=2"
+  },
+  {
+   "id": "popcorn-tacticals",
+   "name": "Popcorn Tacticals",
+   "tree": "Warfighter",
+   "effect": "Enemies hit by your Tacticals are more likely to drop Tacticals",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/popcorn-tacticals.png?v=2"
+  },
+  {
+   "id": "possum",
+   "tree": "Warfighter",
+   "name": "Possum",
+   "effect": "Once per match, self-revive from death into Last Stand with full health",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/possum.png?v=2"
+  },
+  {
+   "id": "quick-fix",
+   "tree": "Warfighter",
+   "name": "Quick Fix",
+   "effect": "Shorter health regen delay after you kill an enemy operator or hostile",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/quick-fix.png?v=2"
+  },
+  {
+   "id": "quick-knife",
+   "name": "Quick Knife",
+   "tree": "Scout",
+   "effect": "Your weapon bash becomes a knife attack",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/quick-knife.png?v=2"
+  },
+  {
+   "id": "randomized-trait",
+   "name": "Randomized Trait",
+   "tree": "Warfighter",
+   "effect": "Revealed once you take a trait from the row before"
+  },
+  {
+   "id": "resource-hoarder",
+   "name": "Resource Hoarder",
+   "tree": "Scout",
+   "effect": "20% more printer resource capacity. Stacks with Pack Rat",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/resource-hoarder.png?v=2"
+  },
+  {
+   "id": "resource-management",
+   "name": "Resource Management",
+   "tree": "Scout",
+   "effect": "Resources you pick up past your cap top up whichever you have least of",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/resource-management.png?v=2"
+  },
+  {
+   "id": "resource-pockets",
+   "name": "Resource Pockets",
+   "tree": "Scout",
+   "effect": "Scrapped items give 20% more printer resources",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/resource-pockets.png?v=2"
+  },
+  {
+   "id": "resupply",
+   "name": "Resupply",
+   "tree": "Scout",
+   "effect": "More ammo from restocks and ammo crates; Armor Boxes give 2 extra plates",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/resupply.png?v=2"
+  },
+  {
+   "id": "scout-emblem",
+   "tree": "Scout",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/scout-emblem.png?v=2"
+  },
+  {
+   "id": "stealthy",
+   "name": "Stealthy",
+   "tree": "Scout",
+   "effect": "Kill more enemies before a Hunt Squad comes after you",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/stealthy.png?v=2"
+  },
+  {
+   "id": "surv-emblem",
+   "tree": "Survivalist",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/surv-emblem.png?v=2"
+  },
+  {
+   "id": "surv-r1a",
+   "tree": "Survivalist",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/surv-r1a.png?v=2"
+  },
+  {
+   "id": "surv-r4b",
+   "tree": "Survivalist",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/surv-r4b.png?v=2"
+  },
+  {
+   "id": "surv-r7a",
+   "tree": "Survivalist",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/surv-r7a.png?v=2"
+  },
+  {
+   "id": "surv-r7b",
+   "tree": "Survivalist",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/surv-r7b.png?v=2"
+  },
+  {
+   "id": "thermal-padding",
+   "name": "Thermal Padding",
+   "tree": "Scout",
+   "effect": "Hides you from UAVs and drops Advanced UAVs to normal UAV detection",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/thermal-padding.png?v=2"
+  },
+  {
+   "id": "uav-upgrade",
+   "name": "UAV Upgrade",
+   "tree": "Scout",
+   "effect": "Longer range and duration for UAVs, and they become Advanced UAVs",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/uav-upgrade.png?v=2"
+  },
+  {
+   "id": "viper-sense",
+   "tree": "Warfighter",
+   "name": "Viper Sense",
+   "effect": "Warns you when enemy operators are nearby",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/viper-sense.png?v=2"
   }
  ]
 }

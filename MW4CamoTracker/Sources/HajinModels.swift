@@ -124,6 +124,30 @@ struct HajinGuide: Codable {
         let marker: String?
     }
 
+    /// One of the three trait trees, laid out like the game: rows top to
+    /// bottom (two fixed choices or three random ones), emblem last.
+    struct TraitTree: Codable, Identifiable, Hashable {
+        let id: String
+        let name: GuideText
+        let color: String
+        /// "hexagon", "circle" or "square", the node shape in game.
+        let shape: String
+        /// Trait ids; `nil` is a random slot not revealed yet.
+        let rows: [[String?]]
+        let emblem: String?
+
+        var tint: Color { Color(hex: color) ?? .appInk }
+    }
+
+    struct Trait: Codable, Identifiable, Hashable {
+        let id: String
+        /// `nil` when the trait's icon is known but not its name yet.
+        let name: GuideText?
+        let tree: String?
+        let effect: GuideText?
+        let icon: String?
+    }
+
     struct MapInfo: Codable {
         let image: String
         let credit: String?
@@ -137,6 +161,10 @@ struct HajinGuide: Codable {
     let markers: [Marker]
     let guide: [Section]
     let items: [Item]?
+    let traitTrees: [TraitTree]?
+    let traits: [Trait]?
+
+    func trait(_ id: String) -> Trait? { traits?.first { $0.id == id } }
 
     func category(_ id: String) -> Category? { categories.first { $0.id == id } }
 
