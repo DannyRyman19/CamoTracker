@@ -34,6 +34,72 @@ struct CategoryListView: View {
     /// `weaponCategories` after the Filter/Sort pills are applied — everything
     /// else (Suggested, Pinned, Objectives) is untouched, since those aren't
     /// the flat browsable list this control is for.
+    /// The class the weapon list shows (-1: every weapon), and the list's
+    /// filter and sort, shared with a class's own weapon list.
+    @AppStorage("mw4_home_class") private var classId = -1
+    @AppStorage("mw4_weapon_sort") private var weaponSortRaw = ProgressSort.natural.rawValue
+    @AppStorage("mw4_weapon_filter") private var weaponFilterRaw = WeaponFilter.all.rawValue
+    private var weaponSortOptions: [ProgressSort] {
+        let all: [ProgressSort] = [.natural, .alphabetical, .progressDesc, .progressAsc, .level]
+        return viewModel.quickTick ? all.filter { $0 != .level } : all
+    }
+    private var weaponSort: ProgressSort {
+        let saved = ProgressSort(rawValue: weaponSortRaw) ?? .natural
+        return weaponSortOptions.contains(saved) ? saved : .natural
+    }
+    private var weaponFilterBinding: Binding<WeaponFilter> {
+        Binding(get: { WeaponFilter(rawValue: weaponFilterRaw) ?? .all }, set: { weaponFilterRaw = $0.rawValue })
+    }
+    private var weaponSortBinding: Binding<ProgressSort> {
+        Binding(get: { weaponSort }, set: { weaponSortRaw = $0.rawValue })
+    }
+
+    private var displayedWeapons: [WeaponEntry] {
+        let filter = WeaponFilter(rawValue: weaponFilterRaw) ?? .all
+        var weapons = (weaponCategories.first { $0.categoryId == classId }.map { [$0] } ?? weaponCategories)
+            .flatMap(\.weapons)
+            .filter { viewModel.matches(filter, mode: mode.rawValue, weaponId: $0.weaponId) }
+        func progress(_ w: WeaponEntry) -> Double { viewModel.camoProgressFraction(weaponId: w.weaponId, mode: mode.rawValue) }
+        func level(_ w: WeaponEntry) -> Double {
+            Double(viewModel.prestige(for: w.weaponId)) + Double(viewModel.level(for: w.weaponId)) / Double(max(viewModel.maxLevel(for: w), 1))
+        }
+        switch weaponSort {
+        case .natural: break
+        case .alphabetical: weapons.sort { $0.name.resolved().localizedCaseInsensitiveCompare($1.name.resolved()) == .orderedAscending }
+        case .progressDesc: weapons.sort { progress($0) > progress($1) }
+        case .progressAsc: weapons.sort { progress($0) < progress($1) }
+        case .level: weapons.sort { level($0) > level($1) }
+        }
+        return weapons
+    }
+
+    /// All, then each class: tap one to narrow the list to it.
+    private var classChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                chip("mw4.ui.filter.all".localized(), id: -1)
+                ForEach(weaponCategories) { category in
+                    chip(category.name.resolved(), id: category.categoryId)
+                }
+            }
+            .padding(.horizontal, 12)
+        }
+    }
+
+    private func chip(_ title: String, id: Int) -> some View {
+        let on = classId == id
+        return Button { classId = id } label: {
+            Text(title)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(on ? Color.black : Color.appInk)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 7)
+                .background(on ? mode.accent : Color.appSurface, in: Capsule())
+                .overlay(Capsule().strokeBorder(Color.appInkMuted.opacity(on ? 0 : 0.25), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+
     private var displayedCategories: [WeaponCategory] {
         var categories = weaponCategories
         switch filter {
@@ -152,32 +218,28 @@ struct CategoryListView: View {
         case .weapons:
             if !weaponCategories.isEmpty {
                 Section {
+                    classChips
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                        .listRowBackground(Color.clear)
                     HStack(spacing: 8) {
-                        FilterSortMenu(title: "mw4.ui.filter".localized(), options: CompletionFilter.allCases, label: { $0.label }, accent: mode.accent, selection: filterBinding)
-                        FilterSortMenu(title: "mw4.ui.sort".localized(), options: Self.sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
+                        FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: weaponFilterBinding)
+                        FilterSortMenu(title: "mw4.ui.sort".localized(), options: weaponSortOptions, label: { $0.label }, accent: mode.accent, selection: weaponSortBinding)
                     }
                     .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 6, trailing: 12))
                     .listRowBackground(Color.clear)
 
-                    if displayedCategories.isEmpty {
+                    if displayedWeapons.isEmpty {
                         FilterEmptyRow()
                             .listRowInsets(EdgeInsets())
                             .listRowBackground(Color.clear)
                     } else {
-                        CardGrid(items: displayedCategories, columns: columns, route: { .weaponCategory($0.categoryId) }) { category in
-                            WeaponCategoryRow(mode: mode, category: category)
+                        // Weapons first: every gun, or one class, straight to its camos
+                        CardGrid(items: displayedWeapons, columns: columns, route: { .weapon($0.weaponId) }) { weapon in
+                            WeaponRow(mode: mode, weapon: weapon)
                         }
                     }
                 } header: {
-                    // Every weapon in one list is a way of looking at
-                    // the classes, not a class: a link, not a card.
-                    HStack {
-                        Text("mw4.ui.section.weapons".localized())
-                        Spacer()
-                        if let all = viewModel.allWeaponsCategory {
-                            SeeAllLink(accent: mode.accent, count: all.weapons.count)
-                        }
-                    }
+                    Text("mw4.ui.section.weapons".localized())
                 }
             }
 
@@ -251,21 +313,36 @@ private struct SuggestionRow: View {
 
     private var fraction: Double { viewModel.camoProgressFraction(weaponId: suggestion.weaponId, mode: mode.rawValue) }
 
+    /// The camo's own gradient when it has one, else its color.
+    private var badgeFill: AnyShapeStyle {
+        if let colors = suggestion.gradient, colors.count > 1 {
+            return AnyShapeStyle(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+        }
+        return AnyShapeStyle(suggestion.highlight ?? mode.accent)
+    }
+
+    private var subtitleStyle: AnyShapeStyle {
+        if let colors = suggestion.gradient, colors.count > 1 {
+            return AnyShapeStyle(LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing))
+        }
+        return AnyShapeStyle(Color.appInkMuted)
+    }
+
     var body: some View {
         HStack(spacing: 10) {
             Image(systemName: suggestion.highlight != nil ? "diamond.fill" : "arrow.up.forward")
                 .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(Color.appBackground)
                 .frame(width: 30, height: 30)
-                .background(Circle().fill(suggestion.highlight ?? mode.accent))
+                .background(Circle().fill(badgeFill))
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(suggestion.title)
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Color.appInk)
                 Text(suggestion.subtitle)
-                    .font(.system(size: 12.5))
-                    .foregroundStyle(Color.appInkMuted)
+                    .font(.system(size: 12.5, weight: suggestion.gradient != nil ? .semibold : .regular))
+                    .foregroundStyle(subtitleStyle)
                 ProgressBar(fraction: fraction, accent: mode.accent)
             }
 
