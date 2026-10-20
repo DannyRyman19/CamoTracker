@@ -1,0 +1,2173 @@
+{
+ "version": "0.1.0",
+ "updated": "2026-10-20",
+ "map": {
+  "image": "hajin_map",
+  "credit": "Map: Activision Hajin DMZ Tac Map"
+ },
+ "threatLevels": [
+  "Low",
+  "Medium",
+  "High",
+  "Critical",
+  "Extreme"
+ ],
+ "categories": [
+  {
+   "id": "area",
+   "name": "Areas",
+   "symbol": "map.fill",
+   "color": "#FFFFFF",
+   "visible": true
+  },
+  {
+   "id": "place",
+   "name": "Places",
+   "symbol": "mappin",
+   "color": "#C9D1D9",
+   "visible": true
+  },
+  {
+   "id": "fortress",
+   "name": "Fortresses",
+   "symbol": "building.columns.fill",
+   "color": "#E5484D",
+   "visible": true,
+   "blurb": "A Fortress: a heavily guarded stronghold with tougher enemies and better loot."
+  },
+  {
+   "id": "compound",
+   "name": "Compounds",
+   "symbol": "shield.lefthalf.filled",
+   "color": "#F76B15",
+   "visible": true,
+   "blurb": "An enemy Compound: a fortified military position inside a normal building, with a guard force and loot to match."
+  },
+  {
+   "id": "lieutenant",
+   "name": "Lieutenant Towers",
+   "symbol": "binoculars.fill",
+   "color": "#FFC53D",
+   "visible": true,
+   "blurb": "Climb a Lieutenant Hunt tower to reveal the nearest Lieutenant boss on your map."
+  },
+  {
+   "id": "uav",
+   "name": "UAV Towers",
+   "symbol": "antenna.radiowaves.left.and.right",
+   "color": "#3DD68C",
+   "visible": true,
+   "blurb": "Activate a UAV Tower to see enemies on your minimap for a while."
+  },
+  {
+   "id": "key",
+   "name": "Key Rooms",
+   "symbol": "key.fill",
+   "color": "#FFD60A",
+   "visible": true,
+   "blurb": "A locked room. Find its key in Hajin (keys can drop from Lieutenants) and bring it here; the key's description names its grid square."
+  },
+  {
+   "id": "cache",
+   "name": "Ammo & Armor Caches",
+   "symbol": "shippingbox.fill",
+   "color": "#70B8FF",
+   "visible": false,
+   "blurb": "Ammo & Armor Cache: refill ammo and plates. It goes on cooldown after use."
+  },
+  {
+   "id": "clinic",
+   "name": "Clinics",
+   "symbol": "cross.case.fill",
+   "color": "#FF8DCC",
+   "visible": false,
+   "blurb": "Clinics hold medical loot."
+  },
+  {
+   "id": "fire",
+   "name": "Fire Stations",
+   "symbol": "flame.fill",
+   "color": "#FF977D",
+   "visible": false,
+   "blurb": "Fire Stations are the place for radiation gear and parachutes, which you need for the Nuclear Reactor and high drops."
+  },
+  {
+   "id": "police",
+   "name": "Police Stations",
+   "symbol": "light.beacon.max.fill",
+   "color": "#9EB1FF",
+   "visible": false,
+   "blurb": "Police Stations carry military gear, with a locked Armory inside."
+  },
+  {
+   "id": "gas",
+   "name": "Gas Stations",
+   "symbol": "fuelpump.fill",
+   "color": "#B5B3AD",
+   "visible": false,
+   "blurb": "Gas Station: refuel vehicles here."
+  },
+  {
+   "id": "marine",
+   "name": "Marine Gas Stations",
+   "symbol": "sailboat.fill",
+   "color": "#7CE2FE",
+   "visible": false,
+   "blurb": "Marine Gas Station: refuel boats here."
+  }
+ ],
+ "markers": [
+  {
+   "id": "m5850",
+   "cat": "area",
+   "name": "14th Political Prison",
+   "x": 0.1872,
+   "y": 0.3316,
+   "threat": 3,
+   "note": "A walled prison on a cleared plateau in the North Korean wilderness. Watchtowers on every corner, barracks on the east side and the main gate to the south. The Citadel Fortress sits inside the yard."
+  },
+  {
+   "id": "m5851",
+   "cat": "area",
+   "name": "Chang-san Air Base",
+   "x": 0.103,
+   "y": 0.5925,
+   "threat": 4,
+   "note": "A North Korean air base cut into a granite hillside, with an underground bunker bigger than the base above it. Cliffs guard the east side; the woods to the south are the usual way in. The outside is Critical, the bunker Extreme. Lieutenant Bale holds the Tank Depot in the bunker."
+  },
+  {
+   "id": "m5852",
+   "cat": "area",
+   "name": "Deadtown",
+   "x": 0.1842,
+   "y": 0.747,
+   "note": "An empty farming town taken over by the army, with toxic rivers to the northwest and east and sewers running under the main buildings. Light resistance and street fights; the two Re-Education Centers hold the better targets."
+  },
+  {
+   "id": "m5853",
+   "cat": "area",
+   "name": "Imjin Farmland",
+   "x": 0.3177,
+   "y": 0.7741,
+   "threat": 1,
+   "note": "Flat rice fields, waterways and rail lines on the southwest border, with the Rice Mill Fortress in the middle. Long sightlines and little cover, so move carefully or use a vehicle."
+  },
+  {
+   "id": "m5854",
+   "cat": "area",
+   "name": "Cheongun Village",
+   "x": 0.5098,
+   "y": 0.4793,
+   "threat": 1,
+   "note": "A gambling town on the Hajin River with border crossings into Russia to the east and west. Expressway No. 1 runs along its south edge. The Heavenly Luck Casino Fortress dominates it."
+  },
+  {
+   "id": "m5855",
+   "cat": "area",
+   "name": "Haneul Nuclear Reactor",
+   "x": 0.8,
+   "y": 0.444,
+   "threat": 3,
+   "note": "A radioactive cloud hangs over the whole site and gets worse inside the reactor. Bring radiation gear and a gas mask; Radiation Blockers help. Fire Stations are where to find the gear."
+  },
+  {
+   "id": "m5856",
+   "cat": "area",
+   "name": "Mirae General Hospital",
+   "x": 0.5752,
+   "y": 0.5429,
+   "threat": 1,
+   "note": "Hajin's main hospital, next to a train station with The Grid and the mall to the east. Triage tents and barracks outside, close-quarters fights through the wards inside. Snipers like the woods of Mujin Pass to the south. Also a Fortress."
+  },
+  {
+   "id": "m5857",
+   "cat": "area",
+   "name": "NuriGo Mall",
+   "x": 0.709,
+   "y": 0.6165,
+   "note": "A shopping district under the city's towers: police station, clinic, City Hall, a monorail stop and car parks. Three round structures in the main courtyard lead down to a huge dark underground mall (bring NVGs), which is the NuriGO Mall Fortress. Lieutenant Jang-ui camps here. West is High threat, East Medium."
+  },
+  {
+   "id": "m5858",
+   "cat": "area",
+   "name": "Cheonwang Peak Array",
+   "x": 0.4846,
+   "y": 0.682,
+   "threat": 2,
+   "note": "Hajin's biggest telecom array on a flat summit, now an enemy base. Boulder trails to the west, gentler woods north toward Mujin Pass. The roof has a helipad and long views."
+  },
+  {
+   "id": "m5859",
+   "cat": "area",
+   "name": "The Grid",
+   "x": 0.6477,
+   "y": 0.6823,
+   "threat": 4,
+   "note": "The walled, razor-wired heart of Hajin City: barricaded streets, watchtowers and roaming patrols. Includes Donpyeong Gate, Hanex Bank, the DBN TV tower (the tallest building in Hajin) and the red-roofed Nenshin Tech Complex, which is Extreme threat."
+  },
+  {
+   "id": "m5860",
+   "cat": "area",
+   "name": "Songdo Wharf",
+   "x": 0.7962,
+   "y": 0.7335,
+   "threat": 1,
+   "note": "A quieter waterfront between the reactor and the river, with working train and monorail lines. The La Grande Vie tower is the tallest building nearby; a market, pier, lighthouse and Oamsik Turtle Island are on the coast."
+  },
+  {
+   "id": "m5861",
+   "cat": "area",
+   "name": "Wolves Stadium",
+   "x": 0.6023,
+   "y": 0.7665,
+   "threat": 2,
+   "note": "A ruined baseball stadium with a collapsed apartment tower beside it, an open-air theatre to the north and a police station and bank in the streets around. The edge with The Grid to the north is the dangerous part."
+  },
+  {
+   "id": "m5862",
+   "cat": "area",
+   "name": "Hajin River Heights",
+   "x": 0.6726,
+   "y": 0.8241,
+   "threat": 2,
+   "note": "Battered apartments and narrow shopping streets south of the stadium, rising toward the river's south fork. One apartment block is Compound Echo; Jinseo Park Towers and South Island's comms tower are further south."
+  },
+  {
+   "id": "m5863",
+   "cat": "place",
+   "name": "Jayon Warehouses",
+   "x": 0.112,
+   "y": 0.162
+  },
+  {
+   "id": "m5864",
+   "cat": "place",
+   "name": "Russian Border Crossing (West)",
+   "x": 0.2147,
+   "y": 0.1887
+  },
+  {
+   "id": "m5866",
+   "cat": "place",
+   "name": "Russian Border Crossing (East)",
+   "x": 0.6895,
+   "y": 0.4395
+  },
+  {
+   "id": "m5867",
+   "cat": "place",
+   "name": "Hanrim Village",
+   "x": 0.2534,
+   "y": 0.2429,
+   "note": "Lieutenant Gorani, a ghillie-suited sniper, hunts from the woods above this village."
+  },
+  {
+   "id": "m5868",
+   "cat": "place",
+   "name": "Revolution Dam",
+   "x": 0.3447,
+   "y": 0.2737
+  },
+  {
+   "id": "m5869",
+   "cat": "place",
+   "name": "Tong-il Village",
+   "x": 0.3556,
+   "y": 0.3906
+  },
+  {
+   "id": "m5870",
+   "cat": "place",
+   "name": "Pyonghwa Village",
+   "x": 0.2876,
+   "y": 0.4974
+  },
+  {
+   "id": "m5871",
+   "cat": "place",
+   "name": "Namjin Riverside",
+   "x": 0.3966,
+   "y": 0.9244
+  },
+  {
+   "id": "m5872",
+   "cat": "place",
+   "name": "South Island",
+   "x": 0.7271,
+   "y": 0.8778
+  },
+  {
+   "id": "m5873",
+   "cat": "place",
+   "name": "Cheongun Outskirts",
+   "x": 0.4421,
+   "y": 0.4395
+  },
+  {
+   "id": "m5874",
+   "cat": "place",
+   "name": "Imjin Suburb",
+   "x": 0.3677,
+   "y": 0.6177
+  },
+  {
+   "id": "m5875",
+   "cat": "place",
+   "name": "Mujin Pass",
+   "x": 0.4789,
+   "y": 0.6045
+  },
+  {
+   "id": "m5876",
+   "cat": "place",
+   "name": "Daesong Ridge",
+   "x": 0.4771,
+   "y": 0.7451
+  },
+  {
+   "id": "m5877",
+   "cat": "place",
+   "name": "Oamsik Turtle Islands",
+   "x": 0.8474,
+   "y": 0.5872
+  },
+  {
+   "id": "m5878",
+   "cat": "place",
+   "name": "NuriGO West",
+   "x": 0.6489,
+   "y": 0.6139
+  },
+  {
+   "id": "m5879",
+   "cat": "place",
+   "name": "Shoreline Station",
+   "x": 0.8038,
+   "y": 0.6203
+  },
+  {
+   "id": "m5880",
+   "cat": "place",
+   "name": "NuriGO East",
+   "x": 0.7526,
+   "y": 0.6395
+  },
+  {
+   "id": "m5881",
+   "cat": "place",
+   "name": "DBN Headquarters",
+   "x": 0.6752,
+   "y": 0.6575
+  },
+  {
+   "id": "m5882",
+   "cat": "place",
+   "name": "Hanex Bank",
+   "x": 0.6872,
+   "y": 0.6793
+  },
+  {
+   "id": "m5883",
+   "cat": "place",
+   "name": "Construction Zone",
+   "x": 0.7447,
+   "y": 0.7195
+  },
+  {
+   "id": "m5884",
+   "cat": "place",
+   "name": "Songdo Pier",
+   "x": 0.8808,
+   "y": 0.7568
+  },
+  {
+   "id": "m5885",
+   "cat": "compound",
+   "name": "Compound Foxtrot",
+   "x": 0.1342,
+   "y": 0.4733
+  },
+  {
+   "id": "m5886",
+   "cat": "compound",
+   "name": "Compound Alpha",
+   "x": 0.4365,
+   "y": 0.7989
+  },
+  {
+   "id": "m5887",
+   "cat": "compound",
+   "name": "Compound Bravo",
+   "x": 0.515,
+   "y": 0.8579
+  },
+  {
+   "id": "m5888",
+   "cat": "compound",
+   "name": "Compound Charlie",
+   "x": 0.3492,
+   "y": 0.5135
+  },
+  {
+   "id": "m5889",
+   "cat": "compound",
+   "name": "Compound Delta",
+   "x": 0.7654,
+   "y": 0.5391
+  },
+  {
+   "id": "m5890",
+   "cat": "compound",
+   "name": "Compound Echo",
+   "x": 0.6744,
+   "y": 0.7951
+  },
+  {
+   "id": "m5891",
+   "cat": "fortress",
+   "name": "The Citadel",
+   "x": 0.1692,
+   "y": 0.35,
+   "threat": 4,
+   "note": "A Y-shaped Fortress inside the prison yard: gantries, cell blocks and a furnace, with high-value targets throughout. Easy to get cut off, so learn the layout. Critical threat."
+  },
+  {
+   "id": "m5892",
+   "cat": "fortress",
+   "name": "Heavenly Luck Casino",
+   "x": 0.553,
+   "y": 0.4451,
+   "threat": 3,
+   "note": "A multi-floor casino with an underground car park. No power, so the gambling halls are dark mazes: bring NVGs. High threat."
+  },
+  {
+   "id": "m5893",
+   "cat": "fortress",
+   "name": "Mirae General Hospital",
+   "x": 0.5771,
+   "y": 0.5688,
+   "threat": 1,
+   "note": "The hospital itself is a Fortress: expect close-quarters fights through the wards and lobby."
+  },
+  {
+   "id": "m5894",
+   "cat": "fortress",
+   "name": "Admin Complex No. 2",
+   "x": 0.1105,
+   "y": 0.5944,
+   "threat": 5,
+   "note": "The command Fortress at Chang-san Air Base. Extreme threat."
+  },
+  {
+   "id": "m5895",
+   "cat": "fortress",
+   "name": "Re-Education Center",
+   "x": 0.1538,
+   "y": 0.7365,
+   "note": "Two central buildings in Deadtown where enemy numbers build up. The town around them has a Clinic and a Gas Station at each end."
+  },
+  {
+   "id": "m5896",
+   "cat": "fortress",
+   "name": "Rice Mill",
+   "x": 0.3496,
+   "y": 0.8282,
+   "note": "A Fortress on high ground over the farmland. Use the warehouses as cover on the way in, watch for enemy vehicles in the open, and switch to close-range weapons inside."
+  },
+  {
+   "id": "m5897",
+   "cat": "fortress",
+   "name": "NuriGO Mall",
+   "x": 0.7158,
+   "y": 0.6286,
+   "note": "The underground mall beneath the NuriGO courtyard: a sprawling, unlit shopping level. Bring NVGs. The Warden's key opens a sealed door down here."
+  },
+  {
+   "id": "m5898",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.3075,
+   "y": 0.2778
+  },
+  {
+   "id": "m5899",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.3109,
+   "y": 0.456
+  },
+  {
+   "id": "m5900",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.25,
+   "y": 0.5244
+  },
+  {
+   "id": "m5901",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.1789,
+   "y": 0.6763
+  },
+  {
+   "id": "m5902",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.1169,
+   "y": 0.7692
+  },
+  {
+   "id": "m5903",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.3365,
+   "y": 0.8868
+  },
+  {
+   "id": "m5904",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.4462,
+   "y": 0.9421
+  },
+  {
+   "id": "m5905",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.4549,
+   "y": 0.4842
+  },
+  {
+   "id": "m5906",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.6252,
+   "y": 0.4692
+  },
+  {
+   "id": "m5907",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.706,
+   "y": 0.509
+  },
+  {
+   "id": "m5908",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.3684,
+   "y": 0.6252
+  },
+  {
+   "id": "m5909",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.5383,
+   "y": 0.6398
+  },
+  {
+   "id": "m5910",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.6395,
+   "y": 0.6113
+  },
+  {
+   "id": "m5911",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.741,
+   "y": 0.5936
+  },
+  {
+   "id": "m5912",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.4985,
+   "y": 0.7846
+  },
+  {
+   "id": "m5913",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.5861,
+   "y": 0.8023
+  },
+  {
+   "id": "m5914",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.7387,
+   "y": 0.7406
+  },
+  {
+   "id": "m5915",
+   "cat": "gas",
+   "name": "Gas Station",
+   "x": 0.8338,
+   "y": 0.6872
+  },
+  {
+   "id": "m5916",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.2248,
+   "y": 0.212
+  },
+  {
+   "id": "m5917",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.556,
+   "y": 0.3906
+  },
+  {
+   "id": "m5918",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.8756,
+   "y": 0.4714
+  },
+  {
+   "id": "m5919",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.885,
+   "y": 0.7372
+  },
+  {
+   "id": "m5920",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.6289,
+   "y": 0.8722
+  },
+  {
+   "id": "m5921",
+   "cat": "marine",
+   "name": "Marine Gas Station",
+   "x": 0.6538,
+   "y": 0.9647
+  },
+  {
+   "id": "m5922",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.2079,
+   "y": 0.2293
+  },
+  {
+   "id": "m5923",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.244,
+   "y": 0.5102
+  },
+  {
+   "id": "m5924",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.2049,
+   "y": 0.6489
+  },
+  {
+   "id": "m5925",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.4808,
+   "y": 0.4868
+  },
+  {
+   "id": "m5926",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.7485,
+   "y": 0.6425
+  },
+  {
+   "id": "m5927",
+   "cat": "fire",
+   "name": "Fire Station",
+   "x": 0.3203,
+   "y": 0.8835
+  },
+  {
+   "id": "m5928",
+   "cat": "police",
+   "name": "Police Station",
+   "x": 0.3357,
+   "y": 0.2944
+  },
+  {
+   "id": "m5929",
+   "cat": "police",
+   "name": "Police Station",
+   "x": 0.2541,
+   "y": 0.4955
+  },
+  {
+   "id": "m5930",
+   "cat": "police",
+   "name": "Police Station",
+   "x": 0.5023,
+   "y": 0.4421
+  },
+  {
+   "id": "m5931",
+   "cat": "police",
+   "name": "Police Station",
+   "x": 0.7244,
+   "y": 0.5947
+  },
+  {
+   "id": "m5932",
+   "cat": "police",
+   "name": "Police Station",
+   "x": 0.6368,
+   "y": 0.7767
+  },
+  {
+   "id": "m5933",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.3383,
+   "y": 0.3827
+  },
+  {
+   "id": "m5934",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.2744,
+   "y": 0.4718
+  },
+  {
+   "id": "m5935",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.1222,
+   "y": 0.5707
+  },
+  {
+   "id": "m5936",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.1222,
+   "y": 0.5707
+  },
+  {
+   "id": "m5937",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.5026,
+   "y": 0.4883
+  },
+  {
+   "id": "m5938",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.382,
+   "y": 0.5383
+  },
+  {
+   "id": "m5939",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.4177,
+   "y": 0.7297
+  },
+  {
+   "id": "m5940",
+   "cat": "clinic",
+   "name": "Clinic",
+   "x": 0.5669,
+   "y": 0.7714
+  },
+  {
+   "id": "m5941",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.1722,
+   "y": 0.3639
+  },
+  {
+   "id": "m5942",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.1297,
+   "y": 0.4737
+  },
+  {
+   "id": "m5943",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.1357,
+   "y": 0.5564
+  },
+  {
+   "id": "m5944",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.0827,
+   "y": 0.6256
+  },
+  {
+   "id": "m5945",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.162,
+   "y": 0.7372
+  },
+  {
+   "id": "m5946",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.3556,
+   "y": 0.5083
+  },
+  {
+   "id": "m5947",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.3748,
+   "y": 0.5737
+  },
+  {
+   "id": "m5948",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.5053,
+   "y": 0.4639
+  },
+  {
+   "id": "m5949",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.5301,
+   "y": 0.4496
+  },
+  {
+   "id": "m5950",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.5455,
+   "y": 0.4447
+  },
+  {
+   "id": "m5951",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.5504,
+   "y": 0.491
+  },
+  {
+   "id": "m5952",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.559,
+   "y": 0.5594
+  },
+  {
+   "id": "m5953",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.8263,
+   "y": 0.4169
+  },
+  {
+   "id": "m5954",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.7898,
+   "y": 0.4312
+  },
+  {
+   "id": "m5955",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.7703,
+   "y": 0.5346
+  },
+  {
+   "id": "m5956",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.715,
+   "y": 0.6109
+  },
+  {
+   "id": "m5957",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.7199,
+   "y": 0.6789
+  },
+  {
+   "id": "m5958",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.6729,
+   "y": 0.7023
+  },
+  {
+   "id": "m5959",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.6406,
+   "y": 0.7244
+  },
+  {
+   "id": "m5960",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.7357,
+   "y": 0.7583
+  },
+  {
+   "id": "m5961",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.8278,
+   "y": 0.7444
+  },
+  {
+   "id": "m5962",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.6068,
+   "y": 0.7835
+  },
+  {
+   "id": "m5963",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.6831,
+   "y": 0.8459
+  },
+  {
+   "id": "m5964",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.3267,
+   "y": 0.7184
+  },
+  {
+   "id": "m5965",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.444,
+   "y": 0.7898
+  },
+  {
+   "id": "m5966",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.5199,
+   "y": 0.8519
+  },
+  {
+   "id": "m5967",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.2921,
+   "y": 0.8173
+  },
+  {
+   "id": "m5968",
+   "cat": "cache",
+   "name": "Ammo Armor Cache",
+   "x": 0.3598,
+   "y": 0.8207
+  },
+  {
+   "id": "m5969",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.1508,
+   "y": 0.3504
+  },
+  {
+   "id": "m5970",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.082,
+   "y": 0.5466
+  },
+  {
+   "id": "m5971",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.1756,
+   "y": 0.7026
+  },
+  {
+   "id": "m5972",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.3372,
+   "y": 0.7079
+  },
+  {
+   "id": "m5973",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.347,
+   "y": 0.8643
+  },
+  {
+   "id": "m5974",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.4842,
+   "y": 0.4523
+  },
+  {
+   "id": "m5975",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.6098,
+   "y": 0.4511
+  },
+  {
+   "id": "m5976",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.7335,
+   "y": 0.4477
+  },
+  {
+   "id": "m5977",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.5966,
+   "y": 0.5767
+  },
+  {
+   "id": "m5978",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.7278,
+   "y": 0.5902
+  },
+  {
+   "id": "m5979",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.4812,
+   "y": 0.6793
+  },
+  {
+   "id": "m5980",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.5853,
+   "y": 0.806
+  },
+  {
+   "id": "m5981",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.712,
+   "y": 0.8226
+  },
+  {
+   "id": "m5982",
+   "cat": "uav",
+   "name": "UAV Tower",
+   "x": 0.8154,
+   "y": 0.7466
+  },
+  {
+   "id": "m5983",
+   "cat": "lieutenant",
+   "name": "Lieutenant Tower",
+   "x": 0.359,
+   "y": 0.3553
+  },
+  {
+   "id": "m5984",
+   "cat": "lieutenant",
+   "name": "Lieutenant Tower",
+   "x": 0.138,
+   "y": 0.7872
+  },
+  {
+   "id": "m5985",
+   "cat": "lieutenant",
+   "name": "Lieutenant Tower",
+   "x": 0.6759,
+   "y": 0.4846
+  },
+  {
+   "id": "m5986",
+   "cat": "lieutenant",
+   "name": "Lieutenant Tower",
+   "x": 0.5669,
+   "y": 0.7282
+  },
+  {
+   "id": "m5987",
+   "cat": "lieutenant",
+   "name": "Lieutenant Tower",
+   "x": 0.7639,
+   "y": 0.8199
+  },
+  {
+   "id": "k-vault-armory",
+   "cat": "key",
+   "name": "Vault Armory",
+   "x": 0.5658,
+   "y": 0.4353,
+   "note": "Epic key, grid F4. Opens the small armory in the casino's underground car park."
+  },
+  {
+   "id": "k-imjin-mill",
+   "cat": "key",
+   "name": "Imjin Mill Foreman's Office",
+   "x": 0.3624,
+   "y": 0.8184,
+   "note": "Rare key, grid D8. Opens the foreman's office on the first floor of the Rice Mill."
+  },
+  {
+   "id": "k-citadel-south",
+   "cat": "key",
+   "name": "The Citadel South Wing",
+   "x": 0.182,
+   "y": 0.3402,
+   "note": "Uncommon key. Opens the South Wing of the Citadel inside the prison."
+  },
+  {
+   "id": "k-reeducation-annex",
+   "cat": "key",
+   "name": "Re-Education Center Annex",
+   "x": 0.1665,
+   "y": 0.7267,
+   "note": "Epic key, grid B7. Opens the annex on the ground floor of the Re-Education Center in Deadtown."
+  },
+  {
+   "id": "k-iskra",
+   "cat": "key",
+   "name": "Iskra's Control Room",
+   "x": 0.4974,
+   "y": 0.6722,
+   "note": "Legendary key, grid F7. Opens the control room on the upper floor of the broadcast building."
+  }
+ ],
+ "guide": [
+  {
+   "id": "levels",
+   "title": "Level unlocks",
+   "symbol": "chart.bar.fill",
+   "intro": "What each DMZ level gives you, up to level 70.",
+   "rows": [
+    {
+     "title": "Level 2",
+     "subtitle": "3D Printer station; recipes: 1-Plate Armor Vest, 2-Plate Armor Vest, Bandage, Medkit, Small Backpack, Medium Backpack",
+     "level": 2
+    },
+    {
+     "title": "Level 3",
+     "subtitle": "Sedative Inhaler recipe",
+     "level": 3
+    },
+    {
+     "title": "Level 4",
+     "subtitle": "Reece operator skin; Tacticals print upgrade; Smoke Grenade and Concussion Grenade recipes",
+     "level": 4
+    },
+    {
+     "title": "Level 5",
+     "subtitle": "Vendor station",
+     "level": 5
+    },
+    {
+     "title": "Level 6",
+     "subtitle": "Rigid Synthetics x2; Basic Armor Kit",
+     "level": 6
+    },
+    {
+     "title": "Level 7",
+     "subtitle": "Lethals print upgrade; Frag Grenade and Throwing Knife recipes",
+     "level": 7
+    },
+    {
+     "title": "Level 8",
+     "subtitle": "Restock Kit",
+     "level": 8
+    },
+    {
+     "title": "Level 9",
+     "subtitle": "Coffey operator skin; Snapshot Grenade recipe",
+     "level": 9
+    },
+    {
+     "title": "Level 10",
+     "subtitle": "Gunsmith station",
+     "level": 10
+    },
+    {
+     "title": "Level 11",
+     "subtitle": "Reactive Metals x2; Basic Triage Kit",
+     "level": 11
+    },
+    {
+     "title": "Level 12",
+     "subtitle": "Field Upgrades print upgrade; Ammo Box and Spotter Scope recipes",
+     "level": 12
+    },
+    {
+     "title": "Level 13",
+     "subtitle": "UAV (Epic Fire Support)",
+     "level": 13
+    },
+    {
+     "title": "Level 14",
+     "subtitle": "Armor Box recipe",
+     "level": 14
+    },
+    {
+     "title": "Level 15",
+     "subtitle": "Simone operator skin; +1 Operator slot",
+     "level": 15
+    },
+    {
+     "title": "Level 16",
+     "subtitle": "Explosives Equipment Kit",
+     "level": 16
+    },
+    {
+     "title": "Level 17",
+     "subtitle": "Shock Stick recipe",
+     "level": 17
+    },
+    {
+     "title": "Level 18",
+     "subtitle": "Vendor upgrade: more items for sale",
+     "level": 18
+    },
+    {
+     "title": "Level 19",
+     "subtitle": "Hector operator skin; Recon Equipment Kit",
+     "level": 19
+    },
+    {
+     "title": "Level 20",
+     "subtitle": "Dog Tag Case station",
+     "level": 20
+    },
+    {
+     "title": "Level 21",
+     "subtitle": "Basic Armor Kit",
+     "level": 21
+    },
+    {
+     "title": "Level 22",
+     "subtitle": "+18 Stash slots",
+     "level": 22
+    },
+    {
+     "title": "Level 23",
+     "subtitle": "Sticky Grenade recipe",
+     "level": 23
+    },
+    {
+     "title": "Level 24",
+     "subtitle": "Restock Kit",
+     "level": 24
+    },
+    {
+     "title": "Level 25",
+     "subtitle": "5% Gunsmith discount",
+     "level": 25
+    },
+    {
+     "title": "Level 26",
+     "subtitle": "Gas Mask recipe",
+     "level": 26
+    },
+    {
+     "title": "Level 27",
+     "subtitle": "Triage Kit (Epic)",
+     "level": 27
+    },
+    {
+     "title": "Level 28",
+     "subtitle": "Fire Support print upgrade; Care Package recipe",
+     "level": 28
+    },
+    {
+     "title": "Level 29",
+     "subtitle": "Detonators x2",
+     "level": 29
+    },
+    {
+     "title": "Level 30",
+     "subtitle": "10% Bounty payout",
+     "level": 30
+    },
+    {
+     "title": "Level 31",
+     "subtitle": "UAV recipe",
+     "level": 31
+    },
+    {
+     "title": "Level 32",
+     "subtitle": "Vendor upgrade",
+     "level": 32
+    },
+    {
+     "title": "Level 33",
+     "subtitle": "Electronics x2",
+     "level": 33
+    },
+    {
+     "title": "Level 34",
+     "subtitle": "Large Backpack (Epic)",
+     "level": 34
+    },
+    {
+     "title": "Level 35",
+     "subtitle": "+6 Weapon Stash slots",
+     "level": 35
+    },
+    {
+     "title": "Level 36",
+     "subtitle": "Molotov Cocktail recipe",
+     "level": 36
+    },
+    {
+     "title": "Level 37",
+     "subtitle": "3-Plate Armor Vest (Epic)",
+     "level": 37
+    },
+    {
+     "title": "Level 38",
+     "subtitle": "Control Unit x2",
+     "level": 38
+    },
+    {
+     "title": "Level 39",
+     "subtitle": "Biomaterials x2",
+     "level": 39
+    },
+    {
+     "title": "Level 40",
+     "subtitle": "Station upgrade",
+     "level": 40
+    },
+    {
+     "title": "Level 41",
+     "subtitle": "Thermite recipe",
+     "level": 41
+    },
+    {
+     "title": "Level 42",
+     "subtitle": "Trap Equipment Kit",
+     "level": 42
+    },
+    {
+     "title": "Level 43",
+     "subtitle": "Structural Alloy x2 (Rare)",
+     "level": 43
+    },
+    {
+     "title": "Level 44",
+     "subtitle": "CPU x2 (Rare)",
+     "level": 44
+    },
+    {
+     "title": "Level 45",
+     "subtitle": "+18 Stash slots",
+     "level": 45
+    },
+    {
+     "title": "Level 46",
+     "subtitle": "Recon Equipment Kit",
+     "level": 46
+    },
+    {
+     "title": "Level 47",
+     "subtitle": "Nitro Compounds x2 (Rare)",
+     "level": 47
+    },
+    {
+     "title": "Level 48",
+     "subtitle": "Self-Revive Kit recipe",
+     "level": 48
+    },
+    {
+     "title": "Level 49",
+     "subtitle": "Binding Catalyst x2 (Rare)",
+     "level": 49
+    },
+    {
+     "title": "Level 50",
+     "subtitle": "50% Bounty payout",
+     "level": 50
+    },
+    {
+     "title": "Level 51",
+     "subtitle": "Stock Rod x2 (Rare)",
+     "level": 51
+    },
+    {
+     "title": "Level 52",
+     "subtitle": "Inflatable Decoy recipe",
+     "level": 52
+    },
+    {
+     "title": "Level 53",
+     "subtitle": "High-Tenacity Fibers x2 (Rare)",
+     "level": 53
+    },
+    {
+     "title": "Level 54",
+     "subtitle": "Epic consumable",
+     "level": 54
+    },
+    {
+     "title": "Level 55",
+     "subtitle": "Disposable Parachute recipe",
+     "level": 55
+    },
+    {
+     "title": "Level 56",
+     "subtitle": "Printed Circuit Board x2 (Rare)",
+     "level": 56
+    },
+    {
+     "title": "Level 57",
+     "subtitle": "Nylon Cloth x2 (Rare)",
+     "level": 57
+    },
+    {
+     "title": "Level 58",
+     "subtitle": "Care Package (Rare Fire Support)",
+     "level": 58
+    },
+    {
+     "title": "Level 59",
+     "subtitle": "Combat Drone (Epic Fire Support)",
+     "level": 59
+    },
+    {
+     "title": "Level 60",
+     "subtitle": "+6 Weapon Stash slots",
+     "level": 60
+    },
+    {
+     "title": "Level 61",
+     "subtitle": "Medium Weapon Backpack (Epic)",
+     "level": 61
+    },
+    {
+     "title": "Level 62",
+     "subtitle": "Door Breacher Charge (Ultra consumable)",
+     "level": 62
+    },
+    {
+     "title": "Level 63",
+     "subtitle": "2-Plate Helmet Armor Vest (Epic)",
+     "level": 63
+    },
+    {
+     "title": "Level 64",
+     "subtitle": "Revive Pistol (Field Upgrade)",
+     "level": 64
+    },
+    {
+     "title": "Level 65",
+     "subtitle": "UAV (Epic Fire Support)",
+     "level": 65
+    },
+    {
+     "title": "Level 66",
+     "subtitle": "Crossfire (Fire Support)",
+     "level": 66
+    },
+    {
+     "title": "Level 67",
+     "subtitle": "Defibrillator",
+     "level": 67
+    },
+    {
+     "title": "Level 68",
+     "subtitle": "Durable Gas Mask (Epic)",
+     "level": 68
+    },
+    {
+     "title": "Level 69",
+     "subtitle": "Parachute (Legendary)",
+     "level": 69
+    },
+    {
+     "title": "Level 70",
+     "subtitle": "+18 Stash slots; 100% Bounty payout; Advanced SERE Kit (Legendary)",
+     "level": 70
+    }
+   ]
+  },
+  {
+   "id": "recipes",
+   "title": "Crafting recipes",
+   "symbol": "printer.fill",
+   "intro": "Made at the 3D Printer in your FOB before you deploy. Recipes unlock by level, from DMZ Orders, or by extracting with a looted recipe, which adds it to the printer and pays $5,000. More costs get added as they're confirmed.",
+   "rows": [
+    {
+     "title": "Bandage",
+     "value": "Lv 2",
+     "subtitle": "15 Synthetics, 15 Chemicals"
+    },
+    {
+     "title": "Medkit",
+     "value": "Lv 2",
+     "subtitle": "30 Chemicals, 1 Binding Catalyst, 5 Biomaterials"
+    },
+    {
+     "title": "1-Plate Armor Vest",
+     "value": "Lv 2",
+     "subtitle": "25 Synthetics, 25 Metals"
+    },
+    {
+     "title": "2-Plate Armor Vest",
+     "value": "Lv 2",
+     "subtitle": "50 Synthetics, 5 Reactive Metals"
+    },
+    {
+     "title": "Small Backpack",
+     "value": "Lv 2",
+     "subtitle": "25 Synthetics, 25 Metals"
+    },
+    {
+     "title": "Medium Backpack",
+     "value": "Lv 2",
+     "subtitle": "50 Synthetics, 5 Rigid Synthetics. Adds Secure Slots"
+    },
+    {
+     "title": "Energy Drink",
+     "value": "Any",
+     "subtitle": "10 Chemicals, 10 Metals. Unlimited stamina for a while"
+    },
+    {
+     "title": "Door Breacher Charge",
+     "value": "Any",
+     "subtitle": "1 Stock Rod"
+    },
+    {
+     "title": "Bomb Glider",
+     "value": "Any",
+     "subtitle": "1 Stock Rod"
+    },
+    {
+     "title": "Pain Killers",
+     "subtitle": "15 Electronics, 15 Chemicals"
+    },
+    {
+     "title": "Radiation Blockers",
+     "subtitle": "15 Electronics, 15 Chemicals"
+    },
+    {
+     "title": "Small Secure Backpack",
+     "subtitle": "50 Metals, 10 Rigid Synthetics, 3 Structural Alloy. Three Secure Slots"
+    },
+    {
+     "title": "Secure Scavenger Backpack",
+     "subtitle": "2 Military Composites, 4 Nylon Laminate, 10 Reactive Metals"
+    },
+    {
+     "title": "Tempered Armor Vest",
+     "subtitle": "2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics"
+    },
+    {
+     "title": "Recon Drone",
+     "value": "Order",
+     "subtitle": "Reward from the Counterfeit DMZ Order. Cost not confirmed yet"
+    },
+    {
+     "title": "Sedative Inhaler",
+     "value": "Lv 3",
+     "subtitle": "15 Synthetics, 15 Chemicals"
+    },
+    {
+     "title": "Smoke Grenade",
+     "value": "Lv 4",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Concussion Grenade",
+     "value": "Lv 4",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Frag Grenade",
+     "value": "Lv 7",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Throwing Knife",
+     "value": "Lv 7",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Snapshot Grenade",
+     "value": "Lv 9",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Ammo Box",
+     "value": "Lv 12",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Spotter Scope",
+     "value": "Lv 12",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Armor Box",
+     "value": "Lv 14",
+     "subtitle": "1 Reactive Metals (rest not confirmed)"
+    },
+    {
+     "title": "Shock Stick",
+     "value": "Lv 17",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Sticky Grenade",
+     "value": "Lv 23",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Gas Mask",
+     "value": "Lv 26",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Care Package",
+     "value": "Lv 28",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "UAV",
+     "value": "Lv 31",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Molotov Cocktail",
+     "value": "Lv 36",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Thermite",
+     "value": "Lv 41",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Self-Revive Kit",
+     "value": "Lv 48",
+     "subtitle": "5 Biomaterials, 3 Binding Catalyst"
+    },
+    {
+     "title": "Inflatable Decoy",
+     "value": "Lv 52",
+     "subtitle": "Cost not confirmed yet"
+    },
+    {
+     "title": "Disposable Parachute",
+     "value": "Lv 55",
+     "subtitle": "1 Rigid Synthetics (rest not confirmed)"
+    }
+   ]
+  },
+  {
+   "id": "resources",
+   "title": "Resources & ingredients",
+   "symbol": "cube.fill",
+   "intro": "Loot breaks down by itself into four resources, which take no backpack space. Ingredients stay whole, take a slot and must be extracted.",
+   "rows": [
+    {
+     "title": "Synthetics",
+     "value": "Resource"
+    },
+    {
+     "title": "Electronics",
+     "value": "Resource"
+    },
+    {
+     "title": "Chemicals",
+     "value": "Resource"
+    },
+    {
+     "title": "Metals",
+     "value": "Resource"
+    },
+    {
+     "title": "Biomaterials",
+     "value": "Uncommon",
+     "subtitle": "Medkit, Self-Revive Kit. Level 39 gives 2"
+    },
+    {
+     "title": "Rigid Synthetics",
+     "value": "Uncommon",
+     "subtitle": "Medium Backpack, Disposable Parachute, Small Secure Backpack, Tempered Armor Vest. Sells for $200. Level 6 gives 2"
+    },
+    {
+     "title": "Reactive Metals",
+     "value": "Uncommon",
+     "subtitle": "Industrial areas and toolboxes. 2-Plate Armor Vest, Armor Box, Secure Scavenger Backpack. Sells for $400. Level 11 gives 2"
+    },
+    {
+     "title": "Binding Catalyst",
+     "value": "Rare",
+     "subtitle": "Medkit, Self-Revive Kit. Level 49 gives 2"
+    },
+    {
+     "title": "Stock Rod",
+     "value": "Rare",
+     "subtitle": "Door Breacher Charge, Bomb Glider. Sells for $500. Level 51 gives 2"
+    },
+    {
+     "title": "Detonators",
+     "subtitle": "Level 29 gives 2"
+    },
+    {
+     "title": "Control Unit",
+     "subtitle": "Level 38 gives 2"
+    },
+    {
+     "title": "Structural Alloy",
+     "value": "Rare",
+     "subtitle": "Small Secure Backpack. Level 43 gives 2"
+    },
+    {
+     "title": "CPU",
+     "value": "Rare",
+     "subtitle": "Level 44 gives 2"
+    },
+    {
+     "title": "Nitro Compounds",
+     "value": "Rare",
+     "subtitle": "Level 47 gives 2"
+    },
+    {
+     "title": "High-Tenacity Fibers",
+     "value": "Rare",
+     "subtitle": "Level 53 gives 2"
+    },
+    {
+     "title": "Printed Circuit Board",
+     "value": "Rare",
+     "subtitle": "Level 56 gives 2"
+    },
+    {
+     "title": "Nylon Cloth",
+     "value": "Rare",
+     "subtitle": "Level 57 gives 2"
+    },
+    {
+     "title": "Electronic Sensors",
+     "value": "Uncommon",
+     "subtitle": "Stash upgrade (+18 slots). Sells for $800"
+    },
+    {
+     "title": "Ballistic Flight Logs",
+     "value": "Uncommon",
+     "subtitle": "Sells for $1,000"
+    },
+    {
+     "title": "Nylon Laminate",
+     "value": "Epic",
+     "subtitle": "Military holdings and upmarket civilian buildings. Secure Scavenger Backpack"
+    },
+    {
+     "title": "Ballistic Fabric",
+     "value": "Epic",
+     "subtitle": "Tempered Armor Vest"
+    },
+    {
+     "title": "Power Regulator",
+     "value": "Epic"
+    },
+    {
+     "title": "Military Composites",
+     "value": "Legendary",
+     "subtitle": "Secure Scavenger Backpack, Tempered Armor Vest"
+    },
+    {
+     "title": "Commanders",
+     "subtitle": "Kill one and extract to get valuable ingredients"
+    }
+   ]
+  },
+  {
+   "id": "stations",
+   "title": "FOB stations",
+   "symbol": "house.fill",
+   "rows": [
+    {
+     "title": "3D Printer",
+     "value": "Lv 2",
+     "subtitle": "Crafts gear and upgrades your FOB: Bank and Stash size, MIA rescue discounts, rarer ingredients. Print upgrades: Tacticals (4), Lethals (7), Field Upgrades (12), Fire Support (28)"
+    },
+    {
+     "title": "Vendor",
+     "value": "Lv 5",
+     "subtitle": "Sells weapons and items for DMZ Cash. Stock rotates daily; upgrades at 18 and 32 add more"
+    },
+    {
+     "title": "Gunsmith",
+     "value": "Lv 10",
+     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Base M4 about $5,000, assault rifles $4,750, SMGs $2,850, each attachment slot $1,000. 5% off from level 25"
+    },
+    {
+     "title": "Dog Tag Case",
+     "value": "Lv 20",
+     "subtitle": "Stores and shows off the dog tags you've extracted"
+    },
+    {
+     "title": "Boss Board",
+     "value": "2nd Order",
+     "subtitle": "Lieutenant intel costs DMZ Cash and lasts one deployment. Commander intel is free"
+    },
+    {
+     "title": "Stash",
+     "subtitle": "Starts at 40 items and 12 weapons, shared by your operators. +18 at levels 22, 45 and 70; +6 weapons at 35 and 60"
+    },
+    {
+     "title": "Bank",
+     "subtitle": "Holds your DMZ Cash; cash you extract goes here. Has a cap that FOB upgrades raise"
+    },
+    {
+     "title": "Firing Range",
+     "subtitle": "Targets from under 10 m to over 100 m"
+    }
+   ]
+  },
+  {
+   "id": "bosses",
+   "title": "Bosses",
+   "symbol": "scope",
+   "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients.",
+   "rows": [
+    {
+     "title": "Gorani",
+     "value": "Lieutenant",
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village"
+    },
+    {
+     "title": "Bale",
+     "value": "Lieutenant",
+     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract"
+    },
+    {
+     "title": "Jang-ui",
+     "value": "Lieutenant",
+     "subtitle": "Camp in the NuriGO Mall shopping district"
+    },
+    {
+     "title": "The Doctor",
+     "value": "Lieutenant",
+     "subtitle": "Pays $10,000"
+    },
+    {
+     "title": "Jin-Tae",
+     "value": "Lieutenant",
+     "subtitle": "The target in Operation Critical Extraction. Drops Radiation Blockers. Pays $10,000"
+    },
+    {
+     "title": "Scavenger",
+     "value": "Lieutenant",
+     "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000"
+    },
+    {
+     "title": "Iskra",
+     "value": "Lieutenant",
+     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Pays $10,000"
+    },
+    {
+     "title": "Roze",
+     "value": "Lieutenant"
+    },
+    {
+     "title": "The Warden",
+     "value": "Lieutenant",
+     "subtitle": "Northern hills. Drops a key to a sealed door under NuriGO Mall"
+    },
+    {
+     "title": "Colossus",
+     "value": "Commander",
+     "subtitle": "A seven-foot armored soldier with a minigun"
+    },
+    {
+     "title": "Deathstalker",
+     "value": "Commander",
+     "subtitle": "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it"
+    },
+    {
+     "title": "NK Battle Tank",
+     "value": "Commander",
+     "subtitle": "Roams Hajin"
+    }
+   ]
+  },
+  {
+   "id": "keys",
+   "title": "Keys",
+   "symbol": "key.fill",
+   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
+   "rows": [
+    {
+     "title": "Vault Armory",
+     "value": "F4",
+     "subtitle": "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village"
+    },
+    {
+     "title": "Imjin Mill Foreman's Office",
+     "value": "D8",
+     "subtitle": "Rare. First floor of the Rice Mill, Imjin Farmland"
+    },
+    {
+     "title": "Haksan School Armory",
+     "value": "B7",
+     "subtitle": "Rare. Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown"
+    },
+    {
+     "title": "Re-Education Center Annex",
+     "value": "B7",
+     "subtitle": "Epic. The annex on the Re-Education Center's ground floor, Deadtown"
+    },
+    {
+     "title": "Iskra's Control Room",
+     "value": "F7",
+     "subtitle": "Legendary. Upper floor of the broadcast building, Cheonwang Peak Array"
+    },
+    {
+     "title": "Netshin IT Room",
+     "value": "G6",
+     "subtitle": "Epic. The high-security server room on the upper floors of the Netshin Tech Complex, The Grid"
+    },
+    {
+     "title": "Traindepot Storage Room",
+     "value": "E5",
+     "subtitle": "Rare. Basement of the train station by the fire station, Cheongun Village"
+    },
+    {
+     "title": "The Chemist's Secure Armory",
+     "value": "I4",
+     "subtitle": "Legendary. A secured bunker by the Haneul Nuclear Reactor boathouse"
+    },
+    {
+     "title": "The Citadel South Wing",
+     "subtitle": "Uncommon. The Citadel's South Wing, 14th Political Prison"
+    },
+    {
+     "title": "Bank Branch Vault Access",
+     "subtitle": "Rare. The cash vaults of South Korean bank branches"
+    }
+   ]
+  },
+  {
+   "id": "valuables",
+   "title": "Valuables",
+   "symbol": "diamond.fill",
+   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
+   "rows": [
+    {
+     "title": "Gold Bar",
+     "value": "$25,000",
+     "subtitle": "Ultra. Also a reward from Silent Ledger"
+    },
+    {
+     "title": "Cipher Code Ledger",
+     "value": "$5,000",
+     "subtitle": "Epic"
+    },
+    {
+     "title": "W.M.D Manifest",
+     "value": "$5,000",
+     "subtitle": "Epic"
+    },
+    {
+     "title": "Parachute",
+     "value": "$5,000",
+     "subtitle": "Legendary"
+    },
+    {
+     "title": "Revive Pistol",
+     "value": "$2,500",
+     "subtitle": "Legendary"
+    },
+    {
+     "title": "Fulton Drop Marker",
+     "value": "$2,500",
+     "subtitle": "Ultra"
+    },
+    {
+     "title": "Medkit",
+     "value": "$2,000",
+     "subtitle": "Epic"
+    },
+    {
+     "title": "Keys",
+     "value": "$100",
+     "subtitle": "Every key sells for $100"
+    }
+   ]
+  },
+  {
+   "id": "threat",
+   "title": "Threat levels",
+   "symbol": "exclamationmark.triangle.fill",
+   "rows": [
+    {
+     "title": "Low",
+     "subtitle": "Imjin Farmland, Cheongun Village, Mirae General Hospital, Songdo Wharf"
+    },
+    {
+     "title": "Medium",
+     "subtitle": "Cheonwang Peak Array, Wolves Stadium, Hajin River Heights, NuriGO East"
+    },
+    {
+     "title": "High",
+     "subtitle": "14th Political Prison, Heavenly Luck Casino, NuriGO West, Haneul Nuclear Reactor"
+    },
+    {
+     "title": "Critical",
+     "subtitle": "The Grid, The Citadel, Chang-san Air Base (outside)"
+    },
+    {
+     "title": "Extreme",
+     "subtitle": "Chang-san Air Base bunker, Nenshin Tech Complex"
+    }
+   ]
+  },
+  {
+   "id": "infil",
+   "title": "Infil",
+   "symbol": "airplane",
+   "rows": [
+    {
+     "title": "On foot",
+     "value": "Free",
+     "subtitle": "Random spot"
+    },
+    {
+     "title": "Polaris Dagor A1",
+     "value": "$5,000",
+     "subtitle": "Random spot"
+    },
+    {
+     "title": "LTV",
+     "value": "$25,000",
+     "subtitle": "Random spot. Unlocked by Operation Iron Citadel"
+    },
+    {
+     "title": "Helicopter",
+     "value": "$50,000",
+     "subtitle": "Flown in from the FOB. Unlocked by Operation Grid Assault"
+    },
+    {
+     "title": "Cargo Plane",
+     "value": "$100,000",
+     "subtitle": "Pick your exact drop point"
+    }
+   ]
+  },
+  {
+   "id": "ops",
+   "title": "Missions & payouts",
+   "symbol": "target",
+   "rows": [
+    {
+     "title": "Dynamic Operations",
+     "value": "$10-20K",
+     "subtitle": "Paid into your Bank per op, plus a Supply Drop that improves with each success"
+    },
+    {
+     "title": "Critical Extraction",
+     "value": "$25,000",
+     "subtitle": "Mirae General Hospital. Get General Kang out alive. Also rewards a Defibrillator"
+    },
+    {
+     "title": "Silent Ledger",
+     "value": "$25,000",
+     "subtitle": "Cheongun Village. Also a Gold Bar and a Polaris Dagor"
+    },
+    {
+     "title": "Shopping Hacks",
+     "value": "$25,000",
+     "subtitle": "NuriGO Mall. Also Night Vision"
+    },
+    {
+     "title": "Robbery",
+     "subtitle": "Extract $5,000 in cash value"
+    },
+    {
+     "title": "Story Missions",
+     "value": "Weekly",
+     "subtitle": "Finish a random one three times a week for the weekly rewards"
+    },
+    {
+     "title": "Reduce Bounty",
+     "value": "$5,000",
+     "subtitle": "At a Bounty Station. Four kills make you Wanted"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "title": "Exfil & death",
+   "symbol": "figure.run",
+   "rows": [
+    {
+     "title": "Exfil",
+     "subtitle": "Green smoke marks the helicopter exfils. Call it in and hold the area until it lands. A Fulton balloon or a Flare also gets you out; flares are loud and visible from far away"
+    },
+    {
+     "title": "Only extracted loot counts",
+     "subtitle": "Anything outside your Secure Slots is lost if you don't make it out. Dog tags and bosses' guns only count once extracted"
+    },
+    {
+     "title": "Recipes and Manuals",
+     "value": "$5,000",
+     "subtitle": "Used up when you extract with them: the recipe goes to your printer, the Manual to the Gunsmith"
+    },
+    {
+     "title": "Dying",
+     "subtitle": "Your gear stays in Hajin. A squadmate can rescue you as MIA; the rescue costs more the more Traits you have. Traits are kept"
+    },
+    {
+     "title": "Failed exfil",
+     "subtitle": "You still get the XP"
+    },
+    {
+     "title": "Radiation",
+     "subtitle": "The Reactor needs radiation gear and a gas mask. Radiation Blockers help in irradiated areas"
+    }
+   ]
+  },
+  {
+   "id": "prestige",
+   "title": "Prestige rewards",
+   "symbol": "star.fill",
+   "rows": [
+    {
+     "title": "1st Prestige",
+     "value": "$200,000",
+     "subtitle": "Two Rare weapons, Rare plate carrier and backpack, four Rare ingredients"
+    },
+    {
+     "title": "2nd Prestige",
+     "value": "$300,000",
+     "subtitle": "Two weapons with four attachment slots, Epic plate carrier and backpack, four Epic ingredients"
+    },
+    {
+     "title": "3rd and later",
+     "value": "$500,000",
+     "subtitle": "The Legendary versions"
+    }
+   ]
+  }
+ ]
+}

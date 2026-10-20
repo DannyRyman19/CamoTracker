@@ -66,6 +66,9 @@ struct ContentView: View {
     @AppStorage(AppMode.startKey) private var startRaw = ""
     @State private var paths: [Int: NavigationPath] = [:]
 
+    /// Outside the mode and Stats indices, so adding it moved no other tab.
+    static let hajinTab = 100
+
     private func pathBinding(_ index: Int) -> Binding<NavigationPath> {
         Binding(get: { paths[index] ?? NavigationPath() }, set: { paths[index] = $0 })
     }
@@ -170,6 +173,10 @@ struct ContentView: View {
                         .tag(2)
                 }
 
+                NavigationStack { HajinView() }
+                    .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
+                    .tag(Self.hajinTab)
+
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
                     .tag(1)
@@ -223,7 +230,7 @@ struct ContentView: View {
         .onAppear {
             if let screen = Self.screenshotScreen {
                 if let m = AppMode(rawValue: screen) { primaryModeRaw = m.rawValue }
-                let index = screen == "stats" ? 1 : 0
+                let index = screen == "stats" ? 1 : screen == "hajin" ? Self.hajinTab : 0
                 selectedTab = index
                 if let route = Self.screenshotRoute {
                     var path = NavigationPath()

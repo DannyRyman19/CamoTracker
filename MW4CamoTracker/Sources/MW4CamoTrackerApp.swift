@@ -4,6 +4,7 @@ import SwiftUI
 struct MW4CamoTrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var viewModel = TrackerViewModel()
+    @StateObject private var hajin = HajinStore()
     @Environment(\.scenePhase) private var scenePhase
 
     /// GitHub Pages serves `cache-control: max-age=14400` on 404s as well as
@@ -20,6 +21,7 @@ struct MW4CamoTrackerApp: App {
             ContentView()
                 .screenshotWidth()
                 .environmentObject(viewModel)
+                .environmentObject(hajin)
                 .preferredColorScheme(.dark)
                 .task {
                     if imageCacheToken < Self.currentImageCacheToken {

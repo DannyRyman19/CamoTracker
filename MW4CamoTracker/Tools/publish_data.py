@@ -47,6 +47,10 @@ ROOT = Path(__file__).resolve().parents[2]          # the CamoTracker repo
 RES = ROOT / "MW4CamoTracker" / "Resources"
 OUT = ROOT / "Data" / "MW4"
 MODES = ["multiplayer", "warzone", "dmz"]
+# Reference guides: listed under the manifest's own "guides" block (old app
+# versions read every "modes" entry as a camo file). A guide change never
+# posts a notification; the app picks it up quietly.
+GUIDES = ["hajin"]
 LANGS = ["en", "fr", "es", "de", "it", "nl"]
 
 
@@ -143,7 +147,7 @@ def main():
     if args.silent and (args.title or args.body):
         raise SystemExit("--silent and --title/--body contradict each other")
 
-    files = ["weapons"] + MODES
+    files = ["weapons"] + MODES + GUIDES
     problems, warnings, changed = [], [], []
     for name in files:
         src, dst = RES / f"{name}.json", OUT / f"{name}.json"
@@ -186,6 +190,7 @@ def main():
     manifest = {"catalog": {"version": version_of(RES / "weapons.json"), "path": "weapons.json"}, "modes": {}}
     for mode in MODES:
         manifest["modes"][mode] = {"version": version_of(RES / f"{mode}.json"), "path": f"{mode}.json"}
+    manifest["guides"] = {g: {"version": version_of(RES / f"{g}.json"), "path": f"{g}.json"} for g in GUIDES}
     if notification:
         manifest["notification"] = notification
 

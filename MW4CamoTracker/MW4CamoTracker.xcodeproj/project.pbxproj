@@ -20,9 +20,11 @@
 		3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */; };
 		3A69BB325248C404557D3503 /* warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B063F6E81EF142F5E8BE3A /* warzone.json */; };
 		4110D8C761A17F70A42E12E1 /* MW4Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2545F0D6D707B0DFE010A2F /* MW4Widgets.swift */; };
+		41C4A8E67C4682A9263DFEEF /* HajinModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137CA712348610EDF30BE314 /* HajinModels.swift */; };
 		478FA5F145C9BB0BBA6D92EE /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 168914AE193FC3A43CA6E617 /* es.lproj */; };
 		50ABA7D24D1C051E2996042A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E53AF5B26DF707884D61 /* Components.swift */; };
 		515902E4FC12F771B0982C14 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */; };
+		57A4C1D86FEE9699E045533B /* hajin_map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C38D62716173086722580420 /* hajin_map.jpg */; };
 		57E1E10B61A7903CDC964565 /* dmz.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE30F4DD23978D03C51021E /* dmz.json */; };
 		598BA5E333739FF354F97685 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4396711A369888BFFA7AD0B5 /* nl.lproj */; };
 		5F42960D56A68847BDCB8E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C093C55B6D15F2A2B624938 /* Foundation.framework */; };
@@ -30,16 +32,19 @@
 		6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */; };
 		6E8364C1C424CB6D064C1A42 /* WidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0444E41EF781730B5B9B23 /* WidgetViews.swift */; };
 		79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E6BE0838A8B785F45509FD /* WeaponListView.swift */; };
-		C3D5E7F9A1B2C4D6E8F0A1B1 /* MasteryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */; };
 		7A977FF5DB06808FC339171C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159B423149587E45D2B5F5A /* Navigation.swift */; };
 		7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A39FDC7376E2120B670A81 /* Models.swift */; };
 		7ECB0628434ED5587D5E203B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E2E50AE42F063B3CFE85D63E /* en.lproj */; };
 		817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 721F171FEBB0173685265D18 /* es.lproj */; };
 		8BBCDAC269D29D4792A3AF9F /* WidgetSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */; };
+		8D7BE2A36F683B63203F1B3C /* hajin.json in Resources */ = {isa = PBXBuildFile; fileRef = 63D676EEC8CACBE3AB71F0CF /* hajin.json */; };
+		919813FB7392C71D66C6DE86 /* HajinMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */; };
 		992D0DDC22EFE45CF3336AD8 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 240B67BB78B0DE3B4C8C0228 /* it.lproj */; };
 		99B580FC66079179AA15A449 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AE483D41E3B50947797343F0 /* de.lproj */; };
 		9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */; };
 		A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 82971534ADD2CA7EFF592137 /* weapons.json */; };
+		A7C1E5F3B9D2048A6C8E0F21 /* SharedCamoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */; };
+		AAEC0C7F5B899153501B92FF /* HajinGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */; };
 		B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */; };
 		B39983607DD7CA0C2A98BAF1 /* MW4CamoTrackerWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E63CAA2281D717492836A497 /* MW4CamoTrackerWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B5901F3F78BA7F7BA03893A4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D4216871DE1E40B303C87 /* OnboardingView.swift */; };
@@ -48,6 +53,7 @@
 		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
 		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
 		C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */; };
+		C3D5E7F9A1B2C4D6E8F0A1B1 /* MasteryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */; };
 		C7DBE44742D8CD7A76F93F78 /* WidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0444E41EF781730B5B9B23 /* WidgetViews.swift */; };
 		C91C77D92A59204CF0E57968 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66A60FEF15496240122166 /* WeaponDetailView.swift */; };
 		CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D260791573B9EE8356EAC22 /* Theme.swift */; };
@@ -57,15 +63,10 @@
 		DB3BF0D52FD458CB66229CC0 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB66123432A590A91A8AA7 /* de.lproj */; };
 		DD8DA57611E4F76BB696DC1B /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */; };
 		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
+		E4F159CCFEE9066C7A6B3223 /* HajinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65827CB775F1AFB05F6AD6C5 /* HajinView.swift */; };
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
 		EA76D1EE791EC486AE90AD08 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A2E8CFFC9E147140CB22B860 /* fr.lproj */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
-		B9D0A1C3E5F7092B4D6E8F12 /* MasteryOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */; };
-		A7C1E5F3B9D2048A6C8E0F21 /* SharedCamoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */; };
-		C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */; };
-		B9D0A1C3E5F7092B4D6E8F20 /* GridTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */; };
-		B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */; };
-		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		0F00C36E336BC0A943B5CBFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1007D568D6EF400D6F8D97AB /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		1159B423149587E45D2B5F5A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		137CA712348610EDF30BE314 /* HajinModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinModels.swift; sourceTree = "<group>"; };
 		168914AE193FC3A43CA6E617 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		1A7C3E9F2B4D5F6071829305 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
 		1F0444E41EF781730B5B9B23 /* WidgetViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetViews.swift; sourceTree = "<group>"; };
@@ -129,12 +131,13 @@
 		5D260791573B9EE8356EAC22 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		613DA0B92D98434F953C3144 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		61A420378B1E88B956B09DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63D676EEC8CACBE3AB71F0CF /* hajin.json */ = {isa = PBXFileReference; includeInIndex = 1; path = hajin.json; sourceTree = "<group>"; };
+		65827CB775F1AFB05F6AD6C5 /* HajinView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinView.swift; sourceTree = "<group>"; };
 		6FE011B12DC06CD3532E4EFB /* SupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMail.swift; sourceTree = "<group>"; };
 		721F171FEBB0173685265D18 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		782CE3E33B1F795FA8614EBD /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
-		C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryTabView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		895B374FC30B3DC7C15333E3 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		89EFA2A972DD69632EC339FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		97A39FDC7376E2120B670A81 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		A2E8CFFC9E147140CB22B860 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCamoTests.swift; sourceTree = "<group>"; };
 		AAE30F4DD23978D03C51021E /* dmz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dmz.json; sourceTree = "<group>"; };
 		AE483D41E3B50947797343F0 /* de.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
 		B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,24 +159,20 @@
 		BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetSync.swift; sourceTree = "<group>"; };
 		C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 		C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefreshCoordinator.swift; sourceTree = "<group>"; };
+		C38D62716173086722580420 /* hajin_map.jpg */ = {isa = PBXFileReference; includeInIndex = 1; path = hajin_map.jpg; sourceTree = "<group>"; };
+		C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryTabView.swift; sourceTree = "<group>"; };
 		CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
 		D2545F0D6D707B0DFE010A2F /* MW4Widgets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MW4Widgets.swift; sourceTree = "<group>"; };
 		D6D4CDA89124982F18FDAA90 /* multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = multiplayer.json; sourceTree = "<group>"; };
 		D712A377EABACE253BE27F61 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinMapView.swift; sourceTree = "<group>"; };
 		E2E50AE42F063B3CFE85D63E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		E63CAA2281D717492836A497 /* MW4CamoTrackerWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MW4CamoTrackerWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
-		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
-		A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCamoTests.swift; sourceTree = "<group>"; };
-		C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
-		B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTapUITests.swift; sourceTree = "<group>"; };
-		B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTextTests.swift; sourceTree = "<group>"; };
-		B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
-		B2C8E41D05F35E7299B1D622 /* MW4CamoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = MW4CamoTracker.entitlements; sourceTree = "<group>"; };
+		F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinGuideTests.swift; sourceTree = "<group>"; };
 		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +212,8 @@
 				55B063F6E81EF142F5E8BE3A /* warzone.json */,
 				82971534ADD2CA7EFF592137 /* weapons.json */,
 				ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */,
+				63D676EEC8CACBE3AB71F0CF /* hajin.json */,
+				C38D62716173086722580420 /* hajin_map.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -254,6 +256,9 @@
 				C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */,
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
 				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
+				137CA712348610EDF30BE314 /* HajinModels.swift */,
+				E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */,
+				65827CB775F1AFB05F6AD6C5 /* HajinView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */,
 				B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
+				F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -458,6 +464,8 @@
 				1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */,
 				3A69BB325248C404557D3503 /* warzone.json in Resources */,
 				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
+				8D7BE2A36F683B63203F1B3C /* hajin.json in Resources */,
+				57A4C1D86FEE9699E045533B /* hajin_map.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +502,9 @@
 				DD8DA57611E4F76BB696DC1B /* WidgetSnapshot.swift in Sources */,
 				C7DBE44742D8CD7A76F93F78 /* WidgetViews.swift in Sources */,
 				03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */,
+				41C4A8E67C4682A9263DFEEF /* HajinModels.swift in Sources */,
+				919813FB7392C71D66C6DE86 /* HajinMapView.swift in Sources */,
+				E4F159CCFEE9066C7A6B3223 /* HajinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +517,7 @@
 				C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */,
 				B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
+				AAEC0C7F5B899153501B92FF /* HajinGuideTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +568,6 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/MW4CamoTracker.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker Dev";
 				DEVELOPMENT_TEAM = 44G72CWWEW;
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -565,6 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker;
+				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker Dev";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -801,7 +813,6 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = Widgets/MW4CamoTrackerWidgets.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker Widgets Dev";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44G72CWWEW;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -815,6 +826,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker.Widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker Widgets Dev";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
