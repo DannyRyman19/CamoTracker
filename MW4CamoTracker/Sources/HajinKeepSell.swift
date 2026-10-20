@@ -107,6 +107,11 @@ struct HajinVerdictBadge: View {
                     .foregroundStyle(Color.appInk.opacity(0.85))
                     .lineLimit(compact ? 2 : nil)
                     .fixedSize(horizontal: false, vertical: !compact)
+                // The full banner links straight to what needs the item
+                if !compact {
+                    let ids = (verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []).map(\.item.id)
+                    if !ids.isEmpty { HajinLinkChips(ids: ids).padding(.top, 4) }
+                }
             }
             Spacer(minLength: 0)
         }
