@@ -20,16 +20,30 @@ struct WeaponDetailView: View {
     /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
     @ViewBuilder private var modeSwitch: some View {
         if viewModel.visibleModes.count > 1 {
-            VStack(alignment: .leading, spacing: 6) {
+            // A dropdown like the home title's, so it doesn't stack a second
+            // segmented bar on the tabs below it
+            HStack(spacing: 8) {
                 Text("mw4.ui.counts_for".localized())
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
-                Picker("mw4.ui.counts_for".localized(), selection: $mode) {
-                    ForEach(viewModel.visibleModes) { m in
-                        Text(m.displayNameKey.localized()).tag(m)
+                Menu {
+                    Picker("mw4.ui.counts_for".localized(), selection: $mode) {
+                        ForEach(viewModel.visibleModes) { m in
+                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m)
+                        }
+                    }
+                } label: {
+                    HStack(spacing: 5) {
+                        Text(mode.displayNameKey.localized())
+                            .font(.system(size: 15, weight: .bold))
+                            .foregroundStyle(Color.appInk)
+                        Image(systemName: "chevron.down.circle.fill")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(mode.accent)
                     }
                 }
-                .pickerStyle(.segmented)
+                .accessibilityLabel("mw4.ui.counts_for".localized())
+                Spacer(minLength: 0)
             }
         }
     }
