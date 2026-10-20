@@ -1,36 +1,46 @@
 import SwiftUI
 
-/// Mastery, the one part of the grind that's per mode: each mode's three
-/// Mastery camos, side by side with a mode switch.
+/// Mastery, the one part of the grind that's per mode: every mode you play,
+/// one under the other, each with its three Mastery camos to tick and count.
 struct MasteryTabView: View {
-    let startMode: AppMode
-    @State private var mode: AppMode?
     @EnvironmentObject private var viewModel: TrackerViewModel
+    /// The mode picked in the Weapons title goes first.
+    @AppStorage("mw4.primaryMode") private var primaryModeRaw = AppMode.multiplayer.rawValue
 
-    private var shown: AppMode { mode ?? startMode }
+    private var ordered: [AppMode] {
+        let modes = viewModel.visibleModes
+        guard let first = modes.first(where: { $0.rawValue == primaryModeRaw }) else { return modes }
+        return [first] + modes.filter { $0 != first }
+    }
 
     var body: some View {
         ZStack {
-            AppBackground(accent: shown.accent)
+            AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
             List {
-                if viewModel.visibleModes.count > 1 {
-                    Picker("mw4.ui.counts_for".localized(), selection: Binding(get: { shown }, set: { mode = $0 })) {
-                        ForEach(viewModel.visibleModes) { m in
-                            Text(m.displayNameKey.localized()).tag(m)
+                ForEach(ordered) { mode in
+                    Section {
+                        ForEach(1...3, id: \.self) { tier in
+                            row(mode: mode, tier: tier)
                         }
+                    } header: {
+                        Label(mode.displayNameKey.localized(), systemImage: mode.symbol)
+                            .foregroundStyle(mode.accent)
                     }
-                    .pickerStyle(.segmented)
-                    .listRowBackground(Color.clear)
+                    .listRowBackground(Color.appSurface)
                 }
-                Section {
-                    ForEach(1...3, id: \.self) { tier in
-                        MasteryModeRow(mode: shown, tier: tier)
-                    }
-                }
-                .listRowBackground(Color.appSurface)
             }
             .scrollContentBackground(.hidden)
         }
         .navigationTitle("mw4.ui.section.mastery".localized())
+    }
+
+    /// A mode-wide challenge to tick and count (any weapon counts; the
+    /// weapon only names the milestone), else the read-only status.
+    @ViewBuilder private func row(mode: AppMode, tier: Int) -> some View {
+        if viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode, let weapon = viewModel.allWeapons.first {
+            MasteryModeChallengeRow(mode: mode, weapon: weapon, tier: tier)
+        } else {
+            MasteryModeRow(mode: mode, tier: tier)
+        }
     }
 }
