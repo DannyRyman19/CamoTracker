@@ -285,7 +285,7 @@ extension Color {
     /// (tier3 — Orion Reforged / Empyros / Helio) rather than an arbitrary
     /// brand pick, so the whole mode is visually "about" the camo it's
     /// building toward, not just a generic red/green/gold wash.
-    static let accentMultiplayer = Color(red: 0.757, green: 0.114, blue: 0.027) // #C11D07, Orion Reforged's old swatch (kept so the mode's look doesn't change)
+    static let accentMultiplayer = Color(red: 0.788, green: 0.271, blue: 0.494) // #C9457E, Orion Reforged's magenta (crimson sat too close to DMZ's red)
     static let accentWarzone     = camoEmpyros        // Empyros — #26A0B5
     static let accentDMZ         = camoHelio          // Helio — #C42437
 

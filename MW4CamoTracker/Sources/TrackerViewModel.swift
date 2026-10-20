@@ -1292,6 +1292,17 @@ final class TrackerViewModel: ObservableObject {
     }
 
     private func loadProgress() {
+        #if DEBUG
+        // A save copied onto a device (`devicectl device copy to` into
+        // Documents/mw4_seed.json) replaces the stored one once, then goes.
+        if let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let seed = docs.appendingPathComponent("mw4_seed.json")
+            if let data = try? Data(contentsOf: seed) {
+                defaults.set(data, forKey: storeKey)
+                try? FileManager.default.removeItem(at: seed)
+            }
+        }
+        #endif
         guard let data = defaults.data(forKey: storeKey),
               let store = try? JSONDecoder().decode(ProgressStore.self, from: data) else { return }
         weaponLevels = store.weaponLevels
