@@ -278,6 +278,14 @@ extension [Color] {
         [Color(red: 0.61, green: 0.59, blue: 0.44), Color(red: 0.78, green: 0.76, blue: 0.49), Color(red: 0.43, green: 0.48, blue: 0.29)],
         [Color(red: 0.61, green: 0.77, blue: 0.42), Color(red: 0.85, green: 0.94, blue: 0.66), Color(red: 0.33, green: 0.45, blue: 0.23)]
     ]
+
+    /// A Prestige camo's colors: the data's `colors`, else the built-in set
+    /// for its place.
+    static func prestige(_ camo: PrestigeCamo, index: Int) -> [Color] {
+        let parsed = (camo.colors ?? []).compactMap(Color.init(hex:))
+        if parsed.count > 1 { return parsed }
+        return prestige[Swift.min(index, prestige.count - 1)]
+    }
 }
 
 extension Color {

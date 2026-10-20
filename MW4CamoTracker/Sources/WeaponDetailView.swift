@@ -324,19 +324,11 @@ struct WeaponDetailView: View {
             accent: mode.accent,
             amount: 0,
             isDone: viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: index),
-            titleGradient: prestigeCamoGradient(camo, index: index),
+            titleGradient: [Color].prestige(camo, index: index),
             detail: prestigeCamoDetail(camo),
             onToggle: { viewModel.togglePrestigeCamo(weaponId: weapon.weaponId, index: index) },
             onSetAmount: { _ in }
         )
-    }
-
-    /// The colors an earned Prestige camo's name shimmers through: the
-    /// data's `colors`, else the built-in set for its place.
-    private func prestigeCamoGradient(_ camo: PrestigeCamo, index: Int) -> [Color] {
-        let parsed = (camo.colors ?? []).compactMap(Color.init(hex:))
-        if parsed.count > 1 { return parsed }
-        return [Color].prestige[min(index, [Color].prestige.count - 1)]
     }
 
     /// "Prestige the HAN 86." or "Reach Prestige Master level 73."

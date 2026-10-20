@@ -344,6 +344,10 @@ struct ProgressBar: View {
 struct BorderedCard: ViewModifier {
     var cornerRadius: CGFloat = 8
     var accent: Color? = nil
+    /// A still gradient for the border instead of the flat accent: an
+    /// earned camo's own colors on a weapon card. Kept at the accent
+    /// border's strength so a list where everything's earned stays calm.
+    var borderGradient: [Color]? = nil
 
     func body(content: Content) -> some View {
         content
@@ -353,15 +357,22 @@ struct BorderedCard: ViewModifier {
                     .overlay(RoundedRectangle(cornerRadius: cornerRadius).fill(accent?.opacity(0.10) ?? Color.clear))
                     .overlay(
                         RoundedRectangle(cornerRadius: cornerRadius)
-                            .strokeBorder(accent?.opacity(0.55) ?? Color.appInkMuted.opacity(0.25), lineWidth: 1)
+                            .strokeBorder(borderStyle, lineWidth: 1)
                     )
             )
+    }
+
+    private var borderStyle: AnyShapeStyle {
+        if let borderGradient, borderGradient.count > 1 {
+            return AnyShapeStyle(LinearGradient(colors: borderGradient, startPoint: .topLeading, endPoint: .bottomTrailing).opacity(0.7))
+        }
+        return AnyShapeStyle(accent?.opacity(0.55) ?? Color.appInkMuted.opacity(0.25))
     }
 }
 
 extension View {
-    func borderedCard(cornerRadius: CGFloat = 8, accent: Color? = nil) -> some View {
-        modifier(BorderedCard(cornerRadius: cornerRadius, accent: accent))
+    func borderedCard(cornerRadius: CGFloat = 8, accent: Color? = nil, borderGradient: [Color]? = nil) -> some View {
+        modifier(BorderedCard(cornerRadius: cornerRadius, accent: accent, borderGradient: borderGradient))
     }
 }
 
