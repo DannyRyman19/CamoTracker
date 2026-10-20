@@ -39,6 +39,7 @@
 		7ECB0628434ED5587D5E203B /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E2E50AE42F063B3CFE85D63E /* en.lproj */; };
 		817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 721F171FEBB0173685265D18 /* es.lproj */; };
 		8BBCDAC269D29D4792A3AF9F /* WidgetSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */; };
+		8BCCEBEA150DD9C2F3578DD1 /* HajinKeepSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */; };
 		8D7BE2A36F683B63203F1B3C /* hajin.json in Resources */ = {isa = PBXBuildFile; fileRef = 63D676EEC8CACBE3AB71F0CF /* hajin.json */; };
 		919813FB7392C71D66C6DE86 /* HajinMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */; };
 		992D0DDC22EFE45CF3336AD8 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 240B67BB78B0DE3B4C8C0228 /* it.lproj */; };
@@ -173,6 +174,7 @@
 		D6D4CDA89124982F18FDAA90 /* multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = multiplayer.json; sourceTree = "<group>"; };
 		D712A377EABACE253BE27F61 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinKeepSell.swift; sourceTree = "<group>"; };
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinMapView.swift; sourceTree = "<group>"; };
 		E2E50AE42F063B3CFE85D63E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */,
 				BD87D3E1EB0474E855A5E907 /* HajinTraitsView.swift */,
 				6F6A589A8AD35B65A48A4E26 /* CloudSync.swift */,
+				DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				1B1D539E22BDC38C0D4D6B8E /* HajinItemViews.swift in Sources */,
 				F007641376295D2DE45C6967 /* HajinTraitsView.swift in Sources */,
 				57641B70FF6B2206002818BD /* CloudSync.swift in Sources */,
+				8BCCEBEA150DD9C2F3578DD1 /* HajinKeepSell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

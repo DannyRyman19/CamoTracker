@@ -10,6 +10,7 @@ struct HajinView: View {
     @State private var showsMap = false
     @State private var shownSection: HajinGuide.Section?
     @State private var shownItem: String?
+    @State private var showsKeepSell = false
     @State private var width: CGFloat = 0
 
     private var accent: Color { .accentDMZ }
@@ -30,6 +31,7 @@ struct HajinView: View {
         .navigationTitle("mw4.ui.hajin.title".localized())
         .navigationBarTitleDisplayMode(width >= 700 ? .inline : .automatic)
         .navigationDestination(isPresented: $showsMap) { HajinMapScreen() }
+        .navigationDestination(isPresented: $showsKeepSell) { HajinKeepSellView() }
         .navigationDestination(isPresented: Binding(get: { shownSection != nil }, set: { if !$0 { shownSection = nil } })) {
             if let shownSection { GuideSectionView(section: shownSection) }
         }
@@ -50,6 +52,11 @@ struct HajinView: View {
                 .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
+
+                Section {
+                    NavigationLink { HajinKeepSellView() } label: { HajinKeepSellRow() }
+                        .listRowBackground(Color.appSurface)
+                }
 
                 Section {
                     ForEach(guide.guide) { section in
@@ -82,6 +89,8 @@ struct HajinView: View {
               UIDevice.current.userInterfaceIdiom == .phone else { return }
         if target == "map" {
             showsMap = true
+        } else if target == "keep" {
+            showsKeepSell = true
         } else if target.hasPrefix("item:") {
             shownItem = String(target.dropFirst(5))
         } else {
@@ -728,6 +737,8 @@ struct HajinGuidePanel: View {
                     } else if !query.isEmpty {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
+                        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellRow() }
+                            .listRowBackground(Color.appSurface)
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
                                 HStack {

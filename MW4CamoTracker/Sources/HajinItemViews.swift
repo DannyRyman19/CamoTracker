@@ -122,6 +122,27 @@ struct HajinItemRow: View {
     @Environment(\.hajinOpenItem) private var openItem
 
     var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            if let key = row.check {
+                let done = store.checked.contains(key)
+                Button {
+                    Haptics.step()
+                    store.toggle(key)
+                } label: {
+                    Image(systemName: done ? "checkmark.square.fill" : "square")
+                        .font(.title2)
+                        .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
+                        .padding(.top, 10)
+                }
+                .buttonStyle(.borderless)
+                .accessibilityLabel(item.name.resolved)
+                .accessibilityAddTraits(done ? .isSelected : [])
+            }
+            link
+        }
+    }
+
+    private var link: some View {
         HajinItemLink(id: item.id) {
             HStack(alignment: .top, spacing: 12) {
                 HajinItemTile(item: item, size: 48)
@@ -142,7 +163,8 @@ struct HajinItemRow: View {
                     }
                     if item.rarity != nil { HajinRarityLine(item: item, size: 10) }
                     if let cost = item.cost, !cost.isEmpty {
-                        CostChips(cost: cost, cash: item.cash)
+                        // The row's badge already shows the cash for upgrades
+                        CostChips(cost: cost, cash: row.value == nil ? item.cash : nil)
                     } else if let effect = item.effect ?? item.note {
                         Text(effect.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted).lineLimit(2)
                     } else if row.subtitle?.values["en"]?.contains("not confirmed") ?? false {
@@ -236,6 +258,9 @@ struct HajinItemView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 18) {
                         header(item)
+                        if item.kind != "FOB Upgrade" {
+                            HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
+                        }
                         if let cost = item.cost, !cost.isEmpty { recipe(item, cost) }
                         facts(item)
                         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
