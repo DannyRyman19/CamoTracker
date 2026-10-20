@@ -525,6 +525,9 @@ struct StatSummaryCard: View {
         /// generic Gold sweep `ProgressRing` defaults to. Leave `nil` for a
         /// ring that really does mean Gold.
         var ringGradient: [Color]? = nil
+        /// Not open yet: a lock in place of the ring, and what it waits for
+        /// ("6/8 Gold") in place of the count.
+        var lockedHint: String? = nil
     }
     /// Omit both (leave `nil`) for a card with no separate leading ring —
     /// used when one of the `stats` columns (e.g. Gold) already carries its
@@ -554,7 +557,23 @@ struct StatSummaryCard: View {
             HStack(spacing: 0) {
                 ForEach(stats.indices, id: \.self) { index in
                     VStack(spacing: 4) {
-                        if let ringFraction = stats[index].ringFraction {
+                        if let hint = stats[index].lockedHint {
+                            ZStack {
+                                Circle()
+                                    .stroke(Color.appInkMuted.opacity(0.3), lineWidth: 4)
+                                Image(systemName: "lock.fill")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundStyle(Color.appInkMuted)
+                            }
+                            .frame(width: 40, height: 40)
+                            Text(hint)
+                                .font(.system(size: 10, weight: .semibold, design: .monospaced))
+                                .foregroundStyle(Color.appInkMuted)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.8)
+                                .fixedSize(horizontal: false, vertical: true)
+                        } else if let ringFraction = stats[index].ringFraction {
                             ProgressRing(
                                 fraction: ringFraction,
                                 accent: stats[index].ringColor ?? Color.appInk,
