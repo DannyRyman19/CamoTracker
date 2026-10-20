@@ -70,6 +70,22 @@ struct ContentView: View {
         Binding(get: { paths[index] ?? NavigationPath() }, set: { paths[index] = $0 })
     }
 
+    @Environment(\.horizontalSizeClass) private var sizeClass
+
+    /// iPad: the weapons, with each mode's Mastery in a column beside them.
+    @ViewBuilder private func homeRoot(mode: AppMode) -> some View {
+        if sizeClass == .regular {
+            HStack(spacing: 0) {
+                CategoryListView(mode: mode)
+                    .frame(maxWidth: .infinity)
+                MasteryTabView(embedded: true)
+                    .frame(width: 360)
+            }
+        } else {
+            CategoryListView(mode: mode)
+        }
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
             TabView(selection: $selectedTab) {
@@ -77,7 +93,7 @@ struct ContentView: View {
                 // each weapon switches modes for its own counts
                 let index = 0, mode = primaryMode
                 NavigationStack(path: pathBinding(index)) {
-                    CategoryListView(mode: mode)
+                    homeRoot(mode: mode)
                         .navigationDestination(for: Route.self) { route in
                             RouteDestinationView(mode: mode, route: route)
                         }
