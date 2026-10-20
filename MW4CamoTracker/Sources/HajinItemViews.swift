@@ -300,37 +300,61 @@ struct HajinItemView: View {
     let id: String
     @EnvironmentObject private var store: HajinStore
     @Environment(\.hajinShowMarker) private var showMarker
+    @State private var width: CGFloat = 0
 
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
             if let guide = store.guide, let item = guide.item(id) {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 18) {
-                        header(item)
-                        if item.kind != "FOB Upgrade" {
-                            HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
+                    if width >= 760 {
+                        // Wide: the item and its recipe on the left, what uses
+                        // it and where to get it on the right
+                        HStack(alignment: .top, spacing: 20) {
+                            VStack(alignment: .leading, spacing: 18) { primary(item, guide) }
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                            VStack(alignment: .leading, spacing: 18) { secondary(item, guide) }
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
                         }
-                        let tiers = guide.tiers(of: item)
-                        if tiers.count > 1 { tierStrip(item, tiers) }
-                        if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
-                        facts(item)
-                        if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
-                        let users = guide.usedIn(item.id)
-                        if !users.isEmpty { usedIn(users) }
-                        let mentions = guide.mentions(item.id)
-                        if !mentions.isEmpty { whereFrom(mentions) }
+                        .padding(20)
+                        .frame(maxWidth: 1100)
+                        .frame(maxWidth: .infinity)
+                    } else {
+                        VStack(alignment: .leading, spacing: 18) {
+                            primary(item, guide)
+                            secondary(item, guide)
+                        }
+                        .padding(16)
+                        .frame(maxWidth: 640, alignment: .leading)
+                        .frame(maxWidth: .infinity)
                     }
-                    .padding(16)
-                    .frame(maxWidth: 640, alignment: .leading)
-                    .frame(maxWidth: .infinity)
                 }
             } else {
                 Text("mw4.ui.hajin.no_results".localized()).foregroundStyle(Color.appInkMuted)
             }
         }
+        .readingWidth($width)
         .navigationTitle(store.guide?.item(id)?.name.resolved ?? "")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder private func primary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
+        header(item)
+        if item.kind != "FOB Upgrade" {
+            HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
+        }
+        let tiers = guide.tiers(of: item)
+        if tiers.count > 1 { tierStrip(item, tiers) }
+        if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
+        facts(item)
+        if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
+    }
+
+    @ViewBuilder private func secondary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
+        let users = guide.usedIn(item.id)
+        if !users.isEmpty { usedIn(users) }
+        let mentions = guide.mentions(item.id)
+        if !mentions.isEmpty { whereFrom(mentions) }
     }
 
     private func header(_ item: HajinGuide.Item) -> some View {

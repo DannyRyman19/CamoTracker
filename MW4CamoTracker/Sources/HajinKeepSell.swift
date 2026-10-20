@@ -124,10 +124,11 @@ struct HajinVerdictBadge: View {
 struct HajinKeepSellView: View {
     @EnvironmentObject private var store: HajinStore
     @State private var query = ""
+    @State private var width: CGFloat = 0
 
     /// Lootables grouped by verdict, Keep first. Gear and keys only show
     /// when searched for: there's nothing to decide about them.
-    private func groups(_ guide: HajinGuide) -> [(kind: HajinVerdict.Kind, rows: [(HajinGuide.Item, HajinVerdict)])] {
+    fileprivate func groups(_ guide: HajinGuide) -> [(kind: HajinVerdict.Kind, rows: [(HajinGuide.Item, HajinVerdict)])] {
         let needle = query.lowercased()
         let rows = (guide.items ?? [])
             .filter { !["Resource", "FOB Upgrade"].contains($0.kind) }
@@ -145,6 +146,9 @@ struct HajinKeepSellView: View {
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
+            if width >= 700, let guide = store.guide {
+                columns(guide)
+            } else {
             List {
                 if query.isEmpty {
                     Text("mw4.ui.keep.intro".localized())
@@ -176,10 +180,53 @@ struct HajinKeepSellView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
-            .searchable(text: $query, prompt: "mw4.ui.keep.search".localized())
+            }
         }
+        .readingWidth($width)
+        .searchable(text: $query, prompt: "mw4.ui.keep.search".localized())
         .navigationTitle("mw4.ui.keep.title".localized())
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+extension HajinKeepSellView {
+    /// Wide screens: each verdict group as two columns of cards.
+    func columns(_ guide: HajinGuide) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                if query.isEmpty {
+                    Text("mw4.ui.keep.intro".localized()).font(.subheadline).foregroundStyle(Color.appInkMuted)
+                        .frame(maxWidth: 720, alignment: .leading)
+                }
+                ForEach(groups(guide), id: \.kind) { group in
+                    VStack(alignment: .leading, spacing: 8) {
+                        if let first = group.rows.first {
+                            Text(first.1.title.uppercased())
+                                .font(.caption.weight(.heavy)).tracking(1.2).foregroundStyle(first.1.color)
+                        }
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12, alignment: .top), GridItem(.flexible(), spacing: 12, alignment: .top)],
+                                  alignment: .leading, spacing: 12) {
+                            ForEach(group.rows, id: \.0.id) { item, verdict in
+                                HajinItemLink(id: item.id) {
+                                    HStack(alignment: .top, spacing: 12) {
+                                        HajinItemTile(item: item, size: 44)
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text(item.name.resolved).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
+                                            HajinVerdictBadge(verdict: verdict, compact: true)
+                                        }
+                                        Spacer(minLength: 0)
+                                    }
+                                    .padding(12)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .padding(16)
+        }
     }
 }
 

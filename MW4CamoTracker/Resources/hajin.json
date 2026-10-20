@@ -1,5 +1,5 @@
 {
- "version": "0.8.5",
+ "version": "0.8.6",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -1309,6 +1309,22 @@
    "x": 0.4974,
    "y": 0.6722,
    "note": "Legendary key, grid F7. Opens the control room on the upper floor of the broadcast building."
+  },
+  {
+   "id": "k-counting-room",
+   "cat": "key",
+   "name": "Counting Room Vault",
+   "x": 0.5402,
+   "y": 0.4353,
+   "note": "Epic key, grid F4. Opens the counting-room vault on the casino's main floor; players report a backpack inside."
+  },
+  {
+   "id": "k-reactor-drc",
+   "cat": "key",
+   "name": "Reactor DRC Locker",
+   "x": 0.8113,
+   "y": 0.4553,
+   "note": "Ultra key, grid H4. Opens the DRC Weapons Locker in Reactor 02's irradiated pool. Bring radiation gear."
   },
   {
    "id": "k-airbase-drc",
@@ -2946,6 +2962,18 @@
    "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
    "rows": [
     {
+     "title": "Counting Room Vault",
+     "value": "F4",
+     "subtitle": "Epic. The counting-room vault on the Heavenly Luck Casino's main floor, Cheongun Village. Players report a backpack inside",
+     "item": "counting-room-vault"
+    },
+    {
+     "title": "Reactor DRC Locker",
+     "value": "H4",
+     "subtitle": "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
+     "item": "reactor-drc-locker"
+    },
+    {
      "title": "Air Base DRC Weapons Locker",
      "value": "B6",
      "subtitle": "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker",
@@ -4084,6 +4112,17 @@
    "symbol": "slider.horizontal.3"
   },
   {
+   "id": "counting-room-vault",
+   "name": "Counting Room Vault",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The counting-room vault on the Heavenly Luck Casino's main floor, Cheongun Village. Players report a backpack inside",
+   "grid": "F4",
+   "marker": "k-counting-room",
+   "value": 100
+  },
+  {
    "id": "ddos",
    "name": "DDOS",
    "kind": "Field Upgrades",
@@ -4711,6 +4750,17 @@
    "effect": "Needs Uncommon Ingredient Printing",
    "value": 400,
    "note": "Industrial areas and toolboxes. DMZ level 11 gives you 2"
+  },
+  {
+   "id": "reactor-drc-locker",
+   "name": "Reactor DRC Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Ultra",
+   "note": "The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
+   "grid": "H4",
+   "marker": "k-reactor-drc",
+   "value": 100
   },
   {
    "id": "recon-drone",

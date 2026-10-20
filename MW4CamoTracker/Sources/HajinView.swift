@@ -82,11 +82,10 @@ struct HajinView: View {
     }
 
     /// `SS_HAJIN=map` or `SS_HAJIN=<section id>` opens that screen for the
-    /// screenshot harness (iPhone). DEBUG-only.
+    /// screenshot harness. DEBUG-only.
     private func openScreenshotTarget() {
         #if DEBUG
-        guard let target = ProcessInfo.processInfo.environment["SS_HAJIN"], !target.isEmpty,
-              UIDevice.current.userInterfaceIdiom == .phone else { return }
+        guard let target = ProcessInfo.processInfo.environment["SS_HAJIN"], !target.isEmpty else { return }
         if target == "map" {
             showsMap = true
         } else if target == "keep" {
@@ -292,16 +291,20 @@ struct GuideSectionView: View {
     }
 
     @EnvironmentObject private var store: HajinStore
+    @State private var width: CGFloat = 0
 
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
             if section.id == "traits", query.isEmpty, let trees = store.guide?.traitTrees {
                 HajinTraitsView(trees: trees)
+            } else if width >= 700, !rows.isEmpty {
+                HajinRowColumns(rows: rows, intro: query.isEmpty ? section.intro?.resolved : nil, highlight: query.lowercased())
             } else {
                 rowList
             }
         }
+        .readingWidth($width)
         .searchable(text: $query, prompt: "mw4.ui.hajin.search_section".localized())
         .navigationTitle(section.title.resolved)
         .navigationBarTitleDisplayMode(.inline)
@@ -324,6 +327,59 @@ struct GuideSectionView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
+    }
+}
+
+/// Consecutive rows that share a `group`, in order.
+func hajinGroups(_ rows: [HajinGuide.Row]) -> [(title: String?, rows: [HajinGuide.Row])] {
+    var out: [(title: String?, rows: [HajinGuide.Row])] = []
+    for row in rows {
+        let title = row.group?.resolved
+        if let last = out.indices.last, out[last].title == title {
+            out[last].rows.append(row)
+        } else {
+            out.append((title, [row]))
+        }
+    }
+    return out
+}
+
+/// Wide screens: a section's rows as cards in two columns, under the same
+/// group headings, instead of one stretched list.
+struct HajinRowColumns: View {
+    let rows: [HajinGuide.Row]
+    var intro: String? = nil
+    var highlight = ""
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                if let intro {
+                    Text(intro).font(.subheadline).foregroundStyle(Color.appInkMuted)
+                        .frame(maxWidth: 720, alignment: .leading)
+                }
+                ForEach(Array(hajinGroups(rows).enumerated()), id: \.offset) { _, group in
+                    VStack(alignment: .leading, spacing: 8) {
+                        if let title = group.title {
+                            Text(title.uppercased())
+                                .font(.caption.weight(.heavy))
+                                .tracking(1.2)
+                                .foregroundStyle(Color.appInkMuted)
+                        }
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12, alignment: .top), GridItem(.flexible(), spacing: 12, alignment: .top)],
+                                  alignment: .leading, spacing: 12) {
+                            ForEach(group.rows, id: \.self) { row in
+                                GuideRowView(row: row, highlight: highlight)
+                                    .padding(12)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
+                            }
+                        }
+                    }
+                }
+            }
+            .padding(16)
+        }
     }
 }
 
@@ -672,6 +728,7 @@ struct HajinGuidePanel: View {
     @EnvironmentObject private var store: HajinStore
     @State private var query = ""
     @State private var stack: [Page] = []
+    @State private var panelWidth: CGFloat = 0
 
     private enum Page: Hashable {
         case section(HajinGuide.Section)
@@ -723,6 +780,10 @@ struct HajinGuidePanel: View {
 
             if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
                 HajinTraitsView(trees: trees)
+            } else if let section = open, panelWidth >= 700 {
+                let needle = query.lowercased()
+                HajinRowColumns(rows: needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) },
+                                intro: needle.isEmpty ? section.intro?.resolved : nil, highlight: needle)
             } else if let guide = store.guide {
                 List {
                     if let section = open {
@@ -751,6 +812,7 @@ struct HajinGuidePanel: View {
             }
         }
         .background(Color.appBackground)
+        .readingWidth($panelWidth)
         .environment(\.hajinOpenItem) { id in withAnimation(.snappy) { stack.append(.item(id)) } }
     }
 
