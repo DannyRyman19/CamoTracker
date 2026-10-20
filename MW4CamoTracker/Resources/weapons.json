@@ -1,5 +1,5 @@
 {
-  "version": "0.9.6",
+  "version": "0.9.7",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -23,7 +23,8 @@
         "de": "Pyroclast",
         "nl": "Pyroclast",
         "it": "Pyroclast"
-      }
+      },
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast.png"
     },
     {
       "name": {
@@ -34,7 +35,8 @@
         "nl": "Pyroclast Terminus",
         "it": "Pyroclast Terminus"
       },
-      "afterWeaponMaxLevel": true
+      "afterWeaponMaxLevel": true,
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_terminus.png"
     },
     {
       "name": {
@@ -45,7 +47,8 @@
         "nl": "Pyroclast Scatter",
         "it": "Pyroclast Scatter"
       },
-      "level": 150
+      "level": 150,
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_scatter.png"
     },
     {
       "name": {
@@ -56,7 +59,8 @@
         "nl": "Pyroclast Cascade",
         "it": "Pyroclast Cascade"
       },
-      "level": 250
+      "level": 250,
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_cascade.png"
     }
   ],
   "categories": [

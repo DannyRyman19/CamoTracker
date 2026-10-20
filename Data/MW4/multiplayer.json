@@ -1,5 +1,5 @@
 {
-  "version": "0.8.15",
+  "version": "0.8.16",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -6022,15 +6022,15 @@
         {
           "itemId": 9,
           "name": {
-            "en": "Brown",
-            "fr": "Brown",
-            "es": "Brown",
-            "de": "Brown",
-            "nl": "Brown",
-            "it": "Brown"
+            "en": "Fractal Snow",
+            "fr": "Fractal Snow",
+            "es": "Fractal Snow",
+            "de": "Fractal Snow",
+            "nl": "Fractal Snow",
+            "it": "Fractal Snow"
           },
           "tier": 10,
-          "unlockLevel": null,
+          "unlockLevel": 48,
           "requirement": {
             "amount": 15,
             "unit": "times",
@@ -6044,21 +6044,21 @@
             }
           },
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_brown.png",
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_fractal_snow.png",
           "group": "special"
         },
         {
           "itemId": 10,
           "name": {
-            "en": "Gunmetal",
-            "fr": "Gunmetal",
-            "es": "Gunmetal",
-            "de": "Gunmetal",
-            "nl": "Gunmetal",
-            "it": "Gunmetal"
+            "en": "Sticker Shock",
+            "fr": "Sticker Shock",
+            "es": "Sticker Shock",
+            "de": "Sticker Shock",
+            "nl": "Sticker Shock",
+            "it": "Sticker Shock"
           },
           "tier": 11,
-          "unlockLevel": null,
+          "unlockLevel": 69,
           "requirement": {
             "amount": 20,
             "unit": "headshots",
@@ -6072,7 +6072,7 @@
             }
           },
           "children": [],
-          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_gunmetal.png",
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_sticker_shock.png",
           "group": "special"
         }
       ]
@@ -7701,7 +7701,7 @@
         "it": "Divergence"
       },
       "harmonicBreaksNeeded": 33,
-      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/divergence.png"
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/divergence_v2.png"
     }
   },
   "mastery": {
