@@ -544,6 +544,10 @@ struct StatSummaryCard: View {
     var horizontalPadding: CGFloat = 12
     var verticalPadding: CGFloat = 14
 
+    /// Two lines of a lock hint ("13/33" over "Platinum").
+    private static let countHeight: CGFloat = 26
+    private var hasLock: Bool { stats.contains { $0.lockedHint != nil } }
+
     var body: some View {
         HStack(spacing: 14) {
             if let heroFraction, let heroAccent {
@@ -572,7 +576,7 @@ struct StatSummaryCard: View {
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.8)
-                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(height: Self.countHeight)
                         } else if let ringFraction = stats[index].ringFraction {
                             ProgressRing(
                                 fraction: ringFraction,
@@ -584,6 +588,9 @@ struct StatSummaryCard: View {
                             Text(stats[index].value)
                                 .font(.system(size: 11, weight: .semibold, design: .monospaced))
                                 .foregroundStyle(Color.appInk)
+                                // Same height as a two-line lock hint, so
+                                // every column's label sits on one line
+                                .frame(height: hasLock ? Self.countHeight : nil)
                         } else {
                             Text(stats[index].value)
                                 .font(.system(size: 17, weight: .bold, design: .monospaced))
