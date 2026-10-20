@@ -6,6 +6,9 @@ struct MasteryTabView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     /// The mode picked in the Weapons title goes first.
     @AppStorage("mw4.primaryMode") private var primaryModeRaw = AppMode.multiplayer.rawValue
+    /// Beside the weapons on the iPad home: no background or title of its
+    /// own, a heading instead.
+    var embedded = false
 
     private var ordered: [AppMode] {
         let modes = viewModel.visibleModes
@@ -14,9 +17,30 @@ struct MasteryTabView: View {
     }
 
     var body: some View {
-        ZStack {
-            AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
+        if embedded {
+            // The home's own background, so the column reads as part of it
+            ZStack {
+                AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
+                list
+            }
+        } else {
+            ZStack {
+                AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
+                list
+            }
+            .navigationTitle("mw4.ui.section.mastery".localized())
+        }
+    }
+
+    private var list: some View {
             List {
+                if embedded {
+                    Text("mw4.ui.section.mastery".localized())
+                        .font(.hitmarker(22))
+                        .foregroundStyle(Color.appInk)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                }
                 ForEach(ordered) { mode in
                     Section {
                         ForEach(1...3, id: \.self) { tier in
@@ -30,8 +54,6 @@ struct MasteryTabView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-        }
-        .navigationTitle("mw4.ui.section.mastery".localized())
     }
 
     /// A mode-wide challenge to tick and count (any weapon counts; the

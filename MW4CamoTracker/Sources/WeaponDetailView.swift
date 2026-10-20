@@ -64,7 +64,8 @@ struct WeaponDetailView: View {
 
     /// The Weapon Prestige camos, under the Prestige control that earns
     /// them: a one-line count with their swatches, opening to the rows.
-    @ViewBuilder private var prestigeCamosBlock: some View {
+    /// On iPad it spans the card under the art, the rows `columns` across.
+    @ViewBuilder private func prestigeCamosBlock(columns: Int = 1) -> some View {
         let count = viewModel.prestigeCamos.count
         if count > 0 {
             let done = viewModel.prestigeCamos.indices.filter {
@@ -97,8 +98,17 @@ struct WeaponDetailView: View {
                 .accessibilityValue("\(done)/\(count)")
 
                 if prestigeCamosOpen {
-                    ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
-                        prestigeCamoRow(index)
+                    let indices = Array(viewModel.prestigeCamos.indices)
+                    ForEach(Array(stride(from: 0, to: indices.count, by: columns)), id: \.self) { start in
+                        HStack(alignment: .top, spacing: 20) {
+                            ForEach(start..<start + columns, id: \.self) { index in
+                                if index < indices.count {
+                                    prestigeCamoRow(index).frame(maxWidth: .infinity, alignment: .leading)
+                                } else {
+                                    Color.clear.frame(maxWidth: .infinity, maxHeight: 1)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -137,7 +147,7 @@ struct WeaponDetailView: View {
                     CompactLevelRow(mode: mode, weapon: weapon)
                 }
 
-                prestigeCamosBlock
+                prestigeCamosBlock()
             }
             .padding(12)
             .borderedCard()
@@ -167,14 +177,6 @@ struct WeaponDetailView: View {
             }
             return (title, group.camos)
         }
-    }
-
-    private var completionistTitle: String {
-        "\(mode.displayNameKey.localized()) \("mw4.ui.section.completionist".localized())"
-    }
-
-    private var masteryTitle: String {
-        "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())"
     }
 
     /// The parts of this screen the picker switches between: each camo
@@ -357,23 +359,33 @@ struct WeaponDetailView: View {
     /// A camo tile needs about 400pt to keep its sentence and its stepper on
     /// good terms, so an unfolded iPhone Duo held upright (about 670pt) gets
     /// the wide header over full-width tiles, and only wider screens a grid.
-    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 840 ? 2 : 1) }
-    private var masteryInOneRow: Bool { width >= 1000 }
+    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 800 ? 2 : 1) }
+
+    /// Columns for `count` tiles: 3 when they split into threes and there's
+    /// room, else 2 (a tile left over stretches across its row).
+    private func fitColumns(_ count: Int) -> Int {
+        guard tileColumns > 1, count > 1 else { return 1 }
+        if count % 3 == 0, width >= 1000 { return 3 }
+        return 2
+    }
 
     @ViewBuilder private var wideSections: some View {
         let columns = tileColumns
-        HStack(alignment: .center, spacing: 20) {
-            WeaponHeroImage(urlString: weapon.imageURL, height: 210)
-            VStack(alignment: .leading, spacing: 14) {
-                titleBlock
-                if !viewModel.quickTick {
-                    Divider().overlay(Color.appInkMuted.opacity(0.2))
-                    CompactLevelRow(mode: mode, weapon: weapon)
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .center, spacing: 20) {
+                WeaponHeroImage(urlString: weapon.imageURL, height: 210)
+                VStack(alignment: .leading, spacing: 14) {
+                    titleBlock
+                    if !viewModel.quickTick {
+                        Divider().overlay(Color.appInkMuted.opacity(0.2))
+                        CompactLevelRow(mode: mode, weapon: weapon)
+                    }
                 }
-
-                prestigeCamosBlock
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            // Full width under the art, so the open list isn't squeezed
+            // into the column beside it
+            prestigeCamosBlock(columns: columns > 1 ? 2 : 1)
         }
         .padding(16)
         .borderedCard()
@@ -381,31 +393,31 @@ struct WeaponDetailView: View {
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
 
+        // The same tabs as on iPhone, one part at a time
         modeSwitchRow
+        partPicker
 
-        if camos.isEmpty {
-            noCamoData
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-        } else {
-            ForEach(camoGroups, id: \.title) { group in
-                Section(group.title) {
-                    tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: columns)
+        switch shownPart {
+        case .camos:
+            if camos.isEmpty {
+                noCamoData
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+            } else {
+                ForEach(camoGroups, id: \.title) { group in
+                    Section(group.title) {
+                        tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
+                    }
                 }
             }
-        }
-
-        Section(completionistTitle) {
+        case .completionist:
             let steps = (0..<TrackerViewModel.completionistStepCount).map { step in
                 AnyView(CompletionistStepRow(mode: mode, weapon: weapon, step: step))
             }
             let final = mode.hasFinalCamo ? [AnyView(FinalCamoRow(mode: mode, weapon: weapon))] : []
-            tileRows(steps + final, columns: masteryInOneRow ? steps.count + final.count : columns)
-        }
-
-        Section(masteryTitle) {
-            tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
-                     columns: masteryInOneRow ? 3 : columns)
+            tileRows(steps + final, columns: fitColumns(steps.count + final.count))
+        case .mastery:
+            tileRows((1...3).map { tier in AnyView(masteryRow(tier)) }, columns: fitColumns(3))
         }
     }
 
@@ -419,16 +431,13 @@ struct WeaponDetailView: View {
         }
     }
 
-    /// Rows of `columns` tiles, the last row padded so tiles keep one width.
+    /// Rows of `columns` tiles. A short last row stretches across rather
+    /// than leaving a gap beside it.
     @ViewBuilder private func tileRows(_ tiles: [AnyView], columns: Int) -> some View {
         ForEach(Array(stride(from: 0, to: tiles.count, by: columns)), id: \.self) { start in
             HStack(alignment: .top, spacing: 12) {
-                ForEach(0..<columns, id: \.self) { offset in
-                    if start + offset < tiles.count {
-                        tiles[start + offset].modifier(DetailTile())
-                    } else {
-                        Color.clear.frame(maxWidth: .infinity)
-                    }
+                ForEach(start..<min(start + columns, tiles.count), id: \.self) { index in
+                    tiles[index].modifier(DetailTile())
                 }
             }
             .listRowInsets(Self.rowInsets)

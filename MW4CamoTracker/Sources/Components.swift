@@ -54,38 +54,19 @@ enum AppLanguage {
 /// Multiplayer, Warzone and DMZ as switches, for picking the modes you
 /// play. One always stays on. A picked mode is filled in its colour with a
 /// tick; one left out is a dim outline with an empty circle, so the two
-/// can't be mistaken for each other. With more than one picked, `showsStart`
-/// adds the choice of which one the app opens on.
+/// can't be mistaken for each other. A mode the data hides for now
+/// (Warzone until Season 1) gets no switch. Where the app opens is the
+/// home title's mode, so there's no separate choice for it here.
 struct PlayedModesPicker: View {
-    var showsStart = true
     @AppStorage(AppMode.playedKey) private var playedRaw = ""
-    @AppStorage(AppMode.startKey) private var startRaw = ""
+    @EnvironmentObject private var viewModel: TrackerViewModel
 
     var body: some View {
         let played = AppMode.played(playedRaw)
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 8) {
-                ForEach(AppMode.allCases) { mode in
-                    chip(mode, on: played.contains(mode))
-                }
-            }
-            if showsStart, played.count > 1 {
-                HStack {
-                    Text("mw4.ui.opens_to".localized())
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(Color.appInkMuted)
-                    Spacer(minLength: 8)
-                    Picker("mw4.ui.opens_to".localized(), selection: Binding(
-                        get: { AppMode.start(startRaw, played: playedRaw) },
-                        set: { Haptics.step(); startRaw = $0.rawValue })) {
-                        ForEach(played) { mode in
-                            Text(mode.displayNameKey.localized()).tag(mode)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .fixedSize()
-                    .accessibilityIdentifier("mode.start")
-                }
+        let offered = AppMode.allCases.filter { viewModel.modes[$0.rawValue]?.hidden != true }
+        HStack(spacing: 8) {
+            ForEach(offered) { mode in
+                chip(mode, on: played.contains(mode))
             }
         }
         .animation(.snappy, value: playedRaw)
@@ -771,6 +752,7 @@ struct ChallengeRow: View {
             }
             .buttonStyle(.plain)
             .disabled(!isAvailable)
+            .accessibilityIdentifier("tick.\(item.name.resolved())")
 
             if item.imageURL != nil {
                 CamoThumbnail(urlString: item.imageURL, size: 34)

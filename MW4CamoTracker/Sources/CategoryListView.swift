@@ -98,6 +98,7 @@ struct CategoryListView: View {
                 .overlay(Capsule().strokeBorder(Color.appInkMuted.opacity(on ? 0 : 0.25), lineWidth: 1))
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("classChip.\(id)")
     }
 
     private var displayedCategories: [WeaponCategory] {
@@ -503,35 +504,6 @@ enum CategoryStats {
             stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))
         }
         return stats
-    }
-}
-
-/// "See all 33 ›" beside the Weapons header: every weapon in one list.
-private struct SeeAllLink: View {
-    let accent: Color
-    let count: Int
-    @Environment(\.pushRoute) private var pushRoute
-
-    var body: some View {
-        Group {
-            if let pushRoute {
-                Button { pushRoute(.allWeapons) } label: { label }
-            } else {
-                NavigationLink(value: Route.allWeapons) { label }
-            }
-        }
-        .buttonStyle(.plain)
-        .accessibilityIdentifier("seeAllWeapons")
-    }
-
-    private var label: some View {
-        HStack(spacing: 3) {
-            Text(String(format: "mw4.ui.see_all".localized(), count))
-            Image(systemName: "chevron.right").imageScale(.small)
-        }
-        .font(.subheadline.weight(.semibold))
-        .foregroundStyle(accent)
-        .textCase(nil)
     }
 }
 

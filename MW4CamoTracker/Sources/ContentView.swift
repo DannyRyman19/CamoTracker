@@ -70,14 +70,45 @@ struct ContentView: View {
         Binding(get: { paths[index] ?? NavigationPath() }, set: { paths[index] = $0 })
     }
 
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    @State private var rootWidth: CGFloat = 0
+
+    /// Room for Mastery beside the weapons: an iPad, or an unfolded iPhone
+    /// Duo held sideways. Upright the Duo (about 670pt) keeps the tab.
+    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 }
+
+    /// iPad: Mastery in a column beside the weapons, shown or hidden from
+    /// the toolbar. It stands in for the Mastery tab, which iPad drops.
+    @AppStorage("mw4.masteryColumn") private var showsMasteryColumn = true
+
+    @ViewBuilder private func homeRoot(mode: AppMode) -> some View {
+        if hasMasteryColumn {
+            HStack(spacing: 0) {
+                CategoryListView(mode: mode)
+                    .frame(maxWidth: .infinity)
+                if showsMasteryColumn {
+                    MasteryTabView(embedded: true)
+                        .frame(width: 300)
+                        .overlay(alignment: .leading) {
+                            Rectangle().fill(Color.appInkMuted.opacity(0.12)).frame(width: 1).ignoresSafeArea()
+                        }
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
+            }
+        } else {
+            CategoryListView(mode: mode)
+        }
+    }
+
     var body: some View {
         ZStack(alignment: .top) {
+            Color.clear.readingWidth($rootWidth)
             TabView(selection: $selectedTab) {
                 // Weapons first: one list, in the mode you mostly play;
                 // each weapon switches modes for its own counts
                 let index = 0, mode = primaryMode
                 NavigationStack(path: pathBinding(index)) {
-                    CategoryListView(mode: mode)
+                    homeRoot(mode: mode)
                         .navigationDestination(for: Route.self) { route in
                             RouteDestinationView(mode: mode, route: route)
                         }
@@ -110,6 +141,17 @@ struct ContentView: View {
                                     Image(systemName: "questionmark.circle")
                                 }
                             }
+                            if hasMasteryColumn {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        Haptics.step()
+                                        withAnimation(.snappy) { showsMasteryColumn.toggle() }
+                                    } label: {
+                                        Image(systemName: showsMasteryColumn ? "sidebar.trailing" : "sidebar.right")
+                                    }
+                                    .accessibilityLabel("mw4.ui.section.mastery".localized())
+                                }
+                            }
                         }
                 }
                 .id(mode)
@@ -121,9 +163,12 @@ struct ContentView: View {
                 .tabItem { Label("mw4.ui.section.weapons".localized(), systemImage: "scope") }
                 .tag(index)
 
-                NavigationStack { MasteryTabView() }
-                    .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
-                    .tag(2)
+                // iPad has Mastery beside the weapons instead
+                if !hasMasteryColumn {
+                    NavigationStack { MasteryTabView() }
+                        .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
+                        .tag(2)
+                }
 
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
@@ -149,7 +194,15 @@ struct ContentView: View {
                 paths[0] = path
             }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
+            .onChange(of: hasMasteryColumn) { column in
+                if column, selectedTab == 2 { selectedTab = 0 }
+            }
             .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
+            // The title's mode is where the app opens next time, and what
+            // the widgets follow
+            .onChange(of: primaryModeRaw) { raw in
+                if startRaw != raw { startRaw = raw }
+            }
             // A mode no longer played falls back in `primaryMode` itself
             .onChange(of: playedRaw) { _ in viewModel.refreshWidgets() }
 
@@ -180,7 +233,7 @@ struct ContentView: View {
                 splashDone = true
                 return
             }
-            // Weapons opens in the mode the player picked (Customise > Opens to)
+            // Weapons opens in the mode last picked in its title
             if !startRaw.isEmpty {
                 primaryModeRaw = AppMode.start(startRaw, played: playedRaw).rawValue
             }

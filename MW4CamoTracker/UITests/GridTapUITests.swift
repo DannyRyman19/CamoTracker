@@ -17,7 +17,7 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         if let category { app.launchEnvironment["SS_CAT"] = "\(category)" }
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
         return app
     }
@@ -42,17 +42,20 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Weapon Level"].exists)
     }
 
-    /// "See all" in the Weapons header opens every weapon in one list, and
-    /// no "All weapons" card sits among the classes any more.
-    func testSeeAllOpensEveryWeapon() {
+    /// The class chips above the weapons filter the one list in place:
+    /// SMGs shows the SMGs and nothing else, All brings every weapon back.
+    func testClassChipsFilterTheList() {
         let app = launch()
-        let link = app.buttons["seeAllWeapons"]
-        XCTAssertTrue(link.waitForExistence(timeout: 15))
-        XCTAssertFalse(app.staticTexts["All weapons"].exists)
-        for _ in 0..<3 where !link.isHittable { app.swipeUp() }
-        link.tap()
-        XCTAssertTrue(app.navigationBars["All weapons"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["HAN 86"].exists)
+        let smgs = app.buttons["classChip.1"]
+        XCTAssertTrue(smgs.waitForExistence(timeout: 15))
+        for _ in 0..<4 where !smgs.isHittable { app.swipeUp() }
+        smgs.tap()
+        XCTAssertTrue(app.staticTexts["ISO Nightshade"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["Rezi 12"].exists)
+
+        // Assault Rifles lead the full list, just under the chips
+        app.buttons["classChip.-1"].tap()
+        XCTAssertTrue(app.staticTexts["Hyeon Burst"].waitForExistence(timeout: 5))
     }
 
     /// Customise: switching Suggested off takes it off the tab, and Reset
@@ -61,7 +64,7 @@ final class GridTapUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
         // Below the layout list and the locked-challenges switch: lift the
@@ -98,21 +101,6 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Suggested"].exists)
     }
 
-    func testTappingACategoryCardOpensThatCategoryOnly() {
-        let app = launch()
-        XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 15))
-        // Below Suggested and the filter row: scroll it into view.
-        let second = app.staticTexts["SMGs"]
-        for _ in 0..<4 where !second.isHittable { app.swipeUp() }
-        second.tap()
-        XCTAssertTrue(app.navigationBars["SMGs"].waitForExistence(timeout: 5))
-
-        // One back lands on the tab root, so only one screen was pushed.
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        XCTAssertTrue(app.navigationBars["Multiplayer"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Assault Rifles"].exists)
-    }
-
     /// A save where every Assault Rifle has Gold, so HAN 86's Platinum
     /// (a 50-headshot counter) is open, passed in through the arguments
     /// domain so the test needs no setup screens.
@@ -136,7 +124,7 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["SS_WEAPON"] = "0" // HAN 86
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(hex)>"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(hex)>", "-mw4_home_class", "-1"]
         app.launch()
         return app
     }
@@ -148,7 +136,7 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["SS_WEAPON"] = "1" // M4, max 72
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
         let detail = app.staticTexts["Unlocks at weapon level 10."]
@@ -176,11 +164,11 @@ final class GridTapUITests: XCTestCase {
         count.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)).withOffset(CGVector(dx: 18, dy: 0)).tap()
         XCTAssertTrue(app.descendants(matching: .any)["1/50"].waitForExistence(timeout: 5))
 
-        // The tick box still completes it in one tap, no typing 50. It sits
-        // at the row's left edge, level with the name (a camo picture can
-        // sit between them).
-        let name = app.staticTexts["Platinum"]
-        app.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: 27, dy: name.frame.maxY)).tap()
-        XCTAssertTrue(app.descendants(matching: .any)["50/50"].waitForExistence(timeout: 5))
+        // The tick box still completes it in one tap, no typing 50. A done
+        // camo drops its counter.
+        app.buttons["tick.Platinum"].tap()
+        let gone = expectation(for: NSPredicate(format: "exists == false"),
+                               evaluatedWith: app.descendants(matching: .any)["1/50"])
+        wait(for: [gone], timeout: 5)
     }
 }
