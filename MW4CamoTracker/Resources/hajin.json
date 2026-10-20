@@ -1,5 +1,5 @@
 {
- "version": "0.1.0",
+ "version": "0.2.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -1511,172 +1511,371 @@
    "id": "recipes",
    "title": "Crafting recipes",
    "symbol": "printer.fill",
-   "intro": "Made at the 3D Printer in your FOB before you deploy. Recipes unlock by level, from DMZ Orders, or by extracting with a looted recipe, which adds it to the printer and pays $5,000. More costs get added as they're confirmed.",
+   "intro": "Made at the 3D Printer in your FOB before you deploy. \"Find\" means you unlock it by finding the recipe in Hajin and extracting with it, which also pays $5,000. \"Orders\" means DMZ Orders. Costs read from the in-game printer; more get added as they're confirmed.",
    "rows": [
     {
      "title": "Bandage",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Restores max health for a while after you're hurt",
+     "group": "Consumables",
      "value": "Lv 2",
-     "subtitle": "15 Synthetics, 15 Chemicals"
+     "image": "https://camotracker.djr.li/Images/DMZ/bandage.png"
     },
     {
      "title": "Medkit",
+     "subtitle": "Epic. 30 Chemicals, 1 Binding Catalyst, 5 Biomaterials",
+     "group": "Consumables",
      "value": "Lv 2",
-     "subtitle": "30 Chemicals, 1 Binding Catalyst, 5 Biomaterials"
-    },
-    {
-     "title": "1-Plate Armor Vest",
-     "value": "Lv 2",
-     "subtitle": "25 Synthetics, 25 Metals"
-    },
-    {
-     "title": "2-Plate Armor Vest",
-     "value": "Lv 2",
-     "subtitle": "50 Synthetics, 5 Reactive Metals"
-    },
-    {
-     "title": "Small Backpack",
-     "value": "Lv 2",
-     "subtitle": "25 Synthetics, 25 Metals"
-    },
-    {
-     "title": "Medium Backpack",
-     "value": "Lv 2",
-     "subtitle": "50 Synthetics, 5 Rigid Synthetics. Adds Secure Slots"
-    },
-    {
-     "title": "Energy Drink",
-     "value": "Any",
-     "subtitle": "10 Chemicals, 10 Metals. Unlimited stamina for a while"
-    },
-    {
-     "title": "Door Breacher Charge",
-     "value": "Any",
-     "subtitle": "1 Stock Rod"
-    },
-    {
-     "title": "Bomb Glider",
-     "value": "Any",
-     "subtitle": "1 Stock Rod"
-    },
-    {
-     "title": "Pain Killers",
-     "subtitle": "15 Electronics, 15 Chemicals"
-    },
-    {
-     "title": "Radiation Blockers",
-     "subtitle": "15 Electronics, 15 Chemicals"
-    },
-    {
-     "title": "Small Secure Backpack",
-     "subtitle": "50 Metals, 10 Rigid Synthetics, 3 Structural Alloy. Three Secure Slots"
-    },
-    {
-     "title": "Secure Scavenger Backpack",
-     "subtitle": "2 Military Composites, 4 Nylon Laminate, 10 Reactive Metals"
-    },
-    {
-     "title": "Tempered Armor Vest",
-     "subtitle": "2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics"
-    },
-    {
-     "title": "Recon Drone",
-     "value": "Order",
-     "subtitle": "Reward from the Counterfeit DMZ Order. Cost not confirmed yet"
+     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png"
     },
     {
      "title": "Sedative Inhaler",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Hides you from radar, marking and thermal",
+     "group": "Consumables",
      "value": "Lv 3",
-     "subtitle": "15 Synthetics, 15 Chemicals"
+     "image": "https://camotracker.djr.li/Images/DMZ/sedative-inhaler.png"
     },
     {
-     "title": "Smoke Grenade",
-     "value": "Lv 4",
-     "subtitle": "Cost not confirmed yet"
+     "title": "Energy Drink",
+     "subtitle": "Common. 10 Chemicals, 10 Metals. Unlimited stamina",
+     "group": "Consumables",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/energy-drink.png"
     },
     {
-     "title": "Concussion Grenade",
-     "value": "Lv 4",
-     "subtitle": "Cost not confirmed yet"
+     "title": "Pain Killers",
+     "subtitle": "Uncommon. 15 Electronics, 15 Chemicals. Max health, weaker damage effects and faster regen for a minute",
+     "group": "Consumables",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/pain-killers.png"
     },
     {
-     "title": "Frag Grenade",
-     "value": "Lv 7",
-     "subtitle": "Cost not confirmed yet"
+     "title": "Smelling Salts",
+     "subtitle": "Rare. 30 Chemicals, 3 Detonators. Unlimited stamina, better movement and faster reloads for 60 seconds",
+     "group": "Consumables",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/smelling-salts.png"
     },
     {
-     "title": "Throwing Knife",
-     "value": "Lv 7",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Snapshot Grenade",
-     "value": "Lv 9",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Ammo Box",
-     "value": "Lv 12",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Spotter Scope",
-     "value": "Lv 12",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Armor Box",
-     "value": "Lv 14",
-     "subtitle": "1 Reactive Metals (rest not confirmed)"
-    },
-    {
-     "title": "Shock Stick",
-     "value": "Lv 17",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Sticky Grenade",
-     "value": "Lv 23",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Gas Mask",
-     "value": "Lv 26",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Care Package",
-     "value": "Lv 28",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "UAV",
-     "value": "Lv 31",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Molotov Cocktail",
-     "value": "Lv 36",
-     "subtitle": "Cost not confirmed yet"
-    },
-    {
-     "title": "Thermite",
-     "value": "Lv 41",
-     "subtitle": "Cost not confirmed yet"
+     "title": "Radiation Blockers",
+     "subtitle": "Uncommon. 15 Electronics, 15 Chemicals. Protection in irradiated areas",
+     "group": "Consumables",
+     "image": "https://camotracker.djr.li/Images/DMZ/radiation-blockers.png"
     },
     {
      "title": "Self-Revive Kit",
+     "subtitle": "Legendary. 1 Stabilized Reagents, 5 Biomaterials, 3 Binding Catalyst. Revive yourself when you're downed",
+     "group": "Consumables",
      "value": "Lv 48",
-     "subtitle": "5 Biomaterials, 3 Binding Catalyst"
+     "image": "https://camotracker.djr.li/Images/DMZ/self-revive-kit.png"
+    },
+    {
+     "title": "1-Plate Armor Vest",
+     "subtitle": "Uncommon. 25 Synthetics, 25 Metals. One armor plate",
+     "group": "Plate Carriers",
+     "value": "Lv 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/1-plate-armor-vest.png"
+    },
+    {
+     "title": "2-Plate Armor Vest",
+     "subtitle": "Rare. 50 Synthetics, 5 Reactive Metals. Two armor plates",
+     "group": "Plate Carriers",
+     "value": "Lv 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-armor-vest.png"
+    },
+    {
+     "title": "2-Plate Helmet Armor Vest",
+     "subtitle": "Epic. 50 Synthetics, 3 Structural Alloy, 10 Reactive Metals. Two plates, less damage from headshots",
+     "group": "Plate Carriers",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-helmet-armor-vest.png"
+    },
+    {
+     "title": "3-Plate Ballistic Gel Vest",
+     "subtitle": "Ultra. 2 Experimental Compounds, 4 Stabilized Reagents, 10 Biomaterials. Three plates that regenerate over time",
+     "group": "Plate Carriers",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-ballistic-gel-vest.png"
+    },
+    {
+     "title": "3-Plate Helmet Armor Vest",
+     "subtitle": "Ultra. 2 Nano-Structured Alloy, 4 Alloyed Plating, 10 Reactive Metals. Three plates, less damage from headshots",
+     "group": "Plate Carriers",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-helmet-armor-vest.png"
+    },
+    {
+     "title": "Tempered Armor Vest",
+     "subtitle": "Ultra. 2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics",
+     "group": "Plate Carriers",
+     "image": "https://camotracker.djr.li/Images/DMZ/tempered-armor-vest.png"
+    },
+    {
+     "title": "Small Backpack",
+     "subtitle": "Uncommon. 25 Synthetics, 25 Metals",
+     "group": "Backpacks",
+     "value": "Lv 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/small-backpack.png"
+    },
+    {
+     "title": "Medium Backpack",
+     "subtitle": "50 Synthetics, 5 Rigid Synthetics. Adds Secure Slots",
+     "group": "Backpacks",
+     "value": "Lv 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/medium-backpack.png"
+    },
+    {
+     "title": "Medium Scavenger Backpack",
+     "subtitle": "Epic. 50 Metals, 3 Nylon Cloth, 10 Rigid Synthetics. Two Secure Slots and room for more resources",
+     "group": "Backpacks",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/medium-scavenger-backpack.png"
+    },
+    {
+     "title": "Small Secure Backpack",
+     "subtitle": "Epic. 50 Metals, 3 Structural Alloy, 10 Rigid Synthetics. Three Secure Slots",
+     "group": "Backpacks",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/small-secure-backpack.png"
+    },
+    {
+     "title": "Medium Secure Backpack",
+     "subtitle": "Legendary. 2 Alloyed Plating, 5 Nylon Cloth, 10 Reactive Metals. Four Secure Slots",
+     "group": "Backpacks",
+     "value": "Find"
+    },
+    {
+     "title": "Secure Scavenger Backpack",
+     "subtitle": "Ultra. 2 Military Composites, 4 Nylon Laminate, 10 Reactive Metals. Large, four Secure Slots and room for more resources",
+     "group": "Backpacks",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/secure-scavenger-backpack.png"
+    },
+    {
+     "title": "Smoke Grenade",
+     "subtitle": "Common. 10 Synthetics, 10 Chemicals. Smoke that blocks sight and automated targeting",
+     "group": "Tacticals",
+     "value": "Lv 4",
+     "image": "https://camotracker.djr.li/Images/DMZ/smoke-grenade.png"
+    },
+    {
+     "title": "Concussion Grenade",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Tacticals",
+     "value": "Lv 4"
+    },
+    {
+     "title": "Snapshot Grenade",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Tacticals",
+     "value": "Lv 9",
+     "image": "https://camotracker.djr.li/Images/DMZ/snapshot-grenade.png"
+    },
+    {
+     "title": "Spotter Scope",
+     "subtitle": "Rare. 50 Synthetics, 5 Electronic Sensors. Spot and mark enemies nearby",
+     "group": "Tacticals",
+     "value": "Lv 12"
+    },
+    {
+     "title": "Stim",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Starts health regen, refreshes Tactical Sprint, eases flash and stun",
+     "group": "Tacticals",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/stim.png"
+    },
+    {
+     "title": "Heartbeat Sensor",
+     "subtitle": "Uncommon. 25 Synthetics, 25 Chemicals. A tablet showing roughly where enemies are",
+     "group": "Tacticals",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/heartbeat-sensor.png"
+    },
+    {
+     "title": "Frag Grenade",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Lethals",
+     "value": "Lv 7"
+    },
+    {
+     "title": "Throwing Knife",
+     "subtitle": "Uncommon. Cost not confirmed yet",
+     "group": "Lethals",
+     "value": "Lv 7",
+     "image": "https://camotracker.djr.li/Images/DMZ/throwing-knife.png"
+    },
+    {
+     "title": "C4",
+     "subtitle": "Common. 10 Chemicals, 10 Metals. Sticky explosive you set off remotely",
+     "group": "Lethals",
+     "value": "Orders"
+    },
+    {
+     "title": "Zip Gun",
+     "subtitle": "Common. 10 Chemicals, 10 Metals. Single-shot pistol for close range",
+     "group": "Lethals",
+     "value": "Find"
+    },
+    {
+     "title": "Drill Charge",
+     "subtitle": "Uncommon. 15 Chemicals, 15 Metals. Burrows into a surface before it blows",
+     "group": "Lethals",
+     "value": "Find"
+    },
+    {
+     "title": "Trip Wire",
+     "subtitle": "Uncommon. 15 Chemicals, 15 Metals. Thrown trap; several link into a network",
+     "group": "Lethals",
+     "value": "Find"
+    },
+    {
+     "title": "Sticky Grenade",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Lethals",
+     "value": "Lv 23"
+    },
+    {
+     "title": "Molotov Cocktail",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Lethals",
+     "value": "Lv 36"
+    },
+    {
+     "title": "Thermite",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Lethals",
+     "value": "Lv 41"
+    },
+    {
+     "title": "Ammo Box",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Field Upgrades",
+     "value": "Lv 12"
+    },
+    {
+     "title": "Armor Box",
+     "subtitle": "Rare. 30 Metals, 3 Reactive Metals. Armor plates for you and your squad",
+     "group": "Field Upgrades",
+     "value": "Lv 14",
+     "image": "https://camotracker.djr.li/Images/DMZ/armor-box.png"
+    },
+    {
+     "title": "Portable Radar",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Electronics. Pings nearby enemies every so often",
+     "group": "Field Upgrades",
+     "value": "Find"
+    },
+    {
+     "title": "Riot Shield",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Metals. A placeable shield to hold a position",
+     "group": "Field Upgrades",
+     "value": "Find"
+    },
+    {
+     "title": "Shock Stick",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Field Upgrades",
+     "value": "Lv 17",
+     "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png"
+    },
+    {
+     "title": "DDOS",
+     "subtitle": "Rare. 30 Electronics, 3 Detonators. Knocks out electronics and sensors nearby for a short time",
+     "group": "Field Upgrades",
+     "value": "Orders"
+    },
+    {
+     "title": "Revive Pistol",
+     "subtitle": "Legendary. 2 Power Regulator, 3 Binding Catalyst, 5 Detonators. Revive or heal allies from a distance",
+     "group": "Field Upgrades",
+     "value": "Lv 25",
+     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png"
     },
     {
      "title": "Inflatable Decoy",
-     "value": "Lv 52",
-     "subtitle": "Cost not confirmed yet"
+     "subtitle": "Cost not confirmed yet",
+     "group": "Field Upgrades",
+     "value": "Lv 52"
+    },
+    {
+     "title": "Care Package",
+     "subtitle": "Rare. 20 Electronics, 2 Control Unit, 2 Rigid Synthetics. Calls in a supply drop",
+     "group": "Fire Support",
+     "value": "Lv 28"
+    },
+    {
+     "title": "UAV",
+     "subtitle": "Epic. 30 Electronics, 2 Structural Alloy, 5 Electronic Sensors. Shows enemies on the minimap",
+     "group": "Fire Support",
+     "value": "Lv 31"
+    },
+    {
+     "title": "Railgun Sentry",
+     "subtitle": "Legendary. 2 Power Regulator, 3 Nitro Compounds, 5 Control Unit. Hypersonic flechette cannon that works as a sentry",
+     "group": "Fire Support",
+     "value": "Find"
+    },
+    {
+     "title": "Gas Mask",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Gear",
+     "value": "Lv 26"
     },
     {
      "title": "Disposable Parachute",
-     "value": "Lv 55",
-     "subtitle": "1 Rigid Synthetics (rest not confirmed)"
+     "subtitle": "Rare. 30 Chemicals, 3 Rigid Synthetics. A parachute with limited uses",
+     "group": "Gear",
+     "value": "Lv 55"
+    },
+    {
+     "title": "Parachute",
+     "subtitle": "Legendary. 2 Turned Components, 5 Nylon Cloth, 10 Rigid Synthetics. Reusable",
+     "group": "Gear",
+     "value": "Find",
+     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png"
+    },
+    {
+     "title": "Biomaterials",
+     "subtitle": "Uncommon. 20 Synthetics, 20 Chemicals. Needs Uncommon Ingredient Printing",
+     "group": "Ingredients",
+     "value": "Upgrade",
+     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png"
+    },
+    {
+     "title": "Reactive Metals",
+     "subtitle": "Uncommon. 20 Chemicals, 20 Metals. Needs Uncommon Ingredient Printing",
+     "group": "Ingredients",
+     "value": "Upgrade",
+     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png"
+    },
+    {
+     "title": "Ballistic Fabric",
+     "subtitle": "Epic. 100 Synthetics, 3 High-Tenacity Fibers. Needs Epic Ingredient Printing",
+     "group": "Ingredients",
+     "value": "Upgrade",
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png"
+    },
+    {
+     "title": "Stabilized Reagents",
+     "subtitle": "Epic. 100 Chemicals, 3 Binding Catalyst. Needs Epic Ingredient Printing",
+     "group": "Ingredients",
+     "value": "Upgrade"
+    },
+    {
+     "title": "Door Breacher Charge",
+     "subtitle": "Ultra. 1 Stock Rod",
+     "group": "Other",
+     "image": "https://camotracker.djr.li/Images/DMZ/door-breacher-charge.png"
+    },
+    {
+     "title": "Bomb Glider",
+     "subtitle": "1 Stock Rod",
+     "group": "Other"
+    },
+    {
+     "title": "Recon Drone",
+     "subtitle": "Cost not confirmed yet",
+     "group": "Other",
+     "value": "Order"
     }
    ]
   },
@@ -1705,31 +1904,37 @@
     {
      "title": "Biomaterials",
      "value": "Uncommon",
-     "subtitle": "Medkit, Self-Revive Kit. Level 39 gives 2"
+     "subtitle": "Medkit, Self-Revive Kit. Level 39 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png"
     },
     {
      "title": "Rigid Synthetics",
      "value": "Uncommon",
-     "subtitle": "Medium Backpack, Disposable Parachute, Small Secure Backpack, Tempered Armor Vest. Sells for $200. Level 6 gives 2"
+     "subtitle": "Medium Backpack, Disposable Parachute, Small Secure Backpack, Tempered Armor Vest. Sells for $200. Level 6 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/rigid-synthetics.png"
     },
     {
      "title": "Reactive Metals",
      "value": "Uncommon",
-     "subtitle": "Industrial areas and toolboxes. 2-Plate Armor Vest, Armor Box, Secure Scavenger Backpack. Sells for $400. Level 11 gives 2"
+     "subtitle": "Industrial areas and toolboxes. 2-Plate Armor Vest, Armor Box, Secure Scavenger Backpack. Sells for $400. Level 11 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png"
     },
     {
      "title": "Binding Catalyst",
      "value": "Rare",
-     "subtitle": "Medkit, Self-Revive Kit. Level 49 gives 2"
+     "subtitle": "Medkit, Self-Revive Kit. Level 49 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png"
     },
     {
      "title": "Stock Rod",
      "value": "Rare",
-     "subtitle": "Door Breacher Charge, Bomb Glider. Sells for $500. Level 51 gives 2"
+     "subtitle": "Door Breacher Charge, Bomb Glider. Sells for $500. Level 51 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/stock-rod.png"
     },
     {
      "title": "Detonators",
-     "subtitle": "Level 29 gives 2"
+     "subtitle": "Level 29 gives 2",
+     "image": "https://camotracker.djr.li/Images/DMZ/detonators.png"
     },
     {
      "title": "Control Unit",
@@ -1773,30 +1978,72 @@
     {
      "title": "Ballistic Flight Logs",
      "value": "Uncommon",
-     "subtitle": "Sells for $1,000"
+     "subtitle": "Sells for $1,000",
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png"
     },
     {
      "title": "Nylon Laminate",
      "value": "Epic",
-     "subtitle": "Military holdings and upmarket civilian buildings. Secure Scavenger Backpack"
+     "subtitle": "Military holdings and upmarket civilian buildings. Secure Scavenger Backpack",
+     "image": "https://camotracker.djr.li/Images/DMZ/nylon-laminate.png"
     },
     {
      "title": "Ballistic Fabric",
      "value": "Epic",
-     "subtitle": "Tempered Armor Vest"
+     "subtitle": "Tempered Armor Vest",
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png"
     },
     {
      "title": "Power Regulator",
-     "value": "Epic"
+     "value": "Epic",
+     "image": "https://camotracker.djr.li/Images/DMZ/power-regulator.png"
     },
     {
      "title": "Military Composites",
      "value": "Legendary",
-     "subtitle": "Secure Scavenger Backpack, Tempered Armor Vest"
+     "subtitle": "Secure Scavenger Backpack, Tempered Armor Vest",
+     "image": "https://camotracker.djr.li/Images/DMZ/military-composites.png"
     },
     {
      "title": "Commanders",
      "subtitle": "Kill one and extract to get valuable ingredients"
+    },
+    {
+     "title": "Stabilized Reagents",
+     "subtitle": "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst",
+     "value": "Epic"
+    },
+    {
+     "title": "Experimental Compounds",
+     "subtitle": "3-Plate Ballistic Gel Vest"
+    },
+    {
+     "title": "Nano-Structured Alloy",
+     "subtitle": "3-Plate Helmet Armor Vest"
+    },
+    {
+     "title": "Alloyed Plating",
+     "subtitle": "3-Plate Helmet Armor Vest, Medium Secure Backpack"
+    },
+    {
+     "title": "Turned Components",
+     "subtitle": "Parachute"
+    },
+    {
+     "title": "Comms Module",
+     "subtitle": "Stash Weapon Upgrade, Uncommon Ingredient Printing"
+    },
+    {
+     "title": "Prototype RF Module",
+     "subtitle": "Vendor Item Upgrade"
+    },
+    {
+     "title": "Regional Combat Notes",
+     "subtitle": "MIA Recovery Discount"
+    },
+    {
+     "title": "Infantry Invasion Plans",
+     "subtitle": "Bank Upgrade III"
     }
    ]
   },
@@ -1813,12 +2060,12 @@
     {
      "title": "Vendor",
      "value": "Lv 5",
-     "subtitle": "Sells weapons and items for DMZ Cash. Stock rotates daily; upgrades at 18 and 32 add more"
+     "subtitle": "Sells weapons and gear for DMZ Cash, restocking daily. More slots unlock with DMZ level and Vendor Item Upgrades. Seen on day one: night vision goggles $7,000, a built rifle $46,250"
     },
     {
      "title": "Gunsmith",
      "value": "Lv 10",
-     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Base M4 about $5,000, assault rifles $4,750, SMGs $2,850, each attachment slot $1,000. 5% off from level 25"
+     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I"
     },
     {
      "title": "Dog Tag Case",
@@ -1836,11 +2083,226 @@
     },
     {
      "title": "Bank",
-     "subtitle": "Holds your DMZ Cash; cash you extract goes here. Has a cap that FOB upgrades raise"
+     "subtitle": "Holds your DMZ Cash; cash you extract goes here. Bank Upgrade III raises the cap to $1 million"
     },
     {
      "title": "Firing Range",
      "subtitle": "Targets from under 10 m to over 100 m"
+    }
+   ]
+  },
+  {
+   "id": "upgrades",
+   "title": "FOB upgrades",
+   "symbol": "arrow.up.circle.fill",
+   "intro": "Printed at the 3D Printer to improve your FOB. Costs read from the in-game printer.",
+   "rows": [
+    {
+     "title": "Stash Item Upgrade I",
+     "subtitle": "10 Rigid Synthetics, 10 Electronic Sensors. +18 Stash item slots",
+     "value": "$10,000"
+    },
+    {
+     "title": "Stash Weapon Upgrade I",
+     "subtitle": "20 Reactive Metals, 10 Stock Rod, 5 Comms Module. +6 Stash weapon slots",
+     "value": "$50,000"
+    },
+    {
+     "title": "MIA Recovery Discount I",
+     "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less"
+    },
+    {
+     "title": "Bank Upgrade III",
+     "subtitle": "5 Infantry Invasion Plans. Your Bank holds up to $1 million",
+     "value": "$100,000"
+    },
+    {
+     "title": "Gunsmith Upgrade I",
+     "subtitle": "20 Reactive Metals, 10 CPU, 5 Power Regulator. 5% off at the Gunsmith",
+     "value": "$50,000"
+    },
+    {
+     "title": "Vendor Item Upgrade I",
+     "subtitle": "20 Electronic Sensors, 10 CPU, 10 Printed Circuit Board, 2 Prototype RF Module. More to buy at the Vendor"
+    },
+    {
+     "title": "Uncommon Ingredient Printing",
+     "subtitle": "20 Biomaterials, 10 High-Tenacity Fibers, 5 Comms Module. Print Biomaterials and Reactive Metals",
+     "value": "$50,000"
+    },
+    {
+     "title": "Epic Ingredient Printing",
+     "subtitle": "10 Binding Catalyst, 10 Printed Circuit Board, 5 Military Composites. Print Ballistic Fabric and Stabilized Reagents",
+     "value": "$100,000"
+    },
+    {
+     "title": "Dog Tag Case Upgrade I",
+     "subtitle": "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case",
+     "value": "$10,000"
+    }
+   ]
+  },
+  {
+   "id": "gunsmith",
+   "title": "Gunsmith prices",
+   "symbol": "scope",
+   "intro": "What a base weapon costs at the Gunsmith (level 10). Discounts from level 25 and Gunsmith Upgrade I come off these.",
+   "rows": [
+    {
+     "title": "Han 86",
+     "value": "$6,000",
+     "group": "Assault Rifles",
+     "subtitle": "Unlocked from the start"
+    },
+    {
+     "title": "M4",
+     "value": "$6,250",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Hyeon Burst",
+     "value": "$5,250",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Kastov 762",
+     "value": "$5,500",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Patriot XMR",
+     "value": "$6,500",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Oden",
+     "value": "$6,250",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Axion",
+     "value": "$5,750",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Cronen Squall",
+     "value": "$6,750",
+     "group": "Assault Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "ISO Nightshade",
+     "value": "$4,250",
+     "group": "SMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "VEL 46",
+     "value": "$4,500",
+     "group": "SMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Wz.55 Striga",
+     "value": "$3,500",
+     "group": "SMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "PPSh-41",
+     "value": "$3,750",
+     "group": "SMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "X-58 Nyx",
+     "value": "$4,000",
+     "group": "SMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Rezi 12",
+     "value": "$4,000",
+     "group": "Shotguns",
+     "subtitle": "Unlocked from the start"
+    },
+    {
+     "title": "Warlord",
+     "value": "$3,500",
+     "group": "Shotguns",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "FiNN LMG",
+     "value": "$8,000",
+     "group": "LMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Type 73",
+     "value": "$7,500",
+     "group": "LMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "APOC-338",
+     "value": "$7,750",
+     "group": "LMGs",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "MAR-9",
+     "value": "$6,500",
+     "group": "Marksman Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Oris 8.6",
+     "value": "$7,000",
+     "group": "Marksman Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Mosin-Nagant",
+     "value": "$7,500",
+     "group": "Marksman Rifles",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Sang 9mm",
+     "value": "$1,000",
+     "group": "Pistols",
+     "subtitle": "Unlocked from the start"
+    },
+    {
+     "title": "Krait P68",
+     "value": "$1,000",
+     "group": "Pistols",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": ".50 GS",
+     "value": "$4,000",
+     "group": "Pistols",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "Mojave .357",
+     "value": "$2,500",
+     "group": "Pistols",
+     "subtitle": "Extract its Manual to unlock"
+    },
+    {
+     "title": "FSS Carbon Edge 1095",
+     "value": "$250",
+     "group": "Melee",
+     "subtitle": "Unlocked from the start"
     }
    ]
   },
@@ -1976,37 +2438,44 @@
     {
      "title": "Gold Bar",
      "value": "$25,000",
-     "subtitle": "Ultra. Also a reward from Silent Ledger"
+     "subtitle": "Ultra. Also a reward from Silent Ledger",
+     "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png"
     },
     {
      "title": "Cipher Code Ledger",
      "value": "$5,000",
-     "subtitle": "Epic"
+     "subtitle": "Epic",
+     "image": "https://camotracker.djr.li/Images/DMZ/cipher-code-ledger.png"
     },
     {
      "title": "W.M.D Manifest",
      "value": "$5,000",
-     "subtitle": "Epic"
+     "subtitle": "Epic",
+     "image": "https://camotracker.djr.li/Images/DMZ/wmd-manifest.png"
     },
     {
      "title": "Parachute",
      "value": "$5,000",
-     "subtitle": "Legendary"
+     "subtitle": "Legendary",
+     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png"
     },
     {
      "title": "Revive Pistol",
      "value": "$2,500",
-     "subtitle": "Legendary"
+     "subtitle": "Legendary",
+     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png"
     },
     {
      "title": "Fulton Drop Marker",
      "value": "$2,500",
-     "subtitle": "Ultra"
+     "subtitle": "Ultra",
+     "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png"
     },
     {
      "title": "Medkit",
      "value": "$2,000",
-     "subtitle": "Epic"
+     "subtitle": "Epic",
+     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png"
     },
     {
      "title": "Keys",
@@ -2166,6 +2635,58 @@
      "title": "3rd and later",
      "value": "$500,000",
      "subtitle": "The Legendary versions"
+    }
+   ]
+  },
+  {
+   "id": "traits",
+   "title": "Traits",
+   "symbol": "brain.head.profile",
+   "intro": "Each operator spends trait points across three trees: Warfighter, Scout and Survivalist. Dog tags level up from Steel to Onyx III, one point per level. The Scout tree so far:",
+   "rows": [
+    {
+     "title": "Pack Rat",
+     "subtitle": "20% more printer resource capacity. Stacks with Resource Hoarder",
+     "group": "Scout"
+    },
+    {
+     "title": "Resource Pockets",
+     "subtitle": "Scrapped items give 20% more printer resources",
+     "group": "Scout"
+    },
+    {
+     "title": "Ammo Scavenger",
+     "subtitle": "Double ammo from ammo packs",
+     "group": "Scout"
+    },
+    {
+     "title": "Quick Knife",
+     "subtitle": "Your weapon bash becomes a knife attack",
+     "group": "Scout"
+    },
+    {
+     "title": "Field Medic",
+     "subtitle": "Revive allies faster",
+     "group": "Scout"
+    },
+    {
+     "title": "Key Cash",
+     "subtitle": "Opening a locked room with a key pays cash; rarer keys pay more",
+     "group": "Scout"
+    },
+    {
+     "title": "Investor",
+     "subtitle": "A little more cash when you extract",
+     "group": "Scout"
+    },
+    {
+     "title": "Overwatch",
+     "subtitle": "UAV Towers you activate never expire",
+     "group": "Scout"
+    },
+    {
+     "title": "Randomized Trait",
+     "subtitle": "Revealed once you take a trait from the row before"
     }
    ]
   }

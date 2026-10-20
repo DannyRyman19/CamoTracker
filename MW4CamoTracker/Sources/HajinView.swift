@@ -282,10 +282,7 @@ struct GuideSectionView: View {
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
                 }
-                ForEach(rows, id: \.self) { row in
-                    GuideRowView(row: row, highlight: query.lowercased())
-                        .listRowBackground(Color.appSurface)
-                }
+                GroupedGuideRows(rows: rows, highlight: query.lowercased())
                 if rows.isEmpty {
                     Text("mw4.ui.hajin.no_results".localized())
                         .foregroundStyle(Color.appInkMuted)
@@ -301,31 +298,79 @@ struct GuideSectionView: View {
     }
 }
 
+/// A section's rows, under headings when they carry a `group`.
+struct GroupedGuideRows: View {
+    let rows: [HajinGuide.Row]
+    var highlight = ""
+
+    private var groups: [(title: String?, rows: [HajinGuide.Row])] {
+        var out: [(title: String?, rows: [HajinGuide.Row])] = []
+        for row in rows {
+            let title = row.group?.resolved
+            if let last = out.indices.last, out[last].title == title {
+                out[last].rows.append(row)
+            } else {
+                out.append((title, [row]))
+            }
+        }
+        return out
+    }
+
+    var body: some View {
+        ForEach(Array(groups.enumerated()), id: \.offset) { _, group in
+            Section {
+                ForEach(group.rows, id: \.self) { row in
+                    GuideRowView(row: row, highlight: highlight)
+                        .listRowBackground(Color.appSurface)
+                }
+            } header: {
+                if let title = group.title { Text(title) }
+            }
+        }
+    }
+}
+
 struct GuideRowView: View {
     let row: HajinGuide.Row
     var highlight = ""
 
+    private var unconfirmed: Bool { row.subtitle?.values["en"]?.contains("not confirmed") ?? false }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(row.title.resolved)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.appInk)
-                Spacer(minLength: 8)
-                if let value = row.value {
-                    Text(value.resolved)
-                        .font(.footnote.weight(.semibold).monospacedDigit())
-                        .foregroundStyle(Color.accentDMZ)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
+        HStack(alignment: .top, spacing: 12) {
+            if let image = row.image, let url = URL(string: image) {
+                AsyncImage(url: url) { phase in
+                    if let picture = phase.image {
+                        picture.resizable().scaledToFit()
+                    } else {
+                        Color.clear
+                    }
                 }
+                .frame(width: 44, height: 44)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface2))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-            if let subtitle = row.subtitle {
-                Text(subtitle.resolved)
-                    .font(.subheadline)
-                    .foregroundStyle(subtitle.resolved.hasPrefix("Cost not confirmed") ? Color.appInkMuted.opacity(0.7) : Color.appInkMuted)
-                    .italic(subtitle.resolved.hasPrefix("Cost not confirmed"))
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(row.title.resolved)
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Color.appInk)
+                    Spacer(minLength: 8)
+                    if let value = row.value {
+                        Text(value.resolved)
+                            .font(.footnote.weight(.semibold).monospacedDigit())
+                            .foregroundStyle(Color.accentDMZ)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
+                    }
+                }
+                if let subtitle = row.subtitle {
+                    Text(subtitle.resolved)
+                        .font(.subheadline)
+                        .foregroundStyle(unconfirmed ? Color.appInkMuted.opacity(0.7) : Color.appInkMuted)
+                        .italic(unconfirmed)
+                }
             }
         }
         .padding(.vertical, 3)
@@ -636,9 +681,7 @@ struct HajinGuidePanel: View {
         if let intro = section.intro, needle.isEmpty {
             Text(intro.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted).listRowBackground(Color.clear)
         }
-        ForEach(rows, id: \.self) { row in
-            GuideRowView(row: row).listRowBackground(Color.appSurface)
-        }
+        GroupedGuideRows(rows: rows)
         if rows.isEmpty {
             Text("mw4.ui.hajin.no_results".localized()).foregroundStyle(Color.appInkMuted).listRowBackground(Color.clear)
         }

@@ -68,6 +68,10 @@ struct HajinGuide: Codable {
         let value: GuideText?
         let subtitle: GuideText?
         let level: Int?
+        /// The item's picture, when there is one.
+        let image: String?
+        /// A heading the row sits under within its section ("Backpacks").
+        let group: GuideText?
 
         /// Whether any of its text contains `needle` (already lowercased).
         func matches(_ needle: String) -> Bool {
