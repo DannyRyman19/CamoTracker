@@ -82,12 +82,18 @@ platform :ios do
     # Adding a capability (App Groups, for the widgets) turns existing
     # profiles INVALID, and sigh would then make a replacement under a
     # timestamped name the pinned PROVISIONING_PROFILE_SPECIFIER never finds,
-    # so drop an invalid profile holding one of our names first.
+    # so drop an invalid profile holding one of our names first. A timestamped
+    # copy ("<name> 1792438064") left by an earlier run goes too: when it is
+    # the app's only App Store profile, sigh keeps downloading it and the
+    # archive never finds the exact name.
     Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.from(hash: api_key)
     Spaceship::ConnectAPI::Profile.all.each do |profile|
-      next unless [PROFILE_NAME, WIDGET_PROFILE_NAME].include?(profile.name)
-      next unless profile.profile_state == "INVALID"
-      UI.important("Replacing invalid profile '#{profile.name}'")
+      ours = [PROFILE_NAME, WIDGET_PROFILE_NAME].any? do |name|
+        profile.name.match?(/\A#{Regexp.escape(name)} \d+\z/) ||
+          (profile.name == name && profile.profile_state == "INVALID")
+      end
+      next unless ours
+      UI.important("Replacing profile '#{profile.name}'")
       profile.delete!
     end
     get_provisioning_profile(
