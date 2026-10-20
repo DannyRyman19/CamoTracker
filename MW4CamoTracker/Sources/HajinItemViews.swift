@@ -311,6 +311,8 @@ struct HajinItemView: View {
                         if item.kind != "FOB Upgrade" {
                             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
                         }
+                        let tiers = guide.tiers(of: item)
+                        if tiers.count > 1 { tierStrip(item, tiers) }
                         if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
                         facts(item)
                         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
@@ -481,6 +483,47 @@ struct HajinItemView: View {
             }
             .background(panel)
         }
+    }
+
+    /// Every tier of the upgrade side by side, this one lit; tap another to
+    /// jump to it. Ticked tiers show a check.
+    private func tierStrip(_ item: HajinGuide.Item, _ tiers: [HajinGuide.Item]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            panelTitle("mw4.ui.hajin.tiers".localized())
+            HStack(spacing: 8) {
+                ForEach(tiers) { tier in
+                    let current = tier.id == item.id
+                    let done = store.checked.contains("upgrade-\(tier.id)")
+                    let label = VStack(spacing: 3) {
+                        HStack(spacing: 4) {
+                            Text(Self.roman(tier.tier ?? 1))
+                                .font(.hitmarker(18))
+                            if done { Image(systemName: "checkmark.circle.fill").font(.caption) }
+                        }
+                        .foregroundStyle(current ? Color.black.opacity(0.85) : Color.appInk)
+                        Text(tier.cash.map { "$\($0.formatted())" } ?? "–")
+                            .font(.caption2.weight(.semibold).monospacedDigit())
+                            .foregroundStyle(current ? Color.black.opacity(0.7) : Color.appInkMuted)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(current ? Color.accentDMZ : Color.appSurface)
+                            .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.appInkMuted.opacity(current ? 0 : 0.25), lineWidth: 1))
+                    )
+                    if current {
+                        label
+                    } else {
+                        HajinItemLink(id: tier.id) { label }
+                    }
+                }
+            }
+        }
+    }
+
+    private static func roman(_ n: Int) -> String {
+        ["I", "II", "III", "IV", "V"].indices.contains(n - 1) ? ["I", "II", "III", "IV", "V"][n - 1] : "\(n)"
     }
 
     private func panelTitle(_ text: String) -> some View {

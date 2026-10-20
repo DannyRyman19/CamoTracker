@@ -1,5 +1,5 @@
 {
- "version": "0.8.4",
+ "version": "0.8.5",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2491,82 +2491,94 @@
      "subtitle": "10 Rigid Synthetics, 10 Electronic Sensors. +18 Stash item slots",
      "value": "$10,000",
      "item": "stash-item-upgrade-i",
-     "check": "upgrade-stash-item-upgrade-i"
+     "check": "upgrade-stash-item-upgrade-i",
+     "group": "Stash"
     },
     {
      "title": "Stash Item Upgrade II",
      "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. +18 Stash item slots",
      "value": "$50,000",
      "item": "stash-item-upgrade-ii",
-     "check": "upgrade-stash-item-upgrade-ii"
+     "check": "upgrade-stash-item-upgrade-ii",
+     "group": "Stash"
     },
     {
      "title": "Stash Weapon Upgrade I",
      "subtitle": "20 Reactive Metals, 10 Stock Rod, 5 Comms Module. +6 Stash weapon slots",
      "value": "$50,000",
      "item": "stash-weapon-upgrade-i",
-     "check": "upgrade-stash-weapon-upgrade-i"
-    },
-    {
-     "title": "MIA Recovery Discount I",
-     "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less",
-     "item": "mia-recovery-discount-i",
-     "check": "upgrade-mia-recovery-discount-i"
+     "check": "upgrade-stash-weapon-upgrade-i",
+     "group": "Stash"
     },
     {
      "title": "Bank Upgrade I",
      "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
      "value": "$25,000",
      "item": "bank-upgrade-i",
-     "check": "upgrade-bank-upgrade-i"
+     "check": "upgrade-bank-upgrade-i",
+     "group": "Bank"
     },
     {
      "title": "Bank Upgrade II",
      "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
      "value": "$50,000",
      "item": "bank-upgrade-ii",
-     "check": "upgrade-bank-upgrade-ii"
+     "check": "upgrade-bank-upgrade-ii",
+     "group": "Bank"
     },
     {
      "title": "Bank Upgrade III",
      "subtitle": "5 Infantry Invasion Plans. Your Bank holds up to $1 million",
      "value": "$100,000",
      "item": "bank-upgrade-iii",
-     "check": "upgrade-bank-upgrade-iii"
+     "check": "upgrade-bank-upgrade-iii",
+     "group": "Bank"
     },
     {
      "title": "Gunsmith Upgrade I",
      "subtitle": "20 Reactive Metals, 10 CPU, 5 Power Regulator. 5% off at the Gunsmith",
      "value": "$50,000",
      "item": "gunsmith-upgrade-i",
-     "check": "upgrade-gunsmith-upgrade-i"
+     "check": "upgrade-gunsmith-upgrade-i",
+     "group": "Gunsmith"
     },
     {
      "title": "Vendor Item Upgrade I",
      "subtitle": "20 Electronic Sensors, 10 CPU, 10 Printed Circuit Board, 2 Prototype RF Module. More to buy at the Vendor",
      "item": "vendor-item-upgrade-i",
-     "check": "upgrade-vendor-item-upgrade-i"
+     "check": "upgrade-vendor-item-upgrade-i",
+     "group": "Vendor"
     },
     {
      "title": "Uncommon Ingredient Printing",
      "subtitle": "20 Biomaterials, 10 High-Tenacity Fibers, 5 Comms Module. Print Biomaterials and Reactive Metals",
      "value": "$50,000",
      "item": "uncommon-ingredient-printing",
-     "check": "upgrade-uncommon-ingredient-printing"
+     "check": "upgrade-uncommon-ingredient-printing",
+     "group": "3D Printer"
     },
     {
      "title": "Epic Ingredient Printing",
      "subtitle": "10 Binding Catalyst, 10 Printed Circuit Board, 5 Military Composites. Print Ballistic Fabric and Stabilized Reagents",
      "value": "$100,000",
      "item": "epic-ingredient-printing",
-     "check": "upgrade-epic-ingredient-printing"
+     "check": "upgrade-epic-ingredient-printing",
+     "group": "3D Printer"
+    },
+    {
+     "title": "MIA Recovery Discount I",
+     "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less",
+     "item": "mia-recovery-discount-i",
+     "check": "upgrade-mia-recovery-discount-i",
+     "group": "Operators"
     },
     {
      "title": "Dog Tag Case Upgrade I",
      "subtitle": "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case",
      "value": "$10,000",
      "item": "dog-tag-case-upgrade-i",
-     "check": "upgrade-dog-tag-case-upgrade-i"
+     "check": "upgrade-dog-tag-case-upgrade-i",
+     "group": "Dog Tag Case"
     }
    ]
   },
@@ -3909,7 +3921,9 @@
    "note": "Ingredients not confirmed yet",
    "cash": 25000,
    "effect": "Raises your Bank's cash cap",
-   "symbol": "building.columns.fill"
+   "symbol": "building.columns.fill",
+   "family": "Bank Upgrade",
+   "tier": 1
   },
   {
    "id": "bank-upgrade-ii",
@@ -3918,7 +3932,9 @@
    "note": "Ingredients not confirmed yet",
    "cash": 50000,
    "effect": "Raises your Bank's cash cap",
-   "symbol": "building.columns.fill"
+   "symbol": "building.columns.fill",
+   "family": "Bank Upgrade",
+   "tier": 2
   },
   {
    "id": "bank-upgrade-iii",
@@ -3932,7 +3948,9 @@
    ],
    "cash": 100000,
    "effect": "Your Bank holds up to $1 million",
-   "symbol": "building.columns.fill"
+   "symbol": "building.columns.fill",
+   "family": "Bank Upgrade",
+   "tier": 3
   },
   {
    "id": "binding-catalyst",
@@ -4134,7 +4152,9 @@
    ],
    "cash": 10000,
    "effect": "+20 dog tags. Needs the Dog Tag Case",
-   "symbol": "tag.fill"
+   "symbol": "tag.fill",
+   "family": "Dog Tag Case Upgrade",
+   "tier": 1
   },
   {
    "id": "door-breacher-charge",
@@ -4222,7 +4242,9 @@
    ],
    "cash": 100000,
    "effect": "Print Ballistic Fabric and Stabilized Reagents",
-   "symbol": "printer.filled.and.paper"
+   "symbol": "printer.filled.and.paper",
+   "family": "Ingredient Printing",
+   "tier": 2
   },
   {
    "id": "experimental-compounds",
@@ -4280,7 +4302,9 @@
    ],
    "cash": 50000,
    "effect": "5% off at the Gunsmith",
-   "symbol": "wrench.and.screwdriver.fill"
+   "symbol": "wrench.and.screwdriver.fill",
+   "family": "Gunsmith Upgrade",
+   "tier": 1
   },
   {
    "id": "haksan-school-armory",
@@ -4373,7 +4397,9 @@
     }
    ],
    "effect": "Rescuing an MIA operator costs 5% less",
-   "symbol": "cross.case.fill"
+   "symbol": "cross.case.fill",
+   "family": "MIA Recovery Discount",
+   "tier": 1
   },
   {
    "id": "medium-backpack",
@@ -4972,7 +4998,9 @@
    ],
    "cash": 10000,
    "effect": "+18 Stash item slots",
-   "symbol": "archivebox.fill"
+   "symbol": "archivebox.fill",
+   "family": "Stash Item Upgrade",
+   "tier": 1
   },
   {
    "id": "stash-item-upgrade-ii",
@@ -4994,7 +5022,9 @@
    ],
    "cash": 50000,
    "effect": "+18 Stash item slots",
-   "symbol": "archivebox.fill"
+   "symbol": "archivebox.fill",
+   "family": "Stash Item Upgrade",
+   "tier": 2
   },
   {
    "id": "stash-weapon-upgrade-i",
@@ -5016,7 +5046,9 @@
    ],
    "cash": 50000,
    "effect": "+6 Stash weapon slots",
-   "symbol": "scope"
+   "symbol": "scope",
+   "family": "Stash Weapon Upgrade",
+   "tier": 1
   },
   {
    "id": "sticky-grenade",
@@ -5201,7 +5233,9 @@
    ],
    "cash": 50000,
    "effect": "Print Biomaterials and Reactive Metals",
-   "symbol": "printer.fill"
+   "symbol": "printer.fill",
+   "family": "Ingredient Printing",
+   "tier": 1
   },
   {
    "id": "vault-armory",
@@ -5237,7 +5271,9 @@
     }
    ],
    "effect": "More to buy at the Vendor",
-   "symbol": "cart.fill"
+   "symbol": "cart.fill",
+   "family": "Vendor Item Upgrade",
+   "tier": 1
   },
   {
    "id": "wmd-manifest",

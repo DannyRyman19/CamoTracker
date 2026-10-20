@@ -131,6 +131,9 @@ struct HajinGuide: Codable {
         let grid: String?
         /// The map marker for where it's used (key rooms).
         let marker: String?
+        /// FOB upgrades: the family ("Bank Upgrade") and this one's tier.
+        let family: String?
+        let tier: Int?
     }
 
     /// One of the three trait trees, laid out like the game: rows top to
@@ -185,6 +188,12 @@ struct HajinGuide: Codable {
     }
 
     func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
+
+    /// Every tier of an upgrade family, lowest first.
+    func tiers(of item: Item) -> [Item] {
+        guard let family = item.family else { return [] }
+        return (items ?? []).filter { $0.family == family }.sorted { ($0.tier ?? 0) < ($1.tier ?? 0) }
+    }
 
     /// Guide rows that mention this item: where it drops, what rewards it.
     func mentions(_ id: String) -> [(section: Section, row: Row)] {
