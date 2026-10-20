@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import Testing
 @testable import MW4CamoTracker
 
@@ -53,6 +54,15 @@ struct HajinGuideTests {
             for row in section.rows { if let id = row.item { #expect(ids.contains(id), "\(section.id) row links unknown \(id)") } }
         }
         #expect(Bundle.main.url(forResource: guide.map.image, withExtension: "jpg") != nil)
+    }
+
+    /// Every SF Symbol the guide names must exist, or its tile shows blank.
+    @Test func everySymbolExists() throws {
+        let guide = try #require(DataService().loadSeedGuide(name: "hajin"))
+        let symbols = (guide.items ?? []).compactMap(\.symbol) + guide.categories.map(\.symbol) + guide.guide.map(\.symbol)
+        for symbol in Set(symbols) {
+            #expect(UIImage(systemName: symbol) != nil, "missing SF Symbol \(symbol)")
+        }
     }
 
     @Test func guideTextTakesAPlainStringOrTranslations() throws {

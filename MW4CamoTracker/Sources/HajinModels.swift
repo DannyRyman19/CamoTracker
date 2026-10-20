@@ -61,6 +61,13 @@ struct HajinGuide: Codable {
         /// 1 (Low) to 5 (Extreme), for areas and Fortresses.
         let threat: Int?
         let note: GuideText?
+        /// The named places inside an area, each with its own threat.
+        let parts: [Part]?
+
+        struct Part: Codable, Hashable {
+            let name: GuideText
+            let threat: Int?
+        }
     }
 
     struct Row: Codable, Hashable {

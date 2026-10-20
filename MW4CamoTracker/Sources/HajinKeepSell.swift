@@ -12,12 +12,14 @@ struct HajinVerdict {
     /// Recipes that use it.
     let recipes: [(item: HajinGuide.Item, qty: Int)]
     let value: Int?
+    let itemKind: String
 
     init(item: HajinGuide.Item, guide: HajinGuide, done: Set<String>) {
         let users = guide.usedIn(item.id).map { user in (item: user, qty: user.cost?.first { $0.item == item.id }?.qty ?? 0) }
         upgrades = users.filter { $0.item.kind == "FOB Upgrade" && !done.contains("upgrade-\($0.item.id)") }
         recipes = users.filter { $0.item.kind != "FOB Upgrade" }
         value = item.value
+        itemKind = item.kind
         if item.kind == "Resource" {
             kind = .resource
         } else if !upgrades.isEmpty {
@@ -72,7 +74,12 @@ struct HajinVerdict {
         case .sell:
             if let value { return String(format: "mw4.ui.keep.sell_reason".localized(), "$\(value.formatted())") }
             return "mw4.ui.keep.sell_reason_novalue".localized()
-        case .use: return "mw4.ui.keep.use_reason".localized()
+        case .use:
+            switch itemKind {
+            case "Key": return "mw4.ui.keep.use_key".localized()
+            case "Consumables": return "mw4.ui.keep.use_consumable".localized()
+            default: return "mw4.ui.keep.use_reason".localized()
+            }
         case .resource: return "mw4.ui.keep.resource_reason".localized()
         }
     }
@@ -89,10 +96,12 @@ struct HajinVerdictBadge: View {
                 .font(compact ? .footnote.weight(.bold) : .title3.weight(.bold))
                 .foregroundStyle(verdict.color)
             VStack(alignment: .leading, spacing: 2) {
-                Text(verdict.title.uppercased())
-                    .font(.system(size: compact ? 11 : 14, weight: .heavy))
-                    .tracking(0.8)
-                    .foregroundStyle(verdict.color)
+                if !compact {
+                    Text(verdict.title.uppercased())
+                        .font(.system(size: 14, weight: .heavy))
+                        .tracking(0.8)
+                        .foregroundStyle(verdict.color)
+                }
                 Text(verdict.reason)
                     .font(compact ? .caption : .subheadline)
                     .foregroundStyle(Color.appInk.opacity(0.85))

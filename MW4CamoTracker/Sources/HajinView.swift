@@ -413,14 +413,7 @@ struct GuideRowView: View {
                         .font(.body.weight(.semibold))
                         .foregroundStyle(Color.appInk)
                     Spacer(minLength: 8)
-                    if let value = row.value {
-                        Text(value.resolved)
-                            .font(.footnote.weight(.semibold).monospacedDigit())
-                            .foregroundStyle(Color.accentDMZ)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
-                    }
+                    if let value = row.value { HajinValueBadge(text: value.resolved) }
                 }
                 if let subtitle = row.subtitle {
                     Text(subtitle.resolved)
@@ -467,7 +460,7 @@ struct HajinMapPane: View {
                 // clear of the filter chips and the marker card
                 ThreatLegend(guide: guide)
                     .padding(10)
-                    .padding(.top, inline ? 0 : 36)
+                    .padding(.top, inline ? 0 : 46)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: inline ? .bottomTrailing : .topTrailing)
                     .allowsHitTesting(false)
 
@@ -849,6 +842,26 @@ private struct SelectionDetails: View {
         }
         if let note = marker.note {
             Text(note.resolved).font(.body).foregroundStyle(Color.appInk)
+        }
+        if let parts = marker.parts, !parts.isEmpty {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("mw4.ui.hajin.inside".localized().uppercased())
+                    .font(.caption.weight(.heavy))
+                    .tracking(1.2)
+                    .foregroundStyle(Color.appInkMuted)
+                HajinWrap(spacing: 6) {
+                    ForEach(parts, id: \.self) { part in
+                        let tint = part.threat.map(HajinThreat.color) ?? Color.appInkMuted
+                        HStack(spacing: 5) {
+                            Circle().fill(tint).frame(width: 7, height: 7)
+                            Text(part.name.resolved).font(.caption.weight(.semibold)).foregroundStyle(Color.appInk)
+                        }
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Capsule().fill(Color.appSurface2).overlay(Capsule().strokeBorder(tint.opacity(0.5), lineWidth: 1)))
+                    }
+                }
+            }
         }
         if let blurb = category?.blurb {
             Text(blurb.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted)

@@ -68,6 +68,7 @@ struct ContentView: View {
 
     /// Outside the mode and Stats indices, so adding it moved no other tab.
     static let hajinTab = 100
+    @State private var hajinPath = NavigationPath()
 
     private func pathBinding(_ index: Int) -> Binding<NavigationPath> {
         Binding(get: { paths[index] ?? NavigationPath() }, set: { paths[index] = $0 })
@@ -173,7 +174,13 @@ struct ContentView: View {
                         .tag(2)
                 }
 
-                NavigationStack { HajinView() }
+                // Item links push here, so a chain of items keeps its back stack
+                // and links inside lists don't get the system's disclosure arrows
+                NavigationStack(path: $hajinPath) {
+                    HajinView()
+                        .navigationDestination(for: HajinItemRoute.self) { route in HajinItemView(id: route.id) }
+                }
+                .environment(\.hajinOpenItem) { id in hajinPath.append(HajinItemRoute(id: id)) }
                     .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
                     .tag(Self.hajinTab)
 

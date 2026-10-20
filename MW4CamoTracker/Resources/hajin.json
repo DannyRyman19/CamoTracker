@@ -1,5 +1,5 @@
 {
- "version": "0.8.0",
+ "version": "0.8.1",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -124,7 +124,21 @@
    "x": 0.1872,
    "y": 0.3316,
    "threat": 3,
-   "note": "A walled prison on a cleared plateau in the North Korean wilderness. Watchtowers on every corner, barracks on the east side and the main gate to the south. The Citadel Fortress sits inside the yard. Inside: Prison (High), The Fortress Prison Yard (High), The Citadel (Critical)."
+   "note": "A walled prison on a cleared plateau in the North Korean wilderness. Watchtowers on every corner, barracks on the east side and the main gate to the south. The Citadel Fortress sits inside the yard.",
+   "parts": [
+    {
+     "name": "Prison",
+     "threat": 3
+    },
+    {
+     "name": "The Fortress Prison Yard",
+     "threat": 3
+    },
+    {
+     "name": "The Citadel",
+     "threat": 4
+    }
+   ]
   },
   {
    "id": "m5851",
@@ -133,7 +147,20 @@
    "x": 0.103,
    "y": 0.5925,
    "threat": 4,
-   "note": "A North Korean air base cut into a granite hillside, with an underground bunker bigger than the base above it. Cliffs guard the east side; the woods to the south are the usual way in. The outside is Critical, the bunker Extreme. Lieutenant Bale holds the Tank Depot in the bunker. Inside: Air Base Exterior (Critical), Air Base Bunker (Extreme), Admin Complex No. 2."
+   "note": "A North Korean air base cut into a granite hillside, with an underground bunker bigger than the base above it. Cliffs guard the east side; the woods to the south are the usual way in. The outside is Critical, the bunker Extreme. Lieutenant Bale holds the Tank Depot in the bunker.",
+   "parts": [
+    {
+     "name": "Air Base Exterior",
+     "threat": 4
+    },
+    {
+     "name": "Air Base Bunker",
+     "threat": 5
+    },
+    {
+     "name": "Admin Complex No. 2"
+    }
+   ]
   },
   {
    "id": "m5852",
@@ -141,7 +168,17 @@
    "name": "Deadtown",
    "x": 0.1842,
    "y": 0.747,
-   "note": "An empty farming town taken over by the army, with toxic rivers to the northwest and east and sewers running under the main buildings. Light resistance and street fights; the two Re-Education Centers hold the better targets. Inside: Deadtown Exterior (Low), Re-Education Center (Medium).",
+   "note": "An empty farming town taken over by the army, with toxic rivers to the northwest and east and sewers running under the main buildings. Light resistance and street fights; the two Re-Education Centers hold the better targets.",
+   "parts": [
+    {
+     "name": "Deadtown Exterior",
+     "threat": 1
+    },
+    {
+     "name": "Re-Education Center",
+     "threat": 2
+    }
+   ],
    "threat": 2
   },
   {
@@ -151,7 +188,21 @@
    "x": 0.3177,
    "y": 0.7741,
    "threat": 1,
-   "note": "Flat rice fields, waterways and rail lines on the southwest border, with the Rice Mill Fortress in the middle. Long sightlines and little cover, so move carefully or use a vehicle. Inside: Farmland Exterior (Low), Jeong Loading Dock (Low), Rice Mill (Medium)."
+   "note": "Flat rice fields, waterways and rail lines on the southwest border, with the Rice Mill Fortress in the middle. Long sightlines and little cover, so move carefully or use a vehicle.",
+   "parts": [
+    {
+     "name": "Farmland Exterior",
+     "threat": 1
+    },
+    {
+     "name": "Jeong Loading Dock",
+     "threat": 1
+    },
+    {
+     "name": "Rice Mill",
+     "threat": 2
+    }
+   ]
   },
   {
    "id": "m5854",
@@ -160,7 +211,21 @@
    "x": 0.5098,
    "y": 0.4793,
    "threat": 1,
-   "note": "A gambling town on the Hajin River with border crossings into Russia to the east and west. Expressway No. 1 runs along its south edge. The Heavenly Luck Casino Fortress dominates it. Inside: Cheongun Outskirts (Low), Russian Border Crossing (Low), Heavenly Luck Casino (High)."
+   "note": "A gambling town on the Hajin River with border crossings into Russia to the east and west. Expressway No. 1 runs along its south edge. The Heavenly Luck Casino Fortress dominates it.",
+   "parts": [
+    {
+     "name": "Cheongun Outskirts",
+     "threat": 1
+    },
+    {
+     "name": "Russian Border Crossing",
+     "threat": 1
+    },
+    {
+     "name": "Heavenly Luck Casino",
+     "threat": 3
+    }
+   ]
   },
   {
    "id": "m5855",
@@ -169,7 +234,17 @@
    "x": 0.8,
    "y": 0.444,
    "threat": 3,
-   "note": "A radioactive cloud hangs over the whole site and gets worse inside the reactor. Bring radiation gear and a gas mask; Radiation Blockers help. Fire Stations are where to find the gear. Inside: Reactor (High, worst radiation), South Korean Border Zone (Medium)."
+   "note": "A radioactive cloud hangs over the whole site and gets worse inside the reactor. Bring radiation gear and a gas mask; Radiation Blockers help. Fire Stations are where to find the gear.",
+   "parts": [
+    {
+     "name": "Reactor",
+     "threat": 3
+    },
+    {
+     "name": "South Korean Border Zone",
+     "threat": 2
+    }
+   ]
   },
   {
    "id": "m5856",
@@ -186,7 +261,23 @@
    "name": "NuriGo Mall",
    "x": 0.709,
    "y": 0.6165,
-   "note": "A shopping district under the city's towers: police station, clinic, City Hall, a monorail stop and car parks. Three round structures in the main courtyard lead down to a huge dark underground mall (bring NVGs), which is the NuriGO Mall Fortress. Lieutenant Jang-ui camps here. West is High threat, East Medium. Inside: NuriGO East (Medium), NuriGO West (High), City Hall, Han-Go Korean BBQ."
+   "note": "A shopping district under the city's towers: police station, clinic, City Hall, a monorail stop and car parks. Three round structures in the main courtyard lead down to a huge dark underground mall (bring NVGs), which is the NuriGO Mall Fortress. Lieutenant Jang-ui camps here. West is High threat, East Medium.",
+   "parts": [
+    {
+     "name": "NuriGO East",
+     "threat": 2
+    },
+    {
+     "name": "NuriGO West",
+     "threat": 3
+    },
+    {
+     "name": "City Hall"
+    },
+    {
+     "name": "Han-Go Korean BBQ"
+    }
+   ]
   },
   {
    "id": "m5858",
@@ -204,7 +295,35 @@
    "x": 0.6477,
    "y": 0.6823,
    "threat": 4,
-   "note": "The walled, razor-wired heart of Hajin City: barricaded streets, watchtowers and roaming patrols. Includes Donpyeong Gate, Hanex Bank, the DBN TV tower (the tallest building in Hajin) and the red-roofed Nenshin Tech Complex, which is Extreme threat. Inside: Nenshin Tech Complex (Extreme), Construction Zone, DBN Headquarters, Hanex Bank, Minsok Art School (all Critical), Donpyeong Gate, Hotel Lucera."
+   "note": "The walled, razor-wired heart of Hajin City: barricaded streets, watchtowers and roaming patrols. Includes Donpyeong Gate, Hanex Bank, the DBN TV tower (the tallest building in Hajin) and the red-roofed Nenshin Tech Complex, which is Extreme threat.",
+   "parts": [
+    {
+     "name": "Nenshin Tech Complex",
+     "threat": 5
+    },
+    {
+     "name": "Construction Zone",
+     "threat": 4
+    },
+    {
+     "name": "DBN Headquarters",
+     "threat": 4
+    },
+    {
+     "name": "Hanex Bank",
+     "threat": 4
+    },
+    {
+     "name": "Minsok Art School",
+     "threat": 4
+    },
+    {
+     "name": "Donpyeong Gate"
+    },
+    {
+     "name": "Hotel Lucera"
+    }
+   ]
   },
   {
    "id": "m5860",
@@ -213,7 +332,20 @@
    "x": 0.7962,
    "y": 0.7335,
    "threat": 1,
-   "note": "A quieter waterfront between the reactor and the river, with working train and monorail lines. The La Grande Vie tower is the tallest building nearby; a market, pier, lighthouse and Oamsik Turtle Island are on the coast. Inside: Shoreline Station (Low), Oamsik Turtle Island (Low), La Grande Vie tower."
+   "note": "A quieter waterfront between the reactor and the river, with working train and monorail lines. The La Grande Vie tower is the tallest building nearby; a market, pier, lighthouse and Oamsik Turtle Island are on the coast.",
+   "parts": [
+    {
+     "name": "Shoreline Station",
+     "threat": 1
+    },
+    {
+     "name": "Oamsik Turtle Island",
+     "threat": 1
+    },
+    {
+     "name": "La Grande Vie tower"
+    }
+   ]
   },
   {
    "id": "m5861",
@@ -222,7 +354,19 @@
    "x": 0.6023,
    "y": 0.7665,
    "threat": 2,
-   "note": "A ruined baseball stadium with a collapsed apartment tower beside it, an open-air theatre to the north and a police station and bank in the streets around. The edge with The Grid to the north is the dangerous part. Inside: Theatre (Medium), Baseball Stadium B Station, Ginyeom-il Bridge."
+   "note": "A ruined baseball stadium with a collapsed apartment tower beside it, an open-air theatre to the north and a police station and bank in the streets around. The edge with The Grid to the north is the dangerous part.",
+   "parts": [
+    {
+     "name": "Theatre",
+     "threat": 2
+    },
+    {
+     "name": "Baseball Stadium B Station"
+    },
+    {
+     "name": "Ginyeom-il Bridge"
+    }
+   ]
   },
   {
    "id": "m5862",
@@ -231,7 +375,20 @@
    "x": 0.6726,
    "y": 0.8241,
    "threat": 2,
-   "note": "Battered apartments and narrow shopping streets south of the stadium, rising toward the river's south fork. One apartment block is Compound Echo; Jinseo Park Towers and South Island's comms tower are further south. Inside: Jinseo Park Towers (Medium), South Island (Medium), Compound Echo."
+   "note": "Battered apartments and narrow shopping streets south of the stadium, rising toward the river's south fork. One apartment block is Compound Echo; Jinseo Park Towers and South Island's comms tower are further south.",
+   "parts": [
+    {
+     "name": "Jinseo Park Towers",
+     "threat": 2
+    },
+    {
+     "name": "South Island",
+     "threat": 2
+    },
+    {
+     "name": "Compound Echo"
+    }
+   ]
   },
   {
    "id": "m5863",
@@ -2402,182 +2559,182 @@
      "title": "Han 86",
      "value": "$6,000",
      "group": "Assault Rifles",
-     "subtitle": "Unlocked from the start",
+     "subtitle": "Starter weapon",
      "weapon": 0
     },
     {
      "title": "M4",
      "value": "$6,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 1
     },
     {
      "title": "Hyeon Burst",
      "value": "$5,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 2
     },
     {
      "title": "Kastov 762",
      "value": "$5,500",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 3
     },
     {
      "title": "Patriot XMR",
      "value": "$6,500",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 4
     },
     {
      "title": "Oden",
      "value": "$6,250",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 20
     },
     {
      "title": "Axion",
      "value": "$5,750",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 19
     },
     {
      "title": "Cronen Squall",
      "value": "$6,750",
      "group": "Assault Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 21
     },
     {
      "title": "ISO Nightshade",
      "value": "$4,250",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 5
     },
     {
      "title": "VEL 46",
      "value": "$4,500",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 22
     },
     {
      "title": "Wz.55 Striga",
      "value": "$3,500",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 23
     },
     {
      "title": "PPSh-41",
      "value": "$3,750",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 6
     },
     {
      "title": "X-58 Nyx",
      "value": "$4,000",
      "group": "SMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 7
     },
     {
      "title": "Rezi 12",
      "value": "$4,000",
      "group": "Shotguns",
-     "subtitle": "Unlocked from the start",
+     "subtitle": "Starter weapon",
      "weapon": 8
     },
     {
      "title": "Warlord",
      "value": "$3,500",
      "group": "Shotguns",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 24
     },
     {
      "title": "FiNN LMG",
      "value": "$8,000",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 9
     },
     {
      "title": "Type 73",
      "value": "$7,500",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 10
     },
     {
      "title": "APOC-338",
      "value": "$7,750",
      "group": "LMGs",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 25
     },
     {
      "title": "MAR-9",
      "value": "$6,500",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 11
     },
     {
      "title": "Oris 8.6",
      "value": "$7,000",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 12
     },
     {
      "title": "Mosin-Nagant",
      "value": "$7,500",
      "group": "Marksman Rifles",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 26
     },
     {
      "title": "Sang 9mm",
      "value": "$1,000",
      "group": "Pistols",
-     "subtitle": "Unlocked from the start",
+     "subtitle": "Starter weapon",
      "weapon": 28
     },
     {
      "title": "Krait P68",
      "value": "$1,000",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 15
     },
     {
      "title": ".50 GS",
      "value": "$4,000",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 16
     },
     {
      "title": "Mojave .357",
      "value": "$2,500",
      "group": "Pistols",
-     "subtitle": "Extract its Manual to unlock",
+     "subtitle": "Needs its Manual",
      "weapon": 29
     },
     {
      "title": "FSS Carbon Edge 1095",
      "value": "$250",
      "group": "Melee",
-     "subtitle": "Unlocked from the start",
+     "subtitle": "Starter weapon",
      "weapon": 18
     }
    ]
@@ -2590,13 +2747,13 @@
    "rows": [
     {
      "title": "Gorani",
-     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village Uses an M4.",
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village. Uses an M4.",
      "group": "Lieutenants",
      "check": "boss-gorani"
     },
     {
      "title": "Bale",
-     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract Carries the Dreadnought, a Legendary LMG worth about $16,000.",
+     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract. Carries the Dreadnought, a Legendary LMG worth about $16,000.",
      "links": [
       "bales-dog-tag"
      ],
@@ -3633,13 +3790,15 @@
   {
    "id": "alloyed-plating",
    "name": "Alloyed Plating",
-   "kind": "Ingredient"
+   "kind": "Ingredient",
+   "symbol": "square.stack.3d.up.fill"
   },
   {
    "id": "ammo-box",
    "name": "Ammo Box",
    "kind": "Field Upgrades",
-   "unlock": "Reach DMZ level 12"
+   "unlock": "Reach DMZ level 12",
+   "symbol": "shippingbox.fill"
   },
   {
    "id": "armor-box",
@@ -3665,7 +3824,8 @@
    "name": "Bale's Dog Tag",
    "kind": "Valuable",
    "rarity": "Legendary",
-   "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract"
+   "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract",
+   "symbol": "tag.fill"
   },
   {
    "id": "ballistic-fabric",
@@ -3732,7 +3892,8 @@
     }
    ],
    "cash": 100000,
-   "effect": "Your Bank holds up to $1 million"
+   "effect": "Your Bank holds up to $1 million",
+   "symbol": "building.columns.fill"
   },
   {
    "id": "binding-catalyst",
@@ -3770,7 +3931,8 @@
      "item": "stock-rod",
      "qty": 1
     }
-   ]
+   ],
+   "symbol": "paperplane.fill"
   },
   {
    "id": "c4",
@@ -3788,14 +3950,16 @@
      "qty": 10
     }
    ],
-   "effect": "Sticky explosive you set off remotely"
+   "effect": "Sticky explosive you set off remotely",
+   "symbol": "bolt.horizontal.fill"
   },
   {
    "id": "cpu",
    "name": "CPU",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 44 gives you 2"
+   "note": "DMZ level 44 gives you 2",
+   "symbol": "cpu.fill"
   },
   {
    "id": "care-package",
@@ -3817,7 +3981,8 @@
      "qty": 2
     }
    ],
-   "effect": "Calls in a supply drop"
+   "effect": "Calls in a supply drop",
+   "symbol": "arrow.down.circle.fill"
   },
   {
    "id": "chemicals",
@@ -3837,25 +4002,29 @@
    "id": "commanders",
    "name": "Commanders",
    "kind": "Ingredient",
-   "note": "Kill one and extract to get valuable ingredients"
+   "note": "Kill one and extract to get valuable ingredients",
+   "symbol": "cube.fill"
   },
   {
    "id": "comms-module",
    "name": "Comms Module",
    "kind": "Ingredient",
-   "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing"
+   "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing",
+   "symbol": "antenna.radiowaves.left.and.right"
   },
   {
    "id": "concussion-grenade",
    "name": "Concussion Grenade",
    "kind": "Tacticals",
-   "unlock": "Reach DMZ level 4"
+   "unlock": "Reach DMZ level 4",
+   "symbol": "burst.fill"
   },
   {
    "id": "control-unit",
    "name": "Control Unit",
    "kind": "Ingredient",
-   "note": "DMZ level 38 gives you 2"
+   "note": "DMZ level 38 gives you 2",
+   "symbol": "slider.horizontal.3"
   },
   {
    "id": "ddos",
@@ -3873,7 +4042,8 @@
      "qty": 3
     }
    ],
-   "effect": "Knocks out electronics and sensors nearby for a short time"
+   "effect": "Knocks out electronics and sensors nearby for a short time",
+   "symbol": "wifi.slash"
   },
   {
    "id": "defibrillator",
@@ -3906,7 +4076,8 @@
      "qty": 3
     }
    ],
-   "effect": "A parachute with limited uses"
+   "effect": "A parachute with limited uses",
+   "symbol": "arrow.down.circle.fill"
   },
   {
    "id": "dog-tag-case-upgrade-i",
@@ -3923,7 +4094,8 @@
     }
    ],
    "cash": 10000,
-   "effect": "+20 dog tags. Needs the Dog Tag Case"
+   "effect": "+20 dog tags. Needs the Dog Tag Case",
+   "symbol": "tag.fill"
   },
   {
    "id": "door-breacher-charge",
@@ -3954,7 +4126,8 @@
      "qty": 15
     }
    ],
-   "effect": "Burrows into a surface before it blows"
+   "effect": "Burrows into a surface before it blows",
+   "symbol": "screwdriver.fill"
   },
   {
    "id": "electronic-sensors",
@@ -3962,7 +4135,8 @@
    "rarity": "Uncommon",
    "kind": "Ingredient",
    "value": 800,
-   "note": "Stash upgrade (+18 slots)"
+   "note": "Stash upgrade (+18 slots)",
+   "symbol": "sensor.fill"
   },
   {
    "id": "electronics",
@@ -4008,18 +4182,21 @@
     }
    ],
    "cash": 100000,
-   "effect": "Print Ballistic Fabric and Stabilized Reagents"
+   "effect": "Print Ballistic Fabric and Stabilized Reagents",
+   "symbol": "printer.filled.and.paper"
   },
   {
    "id": "experimental-compounds",
    "name": "Experimental Compounds",
-   "kind": "Ingredient"
+   "kind": "Ingredient",
+   "symbol": "testtube.2"
   },
   {
    "id": "frag-grenade",
    "name": "Frag Grenade",
    "kind": "Lethals",
-   "unlock": "Reach DMZ level 7"
+   "unlock": "Reach DMZ level 7",
+   "symbol": "circle.circle.fill"
   },
   {
    "id": "fulton-drop-marker",
@@ -4033,7 +4210,8 @@
    "id": "gas-mask",
    "name": "Gas Mask",
    "kind": "Gear",
-   "unlock": "Reach DMZ level 26"
+   "unlock": "Reach DMZ level 26",
+   "symbol": "aqi.medium"
   },
   {
    "id": "gold-bar",
@@ -4062,7 +4240,8 @@
     }
    ],
    "cash": 50000,
-   "effect": "5% off at the Gunsmith"
+   "effect": "5% off at the Gunsmith",
+   "symbol": "wrench.and.screwdriver.fill"
   },
   {
    "id": "haksan-school-armory",
@@ -4098,7 +4277,8 @@
    "name": "High-Tenacity Fibers",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 53 gives you 2"
+   "note": "DMZ level 53 gives you 2",
+   "symbol": "wind"
   },
   {
    "id": "imjin-mill-foremans-office",
@@ -4114,13 +4294,15 @@
   {
    "id": "infantry-invasion-plans",
    "name": "Infantry Invasion Plans",
-   "kind": "Ingredient"
+   "kind": "Ingredient",
+   "symbol": "map.fill"
   },
   {
    "id": "inflatable-decoy",
    "name": "Inflatable Decoy",
    "kind": "Field Upgrades",
-   "unlock": "Reach DMZ level 52"
+   "unlock": "Reach DMZ level 52",
+   "symbol": "person.fill.questionmark"
   },
   {
    "id": "iskras-control-room",
@@ -4151,7 +4333,8 @@
      "qty": 10
     }
    ],
-   "effect": "Rescuing an MIA operator costs 5% less"
+   "effect": "Rescuing an MIA operator costs 5% less",
+   "symbol": "cross.case.fill"
   },
   {
    "id": "medium-backpack",
@@ -4214,7 +4397,8 @@
      "qty": 10
     }
    ],
-   "effect": "Four Secure Slots"
+   "effect": "Four Secure Slots",
+   "symbol": "bag.fill"
   },
   {
    "id": "medkit",
@@ -4257,12 +4441,14 @@
    "id": "molotov-cocktail",
    "name": "Molotov Cocktail",
    "kind": "Lethals",
-   "unlock": "Reach DMZ level 36"
+   "unlock": "Reach DMZ level 36",
+   "symbol": "flame.fill"
   },
   {
    "id": "nano-structured-alloy",
    "name": "Nano-Structured Alloy",
-   "kind": "Ingredient"
+   "kind": "Ingredient",
+   "symbol": "circle.hexagongrid.fill"
   },
   {
    "id": "netshin-it-room",
@@ -4278,21 +4464,24 @@
    "id": "night-vision-goggles",
    "name": "Night Vision Goggles",
    "kind": "Gear",
-   "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"
+   "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall",
+   "symbol": "binoculars.fill"
   },
   {
    "id": "nitro-compounds",
    "name": "Nitro Compounds",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 47 gives you 2"
+   "note": "DMZ level 47 gives you 2",
+   "symbol": "flame.fill"
   },
   {
    "id": "nylon-cloth",
    "name": "Nylon Cloth",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 57 gives you 2"
+   "note": "DMZ level 57 gives you 2",
+   "symbol": "tshirt.fill"
   },
   {
    "id": "nylon-laminate",
@@ -4361,7 +4550,8 @@
      "qty": 15
     }
    ],
-   "effect": "Pings nearby enemies every so often"
+   "effect": "Pings nearby enemies every so often",
+   "symbol": "dot.radiowaves.up.forward"
   },
   {
    "id": "power-regulator",
@@ -4375,13 +4565,15 @@
    "name": "Printed Circuit Board",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 56 gives you 2"
+   "note": "DMZ level 56 gives you 2",
+   "symbol": "memorychip.fill"
   },
   {
    "id": "prototype-rf-module",
    "name": "Prototype RF Module",
    "kind": "Ingredient",
-   "note": "Vendor Item Upgrade"
+   "note": "Vendor Item Upgrade",
+   "symbol": "dot.radiowaves.left.and.right"
   },
   {
    "id": "radiation-blockers",
@@ -4421,7 +4613,8 @@
      "qty": 5
     }
    ],
-   "effect": "Hypersonic flechette cannon that works as a sentry"
+   "effect": "Hypersonic flechette cannon that works as a sentry",
+   "symbol": "scope"
   },
   {
    "id": "re-education-center-annex",
@@ -4459,13 +4652,15 @@
    "name": "Recon Drone",
    "kind": "Other",
    "unlock": "Complete the Counterfeit DMZ Order",
-   "effect": "Reward from the Counterfeit DMZ Order"
+   "effect": "Reward from the Counterfeit DMZ Order",
+   "symbol": "airplane.circle.fill"
   },
   {
    "id": "regional-combat-notes",
    "name": "Regional Combat Notes",
    "kind": "Ingredient",
-   "note": "MIA Recovery Discount"
+   "note": "MIA Recovery Discount",
+   "symbol": "doc.text.fill"
   },
   {
    "id": "revive-pistol",
@@ -4516,14 +4711,16 @@
      "qty": 15
     }
    ],
-   "effect": "A placeable shield to hold a position"
+   "effect": "A placeable shield to hold a position",
+   "symbol": "shield.fill"
   },
   {
    "id": "scavengers-dog-tag",
    "name": "Scavenger's Dog Tag",
    "kind": "Valuable",
    "rarity": "Legendary",
-   "note": "Dropped by Lieutenant Scavenger"
+   "note": "Dropped by Lieutenant Scavenger",
+   "symbol": "tag.fill"
   },
   {
    "id": "secure-scavenger-backpack",
@@ -4699,7 +4896,8 @@
      "qty": 5
     }
    ],
-   "effect": "Spot and mark enemies nearby"
+   "effect": "Spot and mark enemies nearby",
+   "symbol": "binoculars.fill"
   },
   {
    "id": "stabilized-reagents",
@@ -4716,7 +4914,8 @@
      "qty": 3
     }
    ],
-   "effect": "Needs Epic Ingredient Printing"
+   "effect": "Needs Epic Ingredient Printing",
+   "symbol": "flask.fill"
   },
   {
    "id": "stash-item-upgrade-i",
@@ -4733,7 +4932,8 @@
     }
    ],
    "cash": 10000,
-   "effect": "+18 Stash item slots"
+   "effect": "+18 Stash item slots",
+   "symbol": "archivebox.fill"
   },
   {
    "id": "stash-weapon-upgrade-i",
@@ -4754,13 +4954,15 @@
     }
    ],
    "cash": 50000,
-   "effect": "+6 Stash weapon slots"
+   "effect": "+6 Stash weapon slots",
+   "symbol": "scope"
   },
   {
    "id": "sticky-grenade",
    "name": "Sticky Grenade",
    "kind": "Lethals",
-   "unlock": "Reach DMZ level 23"
+   "unlock": "Reach DMZ level 23",
+   "symbol": "drop.fill"
   },
   {
    "id": "stim",
@@ -4795,7 +4997,8 @@
    "name": "Structural Alloy",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 43 gives you 2"
+   "note": "DMZ level 43 gives you 2",
+   "symbol": "cube.fill"
   },
   {
    "id": "synthetics",
@@ -4848,7 +5051,8 @@
    "id": "thermite",
    "name": "Thermite",
    "kind": "Lethals",
-   "unlock": "Reach DMZ level 41"
+   "unlock": "Reach DMZ level 41",
+   "symbol": "sparkles"
   },
   {
    "id": "throwing-knife",
@@ -4884,12 +5088,14 @@
      "qty": 15
     }
    ],
-   "effect": "Thrown trap; several link into a network"
+   "effect": "Thrown trap; several link into a network",
+   "symbol": "line.diagonal"
   },
   {
    "id": "turned-components",
    "name": "Turned Components",
-   "kind": "Ingredient"
+   "kind": "Ingredient",
+   "symbol": "gearshape.2.fill"
   },
   {
    "id": "uav",
@@ -4911,7 +5117,8 @@
      "qty": 5
     }
    ],
-   "effect": "Shows enemies on the minimap"
+   "effect": "Shows enemies on the minimap",
+   "symbol": "airplane"
   },
   {
    "id": "uncommon-ingredient-printing",
@@ -4932,7 +5139,8 @@
     }
    ],
    "cash": 50000,
-   "effect": "Print Biomaterials and Reactive Metals"
+   "effect": "Print Biomaterials and Reactive Metals",
+   "symbol": "printer.fill"
   },
   {
    "id": "vault-armory",
@@ -4967,7 +5175,8 @@
      "qty": 2
     }
    ],
-   "effect": "More to buy at the Vendor"
+   "effect": "More to buy at the Vendor",
+   "symbol": "cart.fill"
   },
   {
    "id": "wmd-manifest",
@@ -4993,7 +5202,8 @@
      "qty": 10
     }
    ],
-   "effect": "Single-shot pistol for close range"
+   "effect": "Single-shot pistol for close range",
+   "symbol": "scope"
   }
  ],
  "traitTrees": [

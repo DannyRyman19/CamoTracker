@@ -30,8 +30,8 @@ struct HajinItemTile: View {
                 }
             } else if let symbol = item?.symbol {
                 Image(systemName: symbol)
-                    .font(.system(size: size * 0.42, weight: .semibold))
-                    .foregroundStyle(Color.appInk)
+                    .font(.system(size: size * 0.4, weight: .semibold))
+                    .foregroundStyle(item?.rarity == nil ? Color.appInk : tint)
             } else {
                 Image(systemName: "shippingbox")
                     .font(.system(size: size * 0.36))
@@ -68,6 +68,56 @@ struct HajinRarityLine: View {
     }
 }
 
+/// A row's figure (price, level, grid square, "Find"), in one neutral
+/// style everywhere so money never reads as a warning.
+struct HajinValueBadge: View {
+    let text: String
+
+    var body: some View {
+        Text(text)
+            .font(.caption.weight(.semibold).monospacedDigit())
+            .foregroundStyle(Color.appInk.opacity(0.9))
+            .lineLimit(1)
+            .fixedSize()
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(
+                Capsule().fill(Color.appSurface2)
+                    .overlay(Capsule().strokeBorder(Color.appInkMuted.opacity(0.25), lineWidth: 1))
+            )
+    }
+}
+
+/// Lays chips out left to right, wrapping onto new lines instead of
+/// running off the edge.
+struct HajinWrap: Layout {
+    var spacing: CGFloat = 6
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = proposal.width ?? .infinity
+        var x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, widest: CGFloat = 0
+        for view in subviews {
+            let size = view.sizeThatFits(.unspecified)
+            if x > 0, x + size.width > width { x = 0; y += row + spacing; row = 0 }
+            x += size.width + spacing
+            row = max(row, size.height)
+            widest = max(widest, x - spacing)
+        }
+        return CGSize(width: min(widest, width), height: y + row)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var x = bounds.minX, y = bounds.minY, row: CGFloat = 0
+        for view in subviews {
+            let size = view.sizeThatFits(.unspecified)
+            if x > bounds.minX, x + size.width > bounds.maxX { x = bounds.minX; y += row + spacing; row = 0 }
+            view.place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(size))
+            x += size.width + spacing
+            row = max(row, size.height)
+        }
+    }
+}
+
 // MARK: - Links
 
 /// On iPad the guide lives in a side panel with its own back stack, so links
@@ -90,6 +140,11 @@ extension EnvironmentValues {
         get { self[ShowMarkerKey.self] }
         set { self[ShowMarkerKey.self] = newValue }
     }
+}
+
+/// An item pushed onto the Hajin tab's navigation stack.
+struct HajinItemRoute: Hashable {
+    let id: String
 }
 
 /// Opens an item's screen, however the current layout navigates.
@@ -152,13 +207,8 @@ struct HajinItemRow: View {
                             .font(.body.weight(.semibold))
                             .foregroundStyle(Color.appInk)
                         Spacer(minLength: 6)
-                        if let value = row.value {
-                            Text(value.resolved)
-                                .font(.footnote.weight(.semibold).monospacedDigit())
-                                .foregroundStyle(Color.accentDMZ)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 3)
-                                .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
+                        if let value = row.value?.resolved, value != item.rarity, value != "Resource" {
+                            HajinValueBadge(text: value)
                         }
                     }
                     if item.rarity != nil { HajinRarityLine(item: item, size: 10) }
@@ -189,7 +239,7 @@ struct HajinItemRow: View {
         @EnvironmentObject private var store: HajinStore
 
         var body: some View {
-            HStack(spacing: 6) {
+            HajinWrap(spacing: 8) {
                 if let cash {
                     Text("$\(cash.formatted())")
                         .font(.caption.weight(.semibold).monospacedDigit())
@@ -420,9 +470,7 @@ struct HajinItemView: View {
                             HStack {
                                 Text(mention.row.title.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                                 Spacer()
-                                if let value = mention.row.value {
-                                    Text(value.resolved).font(.caption.weight(.semibold).monospacedDigit()).foregroundStyle(Color.accentDMZ)
-                                }
+                                if let value = mention.row.value { HajinValueBadge(text: value.resolved) }
                             }
                             Text(mention.section.title.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
                         }
@@ -458,8 +506,7 @@ struct HajinLinkChips: View {
     @EnvironmentObject private var store: HajinStore
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 6) {
+        HajinWrap(spacing: 6) {
                 ForEach(ids, id: \.self) { id in
                     if let item = store.guide?.item(id) {
                         HajinItemLink(id: id) {
@@ -480,7 +527,6 @@ struct HajinLinkChips: View {
                         }
                     }
                 }
-            }
         }
     }
 }
@@ -495,8 +541,8 @@ struct HajinWeaponRow: View {
     var body: some View {
         let weapon = viewModel.weapon(id: weaponId)
         let content = HStack(spacing: 12) {
-            WeaponThumbnail(urlString: weapon?.imageURL, size: 64, inset: 4)
-                .frame(width: 92, height: 52)
+            WeaponThumbnail(urlString: weapon?.imageURL, size: 80, inset: 6)
+                .frame(width: 112, height: 60)
                 .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2))
                 .clipShape(RoundedRectangle(cornerRadius: 6))
             VStack(alignment: .leading, spacing: 3) {
@@ -508,14 +554,7 @@ struct HajinWeaponRow: View {
                 }
             }
             Spacer(minLength: 6)
-            if let value = row.value {
-                Text(value.resolved)
-                    .font(.footnote.weight(.semibold).monospacedDigit())
-                    .foregroundStyle(Color.accentDMZ)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .background(Capsule().fill(Color.accentDMZ.opacity(0.15)))
-            }
+            if let value = row.value { HajinValueBadge(text: value.resolved) }
         }
         .padding(.vertical, 2)
         if let weapon {

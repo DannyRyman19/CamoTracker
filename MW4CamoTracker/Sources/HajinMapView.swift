@@ -154,7 +154,10 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
                 minZoom = 0
             }
             place(view, x: marker.x, y: marker.y, tag: .marker(marker), minZoom: minZoom)
-            if category.id == "fortress", let threat = marker.threat {
+            // A Fortress named like its area (Mirae General Hospital) already
+            // has its name on the map
+            let areaNames = Set(guide.markers.filter { $0.cat == "area" }.map { $0.name.resolved.lowercased() })
+            if category.id == "fortress", let threat = marker.threat, !areaNames.contains(marker.name.resolved.lowercased()) {
                 let name = label(marker.name.resolved, size: 10, weight: .bold, colour: UIColor(HajinThreat.color(threat)), selected: selected)
                 name.isUserInteractionEnabled = false
                 // Sits under the icon; offset in map points at the zoom it shows from
@@ -203,12 +206,14 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         let label = UILabel()
         label.text = text.uppercased()
         label.font = .systemFont(ofSize: size, weight: weight)
-        label.textColor = selected ? UIColor(red: 1, green: 0.85, blue: 0.2, alpha: 1) : colour
+        // Selected names go white and glow in their own colour, so the
+        // selection never reads as a different threat level
+        label.textColor = selected ? .white : colour
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowColor = (selected ? colour : .black).cgColor
         label.layer.shadowOpacity = 1
-        label.layer.shadowRadius = 2.5
+        label.layer.shadowRadius = selected ? 5 : 2.5
         label.layer.shadowOffset = .zero
         let fitted = label.sizeThatFits(CGSize(width: 140, height: 60))
         label.frame = CGRect(origin: .zero, size: CGSize(width: fitted.width + 8, height: fitted.height + 6))
