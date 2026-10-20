@@ -1,5 +1,5 @@
 {
- "version": "0.7.0",
+ "version": "0.8.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -124,7 +124,7 @@
    "x": 0.1872,
    "y": 0.3316,
    "threat": 3,
-   "note": "A walled prison on a cleared plateau in the North Korean wilderness. Watchtowers on every corner, barracks on the east side and the main gate to the south. The Citadel Fortress sits inside the yard."
+   "note": "A walled prison on a cleared plateau in the North Korean wilderness. Watchtowers on every corner, barracks on the east side and the main gate to the south. The Citadel Fortress sits inside the yard. Inside: Prison (High), The Fortress Prison Yard (High), The Citadel (Critical)."
   },
   {
    "id": "m5851",
@@ -133,7 +133,7 @@
    "x": 0.103,
    "y": 0.5925,
    "threat": 4,
-   "note": "A North Korean air base cut into a granite hillside, with an underground bunker bigger than the base above it. Cliffs guard the east side; the woods to the south are the usual way in. The outside is Critical, the bunker Extreme. Lieutenant Bale holds the Tank Depot in the bunker."
+   "note": "A North Korean air base cut into a granite hillside, with an underground bunker bigger than the base above it. Cliffs guard the east side; the woods to the south are the usual way in. The outside is Critical, the bunker Extreme. Lieutenant Bale holds the Tank Depot in the bunker. Inside: Air Base Exterior (Critical), Air Base Bunker (Extreme), Admin Complex No. 2."
   },
   {
    "id": "m5852",
@@ -141,7 +141,8 @@
    "name": "Deadtown",
    "x": 0.1842,
    "y": 0.747,
-   "note": "An empty farming town taken over by the army, with toxic rivers to the northwest and east and sewers running under the main buildings. Light resistance and street fights; the two Re-Education Centers hold the better targets."
+   "note": "An empty farming town taken over by the army, with toxic rivers to the northwest and east and sewers running under the main buildings. Light resistance and street fights; the two Re-Education Centers hold the better targets. Inside: Deadtown Exterior (Low), Re-Education Center (Medium).",
+   "threat": 2
   },
   {
    "id": "m5853",
@@ -150,7 +151,7 @@
    "x": 0.3177,
    "y": 0.7741,
    "threat": 1,
-   "note": "Flat rice fields, waterways and rail lines on the southwest border, with the Rice Mill Fortress in the middle. Long sightlines and little cover, so move carefully or use a vehicle."
+   "note": "Flat rice fields, waterways and rail lines on the southwest border, with the Rice Mill Fortress in the middle. Long sightlines and little cover, so move carefully or use a vehicle. Inside: Farmland Exterior (Low), Jeong Loading Dock (Low), Rice Mill (Medium)."
   },
   {
    "id": "m5854",
@@ -159,7 +160,7 @@
    "x": 0.5098,
    "y": 0.4793,
    "threat": 1,
-   "note": "A gambling town on the Hajin River with border crossings into Russia to the east and west. Expressway No. 1 runs along its south edge. The Heavenly Luck Casino Fortress dominates it."
+   "note": "A gambling town on the Hajin River with border crossings into Russia to the east and west. Expressway No. 1 runs along its south edge. The Heavenly Luck Casino Fortress dominates it. Inside: Cheongun Outskirts (Low), Russian Border Crossing (Low), Heavenly Luck Casino (High)."
   },
   {
    "id": "m5855",
@@ -168,7 +169,7 @@
    "x": 0.8,
    "y": 0.444,
    "threat": 3,
-   "note": "A radioactive cloud hangs over the whole site and gets worse inside the reactor. Bring radiation gear and a gas mask; Radiation Blockers help. Fire Stations are where to find the gear."
+   "note": "A radioactive cloud hangs over the whole site and gets worse inside the reactor. Bring radiation gear and a gas mask; Radiation Blockers help. Fire Stations are where to find the gear. Inside: Reactor (High, worst radiation), South Korean Border Zone (Medium)."
   },
   {
    "id": "m5856",
@@ -185,7 +186,7 @@
    "name": "NuriGo Mall",
    "x": 0.709,
    "y": 0.6165,
-   "note": "A shopping district under the city's towers: police station, clinic, City Hall, a monorail stop and car parks. Three round structures in the main courtyard lead down to a huge dark underground mall (bring NVGs), which is the NuriGO Mall Fortress. Lieutenant Jang-ui camps here. West is High threat, East Medium."
+   "note": "A shopping district under the city's towers: police station, clinic, City Hall, a monorail stop and car parks. Three round structures in the main courtyard lead down to a huge dark underground mall (bring NVGs), which is the NuriGO Mall Fortress. Lieutenant Jang-ui camps here. West is High threat, East Medium. Inside: NuriGO East (Medium), NuriGO West (High), City Hall, Han-Go Korean BBQ."
   },
   {
    "id": "m5858",
@@ -203,7 +204,7 @@
    "x": 0.6477,
    "y": 0.6823,
    "threat": 4,
-   "note": "The walled, razor-wired heart of Hajin City: barricaded streets, watchtowers and roaming patrols. Includes Donpyeong Gate, Hanex Bank, the DBN TV tower (the tallest building in Hajin) and the red-roofed Nenshin Tech Complex, which is Extreme threat."
+   "note": "The walled, razor-wired heart of Hajin City: barricaded streets, watchtowers and roaming patrols. Includes Donpyeong Gate, Hanex Bank, the DBN TV tower (the tallest building in Hajin) and the red-roofed Nenshin Tech Complex, which is Extreme threat. Inside: Nenshin Tech Complex (Extreme), Construction Zone, DBN Headquarters, Hanex Bank, Minsok Art School (all Critical), Donpyeong Gate, Hotel Lucera."
   },
   {
    "id": "m5860",
@@ -212,7 +213,7 @@
    "x": 0.7962,
    "y": 0.7335,
    "threat": 1,
-   "note": "A quieter waterfront between the reactor and the river, with working train and monorail lines. The La Grande Vie tower is the tallest building nearby; a market, pier, lighthouse and Oamsik Turtle Island are on the coast."
+   "note": "A quieter waterfront between the reactor and the river, with working train and monorail lines. The La Grande Vie tower is the tallest building nearby; a market, pier, lighthouse and Oamsik Turtle Island are on the coast. Inside: Shoreline Station (Low), Oamsik Turtle Island (Low), La Grande Vie tower."
   },
   {
    "id": "m5861",
@@ -221,7 +222,7 @@
    "x": 0.6023,
    "y": 0.7665,
    "threat": 2,
-   "note": "A ruined baseball stadium with a collapsed apartment tower beside it, an open-air theatre to the north and a police station and bank in the streets around. The edge with The Grid to the north is the dangerous part."
+   "note": "A ruined baseball stadium with a collapsed apartment tower beside it, an open-air theatre to the north and a police station and bank in the streets around. The edge with The Grid to the north is the dangerous part. Inside: Theatre (Medium), Baseball Stadium B Station, Ginyeom-il Bridge."
   },
   {
    "id": "m5862",
@@ -230,7 +231,7 @@
    "x": 0.6726,
    "y": 0.8241,
    "threat": 2,
-   "note": "Battered apartments and narrow shopping streets south of the stadium, rising toward the river's south fork. One apartment block is Compound Echo; Jinseo Park Towers and South Island's comms tower are further south."
+   "note": "Battered apartments and narrow shopping streets south of the stadium, rising toward the river's south fork. One apartment block is Compound Echo; Jinseo Park Towers and South Island's comms tower are further south. Inside: Jinseo Park Towers (Medium), South Island (Medium), Compound Echo."
   },
   {
    "id": "m5863",
@@ -1151,6 +1152,14 @@
    "x": 0.4974,
    "y": 0.6722,
    "note": "Legendary key, grid F7. Opens the control room on the upper floor of the broadcast building."
+  },
+  {
+   "id": "k-airbase-drc",
+   "cat": "key",
+   "name": "Air Base DRC Weapons Locker",
+   "x": 0.1233,
+   "y": 0.5846,
+   "note": "Ultra key, grid B6. Opens the DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker."
   }
  ],
  "guide": [
@@ -2581,13 +2590,13 @@
    "rows": [
     {
      "title": "Gorani",
-     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village",
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village Uses an M4.",
      "group": "Lieutenants",
      "check": "boss-gorani"
     },
     {
      "title": "Bale",
-     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract",
+     "subtitle": "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract Carries the Dreadnought, a Legendary LMG worth about $16,000.",
      "links": [
       "bales-dog-tag"
      ],
@@ -2633,7 +2642,8 @@
     {
      "title": "Roze",
      "group": "Lieutenants",
-     "check": "boss-roze"
+     "check": "boss-roze",
+     "subtitle": "Holds a dark parking garage with a scoped rifle"
     },
     {
      "title": "The Warden",
@@ -2643,7 +2653,7 @@
     },
     {
      "title": "Colossus",
-     "subtitle": "A seven-foot armored soldier with a minigun",
+     "subtitle": "A seven-foot armored soldier with a minigun The minigun fires depleted uranium rounds.",
      "group": "Commanders",
      "check": "boss-colossus"
     },
@@ -2662,11 +2672,95 @@
    ]
   },
   {
+   "id": "enemies",
+   "title": "Enemies",
+   "symbol": "figure.stand",
+   "intro": "Regular troops come in four tiers, each tougher than the last.",
+   "rows": [
+    {
+     "title": "Tier 1 North Korean Grunts",
+     "subtitle": "The basic soldiers",
+     "group": "Infantry"
+    },
+    {
+     "title": "Tier 2 Armored Soldiers",
+     "subtitle": "Wear armor",
+     "group": "Infantry"
+    },
+    {
+     "title": "Tier 3 Armored Gas-Masked Soldiers",
+     "subtitle": "Armor and gas masks",
+     "group": "Infantry"
+    },
+    {
+     "title": "Tier 4 Faceless Armored Soldiers",
+     "subtitle": "The toughest regular troops",
+     "group": "Infantry"
+    },
+    {
+     "title": "Juggernaut",
+     "subtitle": "Heavy infantry",
+     "group": "Infantry"
+    },
+    {
+     "title": "Hunt Squad",
+     "subtitle": "Comes after you once you've killed enough; Stealthy delays it",
+     "group": "Response"
+    },
+    {
+     "title": "Elite Strike Team",
+     "subtitle": "A response force",
+     "group": "Response"
+    },
+    {
+     "title": "Lieutenant Escort",
+     "subtitle": "Guards a Lieutenant",
+     "group": "Response"
+    },
+    {
+     "title": "Road Convoys",
+     "subtitle": "Armed convoys on the roads",
+     "group": "Response"
+    },
+    {
+     "title": "Attack Infantry Helicopter Patrol",
+     "subtitle": "Air patrol",
+     "group": "Drones & air"
+    },
+    {
+     "title": "Combat Drone Swarm",
+     "subtitle": "Drone swarm",
+     "group": "Drones & air"
+    },
+    {
+     "title": "LMG Combat Drone",
+     "subtitle": "Armed drone",
+     "group": "Drones & air"
+    },
+    {
+     "title": "Autonomous K9",
+     "subtitle": "Robot dogs underground",
+     "group": "Underground"
+    },
+    {
+     "title": "Rival Operators",
+     "subtitle": "Other squads in Hajin",
+     "group": "Players"
+    }
+   ]
+  },
+  {
    "id": "keys",
    "title": "Keys",
    "symbol": "key.fill",
    "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
    "rows": [
+    {
+     "title": "Air Base DRC Weapons Locker",
+     "value": "B6",
+     "subtitle": "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker",
+     "item": "air-base-drc-weapons-locker"
+    },
     {
      "title": "Vault Armory",
      "value": "F4",
@@ -2790,6 +2884,46 @@
    ]
   },
   {
+   "id": "kits",
+   "title": "Survival kits",
+   "symbol": "shippingbox.and.arrow.backward.fill",
+   "rows": [
+    {
+     "title": "Weapon Insurance Contract",
+     "subtitle": "Get back an insured weapon you lose, up to the number of contracts you hold. Two come with the Vault Edition"
+    },
+    {
+     "title": "Operator Rescue Beacon",
+     "subtitle": "Recover an MIA operator without paying DMZ Cash. Two come with the Vault Edition"
+    },
+    {
+     "title": "Fulton Drop Marker",
+     "subtitle": "A balloon that sends gear out of Hajin without an exfil",
+     "value": "$2,500",
+     "links": [
+      "fulton-drop-marker"
+     ]
+    },
+    {
+     "title": "Triage Kit",
+     "subtitle": "Bandages, Medkits, Self-Revives, Pain Killers and an Epic consumable",
+     "value": "Lv 27",
+     "links": [
+      "pain-killers"
+     ]
+    },
+    {
+     "title": "Vault Edition Deployment Kit",
+     "subtitle": "2 Weapon Insurance Contracts, 2 Operator Rescue Beacons, 2 Fulton Drop Markers, 2 Medium Backpacks, 2 two-plate carriers",
+     "value": "Vault"
+    },
+    {
+     "title": "Opening kits",
+     "subtitle": "Kits come from levels, Orders, missions and events. Open them at the Survival Kits station in your FOB; unopened kits stack without limit"
+    }
+   ]
+  },
+  {
    "id": "threat",
    "title": "Threat levels",
    "symbol": "exclamationmark.triangle.fill",
@@ -2849,52 +2983,264 @@
    ]
   },
   {
+   "id": "vehicles",
+   "title": "Vehicles",
+   "symbol": "car.fill",
+   "intro": "What moves in Hajin. Refuel at Gas Stations (boats at Marine Gas Stations).",
+   "rows": [
+    {
+     "title": "Polaris Dagor A1",
+     "subtitle": "Drivable. $5,000 to infil in; also a Silent Ledger reward",
+     "group": "Ground"
+    },
+    {
+     "title": "LTV",
+     "subtitle": "Drivable. $25,000 to infil in once Iron Citadel unlocks it",
+     "group": "Ground"
+    },
+    {
+     "title": "Camper",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "Sedan",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "Grizzly",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "Dreadnought",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "Cargo Truck",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "D50 Radar Flatbed",
+     "subtitle": "Drivable",
+     "group": "Ground"
+    },
+    {
+     "title": "RHIB",
+     "subtitle": "Drivable boat. Refuel at Marine Gas Stations",
+     "group": "Water"
+    },
+    {
+     "title": "Heli",
+     "subtitle": "Flyable. $50,000 to infil in once Grid Assault unlocks it",
+     "group": "Air"
+    },
+    {
+     "title": "Heavy Chopper",
+     "subtitle": "Rarely flyable",
+     "group": "Air"
+    },
+    {
+     "title": "Monarch",
+     "subtitle": "Not player-controlled",
+     "group": "Air"
+    },
+    {
+     "title": "Cargo Plane",
+     "subtitle": "Not player-controlled. $100,000 infil that lets you pick your drop point",
+     "group": "Air"
+    },
+    {
+     "title": "Train",
+     "subtitle": "Runs a fixed route; not player-controlled",
+     "group": "Rail"
+    },
+    {
+     "title": "Tram / monorail",
+     "subtitle": "Loops round Hajin City; not player-controlled",
+     "group": "Rail"
+    }
+   ]
+  },
+  {
    "id": "ops",
-   "title": "Missions & payouts",
+   "title": "Missions & Ops",
    "symbol": "target",
    "rows": [
     {
-     "title": "Dynamic Operations",
-     "value": "$10-20K",
-     "subtitle": "Paid into your Bank per op, plus a Supply Drop that improves with each success"
-    },
-    {
      "title": "Critical Extraction",
+     "subtitle": "Mirae General Hospital. Locate the HVT, eliminate any resistance, extract the HVT. Also a Defibrillator",
+     "group": "Story Missions",
      "value": "$25,000",
-     "subtitle": "Mirae General Hospital. Get General Kang out alive. Also rewards a Defibrillator",
      "links": [
       "defibrillator"
      ]
     },
     {
      "title": "Silent Ledger",
+     "subtitle": "Heavenly Luck Casino, Cheongun Village. Enter the casino, breach the vault, secure the printing plates. Also a Gold Bar and a Polaris Dagor A1",
+     "group": "Story Missions",
      "value": "$25,000",
-     "subtitle": "Cheongun Village. Also a Gold Bar and a Polaris Dagor",
      "links": [
       "gold-bar"
      ]
     },
     {
      "title": "Shopping Hacks",
+     "subtitle": "NuriGO Mall, Lieutenant Jang-ui's encampment. Hack the network, program the protocol, secure any evidence. Also Night Vision Goggles",
+     "group": "Story Missions",
      "value": "$25,000",
-     "subtitle": "NuriGO Mall. Also Night Vision Goggles",
      "links": [
       "night-vision-goggles"
      ]
     },
     {
-     "title": "Robbery",
-     "subtitle": "Extract $5,000 in cash value"
+     "title": "Iron Citadel",
+     "subtitle": "Unlocks the LTV for deployment",
+     "group": "Story Missions",
+     "value": "LTV"
     },
     {
-     "title": "Story Missions",
-     "value": "Weekly",
-     "subtitle": "Finish a random one three times a week for the weekly rewards"
+     "title": "Grid Assault",
+     "subtitle": "Unlocks the Helicopter for deployment",
+     "group": "Story Missions",
+     "value": "Heli"
+    },
+    {
+     "title": "Weekly Story Missions",
+     "subtitle": "Finish a random one three times a week for the weekly rewards",
+     "group": "Story Missions",
+     "value": "Weekly"
+    },
+    {
+     "title": "Chapter 1",
+     "subtitle": "Gear Up, Crack Shot, First OP",
+     "group": "DMZ Orders"
+    },
+    {
+     "title": "Counterfeit: Hostile Force",
+     "subtitle": "Enter a Police Station, search 3 containers inside, eliminate 5 soldiers inside",
+     "group": "DMZ Orders",
+     "value": "Caliber"
+    },
+    {
+     "title": "Counterfeit: Robbery",
+     "subtitle": "Open a safe, then extract with $5,000 of backpack and loadout value",
+     "group": "DMZ Orders",
+     "value": "Caliber"
+    },
+    {
+     "title": "Counterfeit: Execute Intel",
+     "subtitle": "Hack a UAV Tower in Deadtown, kill 5 North Korean soldiers it pings, loot the counterfeit cash they drop. Finishing the page gives the Recon Drone recipe",
+     "group": "DMZ Orders",
+     "value": "Caliber",
+     "links": [
+      "recon-drone"
+     ]
+    },
+    {
+     "title": "Underground",
+     "subtitle": "Eye in the Sky, Joyride, and placing a Transmitter on top of La Grande Vie in Songdo Wharf",
+     "group": "DMZ Orders"
+    },
+    {
+     "title": "Human Intel: Hunter",
+     "subtitle": "Climb a Lieutenant Tower and use the terminal at the top to find the nearest Lieutenant",
+     "group": "DMZ Orders"
+    },
+    {
+     "title": "Human Intel: Triage Protocol",
+     "subtitle": "Head to a Clinic, loot a Bandage and 30 Chemicals",
+     "group": "DMZ Orders",
+     "links": [
+      "bandage"
+     ]
+    },
+    {
+     "title": "Human Intel: No One Left",
+     "subtitle": "Clear a Compound and loot the Medical Extraction Intel it drops",
+     "group": "DMZ Orders"
+    },
+    {
+     "title": "Chapter 2",
+     "subtitle": "Eye in the Sky, Watch for Bumps, Triangulation, Dead Battery, Death from Above, Operation Shopping Hacks",
+     "group": "DMZ Orders"
+    },
+    {
+     "title": "Dynamic Operations",
+     "subtitle": "Paid into your Bank per op, plus a Supply Drop that improves with each success in the same deployment",
+     "group": "Dynamic Ops",
+     "value": "$10-20K"
+    },
+    {
+     "title": "Dead Man's Cache",
+     "subtitle": "Cheongun Outskirts. Find the enemy comms server and collect the Encrypted Drive",
+     "group": "Dynamic Ops"
+    },
+    {
+     "title": "Chemical Denial",
+     "subtitle": "Investigate the power outage at the Tank Depot and Chang-san Air Base bunker",
+     "group": "Dynamic Ops"
+    },
+    {
+     "title": "Hunt Operators",
+     "subtitle": "Take out a rival squad of Operators",
+     "group": "Dynamic Ops"
+    },
+    {
+     "title": "Broken Resupply",
+     "subtitle": "Hack the comms server",
+     "group": "Dynamic Ops"
+    },
+    {
+     "title": "Signal Breaker",
+     "subtitle": "Head to the target area",
+     "group": "Dynamic Ops"
+    },
+    {
+     "title": "Paid Intel",
+     "subtitle": "Reach Lieutenant Bale at the Tank Depot and kill him",
+     "group": "Side Ops",
+     "value": "+$500"
+    },
+    {
+     "title": "Capture a SAM Site",
+     "subtitle": "Hack the SAM control computer and defend it while it runs. A captured SAM shoots enemy aircraft, Deathstalker included, until enemies retake it",
+     "group": "Side Ops"
+    },
+    {
+     "title": "Activate UAV Tower",
+     "subtitle": "Turn on a UAV Tower to see enemies nearby",
+     "group": "Side Ops"
+    },
+    {
+     "title": "Download Intel to Locate Lieutenant",
+     "subtitle": "Download the intel to find a Lieutenant",
+     "group": "Side Ops"
+    },
+    {
+     "title": "Secure Lost Supply Drop",
+     "subtitle": "Find and open a lost supply drop",
+     "group": "Side Ops"
+    },
+    {
+     "title": "Repair a Truck",
+     "subtitle": "Fix a useful truck you come across",
+     "group": "Side Ops"
+    },
+    {
+     "title": "Robbery",
+     "subtitle": "Extract $5,000 in cash value",
+     "group": "Other"
     },
     {
      "title": "Reduce Bounty",
-     "value": "$5,000",
-     "subtitle": "At a Bounty Station. Four kills make you Wanted"
+     "subtitle": "At a Bounty Station. Four kills make you Wanted",
+     "group": "Other",
+     "value": "$5,000"
     }
    ]
   },
@@ -2960,7 +3306,7 @@
    "id": "traits",
    "title": "Traits",
    "symbol": "brain.head.profile",
-   "intro": "Each operator has three trees: Warfighter, Scout and Survivalist. You pick one trait per row, 9 per tree and 18 at most, with points from levelling your operator's dog tag (about 1,900 XP a point at Silver). The two-choice rows are fixed; the three-choice rows are random for each operator and show once you take a trait from the row above. Scout is shown as seen on Ghost; tap any trait to see what it does.",
+   "intro": "Each operator has three trees: Warfighter, Scout and Survivalist. You pick one trait per row, 9 per tree and 18 at most, with points from levelling your operator's dog tag (about 1,900 XP a point at Silver). The two-choice rows are fixed; the three-choice rows are random for each operator and show once you take a trait from the row below (trees are climbed from the bottom). Scout is shown as seen on Ghost; tap any trait to see what it does.",
    "rows": [
     {
      "title": "Popcorn Tacticals",
@@ -3274,6 +3620,17 @@
    "effect": "Three plates, less damage from headshots"
   },
   {
+   "id": "air-base-drc-weapons-locker",
+   "name": "Air Base DRC Weapons Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Ultra",
+   "note": "The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker",
+   "grid": "B6",
+   "marker": "k-airbase-drc",
+   "value": 100
+  },
+  {
    "id": "alloyed-plating",
    "name": "Alloyed Plating",
    "kind": "Ingredient"
@@ -3353,7 +3710,7 @@
      "qty": 15
     }
    ],
-   "effect": "Restores max health for a while after you're hurt"
+   "effect": "Restores max health for 180 seconds after you're hurt"
   },
   {
    "id": "bank-branch-vault-access",
@@ -3880,7 +4237,8 @@
      "qty": 5
     }
    ],
-   "value": 2000
+   "value": 2000,
+   "effect": "Permanently restores the health you've lost to a wound"
   },
   {
    "id": "metals",
@@ -4041,7 +4399,7 @@
      "qty": 15
     }
    ],
-   "effect": "Protection in irradiated areas"
+   "effect": "Cuts the effects of radiation for a minute"
   },
   {
    "id": "railgun-sentry",
