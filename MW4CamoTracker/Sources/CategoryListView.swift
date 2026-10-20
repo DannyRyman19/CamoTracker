@@ -221,12 +221,17 @@ struct CategoryListView: View {
                     classChips
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
                         .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                    // Lined up with the cards below (whose chevron sits
+                    // outside the card), no rules either side
                     HStack(spacing: 8) {
                         FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: weaponFilterBinding)
                         FilterSortMenu(title: "mw4.ui.sort".localized(), options: weaponSortOptions, label: { $0.label }, accent: mode.accent, selection: weaponSortBinding)
                     }
+                    .padding(.trailing, 22)
                     .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 6, trailing: 12))
                     .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
 
                     if displayedWeapons.isEmpty {
                         FilterEmptyRow()
