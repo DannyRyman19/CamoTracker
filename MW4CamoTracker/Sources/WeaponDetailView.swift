@@ -952,12 +952,18 @@ private struct CompactLevelRow: View {
             HStack(spacing: 10) {
                 // Longer in French and Spanish than the room beside the stepper
                 // on a narrow header: shrink a little before truncating.
-                Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
-                                  : "mw4.ui.weapon_level".localized())
+                // Full size whenever it fits. A bare minimumScaleFactor shrank
+                // it with room to spare (sized before the row had its width).
+                let label = Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
+                                              : "mw4.ui.weapon_level".localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                ViewThatFits(in: .horizontal) {
+                    label.fixedSize()
+                    label.minimumScaleFactor(0.7)
+                }
+                .layoutPriority(1)
 
                 Spacer(minLength: 4)
 
