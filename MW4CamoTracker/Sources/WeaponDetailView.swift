@@ -586,7 +586,7 @@ struct MasteryModeRow: View {
 /// A Mastery tier as one challenge for the whole mode (`mastery.unlock` is
 /// "mode"). It reads the same on every weapon's page; ticking it on one
 /// ticks it for the mode.
-private struct MasteryModeChallengeRow: View {
+struct MasteryModeChallengeRow: View {
     let mode: AppMode
     let weapon: WeaponEntry
     let tier: Int

@@ -121,7 +121,7 @@ struct ContentView: View {
                 .tabItem { Label("mw4.ui.section.weapons".localized(), systemImage: "scope") }
                 .tag(index)
 
-                NavigationStack { MasteryTabView(startMode: primaryMode) }
+                NavigationStack { MasteryTabView() }
                     .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
                     .tag(2)
 
