@@ -174,13 +174,14 @@ struct CategoryListView: View {
                     let mastery = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
                     let masteryProgress = viewModel.masteryProgress(mode: mode.rawValue, tier: tier)
                     let masteryDone = viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier)
+                    let locks = CategoryStats.Locks(viewModel: viewModel, mode: mode)
                     var stats: [StatSummaryCard.Stat] = [
                         .init(value: "\(completeCount)/\(total)", label: "mw4.ui.gold".localized(), ringFraction: fraction(completeCount, total), ringColor: .camoGold),
-                        .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient),
-                        .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient)
+                        .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient, lockedHint: harmonicCount == 0 ? locks.harmonic : nil),
+                        .init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil)
                     ]
                     if mode.hasFinalCamo {
-                        stats.insert(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient), at: 2)
+                        stats.insert(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: total > 0 && finalCount == total ? final.gradient : nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil), at: 2)
                     }
                     // Only worth showing once the last Mastery camo is
                     // earned; before then "100%+" is a goal past one
@@ -437,10 +438,45 @@ private struct ObjectiveCategoryRow: View {
 /// A weapon category's three rings, on its card here and atop its own weapon
 /// list: camo lists complete, Harmonic Break, and the final camo.
 enum CategoryStats {
+    /// What a mode-wide step still waits for, nil once it's open: Harmonic
+    /// Break on every Platinum, the final camo on enough Harmonic Breaks,
+    /// Mastery on the final camo (or the tier before).
+    @MainActor
+    struct Locks {
+        let viewModel: TrackerViewModel
+        let mode: AppMode
+
+        var harmonic: String? {
+            let gate = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: 2)
+            guard gate.done < gate.total else { return nil }
+            return "\(gate.done)/\(gate.total) \(mode.completionist.steps[1].name)"
+        }
+
+        var final: String? {
+            let needed = viewModel.harmonicBreaksNeeded(mode: mode.rawValue)
+            let have = viewModel.harmonicBreakCount(mode: mode.rawValue)
+            guard needed > 0, have < needed else { return nil }
+            return "\(have)/\(needed) \(mode.completionist.steps[2].name)"
+        }
+
+        func mastery(tier: Int) -> String? {
+            guard viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode,
+                  !viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier) else { return nil }
+            if tier == 1 {
+                let total = viewModel.totalWeaponCount
+                return "\(min(viewModel.lastCompletionistCount(mode: mode.rawValue), total))/\(total) \(mode.lastCompletionist.name)"
+            }
+            let tiers = mode.masteryCamos
+            return [tiers.tier1, tiers.tier2, tiers.tier3][tier - 2].name
+        }
+    }
+
     @MainActor
     static func stats(viewModel: TrackerViewModel, category: WeaponCategory, mode: AppMode) -> [StatSummaryCard.Stat] {
         let count = category.weapons.count
         let fraction: (Int) -> Double = { count > 0 ? Double($0) / Double(count) : 0 }
+        let gold = viewModel.goldWeaponCount(in: category, mode: mode.rawValue)
+        let locks = Locks(viewModel: viewModel, mode: mode)
         let platinum = mode.completionist.steps[1]
         let platinumCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 1)
         let harmonic = mode.completionist.steps[2]
@@ -450,12 +486,13 @@ enum CategoryStats {
         var stats: [StatSummaryCard.Stat] = [
             .init(value: "\(viewModel.goldWeaponCount(in: category, mode: mode.rawValue))/\(count)", label: "mw4.ui.gold".localized(), ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
             // Platinum opens when every weapon in the class has Gold
-            .init(value: "\(platinumCount)/\(count)", label: platinum.name, labelGradient: count > 0 && platinumCount == count ? platinum.gradient : nil, ringFraction: fraction(platinumCount), ringColor: platinum.color, ringGradient: platinum.gradient),
-            .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient)
+            .init(value: "\(platinumCount)/\(count)", label: platinum.name, labelGradient: count > 0 && platinumCount == count ? platinum.gradient : nil, ringFraction: fraction(platinumCount), ringColor: platinum.color, ringGradient: platinum.gradient,
+                  lockedHint: platinumCount == 0 && gold < count ? "\(gold)/\(count) \("mw4.ui.gold".localized())" : nil),
+            .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient, lockedHint: harmonicCount == 0 ? locks.harmonic : nil)
         ]
         // The final camo's ring, when the track has one.
         if mode.hasFinalCamo {
-            stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient))
+            stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))
         }
         return stats
     }
