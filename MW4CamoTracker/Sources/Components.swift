@@ -856,6 +856,16 @@ struct ChallengeRow: View {
                 Text(String(format: "mw4.ui.set_amount.message".localized(), requirement.amount))
             }
         }
+        .preference(key: EarnedGradientKey.self, value: isDone ? titleGradient : nil)
+    }
+}
+
+/// An earned camo's colors, passed up from its row so the tile around it
+/// can draw its border in them.
+struct EarnedGradientKey: PreferenceKey {
+    static let defaultValue: [Color]? = nil
+    static func reduce(value: inout [Color]?, nextValue: () -> [Color]?) {
+        value = value ?? nextValue()
     }
 }
 

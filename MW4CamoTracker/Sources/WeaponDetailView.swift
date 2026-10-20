@@ -817,6 +817,7 @@ private struct StatusRow: View {
             }
         }
         .padding(.vertical, 5)
+        .preference(key: EarnedGradientKey.self, value: achieved ? gradient : nil)
     }
 }
 
@@ -1037,5 +1038,14 @@ private struct DetailTile: ViewModifier {
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+            // An earned Completionist or Mastery camo outlines its tile in
+            // its own colors, like the weapon cards.
+            .overlayPreferenceValue(EarnedGradientKey.self) { colors in
+                if let colors, colors.count > 1 {
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing).opacity(0.7), lineWidth: 1)
+                }
+            }
+            .transformPreference(EarnedGradientKey.self) { $0 = nil }
     }
 }
