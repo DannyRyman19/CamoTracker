@@ -75,7 +75,9 @@ final class GridTapUITests: XCTestCase {
         func customise(_ change: () -> Void) {
             XCTAssertTrue(app.buttons["customiseHome"].waitForExistence(timeout: 15))
             app.buttons["customiseHome"].tap()
-            XCTAssertTrue(app.switches["Suggested"].waitForExistence(timeout: 5))
+            // Modes and Language come first, so the layout switches can
+            // start below the fold: wait for the sheet itself.
+            XCTAssertTrue(app.navigationBars.buttons["Done"].waitForExistence(timeout: 5))
             change()
             app.navigationBars.buttons["Done"].tap()
             XCTAssertTrue(app.staticTexts["Weapons"].waitForExistence(timeout: 5))
@@ -85,7 +87,10 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Suggested"].exists)
 
         customise {
-            app.switches["Suggested"].coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+            // Under Modes and Language now: lift the sheet until it shows.
+            let suggested = app.switches["Suggested"]
+            for _ in 0..<4 where !(suggested.exists && suggested.isHittable) { app.swipeUp() }
+            suggested.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
         }
         XCTAssertFalse(app.staticTexts["Suggested"].exists)
 

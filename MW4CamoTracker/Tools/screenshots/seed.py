@@ -29,7 +29,7 @@ Run with /usr/bin/python3. Homebrew's python currently fails to import plistlib
 (pyexpat links against a libexpat that lacks a symbol it wants).
 
 Key formats and the store shape must match TrackerViewModel.swift. Two traps:
-  * the weapon mastery prefix is `wmastery|`, not `mastery|`
+  * a Completionist step is `comp|<mode>|<weaponId>|<step>` (0 Gold, 1 Platinum, 2 Harmonic Break)
   * `weaponLevels: [Int: Int]` encodes as a JSON *object with stringified keys*
     ({"1": 68}). Swift's Codable special-cases String and Int dictionary keys;
     only other key types get flattened to a [k, v, k, v, ...] array. Emitting
@@ -44,10 +44,6 @@ import sys
 
 STORE_KEY = "mw4_progress_v2"
 PINNED_KEY = "mw4_pinned_weapon_v1"
-
-# MasteryRequirement in Theme.swift.
-TIER1_AMOUNT = 3
-TIER2_AMOUNT = 5
 
 PREVIEW_WEAPON = 3             # Kastov 762, also the pinned weapon
 PREVIEW_MODE = "warzone"
@@ -68,8 +64,8 @@ def camo_key(mode, weapon_id, camo_id):
     return f"camo|{mode}|{weapon_id}|{camo_id}"
 
 
-def wmastery_key(mode, weapon_id, tier):
-    return f"wmastery|{mode}|{weapon_id}|{tier}"
+def completionist_key(mode, weapon_id, step):
+    return f"comp|{mode}|{weapon_id}|{step}"
 
 
 def objective_key(mode, category_id, item_id):
@@ -95,11 +91,6 @@ def build(preview=False):
             elif index == done_count and required > 1:
                 amounts[key] = rng.randint(1, max(1, required - 1))
 
-    def mastery(mode, weapon_id, tier):
-        key = wmastery_key(mode, weapon_id, tier)
-        amounts[key] = TIER1_AMOUNT if tier == 1 else TIER2_AMOUNT
-        completed.append(key)
-
     # How far into each mode's camo list to go, per weapon.
     plans = {
         "multiplayer": lambda n: n,                                  # all Gold
@@ -121,13 +112,26 @@ def build(preview=False):
                 amounts[key] = required
                 completed.append(key)
 
-    # Mastery: Multiplayer fully tier1 and its ARs tier2; Warzone part-way.
+    # Completionist: Multiplayer has Gold on every weapon, Platinum on the
+    # Assault Rifles and SMGs, Harmonic Break on the Assault Rifles; Warzone
+    # has Gold on its first two classes. A key counts whether its step is a
+    # tick box (`completed`) or a counted challenge (`amounts` at or past the
+    # target, which the app caps on read).
+    smgs = [w["weaponId"] for w in catalog["categories"][1]["weapons"]]
+
+    def completionist(mode, weapon_id, step):
+        key = completionist_key(mode, weapon_id, step)
+        amounts[key] = 100_000
+        completed.append(key)
+
     for weapon_id in weapons:
-        mastery("multiplayer", weapon_id, 1)
+        completionist("multiplayer", weapon_id, 0)
+    for weapon_id in assault_rifles + smgs:
+        completionist("multiplayer", weapon_id, 1)
     for weapon_id in assault_rifles:
-        mastery("multiplayer", weapon_id, 2)
-    for weapon_id in assault_rifles[:4]:
-        mastery("warzone", weapon_id, 1)
+        completionist("multiplayer", weapon_id, 2)
+    for weapon_id in assault_rifles + smgs:
+        completionist("warzone", weapon_id, 0)
 
     if preview:
         # Undo the random Warzone plan for this one weapon: all camos but the

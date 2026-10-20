@@ -201,6 +201,10 @@ struct CategoryListView: View {
                         WeaponRow(mode: mode, weapon: weapon)
                     }
                 } else {
+                    WidgetTipCard(accent: mode.accent)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     ForEach(layout.visible) { section in
                         sectionView(section)
                     }
@@ -464,6 +468,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
 
@@ -473,6 +478,30 @@ struct CustomiseHomeSheet: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    // Inset from the row's edges: flush, the List clipped the
+                    // chips' rounded borders at the corners.
+                    PlayedModesPicker()
+                        .padding(.vertical, 4)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                } header: {
+                    Text("mw4.ui.modes".localized())
+                } footer: {
+                    Text("mw4.ui.modes.footer".localized())
+                }
+
+                Section {
+                    Picker("mw4.ui.language".localized(), selection: $languageRaw) {
+                        Text("mw4.ui.language.system".localized()).tag("")
+                        ForEach(AppLanguage.supported, id: \.code) { language in
+                            Text(verbatim: language.name).tag(language.code)
+                        }
+                    }
+                    .tint(accent)
+                    .accessibilityIdentifier("customise.language")
+                }
+
                 Section {
                     ForEach(rows) { section in
                         HStack(spacing: 12) {

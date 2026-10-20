@@ -29,11 +29,8 @@ struct LocalizedText: Codable {
     /// then to whatever translation exists — so a missing language never
     /// surfaces blank text or a raw key to the player.
     func resolved() -> String {
-        for identifier in Locale.preferredLanguages {
-            if let code = Locale(identifier: identifier).language.languageCode?.identifier,
-               let value = values[code] {
-                return value
-            }
+        for code in AppLanguage.preferred {
+            if let value = values[code] { return value }
         }
         return values["en"] ?? values.values.first ?? ""
     }
@@ -62,7 +59,36 @@ struct WeaponCatalog: Codable {
     /// level cap can change without an app update. Optional: no prestige
     /// at all when absent.
     let weaponPrestige: [PrestigeStage]?
+    /// Camos earned by Weapon Prestige rather than by a mode's challenges,
+    /// so they're the same in every mode. In order: each one ticks itself
+    /// once the weapon reaches its stage and level. Optional: none when
+    /// absent.
+    let prestigeCamos: [PrestigeCamo]?
     let categories: [WeaponCategory]
+}
+
+/// A Weapon Prestige camo ("Pyroclast Terminus: reach Prestige Master
+/// level 73" on the HAN 86). `stage` is which `weaponPrestige` stage it's
+/// in, counting from 1; `nil` means the last one, so the data doesn't need
+/// changing if stages are added before it. `level` is the level within that
+/// stage, and `afterWeaponMaxLevel` makes it the level after the weapon's
+/// own `maxLevel` instead (73 on the HAN 86, whose max is 72; other numbers
+/// on other guns). Neither means reaching the stage is enough.
+struct PrestigeCamo: Codable {
+    let name: LocalizedText
+    let stage: Int?
+    let level: Int?
+    let afterWeaponMaxLevel: Bool?
+    let imageURL: String?
+    /// A weapon's own name, image or level for this camo, keyed by `weaponId` as a
+    /// string, for a weapon whose Prestige camos differ.
+    let byWeapon: [String: PrestigeCamoOverride]?
+}
+
+struct PrestigeCamoOverride: Codable {
+    let name: LocalizedText?
+    let imageURL: String?
+    let level: Int?
 }
 
 /// One Weapon Prestige stage. `maxLevel` is that stage's level cap; `nil`
