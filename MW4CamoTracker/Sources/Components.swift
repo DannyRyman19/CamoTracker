@@ -860,6 +860,14 @@ struct ChallengeRow: View {
     }
 }
 
+/// Customise > Card outlines: which earned camo colors a weapon card's
+/// border, Prestige or Completionist first, or no colored borders at all.
+enum CardOutline: String, CaseIterable {
+    case prestige, completionist, off
+    static let key = "mw4_card_outline"
+    var titleKey: String { "mw4.ui.card_outline.\(rawValue)" }
+}
+
 /// An earned camo's colors, passed up from its row so the tile around it
 /// can draw its border in them.
 struct EarnedGradientKey: PreferenceKey {

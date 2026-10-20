@@ -1032,6 +1032,8 @@ private struct CompactLevelRow: View {
 /// A camo or Mastery row as a tile in the iPad grid: the same row, on its own
 /// rounded surface, stretched so a row of tiles shares one height.
 private struct DetailTile: ViewModifier {
+    @AppStorage(CardOutline.key) private var outline = CardOutline.prestige.rawValue
+
     func body(content: Content) -> some View {
         content
             .padding(.horizontal, 12)
@@ -1041,7 +1043,7 @@ private struct DetailTile: ViewModifier {
             // An earned Completionist or Mastery camo outlines its tile in
             // its own colors, like the weapon cards.
             .overlayPreferenceValue(EarnedGradientKey.self) { colors in
-                if let colors, colors.count > 1 {
+                if let colors, colors.count > 1, outline != CardOutline.off.rawValue {
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing).opacity(0.7), lineWidth: 1)
                 }
