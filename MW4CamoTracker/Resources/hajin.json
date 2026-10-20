@@ -1,5 +1,5 @@
 {
- "version": "0.8.2",
+ "version": "0.8.3",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2495,7 +2495,7 @@
     },
     {
      "title": "Stash Item Upgrade II",
-     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More Stash item slots",
+     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. +18 Stash item slots",
      "value": "$50,000",
      "item": "stash-item-upgrade-ii",
      "check": "upgrade-stash-item-upgrade-ii"
@@ -4961,7 +4961,7 @@
     }
    ],
    "cash": 50000,
-   "effect": "More Stash item slots",
+   "effect": "+18 Stash item slots",
    "symbol": "archivebox.fill"
   },
   {
