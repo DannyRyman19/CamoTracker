@@ -1,5 +1,5 @@
 {
- "version": "0.2.0",
+ "version": "0.3.0",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -1518,364 +1518,420 @@
      "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Restores max health for a while after you're hurt",
      "group": "Consumables",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/bandage.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/bandage.png?v=1",
+     "item": "bandage"
     },
     {
      "title": "Medkit",
      "subtitle": "Epic. 30 Chemicals, 1 Binding Catalyst, 5 Biomaterials",
      "group": "Consumables",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png?v=1",
+     "item": "medkit"
     },
     {
      "title": "Sedative Inhaler",
      "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Hides you from radar, marking and thermal",
      "group": "Consumables",
      "value": "Lv 3",
-     "image": "https://camotracker.djr.li/Images/DMZ/sedative-inhaler.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/sedative-inhaler.png?v=1",
+     "item": "sedative-inhaler"
     },
     {
      "title": "Energy Drink",
      "subtitle": "Common. 10 Chemicals, 10 Metals. Unlimited stamina",
      "group": "Consumables",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/energy-drink.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/energy-drink.png?v=1",
+     "item": "energy-drink"
     },
     {
      "title": "Pain Killers",
      "subtitle": "Uncommon. 15 Electronics, 15 Chemicals. Max health, weaker damage effects and faster regen for a minute",
      "group": "Consumables",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/pain-killers.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/pain-killers.png?v=1",
+     "item": "pain-killers"
     },
     {
      "title": "Smelling Salts",
      "subtitle": "Rare. 30 Chemicals, 3 Detonators. Unlimited stamina, better movement and faster reloads for 60 seconds",
      "group": "Consumables",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/smelling-salts.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/smelling-salts.png?v=1",
+     "item": "smelling-salts"
     },
     {
      "title": "Radiation Blockers",
      "subtitle": "Uncommon. 15 Electronics, 15 Chemicals. Protection in irradiated areas",
      "group": "Consumables",
-     "image": "https://camotracker.djr.li/Images/DMZ/radiation-blockers.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/radiation-blockers.png?v=1",
+     "item": "radiation-blockers"
     },
     {
      "title": "Self-Revive Kit",
      "subtitle": "Legendary. 1 Stabilized Reagents, 5 Biomaterials, 3 Binding Catalyst. Revive yourself when you're downed",
      "group": "Consumables",
      "value": "Lv 48",
-     "image": "https://camotracker.djr.li/Images/DMZ/self-revive-kit.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/self-revive-kit.png?v=1",
+     "item": "self-revive-kit"
     },
     {
      "title": "1-Plate Armor Vest",
      "subtitle": "Uncommon. 25 Synthetics, 25 Metals. One armor plate",
      "group": "Plate Carriers",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/1-plate-armor-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/1-plate-armor-vest.png?v=1",
+     "item": "1-plate-armor-vest"
     },
     {
      "title": "2-Plate Armor Vest",
      "subtitle": "Rare. 50 Synthetics, 5 Reactive Metals. Two armor plates",
      "group": "Plate Carriers",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-armor-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-armor-vest.png?v=1",
+     "item": "2-plate-armor-vest"
     },
     {
      "title": "2-Plate Helmet Armor Vest",
      "subtitle": "Epic. 50 Synthetics, 3 Structural Alloy, 10 Reactive Metals. Two plates, less damage from headshots",
      "group": "Plate Carriers",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-helmet-armor-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/2-plate-helmet-armor-vest.png?v=1",
+     "item": "2-plate-helmet-armor-vest"
     },
     {
      "title": "3-Plate Ballistic Gel Vest",
      "subtitle": "Ultra. 2 Experimental Compounds, 4 Stabilized Reagents, 10 Biomaterials. Three plates that regenerate over time",
      "group": "Plate Carriers",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-ballistic-gel-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-ballistic-gel-vest.png?v=1",
+     "item": "3-plate-ballistic-gel-vest"
     },
     {
      "title": "3-Plate Helmet Armor Vest",
      "subtitle": "Ultra. 2 Nano-Structured Alloy, 4 Alloyed Plating, 10 Reactive Metals. Three plates, less damage from headshots",
      "group": "Plate Carriers",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-helmet-armor-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/3-plate-helmet-armor-vest.png?v=1",
+     "item": "3-plate-helmet-armor-vest"
     },
     {
      "title": "Tempered Armor Vest",
      "subtitle": "Ultra. 2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics",
      "group": "Plate Carriers",
-     "image": "https://camotracker.djr.li/Images/DMZ/tempered-armor-vest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/tempered-armor-vest.png?v=1",
+     "item": "tempered-armor-vest"
     },
     {
      "title": "Small Backpack",
      "subtitle": "Uncommon. 25 Synthetics, 25 Metals",
      "group": "Backpacks",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/small-backpack.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/small-backpack.png?v=1",
+     "item": "small-backpack"
     },
     {
      "title": "Medium Backpack",
      "subtitle": "50 Synthetics, 5 Rigid Synthetics. Adds Secure Slots",
      "group": "Backpacks",
      "value": "Lv 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/medium-backpack.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/medium-backpack.png?v=1",
+     "item": "medium-backpack"
     },
     {
      "title": "Medium Scavenger Backpack",
      "subtitle": "Epic. 50 Metals, 3 Nylon Cloth, 10 Rigid Synthetics. Two Secure Slots and room for more resources",
      "group": "Backpacks",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/medium-scavenger-backpack.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/medium-scavenger-backpack.png?v=1",
+     "item": "medium-scavenger-backpack"
     },
     {
      "title": "Small Secure Backpack",
      "subtitle": "Epic. 50 Metals, 3 Structural Alloy, 10 Rigid Synthetics. Three Secure Slots",
      "group": "Backpacks",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/small-secure-backpack.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/small-secure-backpack.png?v=1",
+     "item": "small-secure-backpack"
     },
     {
      "title": "Medium Secure Backpack",
      "subtitle": "Legendary. 2 Alloyed Plating, 5 Nylon Cloth, 10 Reactive Metals. Four Secure Slots",
      "group": "Backpacks",
-     "value": "Find"
+     "value": "Find",
+     "item": "medium-secure-backpack"
     },
     {
      "title": "Secure Scavenger Backpack",
      "subtitle": "Ultra. 2 Military Composites, 4 Nylon Laminate, 10 Reactive Metals. Large, four Secure Slots and room for more resources",
      "group": "Backpacks",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/secure-scavenger-backpack.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/secure-scavenger-backpack.png?v=1",
+     "item": "secure-scavenger-backpack"
     },
     {
      "title": "Smoke Grenade",
      "subtitle": "Common. 10 Synthetics, 10 Chemicals. Smoke that blocks sight and automated targeting",
      "group": "Tacticals",
      "value": "Lv 4",
-     "image": "https://camotracker.djr.li/Images/DMZ/smoke-grenade.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/smoke-grenade.png?v=1",
+     "item": "smoke-grenade"
     },
     {
      "title": "Concussion Grenade",
      "subtitle": "Cost not confirmed yet",
      "group": "Tacticals",
-     "value": "Lv 4"
+     "value": "Lv 4",
+     "item": "concussion-grenade"
     },
     {
      "title": "Snapshot Grenade",
      "subtitle": "Cost not confirmed yet",
      "group": "Tacticals",
      "value": "Lv 9",
-     "image": "https://camotracker.djr.li/Images/DMZ/snapshot-grenade.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/snapshot-grenade.png?v=1",
+     "item": "snapshot-grenade"
     },
     {
      "title": "Spotter Scope",
      "subtitle": "Rare. 50 Synthetics, 5 Electronic Sensors. Spot and mark enemies nearby",
      "group": "Tacticals",
-     "value": "Lv 12"
+     "value": "Lv 12",
+     "item": "spotter-scope"
     },
     {
      "title": "Stim",
      "subtitle": "Uncommon. 15 Synthetics, 15 Chemicals. Starts health regen, refreshes Tactical Sprint, eases flash and stun",
      "group": "Tacticals",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/stim.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/stim.png?v=1",
+     "item": "stim"
     },
     {
      "title": "Heartbeat Sensor",
      "subtitle": "Uncommon. 25 Synthetics, 25 Chemicals. A tablet showing roughly where enemies are",
      "group": "Tacticals",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/heartbeat-sensor.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/heartbeat-sensor.png?v=1",
+     "item": "heartbeat-sensor"
     },
     {
      "title": "Frag Grenade",
      "subtitle": "Cost not confirmed yet",
      "group": "Lethals",
-     "value": "Lv 7"
+     "value": "Lv 7",
+     "item": "frag-grenade"
     },
     {
      "title": "Throwing Knife",
      "subtitle": "Uncommon. Cost not confirmed yet",
      "group": "Lethals",
      "value": "Lv 7",
-     "image": "https://camotracker.djr.li/Images/DMZ/throwing-knife.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/throwing-knife.png?v=1",
+     "item": "throwing-knife"
     },
     {
      "title": "C4",
      "subtitle": "Common. 10 Chemicals, 10 Metals. Sticky explosive you set off remotely",
      "group": "Lethals",
-     "value": "Orders"
+     "value": "Orders",
+     "item": "c4"
     },
     {
      "title": "Zip Gun",
      "subtitle": "Common. 10 Chemicals, 10 Metals. Single-shot pistol for close range",
      "group": "Lethals",
-     "value": "Find"
+     "value": "Find",
+     "item": "zip-gun"
     },
     {
      "title": "Drill Charge",
      "subtitle": "Uncommon. 15 Chemicals, 15 Metals. Burrows into a surface before it blows",
      "group": "Lethals",
-     "value": "Find"
+     "value": "Find",
+     "item": "drill-charge"
     },
     {
      "title": "Trip Wire",
      "subtitle": "Uncommon. 15 Chemicals, 15 Metals. Thrown trap; several link into a network",
      "group": "Lethals",
-     "value": "Find"
+     "value": "Find",
+     "item": "trip-wire"
     },
     {
      "title": "Sticky Grenade",
      "subtitle": "Cost not confirmed yet",
      "group": "Lethals",
-     "value": "Lv 23"
+     "value": "Lv 23",
+     "item": "sticky-grenade"
     },
     {
      "title": "Molotov Cocktail",
      "subtitle": "Cost not confirmed yet",
      "group": "Lethals",
-     "value": "Lv 36"
+     "value": "Lv 36",
+     "item": "molotov-cocktail"
     },
     {
      "title": "Thermite",
      "subtitle": "Cost not confirmed yet",
      "group": "Lethals",
-     "value": "Lv 41"
+     "value": "Lv 41",
+     "item": "thermite"
     },
     {
      "title": "Ammo Box",
      "subtitle": "Cost not confirmed yet",
      "group": "Field Upgrades",
-     "value": "Lv 12"
+     "value": "Lv 12",
+     "item": "ammo-box"
     },
     {
      "title": "Armor Box",
      "subtitle": "Rare. 30 Metals, 3 Reactive Metals. Armor plates for you and your squad",
      "group": "Field Upgrades",
      "value": "Lv 14",
-     "image": "https://camotracker.djr.li/Images/DMZ/armor-box.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/armor-box.png?v=1",
+     "item": "armor-box"
     },
     {
      "title": "Portable Radar",
      "subtitle": "Uncommon. 15 Synthetics, 15 Electronics. Pings nearby enemies every so often",
      "group": "Field Upgrades",
-     "value": "Find"
+     "value": "Find",
+     "item": "portable-radar"
     },
     {
      "title": "Riot Shield",
      "subtitle": "Uncommon. 15 Synthetics, 15 Metals. A placeable shield to hold a position",
      "group": "Field Upgrades",
-     "value": "Find"
+     "value": "Find",
+     "item": "riot-shield"
     },
     {
      "title": "Shock Stick",
      "subtitle": "Cost not confirmed yet",
      "group": "Field Upgrades",
      "value": "Lv 17",
-     "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png?v=1",
+     "item": "shock-stick"
     },
     {
      "title": "DDOS",
      "subtitle": "Rare. 30 Electronics, 3 Detonators. Knocks out electronics and sensors nearby for a short time",
      "group": "Field Upgrades",
-     "value": "Orders"
+     "value": "Orders",
+     "item": "ddos"
     },
     {
      "title": "Revive Pistol",
      "subtitle": "Legendary. 2 Power Regulator, 3 Binding Catalyst, 5 Detonators. Revive or heal allies from a distance",
      "group": "Field Upgrades",
      "value": "Lv 25",
-     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png?v=1",
+     "item": "revive-pistol"
     },
     {
      "title": "Inflatable Decoy",
      "subtitle": "Cost not confirmed yet",
      "group": "Field Upgrades",
-     "value": "Lv 52"
+     "value": "Lv 52",
+     "item": "inflatable-decoy"
     },
     {
      "title": "Care Package",
      "subtitle": "Rare. 20 Electronics, 2 Control Unit, 2 Rigid Synthetics. Calls in a supply drop",
      "group": "Fire Support",
-     "value": "Lv 28"
+     "value": "Lv 28",
+     "item": "care-package"
     },
     {
      "title": "UAV",
      "subtitle": "Epic. 30 Electronics, 2 Structural Alloy, 5 Electronic Sensors. Shows enemies on the minimap",
      "group": "Fire Support",
-     "value": "Lv 31"
+     "value": "Lv 31",
+     "item": "uav"
     },
     {
      "title": "Railgun Sentry",
      "subtitle": "Legendary. 2 Power Regulator, 3 Nitro Compounds, 5 Control Unit. Hypersonic flechette cannon that works as a sentry",
      "group": "Fire Support",
-     "value": "Find"
+     "value": "Find",
+     "item": "railgun-sentry"
     },
     {
      "title": "Gas Mask",
      "subtitle": "Cost not confirmed yet",
      "group": "Gear",
-     "value": "Lv 26"
+     "value": "Lv 26",
+     "item": "gas-mask"
     },
     {
      "title": "Disposable Parachute",
      "subtitle": "Rare. 30 Chemicals, 3 Rigid Synthetics. A parachute with limited uses",
      "group": "Gear",
-     "value": "Lv 55"
+     "value": "Lv 55",
+     "item": "disposable-parachute"
     },
     {
      "title": "Parachute",
      "subtitle": "Legendary. 2 Turned Components, 5 Nylon Cloth, 10 Rigid Synthetics. Reusable",
      "group": "Gear",
      "value": "Find",
-     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1",
+     "item": "parachute"
     },
     {
      "title": "Biomaterials",
      "subtitle": "Uncommon. 20 Synthetics, 20 Chemicals. Needs Uncommon Ingredient Printing",
      "group": "Ingredients",
      "value": "Upgrade",
-     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png?v=1",
+     "item": "biomaterials"
     },
     {
      "title": "Reactive Metals",
      "subtitle": "Uncommon. 20 Chemicals, 20 Metals. Needs Uncommon Ingredient Printing",
      "group": "Ingredients",
      "value": "Upgrade",
-     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png?v=1",
+     "item": "reactive-metals"
     },
     {
      "title": "Ballistic Fabric",
      "subtitle": "Epic. 100 Synthetics, 3 High-Tenacity Fibers. Needs Epic Ingredient Printing",
      "group": "Ingredients",
      "value": "Upgrade",
-     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png?v=1",
+     "item": "ballistic-fabric"
     },
     {
      "title": "Stabilized Reagents",
      "subtitle": "Epic. 100 Chemicals, 3 Binding Catalyst. Needs Epic Ingredient Printing",
      "group": "Ingredients",
-     "value": "Upgrade"
+     "value": "Upgrade",
+     "item": "stabilized-reagents"
     },
     {
      "title": "Door Breacher Charge",
      "subtitle": "Ultra. 1 Stock Rod",
      "group": "Other",
-     "image": "https://camotracker.djr.li/Images/DMZ/door-breacher-charge.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/door-breacher-charge.png?v=1",
+     "item": "door-breacher-charge"
     },
     {
      "title": "Bomb Glider",
      "subtitle": "1 Stock Rod",
-     "group": "Other"
+     "group": "Other",
+     "item": "bomb-glider"
     },
     {
      "title": "Recon Drone",
      "subtitle": "Cost not confirmed yet",
      "group": "Other",
-     "value": "Order"
+     "value": "Order",
+     "item": "recon-drone"
     }
    ]
   },
@@ -1887,163 +1943,196 @@
    "rows": [
     {
      "title": "Synthetics",
-     "value": "Resource"
+     "value": "Resource",
+     "item": "synthetics"
     },
     {
      "title": "Electronics",
-     "value": "Resource"
+     "value": "Resource",
+     "item": "electronics"
     },
     {
      "title": "Chemicals",
-     "value": "Resource"
+     "value": "Resource",
+     "item": "chemicals"
     },
     {
      "title": "Metals",
-     "value": "Resource"
+     "value": "Resource",
+     "item": "metals"
     },
     {
      "title": "Biomaterials",
      "value": "Uncommon",
      "subtitle": "Medkit, Self-Revive Kit. Level 39 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png?v=1",
+     "item": "biomaterials"
     },
     {
      "title": "Rigid Synthetics",
      "value": "Uncommon",
      "subtitle": "Medium Backpack, Disposable Parachute, Small Secure Backpack, Tempered Armor Vest. Sells for $200. Level 6 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/rigid-synthetics.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/rigid-synthetics.png?v=1",
+     "item": "rigid-synthetics"
     },
     {
      "title": "Reactive Metals",
      "value": "Uncommon",
      "subtitle": "Industrial areas and toolboxes. 2-Plate Armor Vest, Armor Box, Secure Scavenger Backpack. Sells for $400. Level 11 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png?v=1",
+     "item": "reactive-metals"
     },
     {
      "title": "Binding Catalyst",
      "value": "Rare",
      "subtitle": "Medkit, Self-Revive Kit. Level 49 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1",
+     "item": "binding-catalyst"
     },
     {
      "title": "Stock Rod",
      "value": "Rare",
      "subtitle": "Door Breacher Charge, Bomb Glider. Sells for $500. Level 51 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/stock-rod.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/stock-rod.png?v=1",
+     "item": "stock-rod"
     },
     {
      "title": "Detonators",
      "subtitle": "Level 29 gives 2",
-     "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
+     "item": "detonators"
     },
     {
      "title": "Control Unit",
-     "subtitle": "Level 38 gives 2"
+     "subtitle": "Level 38 gives 2",
+     "item": "control-unit"
     },
     {
      "title": "Structural Alloy",
      "value": "Rare",
-     "subtitle": "Small Secure Backpack. Level 43 gives 2"
+     "subtitle": "Small Secure Backpack. Level 43 gives 2",
+     "item": "structural-alloy"
     },
     {
      "title": "CPU",
      "value": "Rare",
-     "subtitle": "Level 44 gives 2"
+     "subtitle": "Level 44 gives 2",
+     "item": "cpu"
     },
     {
      "title": "Nitro Compounds",
      "value": "Rare",
-     "subtitle": "Level 47 gives 2"
+     "subtitle": "Level 47 gives 2",
+     "item": "nitro-compounds"
     },
     {
      "title": "High-Tenacity Fibers",
      "value": "Rare",
-     "subtitle": "Level 53 gives 2"
+     "subtitle": "Level 53 gives 2",
+     "item": "high-tenacity-fibers"
     },
     {
      "title": "Printed Circuit Board",
      "value": "Rare",
-     "subtitle": "Level 56 gives 2"
+     "subtitle": "Level 56 gives 2",
+     "item": "printed-circuit-board"
     },
     {
      "title": "Nylon Cloth",
      "value": "Rare",
-     "subtitle": "Level 57 gives 2"
+     "subtitle": "Level 57 gives 2",
+     "item": "nylon-cloth"
     },
     {
      "title": "Electronic Sensors",
      "value": "Uncommon",
-     "subtitle": "Stash upgrade (+18 slots). Sells for $800"
+     "subtitle": "Stash upgrade (+18 slots). Sells for $800",
+     "item": "electronic-sensors"
     },
     {
      "title": "Ballistic Flight Logs",
      "value": "Uncommon",
      "subtitle": "Sells for $1,000",
-     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png?v=1",
+     "item": "ballistic-flight-logs"
     },
     {
      "title": "Nylon Laminate",
      "value": "Epic",
      "subtitle": "Military holdings and upmarket civilian buildings. Secure Scavenger Backpack",
-     "image": "https://camotracker.djr.li/Images/DMZ/nylon-laminate.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/nylon-laminate.png?v=1",
+     "item": "nylon-laminate"
     },
     {
      "title": "Ballistic Fabric",
      "value": "Epic",
      "subtitle": "Tempered Armor Vest",
-     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png?v=1",
+     "item": "ballistic-fabric"
     },
     {
      "title": "Power Regulator",
      "value": "Epic",
-     "image": "https://camotracker.djr.li/Images/DMZ/power-regulator.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/power-regulator.png?v=1",
+     "item": "power-regulator"
     },
     {
      "title": "Military Composites",
      "value": "Legendary",
      "subtitle": "Secure Scavenger Backpack, Tempered Armor Vest",
-     "image": "https://camotracker.djr.li/Images/DMZ/military-composites.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/military-composites.png?v=1",
+     "item": "military-composites"
     },
     {
      "title": "Commanders",
-     "subtitle": "Kill one and extract to get valuable ingredients"
+     "subtitle": "Kill one and extract to get valuable ingredients",
+     "item": "commanders"
     },
     {
      "title": "Stabilized Reagents",
      "subtitle": "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst",
-     "value": "Epic"
+     "value": "Epic",
+     "item": "stabilized-reagents"
     },
     {
      "title": "Experimental Compounds",
-     "subtitle": "3-Plate Ballistic Gel Vest"
+     "subtitle": "3-Plate Ballistic Gel Vest",
+     "item": "experimental-compounds"
     },
     {
      "title": "Nano-Structured Alloy",
-     "subtitle": "3-Plate Helmet Armor Vest"
+     "subtitle": "3-Plate Helmet Armor Vest",
+     "item": "nano-structured-alloy"
     },
     {
      "title": "Alloyed Plating",
-     "subtitle": "3-Plate Helmet Armor Vest, Medium Secure Backpack"
+     "subtitle": "3-Plate Helmet Armor Vest, Medium Secure Backpack",
+     "item": "alloyed-plating"
     },
     {
      "title": "Turned Components",
-     "subtitle": "Parachute"
+     "subtitle": "Parachute",
+     "item": "turned-components"
     },
     {
      "title": "Comms Module",
-     "subtitle": "Stash Weapon Upgrade, Uncommon Ingredient Printing"
+     "subtitle": "Stash Weapon Upgrade, Uncommon Ingredient Printing",
+     "item": "comms-module"
     },
     {
      "title": "Prototype RF Module",
-     "subtitle": "Vendor Item Upgrade"
+     "subtitle": "Vendor Item Upgrade",
+     "item": "prototype-rf-module"
     },
     {
      "title": "Regional Combat Notes",
-     "subtitle": "MIA Recovery Discount"
+     "subtitle": "MIA Recovery Discount",
+     "item": "regional-combat-notes"
     },
     {
      "title": "Infantry Invasion Plans",
-     "subtitle": "Bank Upgrade III"
+     "subtitle": "Bank Upgrade III",
+     "item": "infantry-invasion-plans"
     }
    ]
   },
@@ -2100,45 +2189,54 @@
     {
      "title": "Stash Item Upgrade I",
      "subtitle": "10 Rigid Synthetics, 10 Electronic Sensors. +18 Stash item slots",
-     "value": "$10,000"
+     "value": "$10,000",
+     "item": "stash-item-upgrade-i"
     },
     {
      "title": "Stash Weapon Upgrade I",
      "subtitle": "20 Reactive Metals, 10 Stock Rod, 5 Comms Module. +6 Stash weapon slots",
-     "value": "$50,000"
+     "value": "$50,000",
+     "item": "stash-weapon-upgrade-i"
     },
     {
      "title": "MIA Recovery Discount I",
-     "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less"
+     "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less",
+     "item": "mia-recovery-discount-i"
     },
     {
      "title": "Bank Upgrade III",
      "subtitle": "5 Infantry Invasion Plans. Your Bank holds up to $1 million",
-     "value": "$100,000"
+     "value": "$100,000",
+     "item": "bank-upgrade-iii"
     },
     {
      "title": "Gunsmith Upgrade I",
      "subtitle": "20 Reactive Metals, 10 CPU, 5 Power Regulator. 5% off at the Gunsmith",
-     "value": "$50,000"
+     "value": "$50,000",
+     "item": "gunsmith-upgrade-i"
     },
     {
      "title": "Vendor Item Upgrade I",
-     "subtitle": "20 Electronic Sensors, 10 CPU, 10 Printed Circuit Board, 2 Prototype RF Module. More to buy at the Vendor"
+     "subtitle": "20 Electronic Sensors, 10 CPU, 10 Printed Circuit Board, 2 Prototype RF Module. More to buy at the Vendor",
+     "item": "vendor-item-upgrade-i"
     },
     {
      "title": "Uncommon Ingredient Printing",
      "subtitle": "20 Biomaterials, 10 High-Tenacity Fibers, 5 Comms Module. Print Biomaterials and Reactive Metals",
-     "value": "$50,000"
+     "value": "$50,000",
+     "item": "uncommon-ingredient-printing"
     },
     {
      "title": "Epic Ingredient Printing",
      "subtitle": "10 Binding Catalyst, 10 Printed Circuit Board, 5 Military Composites. Print Ballistic Fabric and Stabilized Reagents",
-     "value": "$100,000"
+     "value": "$100,000",
+     "item": "epic-ingredient-printing"
     },
     {
      "title": "Dog Tag Case Upgrade I",
      "subtitle": "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case",
-     "value": "$10,000"
+     "value": "$10,000",
+     "item": "dog-tag-case-upgrade-i"
     }
    ]
   },
@@ -2382,50 +2480,60 @@
     {
      "title": "Vault Armory",
      "value": "F4",
-     "subtitle": "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village"
+     "subtitle": "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village",
+     "item": "vault-armory"
     },
     {
      "title": "Imjin Mill Foreman's Office",
      "value": "D8",
-     "subtitle": "Rare. First floor of the Rice Mill, Imjin Farmland"
+     "subtitle": "Rare. First floor of the Rice Mill, Imjin Farmland",
+     "item": "imjin-mill-foremans-office"
     },
     {
      "title": "Haksan School Armory",
      "value": "B7",
-     "subtitle": "Rare. Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown"
+     "subtitle": "Rare. Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown",
+     "item": "haksan-school-armory"
     },
     {
      "title": "Re-Education Center Annex",
      "value": "B7",
-     "subtitle": "Epic. The annex on the Re-Education Center's ground floor, Deadtown"
+     "subtitle": "Epic. The annex on the Re-Education Center's ground floor, Deadtown",
+     "item": "re-education-center-annex"
     },
     {
      "title": "Iskra's Control Room",
      "value": "F7",
-     "subtitle": "Legendary. Upper floor of the broadcast building, Cheonwang Peak Array"
+     "subtitle": "Legendary. Upper floor of the broadcast building, Cheonwang Peak Array",
+     "item": "iskras-control-room"
     },
     {
      "title": "Netshin IT Room",
      "value": "G6",
-     "subtitle": "Epic. The high-security server room on the upper floors of the Netshin Tech Complex, The Grid"
+     "subtitle": "Epic. The high-security server room on the upper floors of the Netshin Tech Complex, The Grid",
+     "item": "netshin-it-room"
     },
     {
      "title": "Traindepot Storage Room",
      "value": "E5",
-     "subtitle": "Rare. Basement of the train station by the fire station, Cheongun Village"
+     "subtitle": "Rare. Basement of the train station by the fire station, Cheongun Village",
+     "item": "traindepot-storage-room"
     },
     {
      "title": "The Chemist's Secure Armory",
      "value": "I4",
-     "subtitle": "Legendary. A secured bunker by the Haneul Nuclear Reactor boathouse"
+     "subtitle": "Legendary. A secured bunker by the Haneul Nuclear Reactor boathouse",
+     "item": "the-chemists-secure-armory"
     },
     {
      "title": "The Citadel South Wing",
-     "subtitle": "Uncommon. The Citadel's South Wing, 14th Political Prison"
+     "subtitle": "Uncommon. The Citadel's South Wing, 14th Political Prison",
+     "item": "the-citadel-south-wing"
     },
     {
      "title": "Bank Branch Vault Access",
-     "subtitle": "Rare. The cash vaults of South Korean bank branches"
+     "subtitle": "Rare. The cash vaults of South Korean bank branches",
+     "item": "bank-branch-vault-access"
     }
    ]
   },
@@ -2439,43 +2547,50 @@
      "title": "Gold Bar",
      "value": "$25,000",
      "subtitle": "Ultra. Also a reward from Silent Ledger",
-     "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1",
+     "item": "gold-bar"
     },
     {
      "title": "Cipher Code Ledger",
      "value": "$5,000",
      "subtitle": "Epic",
-     "image": "https://camotracker.djr.li/Images/DMZ/cipher-code-ledger.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/cipher-code-ledger.png?v=1",
+     "item": "cipher-code-ledger"
     },
     {
      "title": "W.M.D Manifest",
      "value": "$5,000",
      "subtitle": "Epic",
-     "image": "https://camotracker.djr.li/Images/DMZ/wmd-manifest.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/wmd-manifest.png?v=1",
+     "item": "wmd-manifest"
     },
     {
      "title": "Parachute",
      "value": "$5,000",
      "subtitle": "Legendary",
-     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1",
+     "item": "parachute"
     },
     {
      "title": "Revive Pistol",
      "value": "$2,500",
      "subtitle": "Legendary",
-     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png?v=1",
+     "item": "revive-pistol"
     },
     {
      "title": "Fulton Drop Marker",
      "value": "$2,500",
      "subtitle": "Ultra",
-     "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1",
+     "item": "fulton-drop-marker"
     },
     {
      "title": "Medkit",
      "value": "$2,000",
      "subtitle": "Epic",
-     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png?v=1"
+     "image": "https://camotracker.djr.li/Images/DMZ/medkit.png?v=1",
+     "item": "medkit"
     },
     {
      "title": "Keys",
@@ -2689,6 +2804,1451 @@
      "subtitle": "Revealed once you take a trait from the row before"
     }
    ]
+  }
+ ],
+ "items": [
+  {
+   "id": "1-plate-armor-vest",
+   "name": "1-Plate Armor Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/1-plate-armor-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Uncommon",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 25
+    },
+    {
+     "item": "metals",
+     "qty": 25
+    }
+   ],
+   "effect": "One armor plate"
+  },
+  {
+   "id": "2-plate-armor-vest",
+   "name": "2-Plate Armor Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/2-plate-armor-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Rare",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 50
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 5
+    }
+   ],
+   "effect": "Two armor plates"
+  },
+  {
+   "id": "2-plate-helmet-armor-vest",
+   "name": "2-Plate Helmet Armor Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/2-plate-helmet-armor-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 50
+    },
+    {
+     "item": "structural-alloy",
+     "qty": 3
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Two plates, less damage from headshots"
+  },
+  {
+   "id": "3-plate-ballistic-gel-vest",
+   "name": "3-Plate Ballistic Gel Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/3-plate-ballistic-gel-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "experimental-compounds",
+     "qty": 2
+    },
+    {
+     "item": "stabilized-reagents",
+     "qty": 4
+    },
+    {
+     "item": "biomaterials",
+     "qty": 10
+    }
+   ],
+   "effect": "Three plates that regenerate over time"
+  },
+  {
+   "id": "3-plate-helmet-armor-vest",
+   "name": "3-Plate Helmet Armor Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/3-plate-helmet-armor-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "nano-structured-alloy",
+     "qty": 2
+    },
+    {
+     "item": "alloyed-plating",
+     "qty": 4
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Three plates, less damage from headshots"
+  },
+  {
+   "id": "alloyed-plating",
+   "name": "Alloyed Plating",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "ammo-box",
+   "name": "Ammo Box",
+   "kind": "Field Upgrades",
+   "unlock": "Reach DMZ level 12"
+  },
+  {
+   "id": "armor-box",
+   "name": "Armor Box",
+   "image": "https://camotracker.djr.li/Images/DMZ/armor-box.png?v=1",
+   "kind": "Field Upgrades",
+   "rarity": "Rare",
+   "unlock": "Reach DMZ level 14",
+   "cost": [
+    {
+     "item": "metals",
+     "qty": 30
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 3
+    }
+   ],
+   "effect": "Armor plates for you and your squad"
+  },
+  {
+   "id": "ballistic-fabric",
+   "name": "Ballistic Fabric",
+   "image": "https://camotracker.djr.li/Images/DMZ/ballistic-fabric.png?v=1",
+   "kind": "Ingredient",
+   "rarity": "Epic",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 100
+    },
+    {
+     "item": "high-tenacity-fibers",
+     "qty": 3
+    }
+   ],
+   "effect": "Needs Epic Ingredient Printing"
+  },
+  {
+   "id": "ballistic-flight-logs",
+   "name": "Ballistic Flight Logs",
+   "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png?v=1",
+   "rarity": "Uncommon",
+   "kind": "Ingredient",
+   "value": 1000
+  },
+  {
+   "id": "bandage",
+   "name": "Bandage",
+   "image": "https://camotracker.djr.li/Images/DMZ/bandage.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Uncommon",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "chemicals",
+     "qty": 15
+    }
+   ],
+   "effect": "Restores max health for a while after you're hurt"
+  },
+  {
+   "id": "bank-branch-vault-access",
+   "name": "Bank Branch Vault Access",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The cash vaults of South Korean bank branches",
+   "value": 100
+  },
+  {
+   "id": "bank-upgrade-iii",
+   "name": "Bank Upgrade III",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "infantry-invasion-plans",
+     "qty": 5
+    }
+   ],
+   "cash": 100000,
+   "effect": "Your Bank holds up to $1 million"
+  },
+  {
+   "id": "binding-catalyst",
+   "name": "Binding Catalyst",
+   "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 49 gives you 2"
+  },
+  {
+   "id": "biomaterials",
+   "name": "Biomaterials",
+   "image": "https://camotracker.djr.li/Images/DMZ/biomaterials.png?v=1",
+   "kind": "Ingredient",
+   "rarity": "Uncommon",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 20
+    },
+    {
+     "item": "chemicals",
+     "qty": 20
+    }
+   ],
+   "effect": "Needs Uncommon Ingredient Printing",
+   "note": "DMZ level 39 gives you 2"
+  },
+  {
+   "id": "bomb-glider",
+   "name": "Bomb Glider",
+   "kind": "Other",
+   "cost": [
+    {
+     "item": "stock-rod",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "name": "C4",
+   "kind": "Lethals",
+   "rarity": "Common",
+   "unlock": "Complete DMZ Orders",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 10
+    },
+    {
+     "item": "metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Sticky explosive you set off remotely"
+  },
+  {
+   "id": "cpu",
+   "name": "CPU",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 44 gives you 2"
+  },
+  {
+   "id": "care-package",
+   "name": "Care Package",
+   "kind": "Fire Support",
+   "rarity": "Rare",
+   "unlock": "Reach DMZ level 28",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 20
+    },
+    {
+     "item": "control-unit",
+     "qty": 2
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 2
+    }
+   ],
+   "effect": "Calls in a supply drop"
+  },
+  {
+   "id": "chemicals",
+   "name": "Chemicals",
+   "kind": "Resource",
+   "symbol": "flask.fill"
+  },
+  {
+   "id": "cipher-code-ledger",
+   "name": "Cipher Code Ledger",
+   "image": "https://camotracker.djr.li/Images/DMZ/cipher-code-ledger.png?v=1",
+   "kind": "Valuable",
+   "value": 5000,
+   "rarity": "Epic"
+  },
+  {
+   "id": "commanders",
+   "name": "Commanders",
+   "kind": "Ingredient",
+   "note": "Kill one and extract to get valuable ingredients"
+  },
+  {
+   "id": "comms-module",
+   "name": "Comms Module",
+   "kind": "Ingredient",
+   "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing"
+  },
+  {
+   "id": "concussion-grenade",
+   "name": "Concussion Grenade",
+   "kind": "Tacticals",
+   "unlock": "Reach DMZ level 4"
+  },
+  {
+   "id": "control-unit",
+   "name": "Control Unit",
+   "kind": "Ingredient",
+   "note": "DMZ level 38 gives you 2"
+  },
+  {
+   "id": "ddos",
+   "name": "DDOS",
+   "kind": "Field Upgrades",
+   "rarity": "Rare",
+   "unlock": "Complete DMZ Orders",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 30
+    },
+    {
+     "item": "detonators",
+     "qty": 3
+    }
+   ],
+   "effect": "Knocks out electronics and sensors nearby for a short time"
+  },
+  {
+   "id": "detonators",
+   "name": "Detonators",
+   "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
+   "kind": "Ingredient",
+   "note": "DMZ level 29 gives you 2"
+  },
+  {
+   "id": "disposable-parachute",
+   "name": "Disposable Parachute",
+   "kind": "Gear",
+   "rarity": "Rare",
+   "unlock": "Reach DMZ level 55",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 30
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 3
+    }
+   ],
+   "effect": "A parachute with limited uses"
+  },
+  {
+   "id": "dog-tag-case-upgrade-i",
+   "name": "Dog Tag Case Upgrade I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    },
+    {
+     "item": "biomaterials",
+     "qty": 10
+    }
+   ],
+   "cash": 10000,
+   "effect": "+20 dog tags. Needs the Dog Tag Case"
+  },
+  {
+   "id": "door-breacher-charge",
+   "name": "Door Breacher Charge",
+   "image": "https://camotracker.djr.li/Images/DMZ/door-breacher-charge.png?v=1",
+   "kind": "Other",
+   "rarity": "Ultra",
+   "cost": [
+    {
+     "item": "stock-rod",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "id": "drill-charge",
+   "name": "Drill Charge",
+   "kind": "Lethals",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 15
+    },
+    {
+     "item": "metals",
+     "qty": 15
+    }
+   ],
+   "effect": "Burrows into a surface before it blows"
+  },
+  {
+   "id": "electronic-sensors",
+   "name": "Electronic Sensors",
+   "rarity": "Uncommon",
+   "kind": "Ingredient",
+   "value": 800,
+   "note": "Stash upgrade (+18 slots)"
+  },
+  {
+   "id": "electronics",
+   "name": "Electronics",
+   "kind": "Resource",
+   "symbol": "cpu.fill"
+  },
+  {
+   "id": "energy-drink",
+   "name": "Energy Drink",
+   "image": "https://camotracker.djr.li/Images/DMZ/energy-drink.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Common",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 10
+    },
+    {
+     "item": "metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Unlimited stamina"
+  },
+  {
+   "id": "epic-ingredient-printing",
+   "name": "Epic Ingredient Printing",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "binding-catalyst",
+     "qty": 10
+    },
+    {
+     "item": "printed-circuit-board",
+     "qty": 10
+    },
+    {
+     "item": "military-composites",
+     "qty": 5
+    }
+   ],
+   "cash": 100000,
+   "effect": "Print Ballistic Fabric and Stabilized Reagents"
+  },
+  {
+   "id": "experimental-compounds",
+   "name": "Experimental Compounds",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "frag-grenade",
+   "name": "Frag Grenade",
+   "kind": "Lethals",
+   "unlock": "Reach DMZ level 7"
+  },
+  {
+   "id": "fulton-drop-marker",
+   "name": "Fulton Drop Marker",
+   "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1",
+   "kind": "Valuable",
+   "value": 2500,
+   "rarity": "Ultra"
+  },
+  {
+   "id": "gas-mask",
+   "name": "Gas Mask",
+   "kind": "Gear",
+   "unlock": "Reach DMZ level 26"
+  },
+  {
+   "id": "gold-bar",
+   "name": "Gold Bar",
+   "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1",
+   "kind": "Valuable",
+   "value": 25000,
+   "rarity": "Ultra"
+  },
+  {
+   "id": "gunsmith-upgrade-i",
+   "name": "Gunsmith Upgrade I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "reactive-metals",
+     "qty": 20
+    },
+    {
+     "item": "cpu",
+     "qty": 10
+    },
+    {
+     "item": "power-regulator",
+     "qty": 5
+    }
+   ],
+   "cash": 50000,
+   "effect": "5% off at the Gunsmith"
+  },
+  {
+   "id": "haksan-school-armory",
+   "name": "Haksan School Armory",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown",
+   "grid": "B7",
+   "value": 100
+  },
+  {
+   "id": "heartbeat-sensor",
+   "name": "Heartbeat Sensor",
+   "image": "https://camotracker.djr.li/Images/DMZ/heartbeat-sensor.png?v=1",
+   "kind": "Tacticals",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 25
+    },
+    {
+     "item": "chemicals",
+     "qty": 25
+    }
+   ],
+   "effect": "A tablet showing roughly where enemies are"
+  },
+  {
+   "id": "high-tenacity-fibers",
+   "name": "High-Tenacity Fibers",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 53 gives you 2"
+  },
+  {
+   "id": "imjin-mill-foremans-office",
+   "name": "Imjin Mill Foreman's Office",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "First floor of the Rice Mill, Imjin Farmland",
+   "grid": "D8",
+   "marker": "k-imjin-mill",
+   "value": 100
+  },
+  {
+   "id": "infantry-invasion-plans",
+   "name": "Infantry Invasion Plans",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "inflatable-decoy",
+   "name": "Inflatable Decoy",
+   "kind": "Field Upgrades",
+   "unlock": "Reach DMZ level 52"
+  },
+  {
+   "id": "iskras-control-room",
+   "name": "Iskra's Control Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "Upper floor of the broadcast building, Cheonwang Peak Array",
+   "grid": "F7",
+   "marker": "k-iskra",
+   "value": 100
+  },
+  {
+   "id": "mia-recovery-discount-i",
+   "name": "MIA Recovery Discount I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "regional-combat-notes",
+     "qty": 5
+    },
+    {
+     "item": "control-unit",
+     "qty": 10
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    }
+   ],
+   "effect": "Rescuing an MIA operator costs 5% less"
+  },
+  {
+   "id": "medium-backpack",
+   "name": "Medium Backpack",
+   "image": "https://camotracker.djr.li/Images/DMZ/medium-backpack.png?v=1",
+   "kind": "Backpacks",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 50
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 5
+    }
+   ],
+   "effect": "Adds Secure Slots"
+  },
+  {
+   "id": "medium-scavenger-backpack",
+   "name": "Medium Scavenger Backpack",
+   "image": "https://camotracker.djr.li/Images/DMZ/medium-scavenger-backpack.png?v=1",
+   "kind": "Backpacks",
+   "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "metals",
+     "qty": 50
+    },
+    {
+     "item": "nylon-cloth",
+     "qty": 3
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    }
+   ],
+   "effect": "Two Secure Slots and room for more resources"
+  },
+  {
+   "id": "medium-secure-backpack",
+   "name": "Medium Secure Backpack",
+   "kind": "Backpacks",
+   "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "alloyed-plating",
+     "qty": 2
+    },
+    {
+     "item": "nylon-cloth",
+     "qty": 5
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Four Secure Slots"
+  },
+  {
+   "id": "medkit",
+   "name": "Medkit",
+   "image": "https://camotracker.djr.li/Images/DMZ/medkit.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Epic",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 30
+    },
+    {
+     "item": "binding-catalyst",
+     "qty": 1
+    },
+    {
+     "item": "biomaterials",
+     "qty": 5
+    }
+   ],
+   "value": 2000
+  },
+  {
+   "id": "metals",
+   "name": "Metals",
+   "kind": "Resource",
+   "symbol": "hexagon.fill"
+  },
+  {
+   "id": "military-composites",
+   "name": "Military Composites",
+   "image": "https://camotracker.djr.li/Images/DMZ/military-composites.png?v=1",
+   "rarity": "Legendary",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "molotov-cocktail",
+   "name": "Molotov Cocktail",
+   "kind": "Lethals",
+   "unlock": "Reach DMZ level 36"
+  },
+  {
+   "id": "nano-structured-alloy",
+   "name": "Nano-Structured Alloy",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "netshin-it-room",
+   "name": "Netshin IT Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The high-security server room on the upper floors of the Netshin Tech Complex, The Grid",
+   "grid": "G6",
+   "value": 100
+  },
+  {
+   "id": "nitro-compounds",
+   "name": "Nitro Compounds",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 47 gives you 2"
+  },
+  {
+   "id": "nylon-cloth",
+   "name": "Nylon Cloth",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 57 gives you 2"
+  },
+  {
+   "id": "nylon-laminate",
+   "name": "Nylon Laminate",
+   "image": "https://camotracker.djr.li/Images/DMZ/nylon-laminate.png?v=1",
+   "rarity": "Epic",
+   "kind": "Ingredient",
+   "note": "Military holdings and upmarket civilian buildings"
+  },
+  {
+   "id": "pain-killers",
+   "name": "Pain Killers",
+   "image": "https://camotracker.djr.li/Images/DMZ/pain-killers.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 15
+    },
+    {
+     "item": "chemicals",
+     "qty": 15
+    }
+   ],
+   "effect": "Max health, weaker damage effects and faster regen for a minute"
+  },
+  {
+   "id": "parachute",
+   "name": "Parachute",
+   "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "turned-components",
+     "qty": 2
+    },
+    {
+     "item": "nylon-cloth",
+     "qty": 5
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    }
+   ],
+   "effect": "Reusable",
+   "value": 5000
+  },
+  {
+   "id": "portable-radar",
+   "name": "Portable Radar",
+   "kind": "Field Upgrades",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "electronics",
+     "qty": 15
+    }
+   ],
+   "effect": "Pings nearby enemies every so often"
+  },
+  {
+   "id": "power-regulator",
+   "name": "Power Regulator",
+   "image": "https://camotracker.djr.li/Images/DMZ/power-regulator.png?v=1",
+   "rarity": "Epic",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "printed-circuit-board",
+   "name": "Printed Circuit Board",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 56 gives you 2"
+  },
+  {
+   "id": "prototype-rf-module",
+   "name": "Prototype RF Module",
+   "kind": "Ingredient",
+   "note": "Vendor Item Upgrade"
+  },
+  {
+   "id": "radiation-blockers",
+   "name": "Radiation Blockers",
+   "image": "https://camotracker.djr.li/Images/DMZ/radiation-blockers.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Uncommon",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 15
+    },
+    {
+     "item": "chemicals",
+     "qty": 15
+    }
+   ],
+   "effect": "Protection in irradiated areas"
+  },
+  {
+   "id": "railgun-sentry",
+   "name": "Railgun Sentry",
+   "kind": "Fire Support",
+   "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "power-regulator",
+     "qty": 2
+    },
+    {
+     "item": "nitro-compounds",
+     "qty": 3
+    },
+    {
+     "item": "control-unit",
+     "qty": 5
+    }
+   ],
+   "effect": "Hypersonic flechette cannon that works as a sentry"
+  },
+  {
+   "id": "re-education-center-annex",
+   "name": "Re-Education Center Annex",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The annex on the Re-Education Center's ground floor, Deadtown",
+   "grid": "B7",
+   "marker": "k-reeducation-annex",
+   "value": 100
+  },
+  {
+   "id": "reactive-metals",
+   "name": "Reactive Metals",
+   "image": "https://camotracker.djr.li/Images/DMZ/reactive-metals.png?v=1",
+   "kind": "Ingredient",
+   "rarity": "Uncommon",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 20
+    },
+    {
+     "item": "metals",
+     "qty": 20
+    }
+   ],
+   "effect": "Needs Uncommon Ingredient Printing",
+   "value": 400,
+   "note": "Industrial areas and toolboxes. DMZ level 11 gives you 2"
+  },
+  {
+   "id": "recon-drone",
+   "name": "Recon Drone",
+   "kind": "Other",
+   "unlock": "Complete the Counterfeit DMZ Order",
+   "effect": "Reward from the Counterfeit DMZ Order"
+  },
+  {
+   "id": "regional-combat-notes",
+   "name": "Regional Combat Notes",
+   "kind": "Ingredient",
+   "note": "MIA Recovery Discount"
+  },
+  {
+   "id": "revive-pistol",
+   "name": "Revive Pistol",
+   "image": "https://camotracker.djr.li/Images/DMZ/revive-pistol.png?v=1",
+   "kind": "Field Upgrades",
+   "rarity": "Legendary",
+   "unlock": "Reach DMZ level 25",
+   "cost": [
+    {
+     "item": "power-regulator",
+     "qty": 2
+    },
+    {
+     "item": "binding-catalyst",
+     "qty": 3
+    },
+    {
+     "item": "detonators",
+     "qty": 5
+    }
+   ],
+   "effect": "Revive or heal allies from a distance",
+   "value": 2500
+  },
+  {
+   "id": "rigid-synthetics",
+   "name": "Rigid Synthetics",
+   "image": "https://camotracker.djr.li/Images/DMZ/rigid-synthetics.png?v=1",
+   "rarity": "Uncommon",
+   "kind": "Ingredient",
+   "value": 200,
+   "note": "DMZ level 6 gives you 2"
+  },
+  {
+   "id": "riot-shield",
+   "name": "Riot Shield",
+   "kind": "Field Upgrades",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "metals",
+     "qty": 15
+    }
+   ],
+   "effect": "A placeable shield to hold a position"
+  },
+  {
+   "id": "secure-scavenger-backpack",
+   "name": "Secure Scavenger Backpack",
+   "image": "https://camotracker.djr.li/Images/DMZ/secure-scavenger-backpack.png?v=1",
+   "kind": "Backpacks",
+   "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "military-composites",
+     "qty": 2
+    },
+    {
+     "item": "nylon-laminate",
+     "qty": 4
+    },
+    {
+     "item": "reactive-metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Large, four Secure Slots and room for more resources"
+  },
+  {
+   "id": "sedative-inhaler",
+   "name": "Sedative Inhaler",
+   "image": "https://camotracker.djr.li/Images/DMZ/sedative-inhaler.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Uncommon",
+   "unlock": "Reach DMZ level 3",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "chemicals",
+     "qty": 15
+    }
+   ],
+   "effect": "Hides you from radar, marking and thermal"
+  },
+  {
+   "id": "self-revive-kit",
+   "name": "Self-Revive Kit",
+   "image": "https://camotracker.djr.li/Images/DMZ/self-revive-kit.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Legendary",
+   "unlock": "Reach DMZ level 48",
+   "cost": [
+    {
+     "item": "stabilized-reagents",
+     "qty": 1
+    },
+    {
+     "item": "biomaterials",
+     "qty": 5
+    },
+    {
+     "item": "binding-catalyst",
+     "qty": 3
+    }
+   ],
+   "effect": "Revive yourself when you're downed"
+  },
+  {
+   "id": "shock-stick",
+   "name": "Shock Stick",
+   "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png?v=1",
+   "kind": "Field Upgrades",
+   "unlock": "Reach DMZ level 17"
+  },
+  {
+   "id": "small-backpack",
+   "name": "Small Backpack",
+   "image": "https://camotracker.djr.li/Images/DMZ/small-backpack.png?v=1",
+   "kind": "Backpacks",
+   "rarity": "Uncommon",
+   "unlock": "Reach DMZ level 2",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 25
+    },
+    {
+     "item": "metals",
+     "qty": 25
+    }
+   ]
+  },
+  {
+   "id": "small-secure-backpack",
+   "name": "Small Secure Backpack",
+   "image": "https://camotracker.djr.li/Images/DMZ/small-secure-backpack.png?v=1",
+   "kind": "Backpacks",
+   "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "metals",
+     "qty": 50
+    },
+    {
+     "item": "structural-alloy",
+     "qty": 3
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    }
+   ],
+   "effect": "Three Secure Slots"
+  },
+  {
+   "id": "smelling-salts",
+   "name": "Smelling Salts",
+   "image": "https://camotracker.djr.li/Images/DMZ/smelling-salts.png?v=1",
+   "kind": "Consumables",
+   "rarity": "Rare",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 30
+    },
+    {
+     "item": "detonators",
+     "qty": 3
+    }
+   ],
+   "effect": "Unlimited stamina, better movement and faster reloads for 60 seconds"
+  },
+  {
+   "id": "smoke-grenade",
+   "name": "Smoke Grenade",
+   "image": "https://camotracker.djr.li/Images/DMZ/smoke-grenade.png?v=1",
+   "kind": "Tacticals",
+   "rarity": "Common",
+   "unlock": "Reach DMZ level 4",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 10
+    },
+    {
+     "item": "chemicals",
+     "qty": 10
+    }
+   ],
+   "effect": "Smoke that blocks sight and automated targeting"
+  },
+  {
+   "id": "snapshot-grenade",
+   "name": "Snapshot Grenade",
+   "image": "https://camotracker.djr.li/Images/DMZ/snapshot-grenade.png?v=1",
+   "kind": "Tacticals",
+   "unlock": "Reach DMZ level 9"
+  },
+  {
+   "id": "spotter-scope",
+   "name": "Spotter Scope",
+   "kind": "Tacticals",
+   "rarity": "Rare",
+   "unlock": "Reach DMZ level 12",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 50
+    },
+    {
+     "item": "electronic-sensors",
+     "qty": 5
+    }
+   ],
+   "effect": "Spot and mark enemies nearby"
+  },
+  {
+   "id": "stabilized-reagents",
+   "name": "Stabilized Reagents",
+   "kind": "Ingredient",
+   "rarity": "Epic",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 100
+    },
+    {
+     "item": "binding-catalyst",
+     "qty": 3
+    }
+   ],
+   "effect": "Needs Epic Ingredient Printing"
+  },
+  {
+   "id": "stash-item-upgrade-i",
+   "name": "Stash Item Upgrade I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    },
+    {
+     "item": "electronic-sensors",
+     "qty": 10
+    }
+   ],
+   "cash": 10000,
+   "effect": "+18 Stash item slots"
+  },
+  {
+   "id": "stash-weapon-upgrade-i",
+   "name": "Stash Weapon Upgrade I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "reactive-metals",
+     "qty": 20
+    },
+    {
+     "item": "stock-rod",
+     "qty": 10
+    },
+    {
+     "item": "comms-module",
+     "qty": 5
+    }
+   ],
+   "cash": 50000,
+   "effect": "+6 Stash weapon slots"
+  },
+  {
+   "id": "sticky-grenade",
+   "name": "Sticky Grenade",
+   "kind": "Lethals",
+   "unlock": "Reach DMZ level 23"
+  },
+  {
+   "id": "stim",
+   "name": "Stim",
+   "image": "https://camotracker.djr.li/Images/DMZ/stim.png?v=1",
+   "kind": "Tacticals",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "chemicals",
+     "qty": 15
+    }
+   ],
+   "effect": "Starts health regen, refreshes Tactical Sprint, eases flash and stun"
+  },
+  {
+   "id": "stock-rod",
+   "name": "Stock Rod",
+   "image": "https://camotracker.djr.li/Images/DMZ/stock-rod.png?v=1",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "value": 500,
+   "note": "DMZ level 51 gives you 2"
+  },
+  {
+   "id": "structural-alloy",
+   "name": "Structural Alloy",
+   "rarity": "Rare",
+   "kind": "Ingredient",
+   "note": "DMZ level 43 gives you 2"
+  },
+  {
+   "id": "synthetics",
+   "name": "Synthetics",
+   "kind": "Resource",
+   "symbol": "doc.on.doc.fill"
+  },
+  {
+   "id": "tempered-armor-vest",
+   "name": "Tempered Armor Vest",
+   "image": "https://camotracker.djr.li/Images/DMZ/tempered-armor-vest.png?v=1",
+   "kind": "Plate Carriers",
+   "rarity": "Ultra",
+   "cost": [
+    {
+     "item": "military-composites",
+     "qty": 2
+    },
+    {
+     "item": "ballistic-fabric",
+     "qty": 4
+    },
+    {
+     "item": "rigid-synthetics",
+     "qty": 10
+    }
+   ]
+  },
+  {
+   "id": "the-chemists-secure-armory",
+   "name": "The Chemist's Secure Armory",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "A secured bunker by the Haneul Nuclear Reactor boathouse",
+   "grid": "I4",
+   "value": 100
+  },
+  {
+   "id": "the-citadel-south-wing",
+   "name": "The Citadel South Wing",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "The Citadel's South Wing, 14th Political Prison",
+   "marker": "k-citadel-south",
+   "value": 100
+  },
+  {
+   "id": "thermite",
+   "name": "Thermite",
+   "kind": "Lethals",
+   "unlock": "Reach DMZ level 41"
+  },
+  {
+   "id": "throwing-knife",
+   "name": "Throwing Knife",
+   "image": "https://camotracker.djr.li/Images/DMZ/throwing-knife.png?v=1",
+   "kind": "Lethals",
+   "rarity": "Uncommon",
+   "unlock": "Reach DMZ level 7"
+  },
+  {
+   "id": "traindepot-storage-room",
+   "name": "Traindepot Storage Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "Basement of the train station by the fire station, Cheongun Village",
+   "grid": "E5",
+   "value": 100
+  },
+  {
+   "id": "trip-wire",
+   "name": "Trip Wire",
+   "kind": "Lethals",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 15
+    },
+    {
+     "item": "metals",
+     "qty": 15
+    }
+   ],
+   "effect": "Thrown trap; several link into a network"
+  },
+  {
+   "id": "turned-components",
+   "name": "Turned Components",
+   "kind": "Ingredient"
+  },
+  {
+   "id": "uav",
+   "name": "UAV",
+   "kind": "Fire Support",
+   "rarity": "Epic",
+   "unlock": "Reach DMZ level 31",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 30
+    },
+    {
+     "item": "structural-alloy",
+     "qty": 2
+    },
+    {
+     "item": "electronic-sensors",
+     "qty": 5
+    }
+   ],
+   "effect": "Shows enemies on the minimap"
+  },
+  {
+   "id": "uncommon-ingredient-printing",
+   "name": "Uncommon Ingredient Printing",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "biomaterials",
+     "qty": 20
+    },
+    {
+     "item": "high-tenacity-fibers",
+     "qty": 10
+    },
+    {
+     "item": "comms-module",
+     "qty": 5
+    }
+   ],
+   "cash": 50000,
+   "effect": "Print Biomaterials and Reactive Metals"
+  },
+  {
+   "id": "vault-armory",
+   "name": "Vault Armory",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village",
+   "grid": "F4",
+   "marker": "k-vault-armory",
+   "value": 100
+  },
+  {
+   "id": "vendor-item-upgrade-i",
+   "name": "Vendor Item Upgrade I",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "electronic-sensors",
+     "qty": 20
+    },
+    {
+     "item": "cpu",
+     "qty": 10
+    },
+    {
+     "item": "printed-circuit-board",
+     "qty": 10
+    },
+    {
+     "item": "prototype-rf-module",
+     "qty": 2
+    }
+   ],
+   "effect": "More to buy at the Vendor"
+  },
+  {
+   "id": "wmd-manifest",
+   "name": "W.M.D Manifest",
+   "image": "https://camotracker.djr.li/Images/DMZ/wmd-manifest.png?v=1",
+   "kind": "Valuable",
+   "value": 5000,
+   "rarity": "Epic"
+  },
+  {
+   "id": "zip-gun",
+   "name": "Zip Gun",
+   "kind": "Lethals",
+   "rarity": "Common",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 10
+    },
+    {
+     "item": "metals",
+     "qty": 10
+    }
+   ],
+   "effect": "Single-shot pistol for close range"
   }
  ]
 }

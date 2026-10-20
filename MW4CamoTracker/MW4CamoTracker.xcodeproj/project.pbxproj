@@ -14,6 +14,7 @@
 		0EC35E8B8AA5FC37FC6C0D45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B68295CC227225DC6C73D4 /* ContentView.swift */; };
 		17C918F4298306D3B088A35A /* multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = D6D4CDA89124982F18FDAA90 /* multiplayer.json */; };
 		1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C3E9F2B4D5F6071829305 /* it.lproj */; };
+		1B1D539E22BDC38C0D4D6B8E /* HajinItemViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */; };
 		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
 		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
@@ -172,6 +173,7 @@
 		E63CAA2281D717492836A497 /* MW4CamoTrackerWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MW4CamoTrackerWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
 		ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = MW4CamoTracker.entitlements; sourceTree = "<group>"; };
+		EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinItemViews.swift; sourceTree = "<group>"; };
 		F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinGuideTests.swift; sourceTree = "<group>"; };
 		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +261,7 @@
 				137CA712348610EDF30BE314 /* HajinModels.swift */,
 				E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */,
 				65827CB775F1AFB05F6AD6C5 /* HajinView.swift */,
+				EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				41C4A8E67C4682A9263DFEEF /* HajinModels.swift in Sources */,
 				919813FB7392C71D66C6DE86 /* HajinMapView.swift in Sources */,
 				E4F159CCFEE9066C7A6B3223 /* HajinView.swift in Sources */,
+				1B1D539E22BDC38C0D4D6B8E /* HajinItemViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

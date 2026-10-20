@@ -41,6 +41,17 @@ struct HajinGuideTests {
             if let threat = marker.threat { #expect(guide.threatName(threat) != nil) }
         }
         #expect(!guide.guide.isEmpty)
+        // Every link lands somewhere: recipe ingredients, guide rows, key markers
+        let items = try #require(guide.items)
+        let ids = Set(items.map(\.id))
+        #expect(ids.count == items.count, "item ids must be unique")
+        for item in items {
+            for part in item.cost ?? [] { #expect(ids.contains(part.item), "\(item.id) needs unknown \(part.item)") }
+            if let marker = item.marker { #expect(guide.marker(marker) != nil, "\(item.id) points at missing marker \(marker)") }
+        }
+        for section in guide.guide {
+            for row in section.rows { if let id = row.item { #expect(ids.contains(id), "\(section.id) row links unknown \(id)") } }
+        }
         #expect(Bundle.main.url(forResource: guide.map.image, withExtension: "jpg") != nil)
     }
 

@@ -9,6 +9,7 @@ struct HajinView: View {
     @State private var query = ""
     @State private var showsMap = false
     @State private var shownSection: HajinGuide.Section?
+    @State private var shownItem: String?
     @State private var width: CGFloat = 0
 
     private var accent: Color { .accentDMZ }
@@ -31,6 +32,9 @@ struct HajinView: View {
         .navigationDestination(isPresented: $showsMap) { HajinMapScreen() }
         .navigationDestination(isPresented: Binding(get: { shownSection != nil }, set: { if !$0 { shownSection = nil } })) {
             if let shownSection { GuideSectionView(section: shownSection) }
+        }
+        .navigationDestination(isPresented: Binding(get: { shownItem != nil }, set: { if !$0 { shownItem = nil } })) {
+            if let shownItem { HajinItemView(id: shownItem) }
         }
         .onAppear(perform: openScreenshotTarget)
         .task { await store.refresh() }
@@ -76,7 +80,13 @@ struct HajinView: View {
         #if DEBUG
         guard let target = ProcessInfo.processInfo.environment["SS_HAJIN"], !target.isEmpty,
               UIDevice.current.userInterfaceIdiom == .phone else { return }
-        if target == "map" { showsMap = true } else { shownSection = store.guide?.guide.first { $0.id == target } }
+        if target == "map" {
+            showsMap = true
+        } else if target.hasPrefix("item:") {
+            shownItem = String(target.dropFirst(5))
+        } else {
+            shownSection = store.guide?.guide.first { $0.id == target }
+        }
         #endif
     }
 }
@@ -333,10 +343,19 @@ struct GroupedGuideRows: View {
 struct GuideRowView: View {
     let row: HajinGuide.Row
     var highlight = ""
+    @EnvironmentObject private var store: HajinStore
 
     private var unconfirmed: Bool { row.subtitle?.values["en"]?.contains("not confirmed") ?? false }
 
     var body: some View {
+        if let id = row.item, let item = store.guide?.item(id) {
+            HajinItemRow(item: item, row: row)
+        } else {
+            plainRow
+        }
+    }
+
+    private var plainRow: some View {
         HStack(alignment: .top, spacing: 12) {
             if let image = row.image, let url = URL(string: image) {
                 AsyncImage(url: url) { phase in
@@ -516,7 +535,7 @@ struct HajinWideLayout: View {
     var body: some View {
         GeometryReader { geo in
             let map = HajinMapPane(selection: $selection, focus: $focus, inline: true)
-            let panel = HajinGuidePanel(pick: fly(to:))
+            let panel = HajinGuidePanel(pick: fly(to:)).environment(\.hajinShowMarker, fly(to:))
             if geo.size.width > geo.size.height {
                 HStack(spacing: 0) {
                     map
@@ -613,17 +632,27 @@ struct HajinGuidePanel: View {
     let pick: (HajinGuide.Marker) -> Void
     @EnvironmentObject private var store: HajinStore
     @State private var query = ""
-    @State private var open: HajinGuide.Section?
+    @State private var stack: [Page] = []
+
+    private enum Page: Hashable {
+        case section(HajinGuide.Section)
+        case item(String)
+    }
+
+    private var open: HajinGuide.Section? {
+        if case .section(let section) = stack.last { return section }
+        return nil
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 8) {
-                if let section = open {
-                    Button { withAnimation(.snappy) { open = nil; query = "" } } label: {
+                if let page = stack.last {
+                    Button { withAnimation(.snappy) { _ = stack.popLast(); query = "" } } label: {
                         Image(systemName: "chevron.left").font(.body.weight(.semibold))
                     }
                     .accessibilityLabel("mw4.ui.hajin.guide".localized())
-                    Text(section.title.resolved).font(.headline).foregroundStyle(Color.appInk).lineLimit(1)
+                    Text(title(page)).font(.headline).foregroundStyle(Color.appInk).lineLimit(1)
                 } else {
                     Text("mw4.ui.hajin.guide".localized()).font(.headline).foregroundStyle(Color.appInk)
                 }
@@ -633,6 +662,11 @@ struct HajinGuidePanel: View {
             .padding(.top, 12)
             .padding(.bottom, 8)
 
+            if case .item(let id) = stack.last {
+                HajinItemView(id: id)
+                    .id(id)
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
+            } else {
             HStack(spacing: 6) {
                 Image(systemName: "magnifyingglass").foregroundStyle(Color.appInkMuted)
                 TextField(open == nil ? "mw4.ui.hajin.search_guide".localized() : "mw4.ui.hajin.search_section".localized(), text: $query)
@@ -656,7 +690,7 @@ struct HajinGuidePanel: View {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
                         ForEach(guide.guide) { section in
-                            Button { withAnimation(.snappy) { open = section } } label: {
+                            Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
                                 HStack {
                                     SectionRow(section: section)
                                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
@@ -671,8 +705,17 @@ struct HajinGuidePanel: View {
                 .scrollContentBackground(.hidden)
                 .listStyle(.insetGrouped)
             }
+            }
         }
         .background(Color.appBackground)
+        .environment(\.hajinOpenItem) { id in withAnimation(.snappy) { stack.append(.item(id)) } }
+    }
+
+    private func title(_ page: Page) -> String {
+        switch page {
+        case .section(let section): return section.title.resolved
+        case .item(let id): return store.guide?.item(id)?.name.resolved ?? ""
+        }
     }
 
     @ViewBuilder private func sectionRows(_ section: HajinGuide.Section) -> some View {

@@ -72,6 +72,8 @@ struct HajinGuide: Codable {
         let image: String?
         /// A heading the row sits under within its section ("Backpacks").
         let group: GuideText?
+        /// The item this row is about, for its own screen and links.
+        let item: String?
 
         /// Whether any of its text contains `needle` (already lowercased).
         func matches(_ needle: String) -> Bool {
@@ -87,6 +89,36 @@ struct HajinGuide: Codable {
         let rows: [Row]
     }
 
+    /// Anything the game lets you print, loot, spend or open: recipes,
+    /// ingredients, resources, FOB upgrades, valuables and keys. Recipes
+    /// point at their ingredients by id, so every mention is a link.
+    struct Item: Codable, Identifiable, Hashable {
+        struct Cost: Codable, Hashable {
+            let item: String
+            let qty: Int
+        }
+        let id: String
+        let name: GuideText
+        /// The printer tab or kind: "Consumables", "Ingredient", "Key"...
+        let kind: String
+        let rarity: String?
+        let image: String?
+        /// SF Symbol for the four base resources, which have no picture.
+        let symbol: String?
+        let unlock: GuideText?
+        let cost: [Cost]?
+        /// DMZ Cash on top of `cost` (FOB upgrades).
+        let cash: Int?
+        let effect: GuideText?
+        /// Sell value in DMZ Cash.
+        let value: Int?
+        let note: GuideText?
+        /// Tac Map grid square (keys).
+        let grid: String?
+        /// The map marker for where it's used (key rooms).
+        let marker: String?
+    }
+
     struct MapInfo: Codable {
         let image: String
         let credit: String?
@@ -99,8 +131,18 @@ struct HajinGuide: Codable {
     let categories: [Category]
     let markers: [Marker]
     let guide: [Section]
+    let items: [Item]?
 
     func category(_ id: String) -> Category? { categories.first { $0.id == id } }
+
+    func item(_ id: String) -> Item? { items?.first { $0.id == id } }
+
+    /// Everything whose recipe or upgrade needs this item.
+    func usedIn(_ id: String) -> [Item] {
+        (items ?? []).filter { $0.cost?.contains { $0.item == id } ?? false }
+    }
+
+    func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
 
     func threatName(_ level: Int) -> String? {
         threatLevels.indices.contains(level - 1) ? threatLevels[level - 1].resolved : nil
