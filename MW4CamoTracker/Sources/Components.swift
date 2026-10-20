@@ -752,6 +752,7 @@ struct ChallengeRow: View {
             }
             .buttonStyle(.plain)
             .disabled(!isAvailable)
+            .accessibilityIdentifier("tick.\(item.name.resolved())")
 
             if item.imageURL != nil {
                 CamoThumbnail(urlString: item.imageURL, size: 34)
