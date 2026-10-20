@@ -102,8 +102,8 @@ The publish script enforces the first two.
   mode-wide Mastery capstone is gated on it, so a player can finish a new
   weapon in place of a launch one they skipped. Adding weapons does not
   change it.
-- **Every piece of text needs all five languages** (`en`, `fr`, `es`, `de`,
-  `nl`). A missing one falls back to English in the app. Weapon and Mastery
+- **Every piece of text needs all six languages** (`en`, `fr`, `es`, `de`,
+  `it`, `nl`). A missing one falls back to English in the app. Weapon and Mastery
   camo names are proper nouns and are the same in every language.
 
 ## What the files hold
@@ -116,6 +116,13 @@ The publish script enforces the first two.
 - `weaponPrestige[]`: the prestige stages after a weapon's normal levels, in
   order. Each has a `name` and a `maxLevel` (`null` means the weapon's own).
   Add or remove entries to change how many times a weapon can prestige.
+- `prestigeCamos[]`: the Weapon Prestige camos, the same in every mode, in
+  order. Each has a `name` and ticks itself once the weapon reaches its
+  `stage` (counting from 1; leave it out for the last stage) and, within it,
+  its `level`. `"afterWeaponMaxLevel": true` uses the level after the
+  weapon's own `maxLevel` instead (73 on the HAN 86). No level means
+  reaching the stage is enough (Pyroclast). `byWeapon` (keyed by `weaponId`
+  as a string) can give one weapon its own `name`, `imageURL` or `level`.
 
 `multiplayer.json`, `warzone.json`, `dmz.json` (one per mode):
 
@@ -175,9 +182,10 @@ The publish script enforces the first two.
     whose `unit` is `"golds"`, `"platinums"`, `"harmonic_breaks"` or
     `"finals"` counts those across the mode by itself ("Complete 20
     Harmonic Break Challenges"); any other unit is ticked or counted by the
-    player. This is what the files use now; the game's numbers are still
-    `&&1` placeholders, so every tier is a tick box until they show. App
-    builds before 1.0.1 read `"mode"` as `"count"` and ignore `kind`.
+    player. This is what the files use now: Harmonic Break on every weapon
+    is the weapon side, and after it the three Mastery challenges count
+    with any weapon. App builds before 1.0.1 read `"mode"` as `"count"`
+    and ignore `kind`.
   Each tier may also set `name`, `colors` (`"#RRGGBB"` hex: the first is
   the badge colour, all of them the animated gradient) and `imageURL`.
 

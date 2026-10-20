@@ -29,7 +29,7 @@ OUT=""
 DEVICE=iphone
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --all-languages) LANGS=(en de es fr nl); ALL=1; shift ;;
+    --all-languages) LANGS=(en de es fr it nl); ALL=1; shift ;;
     --lang) LANGS=("$2"); shift 2 ;;
     --ipad) DEVICE=ipad; shift ;;
     --duo) DEVICE=duo; shift ;;
@@ -77,13 +77,13 @@ OUT="${OUT:-$HOME/Desktop/MW4CamoTracker-screenshots}"
 asc_locale () { # <lang> -> App Store Connect locale directory
   case "$1" in
     en) echo "en-US" ;; de) echo "de-DE" ;; es) echo "es-ES" ;;
-    fr) echo "fr-FR" ;; nl) echo "nl-NL" ;; *) echo "$1" ;;
+    fr) echo "fr-FR" ;; it) echo "it-IT" ;; nl) echo "nl-NL" ;; *) echo "$1" ;;
   esac
 }
 posix_locale () { # <lang> -> the AppleLocale the region formats follow
   case "$1" in
     en) echo "en_US" ;; de) echo "de_DE" ;; es) echo "es_ES" ;;
-    fr) echo "fr_FR" ;; nl) echo "nl_NL" ;; *) echo "$1" ;;
+    fr) echo "fr_FR" ;; it) echo "it_IT" ;; nl) echo "nl_NL" ;; *) echo "$1" ;;
   esac
 }
 
@@ -219,7 +219,7 @@ for LANG_CODE in "${LANGS[@]}"; do
   shot multiplayer multiplayer
   shot stats       stats
   shot warzone     warzone
-  shot dmz         dmz
+  shot widgets     widgets           # the widgets, as on a Home Screen
   shot multiplayer category 0 ""    # Assault Rifles list
   shot multiplayer weapon   "" 3    # Kastov 762 detail
 
@@ -228,7 +228,7 @@ for LANG_CODE in "${LANGS[@]}"; do
 
   if [[ $ALL -eq 1 ]]; then
     i=1
-    for n in multiplayer stats warzone dmz category weapon; do
+    for n in multiplayer stats warzone widgets category weapon; do
       mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n${SHOT_SUFFIX}.png"
       i=$((i + 1))
     done

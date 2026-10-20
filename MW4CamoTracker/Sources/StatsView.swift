@@ -6,6 +6,7 @@ import SwiftUI
 /// old flat list-of-sections layout, which had no visual hierarchy between
 /// "how close am I" and "here's every category's percentage."
 struct StatsView: View {
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @State private var width: CGFloat = 0
 
@@ -66,6 +67,8 @@ private struct OverallStatsHero: View {
     /// Stretch to the height of the card beside it, ring centred.
     var fillsHeight = false
     @EnvironmentObject private var viewModel: TrackerViewModel
+
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
 
     private var perMode: [(mode: AppMode, fraction: Double)] {
         viewModel.visibleModes.map { ($0, viewModel.trueCompletionFraction(mode: $0.rawValue)) }

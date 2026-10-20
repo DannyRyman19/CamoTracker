@@ -47,7 +47,7 @@ ROOT = Path(__file__).resolve().parents[2]          # the CamoTracker repo
 RES = ROOT / "MW4CamoTracker" / "Resources"
 OUT = ROOT / "Data" / "MW4"
 MODES = ["multiplayer", "warzone", "dmz"]
-LANGS = ["en", "fr", "es", "de", "nl"]
+LANGS = ["en", "fr", "es", "de", "it", "nl"]
 
 
 def load(path):

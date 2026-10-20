@@ -208,6 +208,17 @@ private struct WelcomePage: View {
                     .multilineTextAlignment(.center)
                     .padding(14)
                     .borderedCard()
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("mw4.ui.modes".localized())
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(Color.appInk)
+                    Text("mw4.onboarding.modes.hint".localized())
+                        .font(.system(size: 12.5))
+                        .foregroundStyle(Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                    PlayedModesPicker()
+                }
             }
         }
     }
@@ -404,6 +415,9 @@ private struct MakeItYoursPage: View {
                 row("pin.fill", "mw4.onboarding.yours.pin".localized())
                 row("slider.horizontal.3", "mw4.onboarding.yours.customise".localized())
                 row("exclamationmark.bubble.fill", "mw4.onboarding.yours.report".localized())
+                if #available(iOS 17, *) {
+                    row("square.grid.2x2.fill", "mw4.onboarding.yours.widget".localized())
+                }
             }
         }
     }

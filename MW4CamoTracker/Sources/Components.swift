@@ -8,7 +8,121 @@ extension String {
     /// instead (see Models.swift), since a bundle key can't resolve until the
     /// next app update ships a matching entry.
     func localized() -> String {
-        NSLocalizedString(self, bundle: .main, comment: "")
+        NSLocalizedString(self, bundle: AppLanguage.bundle, comment: "")
+    }
+}
+
+/// The language picked in Customise, over the iPhone's own. `nil` follows
+/// the iPhone. Both the bundled strings and the data's `LocalizedText`
+/// read it, and the root view rebuilds when it changes, so a switch shows
+/// at once without a relaunch.
+enum AppLanguage {
+    static let key = "mw4_language"
+    /// Every language the app is translated into, as shown in its own name.
+    static let supported: [(code: String, name: String)] = [
+        ("en", "English"), ("de", "Deutsch"), ("es", "Español"),
+        ("fr", "Français"), ("it", "Italiano"), ("nl", "Nederlands"),
+    ]
+
+    static var override: String? {
+        guard let code = UserDefaults.standard.string(forKey: key),
+              supported.contains(where: { $0.code == code }) else { return nil }
+        return code
+    }
+
+    /// One bundle per language, looked up once; strings are read from any
+    /// thread, so the cache is behind a lock.
+    nonisolated(unsafe) private static var bundles: [String: Bundle] = [:]
+    private static let lock = NSLock()
+
+    static var bundle: Bundle {
+        guard let code = override else { return .main }
+        lock.lock(); defer { lock.unlock() }
+        if let cached = bundles[code] { return cached }
+        let found = Bundle.main.path(forResource: code, ofType: "lproj").flatMap(Bundle.init(path:)) ?? .main
+        bundles[code] = found
+        return found
+    }
+
+    /// Language codes to try in order: the picked one, else the iPhone's.
+    static var preferred: [String] {
+        if let code = override { return [code] }
+        return Locale.preferredLanguages.compactMap { Locale(identifier: $0).language.languageCode?.identifier }
+    }
+}
+
+/// Multiplayer, Warzone and DMZ as switches, for picking the modes you
+/// play. One always stays on. A picked mode is filled in its colour with a
+/// tick; one left out is a dim outline with an empty circle, so the two
+/// can't be mistaken for each other. With more than one picked, `showsStart`
+/// adds the choice of which one the app opens on.
+struct PlayedModesPicker: View {
+    var showsStart = true
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
+    @AppStorage(AppMode.startKey) private var startRaw = ""
+
+    var body: some View {
+        let played = AppMode.played(playedRaw)
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                ForEach(AppMode.allCases) { mode in
+                    chip(mode, on: played.contains(mode))
+                }
+            }
+            if showsStart, played.count > 1 {
+                HStack {
+                    Text("mw4.ui.opens_to".localized())
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.appInkMuted)
+                    Spacer(minLength: 8)
+                    Picker("mw4.ui.opens_to".localized(), selection: Binding(
+                        get: { AppMode.start(startRaw, played: playedRaw) },
+                        set: { Haptics.step(); startRaw = $0.rawValue })) {
+                        ForEach(played) { mode in
+                            Text(mode.displayNameKey.localized()).tag(mode)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .fixedSize()
+                    .accessibilityIdentifier("mode.start")
+                }
+            }
+        }
+        .animation(.snappy, value: playedRaw)
+    }
+
+    private func chip(_ mode: AppMode, on: Bool) -> some View {
+        Button {
+            let next = AppMode.toggling(mode, in: playedRaw)
+            if next != playedRaw { Haptics.light(); playedRaw = next }
+        } label: {
+            VStack(spacing: 5) {
+                Image(systemName: mode.symbol)
+                    .font(.system(size: 17, weight: .semibold))
+                Text(mode.displayNameKey.localized())
+                    .font(.system(size: 12, weight: .bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .foregroundStyle(on ? mode.accent : Color.appInkMuted.opacity(0.7))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(RoundedRectangle(cornerRadius: 14).fill(on ? mode.accent.opacity(0.18) : Color.clear))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14)
+                    .strokeBorder(on ? mode.accent : Color.appInkMuted.opacity(0.3),
+                                  style: StrokeStyle(lineWidth: on ? 2 : 1, dash: on ? [] : [4, 3]))
+            )
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(on ? mode.accent : Color.appInkMuted.opacity(0.5))
+                    .padding(6)
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("mode.\(mode.rawValue)")
     }
 }
 

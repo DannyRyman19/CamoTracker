@@ -1,5 +1,5 @@
 {
-  "version": "0.8.14",
+  "version": "0.8.15",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -12,7 +12,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -28,7 +29,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -44,7 +46,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 25,
@@ -60,7 +63,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 34,
@@ -76,7 +80,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 42,
@@ -92,7 +97,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 50,
@@ -108,7 +114,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 57,
@@ -124,7 +131,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 65,
@@ -140,7 +148,8 @@
             "fr": "Smoke",
             "es": "Smoke",
             "de": "Smoke",
-            "nl": "Smoke"
+            "nl": "Smoke",
+            "it": "Smoke"
           },
           "tier": 9,
           "unlockLevel": 25,
@@ -152,7 +161,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -166,7 +176,8 @@
             "fr": "Stormwave",
             "es": "Stormwave",
             "de": "Stormwave",
-            "nl": "Stormwave"
+            "nl": "Stormwave",
+            "it": "Stormwave"
           },
           "tier": 10,
           "unlockLevel": 46,
@@ -178,7 +189,8 @@
               "fr": "Obtenez 50 éliminations de joueurs avec un silencieux.",
               "es": "Consigue 50 bajas de jugadores usando un silenciador.",
               "de": "Erziele 50 Spielerabschüsse mit einem Schalldämpfer.",
-              "nl": "Behaal 50 spelerkills met een geluiddemper."
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Ottieni 50 uccisioni di giocatori usando un silenziatore."
             }
           },
           "children": [],
@@ -192,7 +204,8 @@
             "fr": "Red",
             "es": "Red",
             "de": "Red",
-            "nl": "Red"
+            "nl": "Red",
+            "it": "Red"
           },
           "tier": 11,
           "unlockLevel": 72,
@@ -204,7 +217,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "children": [],
@@ -223,7 +237,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -239,7 +254,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -255,7 +271,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 26,
@@ -271,7 +288,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 35,
@@ -287,7 +305,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 44,
@@ -303,7 +322,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 51,
@@ -319,7 +339,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 59,
@@ -335,7 +356,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 64,
@@ -351,7 +373,8 @@
             "fr": "Myriad",
             "es": "Myriad",
             "de": "Myriad",
-            "nl": "Myriad"
+            "nl": "Myriad",
+            "it": "Myriad"
           },
           "tier": 9,
           "unlockLevel": 26,
@@ -363,7 +386,8 @@
               "fr": "Obtenez 20 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 20 bajas a quemarropa contra jugadores.",
               "de": "Erziele 20 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 20 kills van dichtbij tegen spelers."
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -377,7 +401,8 @@
             "fr": "Night Ops",
             "es": "Night Ops",
             "de": "Night Ops",
-            "nl": "Night Ops"
+            "nl": "Night Ops",
+            "it": "Night Ops"
           },
           "tier": 10,
           "unlockLevel": 51,
@@ -389,7 +414,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -403,7 +429,8 @@
             "fr": "Green",
             "es": "Green",
             "de": "Green",
-            "nl": "Green"
+            "nl": "Green",
+            "it": "Green"
           },
           "tier": 11,
           "unlockLevel": 72,
@@ -415,7 +442,8 @@
               "fr": "Obtenez 25 éliminations de joueurs par derrière.",
               "es": "Consigue 25 bajas de jugadores por la espalda.",
               "de": "Erziele 25 Spielerabschüsse von hinten.",
-              "nl": "Behaal 25 spelerkills van achteren."
+              "nl": "Behaal 25 spelerkills van achteren.",
+              "it": "Ottieni 25 uccisioni di giocatori alle spalle."
             }
           },
           "children": [],
@@ -434,7 +462,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -450,7 +479,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 17,
@@ -466,7 +496,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 26,
@@ -482,7 +513,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 32,
@@ -498,7 +530,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 40,
@@ -514,7 +547,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 49,
@@ -530,7 +564,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 55,
@@ -546,7 +581,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 62,
@@ -562,7 +598,8 @@
             "fr": "Ponderosa",
             "es": "Ponderosa",
             "de": "Ponderosa",
-            "nl": "Ponderosa"
+            "nl": "Ponderosa",
+            "it": "Ponderosa"
           },
           "tier": 9,
           "unlockLevel": 23,
@@ -574,7 +611,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 10 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 10 veces.",
               "de": "Erziele 10-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 10 volte."
             }
           },
           "children": [],
@@ -588,7 +626,8 @@
             "fr": "Red Rain",
             "es": "Red Rain",
             "de": "Red Rain",
-            "nl": "Red Rain"
+            "nl": "Red Rain",
+            "it": "Red Rain"
           },
           "tier": 10,
           "unlockLevel": 46,
@@ -600,7 +639,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -614,7 +654,8 @@
             "fr": "Kitty Kaos",
             "es": "Kitty Kaos",
             "de": "Kitty Kaos",
-            "nl": "Kitty Kaos"
+            "nl": "Kitty Kaos",
+            "it": "Kitty Kaos"
           },
           "tier": 11,
           "unlockLevel": 68,
@@ -626,7 +667,8 @@
               "fr": "Obtenez 100 éliminations de joueurs en tir automatique.",
               "es": "Consigue 100 bajas de jugadores en modo automático.",
               "de": "Erziele 100 Spielerabschüsse im Vollautomatik-Modus.",
-              "nl": "Behaal 100 spelerkills met volautomatisch vuur."
+              "nl": "Behaal 100 spelerkills met volautomatisch vuur.",
+              "it": "Ottieni 100 uccisioni di giocatori a raffica continua."
             }
           },
           "children": [],
@@ -645,7 +687,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -661,7 +704,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -677,7 +721,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 27,
@@ -693,7 +738,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 37,
@@ -709,7 +755,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 45,
@@ -725,7 +772,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 54,
@@ -741,7 +789,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 61,
@@ -757,7 +806,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 67,
@@ -773,7 +823,8 @@
             "fr": "Samnim",
             "es": "Samnim",
             "de": "Samnim",
-            "nl": "Samnim"
+            "nl": "Samnim",
+            "it": "Samnim"
           },
           "tier": 9,
           "unlockLevel": 24,
@@ -785,7 +836,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 10 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 10 veces.",
               "de": "Erziele 10-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 10 volte."
             }
           },
           "children": [],
@@ -799,7 +851,8 @@
             "fr": "Raster Aux",
             "es": "Raster Aux",
             "de": "Raster Aux",
-            "nl": "Raster Aux"
+            "nl": "Raster Aux",
+            "it": "Raster Aux"
           },
           "tier": 10,
           "unlockLevel": 48,
@@ -811,7 +864,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -825,7 +879,8 @@
             "fr": "Yellow",
             "es": "Yellow",
             "de": "Yellow",
-            "nl": "Yellow"
+            "nl": "Yellow",
+            "it": "Yellow"
           },
           "tier": 11,
           "unlockLevel": 71,
@@ -837,7 +892,8 @@
               "fr": "Obtenez 30 éliminations sans viser contre des joueurs.",
               "es": "Consigue 30 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 30 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 30 heupvuurkills tegen spelers."
+              "nl": "Behaal 30 heupvuurkills tegen spelers.",
+              "it": "Ottieni 30 uccisioni di giocatori senza mirare."
             }
           },
           "children": [],
@@ -856,7 +912,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -872,7 +929,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 20,
@@ -888,7 +946,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 28,
@@ -904,7 +963,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 36,
@@ -920,7 +980,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 43,
@@ -936,7 +997,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 52,
@@ -952,7 +1014,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 59,
@@ -968,7 +1031,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 66,
@@ -984,7 +1048,8 @@
             "fr": "Dune Sea",
             "es": "Dune Sea",
             "de": "Dune Sea",
-            "nl": "Dune Sea"
+            "nl": "Dune Sea",
+            "it": "Dune Sea"
           },
           "tier": 9,
           "unlockLevel": 24,
@@ -996,7 +1061,8 @@
               "fr": "Obtenez 20 éliminations sans viser contre des joueurs.",
               "es": "Consigue 20 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 20 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 20 heupvuurkills tegen spelers."
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori senza mirare."
             }
           },
           "children": [],
@@ -1010,7 +1076,8 @@
             "fr": "Scorch",
             "es": "Scorch",
             "de": "Scorch",
-            "nl": "Scorch"
+            "nl": "Scorch",
+            "it": "Scorch"
           },
           "tier": 10,
           "unlockLevel": 49,
@@ -1022,7 +1089,8 @@
               "fr": "Obtenez 50 éliminations de joueurs avec un silencieux.",
               "es": "Consigue 50 bajas de jugadores usando un silenciador.",
               "de": "Erziele 50 Spielerabschüsse mit einem Schalldämpfer.",
-              "nl": "Behaal 50 spelerkills met een geluiddemper."
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Ottieni 50 uccisioni di giocatori usando un silenziatore."
             }
           },
           "children": [],
@@ -1036,7 +1104,8 @@
             "fr": "Disperse",
             "es": "Disperse",
             "de": "Disperse",
-            "nl": "Disperse"
+            "nl": "Disperse",
+            "it": "Disperse"
           },
           "tier": 11,
           "unlockLevel": 72,
@@ -1048,7 +1117,8 @@
               "fr": "Obtenez 30 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 30 bajas a larga distancia contra jugadores.",
               "de": "Erziele 30 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 30 kills van lange afstand tegen spelers."
+              "nl": "Behaal 30 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 30 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -1067,7 +1137,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -1083,7 +1154,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -1099,7 +1171,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 25,
@@ -1115,7 +1188,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 31,
@@ -1131,7 +1205,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 38,
@@ -1147,7 +1222,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 44,
@@ -1163,7 +1239,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 50,
@@ -1179,7 +1256,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 57,
@@ -1195,7 +1273,8 @@
             "fr": "Asphalt",
             "es": "Asphalt",
             "de": "Asphalt",
-            "nl": "Asphalt"
+            "nl": "Asphalt",
+            "it": "Asphalt"
           },
           "tier": 9,
           "unlockLevel": 22,
@@ -1207,7 +1286,8 @@
               "fr": "Obtenez 50 éliminations de joueurs en visant.",
               "es": "Consigue 50 bajas de jugadores apuntando con la mira.",
               "de": "Erziele 50 Spielerabschüsse beim Zielen über Kimme und Korn.",
-              "nl": "Behaal 50 spelerkills terwijl je richt."
+              "nl": "Behaal 50 spelerkills terwijl je richt.",
+              "it": "Ottieni 50 uccisioni di giocatori mirando."
             }
           },
           "children": [],
@@ -1221,7 +1301,8 @@
             "fr": "Black Topo",
             "es": "Black Topo",
             "de": "Black Topo",
-            "nl": "Black Topo"
+            "nl": "Black Topo",
+            "it": "Black Topo"
           },
           "tier": 10,
           "unlockLevel": 44,
@@ -1233,7 +1314,8 @@
               "fr": "Réalisez 10 doubles éliminations contre des joueurs.",
               "es": "Consigue 10 bajas dobles contra jugadores.",
               "de": "Erziele 10 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 10 dubbele kills tegen spelers."
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Ottieni 10 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -1247,7 +1329,8 @@
             "fr": "Brown",
             "es": "Brown",
             "de": "Brown",
-            "nl": "Brown"
+            "nl": "Brown",
+            "it": "Brown"
           },
           "tier": 11,
           "unlockLevel": 64,
@@ -1259,7 +1342,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "children": [],
@@ -1278,7 +1362,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 11,
@@ -1294,7 +1379,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 17,
@@ -1310,7 +1396,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 23,
@@ -1326,7 +1413,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 31,
@@ -1342,7 +1430,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 38,
@@ -1358,7 +1447,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 44,
@@ -1374,7 +1464,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 51,
@@ -1390,7 +1481,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 57,
@@ -1406,7 +1498,8 @@
             "fr": "Blackwell",
             "es": "Blackwell",
             "de": "Blackwell",
-            "nl": "Blackwell"
+            "nl": "Blackwell",
+            "it": "Blackwell"
           },
           "tier": 9,
           "unlockLevel": 20,
@@ -1418,7 +1511,8 @@
               "fr": "Réalisez 10 doubles éliminations contre des joueurs.",
               "es": "Consigue 10 bajas dobles contra jugadores.",
               "de": "Erziele 10 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 10 dubbele kills tegen spelers."
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Ottieni 10 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -1432,7 +1526,8 @@
             "fr": "Iron",
             "es": "Iron",
             "de": "Iron",
-            "nl": "Iron"
+            "nl": "Iron",
+            "it": "Iron"
           },
           "tier": 10,
           "unlockLevel": 41,
@@ -1444,7 +1539,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -1458,7 +1554,8 @@
             "fr": "Currents",
             "es": "Currents",
             "de": "Currents",
-            "nl": "Currents"
+            "nl": "Currents",
+            "it": "Currents"
           },
           "tier": 11,
           "unlockLevel": 62,
@@ -1470,7 +1567,8 @@
               "fr": "Obtenez 100 éliminations de joueurs en visant.",
               "es": "Consigue 100 bajas de jugadores apuntando con la mira.",
               "de": "Erziele 100 Spielerabschüsse beim Zielen über Kimme und Korn.",
-              "nl": "Behaal 100 spelerkills terwijl je richt."
+              "nl": "Behaal 100 spelerkills terwijl je richt.",
+              "it": "Ottieni 100 uccisioni di giocatori mirando."
             }
           },
           "children": [],
@@ -1489,7 +1587,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 9,
@@ -1505,7 +1604,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 15,
@@ -1521,7 +1621,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 20,
@@ -1537,7 +1638,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 25,
@@ -1553,7 +1655,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 29,
@@ -1569,7 +1672,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 35,
@@ -1585,7 +1689,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 42,
@@ -1601,7 +1706,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 47,
@@ -1617,7 +1723,8 @@
             "fr": "Sniper Veil",
             "es": "Sniper Veil",
             "de": "Sniper Veil",
-            "nl": "Sniper Veil"
+            "nl": "Sniper Veil",
+            "it": "Sniper Veil"
           },
           "tier": 9,
           "unlockLevel": 17,
@@ -1629,7 +1736,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en mouvement.",
               "es": "Consigue 20 bajas de jugadores en movimiento.",
               "de": "Erziele 20 Spielerabschüsse in Bewegung.",
-              "nl": "Behaal 20 spelerkills terwijl je beweegt."
+              "nl": "Behaal 20 spelerkills terwijl je beweegt.",
+              "it": "Ottieni 20 uccisioni di giocatori in movimento."
             }
           },
           "children": [],
@@ -1643,7 +1751,8 @@
             "fr": "Carbonated",
             "es": "Carbonated",
             "de": "Carbonated",
-            "nl": "Carbonated"
+            "nl": "Carbonated",
+            "it": "Carbonated"
           },
           "tier": 10,
           "unlockLevel": 35,
@@ -1655,7 +1764,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -1669,7 +1779,8 @@
             "fr": "Lime",
             "es": "Lime",
             "de": "Lime",
-            "nl": "Lime"
+            "nl": "Lime",
+            "it": "Lime"
           },
           "tier": 11,
           "unlockLevel": 53,
@@ -1681,7 +1792,8 @@
               "fr": "Obtenez 40 éliminations à la tête contre des joueurs.",
               "es": "Consigue 40 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 40 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 40 headshotkills tegen spelers."
+              "nl": "Behaal 40 headshotkills tegen spelers.",
+              "it": "Ottieni 40 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -1700,7 +1812,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 11,
@@ -1716,7 +1829,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -1732,7 +1846,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 26,
@@ -1748,7 +1863,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 30,
@@ -1764,7 +1880,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 38,
@@ -1780,7 +1897,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 42,
@@ -1796,7 +1914,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 47,
@@ -1812,7 +1931,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 54,
@@ -1828,7 +1948,8 @@
             "fr": "Struck Oil",
             "es": "Struck Oil",
             "de": "Struck Oil",
-            "nl": "Struck Oil"
+            "nl": "Struck Oil",
+            "it": "Struck Oil"
           },
           "tier": 9,
           "unlockLevel": 22,
@@ -1840,7 +1961,8 @@
               "fr": "Obtenez 20 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 20 bajas a quemarropa contra jugadores.",
               "de": "Erziele 20 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 20 kills van dichtbij tegen spelers."
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -1854,7 +1976,8 @@
             "fr": "Brushstroke",
             "es": "Brushstroke",
             "de": "Brushstroke",
-            "nl": "Brushstroke"
+            "nl": "Brushstroke",
+            "it": "Brushstroke"
           },
           "tier": 10,
           "unlockLevel": 42,
@@ -1866,7 +1989,8 @@
               "fr": "Obtenez 10 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 10 bajas a larga distancia contra jugadores.",
               "de": "Erziele 10 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 10 kills van lange afstand tegen spelers."
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -1880,7 +2004,8 @@
             "fr": "White Pine",
             "es": "White Pine",
             "de": "White Pine",
-            "nl": "White Pine"
+            "nl": "White Pine",
+            "it": "White Pine"
           },
           "tier": 11,
           "unlockLevel": 60,
@@ -1892,7 +2017,8 @@
               "fr": "Obtenez 40 éliminations de joueurs en sautant.",
               "es": "Consigue 40 bajas de jugadores mientras saltas.",
               "de": "Erziele 40 Spielerabschüsse im Sprung.",
-              "nl": "Behaal 40 spelerkills terwijl je springt."
+              "nl": "Behaal 40 spelerkills terwijl je springt.",
+              "it": "Ottieni 40 uccisioni di giocatori saltando."
             }
           },
           "children": [],
@@ -1911,7 +2037,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -1927,7 +2054,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -1943,7 +2071,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 24,
@@ -1959,7 +2088,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 31,
@@ -1975,7 +2105,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 37,
@@ -1991,7 +2122,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 42,
@@ -2007,7 +2139,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 48,
@@ -2023,7 +2156,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 53,
@@ -2039,7 +2173,8 @@
             "fr": "Desert Tactics",
             "es": "Desert Tactics",
             "de": "Desert Tactics",
-            "nl": "Desert Tactics"
+            "nl": "Desert Tactics",
+            "it": "Desert Tactics"
           },
           "tier": 9,
           "unlockLevel": 18,
@@ -2051,7 +2186,8 @@
               "fr": "Obtenez 20 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 20 bajas a quemarropa contra jugadores.",
               "de": "Erziele 20 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 20 kills van dichtbij tegen spelers."
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -2065,7 +2201,8 @@
             "fr": "Green Tiger",
             "es": "Green Tiger",
             "de": "Green Tiger",
-            "nl": "Green Tiger"
+            "nl": "Green Tiger",
+            "it": "Green Tiger"
           },
           "tier": 10,
           "unlockLevel": 39,
@@ -2077,7 +2214,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 10 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 10 veces.",
               "de": "Erziele 10-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 10 volte."
             }
           },
           "children": [],
@@ -2091,7 +2229,8 @@
             "fr": "Thunderhead",
             "es": "Thunderhead",
             "de": "Thunderhead",
-            "nl": "Thunderhead"
+            "nl": "Thunderhead",
+            "it": "Thunderhead"
           },
           "tier": 11,
           "unlockLevel": 60,
@@ -2103,7 +2242,8 @@
               "fr": "Obtenez 0 éliminations de joueurs sans mourir, 30 fois.",
               "es": "Consigue 0 bajas de jugadores sin morir, 30 veces.",
               "de": "Erziele 30-mal 0 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 30 keer 0 spelerkills zonder dood te gaan."
+              "nl": "Behaal 30 keer 0 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 0 uccisioni di giocatori senza morire, 30 volte."
             }
           },
           "children": [],
@@ -2122,7 +2262,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -2138,7 +2279,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -2154,7 +2296,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 26,
@@ -2170,7 +2313,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 34,
@@ -2186,7 +2330,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 41,
@@ -2202,7 +2347,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 48,
@@ -2218,7 +2364,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 55,
@@ -2234,7 +2381,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 61,
@@ -2250,7 +2398,8 @@
             "fr": "Ash Pine",
             "es": "Ash Pine",
             "de": "Ash Pine",
-            "nl": "Ash Pine"
+            "nl": "Ash Pine",
+            "it": "Ash Pine"
           },
           "tier": 9,
           "unlockLevel": 23,
@@ -2262,7 +2411,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -2276,7 +2426,8 @@
             "fr": "Outcrop",
             "es": "Outcrop",
             "de": "Outcrop",
-            "nl": "Outcrop"
+            "nl": "Outcrop",
+            "it": "Outcrop"
           },
           "tier": 10,
           "unlockLevel": 45,
@@ -2288,7 +2439,8 @@
               "fr": "Réalisez 10 doubles éliminations contre des joueurs.",
               "es": "Consigue 10 bajas dobles contra jugadores.",
               "de": "Erziele 10 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 10 dubbele kills tegen spelers."
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Ottieni 10 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -2302,7 +2454,8 @@
             "fr": "Foxtrail",
             "es": "Foxtrail",
             "de": "Foxtrail",
-            "nl": "Foxtrail"
+            "nl": "Foxtrail",
+            "it": "Foxtrail"
           },
           "tier": 11,
           "unlockLevel": 65,
@@ -2314,7 +2467,8 @@
               "fr": "Obtenez 40 éliminations à la tête contre des joueurs.",
               "es": "Consigue 40 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 40 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 40 headshotkills tegen spelers."
+              "nl": "Behaal 40 headshotkills tegen spelers.",
+              "it": "Ottieni 40 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -2333,7 +2487,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -2349,7 +2504,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -2365,7 +2521,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 29,
@@ -2381,7 +2538,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 38,
@@ -2397,7 +2555,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 45,
@@ -2413,7 +2572,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 52,
@@ -2429,7 +2589,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 58,
@@ -2445,7 +2606,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 69,
@@ -2461,7 +2623,8 @@
             "fr": "Mangrove",
             "es": "Mangrove",
             "de": "Mangrove",
-            "nl": "Mangrove"
+            "nl": "Mangrove",
+            "it": "Mangrove"
           },
           "tier": 9,
           "unlockLevel": 26,
@@ -2473,7 +2636,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -2487,7 +2651,8 @@
             "fr": "Fungal Grid",
             "es": "Fungal Grid",
             "de": "Fungal Grid",
-            "nl": "Fungal Grid"
+            "nl": "Fungal Grid",
+            "it": "Fungal Grid"
           },
           "tier": 10,
           "unlockLevel": 49,
@@ -2499,7 +2664,8 @@
               "fr": "Obtenez 25 éliminations de joueurs accroupi.",
               "es": "Consigue 25 bajas de jugadores agachado.",
               "de": "Erziele 25 Spielerabschüsse in der Hocke.",
-              "nl": "Behaal 25 spelerkills terwijl je hurkt."
+              "nl": "Behaal 25 spelerkills terwijl je hurkt.",
+              "it": "Ottieni 25 uccisioni di giocatori da accovacciato."
             }
           },
           "children": [],
@@ -2513,7 +2679,8 @@
             "fr": "White",
             "es": "White",
             "de": "White",
-            "nl": "White"
+            "nl": "White",
+            "it": "White"
           },
           "tier": 11,
           "unlockLevel": 73,
@@ -2525,7 +2692,8 @@
               "fr": "Obtenez 30 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 30 bajas a larga distancia contra jugadores.",
               "de": "Erziele 30 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 30 kills van lange afstand tegen spelers."
+              "nl": "Behaal 30 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 30 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -2544,7 +2712,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 11,
@@ -2560,7 +2729,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -2576,7 +2746,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 27,
@@ -2592,7 +2763,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 33,
@@ -2608,7 +2780,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 42,
@@ -2624,7 +2797,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 49,
@@ -2640,7 +2814,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 55,
@@ -2656,7 +2831,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 61,
@@ -2672,7 +2848,8 @@
             "fr": "Hibiscus",
             "es": "Hibiscus",
             "de": "Hibiscus",
-            "nl": "Hibiscus"
+            "nl": "Hibiscus",
+            "it": "Hibiscus"
           },
           "tier": 9,
           "unlockLevel": 27,
@@ -2684,7 +2861,8 @@
               "fr": "Obtenez 10 éliminations en visée rapide contre des joueurs.",
               "es": "Consigue 10 bajas con apuntado rápido contra jugadores.",
               "de": "Erziele 10 Quickscope-Abschüsse gegen Spieler.",
-              "nl": "Behaal 10 quickscopekills tegen spelers."
+              "nl": "Behaal 10 quickscopekills tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori con mira rapida."
             }
           },
           "children": [],
@@ -2698,7 +2876,8 @@
             "fr": "Fire Topo",
             "es": "Fire Topo",
             "de": "Fire Topo",
-            "nl": "Fire Topo"
+            "nl": "Fire Topo",
+            "it": "Fire Topo"
           },
           "tier": 10,
           "unlockLevel": 49,
@@ -2710,7 +2889,8 @@
               "fr": "Réalisez 20 doubles éliminations contre des joueurs.",
               "es": "Consigue 20 bajas dobles contra jugadores.",
               "de": "Erziele 20 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 20 dubbele kills tegen spelers."
+              "nl": "Behaal 20 dubbele kills tegen spelers.",
+              "it": "Ottieni 20 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -2724,7 +2904,8 @@
             "fr": "Deep Space",
             "es": "Deep Space",
             "de": "Deep Space",
-            "nl": "Deep Space"
+            "nl": "Deep Space",
+            "it": "Deep Space"
           },
           "tier": 11,
           "unlockLevel": 70,
@@ -2736,7 +2917,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "children": [],
@@ -2755,7 +2937,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 13,
@@ -2771,7 +2954,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 22,
@@ -2787,7 +2971,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 31,
@@ -2803,7 +2988,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 38,
@@ -2819,7 +3005,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 47,
@@ -2835,7 +3022,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 54,
@@ -2851,7 +3039,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 61,
@@ -2867,7 +3056,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 69,
@@ -2883,7 +3073,8 @@
             "fr": "Treeline",
             "es": "Treeline",
             "de": "Treeline",
-            "nl": "Treeline"
+            "nl": "Treeline",
+            "it": "Treeline"
           },
           "tier": 9,
           "unlockLevel": 22,
@@ -2895,7 +3086,8 @@
               "fr": "Obtenez 10 éliminations sans viser contre des joueurs.",
               "es": "Consigue 10 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 10 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 10 heupvuurkills tegen spelers."
+              "nl": "Behaal 10 heupvuurkills tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori senza mirare."
             }
           },
           "children": [],
@@ -2909,7 +3101,8 @@
             "fr": "Spidersilk",
             "es": "Spidersilk",
             "de": "Spidersilk",
-            "nl": "Spidersilk"
+            "nl": "Spidersilk",
+            "it": "Spidersilk"
           },
           "tier": 10,
           "unlockLevel": 47,
@@ -2921,7 +3114,8 @@
               "fr": "Obtenez 20 éliminations à la tête contre des joueurs.",
               "es": "Consigue 20 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 20 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 headshotkills tegen spelers."
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -2935,7 +3129,8 @@
             "fr": "Tension",
             "es": "Tension",
             "de": "Tension",
-            "nl": "Tension"
+            "nl": "Tension",
+            "it": "Tension"
           },
           "tier": 11,
           "unlockLevel": 75,
@@ -2947,7 +3142,8 @@
               "fr": "Éliminez 2 joueurs sans subir de dégâts, 20 fois.",
               "es": "Consigue 2 bajas de jugadores sin recibir daño, 20 veces.",
               "de": "Erziele 20-mal 2 Spielerabschüsse, ohne Schaden zu nehmen.",
-              "nl": "Behaal 20 keer 2 spelerkills zonder schade op te lopen."
+              "nl": "Behaal 20 keer 2 spelerkills zonder schade op te lopen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza subire danni, 20 volte."
             }
           },
           "children": [],
@@ -2966,7 +3162,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -2982,7 +3179,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -2998,7 +3196,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 28,
@@ -3014,7 +3213,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 35,
@@ -3030,7 +3230,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 43,
@@ -3046,7 +3247,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 52,
@@ -3062,7 +3264,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 57,
@@ -3078,7 +3281,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 67,
@@ -3094,7 +3298,8 @@
             "fr": "Anaconda",
             "es": "Anaconda",
             "de": "Anaconda",
-            "nl": "Anaconda"
+            "nl": "Anaconda",
+            "it": "Anaconda"
           },
           "tier": 9,
           "unlockLevel": 28,
@@ -3106,7 +3311,8 @@
               "fr": "Obtenez 2 éliminations de joueurs en 5 secondes, 10 fois.",
               "es": "Consigue 2 bajas de jugadores en 5 segundos, 10 veces.",
               "de": "Erziele 10-mal 2 Spielerabschüsse innerhalb von 5 Sekunden.",
-              "nl": "Behaal 10 keer 2 spelerkills binnen 5 seconden."
+              "nl": "Behaal 10 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni di giocatori entro 5 secondi, 10 volte."
             }
           },
           "children": [],
@@ -3120,7 +3326,8 @@
             "fr": "Ripplewave",
             "es": "Ripplewave",
             "de": "Ripplewave",
-            "nl": "Ripplewave"
+            "nl": "Ripplewave",
+            "it": "Ripplewave"
           },
           "tier": 10,
           "unlockLevel": 52,
@@ -3132,7 +3339,8 @@
               "fr": "Obtenez 20 éliminations en visée rapide contre des joueurs.",
               "es": "Consigue 20 bajas con apuntado rápido contra jugadores.",
               "de": "Erziele 20 Quickscope-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 quickscopekills tegen spelers."
+              "nl": "Behaal 20 quickscopekills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori con mira rapida."
             }
           },
           "children": [],
@@ -3146,7 +3354,8 @@
             "fr": "Sunburn",
             "es": "Sunburn",
             "de": "Sunburn",
-            "nl": "Sunburn"
+            "nl": "Sunburn",
+            "it": "Sunburn"
           },
           "tier": 11,
           "unlockLevel": 74,
@@ -3158,7 +3367,8 @@
               "fr": "Obtenez 40 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 40 bajas a larga distancia contra jugadores.",
               "de": "Erziele 40 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 40 kills van lange afstand tegen spelers."
+              "nl": "Behaal 40 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 40 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -3177,7 +3387,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -3193,7 +3404,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 14,
@@ -3209,7 +3421,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 18,
@@ -3225,7 +3438,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 22,
@@ -3241,7 +3455,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 25,
@@ -3257,7 +3472,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 28,
@@ -3273,7 +3489,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 32,
@@ -3289,7 +3506,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 35,
@@ -3305,7 +3523,8 @@
             "fr": "Off Grid",
             "es": "Off Grid",
             "de": "Off Grid",
-            "nl": "Off Grid"
+            "nl": "Off Grid",
+            "it": "Off Grid"
           },
           "tier": 9,
           "unlockLevel": 13,
@@ -3317,7 +3536,8 @@
               "fr": "Obtenez 15 éliminations de joueurs en étant suspendu à une corniche.",
               "es": "Consigue 15 bajas de jugadores colgado de un saliente.",
               "de": "Erziele 15 Spielerabschüsse, während du an einer Kante hängst.",
-              "nl": "Behaal 15 spelerkills terwijl je aan een richel hangt."
+              "nl": "Behaal 15 spelerkills terwijl je aan een richel hangt.",
+              "it": "Ottieni 15 uccisioni di giocatori appeso a un bordo."
             }
           },
           "children": [],
@@ -3331,7 +3551,8 @@
             "fr": "Urban Flamingo",
             "es": "Urban Flamingo",
             "de": "Urban Flamingo",
-            "nl": "Urban Flamingo"
+            "nl": "Urban Flamingo",
+            "it": "Urban Flamingo"
           },
           "tier": 10,
           "unlockLevel": 25,
@@ -3343,7 +3564,8 @@
               "fr": "Obtenez 15 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 15 bajas a quemarropa contra jugadores.",
               "de": "Erziele 15 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 15 kills van dichtbij tegen spelers."
+              "nl": "Behaal 15 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 15 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -3357,7 +3579,8 @@
             "fr": "Smokescreen",
             "es": "Smokescreen",
             "de": "Smokescreen",
-            "nl": "Smokescreen"
+            "nl": "Smokescreen",
+            "it": "Smokescreen"
           },
           "tier": 11,
           "unlockLevel": 38,
@@ -3369,7 +3592,8 @@
               "fr": "Obtenez 50 éliminations de joueurs avec un silencieux.",
               "es": "Consigue 50 bajas de jugadores usando un silenciador.",
               "de": "Erziele 50 Spielerabschüsse mit einem Schalldämpfer.",
-              "nl": "Behaal 50 spelerkills met een geluiddemper."
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Ottieni 50 uccisioni di giocatori usando un silenziatore."
             }
           },
           "children": [],
@@ -3388,7 +3612,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -3404,7 +3629,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 16,
@@ -3420,7 +3646,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 22,
@@ -3436,7 +3663,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 28,
@@ -3452,7 +3680,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 32,
@@ -3468,7 +3697,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 36,
@@ -3484,7 +3714,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 40,
@@ -3500,7 +3731,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 46,
@@ -3516,7 +3748,8 @@
             "fr": "Frosted",
             "es": "Frosted",
             "de": "Frosted",
-            "nl": "Frosted"
+            "nl": "Frosted",
+            "it": "Frosted"
           },
           "tier": 9,
           "unlockLevel": 18,
@@ -3528,7 +3761,8 @@
               "fr": "Obtenez 20 éliminations à la tête contre des joueurs.",
               "es": "Consigue 20 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 20 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 headshotkills tegen spelers."
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -3542,7 +3776,8 @@
             "fr": "Splatter Ops",
             "es": "Splatter Ops",
             "de": "Splatter Ops",
-            "nl": "Splatter Ops"
+            "nl": "Splatter Ops",
+            "it": "Splatter Ops"
           },
           "tier": 10,
           "unlockLevel": 34,
@@ -3554,7 +3789,8 @@
               "fr": "Réalisez 7 doubles éliminations contre des joueurs.",
               "es": "Consigue 7 bajas dobles contra jugadores.",
               "de": "Erziele 7 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 7 dubbele kills tegen spelers."
+              "nl": "Behaal 7 dubbele kills tegen spelers.",
+              "it": "Ottieni 7 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -3568,7 +3804,8 @@
             "fr": "Red Tiger",
             "es": "Red Tiger",
             "de": "Red Tiger",
-            "nl": "Red Tiger"
+            "nl": "Red Tiger",
+            "it": "Red Tiger"
           },
           "tier": 11,
           "unlockLevel": 50,
@@ -3580,7 +3817,8 @@
               "fr": "Obtenez 30 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 30 bajas a quemarropa contra jugadores.",
               "de": "Erziele 30 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 30 kills van dichtbij tegen spelers."
+              "nl": "Behaal 30 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 30 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -3599,7 +3837,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 6,
@@ -3615,7 +3854,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 11,
@@ -3631,7 +3871,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 16,
@@ -3647,7 +3888,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -3663,7 +3905,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -3679,7 +3922,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 31,
@@ -3695,7 +3939,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 36,
@@ -3711,7 +3956,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 41,
@@ -3727,7 +3973,8 @@
             "fr": "Frontier",
             "es": "Frontier",
             "de": "Frontier",
-            "nl": "Frontier"
+            "nl": "Frontier",
+            "it": "Frontier"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -3739,7 +3986,8 @@
               "fr": "Obtenez 10 éliminations par tir direct contre des joueurs.",
               "es": "Consigue 10 bajas con impacto directo contra jugadores.",
               "de": "Erziele 10 Abschüsse durch Direkttreffer gegen Spieler.",
-              "nl": "Behaal 10 kills met een voltreffer tegen spelers."
+              "nl": "Behaal 10 kills met een voltreffer tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori con colpo diretto."
             }
           },
           "children": [],
@@ -3753,7 +4001,8 @@
             "fr": "Sandwash",
             "es": "Sandwash",
             "de": "Sandwash",
-            "nl": "Sandwash"
+            "nl": "Sandwash",
+            "it": "Sandwash"
           },
           "tier": 10,
           "unlockLevel": 31,
@@ -3765,7 +4014,8 @@
               "fr": "Réalisez 5 doubles éliminations contre des joueurs.",
               "es": "Consigue 5 bajas dobles contra jugadores.",
               "de": "Erziele 5 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 5 dubbele kills tegen spelers."
+              "nl": "Behaal 5 dubbele kills tegen spelers.",
+              "it": "Ottieni 5 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -3779,7 +4029,8 @@
             "fr": "Digital Fall",
             "es": "Digital Fall",
             "de": "Digital Fall",
-            "nl": "Digital Fall"
+            "nl": "Digital Fall",
+            "it": "Digital Fall"
           },
           "tier": 11,
           "unlockLevel": 46,
@@ -3791,7 +4042,8 @@
               "fr": "Détruisez 30 séries d'éliminations ou véhicules.",
               "es": "Destruye 30 rachas de bajas o vehículos.",
               "de": "Zerstöre 30 Abschussserien oder Fahrzeuge.",
-              "nl": "Vernietig 30 killstreaks of voertuigen."
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli."
             }
           },
           "children": [],
@@ -3810,7 +4062,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 6,
@@ -3826,7 +4079,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 11,
@@ -3842,7 +4096,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 16,
@@ -3858,7 +4113,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -3874,7 +4130,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -3890,7 +4147,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 31,
@@ -3906,7 +4164,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 36,
@@ -3922,7 +4181,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 41,
@@ -3938,7 +4198,8 @@
             "fr": "Raster Lite",
             "es": "Raster Lite",
             "de": "Raster Lite",
-            "nl": "Raster Lite"
+            "nl": "Raster Lite",
+            "it": "Raster Lite"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -3950,7 +4211,8 @@
               "fr": "Obtenez 25 éliminations de joueurs en sautant.",
               "es": "Consigue 25 bajas de jugadores mientras saltas.",
               "de": "Erziele 25 Spielerabschüsse im Sprung.",
-              "nl": "Behaal 25 spelerkills terwijl je springt."
+              "nl": "Behaal 25 spelerkills terwijl je springt.",
+              "it": "Ottieni 25 uccisioni di giocatori saltando."
             }
           },
           "children": [],
@@ -3964,7 +4226,8 @@
             "fr": "Stockpile",
             "es": "Stockpile",
             "de": "Stockpile",
-            "nl": "Stockpile"
+            "nl": "Stockpile",
+            "it": "Stockpile"
           },
           "tier": 10,
           "unlockLevel": 31,
@@ -3976,7 +4239,8 @@
               "fr": "Obtenez 25 éliminations de joueurs avec l'achèvement au corps à corps lourd.",
               "es": "Consigue 25 bajas de jugadores con el remate cuerpo a cuerpo pesado.",
               "de": "Erziele 25 Spielerabschüsse mit dem schweren Nahkampf-Finisher.",
-              "nl": "Behaal 25 spelerkills met de zware melee-finisher."
+              "nl": "Behaal 25 spelerkills met de zware melee-finisher.",
+              "it": "Ottieni 25 uccisioni di giocatori con il colpo finale corpo a corpo pesante."
             }
           },
           "children": [],
@@ -3990,7 +4254,8 @@
             "fr": "Deathbed",
             "es": "Deathbed",
             "de": "Deathbed",
-            "nl": "Deathbed"
+            "nl": "Deathbed",
+            "it": "Deathbed"
           },
           "tier": 11,
           "unlockLevel": 46,
@@ -4002,7 +4267,8 @@
               "fr": "Obtenez 2 éliminations de joueurs en 5 secondes, 25 fois.",
               "es": "Consigue 2 bajas de jugadores en 5 segundos, 25 veces.",
               "de": "Erziele 25-mal 2 Spielerabschüsse innerhalb von 5 Sekunden.",
-              "nl": "Behaal 25 keer 2 spelerkills binnen 5 seconden."
+              "nl": "Behaal 25 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni di giocatori entro 5 secondi, 25 volte."
             }
           },
           "children": [],
@@ -4021,7 +4287,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -4037,7 +4304,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -4053,7 +4321,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 26,
@@ -4069,7 +4338,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 34,
@@ -4085,7 +4355,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 41,
@@ -4101,7 +4372,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 48,
@@ -4117,7 +4389,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 55,
@@ -4133,7 +4406,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 62,
@@ -4149,7 +4423,8 @@
             "fr": "Splinter Rock",
             "es": "Splinter Rock",
             "de": "Splinter Rock",
-            "nl": "Splinter Rock"
+            "nl": "Splinter Rock",
+            "it": "Splinter Rock"
           },
           "tier": 9,
           "unlockLevel": 23,
@@ -4161,7 +4436,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -4175,7 +4451,8 @@
             "fr": "Sunset Tropic",
             "es": "Sunset Tropic",
             "de": "Sunset Tropic",
-            "nl": "Sunset Tropic"
+            "nl": "Sunset Tropic",
+            "it": "Sunset Tropic"
           },
           "tier": 10,
           "unlockLevel": 45,
@@ -4187,7 +4464,8 @@
               "fr": "Obtenez 25 éliminations de joueurs avec le lance-grenades Miri 40 mm.",
               "es": "Consigue 25 bajas de jugadores con el lanzagranadas Miri 40 mm.",
               "de": "Erziele 25 Spielerabschüsse mit dem Miri-40-mm-Granatwerfer.",
-              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper."
+              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper.",
+              "it": "Ottieni 25 uccisioni di giocatori con il lanciagranate Miri 40MM."
             }
           },
           "children": [],
@@ -4201,7 +4479,8 @@
             "fr": "Cyan",
             "es": "Cyan",
             "de": "Cyan",
-            "nl": "Cyan"
+            "nl": "Cyan",
+            "it": "Cyan"
           },
           "tier": 11,
           "unlockLevel": 69,
@@ -4213,7 +4492,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 25 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 25 veces.",
               "de": "Erziele 25-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 25 volte."
             }
           },
           "children": [],
@@ -4232,7 +4512,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -4248,7 +4529,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 21,
@@ -4264,7 +4546,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 25,
@@ -4280,7 +4563,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 33,
@@ -4296,7 +4580,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 39,
@@ -4312,7 +4597,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 46,
@@ -4328,7 +4614,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 53,
@@ -4344,7 +4631,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 59,
@@ -4360,7 +4648,8 @@
             "fr": "Dark Moss",
             "es": "Dark Moss",
             "de": "Dark Moss",
-            "nl": "Dark Moss"
+            "nl": "Dark Moss",
+            "it": "Dark Moss"
           },
           "tier": 9,
           "unlockLevel": 25,
@@ -4372,7 +4661,8 @@
               "fr": "Obtenez 25 éliminations de joueurs avec le lance-grenades Miri 40 mm.",
               "es": "Consigue 25 bajas de jugadores con el lanzagranadas Miri 40 mm.",
               "de": "Erziele 25 Spielerabschüsse mit dem Miri-40-mm-Granatwerfer.",
-              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper."
+              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper.",
+              "it": "Ottieni 25 uccisioni di giocatori con il lanciagranate Miri 40MM."
             }
           },
           "children": [],
@@ -4386,7 +4676,8 @@
             "fr": "Shale",
             "es": "Shale",
             "de": "Shale",
-            "nl": "Shale"
+            "nl": "Shale",
+            "it": "Shale"
           },
           "tier": 10,
           "unlockLevel": 44,
@@ -4398,7 +4689,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 10 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 10 veces.",
               "de": "Erziele 10-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 10 volte."
             }
           },
           "children": [],
@@ -4412,7 +4704,8 @@
             "fr": "Hot Rod",
             "es": "Hot Rod",
             "de": "Hot Rod",
-            "nl": "Hot Rod"
+            "nl": "Hot Rod",
+            "it": "Hot Rod"
           },
           "tier": 11,
           "unlockLevel": 65,
@@ -4424,7 +4717,8 @@
               "fr": "Obtenez 100 éliminations de joueurs en visant.",
               "es": "Consigue 100 bajas de jugadores apuntando con la mira.",
               "de": "Erziele 100 Spielerabschüsse beim Zielen über Kimme und Korn.",
-              "nl": "Behaal 100 spelerkills terwijl je richt."
+              "nl": "Behaal 100 spelerkills terwijl je richt.",
+              "it": "Ottieni 100 uccisioni di giocatori mirando."
             }
           },
           "children": [],
@@ -4443,7 +4737,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -4459,7 +4754,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 17,
@@ -4475,7 +4771,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 24,
@@ -4491,7 +4788,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 31,
@@ -4507,7 +4805,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 39,
@@ -4523,7 +4822,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 45,
@@ -4539,7 +4839,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 54,
@@ -4555,7 +4856,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 60,
@@ -4571,7 +4873,8 @@
             "fr": "Oni",
             "es": "Oni",
             "de": "Oni",
-            "nl": "Oni"
+            "nl": "Oni",
+            "it": "Oni"
           },
           "tier": 9,
           "unlockLevel": 24,
@@ -4583,7 +4886,8 @@
               "fr": "Obtenez 20 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 20 bajas a quemarropa contra jugadores.",
               "de": "Erziele 20 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 20 kills van dichtbij tegen spelers."
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -4597,7 +4901,8 @@
             "fr": "Urban Smoke",
             "es": "Urban Smoke",
             "de": "Urban Smoke",
-            "nl": "Urban Smoke"
+            "nl": "Urban Smoke",
+            "it": "Urban Smoke"
           },
           "tier": 10,
           "unlockLevel": 45,
@@ -4609,7 +4914,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -4623,7 +4929,8 @@
             "fr": "Optical Reverb",
             "es": "Optical Reverb",
             "de": "Optical Reverb",
-            "nl": "Optical Reverb"
+            "nl": "Optical Reverb",
+            "it": "Optical Reverb"
           },
           "tier": 11,
           "unlockLevel": 67,
@@ -4635,7 +4942,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "children": [],
@@ -4654,7 +4962,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 9,
@@ -4670,7 +4979,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 15,
@@ -4686,7 +4996,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 22,
@@ -4702,7 +5013,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 28,
@@ -4718,7 +5030,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 33,
@@ -4734,7 +5047,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 40,
@@ -4750,7 +5064,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 47,
@@ -4766,7 +5081,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 54,
@@ -4782,7 +5098,8 @@
             "fr": "Jungle Shadow",
             "es": "Jungle Shadow",
             "de": "Jungle Shadow",
-            "nl": "Jungle Shadow"
+            "nl": "Jungle Shadow",
+            "it": "Jungle Shadow"
           },
           "tier": 9,
           "unlockLevel": 20,
@@ -4794,7 +5111,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position allongée.",
               "es": "Consigue 20 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 20 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 20 spelerkills terwijl je ligt."
+              "nl": "Behaal 20 spelerkills terwijl je ligt.",
+              "it": "Ottieni 20 uccisioni di giocatori da prono."
             }
           },
           "children": [],
@@ -4808,7 +5126,8 @@
             "fr": "Ghast",
             "es": "Ghast",
             "de": "Ghast",
-            "nl": "Ghast"
+            "nl": "Ghast",
+            "it": "Ghast"
           },
           "tier": 10,
           "unlockLevel": 40,
@@ -4820,7 +5139,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position allongée.",
               "es": "Consigue 20 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 20 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 20 spelerkills terwijl je ligt."
+              "nl": "Behaal 20 spelerkills terwijl je ligt.",
+              "it": "Ottieni 20 uccisioni di giocatori da prono."
             }
           },
           "children": [],
@@ -4834,7 +5154,8 @@
             "fr": "Gunmetal",
             "es": "Gunmetal",
             "de": "Gunmetal",
-            "nl": "Gunmetal"
+            "nl": "Gunmetal",
+            "it": "Gunmetal"
           },
           "tier": 11,
           "unlockLevel": 60,
@@ -4846,7 +5167,8 @@
               "fr": "Obtenez 20 éliminations à la tête contre des joueurs.",
               "es": "Consigue 20 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 20 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 headshotkills tegen spelers."
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -4865,7 +5187,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 12,
@@ -4881,7 +5204,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 18,
@@ -4897,7 +5221,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 23,
@@ -4913,7 +5238,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 29,
@@ -4929,7 +5255,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 36,
@@ -4945,7 +5272,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 41,
@@ -4961,7 +5289,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 47,
@@ -4977,7 +5306,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 54,
@@ -4993,7 +5323,8 @@
             "fr": "Stellation",
             "es": "Stellation",
             "de": "Stellation",
-            "nl": "Stellation"
+            "nl": "Stellation",
+            "it": "Stellation"
           },
           "tier": 9,
           "unlockLevel": 20,
@@ -5005,7 +5336,8 @@
               "fr": "Obtenez 50 éliminations de joueurs avec un silencieux.",
               "es": "Consigue 50 bajas de jugadores usando un silenciador.",
               "de": "Erziele 50 Spielerabschüsse mit einem Schalldämpfer.",
-              "nl": "Behaal 50 spelerkills met een geluiddemper."
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Ottieni 50 uccisioni di giocatori usando un silenziatore."
             }
           },
           "children": [],
@@ -5019,7 +5351,8 @@
             "fr": "Rattlesnake",
             "es": "Rattlesnake",
             "de": "Rattlesnake",
-            "nl": "Rattlesnake"
+            "nl": "Rattlesnake",
+            "it": "Rattlesnake"
           },
           "tier": 10,
           "unlockLevel": 41,
@@ -5031,7 +5364,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en sautant.",
               "es": "Consigue 20 bajas de jugadores mientras saltas.",
               "de": "Erziele 20 Spielerabschüsse im Sprung.",
-              "nl": "Behaal 20 spelerkills terwijl je springt."
+              "nl": "Behaal 20 spelerkills terwijl je springt.",
+              "it": "Ottieni 20 uccisioni di giocatori saltando."
             }
           },
           "children": [],
@@ -5045,7 +5379,8 @@
             "fr": "Dark Tan",
             "es": "Dark Tan",
             "de": "Dark Tan",
-            "nl": "Dark Tan"
+            "nl": "Dark Tan",
+            "it": "Dark Tan"
           },
           "tier": 11,
           "unlockLevel": 60,
@@ -5057,7 +5392,8 @@
               "fr": "Obtenez 40 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 40 bajas a quemarropa contra jugadores.",
               "de": "Erziele 40 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 40 kills van dichtbij tegen spelers."
+              "nl": "Behaal 40 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 40 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -5076,7 +5412,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 13,
@@ -5092,7 +5429,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 19,
@@ -5108,7 +5446,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 25,
@@ -5124,7 +5463,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 30,
@@ -5140,7 +5480,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 37,
@@ -5156,7 +5497,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 43,
@@ -5172,7 +5514,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 49,
@@ -5188,7 +5531,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 55,
@@ -5204,7 +5548,8 @@
             "fr": "Redshift",
             "es": "Redshift",
             "de": "Redshift",
-            "nl": "Redshift"
+            "nl": "Redshift",
+            "it": "Redshift"
           },
           "tier": 9,
           "unlockLevel": 21,
@@ -5216,7 +5561,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en mouvement.",
               "es": "Consigue 20 bajas de jugadores en movimiento.",
               "de": "Erziele 20 Spielerabschüsse in Bewegung.",
-              "nl": "Behaal 20 spelerkills terwijl je beweegt."
+              "nl": "Behaal 20 spelerkills terwijl je beweegt.",
+              "it": "Ottieni 20 uccisioni di giocatori in movimento."
             }
           },
           "children": [],
@@ -5230,7 +5576,8 @@
             "fr": "Corrupted Clay",
             "es": "Corrupted Clay",
             "de": "Corrupted Clay",
-            "nl": "Corrupted Clay"
+            "nl": "Corrupted Clay",
+            "it": "Corrupted Clay"
           },
           "tier": 10,
           "unlockLevel": 41,
@@ -5242,7 +5589,8 @@
               "fr": "Réalisez 10 doubles éliminations contre des joueurs.",
               "es": "Consigue 10 bajas dobles contra jugadores.",
               "de": "Erziele 10 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 10 dubbele kills tegen spelers."
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Ottieni 10 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -5256,7 +5604,8 @@
             "fr": "Magma Ire",
             "es": "Magma Ire",
             "de": "Magma Ire",
-            "nl": "Magma Ire"
+            "nl": "Magma Ire",
+            "it": "Magma Ire"
           },
           "tier": 11,
           "unlockLevel": 60,
@@ -5268,7 +5617,8 @@
               "fr": "Obtenez 50 éliminations de joueurs en position allongée.",
               "es": "Consigue 50 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 50 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 50 spelerkills terwijl je ligt."
+              "nl": "Behaal 50 spelerkills terwijl je ligt.",
+              "it": "Ottieni 50 uccisioni di giocatori da prono."
             }
           },
           "children": [],
@@ -5287,7 +5637,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 9,
@@ -5303,7 +5654,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 15,
@@ -5319,7 +5671,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 22,
@@ -5335,7 +5688,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 26,
@@ -5351,7 +5705,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 33,
@@ -5367,7 +5722,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 40,
@@ -5383,7 +5739,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 44,
@@ -5399,7 +5756,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 51,
@@ -5415,7 +5773,8 @@
             "fr": "Phantom Flux",
             "es": "Phantom Flux",
             "de": "Phantom Flux",
-            "nl": "Phantom Flux"
+            "nl": "Phantom Flux",
+            "it": "Phantom Flux"
           },
           "tier": 9,
           "unlockLevel": 15,
@@ -5427,7 +5786,8 @@
               "fr": "Obtenez 20 éliminations sans viser contre des joueurs.",
               "es": "Consigue 20 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 20 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 20 heupvuurkills tegen spelers."
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori senza mirare."
             }
           },
           "children": [],
@@ -5441,7 +5801,8 @@
             "fr": "Mineral",
             "es": "Mineral",
             "de": "Mineral",
-            "nl": "Mineral"
+            "nl": "Mineral",
+            "it": "Mineral"
           },
           "tier": 10,
           "unlockLevel": 36,
@@ -5453,7 +5814,8 @@
               "fr": "Obtenez 20 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 20 bajas a larga distancia contra jugadores.",
               "de": "Erziele 20 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 kills van lange afstand tegen spelers."
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -5467,7 +5829,8 @@
             "fr": "Tiger Swipe",
             "es": "Tiger Swipe",
             "de": "Tiger Swipe",
-            "nl": "Tiger Swipe"
+            "nl": "Tiger Swipe",
+            "it": "Tiger Swipe"
           },
           "tier": 11,
           "unlockLevel": 56,
@@ -5479,7 +5842,8 @@
               "fr": "Obtenez 100 éliminations de joueurs en position allongée.",
               "es": "Consigue 100 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 100 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 100 spelerkills terwijl je ligt."
+              "nl": "Behaal 100 spelerkills terwijl je ligt.",
+              "it": "Ottieni 100 uccisioni di giocatori da prono."
             }
           },
           "children": [],
@@ -5498,7 +5862,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -5514,7 +5879,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 17,
@@ -5530,7 +5896,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 25,
@@ -5546,7 +5913,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 31,
@@ -5562,7 +5930,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 38,
@@ -5578,7 +5947,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 47,
@@ -5594,7 +5964,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 55,
@@ -5610,7 +5981,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 61,
@@ -5626,7 +5998,8 @@
             "fr": "Ice Sheer",
             "es": "Ice Sheer",
             "de": "Ice Sheer",
-            "nl": "Ice Sheer"
+            "nl": "Ice Sheer",
+            "it": "Ice Sheer"
           },
           "tier": 9,
           "unlockLevel": 25,
@@ -5638,7 +6011,8 @@
               "fr": "Obtenez 25 éliminations à la tête contre des joueurs.",
               "es": "Consigue 25 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 25 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 25 headshotkills tegen spelers."
+              "nl": "Behaal 25 headshotkills tegen spelers.",
+              "it": "Ottieni 25 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -5652,7 +6026,8 @@
             "fr": "Brown",
             "es": "Brown",
             "de": "Brown",
-            "nl": "Brown"
+            "nl": "Brown",
+            "it": "Brown"
           },
           "tier": 10,
           "unlockLevel": null,
@@ -5664,7 +6039,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "children": [],
@@ -5678,7 +6054,8 @@
             "fr": "Gunmetal",
             "es": "Gunmetal",
             "de": "Gunmetal",
-            "nl": "Gunmetal"
+            "nl": "Gunmetal",
+            "it": "Gunmetal"
           },
           "tier": 11,
           "unlockLevel": null,
@@ -5690,7 +6067,8 @@
               "fr": "Obtenez 20 éliminations à la tête contre des joueurs.",
               "es": "Consigue 20 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 20 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 20 headshotkills tegen spelers."
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Ottieni 20 uccisioni di giocatori con colpi alla testa."
             }
           },
           "children": [],
@@ -5709,7 +6087,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 10,
@@ -5725,7 +6104,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 15,
@@ -5741,7 +6121,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 20,
@@ -5757,7 +6138,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 26,
@@ -5773,7 +6155,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 32,
@@ -5789,7 +6172,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 37,
@@ -5805,7 +6189,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 42,
@@ -5821,7 +6206,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 48,
@@ -5837,7 +6223,8 @@
             "fr": "Dry Brush",
             "es": "Dry Brush",
             "de": "Dry Brush",
-            "nl": "Dry Brush"
+            "nl": "Dry Brush",
+            "it": "Dry Brush"
           },
           "tier": 9,
           "unlockLevel": 20,
@@ -5849,7 +6236,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 10 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 10 veces.",
               "de": "Erziele 10-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 10 volte."
             }
           },
           "children": [],
@@ -5863,7 +6251,8 @@
             "fr": "Backcountry",
             "es": "Backcountry",
             "de": "Backcountry",
-            "nl": "Backcountry"
+            "nl": "Backcountry",
+            "it": "Backcountry"
           },
           "tier": 10,
           "unlockLevel": 37,
@@ -5875,7 +6264,8 @@
               "fr": "Obtenez 20 éliminations de joueurs en position appuyée.",
               "es": "Consigue 20 bajas de jugadores con el arma apoyada.",
               "de": "Erziele 20 Spielerabschüsse mit aufgelegter Waffe.",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund."
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Ottieni 20 uccisioni di giocatori da posizione appoggiata."
             }
           },
           "children": [],
@@ -5889,7 +6279,8 @@
             "fr": "Dread Plague",
             "es": "Dread Plague",
             "de": "Dread Plague",
-            "nl": "Dread Plague"
+            "nl": "Dread Plague",
+            "it": "Dread Plague"
           },
           "tier": 11,
           "unlockLevel": 54,
@@ -5901,7 +6292,8 @@
               "fr": "Obtenez 2 éliminations de joueurs en 5 secondes, 20 fois.",
               "es": "Consigue 2 bajas de jugadores en 5 segundos, 20 veces.",
               "de": "Erziele 20-mal 2 Spielerabschüsse innerhalb von 5 Sekunden.",
-              "nl": "Behaal 20 keer 2 spelerkills binnen 5 seconden."
+              "nl": "Behaal 20 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Ottieni 2 uccisioni di giocatori entro 5 secondi, 20 volte."
             }
           },
           "children": [],
@@ -5920,7 +6312,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 9,
@@ -5936,7 +6329,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 13,
@@ -5952,7 +6346,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 17,
@@ -5968,7 +6363,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -5984,7 +6380,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 25,
@@ -6000,7 +6397,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 28,
@@ -6016,7 +6414,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 31,
@@ -6032,7 +6431,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 35,
@@ -6048,7 +6448,8 @@
             "fr": "Autumn",
             "es": "Autumn",
             "de": "Autumn",
-            "nl": "Autumn"
+            "nl": "Autumn",
+            "it": "Autumn"
           },
           "tier": 9,
           "unlockLevel": 13,
@@ -6060,7 +6461,8 @@
               "fr": "Obtenez 25 éliminations de joueurs en visant.",
               "es": "Consigue 25 bajas de jugadores apuntando con la mira.",
               "de": "Erziele 25 Spielerabschüsse beim Zielen über Kimme und Korn.",
-              "nl": "Behaal 25 spelerkills terwijl je richt."
+              "nl": "Behaal 25 spelerkills terwijl je richt.",
+              "it": "Ottieni 25 uccisioni di giocatori mirando."
             }
           },
           "children": [],
@@ -6074,7 +6476,8 @@
             "fr": "Snakeskin",
             "es": "Snakeskin",
             "de": "Snakeskin",
-            "nl": "Snakeskin"
+            "nl": "Snakeskin",
+            "it": "Snakeskin"
           },
           "tier": 10,
           "unlockLevel": 25,
@@ -6086,7 +6489,8 @@
               "fr": "Obtenez 3 éliminations de joueurs sans mourir, 5 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir, 5 veces.",
               "de": "Erziele 5-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 5 keer 3 spelerkills zonder dood te gaan."
+              "nl": "Behaal 5 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 5 volte."
             }
           },
           "children": [],
@@ -6100,7 +6504,8 @@
             "fr": "Space Time",
             "es": "Space Time",
             "de": "Space Time",
-            "nl": "Space Time"
+            "nl": "Space Time",
+            "it": "Space Time"
           },
           "tier": 11,
           "unlockLevel": 38,
@@ -6112,7 +6517,8 @@
               "fr": "Obtenez 50 éliminations de joueurs avec Akimbo.",
               "es": "Consigue 50 bajas de jugadores usando Akimbo.",
               "de": "Erziele 50 Spielerabschüsse mit Akimbo.",
-              "nl": "Behaal 50 spelerkills met Akimbo."
+              "nl": "Behaal 50 spelerkills met Akimbo.",
+              "it": "Ottieni 50 uccisioni di giocatori usando Akimbo."
             }
           },
           "children": [],
@@ -6131,7 +6537,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 9,
@@ -6147,7 +6554,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 13,
@@ -6163,7 +6571,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 18,
@@ -6179,7 +6588,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 22,
@@ -6195,7 +6605,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -6211,7 +6622,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 30,
@@ -6227,7 +6639,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 35,
@@ -6243,7 +6656,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 40,
@@ -6259,7 +6673,8 @@
             "fr": "Miami",
             "es": "Miami",
             "de": "Miami",
-            "nl": "Miami"
+            "nl": "Miami",
+            "it": "Miami"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -6271,7 +6686,8 @@
               "fr": "Obtenez 15 éliminations en un tir contre des joueurs.",
               "es": "Consigue 15 bajas de un disparo contra jugadores.",
               "de": "Erziele 15 Abschüsse mit einem Schuss gegen Spieler.",
-              "nl": "Behaal 15 kills met één schot tegen spelers."
+              "nl": "Behaal 15 kills met één schot tegen spelers.",
+              "it": "Ottieni 15 uccisioni di giocatori con un colpo solo."
             }
           },
           "children": [],
@@ -6285,7 +6701,8 @@
             "fr": "Wallpaper",
             "es": "Wallpaper",
             "de": "Wallpaper",
-            "nl": "Wallpaper"
+            "nl": "Wallpaper",
+            "it": "Wallpaper"
           },
           "tier": 10,
           "unlockLevel": 30,
@@ -6297,7 +6714,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 10 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 10 veces.",
               "de": "Erziele 10-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 10 volte."
             }
           },
           "children": [],
@@ -6311,7 +6729,8 @@
             "fr": "Garland",
             "es": "Garland",
             "de": "Garland",
-            "nl": "Garland"
+            "nl": "Garland",
+            "it": "Garland"
           },
           "tier": 11,
           "unlockLevel": 44,
@@ -6323,7 +6742,8 @@
               "fr": "Obtenez 30 éliminations à bout portant contre des joueurs.",
               "es": "Consigue 30 bajas a quemarropa contra jugadores.",
               "de": "Erziele 30 Abschüsse aus nächster Nähe gegen Spieler.",
-              "nl": "Behaal 30 kills van dichtbij tegen spelers."
+              "nl": "Behaal 30 kills van dichtbij tegen spelers.",
+              "it": "Ottieni 30 uccisioni di giocatori a bruciapelo."
             }
           },
           "children": [],
@@ -6342,7 +6762,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 6,
@@ -6358,7 +6779,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 11,
@@ -6374,7 +6796,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 16,
@@ -6390,7 +6813,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -6406,7 +6830,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -6422,7 +6847,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 31,
@@ -6438,7 +6864,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 36,
@@ -6454,7 +6881,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 41,
@@ -6470,7 +6898,8 @@
             "fr": "Digi Bark",
             "es": "Digi Bark",
             "de": "Digi Bark",
-            "nl": "Digi Bark"
+            "nl": "Digi Bark",
+            "it": "Digi Bark"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -6482,7 +6911,8 @@
               "fr": "Obtenez 10 éliminations de joueurs en position allongée.",
               "es": "Consigue 10 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 10 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 10 spelerkills terwijl je ligt."
+              "nl": "Behaal 10 spelerkills terwijl je ligt.",
+              "it": "Ottieni 10 uccisioni di giocatori da prono."
             }
           },
           "children": [],
@@ -6496,7 +6926,8 @@
             "fr": "Stone Bits",
             "es": "Stone Bits",
             "de": "Stone Bits",
-            "nl": "Stone Bits"
+            "nl": "Stone Bits",
+            "it": "Stone Bits"
           },
           "tier": 10,
           "unlockLevel": 31,
@@ -6508,7 +6939,8 @@
               "fr": "Obtenez 10 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 10 bajas a larga distancia contra jugadores.",
               "de": "Erziele 10 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 10 kills van lange afstand tegen spelers."
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -6522,7 +6954,8 @@
             "fr": "Bubblegum Ops",
             "es": "Bubblegum Ops",
             "de": "Bubblegum Ops",
-            "nl": "Bubblegum Ops"
+            "nl": "Bubblegum Ops",
+            "it": "Bubblegum Ops"
           },
           "tier": 11,
           "unlockLevel": 46,
@@ -6534,7 +6967,8 @@
               "fr": "Détruisez 30 séries d'éliminations ou véhicules.",
               "es": "Destruye 30 rachas de bajas o vehículos.",
               "de": "Zerstöre 30 Abschussserien oder Fahrzeuge.",
-              "nl": "Vernietig 30 killstreaks of voertuigen."
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli."
             }
           },
           "children": [],
@@ -6553,7 +6987,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 6,
@@ -6569,7 +7004,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 11,
@@ -6585,7 +7021,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 16,
@@ -6601,7 +7038,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -6617,7 +7055,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -6633,7 +7072,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 31,
@@ -6649,7 +7089,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 36,
@@ -6665,7 +7106,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 41,
@@ -6681,7 +7123,8 @@
             "fr": "Thicket",
             "es": "Thicket",
             "de": "Thicket",
-            "nl": "Thicket"
+            "nl": "Thicket",
+            "it": "Thicket"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -6693,7 +7136,8 @@
               "fr": "Réalisez 5 doubles éliminations contre des joueurs.",
               "es": "Consigue 5 bajas dobles contra jugadores.",
               "de": "Erziele 5 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 5 dubbele kills tegen spelers."
+              "nl": "Behaal 5 dubbele kills tegen spelers.",
+              "it": "Ottieni 5 uccisioni doppie di giocatori."
             }
           },
           "children": [],
@@ -6707,7 +7151,8 @@
             "fr": "Tectonic",
             "es": "Tectonic",
             "de": "Tectonic",
-            "nl": "Tectonic"
+            "nl": "Tectonic",
+            "it": "Tectonic"
           },
           "tier": 10,
           "unlockLevel": 31,
@@ -6719,7 +7164,8 @@
               "fr": "Obtenez 10 éliminations à longue distance contre des joueurs.",
               "es": "Consigue 10 bajas a larga distancia contra jugadores.",
               "de": "Erziele 10 Weitschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 10 kills van lange afstand tegen spelers."
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Ottieni 10 uccisioni di giocatori a lunga distanza."
             }
           },
           "children": [],
@@ -6733,7 +7179,8 @@
             "fr": "Blue Tiger",
             "es": "Blue Tiger",
             "de": "Blue Tiger",
-            "nl": "Blue Tiger"
+            "nl": "Blue Tiger",
+            "it": "Blue Tiger"
           },
           "tier": 11,
           "unlockLevel": 46,
@@ -6745,7 +7192,8 @@
               "fr": "Détruisez 30 séries d'éliminations ou véhicules.",
               "es": "Destruye 30 rachas de bajas o vehículos.",
               "de": "Zerstöre 30 Abschussserien oder Fahrzeuge.",
-              "nl": "Vernietig 30 killstreaks of voertuigen."
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli."
             }
           },
           "children": [],
@@ -6764,7 +7212,8 @@
             "fr": "Militaire 1",
             "es": "Militar 1",
             "de": "Militär 1",
-            "nl": "Militair 1"
+            "nl": "Militair 1",
+            "it": "Militare 1"
           },
           "tier": 1,
           "unlockLevel": 6,
@@ -6780,7 +7229,8 @@
             "fr": "Militaire 2",
             "es": "Militar 2",
             "de": "Militär 2",
-            "nl": "Militair 2"
+            "nl": "Militair 2",
+            "it": "Militare 2"
           },
           "tier": 2,
           "unlockLevel": 11,
@@ -6796,7 +7246,8 @@
             "fr": "Militaire 3",
             "es": "Militar 3",
             "de": "Militär 3",
-            "nl": "Militair 3"
+            "nl": "Militair 3",
+            "it": "Militare 3"
           },
           "tier": 3,
           "unlockLevel": 16,
@@ -6812,7 +7263,8 @@
             "fr": "Militaire 4",
             "es": "Militar 4",
             "de": "Militär 4",
-            "nl": "Militair 4"
+            "nl": "Militair 4",
+            "it": "Militare 4"
           },
           "tier": 4,
           "unlockLevel": 21,
@@ -6828,7 +7280,8 @@
             "fr": "Militaire 5",
             "es": "Militar 5",
             "de": "Militär 5",
-            "nl": "Militair 5"
+            "nl": "Militair 5",
+            "it": "Militare 5"
           },
           "tier": 5,
           "unlockLevel": 26,
@@ -6844,7 +7297,8 @@
             "fr": "Militaire 6",
             "es": "Militar 6",
             "de": "Militär 6",
-            "nl": "Militair 6"
+            "nl": "Militair 6",
+            "it": "Militare 6"
           },
           "tier": 6,
           "unlockLevel": 31,
@@ -6860,7 +7314,8 @@
             "fr": "Militaire 7",
             "es": "Militar 7",
             "de": "Militär 7",
-            "nl": "Militair 7"
+            "nl": "Militair 7",
+            "it": "Militare 7"
           },
           "tier": 7,
           "unlockLevel": 36,
@@ -6876,7 +7331,8 @@
             "fr": "Militaire 8",
             "es": "Militar 8",
             "de": "Militär 8",
-            "nl": "Militair 8"
+            "nl": "Militair 8",
+            "it": "Militare 8"
           },
           "tier": 8,
           "unlockLevel": 41,
@@ -6892,7 +7348,8 @@
             "fr": "Night Snow",
             "es": "Night Snow",
             "de": "Night Snow",
-            "nl": "Night Snow"
+            "nl": "Night Snow",
+            "it": "Night Snow"
           },
           "tier": 9,
           "unlockLevel": 16,
@@ -6904,7 +7361,8 @@
               "fr": "Obtenez 25 éliminations par tir direct contre des joueurs.",
               "es": "Consigue 25 bajas con impacto directo contra jugadores.",
               "de": "Erziele 25 Abschüsse durch Direkttreffer gegen Spieler.",
-              "nl": "Behaal 25 kills met een voltreffer tegen spelers."
+              "nl": "Behaal 25 kills met een voltreffer tegen spelers.",
+              "it": "Ottieni 25 uccisioni di giocatori con colpo diretto."
             }
           },
           "children": [],
@@ -6918,7 +7376,8 @@
             "fr": "Recursive",
             "es": "Recursive",
             "de": "Recursive",
-            "nl": "Recursive"
+            "nl": "Recursive",
+            "it": "Recursive"
           },
           "tier": 10,
           "unlockLevel": 31,
@@ -6930,7 +7389,8 @@
               "fr": "Obtenez 2 éliminations de joueurs sans recharger, 5 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar, 5 veces.",
               "de": "Erziele 5-mal 2 Spielerabschüsse, ohne nachzuladen.",
-              "nl": "Behaal 5 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 5 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 5 volte."
             }
           },
           "children": [],
@@ -6944,7 +7404,8 @@
             "fr": "Urban Standard",
             "es": "Urban Standard",
             "de": "Urban Standard",
-            "nl": "Urban Standard"
+            "nl": "Urban Standard",
+            "it": "Urban Standard"
           },
           "tier": 11,
           "unlockLevel": 46,
@@ -6956,7 +7417,8 @@
               "fr": "Obtenez 40 éliminations de joueurs en mouvement.",
               "es": "Consigue 40 bajas de jugadores en movimiento.",
               "de": "Erziele 40 Spielerabschüsse in Bewegung.",
-              "nl": "Behaal 40 spelerkills terwijl je beweegt."
+              "nl": "Behaal 40 spelerkills terwijl je beweegt.",
+              "it": "Ottieni 40 uccisioni di giocatori in movimento."
             }
           },
           "children": [],
@@ -6979,7 +7441,8 @@
             "fr": "Obtenez 15 éliminations de joueurs en une seule partie.",
             "es": "Consigue 15 bajas de jugadores en una sola partida.",
             "de": "Erziele 15 Spielerabschüsse in einem einzigen Match.",
-            "nl": "Behaal 15 spelerkills in één wedstrijd."
+            "nl": "Behaal 15 spelerkills in één wedstrijd.",
+            "it": "Ottieni 15 uccisioni di giocatori in una sola partita."
           }
         },
         "unlock": "weapon",
@@ -6995,7 +7458,8 @@
               "fr": "Obtenez 50 éliminations à la tête contre des joueurs.",
               "es": "Consigue 50 bajas con disparo a la cabeza contra jugadores.",
               "de": "Erziele 50 Kopfschuss-Abschüsse gegen Spieler.",
-              "nl": "Behaal 50 headshotkills tegen spelers."
+              "nl": "Behaal 50 headshotkills tegen spelers.",
+              "it": "Ottieni 50 uccisioni di giocatori con colpi alla testa."
             }
           },
           "1": {
@@ -7006,7 +7470,8 @@
               "fr": "Obtenez 25 éliminations de joueurs par derrière.",
               "es": "Consigue 25 bajas de jugadores por la espalda.",
               "de": "Erziele 25 Spielerabschüsse von hinten.",
-              "nl": "Behaal 25 spelerkills van achteren."
+              "nl": "Behaal 25 spelerkills van achteren.",
+              "it": "Ottieni 25 uccisioni di giocatori alle spalle."
             }
           },
           "2": {
@@ -7017,7 +7482,8 @@
               "fr": "Obtenez 125 éliminations sans viser contre des joueurs.",
               "es": "Consigue 125 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 125 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 125 heupvuurkills tegen spelers."
+              "nl": "Behaal 125 heupvuurkills tegen spelers.",
+              "it": "Ottieni 125 uccisioni di giocatori senza mirare."
             }
           },
           "3": {
@@ -7028,7 +7494,8 @@
               "fr": "Éliminez 3 joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder te sterven."
+              "nl": "Behaal 15 keer 3 spelerkills zonder te sterven.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           },
           "4": {
@@ -7039,7 +7506,8 @@
               "fr": "Obtenez 75 éliminations de joueurs en position allongée.",
               "es": "Consigue 75 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 75 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 75 spelerkills terwijl je ligt."
+              "nl": "Behaal 75 spelerkills terwijl je ligt.",
+              "it": "Ottieni 75 uccisioni di giocatori da prono."
             }
           },
           "5": {
@@ -7050,7 +7518,8 @@
               "fr": "Obtenez 75 éliminations de joueurs en position allongée.",
               "es": "Consigue 75 bajas de jugadores cuerpo a tierra.",
               "de": "Erziele 75 Spielerabschüsse im Liegen.",
-              "nl": "Behaal 75 spelerkills terwijl je ligt."
+              "nl": "Behaal 75 spelerkills terwijl je ligt.",
+              "it": "Ottieni 75 uccisioni di giocatori da prono."
             }
           },
           "6": {
@@ -7061,7 +7530,8 @@
               "fr": "Obtenez 20 éliminations de joueurs par derrière.",
               "es": "Consigue 20 bajas de jugadores por la espalda.",
               "de": "Erziele 20 Spielerabschüsse von hinten.",
-              "nl": "Behaal 20 spelerkills van achteren."
+              "nl": "Behaal 20 spelerkills van achteren.",
+              "it": "Ottieni 20 uccisioni di giocatori alle spalle."
             }
           },
           "7": {
@@ -7072,7 +7542,8 @@
               "fr": "Éliminez 2 joueurs sans subir de dégâts, 15 fois.",
               "es": "Consigue 2 bajas de jugadores sin recibir daño 15 veces.",
               "de": "Erziele 15-mal 2 Spielerabschüsse, ohne Schaden zu nehmen.",
-              "nl": "Behaal 15 keer 2 spelerkills zonder schade op te lopen."
+              "nl": "Behaal 15 keer 2 spelerkills zonder schade op te lopen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza subire danni, 15 volte."
             }
           },
           "8": {
@@ -7083,7 +7554,8 @@
               "fr": "Éliminez 3 joueurs sans mourir, 15 fois.",
               "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
               "de": "Erziele 15-mal 3 Spielerabschüsse, ohne zu sterben.",
-              "nl": "Behaal 15 keer 3 spelerkills zonder te sterven."
+              "nl": "Behaal 15 keer 3 spelerkills zonder te sterven.",
+              "it": "Ottieni 3 uccisioni di giocatori senza morire, 15 volte."
             }
           }
         },
@@ -7098,7 +7570,8 @@
               "fr": "Obtenez 50 éliminations sans viser contre des joueurs.",
               "es": "Consigue 50 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 50 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 50 heupvuurkills tegen spelers."
+              "nl": "Behaal 50 heupvuurkills tegen spelers.",
+              "it": "Ottieni 50 uccisioni di giocatori senza mirare."
             }
           }
         }
@@ -7113,7 +7586,8 @@
               "fr": "Réalisez 25 doubles éliminations contre des joueurs.",
               "es": "Consigue 25 bajas dobles contra jugadores.",
               "de": "Erziele 25 Doppelabschüsse gegen Spieler.",
-              "nl": "Behaal 25 dubbele kills tegen spelers."
+              "nl": "Behaal 25 dubbele kills tegen spelers.",
+              "it": "Ottieni 25 uccisioni doppie di giocatori."
             }
           },
           "1": {
@@ -7124,7 +7598,8 @@
               "fr": "Obtenez 50 éliminations sans viser contre des joueurs.",
               "es": "Consigue 50 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 50 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 50 heupvuurkills tegen spelers."
+              "nl": "Behaal 50 heupvuurkills tegen spelers.",
+              "it": "Ottieni 50 uccisioni di giocatori senza mirare."
             }
           },
           "2": {
@@ -7135,7 +7610,8 @@
               "fr": "Éliminez 2 joueurs sans recharger, 25 fois.",
               "es": "Consigue 2 bajas de jugadores sin recargar 25 veces.",
               "de": "Erziele 25-mal 2 Spielerabschüsse ohne Nachladen.",
-              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen."
+              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen.",
+              "it": "Ottieni 2 uccisioni di giocatori senza ricaricare, 25 volte."
             }
           },
           "3": {
@@ -7146,7 +7622,8 @@
               "fr": "Éliminez 2 joueurs sans relâcher la détente, 25 fois.",
               "es": "Consigue 2 bajas de jugadores sin soltar el gatillo 25 veces.",
               "de": "Erziele 25-mal 2 Spielerabschüsse, ohne den Abzug loszulassen.",
-              "nl": "Behaal 25 keer 2 spelerkills zonder de trekker los te laten."
+              "nl": "Behaal 25 keer 2 spelerkills zonder de trekker los te laten.",
+              "it": "Ottieni 2 uccisioni di giocatori senza rilasciare il grilletto, 25 volte."
             }
           },
           "4": {
@@ -7157,7 +7634,8 @@
               "fr": "Obtenez 75 éliminations en un seul tir contre des joueurs.",
               "es": "Consigue 75 bajas de un solo disparo contra jugadores.",
               "de": "Erziele 75 Abschüsse mit einem Schuss gegen Spieler.",
-              "nl": "Behaal 75 one-shot kills tegen spelers."
+              "nl": "Behaal 75 one-shot kills tegen spelers.",
+              "it": "Ottieni 75 uccisioni di giocatori con un colpo solo."
             }
           },
           "5": {
@@ -7168,7 +7646,8 @@
               "fr": "Obtenez 75 éliminations en un seul tir contre des joueurs.",
               "es": "Consigue 75 bajas de un solo disparo contra jugadores.",
               "de": "Erziele 75 Abschüsse mit einem Schuss gegen Spieler.",
-              "nl": "Behaal 75 one-shot kills tegen spelers."
+              "nl": "Behaal 75 one-shot kills tegen spelers.",
+              "it": "Ottieni 75 uccisioni di giocatori con un colpo solo."
             }
           },
           "6": {
@@ -7179,7 +7658,8 @@
               "fr": "Obtenez 40 éliminations sans viser contre des joueurs.",
               "es": "Consigue 40 bajas disparando desde la cadera contra jugadores.",
               "de": "Erziele 40 Abschüsse aus der Hüfte gegen Spieler.",
-              "nl": "Behaal 40 heupvuurkills tegen spelers."
+              "nl": "Behaal 40 heupvuurkills tegen spelers.",
+              "it": "Ottieni 40 uccisioni di giocatori senza mirare."
             }
           },
           "7": {
@@ -7190,7 +7670,8 @@
               "fr": "Obtenez 10 éliminations de joueurs en une partie, 7 fois.",
               "es": "Consigue 10 bajas de jugadores en una partida 7 veces.",
               "de": "Erziele 7-mal 10 Spielerabschüsse in einem Match.",
-              "nl": "Behaal 7 keer 10 spelerkills in één wedstrijd."
+              "nl": "Behaal 7 keer 10 spelerkills in één wedstrijd.",
+              "it": "Ottieni 10 uccisioni di giocatori in una partita, 7 volte."
             }
           },
           "8": {
@@ -7201,7 +7682,8 @@
               "fr": "Obtenez 25 éliminations de joueurs par derrière.",
               "es": "Consigue 25 bajas de jugadores por la espalda.",
               "de": "Erziele 25 Spielerabschüsse von hinten.",
-              "nl": "Behaal 25 spelerkills van achteren."
+              "nl": "Behaal 25 spelerkills van achteren.",
+              "it": "Ottieni 25 uccisioni di giocatori alle spalle."
             }
           }
         },
@@ -7215,7 +7697,8 @@
         "fr": "Divergence",
         "es": "Divergence",
         "de": "Divergence",
-        "nl": "Divergence"
+        "nl": "Divergence",
+        "it": "Divergence"
       },
       "harmonicBreaksNeeded": 33,
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/divergence.png"
@@ -7232,7 +7715,8 @@
           "fr": "Débloquez Divergence, puis obtenez 10 éliminations en une partie 250 fois.",
           "es": "Desbloquea Divergence y luego consigue 10 bajas en una partida 250 veces.",
           "de": "Schalte Divergence frei, dann erziele 250-mal 10 Abschüsse in einem Match.",
-          "nl": "Ontgrendel Divergence en behaal 250 keer 10 kills in één wedstrijd."
+          "nl": "Ontgrendel Divergence en behaal 250 keer 10 kills in één wedstrijd.",
+          "it": "Sblocca Divergence, poi ottieni 10 uccisioni in una partita 250 volte."
         }
       }
     },
@@ -7246,7 +7730,8 @@
           "fr": "Obtenez 3 éliminations sans subir de dégâts 300 fois.",
           "es": "Consigue 3 bajas sin recibir daño 300 veces.",
           "de": "Erziele 300-mal 3 Abschüsse, ohne Schaden zu nehmen.",
-          "nl": "Behaal 300 keer 3 kills zonder schade op te lopen."
+          "nl": "Behaal 300 keer 3 kills zonder schade op te lopen.",
+          "it": "Ottieni 3 uccisioni senza subire danni 300 volte."
         }
       }
     },
@@ -7260,7 +7745,8 @@
           "fr": "Obtenez 5 éliminations sans mourir 500 fois.",
           "es": "Consigue 5 bajas sin morir 500 veces.",
           "de": "Erziele 500-mal 5 Abschüsse, ohne zu sterben.",
-          "nl": "Behaal 500 keer 5 kills zonder dood te gaan."
+          "nl": "Behaal 500 keer 5 kills zonder dood te gaan.",
+          "it": "Ottieni 5 uccisioni senza morire 500 volte."
         }
       }
     },

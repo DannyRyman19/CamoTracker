@@ -10,6 +10,9 @@ struct Suggestion: Identifiable {
     /// The Completionist camo this weapon is on, for its badge; nil for a
     /// weapon still on its camo list.
     let highlight: Color?
+    /// That camo's gradient, where it has one (Gold to Mastery), drawn in
+    /// place of the flat color.
+    var gradient: [Color]? = nil
 }
 
 /// A brief celebration shown when a weapon, category, or the whole roster
@@ -54,16 +57,21 @@ extension TrackerViewModel {
                                 weaponId: weaponId,
                                 title: weapon.name.resolved(),
                                 subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), camo.name),
-                                highlight: camo.color
+                                highlight: camo.color,
+                                gradient: camo.gradient
                             ), Self.completionistStepCount + tier))
                         }
                         continue
                     }
+                    // Only once it can be worked on: Platinum waits for the
+                    // class's Golds, Harmonic Break for every Platinum
+                    guard isCompletionistAvailable(mode: mode, weaponId: weaponId, step: next) else { continue }
                     onCompletionist.append((Suggestion(
                         weaponId: weaponId,
                         title: weapon.name.resolved(),
                         subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), steps[next].name),
-                        highlight: steps[next].color
+                        highlight: steps[next].color,
+                        gradient: steps[next].gradient
                     ), next))
                 } else {
                     let remaining = remainingCamoCount(weaponId: weaponId, mode: mode)

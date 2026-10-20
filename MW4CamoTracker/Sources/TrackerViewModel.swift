@@ -25,6 +25,10 @@ final class TrackerViewModel: ObservableObject {
     @Published private(set) var pinnedWeaponId: Int?
     private let pinnedWeaponKey = "mw4_pinned_weapon_v1"
 
+    /// The pending widget refresh (see WidgetSync.swift), so a burst of
+    /// ticks writes the snapshot once.
+    var widgetTask: Task<Void, Never>?
+
     private let dataService: DataService
 
     /// Weapon level is the one thing genuinely global: keyed by `weaponId` alone,
@@ -102,6 +106,9 @@ final class TrackerViewModel: ObservableObject {
                 modes = merged
             }
             refreshError = nil
+            // Every launch passes through here, and new data can rename or
+            // add camos, so the widgets get a fresh snapshot.
+            refreshWidgets()
             #if DEBUG
             // `refreshError` is not shown anywhere, so a broken feed is
             // invisible: Data/MW4 did not exist on the CDN for the app's
@@ -237,6 +244,85 @@ final class TrackerViewModel: ObservableObject {
         saveProgress()
         objectWillChange.send()
         Haptics.undone()
+    }
+
+    // MARK: - Prestige camos (global, like level and Prestige)
+
+    var prestigeCamos: [PrestigeCamo] { catalog?.prestigeCamos ?? [] }
+
+    /// The stage a Prestige camo sits in, counting from 1 (`nil` in the data
+    /// means the last stage). `nil` here when there are no stages at all.
+    func prestigeCamoStage(_ camo: PrestigeCamo) -> Int? {
+        let count = prestigeStages.count
+        guard count > 0 else { return nil }
+        return min(camo.stage ?? count, count)
+    }
+
+    /// The level within its stage a Prestige camo needs on this weapon:
+    /// the weapon's own override, the level after its max when the camo
+    /// says so, or
+    /// the camo's level. `nil` when reaching the stage is enough.
+    func prestigeCamoLevel(_ camo: PrestigeCamo, weaponId: Int) -> Int? {
+        if let level = camo.byWeapon?[String(weaponId)]?.level { return level }
+        if camo.afterWeaponMaxLevel == true { return weapon(id: weaponId).map { $0.maxLevel + 1 } }
+        return camo.level
+    }
+
+    /// Earned by the weapon's own Prestige and level, the way a Military
+    /// camo is by its level.
+    func hasReachedPrestigeCamo(_ camo: PrestigeCamo, weaponId: Int) -> Bool {
+        guard let stage = prestigeCamoStage(camo) else { return false }
+        let current = prestige(for: weaponId)
+        if current != stage { return current > stage }
+        return level(for: weaponId) >= (prestigeCamoLevel(camo, weaponId: weaponId) ?? 0)
+    }
+
+    func isPrestigeCamoComplete(weaponId: Int, index: Int) -> Bool {
+        guard prestigeCamos.indices.contains(index) else { return false }
+        return hasReachedPrestigeCamo(prestigeCamos[index], weaponId: weaponId)
+            || completed.contains(prestigeCamoKey(weaponId, index))
+    }
+
+    /// Like a Military camo: tapping one sets the weapon's Prestige and
+    /// level to it, tapping an earned one steps back to just below it. In
+    /// quick tick it's a plain tick, with the ones before it.
+    func togglePrestigeCamo(weaponId: Int, index: Int) {
+        guard prestigeCamos.indices.contains(index), let weapon = weapon(id: weaponId),
+              let stage = prestigeCamoStage(prestigeCamos[index]) else { return }
+        let camo = prestigeCamos[index]
+        let wasDone = isPrestigeCamoComplete(weaponId: weaponId, index: index)
+        if wasDone {
+            for later in index..<prestigeCamos.count { completed.remove(prestigeCamoKey(weaponId, later)) }
+            if hasReachedPrestigeCamo(camo, weaponId: weaponId) {
+                if let level = prestigeCamoLevel(camo, weaponId: weaponId), level > 1 {
+                    weaponPrestige[weaponId] = stage
+                    weaponLevels[weaponId] = level - 1
+                } else {
+                    // Reaching the stage was all it took: back to the one
+                    // before it, maxed, as undoing a prestige does.
+                    weaponPrestige[weaponId] = stage - 1
+                    weaponLevels[weaponId] = maxLevel(for: weapon)
+                }
+            }
+        } else if quickTick {
+            for earlier in 0...index { completed.insert(prestigeCamoKey(weaponId, earlier)) }
+        } else {
+            let current = prestige(for: weaponId) == stage ? level(for: weaponId) : 1
+            weaponPrestige[weaponId] = stage
+            weaponLevels[weaponId] = max(current, prestigeCamoLevel(camo, weaponId: weaponId) ?? 1)
+        }
+        saveProgress()
+        objectWillChange.send()
+        Haptics.change(wasDone: wasDone, isDone: isPrestigeCamoComplete(weaponId: weaponId, index: index))
+    }
+
+    /// The camo's name, or the weapon's own when it has one.
+    func prestigeCamoName(_ camo: PrestigeCamo, weaponId: Int) -> LocalizedText {
+        camo.byWeapon?[String(weaponId)]?.name ?? camo.name
+    }
+
+    func prestigeCamoImageURL(_ camo: PrestigeCamo, weaponId: Int) -> String? {
+        camo.byWeapon?[String(weaponId)]?.imageURL ?? camo.imageURL
     }
 
     // MARK: - Camo challenges (per mode, per weapon)
@@ -472,7 +558,11 @@ final class TrackerViewModel: ObservableObject {
 
     /// The modes to show: every mode its file doesn't mark `hidden`.
     var visibleModes: [AppMode] {
-        AppMode.allCases.filter { modes[$0.rawValue]?.hidden != true }
+        // The modes the player picked (Customise > Modes you play), less any
+        // the data hides for now (Warzone until Season 1)
+        let picked = AppMode.played(UserDefaults.standard.string(forKey: AppMode.playedKey) ?? "")
+        let shown = picked.filter { modes[$0.rawValue]?.hidden != true }
+        return shown.isEmpty ? [.multiplayer] : shown
     }
 
     /// Whether this mode's Specials stay shut until every Military camo is
@@ -682,7 +772,7 @@ final class TrackerViewModel: ObservableObject {
         return (0..<Self.completionistStepCount).last { isCompletionistComplete(mode: mode, weaponId: weaponId, step: $0) }
     }
 
-    private var allWeapons: [WeaponEntry] { catalog?.categories.flatMap(\.weapons) ?? [] }
+    var allWeapons: [WeaponEntry] { catalog?.categories.flatMap(\.weapons) ?? [] }
 
     // MARK: - Where a weapon is on its track (filters)
 
@@ -1088,12 +1178,14 @@ final class TrackerViewModel: ObservableObject {
     func pin(weaponId: Int) {
         pinnedWeaponId = weaponId
         defaults.set(weaponId, forKey: pinnedWeaponKey)
+        refreshWidgets()
         Haptics.light()
     }
 
     func unpin() {
         pinnedWeaponId = nil
         defaults.removeObject(forKey: pinnedWeaponKey)
+        refreshWidgets()
         Haptics.undone()
     }
 
@@ -1181,11 +1273,15 @@ final class TrackerViewModel: ObservableObject {
         return Double(done) / Double(leaves.count)
     }
 
-    private func leafItems(_ item: ChallengeItem) -> [ChallengeItem] {
+    func leafItems(_ item: ChallengeItem) -> [ChallengeItem] {
         item.isLeaf ? [item] : item.children.flatMap(leafItems)
     }
 
     // MARK: - Persistence
+
+    private func prestigeCamoKey(_ weaponId: Int, _ index: Int) -> String {
+        "prestigecamo|\(weaponId)|\(index)"
+    }
 
     private func camoKey(_ mode: String, _ weaponId: Int, _ camoId: Int) -> String {
         "camo|\(trackMode(mode))|\(weaponId)|\(camoId)"
@@ -1209,6 +1305,7 @@ final class TrackerViewModel: ObservableObject {
         if let data = try? JSONEncoder().encode(store) {
             defaults.set(data, forKey: storeKey)
         }
+        refreshWidgets()
     }
 }
 

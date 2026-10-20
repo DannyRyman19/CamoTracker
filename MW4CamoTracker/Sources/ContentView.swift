@@ -61,6 +61,9 @@ struct ContentView: View {
 
     /// One navigation path per mode tab. Only ever non-empty under the
     /// screenshot harness; normal navigation pushes onto it as usual.
+    @AppStorage(AppMode.playedKey) private var playedRaw = ""
+    @AppStorage(AppLanguage.key) private var languageRaw = ""
+    @AppStorage(AppMode.startKey) private var startRaw = ""
     @State private var paths: [Int: NavigationPath] = [:]
 
     private func pathBinding(_ index: Int) -> Binding<NavigationPath> {
@@ -127,6 +130,32 @@ struct ContentView: View {
                     .tag(1)
             }
             .tint(currentAccent)
+            // A language switch redraws every screen in the new language.
+            .id(languageRaw)
+            // A widget tap: mw4camo://mode/<mode>[/weapon/<id>] opens that
+            // mode's tab, and the weapon on it when there is one.
+            .onOpenURL { url in
+                guard url.scheme == "mw4camo", url.host == "mode" else { return }
+                let parts = url.pathComponents.filter { $0 != "/" }
+                guard let mode = parts.first.flatMap(AppMode.init(rawValue:)),
+                      viewModel.visibleModes.contains(mode) else { return }
+                // The Weapons tab, in that mode
+                primaryModeRaw = mode.rawValue
+                selectedTab = 0
+                var path = NavigationPath()
+                if parts.count >= 3, parts[1] == "weapon", let id = Int(parts[2]) {
+                    path.append(Route.weapon(id))
+                }
+                paths[0] = path
+            }
+            .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
+            .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
+            // A mode no longer played falls back in `primaryMode` itself
+            .onChange(of: playedRaw) { _ in viewModel.refreshWidgets() }
+
+            #if DEBUG
+            if Self.screenshotScreen == "widgets" { WidgetScreenshotView() }
+            #endif
 
             if let banner = viewModel.milestoneBanner {
                 ConfettiBurst(colors: banner.titleGradient)
@@ -150,6 +179,10 @@ struct ContentView: View {
                 }
                 splashDone = true
                 return
+            }
+            // Weapons opens in the mode the player picked (Customise > Opens to)
+            if !startRaw.isEmpty {
+                primaryModeRaw = AppMode.start(startRaw, played: playedRaw).rawValue
             }
             if !hasOnboarded { showOnboarding = true }
         }

@@ -39,7 +39,7 @@ Output: `<out>/raw/*.png` (straight simulator captures) and `<out>/framed/*.png`
 
 | mode | state |
 |---|---|
-| Multiplayer | every weapon Gold, Mercurial Drift on all of them, Polyatomic Reforged on the ARs |
+| Multiplayer | every camo on every weapon; Gold everywhere, Platinum on ARs and SMGs, Harmonic Break on ARs |
 | Warzone | mid-grind, roughly two thirds |
 | DMZ | early, a few objectives ticked |
 | Levels | M4, Kastov 762, ISO Nightshade and KG-7 Vulcan maxed; the rest scattered |
@@ -52,7 +52,7 @@ same save comes out every run and the shots stay reproducible.
 The key formats have to match `TrackerViewModel.swift` exactly or the seed
 silently does nothing:
 
-- weapon mastery is `wmastery|<mode>|<weaponId>|<tier>`, **not** `mastery|`
+- a Completionist step is `comp|<mode>|<weaponId>|<step>` (0 Gold, 1 Platinum, 2 Harmonic Break); Mastery is mode-wide and isn't seeded
 - `weaponLevels: [Int: Int]` encodes as a JSON object with **stringified**
   keys (`{"1": 68}`). Swift's Codable special-cases String and Int dictionary
   keys; only other key types flatten to `[k, v, k, v, ...]`. Get this wrong and
