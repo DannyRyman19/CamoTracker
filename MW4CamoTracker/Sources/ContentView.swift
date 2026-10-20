@@ -72,14 +72,23 @@ struct ContentView: View {
 
     @Environment(\.horizontalSizeClass) private var sizeClass
 
-    /// iPad: the weapons, with each mode's Mastery in a column beside them.
+    /// iPad: Mastery in a column beside the weapons, shown or hidden from
+    /// the toolbar. It stands in for the Mastery tab, which iPad drops.
+    @AppStorage("mw4.masteryColumn") private var showsMasteryColumn = true
+
     @ViewBuilder private func homeRoot(mode: AppMode) -> some View {
         if sizeClass == .regular {
             HStack(spacing: 0) {
                 CategoryListView(mode: mode)
                     .frame(maxWidth: .infinity)
-                MasteryTabView(embedded: true)
-                    .frame(width: 360)
+                if showsMasteryColumn {
+                    MasteryTabView(embedded: true)
+                        .frame(width: 300)
+                        .overlay(alignment: .leading) {
+                            Rectangle().fill(Color.appInkMuted.opacity(0.12)).frame(width: 1).ignoresSafeArea()
+                        }
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
             }
         } else {
             CategoryListView(mode: mode)
@@ -126,6 +135,17 @@ struct ContentView: View {
                                     Image(systemName: "questionmark.circle")
                                 }
                             }
+                            if sizeClass == .regular {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button {
+                                        Haptics.step()
+                                        withAnimation(.snappy) { showsMasteryColumn.toggle() }
+                                    } label: {
+                                        Image(systemName: showsMasteryColumn ? "sidebar.trailing" : "sidebar.right")
+                                    }
+                                    .accessibilityLabel("mw4.ui.section.mastery".localized())
+                                }
+                            }
                         }
                 }
                 .id(mode)
@@ -137,9 +157,12 @@ struct ContentView: View {
                 .tabItem { Label("mw4.ui.section.weapons".localized(), systemImage: "scope") }
                 .tag(index)
 
-                NavigationStack { MasteryTabView() }
-                    .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
-                    .tag(2)
+                // iPad has Mastery beside the weapons instead
+                if sizeClass != .regular {
+                    NavigationStack { MasteryTabView() }
+                        .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
+                        .tag(2)
+                }
 
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
@@ -165,6 +188,9 @@ struct ContentView: View {
                 paths[0] = path
             }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
+            .onChange(of: sizeClass) { size in
+                if size == .regular, selectedTab == 2 { selectedTab = 0 }
+            }
             .onChange(of: startRaw) { _ in viewModel.refreshWidgets() }
             // The title's mode is where the app opens next time, and what
             // the widgets follow

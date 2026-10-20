@@ -18,7 +18,11 @@ struct MasteryTabView: View {
 
     var body: some View {
         if embedded {
-            list
+            // The home's own background, so the column reads as part of it
+            ZStack {
+                AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
+                list
+            }
         } else {
             ZStack {
                 AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)

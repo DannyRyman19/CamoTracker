@@ -360,7 +360,15 @@ struct WeaponDetailView: View {
     /// good terms, so an unfolded iPhone Duo held upright (about 670pt) gets
     /// the wide header over full-width tiles, and only wider screens a grid.
     private var tileColumns: Int { width >= 1250 ? 3 : (width >= 840 ? 2 : 1) }
-    private var masteryInOneRow: Bool { width >= 1000 }
+
+    /// Columns for `count` tiles with no row left half full: 3 when they
+    /// split into threes (and there's room), else 2. Only an odd count that
+    /// isn't a multiple of 3 leaves one over.
+    private func fitColumns(_ count: Int) -> Int {
+        guard tileColumns > 1, count > 1 else { return 1 }
+        if count % 3 == 0, width >= 1000 { return 3 }
+        return 2
+    }
 
     @ViewBuilder private var wideSections: some View {
         let columns = tileColumns
@@ -399,7 +407,7 @@ struct WeaponDetailView: View {
             } else {
                 ForEach(camoGroups, id: \.title) { group in
                     Section(group.title) {
-                        tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: columns)
+                        tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
                     }
                 }
             }
@@ -408,10 +416,9 @@ struct WeaponDetailView: View {
                 AnyView(CompletionistStepRow(mode: mode, weapon: weapon, step: step))
             }
             let final = mode.hasFinalCamo ? [AnyView(FinalCamoRow(mode: mode, weapon: weapon))] : []
-            tileRows(steps + final, columns: masteryInOneRow ? steps.count + final.count : columns)
+            tileRows(steps + final, columns: fitColumns(steps.count + final.count))
         case .mastery:
-            tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
-                     columns: masteryInOneRow ? 3 : columns)
+            tileRows((1...3).map { tier in AnyView(masteryRow(tier)) }, columns: fitColumns(3))
         }
     }
 
