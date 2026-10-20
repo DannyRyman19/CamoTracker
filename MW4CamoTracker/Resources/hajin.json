@@ -1,5 +1,5 @@
 {
- "version": "0.8.1",
+ "version": "0.8.2",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2494,6 +2494,13 @@
      "check": "upgrade-stash-item-upgrade-i"
     },
     {
+     "title": "Stash Item Upgrade II",
+     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More Stash item slots",
+     "value": "$50,000",
+     "item": "stash-item-upgrade-ii",
+     "check": "upgrade-stash-item-upgrade-ii"
+    },
+    {
      "title": "Stash Weapon Upgrade I",
      "subtitle": "20 Reactive Metals, 10 Stock Rod, 5 Comms Module. +6 Stash weapon slots",
      "value": "$50,000",
@@ -4933,6 +4940,28 @@
    ],
    "cash": 10000,
    "effect": "+18 Stash item slots",
+   "symbol": "archivebox.fill"
+  },
+  {
+   "id": "stash-item-upgrade-ii",
+   "name": "Stash Item Upgrade II",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "detonators",
+     "qty": 20
+    },
+    {
+     "item": "nylon-cloth",
+     "qty": 10
+    },
+    {
+     "item": "power-regulator",
+     "qty": 5
+    }
+   ],
+   "cash": 50000,
+   "effect": "More Stash item slots",
    "symbol": "archivebox.fill"
   },
   {
