@@ -359,11 +359,10 @@ struct WeaponDetailView: View {
     /// A camo tile needs about 400pt to keep its sentence and its stepper on
     /// good terms, so an unfolded iPhone Duo held upright (about 670pt) gets
     /// the wide header over full-width tiles, and only wider screens a grid.
-    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 840 ? 2 : 1) }
+    private var tileColumns: Int { width >= 1250 ? 3 : (width >= 800 ? 2 : 1) }
 
-    /// Columns for `count` tiles with no row left half full: 3 when they
-    /// split into threes (and there's room), else 2. Only an odd count that
-    /// isn't a multiple of 3 leaves one over.
+    /// Columns for `count` tiles: 3 when they split into threes and there's
+    /// room, else 2 (a tile left over stretches across its row).
     private func fitColumns(_ count: Int) -> Int {
         guard tileColumns > 1, count > 1 else { return 1 }
         if count % 3 == 0, width >= 1000 { return 3 }
@@ -432,16 +431,13 @@ struct WeaponDetailView: View {
         }
     }
 
-    /// Rows of `columns` tiles, the last row padded so tiles keep one width.
+    /// Rows of `columns` tiles. A short last row stretches across rather
+    /// than leaving a gap beside it.
     @ViewBuilder private func tileRows(_ tiles: [AnyView], columns: Int) -> some View {
         ForEach(Array(stride(from: 0, to: tiles.count, by: columns)), id: \.self) { start in
             HStack(alignment: .top, spacing: 12) {
-                ForEach(0..<columns, id: \.self) { offset in
-                    if start + offset < tiles.count {
-                        tiles[start + offset].modifier(DetailTile())
-                    } else {
-                        Color.clear.frame(maxWidth: .infinity)
-                    }
+                ForEach(start..<min(start + columns, tiles.count), id: \.self) { index in
+                    tiles[index].modifier(DetailTile())
                 }
             }
             .listRowInsets(Self.rowInsets)
