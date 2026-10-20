@@ -20,16 +20,87 @@ struct WeaponDetailView: View {
     /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
     @ViewBuilder private var modeSwitch: some View {
         if viewModel.visibleModes.count > 1 {
-            VStack(alignment: .leading, spacing: 6) {
+            // A dropdown like the home title's, so it doesn't stack a second
+            // segmented bar on the tabs below it
+            HStack(spacing: 8) {
                 Text("mw4.ui.counts_for".localized())
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
-                Picker("mw4.ui.counts_for".localized(), selection: $mode) {
-                    ForEach(viewModel.visibleModes) { m in
-                        Text(m.displayNameKey.localized()).tag(m)
+                Menu {
+                    Picker("mw4.ui.counts_for".localized(), selection: $mode) {
+                        ForEach(viewModel.visibleModes) { m in
+                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m)
+                        }
+                    }
+                } label: {
+                    HStack(spacing: 5) {
+                        Text(mode.displayNameKey.localized())
+                            .font(.system(size: 15, weight: .bold))
+                            .foregroundStyle(Color.appInk)
+                        Image(systemName: "chevron.down.circle.fill")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(mode.accent)
                     }
                 }
-                .pickerStyle(.segmented)
+                .accessibilityLabel("mw4.ui.counts_for".localized())
+                Spacer(minLength: 0)
+            }
+        }
+    }
+
+    /// The switch as its own row, just above the tabs it changes.
+    @ViewBuilder private var modeSwitchRow: some View {
+        if viewModel.visibleModes.count > 1 {
+            modeSwitch
+                .listRowInsets(EdgeInsets(top: 8, leading: 14, bottom: 2, trailing: 14))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+        }
+    }
+
+    /// Open or shut for every weapon: someone hunting Prestige camos wants
+    /// them open on the next gun too.
+    @AppStorage("mw4.prestigeCamosOpen") private var prestigeCamosOpen = false
+
+    /// The Weapon Prestige camos, under the Prestige control that earns
+    /// them: a one-line count with their swatches, opening to the rows.
+    @ViewBuilder private var prestigeCamosBlock: some View {
+        let count = viewModel.prestigeCamos.count
+        if count > 0 {
+            let done = viewModel.prestigeCamos.indices.filter {
+                viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0)
+            }.count
+            VStack(alignment: .leading, spacing: 4) {
+                Divider().overlay(Color.appInkMuted.opacity(0.2))
+                Button {
+                    Haptics.step()
+                    withAnimation(.snappy) { prestigeCamosOpen.toggle() }
+                } label: {
+                    HStack(spacing: 8) {
+                        Text("mw4.ui.prestige_camos".localized())
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(Color.appInkMuted)
+                        Spacer(minLength: 8)
+                        Text("\(done)/\(count)")
+                            .font(.system(size: 13, weight: .bold, design: .rounded))
+                            .monospacedDigit()
+                            .foregroundStyle(done == count ? mode.accent : Color.appInk)
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(Color.appInkMuted)
+                            .rotationEffect(.degrees(prestigeCamosOpen ? 90 : 0))
+                    }
+                    .padding(.vertical, 6)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityValue("\(done)/\(count)")
+
+                if prestigeCamosOpen {
+                    ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
+                        prestigeCamoRow(index)
+                    }
+                }
             }
         }
     }
@@ -66,7 +137,7 @@ struct WeaponDetailView: View {
                     CompactLevelRow(mode: mode, weapon: weapon)
                 }
 
-                modeSwitch
+                prestigeCamosBlock
             }
             .padding(12)
             .borderedCard()
@@ -109,20 +180,19 @@ struct WeaponDetailView: View {
     /// The parts of this screen the picker switches between: each camo
     /// group (Military, Special), then Completionist, then Mastery.
     /// The mode's camos (Military and Special under their own headers),
-    /// its Completionist camos, Mastery, then the Prestige camos, which are
-    /// the same in every mode.
+    /// its Completionist camos, then Mastery. The Prestige camos are the
+    /// same in every mode, so they sit in the card up top by the Prestige
+    /// control instead.
     private enum Part: Hashable {
         case camos
         case completionist
         case mastery
-        case prestige
     }
 
     private var parts: [(part: Part, title: String)] {
         [(.camos, "mw4.ui.section.camos".localized()),
          (.completionist, "mw4.ui.section.completionist".localized()),
          (.mastery, "mw4.ui.section.mastery".localized())]
-            + (viewModel.prestigeCamos.isEmpty ? [] : [(.prestige, "mw4.ui.prestige".localized())])
     }
 
     /// Picked by hand, else the first part with something still to do.
@@ -156,6 +226,7 @@ struct WeaponDetailView: View {
             .listRowBackground(Color.appSurface)
         }
 
+        modeSwitchRow
         partPicker
 
         if shownPart == .camos {
@@ -174,10 +245,6 @@ struct WeaponDetailView: View {
             switch shownPart {
             case .camos:
                 EmptyView()
-            case .prestige:
-                ForEach(viewModel.prestigeCamos.indices, id: \.self) { index in
-                    prestigeCamoRow(index)
-                }
             case .completionist:
                 // Finishing the camo list opens this weapon's Completionist
                 // camos, and those feed the mode's Mastery camos.
@@ -304,7 +371,7 @@ struct WeaponDetailView: View {
                     CompactLevelRow(mode: mode, weapon: weapon)
                 }
 
-                modeSwitch
+                prestigeCamosBlock
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -313,6 +380,8 @@ struct WeaponDetailView: View {
         .listRowInsets(Self.rowInsets)
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
+
+        modeSwitchRow
 
         if camos.isEmpty {
             noCamoData
@@ -337,12 +406,6 @@ struct WeaponDetailView: View {
         Section(masteryTitle) {
             tileRows((1...3).map { tier in AnyView(masteryRow(tier)) },
                      columns: masteryInOneRow ? 3 : columns)
-        }
-
-        if !viewModel.prestigeCamos.isEmpty {
-            Section("mw4.ui.prestige".localized()) {
-                tileRows(viewModel.prestigeCamos.indices.map { AnyView(prestigeCamoRow($0)) }, columns: columns)
-            }
         }
     }
 
@@ -889,12 +952,18 @@ private struct CompactLevelRow: View {
             HStack(spacing: 10) {
                 // Longer in French and Spanish than the room beside the stepper
                 // on a narrow header: shrink a little before truncating.
-                Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
-                                  : "mw4.ui.weapon_level".localized())
+                // Full size whenever it fits. A bare minimumScaleFactor shrank
+                // it with room to spare (sized before the row had its width).
+                let label = Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
+                                              : "mw4.ui.weapon_level".localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                ViewThatFits(in: .horizontal) {
+                    label.fixedSize()
+                    label.minimumScaleFactor(0.7)
+                }
+                .layoutPriority(1)
 
                 Spacer(minLength: 4)
 
