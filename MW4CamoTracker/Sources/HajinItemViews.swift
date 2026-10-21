@@ -156,7 +156,9 @@ struct HajinItemLink<Label: View>: View {
     var body: some View {
         if let openItem {
             Button { openItem(id) } label: { label().contentShape(Rectangle()) }
-                .buttonStyle(.plain)
+                // Borderless, so a link inside a list row (or inside another
+                // link) is its own tap target rather than the whole row
+                .buttonStyle(.borderless)
         } else {
             NavigationLink { HajinItemView(id: id) } label: { label() }
                 .buttonStyle(.plain)
@@ -570,6 +572,8 @@ struct HajinItemView: View {
 /// mission's reward, a level's unlocks.
 struct HajinLinkChips: View {
     let ids: [String]
+    /// Optional amount per id, shown as "×20" on the chip.
+    var amounts: [String: Int] = [:]
     @EnvironmentObject private var store: HajinStore
 
     var body: some View {
@@ -583,6 +587,11 @@ struct HajinLinkChips: View {
                                     .font(.caption.weight(.semibold))
                                     .foregroundStyle(Color.appInk)
                                     .lineLimit(1)
+                                if let qty = amounts[id] {
+                                    Text("×\(qty)")
+                                        .font(.caption.weight(.bold).monospacedDigit())
+                                        .foregroundStyle(Color.appInkMuted)
+                                }
                             }
                             .padding(.leading, 3)
                             .padding(.trailing, 9)

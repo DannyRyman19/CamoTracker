@@ -54,7 +54,7 @@ struct HajinView: View {
                 .listRowSeparator(.hidden)
 
                 Section {
-                    NavigationLink { HajinKeepSellView() } label: { HajinKeepSellRow() }
+                    NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
                         .listRowBackground(Color.appSurface)
                 }
 
@@ -791,7 +791,7 @@ struct HajinGuidePanel: View {
                     } else if !query.isEmpty {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
-                        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellRow() }
+                        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
                             .listRowBackground(Color.appSurface)
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {

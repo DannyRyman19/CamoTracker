@@ -165,17 +165,8 @@ struct HajinKeepSellView: View {
                     ForEach(groups(guide), id: \.kind) { group in
                         Section {
                             ForEach(group.rows, id: \.0.id) { item, verdict in
-                                HajinItemLink(id: item.id) {
-                                    HStack(spacing: 12) {
-                                        HajinItemTile(item: item, size: 44)
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text(item.name.resolved).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
-                                            HajinVerdictBadge(verdict: verdict, compact: true)
-                                        }
-                                    }
-                                    .padding(.vertical, 2)
-                                }
-                                .listRowBackground(Color.appSurface)
+                                HajinKeepSellRow(item: item, verdict: verdict)
+                                    .listRowBackground(Color.appSurface)
                             }
                         } header: {
                             if let first = group.rows.first { Text(first.1.title) }
@@ -212,19 +203,10 @@ extension HajinKeepSellView {
                         LazyVGrid(columns: [GridItem(.flexible(), spacing: 12, alignment: .top), GridItem(.flexible(), spacing: 12, alignment: .top)],
                                   alignment: .leading, spacing: 12) {
                             ForEach(group.rows, id: \.0.id) { item, verdict in
-                                HajinItemLink(id: item.id) {
-                                    HStack(alignment: .top, spacing: 12) {
-                                        HajinItemTile(item: item, size: 44)
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text(item.name.resolved).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
-                                            HajinVerdictBadge(verdict: verdict, compact: true)
-                                        }
-                                        Spacer(minLength: 0)
-                                    }
+                                HajinKeepSellRow(item: item, verdict: verdict)
                                     .padding(12)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
-                                }
                             }
                         }
                     }
@@ -235,8 +217,56 @@ extension HajinKeepSellView {
     }
 }
 
-/// The guide's entry to the tool, styled like a section row.
+/// One item in Keep or sell: its name links to it, and what needs it
+/// (upgrades or recipes) shows as chips that link to those instead of a
+/// sentence.
 struct HajinKeepSellRow: View {
+    let item: HajinGuide.Item
+    let verdict: HajinVerdict
+
+    private var needs: [(item: HajinGuide.Item, qty: Int)] {
+        verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []
+    }
+
+    private var line: String {
+        switch verdict.kind {
+        case .keep:
+            return String(format: "mw4.ui.keep.keep_short".localized(), verdict.upgrades.reduce(0) { $0 + $1.qty })
+        case .crafting: return "mw4.ui.keep.crafting_short".localized()
+        default: return verdict.reason
+        }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HajinItemLink(id: item.id) {
+                HStack(spacing: 12) {
+                    HajinItemTile(item: item, size: 44)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(item.name.resolved).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
+                            .multilineTextAlignment(.leading)
+                        HStack(alignment: .firstTextBaseline, spacing: 5) {
+                            Image(systemName: verdict.symbol).font(.caption2.weight(.bold)).foregroundStyle(verdict.color)
+                            Text(line).font(.caption).foregroundStyle(Color.appInk.opacity(0.85)).lineLimit(2)
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
+                }
+            }
+            if !needs.isEmpty {
+                HajinLinkChips(ids: needs.map(\.item.id),
+                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:])
+                    .padding(.leading, 56)
+            }
+        }
+        .padding(.vertical, 2)
+    }
+}
+
+/// The guide's entry to the tool, styled like a section row.
+struct HajinKeepSellEntry: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: "arrow.left.arrow.right.circle.fill")
