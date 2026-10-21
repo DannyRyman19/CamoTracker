@@ -15,6 +15,7 @@
 		17C918F4298306D3B088A35A /* multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = D6D4CDA89124982F18FDAA90 /* multiplayer.json */; };
 		1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C3E9F2B4D5F6071829305 /* it.lproj */; };
 		1B1D539E22BDC38C0D4D6B8E /* HajinItemViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */; };
+		1E73E547F98260736571AA27 /* HajinTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE12D1B0A1C282353985A8 /* HajinTracking.swift */; };
 		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
 		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
@@ -175,6 +176,7 @@
 		D712A377EABACE253BE27F61 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		D98CA8F37ED7635FBE6BF567 /* fr.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
 		DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinKeepSell.swift; sourceTree = "<group>"; };
+		DCFE12D1B0A1C282353985A8 /* HajinTracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinTracking.swift; sourceTree = "<group>"; };
 		E0B68295CC227225DC6C73D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinMapView.swift; sourceTree = "<group>"; };
 		E2E50AE42F063B3CFE85D63E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				BD87D3E1EB0474E855A5E907 /* HajinTraitsView.swift */,
 				6F6A589A8AD35B65A48A4E26 /* CloudSync.swift */,
 				DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */,
+				DCFE12D1B0A1C282353985A8 /* HajinTracking.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				F007641376295D2DE45C6967 /* HajinTraitsView.swift in Sources */,
 				57641B70FF6B2206002818BD /* CloudSync.swift in Sources */,
 				8BCCEBEA150DD9C2F3578DD1 /* HajinKeepSell.swift in Sources */,
+				1E73E547F98260736571AA27 /* HajinTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

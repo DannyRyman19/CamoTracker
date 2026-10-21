@@ -249,6 +249,10 @@ final class HajinStore: ObservableObject {
     static let pinsKey = "mw4_hajin_pins"
     static let checkedKey = "mw4_hajin_checked"
     static let levelKey = "mw4_hajin_dmz_level"
+    static let trackedKey = "mw4_hajin_tracked"
+    static let stashKey = "mw4_hajin_stash"
+    /// The game tracks five things at once; so does the app.
+    static let maxTracked = 5
     static let maxLevel = 70
     static let hiddenKey = "mw4_hajin_hidden_categories"
 
@@ -261,6 +265,10 @@ final class HajinStore: ObservableObject {
     /// The player's DMZ level; 0 until they set it, which leaves nothing
     /// shown as locked.
     @Published private(set) var dmzLevel = 0
+    /// Recipes and upgrades being worked towards, in the order tracked.
+    @Published private(set) var tracked: [String] = []
+    /// How many of each ingredient or resource the player has.
+    @Published private(set) var stash: [String: Int] = [:]
     private var cloud: CloudSync?
 
     private let dataService: DataService
@@ -284,14 +292,17 @@ final class HajinStore: ObservableObject {
         }
         checked = Set(defaults.stringArray(forKey: Self.checkedKey) ?? [])
         dmzLevel = defaults.integer(forKey: Self.levelKey)
+        tracked = defaults.stringArray(forKey: Self.trackedKey) ?? []
+        stash = (defaults.dictionary(forKey: Self.stashKey) as? [String: Int]) ?? [:]
         if defaults == .standard {
             let cloud = CloudSync(cloudKey: "mw4_hajin_sync", defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in
                 guard let self else { return }
-                self.checked = Set(values.keys).subtracting([Self.levelSyncKey])
+                self.checked = Set(values.keys.filter { $0 != Self.levelSyncKey && !$0.hasPrefix("track:") && !$0.hasPrefix("stash:") })
                 self.dmzLevel = values[Self.levelSyncKey] ?? 0
-                self.defaults.set(Array(self.checked).sorted(), forKey: Self.checkedKey)
-                self.defaults.set(self.dmzLevel, forKey: Self.levelKey)
+                self.tracked = values.filter { $0.key.hasPrefix("track:") }.sorted { $0.value < $1.value }.map { String($0.key.dropFirst(6)) }
+                self.stash = Dictionary(uniqueKeysWithValues: values.filter { $0.key.hasPrefix("stash:") }.map { (String($0.key.dropFirst(6)), $0.value) })
+                self.persistLocal()
             }
             self.cloud = cloud
             cloud.start(current: syncValues())
@@ -313,19 +324,69 @@ final class HajinStore: ObservableObject {
     private func syncValues() -> [String: Int] {
         var values = Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) })
         if dmzLevel > 0 { values[Self.levelSyncKey] = dmzLevel }
+        for (index, id) in tracked.enumerated() { values["track:\(id)"] = index + 1 }
+        for (id, count) in stash where count > 0 { values["stash:\(id)"] = count }
         return values
+    }
+
+    private func persistLocal() {
+        defaults.set(Array(checked).sorted(), forKey: Self.checkedKey)
+        defaults.set(dmzLevel, forKey: Self.levelKey)
+        defaults.set(tracked, forKey: Self.trackedKey)
+        defaults.set(stash, forKey: Self.stashKey)
+    }
+
+    private func saveAndSync() {
+        persistLocal()
+        cloud?.recordLocal(syncValues())
+    }
+
+    func isTracked(_ id: String) -> Bool { tracked.contains(id) }
+
+    /// Track or untrack; returns false when five are already tracked.
+    @discardableResult
+    func toggleTracked(_ id: String) -> Bool {
+        if let index = tracked.firstIndex(of: id) {
+            tracked.remove(at: index)
+        } else {
+            guard tracked.count < Self.maxTracked else { return false }
+            tracked.append(id)
+        }
+        saveAndSync()
+        return true
+    }
+
+    func count(of id: String) -> Int { stash[id] ?? 0 }
+
+    func setCount(_ count: Int, of id: String) {
+        stash[id] = max(0, min(count, 99_999))
+        if stash[id] == 0 { stash[id] = nil }
+        saveAndSync()
+    }
+
+    /// Everything still missing for the tracked items: ingredient id and
+    /// how many more are needed, biggest shortfall first.
+    func shortfall(in guide: HajinGuide) -> [(item: HajinGuide.Item, missing: Int)] {
+        var need: [String: Int] = [:]
+        for id in tracked {
+            for part in guide.item(id)?.cost ?? [] { need[part.item, default: 0] += part.qty }
+        }
+        return need.compactMap { id, qty in
+            guard let item = guide.item(id) else { return nil }
+            let missing = qty - count(of: id)
+            return missing > 0 ? (item, missing) : nil
+        }
+        .sorted { $0.missing == $1.missing ? $0.item.name.resolved < $1.item.name.resolved : $0.missing > $1.missing }
     }
 
     func toggle(_ key: String) {
         if checked.contains(key) { checked.remove(key) } else { checked.insert(key) }
-        defaults.set(Array(checked).sorted(), forKey: Self.checkedKey)
-        cloud?.recordLocal(syncValues())
+        saveAndSync()
     }
 
     func setLevel(_ level: Int) {
         dmzLevel = min(max(level, 0), Self.maxLevel)
-        defaults.set(dmzLevel, forKey: Self.levelKey)
-        cloud?.recordLocal(syncValues())
+        saveAndSync()
     }
 
     /// Locked only once a level is set and it's below what's needed.

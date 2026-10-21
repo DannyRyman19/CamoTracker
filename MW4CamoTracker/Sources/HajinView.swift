@@ -60,6 +60,9 @@ struct HajinView: View {
                 }
 
                 HajinLevelCard().hajinCard()
+                HajinTrackingCard().hajinCard()
+                NavigationLink { HajinStashView() } label: { HajinStashEntry() }
+                    .hajinCard()
                 HajinHeading(title: "mw4.ui.hajin.guide".localized())
                 ForEach(guide.guide) { section in
                     NavigationLink {
@@ -797,6 +800,9 @@ struct HajinGuidePanel: View {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
                         HajinLevelCard().hajinCard()
+                        HajinTrackingCard().hajinCard()
+                        NavigationLink { HajinStashView() } label: { HajinStashEntry() }
+                            .hajinCard()
                         NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
                             .hajinCard()
                         ForEach(guide.guide) { section in

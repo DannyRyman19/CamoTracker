@@ -320,9 +320,11 @@ private struct CostLine: View {
                     }
                 }
                 Spacer()
-                Text("×\(part.qty)")
+                let have = store.count(of: part.item)
+                // With some in the stash: have/need, green once covered
+                Text(have > 0 ? "\(have)/\(part.qty)" : "×\(part.qty)")
                     .font(.system(.body, design: .monospaced).weight(.semibold))
-                    .foregroundStyle(Color.appInk)
+                    .foregroundStyle(have >= part.qty ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInk)
                 Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
             }
             .padding(.horizontal, 12)
@@ -391,6 +393,22 @@ struct HajinItemView: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(done ? Color.accentDMZ : Color.appInk)
                 Spacer()
+            }
+            .padding(12)
+            .background(panel)
+        }
+        // Recipes and upgrades can be tracked; ingredients show the stash count
+        if !(item.cost ?? []).isEmpty || item.kind == "FOB Upgrade" {
+            HajinTrackButton(id: item.id)
+        }
+        if ["Ingredient", "Resource"].contains(item.kind) {
+            HStack {
+                Text("mw4.ui.hajin.in_stash".localized().uppercased())
+                    .font(.caption.weight(.semibold))
+                    .tracking(0.6)
+                    .foregroundStyle(Color.appInkMuted)
+                Spacer()
+                HajinStashStepper(id: item.id)
             }
             .padding(12)
             .background(panel)
