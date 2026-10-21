@@ -1,5 +1,5 @@
 {
- "version": "0.9.9",
+ "version": "0.9.10",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2872,7 +2872,7 @@
     },
     {
      "title": "Bank Upgrade IV",
-     "subtitle": "5 Ballistic Flight Logs, 5 Regional Combat Notes. Raises your Bank's cash cap above $1 million",
+     "subtitle": "5 Ballistic Flight Logs, 5 Regional Combat Notes. Your Bank holds up to $2 million",
      "value": "$200,000",
      "item": "bank-upgrade-iv",
      "check": "upgrade-bank-upgrade-iv",
@@ -4679,7 +4679,7 @@
     }
    ],
    "cash": 200000,
-   "effect": "Raises your Bank's cash cap above $1 million",
+   "effect": "Your Bank holds up to $2 million",
    "symbol": "building.columns.fill",
    "family": "Bank Upgrade",
    "tier": 4
