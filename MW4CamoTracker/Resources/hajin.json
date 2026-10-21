@@ -1,5 +1,5 @@
 {
- "version": "0.9.10",
+ "version": "0.9.11",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2918,7 +2918,7 @@
     },
     {
      "title": "MIA Recovery Discount II",
-     "subtitle": "5 Nuclear Program Files, 5 Degraded Execution Footage, 10 Binding Catalyst, 10 Nitro Compounds. A bigger discount on rescuing an MIA operator",
+     "subtitle": "5 Nuclear Program Files, 5 Degraded Execution Footage, 10 Binding Catalyst, 10 Nitro Compounds. Rescuing an MIA operator costs another 5% less, 10% with Discount I",
      "item": "mia-recovery-discount-ii",
      "check": "upgrade-mia-recovery-discount-ii",
      "group": "Operators"
@@ -5658,7 +5658,7 @@
      "qty": 10
     }
    ],
-   "effect": "A bigger discount on rescuing an MIA operator",
+   "effect": "Rescuing an MIA operator costs another 5% less, 10% with Discount I",
    "symbol": "cross.case.fill",
    "family": "MIA Recovery Discount",
    "tier": 2
