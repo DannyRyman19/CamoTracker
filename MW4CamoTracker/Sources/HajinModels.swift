@@ -89,6 +89,14 @@ struct HajinGuide: Codable {
         /// Gives the row a checkbox, saved (and synced) under this key.
         let check: String?
 
+        /// The DMZ level this row needs: a level-unlock row's level, or a
+        /// "Lv 12" badge.
+        var requiredLevel: Int? {
+            if let level { return level }
+            guard let text = value?.values["en"], text.hasPrefix("Lv ") else { return nil }
+            return Int(text.dropFirst(3))
+        }
+
         /// Whether any of its text contains `needle` (already lowercased).
         func matches(_ needle: String) -> Bool {
             [title, value, subtitle].contains { $0?.resolved.lowercased().contains(needle) ?? false }
@@ -131,6 +139,12 @@ struct HajinGuide: Codable {
         let grid: String?
         /// The map marker for where it's used (key rooms).
         let marker: String?
+        /// "Reach DMZ level 48" as 48.
+        var requiredLevel: Int? {
+            guard let text = unlock?.values["en"], let range = text.range(of: "level ") else { return nil }
+            return Int(text[range.upperBound...].prefix { $0.isNumber })
+        }
+
         /// FOB upgrades: the family ("Bank Upgrade") and this one's tier.
         let family: String?
         let tier: Int?
@@ -234,6 +248,8 @@ enum HajinThreat {
 final class HajinStore: ObservableObject {
     static let pinsKey = "mw4_hajin_pins"
     static let checkedKey = "mw4_hajin_checked"
+    static let levelKey = "mw4_hajin_dmz_level"
+    static let maxLevel = 70
     static let hiddenKey = "mw4_hajin_hidden_categories"
 
     @Published private(set) var guide: HajinGuide?
@@ -242,6 +258,9 @@ final class HajinStore: ObservableObject {
     }
     /// Ticked rows (bosses taken down), synced over iCloud with progress.
     @Published private(set) var checked: Set<String> = []
+    /// The player's DMZ level; 0 until they set it, which leaves nothing
+    /// shown as locked.
+    @Published private(set) var dmzLevel = 0
     private var cloud: CloudSync?
 
     private let dataService: DataService
@@ -264,15 +283,18 @@ final class HajinStore: ObservableObject {
             pins = saved
         }
         checked = Set(defaults.stringArray(forKey: Self.checkedKey) ?? [])
+        dmzLevel = defaults.integer(forKey: Self.levelKey)
         if defaults == .standard {
             let cloud = CloudSync(cloudKey: "mw4_hajin_sync", defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in
                 guard let self else { return }
-                self.checked = Set(values.keys)
+                self.checked = Set(values.keys).subtracting([Self.levelSyncKey])
+                self.dmzLevel = values[Self.levelSyncKey] ?? 0
                 self.defaults.set(Array(self.checked).sorted(), forKey: Self.checkedKey)
+                self.defaults.set(self.dmzLevel, forKey: Self.levelKey)
             }
             self.cloud = cloud
-            cloud.start(current: Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) }))
+            cloud.start(current: syncValues())
             #if DEBUG
             // One-shot wipe like the progress store's, with its own file
             let wipe = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("mw4_wipe_hajin")
@@ -286,10 +308,30 @@ final class HajinStore: ObservableObject {
         }
     }
 
+    private static let levelSyncKey = "dmz-level"
+
+    private func syncValues() -> [String: Int] {
+        var values = Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) })
+        if dmzLevel > 0 { values[Self.levelSyncKey] = dmzLevel }
+        return values
+    }
+
     func toggle(_ key: String) {
         if checked.contains(key) { checked.remove(key) } else { checked.insert(key) }
         defaults.set(Array(checked).sorted(), forKey: Self.checkedKey)
-        cloud?.recordLocal(Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) }))
+        cloud?.recordLocal(syncValues())
+    }
+
+    func setLevel(_ level: Int) {
+        dmzLevel = min(max(level, 0), Self.maxLevel)
+        defaults.set(dmzLevel, forKey: Self.levelKey)
+        cloud?.recordLocal(syncValues())
+    }
+
+    /// Locked only once a level is set and it's below what's needed.
+    func isLocked(_ required: Int?) -> Bool {
+        guard let required, dmzLevel > 0 else { return false }
+        return required > dmzLevel
     }
 
     /// Categories the player switched off on the map. Starts from each

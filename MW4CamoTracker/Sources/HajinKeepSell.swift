@@ -164,13 +164,10 @@ struct HajinKeepSellView: View {
                 }
                 if let guide = store.guide {
                     ForEach(groups(guide), id: \.kind) { group in
-                        Section {
-                            ForEach(group.rows, id: \.0.id) { item, verdict in
-                                HajinKeepSellRow(item: item, verdict: verdict)
-                                    .hajinCard()
-                            }
-                        } header: {
-                            if let first = group.rows.first { Text(first.1.title) }
+                        if let first = group.rows.first { HajinHeading(title: first.1.title) }
+                        ForEach(group.rows, id: \.0.id) { item, verdict in
+                            HajinKeepSellRow(item: item, verdict: verdict)
+                                .hajinCard()
                         }
                     }
                 }

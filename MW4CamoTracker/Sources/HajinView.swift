@@ -59,23 +59,19 @@ struct HajinView: View {
                         .hajinCard()
                 }
 
-                Section {
-                    ForEach(guide.guide) { section in
-                        NavigationLink {
-                            GuideSectionView(section: section)
-                        } label: {
-                            SectionRow(section: section)
-                        }
-                        .hajinCard()
+                HajinLevelCard().hajinCard()
+                HajinHeading(title: "mw4.ui.hajin.guide".localized())
+                ForEach(guide.guide) { section in
+                    NavigationLink {
+                        GuideSectionView(section: section)
+                    } label: {
+                        SectionRow(section: section)
                     }
-                } header: {
-                    Text("mw4.ui.hajin.guide".localized())
-                        .font(.headline)
-                        .foregroundStyle(Color.appInk)
-                        .textCase(nil)
-                } footer: {
-                    GuideFooter(guide: guide)
+                    .hajinCard()
                 }
+                GuideFooter(guide: guide)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             } else {
                 GuideSearchResults(guide: guide, query: query, pick: nil)
             }
@@ -135,7 +131,7 @@ private struct GuideSearchResults: View {
             .sorted { $0.name.resolved < $1.name.resolved }
         let sections = guide.guide.map { ($0, $0.rows.filter { $0.matches(needle) }) }.filter { !$0.1.isEmpty }
         if !uniquePlaces.isEmpty {
-            Section("mw4.ui.hajin.map".localized()) {
+            HajinHeading(title: "mw4.ui.hajin.map".localized())
                 ForEach(uniquePlaces) { marker in
                     Group {
                         if let pick {
@@ -150,14 +146,12 @@ private struct GuideSearchResults: View {
                     }
                     .hajinCard()
                 }
-            }
         }
         ForEach(sections, id: \.0.id) { section, rows in
-            Section(section.title.resolved) {
-                ForEach(rows, id: \.self) { row in
-                    GuideRowView(row: row, highlight: needle)
-                        .hajinCard()
-                }
+            HajinHeading(title: section.title.resolved)
+            ForEach(rows, id: \.self) { row in
+                GuideRowView(row: row, highlight: needle)
+                    .hajinCard()
             }
         }
         if uniquePlaces.isEmpty && sections.isEmpty {
@@ -420,13 +414,10 @@ struct GroupedGuideRows: View {
 
     var body: some View {
         ForEach(Array(groups.enumerated()), id: \.offset) { _, group in
-            Section {
-                ForEach(group.rows, id: \.self) { row in
-                    GuideRowView(row: row, highlight: highlight)
-                        .hajinCard()
-                }
-            } header: {
-                if let title = group.title { Text(title) }
+            if let title = group.title { HajinHeading(title: title) }
+            ForEach(group.rows, id: \.self) { row in
+                GuideRowView(row: row, highlight: highlight)
+                    .hajinCard()
             }
         }
     }
@@ -458,6 +449,12 @@ struct GuideRowView: View {
         HStack(alignment: .top, spacing: 12) {
             if let key = row.check {
                 HajinTick(done: store.checked.contains(key), label: row.title.resolved) { store.toggle(key) }
+            } else if let level = row.level, store.dmzLevel > 0 {
+                // Level unlocks tick themselves up to the player's level
+                Image(systemName: level <= store.dmzLevel ? "checkmark.circle.fill" : "lock.fill")
+                    .font(.system(size: level <= store.dmzLevel ? 21 : 16))
+                    .foregroundStyle(level <= store.dmzLevel ? Color.accentDMZ : Color.appInkMuted.opacity(0.6))
+                    .frame(width: 24, height: 24)
             }
             if let image = row.image, let url = URL(string: image) {
                 AsyncImage(url: url) { phase in
@@ -477,7 +474,7 @@ struct GuideRowView: View {
                         .font(.hitmarker(15))
                         .foregroundStyle(Color.appInk)
                     Spacer(minLength: 8)
-                    if let value = row.value { HajinValueBadge(text: value.resolved) }
+                    if let value = row.value { HajinValueBadge(text: value.resolved, locked: store.isLocked(row.requiredLevel)) }
                 }
                 if let subtitle = row.subtitle {
                     Text(subtitle.resolved)
@@ -799,6 +796,7 @@ struct HajinGuidePanel: View {
                     } else if !query.isEmpty {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
+                        HajinLevelCard().hajinCard()
                         NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
                             .hajinCard()
                         ForEach(guide.guide) { section in
@@ -1108,5 +1106,61 @@ private struct ThreatLegend: View {
         }
         .padding(8)
         .background(RoundedRectangle(cornerRadius: 8).fill(.black.opacity(0.6)))
+    }
+}
+
+/// A group heading that scrolls with the cards, in the app's bold style.
+struct HajinHeading: View {
+    let title: String
+
+    var body: some View {
+        Text(title)
+            .font(.title3.weight(.bold))
+            .foregroundStyle(Color.appInk)
+            .listRowInsets(EdgeInsets(top: 18, leading: 16, bottom: 4, trailing: 16))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+    }
+}
+
+/// The player's DMZ level, stepped like Weapon Level on a weapon. Set it
+/// and the guide shows what's unlocked and what's still locked.
+struct HajinLevelCard: View {
+    @EnvironmentObject private var store: HajinStore
+    @State private var entering = false
+    @State private var text = ""
+
+    var body: some View {
+        let level = store.dmzLevel
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                Text("mw4.ui.hajin.dmz_level".localized())
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
+                Spacer(minLength: 4)
+                stepButton(systemName: "minus", enabled: level > 0, size: 26, accent: .accentDMZ) { store.setLevel(level - 1) }
+                Button {
+                    text = level > 0 ? "\(level)" : ""
+                    entering = true
+                } label: {
+                    Text(level > 0 ? "\(level)/\(HajinStore.maxLevel)" : "–/\(HajinStore.maxLevel)")
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
+                        .foregroundStyle(Color.accentDMZ)
+                        .contentTransition(.numericText())
+                        .frame(minWidth: 56)
+                }
+                .buttonStyle(.borderless)
+                stepButton(systemName: "plus", enabled: level < HajinStore.maxLevel, size: 26, accent: .accentDMZ) { store.setLevel(level + 1) }
+            }
+            ProgressBar(fraction: Double(level) / Double(HajinStore.maxLevel), accent: .accentDMZ)
+            Text(level > 0 ? "mw4.ui.hajin.dmz_level_set".localized() : "mw4.ui.hajin.dmz_level_hint".localized())
+                .font(.caption)
+                .foregroundStyle(Color.appInkMuted)
+        }
+        .alert("mw4.ui.hajin.dmz_level".localized(), isPresented: $entering) {
+            TextField("1–\(HajinStore.maxLevel)", text: $text).keyboardType(.numberPad)
+            Button("mw4.ui.hajin.save".localized()) { if let n = Int(text) { store.setLevel(n) } }
+            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
+        }
     }
 }

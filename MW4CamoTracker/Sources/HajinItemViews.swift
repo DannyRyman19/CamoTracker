@@ -108,11 +108,15 @@ struct HajinTick: View {
 /// style everywhere so money never reads as a warning.
 struct HajinValueBadge: View {
     let text: String
+    var locked = false
 
     var body: some View {
-        Text(text)
+        HStack(spacing: 4) {
+            if locked { Image(systemName: "lock.fill").font(.system(size: 9, weight: .bold)) }
+            Text(text)
+        }
             .font(.system(size: 11, weight: .semibold, design: .monospaced))
-            .foregroundStyle(Color.appInk.opacity(0.9))
+            .foregroundStyle(locked ? Color.appInkMuted : Color.appInk.opacity(0.9))
             .lineLimit(1)
             .fixedSize()
             .padding(.horizontal, 7)
@@ -226,6 +230,12 @@ struct HajinItemRow: View {
 
     private var link: some View {
         HajinItemLink(id: item.id) {
+            linkContent.opacity(store.isLocked(item.requiredLevel ?? row.requiredLevel) ? 0.55 : 1)
+        }
+    }
+
+    private var linkContent: some View {
+        Group {
             HStack(alignment: .top, spacing: 12) {
                 HajinItemTile(item: item, size: 48)
                 VStack(alignment: .leading, spacing: 5) {
@@ -235,7 +245,7 @@ struct HajinItemRow: View {
                             .foregroundStyle(Color.appInk)
                         Spacer(minLength: 6)
                         if let value = row.value?.resolved, value != item.rarity, value != "Resource" {
-                            HajinValueBadge(text: value)
+                            HajinValueBadge(text: value, locked: store.isLocked(item.requiredLevel ?? row.requiredLevel))
                         }
                     }
                     if item.rarity != nil { HajinRarityLine(item: item, size: 10) }
@@ -266,7 +276,9 @@ struct HajinItemRow: View {
         @EnvironmentObject private var store: HajinStore
 
         var body: some View {
-            HajinWrap(spacing: 8) {
+            // One line: a recipe has at most four parts, and a wrapping
+            // layout inside a row broke early
+            HStack(spacing: 8) {
                 if let cash {
                     Text("$\(cash.formatted())")
                         .font(.caption.weight(.semibold).monospacedDigit())
@@ -734,7 +746,7 @@ struct HajinUpgradeFamilyCard: View {
                             Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
                         }
                         if let cost = item.cost, !cost.isEmpty {
-                            HajinWrap(spacing: 8) {
+                            HStack(spacing: 8) {
                                 ForEach(cost, id: \.item) { part in
                                     let ingredient = store.guide?.item(part.item)
                                     HStack(spacing: 3) {
