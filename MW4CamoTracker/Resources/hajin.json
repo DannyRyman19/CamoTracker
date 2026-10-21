@@ -1,5 +1,5 @@
 {
- "version": "0.9.8",
+ "version": "0.9.9",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2743,7 +2743,7 @@
     },
     {
      "title": "Regional Combat Notes",
-     "subtitle": "MIA Recovery Discount I",
+     "subtitle": "MIA Recovery Discount I, Bank Upgrade IV",
      "item": "regional-combat-notes"
     },
     {
@@ -2868,6 +2868,14 @@
      "value": "$100,000",
      "item": "bank-upgrade-iii",
      "check": "upgrade-bank-upgrade-iii",
+     "group": "Bank"
+    },
+    {
+     "title": "Bank Upgrade IV",
+     "subtitle": "5 Ballistic Flight Logs, 5 Regional Combat Notes. Raises your Bank's cash cap above $1 million",
+     "value": "$200,000",
+     "item": "bank-upgrade-iv",
+     "check": "upgrade-bank-upgrade-iv",
      "group": "Bank"
     },
     {
@@ -4655,6 +4663,26 @@
    "symbol": "building.columns.fill",
    "family": "Bank Upgrade",
    "tier": 3
+  },
+  {
+   "id": "bank-upgrade-iv",
+   "name": "Bank Upgrade IV",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "ballistic-flight-logs",
+     "qty": 5
+    },
+    {
+     "item": "regional-combat-notes",
+     "qty": 5
+    }
+   ],
+   "cash": 200000,
+   "effect": "Raises your Bank's cash cap above $1 million",
+   "symbol": "building.columns.fill",
+   "family": "Bank Upgrade",
+   "tier": 4
   },
   {
    "id": "binding-catalyst",
