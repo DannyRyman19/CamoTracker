@@ -214,6 +214,11 @@ struct HajinStashView: View {
                 HajinStashScanButton()
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                if #available(iOS 17.0, *) {
+                    HajinStashGridButton()
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                }
             }
             ForEach(groups, id: \.title) { group in
                 HajinHeading(title: group.title)
@@ -234,6 +239,9 @@ struct HajinStashView: View {
                     Text("mw4.ui.hajin.stash_intro".localized()).font(.subheadline).foregroundStyle(Color.appInkMuted)
                         .frame(maxWidth: 720, alignment: .leading)
                     HajinStashScanButton().frame(maxWidth: 720, alignment: .leading)
+                    if #available(iOS 17.0, *) {
+                        HajinStashGridButton().frame(maxWidth: 720, alignment: .leading)
+                    }
                 }
                 ForEach(groups, id: \.title) { group in
                     VStack(alignment: .leading, spacing: 8) {

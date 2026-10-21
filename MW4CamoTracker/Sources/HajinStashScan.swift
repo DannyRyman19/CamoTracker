@@ -179,12 +179,19 @@ struct HajinStashScanButton: View {
 /// misread, then update the stash in one go.
 struct HajinStashScanReview: View {
     let found: [String: Int]
+    /// Items the reader wasn't sure of: shown with a "check" tag.
+    var unsure: Set<String> = []
+    /// Called after Update or Cancel, e.g. to close the framing screen too.
+    var onDone: (() -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
     @State private var skip: Set<String> = []
+    @State private var edited: [String: Int] = [:]
+    @State private var editing: HajinGuide.Item?
+    @State private var editText = ""
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
-        found.compactMap { id, n in store.guide?.item(id).map { ($0, store.count(of: id), n) } }
+        found.compactMap { id, n in store.guide?.item(id).map { ($0, store.count(of: id), edited[id] ?? n) } }
             .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
     }
 
@@ -208,7 +215,14 @@ struct HajinStashScanReview: View {
                     } label: {
                         HStack(spacing: 12) {
                             HajinItemTile(item: row.item, size: 32)
-                            Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                                if unsure.contains(row.item.id) && edited[row.item.id] == nil {
+                                    Text("mw4.ui.hajin.scan_check".localized().uppercased())
+                                        .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                                        .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                                }
+                            }
                             Spacer(minLength: 8)
                             if same {
                                 Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
@@ -223,19 +237,40 @@ struct HajinStashScanReview: View {
                         }
                     }
                     .buttonStyle(.plain)
+                    .contextMenu {
+                        Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }
+                    }
+                    .swipeActions {
+                        Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }.tint(.accentDMZ)
+                    }
                 }
+                if !all.isEmpty {
+                    Text("mw4.ui.hajin.scan_edit_hint".localized())
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                        .listRowBackground(Color.clear)
+                }
+            }
+            .alert(editing?.name.resolved ?? "", isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {
+                TextField("0", text: $editText).keyboardType(.numberPad)
+                Button("mw4.ui.hajin.save".localized()) {
+                    if let item = editing, let n = Int(editText) { edited[item.id] = n; skip.remove(item.id) }
+                    editing = nil
+                }
+                Button("mw4.ui.hajin.cancel".localized(), role: .cancel) { editing = nil }
             }
             .navigationTitle("mw4.ui.hajin.scan_title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("mw4.ui.hajin.cancel".localized()) { dismiss() }
+                    Button("mw4.ui.hajin.cancel".localized()) { dismiss(); onDone?() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("mw4.ui.hajin.scan_apply".localized()) {
                         Haptics.step()
                         store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
                         dismiss()
+                        onDone?()
                     }
                     .disabled(changes.isEmpty)
                 }

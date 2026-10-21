@@ -11,6 +11,7 @@ struct HajinView: View {
     @State private var shownSection: HajinGuide.Section?
     @State private var shownItem: String?
     @State private var showsKeepSell = false
+    @State private var showsStash = false
     @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
     @State private var width: CGFloat = 0
 
@@ -33,6 +34,7 @@ struct HajinView: View {
         .navigationBarTitleDisplayMode(width >= 700 ? .inline : .automatic)
         .navigationDestination(isPresented: $showsMap) { HajinMapScreen() }
         .navigationDestination(isPresented: $showsKeepSell) { HajinKeepSellView() }
+        .navigationDestination(isPresented: $showsStash) { HajinStashView() }
         .navigationDestination(isPresented: Binding(get: { shownSection != nil }, set: { if !$0 { shownSection = nil } })) {
             if let shownSection { GuideSectionView(section: shownSection) }
         }
@@ -78,7 +80,7 @@ struct HajinView: View {
         .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_guide".localized())
     }
 
-    /// `SS_HAJIN=map` or `SS_HAJIN=<section id>` opens that screen for the
+    /// `SS_HAJIN=map`, `keep`, `stash` or `<section id>` opens that screen for the
     /// screenshot harness. DEBUG-only.
     private func openScreenshotTarget() {
         #if DEBUG
@@ -93,6 +95,8 @@ struct HajinView: View {
             showsMap = true
         } else if target == "keep" {
             showsKeepSell = true
+        } else if target == "stash" {
+            showsStash = true
         } else if target.hasPrefix("item:") {
             shownItem = String(target.dropFirst(5))
         } else {
