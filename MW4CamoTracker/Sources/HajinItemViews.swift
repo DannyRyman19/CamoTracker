@@ -49,6 +49,7 @@ struct HajinItemTile: View {
 struct HajinRarityLine: View {
     let item: HajinGuide.Item
     var size: CGFloat = 12
+    var showsKind = true
 
     var body: some View {
         HStack(spacing: 6) {
@@ -60,10 +61,13 @@ struct HajinRarityLine: View {
                     .font(.system(size: size, weight: .heavy))
                     .foregroundStyle(HajinRarity.color(rarity))
             }
-            Text(item.kind.uppercased())
-                .font(.system(size: size, weight: .semibold))
-                .foregroundStyle(Color.appInkMuted)
+            if showsKind {
+                Text(item.kind.uppercased())
+                    .font(.system(size: size, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
+            }
         }
+        .lineLimit(1)
         .tracking(0.6)
     }
 }
@@ -77,6 +81,23 @@ extension View {
             .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
+    }
+}
+
+/// "Can print": the stash covers this recipe.
+struct HajinCanPrintTag: View {
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "printer.fill").font(.system(size: 9, weight: .bold))
+            Text("mw4.ui.hajin.can_print".localized().uppercased())
+        }
+        .font(.system(size: 10, weight: .heavy))
+        .tracking(0.5)
+        .foregroundStyle(Color.black.opacity(0.85))
+        .padding(.horizontal, 7)
+        .padding(.vertical, 3)
+        .background(RoundedRectangle(cornerRadius: 4).fill(HajinStore.printableGreen))
+        .fixedSize()
     }
 }
 
@@ -248,7 +269,13 @@ struct HajinItemRow: View {
                             HajinValueBadge(text: value, locked: store.isLocked(item.requiredLevel ?? row.requiredLevel))
                         }
                     }
-                    if item.rarity != nil { HajinRarityLine(item: item, size: 10) }
+                    if item.rarity != nil || store.canPrint(item) {
+                        HStack(spacing: 8) {
+                            // The tag replaces the kind, which the heading already gives
+                            if item.rarity != nil { HajinRarityLine(item: item, size: 10, showsKind: !store.canPrint(item)) }
+                            if store.canPrint(item) { HajinCanPrintTag() }
+                        }
+                    }
                     if let cost = item.cost, !cost.isEmpty {
                         // The row's badge already shows the cash for upgrades
                         CostChips(cost: cost, cash: row.value == nil ? item.cash : nil)
@@ -419,6 +446,23 @@ struct HajinItemView: View {
         }
         let tiers = guide.tiers(of: item)
         if tiers.count > 1 { tierStrip(item, tiers) }
+        if store.canPrint(item) {
+            let locked = store.isLocked(item.requiredLevel)
+            HStack(spacing: 10) {
+                Image(systemName: locked ? "lock.fill" : "printer.fill").font(.title3.weight(.bold))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text((locked ? "mw4.ui.hajin.have_all".localized() : "mw4.ui.hajin.can_print_title".localized()).uppercased())
+                        .font(.system(size: 14, weight: .heavy)).tracking(0.8)
+                    Text(locked ? String(format: "mw4.ui.hajin.unlocks_at".localized(), item.requiredLevel ?? 0)
+                                : "mw4.ui.hajin.can_print_detail".localized())
+                        .font(.subheadline)
+                }
+                Spacer(minLength: 0)
+            }
+            .foregroundStyle(locked ? Color.appInk : Color.black.opacity(0.85))
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 8).fill(locked ? Color.appSurface : HajinStore.printableGreen))
+        }
         if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
         facts(item)
         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }

@@ -361,6 +361,7 @@ func hajinGroups(_ rows: [HajinGuide.Row]) -> [(title: String?, rows: [HajinGuid
 /// Wide screens: a section's rows as cards in two columns, under the same
 /// group headings, instead of one stretched list.
 struct HajinRowColumns: View {
+    @EnvironmentObject private var store: HajinStore
     let rows: [HajinGuide.Row]
     var intro: String? = nil
     var highlight = ""
@@ -386,7 +387,7 @@ struct HajinRowColumns: View {
                                 GuideRowView(row: row, highlight: highlight)
                                     .padding(12)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                                    .borderedCard()
+                                    .borderedCard(accent: store.printableAccent(row))
                             }
                         }
                     }
@@ -401,6 +402,7 @@ struct HajinRowColumns: View {
 struct GroupedGuideRows: View {
     let rows: [HajinGuide.Row]
     var highlight = ""
+    @EnvironmentObject private var store: HajinStore
 
     private var groups: [(title: String?, rows: [HajinGuide.Row])] {
         var out: [(title: String?, rows: [HajinGuide.Row])] = []
@@ -420,7 +422,7 @@ struct GroupedGuideRows: View {
             if let title = group.title { HajinHeading(title: title) }
             ForEach(group.rows, id: \.self) { row in
                 GuideRowView(row: row, highlight: highlight)
-                    .hajinCard()
+                    .hajinCard(accent: store.printableAccent(row))
             }
         }
     }

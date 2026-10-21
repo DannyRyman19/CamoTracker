@@ -363,6 +363,20 @@ final class HajinStore: ObservableObject {
 
     func count(of id: String) -> Int { stash[id] ?? 0 }
 
+    /// The stash covers every part of the item's recipe or upgrade cost.
+    func canPrint(_ item: HajinGuide.Item) -> Bool {
+        guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty else { return false }
+        return cost.allSatisfy { count(of: $0.item) >= $0.qty }
+    }
+
+    static let printableGreen = Color(red: 0.42, green: 0.80, blue: 0.36)
+
+    /// Green card border for a row whose item the stash can print.
+    func printableAccent(_ row: HajinGuide.Row) -> Color? {
+        guard let id = row.item, let item = guide?.item(id), canPrint(item) else { return nil }
+        return Self.printableGreen
+    }
+
     func setCount(_ count: Int, of id: String) {
         stash[id] = max(0, min(count, 99_999))
         if stash[id] == 0 { stash[id] = nil }

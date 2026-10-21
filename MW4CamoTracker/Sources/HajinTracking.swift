@@ -125,11 +125,7 @@ private struct TrackedRow: View {
                         HajinItemTile(item: item, size: 32)
                         VStack(alignment: .leading, spacing: 1) {
                             Text(item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
-                            if ready {
-                                Text("mw4.ui.hajin.ready".localized().uppercased())
-                                    .font(.system(size: 10, weight: .heavy)).tracking(0.6)
-                                    .foregroundStyle(Color(red: 0.42, green: 0.80, blue: 0.36))
-                            }
+                            if ready { HajinCanPrintTag() }
                         }
                         Spacer(minLength: 0)
                     }
