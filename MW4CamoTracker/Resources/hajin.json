@@ -1,5 +1,5 @@
 {
- "version": "0.8.7",
+ "version": "0.8.8",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -2595,6 +2595,14 @@
      "item": "dog-tag-case-upgrade-i",
      "check": "upgrade-dog-tag-case-upgrade-i",
      "group": "Dog Tag Case"
+    },
+    {
+     "title": "Dog Tag Case Upgrade II",
+     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More dog tag storage",
+     "value": "$50,000",
+     "item": "dog-tag-case-upgrade-ii",
+     "check": "upgrade-dog-tag-case-upgrade-ii",
+     "group": "Dog Tag Case"
     }
    ]
   },
@@ -4194,6 +4202,30 @@
    "symbol": "tag.fill",
    "family": "Dog Tag Case Upgrade",
    "tier": 1
+  },
+  {
+   "id": "dog-tag-case-upgrade-ii",
+   "name": "Dog Tag Case Upgrade II",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "detonators",
+     "qty": 20
+    },
+    {
+     "item": "nylon-cloth",
+     "qty": 10
+    },
+    {
+     "item": "power-regulator",
+     "qty": 5
+    }
+   ],
+   "cash": 50000,
+   "effect": "More dog tag storage",
+   "symbol": "tag.fill",
+   "family": "Dog Tag Case Upgrade",
+   "tier": 2
   },
   {
    "id": "door-breacher-charge",
