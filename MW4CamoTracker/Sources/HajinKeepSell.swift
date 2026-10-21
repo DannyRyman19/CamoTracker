@@ -5,9 +5,9 @@ import SwiftUI
 /// ticked as done.
 struct HajinVerdict {
     /// Only loot you'd weigh up selling gets a verdict: materials,
-    /// valuables and keys. Loadout items are simply used.
+    /// and valuables. Loadout items and keys are simply used.
     static func applies(to item: HajinGuide.Item) -> Bool {
-        ["Ingredient", "Valuable", "Key"].contains(item.kind)
+        ["Ingredient", "Valuable"].contains(item.kind)
     }
 
     enum Kind: Hashable { case keep, crafting, sell, use, resource }
