@@ -1,0 +1,246 @@
+import PhotosUI
+import SwiftUI
+import Vision
+
+/// Reads stash counts out of photos or screenshots of the 3D Printer's
+/// recipe screens, where each ingredient shows as its name with "have/need"
+/// under it ("Synthetics" then "607/50"). Runs on the device with Vision.
+enum HajinStashScanner {
+    struct Line {
+        let text: String
+        let box: CGRect   // Vision's normalised box, origin bottom left
+    }
+
+    static func lines(in image: CGImage) -> [Line] {
+        let request = VNRecognizeTextRequest()
+        request.recognitionLevel = .accurate
+        request.usesLanguageCorrection = false
+        try? VNImageRequestHandler(cgImage: image).perform([request])
+        return (request.results ?? []).compactMap { obs in
+            obs.topCandidates(1).first.map { Line(text: $0.string, box: obs.boundingBox) }
+        }
+    }
+
+    /// Ingredient and resource counts found in the lines: a name the guide
+    /// knows, then the first number of the "have/need" just below it (or on
+    /// the same line).
+    static func counts(in lines: [Line], items: [HajinGuide.Item]) -> [String: Int] {
+        let names = items.map { (id: $0.id, key: normalised($0.name.resolved)) }.filter { $0.key.count >= 3 }
+        // The stash screen lists resources as a name over a plain total
+        let resources = Set(items.filter { $0.kind == "Resource" }.map(\.id))
+        func amount(_ text: String, for id: String) -> Int? {
+            have(in: text) ?? (resources.contains(id) ? plain(text) : nil)
+        }
+        var found: [String: Int] = [:]
+        let sorted = lines.sorted { $0.box.midY > $1.box.midY }
+        for (i, line) in sorted.enumerated() {
+            guard let id = match(line.text, names) else { continue }
+            if let n = have(in: line.text) {
+                found[id] = n
+                continue
+            }
+            if resources.contains(id), let n = plain(line.text.replacingOccurrences(of: #"^\D+"#, with: "", options: .regularExpression)) {
+                found[id] = n
+                continue
+            }
+            // The count sits just under the name, roughly left-aligned with it
+            let below = sorted[(i + 1)...].prefix(4).first { other in
+                let gap = line.box.minY - other.box.maxY
+                // Same text size, so a big screen title never takes a count
+                let scale = other.box.height / max(line.box.height, 0.0001)
+                return gap > -line.box.height * 0.5 && gap < line.box.height * 2.5
+                    && scale > 0.6 && scale < 1.6
+                    && abs(other.box.minX - line.box.minX) < max(line.box.width, 0.08)
+                    && amount(other.text, for: id) != nil
+            }
+            if let below, let n = amount(below.text, for: id) { found[id] = n }
+        }
+        return found
+    }
+
+    /// "607/50", "607 / 50" or "Synthetics 607/50" gives 607.
+    static func have(in text: String) -> Int? {
+        let cleaned = text.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "O", with: "0")
+        guard let m = cleaned.firstMatch(of: /(\d{1,5})\s*\/\s*\d{1,5}/), let n = Int(m.1) else { return nil }
+        return n
+    }
+
+    /// A line that is only a number: "793" or "1,240".
+    static func plain(_ text: String) -> Int? {
+        let t = text.replacingOccurrences(of: ",", with: "").trimmingCharacters(in: .whitespaces)
+        guard !t.isEmpty, t.count <= 6, t.allSatisfy(\.isNumber) else { return nil }
+        return Int(t)
+    }
+
+    private static func normalised(_ s: String) -> String {
+        s.lowercased().filter { $0.isLetter }
+    }
+
+    /// The guide item the text names: exact once letters are compared, or
+    /// off by a letter or two for longer names (OCR slips).
+    private static func match(_ text: String, _ names: [(id: String, key: String)]) -> String? {
+        let letters = text.replacingOccurrences(of: #"\d.*$"#, with: "", options: .regularExpression)
+        let key = normalised(letters)
+        guard key.count >= 3 else { return nil }
+        if let exact = names.first(where: { $0.key == key }) { return exact.id }
+        // A photo that cuts off the left edge: "thetics" is Synthetics, when
+        // only one name ends that way
+        if key.count >= 5 {
+            let tails = names.filter { $0.key.hasSuffix(key) }
+            if tails.count == 1 { return tails[0].id }
+        }
+        let best = names.map { ($0.id, distance(key, $0.key), $0.key.count) }.min { $0.1 < $1.1 }
+        guard let best, best.1 <= max(1, best.2 / 8) else { return nil }
+        return best.0
+    }
+
+    private static func distance(_ a: String, _ b: String) -> Int {
+        let a = Array(a), b = Array(b)
+        if a.isEmpty { return b.count }
+        if b.isEmpty { return a.count }
+        var prev = Array(0...b.count), cur = [Int](repeating: 0, count: b.count + 1)
+        for i in 1...a.count {
+            cur[0] = i
+            for j in 1...b.count {
+                cur[j] = a[i - 1] == b[j - 1] ? prev[j - 1] : 1 + min(prev[j - 1], prev[j], cur[j - 1])
+            }
+            swap(&prev, &cur)
+        }
+        return prev[b.count]
+    }
+}
+
+/// "Read counts from photos": pick photos, read them, review what changes.
+struct HajinStashScanButton: View {
+    @EnvironmentObject private var store: HajinStore
+    @State private var picks: [PhotosPickerItem] = []
+    @State private var reading = false
+    @State private var result: [String: Int]?
+
+    var body: some View {
+        PhotosPicker(selection: $picks, maxSelectionCount: 30, matching: .images) {
+            HStack(spacing: 10) {
+                Image(systemName: reading ? "hourglass" : "text.viewfinder")
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color.accentDMZ)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text((reading ? "mw4.ui.hajin.scan_reading" : "mw4.ui.hajin.scan").localized())
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Color.appInk)
+                    Text("mw4.ui.hajin.scan_hint".localized())
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+        }
+        .buttonStyle(.plain)
+        .disabled(reading)
+        .onChange(of: picks) { chosen in
+            guard !chosen.isEmpty else { return }
+            read(chosen)
+        }
+        .sheet(isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil } })) {
+            if let result { HajinStashScanReview(found: result) }
+        }
+    }
+
+    private func read(_ chosen: [PhotosPickerItem]) {
+        reading = true
+        let items = (store.guide?.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) }
+        Task {
+            var seen: [String: [Int]] = [:]
+            for pick in chosen {
+                guard let data = try? await pick.loadTransferable(type: Data.self),
+                      let image = UIImage(data: data)?.cgImage else { continue }
+                let counts = await Task.detached(priority: .userInitiated) {
+                    HajinStashScanner.counts(in: HajinStashScanner.lines(in: image), items: items)
+                }.value
+                for (id, n) in counts { seen[id, default: []].append(n) }
+            }
+            // The same ingredient on several screens: take the count read most
+            // often, the higher one on a tie
+            let merged = seen.mapValues { values in
+                Dictionary(grouping: values, by: { $0 }).max { ($0.value.count, $0.key) < ($1.value.count, $1.key) }!.key
+            }
+            await MainActor.run {
+                reading = false
+                picks = []
+                result = merged
+            }
+        }
+    }
+}
+
+/// What the photos said against what the stash has; tick off anything
+/// misread, then update the stash in one go.
+struct HajinStashScanReview: View {
+    let found: [String: Int]
+    @EnvironmentObject private var store: HajinStore
+    @Environment(\.dismiss) private var dismiss
+    @State private var skip: Set<String> = []
+
+    private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
+        found.compactMap { id, n in store.guide?.item(id).map { ($0, store.count(of: id), n) } }
+            .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
+    }
+
+    var body: some View {
+        let all = rows
+        let changes = all.filter { $0.now != $0.read && !skip.contains($0.item.id) }
+        NavigationStack {
+            List {
+                if all.isEmpty {
+                    Text("mw4.ui.hajin.scan_none".localized())
+                        .font(.subheadline)
+                        .foregroundStyle(Color.appInkMuted)
+                        .listRowBackground(Color.clear)
+                }
+                ForEach(all, id: \.item.id) { row in
+                    let same = row.now == row.read
+                    let on = !same && !skip.contains(row.item.id)
+                    Button {
+                        guard !same else { return }
+                        if skip.contains(row.item.id) { skip.remove(row.item.id) } else { skip.insert(row.item.id) }
+                    } label: {
+                        HStack(spacing: 12) {
+                            HajinItemTile(item: row.item, size: 32)
+                            Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                            Spacer(minLength: 8)
+                            if same {
+                                Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                            } else {
+                                Text("\(row.now) → \(row.read)")
+                                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                                    .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
+                                    .strikethrough(!on)
+                                Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                                    .foregroundStyle(on ? Color.accentDMZ : Color.appInkMuted)
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .navigationTitle("mw4.ui.hajin.scan_title".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("mw4.ui.hajin.cancel".localized()) { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("mw4.ui.hajin.scan_apply".localized()) {
+                        Haptics.step()
+                        store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
+                        dismiss()
+                    }
+                    .disabled(changes.isEmpty)
+                }
+            }
+        }
+        .presentationDetents([.medium, .large])
+    }
+}

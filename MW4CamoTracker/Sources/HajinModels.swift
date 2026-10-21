@@ -426,6 +426,20 @@ final class HajinStore: ObservableObject {
         saveAndSync()
     }
 
+    /// Sets several stash counts at once (read from photos), keeping the old
+    /// stash for Undo.
+    func applyScannedCounts(_ counts: [String: Int]) {
+        guard !counts.isEmpty else { return }
+        let previous = stash, previousTracked = tracked
+        for (id, count) in counts {
+            stash[id] = max(0, min(count, 99_999))
+            if stash[id] == 0 { stash[id] = nil }
+        }
+        stashUndo = StashUndo(message: String(format: "mw4.ui.hajin.scan_updated".localized(), counts.count),
+                              previous: previous, previousTracked: previousTracked)
+        saveAndSync()
+    }
+
     /// Everything still missing for the tracked items: ingredient id and
     /// how many more are needed, biggest shortfall first.
     func shortfall(in guide: HajinGuide) -> [(item: HajinGuide.Item, missing: Int)] {
