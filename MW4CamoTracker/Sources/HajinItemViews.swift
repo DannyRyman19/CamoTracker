@@ -479,13 +479,16 @@ struct HajinItemView: View {
 
     @ViewBuilder private func secondary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         let users = guide.usedIn(item.id)
-        if !users.isEmpty { usedIn(users) }
         // Level rows are unlocks (recipe) or rewards; everything else
         // (bosses, missions, stations) is where to find it
         let mentions = guide.mentions(item.id)
         let levels = mentions.filter { $0.section.id == "levels" }
         let found = mentions.filter { $0.section.id != "levels" }
-        if !found.isEmpty || item.found != nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized(), inGame: item.found?.resolved) }
+        let showsWhere = !found.isEmpty || item.found != nil
+        // Ingredients with a known location lead with where to look
+        if showsWhere, item.found != nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized(), inGame: item.found?.resolved, places: (item.foundPlaces ?? []).compactMap { guide.marker($0) }) }
+        if !users.isEmpty { usedIn(users) }
+        if showsWhere, item.found == nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized()) }
         if !levels.isEmpty || item.requiredLevel != nil { unlocks(item, levels) }
     }
 
@@ -604,6 +607,23 @@ struct HajinItemView: View {
         }
     }
 
+    /// A named place in the item's location text; opens the Tac Map on it.
+    @ViewBuilder private func placeChip(_ marker: HajinGuide.Marker) -> some View {
+        let label = HStack(spacing: 5) {
+            Image(systemName: "map.fill").font(.caption2.weight(.semibold))
+            Text(marker.name.resolved).font(.caption.weight(.semibold)).lineLimit(1)
+        }
+        .foregroundStyle(Color.accentDMZ)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 5)
+        .background(RoundedRectangle(cornerRadius: 6).fill(Color.accentDMZ.opacity(0.15)))
+        if let showMarker {
+            Button { showMarker(marker) } label: { label }.buttonStyle(.borderless)
+        } else {
+            NavigationLink { HajinMapScreen(startAt: marker) } label: { label }.buttonStyle(.borderless)
+        }
+    }
+
     @ViewBuilder private func mapButton(_ marker: HajinGuide.Marker) -> some View {
         let label = Label("mw4.ui.hajin.show_on_map".localized(), systemImage: "map.fill")
             .font(.subheadline.weight(.semibold))
@@ -657,7 +677,7 @@ struct HajinItemView: View {
 
     /// Rows that mention the item: the boss that drops it, the mission that
     /// rewards it, the level that hands it out.
-    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)], title: String, inGame: String? = nil) -> some View {
+    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)], title: String, inGame: String? = nil, places: [HajinGuide.Marker] = []) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             panelTitle(title)
             VStack(alignment: .leading, spacing: 0) {
@@ -671,6 +691,12 @@ struct HajinItemView: View {
                             Text(inGame).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                                 .fixedSize(horizontal: false, vertical: true)
                             Text("mw4.ui.hajin.found_in_game".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                            if !places.isEmpty {
+                                HajinWrap(spacing: 6) {
+                                    ForEach(places, id: \.id) { placeChip($0) }
+                                }
+                                .padding(.top, 6)
+                            }
                         }
                         Spacer(minLength: 0)
                     }

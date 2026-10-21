@@ -4410,6 +4410,9 @@
    ],
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Chang-san Air Base hangar, repair bay and Bubun Yard",
+   "foundPlaces": [
+    "m5851"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/alloyed-plating.png?v=1"
   },
   {
@@ -4497,7 +4500,11 @@
     }
    ],
    "effect": "Needs Epic Ingredient Printing",
-   "found": "Mainly the Chang-san Air Base armory and barracks, and the Songdo Wharf La Grande Vie rooftop"
+   "found": "Mainly the Chang-san Air Base armory and barracks, and the Songdo Wharf La Grande Vie rooftop",
+   "foundPlaces": [
+    "m5851",
+    "m5860"
+   ]
   },
   {
    "id": "ballistic-flight-logs",
@@ -4580,7 +4587,10 @@
    "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "found": "Mainly Mirae General Hospital and medical tents"
+   "found": "Mainly Mirae General Hospital and medical tents",
+   "foundPlaces": [
+    "m5856"
+   ]
   },
   {
    "id": "biomaterials",
@@ -4670,6 +4680,10 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the Netshin Tech Complex server rooms, Cheonwang Peak Array server rooms and the Deadtown hillside facade buildings",
+   "foundPlaces": [
+    "m5858",
+    "m5852"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/cpu.png?v=1"
   },
   {
@@ -4775,6 +4789,10 @@
    "effect": "Needs Epic Ingredient Printing",
    "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing",
    "found": "Mainly the Netshin Tech Complex server rooms, Cheonwang Peak Array server rooms and the Deadtown hillside facade buildings",
+   "foundPlaces": [
+    "m5858",
+    "m5852"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/comms-module.png?v=1"
   },
   {
@@ -5278,6 +5296,10 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the Chang-san Air Base armory and barracks, and the Songdo Wharf La Grande Vie rooftop",
+   "foundPlaces": [
+    "m5851",
+    "m5860"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/high-tenacity-fibers.png?v=1"
   },
   {
@@ -5636,6 +5658,11 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the NuriGO Mall DRC lab, the Citadel Prison Yard chemical buildings and the Imjin Farmland storage tents",
+   "foundPlaces": [
+    "m5857",
+    "m5891",
+    "m5853"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/nitro-compounds.png?v=1"
   },
   {
@@ -5644,6 +5671,11 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the Citadel main building wings, the Deadtown underground holding area and the Heavenly Luck Casino's Mujin Nightclub",
+   "foundPlaces": [
+    "m5891",
+    "m5852",
+    "m5892"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/nylon-cloth.png?v=1"
   },
   {
@@ -5664,7 +5696,12 @@
    ],
    "effect": "Needs Epic Ingredient Printing",
    "note": "Military holdings and upmarket civilian buildings",
-   "found": "Mainly the Citadel main building wings, the Deadtown underground holding area and the Heavenly Luck Casino's Mujin Nightclub"
+   "found": "Mainly the Citadel main building wings, the Deadtown underground holding area and the Heavenly Luck Casino's Mujin Nightclub",
+   "foundPlaces": [
+    "m5891",
+    "m5852",
+    "m5892"
+   ]
   },
   {
    "id": "pain-killers",
@@ -5756,7 +5793,10 @@
     }
    ],
    "effect": "Needs Epic Ingredient Printing",
-   "found": "Mainly the Haneul Nuclear Reactor and electrical substations"
+   "found": "Mainly the Haneul Nuclear Reactor and electrical substations",
+   "foundPlaces": [
+    "m5855"
+   ]
   },
   {
    "id": "printed-circuit-board",
@@ -5764,6 +5804,9 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the Haneul Nuclear Reactor and electrical substations",
+   "foundPlaces": [
+    "m5855"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/printed-circuit-board.png?v=1"
   },
   {
@@ -6300,6 +6343,9 @@
    ],
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly Mirae General Hospital and medical tents",
+   "foundPlaces": [
+    "m5856"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/stabilized-reagents.png?v=1"
   },
   {
@@ -6396,7 +6442,11 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "value": 500,
-   "found": "Mainly the Imjin Farmland rice mill, the Hajin City construction zone and Namjjog Station"
+   "found": "Mainly the Imjin Farmland rice mill, the Hajin City construction zone and Namjjog Station",
+   "foundPlaces": [
+    "m5896",
+    "m5883"
+   ]
   },
   {
    "id": "structural-alloy",
@@ -6404,6 +6454,9 @@
    "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Mainly the Chang-san Air Base hangar, repair bay and Bubun Yard",
+   "foundPlaces": [
+    "m5851"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/structural-alloy.png?v=1"
   },
   {
@@ -6560,6 +6613,10 @@
    ],
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Imjin Farmland rice mill, the Hajin City construction zone and Namjjog Station",
+   "foundPlaces": [
+    "m5896",
+    "m5883"
+   ],
    "image": "https://camotracker.djr.li/Images/DMZ/turned-components.png?v=1"
   },
   {
@@ -6665,6 +6722,11 @@
    ],
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the NuriGO Mall DRC lab, the Citadel Prison Yard chemical buildings and the Imjin Farmland storage tents",
+   "foundPlaces": [
+    "m5857",
+    "m5891",
+    "m5853"
+   ],
    "symbol": "cube.fill"
   },
   {

@@ -142,6 +142,8 @@ struct HajinGuide: Codable {
         let note: GuideText?
         /// Where it turns up in Hajin, from the printer's Ingredient Locations.
         let found: GuideText?
+        /// Tac Map markers for the named places in `found`.
+        let foundPlaces: [String]?
         /// Tac Map grid square (keys).
         let grid: String?
         /// The map marker for where it's used (key rooms).
