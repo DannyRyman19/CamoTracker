@@ -1,5 +1,5 @@
 {
- "version": "0.9.12",
+ "version": "0.9.13",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2162,6 +2162,7 @@
      "title": "Flash",
      "subtitle": "Common. 10 Synthetics, 10 Chemicals. A blinding flash that disorients anyone nearby",
      "group": "Tacticals",
+     "value": "Orders",
      "item": "flash"
     },
     {
@@ -2284,12 +2285,14 @@
      "title": "Trophy System",
      "subtitle": "Rare. 15 Electronics, 3 Control Unit. Destroys up to three incoming projectiles or pieces of equipment",
      "group": "Field Upgrades",
+     "value": "Find",
      "item": "trophy-system"
     },
     {
      "title": "Defibrillator",
      "subtitle": "Rare. 30 Electronics, 3 Control Unit. Revive downed operators instantly",
      "group": "Field Upgrades",
+     "value": "Complete Operation Critical Extraction",
      "image": "https://camotracker.djr.li/Images/DMZ/defibrillator.png?v=1",
      "item": "defibrillator"
     },
@@ -2318,6 +2321,7 @@
      "title": "Razor Wire Trap",
      "subtitle": "Uncommon. 15 Electronics, 15 Metals. A mine that tangles enemies in razor wire",
      "group": "Field Upgrades",
+     "value": "Find",
      "item": "razor-wire-trap"
     },
     {
@@ -2359,6 +2363,7 @@
      "title": "SAM Airburst Turret",
      "subtitle": "Rare. 30 Metals, 3 Detonators. Portable turret that shoots down aerial threats",
      "group": "Field Upgrades",
+     "value": "Find",
      "item": "sam-airburst-turret"
     },
     {
@@ -2373,6 +2378,7 @@
      "title": "Fulton Drop Marker",
      "subtitle": "Ultra. 1 Prototype RF Module, 3 Comms Module, 5 Control Unit. Marks a spot and calls in a fulton extraction",
      "group": "Field Upgrades",
+     "value": "Find",
      "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1",
      "item": "fulton-drop-marker"
     },
@@ -2387,6 +2393,7 @@
      "title": "Combat Drone",
      "subtitle": "Epic. 30 Electronics, 2 CPU, 5 Control Unit. Remote-controlled anti-personnel drone",
      "group": "Fire Support",
+     "value": "Find",
      "item": "combat-drone"
     },
     {
@@ -2400,30 +2407,35 @@
      "title": "Bombing Run",
      "subtitle": "Epic. 30 Chemicals, 2 Nitro Compounds, 5 Control Unit. An aerial bombing run on a target location",
      "group": "Fire Support",
+     "value": "Find",
      "item": "bombing-run"
     },
     {
      "title": "Bomb Glider",
      "subtitle": "Epic. 30 Chemicals, 2 Stock Rod, 5 Control Unit. Hand-held glider with an explosive payload",
      "group": "Fire Support",
+     "value": "Find",
      "item": "bomb-glider"
     },
     {
      "title": "Artillery Beacon",
      "subtitle": "Legendary. 2 Volatile Explosives, 3 Nitro Compounds, 5 Detonators. Heat-seeking missiles that track the beacon",
      "group": "Fire Support",
+     "value": "Find",
      "item": "artillery-beacon"
     },
     {
      "title": "Advanced UAV",
      "subtitle": "Legendary. 2 Comms Module, 3 Nitro Compounds, 5 Electronic Sensors. An orbital UAV that can't be shot down; shows which way enemies face",
      "group": "Fire Support",
+     "value": "Find",
      "item": "advanced-uav"
     },
     {
      "title": "Impact Warhead",
      "subtitle": "Legendary. 2 Turned Components, 3 Nitro Compounds, 5 Detonators. A payload that drills through several floors",
      "group": "Fire Support",
+     "value": "Find",
      "item": "impact-warhead"
     },
     {
@@ -2437,6 +2449,7 @@
      "title": "Crossfire",
      "subtitle": "Ultra. 2 Prototype RF Module, 3 Volatile Explosives, 5 Electronic Sensors. Airstrikes from two directions at once",
      "group": "Fire Support",
+     "value": "Find",
      "item": "crossfire"
     },
     {
@@ -2450,24 +2463,28 @@
      "title": "Durable Gas Mask",
      "subtitle": "Epic. 30 Chemicals, 1 High-Tenacity Fibers, 5 Biomaterials. Protects you from radiation",
      "group": "Gear",
+     "value": "Find",
      "item": "durable-gas-mask"
     },
     {
      "title": "Weak Night Vision Goggles",
      "subtitle": "Uncommon. 25 Metals, 5 Control Unit. Night vision you can toggle on and off",
      "group": "Gear",
+     "value": "Find",
      "item": "weak-night-vision-goggles"
     },
     {
      "title": "Night Vision Goggles",
      "subtitle": "Rare. 50 Metals, 3 Printed Circuit Board, 10 Control Unit. Night vision you can toggle on and off",
      "group": "Gear",
+     "value": "Find",
      "item": "night-vision-goggles"
     },
     {
      "title": "Elite Night Vision Goggles",
      "subtitle": "Legendary. 2 Power Regulator, 3 CPU, 5 Electronic Sensors. Night vision you can toggle on and off",
      "group": "Gear",
+     "value": "Find",
      "item": "elite-night-vision-goggles"
     },
     {
@@ -4511,6 +4528,7 @@
    "name": "Advanced UAV",
    "kind": "Fire Support",
    "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "comms-module",
@@ -4613,6 +4631,7 @@
    "name": "Artillery Beacon",
    "kind": "Fire Support",
    "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "volatile-explosives",
@@ -4784,7 +4803,8 @@
     }
    ],
    "effect": "Needs Uncommon Ingredient Printing",
-   "found": "Hospitals and chemical lockers"
+   "found": "Hospitals and chemical lockers",
+   "value": 800
   },
   {
    "id": "blackmarket-weapons-locker",
@@ -4801,6 +4821,7 @@
    "name": "Bomb Glider",
    "kind": "Fire Support",
    "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "chemicals",
@@ -4823,6 +4844,7 @@
    "name": "Bombing Run",
    "kind": "Fire Support",
    "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "chemicals",
@@ -4869,7 +4891,8 @@
     "m5858",
     "m5852"
    ],
-   "image": "https://camotracker.djr.li/Images/DMZ/cpu.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/cpu.png?v=1",
+   "value": 500
   },
   {
    "id": "care-package",
@@ -4932,6 +4955,7 @@
    "name": "Combat Drone",
    "kind": "Fire Support",
    "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "electronics",
@@ -5016,6 +5040,7 @@
    "name": "Crossfire",
    "kind": "Fire Support",
    "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "prototype-rf-module",
@@ -5077,6 +5102,7 @@
    "image": "https://camotracker.djr.li/Images/DMZ/defibrillator.png?v=1",
    "kind": "Field Upgrades",
    "rarity": "Rare",
+   "unlock": "Complete Operation Critical Extraction",
    "cost": [
     {
      "item": "electronics",
@@ -5225,6 +5251,7 @@
    "name": "Durable Gas Mask",
    "kind": "Gear",
    "rarity": "Epic",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "chemicals",
@@ -5274,6 +5301,7 @@
    "name": "Elite Night Vision Goggles",
    "kind": "Gear",
    "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "power-regulator",
@@ -5378,6 +5406,7 @@
    "name": "Flash",
    "kind": "Tacticals",
    "rarity": "Common",
+   "unlock": "Complete DMZ Orders",
    "cost": [
     {
      "item": "synthetics",
@@ -5416,6 +5445,7 @@
    "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1",
    "kind": "Field Upgrades",
    "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "prototype-rf-module",
@@ -5581,6 +5611,7 @@
    "name": "Impact Warhead",
    "kind": "Fire Support",
    "rarity": "Legendary",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "turned-components",
@@ -5603,7 +5634,8 @@
    "name": "Infantry Invasion Plans",
    "kind": "Ingredient",
    "found": "Civilian and military areas",
-   "image": "https://camotracker.djr.li/Images/DMZ/infantry-invasion-plans.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/infantry-invasion-plans.png?v=1",
+   "value": 1000
   },
   {
    "id": "inflatable-decoy",
@@ -5913,7 +5945,8 @@
    "image": "https://camotracker.djr.li/Images/DMZ/military-composites.png?v=1",
    "rarity": "Legendary",
    "kind": "Ingredient",
-   "found": "Colossus"
+   "found": "Colossus",
+   "value": 3500
   },
   {
    "id": "militia-arms-depot",
@@ -5981,6 +6014,7 @@
    "name": "Night Vision Goggles",
    "kind": "Gear",
    "rarity": "Rare",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "metals",
@@ -6016,7 +6050,8 @@
    "id": "nuclear-program-files",
    "name": "Nuclear Program Files",
    "kind": "Ingredient",
-   "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1",
+   "value": 2000
   },
   {
    "id": "nylon-cloth",
@@ -6029,7 +6064,8 @@
     "m5852",
     "m5892"
    ],
-   "image": "https://camotracker.djr.li/Images/DMZ/nylon-cloth.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/nylon-cloth.png?v=1",
+   "value": 1000
   },
   {
    "id": "nylon-laminate",
@@ -6236,6 +6272,7 @@
    "name": "Razor Wire Trap",
    "kind": "Field Upgrades",
    "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "electronics",
@@ -6427,6 +6464,7 @@
    "name": "SAM Airburst Turret",
    "kind": "Field Upgrades",
    "rarity": "Rare",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "metals",
@@ -7026,6 +7064,7 @@
    "name": "Trophy System",
    "kind": "Field Upgrades",
    "rarity": "Rare",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "electronics",
@@ -7195,6 +7234,7 @@
    "name": "Weak Night Vision Goggles",
    "kind": "Gear",
    "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
    "cost": [
     {
      "item": "metals",
