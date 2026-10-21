@@ -51,11 +51,12 @@ struct HajinView: View {
                 .buttonStyle(.plain)
                 .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
                 .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 .listRowSeparator(.hidden)
 
                 Section {
                     NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-                        .listRowBackground(Color.appSurface)
+                        .hajinCard()
                 }
 
                 Section {
@@ -65,10 +66,13 @@ struct HajinView: View {
                         } label: {
                             SectionRow(section: section)
                         }
-                        .listRowBackground(Color.appSurface)
+                        .hajinCard()
                     }
                 } header: {
                     Text("mw4.ui.hajin.guide".localized())
+                        .font(.headline)
+                        .foregroundStyle(Color.appInk)
+                        .textCase(nil)
                 } footer: {
                     GuideFooter(guide: guide)
                 }
@@ -77,8 +81,8 @@ struct HajinView: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .listStyle(.insetGrouped)
-        .searchable(text: $query, prompt: "mw4.ui.hajin.search_guide".localized())
+        .listStyle(.plain)
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_guide".localized())
     }
 
     /// `SS_HAJIN=map` or `SS_HAJIN=<section id>` opens that screen for the
@@ -144,7 +148,7 @@ private struct GuideSearchResults: View {
                             }
                         }
                     }
-                    .listRowBackground(Color.appSurface)
+                    .hajinCard()
                 }
             }
         }
@@ -152,7 +156,7 @@ private struct GuideSearchResults: View {
             Section(section.title.resolved) {
                 ForEach(rows, id: \.self) { row in
                     GuideRowView(row: row, highlight: needle)
-                        .listRowBackground(Color.appSurface)
+                        .hajinCard()
                 }
             }
         }
@@ -160,6 +164,7 @@ private struct GuideSearchResults: View {
             Text("mw4.ui.hajin.no_results".localized())
                 .foregroundStyle(Color.appInkMuted)
                 .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
         }
     }
 }
@@ -247,18 +252,18 @@ private struct SectionRow: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: section.symbol)
-                .font(.body.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
-                .frame(width: 28)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 30, height: 30)
+                .background(Circle().fill(Color.accentDMZ))
             Text(section.title.resolved)
-                .font(.body.weight(.semibold))
+                .font(.hitmarker(16))
                 .foregroundStyle(Color.appInk)
             Spacer()
             Text("\(section.rows.count)")
-                .font(.footnote.monospacedDigit())
+                .font(.system(size: 12, weight: .semibold, design: .monospaced))
                 .foregroundStyle(Color.appInkMuted)
         }
-        .padding(.vertical, 4)
     }
 }
 
@@ -305,7 +310,7 @@ struct GuideSectionView: View {
             }
         }
         .readingWidth($width)
-        .searchable(text: $query, prompt: "mw4.ui.hajin.search_section".localized())
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_section".localized())
         .navigationTitle(section.title.resolved)
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -317,16 +322,18 @@ struct GuideSectionView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
                 GroupedGuideRows(rows: rows, highlight: query.lowercased())
                 if rows.isEmpty {
                     Text("mw4.ui.hajin.no_results".localized())
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
             }
             .scrollContentBackground(.hidden)
-            .listStyle(.insetGrouped)
+            .listStyle(.plain)
     }
 }
 
@@ -372,7 +379,7 @@ struct HajinRowColumns: View {
                                 GuideRowView(row: row, highlight: highlight)
                                     .padding(12)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
+                                    .borderedCard()
                             }
                         }
                     }
@@ -406,7 +413,7 @@ struct GroupedGuideRows: View {
             Section {
                 ForEach(group.rows, id: \.self) { row in
                     GuideRowView(row: row, highlight: highlight)
-                        .listRowBackground(Color.appSurface)
+                        .hajinCard()
                 }
             } header: {
                 if let title = group.title { Text(title) }
@@ -466,7 +473,7 @@ struct GuideRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(row.title.resolved)
-                        .font(.body.weight(.semibold))
+                        .font(.hitmarker(15))
                         .foregroundStyle(Color.appInk)
                     Spacer(minLength: 8)
                     if let value = row.value { HajinValueBadge(text: value.resolved) }
@@ -792,7 +799,7 @@ struct HajinGuidePanel: View {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
                         NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-                            .listRowBackground(Color.appSurface)
+                            .hajinCard()
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
                                 HStack {
@@ -800,14 +807,15 @@ struct HajinGuidePanel: View {
                                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
                                 }
                             }
-                            .listRowBackground(Color.appSurface)
+                            .hajinCard()
                         }
                         GuideFooter(guide: guide)
                             .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     }
                 }
                 .scrollContentBackground(.hidden)
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
             }
             }
         }
@@ -828,10 +836,12 @@ struct HajinGuidePanel: View {
         let rows = needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }
         if let intro = section.intro, needle.isEmpty {
             Text(intro.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted).listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
         }
         GroupedGuideRows(rows: rows)
         if rows.isEmpty {
             Text("mw4.ui.hajin.no_results".localized()).foregroundStyle(Color.appInkMuted).listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
         }
     }
 }

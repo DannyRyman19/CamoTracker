@@ -68,6 +68,18 @@ struct HajinRarityLine: View {
     }
 }
 
+extension View {
+    /// The app's card: each row its own outlined 8pt card in a plain list,
+    /// as on the Weapons and Stats tabs.
+    func hajinCard(accent: Color? = nil) -> some View {
+        padding(12)
+            .borderedCard(accent: accent)
+            .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+    }
+}
+
 /// A row's figure (price, level, grid square, "Find"), in one neutral
 /// style everywhere so money never reads as a warning.
 struct HajinValueBadge: View {
@@ -75,15 +87,15 @@ struct HajinValueBadge: View {
 
     var body: some View {
         Text(text)
-            .font(.caption.weight(.semibold).monospacedDigit())
+            .font(.system(size: 11, weight: .semibold, design: .monospaced))
             .foregroundStyle(Color.appInk.opacity(0.9))
             .lineLimit(1)
             .fixedSize()
-            .padding(.horizontal, 8)
+            .padding(.horizontal, 7)
             .padding(.vertical, 3)
             .background(
-                Capsule().fill(Color.appSurface2)
-                    .overlay(Capsule().strokeBorder(Color.appInkMuted.opacity(0.25), lineWidth: 1))
+                RoundedRectangle(cornerRadius: 4).fill(Color.appSurface2)
+                    .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(Color.appInkMuted.opacity(0.3), lineWidth: 1))
             )
     }
 }
@@ -206,7 +218,7 @@ struct HajinItemRow: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(alignment: .firstTextBaseline) {
                         Text(item.name.resolved)
-                            .font(.body.weight(.semibold))
+                            .font(.hitmarker(15))
                             .foregroundStyle(Color.appInk)
                         Spacer(minLength: 6)
                         if let value = row.value?.resolved, value != item.rarity, value != "Resource" {
@@ -630,7 +642,7 @@ struct HajinWeaponRow: View {
                 .clipShape(RoundedRectangle(cornerRadius: 6))
             VStack(alignment: .leading, spacing: 3) {
                 Text(row.title.resolved)
-                    .font(.body.weight(.semibold))
+                    .font(.hitmarker(15))
                     .foregroundStyle(Color.appInk)
                 if needsManual {
                     ManualPill(done: manualDone) {

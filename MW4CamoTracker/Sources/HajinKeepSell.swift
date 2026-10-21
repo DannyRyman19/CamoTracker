@@ -160,13 +160,14 @@ struct HajinKeepSellView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
                 if let guide = store.guide {
                     ForEach(groups(guide), id: \.kind) { group in
                         Section {
                             ForEach(group.rows, id: \.0.id) { item, verdict in
                                 HajinKeepSellRow(item: item, verdict: verdict)
-                                    .listRowBackground(Color.appSurface)
+                                    .hajinCard()
                             }
                         } header: {
                             if let first = group.rows.first { Text(first.1.title) }
@@ -175,11 +176,11 @@ struct HajinKeepSellView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .listStyle(.insetGrouped)
+            .listStyle(.plain)
             }
         }
         .readingWidth($width)
-        .searchable(text: $query, prompt: "mw4.ui.keep.search".localized())
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.keep.search".localized())
         .navigationTitle("mw4.ui.keep.title".localized())
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -206,7 +207,7 @@ extension HajinKeepSellView {
                                 HajinKeepSellRow(item: item, verdict: verdict)
                                     .padding(12)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.appSurface))
+                                    .borderedCard()
                             }
                         }
                     }
@@ -243,7 +244,7 @@ struct HajinKeepSellRow: View {
                 HStack(spacing: 12) {
                     HajinItemTile(item: item, size: 44)
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(item.name.resolved).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
+                        Text(item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
                             .multilineTextAlignment(.leading)
                         HStack(alignment: .firstTextBaseline, spacing: 5) {
                             Image(systemName: verdict.symbol).font(.caption2.weight(.bold)).foregroundStyle(verdict.color)
@@ -269,12 +270,13 @@ struct HajinKeepSellRow: View {
 struct HajinKeepSellEntry: View {
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: "arrow.left.arrow.right.circle.fill")
-                .font(.body.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
-                .frame(width: 28)
+            Image(systemName: "arrow.left.arrow.right")
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 30, height: 30)
+                .background(Circle().fill(Color.accentDMZ))
             VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.keep.title".localized()).font(.body.weight(.semibold)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.keep.title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
                 Text("mw4.ui.keep.row_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
