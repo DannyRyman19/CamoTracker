@@ -1,5 +1,5 @@
 {
- "version": "0.9.1",
+ "version": "0.9.2",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -1327,6 +1327,22 @@
    "note": "Ultra key, grid H4. Opens the DRC Weapons Locker in Reactor 02's irradiated pool. Bring radiation gear."
   },
   {
+   "id": "k-exec-auction",
+   "cat": "key",
+   "name": "Executive Arms Auction",
+   "x": 0.6865,
+   "y": 0.6477,
+   "note": "Epic key, grid G6. Opens the arms auction room at the top of DBN Headquarters, the tallest building in The Grid."
+  },
+  {
+   "id": "k-mirae-electrical",
+   "cat": "key",
+   "name": "Mirae Electrical Room",
+   "x": 0.5643,
+   "y": 0.559,
+   "note": "Rare key, grid F5. Opens the electrical room in the hospital's northwestern basement car park."
+  },
+  {
    "id": "k-airbase-drc",
    "cat": "key",
    "name": "Air Base DRC Weapons Locker",
@@ -2528,7 +2544,7 @@
     },
     {
      "title": "Bank Upgrade I",
-     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Raises your Bank's cash cap",
      "value": "$25,000",
      "item": "bank-upgrade-i",
      "check": "upgrade-bank-upgrade-i",
@@ -2536,7 +2552,7 @@
     },
     {
      "title": "Bank Upgrade II",
-     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Raises your Bank's cash cap",
      "value": "$50,000",
      "item": "bank-upgrade-ii",
      "check": "upgrade-bank-upgrade-ii",
@@ -2980,6 +2996,30 @@
      "value": "H4",
      "subtitle": "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
      "item": "reactor-drc-locker"
+    },
+    {
+     "title": "Executive Arms Auction",
+     "value": "G6",
+     "subtitle": "Epic. The arms auction room at the top of DBN Headquarters, The Grid",
+     "item": "executive-arms-auction"
+    },
+    {
+     "title": "Mirae Electrical Room",
+     "value": "F5",
+     "subtitle": "Rare. The electrical room in the northwestern basement car park, Mirae General Hospital",
+     "item": "mirae-electrical-room"
+    },
+    {
+     "title": "Police Weapon Depository",
+     "value": "G7",
+     "subtitle": "Epic. The auxiliary police armory north of the police station, Wolves Stadium",
+     "item": "police-weapon-depository"
+    },
+    {
+     "title": "Shop Records Room",
+     "value": "F7",
+     "subtitle": "Rare. The records room above the Goh24 supermarket south of the clinic, Wolves Stadium",
+     "item": "shop-records-room"
     },
     {
      "title": "Air Base DRC Weapons Locker",
@@ -3956,7 +3996,7 @@
    "id": "bank-upgrade-i",
    "name": "Bank Upgrade I",
    "kind": "FOB Upgrade",
-   "note": "Ingredients not confirmed yet",
+   "note": "Cash only",
    "cash": 25000,
    "effect": "Raises your Bank's cash cap",
    "symbol": "building.columns.fill",
@@ -3967,7 +4007,7 @@
    "id": "bank-upgrade-ii",
    "name": "Bank Upgrade II",
    "kind": "FOB Upgrade",
-   "note": "Ingredients not confirmed yet",
+   "note": "Cash only",
    "cash": 50000,
    "effect": "Raises your Bank's cash cap",
    "symbol": "building.columns.fill",
@@ -4316,6 +4356,18 @@
    "tier": 2
   },
   {
+   "id": "executive-arms-auction",
+   "name": "Executive Arms Auction",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The arms auction room at the top of DBN Headquarters, The Grid",
+   "grid": "G6",
+   "marker": "k-exec-auction",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
+  },
+  {
    "id": "experimental-compounds",
    "name": "Experimental Compounds",
    "kind": "Ingredient",
@@ -4574,6 +4626,18 @@
    "kind": "Ingredient"
   },
   {
+   "id": "mirae-electrical-room",
+   "name": "Mirae Electrical Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The electrical room in the northwestern basement car park, Mirae General Hospital",
+   "grid": "F5",
+   "marker": "k-mirae-electrical",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "molotov-cocktail",
    "name": "Molotov Cocktail",
    "kind": "Lethals",
@@ -4668,6 +4732,17 @@
    ],
    "effect": "Reusable",
    "value": 5000
+  },
+  {
+   "id": "police-weapon-depository",
+   "name": "Police Weapon Depository",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The auxiliary police armory north of the police station, Wolves Stadium",
+   "grid": "G7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "portable-radar",
@@ -4939,6 +5014,17 @@
    "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png?v=1",
    "kind": "Field Upgrades",
    "unlock": "Reach DMZ level 17"
+  },
+  {
+   "id": "shop-records-room",
+   "name": "Shop Records Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The records room above the Goh24 supermarket south of the clinic, Wolves Stadium",
+   "grid": "F7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "small-backpack",
