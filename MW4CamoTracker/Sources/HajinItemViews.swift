@@ -339,6 +339,10 @@ private struct CostLine: View {
 /// line and effect, then the recipe, what uses it, and where it is.
 struct HajinItemView: View {
     let id: String
+    /// Another tier of the same upgrade, swapped in place by the tier strip
+    /// rather than pushed as a new page.
+    @State private var tierShown: String?
+    private var shownId: String { tierShown ?? id }
     @EnvironmentObject private var store: HajinStore
     @Environment(\.hajinShowMarker) private var showMarker
     @State private var width: CGFloat = 0
@@ -346,7 +350,7 @@ struct HajinItemView: View {
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
-            if let guide = store.guide, let item = guide.item(id) {
+            if let guide = store.guide, let item = guide.item(shownId) {
                 ScrollView {
                     if width >= 760 {
                         // Wide: the item and its recipe on the left, what uses
@@ -375,7 +379,7 @@ struct HajinItemView: View {
             }
         }
         .readingWidth($width)
-        .navigationTitle(store.guide?.item(id)?.name.resolved ?? "")
+        .navigationTitle(store.guide?.item(shownId)?.name.resolved ?? "")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -580,7 +584,7 @@ struct HajinItemView: View {
                                 HajinRarityLine(item: user, size: 9)
                             }
                             Spacer()
-                            if let qty = user.cost?.first(where: { $0.item == id })?.qty {
+                            if let qty = user.cost?.first(where: { $0.item == shownId })?.qty {
                                 Text("×\(qty)")
                                     .font(.system(.subheadline, design: .monospaced).weight(.semibold))
                                     .foregroundStyle(Color.appInkMuted)
@@ -657,7 +661,11 @@ struct HajinItemView: View {
                     if current {
                         label
                     } else {
-                        HajinItemLink(id: tier.id) { label }
+                        Button {
+                            Haptics.step()
+                            withAnimation(.snappy) { tierShown = tier.id == id ? nil : tier.id }
+                        } label: { label }
+                        .buttonStyle(.borderless)
                     }
                 }
             }
