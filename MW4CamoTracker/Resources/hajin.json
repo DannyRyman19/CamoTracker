@@ -1,5 +1,5 @@
 {
- "version": "0.9.7",
+ "version": "0.9.8",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2743,8 +2743,18 @@
     },
     {
      "title": "Regional Combat Notes",
-     "subtitle": "MIA Recovery Discount",
+     "subtitle": "MIA Recovery Discount I",
      "item": "regional-combat-notes"
+    },
+    {
+     "title": "Nuclear Program Files",
+     "subtitle": "MIA Recovery Discount II",
+     "item": "nuclear-program-files"
+    },
+    {
+     "title": "Degraded Execution Footage",
+     "subtitle": "MIA Recovery Discount II",
+     "item": "degraded-execution-footage"
     },
     {
      "title": "Infantry Invasion Plans",
@@ -2896,6 +2906,13 @@
      "subtitle": "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less",
      "item": "mia-recovery-discount-i",
      "check": "upgrade-mia-recovery-discount-i",
+     "group": "Operators"
+    },
+    {
+     "title": "MIA Recovery Discount II",
+     "subtitle": "5 Nuclear Program Files, 5 Degraded Execution Footage, 10 Binding Catalyst, 10 Nitro Compounds. A bigger discount on rescuing an MIA operator",
+     "item": "mia-recovery-discount-ii",
+     "check": "upgrade-mia-recovery-discount-ii",
      "group": "Operators"
     },
     {
@@ -4964,6 +4981,12 @@
    "note": "A reward from Operation Critical Extraction; DMZ level 67 gives one"
   },
   {
+   "id": "degraded-execution-footage",
+   "name": "Degraded Execution Footage",
+   "kind": "Ingredient",
+   "symbol": "cube.fill"
+  },
+  {
    "id": "detonators",
    "name": "Detonators",
    "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
@@ -5445,7 +5468,7 @@
    "name": "Infantry Invasion Plans",
    "kind": "Ingredient",
    "found": "Civilian and military areas",
-   "symbol": "map.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/infantry-invasion-plans.png?v=1"
   },
   {
    "id": "inflatable-decoy",
@@ -5584,6 +5607,33 @@
    "symbol": "cross.case.fill",
    "family": "MIA Recovery Discount",
    "tier": 1
+  },
+  {
+   "id": "mia-recovery-discount-ii",
+   "name": "MIA Recovery Discount II",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "nuclear-program-files",
+     "qty": 5
+    },
+    {
+     "item": "degraded-execution-footage",
+     "qty": 5
+    },
+    {
+     "item": "binding-catalyst",
+     "qty": 10
+    },
+    {
+     "item": "nitro-compounds",
+     "qty": 10
+    }
+   ],
+   "effect": "A bigger discount on rescuing an MIA operator",
+   "symbol": "cross.case.fill",
+   "family": "MIA Recovery Discount",
+   "tier": 2
   },
   {
    "id": "medium-backpack",
@@ -5794,6 +5844,12 @@
     "m5853"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/nitro-compounds.png?v=1"
+  },
+  {
+   "id": "nuclear-program-files",
+   "name": "Nuclear Program Files",
+   "kind": "Ingredient",
+   "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1"
   },
   {
    "id": "nylon-cloth",
@@ -6125,9 +6181,8 @@
    "id": "regional-combat-notes",
    "name": "Regional Combat Notes",
    "kind": "Ingredient",
-   "note": "MIA Recovery Discount",
    "found": "Civilian and military areas",
-   "symbol": "doc.text.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/regional-combat-notes.png?v=1"
   },
   {
    "id": "revive-pistol",
