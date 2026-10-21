@@ -604,6 +604,13 @@ struct HajinWeaponRow: View {
     let row: HajinGuide.Row
     let weaponId: Int
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @EnvironmentObject private var store: HajinStore
+
+    /// Starter weapons are on sale from the start; the rest need their
+    /// Manual extracted once.
+    private var needsManual: Bool { !(row.subtitle?.values["en"]?.hasPrefix("Starter") ?? false) }
+    private var manualKey: String { "manual-\(weaponId)" }
+    private var manualDone: Bool { store.checked.contains(manualKey) }
 
     var body: some View {
         let weapon = viewModel.weapon(id: weaponId)
@@ -616,7 +623,12 @@ struct HajinWeaponRow: View {
                 Text(row.title.resolved)
                     .font(.body.weight(.semibold))
                     .foregroundStyle(Color.appInk)
-                if let subtitle = row.subtitle {
+                if needsManual {
+                    ManualPill(done: manualDone) {
+                        Haptics.step()
+                        store.toggle(manualKey)
+                    }
+                } else if let subtitle = row.subtitle {
                     Text(subtitle.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
                 }
             }
@@ -629,5 +641,33 @@ struct HajinWeaponRow: View {
         } else {
             content
         }
+    }
+}
+
+/// "Manual needed" / "Manual extracted": tap to tick it off. Saved and
+/// synced like the boss and upgrade ticks.
+private struct ManualPill: View {
+    let done: Bool
+    let toggle: () -> Void
+
+    var body: some View {
+        Button(action: toggle) {
+            HStack(spacing: 4) {
+                Image(systemName: done ? "checkmark.circle.fill" : "book.closed.fill")
+                Text(done ? "mw4.ui.hajin.manual_done".localized() : "mw4.ui.hajin.manual_needed".localized())
+            }
+            .font(.caption.weight(.semibold))
+            .lineLimit(1)
+            .fixedSize()
+            .foregroundStyle(done ? Color.black.opacity(0.85) : Color.appInk)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 4)
+            .background(
+                Capsule().fill(done ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appSurface2)
+                    .overlay(Capsule().strokeBorder(done ? Color.clear : Color.appInkMuted.opacity(0.35), lineWidth: 1))
+            )
+        }
+        .buttonStyle(.borderless)
+        .accessibilityAddTraits(done ? .isSelected : [])
     }
 }
