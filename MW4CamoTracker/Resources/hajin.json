@@ -1,6 +1,6 @@
 {
- "version": "0.8.7",
- "updated": "2026-10-20",
+ "version": "0.8.8",
+ "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -1333,6 +1333,22 @@
    "x": 0.1233,
    "y": 0.5846,
    "note": "Ultra key, grid B6. Opens the DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker."
+  },
+  {
+   "id": "k-exec-arms-auction",
+   "cat": "key",
+   "name": "Executive Arms Auction",
+   "x": 0.6952,
+   "y": 0.6575,
+   "note": "Epic key, grid G6. Opens the arms-auction room at the top of the DBN Headquarters tower."
+  },
+  {
+   "id": "k-mirae-electrical",
+   "cat": "key",
+   "name": "Mirae Electrical Room",
+   "x": 0.5971,
+   "y": 0.5688,
+   "note": "Rare key, grid F5. Opens the electrical room in the northwest basement car park of the hospital."
   }
  ],
  "guide": [
@@ -3016,6 +3032,30 @@
      "item": "netshin-it-room"
     },
     {
+     "title": "Executive Arms Auction",
+     "value": "G6",
+     "subtitle": "Epic. The arms-auction room at the top of the DBN Headquarters tower, The Grid",
+     "item": "executive-arms-auction"
+    },
+    {
+     "title": "Mirae Electrical Room",
+     "value": "F5",
+     "subtitle": "Rare. The electrical room in the northwest basement car park of Mirae General Hospital",
+     "item": "mirae-electrical-room"
+    },
+    {
+     "title": "Police Weapon Depository",
+     "value": "G7",
+     "subtitle": "Epic. The auxiliary police armory north of the police station, Wolves Stadium",
+     "item": "police-weapon-depository"
+    },
+    {
+     "title": "Shop Records Room",
+     "value": "F7",
+     "subtitle": "Rare. The records room above the Goh24 supermarket, south of the clinic, Wolves Stadium",
+     "item": "shop-records-room"
+    },
+    {
      "title": "Traindepot Storage Room",
      "value": "E5",
      "subtitle": "Rare. Basement of the train station by the fire station, Cheongun Village",
@@ -4562,6 +4602,48 @@
    "rarity": "Epic",
    "note": "The high-security server room on the upper floors of the Netshin Tech Complex, The Grid",
    "grid": "G6",
+   "value": 100
+  },
+  {
+   "id": "executive-arms-auction",
+   "name": "Executive Arms Auction",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The arms-auction room at the top of DBN Headquarters, The Grid",
+   "grid": "G6",
+   "marker": "k-exec-arms-auction",
+   "value": 100
+  },
+  {
+   "id": "mirae-electrical-room",
+   "name": "Mirae Electrical Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The electrical room in the northwest basement car park of Mirae General Hospital",
+   "grid": "F5",
+   "marker": "k-mirae-electrical",
+   "value": 100
+  },
+  {
+   "id": "police-weapon-depository",
+   "name": "Police Weapon Depository",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The auxiliary police armory north of the police station, Wolves Stadium",
+   "grid": "G7",
+   "value": 100
+  },
+  {
+   "id": "shop-records-room",
+   "name": "Shop Records Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The records room above the Goh24 supermarket, south of the clinic, Wolves Stadium",
+   "grid": "F7",
    "value": 100
   },
   {
