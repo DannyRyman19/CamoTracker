@@ -304,7 +304,7 @@ struct GuideSectionView: View {
             if section.id == "traits", query.isEmpty, let trees = store.guide?.traitTrees {
                 HajinTraitsView(trees: trees)
             } else if width >= 700, !rows.isEmpty {
-                HajinRowColumns(rows: rows, intro: query.isEmpty ? section.intro?.resolved : nil, highlight: query.lowercased())
+                HajinRowColumns(rows: hajinCollapseTiers(rows, store.guide), intro: query.isEmpty ? section.intro?.resolved : nil, highlight: query.lowercased())
             } else {
                 rowList
             }
@@ -324,7 +324,7 @@ struct GuideSectionView: View {
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                 }
-                GroupedGuideRows(rows: rows, highlight: query.lowercased())
+                GroupedGuideRows(rows: hajinCollapseTiers(rows, store.guide), highlight: query.lowercased())
                 if rows.isEmpty {
                     Text("mw4.ui.hajin.no_results".localized())
                         .foregroundStyle(Color.appInkMuted)
@@ -334,6 +334,16 @@ struct GuideSectionView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
+    }
+}
+
+/// One row per upgrade family: later tiers live in the first tier's tabs.
+func hajinCollapseTiers(_ rows: [HajinGuide.Row], _ guide: HajinGuide?) -> [HajinGuide.Row] {
+    var seen = Set<String>()
+    return rows.filter { row in
+        guard let id = row.item, let item = guide?.item(id), let family = item.family,
+              (guide?.tiers(of: item).count ?? 0) > 1 else { return true }
+        return seen.insert(family).inserted
     }
 }
 
@@ -430,7 +440,9 @@ struct GuideRowView: View {
     private var unconfirmed: Bool { row.subtitle?.values["en"]?.contains("not confirmed") ?? false }
 
     var body: some View {
-        if let id = row.item, let item = store.guide?.item(id) {
+        if let id = row.item, let item = store.guide?.item(id), let tiers = store.guide?.tiers(of: item), tiers.count > 1 {
+            HajinUpgradeFamilyCard(tiers: tiers)
+        } else if let id = row.item, let item = store.guide?.item(id) {
             HajinItemRow(item: item, row: row)
         } else if let weaponId = row.weapon {
             HajinWeaponRow(row: row, weaponId: weaponId)
@@ -445,18 +457,7 @@ struct GuideRowView: View {
     private var plainRow: some View {
         HStack(alignment: .top, spacing: 12) {
             if let key = row.check {
-                let done = store.checked.contains(key)
-                Button {
-                    Haptics.step()
-                    store.toggle(key)
-                } label: {
-                    Image(systemName: done ? "checkmark.square.fill" : "square")
-                        .font(.title2)
-                        .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(row.title.resolved)
-                .accessibilityAddTraits(done ? .isSelected : [])
+                HajinTick(done: store.checked.contains(key), label: row.title.resolved) { store.toggle(key) }
             }
             if let image = row.image, let url = URL(string: image) {
                 AsyncImage(url: url) { phase in
@@ -789,7 +790,7 @@ struct HajinGuidePanel: View {
                 HajinTraitsView(trees: trees)
             } else if let section = open, panelWidth >= 700 {
                 let needle = query.lowercased()
-                HajinRowColumns(rows: needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) },
+                HajinRowColumns(rows: hajinCollapseTiers(needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }, store.guide),
                                 intro: needle.isEmpty ? section.intro?.resolved : nil, highlight: needle)
             } else if let guide = store.guide {
                 List {
@@ -833,7 +834,7 @@ struct HajinGuidePanel: View {
 
     @ViewBuilder private func sectionRows(_ section: HajinGuide.Section) -> some View {
         let needle = query.lowercased()
-        let rows = needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }
+        let rows = hajinCollapseTiers(needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }, store.guide)
         if let intro = section.intro, needle.isEmpty {
             Text(intro.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted).listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)

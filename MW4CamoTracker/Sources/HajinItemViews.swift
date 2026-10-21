@@ -80,6 +80,30 @@ extension View {
     }
 }
 
+/// The app's tick: an empty circle, then a filled accent circle with a
+/// check, as on the camo challenges.
+struct HajinTick: View {
+    let done: Bool
+    let label: String
+    let toggle: () -> Void
+
+    var body: some View {
+        Button {
+            Haptics.step()
+            toggle()
+        } label: {
+            Image(systemName: done ? "checkmark.circle.fill" : "circle")
+                .font(.system(size: 21))
+                .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
+                .frame(width: 24, height: 24)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.borderless)
+        .accessibilityLabel(label)
+        .accessibilityAddTraits(done ? .isSelected : [])
+    }
+}
+
 /// A row's figure (price, level, grid square, "Find"), in one neutral
 /// style everywhere so money never reads as a warning.
 struct HajinValueBadge: View {
@@ -193,19 +217,8 @@ struct HajinItemRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             if let key = row.check {
-                let done = store.checked.contains(key)
-                Button {
-                    Haptics.step()
-                    store.toggle(key)
-                } label: {
-                    Image(systemName: done ? "checkmark.square.fill" : "square")
-                        .font(.title2)
-                        .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
-                        .padding(.top, 10)
-                }
-                .buttonStyle(.borderless)
-                .accessibilityLabel(item.name.resolved)
-                .accessibilityAddTraits(done ? .isSelected : [])
+                HajinTick(done: store.checked.contains(key), label: item.name.resolved) { store.toggle(key) }
+                    .padding(.top, 12)
             }
             link
         }
@@ -594,7 +607,7 @@ struct HajinLinkChips: View {
                     if let item = store.guide?.item(id) {
                         HajinItemLink(id: id) {
                             HStack(spacing: 6) {
-                                HajinItemTile(item: item, size: 24)
+                                HajinItemTile(item: item, size: 22)
                                 Text(item.name.resolved)
                                     .font(.caption.weight(.semibold))
                                     .foregroundStyle(Color.appInk)
@@ -605,12 +618,11 @@ struct HajinLinkChips: View {
                                         .foregroundStyle(Color.appInkMuted)
                                 }
                             }
-                            .padding(.leading, 3)
-                            .padding(.trailing, 9)
-                            .padding(.vertical, 3)
+                            .padding(3)
+                            .padding(.trailing, 6)
                             .background(
-                                Capsule().fill(Color.appSurface2)
-                                    .overlay(Capsule().strokeBorder(HajinRarity.color(item.rarity).opacity(0.5), lineWidth: 1))
+                                RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2)
+                                    .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(HajinRarity.color(item.rarity).opacity(0.5), lineWidth: 1))
                             )
                         }
                     }
@@ -636,8 +648,11 @@ struct HajinWeaponRow: View {
     var body: some View {
         let weapon = viewModel.weapon(id: weaponId)
         let content = HStack(spacing: 12) {
-            WeaponThumbnail(urlString: weapon?.imageURL, size: 80, inset: 6)
-                .frame(width: 112, height: 60)
+            if needsManual {
+                HajinTick(done: manualDone, label: row.title.resolved) { store.toggle(manualKey) }
+            }
+            WeaponThumbnail(urlString: weapon?.imageURL, size: 72, inset: 6)
+                .frame(width: 96, height: 54)
                 .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2))
                 .clipShape(RoundedRectangle(cornerRadius: 6))
             VStack(alignment: .leading, spacing: 3) {
@@ -645,12 +660,15 @@ struct HajinWeaponRow: View {
                     .font(.hitmarker(15))
                     .foregroundStyle(Color.appInk)
                 if needsManual {
-                    ManualPill(done: manualDone) {
-                        Haptics.step()
-                        store.toggle(manualKey)
-                    }
+                    Text(manualDone ? "mw4.ui.hajin.manual_done".localized() : "mw4.ui.hajin.manual_needed".localized())
+                        .font(.system(size: 11, weight: .bold))
+                        .textCase(.uppercase)
+                        .foregroundStyle(manualDone ? Color.accentDMZ : Color.appInkMuted)
                 } else if let subtitle = row.subtitle {
-                    Text(subtitle.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
+                    Text(subtitle.resolved)
+                        .font(.system(size: 11, weight: .bold))
+                        .textCase(.uppercase)
+                        .foregroundStyle(Color.appInkMuted)
                 }
             }
             Spacer(minLength: 6)
@@ -665,30 +683,75 @@ struct HajinWeaponRow: View {
     }
 }
 
-/// "Manual needed" / "Manual extracted": tap to tick it off. Saved and
-/// synced like the boss and upgrade ticks.
-private struct ManualPill: View {
-    let done: Bool
-    let toggle: () -> Void
+/// One FOB upgrade family as a single card: I / II / III tabs (the same
+/// segmented control as the weapon screen), the picked tier's cost, and
+/// its tick. Opens on the first tier not yet ticked.
+struct HajinUpgradeFamilyCard: View {
+    let tiers: [HajinGuide.Item]
+    @EnvironmentObject private var store: HajinStore
+    @State private var picked: String?
+
+    private var shown: HajinGuide.Item {
+        tiers.first { $0.id == picked }
+            ?? tiers.first { !store.checked.contains("upgrade-\($0.id)") }
+            ?? tiers.last!
+    }
+
+    private static func roman(_ n: Int) -> String {
+        let all = ["I", "II", "III", "IV", "V"]
+        return all.indices.contains(n - 1) ? all[n - 1] : "\(n)"
+    }
 
     var body: some View {
-        Button(action: toggle) {
-            HStack(spacing: 4) {
-                Image(systemName: done ? "checkmark.circle.fill" : "book.closed.fill")
-                Text(done ? "mw4.ui.hajin.manual_done".localized() : "mw4.ui.hajin.manual_needed".localized())
+        let item = shown
+        let key = "upgrade-\(item.id)"
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                HajinItemTile(item: item, size: 40)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(item.family ?? item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                    Text("\(tiers.filter { store.checked.contains("upgrade-\($0.id)") }.count)/\(tiers.count) " + "mw4.ui.hajin.tiers".localized())
+                        .font(.system(size: 11, weight: .bold))
+                        .textCase(.uppercase)
+                        .foregroundStyle(Color.appInkMuted)
+                }
+                Spacer(minLength: 0)
             }
-            .font(.caption.weight(.semibold))
-            .lineLimit(1)
-            .fixedSize()
-            .foregroundStyle(done ? Color.black.opacity(0.85) : Color.appInk)
-            .padding(.horizontal, 9)
-            .padding(.vertical, 4)
-            .background(
-                Capsule().fill(done ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appSurface2)
-                    .overlay(Capsule().strokeBorder(done ? Color.clear : Color.appInkMuted.opacity(0.35), lineWidth: 1))
-            )
+            Picker("mw4.ui.hajin.tiers".localized(), selection: Binding(get: { item.id }, set: { Haptics.step(); picked = $0 })) {
+                ForEach(tiers) { tier in
+                    Text((store.checked.contains("upgrade-\(tier.id)") ? "✓ " : "") + Self.roman(tier.tier ?? 1)).tag(tier.id)
+                }
+            }
+            .pickerStyle(.segmented)
+            HStack(alignment: .top, spacing: 10) {
+                HajinTick(done: store.checked.contains(key), label: item.name.resolved) { store.toggle(key) }
+                HajinItemLink(id: item.id) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        HStack {
+                            Text(item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                            Spacer(minLength: 6)
+                            if let cash = item.cash { HajinValueBadge(text: "$\(cash.formatted())") }
+                            Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
+                        }
+                        if let cost = item.cost, !cost.isEmpty {
+                            HajinWrap(spacing: 8) {
+                                ForEach(cost, id: \.item) { part in
+                                    let ingredient = store.guide?.item(part.item)
+                                    HStack(spacing: 3) {
+                                        HajinItemTile(item: ingredient, size: 22)
+                                        Text("\(part.qty)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInk)
+                                    }
+                                }
+                            }
+                        } else if let note = item.note {
+                            Text(note.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
+                        }
+                        if let effect = item.effect {
+                            Text(effect.resolved).font(.caption).italic().foregroundStyle(Color.appInkMuted)
+                        }
+                    }
+                }
+            }
         }
-        .buttonStyle(.borderless)
-        .accessibilityAddTraits(done ? .isSelected : [])
     }
 }
