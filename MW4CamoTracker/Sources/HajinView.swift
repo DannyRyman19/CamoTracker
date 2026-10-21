@@ -11,6 +11,7 @@ struct HajinView: View {
     @State private var shownSection: HajinGuide.Section?
     @State private var shownItem: String?
     @State private var showsKeepSell = false
+    @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
     @State private var width: CGFloat = 0
 
     private var accent: Color { .accentDMZ }
@@ -45,25 +46,17 @@ struct HajinView: View {
     private func phoneList(_ guide: HajinGuide) -> some View {
         List {
             if query.isEmpty {
+                HajinPagePicker(page: $page)
+                if page == HajinPage.mine.rawValue {
+                    HajinMinePage()
+                } else {
                 Button { showsMap = true } label: {
                     MapHeroCard(guide: guide, pinCount: store.pins.count)
                 }
                 .buttonStyle(.plain)
                 .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
                 .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
                 .listRowSeparator(.hidden)
-
-                Section {
-                    NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-                        .hajinCard()
-                }
-
-                HajinLevelCard().hajinCard()
-                HajinTrackingCard().hajinCard()
-                NavigationLink { HajinStashView() } label: { HajinStashEntry() }
-                    .hajinCard()
-                HajinHeading(title: "mw4.ui.hajin.guide".localized())
                 ForEach(guide.guide) { section in
                     NavigationLink {
                         GuideSectionView(section: section)
@@ -75,6 +68,7 @@ struct HajinView: View {
                 GuideFooter(guide: guide)
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                }
             } else {
                 GuideSearchResults(guide: guide, query: query, pick: nil)
             }
@@ -337,6 +331,42 @@ struct GuideSectionView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
+    }
+}
+
+/// The Hajin tab's two halves: the reference guide, and the player's own
+/// plan (level, tracking, what to build, stash, keep or sell).
+enum HajinPage: String, CaseIterable {
+    case guide, mine
+    static let key = "mw4_hajin_page"
+    var title: String { self == .guide ? "mw4.ui.hajin.page_guide".localized() : "mw4.ui.hajin.page_mine".localized() }
+}
+
+struct HajinPagePicker: View {
+    @Binding var page: String
+
+    var body: some View {
+        Picker("", selection: Binding(get: { page }, set: { if $0 != page { Haptics.step() }; page = $0 })) {
+            ForEach(HajinPage.allCases, id: \.rawValue) { Text($0.title).tag($0.rawValue) }
+        }
+        .pickerStyle(.segmented)
+        .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+}
+
+/// The player's own cards, in the order they're used: level, what's
+/// tracked, what to build next, the stash, and keep or sell.
+struct HajinMinePage: View {
+    var body: some View {
+        HajinLevelCard().hajinCard()
+        HajinTrackingCard().hajinCard()
+        HajinBuildNextCard().hajinCard()
+        NavigationLink { HajinStashView() } label: { HajinStashEntry() }
+            .hajinCard()
+        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+            .hajinCard()
     }
 }
 
@@ -747,6 +777,7 @@ struct HajinGuidePanel: View {
     @State private var query = ""
     @State private var stack: [Page] = []
     @State private var panelWidth: CGFloat = 0
+    @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
 
     private enum Page: Hashable {
         case section(HajinGuide.Section)
@@ -809,12 +840,10 @@ struct HajinGuidePanel: View {
                     } else if !query.isEmpty {
                         GuideSearchResults(guide: guide, query: query, pick: pick)
                     } else {
-                        HajinLevelCard().hajinCard()
-                        HajinTrackingCard().hajinCard()
-                        NavigationLink { HajinStashView() } label: { HajinStashEntry() }
-                            .hajinCard()
-                        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-                            .hajinCard()
+                        HajinPagePicker(page: $page)
+                        if page == HajinPage.mine.rawValue {
+                            HajinMinePage()
+                        } else {
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
                                 HStack {
@@ -827,6 +856,7 @@ struct HajinGuidePanel: View {
                         GuideFooter(guide: guide)
                             .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
+                        }
                     }
                 }
                 .scrollContentBackground(.hidden)

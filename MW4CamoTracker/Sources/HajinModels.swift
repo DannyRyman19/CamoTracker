@@ -380,6 +380,36 @@ final class HajinStore: ObservableObject {
 
     static let printableGreen = Color(red: 0.42, green: 0.80, blue: 0.36)
 
+    /// What to print next: the next unprinted tier of each FOB upgrade,
+    /// printable ones first, then by how much of the cost the stash covers,
+    /// cheapest first on a tie.
+    func buildNext(limit: Int = 3) -> [(item: HajinGuide.Item, covered: Double, missing: [(String, Int)])] {
+        guard let guide else { return [] }
+        let upgrades = (guide.items ?? []).filter { $0.kind == "FOB Upgrade" }
+        var families: [String: [HajinGuide.Item]] = [:]
+        for upgrade in upgrades { families[upgrade.family ?? upgrade.id, default: []].append(upgrade) }
+        let next = families.values.compactMap { tiers in
+            tiers.sorted { ($0.tier ?? 0) < ($1.tier ?? 0) }.first { !checked.contains("upgrade-\($0.id)") }
+        }
+        return next.map { item -> (item: HajinGuide.Item, covered: Double, missing: [(String, Int)]) in
+            let cost = item.cost ?? []
+            let need = cost.reduce(0) { $0 + $1.qty }
+            let have = cost.reduce(0) { $0 + min(count(of: $1.item), $1.qty) }
+            let missing = cost.compactMap { part -> (String, Int)? in
+                let short = part.qty - count(of: part.item)
+                return short > 0 ? (part.item, short) : nil
+            }
+            // Cash only: nothing to gather, so it sits just under the printable ones
+            return (item, need == 0 ? 0.99 : Double(have) / Double(need), missing)
+        }
+        .sorted {
+            if $0.covered != $1.covered { return $0.covered > $1.covered }
+            return ($0.item.cash ?? 0) < ($1.item.cash ?? 0)
+        }
+        .prefix(limit)
+        .map { $0 }
+    }
+
     /// Green card border for a row whose item the stash can print.
     func printableAccent(_ row: HajinGuide.Row) -> Color? {
         guard let id = row.item, let item = guide?.item(id), canPrint(item) else { return nil }

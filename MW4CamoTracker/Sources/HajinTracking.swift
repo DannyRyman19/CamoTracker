@@ -303,3 +303,71 @@ struct HajinUndoOverlay: View {
         .animation(.snappy, value: store.stashUndo)
     }
 }
+
+/// Suggests the next FOB upgrades to print from what's in the stash.
+struct HajinBuildNextCard: View {
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        let picks = store.buildNext()
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("mw4.ui.hajin.build_next".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Spacer()
+                if store.stash.isEmpty {
+                    Text("mw4.ui.hajin.build_next_hint".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                }
+            }
+            if picks.isEmpty {
+                Text("mw4.ui.hajin.build_next_done".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+            }
+            ForEach(picks, id: \.item.id) { pick in
+                let ready = pick.missing.isEmpty && !(pick.item.cost ?? []).isEmpty
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 10) {
+                        HajinItemLink(id: pick.item.id) {
+                            HStack(spacing: 10) {
+                                HajinItemTile(item: pick.item, size: 32)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(pick.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                                    HStack(spacing: 6) {
+                                        if ready { HajinCanPrintTag() }
+                                        if let cash = pick.item.cash {
+                                            Text("$\(cash.formatted())")
+                                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                                .foregroundStyle(Color.appInkMuted)
+                                        }
+                                    }
+                                }
+                                Spacer(minLength: 0)
+                            }
+                        }
+                        if !store.isTracked(pick.item.id) && store.tracked.count < HajinStore.maxTracked {
+                            Button {
+                                Haptics.step()
+                                store.toggleTracked(pick.item.id)
+                            } label: {
+                                Image(systemName: "plus.viewfinder").font(.body.weight(.semibold)).foregroundStyle(Color.accentDMZ)
+                            }
+                            .buttonStyle(.borderless)
+                            .accessibilityLabel("mw4.ui.hajin.track".localized())
+                        } else if store.isTracked(pick.item.id) {
+                            Image(systemName: "scope").foregroundStyle(Color.accentDMZ)
+                        }
+                    }
+                    if (pick.item.cost ?? []).isEmpty {
+                        Text("mw4.ui.hajin.cash_only".localized().uppercased())
+                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                            .foregroundStyle(Color.appInkMuted)
+                            .padding(.leading, 42)
+                    } else {
+                        ProgressBar(fraction: pick.covered, accent: ready ? HajinStore.printableGreen : .accentDMZ)
+                    }
+                    if !pick.missing.isEmpty && !store.stash.isEmpty {
+                        HajinLinkChips(ids: pick.missing.map(\.0), amounts: Dictionary(pick.missing, uniquingKeysWith: +))
+                    }
+                }
+            }
+        }
+    }
+}
