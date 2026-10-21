@@ -91,6 +91,7 @@ struct HajinVerdictBadge: View {
     var compact = false
 
     var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
         HStack(alignment: .top, spacing: 10) {
             Image(systemName: verdict.symbol)
                 .font(compact ? .footnote.weight(.bold) : .title3.weight(.bold))
@@ -107,13 +108,19 @@ struct HajinVerdictBadge: View {
                     .foregroundStyle(Color.appInk.opacity(0.85))
                     .lineLimit(compact ? 2 : nil)
                     .fixedSize(horizontal: false, vertical: !compact)
-                // The full banner links straight to what needs the item
-                if !compact {
-                    let ids = (verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []).map(\.item.id)
-                    if !ids.isEmpty { HajinLinkChips(ids: ids).padding(.top, 4) }
-                }
             }
             Spacer(minLength: 0)
+        }
+        // The full banner links straight to what needs the item, across
+        // its whole width so the chips wrap inside it
+        if !compact {
+            let needs = verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []
+            if !needs.isEmpty {
+                HajinLinkChips(ids: needs.map(\.item.id),
+                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:])
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
         }
         .padding(compact ? 0 : 12)
         .background {

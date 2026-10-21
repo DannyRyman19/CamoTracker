@@ -382,6 +382,19 @@ struct HajinItemView: View {
         if item.kind != "FOB Upgrade" {
             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
         }
+        if item.kind == "FOB Upgrade" {
+            let key = "upgrade-\(item.id)"
+            let done = store.checked.contains(key)
+            HStack(spacing: 10) {
+                HajinTick(done: done, label: item.name.resolved) { store.toggle(key) }
+                Text(done ? "mw4.ui.hajin.printed".localized() : "mw4.ui.hajin.not_printed".localized())
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(done ? Color.accentDMZ : Color.appInk)
+                Spacer()
+            }
+            .padding(12)
+            .background(panel)
+        }
         let tiers = guide.tiers(of: item)
         if tiers.count > 1 { tierStrip(item, tiers) }
         if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
@@ -494,6 +507,12 @@ struct HajinItemView: View {
             panelTitle("mw4.ui.hajin.used_in".localized())
             VStack(spacing: 0) {
                 ForEach(Array(users.enumerated()), id: \.element.id) { index, user in
+                    HStack(spacing: 0) {
+                    if user.kind == "FOB Upgrade" {
+                        let key = "upgrade-\(user.id)"
+                        HajinTick(done: store.checked.contains(key), label: user.name.resolved) { store.toggle(key) }
+                            .padding(.leading, 12)
+                    }
                     HajinItemLink(id: user.id) {
                         HStack(spacing: 12) {
                             HajinItemTile(item: user, size: 40)
@@ -511,6 +530,7 @@ struct HajinItemView: View {
                         }
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
+                    }
                     }
                     if index < users.count - 1 { Divider().overlay(Color.appInkMuted.opacity(0.2)).padding(.leading, 64) }
                 }
@@ -736,7 +756,11 @@ struct HajinUpgradeFamilyCard: View {
             }
             .pickerStyle(.segmented)
             HStack(alignment: .top, spacing: 10) {
-                HajinTick(done: store.checked.contains(key), label: item.name.resolved) { store.toggle(key) }
+                HajinTick(done: store.checked.contains(key), label: item.name.resolved) {
+                    store.toggle(key)
+                    // Ticked: move on to the next tier still to print
+                    if store.checked.contains(key) { withAnimation(.snappy) { picked = nil } }
+                }
                 HajinItemLink(id: item.id) {
                     VStack(alignment: .leading, spacing: 6) {
                         HStack {
