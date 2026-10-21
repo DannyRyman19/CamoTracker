@@ -1,5 +1,5 @@
 {
- "version": "0.9.6",
+ "version": "0.9.7",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -1343,6 +1343,22 @@
    "note": "Rare key, grid F5. Opens the electrical room in the hospital's northwestern basement car park."
   },
   {
+   "id": "k-reactor-02",
+   "cat": "key",
+   "name": "Reactor 02 Control Room",
+   "x": 0.7872,
+   "y": 0.4553,
+   "note": "Rare key, grid H4. Opens the control room inside the Reactor 02 building."
+  },
+  {
+   "id": "k-doctor-office",
+   "cat": "key",
+   "name": "The Doctor's Command Office",
+   "x": 0.5898,
+   "y": 0.559,
+   "note": "Legendary key, grid F5. Opens a converted conference room in the hospital's upper-floor offices, behind wooden double doors."
+  },
+  {
    "id": "k-airbase-drc",
    "cat": "key",
    "name": "Air Base DRC Weapons Locker",
@@ -2260,6 +2276,13 @@
      "item": "portable-radar"
     },
     {
+     "title": "Seeker Drone",
+     "subtitle": "Uncommon. 15 Synthetics, 15 Electronics. Deploy a drone that seeks out nearby enemies and snapshots them",
+     "group": "Field Upgrades",
+     "value": "Find",
+     "item": "seeker-drone"
+    },
+    {
      "title": "Razor Wire Trap",
      "subtitle": "Uncommon. 15 Electronics, 15 Metals. A mine that tangles enemies in razor wire",
      "group": "Field Upgrades",
@@ -3112,15 +3135,20 @@
     },
     {
      "title": "The Doctor",
-     "subtitle": "Pays $10,000",
+     "subtitle": "Drops The Doctor's Dog Tag (Legendary), and sometimes The Doctor's Command Office key. Pays $10,000",
+     "links": [
+      "the-doctors-command-office",
+      "the-doctors-dog-tag"
+     ],
      "group": "Lieutenants",
      "check": "boss-the-doctor"
     },
     {
      "title": "Jin-Tae",
-     "subtitle": "The target in Operation Critical Extraction. Drops Radiation Blockers. Pays $10,000",
+     "subtitle": "The target in Operation Critical Extraction. Drops Jin-Tae's Dog Tag (Legendary) and Radiation Blockers. Pays $10,000",
      "links": [
-      "radiation-blockers"
+      "radiation-blockers",
+      "jin-taes-dog-tag"
      ],
      "group": "Lieutenants",
      "check": "boss-jin-tae"
@@ -3136,15 +3164,21 @@
     },
     {
      "title": "Iskra",
-     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Pays $10,000",
+     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Pays $10,000",
+     "links": [
+      "iskras-dog-tag"
+     ],
      "group": "Lieutenants",
      "check": "boss-iskra"
     },
     {
      "title": "Roze",
+     "subtitle": "Holds a dark parking garage with a scoped rifle",
+     "links": [
+      "rozes-dog-tag"
+     ],
      "group": "Lieutenants",
-     "check": "boss-roze",
-     "subtitle": "Holds a dark parking garage with a scoped rifle"
+     "check": "boss-roze"
     },
     {
      "title": "The Warden",
@@ -3291,6 +3325,23 @@
      "value": "F7",
      "subtitle": "Rare. The records room above the Goh24 supermarket south of the clinic, Wolves Stadium",
      "item": "shop-records-room"
+    },
+    {
+     "title": "Reactor 02 Control Room",
+     "value": "H4",
+     "subtitle": "Rare. The control room inside the Reactor 02 building, Haneul Nuclear Reactor",
+     "item": "reactor-02-control-room"
+    },
+    {
+     "title": "The Doctor's Command Office",
+     "value": "F5",
+     "subtitle": "Legendary. A converted conference room in the upper-floor offices of Mirae General Hospital, behind wooden double doors. The Doctor sometimes drops it",
+     "item": "the-doctors-command-office"
+    },
+    {
+     "title": "Gun Store Weapons Locker",
+     "subtitle": "Rare. Opens the three locked cabinets in a gun store basement. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
+     "item": "gun-store-weapons-locker"
     },
     {
      "title": "Air Base DRC Weapons Locker",
@@ -4453,6 +4504,14 @@
    "effect": "Armor plates for you and your squad"
   },
   {
+   "id": "armor-plate",
+   "name": "Armor Plate",
+   "kind": "Gear",
+   "rarity": "Common",
+   "note": "Extra protection in combat; stacks to 6. Your armor slot fills with plates when you infil, and Ammo Armor Caches refill them (with a cooldown)",
+   "image": "https://camotracker.djr.li/Images/DMZ/armor-plate.png?v=1"
+  },
+  {
    "id": "artillery-beacon",
    "name": "Artillery Beacon",
    "kind": "Fire Support",
@@ -4804,7 +4863,7 @@
     }
    ],
    "effect": "Slows the target's movement and aim",
-   "symbol": "burst.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/concussion-grenade.png?v=1"
   },
   {
    "id": "control-unit",
@@ -5100,6 +5159,13 @@
    "image": "https://camotracker.djr.li/Images/DMZ/elite-night-vision-goggles.png?v=1"
   },
   {
+   "id": "encrypted-drive",
+   "name": "Encrypted Drive",
+   "kind": "Gear",
+   "note": "The objective item in the Dead Man's Cache op: collect it from the enemy comms server in Cheongun Outskirts",
+   "image": "https://camotracker.djr.li/Images/DMZ/encrypted-drive.png?v=1"
+  },
+  {
    "id": "energy-drink",
    "name": "Energy Drink",
    "image": "https://camotracker.djr.li/Images/DMZ/energy-drink.png?v=1",
@@ -5222,6 +5288,14 @@
    "value": 2500
   },
   {
+   "id": "gas-can",
+   "name": "Gas Can",
+   "kind": "Gear",
+   "rarity": "Common",
+   "note": "Attach it to a vehicle to refuel it. Refill it at Gas Stations and Marine Gas Stations",
+   "image": "https://camotracker.djr.li/Images/DMZ/gas-can.png?v=1"
+  },
+  {
    "id": "gas-mask",
    "name": "Gas Mask",
    "kind": "Gear",
@@ -5247,6 +5321,16 @@
    "kind": "Valuable",
    "value": 25000,
    "rarity": "Ultra"
+  },
+  {
+   "id": "gun-store-weapons-locker",
+   "name": "Gun Store Weapons Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "Opens the three locked cabinets in a gun store basement. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "gunsmith-upgrade-i",
@@ -5282,6 +5366,14 @@
    "grid": "B7",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
+   "id": "hazmat-suit",
+   "name": "Hazmat Suit",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "note": "Protective suit that shields you from radiation. Discarded when you extract",
+   "image": "https://camotracker.djr.li/Images/DMZ/hazmat-suit.png?v=1"
   },
   {
    "id": "heartbeat-sensor",
@@ -5385,6 +5477,22 @@
    "marker": "k-iskra",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
+  },
+  {
+   "id": "iskras-dog-tag",
+   "name": "Iskra's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Iskra. Extract it for Boss Board progress",
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-dog-tag.png?v=1"
+  },
+  {
+   "id": "jin-taes-dog-tag",
+   "name": "Jin-Tae's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Jin-Tae. Extract it for Boss Board progress",
+   "image": "https://camotracker.djr.li/Images/DMZ/jin-taes-dog-tag.png?v=1"
   },
   {
    "id": "large-backpack",
@@ -5952,6 +6060,18 @@
    "found": "Industrial areas and toolboxes"
   },
   {
+   "id": "reactor-02-control-room",
+   "name": "Reactor 02 Control Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The control room inside the Reactor 02 building, Haneul Nuclear Reactor",
+   "grid": "H4",
+   "marker": "k-reactor-02",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "reactor-drc-locker",
    "name": "Reactor DRC Locker",
    "kind": "Key",
@@ -6073,6 +6193,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/riot-shield.png?v=1"
   },
   {
+   "id": "rozes-dog-tag",
+   "name": "Roze's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress",
+   "image": "https://camotracker.djr.li/Images/DMZ/rozes-dog-tag.png?v=1"
+  },
+  {
    "id": "sam-airburst-turret",
    "name": "SAM Airburst Turret",
    "kind": "Field Upgrades",
@@ -6158,6 +6286,25 @@
     }
    ],
    "effect": "Hides you from radar, marking and thermal"
+  },
+  {
+   "id": "seeker-drone",
+   "name": "Seeker Drone",
+   "kind": "Field Upgrades",
+   "rarity": "Uncommon",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 15
+    },
+    {
+     "item": "electronics",
+     "qty": 15
+    }
+   ],
+   "effect": "Deploy a drone that seeks out nearby enemies and snapshots them",
+   "image": "https://camotracker.djr.li/Images/DMZ/seeker-drone.png?v=1"
   },
   {
    "id": "self-revive-kit",
@@ -6553,6 +6700,26 @@
    "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
   {
+   "id": "the-doctors-command-office",
+   "name": "The Doctor's Command Office",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "A converted conference room in the upper-floor offices of Mirae General Hospital, behind wooden double doors. The Doctor sometimes drops it",
+   "grid": "F5",
+   "marker": "k-doctor-office",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
+  },
+  {
+   "id": "the-doctors-dog-tag",
+   "name": "The Doctor's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by The Doctor. Extract it for Boss Board progress",
+   "image": "https://camotracker.djr.li/Images/DMZ/the-doctors-dog-tag.png?v=1"
+  },
+  {
    "id": "thermite",
    "name": "Thermite",
    "kind": "Lethals",
@@ -6796,6 +6963,13 @@
    ],
    "effect": "Night vision you can toggle on and off",
    "image": "https://camotracker.djr.li/Images/DMZ/weak-night-vision-goggles.png?v=1"
+  },
+  {
+   "id": "weapon-manual",
+   "name": "Weapon Manual",
+   "kind": "Gear",
+   "note": "Extract one to unlock its weapon for repeat buys at the Gunsmith, plus $5,000. Search military containers and safes",
+   "image": "https://camotracker.djr.li/Images/DMZ/weapon-manual.png?v=1"
   },
   {
    "id": "zip-gun",
