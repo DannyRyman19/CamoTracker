@@ -1,5 +1,5 @@
 {
- "version": "0.9.11",
+ "version": "0.9.12",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -1357,6 +1357,38 @@
    "x": 0.5898,
    "y": 0.559,
    "note": "Legendary key, grid F5. Opens a converted conference room in the hospital's upper-floor offices, behind wooden double doors."
+  },
+  {
+   "id": "k-gas-electrical",
+   "cat": "key",
+   "name": "Gas Station Electrical Room",
+   "x": 0.756,
+   "y": 0.7293,
+   "note": "Rare key, grid H6. Opens the gas station's electrical room: a grey metal door beside a noticeboard."
+  },
+  {
+   "id": "k-shopping-drc",
+   "cat": "key",
+   "name": "Shopping DRC Locker",
+   "x": 0.7286,
+   "y": 0.6383,
+   "note": "Ultra key, grid H5. Reported to open the DRC Locker in the DRC Labs under the mall, in the secured lower car park."
+  },
+  {
+   "id": "k-mechanics-shack",
+   "cat": "key",
+   "name": "Mechanic's Shack",
+   "x": 0.4985,
+   "y": 0.4906,
+   "note": "Rare key, grid F5. Opens the standalone shack south of the clinic."
+  },
+  {
+   "id": "k-militia-depot",
+   "cat": "key",
+   "name": "Militia Arms Depot",
+   "x": 0.6838,
+   "y": 0.8353,
+   "note": "Rare key, grid G7. Opens the lower-floor armory in Gangbyeon Apartment B."
   },
   {
    "id": "k-airbase-drc",
@@ -3369,6 +3401,40 @@
      "item": "gun-store-weapons-locker"
     },
     {
+     "title": "Gas Station Electrical Room",
+     "value": "H6",
+     "subtitle": "Rare. The gas station's electrical room at the Construction Zone, a grey metal door beside a noticeboard",
+     "item": "gas-station-electrical-room"
+    },
+    {
+     "title": "Shopping DRC Locker",
+     "value": "H5",
+     "subtitle": "Ultra. Reported to open the DRC Locker in the DRC Labs under NuriGO Mall, in the secured lower car park",
+     "item": "shopping-drc-locker"
+    },
+    {
+     "title": "Mechanic's Shack",
+     "value": "F5",
+     "subtitle": "Rare. The standalone shack south of the clinic, Cheongun Village",
+     "item": "mechanics-shack"
+    },
+    {
+     "title": "Militia Arms Depot",
+     "value": "G7",
+     "subtitle": "Rare. The lower-floor armory in Gangbyeon Apartment B, Hajin River Heights. Players have found it in a duffel bag in the Citadel East Wing",
+     "item": "militia-arms-depot"
+    },
+    {
+     "title": "Blackmarket Weapons Locker",
+     "subtitle": "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet",
+     "item": "blackmarket-weapons-locker"
+    },
+    {
+     "title": "Underground Propaganda Store Room",
+     "subtitle": "Rare. Where its door is isn't known yet",
+     "item": "underground-propaganda-store-room"
+    },
+    {
      "title": "Air Base DRC Weapons Locker",
      "value": "B6",
      "subtitle": "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker",
@@ -3481,6 +3547,12 @@
      "subtitle": "Ultra",
      "image": "https://camotracker.djr.li/Images/DMZ/fulton-drop-marker.png?v=1",
      "item": "fulton-drop-marker"
+    },
+    {
+     "title": "Encrypted Archive",
+     "value": "$2,000",
+     "subtitle": "Rare. Found in the Heavenly Luck Casino storage and counting rooms, and the Mirae Electrical Room",
+     "item": "encrypted-archive"
     },
     {
      "title": "Medkit",
@@ -4715,6 +4787,16 @@
    "found": "Hospitals and chemical lockers"
   },
   {
+   "id": "blackmarket-weapons-locker",
+   "name": "Blackmarket Weapons Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "Comes in DMZ level reward kits. Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "bomb-glider",
    "name": "Bomb Glider",
    "kind": "Fire Support",
@@ -5210,6 +5292,19 @@
    "image": "https://camotracker.djr.li/Images/DMZ/elite-night-vision-goggles.png?v=1"
   },
   {
+   "id": "encrypted-archive",
+   "name": "Encrypted Archive",
+   "kind": "Valuable",
+   "value": 2000,
+   "rarity": "Rare",
+   "found": "Heavenly Luck Casino storage and counting-room containers, and a footlocker and bag in the Mirae Electrical Room at Mirae General Hospital (parking level B2). Both rooms need their keys",
+   "foundPlaces": [
+    "m5892",
+    "m5856"
+   ],
+   "image": "https://camotracker.djr.li/Images/DMZ/encrypted-archive.png?v=1"
+  },
+  {
    "id": "encrypted-drive",
    "name": "Encrypted Drive",
    "kind": "Gear",
@@ -5366,6 +5461,18 @@
    "image": "https://camotracker.djr.li/Images/DMZ/gas-mask.png?v=1"
   },
   {
+   "id": "gas-station-electrical-room",
+   "name": "Gas Station Electrical Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The gas station's electrical room at the Construction Zone, a grey metal door beside a noticeboard",
+   "grid": "H6",
+   "marker": "k-gas-electrical",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "gold-bar",
    "name": "Gold Bar",
    "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1",
@@ -5518,6 +5625,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/inflatable-decoy.png?v=1"
   },
   {
+   "id": "irradiated-container",
+   "name": "Irradiated Container",
+   "kind": "Gear",
+   "rarity": "Ultra",
+   "note": "An Ultra item listed on dmzhub.gg. What it does isn't known yet",
+   "image": "https://camotracker.djr.li/Images/DMZ/irradiated-container.png?v=1"
+  },
+  {
    "id": "iskras-control-room",
    "name": "Iskra's Control Room",
    "kind": "Key",
@@ -5664,6 +5779,18 @@
    "tier": 2
   },
   {
+   "id": "mechanics-shack",
+   "name": "Mechanic's Shack",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The standalone shack south of the clinic, Cheongun Village",
+   "grid": "F5",
+   "marker": "k-mechanics-shack",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "medium-backpack",
    "name": "Medium Backpack",
    "image": "https://camotracker.djr.li/Images/DMZ/medium-backpack.png?v=1",
@@ -5787,6 +5914,18 @@
    "rarity": "Legendary",
    "kind": "Ingredient",
    "found": "Colossus"
+  },
+  {
+   "id": "militia-arms-depot",
+   "name": "Militia Arms Depot",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The lower-floor armory in Gangbyeon Apartment B, Hajin River Heights. Players have found it in a duffel bag in the Citadel East Wing",
+   "grid": "G7",
+   "marker": "k-militia-depot",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "mirae-electrical-room",
@@ -6462,6 +6601,18 @@
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
+   "id": "shopping-drc-locker",
+   "name": "Shopping DRC Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Ultra",
+   "note": "Reported to open the DRC Locker in the DRC Labs under NuriGO Mall, in the secured lower car park",
+   "grid": "H5",
+   "marker": "k-shopping-drc",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/air-base-drc-weapons-locker.png?v=1"
+  },
+  {
    "id": "small-backpack",
    "name": "Small Backpack",
    "image": "https://camotracker.djr.li/Images/DMZ/small-backpack.png?v=1",
@@ -6957,6 +7108,16 @@
    "symbol": "printer.fill",
    "family": "Ingredient Printing",
    "tier": 1
+  },
+  {
+   "id": "underground-propaganda-store-room",
+   "name": "Underground Propaganda Store Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "vault-armory",
