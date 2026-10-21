@@ -181,6 +181,7 @@ struct ContentView: View {
                         .navigationDestination(for: HajinItemRoute.self) { route in HajinItemView(id: route.id) }
                 }
                 .environment(\.hajinOpenItem) { id in hajinPath.append(HajinItemRoute(id: id)) }
+                .overlay(alignment: .bottom) { HajinUndoOverlay().padding(.bottom, 70) }
                     .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
                     .tag(Self.hajinTab)
 

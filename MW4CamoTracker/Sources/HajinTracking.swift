@@ -238,3 +238,68 @@ struct HajinStashEntry: View {
         }
     }
 }
+
+/// "Took 20 Reactive Metals from your stash · Undo", with a bar running
+/// down until it goes away on its own.
+struct HajinStashUndoToast: View {
+    let undo: HajinStore.StashUndo
+    @EnvironmentObject private var store: HajinStore
+    @State private var remaining: CGFloat = 1
+    private static let seconds: Double = 6
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "shippingbox.fill").foregroundStyle(Color.accentDMZ)
+                Text(undo.message)
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInk)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 8)
+                Button("mw4.ui.hajin.undo".localized()) {
+                    Haptics.step()
+                    withAnimation(.snappy) { store.undoStash() }
+                }
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(Color.accentDMZ)
+                .buttonStyle(.borderless)
+            }
+            GeometryReader { geo in
+                Capsule().fill(Color.appInkMuted.opacity(0.25))
+                    .overlay(alignment: .leading) {
+                        Capsule().fill(Color.accentDMZ).frame(width: geo.size.width * remaining)
+                    }
+            }
+            .frame(height: 3)
+        }
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: 12).fill(Color.appSurface2)
+                .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.appInkMuted.opacity(0.3), lineWidth: 1))
+                .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
+        )
+        .padding(.horizontal, 16)
+        .task(id: undo.id) {
+            remaining = 1
+            withAnimation(.linear(duration: Self.seconds)) { remaining = 0 }
+            try? await Task.sleep(nanoseconds: UInt64(Self.seconds * 1_000_000_000))
+            if store.stashUndo?.id == undo.id { withAnimation(.snappy) { store.stashUndo = nil } }
+        }
+    }
+}
+
+/// Shows the stash undo toast whenever there's one to offer.
+struct HajinUndoOverlay: View {
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        ZStack {
+            if let undo = store.stashUndo {
+                HajinStashUndoToast(undo: undo)
+                    .id(undo.id)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
+        .animation(.snappy, value: store.stashUndo)
+    }
+}

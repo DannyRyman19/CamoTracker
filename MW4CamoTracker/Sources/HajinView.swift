@@ -88,6 +88,7 @@ struct HajinView: View {
     /// screenshot harness. DEBUG-only.
     private func openScreenshotTarget() {
         #if DEBUG
+        if let spend = ProcessInfo.processInfo.environment["SS_SPEND"] { store.toggle("upgrade-\(spend)") }
         guard let target = ProcessInfo.processInfo.environment["SS_HAJIN"], !target.isEmpty else { return }
         if target == "map" {
             showsMap = true

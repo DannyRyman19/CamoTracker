@@ -274,6 +274,15 @@ final class HajinStore: ObservableObject {
     @Published private(set) var tracked: [String] = []
     /// How many of each ingredient or resource the player has.
     @Published private(set) var stash: [String: Int] = [:]
+    /// The last automatic stash change, offered for undo for a few seconds.
+    @Published var stashUndo: StashUndo?
+
+    struct StashUndo: Identifiable, Equatable {
+        let id = UUID()
+        let message: String
+        let previous: [String: Int]
+        let previousTracked: [String]
+    }
     private var cloud: CloudSync?
 
     private let dataService: DataService
@@ -399,7 +408,44 @@ final class HajinStore: ObservableObject {
     }
 
     func toggle(_ key: String) {
-        if checked.contains(key) { checked.remove(key) } else { checked.insert(key) }
+        if checked.contains(key) {
+            checked.remove(key)
+        } else {
+            checked.insert(key)
+            // Ticking an upgrade as printed uses up what it cost
+            if key.hasPrefix("upgrade-") { spend(on: String(key.dropFirst("upgrade-".count))) }
+        }
+        saveAndSync()
+    }
+
+    /// Takes a printed item's ingredients out of the stash (only what's
+    /// there) and stops tracking it, keeping the old state for Undo.
+    private func spend(on id: String) {
+        guard let item = guide?.item(id) else { return }
+        let previous = stash, previousTracked = tracked
+        var taken: [String] = []
+        for part in item.cost ?? [] {
+            let have = count(of: part.item)
+            guard have > 0 else { continue }
+            let used = min(have, part.qty)
+            stash[part.item] = have - used == 0 ? nil : have - used
+            taken.append("\(used) \(guide?.item(part.item)?.name.resolved ?? part.item)")
+        }
+        let wasTracked = tracked.contains(id)
+        tracked.removeAll { $0 == id }
+        guard !taken.isEmpty || wasTracked else { return }
+        let message = taken.isEmpty
+            ? String(format: "mw4.ui.hajin.untracked_printed".localized(), item.name.resolved)
+            : String(format: "mw4.ui.hajin.took_from_stash".localized(), taken.joined(separator: ", "))
+        stashUndo = StashUndo(message: message, previous: previous, previousTracked: previousTracked)
+    }
+
+    /// Puts the stash (and tracking) back as it was before the last spend.
+    func undoStash() {
+        guard let undo = stashUndo else { return }
+        stash = undo.previous
+        tracked = undo.previousTracked
+        stashUndo = nil
         saveAndSync()
     }
 

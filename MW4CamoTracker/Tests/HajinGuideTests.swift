@@ -96,4 +96,25 @@ struct HajinGuideTests {
         // Already up to date: nothing more to fetch
         #expect(try await service.refreshGuide(name: "hajin", knownVersion: "9.9.9") == nil)
     }
+
+    /// Printing an upgrade takes its cost out of the stash (never below
+    /// zero), stops tracking it, and Undo puts both back.
+    @MainActor @Test func printingSpendsTheStashAndUndoRestoresIt() throws {
+        let defaults = try #require(UserDefaults(suiteName: "hajin-spend-\(UUID().uuidString)"))
+        let store = HajinStore(defaults: defaults)
+        // Stash Weapon Upgrade I: 20 Reactive Metals, 10 Stock Rod, 5 Comms Module
+        store.setCount(25, of: "reactive-metals")
+        store.setCount(4, of: "stock-rod")
+        store.toggleTracked("stash-weapon-upgrade-i")
+        store.toggle("upgrade-stash-weapon-upgrade-i")
+        #expect(store.count(of: "reactive-metals") == 5)
+        #expect(store.count(of: "stock-rod") == 0)
+        #expect(!store.isTracked("stash-weapon-upgrade-i"))
+        #expect(store.stashUndo != nil)
+        store.undoStash()
+        #expect(store.count(of: "reactive-metals") == 25)
+        #expect(store.count(of: "stock-rod") == 4)
+        #expect(store.isTracked("stash-weapon-upgrade-i"))
+        #expect(store.checked.contains("upgrade-stash-weapon-upgrade-i"))
+    }
 }
