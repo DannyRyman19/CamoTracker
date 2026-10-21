@@ -423,8 +423,49 @@ struct HajinItemView: View {
     @ViewBuilder private func secondary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         let users = guide.usedIn(item.id)
         if !users.isEmpty { usedIn(users) }
+        // Level rows are unlocks (recipe) or rewards; everything else
+        // (bosses, missions, stations) is where to find it
         let mentions = guide.mentions(item.id)
-        if !mentions.isEmpty { whereFrom(mentions) }
+        let levels = mentions.filter { $0.section.id == "levels" }
+        let found = mentions.filter { $0.section.id != "levels" }
+        if !found.isEmpty { whereFrom(found, title: "mw4.ui.hajin.where_find".localized()) }
+        if !levels.isEmpty || item.requiredLevel != nil { unlocks(item, levels) }
+    }
+
+    /// When a recipe unlocks, or which levels hand the item out.
+    private func unlocks(_ item: HajinGuide.Item, _ levels: [(section: HajinGuide.Section, row: HajinGuide.Row)]) -> some View {
+        let craftable = !(item.cost ?? []).isEmpty
+        var rows: [(level: Int, text: String)] = levels.compactMap { mention in
+            guard let level = mention.row.level else { return nil }
+            return (level, craftable ? "mw4.ui.hajin.unlock_recipe".localized() : "mw4.ui.hajin.unlock_reward".localized())
+        }
+        if let needed = item.requiredLevel, !rows.contains(where: { $0.level == needed }) {
+            rows.insert((needed, "mw4.ui.hajin.unlock_recipe".localized()), at: 0)
+        }
+        rows.sort { $0.level < $1.level }
+        return VStack(alignment: .leading, spacing: 8) {
+            panelTitle("mw4.ui.hajin.unlocks".localized())
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(Array(rows.enumerated()), id: \.offset) { index, row in
+                    let locked = store.isLocked(row.level)
+                    HStack(spacing: 12) {
+                        Image(systemName: store.dmzLevel == 0 ? "chart.bar.fill" : locked ? "lock.fill" : "checkmark.circle.fill")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(store.dmzLevel > 0 && !locked ? Color.accentDMZ : Color.appInkMuted)
+                            .frame(width: 28)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(String(format: "mw4.ui.hajin.dmz_level_n".localized(), row.level))
+                                .font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                            Text(row.text).font(.caption).foregroundStyle(Color.appInkMuted)
+                        }
+                        Spacer()
+                    }
+                    .padding(12)
+                    if index < rows.count - 1 { Divider().overlay(Color.appInkMuted.opacity(0.2)) }
+                }
+            }
+            .background(panel)
+        }
     }
 
     private func header(_ item: HajinGuide.Item) -> some View {
@@ -471,7 +512,7 @@ struct HajinItemView: View {
                 }
             }
             .background(panel)
-            if let unlock = item.unlock {
+            if let unlock = item.unlock, item.requiredLevel == nil {
                 Text(unlock.resolved)
                     .font(.footnote)
                     .foregroundStyle(Color(red: 0.86, green: 0.82, blue: 0.55))
@@ -559,9 +600,9 @@ struct HajinItemView: View {
 
     /// Rows that mention the item: the boss that drops it, the mission that
     /// rewards it, the level that hands it out.
-    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)]) -> some View {
+    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)], title: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            panelTitle("mw4.ui.hajin.where_from".localized())
+            panelTitle(title)
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(Array(mentions.enumerated()), id: \.offset) { index, mention in
                     HStack(alignment: .top, spacing: 12) {

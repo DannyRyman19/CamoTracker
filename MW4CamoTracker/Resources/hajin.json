@@ -1,5 +1,5 @@
 {
- "version": "0.8.9",
+ "version": "0.9.1",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -3854,20 +3854,21 @@
    "note": "The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker",
    "grid": "B6",
    "marker": "k-airbase-drc",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/air-base-drc-weapons-locker.png?v=1"
   },
   {
    "id": "alloyed-plating",
    "name": "Alloyed Plating",
    "kind": "Ingredient",
-   "symbol": "square.stack.3d.up.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/alloyed-plating.png?v=1"
   },
   {
    "id": "ammo-box",
    "name": "Ammo Box",
    "kind": "Field Upgrades",
    "unlock": "Reach DMZ level 12",
-   "symbol": "shippingbox.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/ammo-box.png?v=1"
   },
   {
    "id": "armor-box",
@@ -3894,7 +3895,7 @@
    "kind": "Valuable",
    "rarity": "Legendary",
    "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract",
-   "symbol": "tag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/bales-dog-tag.png?v=2"
   },
   {
    "id": "ballistic-fabric",
@@ -3948,7 +3949,8 @@
    "symbol": "key.fill",
    "rarity": "Rare",
    "note": "The cash vaults of South Korean bank branches",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/bank-branch-vault-access.png?v=1"
   },
   {
    "id": "bank-upgrade-i",
@@ -3993,8 +3995,7 @@
    "name": "Binding Catalyst",
    "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1",
    "rarity": "Rare",
-   "kind": "Ingredient",
-   "note": "DMZ level 49 gives you 2"
+   "kind": "Ingredient"
   },
   {
    "id": "biomaterials",
@@ -4012,8 +4013,7 @@
      "qty": 20
     }
    ],
-   "effect": "Needs Uncommon Ingredient Printing",
-   "note": "DMZ level 39 gives you 2"
+   "effect": "Needs Uncommon Ingredient Printing"
   },
   {
    "id": "bomb-glider",
@@ -4025,7 +4025,7 @@
      "qty": 1
     }
    ],
-   "symbol": "paperplane.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/bomb-glider.png?v=1"
   },
   {
    "id": "c4",
@@ -4044,15 +4044,14 @@
     }
    ],
    "effect": "Sticky explosive you set off remotely",
-   "symbol": "bolt.horizontal.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/c4.png?v=1"
   },
   {
    "id": "cpu",
    "name": "CPU",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 44 gives you 2",
-   "symbol": "cpu.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/cpu.png?v=1"
   },
   {
    "id": "care-package",
@@ -4075,7 +4074,7 @@
     }
    ],
    "effect": "Calls in a supply drop",
-   "symbol": "arrow.down.circle.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
   },
   {
    "id": "chemicals",
@@ -4103,7 +4102,7 @@
    "name": "Comms Module",
    "kind": "Ingredient",
    "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing",
-   "symbol": "antenna.radiowaves.left.and.right"
+   "image": "https://camotracker.djr.li/Images/DMZ/comms-module.png?v=1"
   },
   {
    "id": "concussion-grenade",
@@ -4116,8 +4115,7 @@
    "id": "control-unit",
    "name": "Control Unit",
    "kind": "Ingredient",
-   "note": "DMZ level 38 gives you 2",
-   "symbol": "slider.horizontal.3"
+   "image": "https://camotracker.djr.li/Images/DMZ/control-unit.png?v=1"
   },
   {
    "id": "counting-room-vault",
@@ -4128,7 +4126,8 @@
    "note": "The counting-room vault on the Heavenly Luck Casino's main floor, Cheongun Village. Players report a backpack inside",
    "grid": "F4",
    "marker": "k-counting-room",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/counting-room-vault.png?v=1"
   },
   {
    "id": "ddos",
@@ -4147,7 +4146,7 @@
     }
    ],
    "effect": "Knocks out electronics and sensors nearby for a short time",
-   "symbol": "wifi.slash"
+   "image": "https://camotracker.djr.li/Images/DMZ/ddos.png?v=1"
   },
   {
    "id": "defibrillator",
@@ -4161,8 +4160,7 @@
    "id": "detonators",
    "name": "Detonators",
    "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
-   "kind": "Ingredient",
-   "note": "DMZ level 29 gives you 2"
+   "kind": "Ingredient"
   },
   {
    "id": "disposable-parachute",
@@ -4181,7 +4179,7 @@
     }
    ],
    "effect": "A parachute with limited uses",
-   "symbol": "arrow.down.circle.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/disposable-parachute.png?v=1"
   },
   {
    "id": "dog-tag-case-upgrade-i",
@@ -4257,7 +4255,7 @@
     }
    ],
    "effect": "Burrows into a surface before it blows",
-   "symbol": "screwdriver.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/drill-charge.png?v=1"
   },
   {
    "id": "electronic-sensors",
@@ -4266,7 +4264,7 @@
    "kind": "Ingredient",
    "value": 800,
    "note": "Stash upgrade (+18 slots)",
-   "symbol": "sensor.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/electronic-sensors.png?v=1"
   },
   {
    "id": "electronics",
@@ -4321,14 +4319,14 @@
    "id": "experimental-compounds",
    "name": "Experimental Compounds",
    "kind": "Ingredient",
-   "symbol": "testtube.2"
+   "image": "https://camotracker.djr.li/Images/DMZ/experimental-compounds.png?v=1"
   },
   {
    "id": "frag-grenade",
    "name": "Frag Grenade",
    "kind": "Lethals",
    "unlock": "Reach DMZ level 7",
-   "symbol": "circle.circle.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/frag-grenade.png?v=1"
   },
   {
    "id": "fulton-drop-marker",
@@ -4343,7 +4341,7 @@
    "name": "Gas Mask",
    "kind": "Gear",
    "unlock": "Reach DMZ level 26",
-   "symbol": "aqi.medium"
+   "image": "https://camotracker.djr.li/Images/DMZ/gas-mask.png?v=1"
   },
   {
    "id": "gold-bar",
@@ -4385,7 +4383,8 @@
    "rarity": "Rare",
    "note": "Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown",
    "grid": "B7",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "heartbeat-sensor",
@@ -4411,8 +4410,7 @@
    "name": "High-Tenacity Fibers",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 53 gives you 2",
-   "symbol": "wind"
+   "image": "https://camotracker.djr.li/Images/DMZ/high-tenacity-fibers.png?v=1"
   },
   {
    "id": "imjin-mill-foremans-office",
@@ -4423,7 +4421,8 @@
    "note": "First floor of the Rice Mill, Imjin Farmland",
    "grid": "D8",
    "marker": "k-imjin-mill",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/imjin-mill-foremans-office.png?v=1"
   },
   {
    "id": "infantry-invasion-plans",
@@ -4436,7 +4435,7 @@
    "name": "Inflatable Decoy",
    "kind": "Field Upgrades",
    "unlock": "Reach DMZ level 52",
-   "symbol": "person.fill.questionmark"
+   "image": "https://camotracker.djr.li/Images/DMZ/inflatable-decoy.png?v=1"
   },
   {
    "id": "iskras-control-room",
@@ -4447,7 +4446,8 @@
    "note": "Upper floor of the broadcast building, Cheonwang Peak Array",
    "grid": "F7",
    "marker": "k-iskra",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "mia-recovery-discount-i",
@@ -4534,7 +4534,7 @@
     }
    ],
    "effect": "Four Secure Slots",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/medium-secure-backpack.png?v=1"
   },
   {
    "id": "medkit",
@@ -4578,13 +4578,13 @@
    "name": "Molotov Cocktail",
    "kind": "Lethals",
    "unlock": "Reach DMZ level 36",
-   "symbol": "flame.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/molotov-cocktail.png?v=1"
   },
   {
    "id": "nano-structured-alloy",
    "name": "Nano-Structured Alloy",
    "kind": "Ingredient",
-   "symbol": "circle.hexagongrid.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/nano-structured-alloy.png?v=1"
   },
   {
    "id": "netshin-it-room",
@@ -4594,30 +4594,29 @@
    "rarity": "Epic",
    "note": "The high-security server room on the upper floors of the Netshin Tech Complex, The Grid",
    "grid": "G6",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/netshin-it-room.png?v=1"
   },
   {
    "id": "night-vision-goggles",
    "name": "Night Vision Goggles",
    "kind": "Gear",
    "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall",
-   "symbol": "binoculars.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/night-vision-goggles.png?v=1"
   },
   {
    "id": "nitro-compounds",
    "name": "Nitro Compounds",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 47 gives you 2",
-   "symbol": "flame.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/nitro-compounds.png?v=1"
   },
   {
    "id": "nylon-cloth",
    "name": "Nylon Cloth",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 57 gives you 2",
-   "symbol": "tshirt.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/nylon-cloth.png?v=1"
   },
   {
    "id": "nylon-laminate",
@@ -4687,7 +4686,7 @@
     }
    ],
    "effect": "Pings nearby enemies every so often",
-   "symbol": "dot.radiowaves.up.forward"
+   "image": "https://camotracker.djr.li/Images/DMZ/portable-radar.png?v=1"
   },
   {
    "id": "power-regulator",
@@ -4701,15 +4700,14 @@
    "name": "Printed Circuit Board",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 56 gives you 2",
-   "symbol": "memorychip.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/printed-circuit-board.png?v=1"
   },
   {
    "id": "prototype-rf-module",
    "name": "Prototype RF Module",
    "kind": "Ingredient",
    "note": "Vendor Item Upgrade",
-   "symbol": "dot.radiowaves.left.and.right"
+   "image": "https://camotracker.djr.li/Images/DMZ/prototype-rf-module.png?v=1"
   },
   {
    "id": "radiation-blockers",
@@ -4750,7 +4748,7 @@
     }
    ],
    "effect": "Hypersonic flechette cannon that works as a sentry",
-   "symbol": "scope"
+   "image": "https://camotracker.djr.li/Images/DMZ/railgun-sentry.png?v=1"
   },
   {
    "id": "re-education-center-annex",
@@ -4761,7 +4759,8 @@
    "note": "The annex on the Re-Education Center's ground floor, Deadtown",
    "grid": "B7",
    "marker": "k-reeducation-annex",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/re-education-center-annex.png?v=1"
   },
   {
    "id": "reactive-metals",
@@ -4781,7 +4780,7 @@
    ],
    "effect": "Needs Uncommon Ingredient Printing",
    "value": 400,
-   "note": "Industrial areas and toolboxes. DMZ level 11 gives you 2"
+   "note": "Industrial areas and toolboxes"
   },
   {
    "id": "reactor-drc-locker",
@@ -4792,7 +4791,8 @@
    "note": "The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
    "grid": "H4",
    "marker": "k-reactor-drc",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/reactor-drc-locker.png?v=1"
   },
   {
    "id": "recon-drone",
@@ -4800,7 +4800,7 @@
    "kind": "Other",
    "unlock": "Complete the Counterfeit DMZ Order",
    "effect": "Reward from the Counterfeit DMZ Order",
-   "symbol": "airplane.circle.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/recon-drone.png?v=1"
   },
   {
    "id": "regional-combat-notes",
@@ -4839,8 +4839,7 @@
    "image": "https://camotracker.djr.li/Images/DMZ/rigid-synthetics.png?v=1",
    "rarity": "Uncommon",
    "kind": "Ingredient",
-   "value": 200,
-   "note": "DMZ level 6 gives you 2"
+   "value": 200
   },
   {
    "id": "riot-shield",
@@ -4859,7 +4858,7 @@
     }
    ],
    "effect": "A placeable shield to hold a position",
-   "symbol": "shield.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/riot-shield.png?v=1"
   },
   {
    "id": "scavengers-dog-tag",
@@ -4867,7 +4866,7 @@
    "kind": "Valuable",
    "rarity": "Legendary",
    "note": "Dropped by Lieutenant Scavenger",
-   "symbol": "tag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/scavengers-dog-tag.png?v=1"
   },
   {
    "id": "secure-scavenger-backpack",
@@ -5044,7 +5043,7 @@
     }
    ],
    "effect": "Spot and mark enemies nearby",
-   "symbol": "binoculars.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/spotter-scope.png?v=1"
   },
   {
    "id": "stabilized-reagents",
@@ -5062,7 +5061,7 @@
     }
    ],
    "effect": "Needs Epic Ingredient Printing",
-   "symbol": "flask.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/stabilized-reagents.png?v=1"
   },
   {
    "id": "stash-item-upgrade-i",
@@ -5137,7 +5136,7 @@
    "name": "Sticky Grenade",
    "kind": "Lethals",
    "unlock": "Reach DMZ level 23",
-   "symbol": "drop.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/sticky-grenade.png?v=1"
   },
   {
    "id": "stim",
@@ -5164,16 +5163,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/stock-rod.png?v=1",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "value": 500,
-   "note": "DMZ level 51 gives you 2"
+   "value": 500
   },
   {
    "id": "structural-alloy",
    "name": "Structural Alloy",
    "rarity": "Rare",
    "kind": "Ingredient",
-   "note": "DMZ level 43 gives you 2",
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/structural-alloy.png?v=1"
   },
   {
    "id": "synthetics",
@@ -5210,7 +5207,8 @@
    "rarity": "Legendary",
    "note": "A secured bunker by the Haneul Nuclear Reactor boathouse",
    "grid": "I4",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-chemists-secure-armory.png?v=1"
   },
   {
    "id": "the-citadel-south-wing",
@@ -5220,14 +5218,15 @@
    "rarity": "Uncommon",
    "note": "The Citadel's South Wing, 14th Political Prison",
    "marker": "k-citadel-south",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
   {
    "id": "thermite",
    "name": "Thermite",
    "kind": "Lethals",
    "unlock": "Reach DMZ level 41",
-   "symbol": "sparkles"
+   "image": "https://camotracker.djr.li/Images/DMZ/thermite.png?v=1"
   },
   {
    "id": "throwing-knife",
@@ -5245,7 +5244,8 @@
    "rarity": "Rare",
    "note": "Basement of the train station by the fire station, Cheongun Village",
    "grid": "E5",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/traindepot-storage-room.png?v=1"
   },
   {
    "id": "trip-wire",
@@ -5264,13 +5264,13 @@
     }
    ],
    "effect": "Thrown trap; several link into a network",
-   "symbol": "line.diagonal"
+   "image": "https://camotracker.djr.li/Images/DMZ/trip-wire.png?v=1"
   },
   {
    "id": "turned-components",
    "name": "Turned Components",
    "kind": "Ingredient",
-   "symbol": "gearshape.2.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/turned-components.png?v=1"
   },
   {
    "id": "uav",
@@ -5293,7 +5293,7 @@
     }
    ],
    "effect": "Shows enemies on the minimap",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/uav.png?v=1"
   },
   {
    "id": "uncommon-ingredient-printing",
@@ -5328,7 +5328,8 @@
    "note": "The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village",
    "grid": "F4",
    "marker": "k-vault-armory",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "vendor-item-upgrade-i",
@@ -5382,7 +5383,7 @@
     }
    ],
    "effect": "Single-shot pistol for close range",
-   "symbol": "scope"
+   "image": "https://camotracker.djr.li/Images/DMZ/zip-gun.png?v=1"
   }
  ],
  "traitTrees": [
