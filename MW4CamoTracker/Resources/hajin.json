@@ -1,5 +1,5 @@
 {
- "version": "0.8.8",
+ "version": "0.8.9",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2544,7 +2544,7 @@
     },
     {
      "title": "Bank Upgrade I",
-     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Raises your Bank's cash cap",
      "value": "$25,000",
      "item": "bank-upgrade-i",
      "check": "upgrade-bank-upgrade-i",
@@ -2552,7 +2552,7 @@
     },
     {
      "title": "Bank Upgrade II",
-     "subtitle": "Ingredients not confirmed yet. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Raises your Bank's cash cap",
      "value": "$50,000",
      "item": "bank-upgrade-ii",
      "check": "upgrade-bank-upgrade-ii",
@@ -3986,7 +3986,7 @@
    "id": "bank-upgrade-i",
    "name": "Bank Upgrade I",
    "kind": "FOB Upgrade",
-   "note": "Ingredients not confirmed yet",
+   "note": "Cash only",
    "cash": 25000,
    "effect": "Raises your Bank's cash cap",
    "symbol": "building.columns.fill",
@@ -3997,7 +3997,7 @@
    "id": "bank-upgrade-ii",
    "name": "Bank Upgrade II",
    "kind": "FOB Upgrade",
-   "note": "Ingredients not confirmed yet",
+   "note": "Cash only",
    "cash": 50000,
    "effect": "Raises your Bank's cash cap",
    "symbol": "building.columns.fill",
