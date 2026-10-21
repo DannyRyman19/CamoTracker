@@ -161,8 +161,13 @@ private struct TrackedRow: View {
 
 /// Every ingredient and resource with a stepper: what the player has.
 struct HajinStashView: View {
+    /// Set when shown inside the iPad guide panel, which has its own search
+    /// field and header.
+    var embeddedQuery: String? = nil
     @EnvironmentObject private var store: HajinStore
-    @State private var query = ""
+    @State private var ownQuery = ""
+    @State private var width: CGFloat = 0
+    private var query: String { embeddedQuery ?? ownQuery }
 
     private var groups: [(title: String, items: [HajinGuide.Item])] {
         guard let guide = store.guide else { return [] }
@@ -180,39 +185,82 @@ struct HajinStashView: View {
     }
 
     var body: some View {
+        if embeddedQuery != nil {
+            content
+        } else {
+            content
+                .searchable(text: $ownQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_section".localized())
+                .navigationTitle("mw4.ui.hajin.stash".localized())
+                .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+
+    private var content: some View {
         ZStack {
-            AppBackground(accent: .accentDMZ)
-            List {
+            if embeddedQuery == nil { AppBackground(accent: .accentDMZ) }
+            if width >= 700 { columns } else { list }
+        }
+        .readingWidth($width)
+    }
+
+    private var list: some View {
+        List {
+            if query.isEmpty {
+                Text("mw4.ui.hajin.stash_intro".localized())
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInkMuted)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+            }
+            ForEach(groups, id: \.title) { group in
+                HajinHeading(title: group.title)
+                ForEach(group.items) { item in
+                    row(item).hajinCard()
+                }
+            }
+        }
+        .scrollContentBackground(.hidden)
+        .listStyle(.plain)
+    }
+
+    /// Wide screens: each group as two columns of cards.
+    private var columns: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
                 if query.isEmpty {
-                    Text("mw4.ui.hajin.stash_intro".localized())
-                        .font(.subheadline)
-                        .foregroundStyle(Color.appInkMuted)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
+                    Text("mw4.ui.hajin.stash_intro".localized()).font(.subheadline).foregroundStyle(Color.appInkMuted)
+                        .frame(maxWidth: 720, alignment: .leading)
                 }
                 ForEach(groups, id: \.title) { group in
-                    HajinHeading(title: group.title)
-                    ForEach(group.items) { item in
-                        HStack(spacing: 12) {
-                            HajinItemLink(id: item.id) {
-                                HStack(spacing: 12) {
-                                    HajinItemTile(item: item, size: 36)
-                                    Text(item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
-                                    Spacer(minLength: 0)
-                                }
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(group.title.uppercased())
+                            .font(.caption.weight(.heavy)).tracking(1.2).foregroundStyle(Color.appInkMuted)
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], alignment: .leading, spacing: 12) {
+                            ForEach(group.items) { item in
+                                row(item)
+                                    .padding(12)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .borderedCard()
                             }
-                            HajinStashStepper(id: item.id)
                         }
-                        .hajinCard()
                     }
                 }
             }
-            .scrollContentBackground(.hidden)
-            .listStyle(.plain)
-            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_section".localized())
+            .padding(16)
         }
-        .navigationTitle("mw4.ui.hajin.stash".localized())
-        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func row(_ item: HajinGuide.Item) -> some View {
+        HStack(spacing: 12) {
+            HajinItemLink(id: item.id) {
+                HStack(spacing: 12) {
+                    HajinItemTile(item: item, size: 36)
+                    Text(item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                    Spacer(minLength: 0)
+                }
+            }
+            HajinStashStepper(id: item.id)
+        }
     }
 }
 

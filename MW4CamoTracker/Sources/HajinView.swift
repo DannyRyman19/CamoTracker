@@ -359,14 +359,31 @@ struct HajinPagePicker: View {
 /// The player's own cards, in the order they're used: level, what's
 /// tracked, what to build next, the stash, and keep or sell.
 struct HajinMinePage: View {
+    /// iPad: open these inside the guide panel instead of pushing them.
+    var openStash: (() -> Void)? = nil
+    var openKeepSell: (() -> Void)? = nil
+
     var body: some View {
         HajinLevelCard().hajinCard()
         HajinTrackingCard().hajinCard()
         HajinBuildNextCard().hajinCard()
-        NavigationLink { HajinStashView() } label: { HajinStashEntry() }
+        entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
+        entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+    }
+
+    @ViewBuilder private func entry<D: View, L: View>(_ open: (() -> Void)?, @ViewBuilder destination: () -> D, @ViewBuilder label: () -> L) -> some View {
+        if let open {
+            Button(action: open) {
+                HStack {
+                    label()
+                    Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+                }
+            }
+            .buttonStyle(.plain)
             .hajinCard()
-        NavigationLink { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-            .hajinCard()
+        } else {
+            NavigationLink(destination: destination, label: label).hajinCard()
+        }
     }
 }
 
@@ -782,6 +799,8 @@ struct HajinGuidePanel: View {
     private enum Page: Hashable {
         case section(HajinGuide.Section)
         case item(String)
+        case stash
+        case keepSell
     }
 
     private var open: HajinGuide.Section? {
@@ -814,7 +833,7 @@ struct HajinGuidePanel: View {
             } else {
             HStack(spacing: 6) {
                 Image(systemName: "magnifyingglass").foregroundStyle(Color.appInkMuted)
-                TextField(open == nil ? "mw4.ui.hajin.search_guide".localized() : "mw4.ui.hajin.search_section".localized(), text: $query)
+                TextField(stack.isEmpty ? "mw4.ui.hajin.search_guide".localized() : "mw4.ui.hajin.search_section".localized(), text: $query)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                 if !query.isEmpty {
@@ -827,7 +846,11 @@ struct HajinGuidePanel: View {
             .padding(.horizontal, 12)
             .padding(.bottom, 6)
 
-            if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
+            if stack.last == .stash {
+                HajinStashView(embeddedQuery: query)
+            } else if stack.last == .keepSell {
+                HajinKeepSellView(embeddedQuery: query)
+            } else if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
                 HajinTraitsView(trees: trees)
             } else if let section = open, panelWidth >= 700 {
                 let needle = query.lowercased()
@@ -842,7 +865,8 @@ struct HajinGuidePanel: View {
                     } else {
                         HajinPagePicker(page: $page)
                         if page == HajinPage.mine.rawValue {
-                            HajinMinePage()
+                            HajinMinePage(openStash: { withAnimation(.snappy) { stack = [.stash]; query = "" } },
+                                          openKeepSell: { withAnimation(.snappy) { stack = [.keepSell]; query = "" } })
                         } else {
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
@@ -867,12 +891,24 @@ struct HajinGuidePanel: View {
         .background(Color.appBackground)
         .readingWidth($panelWidth)
         .environment(\.hajinOpenItem) { id in withAnimation(.snappy) { stack.append(.item(id)) } }
+        #if DEBUG
+        // SS_PANEL=stash or keep opens that page in the panel for screenshots
+        .onAppear {
+            switch ProcessInfo.processInfo.environment["SS_PANEL"] {
+            case "stash": stack = [.stash]
+            case "keep": stack = [.keepSell]
+            default: break
+            }
+        }
+        #endif
     }
 
     private func title(_ page: Page) -> String {
         switch page {
         case .section(let section): return section.title.resolved
         case .item(let id): return store.guide?.item(id)?.name.resolved ?? ""
+        case .stash: return "mw4.ui.hajin.stash".localized()
+        case .keepSell: return "mw4.ui.keep.title".localized()
         }
     }
 

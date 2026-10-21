@@ -140,9 +140,13 @@ struct HajinVerdictBadge: View {
 
 /// Search anything you've looted and see whether to keep or sell it.
 struct HajinKeepSellView: View {
+    /// Set when shown inside the iPad guide panel, which has its own search
+    /// field and header.
+    var embeddedQuery: String? = nil
     @EnvironmentObject private var store: HajinStore
-    @State private var query = ""
+    @State private var ownQuery = ""
     @State private var width: CGFloat = 0
+    private var query: String { embeddedQuery ?? ownQuery }
 
     /// Lootables grouped by verdict, Keep first. Gear and keys only show
     /// when searched for: there's nothing to decide about them.
@@ -162,8 +166,19 @@ struct HajinKeepSellView: View {
     }
 
     var body: some View {
+        if embeddedQuery != nil {
+            content
+        } else {
+            content
+                .searchable(text: $ownQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.keep.search".localized())
+                .navigationTitle("mw4.ui.keep.title".localized())
+                .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+
+    private var content: some View {
         ZStack {
-            AppBackground(accent: .accentDMZ)
+            if embeddedQuery == nil { AppBackground(accent: .accentDMZ) }
             if width >= 700, let guide = store.guide {
                 columns(guide)
             } else {
@@ -190,9 +205,6 @@ struct HajinKeepSellView: View {
             }
         }
         .readingWidth($width)
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.keep.search".localized())
-        .navigationTitle("mw4.ui.keep.title".localized())
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
