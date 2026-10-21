@@ -485,7 +485,7 @@ struct HajinItemView: View {
         let mentions = guide.mentions(item.id)
         let levels = mentions.filter { $0.section.id == "levels" }
         let found = mentions.filter { $0.section.id != "levels" }
-        if !found.isEmpty { whereFrom(found, title: "mw4.ui.hajin.where_find".localized()) }
+        if !found.isEmpty || item.found != nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized(), inGame: item.found?.resolved) }
         if !levels.isEmpty || item.requiredLevel != nil { unlocks(item, levels) }
     }
 
@@ -657,10 +657,26 @@ struct HajinItemView: View {
 
     /// Rows that mention the item: the boss that drops it, the mission that
     /// rewards it, the level that hands it out.
-    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)], title: String) -> some View {
+    private func whereFrom(_ mentions: [(section: HajinGuide.Section, row: HajinGuide.Row)], title: String, inGame: String? = nil) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             panelTitle(title)
             VStack(alignment: .leading, spacing: 0) {
+                if let inGame {
+                    HStack(alignment: .top, spacing: 12) {
+                        Image(systemName: "mappin.and.ellipse")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                            .frame(width: 28)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(inGame).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                                .fixedSize(horizontal: false, vertical: true)
+                            Text("mw4.ui.hajin.found_in_game".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    .padding(12)
+                    if !mentions.isEmpty { Divider().overlay(Color.appInkMuted.opacity(0.2)) }
+                }
                 ForEach(Array(mentions.enumerated()), id: \.offset) { index, mention in
                     HStack(alignment: .top, spacing: 12) {
                         Image(systemName: mention.section.symbol)

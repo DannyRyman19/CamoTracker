@@ -140,6 +140,8 @@ struct HajinGuide: Codable {
         /// Sell value in DMZ Cash.
         let value: Int?
         let note: GuideText?
+        /// Where it turns up in Hajin, from the printer's Ingredient Locations.
+        let found: GuideText?
         /// Tac Map grid square (keys).
         let grid: String?
         /// The map marker for where it's used (key rooms).
