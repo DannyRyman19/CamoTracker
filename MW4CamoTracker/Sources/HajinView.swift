@@ -88,6 +88,11 @@ struct HajinView: View {
     /// screenshot harness. DEBUG-only.
     private func openScreenshotTarget() {
         #if DEBUG
+        // SS_STASH=id=count,id=count fills the stash for screenshots
+        for pair in (ProcessInfo.processInfo.environment["SS_STASH"] ?? "").split(separator: ",") {
+            let parts = pair.split(separator: "=")
+            if parts.count == 2, let n = Int(parts[1]) { store.setCount(n, of: String(parts[0])) }
+        }
         if let spend = ProcessInfo.processInfo.environment["SS_SPEND"] { store.toggle("upgrade-\(spend)") }
         guard let target = ProcessInfo.processInfo.environment["SS_HAJIN"], !target.isEmpty else { return }
         if target == "map" {

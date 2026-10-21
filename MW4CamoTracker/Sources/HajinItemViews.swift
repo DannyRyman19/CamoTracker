@@ -415,18 +415,44 @@ struct HajinItemView: View {
         if item.kind != "FOB Upgrade" {
             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
         }
+        // One status row: Printed / Ready to print (stash covers it) / tick
+        // once printed. Recipes have no tick, so they only show Ready.
         if item.kind == "FOB Upgrade" {
             let key = "upgrade-\(item.id)"
             let done = store.checked.contains(key)
+            let ready = !done && store.canPrint(item)
             HStack(spacing: 10) {
                 HajinTick(done: done, label: item.name.resolved) { store.toggle(key) }
-                Text(done ? "mw4.ui.hajin.printed".localized() : "mw4.ui.hajin.not_printed".localized())
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(done ? Color.accentDMZ : Color.appInk)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(done ? "mw4.ui.hajin.printed".localized() : ready ? "mw4.ui.hajin.can_print_title".localized() : "mw4.ui.hajin.not_printed".localized())
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(done ? Color.accentDMZ : ready ? HajinStore.printableGreen : Color.appInk)
+                    if ready {
+                        Text("mw4.ui.hajin.ready_tick".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                    }
+                }
+                Spacer()
+                if ready { Image(systemName: "printer.fill").foregroundStyle(HajinStore.printableGreen) }
+            }
+            .padding(12)
+            .background(statusPanel(ready ? HajinStore.printableGreen : nil))
+        } else if store.canPrint(item) {
+            let locked = store.isLocked(item.requiredLevel)
+            HStack(spacing: 10) {
+                Image(systemName: locked ? "lock.fill" : "printer.fill")
+                    .foregroundStyle(locked ? Color.appInkMuted : HajinStore.printableGreen)
+                    .frame(width: 24)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(locked ? "mw4.ui.hajin.have_all".localized() : "mw4.ui.hajin.can_print_title".localized())
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(locked ? Color.appInk : HajinStore.printableGreen)
+                    Text(locked ? String(format: "mw4.ui.hajin.unlocks_at".localized(), item.requiredLevel ?? 0) : "mw4.ui.hajin.can_print_detail".localized())
+                        .font(.caption).foregroundStyle(Color.appInkMuted)
+                }
                 Spacer()
             }
             .padding(12)
-            .background(panel)
+            .background(statusPanel(locked ? nil : HajinStore.printableGreen))
         }
         // Recipes and upgrades can be tracked; ingredients show the stash count
         if !(item.cost ?? []).isEmpty || item.kind == "FOB Upgrade" {
@@ -446,23 +472,6 @@ struct HajinItemView: View {
         }
         let tiers = guide.tiers(of: item)
         if tiers.count > 1 { tierStrip(item, tiers) }
-        if store.canPrint(item) {
-            let locked = store.isLocked(item.requiredLevel)
-            HStack(spacing: 10) {
-                Image(systemName: locked ? "lock.fill" : "printer.fill").font(.title3.weight(.bold))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text((locked ? "mw4.ui.hajin.have_all".localized() : "mw4.ui.hajin.can_print_title".localized()).uppercased())
-                        .font(.system(size: 14, weight: .heavy)).tracking(0.8)
-                    Text(locked ? String(format: "mw4.ui.hajin.unlocks_at".localized(), item.requiredLevel ?? 0)
-                                : "mw4.ui.hajin.can_print_detail".localized())
-                        .font(.subheadline)
-                }
-                Spacer(minLength: 0)
-            }
-            .foregroundStyle(locked ? Color.appInk : Color.black.opacity(0.85))
-            .padding(12)
-            .background(RoundedRectangle(cornerRadius: 8).fill(locked ? Color.appSurface : HajinStore.printableGreen))
-        }
         if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
         facts(item)
         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
@@ -725,6 +734,13 @@ struct HajinItemView: View {
             .font(.caption.weight(.heavy))
             .tracking(1.2)
             .foregroundStyle(Color.appInkMuted)
+    }
+
+    /// The panel, outlined in a colour when it has something to say.
+    private func statusPanel(_ tint: Color?) -> some View {
+        RoundedRectangle(cornerRadius: 8)
+            .fill(tint?.opacity(0.08) ?? Color.appSurface.opacity(0.9))
+            .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(tint?.opacity(0.7) ?? Color.appInkMuted.opacity(0.2), lineWidth: 1))
     }
 
     private var panel: some View {
