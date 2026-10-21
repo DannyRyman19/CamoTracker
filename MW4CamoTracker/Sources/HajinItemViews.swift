@@ -412,7 +412,7 @@ struct HajinItemView: View {
 
     @ViewBuilder private func primary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         header(item)
-        if item.kind != "FOB Upgrade" {
+        if HajinVerdict.applies(to: item) {
             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
         }
         // One status row: Printed / Ready to print (stash covers it) / tick

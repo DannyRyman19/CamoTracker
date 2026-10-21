@@ -4,6 +4,12 @@ import SwiftUI
 /// recipe and FOB upgrade that needs it, minus the upgrades the player has
 /// ticked as done.
 struct HajinVerdict {
+    /// Only loot you'd weigh up selling gets a verdict: materials,
+    /// valuables and keys. Loadout items are simply used.
+    static func applies(to item: HajinGuide.Item) -> Bool {
+        ["Ingredient", "Valuable", "Key"].contains(item.kind)
+    }
+
     enum Kind: Hashable { case keep, crafting, sell, use, resource }
 
     let kind: Kind
@@ -143,11 +149,11 @@ struct HajinKeepSellView: View {
     fileprivate func groups(_ guide: HajinGuide) -> [(kind: HajinVerdict.Kind, rows: [(HajinGuide.Item, HajinVerdict)])] {
         let needle = query.lowercased()
         let rows = (guide.items ?? [])
-            .filter { !["Resource", "FOB Upgrade"].contains($0.kind) }
+            .filter(HajinVerdict.applies)
             .filter { needle.isEmpty || $0.name.resolved.lowercased().contains(needle) }
             .sorted { $0.name.resolved < $1.name.resolved }
             .map { ($0, HajinVerdict(item: $0, guide: guide, done: store.checked)) }
-            .filter { !needle.isEmpty || $0.1.kind != .use }
+
         let order: [HajinVerdict.Kind] = [.keep, .crafting, .sell, .use]
         return order.compactMap { kind in
             let matching = rows.filter { $0.1.kind == kind }
