@@ -362,11 +362,13 @@ struct HajinMinePage: View {
     /// iPad: open these inside the guide panel instead of pushing them.
     var openStash: (() -> Void)? = nil
     var openKeepSell: (() -> Void)? = nil
+    var openShopping: (() -> Void)? = nil
 
     var body: some View {
         HajinLevelCard().hajinCard()
         HajinTrackingCard().hajinCard()
         HajinBuildNextCard().hajinCard()
+        entry(openShopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
         entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
         entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
     }
@@ -801,6 +803,7 @@ struct HajinGuidePanel: View {
         case item(String)
         case stash
         case keepSell
+        case shopping
     }
 
     private var open: HajinGuide.Section? {
@@ -850,6 +853,8 @@ struct HajinGuidePanel: View {
                 HajinStashView(embeddedQuery: query)
             } else if stack.last == .keepSell {
                 HajinKeepSellView(embeddedQuery: query)
+            } else if stack.last == .shopping {
+                HajinShoppingListView(embeddedQuery: query)
             } else if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
                 HajinTraitsView(trees: trees)
             } else if let section = open, panelWidth >= 700 {
@@ -866,7 +871,8 @@ struct HajinGuidePanel: View {
                         HajinPagePicker(page: $page)
                         if page == HajinPage.mine.rawValue {
                             HajinMinePage(openStash: { withAnimation(.snappy) { stack = [.stash]; query = "" } },
-                                          openKeepSell: { withAnimation(.snappy) { stack = [.keepSell]; query = "" } })
+                                          openKeepSell: { withAnimation(.snappy) { stack = [.keepSell]; query = "" } },
+                                          openShopping: { withAnimation(.snappy) { stack = [.shopping]; query = "" } })
                         } else {
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
@@ -892,11 +898,12 @@ struct HajinGuidePanel: View {
         .readingWidth($panelWidth)
         .environment(\.hajinOpenItem) { id in withAnimation(.snappy) { stack.append(.item(id)) } }
         #if DEBUG
-        // SS_PANEL=stash or keep opens that page in the panel for screenshots
+        // SS_PANEL=stash, keep or shop opens that page in the panel for screenshots
         .onAppear {
             switch ProcessInfo.processInfo.environment["SS_PANEL"] {
             case "stash": stack = [.stash]
             case "keep": stack = [.keepSell]
+            case "shop": stack = [.shopping]
             default: break
             }
         }
@@ -909,6 +916,7 @@ struct HajinGuidePanel: View {
         case .item(let id): return store.guide?.item(id)?.name.resolved ?? ""
         case .stash: return "mw4.ui.hajin.stash".localized()
         case .keepSell: return "mw4.ui.keep.title".localized()
+        case .shopping: return "mw4.ui.hajin.shop".localized()
         }
     }
 

@@ -34,6 +34,7 @@
 		64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A420378B1E88B956B09DD1 /* AppDelegate.swift */; };
 		6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */; };
 		6E8364C1C424CB6D064C1A42 /* WidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0444E41EF781730B5B9B23 /* WidgetViews.swift */; };
+		7427EE8626FEB373266DA7BE /* HajinShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9CB5733AB58EA752B5754E /* HajinShoppingList.swift */; };
 		79E3FA53970CD8F923EFD868 /* WeaponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E6BE0838A8B785F45509FD /* WeaponListView.swift */; };
 		7A977FF5DB06808FC339171C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159B423149587E45D2B5F5A /* Navigation.swift */; };
 		7DFB400BF70B4F99A2D55921 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A39FDC7376E2120B670A81 /* Models.swift */; };
@@ -151,6 +152,7 @@
 		8CFB66123432A590A91A8AA7 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
 		9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW4CamoTrackerApp.swift; sourceTree = "<group>"; };
 		97A39FDC7376E2120B670A81 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9A9CB5733AB58EA752B5754E /* HajinShoppingList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinShoppingList.swift; sourceTree = "<group>"; };
 		9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		A2E8CFFC9E147140CB22B860 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
 		A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCamoTests.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				6F6A589A8AD35B65A48A4E26 /* CloudSync.swift */,
 				DCBB9591FAB4D463BFB6C38B /* HajinKeepSell.swift */,
 				DCFE12D1B0A1C282353985A8 /* HajinTracking.swift */,
+				9A9CB5733AB58EA752B5754E /* HajinShoppingList.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				57641B70FF6B2206002818BD /* CloudSync.swift in Sources */,
 				8BCCEBEA150DD9C2F3578DD1 /* HajinKeepSell.swift in Sources */,
 				1E73E547F98260736571AA27 /* HajinTracking.swift in Sources */,
+				7427EE8626FEB373266DA7BE /* HajinShoppingList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

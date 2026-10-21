@@ -1,5 +1,5 @@
 {
- "version": "0.9.14",
+ "version": "0.9.15",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2889,7 +2889,7 @@
     },
     {
      "title": "Stash Item Upgrade III",
-     "subtitle": "20 Binding Catalyst, 20 Stock Rod, 10 Alloyed Plating. More Stash item slots",
+     "subtitle": "20 Binding Catalyst, 20 Stock Rod, 10 Alloyed Plating. +18 Stash item slots",
      "value": "$100,000",
      "item": "stash-item-upgrade-iii",
      "check": "upgrade-stash-item-upgrade-iii",
@@ -4694,7 +4694,8 @@
    "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png?v=1",
    "rarity": "Uncommon",
    "kind": "Ingredient",
-   "value": 1000
+   "value": 1000,
+   "found": "Civilian and military areas"
   },
   {
    "id": "bandage",
@@ -6058,6 +6059,7 @@
    "id": "nuclear-program-files",
    "name": "Nuclear Program Files",
    "kind": "Ingredient",
+   "found": "Computers, and civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1",
    "value": 2000
   },
@@ -6880,7 +6882,7 @@
     }
    ],
    "cash": 100000,
-   "effect": "More Stash item slots",
+   "effect": "+18 Stash item slots",
    "symbol": "archivebox.fill",
    "family": "Stash Item Upgrade",
    "tier": 3
