@@ -1,5 +1,5 @@
 {
- "version": "0.9.2",
+ "version": "0.9.4",
  "updated": "2026-10-20",
  "map": {
   "image": "hajin_map",
@@ -3337,178 +3337,337 @@
    "symbol": "target",
    "rows": [
     {
-     "title": "Critical Extraction",
-     "subtitle": "Mirae General Hospital. Locate the HVT, eliminate any resistance, extract the HVT. Also a Defibrillator",
+     "title": "Operation Critical Extraction",
      "group": "Story Missions",
-     "value": "$25,000",
+     "check": "op-operation-critical-extraction",
+     "place": "Mirae General Hospital",
+     "objectives": [
+      "Locate the HVT (Jin-Tae)",
+      "Eliminate any resistance",
+      "Extract the HVT"
+     ],
+     "cash": 25000,
      "links": [
       "defibrillator"
      ]
     },
     {
-     "title": "Silent Ledger",
-     "subtitle": "Heavenly Luck Casino, Cheongun Village. Enter the casino, breach the vault, secure the printing plates. Also a Gold Bar and a Polaris Dagor A1",
+     "title": "Operation Silent Ledger",
      "group": "Story Missions",
-     "value": "$25,000",
+     "check": "op-operation-silent-ledger",
+     "place": "Heavenly Luck Casino, Cheongun Village",
+     "objectives": [
+      "Enter the casino",
+      "Breach the vault",
+      "Secure the printing plates"
+     ],
+     "cash": 25000,
      "links": [
       "gold-bar"
+     ],
+     "rewards": [
+      "Polaris Dagor A1"
      ]
     },
     {
-     "title": "Shopping Hacks",
-     "subtitle": "NuriGO Mall, Lieutenant Jang-ui's encampment. Hack the network, program the protocol, secure any evidence. Also Night Vision Goggles",
+     "title": "Operation Shopping Hacks",
      "group": "Story Missions",
-     "value": "$25,000",
+     "check": "op-operation-shopping-hacks",
+     "place": "NuriGO Mall, Jang-ui's encampment",
+     "objectives": [
+      "Hack the network",
+      "Program the protocol",
+      "Secure any evidence"
+     ],
+     "cash": 25000,
      "links": [
       "night-vision-goggles"
      ]
     },
     {
-     "title": "Iron Citadel",
-     "subtitle": "Unlocks the LTV for deployment",
+     "title": "Operation Iron Citadel",
      "group": "Story Missions",
-     "value": "LTV"
-    },
-    {
-     "title": "Grid Assault",
-     "subtitle": "Unlocks the Helicopter for deployment",
-     "group": "Story Missions",
-     "value": "Heli"
-    },
-    {
-     "title": "Weekly Story Missions",
-     "subtitle": "Finish a random one three times a week for the weekly rewards",
-     "group": "Story Missions",
-     "value": "Weekly"
-    },
-    {
-     "title": "Chapter 1",
-     "subtitle": "Gear Up, Crack Shot, First OP",
-     "group": "DMZ Orders"
-    },
-    {
-     "title": "Counterfeit: Hostile Force",
-     "subtitle": "Enter a Police Station, search 3 containers inside, eliminate 5 soldiers inside",
-     "group": "DMZ Orders",
-     "value": "Caliber"
-    },
-    {
-     "title": "Counterfeit: Robbery",
-     "subtitle": "Open a safe, then extract with $5,000 of backpack and loadout value",
-     "group": "DMZ Orders",
-     "value": "Caliber"
-    },
-    {
-     "title": "Counterfeit: Execute Intel",
-     "subtitle": "Hack a UAV Tower in Deadtown, kill 5 North Korean soldiers it pings, loot the counterfeit cash they drop. Finishing the page gives the Recon Drone recipe",
-     "group": "DMZ Orders",
-     "value": "Caliber",
-     "links": [
-      "recon-drone"
+     "check": "op-operation-iron-citadel",
+     "rewards": [
+      "Unlocks the LTV infil ($25,000)"
      ]
     },
     {
-     "title": "Underground",
-     "subtitle": "Eye in the Sky, Joyride, and placing a Transmitter on top of La Grande Vie in Songdo Wharf",
-     "group": "DMZ Orders"
+     "title": "Operation Grid Assault",
+     "group": "Story Missions",
+     "check": "op-operation-grid-assault",
+     "rewards": [
+      "Unlocks the Helicopter infil ($50,000)"
+     ]
     },
     {
-     "title": "Human Intel: Hunter",
-     "subtitle": "Climb a Lieutenant Tower and use the terminal at the top to find the nearest Lieutenant",
-     "group": "DMZ Orders"
+     "title": "Hostile Force",
+     "group": "DMZ Orders: Counterfeit",
+     "check": "op-hostile-force",
+     "place": "Any Police Station",
+     "objectives": [
+      "Enter a Police Station",
+      "Search 3 containers inside",
+      "Eliminate 5 soldiers inside"
+     ]
     },
     {
-     "title": "Human Intel: Triage Protocol",
-     "subtitle": "Head to a Clinic, loot a Bandage and 30 Chemicals",
-     "group": "DMZ Orders",
+     "title": "Robbery",
+     "group": "DMZ Orders: Counterfeit",
+     "check": "op-robbery",
+     "place": "Compounds and locked rooms",
+     "objectives": [
+      "Open a safe",
+      "Extract with $5,000 of backpack and loadout value"
+     ]
+    },
+    {
+     "title": "Execute Intel",
+     "group": "DMZ Orders: Counterfeit",
+     "check": "op-execute-intel",
+     "place": "Deadtown",
+     "objectives": [
+      "Hack a UAV Tower in Deadtown",
+      "Kill 5 North Korean soldiers it pings",
+      "Loot the counterfeit cash they drop"
+     ],
+     "links": [
+      "recon-drone"
+     ],
+     "rewards": [
+      "Finishing the page gives the Recon Drone recipe"
+     ]
+    },
+    {
+     "title": "Hunter",
+     "group": "DMZ Orders: Human Intel",
+     "check": "op-hunter",
+     "place": "Any Lieutenant Tower",
+     "objectives": [
+      "Climb a Lieutenant Tower",
+      "Use the terminal at the top to find the nearest Lieutenant"
+     ]
+    },
+    {
+     "title": "Triage Protocol",
+     "group": "DMZ Orders: Human Intel",
+     "check": "op-triage-protocol",
+     "place": "Any Clinic",
+     "objectives": [
+      "Head to a Clinic",
+      "Loot a Bandage",
+      "Loot 30 Chemicals"
+     ],
      "links": [
       "bandage"
      ]
     },
     {
-     "title": "Human Intel: No One Left",
-     "subtitle": "Clear a Compound and loot the Medical Extraction Intel it drops",
-     "group": "DMZ Orders"
+     "title": "No One Left",
+     "group": "DMZ Orders: Human Intel",
+     "check": "op-no-one-left",
+     "place": "Any Compound",
+     "objectives": [
+      "Clear a Compound",
+      "Loot the Medical Extraction Intel it drops"
+     ]
     },
     {
-     "title": "Chapter 2",
-     "subtitle": "Eye in the Sky, Watch for Bumps, Triangulation, Dead Battery, Death from Above, Operation Shopping Hacks",
-     "group": "DMZ Orders"
+     "title": "Eye in the Sky",
+     "group": "DMZ Orders: Underground",
+     "check": "op-eye-in-the-sky",
+     "subtitle": "Objectives not confirmed yet"
     },
     {
-     "title": "Dynamic Operations",
-     "subtitle": "Paid into your Bank per op, plus a Supply Drop that improves with each success in the same deployment",
-     "group": "Dynamic Ops",
-     "value": "$10-20K"
+     "title": "Joyride",
+     "group": "DMZ Orders: Underground",
+     "check": "op-joyride",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Transmitter",
+     "group": "DMZ Orders: Underground",
+     "check": "op-transmitter",
+     "place": "La Grande Vie, Songdo Wharf",
+     "objectives": [
+      "Place a Transmitter on top of La Grande Vie"
+     ]
+    },
+    {
+     "title": "Gear Up",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-gear-up",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Crack Shot",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-crack-shot",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "First OP",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-first-op",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Watch for Bumps",
+     "group": "DMZ Orders: Chapter 2",
+     "check": "op-watch-for-bumps",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Triangulation",
+     "group": "DMZ Orders: Chapter 2",
+     "check": "op-triangulation",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Dead Battery",
+     "group": "DMZ Orders: Chapter 2",
+     "check": "op-dead-battery",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Death from Above",
+     "group": "DMZ Orders: Chapter 2",
+     "check": "op-death-from-above",
+     "subtitle": "Objectives not confirmed yet"
     },
     {
      "title": "Dead Man's Cache",
-     "subtitle": "Cheongun Outskirts. Find the enemy comms server and collect the Encrypted Drive",
-     "group": "Dynamic Ops"
+     "group": "Dynamic Ops",
+     "check": "op-dead-mans-cache",
+     "place": "Cheongun Outskirts",
+     "objectives": [
+      "Find the enemy comms server",
+      "Collect the Encrypted Drive"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
     },
     {
      "title": "Chemical Denial",
-     "subtitle": "Investigate the power outage at the Tank Depot and Chang-san Air Base bunker",
-     "group": "Dynamic Ops"
+     "group": "Dynamic Ops",
+     "check": "op-chemical-denial",
+     "place": "Tank Depot, Chang-san Air Base bunker",
+     "objectives": [
+      "Investigate the power outage"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
     },
     {
      "title": "Hunt Operators",
-     "subtitle": "Take out a rival squad of Operators",
-     "group": "Dynamic Ops"
+     "group": "Dynamic Ops",
+     "check": "op-hunt-operators",
+     "objectives": [
+      "Take out a rival squad of Operators"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
     },
     {
      "title": "Broken Resupply",
-     "subtitle": "Hack the comms server",
-     "group": "Dynamic Ops"
+     "group": "Dynamic Ops",
+     "check": "op-broken-resupply",
+     "objectives": [
+      "Hack the comms server"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
     },
     {
      "title": "Signal Breaker",
-     "subtitle": "Head to the target area",
-     "group": "Dynamic Ops"
+     "group": "Dynamic Ops",
+     "check": "op-signal-breaker",
+     "objectives": [
+      "Head to the target area"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
     },
     {
      "title": "Paid Intel",
-     "subtitle": "Reach Lieutenant Bale at the Tank Depot and kill him",
      "group": "Side Ops",
-     "value": "+$500"
+     "check": "op-paid-intel",
+     "place": "Tank Depot",
+     "objectives": [
+      "Reach Lieutenant Bale",
+      "Kill Bale"
+     ],
+     "cash": 500,
+     "links": [
+      "bales-dog-tag"
+     ]
     },
     {
      "title": "Capture a SAM Site",
-     "subtitle": "Hack the SAM control computer and defend it while it runs. A captured SAM shoots enemy aircraft, Deathstalker included, until enemies retake it",
-     "group": "Side Ops"
+     "group": "Side Ops",
+     "check": "op-capture-a-sam-site",
+     "objectives": [
+      "Hack the SAM control computer",
+      "Defend it while the hack runs"
+     ],
+     "rewards": [
+      "A SAM that shoots enemy aircraft, Deathstalker included"
+     ]
     },
     {
      "title": "Activate UAV Tower",
-     "subtitle": "Turn on a UAV Tower to see enemies nearby",
-     "group": "Side Ops"
+     "group": "Side Ops",
+     "check": "op-activate-uav-tower",
+     "place": "Any UAV Tower",
+     "objectives": [
+      "Turn on a UAV Tower"
+     ],
+     "rewards": [
+      "Enemies nearby show on your minimap"
+     ]
     },
     {
      "title": "Download Intel to Locate Lieutenant",
-     "subtitle": "Download the intel to find a Lieutenant",
-     "group": "Side Ops"
+     "group": "Side Ops",
+     "check": "op-download-intel-to-locate-lieutenant",
+     "objectives": [
+      "Download the intel"
+     ],
+     "rewards": [
+      "A Lieutenant's location"
+     ]
     },
     {
      "title": "Secure Lost Supply Drop",
-     "subtitle": "Find and open a lost supply drop",
-     "group": "Side Ops"
+     "group": "Side Ops",
+     "check": "op-secure-lost-supply-drop",
+     "objectives": [
+      "Find and open a lost supply drop"
+     ]
     },
     {
      "title": "Repair a Truck",
-     "subtitle": "Fix a useful truck you come across",
-     "group": "Side Ops"
-    },
-    {
-     "title": "Robbery",
-     "subtitle": "Extract $5,000 in cash value",
-     "group": "Other"
-    },
-    {
-     "title": "Reduce Bounty",
-     "subtitle": "At a Bounty Station. Four kills make you Wanted",
-     "group": "Other",
-     "value": "$5,000"
+     "group": "Side Ops",
+     "check": "op-repair-a-truck",
+     "objectives": [
+      "Fix a useful truck you come across"
+     ],
+     "rewards": [
+      "A working truck"
+     ]
     }
-   ]
+   ],
+   "intro": "Tick missions, orders and ops as you finish them, or tick each step as you go. Finish a random Story Mission three times a week for the weekly rewards. Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. A Bounty Station clears your bounty for $5,000; four kills make you Wanted."
   },
   {
    "id": "rules",

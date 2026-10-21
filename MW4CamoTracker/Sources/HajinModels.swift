@@ -88,6 +88,11 @@ struct HajinGuide: Codable {
         let weapon: Int?
         /// Gives the row a checkbox, saved (and synced) under this key.
         let check: String?
+        /// Missions and ops: where, the steps, and what they pay.
+        let place: GuideText?
+        let objectives: [GuideText]?
+        let cash: Int?
+        let rewards: [GuideText]?
 
         /// The DMZ level this row needs: a level-unlock row's level, or a
         /// "Lv 12" badge.

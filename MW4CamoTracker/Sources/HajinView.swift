@@ -438,6 +438,8 @@ struct GuideRowView: View {
             HajinUpgradeFamilyCard(tiers: tiers)
         } else if let id = row.item, let item = store.guide?.item(id) {
             HajinItemRow(item: item, row: row)
+        } else if row.objectives != nil || row.cash != nil || row.rewards != nil || row.place != nil {
+            HajinMissionRow(row: row)
         } else if let weaponId = row.weapon {
             HajinWeaponRow(row: row, weaponId: weaponId)
         } else {
@@ -1168,5 +1170,93 @@ struct HajinLevelCard: View {
             Button("mw4.ui.hajin.save".localized()) { if let n = Int(text) { store.setLevel(n) } }
             Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
         }
+    }
+}
+
+/// A mission, order or op: tick, where it is, its steps (each tickable),
+/// and its rewards as cash, linked items and unlocks.
+struct HajinMissionRow: View {
+    let row: HajinGuide.Row
+    @EnvironmentObject private var store: HajinStore
+
+    private var key: String { row.check ?? "op-\(row.title.resolved)" }
+
+    var body: some View {
+        let done = store.checked.contains(key)
+        let objectives = row.objectives ?? []
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top, spacing: 12) {
+                HajinTick(done: done, label: row.title.resolved) { store.toggle(key) }
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(row.title.resolved)
+                        .font(.hitmarker(15))
+                        .foregroundStyle(Color.appInk)
+                    if let place = row.place {
+                        Label(place.resolved, systemImage: "mappin.and.ellipse")
+                            .font(.caption)
+                            .foregroundStyle(Color.appInkMuted)
+                    } else if let subtitle = row.subtitle {
+                        Text(subtitle.resolved).font(.caption).italic().foregroundStyle(Color.appInkMuted.opacity(0.8))
+                    }
+                }
+                Spacer(minLength: 0)
+                if !objectives.isEmpty {
+                    let stepsDone = objectives.indices.filter { done || store.checked.contains("\(key)#\($0)") }.count
+                    Text("\(stepsDone)/\(objectives.count)")
+                        .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(stepsDone == objectives.count ? Color.accentDMZ : Color.appInkMuted)
+                }
+            }
+            if !objectives.isEmpty {
+                VStack(alignment: .leading, spacing: 6) {
+                    ForEach(Array(objectives.enumerated()), id: \.offset) { index, objective in
+                        let stepKey = "\(key)#\(index)"
+                        let stepDone = done || store.checked.contains(stepKey)
+                        Button {
+                            Haptics.step()
+                            store.toggle(stepKey)
+                        } label: {
+                            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                Image(systemName: stepDone ? "checkmark.circle.fill" : "circle")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(stepDone ? Color.accentDMZ : Color.appInkMuted)
+                                Text(objective.resolved)
+                                    .font(.subheadline)
+                                    .foregroundStyle(stepDone ? Color.appInkMuted : Color.appInk)
+                                    .strikethrough(stepDone, color: Color.appInkMuted)
+                                    .multilineTextAlignment(.leading)
+                                Spacer(minLength: 0)
+                            }
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.borderless)
+                        .disabled(done)
+                    }
+                }
+                .padding(.leading, 36)
+            }
+            let items = row.links ?? []
+            let other = row.rewards ?? []
+            if row.cash != nil || !items.isEmpty || !other.isEmpty {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("mw4.ui.hajin.rewards".localized().uppercased())
+                        .font(.system(size: 11, weight: .bold))
+                        .tracking(0.8)
+                        .foregroundStyle(Color.appInkMuted)
+                    HajinWrap(spacing: 6) {
+                        if let cash = row.cash {
+                            HajinValueBadge(text: "$\(cash.formatted())")
+                        }
+                        ForEach(other.indices, id: \.self) { i in
+                            HajinValueBadge(text: other[i].resolved)
+                        }
+                    }
+                    if !items.isEmpty { HajinLinkChips(ids: items) }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 36)
+            }
+        }
+        .opacity(done ? 0.75 : 1)
     }
 }
