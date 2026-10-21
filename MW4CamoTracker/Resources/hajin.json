@@ -2097,7 +2097,7 @@
     },
     {
      "title": "Shock Stick",
-     "subtitle": "Common. Cost not confirmed yet",
+     "subtitle": "Common. 10 Synthetics, 10 Chemicals. Sticks to surfaces, shocks enemies, wrecks equipment and sends vehicles haywire",
      "group": "Tacticals",
      "value": "Lv 17",
      "image": "https://camotracker.djr.li/Images/DMZ/shock-stick.png?v=1",
@@ -2112,7 +2112,7 @@
     },
     {
      "title": "Flash",
-     "subtitle": "Common. Cost not confirmed yet",
+     "subtitle": "Common. 10 Synthetics, 10 Chemicals. A blinding flash that disorients anyone nearby",
      "group": "Tacticals",
      "item": "flash"
     },
@@ -2205,7 +2205,7 @@
     },
     {
      "title": "Molotov Cocktail",
-     "subtitle": "Common. Cost not confirmed yet",
+     "subtitle": "Common. 10 Chemicals, 10 Metals. Incendiary that bursts on impact",
      "group": "Lethals",
      "value": "Lv 36",
      "item": "molotov-cocktail"
@@ -2261,7 +2261,7 @@
     },
     {
      "title": "Razor Wire Trap",
-     "subtitle": "Uncommon. Cost not confirmed yet",
+     "subtitle": "Uncommon. 15 Electronics, 15 Metals. A mine that tangles enemies in razor wire",
      "group": "Field Upgrades",
      "item": "razor-wire-trap"
     },
@@ -2440,7 +2440,7 @@
     },
     {
      "title": "Detonators",
-     "subtitle": "Uncommon. Cost not confirmed yet",
+     "subtitle": "Uncommon. 20 Chemicals, 20 Electronics. Needs Uncommon Ingredient Printing",
      "group": "Ingredients",
      "value": "Upgrade",
      "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
@@ -2680,8 +2680,7 @@
     },
     {
      "title": "Commanders",
-     "subtitle": "Kill one and extract to get valuable ingredients",
-     "item": "commanders"
+     "subtitle": "Kill one and extract to get valuable ingredients"
     },
     {
      "title": "Stabilized Reagents",
@@ -4379,7 +4378,7 @@
     }
    ],
    "effect": "An orbital UAV that can't be shot down; shows which way enemies face",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/advanced-uav.png?v=1"
   },
   {
    "id": "air-base-drc-weapons-locker",
@@ -4473,7 +4472,7 @@
     }
    ],
    "effect": "Heat-seeking missiles that track the beacon",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/artillery-beacon.png?v=1"
   },
   {
    "id": "bales-dog-tag",
@@ -4653,7 +4652,7 @@
     }
    ],
    "effect": "An aerial bombing run on a target location",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/bombing-run.png?v=1"
   },
   {
    "id": "c4",
@@ -4740,7 +4739,7 @@
     }
    ],
    "effect": "Proximity-triggered explosive mine",
-   "symbol": "flame.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/claymore.png?v=1"
   },
   {
    "id": "combat-drone",
@@ -4762,14 +4761,7 @@
     }
    ],
    "effect": "Remote-controlled anti-personnel drone",
-   "symbol": "airplane"
-  },
-  {
-   "id": "commanders",
-   "name": "Commanders",
-   "kind": "Ingredient",
-   "note": "Kill one and extract to get valuable ingredients",
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/combat-drone.png?v=1"
   },
   {
    "id": "comms-module",
@@ -4853,7 +4845,7 @@
     }
    ],
    "effect": "Airstrikes from two directions at once",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/crossfire.png?v=1"
   },
   {
    "id": "ddos",
@@ -4891,7 +4883,7 @@
     }
    ],
    "effect": "Fakes gunfire, movement and radar signatures",
-   "symbol": "eye.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/decoy-grenade.png?v=1"
   },
   {
    "id": "defibrillator",
@@ -4918,6 +4910,16 @@
    "image": "https://camotracker.djr.li/Images/DMZ/detonators.png?v=1",
    "kind": "Ingredient",
    "rarity": "Uncommon",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 20
+    },
+    {
+     "item": "electronics",
+     "qty": 20
+    }
+   ],
    "effect": "Needs Uncommon Ingredient Printing",
    "found": "Military and industrial areas"
   },
@@ -5046,7 +5048,7 @@
     }
    ],
    "effect": "Protects you from radiation",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/durable-gas-mask.png?v=1"
   },
   {
    "id": "electronic-sensors",
@@ -5095,7 +5097,7 @@
     }
    ],
    "effect": "Night vision you can toggle on and off",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/elite-night-vision-goggles.png?v=1"
   },
   {
    "id": "energy-drink",
@@ -5164,8 +5166,18 @@
    "name": "Flash",
    "kind": "Tacticals",
    "rarity": "Common",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 10
+    },
+    {
+     "item": "chemicals",
+     "qty": 10
+    }
+   ],
    "effect": "A blinding flash that disorients anyone nearby",
-   "symbol": "eye.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/flash.png?v=1"
   },
   {
    "id": "frag-grenade",
@@ -5334,7 +5346,7 @@
     }
    ],
    "effect": "A payload that drills through several floors",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/impact-warhead.png?v=1"
   },
   {
    "id": "infantry-invasion-plans",
@@ -5417,7 +5429,7 @@
     }
    ],
    "effect": "Large, three Secure Slots and room for more resources",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/large-scavenger-backpack.png?v=1"
   },
   {
    "id": "large-secure-backpack",
@@ -5608,6 +5620,16 @@
    "kind": "Lethals",
    "rarity": "Common",
    "unlock": "Reach DMZ level 36",
+   "cost": [
+    {
+     "item": "chemicals",
+     "qty": 10
+    },
+    {
+     "item": "metals",
+     "qty": 10
+    }
+   ],
    "effect": "Incendiary that bursts on impact",
    "image": "https://camotracker.djr.li/Images/DMZ/molotov-cocktail.png?v=1"
   },
@@ -5834,7 +5856,7 @@
     }
    ],
    "effect": "Goes off when an enemy gets close; heavy damage to vehicles",
-   "symbol": "flame.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/proximity-mine.png?v=1"
   },
   {
    "id": "radiation-blockers",
@@ -5883,8 +5905,18 @@
    "name": "Razor Wire Trap",
    "kind": "Field Upgrades",
    "rarity": "Uncommon",
+   "cost": [
+    {
+     "item": "electronics",
+     "qty": 15
+    },
+    {
+     "item": "metals",
+     "qty": 15
+    }
+   ],
    "effect": "A mine that tangles enemies in razor wire",
-   "symbol": "shield.lefthalf.filled"
+   "image": "https://camotracker.djr.li/Images/DMZ/razor-wire-trap.png?v=1"
   },
   {
    "id": "re-education-center-annex",
@@ -5948,7 +5980,7 @@
     }
    ],
    "effect": "An oxygen tank for breathing underwater",
-   "symbol": "shield.lefthalf.filled"
+   "image": "https://camotracker.djr.li/Images/DMZ/rebreather.png?v=1"
   },
   {
    "id": "recon-drone",
@@ -6056,7 +6088,7 @@
     }
    ],
    "effect": "Portable turret that shoots down aerial threats",
-   "symbol": "shield.lefthalf.filled"
+   "image": "https://camotracker.djr.li/Images/DMZ/sam-airburst-turret.png?v=1"
   },
   {
    "id": "scavengers-dog-tag",
@@ -6083,7 +6115,7 @@
     }
    ],
    "effect": "Proximity alarm that flashes enemies nearby",
-   "symbol": "eye.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/screamer-mine.png?v=1"
   },
   {
    "id": "secure-scavenger-backpack",
@@ -6167,7 +6199,7 @@
     }
    ],
    "effect": "Timed sticky grenade",
-   "symbol": "flame.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/semtex.png?v=1"
   },
   {
    "id": "shock-stick",
@@ -6176,6 +6208,16 @@
    "kind": "Tacticals",
    "rarity": "Common",
    "unlock": "Reach DMZ level 17",
+   "cost": [
+    {
+     "item": "synthetics",
+     "qty": 10
+    },
+    {
+     "item": "chemicals",
+     "qty": 10
+    }
+   ],
    "effect": "Sticks to surfaces, shocks enemies, wrecks equipment and sends vehicles haywire"
   },
   {
@@ -6286,7 +6328,7 @@
     }
    ],
    "effect": "A fast rocket that leaves a smoke trail to cover a move",
-   "symbol": "shield.lefthalf.filled"
+   "image": "https://camotracker.djr.li/Images/DMZ/smoke-wall.png?v=1"
   },
   {
    "id": "snapshot-grenade",
@@ -6594,7 +6636,7 @@
     }
    ],
    "effect": "Destroys up to three incoming projectiles or pieces of equipment",
-   "symbol": "shield.lefthalf.filled"
+   "image": "https://camotracker.djr.li/Images/DMZ/trophy-system.png?v=1"
   },
   {
    "id": "turned-components",
@@ -6727,7 +6769,7 @@
     "m5891",
     "m5853"
    ],
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/volatile-explosives.png?v=1"
   },
   {
    "id": "wmd-manifest",
@@ -6753,7 +6795,7 @@
     }
    ],
    "effect": "Night vision you can toggle on and off",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/weak-night-vision-goggles.png?v=1"
   },
   {
    "id": "zip-gun",
