@@ -1,5 +1,5 @@
 {
- "version": "0.9.13",
+ "version": "0.9.14",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2885,6 +2885,14 @@
      "value": "$50,000",
      "item": "stash-item-upgrade-ii",
      "check": "upgrade-stash-item-upgrade-ii",
+     "group": "Stash"
+    },
+    {
+     "title": "Stash Item Upgrade III",
+     "subtitle": "20 Binding Catalyst, 20 Stock Rod, 10 Alloyed Plating. More Stash item slots",
+     "value": "$100,000",
+     "item": "stash-item-upgrade-iii",
+     "check": "upgrade-stash-item-upgrade-iii",
      "group": "Stash"
     },
     {
@@ -6852,6 +6860,30 @@
    "symbol": "archivebox.fill",
    "family": "Stash Item Upgrade",
    "tier": 2
+  },
+  {
+   "id": "stash-item-upgrade-iii",
+   "name": "Stash Item Upgrade III",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "binding-catalyst",
+     "qty": 20
+    },
+    {
+     "item": "stock-rod",
+     "qty": 20
+    },
+    {
+     "item": "alloyed-plating",
+     "qty": 10
+    }
+   ],
+   "cash": 100000,
+   "effect": "More Stash item slots",
+   "symbol": "archivebox.fill",
+   "family": "Stash Item Upgrade",
+   "tier": 3
   },
   {
    "id": "stash-weapon-upgrade-i",
