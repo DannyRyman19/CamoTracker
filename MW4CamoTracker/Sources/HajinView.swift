@@ -44,6 +44,9 @@ struct HajinView: View {
             if let shownItem { HajinItemView(id: shownItem) }
         }
         .onAppear(perform: openScreenshotTarget)
+        #if DEBUG
+        .onReceive(NotificationCenter.default.publisher(for: .hajinDemoOpenStash)) { _ in showsStash = true }
+        #endif
         .task { await store.refresh() }
     }
 

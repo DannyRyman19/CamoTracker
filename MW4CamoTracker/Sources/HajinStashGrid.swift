@@ -662,8 +662,21 @@ struct HajinScanHost: ViewModifier {
         }
         #if DEBUG
         // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
-        // SS_GRID_INTRO=1 opens the intro sheet
+        // SS_GRID_INTRO=1 opens the intro sheet;
+        // SS_GRID_DEMO=<file> plays the whole flow for a screen recording:
+        // intro, that photo, scan, read, review, update
         .onAppear {
+            if var path = ProcessInfo.processInfo.environment["SS_GRID_DEMO"] {
+                if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
+                guard let image = UIImage(contentsOfFile: path) else { return }
+                Task { @MainActor in
+                    try? await Task.sleep(for: .seconds(3))
+                    flow.showsIntro = true
+                    try? await Task.sleep(for: .seconds(4.5))
+                    flow.pending = HajinPickedPhoto(image: image.normalisedUp())
+                    flow.showsIntro = false
+                }
+            }
             if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
             if flow.photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
                 if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
@@ -922,6 +935,12 @@ struct HajinStashGridFrameView: View {
                     withAnimation(.easeOut(duration: 0.9).delay(0.2)) { lockGlow = 0 }
                 }
                 remeasure()
+                #if DEBUG
+                if ProcessInfo.processInfo.environment["SS_GRID_DEMO"] != nil {
+                    try? await Task.sleep(for: .seconds(2))
+                    read()
+                }
+                #endif
             }
             .onAppear {
                 #if DEBUG

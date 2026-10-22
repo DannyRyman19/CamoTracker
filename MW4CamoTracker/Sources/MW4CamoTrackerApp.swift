@@ -4,7 +4,7 @@ import SwiftUI
 struct MW4CamoTrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var viewModel = TrackerViewModel()
-    @StateObject private var hajin = HajinStore()
+    @StateObject private var hajin = HajinStore(defaults: HajinStore.launchDefaults())
     @Environment(\.scenePhase) private var scenePhase
 
     /// GitHub Pages serves `cache-control: max-age=14400` on 404s as well as

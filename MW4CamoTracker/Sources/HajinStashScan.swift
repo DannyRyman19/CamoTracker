@@ -245,6 +245,7 @@ struct HajinStashScanReview: View {
     @State private var editText = ""
     @State private var skipCash = false
     @State private var skipLevel = false
+    @State private var detent = PresentationDetent.medium
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: ingredients and resources. The photo
@@ -353,6 +354,7 @@ struct HajinStashScanReview: View {
         let cashChange = cash.flatMap { $0 != store.cash && !skipCash ? $0 : nil }
         let levelChange = level.flatMap { $0 != store.dmzLevel && !skipLevel ? $0 : nil }
         NavigationStack {
+            ScrollViewReader { proxy in
             List {
                 if all.isEmpty && cash == nil && level == nil {
                     Text("mw4.ui.hajin.scan_none".localized())
@@ -410,6 +412,9 @@ struct HajinStashScanReview: View {
                     }
                 }
             }
+            #if DEBUG
+            .task { await demo(proxy) }
+            #endif
             .alert(editing?.name.resolved ?? "", isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {
                 TextField("0", text: $editText).keyboardType(.numberPad)
                 Button("mw4.ui.hajin.save".localized()) {
@@ -425,18 +430,48 @@ struct HajinStashScanReview: View {
                     Button("mw4.ui.hajin.cancel".localized()) { dismiss(); onDone?() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("mw4.ui.hajin.scan_apply".localized()) {
-                        Haptics.step()
-                        store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
-                        if let cashChange { store.setCash(cashChange) }
-                        if let levelChange { store.setLevel(levelChange) }
-                        dismiss()
-                        onDone?()
-                    }
-                    .disabled(changes.isEmpty && cashChange == nil && levelChange == nil)
+                    Button("mw4.ui.hajin.scan_apply".localized()) { apply(changes, cash: cashChange, level: levelChange) }
+                        .disabled(changes.isEmpty && cashChange == nil && levelChange == nil)
                 }
             }
+            }
         }
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.medium, .large], selection: $detent)
     }
+
+    #if DEBUG
+    /// SS_GRID_DEMO: open the sheet up, scroll down the rows, then update
+    /// and open My stash, for the screen recording.
+    private func demo(_ proxy: ScrollViewProxy) async {
+        guard ProcessInfo.processInfo.environment["SS_GRID_DEMO"] != nil else { return }
+        try? await Task.sleep(for: .seconds(2.5))
+        withAnimation { detent = .large }
+        try? await Task.sleep(for: .seconds(1.5))
+        let all = rows
+        let order = all.filter { $0.item.kind == "Resource" } + all.filter { $0.item.kind != "Resource" }
+        for row in order.dropFirst(3) {
+            withAnimation(.easeInOut(duration: 0.5)) { proxy.scrollTo(row.item.id, anchor: .bottom) }
+            try? await Task.sleep(for: .seconds(0.45))
+        }
+        try? await Task.sleep(for: .seconds(1.5))
+        apply(all.filter { $0.now != $0.read && !skip.contains($0.item.id) },
+              cash: cash.flatMap { $0 != store.cash ? $0 : nil }, level: level.flatMap { $0 != store.dmzLevel ? $0 : nil })
+        try? await Task.sleep(for: .seconds(2.5))
+        NotificationCenter.default.post(name: .hajinDemoOpenStash, object: nil)
+    }
+    #endif
+
+    private func apply(_ changes: [(item: HajinGuide.Item, now: Int, read: Int)], cash cashChange: Int?, level levelChange: Int?) {
+        Haptics.step()
+        store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
+        if let cashChange { store.setCash(cashChange) }
+        if let levelChange { store.setLevel(levelChange) }
+        dismiss()
+        onDone?()
+    }
+}
+
+extension Notification.Name {
+    /// SS_GRID_DEMO: the review has updated; open My stash
+    static let hajinDemoOpenStash = Notification.Name("hajinDemoOpenStash")
 }

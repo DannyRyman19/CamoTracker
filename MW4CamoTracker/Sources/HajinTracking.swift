@@ -204,6 +204,7 @@ struct HajinStashView: View {
     }
 
     private var list: some View {
+        ScrollViewReader { proxy in
         List {
             if query.isEmpty {
                 Text("mw4.ui.hajin.stash_intro".localized())
@@ -232,6 +233,18 @@ struct HajinStashView: View {
         }
         .scrollContentBackground(.hidden)
         .listStyle(.plain)
+        #if DEBUG
+        // SS_GRID_DEMO: scroll down the stash for the screen recording
+        .task {
+            guard ProcessInfo.processInfo.environment["SS_GRID_DEMO"] != nil else { return }
+            try? await Task.sleep(for: .seconds(1.5))
+            for item in groups.flatMap(\.items).filter({ store.count(of: $0.id) > 0 }).dropFirst(4) {
+                withAnimation(.easeInOut(duration: 0.6)) { proxy.scrollTo(item.id, anchor: .bottom) }
+                try? await Task.sleep(for: .seconds(0.55))
+            }
+        }
+        #endif
+        }
     }
 
     /// Wide screens: each group as two columns of cards.

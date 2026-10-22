@@ -344,6 +344,20 @@ final class HajinStore: ObservableObject {
         }
     }
 
+    /// Where My DMZ is kept: the standard defaults (synced with iCloud),
+    /// or for the SS_GRID_DEMO screen recording an empty throwaway suite,
+    /// so the demo never reads, changes or syncs the player's real data.
+    static func launchDefaults() -> UserDefaults {
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["SS_GRID_DEMO"] != nil, let demo = UserDefaults(suiteName: "mw4_hajin_demo") {
+            demo.removePersistentDomain(forName: "mw4_hajin_demo")
+            UserDefaults.standard.set(HajinPage.mine.rawValue, forKey: HajinPage.key)
+            return demo
+        }
+        #endif
+        return .standard
+    }
+
     private static let levelSyncKey = "dmz-level"
     private static let cashSyncKey = "dmz-cash"
 
