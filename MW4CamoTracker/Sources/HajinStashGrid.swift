@@ -639,7 +639,7 @@ struct HajinStashGridFrameView: View {
                 }
             }
             .sheet(item: $result, onDismiss: { if result == nil { } }) { r in
-                HajinStashScanReview(found: r.counts, unsure: r.unsure, onDone: { dismiss() })
+                HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, onDone: { dismiss() })
             }
             .overlay(alignment: .bottom) {
                 if finding {
@@ -714,12 +714,18 @@ struct HajinStashGridFrameView: View {
         guard let cg = image.cgImage else { return }
         reading = true
         let frame = corners
+        let resources = (store.guide?.items ?? []).filter { $0.kind == "Resource" }
         Task.detached(priority: .userInitiated) {
             let tiles = HajinStashGrid.read(cg, corners: frame)
-            let totals = HajinStashGrid.totals(tiles)
+            var totals = HajinStashGrid.totals(tiles)
+            // The same photo's text: the resource totals beside the grid and
+            // the bank balance at the top
+            let lines = HajinStashScanner.lines(in: cg)
+            for (id, n) in HajinStashScanner.counts(in: lines, items: resources) { totals.counts[id] = n }
+            let cash = HajinStashScanner.bank(in: lines)
             await MainActor.run {
                 reading = false
-                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure)
+                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash)
             }
         }
     }
@@ -729,6 +735,7 @@ struct HajinGridResult: Identifiable {
     let id = UUID()
     let counts: [String: Int]
     let unsure: Set<String>
+    var cash: Int? = nil
 }
 
 /// A first guess at the grid's corners, for the player to adjust:

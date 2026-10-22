@@ -229,9 +229,16 @@
 "mw4.ui.icloud.footer" = "Garde vos camouflages, niveaux d'arme, Prestige et boss cochés identiques sur chaque iPhone et iPad connecté à votre compte Apple.";
 "mw4.ui.keep.title" = "Garder ou vendre ?";
 "mw4.ui.keep.spare_title" = "Surplus à vendre";
-"mw4.ui.keep.spare_detail" = "Ce que tu as en plus de ce qu'il manque à tes améliorations de FOB, au prix de vente. Les recettes en utilisent aussi.";
+"mw4.ui.keep.spare_detail" = "Ce que tu as en plus de ce qu'il manque à tes améliorations de FOB, au prix de vente.";
 "mw4.ui.keep.spare_empty" = "Ajoute ce que tu as dans Ma réserve pour voir le surplus.";
 "mw4.ui.keep.spare_short" = "%@ en trop";
+"mw4.ui.keep.spare_options" = "Options du surplus";
+"mw4.ui.keep.spare_buffer_n" = "%d de chaque";
+"mw4.ui.keep.spare_buffer_none" = "Pas de réserve";
+"mw4.ui.keep.spare_buffer" = "Garder une réserve";
+"mw4.ui.keep.spare_keep_tracked" = "Garder pour les suivis";
+"mw4.ui.keep.spare_detail_buffer" = "Garde %d de chaque ingrédient.";
+"mw4.ui.keep.spare_detail_tracked" = "Garde aussi ce que tes recettes suivies demandent.";
 "mw4.ui.keep.row_subtitle" = "Cherchez tout ce que vous avez ramassé";
 "mw4.ui.keep.search" = "Rechercher des objets";
 "mw4.ui.keep.intro" = "Calculé à partir de toutes les recettes et améliorations de FOB connues. Cochez les améliorations imprimées et leurs besoins ne comptent plus. Certains coûts de recettes sont encore inconnus, un Vendre peut donc changer.";

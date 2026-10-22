@@ -229,9 +229,16 @@
 "mw4.ui.icloud.footer" = "Mantiene tus camuflajes, niveles de arma, Prestigio y jefes marcados iguales en cada iPhone y iPad con tu cuenta de Apple.";
 "mw4.ui.keep.title" = "¿Guardar o vender?";
 "mw4.ui.keep.spare_title" = "Sobrante para vender";
-"mw4.ui.keep.spare_detail" = "Lo que tienes por encima de lo que aún necesitan tus mejoras de la FOB, a precio de venta. Las recetas también usan parte.";
+"mw4.ui.keep.spare_detail" = "Lo que tienes por encima de lo que aún necesitan tus mejoras de la FOB, a precio de venta.";
 "mw4.ui.keep.spare_empty" = "Añade lo que tienes en Mi alijo para ver lo que sobra.";
 "mw4.ui.keep.spare_short" = "%@ sobrante";
+"mw4.ui.keep.spare_options" = "Opciones de sobrante";
+"mw4.ui.keep.spare_buffer_n" = "%d de cada";
+"mw4.ui.keep.spare_buffer_none" = "Sin reserva";
+"mw4.ui.keep.spare_buffer" = "Guardar una reserva";
+"mw4.ui.keep.spare_keep_tracked" = "Guardar para lo seguido";
+"mw4.ui.keep.spare_detail_buffer" = "Guarda %d de cada ingrediente.";
+"mw4.ui.keep.spare_detail_tracked" = "También guarda lo que necesitan tus recetas seguidas.";
 "mw4.ui.keep.row_subtitle" = "Busca cualquier cosa que hayas saqueado";
 "mw4.ui.keep.search" = "Buscar objetos";
 "mw4.ui.keep.intro" = "Calculado con todas las recetas y mejoras de la FOB conocidas. Marca las mejoras que hayas impreso y lo que necesitaban deja de contar. Aún faltan algunos costes de recetas, así que un Vender podría cambiar.";

@@ -139,15 +139,28 @@ struct HajinVerdictBadge: View {
 }
 
 extension HajinStore {
+    static let spareTrackedKey = "mw4_hajin_spare_tracked"
+    static let spareBufferKey = "mw4_hajin_spare_buffer"
+
     /// What the stash holds beyond what the unfinished FOB upgrades still
-    /// need, with its sell value: most valuable first.
+    /// need (and, as the player chooses, what tracked items need and a
+    /// buffer of each), with its sell value: most valuable first.
     func spare() -> (lines: [(item: HajinGuide.Item, count: Int, worth: Int)], total: Int) {
         guard let guide else { return ([], 0) }
+        let keepTracked = UserDefaults.standard.object(forKey: Self.spareTrackedKey) as? Bool ?? true
+        let buffer = UserDefaults.standard.integer(forKey: Self.spareBufferKey)
         var need: [String: Int] = [:]
         for line in shoppingList(.upgrades) { need[line.item.id] = line.need }
+        if keepTracked {
+            // Tracked upgrades are already in the list above; add tracked recipes
+            for id in tracked {
+                guard let item = guide.item(id), item.kind != "FOB Upgrade" else { continue }
+                for part in item.cost ?? [] { need[part.item, default: 0] += part.qty }
+            }
+        }
         let lines = stash.compactMap { id, have -> (item: HajinGuide.Item, count: Int, worth: Int)? in
             guard let item = guide.item(id), let value = item.value, value > 0 else { return nil }
-            let extra = have - (need[id] ?? 0)
+            let extra = have - (need[id] ?? 0) - (item.kind == "Ingredient" ? buffer : 0)
             return extra > 0 ? (item, extra, extra * value) : nil
         }
         .sorted { $0.worth > $1.worth }
@@ -159,8 +172,12 @@ extension HajinStore {
 /// and the items that make it up.
 struct HajinSpareCard: View {
     @EnvironmentObject private var store: HajinStore
+    @AppStorage(HajinStore.spareTrackedKey) private var keepTracked = true
+    @AppStorage(HajinStore.spareBufferKey) private var buffer = 0
 
     var body: some View {
+        // Read so the card redraws when either setting changes
+        let _ = (keepTracked, buffer)
         let spare = store.spare()
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
@@ -171,8 +188,24 @@ struct HajinSpareCard: View {
                 Text("$\(spare.total.formatted())")
                     .font(.system(size: 18, weight: .bold, design: .monospaced))
                     .foregroundStyle(spare.total > 0 ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInkMuted)
+                Menu {
+                    Toggle("mw4.ui.keep.spare_keep_tracked".localized(), isOn: $keepTracked)
+                    Picker("mw4.ui.keep.spare_buffer".localized(), selection: $buffer) {
+                        Text("mw4.ui.keep.spare_buffer_none".localized()).tag(0)
+                        Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 5)).tag(5)
+                        Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 10)).tag(10)
+                    }
+                } label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Color.accentDMZ)
+                        .padding(.leading, 6)
+                }
+                .accessibilityLabel("mw4.ui.keep.spare_options".localized())
             }
-            Text((store.stash.isEmpty ? "mw4.ui.keep.spare_empty" : "mw4.ui.keep.spare_detail").localized())
+            Text(store.stash.isEmpty ? "mw4.ui.keep.spare_empty".localized()
+                 : "mw4.ui.keep.spare_detail".localized() + (keepTracked ? " " + "mw4.ui.keep.spare_detail_tracked".localized() : "")
+                   + (buffer > 0 ? " " + String(format: "mw4.ui.keep.spare_detail_buffer".localized(), buffer) : ""))
                 .font(.caption)
                 .foregroundStyle(Color.appInkMuted)
             if !spare.lines.isEmpty {

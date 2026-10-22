@@ -58,6 +58,23 @@ enum HajinStashScanner {
         return found
     }
 
+    /// The bank balance from the stash screen's "BANK $33,050 / $1M": the
+    /// first number after BANK, on the same line (it can be split into
+    /// several pieces of text). Nil when there's no BANK.
+    static func bank(in lines: [Line]) -> Int? {
+        guard let label = lines.first(where: { $0.text.uppercased().contains("BANK") }) else { return nil }
+        let sameLine = lines.filter { abs($0.box.midY - label.box.midY) < label.box.height * 0.8 && $0.box.minX >= label.box.minX - 0.01 }
+            .sorted { $0.box.minX < $1.box.minX }
+        var text = sameLine.map(\.text).joined(separator: " ")
+        if let r = text.uppercased().range(of: "BANK") { text = String(text[r.upperBound...]) }
+        // "33,050 / 1M": digits and separators up to the slash
+        let beforeSlash = text.split(separator: "/").first.map(String.init) ?? text
+        guard let m = beforeSlash.firstMatch(of: /\d[\d,\.\s]*/) else { return nil }
+        let digits = String(m.0).filter(\.isNumber)
+        guard digits.count >= 1, digits.count <= 9 else { return nil }
+        return Int(digits)
+    }
+
     /// "607/50", "607 / 50" or "Synthetics 607/50" gives 607.
     static func have(in text: String) -> Int? {
         let cleaned = text.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "O", with: "0")
@@ -116,6 +133,7 @@ struct HajinStashScanButton: View {
     @State private var picks: [PhotosPickerItem] = []
     @State private var reading = false
     @State private var result: [String: Int]?
+    @State private var resultCash: Int?
 
     var body: some View {
         PhotosPicker(selection: $picks, maxSelectionCount: 30, matching: .images) {
@@ -144,7 +162,7 @@ struct HajinStashScanButton: View {
             read(chosen)
         }
         .sheet(isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil } })) {
-            if let result { HajinStashScanReview(found: result) }
+            if let result { HajinStashScanReview(found: result, cash: resultCash) }
         }
     }
 
@@ -153,13 +171,16 @@ struct HajinStashScanButton: View {
         let items = (store.guide?.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) }
         Task {
             var seen: [String: [Int]] = [:]
+            var bank: Int?
             for pick in chosen {
                 guard let data = try? await pick.loadTransferable(type: Data.self),
                       let image = UIImage(data: data)?.cgImage else { continue }
-                let counts = await Task.detached(priority: .userInitiated) {
-                    HajinStashScanner.counts(in: HajinStashScanner.lines(in: image), items: items)
+                let (counts, cash) = await Task.detached(priority: .userInitiated) { () -> ([String: Int], Int?) in
+                    let lines = HajinStashScanner.lines(in: image)
+                    return (HajinStashScanner.counts(in: lines, items: items), HajinStashScanner.bank(in: lines))
                 }.value
                 for (id, n) in counts { seen[id, default: []].append(n) }
+                if let cash { bank = cash }
             }
             // The same ingredient on several screens: take the count read most
             // often, the higher one on a tie
@@ -169,6 +190,7 @@ struct HajinStashScanButton: View {
             await MainActor.run {
                 reading = false
                 picks = []
+                resultCash = bank
                 result = merged
             }
         }
@@ -181,6 +203,8 @@ struct HajinStashScanReview: View {
     let found: [String: Int]
     /// Items the reader wasn't sure of: shown with a "check" tag.
     var unsure: Set<String> = []
+    /// The bank balance read from the photo, if it showed one.
+    var cash: Int? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
@@ -189,6 +213,7 @@ struct HajinStashScanReview: View {
     @State private var edited: [String: Int] = [:]
     @State private var editing: HajinGuide.Item?
     @State private var editText = ""
+    @State private var skipCash = false
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: ingredients and resources. The photo
@@ -201,9 +226,31 @@ struct HajinStashScanReview: View {
     var body: some View {
         let all = rows
         let changes = all.filter { $0.now != $0.read && !skip.contains($0.item.id) }
+        let cashChange = cash.flatMap { $0 != store.cash && !skipCash ? $0 : nil }
         NavigationStack {
             List {
-                if all.isEmpty {
+                if let cash {
+                    let same = cash == store.cash
+                    Button { if !same { skipCash.toggle() } } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "banknote.fill").font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
+                            Text("mw4.ui.hajin.cash_title".localized()).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                            Spacer(minLength: 8)
+                            if same {
+                                Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                            } else {
+                                Text("$\(store.cash.formatted()) → $\(cash.formatted())")
+                                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                                    .foregroundStyle(skipCash ? Color.appInkMuted : Color.appInk)
+                                    .strikethrough(skipCash)
+                                Image(systemName: skipCash ? "circle" : "checkmark.circle.fill")
+                                    .foregroundStyle(skipCash ? Color.appInkMuted : Color.accentDMZ)
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+                if all.isEmpty && cash == nil {
                     Text("mw4.ui.hajin.scan_none".localized())
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
@@ -272,10 +319,11 @@ struct HajinStashScanReview: View {
                     Button("mw4.ui.hajin.scan_apply".localized()) {
                         Haptics.step()
                         store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
+                        if let cashChange { store.setCash(cashChange) }
                         dismiss()
                         onDone?()
                     }
-                    .disabled(changes.isEmpty)
+                    .disabled(changes.isEmpty && cashChange == nil)
                 }
             }
         }
