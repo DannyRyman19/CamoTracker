@@ -521,6 +521,9 @@ struct HajinStashGridFrameView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var corners: [CGPoint] = [CGPoint(x: 0.15, y: 0.25), CGPoint(x: 0.85, y: 0.25), CGPoint(x: 0.85, y: 0.75), CGPoint(x: 0.15, y: 0.75)]
     @State private var reading = false
+    @State private var finding = false
+    /// Set once the player drags a handle, so a late guess doesn't move it back
+    @State private var moved = false
     @State private var result: HajinGridResult?
 
     var body: some View {
@@ -543,6 +546,7 @@ struct HajinStashGridFrameView: View {
                                 .frame(width: 34, height: 34)
                                 .position(x: corners[i].x * fit.width, y: corners[i].y * fit.height)
                                 .gesture(DragGesture().onChanged { g in
+                                    moved = true
                                     corners[i] = CGPoint(x: min(max(g.location.x / fit.width, 0), 1), y: min(max(g.location.y / fit.height, 0), 1))
                                 })
                         }
@@ -568,13 +572,30 @@ struct HajinStashGridFrameView: View {
             .sheet(item: $result, onDismiss: { if result == nil { } }) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, onDone: { dismiss() })
             }
+            .overlay(alignment: .bottom) {
+                if finding {
+                    Label("mw4.ui.hajin.grid_finding".localized(), systemImage: "viewfinder")
+                        .font(.subheadline.weight(.semibold))
+                        .padding(.horizontal, 14).padding(.vertical, 8)
+                        .background(Capsule().fill(Color.appSurface2))
+                        .padding(.bottom, 24)
+                }
+            }
+            .task {
+                // The guess reads the photo (a second or two), off the main thread
+                guard let cg = image.cgImage else { return }
+                finding = true
+                let guess = await Task.detached(priority: .userInitiated) { HajinStashGridFinder.guess(cg) }.value
+                finding = false
+                if let guess, !moved { withAnimation(.snappy) { corners = guess } }
+            }
             .onAppear {
-                corners = HajinStashGridFinder.guess(image) ?? corners
                 #if DEBUG
                 // SS_GRID_CORNERS=x,y,... (fractions, TL TR BR BL) sets the
                 // frame and reads straight away, for screenshots
                 let v = (ProcessInfo.processInfo.environment["SS_GRID_CORNERS"] ?? "").split(separator: ",").compactMap { Double($0) }
                 if v.count == 8 {
+                    moved = true
                     corners = stride(from: 0, to: 8, by: 2).map { CGPoint(x: v[$0], y: v[$0 + 1]) }
                     if ProcessInfo.processInfo.environment["SS_GRID_READ"] == "1" { read() }
                 }
@@ -630,30 +651,143 @@ struct HajinGridResult: Identifiable {
     let unsure: Set<String>
 }
 
-/// A first guess at the grid's corners from the empty and filled tiles the
-/// rectangle detector finds; nil when it finds too few to go on.
+/// A first guess at the grid's corners, for the player to adjust:
+/// - bottom corners and the sides from the tiles the rectangle detector finds
+///   (empty ones mostly, which sit at the bottom of a stash)
+/// - the top from the stash's header line ("9/18 WEAPONS  79/94 ITEMS"),
+///   which sits just over half a tile above the grid
+/// Nil when there's too little to go on.
 enum HajinStashGridFinder {
     static func guess(_ image: UIImage) -> [CGPoint]? {
         guard let cg = image.cgImage else { return nil }
-        let request = VNDetectRectanglesRequest()
-        request.maximumObservations = 0
-        request.minimumSize = 0.04
-        request.minimumAspectRatio = 0.75
-        request.maximumAspectRatio = 1.0
-        request.quadratureTolerance = 20
-        request.minimumConfidence = 0.3
-        try? VNImageRequestHandler(cgImage: cg).perform([request])
-        let quads = (request.results ?? []).filter { $0.boundingBox.width < 0.25 }
-        guard quads.count >= 4 else { return nil }
-        // Vision's origin is bottom left; flip to top left
-        func p(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x, y: 1 - v.y) }
-        // Empty tiles sit at the bottom of a stash, so the bottom corners are
-        // what this finds reliably; the top handles start a few rows up for
-        // the player to drag
-        let br = quads.map { p($0.bottomRight) }.max { $0.x + $0.y < $1.x + $1.y }!
-        let bl = quads.map { p($0.bottomLeft) }.min { $0.x - $0.y < $1.x - $1.y }!
-        guard br.x - bl.x > 0.3, abs(br.y - bl.y) < 0.15 else { return nil }
-        let up = min(max(bl.y, br.y) - 0.05, (br.x - bl.x) * image.size.width / image.size.height * 0.8)
-        return [CGPoint(x: bl.x, y: max(0.02, bl.y - up)), CGPoint(x: br.x, y: max(0.02, br.y - up)), br, bl]
+        return guess(cg)
+    }
+
+    static func guess(_ cg: CGImage) -> [CGPoint]? {
+        let W = CGFloat(cg.width), H = CGFloat(cg.height)
+        let rects = VNDetectRectanglesRequest()
+        rects.maximumObservations = 0
+        rects.minimumSize = 0.04
+        rects.minimumAspectRatio = 0.75
+        rects.maximumAspectRatio = 1.0
+        rects.quadratureTolerance = 20
+        rects.minimumConfidence = 0.3
+        let text = VNRecognizeTextRequest()
+        text.recognitionLevel = .accurate
+        text.usesLanguageCorrection = false
+        try? VNImageRequestHandler(cgImage: cg).perform([rects, text])
+        // pixels, origin top left
+        func px(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x * W, y: (1 - v.y) * H) }
+        let quads = (rects.results ?? []).filter { $0.boundingBox.width < 0.25 }
+        guard quads.count >= 3 else { return nil }
+        let br = quads.map { px($0.bottomRight) }.max { $0.x + $0.y < $1.x + $1.y }!
+        let bl = quads.map { px($0.bottomLeft) }.min { $0.x - $0.y < $1.x - $1.y }!
+        guard br.x - bl.x > W * 0.3, abs(br.y - bl.y) < H * 0.15 else { return nil }
+        let pitch = (br.x - bl.x) / CGFloat(HajinStashGrid.columns)
+
+        // The sides: a line (x as a function of y) through the outer edges of
+        // the tiles in the first and last columns
+        func side(_ points: [CGPoint], through base: CGPoint) -> (CGFloat) -> CGFloat {
+            let pts = points + [base]
+            let my = pts.map(\.y).reduce(0, +) / CGFloat(pts.count), mx = pts.map(\.x).reduce(0, +) / CGFloat(pts.count)
+            let num = pts.reduce(0) { $0 + ($1.y - my) * ($1.x - mx) }, den = pts.reduce(0) { $0 + ($1.y - my) * ($1.y - my) }
+            let slope = den > 1 ? num / den : 0
+            return { y in mx + slope * (y - my) }
+        }
+        let leftEdge = quads.filter { px($0.bottomLeft).x < bl.x + pitch * 0.5 }.flatMap { [px($0.topLeft), px($0.bottomLeft)] }
+        let rightEdge = quads.filter { px($0.bottomRight).x > br.x - pitch * 0.5 }.flatMap { [px($0.topRight), px($0.bottomRight)] }
+        let leftX = side(leftEdge, through: bl), rightX = side(rightEdge, through: br)
+
+        // The top: the header's baseline, if the words are found
+        let header = (text.results ?? []).filter { obs in
+            let t = obs.topCandidates(1).first?.string.uppercased() ?? ""
+            return (t.contains("WEAPON") || t.contains("ITEMS")) && px(obs.bottomLeft).y < min(bl.y, br.y) - pitch
+        }
+        var topAt: (CGFloat) -> CGFloat
+        if !header.isEmpty {
+            let pts = header.flatMap { [px($0.bottomLeft), px($0.bottomRight)] }
+            let mx = pts.map(\.x).reduce(0, +) / CGFloat(pts.count), my = pts.map(\.y).reduce(0, +) / CGFloat(pts.count)
+            let num = pts.reduce(0) { $0 + ($1.x - mx) * ($1.y - my) }, den = pts.reduce(0) { $0 + ($1.x - mx) * ($1.x - mx) }
+            let slope = den > 1 ? num / den : 0
+            topAt = { x in my + slope * (x - mx) }
+        } else {
+            // No header: start a few rows up for the player to drag
+            let up = min(max(bl.y, br.y) - H * 0.05, (br.x - bl.x) * 0.8)
+            topAt = { _ in max(H * 0.02, max(bl.y, br.y) - up) - pitch * 0.58 }
+        }
+        // Top corners where each side meets the line just under the header,
+        // the gap scaled to the tile size up there
+        func corner(_ sideX: (CGFloat) -> CGFloat) -> CGPoint {
+            var y = topAt(sideX(bl.y))
+            for _ in 0..<3 {
+                let topPitch = (rightX(y) - leftX(y)) / CGFloat(HajinStashGrid.columns)
+                y = topAt(sideX(y)) + topPitch * 0.58
+            }
+            return CGPoint(x: sideX(y), y: y)
+        }
+        let tl = corner(leftX), tr = corner(rightX)
+        let quad = [tl, tr, CGPoint(x: rightX(br.y), y: br.y), CGPoint(x: leftX(bl.y), y: bl.y)]
+        guard quad.allSatisfy({ $0.x > -W * 0.05 && $0.x < W * 1.05 && $0.y > -H * 0.05 && $0.y < H * 1.05 }),
+              quad[3].y - quad[0].y > pitch else { return nil }
+        let fractions = quad.map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
+        return refine(cg, fractions)
+    }
+
+    /// Nudges each corner (coordinate descent on a quarter-size copy) to
+    /// where the straightened grid's frame lines fall exactly on its 7
+    /// column and row borders.
+    static func refine(_ cg: CGImage, _ start: [CGPoint]) -> [CGPoint] {
+        let scale: CGFloat = 0.25
+        let small = CIImage(cgImage: cg).transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+        let size = CGSize(width: CGFloat(cg.width) * scale, height: CGFloat(cg.height) * scale)
+        let ci = CIContext()
+        func score(_ q: [CGPoint]) -> Double {
+            let rows = HajinStashGrid.rows(for: q, size: size)
+            let cell: CGFloat = 40
+            guard let f = CIFilter(name: "CIPerspectiveCorrection") else { return 0 }
+            func v(_ p: CGPoint) -> CIVector { CIVector(x: p.x * size.width, y: (1 - p.y) * size.height) }
+            f.setValue(small, forKey: kCIInputImageKey)
+            f.setValue(v(q[0]), forKey: "inputTopLeft"); f.setValue(v(q[1]), forKey: "inputTopRight")
+            f.setValue(v(q[2]), forKey: "inputBottomRight"); f.setValue(v(q[3]), forKey: "inputBottomLeft")
+            guard var o = f.outputImage, o.extent.width > 1 else { return 0 }
+            let ow = cell * CGFloat(HajinStashGrid.columns), oh = cell * CGFloat(rows)
+            o = o.transformed(by: CGAffineTransform(translationX: -o.extent.minX, y: -o.extent.minY))
+            o = o.transformed(by: CGAffineTransform(scaleX: ow / o.extent.width, y: oh / o.extent.height))
+            guard let g = ci.createCGImage(o, from: CGRect(x: 0, y: 0, width: ow, height: oh)) else { return 0 }
+            let w = g.width, h = g.height
+            var px = [UInt8](repeating: 0, count: w * h * 4)
+            guard let c = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                    space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 0 }
+            c.draw(g, in: CGRect(x: 0, y: 0, width: w, height: h))
+            var col = [Double](repeating: 0, count: w), row = [Double](repeating: 0, count: h)
+            for y in 0..<h { for x in 0..<w {
+                let i = (y * w + x) * 4
+                let lo = min(px[i], px[i + 1], px[i + 2]), hi = max(px[i], px[i + 1], px[i + 2])
+                if lo > 110 && hi - lo < 45 { col[x] += 1; row[y] += 1 }
+            } }
+            // Frame lines sit just inside each border: look 3 px either side
+            func at(_ p: [Double], _ c: Int) -> Double { p[max(0, c - 3)...min(p.count - 1, c + 3)].max() ?? 0 }
+            var total = 0.0
+            for k in 0...HajinStashGrid.columns { total += at(col, Int(CGFloat(k) * cell)) / Double(h) }
+            for j in 0...rows { total += at(row, Int(CGFloat(j) * cell)) / Double(w) }
+            return total / Double(HajinStashGrid.columns + rows + 2)
+        }
+        var q = start
+        var best = score(q)
+        for step in [0.012, 0.006, 0.003] {
+            var improved = true, rounds = 0
+            while improved && rounds < 6 {
+                improved = false; rounds += 1
+                for i in 0..<4 {
+                    for d in [CGPoint(x: step, y: 0), CGPoint(x: -step, y: 0), CGPoint(x: 0, y: step), CGPoint(x: 0, y: -step)] {
+                        var t = q
+                        t[i] = CGPoint(x: q[i].x + d.x, y: q[i].y + d.y)
+                        let sc = score(t)
+                        if sc > best { best = sc; q = t; improved = true }
+                    }
+                }
+            }
+        }
+        return q
     }
 }
