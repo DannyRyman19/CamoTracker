@@ -138,6 +138,53 @@ struct HajinVerdictBadge: View {
     }
 }
 
+extension HajinStore {
+    /// What the stash holds beyond what the unfinished FOB upgrades still
+    /// need, with its sell value: most valuable first.
+    func spare() -> (lines: [(item: HajinGuide.Item, count: Int, worth: Int)], total: Int) {
+        guard let guide else { return ([], 0) }
+        var need: [String: Int] = [:]
+        for line in shoppingList(.upgrades) { need[line.item.id] = line.need }
+        let lines = stash.compactMap { id, have -> (item: HajinGuide.Item, count: Int, worth: Int)? in
+            guard let item = guide.item(id), let value = item.value, value > 0 else { return nil }
+            let extra = have - (need[id] ?? 0)
+            return extra > 0 ? (item, extra, extra * value) : nil
+        }
+        .sorted { $0.worth > $1.worth }
+        return (lines, lines.reduce(0) { $0 + $1.worth })
+    }
+}
+
+/// "Spare to sell": the stash's worth beyond what unfinished upgrades need,
+/// and the items that make it up.
+struct HajinSpareCard: View {
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        let spare = store.spare()
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Label("mw4.ui.keep.spare_title".localized(), systemImage: "dollarsign.circle.fill")
+                    .font(.hitmarker(16))
+                    .foregroundStyle(Color.appInk)
+                Spacer()
+                Text("$\(spare.total.formatted())")
+                    .font(.system(size: 18, weight: .bold, design: .monospaced))
+                    .foregroundStyle(spare.total > 0 ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInkMuted)
+            }
+            Text((store.stash.isEmpty ? "mw4.ui.keep.spare_empty" : "mw4.ui.keep.spare_detail").localized())
+                .font(.caption)
+                .foregroundStyle(Color.appInkMuted)
+            if !spare.lines.isEmpty {
+                HajinLinkChips(ids: spare.lines.prefix(8).map(\.item.id),
+                               amounts: Dictionary(spare.lines.map { ($0.item.id, $0.count) }, uniquingKeysWith: +))
+            }
+        }
+        .padding(12)
+        .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+    }
+}
+
 /// Search anything you've looted and see whether to keep or sell it.
 struct HajinKeepSellView: View {
     /// Set when shown inside the iPad guide panel, which has its own search
@@ -189,6 +236,9 @@ struct HajinKeepSellView: View {
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
+                    HajinSpareCard()
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
                 if let guide = store.guide {
                     ForEach(groups(guide), id: \.kind) { group in
@@ -216,6 +266,7 @@ extension HajinKeepSellView {
                 if query.isEmpty {
                     Text("mw4.ui.keep.intro".localized()).font(.subheadline).foregroundStyle(Color.appInkMuted)
                         .frame(maxWidth: 720, alignment: .leading)
+                    HajinSpareCard().frame(maxWidth: 720, alignment: .leading)
                 }
                 ForEach(groups(guide), id: \.kind) { group in
                     VStack(alignment: .leading, spacing: 8) {
@@ -290,7 +341,10 @@ struct HajinKeepSellRow: View {
 
 /// The guide's entry to the tool, styled like a section row.
 struct HajinKeepSellEntry: View {
+    @EnvironmentObject private var store: HajinStore
+
     var body: some View {
+        let spare = store.spare().total
         HStack(spacing: 12) {
             Image(systemName: "arrow.left.arrow.right")
                 .font(.system(size: 14, weight: .bold))
@@ -302,6 +356,11 @@ struct HajinKeepSellEntry: View {
                 Text("mw4.ui.keep.row_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
+            if spare > 0 {
+                Text(String(format: "mw4.ui.keep.spare_short".localized(), "$\(spare.formatted())"))
+                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .foregroundStyle(Color(red: 0.42, green: 0.80, blue: 0.36))
+            }
         }
         .padding(.vertical, 4)
     }

@@ -769,7 +769,12 @@ enum HajinStashGridFinder {
         let tiles = sized.filter { q in sized.contains { o in
             let d = hypot(o.c.x - q.c.x, o.c.y - q.c.y); return d > median * 0.8 && d < median * 1.8 } }
         HajinGridDebug.log("guess: photo \(cg.width)x\(cg.height), \(all.count) rectangles, \(tiles.count) tiles, size \(Int(median))")
-        guard tiles.count >= 3 else { HajinGridDebug.log("guess: too few tiles"); return nil }
+        guard tiles.count >= 3 else {
+            // A full stash has few empty tiles to find: go from the header
+            // down the frame lines instead
+            HajinGridDebug.log("guess: too few tiles, trying from the header")
+            return fromHeader(cg, text.results ?? [])
+        }
 
         // Spacing along a row and down a column, from neighbouring tiles
         var across: [CGPoint] = [], down: [CGPoint] = []
@@ -801,8 +806,13 @@ enum HajinStashGridFinder {
             guard let t = o.topCandidates(1).first?.string.uppercased() else { return nil }
             return (t, o)
         }.filter { px($0.1.bottomLeft).y < bottomPoint.y - pitch }
-        let allWord = words.first { $0.0.trimmingCharacters(in: .whitespaces) == "ALL" }?.1
         let itemsWord = words.first { $0.0.contains("ITEMS") }?.1
+        // The header's "ALL", not the side menu's: the one level with "ITEMS"
+        let allWord = words.filter { $0.0.trimmingCharacters(in: .whitespaces) == "ALL" }
+            .min { a, b in
+                let y = itemsWord.map { px($0.bottomLeft).y } ?? 0
+                return abs(px(a.1.bottomLeft).y - y) < abs(px(b.1.bottomLeft).y - y)
+            }?.1
         let headerPts = words.filter { $0.0.contains("WEAPON") || $0.0.contains("ITEMS") }.flatMap { [px($0.1.bottomLeft), px($0.1.bottomRight)] }
         HajinGridDebug.log("guess: ALL \(allWord != nil), ITEMS \(itemsWord != nil), header points \(headerPts.count), across \(hx), down \(vy)")
 
@@ -839,6 +849,89 @@ enum HajinStashGridFinder {
         let fractions = quad.map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
         let refined = refine(cg, fractions)
         HajinGridDebug.log("guess: refined \(refined)")
+        return refined
+    }
+
+    /// The frame from the header alone: top corners under "ALL" and "ITEMS",
+    /// sides square to the header line, and the bottom where the frame
+    /// lines stop when walking down the grid a row at a time.
+    static func fromHeader(_ cg: CGImage, _ observations: [VNRecognizedTextObservation]) -> [CGPoint]? {
+        let W = CGFloat(cg.width), H = CGFloat(cg.height)
+        func px(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x * W, y: (1 - v.y) * H) }
+        let words = observations.compactMap { o -> (String, VNRecognizedTextObservation)? in
+            guard let t = o.topCandidates(1).first?.string.uppercased() else { return nil }
+            return (t.trimmingCharacters(in: .whitespaces), o)
+        }
+        guard let itemsWord = words.first(where: { $0.0.contains("ITEMS") })?.1,
+              let allWord = words.filter({ $0.0 == "ALL" })
+                .min(by: { abs(px($0.1.bottomLeft).y - px(itemsWord.bottomLeft).y) < abs(px($1.1.bottomLeft).y - px(itemsWord.bottomLeft).y) })?.1,
+              abs(px(allWord.bottomLeft).y - px(itemsWord.bottomLeft).y) < H * 0.06 else {
+            HajinGridDebug.log("guess: no header words"); return nil }
+        let a = px(allWord.bottomLeft), b = px(itemsWord.bottomRight)
+        let across = CGPoint(x: b.x - a.x, y: b.y - a.y)
+        let width = hypot(across.x, across.y)
+        guard width > W * 0.2 else { return nil }
+        let down = CGPoint(x: -across.y / width, y: across.x / width)
+        let pitch = width / CGFloat(HajinStashGrid.columns)
+        let tl = CGPoint(x: a.x + down.x * pitch * 0.58, y: a.y + down.y * pitch * 0.58)
+        let tr = CGPoint(x: b.x + down.x * pitch * 0.58, y: b.y + down.y * pitch * 0.58)
+        // Straighten from the top line down to the bottom of the photo
+        let reach = min((H - tl.y) / max(down.y, 0.1), (H - tr.y) / max(down.y, 0.1)) * 0.98
+        guard reach > pitch * 1.5 else { return nil }
+        let quad = [tl, tr, CGPoint(x: tr.x + down.x * reach, y: tr.y + down.y * reach), CGPoint(x: tl.x + down.x * reach, y: tl.y + down.y * reach)]
+        let scale: CGFloat = 240 / width
+        let outH = reach * scale
+        let fractions = quad.map { CGPoint(x: $0.x / W, y: $0.y / H) }
+        guard let flat = HajinStashGrid.straighten(cg, corners: fractions, size: CGSize(width: 240, height: outH)) else { return nil }
+        let w = flat.width, h = flat.height
+        var buf = [UInt8](repeating: 0, count: w * h * 4)
+        guard let ctx = CGContext(data: &buf, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        ctx.draw(flat, in: CGRect(x: 0, y: 0, width: w, height: h))
+        var row = [Double](repeating: 0, count: h)
+        for y in 0..<h { for x in 0..<w {
+            let i = (y * w + x) * 4
+            let lo = min(buf[i], buf[i + 1], buf[i + 2]), hi = max(buf[i], buf[i + 1], buf[i + 2])
+            if lo > 110 && hi - lo < 45 { row[y] += 1 }
+        } }
+        func smooth(_ p: [Double], _ r: Int) -> [Double] {
+            var acc = [0.0]; for v in p { acc.append(acc.last! + v) }
+            return p.indices.map { i in let lo = max(0, i - r), hi = min(p.count - 1, i + r); return (acc[hi + 1] - acc[lo]) / Double(hi - lo + 1) }
+        }
+        let lines = smooth(zip(row, smooth(row, 20)).map { max(0, $0 - $1) }, 2)
+        // Row spacing: the repeat of the lines, around a tile's width (40 px here)
+        let mean = lines.reduce(0, +) / Double(h)
+        var best = (score: -Double.infinity, lag: 40)
+        for lag in 26...70 where lag < h / 2 {
+            var sc = 0.0
+            for y in 0..<(h - lag) { sc += (lines[y] - mean) * (lines[y + lag] - mean) }
+            sc /= Double(h - lag)
+            if sc > best.score { best = (sc, lag) }
+        }
+        // Walk down while there's a border line about a row further on
+        func peak(near y: Double) -> Double {
+            let lo = max(0, Int(y - Double(best.lag) * 0.2)), hi = min(h - 1, Int(y + Double(best.lag) * 0.2))
+            return lo < hi ? (lines[lo...hi].max() ?? 0) : 0
+        }
+        var strengths: [Double] = []
+        var rows = 0
+        for k in 1...20 {
+            let y = Double(k * best.lag)
+            guard y < Double(h - 2) else { break }
+            let p = peak(near: y)
+            strengths.append(p)
+            let ref = strengths.prefix(3).sorted()[strengths.prefix(3).count / 2]
+            if k > 1 && p < ref * 0.35 { break }
+            rows = k
+        }
+        HajinGridDebug.log("guess: from header, row every \(best.lag) px of 40, \(rows) rows")
+        guard rows >= 1 else { return nil }
+        let depth = CGFloat(rows * best.lag) / scale
+        let bl = CGPoint(x: tl.x + down.x * depth, y: tl.y + down.y * depth), br = CGPoint(x: tr.x + down.x * depth, y: tr.y + down.y * depth)
+        let start = [tl, tr, br, bl].map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
+        HajinGridDebug.log("guess: from header start \([tl, tr, br, bl])")
+        let refined = refine(cg, start)
+        HajinGridDebug.log("guess: from header refined \(refined)")
         return refined
     }
 
