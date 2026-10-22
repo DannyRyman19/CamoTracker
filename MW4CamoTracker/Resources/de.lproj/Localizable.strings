@@ -317,8 +317,8 @@
 "mw4.ui.hajin.scan_apply" = "Übernehmen";
 "mw4.ui.hajin.scan_same" = "Stimmt schon";
 "mw4.ui.hajin.scan_updated" = "%d Einträge aus deinen Fotos aktualisiert";
-"mw4.ui.hajin.grid_scan" = "Lagerfoto lesen";
-"mw4.ui.hajin.grid_scan_hint" = "Ein Foto oder Screenshot deines Lagerrasters im Tab Zutaten";
+"mw4.ui.hajin.grid_scan" = "Aus Foto lesen";
+"mw4.ui.hajin.grid_scan_hint" = "Dein Lager (Gegenstände, Ressourcen und Bank) oder ein 3D-Drucker-Bildschirm";
 "mw4.ui.hajin.grid_frame" = "Zieh die vier Kreise an die äußeren Ecken des Rasters. Die Linien zeigen, wo jedes Feld gelesen wird.";
 "mw4.ui.hajin.grid_read" = "Lesen";
 "mw4.ui.hajin.grid_finding" = "Raster wird gesucht...";
@@ -331,6 +331,11 @@
 "mw4.ui.hajin.grid_tip_glare" = "Vermeide Spiegelungen auf dem Bildschirm";
 "mw4.ui.hajin.grid_choose" = "Foto auswählen";
 "mw4.ui.hajin.grid_camera" = "Foto aufnehmen";
+"mw4.ui.hajin.quality_retake" = "Anderes Foto wählen";
+"mw4.ui.hajin.quality_small" = "Das Foto ist klein, die Zahlen sind vielleicht schwer zu lesen.";
+"mw4.ui.hajin.quality_glare" = "Auf dem Bildschirm ist eine Spiegelung.";
+"mw4.ui.hajin.quality_dark" = "Das Foto ist ziemlich dunkel.";
+"mw4.ui.hajin.quality_blurry" = "Das Foto wirkt unscharf, manche Zahlen werden vielleicht falsch gelesen.";
 "mw4.ui.hajin.scan_check" = "Prüfen";
 "mw4.ui.hajin.scan_edit" = "Ändern";
 "mw4.ui.hajin.scan_edit_hint" = "Tippe auf eine Zeile, um sie auszulassen. Wische oder halte gedrückt, um eine Zahl zu korrigieren.";

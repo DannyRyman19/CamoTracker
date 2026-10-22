@@ -317,8 +317,8 @@
 "mw4.ui.hajin.scan_apply" = "Bijwerken";
 "mw4.ui.hajin.scan_same" = "Klopt al";
 "mw4.ui.hajin.scan_updated" = "%d items bijgewerkt vanuit je foto's";
-"mw4.ui.hajin.grid_scan" = "Voorraadfoto lezen";
-"mw4.ui.hajin.grid_scan_hint" = "Een foto of screenshot van je voorraadraster op het tabblad Ingrediënten";
+"mw4.ui.hajin.grid_scan" = "Uit een foto lezen";
+"mw4.ui.hajin.grid_scan_hint" = "Je voorraad (items, grondstoffen en bank) of een 3D-printerscherm";
 "mw4.ui.hajin.grid_frame" = "Sleep de vier cirkels naar de buitenhoeken van het raster. De lijnen tonen waar elk vak wordt gelezen.";
 "mw4.ui.hajin.grid_read" = "Lezen";
 "mw4.ui.hajin.grid_finding" = "Raster zoeken...";
@@ -331,6 +331,11 @@
 "mw4.ui.hajin.grid_tip_glare" = "Voorkom reflecties op het scherm";
 "mw4.ui.hajin.grid_choose" = "Kies een foto";
 "mw4.ui.hajin.grid_camera" = "Foto maken";
+"mw4.ui.hajin.quality_retake" = "Kies een andere foto";
+"mw4.ui.hajin.quality_small" = "De foto is klein, de aantallen zijn misschien lastig te lezen.";
+"mw4.ui.hajin.quality_glare" = "Er is schittering op het scherm.";
+"mw4.ui.hajin.quality_dark" = "De foto is vrij donker.";
+"mw4.ui.hajin.quality_blurry" = "De foto lijkt wazig, sommige aantallen worden misschien verkeerd gelezen.";
 "mw4.ui.hajin.scan_check" = "Controleren";
 "mw4.ui.hajin.scan_edit" = "Wijzigen";
 "mw4.ui.hajin.scan_edit_hint" = "Tik op een rij om hem over te slaan. Veeg of houd vast om een aantal te verbeteren.";

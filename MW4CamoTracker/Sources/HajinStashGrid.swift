@@ -500,6 +500,10 @@ struct HajinStashGridButton: View {
     /// The picked photo, held until the intro sheet has gone
     @State private var pending: HajinPickedPhoto?
     @State private var captured: UIImage?
+    /// A 3D Printer screen (no stash grid): read straight to the review
+    @State private var textRead: HajinGridResult?
+    @State private var reopenIntro = false
+    @State private var sorting = false
 
     var body: some View {
         Button { showsIntro = true } label: {
@@ -523,7 +527,7 @@ struct HajinStashGridButton: View {
         }
         .buttonStyle(.plain)
         .sheet(isPresented: $showsIntro, onDismiss: {
-            if let pending { photo = pending; self.pending = nil }
+            if let pending { route(pending); self.pending = nil }
         }) {
             HajinStashScanIntro(pick: $pick, captured: $captured)
         }
@@ -547,8 +551,16 @@ struct HajinStashGridButton: View {
                 await MainActor.run { pick = nil }
             }
         }
-        .fullScreenCover(item: $photo) { photo in
-            HajinStashGridFrameView(image: photo.image)
+        .fullScreenCover(item: $photo, onDismiss: {
+            if reopenIntro { reopenIntro = false; showsIntro = true }
+        }) { photo in
+            HajinStashGridFrameView(image: photo.image, onRetake: { reopenIntro = true })
+        }
+        .sheet(item: $textRead) { r in
+            HajinStashScanReview(found: r.counts, cash: r.cash)
+        }
+        .overlay(alignment: .trailing) {
+            if sorting { ProgressView().padding(.trailing, 14) }
         }
         #if DEBUG
         // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
@@ -563,6 +575,67 @@ struct HajinStashGridButton: View {
         }
         #endif
     }
+}
+
+@available(iOS 17.0, *)
+extension HajinStashGridButton {
+    /// A stash grid (its header says ITEMS / STASH) goes to the framing
+    /// screen; anything else, like a 3D Printer recipe screen, is read for
+    /// its have/need counts and the bank and goes straight to the review.
+    fileprivate func route(_ picked: HajinPickedPhoto) {
+        guard let cg = picked.image.cgImage else { return }
+        let items = (store.guide?.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) }
+        sorting = true
+        Task.detached(priority: .userInitiated) {
+            let lines = HajinStashScanner.lines(in: cg)
+            let isStash = lines.contains { let t = $0.text.uppercased(); return t.contains("ITEMS") || t.contains("STASH") }
+            let counts = isStash ? [:] : HajinStashScanner.counts(in: lines, items: items)
+            let cash = HajinStashScanner.bank(in: lines)
+            await MainActor.run {
+                sorting = false
+                if isStash || counts.isEmpty { photo = picked } else { textRead = HajinGridResult(counts: counts, unsure: [], cash: cash) }
+            }
+        }
+    }
+}
+
+/// Whether a photo is good enough to read: sharp, lit, without glare, and
+/// big enough. Thresholds from the user's real stash photos against
+/// blurred and darkened copies of them.
+enum HajinPhotoQuality: String {
+    case blurry, dark, glare, small
+
+    static func issues(_ cg: CGImage) -> [HajinPhotoQuality] {
+        var out: [HajinPhotoQuality] = []
+        if min(cg.width, cg.height) < 900 { out.append(.small) }
+        // A greyscale copy, at most 800 px, middle of the photo only
+        let scale = min(1, 800 / CGFloat(max(cg.width, cg.height)))
+        let w = Int(CGFloat(cg.width) * scale), h = Int(CGFloat(cg.height) * scale)
+        var px = [UInt8](repeating: 0, count: w * h)
+        guard w > 10, h > 10, let ctx = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w,
+                                                  space: CGColorSpaceCreateDeviceGray(), bitmapInfo: 0) else { return out }
+        ctx.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h))
+        let x0 = Int(Double(w) * 0.15), x1 = Int(Double(w) * 0.85), y0 = Int(Double(h) * 0.15), y1 = Int(Double(h) * 0.8)
+        var sum = 0.0, sumSq = 0.0, n = 0.0, total = 0.0, bright = 0.0
+        for y in max(1, y0)..<min(h - 1, y1) {
+            for x in max(1, x0)..<min(w - 1, x1) {
+                let c = Double(px[y * w + x])
+                // Laplacian: how sharply each pixel differs from its neighbours
+                let lap = Double(px[(y - 1) * w + x]) + Double(px[(y + 1) * w + x]) + Double(px[y * w + x - 1]) + Double(px[y * w + x + 1]) - 4 * c
+                sum += lap; sumSq += lap * lap; n += 1
+                total += c
+                if c >= 245 { bright += 1 }
+            }
+        }
+        guard n > 0 else { return out }
+        let variance = sumSq / n - (sum / n) * (sum / n)
+        if variance < 250 { out.append(.blurry) }
+        if total / n < 45 { out.append(.dark) }
+        if bright / n > 0.08 { out.append(.glare) }
+        return out
+    }
+
+    var message: String { "mw4.ui.hajin.quality_\(rawValue)".localized() }
 }
 
 struct HajinPickedPhoto: Identifiable {
@@ -584,6 +657,9 @@ extension UIImage {
 @available(iOS 17.0, *)
 struct HajinStashGridFrameView: View {
     let image: UIImage
+    /// Choose another photo: the caller reopens the photo picker after this closes.
+    var onRetake: (() -> Void)? = nil
+    @State private var quality: [HajinPhotoQuality] = []
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
     @State private var corners: [CGPoint] = [CGPoint(x: 0.15, y: 0.25), CGPoint(x: 0.85, y: 0.25), CGPoint(x: 0.85, y: 0.75), CGPoint(x: 0.15, y: 0.75)]
@@ -598,6 +674,26 @@ struct HajinStashGridFrameView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 12) {
+                if !quality.isEmpty {
+                    // The photo looks poor: say why and offer another
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                        VStack(alignment: .leading, spacing: 4) {
+                            ForEach(quality, id: \.self) { issue in
+                                Text(issue.message).font(.subheadline).foregroundStyle(Color.appInk)
+                            }
+                            if onRetake != nil {
+                                Button("mw4.ui.hajin.quality_retake".localized()) { onRetake?(); dismiss() }
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(Color.accentDMZ)
+                            }
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+                    .padding(.horizontal, 12)
+                }
                 Text("mw4.ui.hajin.grid_frame".localized())
                     .font(.subheadline)
                     .foregroundStyle(Color.appInkMuted)
@@ -653,6 +749,8 @@ struct HajinStashGridFrameView: View {
             .task {
                 // The guess reads the photo (a second or two), off the main thread
                 guard let cg = image.cgImage else { return }
+                let issues = await Task.detached(priority: .userInitiated) { HajinPhotoQuality.issues(cg) }.value
+                withAnimation(.snappy) { quality = issues }
                 finding = true
                 let guess = await Task.detached(priority: .userInitiated) { HajinStashGridFinder.guess(cg) }.value
                 finding = false

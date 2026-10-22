@@ -211,11 +211,14 @@ struct HajinStashView: View {
                     .foregroundStyle(Color.appInkMuted)
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
-                HajinStashScanButton()
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
+                // One photo reader: the stash grid or a 3D Printer screen
+                // (iOS 16 has only the printer-screen reader)
                 if #available(iOS 17.0, *) {
                     HajinStashGridButton()
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                } else {
+                    HajinStashScanButton()
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                 }
@@ -238,9 +241,10 @@ struct HajinStashView: View {
                 if query.isEmpty {
                     Text("mw4.ui.hajin.stash_intro".localized()).font(.subheadline).foregroundStyle(Color.appInkMuted)
                         .frame(maxWidth: 720, alignment: .leading)
-                    HajinStashScanButton().frame(maxWidth: 720, alignment: .leading)
                     if #available(iOS 17.0, *) {
                         HajinStashGridButton().frame(maxWidth: 720, alignment: .leading)
+                    } else {
+                        HajinStashScanButton().frame(maxWidth: 720, alignment: .leading)
                     }
                 }
                 ForEach(groups, id: \.title) { group in

@@ -317,8 +317,8 @@
 "mw4.ui.hajin.scan_apply" = "Actualizar";
 "mw4.ui.hajin.scan_same" = "Ya es correcto";
 "mw4.ui.hajin.scan_updated" = "%d objetos actualizados desde tus fotos";
-"mw4.ui.hajin.grid_scan" = "Leer una foto del alijo";
-"mw4.ui.hajin.grid_scan_hint" = "Una foto o captura de la cuadrícula de tu alijo en la pestaña Ingredientes";
+"mw4.ui.hajin.grid_scan" = "Leer de una foto";
+"mw4.ui.hajin.grid_scan_hint" = "Tu alijo (objetos, recursos y banco) o una pantalla de la impresora 3D";
 "mw4.ui.hajin.grid_frame" = "Arrastra los cuatro círculos a las esquinas exteriores de la cuadrícula. Las líneas muestran dónde se leerá cada casilla.";
 "mw4.ui.hajin.grid_read" = "Leer";
 "mw4.ui.hajin.grid_finding" = "Buscando la cuadrícula...";
@@ -331,6 +331,11 @@
 "mw4.ui.hajin.grid_tip_glare" = "Evita reflejos en la pantalla";
 "mw4.ui.hajin.grid_choose" = "Elegir una foto";
 "mw4.ui.hajin.grid_camera" = "Hacer una foto";
+"mw4.ui.hajin.quality_retake" = "Elegir otra foto";
+"mw4.ui.hajin.quality_small" = "La foto es pequeña, puede que las cantidades cuesten de leer.";
+"mw4.ui.hajin.quality_glare" = "Hay reflejos en la pantalla de la foto.";
+"mw4.ui.hajin.quality_dark" = "La foto está bastante oscura.";
+"mw4.ui.hajin.quality_blurry" = "La foto parece borrosa, puede que algunas cantidades se lean mal.";
 "mw4.ui.hajin.scan_check" = "Revisar";
 "mw4.ui.hajin.scan_edit" = "Editar";
 "mw4.ui.hajin.scan_edit_hint" = "Toca una fila para omitirla. Desliza o mantén pulsado para corregir una cantidad.";

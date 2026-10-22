@@ -317,8 +317,8 @@
 "mw4.ui.hajin.scan_apply" = "Mettre à jour";
 "mw4.ui.hajin.scan_same" = "Déjà juste";
 "mw4.ui.hajin.scan_updated" = "%d objets mis à jour depuis tes photos";
-"mw4.ui.hajin.grid_scan" = "Lire une photo de la réserve";
-"mw4.ui.hajin.grid_scan_hint" = "Une photo ou capture de la grille de ta réserve, onglet Ingrédients";
+"mw4.ui.hajin.grid_scan" = "Lire depuis une photo";
+"mw4.ui.hajin.grid_scan_hint" = "Ta réserve (objets, ressources et banque) ou un écran de l'imprimante 3D";
 "mw4.ui.hajin.grid_frame" = "Fais glisser les quatre cercles sur les coins extérieurs de la grille. Les lignes montrent où chaque case sera lue.";
 "mw4.ui.hajin.grid_read" = "Lire";
 "mw4.ui.hajin.grid_finding" = "Recherche de la grille...";
@@ -331,6 +331,11 @@
 "mw4.ui.hajin.grid_tip_glare" = "Évite les reflets sur l'écran";
 "mw4.ui.hajin.grid_choose" = "Choisir une photo";
 "mw4.ui.hajin.grid_camera" = "Prendre une photo";
+"mw4.ui.hajin.quality_retake" = "Choisir une autre photo";
+"mw4.ui.hajin.quality_small" = "La photo est petite, les quantités seront peut-être difficiles à lire.";
+"mw4.ui.hajin.quality_glare" = "Il y a des reflets sur l'écran.";
+"mw4.ui.hajin.quality_dark" = "La photo est assez sombre.";
+"mw4.ui.hajin.quality_blurry" = "La photo semble floue, certaines quantités risquent d'être mal lues.";
 "mw4.ui.hajin.scan_check" = "À vérifier";
 "mw4.ui.hajin.scan_edit" = "Modifier";
 "mw4.ui.hajin.scan_edit_hint" = "Touche une ligne pour l'ignorer. Balaie ou maintiens pour corriger une quantité.";
