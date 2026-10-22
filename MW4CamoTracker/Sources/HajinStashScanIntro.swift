@@ -29,8 +29,8 @@ struct HajinStashScanIntro: View {
                         Text("mw4.ui.hajin.grid_tips_title".localized().uppercased())
                             .font(.system(size: 11, weight: .bold)).tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
+                        tip("photo.on.rectangle", "mw4.ui.hajin.grid_tip_screenshot", best: true)
                         tip("camera.viewfinder", "mw4.ui.hajin.grid_tip_straight")
-                        tip("photo.on.rectangle", "mw4.ui.hajin.grid_tip_screenshot")
                         tip("square.grid.3x3", "mw4.ui.hajin.grid_tip_tab")
                         tip("sun.max", "mw4.ui.hajin.grid_tip_glare")
                     }
@@ -75,16 +75,25 @@ struct HajinStashScanIntro: View {
         }
     }
 
-    private func tip(_ symbol: String, _ key: String) -> some View {
+    private func tip(_ symbol: String, _ key: String, best: Bool = false) -> some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {
             Image(systemName: symbol)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Color.accentDMZ)
                 .frame(width: 22)
-            Text(key.localized())
-                .font(.subheadline)
-                .foregroundStyle(Color.appInk)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack(alignment: .leading, spacing: 3) {
+                if best {
+                    Text("mw4.ui.hajin.grid_tip_best".localized().uppercased())
+                        .font(.system(size: 10, weight: .heavy)).tracking(0.8)
+                        .foregroundStyle(Color.black.opacity(0.85))
+                        .padding(.horizontal, 6).padding(.vertical, 2)
+                        .background(Capsule().fill(Color.accentDMZ))
+                }
+                Text(key.localized())
+                    .font(best ? .subheadline.weight(.semibold) : .subheadline)
+                    .foregroundStyle(Color.appInk)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
     }
 }

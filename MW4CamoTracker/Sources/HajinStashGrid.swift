@@ -43,12 +43,7 @@ enum HajinStashGrid {
         guard let ctx = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
                                   space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return estimate }
         ctx.draw(flat, in: CGRect(x: 0, y: 0, width: w, height: h))
-        var row = [Double](repeating: 0, count: h)
-        for y in 0..<h { for x in 0..<w {
-            let i = (y * w + x) * 4
-            let lo = min(px[i], px[i + 1], px[i + 2]), hi = max(px[i], px[i + 1], px[i + 2])
-            if lo > 110 && hi - lo < 45 { row[y] += 1 }
-        } }
+        let row = HajinFrameLines.profiles(px, w, h).rows
         func smooth(_ p: [Double], _ r: Int) -> [Double] {
             var acc = [0.0]; for v in p { acc.append(acc.last! + v) }
             return p.indices.map { i in let a = max(0, i - r), b = min(p.count - 1, i + r); return (acc[b + 1] - acc[a]) / Double(b - a + 1) }
@@ -181,15 +176,46 @@ enum HajinStashGrid {
 
     /// Stacks of the same item added together. A stack whose count couldn't
     /// be read counts as 1 and is listed in `unsure`, as is a weak match.
-    static func totals(_ tiles: [Tile]) -> (counts: [String: Int], unsure: Set<String>) {
-        var counts: [String: Int] = [:], unsure = Set<String>()
+    static func totals(_ tiles: [Tile]) -> (counts: [String: Int], unsure: Set<String>, sureness: [String: Float], stacks: [String: Int]) {
+        var counts: [String: Int] = [:], unsure = Set<String>(), sureness: [String: Float] = [:], stacks: [String: Int] = [:]
         // "other" is anything that isn't an ingredient (gear, keys, valuables
         // on the All tab): not tracked in My stash, so left out
         for t in tiles where t.id != "empty" && t.id != "other" {
             counts[t.id, default: 0] += t.count ?? 1
+            stacks[t.id, default: 0] += 1
+            // how sure of the item: its least certain stack
+            sureness[t.id] = min(sureness[t.id] ?? 1, t.confidence)
             if t.count == nil || t.confidence < 0.5 { unsure.insert(t.id) }
         }
-        return (counts, unsure)
+        return (counts, unsure, sureness, stacks)
+    }
+}
+
+/// The tiles' frame lines, counted along each column and row of a
+/// straightened grid (RGBA pixels). A frame pixel is unsaturated and either
+/// bright (a photo of a TV) or a thin ridge clearly brighter than the pixels
+/// a little either side of it (a console screenshot, where the lines are a
+/// dim grey on near black).
+enum HajinFrameLines {
+    static func profiles(_ px: [UInt8], _ w: Int, _ h: Int) -> (cols: [Double], rows: [Double]) {
+        let r = w > 600 ? 4 : 2
+        var cols = [Double](repeating: 0, count: w), rows = [Double](repeating: 0, count: h)
+        func lum(_ x: Int, _ y: Int) -> Int { let i = (y * w + x) * 4; return (Int(px[i]) + Int(px[i + 1]) + Int(px[i + 2])) / 3 }
+        for y in 0..<h {
+            for x in 0..<w {
+                let i = (y * w + x) * 4
+                let lo = min(px[i], px[i + 1], px[i + 2]), hi = max(px[i], px[i + 1], px[i + 2])
+                guard hi - lo < 45 else { continue }
+                if lo > 110 { cols[x] += 1; rows[y] += 1; continue }
+                let l = lum(x, y)
+                guard l >= 40 else { continue }
+                // a horizontal line: brighter than above and below it
+                if y >= r && y < h - r && l - max(lum(x, y - r), lum(x, y + r)) > 15 { rows[y] += 1 }
+                // a vertical line: brighter than left and right of it
+                if x >= r && x < w - r && l - max(lum(x - r, y), lum(x + r, y)) > 15 { cols[x] += 1 }
+            }
+        }
+        return (cols, rows)
     }
 }
 
@@ -209,15 +235,7 @@ enum HajinGridLattice {
         ctx.draw(image, in: CGRect(x: 0, y: 0, width: w, height: h))
         // Frame lines are light grey; rarity bars are bright but coloured, so
         // count bright, unsaturated pixels along each column and row
-        var colProfile = [Double](repeating: 0, count: w), rowProfile = [Double](repeating: 0, count: h)
-        for y in 0..<h {
-            for x in 0..<w {
-                let i = (y * w + x) * 4
-                let r = Int(px[i]), g = Int(px[i + 1]), b = Int(px[i + 2])
-                let lo = min(r, g, b), hi = max(r, g, b)
-                if lo > 110 && hi - lo < 45 { colProfile[x] += 1; rowProfile[y] += 1 }
-            }
-        }
+        var (colProfile, rowProfile) = HajinFrameLines.profiles(px, w, h)
         // Each gap has a frame line either side; smoothing turns the pair
         // into one peak centred on the gap
         // White icons add broad humps; keep only the narrow frame lines by
@@ -364,7 +382,8 @@ enum HajinStackCount {
         var chain = [cs.removeLast()]
         while let c = cs.popLast() {
             let last = chain[0]
-            guard Double(last.minX - c.maxX) < Double(last.height) * 0.35,
+            // crisp screenshot digits sit a little further apart than a photo's
+            guard Double(last.minX - c.maxX) < Double(last.height) * 0.6,
                   abs(Double(c.height - last.height)) < Double(last.height) * 0.25 else { break }
             chain.insert(c, at: 0)
         }
@@ -437,8 +456,38 @@ enum HajinStackCount {
 
     private struct Template { let digit: String; let bits: [Character]; let holes: Int; let aspect: Double }
     private static let templates: [Template] = raw.map { Template(digit: $0.0, bits: Array($0.1), holes: $0.2, aspect: $0.3) }
-    /// Digits from stash photos, then the Hitmarker font (12 x 20, holes, width/height)
+    /// Digits from stash photos, a console screenshot (its zero has a slash,
+    /// so two holes), then the Hitmarker font (12 x 20, holes, width/height)
     private static let raw: [(String, String, Int, Double)] = [
+        ("1", "000001111111000111111111001111111111000000001111000000000111000000000111000000000111000000000111000000011111000000000111000000000111000000000111000000000111000000000111000000000111000000000111000000000111000000000111000000000111000000000011", 0, 0.241),
+        ("4", "000000111100000001111100000001111100000001111100000011111100000111011100000110001100000100001100001100001100001100001100011000001100110000001100110000001100111000011111111111111111000000111110000000001100000000001100000000001100000000001100", 1, 0.500),
+        ("2", "000111111100001110001110011100000111111000000111000000000011000000000011000000000011000000000111000000000111000000011100000000111000000001110000000011100000001110000000001110000000001100000000011000000000111000000000111110000000011111111111", 0, 0.483),
+        ("2", "000111111000011100001100011000001110111000000110000000000011000000000011000000000010000000000110000000001100000000011000000000110000000011100000000111000000001110000000011100000000011000000000011000000000011000000000111100000000011111111110", 0, 0.517),
+        ("2", "000111111000011110011110011000000110111000000111000000000111000000000111000000000111000000000111000000000110000000011100000000111000000001110000000111000000001110000000001100000000011000000000111000000000111000000000111100000000111111111111", 0, 0.483),
+        ("1", "000001111111000011111111000111111111111000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000000111", 0, 0.310),
+        ("3", "000001000000001111111000011100001100011000000110000000000110000000000110000000000110000000001100000000011000000001111000000000011000000000001100000000000110000000000011000000000011000000000011110000000110011000001110001110011100000011100000", 0, 0.500),
+        ("6", "000001110000000001100000000011100000000111000000000110000000001110000000001100000000011100000000011111111100111111111110111000001110111000000111110000000111110000000111110000000111110000000111111000000111011000000110001110011100000001100000", 1, 0.483),
+        ("8", "000111110000001100001100011000000110011000000110010000000110010000000110011000000110001100001100000111111100001111111100001100000100011000000110110000000110110000000010110000000011110000000010111000000110011100001110001110011100000001100000", 2, 0.517),
+        ("5", "111111111100111000000000110000000000110000000000110000000000110000000000110000000000111100000000111111111100111000001100000000000110000000000111000000000111000000000111000000000111000000000111110000000110111000001100011110111100000111100000", 0, 0.483),
+        ("2", "000000001100000000000110000000000011000000000011000000000011000000000011000000000011000000000100000000001100000000011000000000110000000011000000000110000000001100000000001000000000001000000000011000000000111000000000111000000000000000000001", 0, 0.500),
+        ("1", "000000111111000011111111000111111111111000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111", 0, 0.310),
+        ("6", "000000110000000001100000000011100000000011000000000110000000000110000000001100000000001100000000011100000000011111111100111100011110110000000111110000000111110000000111110000000111110000000111110000000111111000000110011100011100001111111000", 1, 0.483),
+        ("1", "000001111111000111111111011111111111111110111111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000001111000000011111000001111111000000111100000000010000000000011000", 0, 0.314),
+        ("0", "000111111000001111111100011110011110011100001110011100001111011000001111011000011111011000011111111000111111111001101111011111101111011111001111011110001111011100001111011100001111011100001111011100001110011110011110001111111100000111111000", 2, 0.567),
+        ("2", "000011100000011110011100110000000100100000000110000000000110000000000110000000000110000000000100000000000100000000001000000000111000000001100000000010000000001100000000001000000000011000000000110000000000110000000000110000000000111111111111", 0, 0.483),
+        ("8", "000011110000001111111100011000000100111000000111111000000111111000000111011000000110011000001110001110001100000111111000001110011100001000000100111000000111111000000011110000000011110000000011111000000111111000000111011110011110001111111100", 2, 0.483),
+        ("5", "011111111110011100000000011000000000011000000000011000000000111000000000111000000000011111110000011111111110111100001110000000000111000000000011000000000011000000000011000000000011000000000011011000000111011100000110001111111100000000100000", 0, 0.467),
+        ("9", "000001100000001110011100001100000111111000000111111000000011111000000011111000000011111000000011111000000011011100000111001111111111000111111111000000001110000000001100000000001100000000011000000000111000000000111000000001100000000001100000", 1, 0.483),
+        ("3", "000011110000001110011100011000000110000000000110000000000110000000000110000000000110000000001100000000111100000000111000000000001000000000000110000000000110000000000011000000000011000000000011110000000110011000000110001100001100000111111000", 0, 0.517),
+        ("2", "000011110000001110011110001100000111011000000011000000000011000000000011000000000011000000000111000000000111000000001100000000011100000001110000000011000000000111000000001110000000001100000000011000000000011000000000111100000000111111111111", 0, 0.483),
+        ("1", "000000011110000001111111001111111111001100001111110000001111000000001111000000001111000000001111000000001111000000001111000000001110000000001110000000001110000000001110000000001110000000001110000000001110000000001110000000001110000000001110", 0, 0.345),
+        ("6", "000000110000000001110000000001100000000011000000000011000000000110000000000110000000001100000000001111010000011111111110111100001111111000000111111000000011110000000011110000000011110000000011111000000111011000000110001110011110000011111000", 1, 0.483),
+        ("3", "000111111000011110011110011000000110010000000011000000000011000000000011000000000110000000001110000000111100000001111000000000011100000000000110000000000011000000000011000000000011000000000011110000000011011000000110011110011110000111111000", 0, 0.483),
+        ("2", "001111111000011110011100111000000110110000000111000000000111000000000111000000000111000000000111000000000100000000011100000000111000000011100000000110000000001110000000001100000000011000000000111000000000111000000000111000000000111111111111", 0, 0.483),
+        ("4", "000000011100000000011100000000011100000000111100000001111100000000000100000000000100000000000100000000000100000000000100000000000100000000000100000000000100111000001100000000011111000000001100000000000100000000000100000000000100000000000100", 0, 0.483),
+        ("7", "111111111111000000001111000000000110000000000100000000000100000000001100000000001100000000011000000000011000000000011000000000111000000000110000000000110000000001100000000001100000000001100000000011000000000011000000000011000000000010000000", 0, 0.517),
+        ("1", "000000111110000001111111000111111111011111111111111100011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000011111000000001110", 0, 0.355),
+        ("0", "000111111000001111111100011111111110011100001111111000000111111000001111111000001111111000011111111000111111111001111111111111100111111111000111111110000111111110000111111100000111111100000111011100001111011111111110001111111100000011111000", 2, 0.516),
         ("1", "000001111000000000111111000111111111001111111111011111111111011111111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000111111000000001111", 0, 0.375),
         ("4", "000000111100000001111110000001111110000001111110000001111110000011111110000111111110000111001110000111011110011111011110011110011110011110011110011110111110111111111111011111111111000000011110000000011110000000011110000000011110000000000110", 1, 0.562),
         ("2", "000011111000001111111100011111111110011110001111111100001111000000001111000000001111000000001111000000001110000000111110000001111100000011111000000111100000000111000000011110000000011110000000011100000000011111111111011111111111000000000011", 0, 0.531),
@@ -493,6 +542,8 @@ enum HajinStackCount {
 /// frame the grid, read it, review. iOS 17+: the icon model needs it.
 @available(iOS 17.0, *)
 struct HajinStashGridButton: View {
+    /// The big My DMZ card (demo, headline, button) rather than a row.
+    var hero = false
     @EnvironmentObject private var store: HajinStore
     @State private var pick: PhotosPickerItem?
     @State private var photo: HajinPickedPhoto?
@@ -507,23 +558,7 @@ struct HajinStashGridButton: View {
 
     var body: some View {
         Button { showsIntro = true } label: {
-            HStack(spacing: 10) {
-                Image(systemName: "square.grid.3x3.fill")
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.accentDMZ)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("mw4.ui.hajin.grid_scan".localized())
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Color.appInk)
-                    Text("mw4.ui.hajin.grid_scan_hint".localized())
-                        .font(.caption)
-                        .foregroundStyle(Color.appInkMuted)
-                        .multilineTextAlignment(.leading)
-                }
-                Spacer(minLength: 0)
-            }
-            .padding(12)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+            if hero { heroLabel } else { rowLabel }
         }
         .buttonStyle(.plain)
         .sheet(isPresented: $showsIntro, onDismiss: {
@@ -575,7 +610,67 @@ struct HajinStashGridButton: View {
         }
         #endif
     }
+
+    /// The headline card: what it does, the little demo, and the button.
+    private var heroLabel: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                Text("mw4.ui.hajin.scan_new".localized().uppercased())
+                    .font(.system(size: 10, weight: .heavy)).tracking(0.8)
+                    .foregroundStyle(Color.black.opacity(0.85))
+                    .padding(.horizontal, 7).padding(.vertical, 3)
+                    .background(Capsule().fill(Color.accentDMZ))
+                Text("mw4.ui.hajin.scan_hero_kicker".localized())
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            Text("mw4.ui.hajin.scan_hero_title".localized())
+                .font(.hitmarker(22))
+                .foregroundStyle(Color.appInk)
+                .multilineTextAlignment(.leading)
+            Text("mw4.ui.hajin.scan_hero_subtitle".localized())
+                .font(.subheadline)
+                .foregroundStyle(Color.appInkMuted)
+                .multilineTextAlignment(.leading)
+            HajinStashScanDemo()
+                .frame(maxWidth: .infinity)
+                .allowsHitTesting(false)
+            Label("mw4.ui.hajin.scan_hero_button".localized(), systemImage: "camera.viewfinder")
+                .font(.headline)
+                .foregroundStyle(Color.black.opacity(0.85))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
+        }
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(LinearGradient(colors: [Color.accentDMZ.opacity(0.22), Color.appSurface], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.accentDMZ.opacity(0.5), lineWidth: 1))
+        )
+    }
+
+    private var rowLabel: some View {
+            HStack(spacing: 10) {
+                Image(systemName: "square.grid.3x3.fill")
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color.accentDMZ)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("mw4.ui.hajin.grid_scan".localized())
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Color.appInk)
+                    Text("mw4.ui.hajin.grid_scan_hint".localized())
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(12)
+            .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+    }
 }
+
 
 @available(iOS 17.0, *)
 extension HajinStashGridButton {
@@ -736,7 +831,8 @@ struct HajinStashGridFrameView: View {
                 }
             }
             .sheet(item: $result, onDismiss: { if result == nil { } }) { r in
-                HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level, onDone: { dismiss() })
+                HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
+                                     sureness: r.sureness, stacks: r.stacks, onDone: { dismiss() })
             }
             .overlay(alignment: .bottom) {
                 if finding {
@@ -825,7 +921,8 @@ struct HajinStashGridFrameView: View {
             let level = HajinStashScanner.level(in: lines)
             await MainActor.run {
                 reading = false
-                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level)
+                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
+                                         sureness: totals.sureness, stacks: totals.stacks)
             }
         }
     }
@@ -837,6 +934,8 @@ struct HajinGridResult: Identifiable {
     let unsure: Set<String>
     var cash: Int? = nil
     var level: Int? = nil
+    var sureness: [String: Float] = [:]
+    var stacks: [String: Int] = [:]
 }
 
 /// A first guess at the grid's corners, for the player to adjust:
@@ -864,25 +963,111 @@ enum HajinStashGridFinder {
         text.recognitionLevel = .accurate
         text.usesLanguageCorrection = false
         try? VNImageRequestHandler(cgImage: cg).perform([rects, text])
+        // The header ("ALL ... 79/94 ITEMS") pins the grid's top and width;
+        // walking down its frame lines finds the bottom. Works for any
+        // stash, full or not. The tiles the rectangle finder sees are the
+        // fallback for photos where the header can't be read.
+        // Three ways in; keep the frame that lines up best with the tiles'
+        // frame lines. A straight screenshot is solved exactly by the first.
+        let candidates: [(String, [CGPoint])] = [
+            ("straight", fromStraightLattice(cg, text.results ?? [])),
+            ("header", fromHeader(cg, text.results ?? [])),
+            ("tiles", fromTiles(cg, rects.results ?? [], text.results ?? [])),
+        ].compactMap { name, q in q.map { (name, $0) } }
+        let scored = candidates.map { ($0.0, $0.1, frameScore(cg, $0.1)) }
+        HajinGridDebug.log("guess: " + scored.map { "\($0.0) \(String(format: "%.3f", $0.2))" }.joined(separator: ", "))
+        return scored.max { $0.2 < $1.2 }?.1
+    }
+
+    /// For a straight-on screenshot (no perspective): the column lines and
+    /// evenly spaced row lines found directly in the strip under the header,
+    /// between "ALL" and "ITEMS". Tiles are square, so rows share the
+    /// column spacing; rows are counted until the lines stop.
+    static func fromStraightLattice(_ cg: CGImage, _ observations: [VNRecognizedTextObservation]) -> [CGPoint]? {
+        let W = CGFloat(cg.width), H = CGFloat(cg.height)
+        func px(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x * W, y: (1 - v.y) * H) }
+        let words = observations.compactMap { o -> (String, VNRecognizedTextObservation)? in
+            guard let t = o.topCandidates(1).first?.string.uppercased() else { return nil }
+            return (t.trimmingCharacters(in: .whitespaces), o)
+        }
+        guard let itemsWord = words.first(where: { $0.0.contains("ITEMS") })?.1,
+              let allWord = words.filter({ $0.0 == "ALL" })
+                .min(by: { abs(px($0.1.bottomLeft).y - px(itemsWord.bottomLeft).y) < abs(px($1.1.bottomLeft).y - px(itemsWord.bottomLeft).y) })?.1 else { return nil }
+        let a = px(allWord.bottomLeft), b = px(itemsWord.bottomRight)
+        // Straight only: the header must be level
+        guard abs(a.y - b.y) < (b.x - a.x) * 0.02, b.x - a.x > W * 0.1 else { return nil }
+        // Work on a copy about 1200 px wide
+        let scale = min(1, 1200 / W)
+        let pitch0 = (b.x - a.x) / CGFloat(HajinStashGrid.columns) * scale
+        let x0 = max(0, Int((a.x * scale) - pitch0)), x1 = min(Int(W * scale) - 1, Int(b.x * scale + pitch0))
+        let y0 = max(0, Int(a.y * scale)), y1 = Int(H * scale) - 1
+        let w = x1 - x0, h = y1 - y0
+        guard w > 20, h > 20 else { return nil }
+        var buf = [UInt8](repeating: 0, count: w * h * 4)
+        guard let ctx = CGContext(data: &buf, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        // draw the crop: shift so (x0, y0) lands at the origin (CG's origin is bottom left)
+        let fullW = W * scale, fullH = H * scale
+        ctx.draw(cg, in: CGRect(x: -CGFloat(x0), y: CGFloat(y0) - (fullH - CGFloat(h)), width: fullW, height: fullH))
+        var (cols, rows) = HajinFrameLines.profiles(buf, w, h)
+        func smooth(_ p: [Double], _ r: Int) -> [Double] {
+            var acc = [0.0]; for v in p { acc.append(acc.last! + v) }
+            return p.indices.map { i in let lo = max(0, i - r), hi = min(p.count - 1, i + r); return (acc[hi + 1] - acc[lo]) / Double(hi - lo + 1) }
+        }
+        cols = smooth(zip(cols, smooth(cols, 20)).map { max(0, $0 - $1) }, 2)
+        rows = smooth(zip(rows, smooth(rows, 20)).map { max(0, $0 - $1) }, 2)
+        // the 7 column lines
+        var bestCol = (score: -1.0, x: 0.0, p: 0.0)
+        for p in stride(from: Double(pitch0) * 0.9, through: Double(pitch0) * 1.1, by: 0.5) {
+            for x in stride(from: Double(pitch0) * 0.6, through: Double(pitch0) * 1.4, by: 1) {
+                guard Int(x + 6 * p) < w else { continue }
+                var sc = 0.0
+                for k in 0...HajinStashGrid.columns { sc += cols[Int(x + Double(k) * p)] }
+                if sc > bestCol.score { bestCol = (sc, x, p) }
+            }
+        }
+        guard bestCol.p > 0 else { return nil }
+        let p = bestCol.p
+        // the top row line just under the header, then rows while lines continue
+        var bestTop = (score: -1.0, y: 0.0)
+        for y in stride(from: p * 0.2, through: p * 1.2, by: 1) where Int(y) < h { if rows[Int(y)] > bestTop.score { bestTop = (rows[Int(y)], y) } }
+        var strengths = [bestTop.score]
+        var count = 0
+        for j in 1...14 {
+            let y = bestTop.y + Double(j) * p
+            guard Int(y) + 3 < h else { break }
+            let lo = max(0, Int(y) - 3), hi = min(h - 1, Int(y) + 3)
+            let st = rows[lo...hi].max() ?? 0
+            let ref = strengths.sorted()[strengths.count / 2]
+            if j > 1 && st < ref * 0.35 { break }
+            strengths.append(st); count = j
+        }
+        guard count >= 1 else { return nil }
+        HajinGridDebug.log("guess: straight lattice pitch \(Int(p)) px, \(count) rows")
+        let left = (CGFloat(x0) + CGFloat(bestCol.x)) / scale, right = (CGFloat(x0) + CGFloat(bestCol.x + 6 * p)) / scale
+        let top = (CGFloat(y0) + CGFloat(bestTop.y)) / scale, bottom = (CGFloat(y0) + CGFloat(bestTop.y + Double(count) * p)) / scale
+        return [CGPoint(x: left, y: top), CGPoint(x: right, y: top), CGPoint(x: right, y: bottom), CGPoint(x: left, y: bottom)]
+            .map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
+    }
+
+    /// The frame from the tiles the rectangle detector finds (mostly empty
+    /// ones), with the header words for the top when they're there.
+    static func fromTiles(_ cg: CGImage, _ rectObservations: [VNRectangleObservation], _ textObservations: [VNRecognizedTextObservation]) -> [CGPoint]? {
+        let W = CGFloat(cg.width), H = CGFloat(cg.height)
         func px(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x * W, y: (1 - v.y) * H) }
         func mid(_ a: CGPoint, _ b: CGPoint) -> CGPoint { CGPoint(x: (a.x + b.x) / 2, y: (a.y + b.y) / 2) }
 
         // Tiles: rectangles of the common size that have a neighbour at a
         // tile's spacing (drops menu boxes and other strays)
         struct Q { let tl, tr, br, bl: CGPoint; var c: CGPoint { CGPoint(x: (tl.x + br.x) / 2, y: (tl.y + br.y) / 2) }; var size: CGFloat { (hypot(tr.x - tl.x, tr.y - tl.y) + hypot(bl.x - tl.x, bl.y - tl.y)) / 2 } }
-        let all = (rects.results ?? []).map { Q(tl: px($0.topLeft), tr: px($0.topRight), br: px($0.bottomRight), bl: px($0.bottomLeft)) }
+        let all = rectObservations.map { Q(tl: px($0.topLeft), tr: px($0.topRight), br: px($0.bottomRight), bl: px($0.bottomLeft)) }
         guard !all.isEmpty else { HajinGridDebug.log("guess: no rectangles"); return nil }
         let median = all.map(\.size).sorted()[all.count / 2]
         let sized = all.filter { $0.size > median * 0.7 && $0.size < median * 1.4 }
         let tiles = sized.filter { q in sized.contains { o in
             let d = hypot(o.c.x - q.c.x, o.c.y - q.c.y); return d > median * 0.8 && d < median * 1.8 } }
         HajinGridDebug.log("guess: photo \(cg.width)x\(cg.height), \(all.count) rectangles, \(tiles.count) tiles, size \(Int(median))")
-        guard tiles.count >= 3 else {
-            // A full stash has few empty tiles to find: go from the header
-            // down the frame lines instead
-            HajinGridDebug.log("guess: too few tiles, trying from the header")
-            return fromHeader(cg, text.results ?? [])
-        }
+        guard tiles.count >= 3 else { HajinGridDebug.log("guess: too few tiles"); return nil }
 
         // Spacing along a row and down a column, from neighbouring tiles
         var across: [CGPoint] = [], down: [CGPoint] = []
@@ -910,7 +1095,7 @@ enum HajinStashGridFinder {
 
         // The header words: "ALL" starts over the grid's left edge, "ITEMS"
         // ends over its right edge, and the grid starts just under them
-        let words = (text.results ?? []).compactMap { o -> (String, VNRecognizedTextObservation)? in
+        let words = textObservations.compactMap { o -> (String, VNRecognizedTextObservation)? in
             guard let t = o.topCandidates(1).first?.string.uppercased() else { return nil }
             return (t, o)
         }.filter { px($0.1.bottomLeft).y < bottomPoint.y - pitch }
@@ -921,7 +1106,11 @@ enum HajinStashGridFinder {
                 let y = itemsWord.map { px($0.bottomLeft).y } ?? 0
                 return abs(px(a.1.bottomLeft).y - y) < abs(px(b.1.bottomLeft).y - y)
             }?.1
-        let headerPts = words.filter { $0.0.contains("WEAPON") || $0.0.contains("ITEMS") }.flatMap { [px($0.1.bottomLeft), px($0.1.bottomRight)] }
+        // Header words only: the side menu has its own WEAPONS further down
+        let itemsY = itemsWord.map { px($0.bottomLeft).y }
+        let headerPts = words.filter { word in
+            (word.0.contains("WEAPON") || word.0.contains("ITEMS")) && (itemsY.map { abs(px(word.1.bottomLeft).y - $0) < H * 0.03 } ?? true)
+        }.flatMap { [px($0.1.bottomLeft), px($0.1.bottomRight)] }
         HajinGridDebug.log("guess: ALL \(allWord != nil), ITEMS \(itemsWord != nil), header points \(headerPts.count), across \(hx), down \(vy)")
 
         var topLeft: CGPoint, topRight: CGPoint
@@ -996,12 +1185,7 @@ enum HajinStashGridFinder {
         guard let ctx = CGContext(data: &buf, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
                                   space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
         ctx.draw(flat, in: CGRect(x: 0, y: 0, width: w, height: h))
-        var row = [Double](repeating: 0, count: h)
-        for y in 0..<h { for x in 0..<w {
-            let i = (y * w + x) * 4
-            let lo = min(buf[i], buf[i + 1], buf[i + 2]), hi = max(buf[i], buf[i + 1], buf[i + 2])
-            if lo > 110 && hi - lo < 45 { row[y] += 1 }
-        } }
+        let row = HajinFrameLines.profiles(buf, w, h).rows
         func smooth(_ p: [Double], _ r: Int) -> [Double] {
             var acc = [0.0]; for v in p { acc.append(acc.last! + v) }
             return p.indices.map { i in let lo = max(0, i - r), hi = min(p.count - 1, i + r); return (acc[hi + 1] - acc[lo]) / Double(hi - lo + 1) }
@@ -1038,7 +1222,9 @@ enum HajinStashGridFinder {
         let bl = CGPoint(x: tl.x + down.x * depth, y: tl.y + down.y * depth), br = CGPoint(x: tr.x + down.x * depth, y: tr.y + down.y * depth)
         let start = [tl, tr, br, bl].map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
         HajinGridDebug.log("guess: from header start \([tl, tr, br, bl])")
-        let refined = refine(cg, start)
+        // The walk already counted the rows; re-measuring can lock onto a
+        // two- or three-row repeat
+        let refined = refine(cg, start, rows: rows)
         HajinGridDebug.log("guess: from header refined \(refined)")
         return refined
     }
@@ -1046,42 +1232,8 @@ enum HajinStashGridFinder {
     /// Nudges each corner (coordinate descent on a quarter-size copy) to
     /// where the straightened grid's frame lines fall exactly on its 7
     /// column and row borders.
-    static func refine(_ cg: CGImage, _ start: [CGPoint]) -> [CGPoint] {
-        let scale: CGFloat = 0.25
-        let small = CIImage(cgImage: cg).transformed(by: CGAffineTransform(scaleX: scale, y: scale))
-        let size = CGSize(width: CGFloat(cg.width) * scale, height: CGFloat(cg.height) * scale)
-        let ci = CIContext()
-        let rows = HajinStashGrid.measureRows(cg, corners: start)
-        func score(_ q: [CGPoint]) -> Double {
-            let cell: CGFloat = 40
-            guard let f = CIFilter(name: "CIPerspectiveCorrection") else { return 0 }
-            func v(_ p: CGPoint) -> CIVector { CIVector(x: p.x * size.width, y: (1 - p.y) * size.height) }
-            f.setValue(small, forKey: kCIInputImageKey)
-            f.setValue(v(q[0]), forKey: "inputTopLeft"); f.setValue(v(q[1]), forKey: "inputTopRight")
-            f.setValue(v(q[2]), forKey: "inputBottomRight"); f.setValue(v(q[3]), forKey: "inputBottomLeft")
-            guard var o = f.outputImage, o.extent.width > 1 else { return 0 }
-            let ow = cell * CGFloat(HajinStashGrid.columns), oh = cell * CGFloat(rows)
-            o = o.transformed(by: CGAffineTransform(translationX: -o.extent.minX, y: -o.extent.minY))
-            o = o.transformed(by: CGAffineTransform(scaleX: ow / o.extent.width, y: oh / o.extent.height))
-            guard let g = ci.createCGImage(o, from: CGRect(x: 0, y: 0, width: ow, height: oh)) else { return 0 }
-            let w = g.width, h = g.height
-            var px = [UInt8](repeating: 0, count: w * h * 4)
-            guard let c = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
-                                    space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 0 }
-            c.draw(g, in: CGRect(x: 0, y: 0, width: w, height: h))
-            var col = [Double](repeating: 0, count: w), row = [Double](repeating: 0, count: h)
-            for y in 0..<h { for x in 0..<w {
-                let i = (y * w + x) * 4
-                let lo = min(px[i], px[i + 1], px[i + 2]), hi = max(px[i], px[i + 1], px[i + 2])
-                if lo > 110 && hi - lo < 45 { col[x] += 1; row[y] += 1 }
-            } }
-            // Frame lines sit just inside each border: look 3 px either side
-            func at(_ p: [Double], _ c: Int) -> Double { p[max(0, c - 3)...min(p.count - 1, c + 3)].max() ?? 0 }
-            var total = 0.0
-            for k in 0...HajinStashGrid.columns { total += at(col, Int(CGFloat(k) * cell)) / Double(h) }
-            for j in 0...rows { total += at(row, Int(CGFloat(j) * cell)) / Double(w) }
-            return total / Double(HajinStashGrid.columns + rows + 2)
-        }
+    static func refine(_ cg: CGImage, _ start: [CGPoint], rows known: Int? = nil) -> [CGPoint] {
+        let score = scorer(cg, rows: known ?? HajinStashGrid.measureRows(cg, corners: start))
         var q = start
         var best = score(q)
         for step in [0.012, 0.006, 0.003] {
@@ -1099,5 +1251,45 @@ enum HajinStashGridFinder {
             }
         }
         return q
+    }
+
+    /// How well a frame lines up with the tiles' frame lines (higher is
+    /// better), for choosing between two guesses.
+    static func frameScore(_ cg: CGImage, _ q: [CGPoint]) -> Double {
+        scorer(cg, rows: HajinStashGrid.measureRows(cg, corners: q))(q)
+    }
+
+    /// Scores frames on a quarter-size copy: straightened with the given
+    /// rows, the mean frame-line strength at the 7 column and row borders.
+    static func scorer(_ cg: CGImage, rows: Int) -> ([CGPoint]) -> Double {
+        let scale: CGFloat = 0.25
+        let small = CIImage(cgImage: cg).transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+        let size = CGSize(width: CGFloat(cg.width) * scale, height: CGFloat(cg.height) * scale)
+        let ci = CIContext()
+        return { q in
+            let cell: CGFloat = 40
+            guard let f = CIFilter(name: "CIPerspectiveCorrection") else { return 0 }
+            func v(_ p: CGPoint) -> CIVector { CIVector(x: p.x * size.width, y: (1 - p.y) * size.height) }
+            f.setValue(small, forKey: kCIInputImageKey)
+            f.setValue(v(q[0]), forKey: "inputTopLeft"); f.setValue(v(q[1]), forKey: "inputTopRight")
+            f.setValue(v(q[2]), forKey: "inputBottomRight"); f.setValue(v(q[3]), forKey: "inputBottomLeft")
+            guard var o = f.outputImage, o.extent.width > 1 else { return 0 }
+            let ow = cell * CGFloat(HajinStashGrid.columns), oh = cell * CGFloat(rows)
+            o = o.transformed(by: CGAffineTransform(translationX: -o.extent.minX, y: -o.extent.minY))
+            o = o.transformed(by: CGAffineTransform(scaleX: ow / o.extent.width, y: oh / o.extent.height))
+            guard let g = ci.createCGImage(o, from: CGRect(x: 0, y: 0, width: ow, height: oh)) else { return 0 }
+            let w = g.width, h = g.height
+            var px = [UInt8](repeating: 0, count: w * h * 4)
+            guard let c = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                    space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 0 }
+            c.draw(g, in: CGRect(x: 0, y: 0, width: w, height: h))
+            let (col, row) = HajinFrameLines.profiles(px, w, h)
+            // Frame lines sit just inside each border: look 3 px either side
+            func at(_ p: [Double], _ c: Int) -> Double { p[max(0, c - 3)...min(p.count - 1, c + 3)].max() ?? 0 }
+            var total = 0.0
+            for k in 0...HajinStashGrid.columns { total += at(col, Int(CGFloat(k) * cell)) / Double(h) }
+            for j in 0...rows { total += at(row, Int(CGFloat(j) * cell)) / Double(w) }
+            return total / Double(HajinStashGrid.columns + rows + 2)
+        }
     }
 }

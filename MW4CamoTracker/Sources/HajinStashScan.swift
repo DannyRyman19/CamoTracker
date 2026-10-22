@@ -231,6 +231,10 @@ struct HajinStashScanReview: View {
     var cash: Int? = nil
     /// The DMZ level read from the photo, if it showed one.
     var level: Int? = nil
+    /// Stash photos: how sure the icon model was of each item (its least
+    /// certain stack) and how many stacks it found.
+    var sureness: [String: Float] = [:]
+    var stacks: [String: Int] = [:]
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
@@ -247,7 +251,22 @@ struct HajinStashScanReview: View {
         // reader also recognises keys, gear and valuables, and leaves them out.
         found.compactMap { id, n in store.guide?.item(id).flatMap { ["Ingredient", "Resource"].contains($0.kind) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
-            .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
+            // Ones to check first, then changes, then ones already right
+            .sorted { (rank($0), $0.item.name.resolved) < (rank($1), $1.item.name.resolved) }
+    }
+
+    private func rank(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> Int {
+        if unsure.contains(row.item.id) && edited[row.item.id] == nil { return 0 }
+        return row.now == row.read ? 2 : 1
+    }
+
+    /// "10 · Already right": the value, then the note.
+    private func sameLabel(_ value: String) -> some View {
+        HStack(spacing: 6) {
+            Text(value).font(.system(size: 13, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInk)
+            Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+            Image(systemName: "checkmark").font(.caption.weight(.bold)).foregroundStyle(HajinStore.printableGreen)
+        }
     }
 
     /// A single value read from the photo (level), now → read, tap to skip.
@@ -258,7 +277,7 @@ struct HajinStashScanReview: View {
                 Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                 Spacer(minLength: 8)
                 if same {
-                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                    sameLabel(read)
                 } else {
                     Text("\(now) → \(read)")
                         .font(.system(size: 13, weight: .semibold, design: .monospaced))
@@ -283,15 +302,22 @@ struct HajinStashScanReview: View {
                 HajinItemTile(item: row.item, size: 32)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
-                    if unsure.contains(row.item.id) && edited[row.item.id] == nil {
-                        Text("mw4.ui.hajin.scan_check".localized().uppercased())
-                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
-                            .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                    HStack(spacing: 6) {
+                        if unsure.contains(row.item.id) && edited[row.item.id] == nil {
+                            Text("mw4.ui.hajin.scan_check".localized().uppercased())
+                                .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                                .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                        }
+                        if let sure = sureness[row.item.id] {
+                            Text(String(format: "mw4.ui.hajin.scan_sure".localized(), stacks[row.item.id] ?? 1, Int((sure * 100).rounded())))
+                                .font(.caption2)
+                                .foregroundStyle(sure < 0.5 ? Color(red: 0.96, green: 0.66, blue: 0.24) : Color.appInkMuted)
+                        }
                     }
                 }
                 Spacer(minLength: 8)
                 if same {
-                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                    sameLabel("\(row.read)")
                 } else {
                     Text("\(row.now) → \(row.read)")
                         .font(.system(size: 13, weight: .semibold, design: .monospaced))
@@ -348,7 +374,7 @@ struct HajinStashScanReview: View {
                                 Text("mw4.ui.hajin.cash_title".localized()).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                                 Spacer(minLength: 8)
                                 if same {
-                                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                                    sameLabel("$\(cash.formatted())")
                                 } else {
                                     Text("$\(store.cash.formatted()) → $\(cash.formatted())")
                                         .font(.system(size: 13, weight: .semibold, design: .monospaced))

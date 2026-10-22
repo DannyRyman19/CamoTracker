@@ -366,10 +366,11 @@ struct HajinPagePicker: View {
 
 /// The My DMZ page's cards, in the player's order; any can be hidden.
 enum HajinMineCard: String, CaseIterable, Identifiable {
-    case level, cash, tracking, buildNext, shopping, blueprints, stash, keepSell
+    case scan, level, cash, tracking, buildNext, shopping, blueprints, stash, keepSell
     var id: String { rawValue }
     var title: String {
         switch self {
+        case .scan: return "mw4.ui.hajin.scan_card".localized()
         case .level: return "mw4.ui.hajin.dmz_level".localized()
         case .cash: return "mw4.ui.hajin.cash_title".localized()
         case .tracking: return "mw4.ui.hajin.tracking".localized()
@@ -382,6 +383,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
     }
     var symbol: String {
         switch self {
+        case .scan: return "camera.viewfinder"
         case .level: return "chart.bar.fill"
         case .cash: return "banknote.fill"
         case .tracking: return "scope"
@@ -434,6 +436,14 @@ struct HajinMinePage: View {
 
     @ViewBuilder private func card(_ card: HajinMineCard) -> some View {
         switch card {
+        case .scan:
+            // The headline feature: reading the stash from a screenshot
+            if #available(iOS 17.0, *) {
+                HajinStashGridButton(hero: true)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            }
         case .level: HajinLevelCard().hajinCard()
         case .cash: HajinCashCard().hajinCard()
         case .tracking: HajinTrackingCard().hajinCard()
