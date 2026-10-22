@@ -223,33 +223,52 @@ struct HajinStashScanReview: View {
             .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
     }
 
+    @ViewBuilder private func itemRow(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> some View {
+        let same = row.now == row.read
+        let on = !same && !skip.contains(row.item.id)
+        Button {
+            guard !same else { return }
+            if skip.contains(row.item.id) { skip.remove(row.item.id) } else { skip.insert(row.item.id) }
+        } label: {
+            HStack(spacing: 12) {
+                HajinItemTile(item: row.item, size: 32)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                    if unsure.contains(row.item.id) && edited[row.item.id] == nil {
+                        Text("mw4.ui.hajin.scan_check".localized().uppercased())
+                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                            .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                    }
+                }
+                Spacer(minLength: 8)
+                if same {
+                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                } else {
+                    Text("\(row.now) → \(row.read)")
+                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
+                        .strikethrough(!on)
+                    Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                        .foregroundStyle(on ? Color.accentDMZ : Color.appInkMuted)
+                }
+            }
+        }
+        .buttonStyle(.plain)
+        .contextMenu {
+            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }
+        }
+        .swipeActions {
+            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }.tint(.accentDMZ)
+        }
+
+    }
+
     var body: some View {
         let all = rows
         let changes = all.filter { $0.now != $0.read && !skip.contains($0.item.id) }
         let cashChange = cash.flatMap { $0 != store.cash && !skipCash ? $0 : nil }
         NavigationStack {
             List {
-                if let cash {
-                    let same = cash == store.cash
-                    Button { if !same { skipCash.toggle() } } label: {
-                        HStack(spacing: 12) {
-                            Image(systemName: "banknote.fill").font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
-                            Text("mw4.ui.hajin.cash_title".localized()).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
-                            Spacer(minLength: 8)
-                            if same {
-                                Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
-                            } else {
-                                Text("$\(store.cash.formatted()) → $\(cash.formatted())")
-                                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
-                                    .foregroundStyle(skipCash ? Color.appInkMuted : Color.appInk)
-                                    .strikethrough(skipCash)
-                                Image(systemName: skipCash ? "circle" : "checkmark.circle.fill")
-                                    .foregroundStyle(skipCash ? Color.appInkMuted : Color.accentDMZ)
-                            }
-                        }
-                    }
-                    .buttonStyle(.plain)
-                }
                 if all.isEmpty && cash == nil {
                     Text("mw4.ui.hajin.scan_none".localized())
                         .font(.subheadline)
@@ -262,42 +281,40 @@ struct HajinStashScanReview: View {
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
                 }
-                ForEach(all, id: \.item.id) { row in
-                    let same = row.now == row.read
-                    let on = !same && !skip.contains(row.item.id)
-                    Button {
-                        guard !same else { return }
-                        if skip.contains(row.item.id) { skip.remove(row.item.id) } else { skip.insert(row.item.id) }
-                    } label: {
-                        HStack(spacing: 12) {
-                            HajinItemTile(item: row.item, size: 32)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
-                                if unsure.contains(row.item.id) && edited[row.item.id] == nil {
-                                    Text("mw4.ui.hajin.scan_check".localized().uppercased())
-                                        .font(.system(size: 10, weight: .bold)).tracking(0.6)
-                                        .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                // Cash, resources and ingredients each in their own section
+                if let cash {
+                    Section("mw4.ui.hajin.cash_title".localized()) {
+                        let same = cash == store.cash
+                        Button { if !same { skipCash.toggle() } } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "banknote.fill").font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
+                                Text("mw4.ui.hajin.cash_title".localized()).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                                Spacer(minLength: 8)
+                                if same {
+                                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                                } else {
+                                    Text("$\(store.cash.formatted()) → $\(cash.formatted())")
+                                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                                        .foregroundStyle(skipCash ? Color.appInkMuted : Color.appInk)
+                                        .strikethrough(skipCash)
+                                    Image(systemName: skipCash ? "circle" : "checkmark.circle.fill")
+                                        .foregroundStyle(skipCash ? Color.appInkMuted : Color.accentDMZ)
                                 }
                             }
-                            Spacer(minLength: 8)
-                            if same {
-                                Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
-                            } else {
-                                Text("\(row.now) → \(row.read)")
-                                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
-                                    .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
-                                    .strikethrough(!on)
-                                Image(systemName: on ? "checkmark.circle.fill" : "circle")
-                                    .foregroundStyle(on ? Color.accentDMZ : Color.appInkMuted)
-                            }
                         }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
-                    .contextMenu {
-                        Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }
+                }
+                let resources = all.filter { $0.item.kind == "Resource" }
+                let ingredients = all.filter { $0.item.kind != "Resource" }
+                if !resources.isEmpty {
+                    Section("mw4.ui.hajin.resources".localized()) {
+                        ForEach(resources, id: \.item.id) { row in itemRow(row) }
                     }
-                    .swipeActions {
-                        Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }.tint(.accentDMZ)
+                }
+                if !ingredients.isEmpty {
+                    Section("mw4.ui.hajin.ingredients".localized()) {
+                        ForEach(ingredients, id: \.item.id) { row in itemRow(row) }
                     }
                 }
             }
