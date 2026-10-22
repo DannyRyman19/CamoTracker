@@ -415,6 +415,20 @@ struct HajinItemView: View {
         if HajinVerdict.applies(to: item) {
             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
         }
+        // Blueprints: tick once found (the "Still to find" list)
+        if item.blueprint == true {
+            let found = store.hasBlueprint(item.id)
+            HStack(spacing: 10) {
+                HajinTick(done: found, label: item.name.resolved) { store.toggle(HajinStore.blueprintKey(item.id)) }
+                Text((found ? "mw4.ui.hajin.blueprint_found" : "mw4.ui.hajin.blueprint_missing").localized())
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(found ? Color.accentDMZ : Color.appInk)
+                Spacer()
+                Image(systemName: "doc.text.magnifyingglass").foregroundStyle(found ? Color.accentDMZ : Color.appInkMuted)
+            }
+            .padding(12)
+            .background(statusPanel(nil))
+        }
         // One status row: Printed / Ready to print (stash covers it) / tick
         // once printed. Recipes have no tick, so they only show Ready.
         if item.kind == "FOB Upgrade" {

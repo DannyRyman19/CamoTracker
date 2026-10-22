@@ -12,6 +12,7 @@ struct HajinView: View {
     @State private var shownItem: String?
     @State private var showsKeepSell = false
     @State private var showsStash = false
+    @State private var showsBlueprints = false
     @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
     @State private var width: CGFloat = 0
 
@@ -35,6 +36,7 @@ struct HajinView: View {
         .navigationDestination(isPresented: $showsMap) { HajinMapScreen() }
         .navigationDestination(isPresented: $showsKeepSell) { HajinKeepSellView() }
         .navigationDestination(isPresented: $showsStash) { HajinStashView() }
+        .navigationDestination(isPresented: $showsBlueprints) { HajinBlueprintsView() }
         .navigationDestination(isPresented: Binding(get: { shownSection != nil }, set: { if !$0 { shownSection = nil } })) {
             if let shownSection { GuideSectionView(section: shownSection) }
         }
@@ -97,6 +99,8 @@ struct HajinView: View {
             showsKeepSell = true
         } else if target == "stash" {
             showsStash = true
+        } else if target == "blueprints" {
+            showsBlueprints = true
         } else if target.hasPrefix("item:") {
             shownItem = String(target.dropFirst(5))
         } else {
@@ -367,12 +371,14 @@ struct HajinMinePage: View {
     var openStash: (() -> Void)? = nil
     var openKeepSell: (() -> Void)? = nil
     var openShopping: (() -> Void)? = nil
+    var openBlueprints: (() -> Void)? = nil
 
     var body: some View {
         HajinLevelCard().hajinCard()
         HajinTrackingCard().hajinCard()
         HajinBuildNextCard().hajinCard()
         entry(openShopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
+        entry(openBlueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
         entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
         entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
     }
@@ -808,6 +814,7 @@ struct HajinGuidePanel: View {
         case stash
         case keepSell
         case shopping
+        case blueprints
     }
 
     private var open: HajinGuide.Section? {
@@ -859,6 +866,8 @@ struct HajinGuidePanel: View {
                 HajinKeepSellView(embeddedQuery: query)
             } else if stack.last == .shopping {
                 HajinShoppingListView(embeddedQuery: query)
+            } else if stack.last == .blueprints {
+                HajinBlueprintsView(embeddedQuery: query)
             } else if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
                 HajinTraitsView(trees: trees)
             } else if let section = open, panelWidth >= 700 {
@@ -876,7 +885,8 @@ struct HajinGuidePanel: View {
                         if page == HajinPage.mine.rawValue {
                             HajinMinePage(openStash: { withAnimation(.snappy) { stack = [.stash]; query = "" } },
                                           openKeepSell: { withAnimation(.snappy) { stack = [.keepSell]; query = "" } },
-                                          openShopping: { withAnimation(.snappy) { stack = [.shopping]; query = "" } })
+                                          openShopping: { withAnimation(.snappy) { stack = [.shopping]; query = "" } },
+                                          openBlueprints: { withAnimation(.snappy) { stack = [.blueprints]; query = "" } })
                         } else {
                         ForEach(guide.guide) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
@@ -908,6 +918,7 @@ struct HajinGuidePanel: View {
             case "stash": stack = [.stash]
             case "keep": stack = [.keepSell]
             case "shop": stack = [.shopping]
+            case "blueprints": stack = [.blueprints]
             default: break
             }
         }
@@ -921,6 +932,7 @@ struct HajinGuidePanel: View {
         case .stash: return "mw4.ui.hajin.stash".localized()
         case .keepSell: return "mw4.ui.keep.title".localized()
         case .shopping: return "mw4.ui.hajin.shop".localized()
+        case .blueprints: return "mw4.ui.hajin.blueprints".localized()
         }
     }
 

@@ -157,6 +157,8 @@ struct HajinGuide: Codable {
         /// FOB upgrades: the family ("Bank Upgrade") and this one's tier.
         let family: String?
         let tier: Int?
+        /// A recipe found in Hajin (a blueprint): on the "Still to find" list.
+        let blueprint: Bool?
     }
 
     /// One of the three trait trees, laid out like the game: rows top to

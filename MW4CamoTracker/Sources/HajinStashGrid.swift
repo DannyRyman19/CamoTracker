@@ -30,6 +30,51 @@ enum HajinStashGrid {
         return max(1, min(20, Int((CGFloat(columns) * height / width).rounded())))
     }
 
+    /// Rows in the framed area, measured: straightened, the horizontal frame
+    /// lines repeat once per row, so the repeat length gives the row count.
+    /// (The frame's shape alone misleads when the photo is taken at an angle
+    /// and the grid looks squashed.) Falls back to the shape estimate.
+    static func measureRows(_ image: CGImage, corners: [CGPoint]) -> Int {
+        let estimate = rows(for: corners, size: CGSize(width: image.width, height: image.height))
+        let cw: CGFloat = 40, height: CGFloat = 640
+        guard let flat = straighten(image, corners: corners, size: CGSize(width: cw * CGFloat(columns), height: height)) else { return estimate }
+        let w = flat.width, h = flat.height
+        var px = [UInt8](repeating: 0, count: w * h * 4)
+        guard let ctx = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return estimate }
+        ctx.draw(flat, in: CGRect(x: 0, y: 0, width: w, height: h))
+        var row = [Double](repeating: 0, count: h)
+        for y in 0..<h { for x in 0..<w {
+            let i = (y * w + x) * 4
+            let lo = min(px[i], px[i + 1], px[i + 2]), hi = max(px[i], px[i + 1], px[i + 2])
+            if lo > 110 && hi - lo < 45 { row[y] += 1 }
+        } }
+        func smooth(_ p: [Double], _ r: Int) -> [Double] {
+            var acc = [0.0]; for v in p { acc.append(acc.last! + v) }
+            return p.indices.map { i in let a = max(0, i - r), b = min(p.count - 1, i + r); return (acc[b + 1] - acc[a]) / Double(b - a + 1) }
+        }
+        let wide = smooth(row, 30)
+        let lines = smooth(zip(row, wide).map { max(0, $0 - $1) }, 2)
+        // the repeat, for 3 to 14 rows; a double-row repeat scores nearly as
+        // well, so take the shortest lag that comes close to the best
+        let mean = lines.reduce(0, +) / Double(h)
+        var scores: [(lag: Int, score: Double)] = []
+        for lag in Int(height / 14)...Int(height / 3) {
+            var sc = 0.0
+            for y in 0..<(h - lag) { sc += (lines[y] - mean) * (lines[y + lag] - mean) }
+            scores.append((lag, sc / Double(h - lag)))
+        }
+        // local peaks only, so the slope next to a strong peak doesn't count
+        let peaks = scores.indices.filter { i in
+            (i == 0 || scores[i].score >= scores[i - 1].score) && (i == scores.count - 1 || scores[i].score >= scores[i + 1].score)
+        }.map { scores[$0] }
+        guard let top = peaks.map(\.score).max(), top > 0,
+              let best = peaks.first(where: { $0.score >= top * 0.8 }) else { return estimate }
+        let measured = Int((height / CGFloat(best.lag)).rounded())
+        HajinGridDebug.log("rows: shape says \(estimate), lines repeat every \(best.lag) of \(Int(height)) -> \(measured)")
+        return (1...20).contains(measured) ? measured : estimate
+    }
+
     /// The framed quad as a flat image of the given size. Corners are
     /// top-left, top-right, bottom-right, bottom-left, as fractions with the
     /// origin at the top left.
@@ -49,8 +94,8 @@ enum HajinStashGrid {
     }
 
     @available(iOS 17.0, *)
-    static func read(_ image: CGImage, corners: [CGPoint]) -> [Tile] {
-        let rows = rows(for: corners, size: CGSize(width: image.width, height: image.height))
+    static func read(_ image: CGImage, corners: [CGPoint], rows known: Int? = nil) -> [Tile] {
+        let rows = known ?? measureRows(image, corners: corners)
         // Half a tile of margin all round, so a frame dragged slightly inside
         // the grid still has its borders in the picture
         let margin = expanded(corners, du: 0.5 / CGFloat(columns), dv: 0.5 / CGFloat(rows))
@@ -451,9 +496,12 @@ struct HajinStashGridButton: View {
     @EnvironmentObject private var store: HajinStore
     @State private var pick: PhotosPickerItem?
     @State private var photo: HajinPickedPhoto?
+    @State private var showsIntro = false
+    /// The picked photo, held until the intro sheet has gone
+    @State private var pending: HajinPickedPhoto?
 
     var body: some View {
-        PhotosPicker(selection: $pick, matching: .images) {
+        Button { showsIntro = true } label: {
             HStack(spacing: 10) {
                 Image(systemName: "square.grid.3x3.fill")
                     .font(.body.weight(.semibold))
@@ -473,11 +521,21 @@ struct HajinStashGridButton: View {
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
         }
         .buttonStyle(.plain)
+        .sheet(isPresented: $showsIntro, onDismiss: {
+            if let pending { photo = pending; self.pending = nil }
+        }) {
+            HajinStashScanIntro(pick: $pick)
+        }
         .onChange(of: pick) { chosen in
             guard let chosen else { return }
             Task {
                 if let data = try? await chosen.loadTransferable(type: Data.self), let image = UIImage(data: data) {
-                    await MainActor.run { photo = HajinPickedPhoto(image: image.normalisedUp()) }
+                    #if DEBUG
+                    // Keep the last photo so a run on a device can be checked from the Mac
+                    let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    try? image.normalisedUp().jpegData(compressionQuality: 0.9)?.write(to: docs.appendingPathComponent("last_grid_photo.jpg"))
+                    #endif
+                    await MainActor.run { pending = HajinPickedPhoto(image: image.normalisedUp()); showsIntro = false }
                 }
                 await MainActor.run { pick = nil }
             }
@@ -486,8 +544,10 @@ struct HajinStashGridButton: View {
             HajinStashGridFrameView(image: photo.image)
         }
         #if DEBUG
-        // SS_GRID_PHOTO=<file> opens that photo in the framing screen
+        // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
+        // SS_GRID_INTRO=1 opens the intro sheet
         .onAppear {
+            if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { showsIntro = true }
             if photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
                 if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
                 guard let image = UIImage(contentsOfFile: path) else { return }
@@ -524,6 +584,8 @@ struct HajinStashGridFrameView: View {
     @State private var finding = false
     /// Set once the player drags a handle, so a late guess doesn't move it back
     @State private var moved = false
+    /// Rows measured from the photo for the current frame (nil until known)
+    @State private var rowCount: Int?
     @State private var result: HajinGridResult?
 
     var body: some View {
@@ -545,10 +607,10 @@ struct HajinStashGridFrameView: View {
                                 .overlay(Circle().strokeBorder(Color.white, lineWidth: 2))
                                 .frame(width: 34, height: 34)
                                 .position(x: corners[i].x * fit.width, y: corners[i].y * fit.height)
-                                .gesture(DragGesture().onChanged { g in
+                                .gesture(DragGesture().onEnded { _ in remeasure() }.simultaneously(with: DragGesture().onChanged { g in
                                     moved = true
                                     corners[i] = CGPoint(x: min(max(g.location.x / fit.width, 0), 1), y: min(max(g.location.y / fit.height, 0), 1))
-                                })
+                                }))
                         }
                     }
                     .frame(width: fit.width, height: fit.height)
@@ -588,6 +650,7 @@ struct HajinStashGridFrameView: View {
                 let guess = await Task.detached(priority: .userInitiated) { HajinStashGridFinder.guess(cg) }.value
                 finding = false
                 if let guess, !moved { withAnimation(.snappy) { corners = guess } }
+                remeasure()
             }
             .onAppear {
                 #if DEBUG
@@ -611,7 +674,7 @@ struct HajinStashGridFrameView: View {
 
     /// The framed quad with the column lines and estimated row lines.
     private func overlay(_ fit: CGSize) -> some View {
-        let rows = HajinStashGrid.rows(for: corners, size: image.size)
+        let rows = rowCount ?? HajinStashGrid.rows(for: corners, size: image.size)
         return Path { p in
             func at(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
                 let top = CGPoint(x: corners[0].x + (corners[1].x - corners[0].x) * u, y: corners[0].y + (corners[1].y - corners[0].y) * u)
@@ -628,6 +691,16 @@ struct HajinStashGridFrameView: View {
             }
         }
         .stroke(Color.accentDMZ, lineWidth: 1.5)
+    }
+
+    /// Counts the rows for the current frame in the background.
+    private func remeasure() {
+        guard let cg = image.cgImage else { return }
+        let frame = corners
+        Task.detached(priority: .utility) {
+            let n = HajinStashGrid.measureRows(cg, corners: frame)
+            await MainActor.run { if frame == corners { rowCount = n } }
+        }
     }
 
     private func read() {
@@ -667,8 +740,8 @@ enum HajinStashGridFinder {
         let W = CGFloat(cg.width), H = CGFloat(cg.height)
         let rects = VNDetectRectanglesRequest()
         rects.maximumObservations = 0
-        rects.minimumSize = 0.04
-        rects.minimumAspectRatio = 0.75
+        rects.minimumSize = 0.03
+        rects.minimumAspectRatio = 0.7
         rects.maximumAspectRatio = 1.0
         rects.quadratureTolerance = 20
         rects.minimumConfidence = 0.3
@@ -676,61 +749,90 @@ enum HajinStashGridFinder {
         text.recognitionLevel = .accurate
         text.usesLanguageCorrection = false
         try? VNImageRequestHandler(cgImage: cg).perform([rects, text])
-        // pixels, origin top left
         func px(_ v: CGPoint) -> CGPoint { CGPoint(x: v.x * W, y: (1 - v.y) * H) }
-        let quads = (rects.results ?? []).filter { $0.boundingBox.width < 0.25 }
-        guard quads.count >= 3 else { return nil }
-        let br = quads.map { px($0.bottomRight) }.max { $0.x + $0.y < $1.x + $1.y }!
-        let bl = quads.map { px($0.bottomLeft) }.min { $0.x - $0.y < $1.x - $1.y }!
-        guard br.x - bl.x > W * 0.3, abs(br.y - bl.y) < H * 0.15 else { return nil }
-        let pitch = (br.x - bl.x) / CGFloat(HajinStashGrid.columns)
+        func mid(_ a: CGPoint, _ b: CGPoint) -> CGPoint { CGPoint(x: (a.x + b.x) / 2, y: (a.y + b.y) / 2) }
 
-        // The sides: a line (x as a function of y) through the outer edges of
-        // the tiles in the first and last columns
-        func side(_ points: [CGPoint], through base: CGPoint) -> (CGFloat) -> CGFloat {
-            let pts = points + [base]
-            let my = pts.map(\.y).reduce(0, +) / CGFloat(pts.count), mx = pts.map(\.x).reduce(0, +) / CGFloat(pts.count)
-            let num = pts.reduce(0) { $0 + ($1.y - my) * ($1.x - mx) }, den = pts.reduce(0) { $0 + ($1.y - my) * ($1.y - my) }
-            let slope = den > 1 ? num / den : 0
-            return { y in mx + slope * (y - my) }
-        }
-        let leftEdge = quads.filter { px($0.bottomLeft).x < bl.x + pitch * 0.5 }.flatMap { [px($0.topLeft), px($0.bottomLeft)] }
-        let rightEdge = quads.filter { px($0.bottomRight).x > br.x - pitch * 0.5 }.flatMap { [px($0.topRight), px($0.bottomRight)] }
-        let leftX = side(leftEdge, through: bl), rightX = side(rightEdge, through: br)
+        // Tiles: rectangles of the common size that have a neighbour at a
+        // tile's spacing (drops menu boxes and other strays)
+        struct Q { let tl, tr, br, bl: CGPoint; var c: CGPoint { CGPoint(x: (tl.x + br.x) / 2, y: (tl.y + br.y) / 2) }; var size: CGFloat { (hypot(tr.x - tl.x, tr.y - tl.y) + hypot(bl.x - tl.x, bl.y - tl.y)) / 2 } }
+        let all = (rects.results ?? []).map { Q(tl: px($0.topLeft), tr: px($0.topRight), br: px($0.bottomRight), bl: px($0.bottomLeft)) }
+        guard !all.isEmpty else { HajinGridDebug.log("guess: no rectangles"); return nil }
+        let median = all.map(\.size).sorted()[all.count / 2]
+        let sized = all.filter { $0.size > median * 0.7 && $0.size < median * 1.4 }
+        let tiles = sized.filter { q in sized.contains { o in
+            let d = hypot(o.c.x - q.c.x, o.c.y - q.c.y); return d > median * 0.8 && d < median * 1.8 } }
+        HajinGridDebug.log("guess: photo \(cg.width)x\(cg.height), \(all.count) rectangles, \(tiles.count) tiles, size \(Int(median))")
+        guard tiles.count >= 3 else { HajinGridDebug.log("guess: too few tiles"); return nil }
 
-        // The top: the header's baseline, if the words are found
-        let header = (text.results ?? []).filter { obs in
-            let t = obs.topCandidates(1).first?.string.uppercased() ?? ""
-            return (t.contains("WEAPON") || t.contains("ITEMS")) && px(obs.bottomLeft).y < min(bl.y, br.y) - pitch
+        // Spacing along a row and down a column, from neighbouring tiles
+        var across: [CGPoint] = [], down: [CGPoint] = []
+        for q in tiles { for o in tiles {
+            let d = CGPoint(x: o.c.x - q.c.x, y: o.c.y - q.c.y)
+            let len = hypot(d.x, d.y)
+            guard len > median * 0.8 && len < median * 1.8 else { continue }
+            if d.x > 0 && abs(d.y) < len * 0.4 { across.append(d) }
+            if d.y > 0 && abs(d.x) < len * 0.4 { down.append(d) }
+        } }
+        func medianVector(_ v: [CGPoint]) -> CGPoint? {
+            guard !v.isEmpty else { return nil }
+            return CGPoint(x: v.map(\.x).sorted()[v.count / 2], y: v.map(\.y).sorted()[v.count / 2])
         }
-        var topAt: (CGFloat) -> CGFloat
-        if !header.isEmpty {
-            let pts = header.flatMap { [px($0.bottomLeft), px($0.bottomRight)] }
-            let mx = pts.map(\.x).reduce(0, +) / CGFloat(pts.count), my = pts.map(\.y).reduce(0, +) / CGFloat(pts.count)
-            let num = pts.reduce(0) { $0 + ($1.x - mx) * ($1.y - my) }, den = pts.reduce(0) { $0 + ($1.x - mx) * ($1.x - mx) }
+        let hx = medianVector(across) ?? CGPoint(x: median * 1.25, y: 0)
+        let vy = medianVector(down) ?? CGPoint(x: -hx.y, y: hx.x)
+        let pitch = hypot(hx.x, hx.y)
+
+        // The bottom: the lowest row of tiles (measured down the columns)
+        let vyLen = hypot(vy.x, vy.y)
+        func depth(_ p: CGPoint) -> CGFloat { (p.x * vy.x + p.y * vy.y) / vyLen }
+        let lowest = tiles.map { depth($0.c) }.max()!
+        let bottomRow = tiles.filter { depth($0.c) > lowest - vyLen * 0.5 }
+        let bottomPoint = bottomRow.map { mid($0.bl, $0.br) }.reduce(CGPoint.zero) { CGPoint(x: $0.x + $1.x / CGFloat(bottomRow.count), y: $0.y + $1.y / CGFloat(bottomRow.count)) }
+
+        // The header words: "ALL" starts over the grid's left edge, "ITEMS"
+        // ends over its right edge, and the grid starts just under them
+        let words = (text.results ?? []).compactMap { o -> (String, VNRecognizedTextObservation)? in
+            guard let t = o.topCandidates(1).first?.string.uppercased() else { return nil }
+            return (t, o)
+        }.filter { px($0.1.bottomLeft).y < bottomPoint.y - pitch }
+        let allWord = words.first { $0.0.trimmingCharacters(in: .whitespaces) == "ALL" }?.1
+        let itemsWord = words.first { $0.0.contains("ITEMS") }?.1
+        let headerPts = words.filter { $0.0.contains("WEAPON") || $0.0.contains("ITEMS") }.flatMap { [px($0.1.bottomLeft), px($0.1.bottomRight)] }
+        HajinGridDebug.log("guess: ALL \(allWord != nil), ITEMS \(itemsWord != nil), header points \(headerPts.count), across \(hx), down \(vy)")
+
+        var topLeft: CGPoint, topRight: CGPoint
+        if let allWord, let itemsWord, headerPts.count >= 2 {
+            let mx = headerPts.map(\.x).reduce(0, +) / CGFloat(headerPts.count), my = headerPts.map(\.y).reduce(0, +) / CGFloat(headerPts.count)
+            let num = headerPts.reduce(0) { $0 + ($1.x - mx) * ($1.y - my) }, den = headerPts.reduce(0) { $0 + ($1.x - mx) * ($1.x - mx) }
             let slope = den > 1 ? num / den : 0
-            topAt = { x in my + slope * (x - mx) }
+            func baseline(_ x: CGFloat) -> CGFloat { my + slope * (x - mx) }
+            let lx = px(allWord.bottomLeft).x, rx = px(itemsWord.bottomRight).x
+            let gap = (rx - lx) / CGFloat(HajinStashGrid.columns) * 0.58
+            topLeft = CGPoint(x: lx, y: baseline(lx) + gap)
+            topRight = CGPoint(x: rx, y: baseline(rx) + gap)
         } else {
-            // No header: start a few rows up for the player to drag
-            let up = min(max(bl.y, br.y) - H * 0.05, (br.x - bl.x) * 0.8)
-            topAt = { _ in max(H * 0.02, max(bl.y, br.y) - up) - pitch * 0.58 }
+            // No header: the leftmost and rightmost tiles' columns, a few rows up
+            let leftmost = tiles.min { $0.c.x < $1.c.x }!, rightmost = tiles.max { $0.c.x < $1.c.x }!
+            let rows: CGFloat = 5
+            topLeft = CGPoint(x: leftmost.bl.x - vy.x * rows, y: bottomPoint.y - vy.y * rows)
+            topRight = CGPoint(x: rightmost.br.x - vy.x * rows, y: bottomPoint.y - vy.y * rows)
         }
-        // Top corners where each side meets the line just under the header,
-        // the gap scaled to the tile size up there
-        func corner(_ sideX: (CGFloat) -> CGFloat) -> CGPoint {
-            var y = topAt(sideX(bl.y))
-            for _ in 0..<3 {
-                let topPitch = (rightX(y) - leftX(y)) / CGFloat(HajinStashGrid.columns)
-                y = topAt(sideX(y)) + topPitch * 0.58
-            }
-            return CGPoint(x: sideX(y), y: y)
+        // Bottom corners: down each side (along the columns) to the bottom row
+        func meet(_ p: CGPoint, _ d: CGPoint, _ q: CGPoint, _ e: CGPoint) -> CGPoint {
+            let den = d.x * e.y - d.y * e.x
+            guard abs(den) > 1e-6 else { return p }
+            let t = ((q.x - p.x) * e.y - (q.y - p.y) * e.x) / den
+            return CGPoint(x: p.x + d.x * t, y: p.y + d.y * t)
         }
-        let tl = corner(leftX), tr = corner(rightX)
-        let quad = [tl, tr, CGPoint(x: rightX(br.y), y: br.y), CGPoint(x: leftX(bl.y), y: bl.y)]
+        let bottomLeft = meet(topLeft, vy, bottomPoint, hx), bottomRight = meet(topRight, vy, bottomPoint, hx)
+        let quad = [topLeft, topRight, bottomRight, bottomLeft]
         guard quad.allSatisfy({ $0.x > -W * 0.05 && $0.x < W * 1.05 && $0.y > -H * 0.05 && $0.y < H * 1.05 }),
-              quad[3].y - quad[0].y > pitch else { return nil }
+              bottomLeft.y - topLeft.y > pitch, topRight.x - topLeft.x > pitch * 3 else {
+            HajinGridDebug.log("guess: quad implausible \(quad)"); return nil }
+        HajinGridDebug.log("guess: before refine \(quad)")
         let fractions = quad.map { CGPoint(x: min(max($0.x / W, 0), 1), y: min(max($0.y / H, 0), 1)) }
-        return refine(cg, fractions)
+        let refined = refine(cg, fractions)
+        HajinGridDebug.log("guess: refined \(refined)")
+        return refined
     }
 
     /// Nudges each corner (coordinate descent on a quarter-size copy) to
@@ -741,8 +843,8 @@ enum HajinStashGridFinder {
         let small = CIImage(cgImage: cg).transformed(by: CGAffineTransform(scaleX: scale, y: scale))
         let size = CGSize(width: CGFloat(cg.width) * scale, height: CGFloat(cg.height) * scale)
         let ci = CIContext()
+        let rows = HajinStashGrid.measureRows(cg, corners: start)
         func score(_ q: [CGPoint]) -> Double {
-            let rows = HajinStashGrid.rows(for: q, size: size)
             let cell: CGFloat = 40
             guard let f = CIFilter(name: "CIPerspectiveCorrection") else { return 0 }
             func v(_ p: CGPoint) -> CIVector { CIVector(x: p.x * size.width, y: (1 - p.y) * size.height) }
