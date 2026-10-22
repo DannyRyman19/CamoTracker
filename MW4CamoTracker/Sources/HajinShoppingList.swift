@@ -135,6 +135,15 @@ struct HajinShoppingListView: View {
                     stat("mw4.ui.hajin.shop_for".localized(), "\(targets.count)")
                     stat("mw4.ui.hajin.shop_cash".localized(), "$\(cash.formatted())")
                 }
+                // Cash against the balance the player entered
+                if store.cash > 0 && cash > 0 {
+                    let gap = cash - store.cash
+                    Label(gap > 0 ? String(format: "mw4.ui.hajin.cash_short".localized(), "$\(store.cash.formatted())", "$\(gap.formatted())")
+                                  : String(format: "mw4.ui.hajin.cash_covered".localized(), "$\(store.cash.formatted())"),
+                          systemImage: gap > 0 ? "banknote" : "checkmark.circle.fill")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(gap > 0 ? Color.appInkMuted : HajinStore.printableGreen)
+                }
                 if short.isEmpty && query.isEmpty {
                     Label("mw4.ui.hajin.shop_done".localized(), systemImage: "checkmark.circle.fill")
                         .font(.caption.weight(.semibold))

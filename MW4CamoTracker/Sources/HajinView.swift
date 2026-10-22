@@ -364,23 +364,85 @@ struct HajinPagePicker: View {
     }
 }
 
-/// The player's own cards, in the order they're used: level, what's
-/// tracked, what to build next, the stash, and keep or sell.
+/// The My DMZ page's cards, in the player's order; any can be hidden.
+enum HajinMineCard: String, CaseIterable, Identifiable {
+    case level, cash, tracking, buildNext, shopping, blueprints, stash, keepSell
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .level: return "mw4.ui.hajin.dmz_level".localized()
+        case .cash: return "mw4.ui.hajin.cash_title".localized()
+        case .tracking: return "mw4.ui.hajin.tracking".localized()
+        case .buildNext: return "mw4.ui.hajin.build_next".localized()
+        case .shopping: return "mw4.ui.hajin.shop".localized()
+        case .blueprints: return "mw4.ui.hajin.blueprints".localized()
+        case .stash: return "mw4.ui.hajin.stash".localized()
+        case .keepSell: return "mw4.ui.keep.title".localized()
+        }
+    }
+    var symbol: String {
+        switch self {
+        case .level: return "chart.bar.fill"
+        case .cash: return "banknote.fill"
+        case .tracking: return "scope"
+        case .buildNext: return "hammer.fill"
+        case .shopping: return "list.bullet.clipboard.fill"
+        case .blueprints: return "doc.text.magnifyingglass"
+        case .stash: return "shippingbox.fill"
+        case .keepSell: return "arrow.left.arrow.right"
+        }
+    }
+
+    static let orderKey = "mw4_hajin_mine_order"
+    static let hiddenKey = "mw4_hajin_mine_hidden"
+    /// Saved order, with any card added since appended in default order.
+    static func order(_ raw: String) -> [HajinMineCard] {
+        var out = raw.split(separator: ",").compactMap { HajinMineCard(rawValue: String($0)) }
+        for card in allCases where !out.contains(card) { out.append(card) }
+        return out
+    }
+}
+
+/// The player's own cards (level, cash, what's tracked, what to build
+/// next, the tools), in the order they chose, with a Customise button.
 struct HajinMinePage: View {
     /// iPad: open these inside the guide panel instead of pushing them.
     var openStash: (() -> Void)? = nil
     var openKeepSell: (() -> Void)? = nil
     var openShopping: (() -> Void)? = nil
     var openBlueprints: (() -> Void)? = nil
+    @AppStorage(HajinMineCard.orderKey) private var orderRaw = ""
+    @AppStorage(HajinMineCard.hiddenKey) private var hiddenRaw = ""
+    @State private var customising = false
 
     var body: some View {
-        HajinLevelCard().hajinCard()
-        HajinTrackingCard().hajinCard()
-        HajinBuildNextCard().hajinCard()
-        entry(openShopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
-        entry(openBlueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
-        entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
-        entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+        let hidden = Set(hiddenRaw.split(separator: ","))
+        ForEach(HajinMineCard.order(orderRaw).filter { !hidden.contains(Substring($0.rawValue)) }) { card in
+            self.card(card)
+        }
+        Button { customising = true } label: {
+            Label("mw4.ui.hajin.mine_customise".localized(), systemImage: "slider.horizontal.3")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.accentDMZ)
+                .frame(maxWidth: .infinity)
+        }
+        .buttonStyle(.borderless)
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+        .sheet(isPresented: $customising) { HajinMineCustomise(orderRaw: $orderRaw, hiddenRaw: $hiddenRaw) }
+    }
+
+    @ViewBuilder private func card(_ card: HajinMineCard) -> some View {
+        switch card {
+        case .level: HajinLevelCard().hajinCard()
+        case .cash: HajinCashCard().hajinCard()
+        case .tracking: HajinTrackingCard().hajinCard()
+        case .buildNext: HajinBuildNextCard().hajinCard()
+        case .shopping: entry(openShopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
+        case .blueprints: entry(openBlueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
+        case .stash: entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
+        case .keepSell: entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+        }
     }
 
     @ViewBuilder private func entry<D: View, L: View>(_ open: (() -> Void)?, @ViewBuilder destination: () -> D, @ViewBuilder label: () -> L) -> some View {
@@ -396,6 +458,56 @@ struct HajinMinePage: View {
         } else {
             NavigationLink(destination: destination, label: label).hajinCard()
         }
+    }
+}
+
+/// Reorder the My DMZ cards by dragging, and switch any off.
+struct HajinMineCustomise: View {
+    @Binding var orderRaw: String
+    @Binding var hiddenRaw: String
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        let order = HajinMineCard.order(orderRaw)
+        let hidden = Set(hiddenRaw.split(separator: ",").map(String.init))
+        NavigationStack {
+            List {
+                Section {
+                    ForEach(order) { card in
+                        Toggle(isOn: Binding(
+                            get: { !hidden.contains(card.rawValue) },
+                            set: { on in
+                                var h = hidden
+                                if on { h.remove(card.rawValue) } else { h.insert(card.rawValue) }
+                                hiddenRaw = h.sorted().joined(separator: ",")
+                            })) {
+                            Label(card.title, systemImage: card.symbol)
+                        }
+                        .tint(.accentDMZ)
+                    }
+                    .onMove { from, to in
+                        var o = order
+                        o.move(fromOffsets: from, toOffset: to)
+                        orderRaw = o.map(\.rawValue).joined(separator: ",")
+                    }
+                } footer: {
+                    Text("mw4.ui.hajin.mine_customise_hint".localized())
+                }
+                Section {
+                    Button("mw4.ui.hajin.mine_reset".localized()) { orderRaw = ""; hiddenRaw = "" }
+                        .foregroundStyle(Color.accentDMZ)
+                }
+            }
+            .environment(\.editMode, .constant(.active))
+            .navigationTitle("mw4.ui.hajin.mine_customise".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("mw4.ui.hajin.done".localized()) { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.medium, .large])
     }
 }
 
@@ -1266,6 +1378,47 @@ struct HajinLevelCard: View {
         .alert("mw4.ui.hajin.dmz_level".localized(), isPresented: $entering) {
             TextField("1–\(HajinStore.maxLevel)", text: $text).keyboardType(.numberPad)
             Button("mw4.ui.hajin.save".localized()) { if let n = Int(text) { store.setLevel(n) } }
+            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
+        }
+    }
+}
+
+/// The player's DMZ Cash: tap to type it in. The shopping list and Build
+/// next weigh upgrades' cash costs against it.
+struct HajinCashCard: View {
+    @EnvironmentObject private var store: HajinStore
+    @State private var entering = false
+    @State private var text = ""
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "banknote.fill")
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 30, height: 30)
+                .background(Circle().fill(Color.accentDMZ))
+            VStack(alignment: .leading, spacing: 2) {
+                Text("mw4.ui.hajin.cash_title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text((store.cash > 0 ? "mw4.ui.hajin.cash_set" : "mw4.ui.hajin.cash_hint").localized())
+                    .font(.caption).foregroundStyle(Color.appInkMuted)
+            }
+            Spacer()
+            Button {
+                text = store.cash > 0 ? "\(store.cash)" : ""
+                entering = true
+            } label: {
+                Text(store.cash > 0 ? "$\(store.cash.formatted())" : "mw4.ui.hajin.cash_add".localized())
+                    .font(.system(size: 14, weight: .bold, design: .monospaced))
+                    .foregroundStyle(Color.accentDMZ)
+                    .contentTransition(.numericText())
+            }
+            .buttonStyle(.borderless)
+        }
+        .alert("mw4.ui.hajin.cash_title".localized(), isPresented: $entering) {
+            TextField("0", text: $text).keyboardType(.numberPad)
+            Button("mw4.ui.hajin.save".localized()) {
+                store.setCash(Int(text.filter(\.isNumber)) ?? 0)
+            }
             Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
         }
     }

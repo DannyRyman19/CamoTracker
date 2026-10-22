@@ -260,6 +260,7 @@ final class HajinStore: ObservableObject {
     static let pinsKey = "mw4_hajin_pins"
     static let checkedKey = "mw4_hajin_checked"
     static let levelKey = "mw4_hajin_dmz_level"
+    static let cashKey = "mw4_hajin_cash"
     static let trackedKey = "mw4_hajin_tracked"
     static let stashKey = "mw4_hajin_stash"
     /// The game tracks five things at once; so does the app.
@@ -276,6 +277,8 @@ final class HajinStore: ObservableObject {
     /// The player's DMZ level; 0 until they set it, which leaves nothing
     /// shown as locked.
     @Published private(set) var dmzLevel = 0
+    /// The player's DMZ Cash, as they last entered it (0 = not set).
+    @Published private(set) var cash = 0
     /// Recipes and upgrades being worked towards, in the order tracked.
     @Published private(set) var tracked: [String] = []
     /// How many of each ingredient or resource the player has.
@@ -312,14 +315,16 @@ final class HajinStore: ObservableObject {
         }
         checked = Set(defaults.stringArray(forKey: Self.checkedKey) ?? [])
         dmzLevel = defaults.integer(forKey: Self.levelKey)
+        cash = defaults.integer(forKey: Self.cashKey)
         tracked = defaults.stringArray(forKey: Self.trackedKey) ?? []
         stash = (defaults.dictionary(forKey: Self.stashKey) as? [String: Int]) ?? [:]
         if defaults == .standard {
             let cloud = CloudSync(cloudKey: "mw4_hajin_sync", defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in
                 guard let self else { return }
-                self.checked = Set(values.keys.filter { $0 != Self.levelSyncKey && !$0.hasPrefix("track:") && !$0.hasPrefix("stash:") })
+                self.checked = Set(values.keys.filter { $0 != Self.levelSyncKey && $0 != Self.cashSyncKey && !$0.hasPrefix("track:") && !$0.hasPrefix("stash:") })
                 self.dmzLevel = values[Self.levelSyncKey] ?? 0
+                self.cash = values[Self.cashSyncKey] ?? 0
                 self.tracked = values.filter { $0.key.hasPrefix("track:") }.sorted { $0.value < $1.value }.map { String($0.key.dropFirst(6)) }
                 self.stash = Dictionary(uniqueKeysWithValues: values.filter { $0.key.hasPrefix("stash:") }.map { (String($0.key.dropFirst(6)), $0.value) })
                 self.persistLocal()
@@ -340,10 +345,12 @@ final class HajinStore: ObservableObject {
     }
 
     private static let levelSyncKey = "dmz-level"
+    private static let cashSyncKey = "dmz-cash"
 
     private func syncValues() -> [String: Int] {
         var values = Dictionary(uniqueKeysWithValues: checked.map { ($0, 1) })
         if dmzLevel > 0 { values[Self.levelSyncKey] = dmzLevel }
+        if cash > 0 { values[Self.cashSyncKey] = cash }
         for (index, id) in tracked.enumerated() { values["track:\(id)"] = index + 1 }
         for (id, count) in stash where count > 0 { values["stash:\(id)"] = count }
         return values
@@ -352,6 +359,7 @@ final class HajinStore: ObservableObject {
     private func persistLocal() {
         defaults.set(Array(checked).sorted(), forKey: Self.checkedKey)
         defaults.set(dmzLevel, forKey: Self.levelKey)
+        defaults.set(cash, forKey: Self.cashKey)
         defaults.set(tracked, forKey: Self.trackedKey)
         defaults.set(stash, forKey: Self.stashKey)
     }
@@ -496,6 +504,11 @@ final class HajinStore: ObservableObject {
         stash = undo.previous
         tracked = undo.previousTracked
         stashUndo = nil
+        saveAndSync()
+    }
+
+    func setCash(_ amount: Int) {
+        cash = min(max(amount, 0), 99_999_999)
         saveAndSync()
     }
 

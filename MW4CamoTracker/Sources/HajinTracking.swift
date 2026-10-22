@@ -393,9 +393,10 @@ struct HajinBuildNextCard: View {
                                     HStack(spacing: 6) {
                                         if ready { HajinCanPrintTag() }
                                         if let cash = pick.item.cash {
+                                            // Red when it's more than the cash the player entered
                                             Text("$\(cash.formatted())")
                                                 .font(.system(size: 11, weight: .semibold, design: .monospaced))
-                                                .foregroundStyle(Color.appInkMuted)
+                                                .foregroundStyle(store.cash > 0 && cash > store.cash ? Color(red: 0.93, green: 0.32, blue: 0.30) : Color.appInkMuted)
                                         }
                                     }
                                 }
