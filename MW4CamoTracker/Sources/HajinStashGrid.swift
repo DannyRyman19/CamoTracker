@@ -557,7 +557,7 @@ struct HajinStashGridButton: View {
             HajinStashGridFrameView(image: photo.image, onRetake: { reopenIntro = true })
         }
         .sheet(item: $textRead) { r in
-            HajinStashScanReview(found: r.counts, cash: r.cash)
+            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level)
         }
         .overlay(alignment: .trailing) {
             if sorting { ProgressView().padding(.trailing, 14) }
@@ -591,9 +591,10 @@ extension HajinStashGridButton {
             let isStash = lines.contains { let t = $0.text.uppercased(); return t.contains("ITEMS") || t.contains("STASH") }
             let counts = isStash ? [:] : HajinStashScanner.counts(in: lines, items: items)
             let cash = HajinStashScanner.bank(in: lines)
+            let level = HajinStashScanner.level(in: lines)
             await MainActor.run {
                 sorting = false
-                if isStash || counts.isEmpty { photo = picked } else { textRead = HajinGridResult(counts: counts, unsure: [], cash: cash) }
+                if isStash || counts.isEmpty { photo = picked } else { textRead = HajinGridResult(counts: counts, unsure: [], cash: cash, level: level) }
             }
         }
     }
@@ -735,7 +736,7 @@ struct HajinStashGridFrameView: View {
                 }
             }
             .sheet(item: $result, onDismiss: { if result == nil { } }) { r in
-                HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, onDone: { dismiss() })
+                HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level, onDone: { dismiss() })
             }
             .overlay(alignment: .bottom) {
                 if finding {
@@ -821,9 +822,10 @@ struct HajinStashGridFrameView: View {
             let lines = HajinStashScanner.lines(in: cg)
             for (id, n) in HajinStashScanner.counts(in: lines, items: resources) { totals.counts[id] = n }
             let cash = HajinStashScanner.bank(in: lines)
+            let level = HajinStashScanner.level(in: lines)
             await MainActor.run {
                 reading = false
-                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash)
+                result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level)
             }
         }
     }
@@ -834,6 +836,7 @@ struct HajinGridResult: Identifiable {
     let counts: [String: Int]
     let unsure: Set<String>
     var cash: Int? = nil
+    var level: Int? = nil
 }
 
 /// A first guess at the grid's corners, for the player to adjust:

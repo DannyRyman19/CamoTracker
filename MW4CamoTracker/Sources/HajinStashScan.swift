@@ -75,6 +75,26 @@ enum HajinStashScanner {
         return Int(digits)
     }
 
+    /// The DMZ level from the stash screen's side panel: "LVL 38", or "LVL"
+    /// with the number just under it. (The big number above it is the
+    /// player's frames, not the level.)
+    static func level(in lines: [Line]) -> Int? {
+        let levels = 1...70   // HajinStore.maxLevel (main-actor, so not usable here)
+        for label in lines where label.text.uppercased().contains("LVL") {
+            let after = label.text.uppercased().components(separatedBy: "LVL").last ?? ""
+            if let n = Int(after.filter(\.isNumber)), levels.contains(n) { return n }
+            // the number on the next line down, roughly in line with LVL
+            let below = lines.filter { other in
+                let gap = label.box.minY - other.box.maxY
+                return gap > -label.box.height && gap < label.box.height * 2.5 && abs(other.box.minX - label.box.minX) < 0.05
+            }
+            for other in below {
+                if let n = plain(other.text), levels.contains(n) { return n }
+            }
+        }
+        return nil
+    }
+
     /// "607/50", "607 / 50" or "Synthetics 607/50" gives 607.
     static func have(in text: String) -> Int? {
         let cleaned = text.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "O", with: "0")
@@ -134,6 +154,7 @@ struct HajinStashScanButton: View {
     @State private var reading = false
     @State private var result: [String: Int]?
     @State private var resultCash: Int?
+    @State private var resultLevel: Int?
 
     var body: some View {
         PhotosPicker(selection: $picks, maxSelectionCount: 30, matching: .images) {
@@ -162,7 +183,7 @@ struct HajinStashScanButton: View {
             read(chosen)
         }
         .sheet(isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil } })) {
-            if let result { HajinStashScanReview(found: result, cash: resultCash) }
+            if let result { HajinStashScanReview(found: result, cash: resultCash, level: resultLevel) }
         }
     }
 
@@ -172,15 +193,17 @@ struct HajinStashScanButton: View {
         Task {
             var seen: [String: [Int]] = [:]
             var bank: Int?
+            var lvl: Int?
             for pick in chosen {
                 guard let data = try? await pick.loadTransferable(type: Data.self),
                       let image = UIImage(data: data)?.cgImage else { continue }
-                let (counts, cash) = await Task.detached(priority: .userInitiated) { () -> ([String: Int], Int?) in
+                let (counts, cash, level) = await Task.detached(priority: .userInitiated) { () -> ([String: Int], Int?, Int?) in
                     let lines = HajinStashScanner.lines(in: image)
-                    return (HajinStashScanner.counts(in: lines, items: items), HajinStashScanner.bank(in: lines))
+                    return (HajinStashScanner.counts(in: lines, items: items), HajinStashScanner.bank(in: lines), HajinStashScanner.level(in: lines))
                 }.value
                 for (id, n) in counts { seen[id, default: []].append(n) }
                 if let cash { bank = cash }
+                if let level { lvl = level }
             }
             // The same ingredient on several screens: take the count read most
             // often, the higher one on a tie
@@ -191,6 +214,7 @@ struct HajinStashScanButton: View {
                 reading = false
                 picks = []
                 resultCash = bank
+                resultLevel = lvl
                 result = merged
             }
         }
@@ -205,6 +229,8 @@ struct HajinStashScanReview: View {
     var unsure: Set<String> = []
     /// The bank balance read from the photo, if it showed one.
     var cash: Int? = nil
+    /// The DMZ level read from the photo, if it showed one.
+    var level: Int? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
@@ -214,6 +240,7 @@ struct HajinStashScanReview: View {
     @State private var editing: HajinGuide.Item?
     @State private var editText = ""
     @State private var skipCash = false
+    @State private var skipLevel = false
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: ingredients and resources. The photo
@@ -221,6 +248,28 @@ struct HajinStashScanReview: View {
         found.compactMap { id, n in store.guide?.item(id).flatMap { ["Ingredient", "Resource"].contains($0.kind) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
             .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
+    }
+
+    /// A single value read from the photo (level), now → read, tap to skip.
+    private func valueRow(symbol: String, title: String, now: String, read: String, same: Bool, skipped: Binding<Bool>) -> some View {
+        Button { if !same { skipped.wrappedValue.toggle() } } label: {
+            HStack(spacing: 12) {
+                Image(systemName: symbol).font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
+                Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                Spacer(minLength: 8)
+                if same {
+                    Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                } else {
+                    Text("\(now) → \(read)")
+                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.appInk)
+                        .strikethrough(skipped.wrappedValue)
+                    Image(systemName: skipped.wrappedValue ? "circle" : "checkmark.circle.fill")
+                        .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.accentDMZ)
+                }
+            }
+        }
+        .buttonStyle(.plain)
     }
 
     @ViewBuilder private func itemRow(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> some View {
@@ -267,9 +316,10 @@ struct HajinStashScanReview: View {
         let all = rows
         let changes = all.filter { $0.now != $0.read && !skip.contains($0.item.id) }
         let cashChange = cash.flatMap { $0 != store.cash && !skipCash ? $0 : nil }
+        let levelChange = level.flatMap { $0 != store.dmzLevel && !skipLevel ? $0 : nil }
         NavigationStack {
             List {
-                if all.isEmpty && cash == nil {
+                if all.isEmpty && cash == nil && level == nil {
                     Text("mw4.ui.hajin.scan_none".localized())
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
@@ -281,7 +331,14 @@ struct HajinStashScanReview: View {
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
                 }
-                // Cash, resources and ingredients each in their own section
+                // Level, cash, resources and ingredients each in their own section
+                if let level {
+                    Section("mw4.ui.hajin.dmz_level".localized()) {
+                        valueRow(symbol: "chart.bar.fill", title: "mw4.ui.hajin.dmz_level".localized(),
+                                 now: store.dmzLevel > 0 ? "\(store.dmzLevel)" : "–", read: "\(level)",
+                                 same: level == store.dmzLevel, skipped: $skipLevel)
+                    }
+                }
                 if let cash {
                     Section("mw4.ui.hajin.cash_title".localized()) {
                         let same = cash == store.cash
@@ -337,10 +394,11 @@ struct HajinStashScanReview: View {
                         Haptics.step()
                         store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
                         if let cashChange { store.setCash(cashChange) }
+                        if let levelChange { store.setLevel(levelChange) }
                         dismiss()
                         onDone?()
                     }
-                    .disabled(changes.isEmpty && cashChange == nil)
+                    .disabled(changes.isEmpty && cashChange == nil && levelChange == nil)
                 }
             }
         }
