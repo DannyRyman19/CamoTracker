@@ -1,5 +1,5 @@
 {
- "version": "0.9.17",
+ "version": "0.9.18",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2906,7 +2906,7 @@
     {
      "title": "Bank Upgrade I",
      "subtitle": "Cash only. Your Bank holds up to $250,000",
-     "value": "$25,000",
+     "value": "$20,000",
      "item": "bank-upgrade-i",
      "check": "upgrade-bank-upgrade-i",
      "group": "Bank"
@@ -4738,7 +4738,7 @@
    "name": "Bank Upgrade I",
    "kind": "FOB Upgrade",
    "note": "Cash only",
-   "cash": 25000,
+   "cash": 20000,
    "effect": "Your Bank holds up to $250,000",
    "symbol": "building.columns.fill",
    "family": "Bank Upgrade",
