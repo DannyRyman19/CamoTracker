@@ -251,13 +251,22 @@ struct HajinStashScanReview: View {
         // reader also recognises keys, gear and valuables, and leaves them out.
         found.compactMap { id, n in store.guide?.item(id).flatMap { ["Ingredient", "Resource"].contains($0.kind) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
-            // Ones to check first, then changes, then ones already right
-            .sorted { (rank($0), $0.item.name.resolved) < (rank($1), $1.item.name.resolved) }
+            // Ones to check first, then anything under 100% sure (least sure
+            // first), then changes, then ones already right
+            .sorted { (rank($0), percent($0), $0.item.name.resolved) < (rank($1), percent($1), $1.item.name.resolved) }
     }
 
     private func rank(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> Int {
         if unsure.contains(row.item.id) && edited[row.item.id] == nil { return 0 }
-        return row.now == row.read ? 2 : 1
+        if percent(row) < 100 { return 1 }
+        return row.now == row.read ? 3 : 2
+    }
+
+    /// How sure the reader was, as shown on the row; 100 for edited rows and
+    /// ones read from text (resources), which carry no figure
+    private func percent(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> Int {
+        guard edited[row.item.id] == nil, let sure = sureness[row.item.id] else { return 100 }
+        return Int((sure * 100).rounded())
     }
 
     /// "10 · Already right": the value, then the note.

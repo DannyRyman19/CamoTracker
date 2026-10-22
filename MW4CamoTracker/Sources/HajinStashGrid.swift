@@ -758,7 +758,9 @@ final class HajinFrameState: ObservableObject {
     @Published var quality: [HajinPhotoQuality] = []
     @Published var corners: [CGPoint] = [CGPoint(x: 0.15, y: 0.25), CGPoint(x: 0.85, y: 0.25), CGPoint(x: 0.85, y: 0.75), CGPoint(x: 0.15, y: 0.75)]
     @Published var reading = false
-    @Published var finding = false
+    /// Looking for the grid: true from the start, so the default frame
+    /// never shows before the guess
+    @Published var finding = true
     var guessed = false
     /// Set once the player drags a handle, so a late guess doesn't move it back
     var moved = false
@@ -803,6 +805,8 @@ struct HajinStashGridFrameView: View {
     /// Choose another photo: the caller reopens the photo picker after this closes.
     var onRetake: (() -> Void)? = nil
     @ObservedObject var state: HajinFrameState
+    /// 1 just as the guess lands, fading to 0
+    @State private var lockGlow = 0.0
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
 
@@ -838,12 +842,25 @@ struct HajinStashGridFrameView: View {
                     let fit = fitted(image.size, in: geo.size)
                     ZStack(alignment: .topLeading) {
                         Image(uiImage: image).resizable().frame(width: fit.width, height: fit.height)
+                        if state.finding {
+                            HajinGridScanning(size: fit)
+                                .transition(.opacity)
+                        }
                         overlay(fit)
+                            .opacity(state.finding ? 0 : 1)
+                        // A glow round the frame as it locks on
+                        frameLines(fit)
+                            .stroke(Color.accentDMZ, lineWidth: 6)
+                            .blur(radius: 6)
+                            .opacity(lockGlow)
+                            .allowsHitTesting(false)
                         ForEach(0..<4, id: \.self) { i in
                             Circle()
                                 .fill(Color.accentDMZ.opacity(0.35))
                                 .overlay(Circle().strokeBorder(Color.white, lineWidth: 2))
                                 .frame(width: 34, height: 34)
+                                .scaleEffect(state.finding ? 0.2 : 1)
+                                .opacity(state.finding ? 0 : 1)
                                 .position(x: state.corners[i].x * fit.width, y: state.corners[i].y * fit.height)
                                 .gesture(DragGesture().onEnded { _ in remeasure() }.simultaneously(with: DragGesture().onChanged { g in
                                     state.moved = true
@@ -891,10 +908,19 @@ struct HajinStashGridFrameView: View {
                 guard let cg = image.cgImage else { return }
                 let issues = await Task.detached(priority: .userInitiated) { HajinPhotoQuality.issues(cg) }.value
                 withAnimation(.snappy) { state.quality = issues }
-                state.finding = true
+                let started = Date()
                 let guess = await Task.detached(priority: .userInitiated) { HajinStashGridFinder.guess(cg) }.value
-                state.finding = false
-                if let guess, !state.moved { withAnimation(.snappy) { state.corners = guess } }
+                // Let the scan run at least one sweep, so a quick find on a
+                // screenshot still reads as a scan rather than a flicker
+                let left = 1.3 - Date().timeIntervalSince(started)
+                if left > 0 { try? await Task.sleep(for: .seconds(left)) }
+                if let guess, !state.moved { state.corners = guess }
+                withAnimation(.spring(duration: 0.45, bounce: 0.3)) { state.finding = false }
+                if guess != nil {
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    lockGlow = 1
+                    withAnimation(.easeOut(duration: 0.9).delay(0.2)) { lockGlow = 0 }
+                }
                 remeasure()
             }
             .onAppear {
@@ -919,6 +945,10 @@ struct HajinStashGridFrameView: View {
 
     /// The framed quad with the column lines and estimated row lines.
     private func overlay(_ fit: CGSize) -> some View {
+        frameLines(fit).stroke(Color.accentDMZ, lineWidth: 1.5)
+    }
+
+    private func frameLines(_ fit: CGSize) -> Path {
         let rows = state.rowCount ?? HajinStashGrid.rows(for: state.corners, size: image.size)
         return Path { p in
             func at(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
@@ -935,7 +965,6 @@ struct HajinStashGridFrameView: View {
                 p.move(to: at(0, v)); p.addLine(to: at(1, v))
             }
         }
-        .stroke(Color.accentDMZ, lineWidth: 1.5)
     }
 
     /// Counts the rows for the current frame in the background.
@@ -968,6 +997,87 @@ struct HajinStashGridFrameView: View {
                                          sureness: totals.sureness, stacks: totals.stacks)
             }
         }
+    }
+}
+
+/// Over the photo while the grid is being found: the photo dims, a scan
+/// line sweeps down and back, crosshair marks light up as it passes, and
+/// viewfinder brackets breathe at the corners.
+struct HajinGridScanning: View {
+    let size: CGSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    private static let sweep = 1.3
+
+    var body: some View {
+        TimelineView(.animation(paused: reduceMotion)) { context in
+            let t = context.date.timeIntervalSinceReferenceDate
+            // 0...1...0, eased so it lingers at each end
+            let phase = (t / Self.sweep).truncatingRemainder(dividingBy: 2)
+            let raw = phase < 1 ? phase : 2 - phase
+            let y = reduceMotion ? 0.5 : (1 - cos(raw * .pi)) / 2
+            let down = phase < 1
+            let pulse = 0.5 + 0.5 * sin(t * 4)
+            ZStack(alignment: .topLeading) {
+                Color.black.opacity(0.35)
+                marks(y: y)
+                band(y: y, down: down)
+                brackets(pulse: pulse)
+            }
+        }
+        .frame(width: size.width, height: size.height)
+        .clipped()
+        .allowsHitTesting(false)
+    }
+
+    /// A field of small crosshairs that light up near the scan line.
+    private func marks(y: Double) -> some View {
+        Canvas { ctx, canvas in
+            let cols = 12, rows = max(6, Int(Double(cols) * canvas.height / canvas.width))
+            for r in 0...rows {
+                for c in 0...cols {
+                    let px = canvas.width * CGFloat(c) / CGFloat(cols)
+                    let py = canvas.height * CGFloat(r) / CGFloat(rows)
+                    let near = max(0, 1 - abs(Double(py / canvas.height) - y) * 6)
+                    let arm: CGFloat = 3 + 3 * near
+                    var p = Path()
+                    p.move(to: CGPoint(x: px - arm, y: py)); p.addLine(to: CGPoint(x: px + arm, y: py))
+                    p.move(to: CGPoint(x: px, y: py - arm)); p.addLine(to: CGPoint(x: px, y: py + arm))
+                    ctx.stroke(p, with: .color(Color.accentDMZ.opacity(0.15 + 0.75 * near)), lineWidth: 1)
+                }
+            }
+        }
+    }
+
+    /// The bright line with a fading trail behind it.
+    private func band(y: Double, down: Bool) -> some View {
+        let trail: CGFloat = min(90, size.height * 0.3)
+        let lineY = size.height * y
+        return ZStack(alignment: .topLeading) {
+            LinearGradient(colors: [Color.accentDMZ.opacity(0), Color.accentDMZ.opacity(0.45)],
+                           startPoint: down ? .top : .bottom, endPoint: down ? .bottom : .top)
+                .frame(width: size.width, height: trail)
+                .offset(y: down ? lineY - trail : lineY)
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: size.width, height: 2)
+                .shadow(color: Color.accentDMZ, radius: 6)
+                .shadow(color: Color.accentDMZ, radius: 12)
+                .offset(y: lineY - 1)
+        }
+    }
+
+    /// Viewfinder corners, breathing in and out a little.
+    private func brackets(pulse: Double) -> some View {
+        let inset: CGFloat = 10 + 6 * pulse
+        let arm = min(size.width, size.height) * 0.12
+        return Path { p in
+            let w = size.width, h = size.height
+            for (x, y, dx, dy) in [(inset, inset, 1.0, 1.0), (w - inset, inset, -1.0, 1.0), (w - inset, h - inset, -1.0, -1.0), (inset, h - inset, 1.0, -1.0)] {
+                p.move(to: CGPoint(x: x, y: y + arm * dy)); p.addLine(to: CGPoint(x: x, y: y)); p.addLine(to: CGPoint(x: x + arm * dx, y: y))
+            }
+        }
+        .stroke(Color.white.opacity(0.6 + 0.4 * pulse), style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
+        .shadow(color: Color.accentDMZ, radius: 4)
     }
 }
 
