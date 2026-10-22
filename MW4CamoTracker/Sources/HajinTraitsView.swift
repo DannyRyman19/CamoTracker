@@ -67,6 +67,19 @@ private struct TreePanel: View {
                         TraitNode(id: id, tree: tree, size: major ? 62 : 44, selected: $selected)
                     }
                 }
+                .frame(maxWidth: .infinity)
+                // Which rows are the same for everyone and which differ per
+                // operator, written down the side
+                .overlay(alignment: .leading) {
+                    Text((major ? "mw4.ui.hajin.trait_fixed" : "mw4.ui.hajin.trait_random").localized().uppercased())
+                        .font(.system(size: 8, weight: .heavy))
+                        .tracking(0.8)
+                        .foregroundStyle(major ? tree.tint : Color.appInkMuted)
+                        .fixedSize()
+                        .rotationEffect(.degrees(-90))
+                        .frame(width: 14)
+                        .padding(.leading, 6)
+                }
                 .padding(.vertical, major ? 12 : 6)
                 .padding(.top, index == 0 ? 14 : 0)
                 // A gap above each fixed row, like the game's sections
