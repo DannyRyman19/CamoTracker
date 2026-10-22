@@ -279,13 +279,14 @@
 "mw4.ui.hajin.shop_done" = "Your stash covers everything here";
 "mw4.ui.hajin.shop_empty_tracked" = "Track a recipe or upgrade to see what it needs here.";
 "mw4.ui.hajin.blueprints" = "Still to find";
-"mw4.ui.hajin.blueprints_subtitle" = "Every blueprint, to tick off";
-"mw4.ui.hajin.blueprints_intro" = "Recipes you find in Hajin and extract with. Tick each one once it's in your printer.";
+"mw4.ui.hajin.blueprints_subtitle" = "Every blueprint and Weapon Manual, to tick off";
+"mw4.ui.hajin.blueprints_intro" = "Recipes and Weapon Manuals you find in Hajin and extract with. Tick each one once you have it.";
 "mw4.ui.hajin.blueprints_progress" = "%1$d of %2$d found";
 "mw4.ui.hajin.blueprints_hide" = "Hide found";
-"mw4.ui.hajin.blueprints_all" = "Every blueprint found";
+"mw4.ui.hajin.blueprints_all" = "Everything found";
 "mw4.ui.hajin.blueprint_found" = "Blueprint found";
 "mw4.ui.hajin.blueprint_missing" = "Blueprint still to find";
+"mw4.ui.hajin.weapon_manuals" = "Weapon Manuals";
 "mw4.ui.hajin.scan" = "Read counts from photos";
 "mw4.ui.hajin.scan_hint" = "Screenshots or photos of the 3D Printer's recipe screens or your stash's resource totals, with names and numbers fully in shot";
 "mw4.ui.hajin.scan_reading" = "Reading photos...";
@@ -306,6 +307,7 @@
 "mw4.ui.hajin.grid_tip_tab" = "Open the Ingredients tab, so only ingredients are in the grid";
 "mw4.ui.hajin.grid_tip_glare" = "Avoid glare and reflections on the screen";
 "mw4.ui.hajin.grid_choose" = "Choose a photo";
+"mw4.ui.hajin.grid_camera" = "Take a photo";
 "mw4.ui.hajin.scan_check" = "Check";
 "mw4.ui.hajin.scan_edit" = "Edit";
 "mw4.ui.hajin.scan_edit_hint" = "Tap a row to skip it. Swipe or hold to fix a count.";

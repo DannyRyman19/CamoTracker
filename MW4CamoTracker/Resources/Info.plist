@@ -8,6 +8,8 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo of your DMZ stash so the app can read your ingredient counts. The photo stays on your device.</string>
 	<key>CFBundleDisplayName</key>
 	<string>MW4 Tracker</string>
 	<key>CFBundleExecutable</key>

@@ -5,6 +5,21 @@ extension HajinStore {
     func hasBlueprint(_ id: String) -> Bool { checked.contains(Self.blueprintKey(id)) }
     /// Every recipe you find in Hajin, printer tab by printer tab.
     var blueprints: [HajinGuide.Item] { (guide?.items ?? []).filter { $0.blueprint == true } }
+
+    /// The Gunsmith's weapons that need their Manual extracted (starters
+    /// don't), ticked as "manual-<weaponId>" like the Gunsmith list.
+    var manualRows: [HajinGuide.Row] {
+        (guide?.guide.first { $0.id == "gunsmith" }?.rows ?? []).filter {
+            $0.weapon != nil && !($0.subtitle?.values["en"]?.hasPrefix("Starter") ?? false)
+        }
+    }
+    func hasManual(_ row: HajinGuide.Row) -> Bool { row.weapon.map { checked.contains("manual-\($0)") } ?? false }
+
+    /// Blueprints and Manuals found, out of all of them.
+    var findProgress: (found: Int, total: Int) {
+        let rows = manualRows
+        return (blueprints.filter { hasBlueprint($0.id) }.count + rows.filter { hasManual($0) }.count, blueprints.count + rows.count)
+    }
 }
 
 /// "Still to find": every blueprint (a recipe found in Hajin and extracted),
@@ -45,7 +60,12 @@ struct HajinBlueprintsView: View {
 
     private var content: some View {
         let all = store.blueprints
-        let found = all.filter { store.hasBlueprint($0.id) }.count
+        let progress = store.findProgress
+        let found = progress.found
+        let needle = query.lowercased()
+        let manuals = store.manualRows.filter { needle.isEmpty || $0.title.resolved.lowercased().contains(needle) }
+            .filter { !hideFound || !store.hasManual($0) }
+            .sorted { (store.hasManual($0) ? 1 : 0, $0.title.resolved) < (store.hasManual($1) ? 1 : 0, $1.title.resolved) }
         return ZStack {
             if embeddedQuery == nil { AppBackground(accent: .accentDMZ) }
             List {
@@ -54,7 +74,7 @@ struct HajinBlueprintsView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
                     HStack {
-                        Text(String(format: "mw4.ui.hajin.blueprints_progress".localized(), found, all.count))
+                        Text(String(format: "mw4.ui.hajin.blueprints_progress".localized(), found, progress.total))
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(Color.appInk)
                         Spacer()
@@ -63,7 +83,7 @@ struct HajinBlueprintsView: View {
                             .font(.caption.weight(.semibold))
                             .tint(.accentDMZ)
                     }
-                    ProgressBar(fraction: all.isEmpty ? 0 : Double(found) / Double(all.count), accent: .accentDMZ)
+                    ProgressBar(fraction: progress.total == 0 ? 0 : Double(found) / Double(progress.total), accent: .accentDMZ)
                 }
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
@@ -74,7 +94,14 @@ struct HajinBlueprintsView: View {
                         HajinBlueprintRow(item: item).hajinCard()
                     }
                 }
-                if groups.isEmpty && hideFound && found == all.count && !all.isEmpty {
+                if !manuals.isEmpty {
+                    let rows = store.manualRows
+                    HajinHeading(title: "\("mw4.ui.hajin.weapon_manuals".localized())  \(rows.filter { store.hasManual($0) }.count)/\(rows.count)")
+                    ForEach(manuals, id: \.self) { row in
+                        if let weapon = row.weapon { HajinWeaponRow(row: row, weaponId: weapon).hajinCard() }
+                    }
+                }
+                if groups.isEmpty && manuals.isEmpty && hideFound && found == progress.total && progress.total > 0 {
                     Label("mw4.ui.hajin.blueprints_all".localized(), systemImage: "checkmark.seal.fill")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(HajinStore.printableGreen)
@@ -101,7 +128,7 @@ struct HajinBlueprintRow: View {
             }
             HajinItemLink(id: item.id) {
                 HStack(spacing: 12) {
-                    HajinItemTile(item: item, size: 36)
+                    HajinItemTile(item: item, size: 40, blueprint: true)
                         .opacity(done ? 0.55 : 1)
                     VStack(alignment: .leading, spacing: 3) {
                         Text(item.name.resolved)
@@ -127,8 +154,7 @@ struct HajinBlueprintsEntry: View {
     @EnvironmentObject private var store: HajinStore
 
     var body: some View {
-        let all = store.blueprints
-        let found = all.filter { store.hasBlueprint($0.id) }.count
+        let progress = store.findProgress
         HStack(spacing: 12) {
             Image(systemName: "doc.text.magnifyingglass")
                 .font(.system(size: 14, weight: .bold))
@@ -140,7 +166,7 @@ struct HajinBlueprintsEntry: View {
                 Text("mw4.ui.hajin.blueprints_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
-            Text("\(found)/\(all.count)")
+            Text("\(progress.found)/\(progress.total)")
                 .font(.system(size: 12, weight: .semibold, design: .monospaced))
                 .foregroundStyle(Color.appInkMuted)
         }

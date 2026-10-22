@@ -499,6 +499,7 @@ struct HajinStashGridButton: View {
     @State private var showsIntro = false
     /// The picked photo, held until the intro sheet has gone
     @State private var pending: HajinPickedPhoto?
+    @State private var captured: UIImage?
 
     var body: some View {
         Button { showsIntro = true } label: {
@@ -524,7 +525,13 @@ struct HajinStashGridButton: View {
         .sheet(isPresented: $showsIntro, onDismiss: {
             if let pending { photo = pending; self.pending = nil }
         }) {
-            HajinStashScanIntro(pick: $pick)
+            HajinStashScanIntro(pick: $pick, captured: $captured)
+        }
+        .onChange(of: captured) { image in
+            guard let image else { return }
+            pending = HajinPickedPhoto(image: image.normalisedUp())
+            captured = nil
+            showsIntro = false
         }
         .onChange(of: pick) { chosen in
             guard let chosen else { return }

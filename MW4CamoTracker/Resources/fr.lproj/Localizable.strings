@@ -279,13 +279,14 @@
 "mw4.ui.hajin.shop_done" = "Ta réserve couvre tout";
 "mw4.ui.hajin.shop_empty_tracked" = "Suis une recette ou une amélioration pour voir ici ce qu'il lui faut.";
 "mw4.ui.hajin.blueprints" = "À trouver";
-"mw4.ui.hajin.blueprints_subtitle" = "Tous les plans, à cocher";
-"mw4.ui.hajin.blueprints_intro" = "Les recettes que tu trouves à Hajin et avec lesquelles tu t'extrais. Coche chacune quand elle est dans ton imprimante.";
+"mw4.ui.hajin.blueprints_subtitle" = "Tous les plans et manuels d'armes, à cocher";
+"mw4.ui.hajin.blueprints_intro" = "Les recettes et manuels d'armes que tu trouves à Hajin et avec lesquels tu t'extrais. Coche chacun quand tu l'as.";
 "mw4.ui.hajin.blueprints_progress" = "%1$d sur %2$d trouvés";
 "mw4.ui.hajin.blueprints_hide" = "Masquer les trouvés";
-"mw4.ui.hajin.blueprints_all" = "Tous les plans trouvés";
+"mw4.ui.hajin.blueprints_all" = "Tout trouvé";
 "mw4.ui.hajin.blueprint_found" = "Plan trouvé";
 "mw4.ui.hajin.blueprint_missing" = "Plan à trouver";
+"mw4.ui.hajin.weapon_manuals" = "Manuels d'armes";
 "mw4.ui.hajin.scan" = "Lire les quantités sur des photos";
 "mw4.ui.hajin.scan_hint" = "Captures ou photos des recettes de l'imprimante 3D ou des ressources de ta réserve, noms et nombres entièrement visibles";
 "mw4.ui.hajin.scan_reading" = "Lecture des photos...";
@@ -306,6 +307,7 @@
 "mw4.ui.hajin.grid_tip_tab" = "Ouvre l'onglet Ingrédients, pour n'avoir que des ingrédients dans la grille";
 "mw4.ui.hajin.grid_tip_glare" = "Évite les reflets sur l'écran";
 "mw4.ui.hajin.grid_choose" = "Choisir une photo";
+"mw4.ui.hajin.grid_camera" = "Prendre une photo";
 "mw4.ui.hajin.scan_check" = "À vérifier";
 "mw4.ui.hajin.scan_edit" = "Modifier";
 "mw4.ui.hajin.scan_edit_hint" = "Touche une ligne pour l'ignorer. Balaie ou maintiens pour corriger une quantité.";

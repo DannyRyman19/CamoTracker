@@ -19,11 +19,17 @@ enum HajinRarity {
 struct HajinItemTile: View {
     let item: HajinGuide.Item?
     var size: CGFloat = 44
+    /// Draw it on blueprint paper (the blueprint checklist).
+    var blueprint = false
 
     var body: some View {
         let tint = HajinRarity.color(item?.rarity)
         ZStack {
-            LinearGradient(colors: [tint.opacity(0.22), Color.black.opacity(0.55)], startPoint: .bottom, endPoint: .top)
+            if blueprint {
+                HajinBlueprintPaper(size: size)
+            } else {
+                LinearGradient(colors: [tint.opacity(0.22), Color.black.opacity(0.55)], startPoint: .bottom, endPoint: .top)
+            }
             if let image = item?.image, let url = URL(string: image) {
                 AsyncImage(url: url) { phase in
                     if let picture = phase.image { picture.resizable().scaledToFit().padding(size * 0.08) } else { Color.clear }
@@ -42,6 +48,34 @@ struct HajinItemTile: View {
         .overlay(alignment: .top) { Rectangle().fill(tint).frame(height: max(2, size / 22)) }
         .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(tint.opacity(0.45), lineWidth: 1))
         .clipShape(RoundedRectangle(cornerRadius: 4))
+    }
+}
+
+/// Blueprint paper: deep blue with a fine grid and a heavier line every
+/// few squares, drawn rather than an image so it stays crisp at any size.
+struct HajinBlueprintPaper: View {
+    let size: CGFloat
+
+    var body: some View {
+        Canvas { ctx, area in
+            ctx.fill(Path(CGRect(origin: .zero, size: area)), with: .linearGradient(Gradient(colors: [Color(red: 0.10, green: 0.30, blue: 0.58), Color(red: 0.05, green: 0.18, blue: 0.40)]),
+                                                         startPoint: .zero, endPoint: CGPoint(x: area.width, y: area.height)))
+            let step = max(4, area.width / 8)
+            var fine = Path(), heavy = Path()
+            for (i, x) in stride(from: 0, through: area.width, by: step).enumerated() {
+                var line = Path()
+                line.move(to: CGPoint(x: x, y: 0)); line.addLine(to: CGPoint(x: x, y: area.height))
+                if i % 4 == 0 { heavy.addPath(line) } else { fine.addPath(line) }
+            }
+            for (i, y) in stride(from: 0, through: area.height, by: step).enumerated() {
+                var line = Path()
+                line.move(to: CGPoint(x: 0, y: y)); line.addLine(to: CGPoint(x: area.width, y: y))
+                if i % 4 == 0 { heavy.addPath(line) } else { fine.addPath(line) }
+            }
+            ctx.stroke(fine, with: .color(.white.opacity(0.12)), lineWidth: 0.5)
+            ctx.stroke(heavy, with: .color(.white.opacity(0.28)), lineWidth: 0.8)
+        }
+        .frame(width: size, height: size)
     }
 }
 

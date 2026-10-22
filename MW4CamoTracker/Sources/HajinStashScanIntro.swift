@@ -7,7 +7,10 @@ import SwiftUI
 @available(iOS 17.0, *)
 struct HajinStashScanIntro: View {
     @Binding var pick: PhotosPickerItem?
+    /// A photo taken with the camera instead of picked
+    @Binding var captured: UIImage?
     @Environment(\.dismiss) private var dismiss
+    @State private var showsCamera = false
 
     var body: some View {
         NavigationStack {
@@ -30,13 +33,24 @@ struct HajinStashScanIntro: View {
                     }
                     .padding(14)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+                    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                        Button { showsCamera = true } label: {
+                            Label("mw4.ui.hajin.grid_camera".localized(), systemImage: "camera.fill")
+                                .font(.headline)
+                                .foregroundStyle(Color.black.opacity(0.85))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
+                        }
+                        .buttonStyle(.plain)
+                    }
                     PhotosPicker(selection: $pick, matching: .images) {
                         Label("mw4.ui.hajin.grid_choose".localized(), systemImage: "photo.stack")
                             .font(.headline)
-                            .foregroundStyle(Color.black.opacity(0.85))
+                            .foregroundStyle(Color.appInk)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 14)
-                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
+                            .background(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.accentDMZ, lineWidth: 2))
                     }
                     .buttonStyle(.plain)
                 }
@@ -52,6 +66,10 @@ struct HajinStashScanIntro: View {
             }
         }
         .presentationDetents([.large])
+        .fullScreenCover(isPresented: $showsCamera) {
+            HajinCamera { image in captured = image }
+                .ignoresSafeArea()
+        }
     }
 
     private func tip(_ symbol: String, _ key: String) -> some View {
@@ -65,6 +83,32 @@ struct HajinStashScanIntro: View {
                 .foregroundStyle(Color.appInk)
                 .fixedSize(horizontal: false, vertical: true)
         }
+    }
+}
+
+/// The system camera, for a photo of the stash taken there and then.
+struct HajinCamera: UIViewControllerRepresentable {
+    let done: (UIImage) -> Void
+    @Environment(\.dismiss) private var dismiss
+
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ controller: UIImagePickerController, context: Context) {}
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
+    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        let parent: HajinCamera
+        init(_ parent: HajinCamera) { self.parent = parent }
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let image = info[.originalImage] as? UIImage { parent.done(image) }
+            parent.dismiss()
+        }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { parent.dismiss() }
     }
 }
 
