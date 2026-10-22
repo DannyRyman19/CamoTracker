@@ -1,6 +1,6 @@
 {
- "version": "0.9.20",
- "updated": "2026-10-21",
+ "version": "0.9.21",
+ "updated": "2026-10-22",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -3234,6 +3234,15 @@
      ],
      "group": "Lieutenants",
      "check": "boss-jin-tae"
+    },
+    {
+     "title": "The Chemist",
+     "subtitle": "Based around the Haneul Nuclear Reactor. Pays $10,000",
+     "links": [
+      "the-chemists-secure-armory"
+     ],
+     "group": "Lieutenants",
+     "check": "boss-chemist"
     },
     {
      "title": "Scavenger",
