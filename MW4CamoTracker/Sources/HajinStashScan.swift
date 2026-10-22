@@ -205,6 +205,12 @@ struct HajinStashScanReview: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
+                } else {
+                    // How to edit, before the rows it's about
+                    Label("mw4.ui.hajin.scan_edit_hint".localized(), systemImage: "hand.tap")
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                        .listRowBackground(Color.clear)
                 }
                 ForEach(all, id: \.item.id) { row in
                     let same = row.now == row.read
@@ -243,12 +249,6 @@ struct HajinStashScanReview: View {
                     .swipeActions {
                         Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }.tint(.accentDMZ)
                     }
-                }
-                if !all.isEmpty {
-                    Text("mw4.ui.hajin.scan_edit_hint".localized())
-                        .font(.caption)
-                        .foregroundStyle(Color.appInkMuted)
-                        .listRowBackground(Color.clear)
                 }
             }
             .alert(editing?.name.resolved ?? "", isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {

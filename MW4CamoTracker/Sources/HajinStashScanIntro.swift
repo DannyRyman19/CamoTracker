@@ -22,6 +22,9 @@ struct HajinStashScanIntro: View {
                     Text("mw4.ui.hajin.grid_intro".localized())
                         .font(.subheadline)
                         .foregroundStyle(Color.appInk)
+                    Label("mw4.ui.hajin.grid_private".localized(), systemImage: "lock.iphone")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color.accentDMZ)
                     VStack(alignment: .leading, spacing: 10) {
                         Text("mw4.ui.hajin.grid_tips_title".localized().uppercased())
                             .font(.system(size: 11, weight: .bold)).tracking(0.8)
