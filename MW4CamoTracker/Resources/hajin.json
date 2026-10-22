@@ -1,6 +1,6 @@
 {
- "version": "0.9.20",
- "updated": "2026-10-21",
+ "version": "0.9.21",
+ "updated": "2026-10-22",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -3006,184 +3006,190 @@
    "rows": [
     {
      "title": "Han 86",
-     "value": "$6,000",
      "group": "Assault Rifles",
      "subtitle": "Starter weapon",
+     "value": "$6,000",
      "weapon": 0
     },
     {
      "title": "M4",
-     "value": "$6,250",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$6,250",
      "weapon": 1
     },
     {
      "title": "Hyeon Burst",
-     "value": "$5,250",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$5,250",
      "weapon": 2
     },
     {
      "title": "Kastov 762",
-     "value": "$5,500",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$5,500",
      "weapon": 3
     },
     {
      "title": "Patriot XMR",
-     "value": "$6,500",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$6,500",
      "weapon": 4
     },
     {
      "title": "Oden",
-     "value": "$6,250",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$6,250",
      "weapon": 20
     },
     {
      "title": "Axion",
-     "value": "$5,750",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$5,750",
      "weapon": 19
     },
     {
      "title": "Cronen Squall",
-     "value": "$6,750",
      "group": "Assault Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$6,750",
      "weapon": 21
     },
     {
      "title": "ISO Nightshade",
-     "value": "$4,250",
      "group": "SMGs",
      "subtitle": "Needs its Manual",
+     "value": "$4,250",
      "weapon": 5
     },
     {
      "title": "VEL 46",
-     "value": "$4,500",
      "group": "SMGs",
      "subtitle": "Needs its Manual",
+     "value": "$4,500",
      "weapon": 22
     },
     {
      "title": "Wz.55 Striga",
-     "value": "$3,500",
      "group": "SMGs",
      "subtitle": "Needs its Manual",
+     "value": "$3,500",
      "weapon": 23
     },
     {
      "title": "PPSh-41",
-     "value": "$3,750",
      "group": "SMGs",
      "subtitle": "Needs its Manual",
+     "value": "$3,750",
      "weapon": 6
     },
     {
      "title": "X-58 Nyx",
-     "value": "$4,000",
      "group": "SMGs",
      "subtitle": "Needs its Manual",
+     "value": "$4,000",
      "weapon": 7
     },
     {
      "title": "Rezi 12",
-     "value": "$4,000",
      "group": "Shotguns",
      "subtitle": "Starter weapon",
+     "value": "$4,000",
      "weapon": 8
     },
     {
      "title": "Warlord",
-     "value": "$3,500",
      "group": "Shotguns",
      "subtitle": "Needs its Manual",
+     "value": "$3,500",
      "weapon": 24
     },
     {
      "title": "FiNN LMG",
-     "value": "$8,000",
      "group": "LMGs",
      "subtitle": "Needs its Manual",
+     "value": "$8,000",
      "weapon": 9
     },
     {
      "title": "Type 73",
-     "value": "$7,500",
      "group": "LMGs",
      "subtitle": "Needs its Manual",
+     "value": "$7,500",
      "weapon": 10
     },
     {
      "title": "APOC-338",
-     "value": "$7,750",
      "group": "LMGs",
      "subtitle": "Needs its Manual",
+     "value": "$7,750",
      "weapon": 25
     },
     {
      "title": "MAR-9",
-     "value": "$6,500",
      "group": "Marksman Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$6,500",
      "weapon": 11
     },
     {
      "title": "Oris 8.6",
-     "value": "$7,000",
      "group": "Marksman Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$7,000",
      "weapon": 12
     },
     {
      "title": "Mosin-Nagant",
-     "value": "$7,500",
      "group": "Marksman Rifles",
      "subtitle": "Needs its Manual",
+     "value": "$7,500",
      "weapon": 26
     },
     {
      "title": "Sang 9mm",
-     "value": "$1,000",
      "group": "Pistols",
      "subtitle": "Starter weapon",
+     "value": "$1,000",
      "weapon": 28
     },
     {
      "title": "Krait P68",
-     "value": "$1,000",
      "group": "Pistols",
      "subtitle": "Needs its Manual",
+     "value": "$1,000",
      "weapon": 15
     },
     {
      "title": ".50 GS",
-     "value": "$4,000",
      "group": "Pistols",
      "subtitle": "Needs its Manual",
+     "value": "$4,000",
      "weapon": 16
     },
     {
      "title": "Mojave .357",
-     "value": "$2,500",
      "group": "Pistols",
      "subtitle": "Needs its Manual",
+     "value": "$2,500",
      "weapon": 29
     },
     {
+     "title": "RPG-8",
+     "group": "Launchers",
+     "subtitle": "Needs its Manual",
+     "weapon": 30
+    },
+    {
      "title": "FSS Carbon Edge 1095",
-     "value": "$250",
      "group": "Melee",
      "subtitle": "Starter weapon",
+     "value": "$250",
      "weapon": 18
     }
    ]
@@ -3196,7 +3202,7 @@
    "rows": [
     {
      "title": "Gorani",
-     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village. Uses an M4.",
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village. Pays $10,000. Uses an M4.",
      "group": "Lieutenants",
      "check": "boss-gorani"
     },
@@ -3522,6 +3528,42 @@
      "title": "Bank Branch Vault Access",
      "subtitle": "Rare. The cash vaults of South Korean bank branches",
      "item": "bank-branch-vault-access"
+    },
+    {
+     "title": "Hanex Guard Station",
+     "value": "G6",
+     "subtitle": "Epic. The guard station on an upper floor near the Hanex Bank vault, The Grid",
+     "item": "hanex-guard-station"
+    },
+    {
+     "title": "Lucera Suite 703 Bedroom",
+     "value": "H7",
+     "subtitle": "Epic. The upper-floor executive suite in Hotel Lucera, The Grid",
+     "item": "lucera-suite-703-bedroom"
+    },
+    {
+     "title": "Jang-ui's Converted Power Room",
+     "value": "H6",
+     "subtitle": "Legendary. The enclosed generator room on the bottom floor of NuriGO Mall, next to the Robo Dog agility course",
+     "item": "jang-uis-converted-power-room"
+    },
+    {
+     "title": "Old Barber Shop",
+     "value": "I7",
+     "subtitle": "Rare. The barber shop next to the crab shack on the south side of Songdo Wharf",
+     "item": "old-barber-shop"
+    },
+    {
+     "title": "Hazard Storehouse",
+     "value": "I7",
+     "subtitle": "Rare. The material storage warehouse south of the cooling towers, Haneul Nuclear Reactor",
+     "item": "hazard-storehouse"
+    },
+    {
+     "title": "Weapons Mod Workshop",
+     "value": "B5",
+     "subtitle": "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base",
+     "item": "weapons-mod-workshop"
     }
    ]
   },
@@ -3537,6 +3579,18 @@
      "subtitle": "Ultra. Also a reward from Silent Ledger",
      "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1",
      "item": "gold-bar"
+    },
+    {
+     "title": "Gold Skull",
+     "value": "$25,000",
+     "subtitle": "Ultra",
+     "item": "gold-skull"
+    },
+    {
+     "title": "Sanctioned Assassination List",
+     "value": "$10,000",
+     "subtitle": "Legendary",
+     "item": "sanctioned-assassination-list"
     },
     {
      "title": "Cipher Code Ledger",
@@ -4180,6 +4234,11 @@
      "group": "Warfighter"
     },
     {
+     "title": "Popcorn Lethals",
+     "subtitle": "Hostiles hit by your Lethals are more likely to drop Lethals. A random-row trait in the top section",
+     "group": "Warfighter"
+    },
+    {
      "title": "Randomized Trait",
      "subtitle": "Revealed once you take a trait from the row before",
      "group": "Warfighter"
@@ -4318,6 +4377,36 @@
      "title": "Quick Knife",
      "subtitle": "Your weapon bash becomes a knife attack",
      "group": "Scout"
+    },
+    {
+     "title": "Faster Revive",
+     "subtitle": "Faster revives. One of the two fixed traits in the bottom section",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Expedited Extraction",
+     "subtitle": "Exfils arrive much faster. A random-row trait in the top section",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Rescuer",
+     "subtitle": "Move faster while dragging a downed teammate. A random-row trait in the top section",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Rad Blocker",
+     "subtitle": "Less damage from radiation. A random-row trait in the middle section",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Fuel Economy",
+     "subtitle": "Vehicles use less fuel. A random-row trait in the middle section",
+     "group": "Survivalist"
+    },
+    {
+     "title": "Consumable Stacker",
+     "subtitle": "Using a consumable that's already active adds to its time, up to twice the normal length. A random-row trait in the middle section",
+     "group": "Survivalist"
     },
     {
      "title": "Die Hard",
@@ -5547,6 +5636,14 @@
    "rarity": "Ultra"
   },
   {
+   "id": "gold-skull",
+   "name": "Gold Skull",
+   "kind": "Valuable",
+   "value": 25000,
+   "rarity": "Ultra",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "gun-store-weapons-locker",
    "name": "Gun Store Weapons Locker",
    "kind": "Key",
@@ -5588,6 +5685,28 @@
    "rarity": "Rare",
    "note": "Makeshift armory upstairs in the school northeast of the Re-Education Center, Deadtown",
    "grid": "B7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
+   "id": "hanex-guard-station",
+   "name": "Hanex Guard Station",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The guard station on an upper floor near the Hanex Bank vault, The Grid",
+   "grid": "G6",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
+  },
+  {
+   "id": "hazard-storehouse",
+   "name": "Hazard Storehouse",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The material storage warehouse south of the cooling towers, Haneul Nuclear Reactor",
+   "grid": "I7",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
@@ -5724,6 +5843,17 @@
    "value": 10000
   },
   {
+   "id": "jang-uis-converted-power-room",
+   "name": "Jang-ui's Converted Power Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "The enclosed generator room on the bottom floor of NuriGO Mall, next to the Robo Dog agility course",
+   "grid": "H6",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
+  },
+  {
    "id": "jin-taes-dog-tag",
    "name": "Jin-Tae's Dog Tag",
    "kind": "Valuable",
@@ -5802,6 +5932,17 @@
     }
    ],
    "effect": "Large, with a weapon slot and four Secure Slots"
+  },
+  {
+   "id": "lucera-suite-703-bedroom",
+   "name": "Lucera Suite 703 Bedroom",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The upper-floor executive suite in Hotel Lucera, The Grid",
+   "grid": "H7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "mia-recovery-discount-i",
@@ -6141,6 +6282,17 @@
     "m5892"
    ],
    "value": 1500
+  },
+  {
+   "id": "old-barber-shop",
+   "name": "Old Barber Shop",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The barber shop next to the crab shack on the south side of Songdo Wharf",
+   "grid": "I7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "pain-killers",
@@ -6540,6 +6692,14 @@
    ],
    "effect": "Portable turret that shoots down aerial threats",
    "image": "https://camotracker.djr.li/Images/DMZ/sam-airburst-turret.png?v=1"
+  },
+  {
+   "id": "sanctioned-assassination-list",
+   "name": "Sanctioned Assassination List",
+   "kind": "Valuable",
+   "value": 10000,
+   "rarity": "Legendary",
+   "symbol": "diamond.fill"
   },
   {
    "id": "scavengers-dog-tag",
@@ -7024,6 +7184,14 @@
    "symbol": "doc.on.doc.fill"
   },
   {
+   "id": "tank-water-pump",
+   "name": "Tank Water Pump",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "note": "Used to repair heavy military tanks",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "tempered-armor-vest",
    "name": "Tempered Armor Vest",
    "image": "https://camotracker.djr.li/Images/DMZ/tempered-armor-vest.png?v=1",
@@ -7358,6 +7526,17 @@
    "image": "https://camotracker.djr.li/Images/DMZ/weapon-manual.png?v=1"
   },
   {
+   "id": "weapons-mod-workshop",
+   "name": "Weapons Mod Workshop",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base",
+   "grid": "B5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "zip-gun",
    "name": "Zip Gun",
    "kind": "Lethals",
@@ -7548,6 +7727,12 @@
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/combat-resistance.png?v=2"
   },
   {
+   "id": "consumable-stacker",
+   "name": "Consumable Stacker",
+   "tree": "Survivalist",
+   "effect": "Using a consumable that's already active adds to its time, up to twice the normal length. A random-row trait in the middle section"
+  },
+  {
    "id": "container-looter",
    "name": "Container Looter",
    "tree": "Scout",
@@ -7569,11 +7754,23 @@
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/equipment-professional.png?v=2"
   },
   {
+   "id": "expedited-extraction",
+   "name": "Expedited Extraction",
+   "tree": "Survivalist",
+   "effect": "Exfils arrive much faster. A random-row trait in the top section"
+  },
+  {
    "id": "fast-learner",
    "name": "Fast Learner",
    "tree": "Scout",
    "effect": "A little more operator XP",
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/fast-learner.png?v=2"
+  },
+  {
+   "id": "faster-revive",
+   "name": "Faster Revive",
+   "tree": "Survivalist",
+   "effect": "Faster revives. One of the two fixed traits in the bottom section"
   },
   {
    "id": "field-crafting",
@@ -7595,6 +7792,12 @@
    "tree": "Scout",
    "effect": "The final exfil is marked on your Tac Map from the start",
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/final-intel.png?v=2"
+  },
+  {
+   "id": "fuel-economy",
+   "name": "Fuel Economy",
+   "tree": "Survivalist",
+   "effect": "Vehicles use less fuel. A random-row trait in the middle section"
   },
   {
    "id": "hostile-looter",
@@ -7646,6 +7849,12 @@
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/pack-rat.png?v=2"
   },
   {
+   "id": "popcorn-lethals",
+   "name": "Popcorn Lethals",
+   "tree": "Warfighter",
+   "effect": "Hostiles hit by your Lethals are more likely to drop Lethals. A random-row trait in the top section"
+  },
+  {
    "id": "popcorn-tacticals",
    "name": "Popcorn Tacticals",
    "tree": "Warfighter",
@@ -7674,10 +7883,22 @@
    "icon": "https://camotracker.djr.li/Images/DMZ/traits/quick-knife.png?v=2"
   },
   {
+   "id": "rad-blocker",
+   "name": "Rad Blocker",
+   "tree": "Survivalist",
+   "effect": "Less damage from radiation. A random-row trait in the middle section"
+  },
+  {
    "id": "randomized-trait",
    "name": "Randomized Trait",
    "tree": "Warfighter",
    "effect": "Revealed once you take a trait from the row before"
+  },
+  {
+   "id": "rescuer",
+   "name": "Rescuer",
+   "tree": "Survivalist",
+   "effect": "Move faster while dragging a downed teammate. A random-row trait in the top section"
   },
   {
    "id": "resource-hoarder",
