@@ -235,6 +235,8 @@ struct HajinStashScanReview: View {
     /// certain stack) and how many stacks it found.
     var sureness: [String: Float] = [:]
     var stacks: [String: Int] = [:]
+    /// Stash photos: the photo and the reader's working, for "Send this photo"
+    var report: HajinScanReport? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
@@ -409,6 +411,15 @@ struct HajinStashScanReview: View {
                 if !ingredients.isEmpty {
                     Section("mw4.ui.hajin.ingredients".localized()) {
                         ForEach(ingredients, id: \.item.id) { row in itemRow(row) }
+                    }
+                }
+                if let report {
+                    Section {
+                        HajinSendScanButton(report: report) {
+                            (Dictionary(uniqueKeysWithValues: all.map { ($0.item.id, $0.now) }), edited, skip)
+                        }
+                    } footer: {
+                        Text("mw4.ui.hajin.send_scan_footer".localized())
                     }
                 }
             }

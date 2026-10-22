@@ -86,6 +86,7 @@
 		F007641376295D2DE45C6967 /* HajinTraitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD87D3E1EB0474E855A5E907 /* HajinTraitsView.swift */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
 		F5D5CD635665FC9842106B65 /* HajinStashScanIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C9A9B7D6370DB71FE67 /* HajinStashScanIntro.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* HajinScanReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* HajinScanReport.swift */; };
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 		FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		5D260791573B9EE8356EAC22 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		613DA0B92D98434F953C3144 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		616A3C9A9B7D6370DB71FE67 /* HajinStashScanIntro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinStashScanIntro.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* HajinScanReport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinScanReport.swift; sourceTree = "<group>"; };
 		61A420378B1E88B956B09DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		627B7A6AFF70E9E99035D097 /* stash_tile_r1c2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = stash_tile_r1c2.png; sourceTree = "<group>"; };
 		63D676EEC8CACBE3AB71F0CF /* hajin.json */ = {isa = PBXFileReference; includeInIndex = 1; path = hajin.json; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				D100DFDB389467E961D75B94 /* HajinStashGrid.swift */,
 				46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */,
 				616A3C9A9B7D6370DB71FE67 /* HajinStashScanIntro.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* HajinScanReport.swift */,
 				BFE07F41351D87A8F3E1EB42 /* HajinBlueprints.swift */,
 			);
 			path = Sources;
@@ -589,6 +592,7 @@
 				8E3889C1FF4BBE1D5A77B29C /* HajinStashGrid.swift in Sources */,
 				FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */,
 				F5D5CD635665FC9842106B65 /* HajinStashScanIntro.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* HajinScanReport.swift in Sources */,
 				99F100D571C1D4F0BAA6CAF7 /* HajinBlueprints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

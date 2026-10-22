@@ -1,6 +1,7 @@
 import CoreGraphics
 import Foundation
 import Testing
+import UIKit
 @testable import MW4CamoTracker
 
 /// Reading stash counts from the text Vision finds in a photo.
@@ -56,5 +57,24 @@ struct HajinStashScanTests {
             line("BIOMATERIALS", top: 0.10, height: 0.06), line("20/10", top: 0.17),
         ], items: try items())
         #expect(found["biomaterials"] == nil)
+    }
+
+    /// "Send this photo": the report carries the reader's working and the
+    /// player's corrections, as JSON that parses back.
+    @Test func scanReportJSON() throws {
+        let image = UIGraphicsImageRenderer(size: CGSize(width: 40, height: 30)).image { _ in }
+        let report = HajinScanReport(image: image, quality: [.blurry], guessedCorners: [CGPoint(x: 0.1, y: 0.2)],
+                                     corners: [CGPoint(x: 0.12345678, y: 0.2)], moved: true,
+                                     tiles: [.init(row: 0, column: 1, id: "biomaterials", confidence: 0.9, count: 10)],
+                                     found: ["biomaterials": 10], unsure: ["biomaterials"], sureness: ["biomaterials": 0.9],
+                                     cash: 33_050, level: 38)
+        let data = try #require(report.json(had: ["biomaterials": 4], edited: ["biomaterials": 12], skipped: []))
+        let json = try #require(try JSONSerialization.jsonObject(with: data) as? [String: Any])
+        #expect(json["level"] as? Int == 38)
+        #expect(json["quality"] as? [String] == ["blurry"])
+        #expect((json["editedByPlayer"] as? [String: Int])?["biomaterials"] == 12)
+        #expect((json["corners"] as? [[Double]])?.first?.first == 0.1235)
+        #expect((json["tiles"] as? [[String: Any]])?.first?["count"] as? Int == 10)
+        #expect(report.photoData() != nil)
     }
 }

@@ -632,6 +632,18 @@ struct HajinScanHost: ViewModifier {
         }) {
             HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
         }
+        #if DEBUG
+        // SS_GRID_DEMO: the intro "picks" the demo photo after a few seconds
+        .onChange(of: flow.showsIntro) { shown in
+            guard shown, let demo = flow.demoPhoto else { return }
+            flow.demoPhoto = nil
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(4.5))
+                flow.pending = HajinPickedPhoto(image: demo)
+                flow.showsIntro = false
+            }
+        }
+        #endif
         .onChange(of: flow.captured) { image in
             guard let image else { return }
             flow.pending = HajinPickedPhoto(image: image.normalisedUp())
@@ -669,12 +681,14 @@ struct HajinScanHost: ViewModifier {
             if var path = ProcessInfo.processInfo.environment["SS_GRID_DEMO"] {
                 if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
                 guard let image = UIImage(contentsOfFile: path) else { return }
-                Task { @MainActor in
-                    try? await Task.sleep(for: .seconds(3))
-                    flow.showsIntro = true
-                    try? await Task.sleep(for: .seconds(4.5))
-                    flow.pending = HajinPickedPhoto(image: image.normalisedUp())
-                    flow.showsIntro = false
+                flow.demoPhoto = image.normalisedUp()
+                // Starts by itself, unless SS_GRID_DEMO_TAP=1 waits for a tap
+                // on the button (for recording on a phone)
+                if ProcessInfo.processInfo.environment["SS_GRID_DEMO_TAP"] != "1" {
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .seconds(3))
+                        flow.showsIntro = true
+                    }
                 }
             }
             if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
@@ -775,6 +789,8 @@ final class HajinFrameState: ObservableObject {
     /// never shows before the guess
     @Published var finding = true
     var guessed = false
+    /// Where the finder put the grid, before any dragging
+    var guess: [CGPoint]?
     /// Set once the player drags a handle, so a late guess doesn't move it back
     var moved = false
     /// Rows measured from the photo for the current frame (nil until known)
@@ -799,6 +815,10 @@ final class HajinScanFlow: ObservableObject {
     @Published var textRead: HajinGridResult?
     var reopenIntro = false
     @Published var sorting = false
+    #if DEBUG
+    /// SS_GRID_DEMO: the photo the intro picks by itself
+    var demoPhoto: UIImage?
+    #endif
 }
 
 extension UIImage {
@@ -901,7 +921,7 @@ struct HajinStashGridFrameView: View {
             }
             .sheet(item: $state.result, onDismiss: { if state.result == nil { } }) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
-                                     sureness: r.sureness, stacks: r.stacks, onDone: { dismiss() })
+                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() })
             }
             .overlay(alignment: .bottom) {
                 if state.finding {
@@ -927,6 +947,7 @@ struct HajinStashGridFrameView: View {
                 // screenshot still reads as a scan rather than a flicker
                 let left = 1.3 - Date().timeIntervalSince(started)
                 if left > 0 { try? await Task.sleep(for: .seconds(left)) }
+                state.guess = guess
                 if let guess, !state.moved { state.corners = guess }
                 withAnimation(.spring(duration: 0.45, bounce: 0.3)) { state.finding = false }
                 if guess != nil {
@@ -1001,6 +1022,7 @@ struct HajinStashGridFrameView: View {
         state.reading = true
         let frame = state.corners
         let resources = (store.guide?.items ?? []).filter { $0.kind == "Resource" }
+        let image = image, quality = state.quality, guess = state.guess, moved = state.moved
         Task.detached(priority: .userInitiated) {
             let tiles = HajinStashGrid.read(cg, corners: frame)
             var totals = HajinStashGrid.totals(tiles)
@@ -1010,10 +1032,13 @@ struct HajinStashGridFrameView: View {
             for (id, n) in HajinStashScanner.counts(in: lines, items: resources) { totals.counts[id] = n }
             let cash = HajinStashScanner.bank(in: lines)
             let level = HajinStashScanner.level(in: lines)
+            let report = HajinScanReport(image: image, quality: quality, guessedCorners: guess, corners: frame, moved: moved,
+                                         tiles: tiles, found: totals.counts, unsure: totals.unsure, sureness: totals.sureness,
+                                         cash: cash, level: level)
             await MainActor.run {
                 state.reading = false
                 state.result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
-                                         sureness: totals.sureness, stacks: totals.stacks)
+                                         sureness: totals.sureness, stacks: totals.stacks, report: report)
             }
         }
     }
@@ -1108,6 +1133,8 @@ struct HajinGridResult: Identifiable {
     var level: Int? = nil
     var sureness: [String: Float] = [:]
     var stacks: [String: Int] = [:]
+    /// The photo and the reader's working, for "Send this photo"
+    var report: HajinScanReport? = nil
 }
 
 /// A first guess at the grid's corners, for the player to adjust:
