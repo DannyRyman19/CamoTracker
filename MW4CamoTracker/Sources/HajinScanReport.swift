@@ -32,7 +32,7 @@ struct HajinScanReport {
     }
 
     /// The reader's working plus what the player had and changed in the review.
-    func json(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Data? {
+    @MainActor func json(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Data? {
         func points(_ p: [CGPoint]?) -> [[Double]]? { p?.map { [($0.x * 10_000).rounded() / 10_000, ($0.y * 10_000).rounded() / 10_000] } }
         var device = utsname()
         uname(&device)
@@ -133,7 +133,7 @@ struct HajinMailView: UIViewControllerRepresentable {
     func updateUIViewController(_ controller: MFMailComposeViewController, context: Context) {}
     func makeCoordinator() -> Coordinator { Coordinator(dismiss: dismiss) }
 
-    final class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
+    @MainActor final class Coordinator: NSObject, @preconcurrency MFMailComposeViewControllerDelegate {
         let dismiss: DismissAction
         init(dismiss: DismissAction) { self.dismiss = dismiss }
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
