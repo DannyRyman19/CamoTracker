@@ -761,6 +761,7 @@ struct HajinStashGridFrameView: View {
     @State private var corners: [CGPoint] = [CGPoint(x: 0.15, y: 0.25), CGPoint(x: 0.85, y: 0.25), CGPoint(x: 0.85, y: 0.75), CGPoint(x: 0.15, y: 0.75)]
     @State private var reading = false
     @State private var finding = false
+    @State private var guessed = false
     /// Set once the player drags a handle, so a late guess doesn't move it back
     @State private var moved = false
     /// Rows measured from the photo for the current frame (nil until known)
@@ -844,6 +845,10 @@ struct HajinStashGridFrameView: View {
                 }
             }
             .task {
+                // Once per photo: the screen can "appear" again when the
+                // review sheet comes up over it, and must not re-guess then
+                guard !guessed else { return }
+                guessed = true
                 // The guess reads the photo (a second or two), off the main thread
                 guard let cg = image.cgImage else { return }
                 let issues = await Task.detached(priority: .userInitiated) { HajinPhotoQuality.issues(cg) }.value
