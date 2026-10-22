@@ -1,5 +1,5 @@
 {
- "version": "0.9.16",
+ "version": "0.9.17",
  "updated": "2026-10-21",
  "map": {
   "image": "hajin_map",
@@ -2905,7 +2905,7 @@
     },
     {
      "title": "Bank Upgrade I",
-     "subtitle": "Cash only. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Your Bank holds up to $250,000",
      "value": "$25,000",
      "item": "bank-upgrade-i",
      "check": "upgrade-bank-upgrade-i",
@@ -2913,7 +2913,7 @@
     },
     {
      "title": "Bank Upgrade II",
-     "subtitle": "Cash only. Raises your Bank's cash cap",
+     "subtitle": "Cash only. Your Bank holds up to $500,000",
      "value": "$50,000",
      "item": "bank-upgrade-ii",
      "check": "upgrade-bank-upgrade-ii",
@@ -4739,7 +4739,7 @@
    "kind": "FOB Upgrade",
    "note": "Cash only",
    "cash": 25000,
-   "effect": "Raises your Bank's cash cap",
+   "effect": "Your Bank holds up to $250,000",
    "symbol": "building.columns.fill",
    "family": "Bank Upgrade",
    "tier": 1
@@ -4750,7 +4750,7 @@
    "kind": "FOB Upgrade",
    "note": "Cash only",
    "cash": 50000,
-   "effect": "Raises your Bank's cash cap",
+   "effect": "Your Bank holds up to $500,000",
    "symbol": "building.columns.fill",
    "family": "Bank Upgrade",
    "tier": 2
