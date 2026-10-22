@@ -544,69 +544,19 @@ enum HajinStackCount {
 struct HajinStashGridButton: View {
     /// The big My DMZ card (demo, headline, button) rather than a row.
     var hero = false
-    @EnvironmentObject private var store: HajinStore
-    /// Held outside the view: the button sits in a List row, which SwiftUI
-    /// can rebuild at any time, and @State there would reset mid-scan
-    @ObservedObject private var flow: HajinScanFlow
-
-    init(hero: Bool = false) {
-        self.hero = hero
-        flow = HajinScanFlow.named(hero ? "hero" : "row")
-    }
+    /// The flow's sheets hang off the app root (`hajinScanHost()`), not
+    /// this button: it sits in a List row, which SwiftUI rebuilds whenever
+    /// it likes, and sheets there reset or bounce mid-scan
+    @ObservedObject private var flow = HajinScanFlow.shared
 
     var body: some View {
         Button { flow.showsIntro = true } label: {
             if hero { heroLabel } else { rowLabel }
         }
         .buttonStyle(.plain)
-        .sheet(isPresented: $flow.showsIntro, onDismiss: {
-            if let pending = flow.pending { route(pending); flow.pending = nil }
-        }) {
-            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
-        }
-        .onChange(of: flow.captured) { image in
-            guard let image else { return }
-            flow.pending = HajinPickedPhoto(image: image.normalisedUp())
-            flow.captured = nil
-            flow.showsIntro = false
-        }
-        .onChange(of: flow.pick) { chosen in
-            guard let chosen else { return }
-            Task {
-                if let data = try? await chosen.loadTransferable(type: Data.self), let image = UIImage(data: data) {
-                    #if DEBUG
-                    // Keep the last photo so a run on a device can be checked from the Mac
-                    let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                    try? image.normalisedUp().jpegData(compressionQuality: 0.9)?.write(to: docs.appendingPathComponent("last_grid_photo.jpg"))
-                    #endif
-                    await MainActor.run { flow.pending = HajinPickedPhoto(image: image.normalisedUp()); flow.showsIntro = false }
-                }
-                await MainActor.run { flow.pick = nil }
-            }
-        }
-        .fullScreenCover(item: $flow.photo, onDismiss: {
-            if flow.reopenIntro { flow.reopenIntro = false; flow.showsIntro = true }
-        }) { photo in
-            HajinStashGridFrameView(image: photo.image, onRetake: { flow.reopenIntro = true }, state: photo.frame)
-        }
-        .sheet(item: $flow.textRead) { r in
-            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level)
-        }
         .overlay(alignment: .trailing) {
             if flow.sorting { ProgressView().padding(.trailing, 14) }
         }
-        #if DEBUG
-        // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
-        // SS_GRID_INTRO=1 opens the intro sheet
-        .onAppear {
-            if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
-            if flow.photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
-                if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
-                guard let image = UIImage(contentsOfFile: path) else { return }
-                flow.photo = HajinPickedPhoto(image: image.normalisedUp())
-            }
-        }
-        #endif
     }
 
     /// The headline card: what it does, the little demo, and the button.
@@ -671,7 +621,70 @@ struct HajinStashGridButton: View {
 
 
 @available(iOS 17.0, *)
-extension HajinStashGridButton {
+struct HajinScanHost: ViewModifier {
+    @EnvironmentObject private var store: HajinStore
+    @ObservedObject private var flow = HajinScanFlow.shared
+
+    func body(content: Content) -> some View {
+        content
+        .sheet(isPresented: $flow.showsIntro, onDismiss: {
+            if let pending = flow.pending { route(pending); flow.pending = nil }
+        }) {
+            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
+        }
+        .onChange(of: flow.captured) { image in
+            guard let image else { return }
+            flow.pending = HajinPickedPhoto(image: image.normalisedUp())
+            flow.captured = nil
+            flow.showsIntro = false
+        }
+        .onChange(of: flow.pick) { chosen in
+            guard let chosen else { return }
+            Task {
+                if let data = try? await chosen.loadTransferable(type: Data.self), let image = UIImage(data: data) {
+                    #if DEBUG
+                    // Keep the last photo so a run on a device can be checked from the Mac
+                    let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    try? image.normalisedUp().jpegData(compressionQuality: 0.9)?.write(to: docs.appendingPathComponent("last_grid_photo.jpg"))
+                    #endif
+                    await MainActor.run { flow.pending = HajinPickedPhoto(image: image.normalisedUp()); flow.showsIntro = false }
+                }
+                await MainActor.run { flow.pick = nil }
+            }
+        }
+        .fullScreenCover(item: $flow.photo, onDismiss: {
+            if flow.reopenIntro { flow.reopenIntro = false; flow.showsIntro = true }
+        }) { photo in
+            HajinStashGridFrameView(image: photo.image, onRetake: { flow.reopenIntro = true }, state: photo.frame)
+        }
+        .sheet(item: $flow.textRead) { r in
+            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level)
+        }
+        #if DEBUG
+        // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
+        // SS_GRID_INTRO=1 opens the intro sheet
+        .onAppear {
+            if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
+            if flow.photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
+                if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
+                guard let image = UIImage(contentsOfFile: path) else { return }
+                flow.photo = HajinPickedPhoto(image: image.normalisedUp())
+            }
+        }
+        #endif
+    }
+}
+
+extension View {
+    /// Presents the stash photo reader (intro, framing screen, review) when
+    /// a `HajinStashGridButton` starts it. Applied once, at the app root.
+    @ViewBuilder func hajinScanHost() -> some View {
+        if #available(iOS 17.0, *) { modifier(HajinScanHost()) } else { self }
+    }
+}
+
+@available(iOS 17.0, *)
+extension HajinScanHost {
     /// A stash grid (its header says ITEMS / STASH) goes to the framing
     /// screen; anything else, like a 3D Printer recipe screen, is read for
     /// its have/need counts and the bank and goes straight to the review.
@@ -754,19 +767,12 @@ final class HajinFrameState: ObservableObject {
     @Published var result: HajinGridResult?
 }
 
-/// The photo reader's flow for one button: the intro sheet, the picked
-/// photo, the framing screen. One per place the button appears, kept for
-/// the app's life.
+/// The photo reader's flow: the intro sheet, the picked photo, the framing
+/// screen. One for the app, started by any reader button.
 @available(iOS 17.0, *)
 @MainActor
 final class HajinScanFlow: ObservableObject {
-    private static var flows: [String: HajinScanFlow] = [:]
-    static func named(_ name: String) -> HajinScanFlow {
-        if let flow = flows[name] { return flow }
-        let flow = HajinScanFlow()
-        flows[name] = flow
-        return flow
-    }
+    static let shared = HajinScanFlow()
 
     @Published var pick: PhotosPickerItem?
     @Published var photo: HajinPickedPhoto?

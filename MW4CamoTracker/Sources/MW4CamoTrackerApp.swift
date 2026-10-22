@@ -21,6 +21,7 @@ struct MW4CamoTrackerApp: App {
             ContentView()
                 .screenshotWidth()
                 .environmentObject(viewModel)
+                .hajinScanHost()
                 .environmentObject(hajin)
                 .preferredColorScheme(.dark)
                 .task {
