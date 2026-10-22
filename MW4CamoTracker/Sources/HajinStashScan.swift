@@ -370,6 +370,16 @@ struct HajinStashScanReview: View {
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
                 }
+                // Sending the photo comes first, so it's seen without scrolling
+                if let report {
+                    Section {
+                        HajinSendScanButton(report: report) {
+                            (Dictionary(uniqueKeysWithValues: all.map { ($0.item.id, $0.now) }), edited, skip)
+                        }
+                    } footer: {
+                        Text("mw4.ui.hajin.send_scan_footer".localized())
+                    }
+                }
                 // Level, cash, resources and ingredients each in their own section
                 if let level {
                     Section("mw4.ui.hajin.dmz_level".localized()) {
@@ -411,15 +421,6 @@ struct HajinStashScanReview: View {
                 if !ingredients.isEmpty {
                     Section("mw4.ui.hajin.ingredients".localized()) {
                         ForEach(ingredients, id: \.item.id) { row in itemRow(row) }
-                    }
-                }
-                if let report {
-                    Section {
-                        HajinSendScanButton(report: report) {
-                            (Dictionary(uniqueKeysWithValues: all.map { ($0.item.id, $0.now) }), edited, skip)
-                        }
-                    } footer: {
-                        Text("mw4.ui.hajin.send_scan_footer".localized())
                     }
                 }
             }
