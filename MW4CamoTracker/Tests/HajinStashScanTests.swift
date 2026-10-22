@@ -61,7 +61,7 @@ struct HajinStashScanTests {
 
     /// "Send this photo": the report carries the reader's working and the
     /// player's corrections, as JSON that parses back.
-    @Test func scanReportJSON() throws {
+    @Test @MainActor func scanReportJSON() throws {
         let image = UIGraphicsImageRenderer(size: CGSize(width: 40, height: 30)).image { _ in }
         let report = HajinScanReport(image: image, quality: [.blurry], guessedCorners: [CGPoint(x: 0.1, y: 0.2)],
                                      corners: [CGPoint(x: 0.12345678, y: 0.2)], moved: true,
