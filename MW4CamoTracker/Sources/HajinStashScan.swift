@@ -191,7 +191,10 @@ struct HajinStashScanReview: View {
     @State private var editText = ""
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
-        found.compactMap { id, n in store.guide?.item(id).map { ($0, store.count(of: id), edited[id] ?? n) } }
+        // Only what My stash tracks: ingredients and resources. The photo
+        // reader also recognises keys, gear and valuables, and leaves them out.
+        found.compactMap { id, n in store.guide?.item(id).flatMap { ["Ingredient", "Resource"].contains($0.kind) ? $0 : nil }
+            .map { ($0, store.count(of: id), edited[id] ?? n) } }
             .sorted { ($0.now == $0.read ? 1 : 0, $0.item.name.resolved) < ($1.now == $1.read ? 1 : 0, $1.item.name.resolved) }
     }
 
