@@ -1,5 +1,5 @@
 {
- "version": "0.9.23",
+ "version": "0.9.24",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -3276,6 +3276,15 @@
      "check": "boss-roze"
     },
     {
+     "title": "The Chemist",
+     "subtitle": "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse. Pays $10,000",
+     "links": [
+      "the-chemists-secure-armory"
+     ],
+     "group": "Lieutenants",
+     "check": "boss-the-chemist"
+    },
+    {
      "title": "The Warden",
      "subtitle": "Northern hills. Drops a key to a sealed door under NuriGO Mall",
      "group": "Lieutenants",
@@ -4075,7 +4084,11 @@
      "title": "Watch for Bumps",
      "group": "DMZ Orders: Chapter 2",
      "check": "op-watch-for-bumps",
-     "subtitle": "Objectives not confirmed yet"
+     "objectives": [
+      "Steal an enemy vehicle",
+      "Refuel and repair a vehicle at a gas station",
+      "Run over 7 enemies in a vehicle"
+     ]
     },
     {
      "title": "Triangulation",
@@ -4087,7 +4100,13 @@
      "title": "Dead Battery",
      "group": "DMZ Orders: Chapter 2",
      "check": "op-dead-battery",
-     "subtitle": "Objectives not confirmed yet"
+     "objectives": [
+      "Print a DDOS field upgrade",
+      "Disable 3 enemy vehicles or drones with it"
+     ],
+     "links": [
+      "ddos"
+     ]
     },
     {
      "title": "Death from Above",
