@@ -22,6 +22,7 @@
 		4110D8C761A17F70A42E12E1 /* MW4Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2545F0D6D707B0DFE010A2F /* MW4Widgets.swift */; };
 		478FA5F145C9BB0BBA6D92EE /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 168914AE193FC3A43CA6E617 /* es.lproj */; };
 		50ABA7D24D1C051E2996042A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E53AF5B26DF707884D61 /* Components.swift */; };
+		4D1F6A0C25E8B37F9A0C1D2E /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A7B1D36F9C4809B1D2E3F /* CachedImage.swift */; };
 		515902E4FC12F771B0982C14 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */; };
 		57E1E10B61A7903CDC964565 /* dmz.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE30F4DD23978D03C51021E /* dmz.json */; };
 		598BA5E333739FF354F97685 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4396711A369888BFFA7AD0B5 /* nl.lproj */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		09E7E53AF5B26DF707884D61 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		5E2A7B1D36F9C4809B1D2E3F /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		0C093C55B6D15F2A2B624938 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0F00C36E336BC0A943B5CBFB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1007D568D6EF400D6F8D97AB /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */,
 				9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */,
 				09E7E53AF5B26DF707884D61 /* Components.swift */,
+				5E2A7B1D36F9C4809B1D2E3F /* CachedImage.swift */,
 				E0B68295CC227225DC6C73D4 /* ContentView.swift */,
 				1007D568D6EF400D6F8D97AB /* DataService.swift */,
 				BB2F5D24163231262425B4C4 /* ItemDetailView.swift */,
@@ -472,6 +475,7 @@
 				9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */,
 				B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */,
 				50ABA7D24D1C051E2996042A /* Components.swift in Sources */,
+				4D1F6A0C25E8B37F9A0C1D2E /* CachedImage.swift in Sources */,
 				0EC35E8B8AA5FC37FC6C0D45 /* ContentView.swift in Sources */,
 				DEB65782F8907846529AFAB8 /* DataService.swift in Sources */,
 				0D06644637814F96A8671ADB /* ItemDetailView.swift in Sources */,
