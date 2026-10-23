@@ -233,3 +233,20 @@ the starting data, which is why they and `Data/MW4/` are kept identical.
   every counter is one tap. The data needs nothing different for them.
 - Versions of the app before 1.0 build 8 crashed in the background check and
   never notified. None of those reached the App Store.
+
+## The Hajin guide (DMZ Tac Map and tables)
+
+`Resources/hajin.json` holds the Hajin tab: map markers, categories and every
+guide table (level unlocks, recipes, keys...). It publishes with the same
+script and reaches apps through the manifest's own `guides` block, which
+older app versions ignore. A guide change never posts a notification.
+
+To add a confirmed recipe cost, key room or boss: edit the row in
+`hajin.json` (any text can be a plain string or `{"en": ..., "de": ...}`),
+bump its `version`, then `python3 MW4CamoTracker/Tools/publish_data.py --silent`,
+commit and push. `--silent` matters: the manifest's notification block applies
+to whatever update is live, so leaving it out would let the next camo update
+go out with the built-in wording instead of its own.
+
+Marker positions are 0 to 1 across and down `hajin_map.jpg`, which is the
+official 4096 px Tac Map cropped at x 750, y 740, 2660 px square.

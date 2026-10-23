@@ -30,6 +30,10 @@ struct Manifest: Codable {
     let catalog: Entry
     let modes: [String: Entry]
     let notification: Announcement?
+    /// Reference guides (the Hajin Tac Map and DMZ tables). A block of its
+    /// own, not part of `modes`: older app versions decode every `modes`
+    /// entry as a camo file, so a guide there would break their refresh.
+    let guides: [String: Entry]?
 }
 
 /// Fetches the weapon catalog and mode JSON from the CDN, versioned through
@@ -113,6 +117,28 @@ final class DataService: Sendable {
             updatedModes[mode] = modeFile
         }
         return (newCatalog, updatedModes, manifest.notification)
+    }
+
+    // MARK: - Guides
+
+    func loadSeedGuide(name: String) -> HajinGuide? {
+        decode(HajinGuide.self, from: Bundle.main.url(forResource: name, withExtension: "json"))
+    }
+
+    func loadCachedGuide(name: String) -> HajinGuide? {
+        decode(HajinGuide.self, from: cacheFileURL(name: "guide-\(name)"))
+    }
+
+    /// Downloads the named guide when the manifest lists a newer version
+    /// than the one the app has. `nil` when there is nothing newer.
+    func refreshGuide(name: String, knownVersion: String?) async throws -> HajinGuide? {
+        let manifest = try JSONDecoder().decode(Manifest.self, from: try await fetch("manifest.json"))
+        guard let entry = manifest.guides?[name], Self.isNewer(entry.version, than: knownVersion) else { return nil }
+        let data = try await fetch(entry.path)
+        let guide = try JSONDecoder().decode(HajinGuide.self, from: data)
+        guard Self.isNewer(guide.version, than: knownVersion) else { return nil }
+        try data.write(to: cacheFileURL(name: "guide-\(name)"), options: .atomic)
+        return guide
     }
 
     /// Dotted versions compared number by number ("0.8.12" > "0.8.9"); any

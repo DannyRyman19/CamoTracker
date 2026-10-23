@@ -580,6 +580,7 @@ struct CustomiseHomeSheet: View {
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
     @AppStorage(CardOutline.key) private var cardOutline = CardOutline.prestige.rawValue
+    @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
@@ -669,6 +670,14 @@ struct CustomiseHomeSheet: View {
                     .accessibilityIdentifier("customise.cardOutline")
                 } footer: {
                     Text("mw4.ui.card_outline.footer".localized())
+                }
+
+                Section {
+                    Toggle("mw4.ui.icloud.title".localized(), isOn: $iCloudSync)
+                        .tint(accent)
+                        .accessibilityIdentifier("customise.iCloudSync")
+                } footer: {
+                    Text("mw4.ui.icloud.footer".localized())
                 }
 
                 Section {

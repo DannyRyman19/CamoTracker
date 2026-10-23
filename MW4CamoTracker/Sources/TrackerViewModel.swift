@@ -47,6 +47,9 @@ final class TrackerViewModel: ObservableObject {
 
     private let storeKey = "mw4_progress_v2"
     private let defaults: UserDefaults
+    /// iCloud sync of the same progress; only for the real store, never a
+    /// test suite.
+    private var cloud: CloudSync?
 
     /// `defaults` is where progress and the pin are kept; tests pass a
     /// throwaway suite.
@@ -54,6 +57,13 @@ final class TrackerViewModel: ObservableObject {
         self.dataService = dataService
         self.defaults = defaults
         loadProgress()
+        if defaults == .standard {
+            let cloud = CloudSync(cloudKey: "mw4_progress_sync", defaults: defaults)
+            cloud.onRemoteChange = { [weak self] values in self?.applySynced(values) }
+            self.cloud = cloud
+            cloud.start(current: syncValues())
+            wipeIfAsked()
+        }
         catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
         var loaded: [String: ModeFile] = [:]
         for mode in ["multiplayer", "warzone", "dmz"] {
@@ -1337,11 +1347,67 @@ final class TrackerViewModel: ObservableObject {
     }
 
     private func saveProgress() {
+        writeProgress()
+        cloud?.recordLocal(syncValues())
+    }
+
+    private func writeProgress() {
         let store = ProgressStore(weaponLevels: weaponLevels, weaponPrestige: weaponPrestige, amounts: amounts, completed: Array(completed))
         if let data = try? JSONEncoder().encode(store) {
             defaults.set(data, forKey: storeKey)
         }
         refreshWidgets()
+    }
+
+    /// DEBUG: a `Documents/mw4_wipe` file clears all progress once. Saved
+    /// as a change, so iCloud carries the deletions to every other device
+    /// instead of their old copies coming back.
+    private func wipeIfAsked() {
+        #if DEBUG
+        let file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("mw4_wipe")
+        guard FileManager.default.fileExists(atPath: file.path) else { return }
+        try? FileManager.default.removeItem(at: file)
+        objectWillChange.send()
+        weaponLevels = [:]
+        weaponPrestige = [:]
+        amounts = [:]
+        completed = []
+        saveProgress()
+        #endif
+    }
+
+    // MARK: - iCloud sync
+
+    /// Progress as flat entries for `CloudSync`: weapon levels, Prestige,
+    /// challenge counts and ticks.
+    private func syncValues() -> [String: Int] {
+        var values: [String: Int] = [:]
+        for (id, level) in weaponLevels { values["l|\(id)"] = level }
+        for (id, stage) in weaponPrestige { values["p|\(id)"] = stage }
+        for (key, amount) in amounts { values["a|\(key)"] = amount }
+        for key in completed { values["d|\(key)"] = 1 }
+        return values
+    }
+
+    /// Another device changed something: take the merged progress.
+    private func applySynced(_ values: [String: Int]) {
+        var levels: [Int: Int] = [:], prestige: [Int: Int] = [:], counts: [String: Int] = [:], done: Set<String> = []
+        for (key, value) in values {
+            let kind = key.prefix(2), rest = String(key.dropFirst(2))
+            switch kind {
+            case "l|": if let id = Int(rest) { levels[id] = value }
+            case "p|": if let id = Int(rest) { prestige[id] = value }
+            case "a|": counts[rest] = value
+            case "d|": done.insert(rest)
+            default: break
+            }
+        }
+        objectWillChange.send()
+        weaponLevels = levels
+        weaponPrestige = prestige
+        amounts = counts
+        completed = done
+        writeProgress()
     }
 }
 
