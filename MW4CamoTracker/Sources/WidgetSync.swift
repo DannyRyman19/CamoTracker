@@ -77,9 +77,10 @@ extension TrackerViewModel {
                 nextTotal = max(requirement.amount, 1)
                 nextDone = camoAmount(mode: raw, weaponId: weapon.weaponId, camo: camo)
             } else if let level = militaryLevel(mode: raw, weaponId: weapon.weaponId, camo: camo) {
-                nextDetail = String(format: "mw4.ui.camo_level_reach".localized(), level)
-                nextTotal = level
-                nextDone = min(self.level(for: weapon.weaponId), level)
+                let unlocks = Self.unlocks(forLevel: level)
+                nextDetail = String(format: "mw4.ui.camo_level_reach".localized(), unlocks)
+                nextTotal = max(unlocks, 1)
+                nextDone = min(Self.unlocks(forLevel: self.level(for: weapon.weaponId)), unlocks)
             }
         } else if let step = (0..<Self.completionistStepCount).first(where: {
             !isCompletionistComplete(mode: raw, weaponId: weapon.weaponId, step: $0)

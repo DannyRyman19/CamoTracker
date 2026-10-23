@@ -32,8 +32,8 @@
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Aucune donnée de camouflage %@ pour cette arme pour le moment.";
 "mw4.ui.locked" = "Terminez d'abord le niveau précédent.";
-"mw4.ui.camo_level_locked" = "Se débloque au niveau d'arme %d.";
-"mw4.ui.camo_level_reach" = "Atteignez le niveau d'arme %d.";
+"mw4.ui.camo_level_locked" = "Nécessite %d déblocages d'arme.";
+"mw4.ui.camo_level_reach" = "Obtenez %d déblocages d'arme.";
 "mw4.ui.set_amount.title" = "Définir la Quantité";
 "mw4.ui.set_amount.field" = "Quantité";
 "mw4.ui.set_amount.message" = "Sur %d requis.";
@@ -132,7 +132,7 @@
 "mw4.ui.mastery.mode_locked" = "Obtenez d'abord %@.";
 "mw4.ui.mastery.self_count" = "Défis %3$@ : %1$d/%2$d";
 "mw4.ui.milestone.mode_mastery_subtitle" = "Camouflage universel : utilisable sur toutes les armes.";
-"mw4.ui.camo_level_earned" = "Obtenu au niveau d'arme %d.";
+"mw4.ui.camo_level_earned" = "Obtenu à %d déblocages d'arme.";
 "mw4.ui.suggestion.next_camo" = "Suivant : %@";
 "mw4.ui.milestone.final_many" = "%d armes l'ont désormais.";
 "mw4.ui.milestone.mastery_subtitle" = "%1$d armes avec %2$@.";
@@ -179,3 +179,8 @@
 "mw4.widget.guide.lock" = "Il y a aussi un anneau de progression pour l'écran verrouillé.";
 "mw4.widget.guide.mode_hint" = "Pour changer le mode d'un widget de progression, maintenez le doigt dessus et touchez Modifier le widget.";
 "mw4.onboarding.yours.widget" = "Ajoutez un widget pour garder votre arme épinglée et la progression de vos modes sur l'écran d'accueil.";
+"mw4.ui.weapon_unlocks" = "Déblocages d'arme";
+"mw4.ui.set_unlocks.title" = "Déblocages d'arme";
+"mw4.ui.prestige.hint_unlocks" = "Obtenez les %d déblocages d'arme pour passer prestige.";
+"mw4.ui.unlocks_short" = "%d/%d DÉBLOCAGES";
+"mw4.ui.unlocks_hint" = "Comptez les déblocages de l'arme, pas son niveau. Les accessoires partagés que vous possédez déjà sont sautés : le niveau d'arme du jeu peut donc être plus élevé.";

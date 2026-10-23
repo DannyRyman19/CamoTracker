@@ -32,8 +32,8 @@
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Nog geen %@-camouflagegegevens voor dit wapen.";
 "mw4.ui.locked" = "Maak eerst de vorige tier af.";
-"mw4.ui.camo_level_locked" = "Ontgrendelt op wapenniveau %d.";
-"mw4.ui.camo_level_reach" = "Bereik wapenniveau %d.";
+"mw4.ui.camo_level_locked" = "Vereist %d wapenontgrendelingen.";
+"mw4.ui.camo_level_reach" = "Verdien %d wapenontgrendelingen.";
 "mw4.ui.set_amount.title" = "Aantal Instellen";
 "mw4.ui.set_amount.field" = "Aantal";
 "mw4.ui.set_amount.message" = "Van %d vereist.";
@@ -132,7 +132,7 @@
 "mw4.ui.mastery.mode_locked" = "Verdien eerst %@.";
 "mw4.ui.mastery.self_count" = "%3$@-uitdagingen: %1$d/%2$d";
 "mw4.ui.milestone.mode_mastery_subtitle" = "Universele camo: te gebruiken op elk wapen.";
-"mw4.ui.camo_level_earned" = "Verdiend op wapenniveau %d.";
+"mw4.ui.camo_level_earned" = "Verdiend bij %d wapenontgrendelingen.";
 "mw4.ui.suggestion.next_camo" = "Volgende: %@";
 "mw4.ui.milestone.final_many" = "%d wapens hebben hem nu.";
 "mw4.ui.milestone.mastery_subtitle" = "%1$d wapens met %2$@.";
@@ -179,3 +179,8 @@
 "mw4.widget.guide.lock" = "Er is ook een voortgangsring voor je toegangsscherm.";
 "mw4.widget.guide.mode_hint" = "Om de modus van een voortgangswidget te wijzigen, houd je hem ingedrukt en tik je op Wijzig widget.";
 "mw4.onboarding.yours.widget" = "Voeg een widget toe om je vastgezette wapen en je voortgang per modus op je beginscherm te houden.";
+"mw4.ui.weapon_unlocks" = "Wapenontgrendelingen";
+"mw4.ui.set_unlocks.title" = "Wapenontgrendelingen";
+"mw4.ui.prestige.hint_unlocks" = "Verdien alle %d wapenontgrendelingen om prestige te bereiken.";
+"mw4.ui.unlocks_short" = "%d/%d ONTGREND.";
+"mw4.ui.unlocks_hint" = "Tel de ontgrendelingen van het wapen, niet het niveau. Gedeelde hulpstukken die je al hebt worden overgeslagen, dus het wapenniveau in de game kan hoger liggen.";

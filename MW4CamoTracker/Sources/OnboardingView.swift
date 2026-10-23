@@ -298,7 +298,7 @@ private struct MarkProgressPage: View {
             accent: .accentMultiplayer,
             amount: amounts[index],
             isDone: done,
-            detail: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_reach".localized(), $0) },
+            detail: camo.unlockLevel.map { String(format: "mw4.ui.camo_level_reach".localized(), TrackerViewModel.unlocks(forLevel: $0)) },
             onToggle: {
                 withAnimation {
                     // Ticking ticks the ones before; unticking clears the ones after.
