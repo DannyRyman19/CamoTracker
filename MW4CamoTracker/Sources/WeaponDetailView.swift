@@ -324,6 +324,7 @@ struct WeaponDetailView: View {
             accent: mode.accent,
             amount: 0,
             isDone: viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: index),
+            titleGradient: [Color].prestige(camo, index: index),
             detail: prestigeCamoDetail(camo),
             onToggle: { viewModel.togglePrestigeCamo(weaponId: weapon.weaponId, index: index) },
             onSetAmount: { _ in }
@@ -816,6 +817,7 @@ private struct StatusRow: View {
             }
         }
         .padding(.vertical, 5)
+        .preference(key: EarnedGradientKey.self, value: achieved ? gradient : nil)
     }
 }
 
@@ -1030,11 +1032,22 @@ private struct CompactLevelRow: View {
 /// A camo or Mastery row as a tile in the iPad grid: the same row, on its own
 /// rounded surface, stretched so a row of tiles shares one height.
 private struct DetailTile: ViewModifier {
+    @AppStorage(CardOutline.key) private var outline = CardOutline.prestige.rawValue
+
     func body(content: Content) -> some View {
         content
             .padding(.horizontal, 12)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+            // An earned Completionist or Mastery camo outlines its tile in
+            // its own colors, like the weapon cards.
+            .overlayPreferenceValue(EarnedGradientKey.self) { colors in
+                if let colors, colors.count > 1, outline != CardOutline.off.rawValue {
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing).opacity(0.7), lineWidth: 1)
+                }
+            }
+            .transformPreference(EarnedGradientKey.self) { $0 = nil }
     }
 }

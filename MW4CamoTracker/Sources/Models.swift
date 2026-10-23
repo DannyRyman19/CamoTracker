@@ -80,6 +80,9 @@ struct PrestigeCamo: Codable {
     let level: Int?
     let afterWeaponMaxLevel: Bool?
     let imageURL: String?
+    /// Hex colors for the name's shimmer once it's earned; the built-in
+    /// `[Color].prestige` set for its place when absent.
+    var colors: [String]? = nil
     /// A weapon's own name, image or level for this camo, keyed by `weaponId` as a
     /// string, for a weapon whose Prestige camos differ.
     let byWeapon: [String: PrestigeCamoOverride]?

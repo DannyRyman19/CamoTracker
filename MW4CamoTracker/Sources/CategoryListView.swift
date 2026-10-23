@@ -579,6 +579,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @AppStorage(CardOutline.key) private var cardOutline = CardOutline.prestige.rawValue
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
     @Environment(\.dismiss) private var dismiss
@@ -656,6 +657,18 @@ struct CustomiseHomeSheet: View {
                         .accessibilityIdentifier("customise.showLocked")
                 } footer: {
                     Text("mw4.ui.customise.locked_footer".localized())
+                }
+
+                Section {
+                    Picker("mw4.ui.card_outline.title".localized(), selection: $cardOutline) {
+                        ForEach(CardOutline.allCases, id: \.rawValue) { option in
+                            Text(option.titleKey.localized()).tag(option.rawValue)
+                        }
+                    }
+                    .tint(accent)
+                    .accessibilityIdentifier("customise.cardOutline")
+                } footer: {
+                    Text("mw4.ui.card_outline.footer".localized())
                 }
 
                 Section {

@@ -243,8 +243,8 @@ extension [Color] {
     /// glow, Parallax's mint-to-gold color-shift, and so on.
     static let mercurialDrift: [Color]     = [.camoMercurialDrift, Color(red: 1.00, green: 0.70, blue: 0.28), Color(red: 1.00, green: 0.31, blue: 0.64)]
     static let polyatomicReforged: [Color] = [.camoPolyatomicReforged, Color(red: 0.31, green: 0.85, blue: 0.91), Color(red: 0.64, green: 0.36, blue: 0.88)]
-    static let orionReforged: [Color]      = [.camoOrionReforged, Color(red: 1.00, green: 0.72, blue: 0.30), Color(red: 0.75, green: 0.16, blue: 0.42)]
-    static let parallax: [Color]           = [.camoParallax, Color(red: 0.96, green: 0.83, blue: 0.37), Color(red: 0.44, green: 0.91, blue: 0.77)]
+    static let orionReforged: [Color]      = [.camoOrionReforged, Color(red: 0.89, green: 0.61, blue: 0.75), Color(red: 0.35, green: 0.13, blue: 0.25)]
+    static let parallax: [Color]           = [.camoParallax, Color(red: 0.94, green: 0.87, blue: 0.95), Color(red: 0.55, green: 0.42, blue: 0.56)]
     static let damascusReforged: [Color]   = [.camoDamascusReforged, Color(red: 1.00, green: 0.54, blue: 0.36), Color(red: 0.88, green: 0.28, blue: 0.62)]
     static let empyros: [Color]            = [.camoEmpyros, Color(red: 0.94, green: 0.42, blue: 0.66), Color(red: 0.31, green: 0.88, blue: 0.82)]
     static let chiral: [Color]             = [.camoChiral, Color(red: 1.00, green: 0.25, blue: 0.21), Color(red: 0.48, green: 0.0, blue: 0.0)]
@@ -262,12 +262,30 @@ extension [Color] {
     /// tier's colors.
     static let platinum: [Color] = [.camoPlatinum, Color(red: 0.96, green: 0.98, blue: 1.00), Color(red: 0.62, green: 0.68, blue: 0.74)]
 
-    /// Harmonic Break and the final Completionist camo (Divergence in
-    /// Multiplayer). No art has been shown yet, so these are stand-ins
-    /// picked to sit apart from Gold, Platinum and the Mastery camos; a mode
-    /// file's `colors` replaces them once the real finishes are known.
-    static let harmonicBreak: [Color] = [.camoHarmonicBreak, Color(red: 0.62, green: 0.95, blue: 0.92), Color(red: 0.36, green: 0.30, blue: 0.86)]
-    static let divergence: [Color] = [.camoDivergence, Color(red: 0.98, green: 0.55, blue: 0.86), Color(red: 0.20, green: 0.10, blue: 0.48)]
+    /// Harmonic Break (coral red over black carbon) and Divergence (dark,
+    /// flecked with blue, yellow and orange), from the in-game tiles. A mode
+    /// file's `colors` still replaces them.
+    static let harmonicBreak: [Color] = [.camoHarmonicBreak, Color(red: 0.95, green: 0.61, blue: 0.60), Color(red: 0.48, green: 0.21, blue: 0.20)]
+    static let divergence: [Color] = [.camoDivergence, Color(red: 0.91, green: 0.78, blue: 0.29), Color(red: 0.90, green: 0.51, blue: 0.25)]
+
+    /// The four Weapon Prestige camos, in order: Pyroclast's charcoal and
+    /// silver, then more olive and green at each step up to Cascade's lime,
+    /// from the in-game tiles. Data `colors` on a prestige camo replaces its
+    /// set.
+    static let prestige: [[Color]] = [
+        [Color(red: 0.61, green: 0.61, blue: 0.59), Color(red: 0.85, green: 0.84, blue: 0.82), Color(red: 0.36, green: 0.36, blue: 0.33)],
+        [Color(red: 0.60, green: 0.58, blue: 0.47), Color(red: 0.85, green: 0.82, blue: 0.63), Color(red: 0.37, green: 0.35, blue: 0.28)],
+        [Color(red: 0.61, green: 0.59, blue: 0.44), Color(red: 0.78, green: 0.76, blue: 0.49), Color(red: 0.43, green: 0.48, blue: 0.29)],
+        [Color(red: 0.61, green: 0.77, blue: 0.42), Color(red: 0.85, green: 0.94, blue: 0.66), Color(red: 0.33, green: 0.45, blue: 0.23)]
+    ]
+
+    /// A Prestige camo's colors: the data's `colors`, else the built-in set
+    /// for its place.
+    static func prestige(_ camo: PrestigeCamo, index: Int) -> [Color] {
+        let parsed = (camo.colors ?? []).compactMap(Color.init(hex:))
+        if parsed.count > 1 { return parsed }
+        return prestige[Swift.min(index, prestige.count - 1)]
+    }
 }
 
 extension Color {
@@ -275,7 +293,7 @@ extension Color {
     /// (tier3 — Orion Reforged / Empyros / Helio) rather than an arbitrary
     /// brand pick, so the whole mode is visually "about" the camo it's
     /// building toward, not just a generic red/green/gold wash.
-    static let accentMultiplayer = camoOrionReforged // Orion Reforged — #C11D07
+    static let accentMultiplayer = Color(red: 0.788, green: 0.271, blue: 0.494) // #C9457E, Orion Reforged's magenta (crimson sat too close to DMZ's red)
     static let accentWarzone     = camoEmpyros        // Empyros — #26A0B5
     static let accentDMZ         = camoHelio          // Helio — #C42437
 
@@ -284,9 +302,9 @@ extension Color {
     /// The "100%+" flex-milestone color — a cool platinum/chrome, deliberately
     /// distinct from any camo's own palette since it isn't one.
     static let camoPlatinum = Color(red: 0.78, green: 0.82, blue: 0.86) // #C7D1DB
-    /// Stand-ins until the real finishes are shown; see `[Color].harmonicBreak`.
-    static let camoHarmonicBreak = Color(red: 0.36, green: 0.78, blue: 0.86) // #5CC7DB
-    static let camoDivergence    = Color(red: 0.69, green: 0.31, blue: 0.91) // #B04FE8
+    /// From the in-game tiles; see `[Color].harmonicBreak`.
+    static let camoHarmonicBreak = Color(red: 0.82, green: 0.31, blue: 0.30) // #D04F4D coral red
+    static let camoDivergence    = Color(red: 0.43, green: 0.61, blue: 0.91) // #6E9BE8 holographic blue
 
     /// MW4's real Mastery camo tier colors — all 9 of them (3 per mode),
     /// sampled directly from the camo art itself (Destructoid's "All MW4
@@ -298,10 +316,10 @@ extension Color {
     // Multiplayer
     static let camoMercurialDrift     = Color(red: 0.878, green: 0.082, blue: 0.498) // #E0157F — hot magenta/pink liquid-metal
     static let camoPolyatomicReforged = Color(red: 0.357, green: 0.384, blue: 0.878) // #5B62E0 — faceted blue-violet crystal
-    static let camoOrionReforged      = Color(red: 0.757, green: 0.114, blue: 0.027) // #C11D07 — crimson nebula with ember glow
+    static let camoOrionReforged      = Color(red: 0.639, green: 0.251, blue: 0.416) // #A3406A plum-magenta nebula
 
     // Warzone
-    static let camoParallax           = Color(red: 0.553, green: 0.816, blue: 0.443) // #8DD071 — mint-to-gold shifting chrome
+    static let camoParallax           = Color(red: 0.761, green: 0.608, blue: 0.769) // #C29BC4 pale lilac
     static let camoDamascusReforged   = Color(red: 0.082, green: 0.255, blue: 0.776) // #1541C6 — blue-violet marbled steel
     static let camoEmpyros            = Color(red: 0.149, green: 0.627, blue: 0.710) // #26A0B5 — teal mosaic
 

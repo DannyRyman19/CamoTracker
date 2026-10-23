@@ -125,6 +125,25 @@ struct WeaponRow: View {
         return index < completionist.steps.count ? completionist.steps[index].color : completionist.final.color
     }
 
+    @AppStorage(CardOutline.key) private var outline = CardOutline.prestige.rawValue
+
+    /// The border's colors: the best Prestige or Completionist camo earned,
+    /// whichever Customise puts first. Nothing earned keeps the plain border.
+    private var borderGradient: [Color]? {
+        let prestige: [Color]? = viewModel.prestigeCamos.indices
+            .last(where: { viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0) })
+            .map { [Color].prestige(viewModel.prestigeCamos[$0], index: $0) }
+        let completionist: [Color]? = highest.map { highest in
+            let track = mode.completionist
+            return highest < track.steps.count ? track.steps[highest].gradient : track.final.gradient
+        }
+        switch CardOutline(rawValue: outline) ?? .prestige {
+        case .prestige: return prestige ?? completionist
+        case .completionist: return completionist ?? prestige
+        case .off: return nil
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             // No longer its own row: with `showsCamoCount` off (every
@@ -179,6 +198,6 @@ struct WeaponRow: View {
             }
         }
         .padding(12)
-        .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil))
+        .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil), borderGradient: borderGradient)
     }
 }
