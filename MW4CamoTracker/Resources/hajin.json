@@ -1,5 +1,5 @@
 {
- "version": "0.9.24",
+ "version": "0.9.25",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -2763,6 +2763,7 @@
     {
      "title": "Experimental Compounds",
      "subtitle": "3-Plate Ballistic Gel Vest",
+     "value": "Legendary",
      "item": "experimental-compounds"
     },
     {
@@ -5628,6 +5629,7 @@
   {
    "id": "experimental-compounds",
    "name": "Experimental Compounds",
+   "rarity": "Legendary",
    "kind": "Ingredient",
    "found": "Now and then on Commanders",
    "image": "https://camotracker.djr.li/Images/DMZ/experimental-compounds.png?v=1",
