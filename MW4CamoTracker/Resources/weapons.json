@@ -1,5 +1,5 @@
 {
-  "version": "0.9.7",
+  "version": "0.9.11",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -9,7 +9,8 @@
         "es": "Maestro de Prestigio",
         "de": "Prestige-Meister",
         "nl": "Prestige Master",
-        "it": "Maestro del Prestigio"
+        "it": "Maestro del Prestigio",
+        "pt": "Mestre de Prestígio"
       },
       "maxLevel": 250
     }
@@ -22,7 +23,8 @@
         "es": "Pyroclast",
         "de": "Pyroclast",
         "nl": "Pyroclast",
-        "it": "Pyroclast"
+        "it": "Pyroclast",
+        "pt": "Pyroclast"
       },
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast.png"
     },
@@ -33,7 +35,8 @@
         "es": "Pyroclast Terminus",
         "de": "Pyroclast Terminus",
         "nl": "Pyroclast Terminus",
-        "it": "Pyroclast Terminus"
+        "it": "Pyroclast Terminus",
+        "pt": "Pyroclast Terminus"
       },
       "afterWeaponMaxLevel": true,
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_terminus.png"
@@ -45,7 +48,8 @@
         "es": "Pyroclast Scatter",
         "de": "Pyroclast Scatter",
         "nl": "Pyroclast Scatter",
-        "it": "Pyroclast Scatter"
+        "it": "Pyroclast Scatter",
+        "pt": "Pyroclast Scatter"
       },
       "level": 150,
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_scatter.png"
@@ -57,7 +61,8 @@
         "es": "Pyroclast Cascade",
         "de": "Pyroclast Cascade",
         "nl": "Pyroclast Cascade",
-        "it": "Pyroclast Cascade"
+        "it": "Pyroclast Cascade",
+        "pt": "Pyroclast Cascade"
       },
       "level": 250,
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pyroclast_cascade.png"
@@ -72,7 +77,8 @@
         "es": "Fusiles de Asalto",
         "de": "Sturmgewehre",
         "nl": "Aanvalsgeweren",
-        "it": "Fucili d'assalto"
+        "it": "Fucili d'assalto",
+        "pt": "Fuzis de Assalto"
       },
       "weapons": [
         {
@@ -83,7 +89,8 @@
             "es": "HAN 86",
             "de": "HAN 86",
             "nl": "HAN 86",
-            "it": "HAN 86"
+            "it": "HAN 86",
+            "pt": "HAN 86"
           },
           "maxLevel": 72,
           "unlockRequirement": {
@@ -92,7 +99,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/HAN_86.png"
         },
@@ -104,7 +112,8 @@
             "es": "M4",
             "de": "M4",
             "nl": "M4",
-            "it": "M4"
+            "it": "M4",
+            "pt": "M4"
           },
           "maxLevel": 72,
           "unlockRequirement": {
@@ -113,7 +122,8 @@
             "es": "Se desbloquea en el nivel 14.",
             "de": "Freischaltung auf Stufe 14.",
             "nl": "Ontgrendel op niveau 14.",
-            "it": "Si sblocca al livello 14."
+            "it": "Si sblocca al livello 14.",
+            "pt": "Desbloqueia no nível 14."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/M4.png"
         },
@@ -125,7 +135,8 @@
             "es": "Hyeon Burst",
             "de": "Hyeon Burst",
             "nl": "Hyeon Burst",
-            "it": "Hyeon Burst"
+            "it": "Hyeon Burst",
+            "pt": "Hyeon Burst"
           },
           "maxLevel": 68,
           "unlockRequirement": {
@@ -134,7 +145,8 @@
             "es": "Se desbloquea en el nivel 21.",
             "de": "Freischaltung auf Stufe 21.",
             "nl": "Ontgrendel op niveau 21.",
-            "it": "Si sblocca al livello 21."
+            "it": "Si sblocca al livello 21.",
+            "pt": "Desbloqueia no nível 21."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/HYEON_BURST.png"
         },
@@ -146,7 +158,8 @@
             "es": "Kastov 762",
             "de": "Kastov 762",
             "nl": "Kastov 762",
-            "it": "Kastov 762"
+            "it": "Kastov 762",
+            "pt": "Kastov 762"
           },
           "maxLevel": 71,
           "unlockRequirement": {
@@ -155,7 +168,8 @@
             "es": "Se desbloquea en el nivel 34.",
             "de": "Freischaltung auf Stufe 34.",
             "nl": "Ontgrendel op niveau 34.",
-            "it": "Si sblocca al livello 34."
+            "it": "Si sblocca al livello 34.",
+            "pt": "Desbloqueia no nível 34."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/KASTOV_762.png"
         },
@@ -167,7 +181,8 @@
             "es": "Patriot XMR",
             "de": "Patriot XMR",
             "nl": "Patriot XMR",
-            "it": "Patriot XMR"
+            "it": "Patriot XMR",
+            "pt": "Patriot XMR"
           },
           "maxLevel": 72,
           "unlockRequirement": {
@@ -176,7 +191,8 @@
             "es": "Se desbloquea en el nivel 27.",
             "de": "Freischaltung auf Stufe 27.",
             "nl": "Ontgrendel op niveau 27.",
-            "it": "Si sblocca al livello 27."
+            "it": "Si sblocca al livello 27.",
+            "pt": "Desbloqueia no nível 27."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PATRIOT_XMR.png"
         },
@@ -188,7 +204,8 @@
             "es": "Axion",
             "de": "Axion",
             "nl": "Axion",
-            "it": "Axion"
+            "it": "Axion",
+            "pt": "Axion"
           },
           "maxLevel": 69,
           "unlockRequirement": {
@@ -197,7 +214,8 @@
             "es": "Se desbloquea en el nivel 52.",
             "de": "Freischaltung auf Stufe 52.",
             "nl": "Ontgrendel op niveau 52.",
-            "it": "Si sblocca al livello 52."
+            "it": "Si sblocca al livello 52.",
+            "pt": "Desbloqueia no nível 52."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/AXION.png"
         },
@@ -209,7 +227,8 @@
             "es": "Oden",
             "de": "Oden",
             "nl": "Oden",
-            "it": "Oden"
+            "it": "Oden",
+            "pt": "Oden"
           },
           "maxLevel": 65,
           "unlockRequirement": {
@@ -218,8 +237,10 @@
             "es": "Se desbloquea en el nivel 39.",
             "de": "Freischaltung auf Stufe 39.",
             "nl": "Ontgrendel op niveau 39.",
-            "it": "Si sblocca al livello 39."
-          }
+            "it": "Si sblocca al livello 39.",
+            "pt": "Desbloqueia no nível 39."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ODEN.png"
         },
         {
           "weaponId": 21,
@@ -229,7 +250,8 @@
             "es": "Cronen Squall",
             "de": "Cronen Squall",
             "nl": "Cronen Squall",
-            "it": "Cronen Squall"
+            "it": "Cronen Squall",
+            "pt": "Cronen Squall"
           },
           "maxLevel": 67,
           "unlockRequirement": {
@@ -238,8 +260,10 @@
             "es": "Se desbloquea en el nivel 55.",
             "de": "Freischaltung auf Stufe 55.",
             "nl": "Ontgrendel op niveau 55.",
-            "it": "Si sblocca al livello 55."
-          }
+            "it": "Si sblocca al livello 55.",
+            "pt": "Desbloqueia no nível 55."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CRONEN_SQUALL.png"
         }
       ]
     },
@@ -251,7 +275,8 @@
         "es": "Subfusiles",
         "de": "Maschinenpistolen",
         "nl": "Pistoolmitrailleurs",
-        "it": "Mitragliette"
+        "it": "Mitragliette",
+        "pt": "Submetralhadoras"
       },
       "weapons": [
         {
@@ -262,7 +287,8 @@
             "es": "ISO Nightshade",
             "de": "ISO Nightshade",
             "nl": "ISO Nightshade",
-            "it": "ISO Nightshade"
+            "it": "ISO Nightshade",
+            "pt": "ISO Nightshade"
           },
           "maxLevel": 64,
           "unlockRequirement": {
@@ -271,7 +297,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ISO_NIGHTSHADE.png"
         },
@@ -283,7 +310,8 @@
             "es": "PPSh-41",
             "de": "PPSh-41",
             "nl": "PPSh-41",
-            "it": "PPSh-41"
+            "it": "PPSh-41",
+            "pt": "PPSh-41"
           },
           "maxLevel": 62,
           "unlockRequirement": {
@@ -292,7 +320,8 @@
             "es": "Se desbloquea en el nivel 30.",
             "de": "Freischaltung auf Stufe 30.",
             "nl": "Ontgrendel op niveau 30.",
-            "it": "Si sblocca al livello 30."
+            "it": "Si sblocca al livello 30.",
+            "pt": "Desbloqueia no nível 30."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PPSH.png"
         },
@@ -304,7 +333,8 @@
             "es": "X-58 Nyx",
             "de": "X-58 Nyx",
             "nl": "X-58 Nyx",
-            "it": "X-58 Nyx"
+            "it": "X-58 Nyx",
+            "pt": "X-58 Nyx"
           },
           "maxLevel": 53,
           "unlockRequirement": {
@@ -313,7 +343,8 @@
             "es": "Se desbloquea en el nivel 46.",
             "de": "Freischaltung auf Stufe 46.",
             "nl": "Ontgrendel op niveau 46.",
-            "it": "Si sblocca al livello 46."
+            "it": "Si sblocca al livello 46.",
+            "pt": "Desbloqueia no nível 46."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/X-58_NYX.png"
         },
@@ -325,7 +356,8 @@
             "es": "VEL 46",
             "de": "VEL 46",
             "nl": "VEL 46",
-            "it": "VEL 46"
+            "it": "VEL 46",
+            "pt": "VEL 46"
           },
           "maxLevel": 60,
           "unlockRequirement": {
@@ -334,8 +366,10 @@
             "es": "Se desbloquea en el nivel 5.",
             "de": "Freischaltung auf Stufe 5.",
             "nl": "Ontgrendel op niveau 5.",
-            "it": "Si sblocca al livello 5."
-          }
+            "it": "Si sblocca al livello 5.",
+            "pt": "Desbloqueia no nível 5."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/VEL_46.png"
         },
         {
           "weaponId": 23,
@@ -345,7 +379,8 @@
             "es": "WZ.55 Striga",
             "de": "WZ.55 Striga",
             "nl": "WZ.55 Striga",
-            "it": "WZ.55 Striga"
+            "it": "WZ.55 Striga",
+            "pt": "WZ.55 Striga"
           },
           "maxLevel": 60,
           "unlockRequirement": {
@@ -354,8 +389,10 @@
             "es": "Se desbloquea en el nivel 18.",
             "de": "Freischaltung auf Stufe 18.",
             "nl": "Ontgrendel op niveau 18.",
-            "it": "Si sblocca al livello 18."
-          }
+            "it": "Si sblocca al livello 18.",
+            "pt": "Desbloqueia no nível 18."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/WZ_55_STRIGA_v2.png"
         }
       ]
     },
@@ -367,7 +404,8 @@
         "es": "Escopetas",
         "de": "Schrotflinten",
         "nl": "Shotguns",
-        "it": "Fucili a pompa"
+        "it": "Fucili a pompa",
+        "pt": "Escopetas"
       },
       "weapons": [
         {
@@ -378,7 +416,8 @@
             "es": "Rezi 12",
             "de": "Rezi 12",
             "nl": "Rezi 12",
-            "it": "Rezi 12"
+            "it": "Rezi 12",
+            "pt": "Rezi 12"
           },
           "maxLevel": 60,
           "unlockRequirement": {
@@ -387,7 +426,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/REZI_12.png"
         },
@@ -399,7 +439,8 @@
             "es": "Warlord",
             "de": "Warlord",
             "nl": "Warlord",
-            "it": "Warlord"
+            "it": "Warlord",
+            "pt": "Warlord"
           },
           "maxLevel": 60,
           "unlockRequirement": {
@@ -408,8 +449,10 @@
             "es": "Se desbloquea en el nivel 31.",
             "de": "Freischaltung auf Stufe 31.",
             "nl": "Ontgrendel op niveau 31.",
-            "it": "Si sblocca al livello 31."
-          }
+            "it": "Si sblocca al livello 31.",
+            "pt": "Desbloqueia no nível 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/WARLORD.png"
         }
       ]
     },
@@ -421,7 +464,8 @@
         "es": "Ametralladoras Ligeras",
         "de": "Leichte MGs",
         "nl": "Lichte Mitrailleurs",
-        "it": "Mitragliatrici leggere"
+        "it": "Mitragliatrici leggere",
+        "pt": "Metralhadoras Leves"
       },
       "weapons": [
         {
@@ -432,7 +476,8 @@
             "es": "FINN LMG",
             "de": "FINN LMG",
             "nl": "FINN LMG",
-            "it": "FINN LMG"
+            "it": "FINN LMG",
+            "pt": "FINN LMG"
           },
           "maxLevel": 60,
           "unlockRequirement": {
@@ -441,7 +486,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/FINN_LMG.png"
         },
@@ -453,7 +499,8 @@
             "es": "Type 73",
             "de": "Type 73",
             "nl": "Type 73",
-            "it": "Type 73"
+            "it": "Type 73",
+            "pt": "Type 73"
           },
           "maxLevel": 65,
           "unlockRequirement": {
@@ -462,7 +509,8 @@
             "es": "Se desbloquea en el nivel 9.",
             "de": "Freischaltung auf Stufe 9.",
             "nl": "Ontgrendel op niveau 9.",
-            "it": "Si sblocca al livello 9."
+            "it": "Si sblocca al livello 9.",
+            "pt": "Desbloqueia no nível 9."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/TYPE_73.png"
         },
@@ -474,7 +522,8 @@
             "es": "APOC-338",
             "de": "APOC-338",
             "nl": "APOC-338",
-            "it": "APOC-338"
+            "it": "APOC-338",
+            "pt": "APOC-338"
           },
           "maxLevel": 56,
           "unlockRequirement": {
@@ -483,8 +532,10 @@
             "es": "Se desbloquea en el nivel 44.",
             "de": "Freischaltung auf Stufe 44.",
             "nl": "Ontgrendel op niveau 44.",
-            "it": "Si sblocca al livello 44."
-          }
+            "it": "Si sblocca al livello 44.",
+            "pt": "Desbloqueia no nível 44."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/APOC-338.png"
         }
       ]
     },
@@ -496,7 +547,8 @@
         "es": "Rifles de Tirador",
         "de": "Marksman-Gewehre",
         "nl": "Marksman-geweren",
-        "it": "Fucili tattici"
+        "it": "Fucili tattici",
+        "pt": "Rifles de Atirador"
       },
       "weapons": [
         {
@@ -507,7 +559,8 @@
             "es": "MAR-9",
             "de": "MAR-9",
             "nl": "MAR-9",
-            "it": "MAR-9"
+            "it": "MAR-9",
+            "pt": "MAR-9"
           },
           "maxLevel": 73,
           "unlockRequirement": {
@@ -516,7 +569,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/MAR-9.png"
         },
@@ -528,7 +582,8 @@
             "es": "ORIS 8.6",
             "de": "ORIS 8.6",
             "nl": "ORIS 8.6",
-            "it": "ORIS 8.6"
+            "it": "ORIS 8.6",
+            "pt": "ORIS 8.6"
           },
           "maxLevel": 70,
           "unlockRequirement": {
@@ -537,7 +592,8 @@
             "es": "Se desbloquea en el nivel 11.",
             "de": "Freischaltung auf Stufe 11.",
             "nl": "Ontgrendel op niveau 11.",
-            "it": "Si sblocca al livello 11."
+            "it": "Si sblocca al livello 11.",
+            "pt": "Desbloqueia no nível 11."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ORIS_8.6.png"
         },
@@ -549,7 +605,8 @@
             "es": "Mosin-Nagant",
             "de": "Mosin-Nagant",
             "nl": "Mosin-Nagant",
-            "it": "Mosin-Nagant"
+            "it": "Mosin-Nagant",
+            "pt": "Mosin-Nagant"
           },
           "maxLevel": 69,
           "unlockRequirement": {
@@ -558,8 +615,10 @@
             "es": "Se desbloquea en el nivel 36.",
             "de": "Freischaltung auf Stufe 36.",
             "nl": "Ontgrendel op niveau 36.",
-            "it": "Si sblocca al livello 36."
-          }
+            "it": "Si sblocca al livello 36.",
+            "pt": "Desbloqueia no nível 36."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/MOSIN-NAGANT.png"
         }
       ]
     },
@@ -571,7 +630,8 @@
         "es": "Rifles de Francotirador",
         "de": "Scharfschützengewehre",
         "nl": "Sluipschuttersgeweren",
-        "it": "Fucili di precisione"
+        "it": "Fucili di precisione",
+        "pt": "Fuzis de Precisão"
       },
       "weapons": [
         {
@@ -582,7 +642,8 @@
             "es": "KG-7 Vulcan",
             "de": "KG-7 Vulcan",
             "nl": "KG-7 Vulcan",
-            "it": "KG-7 Vulcan"
+            "it": "KG-7 Vulcan",
+            "pt": "KG-7 Vulcan"
           },
           "maxLevel": 75,
           "unlockRequirement": {
@@ -591,7 +652,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/KG-7_VULCAN.png"
         },
@@ -603,7 +665,8 @@
             "es": "Signal 50",
             "de": "Signal 50",
             "nl": "Signal 50",
-            "it": "Signal 50"
+            "it": "Signal 50",
+            "pt": "Signal 50"
           },
           "maxLevel": 74,
           "unlockRequirement": {
@@ -612,7 +675,8 @@
             "es": "Se desbloquea en el nivel 50.",
             "de": "Freischaltung auf Stufe 50.",
             "nl": "Ontgrendel op niveau 50.",
-            "it": "Si sblocca al livello 50."
+            "it": "Si sblocca al livello 50.",
+            "pt": "Desbloqueia no nível 50."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/SIGNAL_50.png"
         },
@@ -624,7 +688,8 @@
             "es": "Astaroth .57",
             "de": "Astaroth .57",
             "nl": "Astaroth .57",
-            "it": "Astaroth .57"
+            "it": "Astaroth .57",
+            "pt": "Astaroth .57"
           },
           "maxLevel": 54,
           "unlockRequirement": {
@@ -633,8 +698,10 @@
             "es": "Se desbloquea en el nivel 25.",
             "de": "Freischaltung auf Stufe 25.",
             "nl": "Ontgrendel op niveau 25.",
-            "it": "Si sblocca al livello 25."
-          }
+            "it": "Si sblocca al livello 25.",
+            "pt": "Desbloqueia no nível 25."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/ASTAROTH_57.png"
         }
       ]
     },
@@ -646,7 +713,8 @@
         "es": "Pistolas",
         "de": "Pistolen",
         "nl": "Pistolen",
-        "it": "Pistole"
+        "it": "Pistole",
+        "pt": "Pistolas"
       },
       "weapons": [
         {
@@ -657,7 +725,8 @@
             "es": "Krait P68",
             "de": "Krait P68",
             "nl": "Krait P68",
-            "it": "Krait P68"
+            "it": "Krait P68",
+            "pt": "Krait P68"
           },
           "maxLevel": 38,
           "unlockRequirement": {
@@ -666,7 +735,8 @@
             "es": "Se desbloquea en el nivel 7.",
             "de": "Freischaltung auf Stufe 7.",
             "nl": "Ontgrendel op niveau 7.",
-            "it": "Si sblocca al livello 7."
+            "it": "Si sblocca al livello 7.",
+            "pt": "Desbloqueia no nível 7."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/KRAIT_P68.png"
         },
@@ -678,7 +748,8 @@
             "es": ".50 GS",
             "de": ".50 GS",
             "nl": ".50 GS",
-            "it": ".50 GS"
+            "it": ".50 GS",
+            "pt": ".50 GS"
           },
           "maxLevel": 50,
           "unlockRequirement": {
@@ -687,7 +758,8 @@
             "es": "Se desbloquea en el nivel 41.",
             "de": "Freischaltung auf Stufe 41.",
             "nl": "Ontgrendel op niveau 41.",
-            "it": "Si sblocca al livello 41."
+            "it": "Si sblocca al livello 41.",
+            "pt": "Desbloqueia no nível 41."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/50_GS.png"
         },
@@ -699,7 +771,8 @@
             "es": "Sang 9mm",
             "de": "Sang 9mm",
             "nl": "Sang 9mm",
-            "it": "Sang 9mm"
+            "it": "Sang 9mm",
+            "pt": "Sang 9mm"
           },
           "maxLevel": 38,
           "unlockRequirement": {
@@ -708,8 +781,10 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
-          }
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/SANG_9MM.png"
         },
         {
           "weaponId": 29,
@@ -719,7 +794,8 @@
             "es": "Mojave .357",
             "de": "Mojave .357",
             "nl": "Mojave .357",
-            "it": "Mojave .357"
+            "it": "Mojave .357",
+            "pt": "Mojave .357"
           },
           "maxLevel": 44,
           "unlockRequirement": {
@@ -728,8 +804,10 @@
             "es": "Se desbloquea en el nivel 48.",
             "de": "Freischaltung auf Stufe 48.",
             "nl": "Ontgrendel op niveau 48.",
-            "it": "Si sblocca al livello 48."
-          }
+            "it": "Si sblocca al livello 48.",
+            "pt": "Desbloqueia no nível 48."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/MOJAVE_357.png"
         }
       ]
     },
@@ -741,7 +819,8 @@
         "es": "Lanzacohetes",
         "de": "Werfer",
         "nl": "Lanceerders",
-        "it": "Lanciarazzi"
+        "it": "Lanciarazzi",
+        "pt": "Lança-mísseis"
       },
       "weapons": [
         {
@@ -752,7 +831,8 @@
             "es": "PILA",
             "de": "PILA",
             "nl": "PILA",
-            "it": "PILA"
+            "it": "PILA",
+            "pt": "PILA"
           },
           "maxLevel": 46,
           "unlockRequirement": {
@@ -761,7 +841,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PILA.png"
         },
@@ -773,7 +854,8 @@
             "es": "RPG-8",
             "de": "RPG-8",
             "nl": "RPG-8",
-            "it": "RPG-8"
+            "it": "RPG-8",
+            "pt": "RPG-8"
           },
           "maxLevel": 46,
           "unlockRequirement": {
@@ -782,8 +864,10 @@
             "es": "Se desbloquea en el nivel 23.",
             "de": "Freischaltung auf Stufe 23.",
             "nl": "Ontgrendel op niveau 23.",
-            "it": "Si sblocca al livello 23."
-          }
+            "it": "Si sblocca al livello 23.",
+            "pt": "Desbloqueia no nível 23."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/RPG-8.png"
         },
         {
           "weaponId": 31,
@@ -793,7 +877,8 @@
             "es": "JOKR",
             "de": "JOKR",
             "nl": "JOKR",
-            "it": "JOKR"
+            "it": "JOKR",
+            "pt": "JOKR"
           },
           "maxLevel": 46,
           "unlockRequirement": {
@@ -802,8 +887,10 @@
             "es": "Se desbloquea en el nivel 43.",
             "de": "Freischaltung auf Stufe 43.",
             "nl": "Ontgrendel op niveau 43.",
-            "it": "Si sblocca al livello 43."
-          }
+            "it": "Si sblocca al livello 43.",
+            "pt": "Desbloqueia no nível 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/JOKR.png"
         },
         {
           "weaponId": 32,
@@ -813,7 +900,8 @@
             "es": "PM-40 Anvil",
             "de": "PM-40 Anvil",
             "nl": "PM-40 Anvil",
-            "it": "PM-40 Anvil"
+            "it": "PM-40 Anvil",
+            "pt": "PM-40 Anvil"
           },
           "maxLevel": 46,
           "unlockRequirement": {
@@ -822,8 +910,10 @@
             "es": "Se desbloquea en el nivel 54.",
             "de": "Freischaltung auf Stufe 54.",
             "nl": "Ontgrendel op niveau 54.",
-            "it": "Si sblocca al livello 54."
-          }
+            "it": "Si sblocca al livello 54.",
+            "pt": "Desbloqueia no nível 54."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/PM-40_ANVIL.png"
         }
       ]
     },
@@ -835,7 +925,8 @@
         "es": "Cuerpo a Cuerpo",
         "de": "Nahkampf",
         "nl": "Melee",
-        "it": "Corpo a corpo"
+        "it": "Corpo a corpo",
+        "pt": "Corpo a Corpo"
       },
       "weapons": [
         {
@@ -846,7 +937,8 @@
             "es": "FSS Carbon Edge 1095",
             "de": "FSS Carbon Edge 1095",
             "nl": "FSS Carbon Edge 1095",
-            "it": "FSS Carbon Edge 1095"
+            "it": "FSS Carbon Edge 1095",
+            "pt": "FSS Carbon Edge 1095"
           },
           "maxLevel": 46,
           "unlockRequirement": {
@@ -855,7 +947,8 @@
             "es": "Desbloqueada por defecto.",
             "de": "Standardmäßig freigeschaltet.",
             "nl": "Standaard ontgrendeld.",
-            "it": "Disponibile da subito."
+            "it": "Disponibile da subito.",
+            "pt": "Desbloqueada por padrão."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/COMBAT_KNIFE.png"
         }

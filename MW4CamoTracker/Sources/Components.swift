@@ -248,7 +248,7 @@ struct WeaponThumbnail: View {
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
     var body: some View {
-        AsyncImage(url: url) { phase in
+        CachedAsyncImage(url: url) { phase in
             switch phase {
             case .success(let image):
                 image.resizable().aspectRatio(contentMode: .fit).padding(inset ?? size * 0.14)
@@ -276,7 +276,7 @@ struct WeaponHeroImage: View {
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
     var body: some View {
-        AsyncImage(url: url) { phase in
+        CachedAsyncImage(url: url) { phase in
             switch phase {
             case .success(let image):
                 image.resizable().aspectRatio(contentMode: .fit).padding(12)
@@ -301,7 +301,7 @@ struct CamoThumbnail: View {
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
     var body: some View {
-        AsyncImage(url: url) { phase in
+        CachedAsyncImage(url: url) { phase in
             switch phase {
             case .success(let image):
                 image.resizable().aspectRatio(contentMode: .fill)
