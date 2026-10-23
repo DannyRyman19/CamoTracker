@@ -22,6 +22,7 @@ enum AppLanguage {
     static let supported: [(code: String, name: String)] = [
         ("en", "English"), ("de", "Deutsch"), ("es", "Español"),
         ("fr", "Français"), ("it", "Italiano"), ("nl", "Nederlands"),
+        ("pt", "Português"),
     ]
 
     static var override: String? {

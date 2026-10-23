@@ -14,6 +14,7 @@
 		0EC35E8B8AA5FC37FC6C0D45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B68295CC227225DC6C73D4 /* ContentView.swift */; };
 		17C918F4298306D3B088A35A /* multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = D6D4CDA89124982F18FDAA90 /* multiplayer.json */; };
 		1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C3E9F2B4D5F6071829305 /* it.lproj */; };
+		2B8D4FA03C5E607182930415 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D4FA03C5E607182930416 /* pt.lproj */; };
 		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
 		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
@@ -37,6 +38,7 @@
 		817F73CAD41BFF8E1E2C0991 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 721F171FEBB0173685265D18 /* es.lproj */; };
 		8BBCDAC269D29D4792A3AF9F /* WidgetSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */; };
 		992D0DDC22EFE45CF3336AD8 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 240B67BB78B0DE3B4C8C0228 /* it.lproj */; };
+		3C9E5FB14D6F718293A41526 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3C9E5FB14D6F718293A41527 /* pt.lproj */; };
 		99B580FC66079179AA15A449 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AE483D41E3B50947797343F0 /* de.lproj */; };
 		9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */; };
 		A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 82971534ADD2CA7EFF592137 /* weapons.json */; };
@@ -115,10 +117,12 @@
 		1159B423149587E45D2B5F5A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		168914AE193FC3A43CA6E617 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		1A7C3E9F2B4D5F6071829305 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
+		2B8D4FA03C5E607182930416 /* pt.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
 		1F0444E41EF781730B5B9B23 /* WidgetViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetViews.swift; sourceTree = "<group>"; };
 		1F4D4216871DE1E40B303C87 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		240B67BB78B0DE3B4C8C0228 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
+		3C9E5FB14D6F718293A41527 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
 		3B2CD37DED80EEB3CEA180AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4396711A369888BFFA7AD0B5 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		4C66A60FEF15496240122166 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				D6D4CDA89124982F18FDAA90 /* multiplayer.json */,
 				87E24B1D1EBDC96E0CE57DEE /* nl.lproj */,
 				1A7C3E9F2B4D5F6071829305 /* it.lproj */,
+				2B8D4FA03C5E607182930416 /* pt.lproj */,
 				55B063F6E81EF142F5E8BE3A /* warzone.json */,
 				82971534ADD2CA7EFF592137 /* weapons.json */,
 				ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */,
@@ -313,6 +318,7 @@
 				168914AE193FC3A43CA6E617 /* es.lproj */,
 				A2E8CFFC9E147140CB22B860 /* fr.lproj */,
 				240B67BB78B0DE3B4C8C0228 /* it.lproj */,
+				3C9E5FB14D6F718293A41527 /* pt.lproj */,
 				4396711A369888BFFA7AD0B5 /* nl.lproj */,
 			);
 			name = Widgets;
@@ -412,6 +418,7 @@
 			knownRegions = (
 				Base,
 				en,
+				pt,
 			);
 			mainGroup = 90A2718410341479B980B883;
 			minimizedProjectReferenceProxies = 1;
@@ -438,6 +445,7 @@
 				478FA5F145C9BB0BBA6D92EE /* es.lproj in Resources */,
 				EA76D1EE791EC486AE90AD08 /* fr.lproj in Resources */,
 				992D0DDC22EFE45CF3336AD8 /* it.lproj in Resources */,
+				3C9E5FB14D6F718293A41526 /* pt.lproj in Resources */,
 				598BA5E333739FF354F97685 /* nl.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +464,7 @@
 				17C918F4298306D3B088A35A /* multiplayer.json in Resources */,
 				D5F090744B737F258FDDFFA3 /* nl.lproj in Resources */,
 				1A7C3E9F2B4D5F6071829304 /* it.lproj in Resources */,
+				2B8D4FA03C5E607182930415 /* pt.lproj in Resources */,
 				3A69BB325248C404557D3503 /* warzone.json in Resources */,
 				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
 			);
