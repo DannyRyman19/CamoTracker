@@ -1,5 +1,5 @@
 {
- "version": "0.9.25",
+ "version": "0.9.26",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -3188,6 +3188,12 @@
      "weapon": 29
     },
     {
+     "title": "PILA",
+     "group": "Launchers",
+     "subtitle": "Needs its Manual",
+     "weapon": 17
+    },
+    {
      "title": "RPG-8",
      "group": "Launchers",
      "subtitle": "Needs its Manual",
@@ -3614,6 +3620,12 @@
      "title": "Police Station Key",
      "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet",
      "item": "police-station-key"
+    },
+    {
+     "title": "Air Base Access Card - Multi Use",
+     "value": "B5",
+     "subtitle": "Epic. Opens doors around Chang-san Air Base, and can be used more than once",
+     "item": "air-base-access-card-multi-use"
     },
     {
      "title": "Weapons Mod Workshop",
@@ -4738,6 +4750,17 @@
    ],
    "effect": "An orbital UAV that can't be shot down; shows which way enemies face",
    "image": "https://camotracker.djr.li/Images/DMZ/advanced-uav.png?v=1"
+  },
+  {
+   "id": "air-base-access-card-multi-use",
+   "name": "Air Base Access Card - Multi Use",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "Opens doors around Chang-san Air Base, and can be used more than once",
+   "grid": "B5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "air-base-drc-weapons-locker",
