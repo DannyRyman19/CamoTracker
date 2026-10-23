@@ -1,5 +1,5 @@
 {
- "version": "0.9.22",
+ "version": "0.9.23",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -3590,6 +3590,17 @@
      "item": "hoesik-supply-room"
     },
     {
+     "title": "Mill Explosives Lab",
+     "subtitle": "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+     "item": "mill-explosives-lab"
+    },
+    {
+     "title": "Prison Encampment Storage",
+     "value": "C3",
+     "subtitle": "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison",
+     "item": "prison-encampment-storage"
+    },
+    {
      "title": "Police Station Key",
      "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet",
      "item": "police-station-key"
@@ -6271,6 +6282,16 @@
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
+   "id": "mill-explosives-lab",
+   "name": "Mill Explosives Lab",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
+  },
+  {
    "id": "mirae-electrical-room",
    "name": "Mirae Electrical Room",
    "kind": "Key",
@@ -6535,6 +6556,17 @@
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/printed-circuit-board.png?v=1",
    "value": 500
+  },
+  {
+   "id": "prison-encampment-storage",
+   "name": "Prison Encampment Storage",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The ordnance storage on the southeast side of the prison camp, 14th Political Prison",
+   "grid": "C3",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "prototype-rf-module",
