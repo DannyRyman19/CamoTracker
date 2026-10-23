@@ -558,10 +558,13 @@ struct TrackerViewModelTests {
     }
 
     /// The shipped Multiplayer file gives the Warlord its own Platinum.
+    /// Shotgun Platinum in Multiplayer is 50 hipfire kills on every shotgun
+    /// (the game's own text; 125 is the DMZ count). The Warlord's own entry
+    /// stays and must agree with the class.
     @Test func theWarlordsPlatinumIsItsOwn() throws {
         let model = try model()
         #expect(model.completionistRequirement(mode: mp, weaponId: 24, step: 1)?.amount == 50)
-        #expect(model.completionistRequirement(mode: mp, weaponId: 8, step: 1)?.amount == 125)
+        #expect(model.completionistRequirement(mode: mp, weaponId: 8, step: 1)?.amount == 50)
     }
 
     /// Mode Mastery: one challenge per tier for the whole mode, tier 1
