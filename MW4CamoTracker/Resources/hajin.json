@@ -1,5 +1,5 @@
 {
- "version": "0.9.26",
+ "version": "0.9.27",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -3188,16 +3188,32 @@
      "weapon": 29
     },
     {
-     "title": "PILA",
-     "group": "Launchers",
-     "subtitle": "Needs its Manual",
-     "weapon": 17
-    },
-    {
      "title": "RPG-8",
      "group": "Launchers",
      "subtitle": "Needs its Manual",
+     "value": "$9,500",
      "weapon": 30
+    },
+    {
+     "title": "PILA",
+     "group": "Launchers",
+     "subtitle": "Needs its Manual",
+     "value": "$23,750",
+     "weapon": 17
+    },
+    {
+     "title": "PM-40 Anvil",
+     "group": "Launchers",
+     "subtitle": "Needs its Manual",
+     "value": "$28,500",
+     "weapon": 32
+    },
+    {
+     "title": "JOKR",
+     "group": "Launchers",
+     "subtitle": "Needs its Manual",
+     "value": "$47,500",
+     "weapon": 31
     },
     {
      "title": "FSS Carbon Edge 1095",
