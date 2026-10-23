@@ -1,5 +1,5 @@
 {
- "version": "0.9.27",
+ "version": "0.9.28",
  "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
@@ -2779,6 +2779,7 @@
     {
      "title": "Turned Components",
      "subtitle": "Parachute",
+     "value": "Epic",
      "item": "turned-components"
     },
     {
@@ -2789,26 +2790,31 @@
     {
      "title": "Prototype RF Module",
      "subtitle": "Vendor Item Upgrade",
+     "value": "Legendary",
      "item": "prototype-rf-module"
     },
     {
      "title": "Regional Combat Notes",
      "subtitle": "MIA Recovery Discount I, Bank Upgrade IV",
+     "value": "Uncommon",
      "item": "regional-combat-notes"
     },
     {
      "title": "Nuclear Program Files",
      "subtitle": "MIA Recovery Discount II",
+     "value": "Rare",
      "item": "nuclear-program-files"
     },
     {
      "title": "Degraded Execution Footage",
      "subtitle": "MIA Recovery Discount II",
+     "value": "Rare",
      "item": "degraded-execution-footage"
     },
     {
      "title": "Infantry Invasion Plans",
      "subtitle": "Bank Upgrade III",
+     "value": "Uncommon",
      "item": "infantry-invasion-plans"
     }
    ]
@@ -3426,7 +3432,7 @@
     {
      "title": "Reactor DRC Locker",
      "value": "H4",
-     "subtitle": "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
+     "subtitle": "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear. Reported as a reward from Operation Fallen Ember",
      "item": "reactor-drc-locker"
     },
     {
@@ -3838,7 +3844,7 @@
     {
      "title": "Cargo Plane",
      "value": "$100,000",
-     "subtitle": "Pick your exact drop point"
+     "subtitle": "Pick your exact drop point. Unlocked by Operation Fallen Ember"
     }
    ]
   },
@@ -3983,6 +3989,19 @@
      "title": "Operation Iron Citadel",
      "group": "Story Missions",
      "check": "op-operation-iron-citadel",
+     "place": "Chang-san Air Base",
+     "objectives": [
+      "Approach the air base and find an Airbase Access Card",
+      "Upgrade the card at the marked server",
+      "Find the armory doors inside the bunker",
+      "Recover the three keycode parts and open the armory",
+      "Collect the armory manifest",
+      "Plant explosives in the armory",
+      "Plant explosives on three strike aircraft",
+      "Capture the SAM site",
+      "Exfil with the armory manifest"
+     ],
+     "cash": 25000,
      "links": [
       "supreme-leaders-bunker-access-card"
      ],
@@ -3994,11 +4013,64 @@
      "title": "Operation Grid Assault",
      "group": "Story Missions",
      "check": "op-operation-grid-assault",
+     "place": "The Grid",
+     "objectives": [
+      "Find the drone control at DBN Headquarters",
+      "Recover the first and second code segments",
+      "Compile the code",
+      "Upload the code",
+      "Broadcast the kill code"
+     ],
+     "cash": 25000,
      "links": [
       "rozes-high-rise-armory"
      ],
      "rewards": [
       "Unlocks the Helicopter infil ($50,000)"
+     ]
+    },
+    {
+     "title": "Operation Fallen Ember",
+     "group": "Story Missions",
+     "check": "op-operation-fallen-ember",
+     "place": "Haneul Nuclear Reactor (Extreme)",
+     "objectives": [
+      "Breach the reactor",
+      "Secure the rods",
+      "Extract the decontaminated rods"
+     ],
+     "cash": 25000,
+     "links": [
+      "reactor-drc-locker",
+      "gas-mask"
+     ],
+     "rewards": [
+      "Unlocks the Cargo Plane infil ($100,000)",
+      "Bring radiation gear: hazmat suits hang on the reactor walls"
+     ]
+    },
+    {
+     "title": "Gear Up",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-gear-up",
+     "objectives": [
+      "Equip a weapon, a backpack, an armor vest and a medkit from your stash"
+     ]
+    },
+    {
+     "title": "Crack Shot",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-crack-shot",
+     "objectives": [
+      "Knock down three firing-range targets"
+     ]
+    },
+    {
+     "title": "First OP",
+     "group": "DMZ Orders: Chapter 1",
+     "check": "op-first-op",
+     "objectives": [
+      "Deploy to DMZ in Dynamic Operations"
      ]
     },
     {
@@ -4010,6 +4082,12 @@
       "Enter a Police Station",
       "Search 3 containers inside",
       "Eliminate 5 soldiers inside"
+     ],
+     "links": [
+      "recon-drone"
+     ],
+     "rewards": [
+      "Page reward: the Recon Drone recipe"
      ]
     },
     {
@@ -4020,6 +4098,12 @@
      "objectives": [
       "Open a safe",
       "Extract with $5,000 of backpack and loadout value"
+     ],
+     "links": [
+      "recon-drone"
+     ],
+     "rewards": [
+      "Page reward: the Recon Drone recipe"
      ]
     },
     {
@@ -4036,7 +4120,34 @@
       "recon-drone"
      ],
      "rewards": [
-      "Finishing the page gives the Recon Drone recipe"
+      "Page reward: the Recon Drone recipe"
+     ]
+    },
+    {
+     "title": "Eyes Everywhere",
+     "group": "DMZ Orders: Counterfeit",
+     "check": "op-eyes-everywhere",
+     "place": "Heavenly Luck Casino",
+     "objectives": [
+      "Print a Recon Drone",
+      "Mark 10 enemies in Heavenly Luck Casino with it"
+     ],
+     "links": [
+      "recon-drone"
+     ],
+     "rewards": [
+      "Page reward: $20,000, an Operator Rescue Beacon and a Weapon Insurance Contract"
+     ]
+    },
+    {
+     "title": "Suit Breach",
+     "group": "DMZ Orders: Counterfeit",
+     "check": "op-suit-breach",
+     "objectives": [
+      "Eliminate 15 enemies wearing hazmat suits"
+     ],
+     "rewards": [
+      "Page reward: $20,000, an Operator Rescue Beacon and a Weapon Insurance Contract"
      ]
     },
     {
@@ -4071,63 +4182,84 @@
      ]
     },
     {
-     "title": "Eye in the Sky",
-     "group": "DMZ Orders: Underground",
-     "check": "op-eye-in-the-sky",
-     "subtitle": "Objectives not confirmed yet"
-    },
-    {
-     "title": "Joyride",
-     "group": "DMZ Orders: Underground",
-     "check": "op-joyride",
-     "subtitle": "Objectives not confirmed yet"
-    },
-    {
-     "title": "Transmitter",
-     "group": "DMZ Orders: Underground",
-     "check": "op-transmitter",
-     "place": "La Grande Vie, Songdo Wharf",
+     "title": "Blindness",
+     "group": "DMZ Orders: Human Intel",
+     "check": "op-blindness",
      "objectives": [
-      "Place a Transmitter on top of La Grande Vie"
+      "Print 4 Flash grenades",
+      "Kill 8 flashed enemies"
+     ],
+     "links": [
+      "flash"
      ]
     },
     {
-     "title": "Gear Up",
-     "group": "DMZ Orders: Chapter 1",
-     "check": "op-gear-up",
-     "subtitle": "Objectives not confirmed yet"
+     "title": "Payment Due",
+     "group": "DMZ Orders: Human Intel",
+     "check": "op-payment-due",
+     "objectives": [
+      "Collect a Dynamic Op Phone",
+      "Earn $11,500 from Dynamic Ops"
+     ]
     },
     {
-     "title": "Crack Shot",
-     "group": "DMZ Orders: Chapter 1",
-     "check": "op-crack-shot",
-     "subtitle": "Objectives not confirmed yet"
-    },
-    {
-     "title": "First OP",
-     "group": "DMZ Orders: Chapter 1",
-     "check": "op-first-op",
-     "subtitle": "Objectives not confirmed yet"
+     "title": "Eye in the Sky",
+     "group": "DMZ Orders: Underground",
+     "check": "op-eye-in-the-sky",
+     "place": "Any SAM site",
+     "objectives": [
+      "Take control of a SAM site",
+      "Have the SAM destroy a cargo helicopter",
+      "Loot the crate the helicopter drops"
+     ],
+     "links": [
+      "ddos",
+      "decoy-grenade",
+      "night-vision-goggles"
+     ],
+     "rewards": [
+      "Page reward: DDOS, Decoy Grenade and Night Vision Goggle recipes, and $20,000"
+     ]
     },
     {
      "title": "Watch for Bumps",
-     "group": "DMZ Orders: Chapter 2",
+     "group": "DMZ Orders: Underground",
      "check": "op-watch-for-bumps",
      "objectives": [
       "Steal an enemy vehicle",
       "Refuel and repair a vehicle at a gas station",
       "Run over 7 enemies in a vehicle"
+     ],
+     "links": [
+      "ddos",
+      "decoy-grenade",
+      "night-vision-goggles"
+     ],
+     "rewards": [
+      "Page reward: DDOS, Decoy Grenade and Night Vision Goggle recipes, and $20,000"
      ]
     },
     {
      "title": "Triangulation",
-     "group": "DMZ Orders: Chapter 2",
+     "group": "DMZ Orders: Underground",
      "check": "op-triangulation",
-     "subtitle": "Objectives not confirmed yet"
+     "place": "Radio towers, La Grande Vie in Songdo Wharf",
+     "objectives": [
+      "Place a transmitter on top of 2 radio towers",
+      "Place a transmitter on top of La Grande Vie in Songdo Wharf"
+     ],
+     "links": [
+      "ddos",
+      "decoy-grenade",
+      "night-vision-goggles"
+     ],
+     "rewards": [
+      "Page reward: DDOS, Decoy Grenade and Night Vision Goggle recipes, and $20,000"
+     ]
     },
     {
      "title": "Dead Battery",
-     "group": "DMZ Orders: Chapter 2",
+     "group": "DMZ Orders: Underground",
      "check": "op-dead-battery",
      "objectives": [
       "Print a DDOS field upgrade",
@@ -4135,13 +4267,104 @@
      ],
      "links": [
       "ddos"
+     ],
+     "rewards": [
+      "Page reward: $20,000 and a Basic Restock Kit"
      ]
     },
     {
      "title": "Death from Above",
-     "group": "DMZ Orders: Chapter 2",
+     "group": "DMZ Orders: Underground",
      "check": "op-death-from-above",
-     "subtitle": "Objectives not confirmed yet"
+     "objectives": [
+      "Distract a drone with a Decoy Grenade",
+      "Destroy 3 drones",
+      "Collect a Drone Motherboard from a destroyed drone"
+     ],
+     "links": [
+      "decoy-grenade"
+     ],
+     "rewards": [
+      "Page reward: $20,000 and a Basic Restock Kit"
+     ]
+    },
+    {
+     "title": "Crashed Crate",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-crashed-crate",
+     "objectives": [
+      "Retrieve 3 lost supply drops",
+      "Complete a Loot Radio Tower Side Op"
+     ]
+    },
+    {
+     "title": "Healer",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-healer",
+     "objectives": [
+      "Track the Medkit recipe at the 3D Printer",
+      "Print a Medkit"
+     ],
+     "links": [
+      "medkit"
+     ]
+    },
+    {
+     "title": "Preparation",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-preparation",
+     "objectives": [
+      "Print a Medium Backpack",
+      "Print a 2-Plate Armor Vest"
+     ],
+     "links": [
+      "medium-backpack",
+      "2-plate-armor-vest"
+     ]
+    },
+    {
+     "title": "Radiation Station",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-radiation-station",
+     "place": "Any Fire Station",
+     "objectives": [
+      "Find a Fire Station",
+      "Loot 3 Gas Masks or Radiation Pill Bottles",
+      "Search 5 containers while in radiation"
+     ],
+     "links": [
+      "gas-mask"
+     ]
+    },
+    {
+     "title": "Recognition",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-recognition",
+     "objectives": [
+      "Kill 15 enemies with an unsuppressed weapon in a High threat location"
+     ]
+    },
+    {
+     "title": "Surprise Me",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-surprise-me",
+     "objectives": [
+      "Complete 5 Dynamic Ops",
+      "Complete a Story Mission using Random Mission Deploy"
+     ]
+    },
+    {
+     "title": "Work Quietly",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-work-quietly",
+     "objectives": [
+      "Fit a suppressor to a weapon at the Gunsmith",
+      "Print a Throwing Knife",
+      "Kill 8 enemies in a row without taking damage"
+     ],
+     "links": [
+      "throwing-knife"
+     ]
     },
     {
      "title": "Dead Man's Cache",
@@ -5383,6 +5606,7 @@
   {
    "id": "degraded-execution-footage",
    "name": "Degraded Execution Footage",
+   "rarity": "Rare",
    "kind": "Ingredient",
    "symbol": "cube.fill",
    "value": 2000
@@ -5956,6 +6180,7 @@
   {
    "id": "infantry-invasion-plans",
    "name": "Infantry Invasion Plans",
+   "rarity": "Uncommon",
    "kind": "Ingredient",
    "found": "Civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/infantry-invasion-plans.png?v=1",
@@ -6442,6 +6667,7 @@
   {
    "id": "nuclear-program-files",
    "name": "Nuclear Program Files",
+   "rarity": "Rare",
    "kind": "Ingredient",
    "found": "Computers, and civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1",
@@ -6631,6 +6857,7 @@
   {
    "id": "prototype-rf-module",
    "name": "Prototype RF Module",
+   "rarity": "Legendary",
    "kind": "Ingredient",
    "note": "Vendor Item Upgrade",
    "found": "Deathstalkers",
@@ -6771,7 +6998,7 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Ultra",
-   "note": "The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear",
+   "note": "The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear. Reported as a reward from Operation Fallen Ember",
    "grid": "H4",
    "marker": "k-reactor-drc",
    "value": 100,
@@ -6819,6 +7046,7 @@
   {
    "id": "regional-combat-notes",
    "name": "Regional Combat Notes",
+   "rarity": "Uncommon",
    "kind": "Ingredient",
    "found": "Civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/regional-combat-notes.png?v=1",
@@ -7614,7 +7842,8 @@
     "m5896",
     "m5883"
    ],
-   "image": "https://camotracker.djr.li/Images/DMZ/turned-components.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/turned-components.png?v=1",
+   "value": 1500
   },
   {
    "id": "uav",
@@ -7734,7 +7963,8 @@
     "m5891",
     "m5853"
    ],
-   "image": "https://camotracker.djr.li/Images/DMZ/volatile-explosives.png?v=1"
+   "image": "https://camotracker.djr.li/Images/DMZ/volatile-explosives.png?v=1",
+   "value": 1500
   },
   {
    "id": "wmd-manifest",

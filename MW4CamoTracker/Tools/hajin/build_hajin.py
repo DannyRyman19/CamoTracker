@@ -219,7 +219,7 @@ guide = [
   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
   "rows": rows([
    ("Counting Room Vault", "F4", "Epic. The counting-room vault on the Heavenly Luck Casino's main floor, Cheongun Village. Players report a backpack inside"),
-   ("Reactor DRC Locker", "H4", "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear"),
+   ("Reactor DRC Locker", "H4", "Ultra. The DRC Weapons Locker in Reactor 02's irradiated pool, Haneul Nuclear Reactor. Bring radiation gear. Reported as a reward from Operation Fallen Ember"),
    ("Executive Arms Auction", "G6", "Epic. The arms auction room at the top of DBN Headquarters, The Grid"),
    ("Mirae Electrical Room", "F5", "Rare. The electrical room in the northwestern basement car park, Mirae General Hospital"),
    ("Police Weapon Depository", "G7", "Epic. The auxiliary police armory north of the police station, Wolves Stadium"),
@@ -282,7 +282,7 @@ guide = [
    ("On foot", "Free", "Random spot"), ("Polaris Dagor A1", "$5,000", "Random spot"),
    ("LTV", "$25,000", "Random spot. Unlocked by Operation Iron Citadel"),
    ("Helicopter", "$50,000", "Flown in from the FOB. Unlocked by Operation Grid Assault"),
-   ("Cargo Plane", "$100,000", "Pick your exact drop point"),
+   ("Cargo Plane", "$100,000", "Pick your exact drop point. Unlocked by Operation Fallen Ember"),
   ])},
  {"id": "ops", "title": "Missions & payouts", "symbol": "target",
   "rows": rows([
@@ -337,7 +337,7 @@ _vd.sell_values(items)
 _vd.key_pictures(items)
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.27", "updated": "2026-10-23",
+data = {"version": "0.9.28", "updated": "2026-10-23",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
