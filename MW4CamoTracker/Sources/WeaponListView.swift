@@ -171,8 +171,8 @@ struct WeaponRow: View {
                     // Weapon level is global — the same number shows up under every mode tab.
                     if !viewModel.quickTick {
                         let prestige = viewModel.prestige(for: weapon.weaponId)
-                        Text(prestige > 0
-                             ? "P\(prestige) · LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
+                        Text(!viewModel.countsUnlocks(weaponId: weapon.weaponId)
+                             ? "\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
                              : String(format: "mw4.ui.unlocks_short".localized(),
                                       TrackerViewModel.unlocks(forLevel: viewModel.level(for: weapon.weaponId)),
                                       TrackerViewModel.unlocks(forLevel: viewModel.maxLevel(for: weapon))))

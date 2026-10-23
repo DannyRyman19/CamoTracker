@@ -304,7 +304,7 @@ struct WeaponDetailView: View {
                 && viewModel.specialsWaitForMilitary(mode: mode.rawValue)
                 && !viewModel.allMilitaryComplete(mode: mode.rawValue, weaponId: weapon.weaponId)
                 ? "mw4.ui.special_locked".localized()
-                : camo.unlockLevel.map { String(format: "mw4.ui.camo_level_locked".localized(), TrackerViewModel.unlocks(forLevel: $0)) },
+                : camo.unlockLevel.map { viewModel.levelGateText($0, weaponId: weapon.weaponId, kind: "locked") },
             detail: militaryDetail(camo),
             onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
             onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
@@ -345,11 +345,10 @@ struct WeaponDetailView: View {
     /// weapon unlocks." in quick tick).
     private func militaryDetail(_ camo: ChallengeItem) -> String? {
         guard let level = viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) else { return nil }
-        let unlocks = TrackerViewModel.unlocks(forLevel: level)
         // Quick tick has no levels to unlock by: say what the game asks.
-        guard !viewModel.quickTick else { return String(format: "mw4.ui.camo_level_reach".localized(), unlocks) }
+        guard !viewModel.quickTick else { return viewModel.levelGateText(level, weaponId: weapon.weaponId, kind: "reach") }
         let earned = viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
-        return String(format: (earned ? "mw4.ui.camo_level_earned" : "mw4.ui.camo_level_locked").localized(), unlocks)
+        return viewModel.levelGateText(level, weaponId: weapon.weaponId, kind: earned ? "earned" : "locked")
     }
 
     private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
@@ -840,7 +839,7 @@ private struct CompactLevelRow: View {
     private var stageCount: Int { viewModel.prestigeStages.count }
     /// Before any Weapon Prestige the game counts unlocks; a prestiged
     /// weapon goes back to classic levels.
-    private var countsUnlocks: Bool { prestige == 0 }
+    private var countsUnlocks: Bool { viewModel.countsUnlocks(weaponId: weapon.weaponId) }
     /// The number the stepper shows and steps: unlocks, or the prestige
     /// stage's level.
     private var shown: Int { countsUnlocks ? TrackerViewModel.unlocks(forLevel: level) : level }
@@ -985,7 +984,7 @@ private struct CompactLevelRow: View {
                 // Full size whenever it fits. A bare minimumScaleFactor shrank
                 // it with room to spare (sized before the row had its width).
                 let label = Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
-                                              : "mw4.ui.weapon_unlocks".localized())
+                                              : (countsUnlocks ? "mw4.ui.weapon_unlocks" : "mw4.ui.weapon_level").localized())
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1)

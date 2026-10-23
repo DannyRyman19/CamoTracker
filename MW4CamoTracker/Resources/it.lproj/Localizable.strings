@@ -32,8 +32,8 @@
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Ancora nessun dato sulle mimetiche %@ per quest'arma.";
 "mw4.ui.locked" = "Completa prima il livello precedente.";
-"mw4.ui.camo_level_locked" = "Richiede %d sblocchi arma.";
-"mw4.ui.camo_level_reach" = "Ottieni %d sblocchi arma.";
+"mw4.ui.camo_level_locked" = "Si sblocca al livello arma %d.";
+"mw4.ui.camo_level_reach" = "Raggiungi il livello arma %d.";
 "mw4.ui.set_amount.title" = "Imposta quantità";
 "mw4.ui.set_amount.field" = "Quantità";
 "mw4.ui.set_amount.message" = "Su %d richieste.";
@@ -132,7 +132,7 @@
 "mw4.ui.mastery.mode_locked" = "Ottieni prima %@.";
 "mw4.ui.mastery.self_count" = "%1$d/%2$d sfide %3$@";
 "mw4.ui.milestone.mode_mastery_subtitle" = "Mimetica universale: equipaggiala su qualsiasi arma.";
-"mw4.ui.camo_level_earned" = "Ottenuta a %d sblocchi arma.";
+"mw4.ui.camo_level_earned" = "Ottenuta al livello arma %d.";
 "mw4.ui.suggestion.next_camo" = "Prossima: %@";
 "mw4.ui.milestone.final_many" = "Ora ce l'hanno %d armi.";
 "mw4.ui.milestone.mastery_subtitle" = "%1$d armi con %2$@.";
@@ -184,3 +184,6 @@
 "mw4.ui.prestige.hint_unlocks" = "Ottieni tutti i %d sblocchi arma per il prestigio.";
 "mw4.ui.unlocks_short" = "%d/%d SBLOCCHI";
 "mw4.ui.unlocks_hint" = "Conta gli sblocchi dell'arma, non il suo livello. Gli accessori condivisi che hai già vengono saltati, quindi il livello arma nel gioco può essere più alto.";
+"mw4.ui.camo_unlocks_locked" = "Richiede %d sblocchi arma.";
+"mw4.ui.camo_unlocks_reach" = "Ottieni %d sblocchi arma.";
+"mw4.ui.camo_unlocks_earned" = "Ottenuta a %d sblocchi arma.";
