@@ -31,7 +31,7 @@ struct HajinItemTile: View {
                 LinearGradient(colors: [tint.opacity(0.22), Color.black.opacity(0.55)], startPoint: .bottom, endPoint: .top)
             }
             if let image = item?.image, let url = URL(string: image) {
-                AsyncImage(url: url) { phase in
+                CachedAsyncImage(url: url) { phase in
                     if let picture = phase.image { picture.resizable().scaledToFit().padding(size * 0.08) } else { Color.clear }
                 }
             } else if let symbol = item?.symbol {

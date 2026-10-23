@@ -130,7 +130,7 @@ private struct TraitNode: View {
                 shape.fill(isSelected ? tree.tint : Color.black.opacity(0.55))
                 shape.stroke(tree.tint.opacity(isSelected ? 1 : 0.55), lineWidth: isSelected ? 2.5 : 1.2)
                 if let icon = trait?.icon, let url = URL(string: icon) {
-                    AsyncImage(url: url) { phase in
+                    CachedAsyncImage(url: url) { phase in
                         if let image = phase.image {
                             image.renderingMode(.template).resizable().scaledToFit()
                         } else {

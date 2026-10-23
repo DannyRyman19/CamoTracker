@@ -654,7 +654,7 @@ struct GuideRowView: View {
                     .frame(width: 24, height: 24)
             }
             if let image = row.image, let url = URL(string: image) {
-                AsyncImage(url: url) { phase in
+                CachedAsyncImage(url: url) { phase in
                     if let picture = phase.image {
                         picture.resizable().scaledToFit()
                     } else {
