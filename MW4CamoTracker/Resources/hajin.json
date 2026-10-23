@@ -1669,7 +1669,7 @@
     },
     {
      "title": "Level 40",
-     "subtitle": "Station upgrade",
+     "subtitle": "Station upgrade (players report a 25% Bounty payout)",
      "level": 40
     },
     {
@@ -2982,7 +2982,7 @@
     },
     {
      "title": "MIA Recovery Discount III",
-     "subtitle": "Needs 5 Foreign Intelligence Targets; the rest of the cost isn't known yet. Rescuing an MIA operator costs less again",
+     "subtitle": "5 W.M.D Manifest, 5 Foreign Intelligence Targets, 10 Power Regulator, 10 Comms Module. Rescuing an MIA operator costs another 5% less (reported; the cash cost isn't known yet)",
      "item": "mia-recovery-discount-iii",
      "check": "upgrade-mia-recovery-discount-iii",
      "group": "Operators"
@@ -4256,23 +4256,28 @@
   },
   {
    "id": "prestige",
-   "title": "Prestige rewards",
+   "title": "Operator Prestige",
    "symbol": "star.fill",
+   "intro": "An operator can Prestige once it has 18 Trait Points (spent or not) and isn't MIA. You pay the cash and hand in the gear below, equipped on the operator, and all of it is used up along with every trait you picked. In return the operator gets a random permanent trait. It can hold up to three, and from Prestige 4 you're offered a new one to swap in or turn down. Move anything you want to keep into your Stash first; Secure Slots don't protect it.",
    "rows": [
     {
-     "title": "1st Prestige",
+     "title": "Prestige 1",
      "value": "$200,000",
-     "subtitle": "Two Rare weapons, Rare plate carrier and backpack, four Rare ingredients"
+     "subtitle": "Hand in 2 weapons with 3 attachment slots (Rare or better), a Rare or better plate carrier and backpack, and 4 Rare or better ingredients"
     },
     {
-     "title": "2nd Prestige",
+     "title": "Prestige 2",
      "value": "$300,000",
-     "subtitle": "Two weapons with four attachment slots, Epic plate carrier and backpack, four Epic ingredients"
+     "subtitle": "Hand in 2 weapons with 4 attachment slots, an Epic plate carrier and backpack, and 4 Epic ingredients"
     },
     {
-     "title": "3rd and later",
+     "title": "Prestige 3 and later",
      "value": "$500,000",
-     "subtitle": "The Legendary versions"
+     "subtitle": "Hand in 2 weapons with 4 attachment slots, a Legendary plate carrier and backpack, and 4 Legendary ingredients"
+    },
+    {
+     "title": "If Prestige won't go through",
+     "subtitle": "Activision is looking into a Prestige bug. Its workaround is to equip Rare weapons with three attachment slots that have never had four or more attachments; just removing an attachment doesn't count"
     }
    ]
   },
@@ -6089,8 +6094,25 @@
    "id": "mia-recovery-discount-iii",
    "name": "MIA Recovery Discount III",
    "kind": "FOB Upgrade",
-   "note": "Needs 5 Foreign Intelligence Targets; the rest of the cost isn't known yet",
-   "effect": "Rescuing an MIA operator costs less again",
+   "cost": [
+    {
+     "item": "wmd-manifest",
+     "qty": 5
+    },
+    {
+     "item": "foreign-intelligence-targets",
+     "qty": 5
+    },
+    {
+     "item": "power-regulator",
+     "qty": 10
+    },
+    {
+     "item": "comms-module",
+     "qty": 10
+    }
+   ],
+   "effect": "Rescuing an MIA operator costs another 5% less (reported; the cash cost isn't known yet)",
    "symbol": "arrow.up.circle.fill",
    "family": "MIA Recovery Discount",
    "tier": 3
@@ -7889,7 +7911,8 @@
    "id": "expedited-extraction",
    "name": "Expedited Extraction",
    "tree": "Survivalist",
-   "effect": "Exfils arrive much faster. A random-row trait in the top section"
+   "effect": "Exfils arrive much faster. A random-row trait in the top section",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/expedited-extraction.png?v=2"
   },
   {
    "id": "fast-learner",
@@ -7902,7 +7925,8 @@
    "id": "faster-revive",
    "name": "Faster Revive",
    "tree": "Survivalist",
-   "effect": "Faster revives. One of the two fixed traits in the bottom section"
+   "effect": "Faster revives. One of the two fixed traits in the bottom section",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/faster-revive.png?v=2"
   },
   {
    "id": "field-crafting",
@@ -7929,7 +7953,8 @@
    "id": "fuel-economy",
    "name": "Fuel Economy",
    "tree": "Survivalist",
-   "effect": "Vehicles use less fuel. A random-row trait in the middle section"
+   "effect": "Vehicles use less fuel. A random-row trait in the middle section",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/fuel-economy.png?v=2"
   },
   {
    "id": "hostile-looter",
@@ -7984,7 +8009,8 @@
    "id": "popcorn-lethals",
    "name": "Popcorn Lethals",
    "tree": "Warfighter",
-   "effect": "Hostiles hit by your Lethals are more likely to drop Lethals. A random-row trait in the top section"
+   "effect": "Hostiles hit by your Lethals are more likely to drop Lethals. A random-row trait in the top section",
+   "icon": "https://camotracker.djr.li/Images/DMZ/traits/popcorn-lethals.png?v=2"
   },
   {
    "id": "popcorn-tacticals",
