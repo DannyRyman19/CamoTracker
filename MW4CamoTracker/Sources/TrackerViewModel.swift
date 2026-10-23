@@ -176,6 +176,31 @@ final class TrackerViewModel: ObservableObject {
         weaponLevels[weaponId] ?? 0
     }
 
+    /// MW4 counts weapon progress in unlocks, not levels: every level after
+    /// the first gives one unlock, so a camo the data puts at level 44 needs
+    /// 43 unlocks. Levels whose reward is a shared attachment the player
+    /// already owns are skipped, so the game's level can run ahead of this.
+    /// Stored values stay levels (prestige, max level and the camo gates all
+    /// work on them); only what's shown and typed is in unlocks.
+    static func unlocks(forLevel level: Int) -> Int { max(0, level - 1) }
+    static func level(forUnlocks unlocks: Int) -> Int { unlocks <= 0 ? 0 : unlocks + 1 }
+
+    /// Launchers (7) and melee (8) have no shared attachments, so the game
+    /// keeps counting them in levels; so does any weapon in Weapon Prestige.
+    func countsUnlocks(weaponId: Int) -> Bool {
+        guard prestige(for: weaponId) == 0 else { return false }
+        guard let category = category(containingWeaponId: weaponId)?.categoryId else { return true }
+        return ![7, 8].contains(category)
+    }
+
+    /// What a level gate reads as for this weapon: "Needs 43 weapon unlocks."
+    /// or "Unlocks at weapon level 44." `kind` is locked, reach or earned.
+    func levelGateText(_ level: Int, weaponId: Int, kind: String) -> String {
+        countsUnlocks(weaponId: weaponId)
+            ? String(format: "mw4.ui.camo_unlocks_\(kind)".localized(), Self.unlocks(forLevel: level))
+            : String(format: "mw4.ui.camo_level_\(kind)".localized(), level)
+    }
+
     func setLevel(_ level: Int, for weapon: WeaponEntry) {
         guard level != self.level(for: weapon.weaponId) else { return }
         applyLevel(level, for: weapon)
