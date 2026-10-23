@@ -3926,13 +3926,17 @@
      ],
      "cash": 25000,
      "links": [
-      "night-vision-goggles"
+      "night-vision-goggles",
+      "coin-mining-den"
      ]
     },
     {
      "title": "Operation Iron Citadel",
      "group": "Story Missions",
      "check": "op-operation-iron-citadel",
+     "links": [
+      "supreme-leaders-bunker-access-card"
+     ],
      "rewards": [
       "Unlocks the LTV infil ($25,000)"
      ]
@@ -3941,6 +3945,9 @@
      "title": "Operation Grid Assault",
      "group": "Story Missions",
      "check": "op-operation-grid-assault",
+     "links": [
+      "rozes-high-rise-armory"
+     ],
      "rewards": [
       "Unlocks the Helicopter infil ($50,000)"
      ]
@@ -5616,7 +5623,7 @@
    "kind": "Valuable",
    "value": 5000,
    "rarity": "Epic",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/foreign-intelligence-targets.png?v=1"
   },
   {
    "id": "frag-grenade",
@@ -5715,7 +5722,7 @@
    "kind": "Valuable",
    "value": 25000,
    "rarity": "Ultra",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/gold-skull.png?v=1"
   },
   {
    "id": "gun-store-weapons-locker",
@@ -6439,7 +6446,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "note": "Where its door is isn't known yet",
-   "value": 100
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/police-station-key.png?v=1"
   },
   {
    "id": "police-weapon-depository",
@@ -6812,7 +6820,7 @@
    "kind": "Valuable",
    "value": 10000,
    "rarity": "Legendary",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/sanctioned-assassination-list.png?v=1"
   },
   {
    "id": "scavengers-dog-tag",
@@ -7313,7 +7321,7 @@
    "kind": "Gear",
    "rarity": "Legendary",
    "note": "Used to repair heavy military tanks",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/tank-water-pump.png?v=1"
   },
   {
    "id": "tempered-armor-vest",
