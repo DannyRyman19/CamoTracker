@@ -1,6 +1,6 @@
 {
- "version": "0.9.21",
- "updated": "2026-10-22",
+ "version": "0.9.22",
+ "updated": "2026-10-23",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -2981,6 +2981,13 @@
      "group": "Operators"
     },
     {
+     "title": "MIA Recovery Discount III",
+     "subtitle": "Needs 5 Foreign Intelligence Targets; the rest of the cost isn't known yet. Rescuing an MIA operator costs less again",
+     "item": "mia-recovery-discount-iii",
+     "check": "upgrade-mia-recovery-discount-iii",
+     "group": "Operators"
+    },
+    {
      "title": "Dog Tag Case Upgrade I",
      "subtitle": "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case",
      "value": "$10,000",
@@ -3560,6 +3567,34 @@
      "item": "hazard-storehouse"
     },
     {
+     "title": "Coin Mining Den",
+     "value": "G6",
+     "subtitle": "Rare. The e-coin mining lab in an upper apartment east of the westernmost gas station, NuriGO West: a grey office door beside a red fire alarm. Reported as a reward from Operation Shopping Hacks",
+     "item": "coin-mining-den"
+    },
+    {
+     "title": "Supreme Leader's Bunker Access Card",
+     "value": "B6",
+     "subtitle": "Legendary. The Supreme Leader's Bunker deep in the Chang-san Air Base bunker; Bale cloned its credentials onto a new card. Reported as a reward from Operation Iron Citadel",
+     "item": "supreme-leaders-bunker-access-card"
+    },
+    {
+     "title": "Roze's High-Rise Armory",
+     "value": "G6",
+     "subtitle": "Legendary. The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault",
+     "item": "rozes-high-rise-armory"
+    },
+    {
+     "title": "Hoesik Supply Room",
+     "subtitle": "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+     "item": "hoesik-supply-room"
+    },
+    {
+     "title": "Police Station Key",
+     "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet",
+     "item": "police-station-key"
+    },
+    {
      "title": "Weapons Mod Workshop",
      "value": "B5",
      "subtitle": "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base",
@@ -3591,6 +3626,18 @@
      "value": "$10,000",
      "subtitle": "Legendary",
      "item": "sanctioned-assassination-list"
+    },
+    {
+     "title": "Foreign Intelligence Targets",
+     "value": "$5,000",
+     "subtitle": "Epic. Five are needed for MIA Recovery Discount III",
+     "item": "foreign-intelligence-targets"
+    },
+    {
+     "title": "Cash Bag",
+     "value": "$1,500",
+     "subtitle": "Rare. Carried out of the casino vault in Operation Silent Ledger, which is reported to hold twelve optional bags worth about $1,500 each",
+     "item": "cash-bag"
     },
     {
      "title": "Cipher Code Ledger",
@@ -5029,6 +5076,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
   },
   {
+   "id": "cash-bag",
+   "name": "Cash Bag",
+   "kind": "Valuable",
+   "value": 1500,
+   "rarity": "Rare",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "chemicals",
    "name": "Chemicals",
    "kind": "Resource",
@@ -5061,6 +5116,17 @@
    ],
    "effect": "Proximity-triggered explosive mine",
    "image": "https://camotracker.djr.li/Images/DMZ/claymore.png?v=1"
+  },
+  {
+   "id": "coin-mining-den",
+   "name": "Coin Mining Den",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The e-coin mining lab in an upper apartment east of the westernmost gas station, NuriGO West: a grey office door beside a red fire alarm. Reported as a reward from Operation Shopping Hacks",
+   "grid": "G6",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
   {
    "id": "combat-drone",
@@ -5545,6 +5611,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/flash.png?v=1"
   },
   {
+   "id": "foreign-intelligence-targets",
+   "name": "Foreign Intelligence Targets",
+   "kind": "Valuable",
+   "value": 5000,
+   "rarity": "Epic",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "frag-grenade",
    "name": "Frag Grenade",
    "kind": "Lethals",
@@ -5749,6 +5823,16 @@
     "m5860"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/high-tenacity-fibers.png?v=1"
+  },
+  {
+   "id": "hoesik-supply-room",
+   "name": "Hoesik Supply Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "imjin-mill-foremans-office",
@@ -5993,6 +6077,16 @@
    "symbol": "cross.case.fill",
    "family": "MIA Recovery Discount",
    "tier": 2
+  },
+  {
+   "id": "mia-recovery-discount-iii",
+   "name": "MIA Recovery Discount III",
+   "kind": "FOB Upgrade",
+   "note": "Needs 5 Foreign Intelligence Targets; the rest of the cost isn't known yet",
+   "effect": "Rescuing an MIA operator costs less again",
+   "symbol": "arrow.up.circle.fill",
+   "family": "MIA Recovery Discount",
+   "tier": 3
   },
   {
    "id": "mechanics-shack",
@@ -6340,6 +6434,14 @@
    "value": 5000
   },
   {
+   "id": "police-station-key",
+   "name": "Police Station Key",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "note": "Where its door is isn't known yet",
+   "value": 100
+  },
+  {
    "id": "police-weapon-depository",
    "name": "Police Weapon Depository",
    "kind": "Key",
@@ -6672,6 +6774,17 @@
    "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)",
    "image": "https://camotracker.djr.li/Images/DMZ/rozes-dog-tag.png?v=1",
    "value": 10000
+  },
+  {
+   "id": "rozes-high-rise-armory",
+   "name": "Roze's High-Rise Armory",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault",
+   "grid": "G6",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "sam-airburst-turret",
@@ -7176,6 +7289,17 @@
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/structural-alloy.png?v=1",
    "value": 500
+  },
+  {
+   "id": "supreme-leaders-bunker-access-card",
+   "name": "Supreme Leader's Bunker Access Card",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "The Supreme Leader's Bunker deep in the Chang-san Air Base bunker; Bale cloned its credentials onto a new card. Reported as a reward from Operation Iron Citadel",
+   "grid": "B6",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "synthetics",
