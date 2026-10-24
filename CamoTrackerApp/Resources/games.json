@@ -155,5 +155,21 @@
         "id": "multiplayer"
       }
     ]
+  },
+  {
+    "id": "bo2",
+    "name": {
+      "en": "Black Ops II"
+    },
+    "shortName": "BO2",
+    "path": "Data/CT/BO2/",
+    "seedPrefix": "bo2_",
+    "hasMastery": false,
+    "completionistSteps": 2,
+    "modes": [
+      {
+        "id": "multiplayer"
+      }
+    ]
   }
 ]

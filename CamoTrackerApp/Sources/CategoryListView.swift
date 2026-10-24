@@ -164,7 +164,7 @@ struct CategoryListView: View {
                     let total = viewModel.totalWeaponCount
                     let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
                     let completeCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
-                    let harmonic = mode.completionist.steps[2]
+                    let harmonic = mode.completionist.steps[TrackerViewModel.lastStep]
                     let harmonicCount = viewModel.harmonicBreakCount(mode: mode.rawValue)
                     let final = mode.completionist.final
                     let finalCount = viewModel.finalCamoCount(mode: mode.rawValue)
@@ -186,6 +186,8 @@ struct CategoryListView: View {
                         .init(value: "\(platinumCount)/\(total)", label: platinum.name, labelGradient: total > 0 && platinumCount == total ? platinum.gradient : nil, ringFraction: fraction(platinumCount, total), ringColor: platinum.color, ringGradient: platinum.gradient),
                         .init(value: "\(harmonicCount)/\(total)", label: harmonic.name, labelGradient: total > 0 && harmonicCount == total ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount, total), ringColor: harmonic.color, ringGradient: harmonic.gradient, lockedHint: harmonicCount == 0 ? locks.harmonic : nil)
                     ]
+                    // A two-step track (BO2) ends on its second camo
+                    if TrackerViewModel.completionistStepCount < 3 { stats.removeLast() }
                     let divergenceDone = !mode.hasFinalCamo || (total > 0 && finalCount >= total)
                     if divergenceDone {
                         if GameRegistry.hasMastery { stats.append(.init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil)) }
@@ -391,7 +393,7 @@ private struct WeaponCategoryRow: View {
         guard !category.weapons.isEmpty else { return nil }
         let count = category.weapons.count
         if mode.hasFinalCamo, viewModel.categoryFinalCount(category, mode: mode.rawValue) == count { return mode.completionist.final.color }
-        if viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2) == count { return mode.completionist.steps[2].color }
+        if viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: TrackerViewModel.lastStep) == count { return mode.completionist.steps[TrackerViewModel.lastStep].color }
         return nil
     }
 
@@ -456,6 +458,7 @@ enum CategoryStats {
         let mode: AppMode
 
         var harmonic: String? {
+            guard TrackerViewModel.completionistStepCount == 3 else { return nil }
             let gate = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: 2)
             guard gate.done < gate.total else { return nil }
             return "\(gate.done)/\(gate.total) \(mode.completionist.steps[1].name)"
@@ -465,7 +468,7 @@ enum CategoryStats {
             let needed = viewModel.harmonicBreaksNeeded(mode: mode.rawValue)
             let have = viewModel.harmonicBreakCount(mode: mode.rawValue)
             guard needed > 0, have < needed else { return nil }
-            return "\(have)/\(needed) \(mode.completionist.steps[2].name)"
+            return "\(have)/\(needed) \(mode.completionist.steps[TrackerViewModel.lastStep].name)"
         }
 
         func mastery(tier: Int) -> String? {
@@ -488,8 +491,8 @@ enum CategoryStats {
         let locks = Locks(viewModel: viewModel, mode: mode)
         let platinum = mode.completionist.steps[1]
         let platinumCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 1)
-        let harmonic = mode.completionist.steps[2]
-        let harmonicCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: 2)
+        let harmonic = mode.completionist.steps[TrackerViewModel.lastStep]
+        let harmonicCount = viewModel.categoryCompletionistCount(category, mode: mode.rawValue, step: TrackerViewModel.lastStep)
         let final = mode.completionist.final
         let finalCount = viewModel.categoryFinalCount(category, mode: mode.rawValue)
         var stats: [StatSummaryCard.Stat] = [
@@ -499,6 +502,7 @@ enum CategoryStats {
                   lockedHint: platinumCount == 0 && gold < count ? "\(gold)/\(count) \("mw4.ui.gold".localized())" : nil),
             .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient, lockedHint: harmonicCount == 0 ? locks.harmonic : nil)
         ]
+        if TrackerViewModel.completionistStepCount < 3 { stats.removeLast() }
         // The final camo's ring, when the track has one.
         if mode.hasFinalCamo {
             stats.append(.init(value: "\(finalCount)/\(count)", label: final.name, labelGradient: count > 0 && finalCount == count ? final.gradient : nil, ringFraction: fraction(finalCount), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))

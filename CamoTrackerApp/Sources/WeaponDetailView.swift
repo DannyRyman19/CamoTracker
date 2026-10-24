@@ -620,13 +620,13 @@ private struct FinalCamoRow: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     private var camo: MasteryCamo { mode.completionist.final }
-    private var harmonicBreak: MasteryCamo { mode.completionist.steps[2] }
+    private var harmonicBreak: MasteryCamo { mode.completionist.steps[TrackerViewModel.lastStep] }
     private var achieved: Bool { viewModel.hasFinalCamo(mode: mode.rawValue, weaponId: weapon.weaponId) }
 
     private var detail: String {
         let needed = viewModel.harmonicBreaksNeeded(mode: mode.rawValue)
         let done = viewModel.harmonicBreakCount(mode: mode.rawValue)
-        if !viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: 2) {
+        if !viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: TrackerViewModel.lastStep) {
             return needed > 1
                 ? String(format: "mw4.ui.completionist.final_locked_count".localized(), harmonicBreak.name, needed, min(done, needed))
                 : String(format: "mw4.ui.completionist.locked_previous".localized(), harmonicBreak.name)
@@ -720,7 +720,7 @@ struct MasteryModeChallengeRow: View {
                 gradient: camo.gradient,
                 detail: viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier)
                     ? String(format: "mw4.ui.mastery.self_count".localized(), progress.done, progress.total,
-                             (viewModel.modeMasteryCountedCamo(mode: mode.rawValue, tier: tier) ?? mode.completionist.steps[2]).name)
+                             (viewModel.modeMasteryCountedCamo(mode: mode.rawValue, tier: tier) ?? mode.completionist.steps[TrackerViewModel.lastStep]).name)
                     : lockedReason,
                 imageURL: camo.imageURL
             )

@@ -616,7 +616,10 @@ final class TrackerViewModel: ObservableObject {
     //   the weapon earns it once it has its own Harmonic Break and the mode
     //   has `harmonicBreaksNeeded` Harmonic Breaks across all its weapons.
 
-    static let completionistStepCount = 3
+    /// The current game's Completionist steps (3, or BO2's 2).
+    nonisolated static var completionistStepCount: Int { max(1, min(3, GameRegistry.current.completionistSteps ?? 3)) }
+    /// The last of them: Harmonic Break, or Diamond in BO2.
+    nonisolated static var lastStep: Int { completionistStepCount - 1 }
 
     /// The mode whose camo list and Completionist progress this mode uses:
     /// itself, or the one its file's `trackFrom` names for a grind shared
@@ -832,7 +835,7 @@ final class TrackerViewModel: ObservableObject {
 
     /// How many weapons have their Harmonic Break in this mode.
     func harmonicBreakCount(mode: String) -> Int {
-        allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: 2) }.count
+        allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: Self.lastStep) }.count
     }
 
     /// Harmonic Breaks across the mode that open the final camo. Zero (no
@@ -843,7 +846,7 @@ final class TrackerViewModel: ObservableObject {
 
     func hasFinalCamo(mode: String, weaponId: Int) -> Bool {
         finalEnabled(mode: mode)
-            && isCompletionistComplete(mode: mode, weaponId: weaponId, step: 2)
+            && isCompletionistComplete(mode: mode, weaponId: weaponId, step: Self.lastStep)
             && harmonicBreakCount(mode: mode) >= harmonicBreaksNeeded(mode: mode)
     }
 
@@ -857,7 +860,7 @@ final class TrackerViewModel: ObservableObject {
     func hasLastCompletionist(mode: String, weaponId: Int) -> Bool {
         finalEnabled(mode: mode)
             ? hasFinalCamo(mode: mode, weaponId: weaponId)
-            : isCompletionistComplete(mode: mode, weaponId: weaponId, step: 2)
+            : isCompletionistComplete(mode: mode, weaponId: weaponId, step: Self.lastStep)
     }
 
     func lastCompletionistCount(mode: String) -> Int {

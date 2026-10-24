@@ -1,0 +1,513 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 40,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "MTAR"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/mtar.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "Type 25"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/type-25.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "SWAT-556"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 10."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/swat-556.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "FAL OSW"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/fal-osw.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "M27"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/m27.png"
+        },
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "SCAR-H"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 40."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/scar-h.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "SMR"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 46."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/smr.png"
+        },
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "M8A1"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 49."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/m8a1.png"
+        },
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "AN-94"
+          },
+          "maxLevel": 17,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 55."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/an-94.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "MP7"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/mp7.png"
+        },
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "PDW-57"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/pdw-57.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "Vector K10"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/vector-k10.png"
+        },
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "MSMC"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/msmc.png"
+        },
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "Chicom CQB"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/chicom-cqb.png"
+        },
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "Skorpion EVO"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 46."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/skorpion-evo.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "Peacekeeper"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "DLC - Revolution Map Pack."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/peacekeeper.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "QBB LSW"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/qbb-lsw.png"
+        },
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "MK48"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/mk48.png"
+        },
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "LSAT"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/lsat.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "HAMR"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/hamr.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "Remington 870 MCS"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/r870-mcs.png"
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "S12"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/s12.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "KSG"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 34."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/ksg.png"
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "M1216"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/m1216.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "SVU-AS"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/svu-as.png"
+        },
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "DSR 50"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/dsr-50.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "Ballista"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/ballista.png"
+        },
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "AS50"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/as50.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Pistols"
+      },
+      "weapons": [
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "Five Seven"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/five-seven.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "Tac-45"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/tac-45.png"
+        },
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "B23R"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 19."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/b23r.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "Executioner"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/executioner.png"
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "KAP-40"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/kap-40.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Launchers"
+      },
+      "weapons": [
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "SMAW"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/smaw.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "FHJ-18 AA"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/fhj-18-aa.png"
+        },
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "RPG-7"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 40."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/rpg.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Specials"
+      },
+      "weapons": [
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "Combat Knife"
+          },
+          "maxLevel": 0,
+          "unlockRequirement": {
+            "en": "Default equipment."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/combat-knife.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "Crossbow"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 25."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/crossbow.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "Assault Shield"
+          },
+          "maxLevel": 6,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 34."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/assault-shield.png"
+        },
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "Ballistic Knife"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked at Rank 49."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO2/ballistic-knife.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the BO2 Camo Tracker data by Tools/games/convert_bo2.py."
+}

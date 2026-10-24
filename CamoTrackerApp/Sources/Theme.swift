@@ -155,7 +155,7 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
             MasteryCamo(nameKey: "mw4.ui.completionist.platinum", color: .camoPlatinum, gradient: .platinum),
             MasteryCamo(nameKey: "mw4.ui.completionist.harmonic_break", color: .camoHarmonicBreak, gradient: .harmonicBreak),
         ]
-        let steps = builtIn.enumerated().map { index, camo in
+        let steps = builtIn.prefix(TrackerViewModel.completionistStepCount).enumerated().map { index, camo in
             let step = config?.steps.flatMap { $0.indices.contains(index) ? $0[index] : nil }
             return camo.overriding(name: step?.name, colors: step?.colors, imageURL: step?.imageURL)
         }

@@ -22,6 +22,9 @@ struct Game: Codable, Identifiable, Hashable {
     /// false for a game without account-wide Mastery camos after the
     /// per-weapon ones (BO7): no Mastery tab, column or summary entry
     var hasMastery: Bool? = nil
+    /// Completionist camos before the final one: 3 (absent), or 2 for a
+    /// track like BO2's Gold and Diamond.
+    var completionistSteps: Int? = nil
 
     static func == (a: Game, b: Game) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

@@ -279,3 +279,32 @@ struct MW2019GameTests {
         #expect(AppMode.multiplayer.completionist.steps.map(\.name) == ["Gold", "Platinum", "Damascus"])
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct BO2GameTests {
+    @Test func goldThenDiamondOnATwoStepTrack() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let name = "BO2GameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game("bo2"))
+        GameRegistry.current = game
+        let model = TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+        #expect(TrackerViewModel.completionistStepCount == 2)
+        #expect(AppMode.multiplayer.completionist.steps.map(\.name) == ["Gold", "Diamond"])
+        #expect(AppMode.multiplayer.completionistCamos.count == 2)
+        let launchers = try #require(model.catalog?.categories.first { $0.name.resolved() == "Launchers" })
+        for weapon in launchers.weapons {
+            for camo in model.camos(weaponId: weapon.weaponId, mode: "multiplayer") {
+                model.toggleCamo(mode: "multiplayer", weaponId: weapon.weaponId, camo: camo)
+            }
+            #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: weapon.weaponId, step: 0))
+            #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: weapon.weaponId, step: 1) == (weapon.weaponId == launchers.weapons.last?.weaponId))
+        }
+        // The track ends on Diamond
+        #expect(model.hasLastCompletionist(mode: "multiplayer", weaponId: launchers.weapons[0].weaponId))
+        #expect(model.lastCompletionistCount(mode: "multiplayer") == launchers.weapons.count)
+        #expect(!(model.modes["multiplayer"]?.objectives.isEmpty ?? true))
+    }
+}
