@@ -258,6 +258,7 @@ guide = [
    ("Police Station Key", None, "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet"),
    ("Air Base Access Card - Multi Use", "B5", "Epic. Opens doors around Chang-san Air Base, and can be used more than once"),
    ("Weapons Mod Workshop", "B5", "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base"),
+   ("Commandant Office", "B5", "Epic. The commandant's office on the second floor of Admin Complex No. 2, Chang-san Air Base"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
@@ -337,7 +338,7 @@ _vd.sell_values(items)
 _vd.key_pictures(items)
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.28", "updated": "2026-10-23",
+data = {"version": "0.9.29", "updated": "2026-10-24",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

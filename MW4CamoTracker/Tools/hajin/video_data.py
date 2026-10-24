@@ -394,6 +394,7 @@ EXTRA_ITEMS = [
  {"id": "iskras-dog-tag", "name": "Iskra's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Iskra. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
  {"id": "jin-taes-dog-tag", "name": "Jin-Tae's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Jin-Tae. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
  {"id": "the-doctors-dog-tag", "name": "The Doctor's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Doctor. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
+ {"id": "goranis-dog-tag", "name": "Gorani's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Gorani. Reported to sell for $10,000 (not confirmed)"},
  {"id": "hazmat-suit", "name": "Hazmat Suit", "kind": "Gear", "rarity": "Legendary", "note": "Protective suit that shields you from radiation. Discarded when you extract"},
  {"id": "irradiated-container", "name": "Irradiated Container", "kind": "Gear", "rarity": "Ultra", "note": "An Ultra item listed on dmzhub.gg. What it does isn't known yet"},
  {"id": "armor-plate", "name": "Armor Plate", "kind": "Gear", "rarity": "Common", "note": "Extra protection in combat; stacks to 6. Your armor slot fills with plates when you infil, and Ammo Armor Caches refill them (with a cooldown)"},
@@ -402,6 +403,9 @@ EXTRA_ITEMS = [
  {"id": "encrypted-drive", "name": "Encrypted Drive", "kind": "Gear", "note": "The objective item in the Dead Man's Cache op: collect it from the enemy comms server in Cheongun Outskirts"},
  {"id": "defibrillator", "name": "Defibrillator", "kind": "Gear", "rarity": "Uncommon", "note": "A reward from Operation Critical Extraction; DMZ level 67 gives one"},
  {"id": "tank-water-pump", "name": "Tank Water Pump", "kind": "Gear", "rarity": "Legendary", "note": "Used to repair heavy military tanks"},
+ {"id": "tank-alternator", "name": "Tank Alternator", "kind": "Gear", "rarity": "Legendary", "value": 100, "note": "Used to repair heavy military tanks"},
+ {"id": "car-battery", "name": "Car Battery", "kind": "Gear", "rarity": "Uncommon", "value": 200, "note": "A repair item for vehicles. Where to find it isn't known yet"},
+ {"id": "spark-plug", "name": "Spark Plug", "kind": "Gear", "rarity": "Uncommon", "value": 100, "note": "A repair item for vehicles. Where to find it isn't known yet"},
  {"id": "night-vision-goggles", "name": "Night Vision Goggles", "kind": "Gear", "value": None, "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"},
 ]
 
@@ -474,6 +478,9 @@ UNPLACED = [
  ("Free Revive", "Your first Wound repairs itself"),
  ("LT Hunter", "Lieutenant Towers give extra paid intel"),
  ("Numb the Pain", "Revives also give Pain Killers and Smelling Salts effects"),
+ ("Ammo Reserves", "More reserve ammo for every ammo type (Scout)"),
+ ("Objective Oriented", "Op reward crates are one rarity higher, up to Rare (Survivalist)"),
+ ("Supplied Drops", "A supply drop may hold an extra container, for the whole squad (Survivalist)"),
 ]
 
 def build_traits(guide):
@@ -747,7 +754,7 @@ SELL_VALUES = {"biomaterials": 800, "cpu": 500, "infantry-invasion-plans": 1000,
                "turned-components": 1500, "volatile-explosives": 1500,
                # dog tags: the user thinks all sell for $10,000 (not confirmed)
                "bales-dog-tag": 10000, "iskras-dog-tag": 10000, "jin-taes-dog-tag": 10000, "rozes-dog-tag": 10000,
-               "scavengers-dog-tag": 10000, "the-doctors-dog-tag": 10000}
+               "scavengers-dog-tag": 10000, "the-doctors-dog-tag": 10000, "goranis-dog-tag": 10000}
 
 def sell_values(items):
     for it in items:

@@ -1,6 +1,6 @@
 {
- "version": "0.9.28",
- "updated": "2026-10-23",
+ "version": "0.9.29",
+ "updated": "2026-10-24",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -3654,6 +3654,12 @@
      "value": "B5",
      "subtitle": "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base",
      "item": "weapons-mod-workshop"
+    },
+    {
+     "title": "Commandant Office",
+     "value": "B5",
+     "subtitle": "Epic. The commandant's office on the second floor of Admin Complex No. 2, Chang-san Air Base",
+     "item": "commandant-office"
     }
    ]
   },
@@ -4803,6 +4809,21 @@
      "title": "Numb the Pain",
      "subtitle": "Revives also give Pain Killers and Smelling Salts effects",
      "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Ammo Reserves",
+     "subtitle": "More reserve ammo for every ammo type (Scout)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Objective Oriented",
+     "subtitle": "Op reward crates are one rarity higher, up to Rare (Survivalist)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Supplied Drops",
+     "subtitle": "A supply drop may hold an extra container, for the whole squad (Survivalist)",
+     "group": "Not placed in a tree yet"
     }
    ]
   }
@@ -5358,6 +5379,15 @@
    "value": 500
   },
   {
+   "id": "car-battery",
+   "name": "Car Battery",
+   "kind": "Gear",
+   "rarity": "Uncommon",
+   "value": 200,
+   "note": "A repair item for vehicles. Where to find it isn't known yet",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "care-package",
    "name": "Care Package",
    "kind": "Fire Support",
@@ -5456,6 +5486,17 @@
    ],
    "effect": "Remote-controlled anti-personnel drone",
    "image": "https://camotracker.djr.li/Images/DMZ/combat-drone.png?v=1"
+  },
+  {
+   "id": "commandant-office",
+   "name": "Commandant Office",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "The commandant's office on the second floor of Admin Complex No. 2, Chang-san Air Base",
+   "grid": "B5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
   },
   {
    "id": "comms-module",
@@ -6023,6 +6064,15 @@
    "value": 25000,
    "rarity": "Ultra",
    "image": "https://camotracker.djr.li/Images/DMZ/gold-skull.png?v=1"
+  },
+  {
+   "id": "goranis-dog-tag",
+   "name": "Gorani's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by Lieutenant Gorani. Reported to sell for $10,000 (not confirmed)",
+   "symbol": "diamond.fill",
+   "value": 10000
   },
   {
    "id": "gun-store-weapons-locker",
@@ -7462,6 +7512,15 @@
    "effect": "Launches up and scans the area for enemies"
   },
   {
+   "id": "spark-plug",
+   "name": "Spark Plug",
+   "kind": "Gear",
+   "rarity": "Uncommon",
+   "value": 100,
+   "note": "A repair item for vehicles. Where to find it isn't known yet",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "spotter-scope",
    "name": "Spotter Scope",
    "kind": "Tacticals",
@@ -7656,6 +7715,15 @@
    "name": "Synthetics",
    "kind": "Resource",
    "symbol": "doc.on.doc.fill"
+  },
+  {
+   "id": "tank-alternator",
+   "name": "Tank Alternator",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "value": 100,
+   "note": "Used to repair heavy military tanks",
+   "symbol": "bag.fill"
   },
   {
    "id": "tank-water-pump",
