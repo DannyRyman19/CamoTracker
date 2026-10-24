@@ -47,18 +47,23 @@ final class DataService: Sendable {
     private let baseURL: URL
     private let cacheDir: URL
     private let session: URLSession
+    /// Bundled seed files are named `<seedPrefix><file>.json`
+    private let seedPrefix: String
 
+    /// One game's data: its CDN folder, bundled seeds and its own cache.
     init(
-        baseURL: URL = URL(string: "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/")!,
+        game: Game = GameRegistry.current,
         session: URLSession = .shared,
         cacheDir: URL? = nil
     ) {
-        self.baseURL = baseURL
+        self.baseURL = game.dataURL
+        self.seedPrefix = game.seedPrefix
         self.session = session
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         // Tests pass their own directory so they never read or write the
         // app's real cache.
         let cacheDir = cacheDir ?? support.appendingPathComponent("CamoTracker", isDirectory: true)
+            .appendingPathComponent(game.id, isDirectory: true)
         self.cacheDir = cacheDir
         try? FileManager.default.createDirectory(at: cacheDir, withIntermediateDirectories: true)
     }
@@ -66,7 +71,7 @@ final class DataService: Sendable {
     // MARK: - Weapon catalog
 
     func loadSeedCatalog() -> WeaponCatalog? {
-        decode(WeaponCatalog.self, from: Bundle.main.url(forResource: "weapons", withExtension: "json"))
+        decode(WeaponCatalog.self, from: Bundle.main.url(forResource: seedPrefix + "weapons", withExtension: "json"))
     }
 
     func loadCachedCatalog() -> WeaponCatalog? {
@@ -78,7 +83,7 @@ final class DataService: Sendable {
     /// Loads the bundled seed copy of a mode immediately (so the UI has content
     /// with zero network latency); callers refresh from the CDN separately.
     func loadSeed(mode: String) -> ModeFile? {
-        decode(ModeFile.self, from: Bundle.main.url(forResource: mode, withExtension: "json"))
+        decode(ModeFile.self, from: Bundle.main.url(forResource: seedPrefix + mode, withExtension: "json"))
     }
 
     func loadCached(mode: String) -> ModeFile? {

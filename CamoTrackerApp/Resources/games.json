@@ -1,0 +1,16 @@
+[
+  {
+    "id": "mw4",
+    "name": {"en": "Modern Warfare 4"},
+    "shortName": "MW4",
+    "path": "Data/MW4/",
+    "seedPrefix": "mw4_",
+    "countsUnlocks": true,
+    "levelCategories": [7, 8],
+    "modes": [
+      {"id": "multiplayer"},
+      {"id": "warzone"},
+      {"id": "dmz"}
+    ]
+  }
+]

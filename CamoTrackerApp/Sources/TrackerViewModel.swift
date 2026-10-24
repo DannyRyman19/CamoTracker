@@ -23,7 +23,7 @@ final class TrackerViewModel: ObservableObject {
     /// global like weapon level, not per-mode, since you pin a weapon, not a
     /// mode-specific track.
     @Published private(set) var pinnedWeaponId: Int?
-    private let pinnedWeaponKey = "mw4_pinned_weapon_v1"
+    private var pinnedWeaponKey: String { "ct_pinned_weapon_\(game.id)" }
 
     /// The pending widget refresh (see WidgetSync.swift), so a burst of
     /// ticks writes the snapshot once.
@@ -45,29 +45,33 @@ final class TrackerViewModel: ObservableObject {
     private var amounts: [String: Int] = [:]
     private var completed: Set<String> = []
 
-    private let storeKey = "mw4_progress_v2"
+    private var storeKey: String { "ct_progress_\(game.id)" }
     private let defaults: UserDefaults
+    /// The game this tracker holds; each game has its own tracker, data
+    /// and saved progress.
+    let game: Game
     /// iCloud sync of the same progress; only for the real store, never a
     /// test suite.
     private var cloud: CloudSync?
 
     /// `defaults` is where progress and the pin are kept; tests pass a
     /// throwaway suite.
-    init(dataService: DataService = DataService(), defaults: UserDefaults = .standard) {
-        self.dataService = dataService
+    init(game: Game = GameRegistry.current, dataService: DataService? = nil, defaults: UserDefaults = .standard) {
+        self.game = game
+        self.dataService = dataService ?? DataService(game: game)
         self.defaults = defaults
         loadProgress()
         if defaults == .standard {
-            let cloud = CloudSync(cloudKey: "mw4_progress_sync", defaults: defaults)
+            let cloud = CloudSync(cloudKey: "ct_sync_\(game.id)", defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in self?.applySynced(values) }
             self.cloud = cloud
             cloud.start(current: syncValues())
             wipeIfAsked()
         }
-        catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
+        catalog = self.dataService.loadCachedCatalog() ?? self.dataService.loadSeedCatalog()
         var loaded: [String: ModeFile] = [:]
-        for mode in ["multiplayer", "warzone", "dmz"] {
-            loaded[mode] = dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode)
+        for mode in game.modes.map(\.id) {
+            loaded[mode] = self.dataService.loadCached(mode: mode) ?? self.dataService.loadSeed(mode: mode)
         }
         MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
         CompletionistOverrides.byMode = loaded.compactMapValues(\.completionist)
@@ -198,9 +202,9 @@ final class TrackerViewModel: ObservableObject {
     /// Launchers (7) and melee (8) have no shared attachments, so the game
     /// keeps counting them in levels; so does any weapon in Weapon Prestige.
     func countsUnlocks(weaponId: Int) -> Bool {
-        guard prestige(for: weaponId) == 0 else { return false }
+        guard game.countsUnlocks == true, prestige(for: weaponId) == 0 else { return false }
         guard let category = category(containingWeaponId: weaponId)?.categoryId else { return true }
-        return ![7, 8].contains(category)
+        return !(game.levelCategories ?? []).contains(category)
     }
 
     /// What a level gate reads as for this weapon: "Needs 43 weapon unlocks."

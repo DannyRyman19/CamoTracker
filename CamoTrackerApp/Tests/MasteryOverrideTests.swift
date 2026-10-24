@@ -97,7 +97,7 @@ struct TrackerViewModelTests {
         let target = cache.appendingPathComponent("\(mode).json")
         try? FileManager.default.removeItem(at: target)
         guard !blocks.isEmpty else { return }
-        let seed = try #require(Bundle.main.url(forResource: mode, withExtension: "json"))
+        let seed = try #require(Bundle.main.url(forResource: "mw4_" + mode, withExtension: "json"))
         var object = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: seed)) as? [String: Any])
         for (key, json) in blocks {
             object[key] = try JSONSerialization.jsonObject(with: Data(json.utf8), options: .fragmentsAllowed)
@@ -185,7 +185,7 @@ struct TrackerViewModelTests {
     /// Gold on any one Assault Rifle opens Platinum for the class.
     @Test func platinumCountsTheClassLaunchRoster() throws {
         try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
-        let seed = try #require(Bundle.main.url(forResource: "weapons", withExtension: "json"))
+        let seed = try #require(Bundle.main.url(forResource: "mw4_weapons", withExtension: "json"))
         var catalog = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: seed)) as? [String: Any])
         catalog["baseWeaponCount"] = 1
         try JSONSerialization.data(withJSONObject: catalog).write(to: cache.appendingPathComponent("weapons.json"))
