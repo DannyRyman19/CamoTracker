@@ -113,7 +113,7 @@ private struct OverallStatsHero: View {
                         Text("\(Int(entry.fraction * 100))%")
                             .font(.system(size: 14, weight: .bold, design: .monospaced))
                             .foregroundStyle(Color.appInk)
-                        Text(entry.mode.displayNameKey.localized())
+                        Text(entry.mode.displayName)
                             .font(.system(size: 10))
                             .foregroundStyle(Color.appInkMuted)
                     }
@@ -210,7 +210,7 @@ private struct ModeStatsCard: View {
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(mode.accent)
                 Text(part == .weapons ? "mw4.ui.section.weapons".localized()
-                     : "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())")
+                     : "\(mode.displayName) \("mw4.ui.section.mastery".localized())")
                     .font(.hitmarker(17))
                     .foregroundStyle(Color.appInk)
                 Spacer()

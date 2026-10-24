@@ -300,7 +300,7 @@ struct CategoryListView: View {
         }
         .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
-        .navigationTitle(mode.displayNameKey.localized())
+        .navigationTitle(mode.displayName)
         .refreshable { await viewModel.refresh() }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

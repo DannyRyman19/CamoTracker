@@ -2,9 +2,34 @@ import SwiftUI
 
 /// Modes each carry their own accent so the shared component shell (row, chip, tab)
 /// reads as a different mode without any layout changes. See design-system v0.1.
-enum AppMode: String, CaseIterable, Identifiable {
-    case multiplayer, warzone, dmz
+/// A mode of the game being tracked (Multiplayer, Zombies, Warzone, DMZ...).
+/// Which modes exist comes from the current game's entry in `games.json`;
+/// the usual ones have names, symbols and colours built in, and a game can
+/// override any of them.
+struct AppMode: Hashable, Identifiable, RawRepresentable {
+    let rawValue: String
     var id: String { rawValue }
+
+    /// Only modes the current game has
+    init?(rawValue: String) {
+        guard GameRegistry.current.modes.contains(where: { $0.id == rawValue }) else { return nil }
+        self.rawValue = rawValue
+    }
+
+    private init(_ id: String) { rawValue = id }
+
+    static let multiplayer = AppMode("multiplayer")
+    static let warzone = AppMode("warzone")
+    static let dmz = AppMode("dmz")
+    static let zombies = AppMode("zombies")
+
+    /// The current game's modes, in its order
+    static var allCases: [AppMode] { GameRegistry.current.modes.map { AppMode($0.id) } }
+
+    private var definition: GameMode? { GameRegistry.current.modes.first { $0.id == rawValue } }
+
+    /// The game's own name for the mode, else the built-in one
+    var displayName: String { definition?.name?.resolved() ?? displayNameKey.localized() }
 
     /// The modes the player picked in onboarding or Customise, as a
     /// comma-separated list. Empty means all of them.
@@ -42,15 +67,10 @@ enum AppMode: String, CaseIterable, Identifiable {
         return modes.count == allCases.count ? "" : allCases.filter(modes.contains).map(\.rawValue).joined(separator: ",")
     }
 
-    var displayNameKey: String {
-        switch self {
-        case .multiplayer: return "mw4.mode.multiplayer"
-        case .warzone:     return "mw4.mode.warzone"
-        case .dmz:         return "mw4.mode.dmz"
-        }
-    }
+    var displayNameKey: String { "mw4.mode.\(rawValue)" }
 
     var symbol: String {
+        if let symbol = definition?.symbol { return symbol }
         switch self {
         // One idea each, distinct in silhouette at 13pt: team play, the
         // collapsing BR circle, and the loot you exfil with. `scope` is
@@ -60,14 +80,19 @@ enum AppMode: String, CaseIterable, Identifiable {
         case .multiplayer: return "person.3.fill"
         case .warzone:     return "circle.dashed"
         case .dmz:         return "shippingbox.fill"
+        case .zombies:     return "flame.fill"
+        default:           return "gamecontroller.fill"
         }
     }
 
     var accent: Color {
+        if let hex = definition?.accent, let color = Color(hex: hex) { return color }
         switch self {
         case .multiplayer: return .accentMultiplayer
         case .warzone:     return .accentWarzone
         case .dmz:         return .accentDMZ
+        case .zombies:     return Color(hex: "#5FB86A") ?? .accentDMZ
+        default:           return .accentMultiplayer
         }
     }
 
@@ -105,6 +130,13 @@ enum AppMode: String, CaseIterable, Identifiable {
                 MasteryCamo(nameKey: "mw4.ui.ripple_tide", color: .camoRippleTide, gradient: .rippleTide),
                 MasteryCamo(nameKey: "mw4.ui.helio", color: .camoHelio, gradient: .helio)
             )
+        default:
+            // Other games name their Mastery camos in their mode files
+            return (
+                MasteryCamo(nameKey: "mw4.ui.mercurial_drift", color: .camoMercurialDrift, gradient: .mercurialDrift),
+                MasteryCamo(nameKey: "mw4.ui.polyatomic_reforged", color: .camoPolyatomicReforged, gradient: .polyatomicReforged),
+                MasteryCamo(nameKey: "mw4.ui.orion_reforged", color: .camoOrionReforged, gradient: .orionReforged)
+            )
         }
     }
 
@@ -127,7 +159,7 @@ enum AppMode: String, CaseIterable, Identifiable {
         // Multiplayer's is Divergence; the other modes' haven't been shown,
         // so they read "Final camo" until their mode file names them.
         let builtInFinal = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence,
-                                       nameOverride: source == .multiplayer ? LocalizedText("Divergence") : nil)
+                                       nameOverride: source == .multiplayer && GameRegistry.current.id == "mw4" ? LocalizedText("Divergence") : nil)
         let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors, imageURL: config?.final?.imageURL)
         return (steps, final)
     }

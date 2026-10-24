@@ -121,12 +121,12 @@ struct ContentView: View {
                                 Menu {
                                     Picker("mw4.ui.mostly_play".localized(), selection: $primaryModeRaw) {
                                         ForEach(viewModel.visibleModes) { m in
-                                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m.rawValue)
+                                            Label(m.displayName, systemImage: m.symbol).tag(m.rawValue)
                                         }
                                     }
                                 } label: {
                                     HStack(spacing: 6) {
-                                        Text(mode.displayNameKey.localized())
+                                        Text(mode.displayName)
                                             .font(.hitmarker(22))
                                             .foregroundStyle(Color.appInk)
                                         Image(systemName: "chevron.down.circle.fill")

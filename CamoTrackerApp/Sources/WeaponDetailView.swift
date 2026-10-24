@@ -29,12 +29,12 @@ struct WeaponDetailView: View {
                 Menu {
                     Picker("mw4.ui.counts_for".localized(), selection: $mode) {
                         ForEach(viewModel.visibleModes) { m in
-                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m)
+                            Label(m.displayName, systemImage: m.symbol).tag(m)
                         }
                     }
                 } label: {
                     HStack(spacing: 5) {
-                        Text(mode.displayNameKey.localized())
+                        Text(mode.displayName)
                             .font(.system(size: 15, weight: .bold))
                             .foregroundStyle(Color.appInk)
                         Image(systemName: "chevron.down.circle.fill")
@@ -270,7 +270,7 @@ struct WeaponDetailView: View {
             Image(systemName: "paintpalette")
                 .font(.system(size: 21))
                 .foregroundStyle(Color.appInkMuted)
-            Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayNameKey.localized()))
+            Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayName))
                 .font(.system(size: 13))
                 .foregroundStyle(Color.appInkMuted)
                 .multilineTextAlignment(.center)
