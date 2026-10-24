@@ -188,7 +188,7 @@ struct CategoryListView: View {
                     ]
                     let divergenceDone = !mode.hasFinalCamo || (total > 0 && finalCount >= total)
                     if divergenceDone {
-                        stats.append(.init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil))
+                        if GameRegistry.hasMastery { stats.append(.init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil)) }
                     } else {
                         stats.append(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))
                     }

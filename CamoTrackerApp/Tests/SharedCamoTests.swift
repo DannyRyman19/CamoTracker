@@ -19,7 +19,10 @@ struct SharedCamoTests {
 
     private func model() -> TrackerViewModel {
         try? FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
-        return TrackerViewModel(dataService: DataService(cacheDir: cache), defaults: defaults)
+        // MW4's data, whatever game the app was last left on
+        let mw4 = GameRegistry.game("mw4")!
+        GameRegistry.current = mw4
+        return TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
     }
 
     /// The HAN 86's first Special (Smoke) in a mode.
@@ -66,5 +69,33 @@ struct SharedCamoTests {
         let vm = model()
         #expect(!vm.visibleModes.contains(.warzone))
         #expect(vm.visibleModes.contains(.multiplayer) && vm.visibleModes.contains(.dmz))
+    }
+}
+
+/// BO7 as a second game: its own data, modes and camo track.
+@Suite("BO7 in Camo Tracker")
+@MainActor
+struct BO7GameTests {
+    @Test func bo7LoadsItsOwnTrack() throws {
+        let name = "BO7GameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let bo7 = try #require(GameRegistry.game("bo7"))
+        GameRegistry.current = bo7
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = TrackerViewModel(game: bo7, dataService: DataService(game: bo7, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+
+        #expect(model.totalWeaponCount == 60)
+        #expect(Set(model.modes.keys) == ["multiplayer", "zombies", "warzone", "campaign"])
+        #expect(AppMode.allCases.map(\.rawValue) == ["multiplayer", "zombies", "warzone", "campaign"])
+        // 9 Military challenges then 3 Specials, every weapon, every mode
+        #expect(model.camos(weaponId: 0, mode: "multiplayer").count == 12)
+        #expect(model.camos(weaponId: 0, mode: "multiplayer").first?.requirement?.amount == 5)
+        // Shattered Gold: the weapon's own challenge (3 kills without dying, 10 times)
+        #expect(model.completionistRequirement(mode: "multiplayer", weaponId: 0, step: 0)?.amount == 10)
+        // No account Mastery, and BO7 counts levels, not unlocks
+        #expect(!GameRegistry.hasMastery)
+        #expect(!model.countsUnlocks(weaponId: 0))
+        #expect(!model.isMasteryAchieved(mode: "multiplayer", tier: 1))
     }
 }

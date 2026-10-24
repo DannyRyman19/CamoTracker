@@ -192,9 +192,15 @@ struct WeaponDetailView: View {
     }
 
     private var parts: [(part: Part, title: String)] {
-        [(.camos, "mw4.ui.section.camos".localized()),
-         (.completionist, "mw4.ui.section.completionist".localized()),
-         (.mastery, "mw4.ui.section.mastery".localized())]
+        // A game without account Mastery (BO7) calls its per-weapon
+        // Completionist camos Mastery, as the game does
+        guard GameRegistry.hasMastery else {
+            return [(.camos, "mw4.ui.section.camos".localized()),
+                    (.completionist, "mw4.ui.section.mastery".localized())]
+        }
+        return [(.camos, "mw4.ui.section.camos".localized()),
+                (.completionist, "mw4.ui.section.completionist".localized()),
+                (.mastery, "mw4.ui.section.mastery".localized())]
     }
 
     /// Picked by hand, else the first part with something still to do.
@@ -205,7 +211,7 @@ struct WeaponDetailView: View {
         if camos.contains(where: { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }) {
             return .camos
         }
-        return viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
+        return GameRegistry.hasMastery && viewModel.hasLastCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) ? .mastery : .completionist
     }
 
     private var partPicker: some View {

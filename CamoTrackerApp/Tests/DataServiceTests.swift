@@ -32,7 +32,7 @@ struct DataServiceTests {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [RecordingProtocol.self]
         let cache = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-        return DataService(session: URLSession(configuration: config), cacheDir: cache)
+        return DataService(game: GameRegistry.game("mw4")!, session: URLSession(configuration: config), cacheDir: cache)
     }
 
     @Test func everyRequestSkipsThePhonesOwnCache() async throws {

@@ -29,7 +29,7 @@ struct StatsView: View {
                 OverallStatsHero()
                     .listRowInsets(Self.rowInsets)
                     .listRowBackground(Color.clear)
-                if width >= 800, let first = modes.first {
+                if width >= 800, GameRegistry.hasMastery, let first = modes.first {
                     // iPad: the weapons on the left, each mode's Mastery
                     // stacked beside them
                     cardRow {
@@ -47,8 +47,8 @@ struct StatsView: View {
                         .listRowInsets(Self.rowInsets)
                         .listRowBackground(Color.clear)
                 }
-                if width >= 800 {
-                    // Mastery is in the row above
+                if width >= 800 || !GameRegistry.hasMastery {
+                    // Mastery is in the row above, or the game has none
                     EmptyView()
                 } else if width >= 600 {
                     cardRow {

@@ -19,6 +19,9 @@ struct Game: Codable, Identifiable, Hashable {
     /// Weapon categories that keep counting levels in a game that counts
     /// unlocks (MW4: launchers and melee have no shared attachments)
     var levelCategories: [Int]? = nil
+    /// false for a game without account-wide Mastery camos after the
+    /// per-weapon ones (BO7): no Mastery tab, column or summary entry
+    var hasMastery: Bool? = nil
 
     static func == (a: Game, b: Game) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
@@ -56,9 +59,41 @@ enum GameRegistry {
 
     static func game(_ id: String) -> Game? { games.first { $0.id == id } }
 
+    /// The current game has account-wide Mastery camos
+    static var hasMastery: Bool { current.hasMastery != false }
+
     /// MW4 as shipped, should `games.json` ever be missing.
     static let fallback = Game(
         id: "mw4", name: LocalizedText("Modern Warfare 4"), shortName: "MW4", path: "Data/MW4/", seedPrefix: "mw4_",
         modes: [GameMode(id: "multiplayer"), GameMode(id: "warzone"), GameMode(id: "dmz")],
         countsUnlocks: true, levelCategories: [7, 8])
+}
+
+/// The game being tracked and its tracker. Each game has its own
+/// `TrackerViewModel` (own data and saved progress); switching makes a new
+/// one and the root view rebuilds around it.
+@MainActor
+final class GameStore: ObservableObject {
+    static let key = "ct_game"
+
+    @Published private(set) var game: Game
+    @Published private(set) var viewModel: TrackerViewModel
+
+    init() {
+        let saved = UserDefaults.standard.string(forKey: Self.key).flatMap(GameRegistry.game)
+        let game = saved ?? GameRegistry.games[0]
+        GameRegistry.current = game
+        self.game = game
+        viewModel = TrackerViewModel(game: game)
+    }
+
+    func select(_ game: Game) {
+        guard game != self.game else { return }
+        UserDefaults.standard.set(game.id, forKey: Self.key)
+        GameRegistry.current = game
+        let model = TrackerViewModel(game: game)
+        viewModel = model
+        self.game = game
+        Task { await model.refresh() }
+    }
 }

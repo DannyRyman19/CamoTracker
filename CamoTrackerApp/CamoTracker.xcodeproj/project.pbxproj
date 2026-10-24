@@ -45,6 +45,11 @@
 		9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F78A30DF2A4DDBB022744E /* BackgroundRefreshCoordinator.swift */; };
 		A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 82971534ADD2CA7EFF592137 /* weapons.json */; };
 		6A1B2C3D4E5F60718293A4B7 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1B2C3D4E5F60718293A4B8 /* games.json */; };
+		7B2C3D4E5F607182930404A1 /* bo7_campaign.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3D4E5F607182930404B2 /* bo7_campaign.json */; };
+		7B2C3D4E5F607182930403A1 /* bo7_warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3D4E5F607182930403B2 /* bo7_warzone.json */; };
+		7B2C3D4E5F607182930402A1 /* bo7_zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3D4E5F607182930402B2 /* bo7_zombies.json */; };
+		7B2C3D4E5F607182930401A1 /* bo7_multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3D4E5F607182930401B2 /* bo7_multiplayer.json */; };
+		7B2C3D4E5F607182930400A1 /* bo7_weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3D4E5F607182930400B2 /* bo7_weapons.json */; };
 		A7C1E5F3B9D2048A6C8E0F21 /* SharedCamoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C1E5F3B9D2048A6C8E0F22 /* SharedCamoTests.swift */; };
 		B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C7974A0D34B0ADB2BE36B /* CategoryListView.swift */; };
 		B39983607DD7CA0C2A98BAF1 /* CamoTrackerWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E63CAA2281D717492836A497 /* CamoTrackerWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -141,6 +146,11 @@
 		782CE3E33B1F795FA8614EBD /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mw4_weapons.json; sourceTree = "<group>"; };
 		6A1B2C3D4E5F60718293A4B8 /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
+		7B2C3D4E5F607182930404B2 /* bo7_campaign.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo7_campaign.json; sourceTree = "<group>"; };
+		7B2C3D4E5F607182930403B2 /* bo7_warzone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo7_warzone.json; sourceTree = "<group>"; };
+		7B2C3D4E5F607182930402B2 /* bo7_zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo7_zombies.json; sourceTree = "<group>"; };
+		7B2C3D4E5F607182930401B2 /* bo7_multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo7_multiplayer.json; sourceTree = "<group>"; };
+		7B2C3D4E5F607182930400B2 /* bo7_weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo7_weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		895B374FC30B3DC7C15333E3 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
@@ -215,6 +225,11 @@
 				55B063F6E81EF142F5E8BE3A /* warzone.json */,
 				82971534ADD2CA7EFF592137 /* weapons.json */,
 				6A1B2C3D4E5F60718293A4B8 /* games.json */,
+				7B2C3D4E5F607182930404B2 /* bo7_campaign.json */,
+				7B2C3D4E5F607182930403B2 /* bo7_warzone.json */,
+				7B2C3D4E5F607182930402B2 /* bo7_zombies.json */,
+				7B2C3D4E5F607182930401B2 /* bo7_multiplayer.json */,
+				7B2C3D4E5F607182930400B2 /* bo7_weapons.json */,
 				ECE376FB912D5E08B09A2AA8 /* CamoTracker.entitlements */,
 			);
 			path = Resources;
@@ -472,6 +487,11 @@
 				3A69BB325248C404557D3503 /* warzone.json in Resources */,
 				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
 				6A1B2C3D4E5F60718293A4B7 /* games.json in Resources */,
+				7B2C3D4E5F607182930404A1 /* bo7_campaign.json in Resources */,
+				7B2C3D4E5F607182930403A1 /* bo7_warzone.json in Resources */,
+				7B2C3D4E5F607182930402A1 /* bo7_zombies.json in Resources */,
+				7B2C3D4E5F607182930401A1 /* bo7_multiplayer.json in Resources */,
+				7B2C3D4E5F607182930400A1 /* bo7_weapons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

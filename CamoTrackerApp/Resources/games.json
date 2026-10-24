@@ -1,16 +1,51 @@
 [
   {
     "id": "mw4",
-    "name": {"en": "Modern Warfare 4"},
+    "name": {
+      "en": "Modern Warfare 4"
+    },
     "shortName": "MW4",
     "path": "Data/MW4/",
     "seedPrefix": "mw4_",
     "countsUnlocks": true,
-    "levelCategories": [7, 8],
+    "levelCategories": [
+      7,
+      8
+    ],
     "modes": [
-      {"id": "multiplayer"},
-      {"id": "warzone"},
-      {"id": "dmz"}
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "warzone"
+      },
+      {
+        "id": "dmz"
+      }
     ]
+  },
+  {
+    "id": "bo7",
+    "name": {
+      "en": "Black Ops 7"
+    },
+    "shortName": "BO7",
+    "path": "Data/CT/BO7/",
+    "seedPrefix": "bo7_",
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      },
+      {
+        "id": "warzone"
+      },
+      {
+        "id": "campaign"
+      }
+    ],
+    "hasMastery": false
   }
 ]

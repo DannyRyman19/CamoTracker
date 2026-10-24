@@ -3,6 +3,7 @@ import StoreKit
 
 struct ContentView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @EnvironmentObject private var gameStore: GameStore
     @Environment(\.requestReview) private var requestReview
     @State private var selectedTab = 0
     /// "I mostly play": the mode the Weapons tab opens in.
@@ -77,7 +78,7 @@ struct ContentView: View {
 
     /// Room for Mastery beside the weapons: an iPad, or an unfolded iPhone
     /// Duo held sideways. Upright the Duo (about 670pt) keeps the tab.
-    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 }
+    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 && GameRegistry.hasMastery }
 
     /// iPad: Mastery in a column beside the weapons, shown or hidden from
     /// the toolbar. It stands in for the Mastery tab, which iPad drops.
@@ -124,8 +125,23 @@ struct ContentView: View {
                                             Label(m.displayName, systemImage: m.symbol).tag(m.rawValue)
                                         }
                                     }
+                                    if GameRegistry.games.count > 1 {
+                                        Picker("ct.ui.game".localized(), selection: Binding(
+                                            get: { gameStore.game.id },
+                                            set: { id in if let game = GameRegistry.game(id) { gameStore.select(game) } })) {
+                                            ForEach(GameRegistry.games) { game in
+                                                Text(game.name.resolved()).tag(game.id)
+                                            }
+                                        }
+                                        .pickerStyle(.menu)
+                                    }
                                 } label: {
                                     HStack(spacing: 6) {
+                                        if GameRegistry.games.count > 1 {
+                                            Text(gameStore.game.shortName)
+                                                .font(.hitmarker(22))
+                                                .foregroundStyle(mode.accent)
+                                        }
                                         Text(mode.displayName)
                                             .font(.hitmarker(22))
                                             .foregroundStyle(Color.appInk)
@@ -166,7 +182,7 @@ struct ContentView: View {
                 .tag(index)
 
                 // iPad has Mastery beside the weapons instead
-                if !hasMasteryColumn {
+                if !hasMasteryColumn && GameRegistry.hasMastery {
                     NavigationStack { MasteryTabView() }
                         .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
                         .tag(2)

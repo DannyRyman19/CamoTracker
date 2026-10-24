@@ -22,6 +22,7 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
     static let warzone = AppMode("warzone")
     static let dmz = AppMode("dmz")
     static let zombies = AppMode("zombies")
+    static let campaign = AppMode("campaign")
 
     /// The current game's modes, in its order
     static var allCases: [AppMode] { GameRegistry.current.modes.map { AppMode($0.id) } }
@@ -81,6 +82,7 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
         case .warzone:     return "circle.dashed"
         case .dmz:         return "shippingbox.fill"
         case .zombies:     return "flame.fill"
+        case .campaign:    return "film.fill"
         default:           return "gamecontroller.fill"
         }
     }
@@ -92,6 +94,7 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
         case .warzone:     return .accentWarzone
         case .dmz:         return .accentDMZ
         case .zombies:     return Color(hex: "#5FB86A") ?? .accentDMZ
+        case .campaign:    return Color(hex: "#C9A24B") ?? .accentWarzone
         default:           return .accentMultiplayer
         }
     }

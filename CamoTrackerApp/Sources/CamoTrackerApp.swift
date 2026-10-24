@@ -3,7 +3,8 @@ import SwiftUI
 @main
 struct CamoTrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    @StateObject private var viewModel = TrackerViewModel()
+    @StateObject private var gameStore = GameStore()
+    private var viewModel: TrackerViewModel { gameStore.viewModel }
     @Environment(\.scenePhase) private var scenePhase
 
     /// GitHub Pages serves `cache-control: max-age=14400` on 404s as well as
@@ -20,6 +21,9 @@ struct CamoTrackerApp: App {
             ContentView()
                 .screenshotWidth()
                 .environmentObject(viewModel)
+                .environmentObject(gameStore)
+                // Each game's screens start fresh on its own tracker
+                .id(gameStore.game.id)
                 .preferredColorScheme(.dark)
                 .task {
                     if imageCacheToken < Self.currentImageCacheToken {

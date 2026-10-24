@@ -937,6 +937,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func isMasteryAchieved(mode: String, tier: Int) -> Bool {
+        guard game.hasMastery != false else { return false }
         guard tier <= 1 || isMasteryAchieved(mode: mode, tier: tier - 1) else { return false }
         let progress = masteryProgress(mode: mode, tier: tier)
         return progress.done >= progress.total
