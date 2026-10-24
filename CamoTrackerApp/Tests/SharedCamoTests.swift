@@ -124,3 +124,41 @@ struct BO6GameTests {
         #expect(model.allWeapons.count == Set(model.allWeapons.map(\.weaponId)).count)
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct MW3GameTests {
+    private func model(_ id: String) throws -> TrackerViewModel {
+        let name = "MW3GameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game(id))
+        GameRegistry.current = game
+        return TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+    }
+
+    @Test func mw3LoadsItsOwnTrack() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model("mw3")
+        #expect(model.totalWeaponCount == 60)
+        #expect(Set(model.modes.keys) == ["multiplayer", "zombies"])
+        // 4 base camos opening at weapon levels
+        #expect(model.camos(weaponId: 0, mode: "multiplayer").map(\.unlockLevel) == [2, 13, 15, 30])
+        // Forged needs Gilded on the class's 6 launch Assault Rifles, Priceless on 36
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 })
+        #expect(model.completionistCategoryGateProgress(rifles, mode: "multiplayer", step: 1).total == 6)
+        #expect(model.completionistModeGateProgress(mode: "multiplayer", step: 2).total == 36)
+        #expect(AppMode.multiplayer.completionist.final.name == "Interstellar")
+        #expect(AppMode.zombies.completionist.final.name == "Borealis")
+        #expect(model.allWeapons.count == Set(model.allWeapons.map(\.weaponId)).count)
+    }
+
+    @Test func mwiiLoadsItsOwnTrack() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model("mw2")
+        #expect(model.totalWeaponCount == 77)
+        #expect(model.completionistModeGateProgress(mode: "multiplayer", step: 2).total == 51)
+        #expect(AppMode.multiplayer.completionist.final.name == "Orion")
+        #expect(AppMode.zombies.completionist.final.name == "Bioluminescent")
+    }
+}

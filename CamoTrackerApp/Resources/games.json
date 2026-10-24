@@ -68,5 +68,41 @@
         "id": "warzone"
       }
     ]
+  },
+  {
+    "id": "mw3",
+    "name": {
+      "en": "Modern Warfare III"
+    },
+    "shortName": "MW3",
+    "path": "Data/CT/MW3/",
+    "seedPrefix": "mw3_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      }
+    ]
+  },
+  {
+    "id": "mw2",
+    "name": {
+      "en": "Modern Warfare II"
+    },
+    "shortName": "MWII",
+    "path": "Data/CT/MWII/",
+    "seedPrefix": "mw2_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      }
+    ]
   }
 ]

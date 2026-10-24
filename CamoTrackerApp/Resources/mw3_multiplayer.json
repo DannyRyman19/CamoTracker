@@ -1,0 +1,5953 @@
+{
+  "version": "1.0.0",
+  "mode": "multiplayer",
+  "weaponCamos": [
+    {
+      "weaponId": 0,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Blue Tones",
+            "de": "Blautöne"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-tones.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Muddy",
+            "de": "Topo Matschig"
+          },
+          "tier": 2,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-muddy.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Cinders",
+            "de": "Asche"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse.."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cinders.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Monarch"
+          },
+          "tier": 4,
+          "unlockLevel": 30,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/monarch.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 1,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Orange Tones",
+            "de": "Orangetöne"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-tones.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Iris Glitch",
+            "de": "Iris-Störung"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/iris-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Germ Factory",
+            "de": "Keimfabrik"
+          },
+          "tier": 3,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/germ-factory.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Purple",
+            "de": "Lila"
+          },
+          "tier": 4,
+          "unlockLevel": 26,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 2,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Fractal Dirt",
+            "de": "Fraktaler Dreck"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fractal-dirt.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Glitch",
+            "de": "Topo Störung"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Rosemary",
+            "de": "Palette Rosmarin"
+          },
+          "tier": 3,
+          "unlockLevel": 16,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-rosemary.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Magma Heat",
+            "de": "Magma-Hitze"
+          },
+          "tier": 4,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/magma-heat.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 3,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Razor Feather",
+            "de": "Raisermesser-feder"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/razor-feather.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Skullflagration",
+            "de": "Schädelflagration"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skullflagration.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Abyssal Fox",
+            "de": "Abgrundtiefer Fuchs"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/abyssal-fox.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Menelaus Blue",
+            "de": "Menelaos-Blau"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/menelaus-blue.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 4,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Heat Map",
+            "de": "Heatmap"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heat-map.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Creeplines",
+            "de": "Schleichwege"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/creeplines.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Twilight Glitch",
+            "de": "Dämmerungs-störung"
+          },
+          "tier": 3,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/twilight-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Oakleaf",
+            "de": "Eichenblatt"
+          },
+          "tier": 4,
+          "unlockLevel": 25,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oakleaf.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 5,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Get Stony",
+            "de": "Steif"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/get-stony.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Digital Bloodbath",
+            "de": "Digitales Blutbad"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/digital-bloodbath.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Nightshade",
+            "de": "Nachtschatten"
+          },
+          "tier": 3,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/nightshade.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Tiger Blood",
+            "de": "Tigerblut"
+          },
+          "tier": 4,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tiger-blood.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 36,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Skull Jumble",
+            "de": "Schädel-wirrwarr"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skull-jumble.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Brown Sands",
+            "de": "Brauner Sand"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/brown-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Heat Waves",
+            "de": "Hitzewellen"
+          },
+          "tier": 3,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heat-waves.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Deadly Spores",
+            "de": "Tödliche Sporen"
+          },
+          "tier": 4,
+          "unlockLevel": 27,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deadly-spores.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 37,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Ice Cave",
+            "de": "Eishöhle"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ice-cave-1.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Coiled",
+            "de": "Aufgerollt"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/coiled.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Fairway",
+            "de": "Fahrwasser"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fairway.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Firmicutes",
+            "de": "Firmicuten"
+          },
+          "tier": 4,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/firmicutes.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 38,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Sunset Waves"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset-waves.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Simpler Times"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/simpler-times.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Electro Torrent"
+          },
+          "tier": 3,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/electro-torrent.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Sunny Side"
+          },
+          "tier": 4,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunny-side.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 39,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Flit And Float",
+            "de": "Flit and Float"
+          },
+          "tier": 1,
+          "unlockLevel": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/flit-and-float.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Forms And Features",
+            "de": "Forms and Features"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forms-and-features.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Out of Sorts"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 Headshot kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/out-of-sorts.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "White"
+          },
+          "tier": 4,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/white.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 6,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Sunset Blur",
+            "de": "Sonnenuntergang-unschärfe"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset-blur.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Phantom Glitch",
+            "de": "Phantom-störung"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while fully auto.",
+              "de": "Erreiche 50 vollautomatische Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/phantom-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Orange Sands",
+            "de": "Orangefarbener Sand"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment.",
+              "de": "Erreiche 10 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "White Satin",
+            "de": "Weißer Satin"
+          },
+          "tier": 4,
+          "unlockLevel": 29,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/white-satin.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 7,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Solar Flare",
+            "de": "Sonneneruption"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/solar-flare.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Sandzone"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while fully auto.",
+              "de": "Erreiche 50 vollautomatische Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sandzone.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Mind Peak",
+            "de": "Geistiger Zenit"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment.",
+              "de": "Erreiche 10 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mind-peak.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Purple Satin",
+            "de": "Lila Satin"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-satin.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 8,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Aquatic Blur",
+            "de": "Aquatische Unschärfe"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/aquatic-blur.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Caustic",
+            "de": "Topo ätzend"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while fully auto.",
+              "de": "Erreiche 50 vollautomatische Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-caustic.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Heatwave",
+            "de": "Hitzewelle"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment.",
+              "de": "Erreiche 10 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/heatwave.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Blue Satin",
+            "de": "Blauer Satin"
+          },
+          "tier": 4,
+          "unlockLevel": 23,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-satin.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 40,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Fjord"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fjord.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Pink"
+          },
+          "tier": 2,
+          "unlockLevel": 7,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while fully auto.",
+              "de": "Erreiche 50 vollautomatische Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pink.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Tidepool",
+            "de": "Gezeitenpool"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment.",
+              "de": "Erreiche 10 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tidepool.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Dopamine",
+            "de": "Dopamin"
+          },
+          "tier": 4,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dopmaine.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 41,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Cursed Photocopy"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cursed-photocopy.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Atoms Abound"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while fully auto."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/atoms-abound.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Peaks And Valleys",
+            "de": "Peaks and Valleys"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/peaks-and-valleys.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Star Light, Star Bright"
+          },
+          "tier": 4,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/star-light-star-bright.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 9,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Ameerega"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ameerga.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Regal",
+            "de": "Topo Majestätisch"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-regal.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Absorption"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/absorption.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Viral Invasion",
+            "de": "Virale Invasion"
+          },
+          "tier": 4,
+          "unlockLevel": 23,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/viral-invasion.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 10,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Phantasmal"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/phantasmal.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Granite Pass",
+            "de": "Granitpass"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/granite-pass.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Red",
+            "de": "Rot"
+          },
+          "tier": 3,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Fritillary",
+            "de": "Fleckenfalter"
+          },
+          "tier": 4,
+          "unlockLevel": 27,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fritillary.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 11,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Dart"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dart.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Amaranth Sands",
+            "de": "Amaranth-sand"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/amaranth-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Microscopic",
+            "de": "Mikroskopisch"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/microscopic.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Rainfall Glitch",
+            "de": "Niederschlag-störung"
+          },
+          "tier": 4,
+          "unlockLevel": 29,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rainfall-glitch.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 12,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Golden Poison",
+            "de": "Goldenes Gift"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/golden-poison.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Shattered Rock",
+            "de": "Zerschmetterter Fels"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shattered-rock.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Orange"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Orange Sulphur",
+            "de": "Orangefarbener Schwefel"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/orange-sulphur.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 13,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Rock Stone",
+            "de": "Felsenstein"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rock-stone.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Rock Glow",
+            "de": "Felsenglühen"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rock-glow.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Deluge Glitch",
+            "de": "Sintflut-störung"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deluge-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Bacterial Decay",
+            "de": "Bakterieller Verfall"
+          },
+          "tier": 4,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bacterial-decay.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 14,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Marbled",
+            "de": "Marmoriert"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/marbled.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Hardpan",
+            "de": "Topo Ortstein"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-hardpan.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Yellow Sands",
+            "de": "Gelber Sand"
+          },
+          "tier": 3,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/yellow-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Desolate Ops",
+            "de": "Trostlose Ops"
+          },
+          "tier": 4,
+          "unlockLevel": 25,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on enemies affected by your tactical.",
+              "de": "Erreiche 15 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolate-ops.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 42,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Big Grins",
+            "de": "Breites Grinsen"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/big-grins.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Lavender Sands",
+            "de": "Lavendelsand"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lavender-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Ocean Waves",
+            "de": "Ozeanwellen"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse beim Ducken oder Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ocean-waves.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Overlayered",
+            "de": "überlagert"
+          },
+          "tier": 4,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on enemies affected by your tactical.",
+              "de": "Erreiche 10 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desolate-ops.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 43,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Scoured",
+            "de": "Ausgespült"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/scoured.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Gradient Globs",
+            "de": "Verlauf-kleckse"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gradient-globs.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Imago"
+          },
+          "tier": 3,
+          "unlockLevel": 16,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ram-9-mp-3.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Occult",
+            "de": "Okkult"
+          },
+          "tier": 4,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on enemies affected by your tactical.",
+              "de": "Erreiche 10 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/occult.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 44,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Blacklight",
+            "de": "Schwarzlicht"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blacklight.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "She Bites",
+            "de": "Sie Beißt"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 hipfire kills.",
+              "de": "Erreiche 50 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/she-bites.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Desert Veil",
+            "de": "Wüstenschleier"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while crouching or sliding.",
+              "de": "Erreiche 25 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/desert-veil.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Penny"
+          },
+          "tier": 4,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills on stunned or blinded enemies.",
+              "de": "Erreiche 25 Abschüsse betäubter oder geblendeter."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/penny.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 45,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Illusive Neon"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/illusive-neon.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "And Then They All Fell Out"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/and-then-they-all-fell-out.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Lambent Streaks"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/lambent-streaks.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Filed And Buffed"
+          },
+          "tier": 4,
+          "unlockLevel": 22,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on stunned or blinded enemies."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/filed-and-buffed.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 46,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Shapely Print"
+          },
+          "tier": 1,
+          "unlockLevel": 3,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shapely-print.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Garden of Eyes"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/garden-of-eyes.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Cacophonous Collision"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cacophonous-collision.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "No-Fly Zone"
+          },
+          "tier": 4,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on stunned or blinded enemies."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/no-fly-zone.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 15,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Blue Sands",
+            "de": "Baluer Sand"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/blue-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Palette Navy",
+            "de": "Palette Marine"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Hipfire kills.",
+              "de": "Erreiche 50 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-navy.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Descent",
+            "de": "Abstieg"
+          },
+          "tier": 3,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS.",
+              "de": "Erreiche 10 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/descent.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Overwhelmed",
+            "de": "überwäl tigt"
+          },
+          "tier": 4,
+          "unlockLevel": 27,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Double kills.",
+              "de": "Erziele 15 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/overwhelmed.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 16,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Pink Sands",
+            "de": "Rosa Sand"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pink-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Guts",
+            "de": "Mumm"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Hipfire kills.",
+              "de": "Erreiche 50 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/guts.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Tropics",
+            "de": "Palette Tropen"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS.",
+              "de": "Erreiche 10 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-tropics.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Smooth Satin",
+            "de": "Geschmeidiger Stain"
+          },
+          "tier": 4,
+          "unlockLevel": 22,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Double kills.",
+              "de": "Erziele 15 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/smooth-satin.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 17,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Purple Sands",
+            "de": "Lila Sand"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "80s Spheres",
+            "de": "80er-Jahre-Sphären"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Hipfire kills.",
+              "de": "Erreiche 50 Abschüsse aus der Hüfte."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/80s-spheres.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Grasses",
+            "de": "Palette Gräser"
+          },
+          "tier": 3,
+          "unlockLevel": 16,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS.",
+              "de": "Erreiche 10 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-grasses.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Upward Reverb",
+            "de": "Aufwärtshall"
+          },
+          "tier": 4,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/upward-reverb.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 47,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Bugged Out"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/purple-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "He's Looking At You"
+          },
+          "tier": 2,
+          "unlockLevel": 7,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Hipfire kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hes-looking-at-you.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Azure Refract"
+          },
+          "tier": 3,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/azure-refract.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Donut Worry"
+          },
+          "tier": 4,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/donut-worry.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 18,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Cosmic Filaments",
+            "de": "Kosmische Filamente"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cosmic-filaments.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Ember Glitch",
+            "de": "Glut-störung"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durchdringungs-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ember-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Sunset Retro",
+            "de": "Sonnenuntergang Retro"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments.",
+              "de": "Erreiche 10 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sunset-retro.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "B&W Fuzz",
+            "de": "SW-Flausch"
+          },
+          "tier": 4,
+          "unlockLevel": 28,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/b-w-fuzz.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 19,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Psychedelic Sky",
+            "de": "Psychedelischer Himmel"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-sky.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Reverb",
+            "de": "Topo Hall"
+          },
+          "tier": 2,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durchdringungs-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-reverb.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Cold Fall",
+            "de": "Kalter Herbst"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments.",
+              "de": "Erreiche 10 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cold-fall.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "B&W Re-Fuzz",
+            "de": "SW-Flauschumkehr"
+          },
+          "tier": 4,
+          "unlockLevel": 29,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/b-w-re-fuzz.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 20,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Ghastly",
+            "de": "Grässlich"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/ghastly.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Cobalt Sands",
+            "de": "Kobalt-sand"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durchdringungs-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cobalt-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Green Field",
+            "de": "Grünes Feld"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments.",
+              "de": "Erreiche 10 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-field.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Warbled",
+            "de": "Getrillert"
+          },
+          "tier": 4,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/warbled.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 21,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Dusted",
+            "de": "Verstaubt"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dusted.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Shuffle",
+            "de": "Mischen"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durchdringungs-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shuffle.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Drip",
+            "de": "Tropfen"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills with full attachments.",
+              "de": "Erreiche 15 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/drip.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Gaggle",
+            "de": "Scharf"
+          },
+          "tier": 4,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gaggle.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 48,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Spreading",
+            "de": "Ausbreitung"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/spreading.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Light Vision",
+            "de": "Helle Vision"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durchdringungs-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/light-vision.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Sands",
+            "de": "Palette Sand"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments.",
+              "de": "Erreiche 10 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Pyramidical",
+            "de": "Pyramidal"
+          },
+          "tier": 4,
+          "unlockLevel": 22,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pyramidical.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 49,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Psychedelic Pop",
+            "de": "Psychedelicscher Pop"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-pop.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Palette Storm",
+            "de": "Palette Sturm"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills.",
+              "de": "Erreiche 10 Durcshlagskraft-Abchüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-storm.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Swift Brush",
+            "de": "Schneller Pinsel"
+          },
+          "tier": 3,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments.",
+              "de": "Erreiche 10 Abschüsse mit allen Aufsätzen."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/swift-brush.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Broken Signal",
+            "de": "Gestörtes Signal"
+          },
+          "tier": 4,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills.",
+              "de": "Erziele 10 Doppelabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/broken-signal.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 50,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "All Consuming"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/all-consuming.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Finger Trap"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 penetration kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/finger-trap.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Hit 'OK'"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with full attachments."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hit-ok.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Shifting Legacy"
+          },
+          "tier": 4,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shifting-legacy.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 22,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Viral"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/viral.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Palette Garden",
+            "de": "Palette Garten"
+          },
+          "tier": 2,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 50,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 50 headshot kills.",
+              "de": "Erreiche 50 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-garden.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Clouded Mind",
+            "de": "Vernebel Ter Geist"
+          },
+          "tier": 3,
+          "unlockLevel": 20,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 with no attachments.",
+              "de": "Erreiche 10 Abschüsse ohne Aufsätze."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/clouded-mind.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Skull-O-Vision",
+            "de": "Schädel Vision"
+          },
+          "tier": 4,
+          "unlockLevel": 30,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 15 times.",
+              "de": "Erreiche 15-mal 2 Abschüsse ohne zu sterben."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skull-o-vision.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 23,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Sharp Brush",
+            "de": "Scharfer Pinsel"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sharp-brush.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Lithic",
+            "de": "Topo Steinern"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 50,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 50 Headshot kills.",
+              "de": "Erreiche 50 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-lithic.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Dry Heat",
+            "de": "Trockene Hitze"
+          },
+          "tier": 3,
+          "unlockLevel": 16,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with no attachments.",
+              "de": "Erreiche 10 Abschüsse ohne Aufsätze."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dry-heat.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Insectoid",
+            "de": "Insektoid"
+          },
+          "tier": 4,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 15 times.",
+              "de": "Erreiche 15-mal 2 Abschüsse ohne zu sterben."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/insectoid.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 24,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Microbiology",
+            "de": "Mikrobiologie"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/microbiology.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Woods Brush",
+            "de": "Holz-pinsel"
+          },
+          "tier": 2,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 50,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 50 headshot kills.",
+              "de": "Erreiche 50 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/woods-brush.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Red Sands",
+            "de": "Roter Sand"
+          },
+          "tier": 3,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 with no attachments.",
+              "de": "Erreiche 10 Abschüsse ohne Aufsätze."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Bone Shaker",
+            "de": "Knochenschüttler"
+          },
+          "tier": 4,
+          "unlockLevel": 23,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 15 times.",
+              "de": "Erreiche 15-mal 2 Abschüsse ohne zu sterben."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bone-shaker.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 25,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Psychedelic Loops",
+            "de": "Psychedelicsche Schleifen"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychedelic-loops.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Thick Brush",
+            "de": "Dicker pinsel"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 50,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 50 headshot kills.",
+              "de": "Erreiche 50 Kopfschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/thick-brush.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Oil Slick Glitch",
+            "de": "ölschlick-störung"
+          },
+          "tier": 3,
+          "unlockLevel": 12,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with no attachments.",
+              "de": "Erreiche 10 Abschüsse ohne Aufsätze."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/oil-slick-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Skullish",
+            "de": "Schädelig"
+          },
+          "tier": 4,
+          "unlockLevel": 18,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 15 times.",
+              "de": "Erreiche 15-mal 2 Abschüsse ohne zu sterben."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/skullish.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 51,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Popping Out"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/popping-out.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Delighted Liquification"
+          },
+          "tier": 2,
+          "unlockLevel": 7,
+          "requirement": {
+            "amount": 50,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 50 headshot kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/delighted-liquification.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Wild Lines And Wild Times"
+          },
+          "tier": 3,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills with no attachments."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/wild-lines-and-wild-times.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Hey, Boo!"
+          },
+          "tier": 4,
+          "unlockLevel": 16,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 15 times."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/hey-boo.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 26,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Death 3D",
+            "de": "Tod in 3D"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/death-3d.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Boulder",
+            "de": "Topo Felsen"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS.",
+              "de": "Erreiche 50 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-boulder.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Neapolitan",
+            "de": "Palette Neapolitaner"
+          },
+          "tier": 3,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-neapolitan.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Art Glass",
+            "de": "Kunstglas"
+          },
+          "tier": 4,
+          "unlockLevel": 29,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 one shot one kills.",
+              "de": "Erreiche 15 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/art-glass.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 27,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Crimson Skulls",
+            "de": "Rote Schädel"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/crimson-skulls.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Arid",
+            "de": "Topo Trocken"
+          },
+          "tier": 2,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS.",
+              "de": "Erreiche 50 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-arid.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Sunrise",
+            "de": "Palette Sonnenaufgang"
+          },
+          "tier": 3,
+          "unlockLevel": 21,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-sunrise.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Rippled",
+            "de": "Gekräuselt"
+          },
+          "tier": 4,
+          "unlockLevel": 31,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 one shot one kills while ADS.",
+              "de": "Erreiche 15 1-Schuss-Abschüsse in ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/rippled.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 28,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Deathparency",
+            "de": "Todparenz"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deathparency.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Tactical Colors",
+            "de": "Taktische Farben"
+          },
+          "tier": 2,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS.",
+              "de": "Erreiche 50 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/tactical-colors.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Palette Dusk",
+            "de": "Palette Abenddämmerung"
+          },
+          "tier": 3,
+          "unlockLevel": 22,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-dusk.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Puzzling Tiles",
+            "de": "Rätselhafte Kacheln"
+          },
+          "tier": 4,
+          "unlockLevel": 33,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 one shot one kills.",
+              "de": "Erreiche 15 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/puzzling-tiles.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 52,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Sprayed Lines",
+            "de": "Aufgesprayte Linien"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sprayed-lines.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Palette Twilight",
+            "de": "Palette-Dämmerung"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS.",
+              "de": "Erreiche 50 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/palette-twilight.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Liquid Brush",
+            "de": "Flüssiger Pinsel"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/liquid-brush.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Fidget"
+          },
+          "tier": 4,
+          "unlockLevel": 21,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 one shot one kills.",
+              "de": "Erreiche 15 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/fidget.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 53,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "What's Your sign?",
+            "de": "Was ist dein sternzeichen?"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/whats-your-sign.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Shadow",
+            "de": "Schatten"
+          },
+          "tier": 2,
+          "unlockLevel": 8,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS.",
+              "de": "Erreiche 50 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/shadow.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "At Ease",
+            "de": "Rühren"
+          },
+          "tier": 3,
+          "unlockLevel": 13,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Longshot kills.",
+              "de": "Erreiche 10 Weitschuss-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/at-ease.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "The Horrors",
+            "de": "Die schrecken"
+          },
+          "tier": 4,
+          "unlockLevel": 19,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 one shot one kills.",
+              "de": "Erreiche 15 Sofortabschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/the-horrors.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 29,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Deconstructed",
+            "de": "Dekonstruiert"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/deconstructed.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Alert Glitch",
+            "de": "Alarm-störung"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/alert-glitch.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Acid Drip",
+            "de": "Säuretropfen"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while moving.",
+              "de": "Erreiche 10 Abschüsse in Bewegung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/acid-drip.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Red Admiral",
+            "de": "Roter Admiral"
+          },
+          "tier": 4,
+          "unlockLevel": 21,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills with the akimbo attachment equipped.",
+              "de": "Erreiche 15 Abschüsse mit dem Akimbo-Aufsatz."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-admiral.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 30,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Pyro Filaments",
+            "de": "Pyro-filamente"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pyro-filaments.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Red Cells",
+            "de": "Rote Zellen"
+          },
+          "tier": 2,
+          "unlockLevel": 9,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/red-cells.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Psychotropic",
+            "de": "Psychotropisch"
+          },
+          "tier": 3,
+          "unlockLevel": 14,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while moving.",
+              "de": "Erreiche 10 Abschüsse in Bewegung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/psychotropic.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Pabels"
+          },
+          "tier": 4,
+          "unlockLevel": 21,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills with the akimbo attachment equipped.",
+              "de": "Erreiche 15 Abschüsse mit dem Akimbo-Aufsatz."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/pabels.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 31,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Satin Swirl",
+            "de": "Saatin-strudel"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/satin-swirl.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Topo Sandrock",
+            "de": "Topo Sandfelsen"
+          },
+          "tier": 2,
+          "unlockLevel": 11,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/topo-sandrock.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Cherry Blossom",
+            "de": "Kirschblüte"
+          },
+          "tier": 3,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while moving.",
+              "de": "Erreiche 10 Abschüsse in Bewegung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/cherry-blossom.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Corrugated",
+            "de": "Geriffelt"
+          },
+          "tier": 4,
+          "unlockLevel": 26,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills with the akimbo attachment equipped.",
+              "de": "Erreiche 15 Abschüsse mit dem Akimbo-Aufsatz."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/corrugated.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 32,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Green Sands",
+            "de": "Grüner Sand"
+          },
+          "tier": 1,
+          "unlockLevel": 2,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/green-sands.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Arctic Filaments",
+            "de": "Arktische Filamente"
+          },
+          "tier": 2,
+          "unlockLevel": 7,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS.",
+              "de": "Erreiche 50 ZV-Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/arctic-filaments.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Geofunk"
+          },
+          "tier": 3,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while moving.",
+              "de": "Erreiche 10 Abschüsse in Bewegung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/geofunk.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Mind Test",
+            "de": "Geistesübung"
+          },
+          "tier": 4,
+          "unlockLevel": 15,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills with the akimbo attachment equipped.",
+              "de": "Erreiche 15 Abschüsse mit dem Akimbo-Aufsatz."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/mind-test.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 33,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Strain",
+            "de": "Stamm"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills.",
+              "de": "Erreiche 25 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/strain.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 54,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Spectral Overload",
+            "de": "Spektralüberladung"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Destroy 25 enemy equipment.",
+              "de": "Zerstöre 25 feindliche Ausrüstung."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/strain.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 55,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "The Last Post"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/the-last-post.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 34,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Sea Green Sands",
+            "de": "Seegrüner Sand"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/sea-green-sands.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 35,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Dark Vision",
+            "de": "Dunkle Vision"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/dark-vision.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 56,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Omnigenesis",
+            "de": "Omnigenese"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/omnigenesis.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 57,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Bullet Hell",
+            "de": "Kugelhölle"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bullet-hell.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 58,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Bullet Hell",
+            "de": "Kugelhölle"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills.",
+              "de": "Erreiche 50 Abschüsse."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/bullet-hell.png",
+          "group": "military"
+        }
+      ]
+    },
+    {
+      "weaponId": 59,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Color Wave"
+          },
+          "tier": 1,
+          "unlockLevel": 4,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills."
+            }
+          },
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/color-wave.png",
+          "group": "military"
+        }
+      ]
+    }
+  ],
+  "objectives": [],
+  "completionist": {
+    "steps": [
+      {
+        "byWeapon": {
+          "0": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 magazin."
+            }
+          },
+          "1": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "2": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "3": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "4": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "5": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "36": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "37": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while strafing.",
+              "de": "Erreiche 10 Abschüsse aus der Seitwärtsbewegung heraus."
+            }
+          },
+          "38": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS and full attachments."
+            }
+          },
+          "39": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while strafing."
+            }
+          },
+          "6": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "7": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "8": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "40": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 headshot kills in one life 10 times.",
+              "de": "Erreiche 10-mal 2 Abschüsse durch Kopfschüsse, ohne zu sterben."
+            }
+          },
+          "41": {
+            "amount": 10,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 10 headshots while moving."
+            }
+          },
+          "9": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "10": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "11": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "12": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "13": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "14": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "42": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse ohne Schaden durch den Feind."
+            }
+          },
+          "43": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills while in tactical stance.",
+              "de": "Erreiche 15 Abschüsse in taktischer Haltung."
+            }
+          },
+          "44": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while ADS and moving.",
+              "de": "Erreiche 50ZV-Abschüsse in Bewegung."
+            }
+          },
+          "45": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 15 times."
+            }
+          },
+          "46": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times."
+            }
+          },
+          "15": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 10 times.",
+              "de": "Erreiche ohne zu sterben 2 Abschüsse kurz nach dem Sprinten."
+            }
+          },
+          "16": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 10 times.",
+              "de": "Erreiche ohne zu sterben 2 Abschüsse kurz nach dem Sprinten."
+            }
+          },
+          "17": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 10 times.",
+              "de": "Erreiche ohne zu sterben 2 Abschüsse kurz nach dem Sprinten."
+            }
+          },
+          "47": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 10 times."
+            }
+          },
+          "18": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "19": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "20": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "21": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "48": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "49": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 10 times.",
+              "de": "Erreiche 10-mal 2 Abchüsse, ohnde den Abzug loszulassen."
+            }
+          },
+          "50": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while fully auto."
+            }
+          },
+          "22": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills using a laser attachment.",
+              "de": "Erreiche 10 Abschüsse mit einem Laser-Aufsatz."
+            }
+          },
+          "23": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills using a laser attachment.",
+              "de": "Erreiche 10 Abschüsse mit einem Laser-Aufsatz."
+            }
+          },
+          "24": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills using a laser attachment.",
+              "de": "Erreiche 10 Abschüsse mit einem Laser-Aufsatz."
+            }
+          },
+          "25": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills using a laser attachment.",
+              "de": "Erreiche 10 Abschüsse mit einem Laser-Aufsatz."
+            }
+          },
+          "51": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills shortly after ADS."
+            }
+          },
+          "26": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 10 kills while focused down sights x times.",
+              "de": "Erreiche 10 ZV-Fokus-Abschüsse."
+            }
+          },
+          "27": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 10 kills while focused down sights x times.",
+              "de": "Erreiche 10 ZV-Fokus-Abschüsse."
+            }
+          },
+          "28": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 10 kills while focused down sights x times.",
+              "de": "Erreiche 10 ZV-Fokus-Abschüsse."
+            }
+          },
+          "52": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 10 kills while focused down sights x times.",
+              "de": "Erreiche 10 ZV-Fokus-Abschüsse."
+            }
+          },
+          "53": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 kills while using a magnification scope attachment.",
+              "de": "Erreiche 50 Abschüsse unter beutzung eines Ziefernrohraufsatzes."
+            }
+          },
+          "29": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "30": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "31": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "32": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills without the enemy damaging you.",
+              "de": "Erreiche 10 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "33": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills by hitting the enemy with a direct impact.",
+              "de": "Erreiche 10 Abschüsse durch einen direkten Treffer."
+            }
+          },
+          "54": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Destroy 10 enemy killstreaks.",
+              "de": "Zerstöre 10 feindliche Abschussserien."
+            }
+          },
+          "55": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Hipfire kills.",
+              "de": "Erreiche 50 Abschüsse aus der Hüfte"
+            }
+          },
+          "34": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on enemies affected by your tactical.",
+              "de": "Erreiche 10 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "35": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on enemies affected by your tactical.",
+              "de": "Erreiche 10 Abschüsse bei von deiner Taktikausrüstung betroffenen Operators."
+            }
+          },
+          "56": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while being out of the enemy's line of sight.",
+              "de": "Erreiche 10 Abschüsse, während du außerhalb der feindlichen Sichtlinie bist."
+            }
+          },
+          "57": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills from behind.",
+              "de": "Erreiche 10 Abschüsse von hinten."
+            }
+          },
+          "58": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills from behind.",
+              "de": "Erreiche 10 Abschüsse von hinten."
+            }
+          },
+          "59": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills from behind."
+            }
+          }
+        },
+        "unlock": "weapon",
+        "name": {
+          "en": "Gilded",
+          "de": "Vergoldet"
+        },
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/gilded.png"
+      },
+      {
+        "byWeapon": {
+          "0": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 multikills.",
+              "de": "Erreiche 25 Mehrfachabschüsse"
+            }
+          },
+          "1": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while moving in tactical stance.",
+              "de": "Erreiche 10 Abschüsse, während du dich in taktischer Haltung bewegst."
+            }
+          },
+          "2": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills with an underbarrel attachment.",
+              "de": "Erreiche 25 Abschüsse mit einem Unterlauf-Aufsatz ohne Bohrladung."
+            }
+          },
+          "3": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse, ohne zu sterben."
+            }
+          },
+          "4": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS and strafing.",
+              "de": "Erreiche 10 ZV-Abschüsse aus der Seitwärtsbewegung heraus."
+            }
+          },
+          "5": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 1 burst kills.",
+              "de": "Erreiche 20 Explosiv-Abschüsse."
+            }
+          },
+          "36": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while ADS and sliding.",
+              "de": "Erreiche 10 Abschüsse mit der Zielvorrichtung beim Rutschen."
+            }
+          },
+          "37": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 15 times.",
+              "de": "Erreiche 15-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "38": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 fully auto clean kills."
+            }
+          },
+          "39": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and moving."
+            }
+          },
+          "6": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 multikills.",
+              "de": "Erreiche 10 Mehrfachabschüsse"
+            }
+          },
+          "7": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 one shot one kills.",
+              "de": "Erreiche 25 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "8": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and Fully Loaded.",
+              "de": "Erreiche 25 vollgeladene ZV-Abschüsse."
+            }
+          },
+          "40": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 suppressed clean kills.",
+              "de": "Erreiche 25 schallgedämpfte saubere Abschüsse."
+            }
+          },
+          "41": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without dying 25 times."
+            }
+          },
+          "9": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse, ohne zu sterben."
+            }
+          },
+          "10": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 hipfire kills while the enemy is affected by your tactical.",
+              "de": "Erreiche 10 Abschüsse aus der Hüfte, während das Ziel unter dem Einfluss deiner Taktikausrüstung steht."
+            }
+          },
+          "11": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills shortly after ADS.",
+              "de": "Erreiche 10 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "12": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while using a magnification scope attachment.",
+              "de": "Erreiche 10 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "13": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills shortly after ADS.",
+              "de": "Erreiche 10 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "14": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Longshot kills.",
+              "de": "Erreiche 15 Weitschuss-Abschüsse."
+            }
+          },
+          "42": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS shortly after sprinting.",
+              "de": "Erreiche 25 Abschüsse mit der Zielvorrichtung kurz nach dem Sprinten."
+            }
+          },
+          "43": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills shortly after ADS.",
+              "de": "Erreiche 15 Abschüsse kurz nach Verwendung der ZV."
+            }
+          },
+          "44": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Kills shortly after swapping weapons.",
+              "de": "Erreiche 25 Abschüsse kurz nach einem Waffenwechsel"
+            }
+          },
+          "45": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and strafing."
+            }
+          },
+          "46": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills while ADS with full attachments equipped."
+            }
+          },
+          "15": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 one shot one kills while ADS.",
+              "de": "Erreiche 25 1-Schuss-Abschüsse in ZV."
+            }
+          },
+          "16": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 hipfire kills with 1 magazine 15 times.",
+              "de": "Erreiche 15-mal 3 Abschüsse aus der Hüfte mit 1 Magazin."
+            }
+          },
+          "17": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 multikills.",
+              "de": "Erreiche 25 Mehrfachabschüsse"
+            }
+          },
+          "47": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills within 10 seconds of each other 15 times."
+            }
+          },
+          "18": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while using a magnification scope attachment.",
+              "de": "Erreiche 25 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "19": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and moving.",
+              "de": "Erreiche 25 ZV-Abschüsse in Bewegung."
+            }
+          },
+          "20": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and strafing.",
+              "de": "Erreiche 25 ZV-Abschüsse aus der Seitwärtsbewegung heraus."
+            }
+          },
+          "21": {
+            "amount": 20,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 20 suppressed headshot kills.",
+              "de": "Erreiche 20 schallgedämpfte Kopfschüsse."
+            }
+          },
+          "48": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse, ohne zu sterben."
+            }
+          },
+          "49": {
+            "amount": 10,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 10 headshot kills while mounted",
+              "de": "Erreiche 10 Kopfschüsse mit der aufgestützten Waffe."
+            }
+          },
+          "50": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while moving."
+            }
+          },
+          "22": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 one shot one kills.",
+              "de": "Erreiche 25 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "23": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 15 times.",
+              "de": "Erreiche 15-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "24": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while in tactical stance.",
+              "de": "Erreiche 25 Abschüsse in taktischer Haltung."
+            }
+          },
+          "25": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse, ohne zu sterben."
+            }
+          },
+          "51": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 15 times."
+            }
+          },
+          "26": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 penetration kills.",
+              "de": "Erreiche 15 Durchdringungs-Abschüsse."
+            }
+          },
+          "27": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while ADS and Fully Loaded.",
+              "de": "Erreiche 25 vollgeladene ZV-Abschüsse."
+            }
+          },
+          "28": {
+            "amount": 25,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 25 headshot kills.",
+              "de": "Erreiche 25 Kopfschuss-Abschüsse."
+            }
+          },
+          "52": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "53": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills with the MORS Dot Sight equipped.",
+              "de": "Erreiche 15 Abschüsse per Kopfschuss mit dem MORS-Punktvisier."
+            }
+          },
+          "29": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills on injured enemies.",
+              "de": "Erreiche 15 Abschüsse von verletzteb Feinden."
+            }
+          },
+          "30": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Longshot kills.",
+              "de": "Erreiche 25 Weitschuss-Abschüsse."
+            }
+          },
+          "31": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 one shot one kills.",
+              "de": "Erreiche 25 saubere Abschüsse oder 1-Schiss-Abschüsse."
+            }
+          },
+          "32": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills while strafing.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte aus der Seitwärtsbewegung heraus."
+            }
+          },
+          "33": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Destroy 25 enemy lethal equipment.",
+              "de": "Zerstöre 25 feindliche Ausrüstung(en)."
+            }
+          },
+          "54": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Destroy 25 enemy killstreaks, equipment or vehicles.",
+              "de": "Zerstöre 25 feindliche Abschussserien, Ausrüstung oder Fahrzeuge."
+            }
+          },
+          "55": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 one shot one kills."
+            }
+          },
+          "34": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 5 times.",
+              "de": "Erreiche 5-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "35": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 kills without the enemy damaging you.",
+              "de": "Erreiche 20 Abschüsse, ohne Schaden su erleiden."
+            }
+          },
+          "56": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while crouching or sliding.",
+              "de": "Erreiche 10 Abschüsse im Ducken/Rutschen."
+            }
+          },
+          "57": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 revenge kills.",
+              "de": "Erreiche 10 Vergeltung-Abschüsse."
+            }
+          },
+          "58": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 revenge kills.",
+              "de": "Erreiche 10 Vergeltung-Abschüsse."
+            }
+          },
+          "59": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills shortly after sprinting."
+            }
+          }
+        },
+        "unlock": "category",
+        "neededByCategory": {
+          "0": 6,
+          "1": 3,
+          "2": 6,
+          "3": 3,
+          "4": 4,
+          "5": 4,
+          "6": 3,
+          "7": 4,
+          "8": 1,
+          "9": 2
+        },
+        "name": {
+          "en": "Forged",
+          "de": "Geschmiedet"
+        },
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/forged.png"
+      },
+      {
+        "byWeapon": {
+          "0": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills with a magnification scope.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse, mit einem Vergrößerungsvisier."
+            }
+          },
+          "1": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills on enemies affected by your tactical while in tac stance.",
+              "de": "Triff 10 Feinde mit taktischer Ausrüstung, während du in der taktischen Haltung 'MTZ-556' bist."
+            }
+          },
+          "2": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Longshot kills while mounted.",
+              "de": "Erreiche 15 aufgestützte Weitschuss-Abschüsse."
+            }
+          },
+          "3": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "4": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 burst kills.",
+              "de": "Erreiche 10 Explosiv-Abschüsse."
+            }
+          },
+          "5": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills with a magnification scope.",
+              "de": "Erreiche 15 Kopfschuss-Abschüsse, mit einem Vergrößerungsvisier."
+            }
+          },
+          "36": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills while strafing in tac stance.",
+              "de": "Erreiche 15 Abschüsse aus der Seitwärtsbewegung heraus in taktischer Haltung."
+            }
+          },
+          "37": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 double kills while in tactical stance.",
+              "de": "Erreiche 15 Doppelabschüsse in taktischer Haltung."
+            }
+          },
+          "38": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills within 2 seconds of each other 25 times."
+            }
+          },
+          "39": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills without the enemy damaging you."
+            }
+          },
+          "6": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 suppressed clean kills.",
+              "de": "Erreiche 25 schallgedämpfte saubere Abschüsse."
+            }
+          },
+          "7": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Longshot kills.",
+              "de": "Erreiche 25 Weitschuss-Abschüsse."
+            }
+          },
+          "8": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 semi-auto headshots with a magnification scope.",
+              "de": "Erreiche 15 halbautomatische Kopfschüsse mit einem Vergrößerungsvisier."
+            }
+          },
+          "40": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 15 times.",
+              "de": "Erreiche 15-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "41": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills shortly after ADS."
+            }
+          },
+          "9": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 10 times.",
+              "de": "Erreiche 10-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "10": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Operator Double Kills while in Tac-Stance.",
+              "de": "Erreiche 10 Doppelabschüsse in taktischer Haltung."
+            }
+          },
+          "11": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills while being out of the enemy's line of sight.",
+              "de": "Erreiche 10 Abschüsse, während du außerhalb der feindlichen Sichtlinie bist."
+            }
+          },
+          "12": {
+            "amount": 10,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 10 suppressed headshot kills.",
+              "de": "Erreiche 10 schallgedämpfte Kopfschüsse."
+            }
+          },
+          "13": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 suppressed double kills.",
+              "de": "Erreiche 10 Schallgedämpfte Doppelabschüsse."
+            }
+          },
+          "14": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshots while moving.",
+              "de": "Erreiche 15 Kopfschüsse in Bewegung."
+            }
+          },
+          "42": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 hipfire kills while sliding.",
+              "de": "Erreiche 15 Abschüsse aus der Hüfte beim Rutschen."
+            }
+          },
+          "43": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills whie midair.",
+              "de": "Erreiche 10 Abschüsse aus der Luft heraus."
+            }
+          },
+          "44": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 double kills without taking any damage.",
+              "de": "Erreiche 15 Doppelabschüsse ohne Schaden zu erleiden."
+            }
+          },
+          "45": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills while moving."
+            }
+          },
+          "46": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills shortly after sprinting in 1 life 10 times."
+            }
+          },
+          "15": {
+            "amount": 5,
+            "unit": "kills",
+            "description": {
+              "en": "Get 5 hipfire kills while moving.",
+              "de": "Erreiche 5 Abschüsse aus der Hüfte in Bewegung."
+            }
+          },
+          "16": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 double kills while in tactical stance.",
+              "de": "Erreiche 10 Doppelabschüsse in taktischer Haltung."
+            }
+          },
+          "17": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 5 times.",
+              "de": "Erreiche 5-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "47": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 5 times."
+            }
+          },
+          "18": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 5 Abschüsse mit 1 Magazin."
+            }
+          },
+          "19": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills while strafing.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte aus der Seitwärtsbewegung heraus."
+            }
+          },
+          "20": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 hipfire kills while moving.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte in Bewegung."
+            }
+          },
+          "21": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 kills with 1 magazine 10 times.",
+              "de": "Erreiche 10-mal 3 Abschüsse mit 1 Magazin."
+            }
+          },
+          "48": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 5 times.",
+              "de": "Erreiche 5-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "49": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 double kill while fully loaded.",
+              "de": "Erreiche 10 Doppelabschüsse mit Voll geladen."
+            }
+          },
+          "50": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills without releasing the trigger 25 times."
+            }
+          },
+          "22": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 extreme magnification kills (8x+).",
+              "de": "Erreiche 25 Abschüsse mit extremer Vergrößerung (8x+)."
+            }
+          },
+          "23": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 suppressed clean kills.",
+              "de": "Erreiche 15 schallgedämpfte saubere Abschüsse."
+            }
+          },
+          "24": {
+            "amount": 15,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 15 headshot kills with iron sights.",
+              "de": "Erreiche 15 Kopfschüsse mit offener Visierung."
+            }
+          },
+          "25": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 5 times.",
+              "de": "Erreiche 5-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "51": {
+            "amount": 20,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 20 headshot kills with iron sights."
+            }
+          },
+          "26": {
+            "amount": 3,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 3 suppressed headshot kills.",
+              "de": "Erreiche 3 schallgedämpfte Kopfschüsse."
+            }
+          },
+          "27": {
+            "amount": 3,
+            "unit": "times",
+            "description": {
+              "en": "Get 5 kills without dying 3 times.",
+              "de": "Erreiche 3-mal 5 Abschüsse, ohne zu sterben."
+            }
+          },
+          "28": {
+            "amount": 5,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 5 headshot kills while moving.",
+              "de": "Erreiche 5 Kopfschüsse in Bewegung."
+            }
+          },
+          "52": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills shortly after sprinting.",
+              "de": "Erreiche 15 Abschüsse kurz nach dem Sprinten."
+            }
+          },
+          "53": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 headshot kills in one life 10 times.",
+              "de": "Erreiche 10-mal 2 Abschüsse durch Kopfschüsse, ohne zu sterben."
+            }
+          },
+          "29": {
+            "amount": 10,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 10 headshot kills.",
+              "de": "Erreiche 10 Kopfschuss-Abschüsse."
+            }
+          },
+          "30": {
+            "amount": 25,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 25 headshot kills.",
+              "de": "Erreiche 25 Kopfschuss-Abschüsse."
+            }
+          },
+          "31": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills while using a magnification scope attachment.",
+              "de": "Erreiche 25 Abschüsse, während du durch ein Zielfernrohr schaust."
+            }
+          },
+          "32": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 kills on enemies affected by your tactical using the akimbo attachment.",
+              "de": "Töte 25 Feinde unter dem Einfluss deiner Taktikausrüstung bei Verwendung des Akimbo-Aufsatzes."
+            }
+          },
+          "33": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 double kills.",
+              "de": "Erziele 25 Doppelabschüsse."
+            }
+          },
+          "54": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Affect 25 enemies with the Stormender EMP.",
+              "de": "Beeinflusse 25 Feinde mit dem Stormender EMP."
+            }
+          },
+          "55": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 kills within 10 seconds of each other 10 times."
+            }
+          },
+          "34": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 revenge kills.",
+              "de": "Erreiche 15 Vergeltung-Abschüsse."
+            }
+          },
+          "35": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 kills from behind.",
+              "de": "Erreiche 10 Abschüsse von hinten."
+            }
+          },
+          "56": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills from behind.",
+              "de": "Erreiche 15 Abschüsse von hinten."
+            }
+          },
+          "57": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills without the enemy damaging you.",
+              "de": "Erreiche 15 Abschüsse ohne Schaden zu erleiden."
+            }
+          },
+          "58": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 kills without the enemy damaging you.",
+              "de": "Erreiche 15 Abschüsse ohne Schaden zu erleiden."
+            }
+          },
+          "59": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 one shot one kills."
+            }
+          }
+        },
+        "unlock": "mode",
+        "needed": 36,
+        "name": {
+          "en": "Priceless",
+          "de": "Unbezahlbar"
+        },
+        "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/priceless.png"
+      }
+    ],
+    "final": {
+      "name": {
+        "en": "Interstellar"
+      },
+      "harmonicBreaksNeeded": 36,
+      "imageURL": "https://camotracker.djr.li/Images/Camos/MW3Tracker/interstellar.png"
+    }
+  },
+  "_note": "Converted from the MW3 Camo Tracker data (Updated_MultiplayerWeapons) by Tools/games/convert_mw3.py."
+}

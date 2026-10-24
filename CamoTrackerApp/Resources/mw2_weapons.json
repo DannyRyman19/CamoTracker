@@ -1,0 +1,936 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 51,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "M4"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M4.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "TAQ-56"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 19."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-56.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "Kastov 762"
+          },
+          "maxLevel": 21,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 23."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_762.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "Lachmann-556"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN-556.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "STB 556"
+          },
+          "maxLevel": 21,
+          "unlockRequirement": {
+            "en": "Unlock at player level 41."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/STB_556.png"
+        },
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "M16"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the 556 Icarus (LMG) to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M16.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "Kastov-74u"
+          },
+          "maxLevel": 21,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Kastov 545 (Assault Rifle) to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV-74U.png"
+        },
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "Kastov 545"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 10."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_545.png"
+        },
+        {
+          "weaponId": 51,
+          "name": {
+            "en": "M13B"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock by defeating the chemist in the radiation zone of DMZ and extracting his dropped weapon."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13B.png"
+        },
+        {
+          "weaponId": 52,
+          "name": {
+            "en": "Chimera"
+          },
+          "maxLevel": 18,
+          "unlockRequirement": {
+            "en": "Extract from DMZ Building 21 OR Get 2 Operator Kills with ARs in 15 seperate matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/Chimera.png"
+        },
+        {
+          "weaponId": 53,
+          "name": {
+            "en": "ISO Hemlock"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 20 Longshot kills with Assault Rifles."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_HEMLOCK.png"
+        },
+        {
+          "weaponId": 54,
+          "name": {
+            "en": "Tempus Razorback"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 35 kills while mounted using Assault Rifles."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_RAZORBACK.png"
+        },
+        {
+          "weaponId": 55,
+          "name": {
+            "en": "FR Avancer"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 5 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FR_AVANCER.png"
+        },
+        {
+          "weaponId": 56,
+          "name": {
+            "en": "M13C"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 5 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13C.png"
+        },
+        {
+          "weaponId": 57,
+          "name": {
+            "en": "TR-76 GEIST"
+          },
+          "maxLevel": 23,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 6 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TR-76_GEIST.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "Battle Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "Lachmann-762"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png"
+        },
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "SO-14"
+          },
+          "maxLevel": 23,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the EBR-14 (Marksman Rifle) to Level 12."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/S0-14.png"
+        },
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "TAQ-V"
+          },
+          "maxLevel": 21,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the TAQ-56 (Assault Rfile) to Level 11."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-V.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "FTAC RECON"
+          },
+          "maxLevel": 23,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the M4 (Assault Rifle) to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_RECON.png"
+        },
+        {
+          "weaponId": 58,
+          "name": {
+            "en": "Cronen Squall"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with Battle Rifles."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CRONEN_SQUALL.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "VEL 46"
+          },
+          "maxLevel": 29,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VEL_46.png"
+        },
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "MX9"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the STB 556 (Assault Rifle) to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX9.png"
+        },
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "Lachmann Sub"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 12."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SUB.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "Vaznev-9k"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Kastov-74u (Assault Rifle) to Level 15."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VAZNEV-9k.png"
+        },
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "FSS Hurricane"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the FTAC Recon (Battle Rifle) to Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FSS_HURRICANE.png"
+        },
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "Minibak"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Vaznev-9k (SMG) to Level 14."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MINIBAK.png"
+        },
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "PDSW 528"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at player level 5."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PDSW_528.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "Fennec 45"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 38."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FENNEC_45.png"
+        },
+        {
+          "weaponId": 59,
+          "name": {
+            "en": "Bas-P"
+          },
+          "maxLevel": 24,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR 25 Headshots using SMGs."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BAS-P.png"
+        },
+        {
+          "weaponId": 60,
+          "name": {
+            "en": "Iso 45"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 45 kills without taking any damage using SMGs."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_45.png"
+        },
+        {
+          "weaponId": 61,
+          "name": {
+            "en": "Lachmann Shroud"
+          },
+          "maxLevel": 11,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 45 kills without taking any damage using SMGs."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SHROUD.png"
+        },
+        {
+          "weaponId": 62,
+          "name": {
+            "en": "ISO 9mm"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 6 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_9MM.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "Lockwood 300"
+          },
+          "maxLevel": 28,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 36."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_300.png"
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "Expedite 12"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 9."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/EXPEDITE_12.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "Bryson 800"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlock at player level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_800.png"
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "Bryson 890"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Bryson 800 (Shotgun) to Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_890.png"
+        },
+        {
+          "weaponId": 63,
+          "name": {
+            "en": "KV Broadside"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 10 one-shot kills with Shotguns."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KV_BROADSIDE.png"
+        },
+        {
+          "weaponId": 64,
+          "name": {
+            "en": "MX Guardian"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Get 30 point blank kills with shotguns."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX_GUARDIAN.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "Sakin MG38"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SAKIN_MG38.png"
+        },
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "HCR 56"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the STB 556 (Assault Rifle) to Level 20."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/HCR_56.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "556 Icarus"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the M4 (Assault Rifle) to Level 18."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/556_ICARUS.png"
+        },
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "Raal MG"
+          },
+          "maxLevel": 28,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 25."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAAL_MG.png"
+        },
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "RPK"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPK.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "Rapp H"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAPP_H.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Marksman Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "EBR-14"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/EBR-14.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "SP-R 208"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 7."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-R_208.png"
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "Lockwood MK2"
+          },
+          "maxLevel": 29,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_MK2.png"
+        },
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "LM-S"
+          },
+          "maxLevel": 13,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 17."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "SA-B 50"
+          },
+          "maxLevel": 23,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the SP-R 208 to Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SA-B_50.png"
+        },
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "TAQ-M"
+          },
+          "maxLevel": 26,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the TAQ-56 (Assault Rfile) to Level 20."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-M.png"
+        },
+        {
+          "weaponId": 65,
+          "name": {
+            "en": "Crossbow"
+          },
+          "maxLevel": 18,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 50 Longshot kills using a Marksman Rifle."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CROSSBOW.png"
+        },
+        {
+          "weaponId": 66,
+          "name": {
+            "en": "Tempus Torrent"
+          },
+          "maxLevel": 18,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 25 Double Kills using a Marksman Rifle."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_TORRENT.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "MCPR-300"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MCPR-300.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "Signal 50"
+          },
+          "maxLevel": 24,
+          "unlockRequirement": {
+            "en": "Unlock at player Level 44."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SIGNAL_50.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "LA-B 330"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the SA-B 50 (Marksman Rifle) to Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LA-B_330.png"
+        },
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "SP-X 80"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the LA-B 330 (Sniper Rifle) to Level 17."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-X_80.png"
+        },
+        {
+          "weaponId": 67,
+          "name": {
+            "en": "Victus XMR"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR 15 Headshots using Sniper Rifles."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VICTUS_XMR.png"
+        },
+        {
+          "weaponId": 68,
+          "name": {
+            "en": "FJX Imperium"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 30 one shot one kills with sniper rifles."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FJX_IMPERIUM.png"
+        },
+        {
+          "weaponId": 69,
+          "name": {
+            "en": "Carrack .300"
+          },
+          "maxLevel": 19,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 5 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CARRACK_300.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Melee"
+      },
+      "weapons": [
+        {
+          "weaponId": 40,
+          "name": {
+            "en": "Riot Shield"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RIOT_SHIELD.png"
+        },
+        {
+          "weaponId": 41,
+          "name": {
+            "en": "Combat Knife"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 17."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/COMBAT_KNIFE.png"
+        },
+        {
+          "weaponId": 70,
+          "name": {
+            "en": "Dual Kodachis"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Get 20 kills with Melee weapons."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KODACHIS.png"
+        },
+        {
+          "weaponId": 71,
+          "name": {
+            "en": "Tonfa"
+          },
+          "maxLevel": 16,
+          "unlockRequirement": {
+            "en": "."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TONFA.png"
+        },
+        {
+          "weaponId": 72,
+          "name": {
+            "en": "Pickaxe"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PICKAXE.png"
+        },
+        {
+          "weaponId": 73,
+          "name": {
+            "en": "Dual Kamas"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocked with the Season 6 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KAMAS.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "name": {
+        "en": "Handguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 42,
+          "name": {
+            "en": "P890"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/P890.png"
+        },
+        {
+          "weaponId": 43,
+          "name": {
+            "en": ".50 GS"
+          },
+          "maxLevel": 27,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png"
+        },
+        {
+          "weaponId": 44,
+          "name": {
+            "en": "X12"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/X12.png"
+        },
+        {
+          "weaponId": 45,
+          "name": {
+            "en": "Basilisk"
+          },
+          "maxLevel": 29,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 39."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BASILISK.png"
+        },
+        {
+          "weaponId": 46,
+          "name": {
+            "en": "X13 Auto"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlock by leveling the X12 (Handgun) to Level 10."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/X13_AUTO.png"
+        },
+        {
+          "weaponId": 74,
+          "name": {
+            "en": "FTAC Siege"
+          },
+          "maxLevel": 26,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 50 hipfire kills with Handguns."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_SIEGE.png"
+        },
+        {
+          "weaponId": 75,
+          "name": {
+            "en": "GS Magna"
+          },
+          "maxLevel": 10,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with the .50 GS."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png"
+        },
+        {
+          "weaponId": 76,
+          "name": {
+            "en": "9MM Daemon"
+          },
+          "maxLevel": 22,
+          "unlockRequirement": {
+            "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with the .50 GS."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/9MM_DAEMON.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 9,
+      "name": {
+        "en": "Launchers"
+      },
+      "weapons": [
+        {
+          "weaponId": 47,
+          "name": {
+            "en": "Pila"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PILA.png"
+        },
+        {
+          "weaponId": 48,
+          "name": {
+            "en": "Strela-P"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 14."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/STRELA-P.png"
+        },
+        {
+          "weaponId": 49,
+          "name": {
+            "en": "JOKR"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 24."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/JOKR.png"
+        },
+        {
+          "weaponId": 50,
+          "name": {
+            "en": "RPG-7"
+          },
+          "maxLevel": 15,
+          "unlockRequirement": {
+            "en": "Unlocks at Player Level 32."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPG-7.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the MW3 Camo Tracker data by Tools/games/convert_mw3.py; ids put the 51 launch weapons first."
+}

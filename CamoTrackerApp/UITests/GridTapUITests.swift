@@ -17,7 +17,7 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         if let category { app.launchEnvironment["SS_CAT"] = "\(category)" }
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-ct_game", "mw4", "-ct_progress_mw4", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
         return app
     }
@@ -64,7 +64,7 @@ final class GridTapUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-ct_game", "mw4", "-ct_progress_mw4", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
         // Below the layout list and the locked-challenges switch: lift the
@@ -136,7 +136,7 @@ final class GridTapUITests: XCTestCase {
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["SS_WEAPON"] = "1" // M4, max 72
         app.launchEnvironment["MW4_OFFLINE"] = "1"
-        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
+        app.launchArguments += ["-AppleLanguages", "(en)", "-ct_game", "mw4", "-ct_progress_mw4", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
         let detail = app.staticTexts["Unlocks at weapon level 10."]
