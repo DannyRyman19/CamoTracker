@@ -162,3 +162,61 @@ struct MW3GameTests {
         #expect(AppMode.zombies.completionist.final.name == "Bioluminescent")
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct VanguardGameTests {
+    private func model() throws -> TrackerViewModel {
+        let name = "VanguardGameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game("vg"))
+        GameRegistry.current = game
+        return TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+    }
+
+    @Test func aCategorySharesOneCount() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model()
+        #expect(model.totalWeaponCount == 56)
+        let camos = model.camos(weaponId: 0, mode: "multiplayer")
+        #expect(camos.count == 100)
+        let (first, second, last) = (camos[0], camos[1], camos[9])
+        // 120 eliminations earns the first three Pack Tactics camos, not the rest
+        model.setCamoAmount(mode: "multiplayer", weaponId: 0, camo: last, amount: 120)
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: first))
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[2]))
+        #expect(!model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[3]))
+        #expect(model.camoAmount(mode: "multiplayer", weaponId: 0, camo: last) == 120)
+        // Unticking the second steps the count back to the first's 40
+        model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: second)
+        #expect(model.camoAmount(mode: "multiplayer", weaponId: 0, camo: last) == 40)
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: first))
+        // Ticking the last fills the category
+        model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: last)
+        #expect(camos[0..<10].allSatisfy { model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: $0) })
+    }
+
+    @Test func goldAndDiamondAreEarnedByThemselves() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model()
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 })
+        let launch = rifles.weapons.filter { $0.weaponId < 38 }
+        #expect(launch.count == 7)
+        func finish(_ weaponId: Int) {
+            for camo in model.camos(weaponId: weaponId, mode: "multiplayer") where !model.isCamoComplete(mode: "multiplayer", weaponId: weaponId, camo: camo) {
+                model.toggleCamo(mode: "multiplayer", weaponId: weaponId, camo: camo)
+            }
+        }
+        finish(launch[0].weaponId)
+        #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: launch[0].weaponId, step: 0))
+        #expect(!model.isCompletionistComplete(mode: "multiplayer", weaponId: launch[0].weaponId, step: 1))
+        // Ticking an automatic step does nothing
+        model.toggleCompletionist(mode: "multiplayer", weaponId: launch[0].weaponId, step: 1)
+        #expect(!model.isCompletionistComplete(mode: "multiplayer", weaponId: launch[0].weaponId, step: 1))
+        launch.dropFirst().forEach { finish($0.weaponId) }
+        #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: launch[0].weaponId, step: 1))
+        #expect(!model.isCompletionistComplete(mode: "multiplayer", weaponId: launch[0].weaponId, step: 2))
+        #expect(AppMode.multiplayer.completionist.steps.map(\.name) == ["Gold", "Diamond", "Atomic"])
+    }
+}

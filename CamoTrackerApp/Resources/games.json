@@ -104,5 +104,23 @@
         "id": "zombies"
       }
     ]
+  },
+  {
+    "id": "vg",
+    "name": {
+      "en": "Vanguard"
+    },
+    "shortName": "Vanguard",
+    "path": "Data/CT/VG/",
+    "seedPrefix": "vg_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      }
+    ]
   }
 ]

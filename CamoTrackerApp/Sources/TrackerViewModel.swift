@@ -5,7 +5,7 @@ import Foundation
 @MainActor
 final class TrackerViewModel: ObservableObject {
     @Published private(set) var catalog: WeaponCatalog?
-    @Published private(set) var modes: [String: ModeFile] = [:]
+    @Published private(set) var modes: [String: ModeFile] = [:] { didSet { autoMemo = [:] } }
     @Published private(set) var isRefreshing = false
     @Published var refreshError: String?
 
@@ -33,17 +33,21 @@ final class TrackerViewModel: ObservableObject {
 
     /// Weapon level is the one thing genuinely global: keyed by `weaponId` alone,
     /// so it reads the same from the Multiplayer tab or the DMZ tab.
-    private var weaponLevels: [Int: Int] = [:]
+    private var weaponLevels: [Int: Int] = [:] { didSet { autoMemo = [:] } }
 
     /// Weapon Prestige reached, per weapon — global like level. 0 is the
     /// weapon's normal levels; n is `prestigeStages[n - 1]`. `weaponLevels`
     /// is always the level *within* the current stage.
-    private var weaponPrestige: [Int: Int] = [:]
+    private var weaponPrestige: [Int: Int] = [:] { didSet { autoMemo = [:] } }
 
     /// Camo and objective completion, keyed by mode — each mode has its own
     /// camo track for the same weapon.
-    private var amounts: [String: Int] = [:]
-    private var completed: Set<String> = []
+    private var amounts: [String: Int] = [:] { didSet { autoMemo = [:] } }
+    private var completed: Set<String> = [] { didSet { autoMemo = [:] } }
+    /// `auto` Completionist steps already worked out, by key: each one counts
+    /// a class or the roster, so a list would otherwise redo it per row.
+    /// Cleared on any change to progress or data.
+    private var autoMemo: [String: Bool] = [:]
 
     private var storeKey: String { "ct_progress_\(game.id)" }
     private let defaults: UserDefaults
@@ -153,6 +157,7 @@ final class TrackerViewModel: ObservableObject {
     func setQuickTick(_ on: Bool) {
         guard on != quickTick else { return }
         defaults.set(on, forKey: Self.quickTickKey)
+        autoMemo = [:]
         objectWillChange.send()
         Haptics.change(wasDone: false, isDone: false)
     }
@@ -377,7 +382,20 @@ final class TrackerViewModel: ObservableObject {
     /// straight to 5, but the stored 8 stays, so raising it again later
     /// gives the player their real progress back.
     func camoAmount(mode: String, weaponId: Int, camo: ChallengeItem) -> Int {
-        min(amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0, camo.requirement?.amount ?? .max)
+        min(amounts[counterKey(mode, weaponId, camo)] ?? 0, camo.requirement?.amount ?? .max)
+    }
+
+    /// Where a camo's count is kept: its own, or the `counter` camo's when
+    /// several camos share one count (Vanguard's 400 eliminations, earning
+    /// a camo at 25, 50, 100...).
+    private func counterKey(_ mode: String, _ weaponId: Int, _ camo: ChallengeItem) -> String {
+        camoKey(mode, weaponId, camo.counter ?? camo.itemId)
+    }
+
+    /// The camos sharing this camo's count, itself included, in list order.
+    private func counterGroup(mode: String, weaponId: Int, camo: ChallengeItem) -> [ChallengeItem] {
+        guard let counter = camo.counter else { return [camo] }
+        return camos(weaponId: weaponId, mode: mode).filter { $0.counter == counter }
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
@@ -403,9 +421,8 @@ final class TrackerViewModel: ObservableObject {
 
     /// Finished in this mode's own count.
     private func isCamoDone(in mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
-        let k = camoKey(mode, weaponId, camo.itemId)
-        guard let req = camo.requirement else { return completed.contains(k) }
-        return (amounts[k] ?? 0) >= req.amount
+        guard let req = camo.requirement else { return completed.contains(camoKey(mode, weaponId, camo.itemId)) }
+        return (amounts[counterKey(mode, weaponId, camo)] ?? 0) >= req.amount
     }
 
     /// The weapon level that earns this Military camo, or nil for any other
@@ -440,8 +457,9 @@ final class TrackerViewModel: ObservableObject {
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-        let req = camo.requirement?.amount ?? 1
-        amounts[camoKey(mode, weaponId, camo.itemId)] = max(0, min(newAmount, req))
+        // A shared count runs up to the last camo on it
+        let req = counterGroup(mode: mode, weaponId: weaponId, camo: camo).compactMap(\.requirement?.amount).max() ?? 1
+        amounts[counterKey(mode, weaponId, camo)] = max(0, min(newAmount, req))
         saveProgress()
         objectWillChange.send()
         checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
@@ -476,7 +494,16 @@ final class TrackerViewModel: ObservableObject {
         }
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-        if wasDone {
+        if camo.counter != nil, let req = camo.requirement {
+            // A shared count: ticking runs it up to this camo, unticking
+            // back to the camo before it, so earlier ones stay earned
+            let below = counterGroup(mode: mode, weaponId: weaponId, camo: camo)
+                .compactMap(\.requirement?.amount).filter { $0 < req.amount }.max() ?? 0
+            for other in wasDone ? camoTrackModes : [mode] {
+                let k = counterKey(other, weaponId, camo)
+                amounts[k] = wasDone ? min(amounts[k] ?? 0, below) : max(amounts[k] ?? 0, req.amount)
+            }
+        } else if wasDone {
             // Unticking clears it in every mode, or a finish elsewhere would
             // keep it ticked here
             for other in camoTrackModes {
@@ -653,11 +680,42 @@ final class TrackerViewModel: ObservableObject {
     }
 
     private func isCompletionistDone(in mode: String, weaponId: Int, step: Int) -> Bool {
+        if isAutoStep(mode: mode, step: step) { return isCompletionistOpen(mode: mode, weaponId: weaponId, step: step) }
         let key = completionistKey(mode, weaponId, step)
         guard let requirement = completionistRequirement(mode: mode, weaponId: weaponId, step: step) else {
             return completed.contains(key)
         }
         return (amounts[key] ?? 0) >= requirement.amount
+    }
+
+    /// A step with no challenge of its own, earned once it opens: BO2's
+    /// Gold (every camo done) and Diamond (Gold across the class).
+    func isAutoStep(mode: String, step: Int) -> Bool {
+        completionistStepConfig(mode: mode, step: step)?.auto == true
+    }
+
+    /// The weapon has the step before and the gate holds, worked out from
+    /// progress alone (never quick tick), which is what earns an `auto` step.
+    private func isCompletionistOpen(mode: String, weaponId: Int, step: Int) -> Bool {
+        let key = completionistKey(mode, weaponId, step)
+        if let known = autoMemo[key] { return known }
+        var open = hasPrerequisite(mode: mode, weaponId: weaponId, step: step)
+        if open {
+            switch completionistGate(mode: mode, step: step) {
+            case .weapon:
+                break
+            case .category:
+                if let category = category(containingWeaponId: weaponId) {
+                    let progress = completionistCategoryGateProgress(category, mode: mode, step: step)
+                    open = progress.done >= progress.total
+                }
+            case .mode:
+                let progress = completionistModeGateProgress(mode: mode, step: step)
+                open = progress.done >= progress.total
+            }
+        }
+        autoMemo[key] = open
+        return open
     }
 
     enum CompletionistGate: String { case weapon, category, mode }
@@ -731,6 +789,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func setCompletionistAmount(mode: String, weaponId: Int, step: Int, amount newAmount: Int) {
+        guard !isAutoStep(mode: mode, step: step) else { return }
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
         let cap = completionistRequirement(mode: mode, weaponId: weaponId, step: step)?.amount ?? 1
@@ -742,6 +801,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func toggleCompletionist(mode: String, weaponId: Int, step: Int) {
+        guard !isAutoStep(mode: mode, step: step) else { return }
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
         for each in run(step, through: Self.completionistStepCount, done: !wasDone) {

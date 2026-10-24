@@ -1,0 +1,697 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 38,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "STG44"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/stg44.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "Automaton"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 8."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/automaton.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "Itra Burst"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/itra_burst.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "BAR"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 25."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/bar.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "AS44"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 33."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/as44.png"
+        },
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "NZ-41"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 41."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/nz-41.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "Volkssturmgewehr"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 55."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/volk.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "Cooper Carbine"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 5 Headshots in 15 different matches with an Assault Rifle."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/cooper_carbine.png"
+        },
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "KG M40"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Earn 3 Double Kill Medals with an Assault Rifle in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/kg_m40.png"
+        },
+        {
+          "weaponId": 40,
+          "name": {
+            "en": "Nikita AVT"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 10 Kills while moving in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/nikita_avt.png"
+        },
+        {
+          "weaponId": 41,
+          "name": {
+            "en": "Vargo-S"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 15 close range Kills."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/vargo-s.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "MP40"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/mp40.png"
+        },
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "Sten"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 10."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/sten.png"
+        },
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "M1928"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 20."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/m1928.png"
+        },
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "Owen Gun"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 29."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/owen_gun.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "Type 100"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 39."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/type_100.png"
+        },
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "PPSH-41"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 51."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/ppsh-41.png"
+        },
+        {
+          "weaponId": 42,
+          "name": {
+            "en": "Welgun"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 10 Kills with an SMG while Aiming Down Sights in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/welgun.png"
+        },
+        {
+          "weaponId": 43,
+          "name": {
+            "en": "Armaguerra 43"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 10 hip-fire kills in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/armaguerra_43.png"
+        },
+        {
+          "weaponId": 44,
+          "name": {
+            "en": "H4 Blixen"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 3 slide kills in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/h4_blixen.png"
+        },
+        {
+          "weaponId": 45,
+          "name": {
+            "en": "Marco 5"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at tier 15 of the Season 4 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/marco_5.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "Einhorn Revolving"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/einhorn_revolving.png"
+        },
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "Combat Shotgun"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 14."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/combat_shotgun.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "Gracey Auto"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/gracey_auto.png"
+        },
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "Double Barrel"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 49."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/double_barrel.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "MG42"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/mg42.png"
+        },
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "DP27"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 18."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/dp27.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "Type 11"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/type_11.png"
+        },
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "Bren"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 53."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/bren.png"
+        },
+        {
+          "weaponId": 46,
+          "name": {
+            "en": "Whitley"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Destroy 3 Killstreaks with an LMG in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/whitley.png"
+        },
+        {
+          "weaponId": 47,
+          "name": {
+            "en": "UGM-8"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at tier 31 of the Season 4 Battle Pass."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/ugm-8.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "Marksman Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "M1 Garand"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 6."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/m1_garand.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "SVT-40"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 27."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/svt-40.png"
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "G-43"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 47."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/g-43.png"
+        },
+        {
+          "weaponId": 48,
+          "name": {
+            "en": "M1916"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Season weapon."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/m1916.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "Type 99"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/type_99.png"
+        },
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "3-Line Rifle"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 22."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/3-line_rifle.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "Kar98K"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/kar98k.png"
+        },
+        {
+          "weaponId": 49,
+          "name": {
+            "en": "Gorenko Anti-Tank Rifle"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Get 10 one-shot eliminations using a Sniper Rifle in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/gorenko.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Handguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "Ratt"
+          },
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/ratt.png"
+        },
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "Top Break"
+          },
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 12."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/top_break.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "1911"
+          },
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 23."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/1911.png"
+        },
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "Klauser"
+          },
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 35."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/klauser.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "Machine Pistol"
+          },
+          "maxLevel": 60,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 45."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/machine_pistol.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Launchers"
+      },
+      "weapons": [
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "M1 Bazooka"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 11."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/m1_bazooka.png"
+        },
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "Panzerschreck"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 26."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/panzerschreck.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "Panzerfaust"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 34."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/panzerfaust.png"
+        },
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "MK11 Launcher"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/mk11_launcher.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "name": {
+        "en": "Melee"
+      },
+      "weapons": [
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "FS Fighting Knife"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 22."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/fs_hunting_knife.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "Combat Shield"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 42."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/combat_shield.png"
+        },
+        {
+          "weaponId": 50,
+          "name": {
+            "en": "Sawtooth"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get 5 kills on Stunned Enemies in a singe match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/sawtooth.png"
+        },
+        {
+          "weaponId": 51,
+          "name": {
+            "en": "Katana"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get 5 kills with a melee weapon in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/katana.png"
+        },
+        {
+          "weaponId": 52,
+          "name": {
+            "en": "Ice Axe"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get 3 kills with the throwing knife in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/ice_axe.png"
+        },
+        {
+          "weaponId": 53,
+          "name": {
+            "en": "Skål Crusher"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get 5 kills with a melee weapon in a single match 15 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/skal_crusher.png"
+        },
+        {
+          "weaponId": 54,
+          "name": {
+            "en": "Sledgehammer"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get a multikill with a melee weapon in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/sledgehammer.png"
+        },
+        {
+          "weaponId": 55,
+          "name": {
+            "en": "Push Dagger"
+          },
+          "maxLevel": 1,
+          "unlockRequirement": {
+            "en": "Get 5 Melee Kills with a Primary Weapon in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/Vanguard/push_dagger.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the Vanguard Camo Tracker data by Tools/games/convert_vanguard.py; ids put the 38 launch weapons first."
+}

@@ -204,6 +204,9 @@ struct CompletionistStepConfig: Codable {
     /// A "category" gate's count per class, keyed by `categoryId` as a
     /// string, over `needed` (BO6: 7 Assault Rifles, 6 SMGs, 2 Shotguns...).
     var neededByCategory: [String: Int]?
+    /// No challenge of its own: earned as soon as it opens (BO2's Gold once
+    /// every camo is done, Vanguard's Diamond once the class has Gold).
+    var auto: Bool?
 }
 
 /// The fourth Completionist camo (Divergence in Multiplayer). It has no
@@ -295,6 +298,10 @@ struct ChallengeItem: Codable, Identifiable {
     /// camo sits in. A Military camo with an `unlockLevel` and no challenge
     /// is earned by reaching that level. Absent means the plain "Camos" list.
     var group: String? = nil
+    /// The `itemId` whose count this camo reads, for camos sharing one
+    /// challenge (Vanguard's "Get Eliminations", 400 in all): each is earned
+    /// once the shared count reaches its own requirement.
+    var counter: Int? = nil
     var id: Int { itemId }
 
     var isLeaf: Bool { children.isEmpty }

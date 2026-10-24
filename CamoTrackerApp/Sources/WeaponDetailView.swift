@@ -584,6 +584,17 @@ private struct CompletionistStepRow: View {
     }
 
     var body: some View {
+        if viewModel.isAutoStep(mode: mode.rawValue, step: step) {
+            // No challenge of its own: earned the moment it opens
+            let achieved = viewModel.isCompletionistComplete(mode: mode.rawValue, weaponId: weapon.weaponId, step: step)
+            StatusRow(name: camo.name, achieved: achieved, color: camo.color, gradient: camo.gradient,
+                      detail: achieved ? "ct.ui.completionist.auto".localized() : lockedReason, imageURL: camo.imageURL)
+        } else {
+            challengeRow
+        }
+    }
+
+    private var challengeRow: some View {
         ChallengeRow(
             item: item,
             accent: camo.color,
