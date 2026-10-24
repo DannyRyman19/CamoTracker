@@ -1,0 +1,840 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 69,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "XM4"
+          },
+          "maxLevel": 48,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/xm4.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "AK-74"
+          },
+          "maxLevel": 48,
+          "unlockRequirement": {
+            "en": "Unlock at level 10."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ak-74.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "Ames 85"
+          },
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 19."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ames-85.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "GPR 91"
+          },
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/gpr-91.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "Model L"
+          },
+          "maxLevel": 45,
+          "unlockRequirement": {
+            "en": "Unlock at level 40."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/model-l.png"
+        },
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "Goblin MK 2"
+          },
+          "maxLevel": 45,
+          "unlockRequirement": {
+            "en": "Unlock at level 46."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/goblin-mk-2.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "AS Val"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock at level 55."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/as-val.png"
+        },
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "Krig C"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/krig-c.png"
+        },
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "Cypher 091"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/cypher-091.png"
+        },
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "Kilo 141"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/kilo-141.png"
+        },
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "CR-56 AMAX"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/cr-56-amax.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "FFAR-1"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ffar-1.png"
+        },
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "ABR A1"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/abr-a1.png"
+        },
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "Merrick 556"
+          },
+          "maxLevel": 39,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/merrick-556.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "C9"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/c9.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "KSV"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Unlock at level 7."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ksv.png"
+        },
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "Tanto .22"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlock at level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/tanto-22.png"
+        },
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "PP-919"
+          },
+          "maxLevel": 37,
+          "unlockRequirement": {
+            "en": "Unlock at level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/pp-919.png"
+        },
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "Jackal PDW"
+          },
+          "maxLevel": 41,
+          "unlockRequirement": {
+            "en": "Unlock at level 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/jackal-pdw.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "KOMPAKT 92"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Unlock at level 49."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/kompakt-92.png"
+        },
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "Saug"
+          },
+          "maxLevel": 39,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/saug.png"
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "PPSh-41"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ppsh-41.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "Ladra"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/ladra.png"
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "LC10"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/lc10.png"
+        },
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "Dresden 9mm"
+          },
+          "maxLevel": 33,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/dresden-9mm.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "Marine SP"
+          },
+          "maxLevel": 37,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/marine-sp.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "ASG-89"
+          },
+          "maxLevel": 44,
+          "unlockRequirement": {
+            "en": "Unlock at level 31."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/asg-89.png"
+        },
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "Maelstrom"
+          },
+          "maxLevel": 34,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/maelstrom.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "PU-21"
+          },
+          "maxLevel": 47,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/pu-21.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "XMG"
+          },
+          "maxLevel": 47,
+          "unlockRequirement": {
+            "en": "Unlock at level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/xmg.png"
+        },
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "GPMG-7"
+          },
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/gpmg-7.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "Feng 82"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/feng-82.png"
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "PML 5.56"
+          },
+          "maxLevel": 39,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/pml-556.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "Marksman Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "Swat 5.56"
+          },
+          "maxLevel": 48,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/swat_556.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "Tsarkov 7.62"
+          },
+          "maxLevel": 45,
+          "unlockRequirement": {
+            "en": "Unlock at level 22."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/tsarkov-762.png"
+        },
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "AEK-973"
+          },
+          "maxLevel": 48,
+          "unlockRequirement": {
+            "en": "Unlock at level 34."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/aek-973.png"
+        },
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "DM-10"
+          },
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Unlock at level 43."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/dm-10.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "TR2"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/tr2.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "Essex Model 07"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/essex-model-7.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "LW3A1 Frostline"
+          },
+          "maxLevel": 44,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/lw3a1-frostline.png"
+        },
+        {
+          "weaponId": 40,
+          "name": {
+            "en": "SVD"
+          },
+          "maxLevel": 45,
+          "unlockRequirement": {
+            "en": "Unlock at level 25."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/svd.png"
+        },
+        {
+          "weaponId": 41,
+          "name": {
+            "en": "LR 7.62"
+          },
+          "maxLevel": 44,
+          "unlockRequirement": {
+            "en": "Unlock at level 49."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/lr-762.png"
+        },
+        {
+          "weaponId": 42,
+          "name": {
+            "en": "AMR MOD 4"
+          },
+          "maxLevel": 39,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/amr-mod-4.png"
+        },
+        {
+          "weaponId": 43,
+          "name": {
+            "en": "HDR"
+          },
+          "maxLevel": 38,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/hdr.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Pistols"
+      },
+      "weapons": [
+        {
+          "weaponId": 44,
+          "name": {
+            "en": "9mm PM"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/9mm_pm.png"
+        },
+        {
+          "weaponId": 45,
+          "name": {
+            "en": "Grekhova"
+          },
+          "maxLevel": 32,
+          "unlockRequirement": {
+            "en": "Unlock at level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/grekhova.png"
+        },
+        {
+          "weaponId": 46,
+          "name": {
+            "en": "GS45"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlock at level 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/gs45.png"
+        },
+        {
+          "weaponId": 47,
+          "name": {
+            "en": "Stryder .22"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 40."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/stryder-22.png"
+        },
+        {
+          "weaponId": 48,
+          "name": {
+            "en": "Gravemark .357"
+          },
+          "maxLevel": 32,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/gravemark.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Launchers & Specials"
+      },
+      "weapons": [
+        {
+          "weaponId": 49,
+          "name": {
+            "en": "CIGMA 2B"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/cigma-2b.png"
+        },
+        {
+          "weaponId": 50,
+          "name": {
+            "en": "HE-1"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 19."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/he-1.png"
+        },
+        {
+          "weaponId": 51,
+          "name": {
+            "en": "Sirin 9mm"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/sirin-9mm.png"
+        },
+        {
+          "weaponId": 52,
+          "name": {
+            "en": "D1.3 Sector"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/d13-sector.png"
+        },
+        {
+          "weaponId": 53,
+          "name": {
+            "en": "Nail Gun"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/nail-gun.png"
+        },
+        {
+          "weaponId": 54,
+          "name": {
+            "en": "Olympia"
+          },
+          "maxLevel": 20,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/olympia.png"
+        },
+        {
+          "weaponId": 55,
+          "name": {
+            "en": "X52 Resonator"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/x52-resonator.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "name": {
+        "en": "Melee"
+      },
+      "weapons": [
+        {
+          "weaponId": 56,
+          "name": {
+            "en": "Knife"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 1."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/knife.png"
+        },
+        {
+          "weaponId": 57,
+          "name": {
+            "en": "Baseball Bat"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock at level 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/baseball-bat.png"
+        },
+        {
+          "weaponId": 58,
+          "name": {
+            "en": "Power Drill"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/power-drill.png"
+        },
+        {
+          "weaponId": 59,
+          "name": {
+            "en": "Cleaver"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/cleaver.png"
+        },
+        {
+          "weaponId": 60,
+          "name": {
+            "en": "Katanas"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/katanas.png"
+        },
+        {
+          "weaponId": 61,
+          "name": {
+            "en": "Bo Staff"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/bo-staff.png"
+        },
+        {
+          "weaponId": 62,
+          "name": {
+            "en": "Sai"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/sai.png"
+        },
+        {
+          "weaponId": 63,
+          "name": {
+            "en": "Nunchaku"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/nunchaku.png"
+        },
+        {
+          "weaponId": 64,
+          "name": {
+            "en": "Skateboard"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/skateboard.png"
+        },
+        {
+          "weaponId": 65,
+          "name": {
+            "en": "Kali Sticks"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock as part of the Return To Verdansk Event."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/kali-sticks.png"
+        },
+        {
+          "weaponId": 66,
+          "name": {
+            "en": "Pickaxe"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/pickaxe.png"
+        },
+        {
+          "weaponId": 67,
+          "name": {
+            "en": "Boxing Gloves"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/boxing-gloves.png"
+        },
+        {
+          "weaponId": 68,
+          "name": {
+            "en": "Chainsaw"
+          },
+          "maxLevel": 30,
+          "unlockRequirement": {
+            "en": "Unlock in the armory."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/BO6/chainsaw.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the BO6 Camo Tracker data by Tools/games/convert_bo6.py."
+}

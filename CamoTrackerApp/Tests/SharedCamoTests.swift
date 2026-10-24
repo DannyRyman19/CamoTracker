@@ -99,3 +99,28 @@ struct BO7GameTests {
         #expect(!model.isMasteryAchieved(mode: "multiplayer", tier: 1))
     }
 }
+
+@Suite("BO6 in Camo Tracker")
+@MainActor
+struct BO6GameTests {
+    @Test func bo6LoadsItsOwnTrack() throws {
+        let name = "BO6GameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let bo6 = try #require(GameRegistry.game("bo6"))
+        GameRegistry.current = bo6
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = TrackerViewModel(game: bo6, dataService: DataService(game: bo6, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+
+        #expect(model.totalWeaponCount == 69)
+        #expect(Set(model.modes.keys) == ["multiplayer", "zombies", "warzone"])
+        // 9 Military then 2 Specials
+        #expect(model.camos(weaponId: 0, mode: "multiplayer").count == 11)
+        // Diamond needs Gold on 7 Assault Rifles, Dark Spine Diamond on 33 weapons
+        let rifles = try #require(model.catalog?.categories.first { $0.categoryId == 0 })
+        #expect(model.completionistCategoryGateProgress(rifles, mode: "multiplayer", step: 1).total == 7)
+        #expect(model.completionistModeGateProgress(mode: "multiplayer", step: 2).total == 33)
+        #expect(AppMode.multiplayer.completionist.final.name == "Dark Matter")
+        #expect(model.allWeapons.count == Set(model.allWeapons.map(\.weaponId)).count)
+    }
+}

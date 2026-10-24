@@ -47,5 +47,26 @@
       }
     ],
     "hasMastery": false
+  },
+  {
+    "id": "bo6",
+    "name": {
+      "en": "Black Ops 6"
+    },
+    "shortName": "BO6",
+    "path": "Data/CT/BO6/",
+    "seedPrefix": "bo6_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      },
+      {
+        "id": "warzone"
+      }
+    ]
   }
 ]

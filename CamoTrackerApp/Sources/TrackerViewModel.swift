@@ -705,7 +705,8 @@ final class TrackerViewModel: ObservableObject {
     /// weapon added later can stand in for a launch one left unfinished.
     func completionistCategoryGateProgress(_ category: WeaponCategory, mode: String, step: Int) -> (done: Int, total: Int) {
         let launch = category.weapons.filter { $0.weaponId < baseWeaponCount }.count
-        let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
+        let config = completionistStepConfig(mode: mode, step: step)
+        let total = gateTotal(needed: config?.neededByCategory?[String(category.categoryId)] ?? config?.needed,
                               available: category.weapons.count, launch: launch)
         let done = category.weapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
         return (min(done, total), total)

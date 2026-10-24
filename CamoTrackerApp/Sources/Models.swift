@@ -201,6 +201,9 @@ struct CompletionistStepConfig: Codable {
     /// before ("Complete 5 Gold Camo Challenges using Assault Rifles"),
     /// capped at the class or roster size. Absent: all of its launch weapons.
     var needed: Int?
+    /// A "category" gate's count per class, keyed by `categoryId` as a
+    /// string, over `needed` (BO6: 7 Assault Rifles, 6 SMGs, 2 Shotguns...).
+    var neededByCategory: [String: Int]?
 }
 
 /// The fourth Completionist camo (Divergence in Multiplayer). It has no
