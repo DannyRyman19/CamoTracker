@@ -338,7 +338,7 @@ _vd.sell_values(items)
 _vd.key_pictures(items)
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.29", "updated": "2026-10-24",
+data = {"version": "0.9.30", "updated": "2026-10-24",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

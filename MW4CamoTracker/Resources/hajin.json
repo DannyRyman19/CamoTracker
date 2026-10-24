@@ -1,5 +1,5 @@
 {
- "version": "0.9.29",
+ "version": "0.9.30",
  "updated": "2026-10-24",
  "map": {
   "image": "hajin_map",
@@ -118,7 +118,7 @@
  ],
  "markers": [
   {
-   "id": "m5850",
+   "id": "m6007",
    "cat": "area",
    "name": "14th Political Prison",
    "x": 0.1872,
@@ -141,7 +141,7 @@
    ]
   },
   {
-   "id": "m5851",
+   "id": "m6008",
    "cat": "area",
    "name": "Chang-san Air Base",
    "x": 0.103,
@@ -163,7 +163,7 @@
    ]
   },
   {
-   "id": "m5852",
+   "id": "m6009",
    "cat": "area",
    "name": "Deadtown",
    "x": 0.1842,
@@ -182,7 +182,7 @@
    "threat": 2
   },
   {
-   "id": "m5853",
+   "id": "m6010",
    "cat": "area",
    "name": "Imjin Farmland",
    "x": 0.3177,
@@ -205,7 +205,7 @@
    ]
   },
   {
-   "id": "m5854",
+   "id": "m6011",
    "cat": "area",
    "name": "Cheongun Village",
    "x": 0.5098,
@@ -228,7 +228,7 @@
    ]
   },
   {
-   "id": "m5855",
+   "id": "m6012",
    "cat": "area",
    "name": "Haneul Nuclear Reactor",
    "x": 0.8,
@@ -247,7 +247,7 @@
    ]
   },
   {
-   "id": "m5856",
+   "id": "m6013",
    "cat": "area",
    "name": "Mirae General Hospital",
    "x": 0.5752,
@@ -256,7 +256,7 @@
    "note": "Hajin's main hospital, next to a train station with The Grid and the mall to the east. Triage tents and barracks outside, close-quarters fights through the wards inside. Snipers like the woods of Mujin Pass to the south. Also a Fortress."
   },
   {
-   "id": "m5857",
+   "id": "m6014",
    "cat": "area",
    "name": "NuriGo Mall",
    "x": 0.709,
@@ -280,7 +280,7 @@
    ]
   },
   {
-   "id": "m5858",
+   "id": "m6015",
    "cat": "area",
    "name": "Cheonwang Peak Array",
    "x": 0.4846,
@@ -289,7 +289,7 @@
    "note": "Hajin's biggest telecom array on a flat summit, now an enemy base. Boulder trails to the west, gentler woods north toward Mujin Pass. The roof has a helipad and long views."
   },
   {
-   "id": "m5859",
+   "id": "m6016",
    "cat": "area",
    "name": "The Grid",
    "x": 0.6477,
@@ -326,7 +326,7 @@
    ]
   },
   {
-   "id": "m5860",
+   "id": "m6017",
    "cat": "area",
    "name": "Songdo Wharf",
    "x": 0.7962,
@@ -348,7 +348,7 @@
    ]
   },
   {
-   "id": "m5861",
+   "id": "m6018",
    "cat": "area",
    "name": "Wolves Stadium",
    "x": 0.6023,
@@ -369,7 +369,7 @@
    ]
   },
   {
-   "id": "m5862",
+   "id": "m6019",
    "cat": "area",
    "name": "Hajin River Heights",
    "x": 0.6726,
@@ -391,28 +391,28 @@
    ]
   },
   {
-   "id": "m5863",
+   "id": "m6020",
    "cat": "place",
    "name": "Jayon Warehouses",
    "x": 0.112,
    "y": 0.162
   },
   {
-   "id": "m5864",
+   "id": "m6021",
    "cat": "place",
    "name": "Russian Border Crossing (West)",
    "x": 0.2147,
    "y": 0.1887
   },
   {
-   "id": "m5866",
+   "id": "m6023",
    "cat": "place",
    "name": "Russian Border Crossing (East)",
    "x": 0.6895,
    "y": 0.4395
   },
   {
-   "id": "m5867",
+   "id": "m6024",
    "cat": "place",
    "name": "Hanrim Village",
    "x": 0.2534,
@@ -420,168 +420,168 @@
    "note": "Lieutenant Gorani, a ghillie-suited sniper, hunts from the woods above this village."
   },
   {
-   "id": "m5868",
+   "id": "m6025",
    "cat": "place",
    "name": "Revolution Dam",
    "x": 0.3447,
    "y": 0.2737
   },
   {
-   "id": "m5869",
+   "id": "m6026",
    "cat": "place",
    "name": "Tong-il Village",
    "x": 0.3556,
    "y": 0.3906
   },
   {
-   "id": "m5870",
+   "id": "m6027",
    "cat": "place",
    "name": "Pyonghwa Village",
    "x": 0.2876,
    "y": 0.4974
   },
   {
-   "id": "m5871",
+   "id": "m6028",
    "cat": "place",
    "name": "Namjin Riverside",
    "x": 0.3966,
    "y": 0.9244
   },
   {
-   "id": "m5872",
+   "id": "m6029",
    "cat": "place",
    "name": "South Island",
    "x": 0.7271,
    "y": 0.8778
   },
   {
-   "id": "m5873",
+   "id": "m6030",
    "cat": "place",
    "name": "Cheongun Outskirts",
    "x": 0.4421,
    "y": 0.4395
   },
   {
-   "id": "m5874",
+   "id": "m6031",
    "cat": "place",
    "name": "Imjin Suburb",
    "x": 0.3677,
    "y": 0.6177
   },
   {
-   "id": "m5875",
+   "id": "m6032",
    "cat": "place",
    "name": "Mujin Pass",
    "x": 0.4789,
    "y": 0.6045
   },
   {
-   "id": "m5876",
+   "id": "m6033",
    "cat": "place",
    "name": "Daesong Ridge",
    "x": 0.4771,
    "y": 0.7451
   },
   {
-   "id": "m5877",
+   "id": "m6034",
    "cat": "place",
    "name": "Oamsik Turtle Islands",
    "x": 0.8474,
    "y": 0.5872
   },
   {
-   "id": "m5878",
+   "id": "m6035",
    "cat": "place",
    "name": "NuriGO West",
    "x": 0.6489,
    "y": 0.6139
   },
   {
-   "id": "m5879",
+   "id": "m6036",
    "cat": "place",
    "name": "Shoreline Station",
    "x": 0.8038,
    "y": 0.6203
   },
   {
-   "id": "m5880",
+   "id": "m6037",
    "cat": "place",
    "name": "NuriGO East",
    "x": 0.7526,
    "y": 0.6395
   },
   {
-   "id": "m5881",
+   "id": "m6038",
    "cat": "place",
    "name": "DBN Headquarters",
    "x": 0.6752,
    "y": 0.6575
   },
   {
-   "id": "m5882",
+   "id": "m6039",
    "cat": "place",
    "name": "Hanex Bank",
    "x": 0.6872,
    "y": 0.6793
   },
   {
-   "id": "m5883",
+   "id": "m6040",
    "cat": "place",
    "name": "Construction Zone",
    "x": 0.7447,
    "y": 0.7195
   },
   {
-   "id": "m5884",
+   "id": "m6041",
    "cat": "place",
    "name": "Songdo Pier",
    "x": 0.8808,
    "y": 0.7568
   },
   {
-   "id": "m5885",
+   "id": "m6042",
    "cat": "compound",
    "name": "Compound Foxtrot",
    "x": 0.1342,
    "y": 0.4733
   },
   {
-   "id": "m5886",
+   "id": "m6043",
    "cat": "compound",
    "name": "Compound Alpha",
    "x": 0.4365,
    "y": 0.7989
   },
   {
-   "id": "m5887",
+   "id": "m6044",
    "cat": "compound",
    "name": "Compound Bravo",
    "x": 0.515,
    "y": 0.8579
   },
   {
-   "id": "m5888",
+   "id": "m6045",
    "cat": "compound",
    "name": "Compound Charlie",
    "x": 0.3492,
    "y": 0.5135
   },
   {
-   "id": "m5889",
+   "id": "m6046",
    "cat": "compound",
    "name": "Compound Delta",
    "x": 0.7654,
    "y": 0.5391
   },
   {
-   "id": "m5890",
+   "id": "m6047",
    "cat": "compound",
    "name": "Compound Echo",
    "x": 0.6744,
    "y": 0.7951
   },
   {
-   "id": "m5891",
+   "id": "m6048",
    "cat": "fortress",
    "name": "The Citadel",
    "x": 0.1692,
@@ -590,7 +590,7 @@
    "note": "A Y-shaped Fortress inside the prison yard: gantries, cell blocks and a furnace, with high-value targets throughout. Easy to get cut off, so learn the layout. Critical threat."
   },
   {
-   "id": "m5892",
+   "id": "m6049",
    "cat": "fortress",
    "name": "Heavenly Luck Casino",
    "x": 0.553,
@@ -599,7 +599,7 @@
    "note": "A multi-floor casino with an underground car park. No power, so the gambling halls are dark mazes: bring NVGs. High threat."
   },
   {
-   "id": "m5893",
+   "id": "m6050",
    "cat": "fortress",
    "name": "Mirae General Hospital",
    "x": 0.5771,
@@ -608,7 +608,7 @@
    "note": "The hospital itself is a Fortress: expect close-quarters fights through the wards and lobby."
   },
   {
-   "id": "m5894",
+   "id": "m6051",
    "cat": "fortress",
    "name": "Admin Complex No. 2",
    "x": 0.1105,
@@ -617,7 +617,7 @@
    "note": "The command Fortress at Chang-san Air Base. Extreme threat."
   },
   {
-   "id": "m5895",
+   "id": "m6052",
    "cat": "fortress",
    "name": "Re-Education Center",
    "x": 0.1538,
@@ -625,7 +625,7 @@
    "note": "Two central buildings in Deadtown where enemy numbers build up. The town around them has a Clinic and a Gas Station at each end."
   },
   {
-   "id": "m5896",
+   "id": "m6053",
    "cat": "fortress",
    "name": "Rice Mill",
    "x": 0.3496,
@@ -633,7 +633,7 @@
    "note": "A Fortress on high ground over the farmland. Use the warehouses as cover on the way in, watch for enemy vehicles in the open, and switch to close-range weapons inside."
   },
   {
-   "id": "m5897",
+   "id": "m6054",
    "cat": "fortress",
    "name": "NuriGO Mall",
    "x": 0.7158,
@@ -641,630 +641,630 @@
    "note": "The underground mall beneath the NuriGO courtyard: a sprawling, unlit shopping level. Bring NVGs. The Warden's key opens a sealed door down here."
   },
   {
-   "id": "m5898",
+   "id": "m6055",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.3075,
    "y": 0.2778
   },
   {
-   "id": "m5899",
+   "id": "m6056",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.3109,
    "y": 0.456
   },
   {
-   "id": "m5900",
+   "id": "m6057",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.25,
    "y": 0.5244
   },
   {
-   "id": "m5901",
+   "id": "m6058",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.1789,
    "y": 0.6763
   },
   {
-   "id": "m5902",
+   "id": "m6059",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.1169,
    "y": 0.7692
   },
   {
-   "id": "m5903",
+   "id": "m6060",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.3365,
    "y": 0.8868
   },
   {
-   "id": "m5904",
+   "id": "m6061",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.4462,
    "y": 0.9421
   },
   {
-   "id": "m5905",
+   "id": "m6062",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.4549,
    "y": 0.4842
   },
   {
-   "id": "m5906",
+   "id": "m6063",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.6252,
    "y": 0.4692
   },
   {
-   "id": "m5907",
+   "id": "m6064",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.706,
    "y": 0.509
   },
   {
-   "id": "m5908",
+   "id": "m6065",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.3684,
    "y": 0.6252
   },
   {
-   "id": "m5909",
+   "id": "m6066",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.5383,
    "y": 0.6398
   },
   {
-   "id": "m5910",
+   "id": "m6067",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.6395,
    "y": 0.6113
   },
   {
-   "id": "m5911",
+   "id": "m6068",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.741,
    "y": 0.5936
   },
   {
-   "id": "m5912",
+   "id": "m6069",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.4985,
    "y": 0.7846
   },
   {
-   "id": "m5913",
+   "id": "m6070",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.5861,
    "y": 0.8023
   },
   {
-   "id": "m5914",
+   "id": "m6071",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.7387,
    "y": 0.7406
   },
   {
-   "id": "m5915",
+   "id": "m6072",
    "cat": "gas",
    "name": "Gas Station",
    "x": 0.8338,
    "y": 0.6872
   },
   {
-   "id": "m5916",
+   "id": "m6073",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.2248,
    "y": 0.212
   },
   {
-   "id": "m5917",
+   "id": "m6074",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.556,
    "y": 0.3906
   },
   {
-   "id": "m5918",
+   "id": "m6075",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.8756,
    "y": 0.4714
   },
   {
-   "id": "m5919",
+   "id": "m6076",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.885,
    "y": 0.7372
   },
   {
-   "id": "m5920",
+   "id": "m6077",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.6289,
    "y": 0.8722
   },
   {
-   "id": "m5921",
+   "id": "m6078",
    "cat": "marine",
    "name": "Marine Gas Station",
    "x": 0.6538,
    "y": 0.9647
   },
   {
-   "id": "m5922",
+   "id": "m6079",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.2079,
    "y": 0.2293
   },
   {
-   "id": "m5923",
+   "id": "m6080",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.244,
    "y": 0.5102
   },
   {
-   "id": "m5924",
+   "id": "m6081",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.2049,
    "y": 0.6489
   },
   {
-   "id": "m5925",
+   "id": "m6082",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.4808,
    "y": 0.4868
   },
   {
-   "id": "m5926",
+   "id": "m6083",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.7485,
    "y": 0.6425
   },
   {
-   "id": "m5927",
+   "id": "m6084",
    "cat": "fire",
    "name": "Fire Station",
    "x": 0.3203,
    "y": 0.8835
   },
   {
-   "id": "m5928",
+   "id": "m6085",
    "cat": "police",
    "name": "Police Station",
    "x": 0.3357,
    "y": 0.2944
   },
   {
-   "id": "m5929",
+   "id": "m6086",
    "cat": "police",
    "name": "Police Station",
    "x": 0.2541,
    "y": 0.4955
   },
   {
-   "id": "m5930",
+   "id": "m6087",
    "cat": "police",
    "name": "Police Station",
    "x": 0.5023,
    "y": 0.4421
   },
   {
-   "id": "m5931",
+   "id": "m6088",
    "cat": "police",
    "name": "Police Station",
    "x": 0.7244,
    "y": 0.5947
   },
   {
-   "id": "m5932",
+   "id": "m6089",
    "cat": "police",
    "name": "Police Station",
    "x": 0.6368,
    "y": 0.7767
   },
   {
-   "id": "m5933",
+   "id": "m6090",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.3383,
    "y": 0.3827
   },
   {
-   "id": "m5934",
+   "id": "m6091",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.2744,
    "y": 0.4718
   },
   {
-   "id": "m5935",
+   "id": "m6092",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.1222,
    "y": 0.5707
   },
   {
-   "id": "m5936",
+   "id": "m6093",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.1222,
    "y": 0.5707
   },
   {
-   "id": "m5937",
+   "id": "m6094",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.5026,
    "y": 0.4883
   },
   {
-   "id": "m5938",
+   "id": "m6095",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.382,
    "y": 0.5383
   },
   {
-   "id": "m5939",
+   "id": "m6096",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.4177,
    "y": 0.7297
   },
   {
-   "id": "m5940",
+   "id": "m6097",
    "cat": "clinic",
    "name": "Clinic",
    "x": 0.5669,
    "y": 0.7714
   },
   {
-   "id": "m5941",
+   "id": "m6098",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.1722,
    "y": 0.3639
   },
   {
-   "id": "m5942",
+   "id": "m6099",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.1297,
    "y": 0.4737
   },
   {
-   "id": "m5943",
+   "id": "m6100",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.1357,
    "y": 0.5564
   },
   {
-   "id": "m5944",
+   "id": "m6101",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.0827,
    "y": 0.6256
   },
   {
-   "id": "m5945",
+   "id": "m6102",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.162,
    "y": 0.7372
   },
   {
-   "id": "m5946",
+   "id": "m6103",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.3556,
    "y": 0.5083
   },
   {
-   "id": "m5947",
+   "id": "m6104",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.3748,
    "y": 0.5737
   },
   {
-   "id": "m5948",
+   "id": "m6105",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.5053,
    "y": 0.4639
   },
   {
-   "id": "m5949",
+   "id": "m6106",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.5301,
    "y": 0.4496
   },
   {
-   "id": "m5950",
+   "id": "m6107",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.5455,
    "y": 0.4447
   },
   {
-   "id": "m5951",
+   "id": "m6108",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.5504,
    "y": 0.491
   },
   {
-   "id": "m5952",
+   "id": "m6109",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.559,
    "y": 0.5594
   },
   {
-   "id": "m5953",
+   "id": "m6110",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.8263,
    "y": 0.4169
   },
   {
-   "id": "m5954",
+   "id": "m6111",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.7898,
    "y": 0.4312
   },
   {
-   "id": "m5955",
+   "id": "m6112",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.7703,
    "y": 0.5346
   },
   {
-   "id": "m5956",
+   "id": "m6113",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.715,
    "y": 0.6109
   },
   {
-   "id": "m5957",
+   "id": "m6114",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.7199,
    "y": 0.6789
   },
   {
-   "id": "m5958",
+   "id": "m6115",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.6729,
    "y": 0.7023
   },
   {
-   "id": "m5959",
+   "id": "m6116",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.6406,
    "y": 0.7244
   },
   {
-   "id": "m5960",
+   "id": "m6117",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.7357,
    "y": 0.7583
   },
   {
-   "id": "m5961",
+   "id": "m6118",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.8278,
    "y": 0.7444
   },
   {
-   "id": "m5962",
+   "id": "m6119",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.6068,
    "y": 0.7835
   },
   {
-   "id": "m5963",
+   "id": "m6120",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.6831,
    "y": 0.8459
   },
   {
-   "id": "m5964",
+   "id": "m6121",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.3267,
    "y": 0.7184
   },
   {
-   "id": "m5965",
+   "id": "m6122",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.444,
    "y": 0.7898
   },
   {
-   "id": "m5966",
+   "id": "m6123",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.5199,
    "y": 0.8519
   },
   {
-   "id": "m5967",
+   "id": "m6124",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.2921,
    "y": 0.8173
   },
   {
-   "id": "m5968",
+   "id": "m6125",
    "cat": "cache",
    "name": "Ammo Armor Cache",
    "x": 0.3598,
    "y": 0.8207
   },
   {
-   "id": "m5969",
+   "id": "m6126",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.1508,
    "y": 0.3504
   },
   {
-   "id": "m5970",
+   "id": "m6127",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.082,
    "y": 0.5466
   },
   {
-   "id": "m5971",
+   "id": "m6128",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.1756,
    "y": 0.7026
   },
   {
-   "id": "m5972",
+   "id": "m6129",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.3372,
    "y": 0.7079
   },
   {
-   "id": "m5973",
+   "id": "m6130",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.347,
    "y": 0.8643
   },
   {
-   "id": "m5974",
+   "id": "m6131",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.4842,
    "y": 0.4523
   },
   {
-   "id": "m5975",
+   "id": "m6132",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.6098,
    "y": 0.4511
   },
   {
-   "id": "m5976",
+   "id": "m6133",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.7335,
    "y": 0.4477
   },
   {
-   "id": "m5977",
+   "id": "m6134",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.5966,
    "y": 0.5767
   },
   {
-   "id": "m5978",
+   "id": "m6135",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.7278,
    "y": 0.5902
   },
   {
-   "id": "m5979",
+   "id": "m6136",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.4812,
    "y": 0.6793
   },
   {
-   "id": "m5980",
+   "id": "m6137",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.5853,
    "y": 0.806
   },
   {
-   "id": "m5981",
+   "id": "m6138",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.712,
    "y": 0.8226
   },
   {
-   "id": "m5982",
+   "id": "m6139",
    "cat": "uav",
    "name": "UAV Tower",
    "x": 0.8154,
    "y": 0.7466
   },
   {
-   "id": "m5983",
+   "id": "m6140",
    "cat": "lieutenant",
    "name": "Lieutenant Tower",
    "x": 0.359,
    "y": 0.3553
   },
   {
-   "id": "m5984",
+   "id": "m6141",
    "cat": "lieutenant",
    "name": "Lieutenant Tower",
    "x": 0.138,
    "y": 0.7872
   },
   {
-   "id": "m5985",
+   "id": "m6142",
    "cat": "lieutenant",
    "name": "Lieutenant Tower",
    "x": 0.6759,
    "y": 0.4846
   },
   {
-   "id": "m5986",
+   "id": "m6143",
    "cat": "lieutenant",
    "name": "Lieutenant Tower",
    "x": 0.5669,
    "y": 0.7282
   },
   {
-   "id": "m5987",
+   "id": "m6144",
    "cat": "lieutenant",
    "name": "Lieutenant Tower",
    "x": 0.7639,
@@ -4295,12 +4295,130 @@
      ]
     },
     {
-     "title": "Crashed Crate",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-crashed-crate",
+     "title": "I'm Over Here",
+     "group": "DMZ Orders: The Grid",
+     "check": "op-im-over-here",
      "objectives": [
-      "Retrieve 3 lost supply drops",
-      "Complete a Loot Radio Tower Side Op"
+      "Distract a drone with an Inflatable Decoy",
+      "Destroy 8 Combat Drones",
+      "Destroy 3 Heavy Combat Drones"
+     ],
+     "links": [
+      "inflatable-decoy",
+      "combat-drone"
+     ]
+    },
+    {
+     "title": "Worth Every Penny",
+     "group": "DMZ Orders: The Grid",
+     "check": "op-worth-every-penny",
+     "objectives": [
+      "Buy a weapon from the Vendor",
+      "Kill 50 enemies with a Rare or better weapon"
+     ]
+    },
+    {
+     "title": "No Time",
+     "group": "DMZ Orders: The Grid",
+     "check": "op-no-time",
+     "objectives": [
+      "Finish a Dynamic Operation in under 8 minutes"
+     ]
+    },
+    {
+     "title": "Opulent",
+     "group": "DMZ Orders: The Grid",
+     "check": "op-opulent",
+     "objectives": [
+      "Finish 6 Side Ops in one deployment"
+     ]
+    },
+    {
+     "title": "Civil Service",
+     "group": "DMZ Orders: The Grid",
+     "check": "op-civil-service",
+     "place": "City Hall, NuriGO Mall",
+     "objectives": [
+      "Enter NuriGO Mall",
+      "Find City Hall",
+      "Extract the Financial Ledger Fragments from City Hall's second floor"
+     ],
+     "rewards": [
+      "The page ends with Operation Grid Assault"
+     ]
+    },
+    {
+     "title": "Information Power",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-information-power",
+     "objectives": [
+      "Buy Lieutenant intel at the Boss Board",
+      "Kill a Lieutenant"
+     ]
+    },
+    {
+     "title": "Arms Deal",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-arms-deal",
+     "objectives": [
+      "Buy a gun at the Gunsmith",
+      "Equip a weapon with at least 3 attachments"
+     ]
+    },
+    {
+     "title": "Friendly Face",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-friendly-face",
+     "objectives": [
+      "Choose Request Truce on the ping wheel"
+     ]
+    },
+    {
+     "title": "Lethal Tools",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-lethal-tools",
+     "objectives": [
+      "Print 6 Lethals",
+      "Kill 13 enemy soldiers with Lethals"
+     ]
+    },
+    {
+     "title": "Committed",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-committed",
+     "objectives": [
+      "Extract after the radiation starts spreading"
+     ]
+    },
+    {
+     "title": "Nothing Is Secure",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-nothing-is-secure",
+     "objectives": [
+      "Open 4 safes",
+      "Extract with at least $20,000 of backpack and loadout value"
+     ]
+    },
+    {
+     "title": "Recognition",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-recognition",
+     "objectives": [
+      "Kill 15 enemies with an unsuppressed weapon in a High threat location"
+     ]
+    },
+    {
+     "title": "Radiation Station",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-radiation-station",
+     "place": "Any Fire Station",
+     "objectives": [
+      "Find a Fire Station",
+      "Loot 3 Gas Masks or Radiation Pill Bottles",
+      "Search 5 containers while in radiation"
+     ],
+     "links": [
+      "gas-mask"
      ]
     },
     {
@@ -4329,37 +4447,6 @@
      ]
     },
     {
-     "title": "Radiation Station",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-radiation-station",
-     "place": "Any Fire Station",
-     "objectives": [
-      "Find a Fire Station",
-      "Loot 3 Gas Masks or Radiation Pill Bottles",
-      "Search 5 containers while in radiation"
-     ],
-     "links": [
-      "gas-mask"
-     ]
-    },
-    {
-     "title": "Recognition",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-recognition",
-     "objectives": [
-      "Kill 15 enemies with an unsuppressed weapon in a High threat location"
-     ]
-    },
-    {
-     "title": "Surprise Me",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-surprise-me",
-     "objectives": [
-      "Complete 5 Dynamic Ops",
-      "Complete a Story Mission using Random Mission Deploy"
-     ]
-    },
-    {
      "title": "Work Quietly",
      "group": "DMZ Orders: Page not known yet",
      "check": "op-work-quietly",
@@ -4370,6 +4457,24 @@
      ],
      "links": [
       "throwing-knife"
+     ]
+    },
+    {
+     "title": "Crashed Crate",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-crashed-crate",
+     "objectives": [
+      "Retrieve 3 lost supply drops",
+      "Complete a Loot Radio Tower Side Op"
+     ]
+    },
+    {
+     "title": "Surprise Me",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-surprise-me",
+     "objectives": [
+      "Complete 5 Dynamic Ops",
+      "Complete a Story Mission using Random Mission Deploy"
      ]
     },
     {
@@ -5052,7 +5157,7 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Chang-san Air Base hangar, repair bay and Bubun Yard",
    "foundPlaces": [
-    "m5851"
+    "m6008"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/alloyed-plating.png?v=1",
    "value": 1500
@@ -5155,8 +5260,8 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Chang-san Air Base armory and barracks, and the Songdo Wharf La Grande Vie rooftop",
    "foundPlaces": [
-    "m5851",
-    "m5860"
+    "m6008",
+    "m6017"
    ],
    "value": 1500
   },
@@ -5264,7 +5369,7 @@
    "kind": "Ingredient",
    "found": "Mainly Mirae General Hospital and medical tents",
    "foundPlaces": [
-    "m5856"
+    "m6013"
    ],
    "value": 500
   },
@@ -5372,8 +5477,8 @@
    "kind": "Ingredient",
    "found": "Mainly the Netshin Tech Complex server rooms, Cheonwang Peak Array server rooms and the Deadtown hillside facade buildings",
    "foundPlaces": [
-    "m5858",
-    "m5852"
+    "m6015",
+    "m6009"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/cpu.png?v=1",
    "value": 500
@@ -5517,8 +5622,8 @@
    "note": "Stash Weapon Upgrade, Uncommon Ingredient Printing",
    "found": "Mainly the Netshin Tech Complex server rooms, Cheonwang Peak Array server rooms and the Deadtown hillside facade buildings",
    "foundPlaces": [
-    "m5858",
-    "m5852"
+    "m6015",
+    "m6009"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/comms-module.png?v=1",
    "value": 1500
@@ -5862,8 +5967,8 @@
    "rarity": "Rare",
    "found": "Heavenly Luck Casino storage and counting-room containers, and a footlocker and bag in the Mirae Electrical Room at Mirae General Hospital (parking level B2). Both rooms need their keys",
    "foundPlaces": [
-    "m5892",
-    "m5856"
+    "m6049",
+    "m6013"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/encrypted-archive.png?v=1"
   },
@@ -6176,8 +6281,8 @@
    "kind": "Ingredient",
    "found": "Mainly the Chang-san Air Base armory and barracks, and the Songdo Wharf La Grande Vie rooftop",
    "foundPlaces": [
-    "m5851",
-    "m5860"
+    "m6008",
+    "m6017"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/high-tenacity-fibers.png?v=1"
   },
@@ -6707,9 +6812,9 @@
    "kind": "Ingredient",
    "found": "Mainly the NuriGO Mall DRC lab, the Citadel Prison Yard chemical buildings and the Imjin Farmland storage tents",
    "foundPlaces": [
-    "m5857",
-    "m5891",
-    "m5853"
+    "m6014",
+    "m6048",
+    "m6010"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/nitro-compounds.png?v=1",
    "value": 500
@@ -6730,9 +6835,9 @@
    "kind": "Ingredient",
    "found": "Mainly the Citadel main building wings, the Deadtown underground holding area and the Heavenly Luck Casino's Mujin Nightclub",
    "foundPlaces": [
-    "m5891",
-    "m5852",
-    "m5892"
+    "m6048",
+    "m6009",
+    "m6049"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/nylon-cloth.png?v=1",
    "value": 1000
@@ -6757,9 +6862,9 @@
    "note": "Military holdings and upmarket civilian buildings",
    "found": "Mainly the Citadel main building wings, the Deadtown underground holding area and the Heavenly Luck Casino's Mujin Nightclub",
    "foundPlaces": [
-    "m5891",
-    "m5852",
-    "m5892"
+    "m6048",
+    "m6009",
+    "m6049"
    ],
    "value": 1500
   },
@@ -6878,7 +6983,7 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Haneul Nuclear Reactor and electrical substations",
    "foundPlaces": [
-    "m5855"
+    "m6012"
    ]
   },
   {
@@ -6888,7 +6993,7 @@
    "kind": "Ingredient",
    "found": "Mainly the Haneul Nuclear Reactor and electrical substations",
    "foundPlaces": [
-    "m5855"
+    "m6012"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/printed-circuit-board.png?v=1",
    "value": 500
@@ -7557,7 +7662,7 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly Mirae General Hospital and medical tents",
    "foundPlaces": [
-    "m5856"
+    "m6013"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/stabilized-reagents.png?v=1",
    "value": 1500
@@ -7683,8 +7788,8 @@
    "value": 500,
    "found": "Mainly the Imjin Farmland rice mill, the Hajin City construction zone and Namjjog Station",
    "foundPlaces": [
-    "m5896",
-    "m5883"
+    "m6053",
+    "m6040"
    ]
   },
   {
@@ -7694,7 +7799,7 @@
    "kind": "Ingredient",
    "found": "Mainly the Chang-san Air Base hangar, repair bay and Bubun Yard",
    "foundPlaces": [
-    "m5851"
+    "m6008"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/structural-alloy.png?v=1",
    "value": 500
@@ -7907,8 +8012,8 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the Imjin Farmland rice mill, the Hajin City construction zone and Namjjog Station",
    "foundPlaces": [
-    "m5896",
-    "m5883"
+    "m6053",
+    "m6040"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/turned-components.png?v=1",
    "value": 1500
@@ -8027,9 +8132,9 @@
    "effect": "Needs Epic Ingredient Printing",
    "found": "Mainly the NuriGO Mall DRC lab, the Citadel Prison Yard chemical buildings and the Imjin Farmland storage tents",
    "foundPlaces": [
-    "m5857",
-    "m5891",
-    "m5853"
+    "m6014",
+    "m6048",
+    "m6010"
    ],
    "image": "https://camotracker.djr.li/Images/DMZ/volatile-explosives.png?v=1",
    "value": 1500
