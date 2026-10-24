@@ -1,0 +1,207 @@
+import SwiftUI
+
+/// Weapons within a catalog category. The weapon list itself is identical in
+/// every mode (it's the shared catalog) — only each row's camo progress
+/// and Mastery pips change, pulled from the active mode.
+struct WeaponListView: View {
+    let mode: AppMode
+    let category: WeaponCategory
+    @EnvironmentObject private var viewModel: TrackerViewModel
+    @State private var width: CGFloat = 0
+
+    /// Shared across every category screen (global, not per-category) so the
+    /// choice sticks as you move between categories — same persisted-filter
+    /// idea as the sibling BO7 Camo Tracker app's `FilterContext`.
+    @AppStorage("mw4_weapon_sort") private var sortRaw = ProgressSort.natural.rawValue
+    @AppStorage("mw4_weapon_filter") private var filterRaw = WeaponFilter.all.rawValue
+    private static let sortOptions: [ProgressSort] = [.natural, .alphabetical, .progressDesc, .progressAsc, .level]
+    /// No level sort in quick tick, where there are no levels.
+    private var sortOptions: [ProgressSort] { viewModel.quickTick ? Self.sortOptions.filter { $0 != .level } : Self.sortOptions }
+
+    private var sort: ProgressSort {
+        let saved = ProgressSort(rawValue: sortRaw) ?? .natural
+        return sortOptions.contains(saved) ? saved : .natural
+    }
+    private var filter: WeaponFilter { WeaponFilter(rawValue: filterRaw) ?? .all }
+    private var sortBinding: Binding<ProgressSort> {
+        Binding(get: { sort }, set: { sortRaw = $0.rawValue })
+    }
+    private var filterBinding: Binding<WeaponFilter> {
+        Binding(get: { filter }, set: { filterRaw = $0.rawValue })
+    }
+
+
+    private var displayedWeapons: [WeaponEntry] {
+        var weapons = category.weapons
+        weapons = weapons.filter { viewModel.matches(filter, mode: mode.rawValue, weaponId: $0.weaponId) }
+        switch sort {
+        case .natural:
+            break
+        case .alphabetical:
+            weapons.sort { $0.name.resolved().localizedCaseInsensitiveCompare($1.name.resolved()) == .orderedAscending }
+        case .progressDesc:
+            weapons.sort { viewModel.camoProgressFraction(weaponId: $0.weaponId, mode: mode.rawValue) > viewModel.camoProgressFraction(weaponId: $1.weaponId, mode: mode.rawValue) }
+        case .progressAsc:
+            weapons.sort { viewModel.camoProgressFraction(weaponId: $0.weaponId, mode: mode.rawValue) < viewModel.camoProgressFraction(weaponId: $1.weaponId, mode: mode.rawValue) }
+        case .level:
+            weapons.sort { levelFraction($0) > levelFraction($1) }
+        }
+        return weapons
+    }
+
+    /// Prestige first, then progress through the current stage, so a
+    /// prestiged weapon at level 3 still sorts above an unprestiged one at 60.
+    private func levelFraction(_ weapon: WeaponEntry) -> Double {
+        Double(viewModel.prestige(for: weapon.weaponId))
+            + Double(viewModel.level(for: weapon.weaponId)) / Double(max(viewModel.maxLevel(for: weapon), 1))
+    }
+
+    var body: some View {
+        ZStack {
+            AppBackground(accent: mode.accent)
+            List {
+                Section {
+                    // No separate leading hero ring here — Gold's own column
+                    // carries the ring instead, since in this per-category
+                    // view "overall progress" and "Gold progress" are the
+                    // same number, unlike the root tab's blended completion
+                    // metric (which really is distinct from any one column).
+                    StatSummaryCard(
+                        stats: CategoryStats.stats(viewModel: viewModel, category: category, mode: mode)
+                    )
+                }
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+
+                HStack(spacing: 8) {
+                    FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: filterBinding)
+                    FilterSortMenu(title: "mw4.ui.sort".localized(), options: sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
+                }
+                .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                .listRowBackground(Color.clear)
+
+                if displayedWeapons.isEmpty {
+                    FilterEmptyRow()
+                        .listRowInsets(EdgeInsets())
+                        .listRowBackground(Color.clear)
+                } else {
+                    CardGrid(items: displayedWeapons, columns: WideLayout.columns(for: width), route: { .weapon($0.weaponId) }) { weapon in
+                        WeaponRow(mode: mode, weapon: weapon, showsCamoCount: false)
+                    }
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .listStyle(.plain)
+        }
+        .readingWidth($width)
+        .navigationTitle(category.name.resolved())
+    }
+}
+
+/// Styled after the in-game loadout slot card: a small tracked category
+/// eyebrow paired with a tier-pip readout on one line, the weapon itself on
+/// the next. A weapon that's gone Gold gets the same "equipped" gold wash
+/// `borderedCard` gives any accented card, echoing that menu's highlighted
+/// selected slot.
+struct WeaponRow: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    /// Off inside `WeaponListView`, where every row is already scoped to one
+    /// category by the screen's own nav title and the header card already
+    /// covers camo counts for the whole category. Stays on for
+    /// `CategoryListView`'s cross-category contexts (search results, the
+    /// pinned weapon), where this weapon's own "x/y camos done" is more
+    /// useful at a glance than naming which category it's in.
+    var showsCamoCount = true
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
+    private var isGold: Bool { viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue) }
+    /// The best Completionist camo this weapon has in this mode, if any.
+    private var highest: Int? { viewModel.highestCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId) }
+
+    private func color(ofCompletionist index: Int) -> Color {
+        let completionist = mode.completionist
+        return index < completionist.steps.count ? completionist.steps[index].color : completionist.final.color
+    }
+
+    @AppStorage(CardOutline.key) private var outline = CardOutline.prestige.rawValue
+
+    /// The border's colors: the best Prestige or Completionist camo earned,
+    /// whichever Customise puts first. Nothing earned keeps the plain border.
+    private var borderGradient: [Color]? {
+        let prestige: [Color]? = viewModel.prestigeCamos.indices
+            .last(where: { viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0) })
+            .map { [Color].prestige(viewModel.prestigeCamos[$0], index: $0) }
+        let completionist: [Color]? = highest.map { highest in
+            let track = mode.completionist
+            return highest < track.steps.count ? track.steps[highest].gradient : track.final.gradient
+        }
+        switch CardOutline(rawValue: outline) ?? .prestige {
+        case .prestige: return prestige ?? completionist
+        case .completionist: return completionist ?? prestige
+        case .off: return nil
+        }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            // No longer its own row: with `showsCamoCount` off (every
+            // `WeaponListView` row), a whole top row here was just empty
+            // space to the left of the pips. Sitting right after the name
+            // uses that space instead of wasting it.
+            if showsCamoCount {
+                let counts = viewModel.camoCounts(weaponId: weapon.weaponId, mode: mode.rawValue)
+                Text("\(counts.done)/\(counts.total) \("mw4.ui.section.camos".localized())")
+                    .font(.system(size: 11, weight: .bold))
+                    .textCase(.uppercase)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+
+            HStack(spacing: 12) {
+                WeaponThumbnail(urlString: weapon.imageURL, size: 56)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(weapon.name.resolved())
+                        .font(.hitmarker(15))
+                        .foregroundStyle(Color.appInk)
+                        .lineLimit(1)
+                    AcquiredByLabel(weapon: weapon, font: .system(size: 10.5), color: .appInkMuted)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+                Spacer(minLength: 8)
+                // Pips stay right-aligned above the level, out of the name's
+                // way — sharing a line with the name pushed long weapon
+                // names off the edge instead of just truncating gracefully.
+                VStack(alignment: .trailing, spacing: 4) {
+                    if !camos.isEmpty {
+                        CamoPipRow(
+                            camos: camos,
+                            isComplete: { viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) },
+                            filledColor: mode.accent,
+                            // One diamond per Completionist camo: Gold,
+                            // Platinum, Harmonic Break, and the final camo
+                            // when the track has one.
+                            masteryTiers: mode.completionistCamos.indices.map { index in
+                                .init(achieved: (highest ?? -1) >= index, color: color(ofCompletionist: index))
+                            }
+                        )
+                    }
+                    // Weapon level is global — the same number shows up under every mode tab.
+                    if !viewModel.quickTick {
+                        let prestige = viewModel.prestige(for: weapon.weaponId)
+                        Text(!viewModel.countsUnlocks(weaponId: weapon.weaponId)
+                             ? "\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
+                             : String(format: "mw4.ui.unlocks_short".localized(),
+                                      TrackerViewModel.unlocks(forLevel: viewModel.level(for: weapon.weaponId)),
+                                      TrackerViewModel.unlocks(forLevel: viewModel.maxLevel(for: weapon))))
+                            .font(.system(size: 11, design: .monospaced))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                }
+            }
+        }
+        .padding(12)
+        .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil), borderGradient: borderGradient)
+    }
+}

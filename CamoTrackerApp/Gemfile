@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+# CI-only. Fastlane drives the archive + TestFlight upload from
+# .github/workflows/testflight.yml; nothing in the app depends on Ruby.
+gem "fastlane", "~> 2.226"
+gem "xcodeproj"

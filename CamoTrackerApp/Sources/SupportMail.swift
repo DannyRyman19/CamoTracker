@@ -1,0 +1,276 @@
+import Foundation
+import SwiftUI
+import UIKit
+
+/// Builds mailto: links for data reports. There is no backend to wire up, so
+/// email is the fastest way to get "this weapon's max level is wrong" style
+/// reports in without building a whole feedback pipeline.
+///
+/// The point of pre-filling is that camo data is entered by hand from a game
+/// that keeps changing: the weapon id, mode and current stored values are
+/// exactly what is needed to fix a row without a round trip asking which
+/// weapon, which mode, and what it currently says.
+enum SupportMail {
+    static let address = "support@camotracker.djr.li"
+
+    /// What a weapon's unlock should actually be. The app stores it as a
+    /// sentence ("Unlock at level 25.") and derives the number, so a report
+    /// needs to say which *kind* of unlock it is, not just a number.
+    enum UnlockRef {
+        case playerLevel(Int?)
+        case challenge
+        case byDefault
+
+        var describedForMail: String {
+            switch self {
+            case .playerLevel(let level):
+                return level.map { "Player level \($0)" } ?? "A player level (number not given)"
+            case .challenge:  return "A challenge (described above)"
+            case .byDefault:  return "Unlocked by default"
+            }
+        }
+    }
+
+    /// A Mastery tier, which is not a `ChallengeItem` -- those come from the
+    /// mode JSON, while Mastery camos are defined in Theme.swift -- so it needs
+    /// its own way into a report.
+    struct MasteryRef {
+        let name: String
+        let tier: Int
+        let requirement: Int?
+    }
+
+    /// The kinds of data problem worth a one-tap report. Raw values are the
+    /// subject line suffix, so they stay readable in an inbox.
+    enum Kind: String, CaseIterable, Identifiable {
+        case maxLevel = "Wrong max level"
+        case unlock = "Wrong unlock requirement"
+        case challenge = "Wrong challenge"
+        case missingImage = "Missing or wrong image"
+        case name = "Wrong name"
+        case other = "Something else"
+
+        var id: String { rawValue }
+
+        var symbol: String {
+            switch self {
+            case .maxLevel:     return "chevron.up.square"
+            case .unlock:       return "lock.open"
+            case .challenge:    return "checklist"
+            case .missingImage: return "photo"
+            case .name:         return "textformat"
+            case .other:        return "ellipsis.circle"
+            }
+        }
+
+        var labelKey: String {
+            switch self {
+            case .maxLevel:     return "mw4.ui.report.max_level"
+            case .unlock:       return "mw4.ui.report.unlock"
+            case .challenge:    return "mw4.ui.report.challenge"
+            case .missingImage: return "mw4.ui.report.image"
+            case .name:         return "mw4.ui.report.name"
+            case .other:        return "mw4.ui.report.other"
+            }
+        }
+    }
+
+    /// General feedback, no item context.
+    static func url(subject: String) -> URL? {
+        url(subject: subject, body: diagnosticsFooter())
+    }
+
+    /// Pre-filled with everything needed to fix the row: which weapon, which
+    /// mode, and what the app currently stores. Deliberately no URLs or host
+    /// names, just the image filename.
+    static func url(kind: Kind, weapon: WeaponEntry, mode: AppMode,
+                    category: String? = nil, camo: ChallengeItem? = nil,
+                    mastery: MasteryRef? = nil, unlock: UnlockRef? = nil,
+                    correctedMaxLevel: Int? = nil) -> URL? {
+        var lines = [
+            "Issue type: \(kind.rawValue)",
+            "Weapon: \(weapon.name.resolved())",
+            "Weapon ID: \(weapon.weaponId)",
+            "Mode: \(mode.rawValue)",
+        ]
+        if let category { lines.append("Category: \(category)") }
+        lines.append("Max level in app: \(weapon.maxLevel)")
+        lines.append("Unlock in app: " + (weapon.unlockLevel.map { "Player level \($0)" } ?? "Unlocked by default"))
+        // Filename only. The full URL would put the CDN's host and directory
+        // layout in every report, and the name alone is enough to find the asset.
+        let imageName = weapon.imageURL.flatMap { URL(string: $0)?.lastPathComponent } ?? "none"
+        lines.append("Image: \(imageName)")
+        // The whole point of a max level report is the number it should be, so
+        // ask for it up front rather than trading emails to find out.
+        if let correctedMaxLevel {
+            lines.append("Should be: \(correctedMaxLevel)")
+        }
+
+        if let camo {
+            lines.append("Camo: \(camo.name.resolved())")
+            lines.append("Camo ID: \(camo.itemId)")
+            if let requirement = camo.requirement {
+                lines.append("Requirement in app: \(requirement.amount) \(requirement.unit)")
+            }
+            if let unlockLevel = camo.unlockLevel {
+                lines.append("Unlocks in app: Weapon level \(unlockLevel)")
+            }
+        }
+        if let unlock {
+            lines.append("Should be: \(unlock.describedForMail)")
+        }
+        if let mastery {
+            lines.append("Mastery camo: \(mastery.name)")
+            lines.append("Mastery tier: \(mastery.tier)")
+            if let requirement = mastery.requirement {
+                lines.append("Requirement in app: \(requirement)")
+            }
+        }
+        return url(subject: "Camo Tracker: \(kind.rawValue)",
+                   body: lines.joined(separator: "\n") + "\n\n" + diagnosticsFooter())
+    }
+
+    private static func diagnosticsFooter() -> String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "?"
+        return "---\nApp \(version) (\(build)) · iOS \(UIDevice.current.systemVersion) · \(UIDevice.current.model)"
+    }
+
+    private static func url(subject: String, body: String) -> URL? {
+        let fullBody = "Describe the issue:\n\n\n" + body
+        // & = + are legal in a query but would be read as mailto separators,
+        // so they have to be encoded even though urlQueryAllowed permits them.
+        var allowed = CharacterSet.urlQueryAllowed
+        allowed.remove(charactersIn: "&=+")
+        guard let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: allowed),
+              let encodedBody = fullBody.addingPercentEncoding(withAllowedCharacters: allowed) else { return nil }
+        return URL(string: "mailto:\(address)?subject=\(encodedSubject)&body=\(encodedBody)")
+    }
+}
+
+/// The "Report an issue" control on a weapon's page. A menu rather than a
+/// single mailto so the subject line arrives already sorted by kind.
+///
+/// "Wrong challenge" opens a submenu of the weapon's camos, because a report
+/// saying a challenge is wrong is not actionable without knowing which one,
+/// and picking it here beats asking for it in a reply.
+///
+/// `compact` renders just the glyph for a toolbar; the full-width card form is
+/// kept for anywhere it sits inline in a list.
+struct ReportIssueMenu: View {
+    @EnvironmentObject private var viewModel: TrackerViewModel
+    let weapon: WeaponEntry
+    let mode: AppMode
+    var category: String? = nil
+    /// This mode's camos for this weapon. Empty is fine; the challenge entry
+    /// then behaves like every other kind.
+    var camos: [ChallengeItem] = []
+    var compact = false
+    /// Called instead of sending when "Wrong max level" is chosen, so the host
+    /// can ask for the correct number first. A `.alert` attached inside a
+    /// `ToolbarItem` is unreliable, so the prompt lives on the view body.
+    var onRequestMaxLevel: (() -> Void)? = nil
+    /// Same reason as `onRequestMaxLevel`: the player-level branch needs a
+    /// number, and the prompt cannot live inside the toolbar item.
+    var onRequestUnlockLevel: (() -> Void)? = nil
+
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        Menu {
+            ForEach(SupportMail.Kind.allCases) { kind in
+                if kind == .unlock {
+                    Menu {
+                        Button("mw4.ui.report.unlock.level".localized()) {
+                            if let onRequestUnlockLevel { onRequestUnlockLevel() }
+                            else { send(kind, unlock: .playerLevel(nil)) }
+                        }
+                        Button("mw4.ui.report.unlock.challenge".localized()) {
+                            send(kind, unlock: .challenge)
+                        }
+                        Button("mw4.ui.report.unlock.default".localized()) {
+                            send(kind, unlock: .byDefault)
+                        }
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                    }
+                } else if kind == .challenge, !camos.isEmpty || !masteryRefs.isEmpty {
+                    Menu {
+                        ForEach(camos) { camo in
+                            Button(camo.name.resolved()) { send(kind, camo: camo) }
+                        }
+                        if !camos.isEmpty && !masteryRefs.isEmpty { Divider() }
+                        ForEach(masteryRefs, id: \.tier) { mastery in
+                            Button(mastery.name) { send(kind, mastery: mastery) }
+                        }
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                    }
+                } else {
+                    Button {
+                        if kind == .maxLevel, let onRequestMaxLevel {
+                            onRequestMaxLevel()
+                        } else {
+                            send(kind)
+                        }
+                    } label: {
+                        Label(kind.labelKey.localized(), systemImage: kind.symbol)
+                    }
+                }
+            }
+        } label: {
+            if compact {
+                Image(systemName: "exclamationmark.bubble")
+                    .accessibilityLabel("mw4.ui.report.title".localized())
+            } else {
+                HStack(spacing: 8) {
+                    Image(systemName: "exclamationmark.bubble")
+                        .font(.system(size: 12, weight: .semibold))
+                    Text("mw4.ui.report.title".localized())
+                        .font(.system(size: 12, weight: .semibold))
+                    Spacer()
+                }
+                .foregroundStyle(Color.appInkMuted)
+                .padding(12)
+                .contentShape(Rectangle())
+                .borderedCard()
+            }
+        }
+    }
+
+    /// This weapon's Completionist camos then the mode's Mastery camos, as
+    /// report targets. Only Gold, Platinum and Harmonic Break carry a
+    /// challenge; the final camo and Mastery are earned by counts.
+    private var masteryRefs: [SupportMail.MasteryRef] {
+        let completionist = mode.completionist
+        let tiers = mode.masteryCamos
+        let steps = completionist.steps.enumerated().map { index, camo in
+            SupportMail.MasteryRef(name: camo.name, tier: index + 1,
+                                   requirement: viewModel.completionistRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, step: index)?.amount)
+        }
+        let final: [SupportMail.MasteryRef] = mode.hasFinalCamo ? [.init(name: completionist.final.name, tier: 4, requirement: nil)] : []
+        func masteryAmount(_ tier: Int) -> Int? {
+            switch viewModel.masteryKind(mode: mode.rawValue, tier: tier) {
+            case .mode: return viewModel.modeMasteryRequirement(mode: mode.rawValue, tier: tier)?.amount
+            case .challenge: return viewModel.masteryRequirement(mode: mode.rawValue, weaponId: weapon.weaponId, tier: tier)?.amount
+            case .count: return nil
+            }
+        }
+        return steps + final + [
+            .init(name: tiers.tier1.name, tier: 5, requirement: masteryAmount(1)),
+            .init(name: tiers.tier2.name, tier: 6, requirement: masteryAmount(2)),
+            .init(name: tiers.tier3.name, tier: 7, requirement: masteryAmount(3)),
+        ]
+    }
+
+    private func send(_ kind: SupportMail.Kind, camo: ChallengeItem? = nil,
+                      mastery: SupportMail.MasteryRef? = nil,
+                      unlock: SupportMail.UnlockRef? = nil,
+                      correctedMaxLevel: Int? = nil) {
+        if let url = SupportMail.url(kind: kind, weapon: weapon, mode: mode,
+                                     category: category, camo: camo, mastery: mastery,
+                                     unlock: unlock, correctedMaxLevel: correctedMaxLevel) {
+            openURL(url)
+        }
+    }
+}
