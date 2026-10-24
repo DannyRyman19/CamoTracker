@@ -395,6 +395,9 @@
 
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Juego";
+"ct.onboarding.welcome.body" = "Sigue tus camuflajes de %1$@ en %2$@. Cada modo tiene su propia pestaña.";
+"ct.onboarding.tracking.full.body" = "Guarda los niveles de arma y cuenta cada baja. Los camuflajes que se abren con un nivel de arma se desbloquean al subir de nivel.";
+"ct.ui.mode" = "Modo";
 "ct.ui.completionist.auto" = "Se consigue automáticamente.";
 "ct.ui.completionist.locked_classes" = "Consigue %1$@ en %2$d clases de arma primero (%3$d/%2$d).";
 "mw4.mode.campaign" = "Campaña";

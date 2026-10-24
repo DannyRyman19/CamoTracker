@@ -17,6 +17,9 @@ struct ContentView: View {
     @State private var splashFinishing = false
     @State private var splashDone = false
 
+    /// Screenshot harness: `SS_SPLASH` holds the splash on screen
+    static let holdSplash = ProcessInfo.processInfo.environment["SS_SPLASH"] != nil
+
     /// Screenshot harness: `SS_SCREEN` picks a tab and suppresses the splash
     /// and onboarding so `Tools/screenshots/make.sh` can capture one screen per
     /// launch. DEBUG-only; a normal launch never reads any of this.
@@ -261,7 +264,9 @@ struct ContentView: View {
             if !hasOnboarded { showOnboarding = true }
         }
         .overlay {
-            if !splashDone, Self.screenshotScreen == nil {
+            if Self.holdSplash {
+                SplashView(isFinishing: false)
+            } else if !splashDone, Self.screenshotScreen == nil {
                 SplashView(isFinishing: splashFinishing)
                     .transition(.identity)
                     .task {

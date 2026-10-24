@@ -192,17 +192,23 @@ private struct OnboardingScaffold<Content: View>: View {
 private struct WelcomePage: View {
     let accent: Color
 
+    /// MW4 keeps its own line; another game lists its modes
+    private var welcomeBody: String {
+        let game = GameRegistry.current
+        guard game.id != "mw4" else { return "mw4.onboarding.welcome.body".localized() }
+        let modes = ListFormatter.localizedString(byJoining: game.modes.compactMap { AppMode(rawValue: $0.id)?.displayName })
+        return String(format: "ct.onboarding.welcome.body".localized(), game.name.resolved(), modes)
+    }
+
     var body: some View {
         OnboardingScaffold("mw4.onboarding.welcome.title".localized(), accent: accent) {
             VStack(spacing: 20) {
                 // The real lockup rather than a stand-in SF Symbol — this is
                 // the same art the splash and app icon use.
-                Image("SplashForeground")
-                    .resizable()
-                    .scaledToFit()
+                SplashMark()
                     .frame(maxWidth: 240)
 
-                Text("mw4.onboarding.welcome.body".localized())
+                Text(welcomeBody)
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
@@ -361,7 +367,7 @@ private struct TrackingStylePage: View {
             VStack(alignment: .leading, spacing: 14) {
                 option(quick: false, symbol: "chart.bar.fill",
                        title: "mw4.onboarding.tracking.full.title".localized(),
-                       body: "mw4.onboarding.tracking.full.body".localized())
+                       body: (GameRegistry.current.sharedCamos == true ? "mw4.onboarding.tracking.full.body" : "ct.onboarding.tracking.full.body").localized())
                 option(quick: true, symbol: "checkmark.circle.fill",
                        title: "mw4.ui.quick_tick.title".localized(),
                        body: "mw4.onboarding.tracking.quick.body".localized())
@@ -493,7 +499,7 @@ private struct NotificationsPage: View {
                         .scaledToFill()
                         .frame(width: 40, height: 40)
                         .overlay {
-                            Image("SplashForeground").resizable().scaledToFit().padding(4)
+                            SplashMark().padding(4)
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 9))
 

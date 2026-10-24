@@ -9,9 +9,9 @@ MW's camo track, per weapon: 10 camo categories of 10 camos, each category
 one challenge ("Get kills", 800 in all) earning its camos along the way, on
 a shared count (`counter`); the first camo of each is free. Then, all
 automatic: Gold once every camo is done, Platinum once the class's launch
-weapons have Gold, Damascus once every class has Platinum. Obsidian (one
-more challenge per weapon after Damascus) has no place on the track yet
-and is left out. Launch weapons (IsDefault) get the lowest ids.
+weapons have Gold, Damascus once every class has Platinum. Each category
+is its own section; Obsidian (one more challenge per weapon) sits after them
+as an extra that doesn't hold up Gold. Launch weapons (IsDefault) get the lowest ids.
 """
 import json
 import re
@@ -69,6 +69,12 @@ def main(src, out_dir):
             camos = []
             for group in w["Camos"]:
                 if group["CategoryName"] == "Obsidian":
+                    # Its own challenge after the grind, not part of Gold
+                    sub = group["CategoryCamos"][0]
+                    amount = int(group["AmountNeeded"])
+                    camos.append({"itemId": len(camos), "name": {"en": "Obsidian"}, "tier": None, "unlockLevel": None,
+                                  "requirement": {"amount": amount, "unit": "times", "description": {"en": group["CategoryDescription"].strip().rstrip(".") + "."}},
+                                  "children": [], "imageURL": sub["CamoURL"], "section": {"en": "Obsidian"}, "extra": True})
                     continue
                 counter = len(camos) + 1  # the first camo is free, so the count lives on the second
                 desc = group["CategoryDescription"]
@@ -77,7 +83,7 @@ def main(src, out_dir):
                     camo = {"itemId": len(camos), "name": {"en": sub["CamoName"].strip()}, "tier": len(camos) + 1, "unlockLevel": None,
                             "requirement": {"amount": amount, "unit": unit_of(desc),
                                             "description": {"en": requirement_text(desc, amount) if amount else "Free with the category."}},
-                            "children": [], "imageURL": sub["CamoURL"]}
+                            "children": [], "imageURL": sub["CamoURL"], "section": {"en": group["CategoryName"].strip()}}
                     if amount:
                         camo["counter"] = counter
                     camos.append(camo)
@@ -94,7 +100,7 @@ def main(src, out_dir):
              {"name": {"en": "Damascus"}, "imageURL": IMAGES.format("damascus"), "unlock": "mode", "classes": list(range(len(categories))), "auto": True}]
     mode_file = {"version": VERSION, "mode": "multiplayer", "weaponCamos": weapon_camos, "objectives": [],
                  "completionist": {"steps": steps, "final": {"enabled": False}},
-                 "_note": "Converted from the MW Camo Tracker data (ModernWarfareCamos) by Tools/games/convert_mw2019.py. Obsidian left out."}
+                 "_note": "Converted from the MW Camo Tracker data (ModernWarfareCamos) by Tools/games/convert_mw2019.py."}
     (out / "mw19_multiplayer.json").write_text(json.dumps(mode_file, ensure_ascii=False, indent=2))
     print(f"mw19: {len(weapon_camos)} weapons, {len(weapon_camos[0]['camos'])} camos each, {launch} launch {launch_per_class}")
 

@@ -363,9 +363,10 @@ extension Color {
     static let camoRippleTide         = Color(red: 0.765, green: 0.584, blue: 0.165) // #C3952A — amber lava marble
     static let camoHelio              = Color(red: 0.769, green: 0.141, blue: 0.216) // #C42437 — crimson-pink translucent
 
-    static let appBackground = Color(red: 0.043, green: 0.059, blue: 0.051) // #0B0F0D
-    static let appSurface    = Color(red: 0.082, green: 0.102, blue: 0.090) // #151A17
-    static let appSurface2   = Color(red: 0.114, green: 0.141, blue: 0.125) // #1D2420
+    /// The current game's page and card colours (`Palette`).
+    static var appBackground: Color { Palette.background }
+    static var appSurface: Color { Palette.surface }
+    static var appSurface2: Color { Palette.surface2 }
     static let appInk        = Color(red: 0.929, green: 0.937, blue: 0.918) // #EDEFEA
     static let appInkMuted   = Color(red: 0.545, green: 0.584, blue: 0.553) // #8B958D
 }
@@ -374,8 +375,37 @@ extension Font {
     /// Hitmarker Text (variable weight) — titles and labels only, never body copy.
     /// Bold, per design-system v0.1: Hitmarker is the identity face and always
     /// reads at 700 there, with Regular reserved for secondary display text.
+    /// The current game's title face stands in: Hitmarker for MW4, Teko for
+    /// Black Ops and so on (`GameTheme.font`), scaled to read the same size.
     static func hitmarker(_ size: CGFloat) -> Font {
-        .custom("Hitmarker Text VF", size: size).weight(.bold)
+        let font = Font.custom(Palette.font, size: size * Palette.fontScale)
+        return Palette.fontIsRegular ? font : font.weight(Palette.fontWeight)
+    }
+}
+
+/// The current game's look, worked out once when the game changes so the
+/// colour lookups stay as cheap as the constants they replaced. MW4's values
+/// are the defaults.
+enum Palette {
+    nonisolated(unsafe) static var background = Color(red: 0.043, green: 0.059, blue: 0.051) // #0B0F0D
+    nonisolated(unsafe) static var surface = Color(red: 0.082, green: 0.102, blue: 0.090) // #151A17
+    nonisolated(unsafe) static var surface2 = Color(red: 0.114, green: 0.141, blue: 0.125) // #1D2420
+    nonisolated(unsafe) static var font = "Hitmarker Text VF"
+    nonisolated(unsafe) static var fontScale: CGFloat = 1
+    nonisolated(unsafe) static var fontWeight: Font.Weight = .bold
+    nonisolated(unsafe) static var fontIsRegular = false
+    /// The splash nebula's tint; nil keeps the art's own gold
+    nonisolated(unsafe) static var tint: Color?
+
+    static func apply(_ theme: GameTheme?) {
+        background = theme?.background.flatMap(Color.init(hex:)) ?? Color(red: 0.043, green: 0.059, blue: 0.051)
+        surface = theme?.surface.flatMap(Color.init(hex:)) ?? Color(red: 0.082, green: 0.102, blue: 0.090)
+        surface2 = theme?.surface2.flatMap(Color.init(hex:)) ?? Color(red: 0.114, green: 0.141, blue: 0.125)
+        font = theme?.font ?? "Hitmarker Text VF"
+        fontScale = CGFloat(theme?.fontScale ?? 1)
+        fontIsRegular = theme?.fontWeight == "regular"
+        fontWeight = theme?.fontWeight == "semibold" ? .semibold : .bold
+        tint = theme?.tint.flatMap(Color.init(hex:))
     }
 }
 

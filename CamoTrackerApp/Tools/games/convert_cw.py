@@ -11,8 +11,9 @@ its camos along the way and opens at a weapon level; the camos of a
 category share one count (`counter`). Then, all automatic: Gold (Golden
 Viper in Zombies) once every camo is done, Diamond (Plague Diamond) once 2
 weapons in the class have Gold, and Dark Matter (Dark Aether) once every
-main class has Diamond (Launchers and Melee don't count). The Sharpshooter
-badge is not a camo and is left out; the old site hosts no camo pictures.
+main class has Diamond (Launchers and Melee don't count). Each category
+is its own section, and the Sharpshooter badge sits after them as an extra
+that doesn't hold up Gold. The old site hosts no camo pictures.
 """
 import json
 import re
@@ -101,7 +102,15 @@ def main(src, out_dir):
                         camos.append({"itemId": len(camos), "name": {"en": sub["CamoName"].strip()}, "tier": len(camos) + 1,
                                       "unlockLevel": int(group["CategoryUnlockLevel"]),
                                       "requirement": {"amount": amount, "unit": unit_of(desc), "description": {"en": text(desc, amount, sub)}},
-                                      "children": [], "imageURL": None, "counter": counter})
+                                      "children": [], "imageURL": None, "counter": counter,
+                                      "section": {"en": group["CategoryName"].strip()}})
+                # The Sharpshooter badge: headshots (critical kills in Zombies), not a camo
+                need = int(w.get("SharpshooterRequired") or 0)
+                if need:
+                    what = "critical kills" if mode == "zombies" else "headshots"
+                    camos.append({"itemId": len(camos), "name": {"en": "Sharpshooter"}, "tier": None, "unlockLevel": None,
+                                  "requirement": {"amount": need, "unit": "headshots", "description": {"en": f"Get {need} {what}."}},
+                                  "children": [], "imageURL": None, "section": {"en": "Badges"}, "extra": True})
                 weapon_camos.append({"weaponId": ids[(ci, wi)], "camos": camos})
         weapon_camos.sort(key=lambda e: e["weaponId"])
         (gold, gc), (diamond, dc), (last, lc) = STEPS[mode]

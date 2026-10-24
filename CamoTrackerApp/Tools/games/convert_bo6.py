@@ -12,7 +12,7 @@ class has the first on as many weapons as it had at launch (7 Assault
 Rifles, 6 SMGs...), the third once 33 weapons have the second, and the
 fourth (Dark Matter in Multiplayer) once 33 weapons have the third. The
 first three map onto Completionist steps, the fourth onto the final camo.
-The per-weapon badges are left out. Text comes in English, German,
+The elimination badges (100, 250, 500 on one count) follow as extras. Text comes in English, German,
 Spanish, French and Dutch; "{0}" is the amount and "{1}" the weapon.
 """
 import json
@@ -23,6 +23,7 @@ from pathlib import Path
 MODES = [("Multiplayer", "multiplayer"), ("Zombies", "zombies"), ("Warzone", "warzone")]
 LANGS = ["de", "es", "fr", "nl"]
 VERSION = "1.0.0"
+BADGES = {"en": "Badges", "de": "Abzeichen", "es": "Insignias", "fr": "Insignes", "nl": "Badges", "it": "Distintivi", "pt": "Insígnias"}
 CATEGORY_NAMES = {"Launchers/Specials": "Launchers & Specials"}
 # The old files spell a few weapons differently per mode; one name each
 WEAPON_NAMES = {"cr-56 amax": "CR-56 AMAX", "dresden 9mm": "Dresden 9mm", "ps-21": "PU-21", "pu-21": "PU-21",
@@ -144,6 +145,18 @@ def main(src, out_dir):
                                       "tier": len(camos) + 1, "unlockLevel": None,
                                       "requirement": {"amount": amount, "unit": unit_of(desc["en"]), "description": desc},
                                       "children": [], "imageURL": c["CamoURL"], "group": group})
+                # The elimination badges: one count, earned at 100, 250 and 500
+                badges = [c for c in w["MasteryCamos"] if c["CamoName"].startswith("Badge") or c["CamoName"] == "Mastery"]
+                counter, total = len(camos), 0
+                for c in badges:
+                    total += int(c["AmountRequired"] or 0)
+                    path = [ci, "Weapons", wi, "MasteryCamos", w["MasteryCamos"].index(c)]
+                    desc = texts(files, path, "CategoryRequirement", total, name)
+                    camos.append({"itemId": len(camos), "name": texts(files, path, "CamoName") or {"en": c["CamoName"]},
+                                  "tier": None, "unlockLevel": None,
+                                  "requirement": {"amount": total, "unit": "eliminations", "description": desc},
+                                  "children": [], "imageURL": c["CamoURL"] or None, "counter": counter,
+                                  "section": BADGES, "extra": True})
                 weapon_camos.append({"weaponId": wid, "camos": camos})
                 mastery = [c for c in w["MasteryCamos"] if not c["CamoName"].startswith("Badge") and c["CamoName"] != "Mastery"]
                 for i, c in enumerate(mastery[:3]):

@@ -22,7 +22,8 @@
       {
         "id": "dmz"
       }
-    ]
+    ],
+    "sharedCamos": true
   },
   {
     "id": "bo7",
@@ -34,19 +35,35 @@
     "seedPrefix": "bo7_",
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#FF5A1F"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#8FD14F"
       },
       {
-        "id": "warzone"
+        "id": "warzone",
+        "accent": "#3FA9F5"
       },
       {
-        "id": "campaign"
+        "id": "campaign",
+        "accent": "#C9A24B"
       }
     ],
-    "hasMastery": false
+    "hasMastery": false,
+    "theme": {
+      "background": "#0F0E10",
+      "surface": "#1A181C",
+      "surface2": "#252228",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF6A2A",
+      "mark": "BO7",
+      "markWhite": 2,
+      "markColor": "#FF5A1F"
+    }
   },
   {
     "id": "bo6",
@@ -59,15 +76,30 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#FF6B1A"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#8CC63F"
       },
       {
-        "id": "warzone"
+        "id": "warzone",
+        "accent": "#3FA9F5"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#110D0B",
+      "surface": "#1D1714",
+      "surface2": "#28201B",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF8A2A",
+      "mark": "BO6",
+      "markWhite": 2,
+      "markColor": "#FF6B1A"
+    }
   },
   {
     "id": "mw3",
@@ -80,12 +112,25 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#E3262E"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#9BCB2E"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#120909",
+      "surface": "#1E1212",
+      "surface2": "#2A1919",
+      "font": "Rajdhani",
+      "fontScale": 1.12,
+      "tint": "#E3262E",
+      "mark": "MWIII",
+      "markWhite": 2,
+      "markColor": "#E3262E"
+    }
   },
   {
     "id": "mw2",
@@ -98,12 +143,25 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#6CBF43"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#C9B037"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#0B100B",
+      "surface": "#151C15",
+      "surface2": "#1E271E",
+      "font": "Rajdhani",
+      "fontScale": 1.12,
+      "tint": "#5FA83A",
+      "mark": "MWII",
+      "markWhite": 2,
+      "markColor": "#6CBF43"
+    }
   },
   {
     "id": "cw",
@@ -116,12 +174,25 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#8C6CFF"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#FF7A1A"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#0D0B16",
+      "surface": "#171425",
+      "surface2": "#211C33",
+      "font": "Chakra Petch",
+      "fontScale": 1.0,
+      "tint": "#6A4CFF",
+      "mark": "CW",
+      "markWhite": 0,
+      "markColor": "#8C6CFF"
+    }
   },
   {
     "id": "vg",
@@ -134,12 +205,26 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#D4AF55"
       },
       {
-        "id": "zombies"
+        "id": "zombies",
+        "accent": "#B3262B"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#12100B",
+      "surface": "#1E1A12",
+      "surface2": "#29241A",
+      "font": "Bebas Neue",
+      "fontScale": 1.25,
+      "fontWeight": "regular",
+      "tint": "#C9A24B",
+      "mark": "VG",
+      "markWhite": 0,
+      "markColor": "#D4AF55"
+    }
   },
   {
     "id": "mw19",
@@ -152,9 +237,21 @@
     "hasMastery": false,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#FF3D7F"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#0A1018",
+      "surface": "#131B26",
+      "surface2": "#1B2634",
+      "font": "Rajdhani",
+      "fontScale": 1.12,
+      "tint": "#1EA0F0",
+      "mark": "MW",
+      "markWhite": 0,
+      "markColor": "#FF3D7F"
+    }
   },
   {
     "id": "bo2",
@@ -168,8 +265,21 @@
     "completionistSteps": 2,
     "modes": [
       {
-        "id": "multiplayer"
+        "id": "multiplayer",
+        "accent": "#FF6A13"
       }
-    ]
+    ],
+    "theme": {
+      "background": "#120C08",
+      "surface": "#1E1610",
+      "surface2": "#2A1F17",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF7A1A",
+      "mark": "II",
+      "markWhite": 0,
+      "markColor": "#FF6A13"
+    }
   }
 ]

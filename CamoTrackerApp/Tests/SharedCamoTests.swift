@@ -308,3 +308,50 @@ struct BO2GameTests {
         #expect(!(model.modes["multiplayer"]?.objectives.isEmpty ?? true))
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct PerGameRulesTests {
+    private func model(_ id: String) throws -> TrackerViewModel {
+        let name = "PerGameRulesTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game(id))
+        GameRegistry.current = game
+        return TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+    }
+
+    @Test func bo6ModesAreTheirOwnGrind() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model("bo6")
+        let camo = try #require(model.camos(weaponId: 0, mode: "multiplayer").first)
+        model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: camo)
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camo))
+        let zombies = try #require(model.camos(weaponId: 0, mode: "zombies").first)
+        #expect(!model.isCamoComplete(mode: "zombies", weaponId: 0, camo: zombies))
+    }
+
+    @Test func badgesShareACountAndDontHoldUpGold() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model("bo6")
+        let badges = model.allCamos(weaponId: 0, mode: "multiplayer").filter { $0.extra == true }
+        #expect(badges.map(\.requirement?.amount) == [100, 250, 500])
+        #expect(badges.allSatisfy { $0.section?.resolved() == "Badges" })
+        model.setCamoAmount(mode: "multiplayer", weaponId: 0, camo: badges[2], amount: 300)
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: badges[1]))
+        #expect(!model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: badges[2]))
+        for camo in model.camos(weaponId: 0, mode: "multiplayer") {
+            model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: camo)
+        }
+        #expect(model.allCamosComplete(weaponId: 0, mode: "multiplayer"))
+    }
+
+    @Test func mw4StillSharesCamosAcrossModes() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let model = try model("mw4")
+        let camo = try #require(model.camos(weaponId: 0, mode: "multiplayer").first { $0.requirement != nil })
+        model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: camo)
+        let other = try #require(model.camos(weaponId: 0, mode: "dmz").first { $0.itemId == camo.itemId })
+        #expect(model.isCamoComplete(mode: "dmz", weaponId: 0, camo: other))
+    }
+}

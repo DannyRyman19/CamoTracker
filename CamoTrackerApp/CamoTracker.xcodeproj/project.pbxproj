@@ -91,6 +91,11 @@
 		DD8DA57611E4F76BB696DC1B /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BE3652110866D27D44F53 /* WidgetSnapshot.swift */; };
 		DEB65782F8907846529AFAB8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007D568D6EF400D6F8D97AB /* DataService.swift */; };
 		E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */; };
+		AA029CC5025D88694F8A5C15 /* FontLicences.txt in Resources */ = {isa = PBXBuildFile; fileRef = 025D88694F8A5C159C6672D4 /* FontLicences.txt */; };
+		408C8DA881CD758F52CCE85A /* Teko-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81CD758F52CCE85ADD4542D0 /* Teko-VF.ttf */; };
+		874EC4343E9D92AC80CB69D8 /* Rajdhani-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E9D92AC80CB69D8924144FB /* Rajdhani-Bold.ttf */; };
+		689170ECD711DDD3035366C9 /* ChakraPetch-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D711DDD3035366C9C8FB9151 /* ChakraPetch-Bold.ttf */; };
+		94FD2F54EB5774B845974BB6 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB5774B845974BB65687BC65 /* BebasNeue-Regular.ttf */; };
 		EA76D1EE791EC486AE90AD08 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A2E8CFFC9E147140CB22B860 /* fr.lproj */; };
 		F175596303EDBA4F183B0D26 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D98CA8F37ED7635FBE6BF567 /* fr.lproj */; };
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
@@ -224,6 +229,11 @@
 		E2E50AE42F063B3CFE85D63E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		E63CAA2281D717492836A497 /* CamoTrackerWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CamoTrackerWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HitmarkerText-VF.ttf"; sourceTree = "<group>"; };
+		025D88694F8A5C159C6672D4 /* FontLicences.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = FontLicences.txt; sourceTree = "<group>"; };
+		81CD758F52CCE85ADD4542D0 /* Teko-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-VF.ttf"; sourceTree = "<group>"; };
+		3E9D92AC80CB69D8924144FB /* Rajdhani-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rajdhani-Bold.ttf"; sourceTree = "<group>"; };
+		D711DDD3035366C9C8FB9151 /* ChakraPetch-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChakraPetch-Bold.ttf"; sourceTree = "<group>"; };
+		EB5774B845974BB65687BC65 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		ECE376FB912D5E08B09A2AA8 /* CamoTracker.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = CamoTracker.entitlements; sourceTree = "<group>"; };
 		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +268,11 @@
 				721F171FEBB0173685265D18 /* es.lproj */,
 				D98CA8F37ED7635FBE6BF567 /* fr.lproj */,
 				E975DF91221439A0FB9F43A5 /* HitmarkerText-VF.ttf */,
+				025D88694F8A5C159C6672D4 /* FontLicences.txt */,
+				81CD758F52CCE85ADD4542D0 /* Teko-VF.ttf */,
+				3E9D92AC80CB69D8924144FB /* Rajdhani-Bold.ttf */,
+				D711DDD3035366C9C8FB9151 /* ChakraPetch-Bold.ttf */,
+				EB5774B845974BB65687BC65 /* BebasNeue-Regular.ttf */,
 				D6D4CDA89124982F18FDAA90 /* multiplayer.json */,
 				87E24B1D1EBDC96E0CE57DEE /* nl.lproj */,
 				1A7C3E9F2B4D5F6071829305 /* it.lproj */,
@@ -535,6 +550,11 @@
 			files = (
 				F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */,
 				E5D372300D33ED536E72212F /* HitmarkerText-VF.ttf in Resources */,
+				AA029CC5025D88694F8A5C15 /* FontLicences.txt in Resources */,
+				408C8DA881CD758F52CCE85A /* Teko-VF.ttf in Resources */,
+				874EC4343E9D92AC80CB69D8 /* Rajdhani-Bold.ttf in Resources */,
+				689170ECD711DDD3035366C9 /* ChakraPetch-Bold.ttf in Resources */,
+				94FD2F54EB5774B845974BB6 /* BebasNeue-Regular.ttf in Resources */,
 				99B580FC66079179AA15A449 /* de.lproj in Resources */,
 				57E1E10B61A7903CDC964565 /* dmz.json in Resources */,
 				D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */,

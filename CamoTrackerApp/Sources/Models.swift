@@ -306,6 +306,14 @@ struct ChallengeItem: Codable, Identifiable {
     /// challenge (Vanguard's "Get Eliminations", 400 in all): each is earned
     /// once the shared count reaches its own requirement.
     var counter: Int? = nil
+    /// The heading this camo sits under on the weapon's page ("Pack
+    /// Tactics", "Badges"), over its `group`'s. Camos in a row with the same
+    /// heading share one section.
+    var section: LocalizedText? = nil
+    /// Tracked on the weapon's page but not part of the camo chain: it
+    /// doesn't hold up Gold or count in progress (BO6's elimination badges,
+    /// MW's Obsidian).
+    var extra: Bool? = nil
     var id: Int { itemId }
 
     var isLeaf: Bool { children.isEmpty }

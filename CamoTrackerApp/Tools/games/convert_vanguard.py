@@ -94,7 +94,8 @@ def main(src, out_dir):
                         camos.append({"itemId": len(camos), "name": {"en": sub["CamoName"].strip()}, "tier": len(camos) + 1,
                                       "unlockLevel": int(group["CategoryUnlockLevel"]),
                                       "requirement": {"amount": amount, "unit": unit_of(desc), "description": {"en": requirement_text(desc, amount)}},
-                                      "children": [], "imageURL": sub["CamoURL"], "counter": counter})
+                                      "children": [], "imageURL": sub["CamoURL"], "counter": counter,
+                                      "section": {"en": group["CategoryName"].strip()}})
                 weapon_camos.append({"weaponId": ids[(ci, wi)], "camos": camos})
         weapon_camos.sort(key=lambda e: e["weaponId"])
         (gold, gc), (diamond, dc), (last, lc) = STEPS[mode]

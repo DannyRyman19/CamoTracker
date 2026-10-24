@@ -112,6 +112,22 @@ def convert(src, out, gid, spec):
                                                   "description": localized(fill(c["CategoryRequirement"], amount),
                                                                            dc and fill(dc["CategoryRequirement"], amount))},
                                   "children": [], "imageURL": c["CamoURL"], "group": "military"})
+                # The per-weapon extras: kills with each Completionist camo,
+                # and the Prestige camos earned with weapon XP
+                for key, section in (("MasteryChallenges", {"en": "Mastery", "de": "Meisterschaft"}),
+                                     ("PrestigeChallenges", {"en": "Prestige", "de": "Prestige"})):
+                    for i, c in enumerate(w.get(key) or []):
+                        dc = (dw.get(key) or [])[i] if dw and i < len(dw.get(key) or []) else None
+                        amount = int(c["AmountRequired"])
+                        desc_en = fill(c["CategoryRequirement"], amount).replace("weapon xp", "weapon XP")
+                        desc_de = dc and fill(dc["CategoryRequirement"], amount)
+                        camos.append({"itemId": len(camos), "name": localized(title(c["ChallengeName"].replace("Engima", "Enigma")),
+                                                                              dc and title(dc["ChallengeName"].replace("Engima", "Enigma"))),
+                                      "tier": None, "unlockLevel": None,
+                                      "requirement": {"amount": amount, "unit": "xp" if "xp" in desc_en.lower() else "kills",
+                                                      "description": localized(desc_en if desc_en.endswith(".") else desc_en + ".",
+                                                                               desc_de and (desc_de if desc_de.endswith(".") else desc_de + "."))},
+                                      "children": [], "imageURL": None, "section": section, "extra": True})
                 weapon_camos.append({"weaponId": wid, "camos": camos})
                 for i, c in enumerate(w["CompletionistCamos"][:3]):
                     dc = dw["CompletionistCamos"][i] if dw and i < len(dw.get("CompletionistCamos", [])) else None

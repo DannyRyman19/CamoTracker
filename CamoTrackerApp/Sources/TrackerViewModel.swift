@@ -374,6 +374,12 @@ final class TrackerViewModel: ObservableObject {
     /// That mode's camo track for a weapon — empty if the mode file doesn't
     /// cover it.
     func camos(weaponId: Int, mode: String) -> [ChallengeItem] {
+        allCamos(weaponId: weaponId, mode: mode).filter { $0.extra != true }
+    }
+
+    /// Everything on the weapon's page: the camo chain and its `extra`
+    /// challenges after it.
+    func allCamos(weaponId: Int, mode: String) -> [ChallengeItem] {
         modes[trackMode(mode)]?.weaponCamos.first { $0.weaponId == weaponId }?.camos ?? []
     }
 
@@ -395,7 +401,7 @@ final class TrackerViewModel: ObservableObject {
     /// The camos sharing this camo's count, itself included, in list order.
     private func counterGroup(mode: String, weaponId: Int, camo: ChallengeItem) -> [ChallengeItem] {
         guard let counter = camo.counter else { return [camo] }
-        return camos(weaponId: weaponId, mode: mode).filter { $0.counter == counter }
+        return allCamos(weaponId: weaponId, mode: mode).filter { $0.counter == counter }
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
@@ -406,9 +412,9 @@ final class TrackerViewModel: ObservableObject {
         // One camo grind per weapon across modes (launch blog, 19 Oct
         // 2026): finished in any mode is unlocked in all. Each mode keeps
         // its own count, read as saved, progress from before this included.
-        return camoTrackModes.contains { other in
+        return countingModes(mode).contains { other in
             let own = trackMode(other) == trackMode(mode) ? camo
-                : camos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
+                : allCamos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
             return own.map { isCamoDone(in: other, weaponId: weaponId, camo: $0) } ?? false
         }
     }
@@ -417,6 +423,13 @@ final class TrackerViewModel: ObservableObject {
     /// as that one).
     private var camoTrackModes: [String] {
         Array(Set(modes.keys.map(trackMode))).sorted()
+    }
+
+    /// The modes whose progress counts for this one: all of them in MW4,
+    /// where a camo finished in one mode is unlocked in every mode, else
+    /// just its own (BO6's Zombies camos are their own grind).
+    private func countingModes(_ mode: String) -> [String] {
+        game.sharedCamos == true ? camoTrackModes : [trackMode(mode)]
     }
 
     /// Finished in this mode's own count.
@@ -500,14 +513,14 @@ final class TrackerViewModel: ObservableObject {
             // back to the camo before it, so earlier ones stay earned
             let below = counterGroup(mode: mode, weaponId: weaponId, camo: camo)
                 .compactMap(\.requirement?.amount).filter { $0 < req.amount }.max() ?? 0
-            for other in wasDone ? camoTrackModes : [mode] {
+            for other in wasDone ? countingModes(mode) : [mode] {
                 let k = counterKey(other, weaponId, camo)
                 amounts[k] = wasDone ? min(amounts[k] ?? 0, below) : max(amounts[k] ?? 0, req.amount)
             }
         } else if wasDone {
             // Unticking clears it in every mode, or a finish elsewhere would
             // keep it ticked here
-            for other in camoTrackModes {
+            for other in countingModes(mode) {
                 let k = camoKey(other, weaponId, camo.itemId)
                 amounts[k] = nil
                 completed.remove(k)
@@ -680,7 +693,7 @@ final class TrackerViewModel: ObservableObject {
     /// Like camos, Gold, Platinum and Harmonic Break count in every mode
     /// once done in one ("wholly or partly in Multiplayer or DMZ").
     func isCompletionistComplete(mode: String, weaponId: Int, step: Int) -> Bool {
-        camoTrackModes.contains { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
+        countingModes(mode).contains { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
     }
 
     private func isCompletionistDone(in mode: String, weaponId: Int, step: Int) -> Bool {
@@ -822,7 +835,7 @@ final class TrackerViewModel: ObservableObject {
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
         for each in run(step, through: Self.completionistStepCount, done: !wasDone) {
             // Unticking clears it in every mode; ticking marks this mode
-            for other in wasDone ? camoTrackModes : [mode] {
+            for other in wasDone ? countingModes(mode) : [mode] {
                 mark(completionistKey(other, weaponId, each),
                      requirement: completionistRequirement(mode: other, weaponId: weaponId, step: each), done: !wasDone)
             }

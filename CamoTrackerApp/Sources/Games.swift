@@ -25,6 +25,11 @@ struct Game: Codable, Identifiable, Hashable {
     /// Completionist camos before the final one: 3 (absent), or 2 for a
     /// track like BO2's Gold and Diamond.
     var completionistSteps: Int? = nil
+    /// A camo finished in one mode counts in every mode (MW4's one camo
+    /// grind per weapon). Absent: each mode is its own grind.
+    var sharedCamos: Bool? = nil
+    /// The game's own look: colours, title font and splash. Absent: MW4's.
+    var theme: GameTheme? = nil
 
     static func == (a: Game, b: Game) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
@@ -32,6 +37,27 @@ struct Game: Codable, Identifiable, Hashable {
     var dataURL: URL {
         URL(string: "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/")!.appendingPathComponent(path, isDirectory: true)
     }
+}
+
+/// How a game looks, so each one feels like its own tracker: the background
+/// and card colours, the title font, and the mark in the middle of the
+/// splash ("CAMO / BO6 / TRACKER"). Every field falls back to MW4's.
+struct GameTheme: Codable, Hashable {
+    /// "#RRGGBB" for the page, cards and raised cards
+    var background: String?
+    var surface: String?
+    var surface2: String?
+    /// The title font's family ("Teko") and how much to scale it so it
+    /// reads at Hitmarker's size; `fontWeight` "regular" for a one-weight face
+    var font: String?
+    var fontScale: Double?
+    var fontWeight: String?
+    /// The splash: the nebula's tint, and the mark between CAMO and TRACKER,
+    /// its first `markWhite` characters white and the rest in `markColor`
+    var tint: String?
+    var mark: String?
+    var markWhite: Int?
+    var markColor: String?
 }
 
 /// A mode as a game defines it. Name, symbol and colour fall back to the
@@ -58,7 +84,9 @@ enum GameRegistry {
         return games
     }()
 
-    nonisolated(unsafe) static var current: Game = games[0]
+    nonisolated(unsafe) static var current: Game = games[0] {
+        didSet { Palette.apply(current.theme) }
+    }
 
     static func game(_ id: String) -> Game? { games.first { $0.id == id } }
 

@@ -20,6 +20,7 @@ from pathlib import Path
 
 MODES = [("Campaign", "campaign"), ("Multiplayer", "multiplayer"), ("Zombies", "zombies"), ("Warzone", "warzone")]
 VERSION = "1.0.0"
+BADGES = {"en": "Badges", "de": "Abzeichen", "es": "Insignias", "fr": "Insignes", "nl": "Badges", "it": "Distintivi", "pt": "Insígnias"}
 
 
 def text(s):
@@ -117,6 +118,16 @@ def main(src, out_dir):
                 camos.append({"itemId": base + i, "name": text(title(c["CamoName"])), "tier": base + i + 1,
                               "unlockLevel": None, "requirement": requirement(c), "children": [],
                               "imageURL": c["CamoImageURL"], "group": "special"})
+            # The elimination badges: one count, earned at 100, 250 and 500
+            # (the text has the running total; the amounts are the steps)
+            counter = len(camos)
+            for c in block.get("MasteryBadges", []):
+                m = re.search(r"Get (\d+)", c["CategoryRequirement"])
+                total = int(m.group(1)) if m else int(c["AmountRequired"] or 1)
+                camos.append({"itemId": len(camos), "name": text(c["CamoName"]), "tier": None, "unlockLevel": None,
+                              "requirement": {"amount": total, "unit": "eliminations", "description": text(c["CategoryRequirement"])},
+                              "children": [], "imageURL": c.get("CamoImageURL") or None, "counter": counter,
+                              "section": BADGES, "extra": True})
             weapon_camos.append({"weaponId": wid, "camos": camos})
             for i, c in enumerate(block["MasteryCamos"][:3]):
                 steps[i]["byWeapon"][str(wid)] = requirement(c)

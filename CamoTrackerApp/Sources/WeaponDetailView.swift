@@ -17,17 +17,23 @@ struct WeaponDetailView: View {
         self.weapon = weapon
     }
 
+    /// "Counts for" where a camo counts in every mode (MW4), else "Mode":
+    /// each mode keeps its own camos.
+    private var countsLabel: String {
+        GameRegistry.current.sharedCamos == true ? "mw4.ui.counts_for".localized() : "ct.ui.mode".localized()
+    }
+
     /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
     @ViewBuilder private var modeSwitch: some View {
         if viewModel.visibleModes.count > 1 {
             // A dropdown like the home title's, so it doesn't stack a second
             // segmented bar on the tabs below it
             HStack(spacing: 8) {
-                Text("mw4.ui.counts_for".localized())
+                Text(countsLabel)
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                 Menu {
-                    Picker("mw4.ui.counts_for".localized(), selection: $mode) {
+                    Picker(countsLabel, selection: $mode) {
                         ForEach(viewModel.visibleModes) { m in
                             Label(m.displayName, systemImage: m.symbol).tag(m)
                         }
@@ -42,7 +48,7 @@ struct WeaponDetailView: View {
                             .foregroundStyle(mode.accent)
                     }
                 }
-                .accessibilityLabel("mw4.ui.counts_for".localized())
+                .accessibilityLabel(countsLabel)
                 Spacer(minLength: 0)
             }
         }
@@ -115,7 +121,7 @@ struct WeaponDetailView: View {
         }
     }
 
-    private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
+    private var camos: [ChallengeItem] { viewModel.allCamos(weaponId: weapon.weaponId, mode: mode.rawValue) }
     private var category: WeaponCategory? { viewModel.category(containingWeaponId: weapon.weaponId) }
 
     private var isPinned: Bool { viewModel.pinnedWeaponId == weapon.weaponId }
@@ -160,23 +166,25 @@ struct WeaponDetailView: View {
     /// The camo list split the way the game shows it: Military, then
     /// Special. Camos with no group (older data) stay one "Camos" list.
     private var camoGroups: [(title: String, camos: [ChallengeItem])] {
-        var groups: [(key: String?, camos: [ChallengeItem])] = []
+        var groups: [(title: String, camos: [ChallengeItem])] = []
         for camo in camos {
-            if let last = groups.indices.last, groups[last].key == camo.group {
+            let title: String
+            if let section = camo.section {
+                title = section.resolved()
+            } else {
+                switch camo.group {
+                case "military": title = "mw4.ui.section.military".localized()
+                case "special": title = "mw4.ui.section.special".localized()
+                default: title = "mw4.ui.section.camos".localized()
+                }
+            }
+            if let last = groups.indices.last, groups[last].title == title {
                 groups[last].camos.append(camo)
             } else {
-                groups.append((camo.group, [camo]))
+                groups.append((title, [camo]))
             }
         }
-        return groups.map { group in
-            let title: String
-            switch group.key {
-            case "military": title = "mw4.ui.section.military".localized()
-            case "special": title = "mw4.ui.section.special".localized()
-            default: title = "mw4.ui.section.camos".localized()
-            }
-            return (title, group.camos)
-        }
+        return groups
     }
 
     /// The parts of this screen the picker switches between: each camo
@@ -239,7 +247,7 @@ struct WeaponDetailView: View {
 
         if shownPart == .camos {
             // Military and Special, each under its own header.
-            ForEach(camoGroups, id: \.title) { group in
+            ForEach(Array(camoGroups.enumerated()), id: \.offset) { _, group in
                 Section(group.title) {
                     ForEach(group.camos) { camo in
                         camoRow(camo)
@@ -411,7 +419,7 @@ struct WeaponDetailView: View {
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
             } else {
-                ForEach(camoGroups, id: \.title) { group in
+                ForEach(Array(camoGroups.enumerated()), id: \.offset) { _, group in
                     Section(group.title) {
                         tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
                     }
