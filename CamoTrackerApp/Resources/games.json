@@ -106,6 +106,24 @@
     ]
   },
   {
+    "id": "cw",
+    "name": {
+      "en": "Black Ops Cold War"
+    },
+    "shortName": "Cold War",
+    "path": "Data/CT/CW/",
+    "seedPrefix": "cw_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "zombies"
+      }
+    ]
+  },
+  {
     "id": "vg",
     "name": {
       "en": "Vanguard"

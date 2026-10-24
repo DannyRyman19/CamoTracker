@@ -579,7 +579,9 @@ private struct CompletionistStepRow: View {
                 ?? String(format: "mw4.ui.completionist.locked_class_camos".localized(), className)
         case .mode:
             let progress = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: step)
-            return String(format: "mw4.ui.completionist.locked_mode".localized(), before ?? "", progress.total, progress.done)
+            let key = viewModel.completionistGateCountsClasses(mode: mode.rawValue, step: step)
+                ? "ct.ui.completionist.locked_classes" : "mw4.ui.completionist.locked_mode"
+            return String(format: key.localized(), before ?? "", progress.total, progress.done)
         }
     }
 

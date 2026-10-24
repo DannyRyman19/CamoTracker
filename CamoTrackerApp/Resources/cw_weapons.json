@@ -1,0 +1,774 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 29,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "XM4"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/xm4.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "AK-47"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 7."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ak-47.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "Krig 6"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/images/krig_6.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "QBZ-83"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 31."
+          },
+          "imageURL": "https://camotracker.djr.li/images/qbz-83.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "FFAR 1"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 40."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ffar_1.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "Groza"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, get 3 kills without dying in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/Groza.png"
+        },
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "FARA 83"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, get 2 headshot kills in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/fara_83.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "C58"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, get a Long Shot kill in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/c58.png"
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": "EM2"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, rapidly kill 2 or more players in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/EM2.png"
+        },
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "Grav"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, kill 3 enemies who are at a lower elevation in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Grav.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "Vargo 52"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Assault Rifles, deal 1000 damage in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/vargo_52.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "MP5"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/mp5.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "Milano 821"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/images/milano_821.png"
+        },
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "Ak-74u"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 19."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ak-74u.png"
+        },
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "KSP 45"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ksp_45.png"
+        },
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "Bullfrog"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 43."
+          },
+          "imageURL": "https://camotracker.djr.li/images/bullfrog.png"
+        },
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "MAC-10"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using SMGs, kill 2 or more players rapidly in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/mac-10.png"
+        },
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "LC10"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using SMGs, get 3 kills without dying in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/lc10.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "PPSh-41"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using SMGs, get 3 kills immediately after sprinting in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ppsh_41.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "OTs 9"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "CW Multiplayer: Using SMGs, kill 3 enemies affected by your Tactical Equipment in 15 different completed matches.\nWarzone: Using SMGs, kill 2 or more players rapidly in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/ots_9.png"
+        },
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "Tec-9"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using SMGs, get 2 Headshot kills in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Tec-9.png"
+        },
+        {
+          "weaponId": 40,
+          "name": {
+            "en": "Lapa"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using SMGs, get 3 kills while aiming down sights in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Lapa.png"
+        },
+        {
+          "weaponId": 41,
+          "name": {
+            "en": "UGR"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using a SMG, kill an enemy revealed by your Spy Plane, UAV or Field Mic in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/UGR.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Tactical Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "Type 63"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/type_63.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "M16"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 10."
+          },
+          "imageURL": "https://camotracker.djr.li/images/m16.png"
+        },
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "AUG"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 28."
+          },
+          "imageURL": "https://camotracker.djr.li/images/aug.png"
+        },
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "DMR 14"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 49."
+          },
+          "imageURL": "https://camotracker.djr.li/images/dmr_14.png"
+        },
+        {
+          "weaponId": 42,
+          "name": {
+            "en": "CARV.2"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Tactical Rifles, rapidly kill 2 or more players in 10 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/carv_2.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "Stoner 63"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/stoner_63.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "RPD"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 22."
+          },
+          "imageURL": "https://camotracker.djr.li/images/rpd.png"
+        },
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "M60"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 46."
+          },
+          "imageURL": "https://camotracker.djr.li/images/m60.png"
+        },
+        {
+          "weaponId": 43,
+          "name": {
+            "en": "MG 82"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using LMGs, kill 3 or more enemies without reloading in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/mg_82.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "Pelington 703"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/pelington_703.png"
+        },
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "LW3 - Tundra"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 25."
+          },
+          "imageURL": "https://camotracker.djr.li/images/lw3-tundra.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "M82"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 55."
+          },
+          "imageURL": "https://camotracker.djr.li/images/m82.png"
+        },
+        {
+          "weaponId": 44,
+          "name": {
+            "en": "ZRG 20mm"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Sniper Rifles, earn 2 Longshot medals in 10 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/zrg_20mm.png"
+        },
+        {
+          "weaponId": 45,
+          "name": {
+            "en": "Swiss K31"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using Sniper Rifles, get 2 Headshot kills in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/swiss_k31.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Pistols"
+      },
+      "weapons": [
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "1911"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/1911.png"
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "Magnum"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 31."
+          },
+          "imageURL": "https://camotracker.djr.li/images/magnum.png"
+        },
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "Diamatti"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 49."
+          },
+          "imageURL": "https://camotracker.djr.li/images/diamatti.png"
+        },
+        {
+          "weaponId": 46,
+          "name": {
+            "en": "AMP63"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Pistol, Eliminate 5 enemies in 20 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/amp63.png"
+        },
+        {
+          "weaponId": 47,
+          "name": {
+            "en": "Marshall"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using Pistols, get a Headshot kill in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/marshall.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "Hauer 77"
+          },
+          "maxLevel": 36,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 7."
+          },
+          "imageURL": "https://camotracker.djr.li/images/hauer_77.png"
+        },
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "Gallo SA12"
+          },
+          "maxLevel": 36,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 34."
+          },
+          "imageURL": "https://camotracker.djr.li/images/gallo_sa12.png"
+        },
+        {
+          "weaponId": 48,
+          "name": {
+            "en": "Streetsweeper"
+          },
+          "maxLevel": 36,
+          "unlockRequirement": {
+            "en": "Using Shotguns, get 3 kills without dying in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/streetsweeper.png"
+        },
+        {
+          "weaponId": 49,
+          "name": {
+            "en": ".410 Ironhide"
+          },
+          "maxLevel": 36,
+          "unlockRequirement": {
+            "en": "Using Shotguns, get 2 point blank kills in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/410Ironhide.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Launchers"
+      },
+      "weapons": [
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "Cigma 2"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 4."
+          },
+          "imageURL": "https://camotracker.djr.li/images/cigma_2.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "RPG-7"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 40."
+          },
+          "imageURL": "https://camotracker.djr.li/images/rpg-7.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "name": {
+        "en": "Melee"
+      },
+      "weapons": [
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "Knife"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 13."
+          },
+          "imageURL": "https://camotracker.djr.li/images/knife.png"
+        },
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "M79"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 52."
+          },
+          "imageURL": "https://camotracker.djr.li/images/m79.png"
+        },
+        {
+          "weaponId": 50,
+          "name": {
+            "en": "Sledgehammer"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee Weapon, kill 2 or more players rapidly in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/sledgehammer.png"
+        },
+        {
+          "weaponId": 51,
+          "name": {
+            "en": "Wakizashi"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "With a Melee Weapon equipped, perform 2 finishing moves in 10 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/wakizashi.png"
+        },
+        {
+          "weaponId": 52,
+          "name": {
+            "en": "Machete"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Earn a Back Stabber medal in 15 different completed matches (melee kill from behind)."
+          },
+          "imageURL": "https://camotracker.djr.li/images/machete.png"
+        },
+        {
+          "weaponId": 53,
+          "name": {
+            "en": "E-Tool"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee weapon, kill 3 enemies without dying in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/e-tool.png"
+        },
+        {
+          "weaponId": 54,
+          "name": {
+            "en": "R1 Shadowhunter"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a weapon with no attachments, get 3 One Shot Kill medals in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/r1_shadowhunter.png"
+        },
+        {
+          "weaponId": 55,
+          "name": {
+            "en": "Ballistic Knife"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Get a one shot, one kill medal and a melee kill in the same life in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/images/ballistic_knife.png"
+        },
+        {
+          "weaponId": 56,
+          "name": {
+            "en": "Baseball Bat"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee weapon kill an enemy revealed by your Spy Plane, UAV, or Field Mic in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/baseball_bat.png"
+        },
+        {
+          "weaponId": 57,
+          "name": {
+            "en": "Nail Gun"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Get 5 Eliminations with Special Weapons in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/nail_gun.png"
+        },
+        {
+          "weaponId": 58,
+          "name": {
+            "en": "Mace"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee weapon, get a Kill while sliding in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Mace.png"
+        },
+        {
+          "weaponId": 59,
+          "name": {
+            "en": "Cane"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee weapon, kill 20 or more enemies consecutively without getting hit 50 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Cane.png"
+        },
+        {
+          "weaponId": 60,
+          "name": {
+            "en": "Sai"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Using a Melee weapon, kill an enemy without receiving returning fire in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Sai.png"
+        },
+        {
+          "weaponId": 61,
+          "name": {
+            "en": "Battle Axe"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Get a kill with a gun, melee weapon, and piece of lethal equipment in the same life in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/battle_axe.png"
+        },
+        {
+          "weaponId": 62,
+          "name": {
+            "en": "Hammer and Sickle"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Get a Melee kill and a Tomahawk or Throwing Knife kill in the same life in 15 different completed matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/hammer_sickle.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the Cold War Camo Tracker data by Tools/games/convert_cw.py; ids put the 29 launch weapons first."
+}

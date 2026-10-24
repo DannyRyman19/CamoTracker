@@ -220,3 +220,35 @@ struct VanguardGameTests {
         #expect(AppMode.multiplayer.completionist.steps.map(\.name) == ["Gold", "Diamond", "Atomic"])
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct ColdWarGameTests {
+    @Test func darkMatterNeedsDiamondInEveryMainClass() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let name = "ColdWarGameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game("cw"))
+        GameRegistry.current = game
+        let model = TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+        #expect(model.totalWeaponCount == 63)
+        #expect(model.camos(weaponId: 0, mode: "zombies").count == 35)
+        func finish(_ weaponId: Int) {
+            for camo in model.camos(weaponId: weaponId, mode: "multiplayer") where !model.isCamoComplete(mode: "multiplayer", weaponId: weaponId, camo: camo) {
+                model.toggleCamo(mode: "multiplayer", weaponId: weaponId, camo: camo)
+            }
+        }
+        let categories = try #require(model.catalog?.categories)
+        // Two Golds per main class: Diamond on both, Dark Matter once all seven have it
+        let main = categories.filter { $0.weapons.count >= 2 && ![7, 8].contains($0.categoryId) }
+        #expect(main.count == 7)
+        #expect(model.completionistModeGateProgress(mode: "multiplayer", step: 2) == (0, 7))
+        for (index, category) in main.enumerated() {
+            category.weapons.prefix(2).forEach { finish($0.weaponId) }
+            #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: category.weapons[0].weaponId, step: 1))
+            #expect(model.isCompletionistComplete(mode: "multiplayer", weaponId: category.weapons[0].weaponId, step: 2) == (index == main.count - 1))
+        }
+        #expect(AppMode.zombies.completionist.steps.map(\.name) == ["Golden Viper", "Plague Diamond", "Dark Aether"])
+    }
+}

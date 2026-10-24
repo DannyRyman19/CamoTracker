@@ -207,6 +207,10 @@ struct CompletionistStepConfig: Codable {
     /// No challenge of its own: earned as soon as it opens (BO2's Gold once
     /// every camo is done, Vanguard's Diamond once the class has Gold).
     var auto: Bool?
+    /// A "mode" gate that counts classes instead of weapons: the step opens
+    /// once every class listed (by `categoryId`) has the step before on at
+    /// least one weapon (Cold War's Dark Matter: Diamond in every class).
+    var classes: [Int]?
 }
 
 /// The fourth Completionist camo (Divergence in Multiplayer). It has no

@@ -451,7 +451,8 @@ final class TrackerViewModel: ObservableObject {
     /// Level gates are on the weapon's normal levels, so a prestiged weapon
     /// has passed every one of them even though its level has reset.
     private func hasReached(_ unlockLevel: Int, weaponId: Int) -> Bool {
-        prestige(for: weaponId) > 0 || level(for: weaponId) >= unlockLevel
+        // Level 1 is where every weapon starts, set or not
+        unlockLevel <= 1 || prestige(for: weaponId) > 0 || level(for: weaponId) >= unlockLevel
     }
 
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
@@ -690,6 +691,11 @@ final class TrackerViewModel: ObservableObject {
 
     /// A step with no challenge of its own, earned once it opens: BO2's
     /// Gold (every camo done) and Diamond (Gold across the class).
+    /// Whether this step's "mode" gate counts classes (`classes`).
+    func completionistGateCountsClasses(mode: String, step: Int) -> Bool {
+        !(completionistStepConfig(mode: mode, step: step)?.classes ?? []).isEmpty
+    }
+
     func isAutoStep(mode: String, step: Int) -> Bool {
         completionistStepConfig(mode: mode, step: step)?.auto == true
     }
@@ -751,6 +757,13 @@ final class TrackerViewModel: ObservableObject {
     /// For a "mode" gate: weapons with the step before, out of the launch
     /// roster (a finished DLC weapon can stand in for a launch one).
     func completionistModeGateProgress(mode: String, step: Int) -> (done: Int, total: Int) {
+        if let classes = completionistStepConfig(mode: mode, step: step)?.classes, !classes.isEmpty {
+            let done = classes.filter { id in
+                catalog?.categories.first { $0.categoryId == id }?.weapons
+                    .contains { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) } ?? false
+            }.count
+            return (done, classes.count)
+        }
         let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
                               available: totalWeaponCount, launch: min(totalWeaponCount, baseWeaponCount))
         let done = allWeapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
