@@ -252,3 +252,30 @@ struct ColdWarGameTests {
         #expect(AppMode.zombies.completionist.steps.map(\.name) == ["Golden Viper", "Plague Diamond", "Dark Aether"])
     }
 }
+
+@MainActor
+@Suite(.serialized)
+struct MW2019GameTests {
+    @Test func freeCamosAndDamascus() throws {
+        defer { GameRegistry.current = GameRegistry.game("mw4")! }
+        let name = "MW2019GameTests-\(UUID().uuidString)"
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let game = try #require(GameRegistry.game("mw19"))
+        GameRegistry.current = game
+        let model = TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: UserDefaults(suiteName: name)!)
+        #expect(model.totalWeaponCount == 62)
+        #expect(Set(model.modes.keys) == ["multiplayer"])
+        let camos = model.camos(weaponId: 0, mode: "multiplayer")
+        // The first camo of each category is free, and tapping it changes nothing
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[0]))
+        model.setCamoAmount(mode: "multiplayer", weaponId: 0, camo: camos[9], amount: 60)
+        model.toggleCamo(mode: "multiplayer", weaponId: 0, camo: camos[0])
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[0]))
+        #expect(model.camoAmount(mode: "multiplayer", weaponId: 0, camo: camos[9]) == 60)
+        #expect(model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[2]))
+        #expect(!model.isCamoComplete(mode: "multiplayer", weaponId: 0, camo: camos[3]))
+        #expect(model.completionistModeGateProgress(mode: "multiplayer", step: 2) == (0, 8))
+        #expect(AppMode.multiplayer.completionist.steps.map(\.name) == ["Gold", "Platinum", "Damascus"])
+    }
+}

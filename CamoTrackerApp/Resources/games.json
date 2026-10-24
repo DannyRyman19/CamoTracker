@@ -140,5 +140,20 @@
         "id": "zombies"
       }
     ]
+  },
+  {
+    "id": "mw19",
+    "name": {
+      "en": "Modern Warfare (2019)"
+    },
+    "shortName": "MW 2019",
+    "path": "Data/CT/MW19/",
+    "seedPrefix": "mw19_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer"
+      }
+    ]
   }
 ]

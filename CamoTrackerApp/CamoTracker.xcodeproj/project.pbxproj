@@ -47,6 +47,8 @@
 		6A1B2C3D4E5F60718293A4B7 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1B2C3D4E5F60718293A4B8 /* games.json */; };
 		8C3D4E5F60718293041503A1 /* bo6_warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D4E5F60718293041503B2 /* bo6_warzone.json */; };
 		8C3D4E5F60718293041502A1 /* bo6_zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D4E5F60718293041502B2 /* bo6_zombies.json */; };
+		C2FC76B0656E8587D352A983 /* mw19_weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 656E8587D352A98306B1ED70 /* mw19_weapons.json */; };
+		82036FF01AC76CDDFF8E4F2C /* mw19_multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AC76CDDFF8E4F2C7F7DE1E2 /* mw19_multiplayer.json */; };
 		2BE8DDF29A39795BBB0A4FFA /* cw_weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A39795BBB0A4FFA375A28E3 /* cw_weapons.json */; };
 		D572552D688383F5A1AF855C /* cw_multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 688383F5A1AF855C38CBAEAA /* cw_multiplayer.json */; };
 		C36F33FB9B62D9D525B3C6C1 /* cw_zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B62D9D525B3C6C10E32A4DF /* cw_zombies.json */; };
@@ -164,6 +166,8 @@
 		6A1B2C3D4E5F60718293A4B8 /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
 		8C3D4E5F60718293041503B2 /* bo6_warzone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo6_warzone.json; sourceTree = "<group>"; };
 		8C3D4E5F60718293041502B2 /* bo6_zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bo6_zombies.json; sourceTree = "<group>"; };
+		656E8587D352A98306B1ED70 /* mw19_weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mw19_weapons.json; sourceTree = "<group>"; };
+		1AC76CDDFF8E4F2C7F7DE1E2 /* mw19_multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mw19_multiplayer.json; sourceTree = "<group>"; };
 		9A39795BBB0A4FFA375A28E3 /* cw_weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cw_weapons.json; sourceTree = "<group>"; };
 		688383F5A1AF855C38CBAEAA /* cw_multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cw_multiplayer.json; sourceTree = "<group>"; };
 		9B62D9D525B3C6C10E32A4DF /* cw_zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cw_zombies.json; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				6A1B2C3D4E5F60718293A4B8 /* games.json */,
 				8C3D4E5F60718293041503B2 /* bo6_warzone.json */,
 				8C3D4E5F60718293041502B2 /* bo6_zombies.json */,
+				656E8587D352A98306B1ED70 /* mw19_weapons.json */,
+				1AC76CDDFF8E4F2C7F7DE1E2 /* mw19_multiplayer.json */,
 				9A39795BBB0A4FFA375A28E3 /* cw_weapons.json */,
 				688383F5A1AF855C38CBAEAA /* cw_multiplayer.json */,
 				9B62D9D525B3C6C10E32A4DF /* cw_zombies.json */,
@@ -537,6 +543,8 @@
 				6A1B2C3D4E5F60718293A4B7 /* games.json in Resources */,
 				8C3D4E5F60718293041503A1 /* bo6_warzone.json in Resources */,
 				8C3D4E5F60718293041502A1 /* bo6_zombies.json in Resources */,
+				C2FC76B0656E8587D352A983 /* mw19_weapons.json in Resources */,
+				82036FF01AC76CDDFF8E4F2C /* mw19_multiplayer.json in Resources */,
 				2BE8DDF29A39795BBB0A4FFA /* cw_weapons.json in Resources */,
 				D572552D688383F5A1AF855C /* cw_multiplayer.json in Resources */,
 				C36F33FB9B62D9D525B3C6C1 /* cw_zombies.json in Resources */,

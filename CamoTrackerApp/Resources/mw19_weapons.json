@@ -1,0 +1,755 @@
+{
+  "version": "1.0.0",
+  "baseWeaponCount": 39,
+  "weaponPrestige": [],
+  "prestigeCamos": [],
+  "categories": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Assault Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 0,
+          "name": {
+            "en": "Kilo 141"
+          },
+          "maxLevel": 69,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/kilo_141.png"
+        },
+        {
+          "weaponId": 1,
+          "name": {
+            "en": "FAL"
+          },
+          "maxLevel": 67,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/fal.png"
+        },
+        {
+          "weaponId": 2,
+          "name": {
+            "en": "M4A1"
+          },
+          "maxLevel": 71,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 6."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/m4a1.png"
+        },
+        {
+          "weaponId": 3,
+          "name": {
+            "en": "FR 5.56"
+          },
+          "maxLevel": 65,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 16."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/fr_556.png"
+        },
+        {
+          "weaponId": 4,
+          "name": {
+            "en": "Oden"
+          },
+          "maxLevel": 66,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 28."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/oden.png"
+        },
+        {
+          "weaponId": 5,
+          "name": {
+            "en": "M13"
+          },
+          "maxLevel": 69,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 39."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/m13.png"
+        },
+        {
+          "weaponId": 6,
+          "name": {
+            "en": "FN Scar 17"
+          },
+          "maxLevel": 65,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 47."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/fn_scar_17.png"
+        },
+        {
+          "weaponId": 7,
+          "name": {
+            "en": "AK-47"
+          },
+          "maxLevel": 68,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 53."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/ak-47.png"
+        },
+        {
+          "weaponId": 39,
+          "name": {
+            "en": "RAM-7"
+          },
+          "maxLevel": 64,
+          "unlockRequirement": {
+            "en": "Get 2 Headshots using Assault Rifles in 25 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/ram-7.png"
+        },
+        {
+          "weaponId": 40,
+          "name": {
+            "en": "Grau 5.56"
+          },
+          "maxLevel": 66,
+          "unlockRequirement": {
+            "en": "Get 5 kills in a minute when using an assault rifle 25 times."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/grau_556.png"
+        },
+        {
+          "weaponId": 41,
+          "name": {
+            "en": "CR-56 Amax"
+          },
+          "maxLevel": 68,
+          "unlockRequirement": {
+            "en": "Get 3 Gunbutt Kills while using an Assault Rifle in 10 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/cr-56_amax.png"
+        },
+        {
+          "weaponId": 42,
+          "name": {
+            "en": "AN-94"
+          },
+          "maxLevel": 68,
+          "unlockRequirement": {
+            "en": "Get 2 Hipfire Kills using an Assault Rifle in 7 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/an-94.png"
+        },
+        {
+          "weaponId": 43,
+          "name": {
+            "en": "AS VAL"
+          },
+          "maxLevel": 68,
+          "unlockRequirement": {
+            "en": "Get 2 Headshots using Assault Rifles in 5 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/as_val.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "SMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 8,
+          "name": {
+            "en": "Aug"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/aug.png"
+        },
+        {
+          "weaponId": 9,
+          "name": {
+            "en": "P90"
+          },
+          "maxLevel": 50,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/p90.png"
+        },
+        {
+          "weaponId": 10,
+          "name": {
+            "en": "MP5"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 12."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/mp5.png"
+        },
+        {
+          "weaponId": 11,
+          "name": {
+            "en": "Uzi"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 34."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/uzi.png"
+        },
+        {
+          "weaponId": 12,
+          "name": {
+            "en": "PP19 Bizon"
+          },
+          "maxLevel": 49,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 42."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/pp19_bizon.png"
+        },
+        {
+          "weaponId": 13,
+          "name": {
+            "en": "MP7"
+          },
+          "maxLevel": 54,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 54."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/mp7.png"
+        },
+        {
+          "weaponId": 44,
+          "name": {
+            "en": "Striker 45"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Get 2 kills while Sliding when using an SMG in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/striker-45.png"
+        },
+        {
+          "weaponId": 45,
+          "name": {
+            "en": "Fennec"
+          },
+          "maxLevel": 54,
+          "unlockRequirement": {
+            "en": "Get 5 kills while using an SMG with the Solozero Optics Mini Reflex and Ranger Foregrip in 10 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/fennec.png"
+        },
+        {
+          "weaponId": 46,
+          "name": {
+            "en": "ISO"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Get 5 kills using an SMG with a Holo Optic in 7 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/iso.png"
+        },
+        {
+          "weaponId": 47,
+          "name": {
+            "en": "CX-9"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Earn 2 longshot kills with SMGs in 5 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/cx-9.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Shotguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 14,
+          "name": {
+            "en": "Model 680"
+          },
+          "maxLevel": 50,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/model_680.png"
+        },
+        {
+          "weaponId": 15,
+          "name": {
+            "en": "R9-0 Shotgun"
+          },
+          "maxLevel": 48,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/r9-0.png"
+        },
+        {
+          "weaponId": 16,
+          "name": {
+            "en": "725"
+          },
+          "maxLevel": 52,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/725.png"
+        },
+        {
+          "weaponId": 17,
+          "name": {
+            "en": "Origin 12"
+          },
+          "maxLevel": 50,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/origin_12.png"
+        },
+        {
+          "weaponId": 48,
+          "name": {
+            "en": "VLK Rogue"
+          },
+          "maxLevel": 51,
+          "unlockRequirement": {
+            "en": "Using a Shotgun with 5 attachments, get 7 kills in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/vlk_rogue.png"
+        },
+        {
+          "weaponId": 49,
+          "name": {
+            "en": "JAK-12"
+          },
+          "maxLevel": 54,
+          "unlockRequirement": {
+            "en": "Get 3 Hipfire Kills using Shotguns in 7 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/jak-12.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": {
+        "en": "LMGs"
+      },
+      "weapons": [
+        {
+          "weaponId": 18,
+          "name": {
+            "en": "PKM"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/pkm.png"
+        },
+        {
+          "weaponId": 19,
+          "name": {
+            "en": "SA87"
+          },
+          "maxLevel": 56,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/sa87.png"
+        },
+        {
+          "weaponId": 20,
+          "name": {
+            "en": "M91"
+          },
+          "maxLevel": 58,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/m91.png"
+        },
+        {
+          "weaponId": 21,
+          "name": {
+            "en": "MG34"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/mg34.png"
+        },
+        {
+          "weaponId": 50,
+          "name": {
+            "en": "Holger-26"
+          },
+          "maxLevel": 57,
+          "unlockRequirement": {
+            "en": "Get 2 Longshot Kills using Light Machine Guns in 25 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/holger-26.png"
+        },
+        {
+          "weaponId": 51,
+          "name": {
+            "en": "Bruen MK9"
+          },
+          "maxLevel": 59,
+          "unlockRequirement": {
+            "en": "Get 3 kills when the enemy is near smoke using an LMG in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/bruen_mk9.png"
+        },
+        {
+          "weaponId": 52,
+          "name": {
+            "en": "FiNN LMG"
+          },
+          "maxLevel": 58,
+          "unlockRequirement": {
+            "en": "Get 1 Melee Kill while using an LMG in 7 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/finn_lmg.png"
+        },
+        {
+          "weaponId": 53,
+          "name": {
+            "en": "RAAL MG"
+          },
+          "maxLevel": 53,
+          "unlockRequirement": {
+            "en": "Get 5 kills in 7 different matches while using LMGs equipped with a Scout Optic."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/raal_mg.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": {
+        "en": "Marksman & Sniper Rifles"
+      },
+      "weapons": [
+        {
+          "weaponId": 22,
+          "name": {
+            "en": "EBR-14"
+          },
+          "maxLevel": 54,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/ebr-14.png"
+        },
+        {
+          "weaponId": 23,
+          "name": {
+            "en": "Dragunov"
+          },
+          "maxLevel": 36,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/dragunov.png"
+        },
+        {
+          "weaponId": 24,
+          "name": {
+            "en": "HDR"
+          },
+          "maxLevel": 37,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 11."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/hdr.png"
+        },
+        {
+          "weaponId": 25,
+          "name": {
+            "en": "MK2 Carbine"
+          },
+          "maxLevel": 50,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 15."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/mk2.png"
+        },
+        {
+          "weaponId": 26,
+          "name": {
+            "en": "Kar98k"
+          },
+          "maxLevel": 50,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 33."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/kar98k.png"
+        },
+        {
+          "weaponId": 27,
+          "name": {
+            "en": "AX-50"
+          },
+          "maxLevel": 39,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/ax-50.png"
+        },
+        {
+          "weaponId": 54,
+          "name": {
+            "en": "Crossbow"
+          },
+          "maxLevel": 43,
+          "unlockRequirement": {
+            "en": "Using a Marksman Rifle with a Reflex optic, get 5 Kills in 25 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/crossbow.png"
+        },
+        {
+          "weaponId": 55,
+          "name": {
+            "en": "SKS"
+          },
+          "maxLevel": 53,
+          "unlockRequirement": {
+            "en": "Using a Sniper or Marksman Rifle, Get 2 Longshot Kills that are headshots in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/sks.png"
+        },
+        {
+          "weaponId": 56,
+          "name": {
+            "en": "SP-R 208"
+          },
+          "maxLevel": 55,
+          "unlockRequirement": {
+            "en": "Using a Sniper or Marskman Rifle, Get 2 Longshot Kills that are Headshots in 5 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/sp-r_208.png"
+        },
+        {
+          "weaponId": 57,
+          "name": {
+            "en": "Rytec AMR"
+          },
+          "maxLevel": 34,
+          "unlockRequirement": {
+            "en": "Get 2 Quickscope Kills using a Sniper or Marksman Rifles in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/rytec_amr.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": {
+        "en": "Melee"
+      },
+      "weapons": [
+        {
+          "weaponId": 28,
+          "name": {
+            "en": "Riot Shield"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/riot_shield.png"
+        },
+        {
+          "weaponId": 29,
+          "name": {
+            "en": "Combat Knife"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/combat_knife.png"
+        },
+        {
+          "weaponId": 58,
+          "name": {
+            "en": "Kali Sticks"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Using the Knife, get 3 kills while sliding in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/kali_sticks.png"
+        },
+        {
+          "weaponId": 59,
+          "name": {
+            "en": "Dual Kodachis"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Using the Knife, get 3 Kills while behind the enemy in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/dual_kodachis.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": {
+        "en": "Handguns"
+      },
+      "weapons": [
+        {
+          "weaponId": 30,
+          "name": {
+            "en": "X16"
+          },
+          "maxLevel": 35,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/x16.png"
+        },
+        {
+          "weaponId": 31,
+          "name": {
+            "en": "1911"
+          },
+          "maxLevel": 34,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/1911.png"
+        },
+        {
+          "weaponId": 32,
+          "name": {
+            "en": ".357"
+          },
+          "maxLevel": 41,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 21."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/357.png"
+        },
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "M19"
+          },
+          "maxLevel": 41,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 37."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/m19.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": ".50 GS"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 52."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/50gs.png"
+        },
+        {
+          "weaponId": 60,
+          "name": {
+            "en": "Renetti"
+          },
+          "maxLevel": 46,
+          "unlockRequirement": {
+            "en": "Using a Pistol, get 2 Headshot Kills in 15 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/renetti.png"
+        },
+        {
+          "weaponId": 61,
+          "name": {
+            "en": "Sykov"
+          },
+          "maxLevel": 40,
+          "unlockRequirement": {
+            "en": "Get 4 Kills while using Pistols in 5 different matches."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/sykov.png"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": {
+        "en": "Launchers"
+      },
+      "weapons": [
+        {
+          "weaponId": 35,
+          "name": {
+            "en": "PILA"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked by default."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/pila.png"
+        },
+        {
+          "weaponId": 36,
+          "name": {
+            "en": "Strela-P"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 17."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/strela-p.png"
+        },
+        {
+          "weaponId": 37,
+          "name": {
+            "en": "JOKR"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 35."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/jokr.png"
+        },
+        {
+          "weaponId": 38,
+          "name": {
+            "en": "RPG-7"
+          },
+          "maxLevel": 31,
+          "unlockRequirement": {
+            "en": "Unlocked at Level 44."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/rpg-7.png"
+        }
+      ]
+    }
+  ],
+  "_note": "Converted from the MW Camo Tracker data by Tools/games/convert_mw2019.py; ids put the 39 launch weapons first."
+}
