@@ -255,6 +255,9 @@ guide = [
    ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
+   ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
+   ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound"),
+   ("Police Station Armory", None, "Uncommon. Reported to open any Police Station armory: West Cheongun Village, north NuriGO Mall, Revolution Dam and south Pyonghwa Village. Whether it is the same key as the Police Station Key isn't known yet"),
    ("Police Station Key", None, "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet"),
    ("Air Base Access Card - Multi Use", "B5", "Epic. Opens doors around Chang-san Air Base, and can be used more than once"),
    ("Weapons Mod Workshop", "B5", "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base"),
@@ -338,7 +341,7 @@ _vd.sell_values(items)
 _vd.key_pictures(items)
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.30", "updated": "2026-10-24",
+data = {"version": "0.9.31", "updated": "2026-10-25",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

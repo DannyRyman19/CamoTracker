@@ -1,6 +1,6 @@
 {
- "version": "0.9.30",
- "updated": "2026-10-24",
+ "version": "0.9.31",
+ "updated": "2026-10-25",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -3639,6 +3639,23 @@
      "item": "prison-encampment-storage"
     },
     {
+     "title": "Utility Maintenance Storage",
+     "value": "H4",
+     "subtitle": "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor",
+     "item": "utility-maintenance-storage"
+    },
+    {
+     "title": "Gangbyeon Apartment B",
+     "value": "G7",
+     "subtitle": "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound",
+     "item": "gangbyeon-apartment-b"
+    },
+    {
+     "title": "Police Station Armory",
+     "subtitle": "Uncommon. Reported to open any Police Station armory: West Cheongun Village, north NuriGO Mall, Revolution Dam and south Pyonghwa Village. Whether it is the same key as the Police Station Key isn't known yet",
+     "item": "police-station-armory"
+    },
+    {
      "title": "Police Station Key",
      "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet",
      "item": "police-station-key"
@@ -4348,68 +4365,131 @@
      ]
     },
     {
+     "title": "Crashed Crate",
+     "group": "DMZ Orders: Page 10",
+     "check": "op-crashed-crate",
+     "objectives": [
+      "Retrieve 3 lost supply drops",
+      "Complete a Loot Radio Tower Side Op"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Large Backpack and a Basic Triage Kit"
+     ]
+    },
+    {
+     "title": "Surprise Me",
+     "group": "DMZ Orders: Page 10",
+     "check": "op-surprise-me",
+     "objectives": [
+      "Complete 5 Dynamic Ops",
+      "Complete a Story Mission using Random Mission Deploy"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Large Backpack and a Basic Triage Kit"
+     ]
+    },
+    {
+     "title": "Healer",
+     "group": "DMZ Orders: Page 10",
+     "check": "op-healer",
+     "objectives": [
+      "Print or extract 3 Reactive Metals",
+      "Extract 30 Metals",
+      "Print an Armor Box"
+     ],
+     "links": [
+      "reactive-metals",
+      "metals",
+      "armor-box"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Large Backpack and a Basic Triage Kit"
+     ]
+    },
+    {
      "title": "Information Power",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 11",
      "check": "op-information-power",
      "objectives": [
       "Buy Lieutenant intel at the Boss Board",
       "Kill a Lieutenant"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Defibrillator, an Inflatable Decoy and the C4 recipe"
      ]
     },
     {
      "title": "Arms Deal",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 11",
      "check": "op-arms-deal",
      "objectives": [
       "Buy a gun at the Gunsmith",
       "Equip a weapon with at least 3 attachments"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Defibrillator, an Inflatable Decoy and the C4 recipe"
      ]
     },
     {
      "title": "Friendly Face",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 11",
      "check": "op-friendly-face",
      "objectives": [
       "Choose Request Truce on the ping wheel"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a Defibrillator, an Inflatable Decoy and the C4 recipe"
      ]
     },
     {
      "title": "Lethal Tools",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 14",
      "check": "op-lethal-tools",
      "objectives": [
       "Print 6 Lethals",
       "Kill 13 enemy soldiers with Lethals"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Structural Alloy and 2 Stock Rod"
      ]
     },
     {
      "title": "Committed",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 14",
      "check": "op-committed",
      "objectives": [
       "Extract after the radiation starts spreading"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Structural Alloy and 2 Stock Rod"
      ]
     },
     {
      "title": "Nothing Is Secure",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Page 14",
      "check": "op-nothing-is-secure",
      "objectives": [
       "Open 4 safes",
       "Extract with at least $20,000 of backpack and loadout value"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Structural Alloy and 2 Stock Rod"
      ]
     },
     {
      "title": "Recognition",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Radiation and medical page",
      "check": "op-recognition",
      "objectives": [
       "Kill 15 enemies with an unsuppressed weapon in a High threat location"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a UAV and an Armor Box"
      ]
     },
     {
      "title": "Radiation Station",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Radiation and medical page",
      "check": "op-radiation-station",
      "place": "Any Fire Station",
      "objectives": [
@@ -4419,11 +4499,14 @@
      ],
      "links": [
       "gas-mask"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a UAV and an Armor Box"
      ]
     },
     {
      "title": "Healer",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Radiation and medical page",
      "check": "op-healer",
      "objectives": [
       "Track the Medkit recipe at the 3D Printer",
@@ -4431,11 +4514,25 @@
      ],
      "links": [
       "medkit"
+     ],
+     "rewards": [
+      "Page reward: $20,000, a UAV and an Armor Box"
+     ]
+    },
+    {
+     "title": "Operation Rewards",
+     "group": "DMZ Orders: Operation Rewards page",
+     "check": "op-operation-rewards",
+     "place": "Cheongun Village",
+     "objectives": [
+      "Collect a Dynamic Op Phone in Cheongun Village",
+      "Complete the Dynamic Op",
+      "Loot the Dynamic Op crate"
      ]
     },
     {
      "title": "Preparation",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Operation Rewards page",
      "check": "op-preparation",
      "objectives": [
       "Print a Medium Backpack",
@@ -4448,7 +4545,7 @@
     },
     {
      "title": "Work Quietly",
-     "group": "DMZ Orders: Page not known yet",
+     "group": "DMZ Orders: Operation Rewards page",
      "check": "op-work-quietly",
      "objectives": [
       "Fit a suppressor to a weapon at the Gunsmith",
@@ -4460,21 +4557,108 @@
      ]
     },
     {
-     "title": "Crashed Crate",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-crashed-crate",
+     "title": "Goliath",
+     "group": "DMZ Orders: Goliath page",
+     "check": "op-goliath",
      "objectives": [
-      "Retrieve 3 lost supply drops",
-      "Complete a Loot Radio Tower Side Op"
+      "Hit Colossus with Thermite or a Drill Charge",
+      "Hit Colossus with a Shock Stick"
+     ],
+     "rewards": [
+      "Page reward: $20,000, the Large Backpack recipe and a Weapon Restock Kit"
      ]
     },
     {
-     "title": "Surprise Me",
-     "group": "DMZ Orders: Page not known yet",
-     "check": "op-surprise-me",
+     "title": "Click, Boom",
+     "group": "DMZ Orders: Goliath page",
+     "check": "op-click-boom",
      "objectives": [
-      "Complete 5 Dynamic Ops",
-      "Complete a Story Mission using Random Mission Deploy"
+      "Print 5 C4 charges",
+      "Kill 12 armored enemies with C4",
+      "Kill 5 enemies with one C4 blast"
+     ],
+     "links": [
+      "c4"
+     ],
+     "rewards": [
+      "Page reward: $20,000, the Large Backpack recipe and a Weapon Restock Kit"
+     ]
+    },
+    {
+     "title": "Navigate With Care",
+     "group": "DMZ Orders: Goliath page",
+     "check": "op-navigate-with-care",
+     "objectives": [
+      "Pay for a Polaris DAGOR A1 infil",
+      "Clear a North Korean convoy",
+      "Loot and extract the Chemical Components found after clearing a convoy"
+     ],
+     "rewards": [
+      "Page reward: $20,000, the Large Backpack recipe and a Weapon Restock Kit"
+     ]
+    },
+    {
+     "title": "Fire Insurance",
+     "group": "DMZ Orders: Fire Insurance page",
+     "check": "op-fire-insurance",
+     "objectives": [
+      "Print 5 Thermite Lethals",
+      "Stick 5 enemy vehicles with Thermite"
+     ],
+     "links": [
+      "thermite"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 CPU, 2 Nylon Cloth and an Inflatable Decoy"
+     ]
+    },
+    {
+     "title": "Quiet",
+     "group": "DMZ Orders: Fire Insurance page",
+     "check": "op-quiet",
+     "objectives": [
+      "Loot 10 containers in The Grid without taking damage"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 CPU, 2 Nylon Cloth and an Inflatable Decoy"
+     ]
+    },
+    {
+     "title": "Mechanic",
+     "group": "DMZ Orders: Fire Insurance page",
+     "check": "op-mechanic",
+     "objectives": [
+      "Repair a radar truck",
+      "Kill 19 enemies pinged by a radar truck"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 CPU, 2 Nylon Cloth and an Inflatable Decoy"
+     ]
+    },
+    {
+     "title": "Jail Break",
+     "group": "DMZ Orders: Jail Break page",
+     "check": "op-jail-break",
+     "objectives": [
+      "Kill 15 enemies in the 14th Political Prison",
+      "Destroy a reinforcement helicopter",
+      "Kill 10 enemies in the Citadel"
+     ],
+     "rewards": [
+      "Page reward: $20,000, an Armor Survival Kit (variant not confirmed), an Operator Rescue Beacon and a Weapon Insurance Contract"
+     ]
+    },
+    {
+     "title": "Keep Out",
+     "group": "DMZ Orders: Jail Break page",
+     "check": "op-keep-out",
+     "objectives": [
+      "Kill 3 Lieutenants",
+      "Loot a Lieutenant's key",
+      "Enter a Lieutenant's room and loot the Lieutenant's gun"
+     ],
+     "rewards": [
+      "Page reward: $20,000, an Armor Survival Kit (variant not confirmed), an Operator Rescue Beacon and a Weapon Insurance Contract"
      ]
     },
     {
@@ -4928,6 +5112,36 @@
     {
      "title": "Supplied Drops",
      "subtitle": "A supply drop may hold an extra container, for the whole squad (Survivalist)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Bounty Hunter",
+     "subtitle": "Bounties pay more (Warfighter)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Bounty Intel",
+     "subtitle": "Bounty Intel costs less (Warfighter)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Hostile Ammo",
+     "subtitle": "Hostiles drop an extra ammo pack (Warfighter)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Lucky",
+     "subtitle": "When you're hurt or low on supplies, you find useful items more often (Warfighter)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Plate Pouch",
+     "subtitle": "Two more spare Plates. Stacks with Plate Organization (Warfighter)",
+     "group": "Not placed in a tree yet"
+    },
+    {
+     "title": "Plate Speed",
+     "subtitle": "Plates go in faster (Warfighter)",
      "group": "Not placed in a tree yet"
     }
    ]
@@ -6116,6 +6330,17 @@
    "value": 2500
   },
   {
+   "id": "gangbyeon-apartment-b",
+   "name": "Gangbyeon Apartment B",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "Opens Gangbyeon Apartment B in the Hajin River Heights compound",
+   "grid": "G7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
+  },
+  {
    "id": "gas-can",
    "name": "Gas Can",
    "kind": "Gear",
@@ -6923,6 +7148,16 @@
    ],
    "effect": "Reusable",
    "value": 5000
+  },
+  {
+   "id": "police-station-armory",
+   "name": "Police Station Armory",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "Reported to open any Police Station armory: West Cheongun Village, north NuriGO Mall, Revolution Dam and south Pyonghwa Village. Whether it is the same key as the Police Station Key isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
   {
    "id": "police-station-key",
@@ -8072,6 +8307,17 @@
    "symbol": "key.fill",
    "rarity": "Rare",
    "note": "Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
+   "id": "utility-maintenance-storage",
+   "name": "Utility Maintenance Storage",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor",
+   "grid": "H4",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
   },
