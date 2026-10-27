@@ -34,6 +34,21 @@ struct PremiumView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 14)
                             .borderedCard()
+                    } else if premium.products.isEmpty, premium.loadFailed {
+                        VStack(spacing: 10) {
+                            Text("mw4.ui.premium.load_failed".localized())
+                                .font(.subheadline)
+                                .foregroundStyle(Color.appInkMuted)
+                                .multilineTextAlignment(.center)
+                            Button("mw4.ui.premium.retry".localized()) {
+                                Task { await premium.loadProducts() }
+                            }
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .borderedCard()
                     } else if premium.products.isEmpty {
                         ProgressView().frame(maxWidth: .infinity).padding(.vertical, 20)
                     } else {

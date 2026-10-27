@@ -17,6 +17,8 @@ final class Premium: ObservableObject {
     /// Yearly first, then lifetime; empty until the App Store answers.
     @Published private(set) var products: [Product] = []
     @Published private(set) var purchasing = false
+    /// The App Store didn't answer (offline, or the products aren't set up)
+    @Published private(set) var loadFailed = false
 
     private var updates: Task<Void, Never>?
 
@@ -37,8 +39,11 @@ final class Premium: ObservableObject {
     }
 
     func loadProducts() async {
-        guard products.isEmpty, let found = try? await Product.products(for: Self.productIDs) else { return }
+        guard products.isEmpty else { return }
+        loadFailed = false
+        let found = (try? await Product.products(for: Self.productIDs)) ?? []
         products = Self.productIDs.compactMap { id in found.first { $0.id == id } }
+        loadFailed = products.isEmpty
     }
 
     /// Premium while a verified, unrevoked yearly or lifetime purchase is held.
