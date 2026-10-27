@@ -1,23 +1,33 @@
-import AppLovinSDK
 import AppTrackingTransparency
+import IronSource
 import SwiftUI
 
-/// AppLovin MAX: a banner under the Weapons and DMZ lists, and a rewarded
-/// ad before each stash scan. Premium players see neither.
+/// Unity LevelPlay: a banner under the Weapons and DMZ lists, and a
+/// rewarded ad before each stash scan. Premium players see neither.
 enum AdConfig {
-    // AppLovin dashboard: Account > Keys, and MAX > Ad Units. Until these
-    // are filled in, the app shows no ads and scans are free.
-    static let sdkKey = ""
-    static let bannerUnit = ""
-    static let rewardedUnit = ""
+    // LevelPlay dashboard: the app's key, and its Banner and Rewarded ad
+    // units. Empty values switch the ads off and make scans free.
+    static let appKey = "290d2170d"
+    static let bannerUnit = "fcdqqqb7rfkcj4ar"
+    static let rewardedUnit = "gd1lxhzn6xvf29nk"
 
-    static var isConfigured: Bool { !sdkKey.isEmpty && !bannerUnit.isEmpty && !rewardedUnit.isEmpty }
+    static var isConfigured: Bool { !appKey.isEmpty && !bannerUnit.isEmpty && !rewardedUnit.isEmpty }
 
-    /// `MW4_ADS=1` (DEBUG) acts as a free player with ads on, without keys:
-    /// the scan asks first, and with no ad to show it goes straight on.
+    /// `MW4_ADS=1` (DEBUG) acts as a free player with ads on, without
+    /// starting the SDK: the scan asks first, and with no ad goes straight on.
     static var simulated: Bool {
         #if DEBUG
         ProcessInfo.processInfo.environment["MW4_ADS"] == "1"
+        #else
+        false
+        #endif
+    }
+
+    /// `MW4_AD_TEST_SUITE=1` (DEBUG) opens LevelPlay's test suite once the
+    /// SDK is up, to check each network serves an ad.
+    static var testSuite: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.environment["MW4_AD_TEST_SUITE"] == "1"
         #else
         false
         #endif
@@ -31,102 +41,134 @@ final class Ads: NSObject, ObservableObject {
     /// The SDK is up and banners can load.
     @Published private(set) var ready = false
 
-    private var rewarded: MARewardedAd?
+    private var starting = false
+    private var rewarded: LPMRewardedAd?
     private var onReward: (() -> Void)?
     private var earned = false
+    private var closed = false
     private var retry = 0
 
     /// Whether this player gets ads at all.
     var showsAds: Bool { (AdConfig.isConfigured || AdConfig.simulated) && !Premium.shared.isPremium }
 
     /// Called once the app is active (the tracking prompt needs that): asks
-    /// about tracking, then starts the SDK. Nothing happens for Premium.
+    /// about tracking, then starts the SDK. Nothing happens for Premium, or
+    /// before onboarding is done: the next time the app is active after it
+    /// (once the notification prompt has closed), so the prompts never stack.
     func start() {
-        guard showsAds, AdConfig.isConfigured, !ready, !ALSdk.shared().isInitialized else { return }
+        guard showsAds, AdConfig.isConfigured, !AdConfig.simulated, !ready, !starting,
+              UserDefaults.standard.bool(forKey: "mw4_has_onboarded") else { return }
+        starting = true
         ATTrackingManager.requestTrackingAuthorization { _ in
             Task { @MainActor in self.initialise() }
         }
     }
 
     private func initialise() {
-        let config = ALSdkInitializationConfiguration(sdkKey: AdConfig.sdkKey) { builder in
-            builder.mediationProvider = ALMediationProviderMAX
-        }
-        ALSdk.shared().initialize(with: config) { _ in
+        if AdConfig.testSuite { LevelPlay.setMetaDataWithKey("is_test_suite", value: "enable") }
+        let request = LPMInitRequestBuilder(appKey: AdConfig.appKey).build()
+        LevelPlay.initWith(request) { _, error in
             Task { @MainActor in
+                self.starting = false
+                guard error == nil else { return }  // tried again next time the app is opened
                 self.ready = true
                 self.loadRewarded()
+                if AdConfig.testSuite, let root = Self.topController() { LevelPlay.launchTestSuite(root) }
             }
         }
     }
 
     private func loadRewarded() {
         if rewarded == nil {
-            rewarded = MARewardedAd.shared(withAdUnitIdentifier: AdConfig.rewardedUnit)
-            rewarded?.delegate = self
+            let ad = LPMRewardedAd(adUnitId: AdConfig.rewardedUnit)
+            ad.setDelegate(self)
+            rewarded = ad
         }
-        rewarded?.load()
+        rewarded?.loadAd()
     }
 
     /// Runs `action` straight away for Premium (or with ads off); otherwise
     /// after a rewarded ad is watched to the end. No ad to show (none loaded,
     /// no network) never blocks the player: the action runs anyway.
     func afterRewardedAd(_ action: @escaping () -> Void) {
-        guard showsAds, ready, let rewarded, rewarded.isReady else {
-            if showsAds, AdConfig.isConfigured { start(); if ready { loadRewarded() } }
+        guard showsAds, ready, let rewarded, rewarded.isAdReady(), let root = Self.topController() else {
+            if showsAds, ready { loadRewarded() } else { start() }
             action()
             return
         }
         onReward = action
         earned = false
-        rewarded.show()
+        closed = false
+        rewarded.showAd(viewController: root, placementName: nil)
+    }
+
+    /// The reward and the close arrive in either order; the scan starts once
+    /// both have, so its sheets don't fight the ad's own screen.
+    private func finishIfDone() {
+        guard closed else { return }
+        if earned { onReward?() }
+        onReward = nil
+        earned = false
+        closed = false
+        rewarded?.loadAd()
+    }
+
+    /// What to present the ad over: the frontmost screen.
+    static func topController() -> UIViewController? {
+        let scene = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive }
+        var top = scene?.windows.first { $0.isKeyWindow }?.rootViewController
+        while let next = top?.presentedViewController { top = next }
+        return top
     }
 }
 
-extension Ads: @preconcurrency MARewardedAdDelegate {
-    func didLoad(_ ad: MAAd) { retry = 0 }
+extension Ads: @preconcurrency LPMRewardedAdDelegate {
+    func didLoadAd(with adInfo: LPMAdInfo) { retry = 0 }
 
-    func didFailToLoadAd(forAdUnitIdentifier adUnitIdentifier: String, withError error: MAError) {
-        // AppLovin's advice: back off, up to a minute
+    func didFailToLoadAd(withAdUnitId adUnitId: String, error: Error) {
+        // Back off, up to a minute, then try again
         retry += 1
         let delay = min(64, 1 << min(retry, 6))
         Task { @MainActor in
             try? await Task.sleep(for: .seconds(delay))
-            self.rewarded?.load()
+            self.rewarded?.loadAd()
         }
     }
 
-    func didDisplay(_ ad: MAAd) {}
-    func didClick(_ ad: MAAd) {}
+    func didDisplayAd(with adInfo: LPMAdInfo) {}
 
-    func didRewardUser(for ad: MAAd, with reward: MAReward) { earned = true }
-
-    /// The scan starts once the ad has closed, so its sheets don't fight the
-    /// ad's own screen.
-    func didHide(_ ad: MAAd) {
-        if earned { onReward?() }
-        onReward = nil
-        earned = false
-        rewarded?.load()
+    func didRewardAd(with adInfo: LPMAdInfo, reward: LPMReward) {
+        earned = true
+        finishIfDone()
     }
 
-    func didFail(toDisplay ad: MAAd, withError error: MAError) {
+    func didCloseAd(with adInfo: LPMAdInfo) {
+        closed = true
+        // The reward can land just after the close: give it a moment
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(400))
+            self.finishIfDone()
+        }
+    }
+
+    func didFailToDisplayAd(with adInfo: LPMAdInfo, error: Error) {
         // Couldn't show it: let them scan rather than lose the tap
-        onReward?()
-        onReward = nil
-        rewarded?.load()
+        earned = true
+        closed = true
+        finishIfDone()
     }
 }
 
-/// A standard banner, 50pt tall (90 on iPad), at the foot of a list screen.
-/// Empty for Premium and until the SDK is ready.
+/// A banner at the foot of a list screen, 50pt tall (90 on iPad). Empty
+/// for Premium and until the SDK is ready.
 struct AdBanner: View {
     @ObservedObject private var ads = Ads.shared
     @ObservedObject private var premium = Premium.shared
     @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
-        if ads.ready, AdConfig.isConfigured, !premium.isPremium {
+        if ads.ready, !premium.isPremium {
             AdBannerView()
                 .frame(height: sizeClass == .regular ? 90 : 50)
                 .frame(maxWidth: .infinity)
@@ -135,17 +177,34 @@ struct AdBanner: View {
     }
 }
 
-private struct AdBannerView: UIViewRepresentable {
-    func makeUIView(context: Context) -> MAAdView {
-        let view = MAAdView(adUnitIdentifier: AdConfig.bannerUnit)
+/// LevelPlay loads a banner against a view controller, so the banner lives
+/// in one of its own.
+private struct AdBannerView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> BannerController { BannerController() }
+    func updateUIViewController(_ controller: BannerController, context: Context) {}
+    static func dismantleUIViewController(_ controller: BannerController, coordinator: ()) { controller.banner?.destroy() }
+}
+
+private final class BannerController: UIViewController, @preconcurrency LPMBannerAdViewDelegate {
+    var banner: LPMBannerAdView?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .clear
-        view.loadAd()
-        return view
+        let config = LPMBannerAdViewConfigBuilder()
+        if let size = LPMAdSize.createAdaptive() { config.set(adSize: size) }
+        let banner = LPMBannerAdView(adUnitId: AdConfig.bannerUnit, config: config.build())
+        banner.setDelegate(self)
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(banner)
+        NSLayoutConstraint.activate([
+            banner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            banner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        banner.loadAd(with: self)
+        self.banner = banner
     }
 
-    func updateUIView(_ view: MAAdView, context: Context) {}
-
-    static func dismantleUIView(_ view: MAAdView, coordinator: ()) {
-        view.stopAutoRefresh()
-    }
+    func didLoadAd(with adInfo: LPMAdInfo) {}
+    func didFailToLoadAd(withAdUnitId adUnitId: String, error: Error) {}
 }

@@ -20,11 +20,11 @@ Link to privacy policy of third party service providers used by the app
 
 *   [Google Play Services](https://www.google.com/policies/privacy/)
 *   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
-*   [AppLovin](https://www.applovin.com/privacy/)
+*   [Unity Ads and LevelPlay](https://unity.com/legal/game-player-and-app-user-privacy-policy)
 
 **Advertising and Premium**
 
-The free version of the app shows ads from AppLovin, including a short ad before reading a stash photo. AppLovin and its ad partners may collect your device's advertising identifier, IP address and how you interact with ads in order to show and measure them. On iPhone and iPad the app asks before allowing tracking, and you can change that answer at any time in Settings > Privacy & Security > Tracking. Stash photos are read on your device and are never sent to AppLovin or to me.
+The free version of the app shows ads through Unity LevelPlay, including a short ad before reading a stash photo. Unity and its ad partners may collect your device's advertising identifier, IP address and how you interact with ads in order to show and measure them. On iPhone and iPad the app asks before allowing tracking, and you can change that answer at any time in Settings > Privacy & Security > Tracking. Stash photos are read on your device and are never sent to Unity or to me.
 
 Premium (a yearly subscription or a one-off purchase) removes the ads. Purchases are handled by Apple; I never see your payment details.
 

@@ -93,10 +93,11 @@
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 		FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */; };
 		A7C3D2E1F0B94C8D9E6A5B41 /* HajinStashTiles.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B8D4E3F2A1C05D9EAF7B6C52 /* HajinStashTiles.mlmodel */; };
-		449A3593E77258B1468B3A65 /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */; };
+		449A3593E77258B1468B3A65 /* UnityMediationSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B04E485BBEEE41EDFCF8C90F /* UnityMediationSDK */; };
 		B03484AF158879AA9D495A96 /* Premium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E4FC72459A6253A5B2B7C /* Premium.swift */; };
 		39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFC2C043486400F10E42010 /* Ads.swift */; };
 		1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18584995CE0647A750FAF9 /* PremiumView.swift */; };
+		526CD7FDF12954A43CA48504 /* UnityAdsAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 3B4630512069BC35E2FFB348 /* UnityAdsAdapter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,7 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449A3593E77258B1468B3A65 /* AppLovinSDK in Frameworks */,
+				449A3593E77258B1468B3A65 /* UnityMediationSDK in Frameworks */,
+				526CD7FDF12954A43CA48504 /* UnityAdsAdapter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +464,8 @@
 			);
 			name = MW4CamoTracker;
 			packageProductDependencies = (
-				B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */,
+				B04E485BBEEE41EDFCF8C90F /* UnityMediationSDK */,
+				3B4630512069BC35E2FFB348 /* UnityAdsAdapter */,
 			);
 			productName = MW4CamoTracker;
 			productReference = 55033CAA3C16581897393815 /* MW4CamoTracker.app */;
@@ -521,7 +524,8 @@
 			mainGroup = 90A2718410341479B980B883;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
+				205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "LevelPlay-Swift-Package" */,
+				67C9D6E757407621C1C3BBCA /* XCRemoteSwiftPackageReference "LevelPlay-UnityAds-Adapter-Swift-Package" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C807CD8FE7BFAEC6E23B808 /* Products */;
@@ -698,21 +702,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */ = {
+		205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "LevelPlay-Swift-Package" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppLovin/AppLovin-MAX-Swift-Package";
+			repositoryURL = "https://github.com/ironsource-mobile/LevelPlay-Swift-Package";
 			requirement = {
 				kind = exactVersion;
-				version = 13.6.4;
+				version = 9.6.1;
+			};
+		};
+		67C9D6E757407621C1C3BBCA /* XCRemoteSwiftPackageReference "LevelPlay-UnityAds-Adapter-Swift-Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package";
+			requirement = {
+				kind = exactVersion;
+				version = 5.12.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */ = {
+		B04E485BBEEE41EDFCF8C90F /* UnityMediationSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */;
-			productName = AppLovinSDK;
+			package = 205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "LevelPlay-Swift-Package" */;
+			productName = UnityMediationSDK;
+		};
+		3B4630512069BC35E2FFB348 /* UnityAdsAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67C9D6E757407621C1C3BBCA /* XCRemoteSwiftPackageReference "LevelPlay-UnityAds-Adapter-Swift-Package" */;
+			productName = UnityAdsAdapter;
 		};
 /* End XCSwiftPackageProductDependency section */
 

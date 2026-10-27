@@ -697,5 +697,12 @@
 			<string>zq492l623r.skadnetwork</string>
 		</dict>
 	</array>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://postbacks-is.com/</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
