@@ -1,0 +1,71 @@
+{
+  "identifier" : "6F1C2A0E-9B7D-4C1E-8E2A-3D5B7A9C1E01",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : false,
+      "internalID" : "6F1C2A0E-9B7D-4C1E-8E2A-3D5B7A9C1E02",
+      "localizations" : [
+        {
+          "description" : "No ads, unlimited stash scans, for good.",
+          "displayName" : "Premium Lifetime",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "com.DannyRyman.MW4CamoTracker.premium.lifetime",
+      "referenceName" : "Premium Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_GB",
+    "_storefront" : "GBR",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "6F1C2A0E-9B7D-4C1E-8E2A-3D5B7A9C1E03",
+      "localizations" : [
+
+      ],
+      "name" : "Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6F1C2A0E-9B7D-4C1E-8E2A-3D5B7A9C1E04",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "No ads, unlimited stash scans.",
+              "displayName" : "Premium Yearly",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "com.DannyRyman.MW4CamoTracker.premium.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Premium Yearly",
+          "subscriptionGroupID" : "6F1C2A0E-9B7D-4C1E-8E2A-3D5B7A9C1E03",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

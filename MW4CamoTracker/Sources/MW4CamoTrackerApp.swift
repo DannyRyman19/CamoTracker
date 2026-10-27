@@ -25,6 +25,10 @@ struct MW4CamoTrackerApp: App {
                 .environmentObject(hajin)
                 .preferredColorScheme(.dark)
                 .task {
+                    Premium.shared.start()
+                    #if DEBUG
+                    Premium.shared.debugOverride()
+                    #endif
                     if imageCacheToken < Self.currentImageCacheToken {
                         URLCache.shared.removeAllCachedResponses()
                         imageCacheToken = Self.currentImageCacheToken
@@ -39,6 +43,8 @@ struct MW4CamoTrackerApp: App {
             }
             // Coming back to the app checks again, so an update published
             // while it sat in the background shows without a relaunch.
+            // Ads start once the app is active: the tracking prompt needs it
+            if newPhase == .active { Ads.shared.start() }
             if newPhase == .active, !viewModel.isRefreshing {
                 Task { await viewModel.refresh() }
             }

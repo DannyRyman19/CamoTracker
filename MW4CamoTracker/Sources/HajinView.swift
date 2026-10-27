@@ -27,6 +27,7 @@ struct HajinView: View {
                     HajinWideLayout()
                 } else {
                     phoneList(guide)
+                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
                 }
             }
         }

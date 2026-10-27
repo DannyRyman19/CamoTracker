@@ -70,6 +70,9 @@
                ReferencedContainer = "container:MW4CamoTracker.xcodeproj">
             </BuildableReference>
       </BuildableProductRunnable>
+      <StoreKitConfigurationFileReference
+         identifier = "../../Premium.storekit">
+      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

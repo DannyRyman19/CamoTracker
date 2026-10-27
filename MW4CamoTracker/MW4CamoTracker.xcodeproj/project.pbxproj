@@ -93,6 +93,10 @@
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 		FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */; };
 		A7C3D2E1F0B94C8D9E6A5B41 /* HajinStashTiles.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B8D4E3F2A1C05D9EAF7B6C52 /* HajinStashTiles.mlmodel */; };
+		449A3593E77258B1468B3A65 /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */; };
+		B03484AF158879AA9D495A96 /* Premium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E4FC72459A6253A5B2B7C /* Premium.swift */; };
+		39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFC2C043486400F10E42010 /* Ads.swift */; };
+		1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18584995CE0647A750FAF9 /* PremiumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +228,9 @@
 		EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinItemViews.swift; sourceTree = "<group>"; };
 		F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinGuideTests.swift; sourceTree = "<group>"; };
 		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
+		202E4FC72459A6253A5B2B7C /* Premium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Premium.swift; sourceTree = "<group>"; };
+		ABFC2C043486400F10E42010 /* Ads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
+		9E18584995CE0647A750FAF9 /* PremiumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F42960D56A68847BDCB8E6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BB5AB86AFA30C09A7DC6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449A3593E77258B1468B3A65 /* AppLovinSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +324,9 @@
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
 				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
 				137CA712348610EDF30BE314 /* HajinModels.swift */,
+				9E18584995CE0647A750FAF9 /* PremiumView.swift */,
+				ABFC2C043486400F10E42010 /* Ads.swift */,
+				202E4FC72459A6253A5B2B7C /* Premium.swift */,
 				E109A09F974C9DCA7A54E2BF /* HajinMapView.swift */,
 				65827CB775F1AFB05F6AD6C5 /* HajinView.swift */,
 				EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */,
@@ -433,6 +451,7 @@
 			buildConfigurationList = 2D364569050CC8B19A2FF9A0 /* Build configuration list for PBXNativeTarget "MW4CamoTracker" */;
 			buildPhases = (
 				A0E0F70D53E5549FD19A3251 /* Sources */,
+				A5BB5AB86AFA30C09A7DC6AF /* Frameworks */,
 				AC7EE0278A1B27F1D16C7CF3 /* Resources */,
 				0F1B1DBCC1713F1D00303FAC /* Embed Foundation Extensions */,
 			);
@@ -442,6 +461,9 @@
 				DEA3EAC63690533786BA814E /* PBXTargetDependency */,
 			);
 			name = MW4CamoTracker;
+			packageProductDependencies = (
+				B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */,
+			);
 			productName = MW4CamoTracker;
 			productReference = 55033CAA3C16581897393815 /* MW4CamoTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -498,6 +520,9 @@
 			);
 			mainGroup = 90A2718410341479B980B883;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C807CD8FE7BFAEC6E23B808 /* Products */;
 			projectDirPath = "";
@@ -568,6 +593,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */,
+				39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */,
+				B03484AF158879AA9D495A96 /* Premium.swift in Sources */,
 				64CE3B49298B2F88E487EC41 /* AppDelegate.swift in Sources */,
 				9E55D2C15DCE00B769E7A3C7 /* BackgroundRefreshCoordinator.swift in Sources */,
 				B1EFBDE3F1C1650BB6D03762 /* CategoryListView.swift in Sources */,
@@ -669,6 +697,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppLovin/AppLovin-MAX-Swift-Package";
+			requirement = {
+				kind = exactVersion;
+				version = 13.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B04E485BBEEE41EDFCF8C90F /* AppLovinSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 205462DD7BC9026DBFA80D4A /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */;
+			productName = AppLovinSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCBuildConfiguration section */
 		329645BF0A7F3FB43ABFB114 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -679,6 +726,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 44G72CWWEW;
 				INFOPLIST_FILE = Resources/Info.plist;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,6 +1004,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 44G72CWWEW;
 				INFOPLIST_FILE = Resources/Info.plist;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

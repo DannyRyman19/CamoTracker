@@ -298,6 +298,7 @@ struct CategoryListView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
         .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
         .navigationTitle(mode.displayNameKey.localized())
@@ -583,6 +584,8 @@ struct CustomiseHomeSheet: View {
     @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @ObservedObject private var premium = Premium.shared
+    @State private var showsPremium = false
     @Environment(\.dismiss) private var dismiss
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
@@ -681,6 +684,23 @@ struct CustomiseHomeSheet: View {
                 }
 
                 Section {
+                    Button { showsPremium = true } label: {
+                        Label(premium.isPremium ? "mw4.ui.premium.active".localized() : "mw4.ui.premium.title".localized(),
+                              systemImage: premium.isPremium ? "checkmark.seal.fill" : "sparkles")
+                    }
+                    .foregroundStyle(accent)
+                    .accessibilityIdentifier("customise.premium")
+                    if !premium.isPremium {
+                        Button("mw4.ui.premium.restore".localized()) {
+                            Task { await premium.restore() }
+                        }
+                        .foregroundStyle(accent)
+                    }
+                } footer: {
+                    Text("mw4.ui.premium.subtitle".localized())
+                }
+
+                Section {
                     Button("mw4.ui.customise.reset".localized()) {
                         order = ""
                         hidden = ""
@@ -699,6 +719,7 @@ struct CustomiseHomeSheet: View {
             }
         }
         .presentationDetents([.medium, .large])
+        .sheet(isPresented: $showsPremium) { PremiumView() }
     }
 
     private func binding(for section: HomeSection) -> Binding<Bool> {

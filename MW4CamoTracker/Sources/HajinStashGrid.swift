@@ -552,7 +552,7 @@ struct HajinStashGridButton: View {
     @ObservedObject private var flow = HajinScanFlow.shared
 
     var body: some View {
-        Button { flow.showsIntro = true } label: {
+        Button { flow.requestScan() } label: {
             if hero { heroLabel } else { rowLabel }
         }
         .buttonStyle(.plain)
@@ -629,6 +629,16 @@ struct HajinScanHost: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+        .confirmationDialog("mw4.ui.premium.scan_title".localized(), isPresented: $flow.showsScanChoice, titleVisibility: .visible) {
+            Button("mw4.ui.premium.scan_watch".localized()) {
+                Ads.shared.afterRewardedAd { flow.showsIntro = true }
+            }
+            Button("mw4.ui.premium.scan_premium".localized()) { flow.showsPremium = true }
+            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
+        } message: {
+            Text("mw4.ui.premium.scan_message".localized())
+        }
+        .sheet(isPresented: $flow.showsPremium) { PremiumView() }
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
             if let pending = flow.pending { route(pending); flow.pending = nil } else { flow.carried = nil }
         }) {
@@ -708,6 +718,9 @@ struct HajinScanHost: ViewModifier {
                 }
             }
             if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
+            // SS_SCAN_CHOICE=1: the ad-or-Premium question; SS_PREMIUM=1: the Premium sheet
+            if ProcessInfo.processInfo.environment["SS_SCAN_CHOICE"] == "1" { flow.requestScan() }
+            if ProcessInfo.processInfo.environment["SS_PREMIUM"] == "1" { flow.showsPremium = true }
             // SS_GRID_BATCH=1: the grid finder over every photo in
             // Documents/gridbatch, corners to gridbatch/corners.json (the
             // tile detector only runs on a device, not the simulator)
@@ -849,6 +862,15 @@ final class HajinScanFlow: ObservableObject {
     /// a 3D Printer screen)
     @Published var showsPicker = false
     @Published var sorting = false
+    /// Free players: watch an ad to scan, or go Premium
+    @Published var showsScanChoice = false
+    @Published var showsPremium = false
+
+    /// A reader button: straight to the intro for Premium (or with ads off),
+    /// otherwise the ad-or-Premium choice first.
+    func requestScan() {
+        if Ads.shared.showsAds { showsScanChoice = true } else { showsIntro = true }
+    }
     /// "Add another photo": the counts read so far, and from how many
     /// photos, added to whatever the next photo reads
     var carried: [String: Int]?
