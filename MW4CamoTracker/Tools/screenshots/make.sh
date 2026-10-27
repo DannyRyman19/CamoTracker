@@ -77,7 +77,8 @@ OUT="${OUT:-$HOME/Desktop/MW4CamoTracker-screenshots}"
 asc_locale () { # <lang> -> App Store Connect locale directory
   case "$1" in
     en) echo "en-US" ;; de) echo "de-DE" ;; es) echo "es-ES" ;;
-    fr) echo "fr-FR" ;; it) echo "it-IT" ;; nl) echo "nl-NL" ;; *) echo "$1" ;;
+    # App Store Connect calls Italian just "it", not "it-IT"
+    fr) echo "fr-FR" ;; it) echo "it" ;; nl) echo "nl-NL" ;; *) echo "$1" ;;
   esac
 }
 posix_locale () { # <lang> -> the AppleLocale the region formats follow
