@@ -60,9 +60,10 @@ final class CloudSync {
     /// Called with merged values when another device changed something.
     var onRemoteChange: (([String: Int]) -> Void)?
 
-    /// Whether sync is on (Customise); on unless the player turned it off.
+    /// Whether sync is on: a Premium feature, on unless the player turned
+    /// it off in Customise. Free, progress stays on the device.
     static var isEnabled: Bool {
-        UserDefaults.standard.object(forKey: enabledKey) as? Bool ?? true
+        Premium.shared.isPremium && (UserDefaults.standard.object(forKey: enabledKey) as? Bool ?? true)
     }
 
     init(cloudKey: String, defaults: UserDefaults = .standard, store: NSUbiquitousKeyValueStore? = .default) {

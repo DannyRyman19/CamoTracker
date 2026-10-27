@@ -453,7 +453,8 @@ private struct FreeAndPremiumPage: View {
                     "mw4.onboarding.premium.free_track", "mw4.onboarding.premium.free_dmz", "mw4.onboarding.premium.free_scan"
                 ])
                 group("mw4.onboarding.premium.premium".localized(), symbol: "sparkles", rows: [
-                    "mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_scans", "mw4.ui.premium.perk_icons", "mw4.ui.premium.perk_customise"
+                    "mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_scans", "mw4.ui.premium.perk_icons", "mw4.ui.premium.perk_customise",
+                    "mw4.ui.premium.perk_sync"
                 ])
                 Text("mw4.onboarding.premium.footer".localized())
                     .font(.footnote)

@@ -705,9 +705,13 @@ struct CustomiseHomeSheet: View {
                 }
 
                 Section {
-                    Toggle("mw4.ui.icloud.title".localized(), isOn: $iCloudSync)
+                    // Free players see it off: sync is a Premium feature
+                    Toggle("mw4.ui.icloud.title".localized(), isOn: locked ? .constant(false) : $iCloudSync)
                         .tint(accent)
+                        .disabled(locked)
                         .accessibilityIdentifier("customise.iCloudSync")
+                } header: {
+                    premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.icloud.footer".localized())
                 }
@@ -775,7 +779,7 @@ struct CustomiseHomeSheet: View {
     }
 
     /// Free players: the layout and look settings show, locked, and open
-    /// Premium; modes, language, quick tick and iCloud stay free.
+    /// Premium; modes, language and quick tick stay free.
     private var locked: Bool { !premium.isPremium }
 
     /// A section header with a Premium lock for free players; tapping it

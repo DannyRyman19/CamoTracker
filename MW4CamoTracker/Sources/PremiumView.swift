@@ -26,6 +26,7 @@ struct PremiumView: View {
                         perk("camera.viewfinder", "mw4.ui.premium.perk_scans")
                         perk("app.badge.fill", "mw4.ui.premium.perk_icons")
                         perk("slider.horizontal.3", "mw4.ui.premium.perk_customise")
+                        perk("icloud.fill", "mw4.ui.premium.perk_sync")
                         perk("heart.fill", "mw4.ui.premium.perk_support")
                     }
 

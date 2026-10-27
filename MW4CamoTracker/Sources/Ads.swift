@@ -207,16 +207,19 @@ extension Ads: @preconcurrency LPMRewardedAdDelegate {
 
 /// A banner at the foot of a list screen: a solid strip with a hairline
 /// above it, the ad pinned inside so it never hangs over the list, and a
-/// "Remove ads" link to Premium above the ad. Empty for Premium and until
-/// the SDK is ready.
+/// "Remove ads" link to Premium above the ad. The ad's size comes from the
+/// strip's own width (an iPad column can be narrower than the screen), so
+/// it never pushes the layout wider. Empty for Premium and until the SDK is
+/// ready.
 struct AdBanner: View {
     @ObservedObject private var ads = Ads.shared
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
+    @State private var width: CGFloat = 0
 
     var body: some View {
         if ads.ready || AdConfig.simulated, !premium.isPremium {
-            let size = BannerController.size
+            let size = BannerController.size(fitting: width)
             VStack(spacing: 4) {
                 Button { showsPremium = true } label: {
                     // No ✕: beside an ad that reads as the ad's own close button
@@ -231,7 +234,8 @@ struct AdBanner: View {
                         // MW4_ADS=1: a stand-in the size of a real banner, for layout
                         Rectangle().fill(Color.gray.opacity(0.35)).overlay(Text(verbatim: "Test banner").font(.caption))
                     } else {
-                        AdBannerView()
+                        AdBannerView(size: size)
+                            .id(size.width)  // a new banner when the strip changes size class
                     }
                 }
                 .frame(width: CGFloat(size.width), height: CGFloat(size.height))
@@ -240,6 +244,11 @@ struct AdBanner: View {
             .padding(.top, 4)
             .padding(.bottom, 6)
             .background(Color.appBackground)
+            .background(GeometryReader { geo in
+                Color.clear
+                    .onAppear { width = geo.size.width }
+                    .onChange(of: geo.size.width) { width = $0 }
+            })
             .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
             .sheet(isPresented: $showsPremium) { PremiumView() }
         }
@@ -249,23 +258,33 @@ struct AdBanner: View {
 /// LevelPlay loads a banner against a view controller, so the banner lives
 /// in one of its own.
 private struct AdBannerView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> BannerController { BannerController() }
+    let size: LPMAdSize
+    func makeUIViewController(context: Context) -> BannerController { BannerController(size: size) }
     func updateUIViewController(_ controller: BannerController, context: Context) {}
     static func dismantleUIViewController(_ controller: BannerController, coordinator: ()) { controller.banner?.destroy() }
 }
 
 private final class BannerController: UIViewController, @preconcurrency LPMBannerAdViewDelegate {
-    /// Banner on iPhone, leaderboard on iPad; worked out once so the strip
-    /// and the ad agree on it.
-    static let size: LPMAdSize = LPMAdSize.createAdaptive() ?? LPMAdSize.banner()
+    /// The leaderboard (728x90) where the strip has room for it, else the
+    /// standard banner (320x50).
+    static func size(fitting width: CGFloat) -> LPMAdSize {
+        width >= 744 ? LPMAdSize.leaderBoard() : LPMAdSize.banner()
+    }
 
+    let size: LPMAdSize
     var banner: LPMBannerAdView?
+
+    init(size: LPMAdSize) {
+        self.size = size
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) { fatalError("not used") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         view.clipsToBounds = true
-        let size = Self.size
         let config = LPMBannerAdViewConfigBuilder().set(adSize: size).build()
         let banner = LPMBannerAdView(adUnitId: AdConfig.bannerUnit, config: config)
         banner.setDelegate(self)
