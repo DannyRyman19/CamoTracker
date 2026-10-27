@@ -1,3 +1,4 @@
+import AdSupport
 import AppTrackingTransparency
 import IronSource
 import SwiftUI
@@ -56,11 +57,22 @@ final class Ads: NSObject, ObservableObject {
     /// before onboarding is done: the next time the app is active after it
     /// (once the notification prompt has closed), so the prompts never stack.
     func start() {
+        #if DEBUG
+        print("[Ads] start: showsAds \(showsAds) ready \(ready) starting \(starting) onboarded \(UserDefaults.standard.bool(forKey: "mw4_has_onboarded")) premium \(Premium.shared.isPremium)")
+        #endif
         guard showsAds, AdConfig.isConfigured, !AdConfig.simulated, !ready, !starting,
               UserDefaults.standard.bool(forKey: "mw4_has_onboarded") else { return }
         starting = true
-        ATTrackingManager.requestTrackingAuthorization { _ in
-            Task { @MainActor in self.initialise() }
+        Task { @MainActor in
+            // iOS drops the tracking request, without asking, if the app isn't
+            // fully active yet, and SwiftUI reports active a moment early:
+            // wait a second, and for the app itself to be active
+            try? await Task.sleep(for: .seconds(1))
+            for _ in 0..<20 where UIApplication.shared.applicationState != .active {
+                try? await Task.sleep(for: .milliseconds(300))
+            }
+            _ = await ATTrackingManager.requestTrackingAuthorization()
+            initialise()
         }
     }
 
@@ -70,10 +82,25 @@ final class Ads: NSObject, ObservableObject {
         LevelPlay.initWith(request) { _, error in
             Task { @MainActor in
                 self.starting = false
+                #if DEBUG
+                print("[Ads] LevelPlay init: \(error.map { "failed \($0)" } ?? "ok")")
+                // For LevelPlay's test devices (all zeros unless tracking is allowed)
+                print("[Ads] IDFA \(ASIdentifierManager.shared().advertisingIdentifier.uuidString) tracking \(ATTrackingManager.trackingAuthorizationStatus.rawValue)")
+                #endif
                 guard error == nil else { return }  // tried again next time the app is opened
                 self.ready = true
                 self.loadRewarded()
-                if AdConfig.testSuite, let root = Self.topController() { LevelPlay.launchTestSuite(root) }
+                if AdConfig.testSuite {
+                    // Logs whether each network's SDK and adapter are wired up
+                    LevelPlay.validateIntegration()
+                    // After the splash, which would otherwise cover it
+                    try? await Task.sleep(for: .seconds(4))
+                    let root = Self.topController()
+                    #if DEBUG
+                    print("[Ads] test suite over \(root.map { String(describing: type(of: $0)) } ?? "nothing")")
+                    #endif
+                    if let root { LevelPlay.launchTestSuite(root) }
+                }
             }
         }
     }
