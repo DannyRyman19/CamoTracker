@@ -141,22 +141,33 @@ struct HajinVerdictBadge: View {
 extension HajinStore {
     static let spareTrackedKey = "mw4_hajin_spare_tracked"
     static let spareBufferKey = "mw4_hajin_spare_buffer"
+    static let spareRecipesKey = "mw4_hajin_spare_recipes"
 
     /// What the stash holds beyond what the unfinished FOB upgrades still
-    /// need (and, as the player chooses, what tracked items need and a
-    /// buffer of each), with its sell value: most valuable first.
+    /// need (and, as the player chooses, one print of every recipe they
+    /// have, what tracked items need and a buffer of each), with its sell
+    /// value: most valuable first.
     func spare() -> (lines: [(item: HajinGuide.Item, count: Int, worth: Int)], total: Int) {
         guard let guide else { return ([], 0) }
         let keepTracked = UserDefaults.standard.object(forKey: Self.spareTrackedKey) as? Bool ?? true
         let buffer = UserDefaults.standard.integer(forKey: Self.spareBufferKey)
+        let keepRecipes = UserDefaults.standard.object(forKey: Self.spareRecipesKey) as? Bool ?? true
         var need: [String: Int] = [:]
         for line in shoppingList(.upgrades) { need[line.item.id] = line.need }
-        if keepTracked {
-            // Tracked upgrades are already in the list above; add tracked recipes
-            for id in tracked {
-                guard let item = guide.item(id), item.kind != "FOB Upgrade" else { continue }
-                for part in item.cost ?? [] { need[part.item, default: 0] += part.qty }
+        // Recipes to keep the makings of: one print of each one the player
+        // has (found, at their level, or unlocked by Ingredient Printing)
+        var recipes = Set<String>()
+        if keepRecipes {
+            for item in guide.items ?? [] where item.kind != "FOB Upgrade" && !(item.cost ?? []).isEmpty && hasRecipe(item) {
+                recipes.insert(item.id)
             }
+        }
+        // Tracked upgrades are already in the list above; add tracked recipes
+        if keepTracked {
+            for id in tracked where guide.item(id)?.kind != "FOB Upgrade" { recipes.insert(id) }
+        }
+        for id in recipes {
+            for part in guide.item(id)?.cost ?? [] { need[part.item, default: 0] += part.qty }
         }
         let lines = stash.compactMap { id, have -> (item: HajinGuide.Item, count: Int, worth: Int)? in
             guard let item = guide.item(id), let value = item.value, value > 0 else { return nil }
@@ -174,10 +185,11 @@ struct HajinSpareCard: View {
     @EnvironmentObject private var store: HajinStore
     @AppStorage(HajinStore.spareTrackedKey) private var keepTracked = true
     @AppStorage(HajinStore.spareBufferKey) private var buffer = 0
+    @AppStorage(HajinStore.spareRecipesKey) private var keepRecipes = true
 
     var body: some View {
         // Read so the card redraws when either setting changes
-        let _ = (keepTracked, buffer)
+        let _ = (keepTracked, buffer, keepRecipes)
         let spare = store.spare()
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
@@ -189,6 +201,7 @@ struct HajinSpareCard: View {
                     .font(.system(size: 18, weight: .bold, design: .monospaced))
                     .foregroundStyle(spare.total > 0 ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInkMuted)
                 Menu {
+                    Toggle("mw4.ui.keep.spare_keep_recipes".localized(), isOn: $keepRecipes)
                     Toggle("mw4.ui.keep.spare_keep_tracked".localized(), isOn: $keepTracked)
                     Picker("mw4.ui.keep.spare_buffer".localized(), selection: $buffer) {
                         Text("mw4.ui.keep.spare_buffer_none".localized()).tag(0)
