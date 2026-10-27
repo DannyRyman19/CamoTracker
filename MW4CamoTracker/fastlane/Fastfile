@@ -187,10 +187,15 @@ platform :ios do
       run_precheck_before_submit: false,
       force: true,
       submission_information: {
-        # Info.plist declares ITSAppUsesNonExemptEncryption false, and the app
-        # has no ads, no ATT prompt and no ad identifier.
+        # Info.plist declares ITSAppUsesNonExemptEncryption false. The free
+        # tier shows ads (Unity LevelPlay), which use the advertising
+        # identifier once the player allows tracking.
         export_compliance_uses_encryption: false,
-        add_id_info_uses_idfa: false
+        add_id_info_uses_idfa: true,
+        add_id_info_serves_ads: true,
+        add_id_info_tracks_install: false,
+        add_id_info_tracks_action: false,
+        add_id_info_limits_tracking: true
       }
     )
 
