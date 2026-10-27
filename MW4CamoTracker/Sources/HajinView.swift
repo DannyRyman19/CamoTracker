@@ -369,7 +369,9 @@ struct HajinPagePicker: View {
 
 /// The My DMZ page's cards, in the player's order; any can be hidden.
 enum HajinMineCard: String, CaseIterable, Identifiable {
-    case scan, level, cash, tracking, buildNext, shopping, blueprints, stash, keepSell
+    // Default order: the scan, then the player's numbers and plan, then the
+    // stash and the tools that work on it
+    case scan, level, cash, tracking, buildNext, stash, keepSell, shopping, blueprints
     var id: String { rawValue }
     var title: String {
         switch self {
@@ -411,6 +413,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
 /// The player's own cards (level, cash, what's tracked, what to build
 /// next, the tools), in the order they chose, with a Customise button.
 struct HajinMinePage: View {
+    @EnvironmentObject private var store: HajinStore
     /// iPad: open these inside the guide panel instead of pushing them.
     var openStash: (() -> Void)? = nil
     var openKeepSell: (() -> Void)? = nil
@@ -440,12 +443,17 @@ struct HajinMinePage: View {
     @ViewBuilder private func card(_ card: HajinMineCard) -> some View {
         switch card {
         case .scan:
-            // The headline feature: reading the stash from a screenshot
+            // The headline feature: reading the stash from a screenshot. The
+            // big card until there's a stash; after that, one row
             if #available(iOS 17.0, *) {
-                HajinStashGridButton(hero: true)
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                if store.stash.isEmpty {
+                    HajinStashGridButton(hero: true)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                } else {
+                    HajinStashGridButton(bare: true).hajinCard()
+                }
             }
         case .level: HajinLevelCard().hajinCard()
         case .cash: HajinCashCard().hajinCard()
@@ -1363,30 +1371,41 @@ struct HajinLevelCard: View {
 
     var body: some View {
         let level = store.dmzLevel
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(spacing: 10) {
-                Text("mw4.ui.hajin.dmz_level".localized())
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(Color.appInkMuted)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 12) {
+                Image(systemName: "chart.bar.fill")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.white)
+                    .frame(width: 30, height: 30)
+                    .background(Circle().fill(Color.accentDMZ))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("mw4.ui.hajin.dmz_level".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                    Text(level > 0 ? "mw4.ui.hajin.dmz_level_set".localized() : "mw4.ui.hajin.dmz_level_hint".localized())
+                        .font(.caption).foregroundStyle(Color.appInkMuted)
+                }
                 Spacer(minLength: 4)
-                stepButton(systemName: "minus", enabled: level > 0, size: 26, accent: .accentDMZ) { store.setLevel(level - 1) }
+                // Unset: one Set button, like Cash's Add. Set: the stepper
+                if level > 0 {
+                    stepButton(systemName: "minus", enabled: true, size: 26, accent: .accentDMZ) { store.setLevel(level - 1) }
+                }
                 Button {
                     text = level > 0 ? "\(level)" : ""
                     entering = true
                 } label: {
-                    Text(level > 0 ? "\(level)/\(HajinStore.maxLevel)" : "–/\(HajinStore.maxLevel)")
+                    Text(level > 0 ? "\(level)/\(HajinStore.maxLevel)" : "mw4.ui.hajin.dmz_level_button".localized())
                         .font(.system(size: 14, weight: .bold, design: .monospaced))
                         .foregroundStyle(Color.accentDMZ)
                         .contentTransition(.numericText())
-                        .frame(minWidth: 56)
+                        .frame(minWidth: level > 0 ? 56 : nil)
                 }
                 .buttonStyle(.borderless)
-                stepButton(systemName: "plus", enabled: level < HajinStore.maxLevel, size: 26, accent: .accentDMZ) { store.setLevel(level + 1) }
+                if level > 0 {
+                    stepButton(systemName: "plus", enabled: level < HajinStore.maxLevel, size: 26, accent: .accentDMZ) { store.setLevel(level + 1) }
+                }
             }
-            ProgressBar(fraction: Double(level) / Double(HajinStore.maxLevel), accent: .accentDMZ)
-            Text(level > 0 ? "mw4.ui.hajin.dmz_level_set".localized() : "mw4.ui.hajin.dmz_level_hint".localized())
-                .font(.caption)
-                .foregroundStyle(Color.appInkMuted)
+            if level > 0 {
+                ProgressBar(fraction: Double(level) / Double(HajinStore.maxLevel), accent: .accentDMZ)
+            }
         }
         .alert("mw4.ui.hajin.dmz_level".localized(), isPresented: $entering) {
             TextField("1–\(HajinStore.maxLevel)", text: $text).keyboardType(.numberPad)

@@ -544,6 +544,8 @@ enum HajinStackCount {
 struct HajinStashGridButton: View {
     /// The big My DMZ card (demo, headline, button) rather than a row.
     var hero = false
+    /// The row without its own background, for inside a `hajinCard()`.
+    var bare = false
     /// The flow's sheets hang off the app root (`hajinScanHost()`), not
     /// this button: it sits in a List row, which SwiftUI rebuilds whenever
     /// it likes, and sheets there reset or bounce mid-scan
@@ -614,8 +616,8 @@ struct HajinStashGridButton: View {
                 }
                 Spacer(minLength: 0)
             }
-            .padding(12)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+            .padding(bare ? 0 : 12)
+            .background(RoundedRectangle(cornerRadius: 8).fill(bare ? Color.clear : Color.appSurface))
     }
 }
 
