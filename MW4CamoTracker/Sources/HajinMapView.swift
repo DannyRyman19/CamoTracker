@@ -111,9 +111,21 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         scrollView.minimumZoomScale = fit
         scrollView.maximumZoomScale = max(fit * 4, 2)
         if first || scrollView.zoomScale < fit {
-            // Open a little closer than the whole map, centred on the city
-            scrollView.zoomScale = min(fit * 1.6, scrollView.maximumZoomScale)
-            centre(on: CGPoint(x: 0.55, y: 0.55), animated: false)
+            // Open a little closer than the whole map, on the city: low
+            // enough that a portrait phone doesn't start on the
+            // out-of-bounds land along the top edge (a tall screen needs to
+            // be in closer before there's any room to scroll down)
+            let tall = bounds.height > bounds.width * 1.3
+            scrollView.zoomScale = min(fit * (tall ? 2.3 : 1.6), scrollView.maximumZoomScale)
+            centre(on: CGPoint(x: 0.5, y: tall ? 0.72 : 0.55), animated: false)
+            #if DEBUG
+            // SS_MAP_VIEW=<zoom>,<x>,<y>: frame the map for a store shot
+            let v = (ProcessInfo.processInfo.environment["SS_MAP_VIEW"] ?? "").split(separator: ",").compactMap { Double($0) }
+            if v.count == 3 {
+                scrollView.zoomScale = min(fit * v[0], scrollView.maximumZoomScale)
+                centre(on: CGPoint(x: v[1], y: v[2]), animated: false)
+            }
+            #endif
         }
         if let pending = pendingFocus {
             pendingFocus = nil

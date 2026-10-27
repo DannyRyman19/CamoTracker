@@ -190,9 +190,13 @@ for LANG_CODE in "${LANGS[@]}"; do
   fi
   mkdir -p "$RAW" "$FRAMED"
 
-  shot () { # <screen> <name> [category-id] [weapon-id]
+  shot () { # <screen> <name> [category-id] [weapon-id] [KEY=value launch env...]
+    local extra=()
+    for kv in "${@:5}"; do extra+=("SIMCTL_CHILD_$kv"); done
     xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true; sleep 1
-    env SIMCTL_CHILD_SS_SCREEN="$1" SIMCTL_CHILD_SS_CAT="${3:-}" SIMCTL_CHILD_SS_WEAPON="${4:-}" \
+    # MW4_PREMIUM=1: no banner and no upsell cards in a store shot
+    env SIMCTL_CHILD_MW4_PREMIUM=1 SIMCTL_CHILD_SS_SCREEN="$1" SIMCTL_CHILD_SS_CAT="${3:-}" SIMCTL_CHILD_SS_WEAPON="${4:-}" \
+      ${extra[@]+"${extra[@]}"} \
       xcrun simctl launch "$UDID" "$BID" \
         -AppleLanguages "($LANG_CODE)" -AppleLocale "$(posix_locale "$LANG_CODE")" >/dev/null
     # Long enough for the weapon art to come down off the CDN; a half-loaded
@@ -215,20 +219,25 @@ for LANG_CODE in "${LANGS[@]}"; do
     fi
     echo "    $2"
   }
+  # Where the Tac Map shot is framed: zoom (times the whole-map fit), then
+# the centre, so the city fills it rather than the out-of-bounds edge
+if [[ $DEVICE == ipad ]]; then MAP_VIEW="1.8,0.52,0.56"; else MAP_VIEW="3.0,0.52,0.62"; fi
   echo "==> capture [$LANG_CODE]"
   shot multiplayer multiplayer
+  shot hajin       dmzmap  "" "" SS_HAJIN=map "SS_MAP_VIEW=$MAP_VIEW"  # the Tac Map, on the city
+  shot hajin       scan    "" "" SS_GRID_INTRO=1                  # Read your stash
   shot stats       stats
-  shot warzone     warzone
+  shot multiplayer weapon   "" 3    # Kastov 762 detail
+  shot multiplayer icons   "" "" SS_CUSTOMISE=1 SS_APP_ICONS=1  # camo app icons
   shot widgets     widgets           # the widgets, as on a Home Screen
   shot multiplayer category 0 ""    # Assault Rifles list
-  shot multiplayer weapon   "" 3    # Kastov 762 detail
 
   echo "==> frame [$LANG_CODE, $DEVICE] -> $FRAMED"
   SS_DEVICE="$DEVICE" swift Tools/screenshots/frame.swift "$RAW" "$FRAMED" "$LANG_CODE"
 
   if [[ $ALL -eq 1 ]]; then
     i=1
-    for n in multiplayer stats warzone widgets category weapon; do
+    for n in multiplayer dmzmap scan stats weapon icons widgets category; do
       mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n${SHOT_SUFFIX}.png"
       i=$((i + 1))
     done

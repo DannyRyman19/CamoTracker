@@ -589,6 +589,15 @@ struct CustomiseHomeSheet: View {
     @State private var showsIcons = false
     @Environment(\.dismiss) private var dismiss
 
+    /// `SS_APP_ICONS=1` (DEBUG): open full height for the screenshot.
+    private static var fullHeight: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.environment["SS_APP_ICONS"] == "1"
+        #else
+        false
+        #endif
+    }
+
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
     private var rows: [HomeSection] { layout.order.filter(offered.contains) }
 
@@ -774,7 +783,7 @@ struct CustomiseHomeSheet: View {
                 }
             }
         }
-        .presentationDetents([.medium, .large])
+        .presentationDetents(Self.fullHeight ? [.large] : [.medium, .large])
         .sheet(isPresented: $showsPremium) { PremiumView() }
     }
 
