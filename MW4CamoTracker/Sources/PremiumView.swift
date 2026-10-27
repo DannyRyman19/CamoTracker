@@ -45,14 +45,16 @@ struct PremiumView: View {
                                 .frame(maxWidth: .infinity)
                         }
                         #endif
-                    } else if premium.products.isEmpty, premium.loadFailed, fakeStore {
+                    } else if (premium.products.isEmpty && premium.loadFailed && fakeStore) || reviewShot {
                         #if DEBUG
                         fakeButton(yearly: true)
                         fakeButton(yearly: false)
-                        Text(verbatim: "Debug build: test purchases, nothing is charged.")
-                            .font(.caption2)
-                            .foregroundStyle(Color.appInkMuted)
-                            .frame(maxWidth: .infinity)
+                        if !Self.reviewShot {
+                            Text(verbatim: "Debug build: test purchases, nothing is charged.")
+                                .font(.caption2)
+                                .foregroundStyle(Color.appInkMuted)
+                                .frame(maxWidth: .infinity)
+                        }
                         #endif
                     } else if premium.products.isEmpty, premium.loadFailed {
                         VStack(spacing: 10) {
@@ -120,6 +122,16 @@ struct PremiumView: View {
         .appSheetBackground()
     }
 
+    /// SS_REVIEW_SHOT=1 (DEBUG): both purchases at the UK prices, whatever
+    /// the App Store returned, for App Review's purchase screenshot.
+    private var reviewShot: Bool {
+        #if DEBUG
+        Self.reviewShot
+        #else
+        false
+        #endif
+    }
+
     private var fakeStore: Bool {
         #if DEBUG
         true
@@ -129,6 +141,10 @@ struct PremiumView: View {
     }
 
     #if DEBUG
+    /// `SS_REVIEW_SHOT=1`: the test prices without "(test)", for App Review's
+    /// purchase screenshot.
+    static let reviewShot = ProcessInfo.processInfo.environment["SS_REVIEW_SHOT"] == "1"
+
     /// A stand-in for a product the App Store didn't return, in the same look.
     private func fakeButton(yearly: Bool) -> some View {
         Button {
@@ -140,7 +156,7 @@ struct PremiumView: View {
                     Text((yearly ? "mw4.ui.premium.yearly_hint" : "mw4.ui.premium.lifetime_hint").localized()).font(.caption).opacity(0.8)
                 }
                 Spacer()
-                Text(verbatim: yearly ? "£1.99 (test)" : "£6.99 (test)")
+                Text(verbatim: (yearly ? "£1.99" : "£7.99") + (Self.reviewShot ? "" : " (test)"))
                     .font(.system(size: 16, weight: .bold, design: .monospaced))
             }
             .foregroundStyle(yearly ? Color.white : Color.appInk)
