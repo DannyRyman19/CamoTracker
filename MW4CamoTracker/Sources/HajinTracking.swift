@@ -172,7 +172,7 @@ struct HajinStashView: View {
     private var groups: [(title: String, items: [HajinGuide.Item])] {
         guard let guide = store.guide else { return [] }
         let needle = query.lowercased()
-        let all = (guide.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) && $0.id != "commanders" }
+        let all = (guide.items ?? []).filter { HajinStore.inStash($0) && $0.id != "commanders" }
             .filter { needle.isEmpty || $0.name.resolved.lowercased().contains(needle) }
         // Needed for something tracked first, then resources, then the rest
         let short = Set(store.shortfall(in: guide).map(\.item.id))

@@ -720,7 +720,7 @@ extension HajinScanHost {
     /// its have/need counts and the bank and goes straight to the review.
     fileprivate func route(_ picked: HajinPickedPhoto) {
         guard let cg = picked.image.cgImage else { return }
-        let items = (store.guide?.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) }
+        let items = (store.guide?.items ?? []).filter(HajinStore.inStash)
         flow.sorting = true
         let flow = flow
         Task { @MainActor in

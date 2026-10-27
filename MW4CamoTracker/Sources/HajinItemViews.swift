@@ -502,11 +502,11 @@ struct HajinItemView: View {
             .padding(12)
             .background(statusPanel(locked ? nil : HajinStore.printableGreen))
         }
-        // Recipes and upgrades can be tracked; ingredients show the stash count
+        // Recipes and upgrades can be tracked; what My stash counts shows it
         if !(item.cost ?? []).isEmpty || item.kind == "FOB Upgrade" {
             HajinTrackButton(id: item.id)
         }
-        if ["Ingredient", "Resource"].contains(item.kind) {
+        if HajinStore.inStash(item) {
             HStack {
                 Text("mw4.ui.hajin.in_stash".localized().uppercased())
                     .font(.caption.weight(.semibold))

@@ -407,8 +407,11 @@ final class HajinStore: ObservableObject {
     func count(of id: String) -> Int { stash[id] ?? 0 }
 
     /// What My stash counts: resources, ingredients and valuables (which
-    /// the higher FOB upgrades cost).
-    nonisolated static let stashKinds: Set<String> = ["Resource", "Ingredient", "Valuable"]
+    /// the higher FOB upgrades cost), less dog tags, which are sold as soon
+    /// as you extract them.
+    nonisolated static func inStash(_ item: HajinGuide.Item) -> Bool {
+        ["Resource", "Ingredient", "Valuable"].contains(item.kind) && !item.id.contains("dog-tag")
+    }
 
     /// The stash covers every part of the item's recipe or upgrade cost.
     func canPrint(_ item: HajinGuide.Item) -> Bool {

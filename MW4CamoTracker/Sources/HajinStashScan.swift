@@ -189,7 +189,7 @@ struct HajinStashScanButton: View {
 
     private func read(_ chosen: [PhotosPickerItem]) {
         reading = true
-        let items = (store.guide?.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) }
+        let items = (store.guide?.items ?? []).filter(HajinStore.inStash)
         Task {
             var seen: [String: [Int]] = [:]
             var bank: Int?
@@ -257,7 +257,7 @@ struct HajinStashScanReview: View {
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: resources, ingredients and valuables.
         // The photo reader also recognises keys and gear, and leaves them out.
-        found.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.stashKinds.contains($0.kind) ? $0 : nil }
+        found.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.inStash($0) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
             // Ones to check first, then anything under 100% sure (least sure
             // first), then changes, then ones already right
