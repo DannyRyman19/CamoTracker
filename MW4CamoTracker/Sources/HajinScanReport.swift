@@ -33,7 +33,8 @@ struct HajinScanReport {
 
     /// The reader's working plus what the player had and changed in the review.
     @MainActor func json(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Data? {
-        func points(_ p: [CGPoint]?) -> [[Double]]? { p?.map { [($0.x * 10_000).rounded() / 10_000, ($0.y * 10_000).rounded() / 10_000] } }
+        func round4(_ v: CGFloat) -> Double { (Double(v) * 10_000).rounded() / 10_000 }
+        func points(_ p: [CGPoint]?) -> [[Double]]? { p?.map { [round4($0.x), round4($0.y)] } }
         var device = utsname()
         uname(&device)
         let model = withUnsafeBytes(of: &device.machine) { String(decoding: $0.prefix { $0 != 0 }, as: UTF8.self) }

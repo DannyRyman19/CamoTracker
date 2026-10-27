@@ -286,7 +286,6 @@ guide = [
    ("Nylon Laminate", "Epic", "Military holdings and upmarket civilian buildings. Secure Scavenger Backpack"),
    ("Ballistic Fabric", "Epic", "Tempered Armor Vest"), ("Power Regulator", "Epic", None),
    ("Military Composites", "Legendary", "Secure Scavenger Backpack, Tempered Armor Vest"),
-   ("Commanders", None, "Kill one and extract to get valuable ingredients"),
   ])},
  {"id": "stations", "title": "FOB stations", "symbol": "house.fill",
   "rows": rows([
@@ -377,7 +376,6 @@ guide = [
   "rows": rows([
    ("Gold Bar", "$25,000", "Ultra. Also a reward from Silent Ledger"), ("Gold Skull", "$25,000", "Ultra"),
    ("Sanctioned Assassination List", "$10,000", "Legendary"), ("Foreign Intelligence Targets", "$5,000", "Epic. Five are needed for MIA Recovery Discount III"),
-   ("Cash Bag", "$1,500", "Rare. Carried out of the casino vault in Operation Silent Ledger, which is reported to hold twelve optional bags worth about $1,500 each"),
    ("Cipher Code Ledger", "$5,000", "Epic"), ("W.M.D Manifest", "$5,000", "Epic"),
    ("Parachute", "$5,000", "Legendary"), ("Revive Pistol", "$2,500", "Legendary"), ("Fulton Drop Marker", "$2,500", "Ultra"),
    ("Encrypted Archive", "$2,000", "Rare. Found in the Heavenly Luck Casino storage and counting rooms, and the Mirae Electrical Room"), ("Medkit", "$2,000", "Epic"), ("Keys", "$100", "Every key sells for $100"),
@@ -452,7 +450,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.32", "updated": "2026-10-27",
+data = {"version": "0.9.33", "updated": "2026-10-27",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

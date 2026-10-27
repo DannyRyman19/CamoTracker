@@ -200,25 +200,9 @@ struct HajinSpareCard: View {
                 Text("$\(spare.total.formatted())")
                     .font(.system(size: 18, weight: .bold, design: .monospaced))
                     .foregroundStyle(spare.total > 0 ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInkMuted)
-                Menu {
-                    Toggle("mw4.ui.keep.spare_keep_recipes".localized(), isOn: $keepRecipes)
-                    Toggle("mw4.ui.keep.spare_keep_tracked".localized(), isOn: $keepTracked)
-                    Picker("mw4.ui.keep.spare_buffer".localized(), selection: $buffer) {
-                        Text("mw4.ui.keep.spare_buffer_none".localized()).tag(0)
-                        Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 5)).tag(5)
-                        Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 10)).tag(10)
-                    }
-                } label: {
-                    Image(systemName: "slider.horizontal.3")
-                        .font(.body.weight(.semibold))
-                        .foregroundStyle(Color.accentDMZ)
-                        .padding(.leading, 6)
-                }
-                .accessibilityLabel("mw4.ui.keep.spare_options".localized())
+                options
             }
-            Text(store.stash.isEmpty ? "mw4.ui.keep.spare_empty".localized()
-                 : "mw4.ui.keep.spare_detail".localized() + (keepTracked ? " " + "mw4.ui.keep.spare_detail_tracked".localized() : "")
-                   + (buffer > 0 ? " " + String(format: "mw4.ui.keep.spare_detail_buffer".localized(), buffer) : ""))
+            Text(detail)
                 .font(.caption)
                 .foregroundStyle(Color.appInkMuted)
             if !spare.lines.isEmpty {
@@ -228,6 +212,33 @@ struct HajinSpareCard: View {
         }
         .padding(12)
         .background(RoundedRectangle(cornerRadius: 8).fill(Color.appSurface))
+    }
+
+    private var options: some View {
+        Menu {
+            Toggle("mw4.ui.keep.spare_keep_recipes".localized(), isOn: $keepRecipes)
+            Toggle("mw4.ui.keep.spare_keep_tracked".localized(), isOn: $keepTracked)
+            Picker("mw4.ui.keep.spare_buffer".localized(), selection: $buffer) {
+                Text("mw4.ui.keep.spare_buffer_none".localized()).tag(0)
+                Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 5)).tag(5)
+                Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 10)).tag(10)
+            }
+        } label: {
+            Image(systemName: "slider.horizontal.3")
+                .font(.body.weight(.semibold))
+                .foregroundStyle(Color.accentDMZ)
+                .padding(.leading, 6)
+        }
+        .accessibilityLabel("mw4.ui.keep.spare_options".localized())
+    }
+
+    /// What the total leaves out, as set in the options.
+    private var detail: String {
+        guard !store.stash.isEmpty else { return "mw4.ui.keep.spare_empty".localized() }
+        var text = "mw4.ui.keep.spare_detail".localized()
+        if keepTracked { text += " " + "mw4.ui.keep.spare_detail_tracked".localized() }
+        if buffer > 0 { text += " " + String(format: "mw4.ui.keep.spare_detail_buffer".localized(), buffer) }
+        return text
     }
 }
 

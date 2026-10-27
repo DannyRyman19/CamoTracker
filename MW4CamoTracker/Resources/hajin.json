@@ -1,5 +1,5 @@
 {
- "version": "0.9.32",
+ "version": "0.9.33",
  "updated": "2026-10-27",
  "map": {
   "image": "hajin_map",
@@ -4454,10 +4454,6 @@
      "item": "military-composites"
     },
     {
-     "title": "Commanders",
-     "subtitle": "Kill one and extract to get valuable ingredients"
-    },
-    {
      "title": "Stabilized Reagents",
      "subtitle": "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst",
      "value": "Epic",
@@ -5538,12 +5534,6 @@
      "value": "$5,000",
      "subtitle": "Epic. Five are needed for MIA Recovery Discount III",
      "item": "foreign-intelligence-targets"
-    },
-    {
-     "title": "Cash Bag",
-     "value": "$1,500",
-     "subtitle": "Rare. Carried out of the casino vault in Operation Silent Ledger, which is reported to hold twelve optional bags worth about $1,500 each",
-     "item": "cash-bag"
     },
     {
      "title": "Cipher Code Ledger",
@@ -7666,14 +7656,6 @@
    ],
    "effect": "Calls in a supply drop",
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
-  },
-  {
-   "id": "cash-bag",
-   "name": "Cash Bag",
-   "kind": "Valuable",
-   "value": 1500,
-   "rarity": "Rare",
-   "symbol": "diamond.fill"
   },
   {
    "id": "chemicals",
