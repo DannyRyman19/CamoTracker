@@ -93,19 +93,17 @@ struct HajinStashScanTests {
     }
 }
 /// Runs the grid finder over a folder of real stash photos and writes the
-/// corners it finds to `corners.json` there, for checking by eye. Only runs
-/// when GRID_PHOTOS is set (TEST_RUNNER_GRID_PHOTOS=<folder> on xcodebuild).
+/// corners it finds to `corners.json` there. Only runs when GRID_PHOTOS is
+/// set (TEST_RUNNER_GRID_PHOTOS=<folder> on xcodebuild). The tile detector
+/// doesn't run in the simulator, so this checks the fallback; SS_GRID_BATCH
+/// does the same on a device.
 struct HajinGridFinderHarness {
     @Test func findGridsInRealPhotos() throws {
         guard let folder = ProcessInfo.processInfo.environment["GRID_PHOTOS"] else { return }
         var out: [String: [[Double]]] = [:]
         for name in try FileManager.default.contentsOfDirectory(atPath: folder).sorted() where name.hasSuffix(".jpg") || name.hasSuffix(".png") {
-            guard let image = UIImage(contentsOfFile: folder + "/" + name)?.normalisedUp() else { continue }
-            if #available(iOS 17.0, *), let cg = image.cgImage {
-                let tiles = HajinTileLattice.tiles(in: cg)
-                out[name + "#tiles"] = [[Double(tiles.count), Double(HajinTileLattice.fit(tiles)?.cells.count ?? -1)]]
-            }
-            guard let corners = HajinStashGridFinder.guess(image) else { out[name] = []; continue }
+            guard let image = UIImage(contentsOfFile: folder + "/" + name)?.normalisedUp(),
+                  let corners = HajinStashGridFinder.guess(image) else { out[name] = []; continue }
             out[name] = corners.map { [Double($0.x), Double($0.y)] }
         }
         try JSONSerialization.data(withJSONObject: out, options: [.prettyPrinted, .sortedKeys])
