@@ -215,18 +215,26 @@ struct AdBanner: View {
     @State private var showsPremium = false
 
     var body: some View {
-        if ads.ready, !premium.isPremium {
+        if ads.ready || AdConfig.simulated, !premium.isPremium {
             let size = BannerController.size
             VStack(spacing: 4) {
                 Button { showsPremium = true } label: {
-                    Label("mw4.ui.premium.remove_ads".localized(), systemImage: "xmark.circle.fill")
+                    // No ✕: beside an ad that reads as the ad's own close button
+                    Label("mw4.ui.premium.remove_ads".localized(), systemImage: "sparkles")
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(Color.appInkMuted)
                 }
                 .buttonStyle(.plain)
                 .frame(width: CGFloat(size.width), alignment: .trailing)
-                AdBannerView()
-                    .frame(width: CGFloat(size.width), height: CGFloat(size.height))
+                Group {
+                    if AdConfig.simulated {
+                        // MW4_ADS=1: a stand-in the size of a real banner, for layout
+                        Rectangle().fill(Color.gray.opacity(0.35)).overlay(Text(verbatim: "Test banner").font(.caption))
+                    } else {
+                        AdBannerView()
+                    }
+                }
+                .frame(width: CGFloat(size.width), height: CGFloat(size.height))
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 4)

@@ -1108,7 +1108,10 @@ struct CardGrid<Item: Identifiable, Card: View>: View {
         let perRow = fillsRow ? 1 : columns
         if columns <= 1 || pushRoute == nil {
             ForEach(items) { item in
-                NavigationLink(value: route(item)) { card(item) }
+                // The link sits behind the card, hidden: a visible one gets
+                // the system chevron, outside the card's own border
+                card(item)
+                    .background { NavigationLink(value: route(item)) { EmptyView() }.opacity(0) }
                     .listRowInsets(Self.insets)
                     .listRowBackground(Color.clear)
             }

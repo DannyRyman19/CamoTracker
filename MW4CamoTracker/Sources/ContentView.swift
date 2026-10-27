@@ -238,7 +238,7 @@ struct ContentView: View {
         .onAppear {
             if let screen = Self.screenshotScreen {
                 if let m = AppMode(rawValue: screen) { primaryModeRaw = m.rawValue }
-                let index = screen == "stats" ? 1 : screen == "hajin" ? Self.hajinTab : 0
+                let index = screen == "stats" ? 1 : screen == "hajin" ? Self.hajinTab : screen == "mastery" ? 2 : 0
                 selectedTab = index
                 if let route = Self.screenshotRoute {
                     var path = NavigationPath()

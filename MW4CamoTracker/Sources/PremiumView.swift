@@ -24,6 +24,8 @@ struct PremiumView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         perk("nosign", "mw4.ui.premium.perk_ads")
                         perk("camera.viewfinder", "mw4.ui.premium.perk_scans")
+                        perk("app.badge.fill", "mw4.ui.premium.perk_icons")
+                        perk("slider.horizontal.3", "mw4.ui.premium.perk_customise")
                         perk("heart.fill", "mw4.ui.premium.perk_support")
                     }
 

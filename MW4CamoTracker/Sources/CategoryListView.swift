@@ -595,6 +595,24 @@ struct CustomiseHomeSheet: View {
     var body: some View {
         NavigationStack {
             List {
+                if locked {
+                    Section {
+                        Button { showsPremium = true } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "sparkles")
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundStyle(.white)
+                                    .frame(width: 30, height: 30)
+                                    .background(Circle().fill(accent))
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("mw4.ui.premium.customise_title".localized()).font(.headline).foregroundStyle(Color.appInk)
+                                    Text("mw4.ui.premium.customise_body".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                                }
+                            }
+                        }
+                        .accessibilityIdentifier("customise.premiumCard")
+                    }
+                }
                 Section {
                     // Inset from the row's edges: flush, the List clipped the
                     // chips' rounded borders at the corners.
@@ -627,8 +645,9 @@ struct CustomiseHomeSheet: View {
                                 .frame(width: 24)
                             Toggle(section.titleKey.localized(), isOn: binding(for: section))
                                 .tint(accent)
-                                .disabled(!section.canHide)
+                                .disabled(!section.canHide || locked)
                         }
+                        .moveDisabled(locked)
                         .accessibilityIdentifier("customise.\(section.rawValue)")
                     }
                     .onMove { from, to in
@@ -640,6 +659,8 @@ struct CustomiseHomeSheet: View {
                         }
                         order = HomeLayout.encode(sections)
                     }
+                } header: {
+                    premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.customise.footer".localized())
                 }
@@ -649,9 +670,10 @@ struct CustomiseHomeSheet: View {
                         get: { viewModel.quickTick },
                         set: { viewModel.setQuickTick($0) }))
                         .tint(accent)
+                        .disabled(locked)
                         .accessibilityIdentifier("customise.quickTick")
                 } header: {
-                    Text("mw4.ui.tracking".localized())
+                    premiumHeader("mw4.ui.tracking".localized())
                 } footer: {
                     Text("mw4.ui.quick_tick.footer".localized())
                 }
@@ -659,7 +681,10 @@ struct CustomiseHomeSheet: View {
                 Section {
                     Toggle("mw4.ui.customise.locked_title".localized(), isOn: $showLockedChallenges)
                         .tint(accent)
+                        .disabled(locked)
                         .accessibilityIdentifier("customise.showLocked")
+                } header: {
+                    premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.customise.locked_footer".localized())
                 }
@@ -671,7 +696,10 @@ struct CustomiseHomeSheet: View {
                         }
                     }
                     .tint(accent)
+                    .disabled(locked)
                     .accessibilityIdentifier("customise.cardOutline")
+                } header: {
+                    premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.card_outline.footer".localized())
                 }
@@ -717,12 +745,14 @@ struct CustomiseHomeSheet: View {
                     Text("mw4.ui.premium.subtitle".localized())
                 }
 
-                Section {
-                    Button("mw4.ui.customise.reset".localized()) {
-                        order = ""
-                        hidden = ""
+                if !locked {
+                    Section {
+                        Button("mw4.ui.customise.reset".localized()) {
+                            order = ""
+                            hidden = ""
+                        }
+                        .foregroundStyle(accent)
                     }
-                    .foregroundStyle(accent)
                 }
             }
             .environment(\.editMode, .constant(.active))
@@ -742,6 +772,29 @@ struct CustomiseHomeSheet: View {
         }
         .presentationDetents([.medium, .large])
         .sheet(isPresented: $showsPremium) { PremiumView() }
+    }
+
+    /// Free players: the layout and look settings show, locked, and open
+    /// Premium; modes, language and iCloud stay free.
+    private var locked: Bool { !premium.isPremium }
+
+    /// A section header with a Premium lock for free players; tapping it
+    /// opens Premium.
+    @ViewBuilder private func premiumHeader(_ title: String?) -> some View {
+        if locked {
+            Button { showsPremium = true } label: {
+                HStack(spacing: 6) {
+                    if let title { Text(title) }
+                    Spacer(minLength: 0)
+                    Label("mw4.ui.app_icon.premium".localized(), systemImage: "lock.fill")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(accent)
+                }
+            }
+            .buttonStyle(.plain)
+        } else if let title {
+            Text(title)
+        }
     }
 
     private func binding(for section: HomeSection) -> Binding<Bool> {

@@ -76,15 +76,20 @@ final class Premium: ObservableObject {
     }
 
     private func set(_ owned: Bool) {
+        #if DEBUG
+        if forced { return }
+        #endif
         guard owned != isPremium else { return }
         isPremium = owned
         UserDefaults.standard.set(owned, forKey: Self.cacheKey)
     }
 
     #if DEBUG
-    /// `MW4_PREMIUM=1` launches as Premium, for screenshots.
+    /// `MW4_PREMIUM=1` launches as Premium, for screenshots, and holds it
+    /// against the App Store's answer.
+    private var forced = false
     func debugOverride() {
-        if ProcessInfo.processInfo.environment["MW4_PREMIUM"] == "1" { isPremium = true }
+        if ProcessInfo.processInfo.environment["MW4_PREMIUM"] == "1" { forced = true; isPremium = true }
     }
     #endif
 }

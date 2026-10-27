@@ -453,8 +453,8 @@ struct HajinMinePage: View {
             .hajinCard(accent: .accentDMZ)
             .sheet(isPresented: $showsPremium) { PremiumView() }
         }
-        Button { customising = true } label: {
-            Label("mw4.ui.hajin.mine_customise".localized(), systemImage: "slider.horizontal.3")
+        Button { if premium.isPremium { customising = true } else { showsPremium = true } } label: {
+            Label("mw4.ui.hajin.mine_customise".localized(), systemImage: premium.isPremium ? "slider.horizontal.3" : "lock.fill")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Color.accentDMZ)
                 .frame(maxWidth: .infinity)

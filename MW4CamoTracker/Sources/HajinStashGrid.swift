@@ -601,13 +601,22 @@ struct HajinStashGridButton: View {
     }
 
     private var rowLabel: some View {
-            HStack(spacing: 10) {
-                Image(systemName: "square.grid.3x3.fill")
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.accentDMZ)
+            HStack(spacing: bare ? 12 : 10) {
+                // As a My DMZ card: the round icon and title the cards beside it have
+                if bare {
+                    Image(systemName: "camera.viewfinder")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.accentDMZ))
+                } else {
+                    Image(systemName: "square.grid.3x3.fill")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Color.accentDMZ)
+                }
                 VStack(alignment: .leading, spacing: 2) {
                     Text("mw4.ui.hajin.grid_scan".localized())
-                        .font(.subheadline.weight(.semibold))
+                        .font(bare ? .hitmarker(16) : .subheadline.weight(.semibold))
                         .foregroundStyle(Color.appInk)
                     Text("mw4.ui.hajin.grid_scan_hint".localized())
                         .font(.caption)
