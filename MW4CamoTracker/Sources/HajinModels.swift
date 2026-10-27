@@ -406,6 +406,10 @@ final class HajinStore: ObservableObject {
 
     func count(of id: String) -> Int { stash[id] ?? 0 }
 
+    /// What My stash counts: resources, ingredients and valuables (which
+    /// the higher FOB upgrades cost).
+    nonisolated static let stashKinds: Set<String> = ["Resource", "Ingredient", "Valuable"]
+
     /// The stash covers every part of the item's recipe or upgrade cost.
     func canPrint(_ item: HajinGuide.Item) -> Bool {
         guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty else { return false }

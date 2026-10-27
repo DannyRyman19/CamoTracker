@@ -775,43 +775,61 @@ struct HajinItemView: View {
     }
 
     /// Every tier of the upgrade side by side, this one lit; tap another to
-    /// jump to it. Ticked tiers show a check.
+    /// jump to it. Ticked tiers show a check. More than five (the Bank's
+    /// nine) scroll sideways at a fixed width, onto the one shown.
     private func tierStrip(_ item: HajinGuide.Item, _ tiers: [HajinGuide.Item]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             panelTitle("mw4.ui.hajin.tiers".localized())
-            HStack(spacing: 8) {
-                ForEach(tiers) { tier in
-                    let current = tier.id == item.id
-                    let done = store.checked.contains("upgrade-\(tier.id)")
-                    let label = VStack(spacing: 3) {
-                        HStack(spacing: 4) {
-                            Text(Self.roman(tier.tier ?? 1))
-                                .font(.hitmarker(18))
-                            if done { Image(systemName: "checkmark.circle.fill").font(.caption) }
-                        }
-                        .foregroundStyle(current ? Color.black.opacity(0.85) : Color.appInk)
-                        Text(tier.cash.map { "$\($0.formatted())" } ?? "–")
-                            .font(.caption2.weight(.semibold).monospacedDigit())
-                            .foregroundStyle(current ? Color.black.opacity(0.7) : Color.appInkMuted)
+            if tiers.count > 5 {
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) { tierTiles(item, tiers, width: 64) }
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(current ? Color.accentDMZ : Color.appSurface)
-                            .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.appInkMuted.opacity(current ? 0 : 0.25), lineWidth: 1))
-                    )
-                    if current {
-                        label
-                    } else {
-                        Button {
-                            Haptics.step()
-                            withAnimation(.snappy) { tierShown = tier.id == id ? nil : tier.id }
-                        } label: { label }
-                        .buttonStyle(.borderless)
-                    }
+                    .onAppear { proxy.scrollTo(item.id, anchor: .center) }
+                    .onChange(of: item.id) { id in withAnimation(.snappy) { proxy.scrollTo(id, anchor: .center) } }
+                }
+            } else {
+                HStack(spacing: 8) { tierTiles(item, tiers, width: nil) }
+            }
+        }
+    }
+
+    @ViewBuilder private func tierTiles(_ item: HajinGuide.Item, _ tiers: [HajinGuide.Item], width: CGFloat?) -> some View {
+        ForEach(tiers) { tier in
+            let current = tier.id == item.id
+            let done = store.checked.contains("upgrade-\(tier.id)")
+            let label = VStack(spacing: 3) {
+                HStack(spacing: 4) {
+                    Text(Self.roman(tier.tier ?? 1))
+                        .font(.hitmarker(18))
+                    if done { Image(systemName: "checkmark.circle.fill").font(.caption) }
+                }
+                .foregroundStyle(current ? Color.black.opacity(0.85) : Color.appInk)
+                // "$500K" rather than "$500,000", so nine tiers still read
+                Text(tier.cash.map { "$" + $0.formatted(.number.notation(.compactName)) } ?? "–")
+                    .font(.caption2.weight(.semibold).monospacedDigit())
+                    .foregroundStyle(current ? Color.black.opacity(0.7) : Color.appInkMuted)
+            }
+            .frame(width: width)
+            .frame(maxWidth: width == nil ? .infinity : nil)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(current ? Color.accentDMZ : Color.appSurface)
+                    .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.appInkMuted.opacity(current ? 0 : 0.25), lineWidth: 1))
+            )
+            Group {
+                if current {
+                    label
+                } else {
+                    Button {
+                        Haptics.step()
+                        withAnimation(.snappy) { tierShown = tier.id == id ? nil : tier.id }
+                    } label: { label }
+                    .buttonStyle(.borderless)
                 }
             }
+            .id(tier.id)
         }
     }
 
@@ -966,12 +984,42 @@ struct HajinUpgradeFamilyCard: View {
                 }
                 Spacer(minLength: 0)
             }
-            Picker("mw4.ui.hajin.tiers".localized(), selection: Binding(get: { item.id }, set: { Haptics.step(); picked = $0 })) {
-                ForEach(tiers) { tier in
-                    Text((store.checked.contains("upgrade-\(tier.id)") ? "✓ " : "") + Self.roman(tier.tier ?? 1)).tag(tier.id)
+            if tiers.count > 5 {
+                // Too many for a segmented control (the Bank's nine): chips
+                // that scroll, onto the one shown
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 6) {
+                            ForEach(tiers) { tier in
+                                let on = tier.id == item.id
+                                Button {
+                                    Haptics.step()
+                                    withAnimation(.snappy) { picked = tier.id }
+                                } label: {
+                                    Text((store.checked.contains("upgrade-\(tier.id)") ? "✓ " : "") + Self.roman(tier.tier ?? 1))
+                                        .font(.subheadline.weight(.semibold))
+                                        .foregroundStyle(on ? Color.black.opacity(0.85) : Color.appInk)
+                                        .frame(minWidth: 34)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 6)
+                                        .background(Capsule().fill(on ? Color.accentDMZ : Color.appSurface2))
+                                }
+                                .buttonStyle(.plain)
+                                .id(tier.id)
+                            }
+                        }
+                    }
+                    .onAppear { proxy.scrollTo(item.id, anchor: .center) }
+                    .onChange(of: item.id) { id in withAnimation(.snappy) { proxy.scrollTo(id, anchor: .center) } }
                 }
+            } else {
+                Picker("mw4.ui.hajin.tiers".localized(), selection: Binding(get: { item.id }, set: { Haptics.step(); picked = $0 })) {
+                    ForEach(tiers) { tier in
+                        Text((store.checked.contains("upgrade-\(tier.id)") ? "✓ " : "") + Self.roman(tier.tier ?? 1)).tag(tier.id)
+                    }
+                }
+                .pickerStyle(.segmented)
             }
-            .pickerStyle(.segmented)
             HStack(alignment: .top, spacing: 10) {
                 HajinTick(done: store.checked.contains(key), label: item.name.resolved) {
                     store.toggle(key)

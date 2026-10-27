@@ -628,7 +628,7 @@ struct HajinScanHost: ViewModifier {
     func body(content: Content) -> some View {
         content
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
-            if let pending = flow.pending { route(pending); flow.pending = nil }
+            if let pending = flow.pending { route(pending); flow.pending = nil } else { flow.carried = nil }
         }) {
             HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
         }
@@ -669,8 +669,11 @@ struct HajinScanHost: ViewModifier {
         }) { photo in
             HajinStashGridFrameView(image: photo.image, onRetake: { flow.reopenIntro = true }, state: photo.frame)
         }
-        .sheet(item: $flow.textRead) { r in
-            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level)
+        .sheet(item: $flow.textRead, onDismiss: {
+            if flow.reopenIntro { flow.reopenIntro = false; flow.showsIntro = true }
+        }) { r in
+            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level, photos: r.photos,
+                                 onAddPhoto: { flow.addPhoto($0, photos: r.photos) })
         }
         #if DEBUG
         // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
@@ -717,7 +720,7 @@ extension HajinScanHost {
     /// its have/need counts and the bank and goes straight to the review.
     fileprivate func route(_ picked: HajinPickedPhoto) {
         guard let cg = picked.image.cgImage else { return }
-        let items = (store.guide?.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) }
+        let items = (store.guide?.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) }
         flow.sorting = true
         let flow = flow
         Task { @MainActor in
@@ -728,7 +731,7 @@ extension HajinScanHost {
                 return (isStash, counts, HajinStashScanner.bank(in: lines), HajinStashScanner.level(in: lines))
             }.value
             flow.sorting = false
-            if isStash || counts.isEmpty { flow.photo = picked } else { flow.textRead = HajinGridResult(counts: counts, unsure: [], cash: cash, level: level) }
+            if isStash || counts.isEmpty { flow.photo = picked } else { flow.textRead = flow.merged(HajinGridResult(counts: counts, unsure: [], cash: cash, level: level)) }
         }
     }
 }
@@ -815,6 +818,30 @@ final class HajinScanFlow: ObservableObject {
     @Published var textRead: HajinGridResult?
     var reopenIntro = false
     @Published var sorting = false
+    /// "Add another photo": the counts read so far, and from how many
+    /// photos, added to whatever the next photo reads
+    var carried: [String: Int]?
+    var carriedPhotos = 0
+
+    /// The next photo's read with the carried counts added in. An item in
+    /// both (the All tab and the Valuables tab, say) keeps the higher count
+    /// rather than being counted twice.
+    func merged(_ r: HajinGridResult) -> HajinGridResult {
+        guard let carried else { return r }
+        var out = r
+        out.counts = r.counts.merging(carried) { max($0, $1) }
+        out.photos = carriedPhotos + 1
+        self.carried = nil
+        carriedPhotos = 0
+        return out
+    }
+
+    /// Keeps what's been read and opens the photo picker again.
+    func addPhoto(_ counts: [String: Int], photos: Int) {
+        carried = counts
+        carriedPhotos = photos
+        reopenIntro = true
+    }
     #if DEBUG
     /// SS_GRID_DEMO: the photo the intro picks by itself
     var demoPhoto: UIImage?
@@ -921,7 +948,11 @@ struct HajinStashGridFrameView: View {
             }
             .sheet(item: $state.result, onDismiss: { if state.result == nil { } }) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
-                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() })
+                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
+                                     photos: r.photos, onAddPhoto: { counts in
+                                         HajinScanFlow.shared.addPhoto(counts, photos: r.photos)
+                                         dismiss()
+                                     })
             }
             .overlay(alignment: .bottom) {
                 if state.finding {
@@ -1037,8 +1068,8 @@ struct HajinStashGridFrameView: View {
                                          cash: cash, level: level)
             await MainActor.run {
                 state.reading = false
-                state.result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
-                                         sureness: totals.sureness, stacks: totals.stacks, report: report)
+                state.result = HajinScanFlow.shared.merged(HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
+                                                                     sureness: totals.sureness, stacks: totals.stacks, report: report))
             }
         }
     }
@@ -1127,7 +1158,7 @@ struct HajinGridScanning: View {
 
 struct HajinGridResult: Identifiable {
     let id = UUID()
-    let counts: [String: Int]
+    var counts: [String: Int]
     let unsure: Set<String>
     var cash: Int? = nil
     var level: Int? = nil
@@ -1135,6 +1166,8 @@ struct HajinGridResult: Identifiable {
     var stacks: [String: Int] = [:]
     /// The photo and the reader's working, for "Send this photo"
     var report: HajinScanReport? = nil
+    /// How many photos the counts come from
+    var photos = 1
 }
 
 /// A first guess at the grid's corners, for the player to adjust:

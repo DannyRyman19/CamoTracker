@@ -172,15 +172,17 @@ struct HajinStashView: View {
     private var groups: [(title: String, items: [HajinGuide.Item])] {
         guard let guide = store.guide else { return [] }
         let needle = query.lowercased()
-        let all = (guide.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) && $0.id != "commanders" }
+        let all = (guide.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) && $0.id != "commanders" }
             .filter { needle.isEmpty || $0.name.resolved.lowercased().contains(needle) }
         // Needed for something tracked first, then resources, then the rest
         let short = Set(store.shortfall(in: guide).map(\.item.id))
         let neededIds = Set(store.tracked.flatMap { guide.item($0)?.cost?.map(\.item) ?? [] })
         let needed = all.filter { neededIds.contains($0.id) }.sorted { (short.contains($0.id) ? 0 : 1, $0.name.resolved) < (short.contains($1.id) ? 0 : 1, $1.name.resolved) }
         let resources = all.filter { $0.kind == "Resource" && !neededIds.contains($0.id) }
-        let rest = all.filter { $0.kind != "Resource" && !neededIds.contains($0.id) }.sorted { $0.name.resolved < $1.name.resolved }
-        return [("mw4.ui.hajin.for_tracked".localized(), needed), ("mw4.ui.hajin.resources".localized(), resources), ("mw4.ui.hajin.ingredients".localized(), rest)]
+        let rest = all.filter { $0.kind == "Ingredient" && !neededIds.contains($0.id) }.sorted { $0.name.resolved < $1.name.resolved }
+        let valuables = all.filter { $0.kind == "Valuable" && !neededIds.contains($0.id) }.sorted { $0.name.resolved < $1.name.resolved }
+        return [("mw4.ui.hajin.for_tracked".localized(), needed), ("mw4.ui.hajin.resources".localized(), resources),
+                ("mw4.ui.hajin.ingredients".localized(), rest), ("mw4.ui.hajin.valuables".localized(), valuables)]
             .filter { !$0.items.isEmpty }
     }
 

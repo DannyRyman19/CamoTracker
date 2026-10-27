@@ -189,7 +189,7 @@ struct HajinStashScanButton: View {
 
     private func read(_ chosen: [PhotosPickerItem]) {
         reading = true
-        let items = (store.guide?.items ?? []).filter { ["Resource", "Ingredient"].contains($0.kind) }
+        let items = (store.guide?.items ?? []).filter { HajinStore.stashKinds.contains($0.kind) }
         Task {
             var seen: [String: [Int]] = [:]
             var bank: Int?
@@ -239,6 +239,11 @@ struct HajinStashScanReview: View {
     var report: HajinScanReport? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
+    /// How many photos these counts come from (stash photos added together).
+    var photos = 1
+    /// Stash photos: read another photo (the Valuables tab after the
+    /// Ingredients tab, say) and add it to these counts, as edited.
+    var onAddPhoto: (([String: Int]) -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
     @State private var skip: Set<String> = []
@@ -250,9 +255,9 @@ struct HajinStashScanReview: View {
     @State private var detent = PresentationDetent.medium
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
-        // Only what My stash tracks: ingredients and resources. The photo
-        // reader also recognises keys, gear and valuables, and leaves them out.
-        found.compactMap { id, n in store.guide?.item(id).flatMap { ["Ingredient", "Resource"].contains($0.kind) ? $0 : nil }
+        // Only what My stash tracks: resources, ingredients and valuables.
+        // The photo reader also recognises keys and gear, and leaves them out.
+        found.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.stashKinds.contains($0.kind) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
             // Ones to check first, then anything under 100% sure (least sure
             // first), then changes, then ones already right
@@ -412,7 +417,8 @@ struct HajinStashScanReview: View {
                     }
                 }
                 let resources = all.filter { $0.item.kind == "Resource" }
-                let ingredients = all.filter { $0.item.kind != "Resource" }
+                let ingredients = all.filter { $0.item.kind == "Ingredient" }
+                let valuables = all.filter { $0.item.kind == "Valuable" }
                 if !resources.isEmpty {
                     Section("mw4.ui.hajin.resources".localized()) {
                         ForEach(resources, id: \.item.id) { row in itemRow(row) }
@@ -421,6 +427,30 @@ struct HajinStashScanReview: View {
                 if !ingredients.isEmpty {
                     Section("mw4.ui.hajin.ingredients".localized()) {
                         ForEach(ingredients, id: \.item.id) { row in itemRow(row) }
+                    }
+                }
+                if !valuables.isEmpty {
+                    Section("mw4.ui.hajin.valuables".localized()) {
+                        ForEach(valuables, id: \.item.id) { row in itemRow(row) }
+                    }
+                }
+                if let onAddPhoto {
+                    Section {
+                        Button {
+                            Haptics.step()
+                            // What's been read so far, as edited, less anything skipped
+                            var carried = found.merging(edited) { _, new in new }
+                            for id in skip { carried[id] = nil }
+                            onAddPhoto(carried)
+                            dismiss()
+                        } label: {
+                            Label("mw4.ui.hajin.scan_add_photo".localized(), systemImage: "plus.viewfinder")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(Color.accentDMZ)
+                        }
+                    } footer: {
+                        Text(photos > 1 ? String(format: "mw4.ui.hajin.scan_photos".localized(), photos)
+                                        : "mw4.ui.hajin.scan_add_photo_footer".localized())
                     }
                 }
             }
@@ -460,7 +490,7 @@ struct HajinStashScanReview: View {
         withAnimation { detent = .large }
         try? await Task.sleep(for: .seconds(1.5))
         let all = rows
-        let order = all.filter { $0.item.kind == "Resource" } + all.filter { $0.item.kind != "Resource" }
+        let order = all.filter { $0.item.kind == "Resource" } + all.filter { $0.item.kind == "Ingredient" } + all.filter { $0.item.kind == "Valuable" }
         for row in order.dropFirst(3) {
             withAnimation(.easeInOut(duration: 0.5)) { proxy.scrollTo(row.item.id, anchor: .bottom) }
             try? await Task.sleep(for: .seconds(0.45))
