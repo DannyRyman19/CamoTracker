@@ -163,11 +163,34 @@ for f in sorted(os.listdir(REFS)):
     if item in blueprints:
         for k in range(N, N + N * 2 // 3):
             photograph(blueprint_tile(icon)).save(os.path.join(OUT, rid, f'{k:04d}.jpg'), quality=92)
+def empty_tile(k):
+    """A stash or backpack slot with nothing in it, or, in a backpack's
+    Secure slots, a locked slot (dots round its edge) or a free one (a grey
+    shield), so neither reads as an item."""
+    style = k % 3
+    if style == 0:
+        t = background(None)
+        d = ImageDraw.Draw(t)
+        d.rectangle([0, 0, 199, 199], outline=(150, 150, 150), width=random.randint(1, 4))
+        return t
+    shade = random.randint(16, 30)
+    t = Image.new('RGB', (200, 200), (shade, shade + 1, shade + 4))
+    d = ImageDraw.Draw(t)
+    if style == 1:
+        dot, step = (random.randint(70, 110),) * 3, random.randint(14, 20)
+        for v in range(4, 200, step):
+            for x, y in ((v, 4), (v, 195), (4, v), (195, v)):
+                d.rectangle([x - 1, y - 1, x + 2, y + 2], fill=dot)
+    else:
+        d.rectangle([0, 0, 199, 199], outline=(70, 72, 76), width=random.randint(2, 4))
+        g = random.randint(80, 105)
+        w, top = random.randint(70, 90), random.randint(48, 60)
+        d.polygon([(100 - w / 2, top), (100, top - 8), (100 + w / 2, top), (100 + w / 2, top + 55),
+                   (100, top + 100), (100 - w / 2, top + 55)], fill=(g, g, g + 2))
+    return t
+
 # empty tiles
 os.makedirs(os.path.join(OUT, 'empty'), exist_ok=True)
 for k in range(N):
-    t = background(None)
-    d = ImageDraw.Draw(t)
-    d.rectangle([0, 0, 199, 199], outline=(150, 150, 150), width=random.randint(1, 4))
-    photograph(t).save(os.path.join(OUT, 'empty', f'{k:04d}.jpg'), quality=92)
+    photograph(empty_tile(k)).save(os.path.join(OUT, 'empty', f'{k:04d}.jpg'), quality=92)
 print('done')

@@ -96,8 +96,12 @@ enum HajinStashGrid {
     }
 
     @available(iOS 17.0, *)
+    /// `fitBorders: false` reads the frame as given, nudged a little up and
+    /// down, without fitting the grid to the lines in the picture (a single
+    /// row, like a backpack's secure slots, has too few to fit, and nearby
+    /// boxes look like rows).
     static func read(_ image: CGImage, corners: [CGPoint], rows known: Int? = nil, columns: Int = columns,
-                     blueprints: Set<String> = []) -> [Tile] {
+                     blueprints: Set<String> = [], fitBorders: Bool = true) -> [Tile] {
         let rows = known ?? measureRows(image, corners: corners, columns: columns)
         // Half a tile of margin all round, so a frame dragged slightly inside
         // the grid still has its borders in the picture
@@ -113,7 +117,8 @@ enum HajinStashGrid {
             HajinGridDebug.log("model \(error)"); return [] }
         HajinGridDebug.log("rows \(rows) flat \(flat.width)x\(flat.height)")
         HajinGridDebug.save(flat, "grid_flat_\(columns)x\(rows)")
-        let lattice = HajinGridLattice.fit(flat, columns: columns, rows: rows, cell: cell)
+        let lattice = fitBorders ? HajinGridLattice.fit(flat, columns: columns, rows: rows, cell: cell)
+                                 : HajinGridLattice.Lattice(xs: [], ys: [])
         let ci = CIContext()
         // Two guesses at each tile: straight from the frame, and from the
         // borders found in the picture. Keep whichever reads more surely.
@@ -162,6 +167,16 @@ enum HajinStashGrid {
             for column in 0..<columns {
                 let a = fromFrame(row, column), b = fromBorders(row, column)
                 var crops = [a, b].compactMap { $0 }
+                if !fitBorders, let a {
+                    // Where the row really sits can be a fifth of a tile out
+                    // either way, and its tiles a little bigger: try across it
+                    crops = []
+                    for dy in [-0.1, 0, 0.1, 0.2, 0.3] {
+                        for grow in [1.0, 1.15] {
+                            crops.append(a.offsetBy(dx: 0, dy: cell * dy).insetBy(dx: -cell * (grow - 1) / 2, dy: -cell * (grow - 1) / 2))
+                        }
+                    }
+                }
                 if let a, let b {   // and one halfway between
                     crops.append(CGRect(x: (a.minX + b.minX) / 2, y: (a.minY + b.minY) / 2,
                                         width: (a.width + b.width) / 2, height: (a.height + b.height) / 2))

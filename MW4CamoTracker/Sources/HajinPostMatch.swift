@@ -125,10 +125,13 @@ enum HajinBackpack {
         let size = CGSize(width: image.width, height: image.height)
         let blueprints = Set((guide?.items ?? []).filter { $0.blueprint == true }.map(\.id))
         var tiles = HajinStashGrid.read(image, corners: corners, rows: rows(for: corners, size: size), columns: columns, blueprints: blueprints)
-        // The secure row: its empty slots are a dotted outline the model
-        // hasn't seen, so only a sure read counts there
-        let secure = HajinStashGrid.read(image, corners: secureRow(corners, lines: lines, size: size), rows: 1, columns: columns, blueprints: blueprints)
-        tiles += secure.filter { $0.confidence >= 0.5 || $0.id == "blueprint" }
+        // The secure row, read where it is rather than fitted to lines: the
+        // SECURE SLOTS label's box looks like another row
+        let secure = HajinStashGrid.read(image, corners: secureRow(corners, lines: lines, size: size), rows: 1, columns: columns,
+                                         blueprints: blueprints, fitBorders: false)
+        // A free secure slot shows a grey shield, which a weak read takes
+        // for a Riot Shield
+        tiles += secure.filter { !($0.id == "riot-shield" && $0.confidence < 0.7) }
         var result = HajinPostMatchResult()
         for t in tiles {
             switch t.id {
@@ -138,7 +141,7 @@ enum HajinBackpack {
                     result.blueprints.append(.init(image: picture, guess: t.guess, sure: t.guessConfidence >= 0.6))
                 }
                 continue
-            case "weapon-manual": result.manual = true; continue
+            case "weapon-manual": result.manuals += 1; continue
             default: break
             }
             // A shared picture's class is named after its first item
@@ -177,8 +180,8 @@ struct HajinPostMatchResult: Identifiable {
         let sure: Bool
     }
     var blueprints: [Blueprint] = []
-    /// A weapon manual was read
-    var manual = false
+    /// Weapon manuals read
+    var manuals = 0
     /// Tiles with something on them the reader couldn't name (a weapon, say)
     var unread = 0
 
@@ -196,7 +199,7 @@ struct HajinPostMatchResult: Identifiable {
         let blue = renderer.image { ctx in UIColor(red: 0.1, green: 0.35, blue: 0.85, alpha: 1).setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 60, height: 60)) }.cgImage!
         r.blueprints = [.init(image: blue, guess: "drill-charge", sure: true), .init(image: blue, guess: "bomb-glider", sure: false),
                         .init(image: blue, guess: nil, sure: false)]
-        r.manual = true
+        r.manuals = 2
         r.unread = 1
         return r
     }
@@ -301,8 +304,8 @@ struct HajinPostMatchReview: View {
                         Text("mw4.ui.postmatch.blueprints_footer".localized())
                     }
                 }
-                Section {
-                    manualRow
+                if result.manuals > 0 {
+                    Section { manualRow }
                 }
                 if !gear.isEmpty {
                     Section("mw4.ui.postmatch.gear".localized()) {
@@ -512,8 +515,7 @@ struct HajinPostMatchReview: View {
         }
     }
 
-    /// Weapon manuals: tick the gun in Gunsmith prices. Stands out when the
-    /// reader saw one, but always there (a manual can read as something else).
+    /// Weapon manuals picked up: tick each gun in Gunsmith prices.
     private var manualRow: some View {
         NavigationLink {
             if let section = store.guide?.guide.first(where: { $0.id == "gunsmith" }) {
@@ -523,14 +525,19 @@ struct HajinPostMatchReview: View {
             HStack(spacing: 12) {
                 HajinCardSymbol("book.closed.fill")
                 VStack(alignment: .leading, spacing: 2) {
-                    Text((result.manual ? "mw4.ui.postmatch.manual_found" : "mw4.ui.postmatch.manual").localized())
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Color.appInk)
+                    HStack(spacing: 6) {
+                        Text("mw4.ui.postmatch.manual_found".localized())
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.appInk)
+                        if result.manuals > 1 {
+                            Text("×\(result.manuals)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
+                        }
+                    }
                     Text("mw4.ui.postmatch.manual_hint".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
                 }
             }
         }
-        .listRowBackground(result.manual ? Color.accentDMZ.opacity(0.15) : nil)
+        .listRowBackground(Color.accentDMZ.opacity(0.15))
     }
 
     private func apply(_ kept: [Row], blueprints: [String]) {
