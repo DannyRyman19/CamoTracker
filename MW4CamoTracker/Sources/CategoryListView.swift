@@ -29,7 +29,11 @@ struct CategoryListView: View {
 
     private var weaponCategories: [WeaponCategory] { viewModel.catalog?.categories ?? [] }
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
-    private var suggestions: [Suggestion] { viewModel.suggestions(mode: mode.rawValue) }
+    private var allSuggestions: [Suggestion] { viewModel.suggestions(mode: mode.rawValue) }
+    /// Free players see the top suggestion; Premium, all of them.
+    private var suggestions: [Suggestion] { premium.isPremium ? allSuggestions : Array(allSuggestions.prefix(1)) }
+    @ObservedObject private var premium = Premium.shared
+    @State private var showsPremium = false
 
     /// `weaponCategories` after the Filter/Sort pills are applied — everything
     /// else (Suggested, Pinned, Objectives) is untouched, since those aren't
@@ -138,8 +142,8 @@ struct CategoryListView: View {
         }
     }
 
-    private var pinnedWeapon: WeaponEntry? {
-        viewModel.pinnedWeaponId.flatMap { viewModel.weapon(id: $0) }
+    private var pinnedWeapons: [WeaponEntry] {
+        viewModel.visiblePinnedWeaponIds.compactMap { viewModel.weapon(id: $0) }
     }
 
 
@@ -206,11 +210,11 @@ struct CategoryListView: View {
             .listRowBackground(Color.clear)
 
         case .pinned:
-            if let pinnedWeapon {
+            if !pinnedWeapons.isEmpty {
                 Section("mw4.ui.section.pinned".localized()) {
-                    // Always the full row, even in a grid: it is one
+                    // Always the full row, even in a grid: a pin is its own
                     // card, and half a row beside a gap looks lost.
-                    CardGrid(items: [pinnedWeapon], columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
+                    CardGrid(items: pinnedWeapons, columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
                         WeaponRow(mode: mode, weapon: weapon)
                     }
                 }
@@ -221,6 +225,19 @@ struct CategoryListView: View {
                 Section("mw4.ui.section.suggested".localized()) {
                     CardGrid(items: suggestions, columns: columns, route: { .weapon($0.weaponId) }) { suggestion in
                         SuggestionRow(mode: mode, suggestion: suggestion)
+                    }
+                    // Free: the rest of the list is Premium's
+                    if allSuggestions.count > suggestions.count {
+                        Button { showsPremium = true } label: {
+                            Label(String(format: "mw4.ui.premium.more_suggestions".localized(), allSuggestions.count - suggestions.count),
+                                  systemImage: "sparkles")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(mode.accent)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderless)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     }
                 }
             }
@@ -318,6 +335,7 @@ struct CategoryListView: View {
             if ProcessInfo.processInfo.environment["SS_CUSTOMISE"] == "1" { isCustomising = true }
             #endif
         }
+        .sheet(isPresented: $showsPremium) { PremiumView() }
         .sheet(isPresented: $isCustomising) {
             CustomiseHomeSheet(
                 order: $layoutOrder, hidden: $layoutHidden, accent: mode.accent,

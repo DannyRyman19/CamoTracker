@@ -22,8 +22,14 @@ final class TrackerViewModel: ObservableObject {
     /// The one weapon pinned for quick access at the top of every mode tab —
     /// global like weapon level, not per-mode, since you pin a weapon, not a
     /// mode-specific track.
-    @Published private(set) var pinnedWeaponId: Int?
+    /// Pinned weapons, newest first: one for free players, up to
+    /// `maxPremiumPins` with Premium.
+    @Published private(set) var pinnedWeaponIds: [Int] = []
+    /// The newest pin: the widget's, and the free tier's only one.
+    var pinnedWeaponId: Int? { pinnedWeaponIds.first }
+    static let maxPremiumPins = 5
     private let pinnedWeaponKey = "mw4_pinned_weapon_v1"
+    private let pinnedWeaponsKey = "mw4_pinned_weapons_v2"
 
     /// The pending widget refresh (see WidgetSync.swift), so a burst of
     /// ticks writes the snapshot once.
@@ -74,8 +80,11 @@ final class TrackerViewModel: ObservableObject {
         TrackSharing.update(from: loaded)
         SpecialRule.update(from: loaded)
         modes = loaded
-        if defaults.object(forKey: pinnedWeaponKey) != nil {
-            pinnedWeaponId = defaults.integer(forKey: pinnedWeaponKey)
+        if let ids = defaults.array(forKey: pinnedWeaponsKey) as? [Int] {
+            pinnedWeaponIds = ids
+        } else if defaults.object(forKey: pinnedWeaponKey) != nil {
+            // The single pin from before there could be several
+            pinnedWeaponIds = [defaults.integer(forKey: pinnedWeaponKey)]
         }
     }
 
@@ -1210,18 +1219,33 @@ final class TrackerViewModel: ObservableObject {
 
     // MARK: - Pinned weapon (quick-access card at the top of each mode tab)
 
+    /// The pins that show: all of them with Premium, else the newest.
+    var visiblePinnedWeaponIds: [Int] {
+        Array(pinnedWeaponIds.prefix(Premium.shared.isPremium ? Self.maxPremiumPins : 1))
+    }
+
+    func isPinned(weaponId: Int) -> Bool { visiblePinnedWeaponIds.contains(weaponId) }
+
+    /// Pins a weapon as the newest. Free players have one pin, so it
+    /// replaces the last; Premium keeps up to five, dropping the oldest.
     func pin(weaponId: Int) {
-        pinnedWeaponId = weaponId
-        defaults.set(weaponId, forKey: pinnedWeaponKey)
-        refreshWidgets()
+        var ids = pinnedWeaponIds.filter { $0 != weaponId }
+        ids.insert(weaponId, at: 0)
+        savePins(Array(ids.prefix(Premium.shared.isPremium ? Self.maxPremiumPins : 1)))
         Haptics.light()
     }
 
-    func unpin() {
-        pinnedWeaponId = nil
-        defaults.removeObject(forKey: pinnedWeaponKey)
-        refreshWidgets()
+    func unpin(weaponId: Int) {
+        savePins(pinnedWeaponIds.filter { $0 != weaponId })
         Haptics.undone()
+    }
+
+    private func savePins(_ ids: [Int]) {
+        pinnedWeaponIds = ids
+        defaults.set(ids, forKey: pinnedWeaponsKey)
+        // Kept for anything still reading the single pin
+        if let first = ids.first { defaults.set(first, forKey: pinnedWeaponKey) } else { defaults.removeObject(forKey: pinnedWeaponKey) }
+        refreshWidgets()
     }
 
     func weapon(id: Int) -> WeaponEntry? {

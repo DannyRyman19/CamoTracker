@@ -454,7 +454,7 @@ private struct FreeAndPremiumPage: View {
                 ])
                 group("mw4.onboarding.premium.premium".localized(), symbol: "sparkles", rows: [
                     "mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_scans", "mw4.ui.premium.perk_icons", "mw4.ui.premium.perk_customise",
-                    "mw4.ui.premium.perk_sync"
+                    "mw4.ui.premium.perk_sync", "mw4.ui.premium.perk_pins"
                 ])
                 Text("mw4.onboarding.premium.footer".localized())
                     .font(.footnote)

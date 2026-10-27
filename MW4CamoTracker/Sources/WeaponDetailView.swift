@@ -118,7 +118,7 @@ struct WeaponDetailView: View {
     private var camos: [ChallengeItem] { viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue) }
     private var category: WeaponCategory? { viewModel.category(containingWeaponId: weapon.weaponId) }
 
-    private var isPinned: Bool { viewModel.pinnedWeaponId == weapon.weaponId }
+    private var isPinned: Bool { viewModel.isPinned(weaponId: weapon.weaponId) }
 
     /// Hosted here rather than inside the toolbar's menu: a `.alert` attached
     /// to `ToolbarItem` content does not reliably present.
@@ -515,7 +515,7 @@ struct WeaponDetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     if isPinned {
-                        viewModel.unpin()
+                        viewModel.unpin(weaponId: weapon.weaponId)
                     } else {
                         viewModel.pin(weaponId: weapon.weaponId)
                     }

@@ -27,6 +27,7 @@ struct PremiumView: View {
                         perk("app.badge.fill", "mw4.ui.premium.perk_icons")
                         perk("slider.horizontal.3", "mw4.ui.premium.perk_customise")
                         perk("icloud.fill", "mw4.ui.premium.perk_sync")
+                        perk("pin.fill", "mw4.ui.premium.perk_pins")
                         perk("heart.fill", "mw4.ui.premium.perk_support")
                     }
 
@@ -156,7 +157,7 @@ struct PremiumView: View {
                     Text((yearly ? "mw4.ui.premium.yearly_hint" : "mw4.ui.premium.lifetime_hint").localized()).font(.caption).opacity(0.8)
                 }
                 Spacer()
-                Text(verbatim: (yearly ? "£1.99" : "£7.99") + (Self.reviewShot ? "" : " (test)"))
+                Text((yearly ? "£1.99" + "mw4.ui.premium.per_year".localized() : "£7.99") + (Self.reviewShot ? "" : " (test)"))
                     .font(.system(size: 16, weight: .bold, design: .monospaced))
             }
             .foregroundStyle(yearly ? Color.white : Color.appInk)
@@ -195,7 +196,8 @@ struct PremiumView: View {
                         .opacity(0.8)
                 }
                 Spacer()
-                Text(product.displayPrice)
+                // A subscription's price always says what it's per
+                Text(yearly ? product.displayPrice + "mw4.ui.premium.per_year".localized() : product.displayPrice)
                     .font(.system(size: 16, weight: .bold, design: .monospaced))
             }
             .foregroundStyle(yearly ? Color.white : Color.appInk)
