@@ -706,6 +706,21 @@ struct HajinScanHost: ViewModifier {
                 }
             }
             if ProcessInfo.processInfo.environment["SS_GRID_INTRO"] == "1" { flow.showsIntro = true }
+            // SS_GRID_BATCH=1: the grid finder over every photo in
+            // Documents/gridbatch, corners to gridbatch/corners.json (the
+            // tile detector only runs on a device, not the simulator)
+            if ProcessInfo.processInfo.environment["SS_GRID_BATCH"] == "1" {
+                Task.detached {
+                    let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("gridbatch")
+                    var out: [String: [[Double]]] = [:]
+                    for name in (try? FileManager.default.contentsOfDirectory(atPath: folder.path)) ?? [] where name.hasSuffix(".jpg") {
+                        guard let cg = UIImage(contentsOfFile: folder.appendingPathComponent(name).path)?.normalisedUp().cgImage else { continue }
+                        out[name] = HajinStashGridFinder.guess(cg)?.map { [Double($0.x), Double($0.y)] } ?? []
+                        out[name + "#detector"] = HajinStashGridFinder.fromDetector(cg)?.map { [Double($0.x), Double($0.y)] } ?? []
+                    }
+                    try? JSONSerialization.data(withJSONObject: out).write(to: folder.appendingPathComponent("corners.json"))
+                }
+            }
             if flow.photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
                 if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
                 guard let image = UIImage(contentsOfFile: path) else { return }
@@ -1234,6 +1249,10 @@ enum HajinStashGridFinder {
     }
 
     static func guess(_ cg: CGImage) -> [CGPoint]? {
+        // The tile detector first: it doesn't need the header, and copes
+        // with full stashes and phone angles. The older ways below are the
+        // fallback when it finds too few tiles.
+        if let q = fromDetector(cg) { HajinGridDebug.log("guess: detector"); return q }
         let W = CGFloat(cg.width), H = CGFloat(cg.height)
         let rects = VNDetectRectanglesRequest()
         rects.maximumObservations = 0
@@ -1260,6 +1279,31 @@ enum HajinStashGridFinder {
         let scored = candidates.map { ($0.0, $0.1, frameScore(cg, $0.1)) }
         HajinGridDebug.log("guess: " + scored.map { "\($0.0) \(String(format: "%.3f", $0.2))" }.joined(separator: ", "))
         return scored.max { $0.2 < $1.2 }?.1
+    }
+
+    /// The 6-wide grid fitted to the detector's tiles (needs 8 or more).
+    /// When it sees fewer than six columns, the frame lines decide which
+    /// side the missing ones are on.
+    static func fromDetector(_ cg: CGImage) -> [CGPoint]? {
+        guard #available(iOS 17.0, *) else { return nil }
+        guard let (h, found) = HajinTileLattice.fit(HajinTileLattice.tiles(in: cg)), found.count >= 8 else { return nil }
+        // Stray boxes off the grid (the sidebar, a cable) make lone rows and
+        // columns: keep the solid block of ones with two or more tiles
+        guard let rows = HajinTileLattice.block(found.map(\.j)) else { return nil }
+        let cells = found.filter { rows.contains($0.j) }
+        guard let cols = HajinTileLattice.block(cells.map(\.i)) else { return nil }
+        let lo = cols.lowerBound, hi = cols.upperBound
+        let columns = HajinStashGrid.columns
+        let firsts = hi - lo + 1 >= columns ? Array(lo...(hi - columns + 1)) : Array((hi - columns + 1)...lo)
+        let size = CGSize(width: cg.width, height: cg.height)
+        let options = firsts.map { first -> ([CGPoint], Int, Double) in
+            let q = HajinTileLattice.corners(h, first: first, rows: rows, size: size)
+            // The most tiles inside, then the strongest frame lines (which
+            // side the columns the detector missed are on)
+            let inside = cells.filter { $0.i >= first && $0.i < first + columns }.count
+            return (q, inside, firsts.count > 1 ? frameScore(cg, q) : 0)
+        }
+        return options.max { ($0.1, $0.2) < ($1.1, $1.2) }?.0
     }
 
     /// For a straight-on screenshot (no perspective): the column lines and
@@ -1574,5 +1618,200 @@ enum HajinStashGridFinder {
             for j in 0...rows { total += at(row, Int(CGFloat(j) * cell)) / Double(w) }
             return total / Double(HajinStashGrid.columns + rows + 2)
         }
+    }
+}
+
+/// The stash's 6-wide grid fitted to the tiles the tile detector found
+/// (HajinStashTiles.mlmodel, trained on generated stash screens at phone
+/// angles). Tiles are squares on a lattice, so each one's column and row
+/// follow from its neighbours; a perspective fit through every tile then
+/// gives the grid's corners, its rows from the lowest tile found (empty
+/// slots are tiles too). Works the same on a full stash or an empty one,
+/// and doesn't need the header to be readable.
+enum HajinTileLattice {
+    /// A tile's half-width in lattice units: tiles are 133 px every 148.
+    static let half = 0.45
+
+    /// Tile boxes (pixels, origin top left) from the detector.
+    @available(iOS 17.0, *)
+    static func tiles(in cg: CGImage) -> [CGRect] {
+        guard let model = detector else { return [] }
+        let request = VNCoreMLRequest(model: model)
+        // Stretched to the model's square, as it was trained (letterboxing
+        // throws the boxes' x off on a portrait photo)
+        request.imageCropAndScaleOption = .scaleFill
+        #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+        #endif
+        try? VNImageRequestHandler(cgImage: cg).perform([request])
+        let W = CGFloat(cg.width), H = CGFloat(cg.height)
+        let found = (request.results as? [VNRecognizedObjectObservation] ?? []).filter { $0.confidence > 0.5 }
+            .sorted { $0.confidence > $1.confidence }
+            .map { o -> CGRect in
+                let b = o.boundingBox
+                return CGRect(x: b.minX * W, y: (1 - b.maxY) * H, width: b.width * W, height: b.height * H)
+            }
+        // One box per tile (the most confident), and only tile-sized ones
+        var kept: [CGRect] = []
+        for box in found where !kept.contains(where: { overlap($0, box) > 0.35 }) { kept.append(box) }
+        let size = median(kept.map { Double(sqrt($0.width * $0.height)) })
+        return kept.filter { let s = Double(sqrt($0.width * $0.height)); return s > size * 0.65 && s < size * 1.5 }
+    }
+
+    private static func overlap(_ a: CGRect, _ b: CGRect) -> Double {
+        let i = a.intersection(b)
+        guard !i.isNull else { return 0 }
+        let inter = Double(i.width * i.height)
+        return inter / (Double(a.width * a.height) + Double(b.width * b.height) - inter)
+    }
+
+    @available(iOS 17.0, *)
+    nonisolated(unsafe) private static let detector: VNCoreMLModel? = {
+        let config = MLModelConfiguration()
+        return try? VNCoreMLModel(for: HajinStashTiles(configuration: config).model)
+    }()
+
+    /// Lattice cell for each tile and the lattice-to-image homography, or
+    /// nil when there's too little to go on.
+    static func fit(_ boxes: [CGRect]) -> (h: [Double], cells: [(i: Int, j: Int)])? {
+        guard boxes.count >= 4 else { return nil }
+        let centers = boxes.map { CGPoint(x: $0.midX, y: $0.midY) }
+        let size = median(boxes.map { Double(sqrt($0.width * $0.height)) })
+        // The lattice's two steps, from each tile's near neighbours
+        var across: [CGPoint] = [], down: [CGPoint] = []
+        var neighbours = [[Int]](repeating: [], count: centers.count)
+        for a in centers.indices {
+            for b in centers.indices where a != b {
+                let d = CGPoint(x: centers[b].x - centers[a].x, y: centers[b].y - centers[a].y)
+                let len = Double(hypot(d.x, d.y))
+                guard len > size * 0.6, len < size * 1.7 else { continue }
+                neighbours[a].append(b)
+                if abs(d.x) > abs(d.y) { across.append(d.x > 0 ? d : CGPoint(x: -d.x, y: -d.y)) }
+                else { down.append(d.y > 0 ? d : CGPoint(x: -d.x, y: -d.y)) }
+            }
+        }
+        guard !across.isEmpty, !down.isEmpty else { return nil }
+        let u = CGPoint(x: median(across.map { Double($0.x) }), y: median(across.map { Double($0.y) }))
+        let v = CGPoint(x: median(down.map { Double($0.x) }), y: median(down.map { Double($0.y) }))
+        let det = Double(u.x * v.y - u.y * v.x)
+        guard abs(det) > 1e-6 else { return nil }
+        func steps(_ d: CGPoint) -> (Double, Double) {
+            (Double(d.x * v.y - d.y * v.x) / det, Double(u.x * d.y - u.y * d.x) / det)
+        }
+        // Walk the neighbours out from a tile near the middle
+        let mid = CGPoint(x: centers.map(\.x).reduce(0, +) / CGFloat(centers.count), y: centers.map(\.y).reduce(0, +) / CGFloat(centers.count))
+        let seed = centers.indices.max { (neighbours[$0].count, -hypot(centers[$0].x - mid.x, centers[$0].y - mid.y)) < (neighbours[$1].count, -hypot(centers[$1].x - mid.x, centers[$1].y - mid.y)) }!
+        var cell = [(i: Int, j: Int)?](repeating: nil, count: centers.count)
+        cell[seed] = (0, 0)
+        var queue = [seed]
+        while !queue.isEmpty {
+            let a = queue.removeFirst()
+            for b in neighbours[a] where cell[b] == nil {
+                let (s, t) = steps(CGPoint(x: centers[b].x - centers[a].x, y: centers[b].y - centers[a].y))
+                guard abs(s - s.rounded()) < 0.3, abs(t - t.rounded()) < 0.3 else { continue }
+                cell[b] = (cell[a]!.i + Int(s.rounded()), cell[a]!.j + Int(t.rounded()))
+                queue.append(b)
+            }
+        }
+        // Fit, then reassign every tile by the fit and fit again
+        var h: [Double]?
+        for _ in 0..<3 {
+            let pairs = centers.indices.compactMap { k in cell[k].map { (Double($0.i), Double($0.j), Double(centers[k].x), Double(centers[k].y)) } }
+            guard pairs.count >= 4, let fitted = homography(pairs) else { break }
+            h = fitted
+            guard let inv = invert(fitted) else { break }
+            var taken: [String: (k: Int, err: Double)] = [:]
+            var next = [(i: Int, j: Int)?](repeating: nil, count: centers.count)
+            for k in centers.indices {
+                let (x, y) = apply(inv, Double(centers[k].x), Double(centers[k].y))
+                let err = hypot(x - x.rounded(), y - y.rounded())
+                guard err < 0.3 else { continue }
+                let key = "\(Int(x.rounded())),\(Int(y.rounded()))"
+                if let other = taken[key], other.err <= err { continue }
+                if let other = taken[key] { next[other.k] = nil }
+                taken[key] = (k, err)
+                next[k] = (Int(x.rounded()), Int(y.rounded()))
+            }
+            cell = next
+        }
+        guard let h else { return nil }
+        let cells = cell.compactMap { $0 }
+        guard cells.count >= 4 else { return nil }
+        return (h, cells)
+    }
+
+    /// The grid's corners (fractions of the image, TL TR BR BL) for six
+    /// columns starting at `first` and the rows the tiles cover.
+    static func corners(_ h: [Double], first: Int, rows: ClosedRange<Int>, size: CGSize) -> [CGPoint] {
+        let l = Double(first) - half, r = Double(first + HajinStashGrid.columns - 1) + half
+        let t = Double(rows.lowerBound) - half, b = Double(rows.upperBound) + half
+        return [(l, t), (r, t), (r, b), (l, b)].map { p in
+            let (x, y) = apply(h, p.0, p.1)
+            return CGPoint(x: x / Double(size.width), y: y / Double(size.height))
+        }
+    }
+
+    /// The longest run of neighbouring indices that each hold two or more
+    /// tiles (rows or columns of the grid).
+    static func block(_ indices: [Int]) -> ClosedRange<Int>? {
+        let count = Dictionary(grouping: indices, by: { $0 }).mapValues(\.count)
+        let good = count.filter { $0.value >= 2 }.keys.sorted()
+        guard var start = good.first else { return nil }
+        var runs: [ClosedRange<Int>] = [], last = start
+        for k in good.dropFirst() {
+            if k != last + 1 { runs.append(start...last); start = k }
+            last = k
+        }
+        runs.append(start...last)
+        return runs.max { a, b in a.reduce(0) { $0 + count[$1]! } < b.reduce(0) { $0 + count[$1]! } }
+    }
+
+    // MARK: - Small linear algebra
+
+    static func median(_ v: [Double]) -> Double {
+        let s = v.sorted(); return s.isEmpty ? 0 : s[s.count / 2]
+    }
+
+    static func apply(_ h: [Double], _ x: Double, _ y: Double) -> (Double, Double) {
+        let w = h[6] * x + h[7] * y + h[8]
+        return ((h[0] * x + h[1] * y + h[2]) / w, (h[3] * x + h[4] * y + h[5]) / w)
+    }
+
+    /// Least-squares homography from (x, y) to (u, v), h[8] = 1.
+    static func homography(_ pairs: [(Double, Double, Double, Double)]) -> [Double]? {
+        var ata = [[Double]](repeating: [Double](repeating: 0, count: 8), count: 8), atb = [Double](repeating: 0, count: 8)
+        for (x, y, u, v) in pairs {
+            for row in [([x, y, 1, 0, 0, 0, -u * x, -u * y], u), ([0, 0, 0, x, y, 1, -v * x, -v * y], v)] {
+                for i in 0..<8 {
+                    atb[i] += row.0[i] * row.1
+                    for j in 0..<8 { ata[i][j] += row.0[i] * row.0[j] }
+                }
+            }
+        }
+        guard let s = solve(ata, atb) else { return nil }
+        return s + [1]
+    }
+
+    static func invert(_ h: [Double]) -> [Double]? {
+        let a = h
+        let det = a[0] * (a[4] * a[8] - a[5] * a[7]) - a[1] * (a[3] * a[8] - a[5] * a[6]) + a[2] * (a[3] * a[7] - a[4] * a[6])
+        guard abs(det) > 1e-12 else { return nil }
+        return [(a[4] * a[8] - a[5] * a[7]) / det, (a[2] * a[7] - a[1] * a[8]) / det, (a[1] * a[5] - a[2] * a[4]) / det,
+                (a[5] * a[6] - a[3] * a[8]) / det, (a[0] * a[8] - a[2] * a[6]) / det, (a[2] * a[3] - a[0] * a[5]) / det,
+                (a[3] * a[7] - a[4] * a[6]) / det, (a[1] * a[6] - a[0] * a[7]) / det, (a[0] * a[4] - a[1] * a[3]) / det]
+    }
+
+    private static func solve(_ a: [[Double]], _ b: [Double]) -> [Double]? {
+        let n = b.count
+        var m = a.enumerated().map { $0.element + [b[$0.offset]] }
+        for i in 0..<n {
+            guard let p = (i..<n).max(by: { abs(m[$0][i]) < abs(m[$1][i]) }), abs(m[p][i]) > 1e-12 else { return nil }
+            m.swapAt(i, p)
+            for r in 0..<n where r != i {
+                let f = m[r][i] / m[i][i]
+                for c in i...n { m[r][c] -= f * m[i][c] }
+            }
+        }
+        return (0..<n).map { m[$0][n] / m[$0][$0] }
     }
 }

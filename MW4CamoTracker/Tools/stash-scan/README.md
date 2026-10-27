@@ -34,3 +34,29 @@ voting across three crops per tile, and the stack-count reader (digit
 templates from real stash photos plus the Hitmarker font). Debug builds write
 what they read to `Documents/grid_debug.txt`; `SS_GRID_PHOTO`,
 `SS_GRID_CORNERS` and `SS_GRID_READ=1` run it from launch.
+
+# Finding the grid: the tile detector
+
+`Sources/HajinStashTiles.mlmodel` finds stash tiles (filled or empty) in a
+photo; `HajinTileLattice` fits the 6-wide grid through them (columns and
+rows from each tile's neighbours, a perspective fit, the solid block of
+rows and columns with two or more tiles). It's the finder's first choice;
+the header-and-frame-line ways are the fallback when it finds under 8.
+It's trained on generated stash screens: grids built from tiles (synth.py's,
+plus real ones), tilted to a phone's angle over a backdrop, with TV damage.
+
+```sh
+python3 synth_grid.py <tiles> <backdrops> /tmp/grid/train 1200
+python3 synth_grid.py <tiles> <backdrops> /tmp/grid/val 150      # change random.seed first
+swiftc -O train_grid.swift -o /tmp/grid/train_grid
+/tmp/grid/train_grid /tmp/grid/train /tmp/grid/val /tmp/grid/HajinStashTiles.mlmodel 1500
+cp /tmp/grid/HajinStashTiles.mlmodel ../../Sources/
+```
+
+The detector doesn't run in the simulator (it returns almost nothing), so
+check it on a device: copy photos to the app's `Documents/gridbatch/` and
+launch a Debug build with `SS_GRID_BATCH=1`; the corners land in
+`gridbatch/corners.json`. Run the model with `.scaleFill`: it was trained on
+images stretched to its square, and letterboxing shifts every box's x.
+On the seven real photos (2026-10-27) the corners are 1.5% of the photo
+off on average, against 8.6% for the old finder.

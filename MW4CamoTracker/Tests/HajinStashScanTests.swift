@@ -100,11 +100,43 @@ struct HajinGridFinderHarness {
         guard let folder = ProcessInfo.processInfo.environment["GRID_PHOTOS"] else { return }
         var out: [String: [[Double]]] = [:]
         for name in try FileManager.default.contentsOfDirectory(atPath: folder).sorted() where name.hasSuffix(".jpg") || name.hasSuffix(".png") {
-            guard let image = UIImage(contentsOfFile: folder + "/" + name)?.normalisedUp(),
-                  let corners = HajinStashGridFinder.guess(image) else { out[name] = []; continue }
+            guard let image = UIImage(contentsOfFile: folder + "/" + name)?.normalisedUp() else { continue }
+            if #available(iOS 17.0, *), let cg = image.cgImage {
+                let tiles = HajinTileLattice.tiles(in: cg)
+                out[name + "#tiles"] = [[Double(tiles.count), Double(HajinTileLattice.fit(tiles)?.cells.count ?? -1)]]
+            }
+            guard let corners = HajinStashGridFinder.guess(image) else { out[name] = []; continue }
             out[name] = corners.map { [Double($0.x), Double($0.y)] }
         }
         try JSONSerialization.data(withJSONObject: out, options: [.prettyPrinted, .sortedKeys])
             .write(to: URL(fileURLWithPath: folder + "/corners.json"))
+    }
+}
+
+/// The grid fitted to tile boxes alone (the detector itself doesn't run in
+/// the simulator): an angled 6 x 7 grid with gaps and two strays.
+struct HajinTileLatticeTests {
+    @Test func anAngledGridWithGapsAndStraysGivesItsCorners() throws {
+        // lattice (i, j) -> image, a mild perspective
+        let h: [Double] = [150, 6, 300, -4, 148, 400, 0.00004, 0.0001, 1]
+        var boxes: [CGRect] = []
+        for j in 0..<7 { for i in 0..<6 where !((i + j) % 5 == 0 && j > 0) {
+            let (x, y) = HajinTileLattice.apply(h, Double(i), Double(j))
+            boxes.append(CGRect(x: x - 60, y: y - 60, width: 120, height: 120))
+        } }
+        boxes.append(CGRect(x: 40, y: 1500, width: 120, height: 120))    // a stray, off the grid
+        boxes.append(CGRect(x: 1900, y: 200, width: 120, height: 120))
+        let (fit, found) = try #require(HajinTileLattice.fit(boxes))
+        let rows = try #require(HajinTileLattice.block(found.map(\.j)))
+        let cols = try #require(HajinTileLattice.block(found.filter { rows.contains($0.j) }.map(\.i)))
+        #expect(rows.count == 7)
+        #expect(cols.count == 6)
+        let size = CGSize(width: 2000, height: 2000)
+        let corners = HajinTileLattice.corners(fit, first: cols.lowerBound, rows: rows, size: size)
+        // its top-left tile's outer corner, wherever the walk numbered it from
+        let (tlx, tly) = HajinTileLattice.apply(h, -HajinTileLattice.half, -HajinTileLattice.half)
+        #expect(abs(corners[0].x * 2000 - tlx) < 3 && abs(corners[0].y * 2000 - tly) < 3)
+        let (brx, bry) = HajinTileLattice.apply(h, 5 + HajinTileLattice.half, 6 + HajinTileLattice.half)
+        #expect(abs(corners[2].x * 2000 - brx) < 3 && abs(corners[2].y * 2000 - bry) < 3)
     }
 }

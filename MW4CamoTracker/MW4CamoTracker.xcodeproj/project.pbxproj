@@ -92,6 +92,7 @@
 		A1B2C3D4E5F6A7B8C9D0E1F2 /* HajinScanReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* HajinScanReport.swift */; };
 		F9D0014D048706C5D4F695A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89EFA2A972DD69632EC339FF /* Assets.xcassets */; };
 		FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */; };
+		A7C3D2E1F0B94C8D9E6A5B41 /* HajinStashTiles.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B8D4E3F2A1C05D9EAF7B6C52 /* HajinStashTiles.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		40871AED1E535DDB2165F9B9 /* stash_tile_r3c2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = stash_tile_r3c2.png; sourceTree = "<group>"; };
 		4396711A369888BFFA7AD0B5 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */ = {isa = PBXFileReference; includeInIndex = 1; path = HajinStashIcons.mlmodel; sourceTree = "<group>"; };
+		B8D4E3F2A1C05D9EAF7B6C52 /* HajinStashTiles.mlmodel */ = {isa = PBXFileReference; includeInIndex = 1; path = HajinStashTiles.mlmodel; sourceTree = "<group>"; };
 		4C66A60FEF15496240122166 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
 		55033CAA3C16581897393815 /* MW4CamoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MW4CamoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55514122198FB86CDE06E404 /* MW4CamoTrackerWidgets.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = MW4CamoTrackerWidgets.entitlements; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				6AAB1385F43C0C7CE6A4AB8A /* HajinStashScan.swift */,
 				D100DFDB389467E961D75B94 /* HajinStashGrid.swift */,
 				46EA4BFDA01A9BF80E040943 /* HajinStashIcons.mlmodel */,
+				B8D4E3F2A1C05D9EAF7B6C52 /* HajinStashTiles.mlmodel */,
 				616A3C9A9B7D6370DB71FE67 /* HajinStashScanIntro.swift */,
 				B2C3D4E5F6A7B8C9D0E1F2A3 /* HajinScanReport.swift */,
 				BFE07F41351D87A8F3E1EB42 /* HajinBlueprints.swift */,
@@ -604,6 +607,7 @@
 				CFF58A378C2EB1851AB421FA /* HajinStashScan.swift in Sources */,
 				8E3889C1FF4BBE1D5A77B29C /* HajinStashGrid.swift in Sources */,
 				FF8EE1DB9AE29E26AC9D7CD0 /* HajinStashIcons.mlmodel in Sources */,
+				A7C3D2E1F0B94C8D9E6A5B41 /* HajinStashTiles.mlmodel in Sources */,
 				F5D5CD635665FC9842106B65 /* HajinStashScanIntro.swift in Sources */,
 				A1B2C3D4E5F6A7B8C9D0E1F2 /* HajinScanReport.swift in Sources */,
 				99F100D571C1D4F0BAA6CAF7 /* HajinBlueprints.swift in Sources */,
