@@ -116,6 +116,7 @@ struct PremiumView: View {
             .task { await premium.loadProducts() }
         }
         .presentationDetents([.large])
+        .appSheetBackground()
     }
 
     private var fakeStore: Bool {
@@ -141,7 +142,7 @@ struct PremiumView: View {
                 Text(verbatim: yearly ? "£1.99 (test)" : "£6.99 (test)")
                     .font(.system(size: 16, weight: .bold, design: .monospaced))
             }
-            .foregroundStyle(yearly ? Color.black.opacity(0.85) : Color.appInk)
+            .foregroundStyle(yearly ? Color.white : Color.appInk)
             .padding(14)
             .background(RoundedRectangle(cornerRadius: 12).fill(yearly ? Color.accentDMZ : Color.appSurface))
         }
@@ -180,7 +181,7 @@ struct PremiumView: View {
                 Text(product.displayPrice)
                     .font(.system(size: 16, weight: .bold, design: .monospaced))
             }
-            .foregroundStyle(yearly ? Color.black.opacity(0.85) : Color.appInk)
+            .foregroundStyle(yearly ? Color.white : Color.appInk)
             .padding(14)
             .background(
                 RoundedRectangle(cornerRadius: 12)
@@ -189,5 +190,17 @@ struct PremiumView: View {
         }
         .buttonStyle(.plain)
         .disabled(premium.purchasing)
+    }
+}
+
+extension View {
+    /// The whole sheet in the app's background rather than iOS's glass,
+    /// where the OS can (16.4 and up).
+    @ViewBuilder func appSheetBackground() -> some View {
+        if #available(iOS 16.4, *) {
+            presentationBackground(Color.appBackground)
+        } else {
+            self
+        }
     }
 }

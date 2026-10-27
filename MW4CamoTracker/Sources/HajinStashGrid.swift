@@ -881,7 +881,7 @@ struct HajinScanChoiceSheet: View {
             Button { pick(.ad) } label: {
                 Label("mw4.ui.premium.scan_watch".localized(), systemImage: "play.rectangle.fill")
                     .font(.headline)
-                    .foregroundStyle(Color.black.opacity(0.85))
+                    .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
@@ -904,10 +904,13 @@ struct HajinScanChoiceSheet: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.appBackground.ignoresSafeArea())
-        .presentationDetents([.height(360)])
+        .padding(.horizontal, 20)
+        .padding(.top, 28)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        // The whole sheet in the app's background, not iOS's glass with a
+        // solid band painted across the middle of it
+        .presentationBackground(Color.appBackground)
+        .presentationDetents([.height(320)])
         .presentationDragIndicator(.visible)
     }
 }
