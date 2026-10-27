@@ -429,12 +429,16 @@ struct HajinItemView: View {
                 ScrollView {
                     if width >= 760 {
                         // Wide: the item and its recipe on the left, what uses
-                        // it and where to get it on the right
+                        // it and where to get it on the right. With nothing
+                        // for the right (an FOB upgrade), its cost goes there
+                        let split = !hasSecondary(item, guide)
                         HStack(alignment: .top, spacing: 20) {
-                            VStack(alignment: .leading, spacing: 18) { primary(item, guide) }
+                            VStack(alignment: .leading, spacing: 18) { primary(item, guide, part: split ? .head : .all) }
                                 .frame(maxWidth: .infinity, alignment: .topLeading)
-                            VStack(alignment: .leading, spacing: 18) { secondary(item, guide) }
-                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                            VStack(alignment: .leading, spacing: 18) {
+                                if split { primary(item, guide, part: .details) } else { secondary(item, guide) }
+                            }
+                            .frame(maxWidth: .infinity, alignment: .topLeading)
                         }
                         .padding(20)
                         .frame(maxWidth: 1100)
@@ -458,7 +462,16 @@ struct HajinItemView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    @ViewBuilder private func primary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
+    /// The left column's parts, for when the right has nothing of its own:
+    /// the item and its status, then its tiers, cost and facts.
+    private enum Part { case all, head, details }
+
+    @ViewBuilder private func primary(_ item: HajinGuide.Item, _ guide: HajinGuide, part: Part = .all) -> some View {
+        if part != .details { primaryHead(item, guide) }
+        if part != .head { primaryDetails(item, guide) }
+    }
+
+    @ViewBuilder private func primaryHead(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         header(item)
         if HajinVerdict.applies(to: item) {
             HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
@@ -532,11 +545,19 @@ struct HajinItemView: View {
             .padding(12)
             .background(panel)
         }
+    }
+
+    @ViewBuilder private func primaryDetails(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         let tiers = guide.tiers(of: item)
         if tiers.count > 1 { tierStrip(item, tiers) }
         if !(item.cost ?? []).isEmpty || item.cash != nil { recipe(item, item.cost ?? []) }
         facts(item)
         if let markerID = item.marker, let marker = guide.marker(markerID) { mapButton(marker) }
+    }
+
+    /// Whether `secondary` shows anything.
+    private func hasSecondary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> Bool {
+        item.found != nil || item.requiredLevel != nil || !guide.usedIn(item.id).isEmpty || !guide.mentions(item.id).isEmpty
     }
 
     @ViewBuilder private func secondary(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {

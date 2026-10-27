@@ -116,7 +116,8 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
             // out-of-bounds land along the top edge (a tall screen needs to
             // be in closer before there's any room to scroll down)
             let tall = bounds.height > bounds.width * 1.3
-            scrollView.zoomScale = min(fit * (tall ? 2.3 : 1.6), scrollView.maximumZoomScale)
+            // A short, wide map (the iPad's guide dragged up) still opens across its width
+            scrollView.zoomScale = min(max(fit * (tall ? 2.3 : 1.6), bounds.width / mapSize.width), scrollView.maximumZoomScale)
             centre(on: CGPoint(x: 0.5, y: tall ? 0.72 : 0.55), animated: false)
             #if DEBUG
             // SS_MAP_VIEW=<zoom>,<x>,<y>: frame the map for a store shot
@@ -126,6 +127,18 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
                 centre(on: CGPoint(x: v[1], y: v[2]), animated: false)
             }
             #endif
+        } else if scrollView.zoomScale < bounds.width / mapSize.width {
+            // Made shorter and wider (the iPad's map and guide divider
+            // dragged up): keep the map across the whole width, on the same spot
+            let zoom = scrollView.zoomScale
+            let middle = CGPoint(x: (scrollView.contentOffset.x + scrollView.bounds.width / 2) / (mapSize.width * zoom),
+                                 y: (scrollView.contentOffset.y + scrollView.bounds.height / 2) / (mapSize.height * zoom))
+            scrollView.zoomScale = min(bounds.width / mapSize.width, scrollView.maximumZoomScale)
+            let fill = scrollView.zoomScale
+            let maxX = max(scrollView.contentSize.width - bounds.width, 0)
+            let maxY = max(scrollView.contentSize.height - bounds.height, 0)
+            scrollView.contentOffset = CGPoint(x: min(max(middle.x * mapSize.width * fill - bounds.width / 2, 0), maxX),
+                                               y: min(max(middle.y * mapSize.height * fill - bounds.height / 2, 0), maxY))
         }
         if let pending = pendingFocus {
             pendingFocus = nil

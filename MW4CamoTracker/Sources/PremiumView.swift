@@ -7,109 +7,30 @@ struct PremiumView: View {
     @ObservedObject private var premium = Premium.shared
     @Environment(\.dismiss) private var dismiss
     @State private var restoring = false
+    @State private var width: CGFloat = 0
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("mw4.ui.premium.title".localized())
-                            .font(.hitmarker(26))
-                            .foregroundStyle(Color.appInk)
-                        Text("mw4.ui.premium.subtitle".localized())
-                            .font(.subheadline)
-                            .foregroundStyle(Color.appInkMuted)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        perk("nosign", "mw4.ui.premium.perk_ads")
-                        perk("camera.viewfinder", "mw4.ui.premium.perk_scans")
-                        perk("app.badge.fill", "mw4.ui.premium.perk_icons")
-                        perk("slider.horizontal.3", "mw4.ui.premium.perk_customise")
-                        perk("icloud.fill", "mw4.ui.premium.perk_sync")
-                        perk("pin.fill", "mw4.ui.premium.perk_pins")
-                        perk("heart.fill", "mw4.ui.premium.perk_support")
-                    }
-
-                    if premium.isPremium {
-                        Label("mw4.ui.premium.active".localized(), systemImage: "checkmark.seal.fill")
-                            .font(.headline)
-                            .foregroundStyle(Color.accentDMZ)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .borderedCard()
-                        #if DEBUG
-                        if premium.hasFakePurchase {
-                            Button("Reset test purchase (debug)") { Task { await premium.resetFakePurchase() } }
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(Color.accentDMZ)
-                                .frame(maxWidth: .infinity)
+                Group {
+                    // iPad: what you get on the left, the options on the right
+                    if width >= 600 {
+                        HStack(alignment: .top, spacing: 32) {
+                            VStack(alignment: .leading, spacing: 20) { header; perks }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            VStack(alignment: .leading, spacing: 20) { purchase }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        #endif
-                    } else if (premium.products.isEmpty && premium.loadFailed && fakeStore) || reviewShot {
-                        #if DEBUG
-                        fakeButton(yearly: true)
-                        fakeButton(yearly: false)
-                        if !Self.reviewShot {
-                            Text(verbatim: "Debug build: test purchases, nothing is charged.")
-                                .font(.caption2)
-                                .foregroundStyle(Color.appInkMuted)
-                                .frame(maxWidth: .infinity)
-                        }
-                        #endif
-                    } else if premium.products.isEmpty, premium.loadFailed {
-                        VStack(spacing: 10) {
-                            Text("mw4.ui.premium.load_failed".localized())
-                                .font(.subheadline)
-                                .foregroundStyle(Color.appInkMuted)
-                                .multilineTextAlignment(.center)
-                            Button("mw4.ui.premium.retry".localized()) {
-                                Task { await premium.loadProducts() }
-                            }
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .borderedCard()
-                    } else if premium.products.isEmpty {
-                        ProgressView().frame(maxWidth: .infinity).padding(.vertical, 20)
+                        .frame(maxWidth: 820)
+                        .padding(.vertical, 12)
                     } else {
-                        ForEach(premium.products, id: \.id) { product in
-                            productButton(product)
-                        }
+                        VStack(alignment: .leading, spacing: 20) { header; perks; purchase }
                     }
-
-                    Button {
-                        restoring = true
-                        Task { await premium.restore(); restoring = false }
-                    } label: {
-                        HStack(spacing: 6) {
-                            if restoring { ProgressView() }
-                            Text("mw4.ui.premium.restore".localized())
-                        }
-                        .font(.subheadline.weight(.semibold))
-                        .frame(maxWidth: .infinity)
-                    }
-                    .foregroundStyle(Color.accentDMZ)
-                    .disabled(restoring)
-
-                    VStack(spacing: 6) {
-                        Text("mw4.ui.premium.legal".localized())
-                            .font(.caption2)
-                            .foregroundStyle(Color.appInkMuted)
-                            .multilineTextAlignment(.center)
-                        HStack(spacing: 16) {
-                            Link("mw4.ui.premium.terms".localized(), destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-                            Link("mw4.ui.premium.privacy".localized(), destination: URL(string: "https://camotracker.djr.li/privacy-policy")!)
-                        }
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.appInkMuted)
-                    }
-                    .frame(maxWidth: .infinity)
                 }
+                .frame(maxWidth: .infinity)
                 .padding(20)
             }
+            .readingWidth($width)
             .background(Color.appBackground.ignoresSafeArea())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -120,7 +41,111 @@ struct PremiumView: View {
             .task { await premium.loadProducts() }
         }
         .presentationDetents([.large])
+        .wideSheetOnPad()
         .appSheetBackground()
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("mw4.ui.premium.title".localized())
+                .font(.hitmarker(26))
+                .foregroundStyle(Color.appInk)
+            Text("mw4.ui.premium.subtitle".localized())
+                .font(.subheadline)
+                .foregroundStyle(Color.appInkMuted)
+        }
+    }
+
+    private var perks: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            perk("nosign", "mw4.ui.premium.perk_ads")
+            perk("camera.viewfinder", "mw4.ui.premium.perk_scans")
+            perk("app.badge.fill", "mw4.ui.premium.perk_icons")
+            perk("slider.horizontal.3", "mw4.ui.premium.perk_customise")
+            perk("icloud.fill", "mw4.ui.premium.perk_sync")
+            perk("pin.fill", "mw4.ui.premium.perk_pins")
+            perk("heart.fill", "mw4.ui.premium.perk_support")
+        }
+    }
+
+    /// The options (or Premium's on), restore and the legal links.
+    @ViewBuilder private var purchase: some View {
+        if premium.isPremium {
+            Label("mw4.ui.premium.active".localized(), systemImage: "checkmark.seal.fill")
+                .font(.headline)
+                .foregroundStyle(Color.accentDMZ)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 14)
+                .borderedCard()
+            #if DEBUG
+            if premium.hasFakePurchase {
+                Button("Reset test purchase (debug)") { Task { await premium.resetFakePurchase() } }
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Color.accentDMZ)
+                    .frame(maxWidth: .infinity)
+            }
+            #endif
+        } else if (premium.products.isEmpty && premium.loadFailed && fakeStore) || reviewShot {
+            #if DEBUG
+            fakeButton(yearly: true)
+            fakeButton(yearly: false)
+            if !Self.reviewShot {
+                Text(verbatim: "Debug build: test purchases, nothing is charged.")
+                    .font(.caption2)
+                    .foregroundStyle(Color.appInkMuted)
+                    .frame(maxWidth: .infinity)
+            }
+            #endif
+        } else if premium.products.isEmpty, premium.loadFailed {
+            VStack(spacing: 10) {
+                Text("mw4.ui.premium.load_failed".localized())
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInkMuted)
+                    .multilineTextAlignment(.center)
+                Button("mw4.ui.premium.retry".localized()) {
+                    Task { await premium.loadProducts() }
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.accentDMZ)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .borderedCard()
+        } else if premium.products.isEmpty {
+            ProgressView().frame(maxWidth: .infinity).padding(.vertical, 20)
+        } else {
+            ForEach(premium.products, id: \.id) { product in
+                productButton(product)
+            }
+        }
+
+        Button {
+            restoring = true
+            Task { await premium.restore(); restoring = false }
+        } label: {
+            HStack(spacing: 6) {
+                if restoring { ProgressView() }
+                Text("mw4.ui.premium.restore".localized())
+            }
+            .font(.subheadline.weight(.semibold))
+            .frame(maxWidth: .infinity)
+        }
+        .foregroundStyle(Color.accentDMZ)
+        .disabled(restoring)
+
+        VStack(spacing: 6) {
+            Text("mw4.ui.premium.legal".localized())
+                .font(.caption2)
+                .foregroundStyle(Color.appInkMuted)
+                .multilineTextAlignment(.center)
+            HStack(spacing: 16) {
+                Link("mw4.ui.premium.terms".localized(), destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                Link("mw4.ui.premium.privacy".localized(), destination: URL(string: "https://camotracker.djr.li/privacy-policy")!)
+            }
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(Color.appInkMuted)
+        }
+        .frame(maxWidth: .infinity)
     }
 
     /// SS_REVIEW_SHOT=1 (DEBUG): both purchases at the UK prices, whatever
@@ -179,6 +204,7 @@ struct PremiumView: View {
             Text(key.localized())
                 .font(.subheadline)
                 .foregroundStyle(Color.appInk)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
@@ -213,6 +239,16 @@ struct PremiumView: View {
 }
 
 extension View {
+    /// iPad: a page-sized sheet, with room for two columns, where the OS
+    /// can (18 and up); a form sheet before that.
+    @ViewBuilder func wideSheetOnPad() -> some View {
+        if #available(iOS 18, *) {
+            presentationSizing(.page)
+        } else {
+            self
+        }
+    }
+
     /// The whole sheet in the app's background rather than iOS's glass,
     /// where the OS can (16.4 and up).
     @ViewBuilder func appSheetBackground() -> some View {
