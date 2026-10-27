@@ -45,35 +45,53 @@ struct HajinItemTile: View {
             }
         }
         .frame(width: size, height: size)
-        .overlay(alignment: .top) { Rectangle().fill(tint).frame(height: max(2, size / 22)) }
-        .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(tint.opacity(0.45), lineWidth: 1))
+        // A blueprint has no rarity bar in the game, just a light edge
+        .overlay(alignment: .top) { if !blueprint { Rectangle().fill(tint).frame(height: max(2, size / 22)) } }
+        .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(blueprint ? Color(red: 0.55, green: 0.78, blue: 1).opacity(0.5) : tint.opacity(0.45), lineWidth: 1))
         .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
 
-/// Blueprint paper: deep blue with a fine grid and a heavier line every
-/// few squares, drawn rather than an image so it stays crisp at any size.
+/// A blueprint as the game draws it in a backpack: bright royal blue,
+/// pale rings and arcs round the middle like a radar, a light square set
+/// in from the edge, and a white card badge in the bottom left. Drawn
+/// rather than an image so it stays crisp at any size.
 struct HajinBlueprintPaper: View {
     let size: CGFloat
 
     var body: some View {
         Canvas { ctx, area in
-            ctx.fill(Path(CGRect(origin: .zero, size: area)), with: .linearGradient(Gradient(colors: [Color(red: 0.10, green: 0.30, blue: 0.58), Color(red: 0.05, green: 0.18, blue: 0.40)]),
-                                                         startPoint: .zero, endPoint: CGPoint(x: area.width, y: area.height)))
-            let step = max(4, area.width / 8)
-            var fine = Path(), heavy = Path()
-            for (i, x) in stride(from: 0, through: area.width, by: step).enumerated() {
-                var line = Path()
-                line.move(to: CGPoint(x: x, y: 0)); line.addLine(to: CGPoint(x: x, y: area.height))
-                if i % 4 == 0 { heavy.addPath(line) } else { fine.addPath(line) }
+            let w = area.width
+            let centre = CGPoint(x: w / 2, y: area.height / 2)
+            ctx.fill(Path(CGRect(origin: .zero, size: area)),
+                     with: .linearGradient(Gradient(colors: [Color(red: 0.15, green: 0.44, blue: 0.94), Color(red: 0.07, green: 0.28, blue: 0.80)]),
+                                           startPoint: .zero, endPoint: CGPoint(x: w, y: area.height)))
+            // Rings, and arcs crossing them
+            var rings = Path()
+            for r in [0.17, 0.31, 0.47] {
+                rings.addEllipse(in: CGRect(x: centre.x - w * r, y: centre.y - w * r, width: w * r * 2, height: w * r * 2))
             }
-            for (i, y) in stride(from: 0, through: area.height, by: step).enumerated() {
-                var line = Path()
-                line.move(to: CGPoint(x: 0, y: y)); line.addLine(to: CGPoint(x: area.width, y: y))
-                if i % 4 == 0 { heavy.addPath(line) } else { fine.addPath(line) }
+            for (start, end) in [(200.0, 290.0), (20.0, 110.0)] {
+                rings.addArc(center: CGPoint(x: centre.x + w * 0.35, y: centre.y + w * 0.35), radius: w * 0.62,
+                             startAngle: .degrees(start), endAngle: .degrees(end), clockwise: false)
             }
-            ctx.stroke(fine, with: .color(.white.opacity(0.12)), lineWidth: 0.5)
-            ctx.stroke(heavy, with: .color(.white.opacity(0.28)), lineWidth: 0.8)
+            ctx.stroke(rings, with: .color(Color(red: 0.55, green: 0.78, blue: 1).opacity(0.35)), lineWidth: max(0.6, w / 70))
+            // The square set in from the edge
+            let inset = w * 0.07
+            ctx.stroke(Path(CGRect(x: inset, y: inset, width: w - inset * 2, height: area.height - inset * 2)),
+                       with: .color(Color(red: 0.62, green: 0.82, blue: 1).opacity(0.75)), lineWidth: max(0.8, w / 55))
+            // The card badge: white, with two dashes
+            if w >= 28 {
+                let badge = CGRect(x: w * 0.03, y: area.height * 0.74, width: w * 0.24, height: w * 0.14)
+                ctx.fill(Path(roundedRect: badge, cornerRadius: w * 0.02), with: .color(.white.opacity(0.92)))
+                var dashes = Path()
+                for dy in [0.35, 0.65] {
+                    let y = badge.minY + badge.height * dy
+                    dashes.move(to: CGPoint(x: badge.minX + badge.width * 0.18, y: y))
+                    dashes.addLine(to: CGPoint(x: badge.maxX - badge.width * 0.18, y: y))
+                }
+                ctx.stroke(dashes, with: .color(Color(white: 0.45)), lineWidth: max(0.6, w / 90))
+            }
         }
         .frame(width: size, height: size)
     }

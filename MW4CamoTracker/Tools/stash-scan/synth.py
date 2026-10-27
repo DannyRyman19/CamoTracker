@@ -11,6 +11,7 @@ RARITY = {'Uncommon': (173, 225, 38), 'Rare': (0, 144, 255), 'Epic': (139, 117, 
           'Common': (150, 150, 150), 'Ultra': (230, 60, 60)}
 guide = json.load(open(os.path.join(HERE, '..', '..', 'Resources', 'hajin.json')))
 rarity = {i['id']: i.get('rarity') for i in guide['items']}
+blueprints = {i['id'] for i in guide['items'] if i.get('blueprint')}
 # rarities the guide lacks, read off the stash photo
 rarity.update({'experimental-compounds': 'Legendary', 'control-unit': 'Uncommon'})
 
@@ -58,6 +59,62 @@ def tile(icon, rid):
         d.rectangle([0, 0, 199, 199], outline=(150, 150, 150), width=random.randint(1, 3))
     return t
 
+def badge(d):
+    """The small white card badge blueprints and manuals carry, bottom left."""
+    x, y = random.randint(4, 10), random.randint(146, 156)
+    w, h = random.randint(38, 48), random.randint(24, 30)
+    d.rounded_rectangle([x, y, x + w, y + h], radius=4, fill=(235, 238, 242))
+    for k in (0.36, 0.64):
+        d.line([(x + w * 0.2, y + h * k), (x + w * 0.8, y + h * k)], fill=(110, 115, 125), width=3)
+
+def blueprint_tile(icon):
+    """A blueprint as a backpack shows it: royal blue, pale rings and arcs
+    round the middle, a light square set in from the edge, the badge."""
+    top = (random.randint(25, 45), random.randint(95, 125), random.randint(220, 250))
+    bottom = (random.randint(12, 25), random.randint(60, 85), random.randint(185, 215))
+    t = Image.new('RGB', (200, 200))
+    d = ImageDraw.Draw(t)
+    for y in range(200):
+        f = y / 199
+        d.line([(0, y), (200, y)], fill=tuple(int(a + (b - a) * f) for a, b in zip(top, bottom)))
+    # faint: a shade or two lighter than the blue
+    ring = tuple(min(255, c + random.randint(30, 55)) for c in top)
+    for r in (34, 62, 94):
+        d.ellipse([100 - r, 100 - r, 100 + r, 100 + r], outline=ring, width=2)
+    cx, cy = random.choice([(170, 170), (30, 170), (170, 30)])
+    d.arc([cx - 124, cy - 124, cx + 124, cy + 124], 0, 360, fill=ring, width=2)
+    inset = random.randint(10, 16)
+    d.rectangle([inset, inset, 200 - inset, 200 - inset], outline=(150, 200, 255), width=random.randint(2, 4))
+    s = int(200 * random.uniform(0.5, 0.72))
+    ic = icon.copy(); ic.thumbnail((s, s), Image.LANCZOS)
+    t.paste(ic, (int((200 - ic.width) / 2 + random.uniform(-8, 8)), int((200 - ic.height) / 2 + random.uniform(-10, 6))), ic)
+    badge(d)
+    if random.random() < 0.6:
+        d.rectangle([0, 0, 199, 199], outline=(150, 150, 150), width=random.randint(1, 3))
+    return t
+
+def manual_tile(icon):
+    """A weapon manual: the manual over the big olive TECHNICAL SERVICES
+    DEPT stamp that fills the tile, and the badge."""
+    t = Image.new('RGB', (200, 200), (random.randint(55, 75), random.randint(52, 68), random.randint(30, 42)))
+    d = ImageDraw.Draw(t)
+    ink = (random.randint(150, 185), random.randint(140, 170), random.randint(80, 105))
+    cx, cy = 100 + random.randint(-12, 12), 100 + random.randint(-12, 12)
+    for r, w in ((112, 14), (84, 4), (62, 3)):
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=ink, width=w)
+    # the stamp's lettering round the ring, as dashes
+    for k in range(28):
+        a = k / 28 * 2 * math.pi
+        x, y = cx + 98 * math.cos(a), cy + 98 * math.sin(a)
+        d.line([(x - 4, y - 4), (x + 4, y + 4)], fill=ink, width=3)
+    s = int(200 * random.uniform(0.6, 0.78))
+    ic = icon.copy(); ic.thumbnail((s, s), Image.LANCZOS)
+    if random.random() < 0.5:
+        ic = ic.rotate(random.uniform(-8, 8), resample=Image.BICUBIC, expand=True)
+    t.paste(ic, (int((200 - ic.width) / 2 + random.uniform(-8, 8)), int((200 - ic.height) / 2 + random.uniform(-10, 6))), ic)
+    badge(d)
+    return t
+
 def photograph(t):
     """Phone-photo-of-a-TV damage."""
     w = 200
@@ -96,8 +153,16 @@ for f in sorted(os.listdir(REFS)):
     rid = f[:-4]
     icon = Image.open(os.path.join(REFS, f)).convert('RGBA')
     os.makedirs(os.path.join(OUT, rid), exist_ok=True)
+    item = rid[2:] if rid.startswith('x-') else rid
     for k in range(N):
-        photograph(tile(icon, rid)).save(os.path.join(OUT, rid, f'{k:04d}.jpg'), quality=92)
+        # A manual is nearly always on its stamp
+        styled = manual_tile(icon) if item == 'weapon-manual' and random.random() < 0.7 else tile(icon, rid)
+        photograph(styled).save(os.path.join(OUT, rid, f'{k:04d}.jpg'), quality=92)
+    # Blueprints, in the backpack's blueprint style: the reader spots the
+    # blue and asks the model which blueprint it is
+    if item in blueprints:
+        for k in range(N, N + N * 2 // 3):
+            photograph(blueprint_tile(icon)).save(os.path.join(OUT, rid, f'{k:04d}.jpg'), quality=92)
 # empty tiles
 os.makedirs(os.path.join(OUT, 'empty'), exist_ok=True)
 for k in range(N):

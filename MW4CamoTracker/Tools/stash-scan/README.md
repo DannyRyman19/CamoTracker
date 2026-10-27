@@ -7,14 +7,16 @@ sharing a picture share a class, named `x-<first id>`), plus `empty` (a blank
 tile). Only ingredient counts reach My stash; the rest are recognised so they
 aren't mistaken for ingredients on the All or Misc tabs. It's trained only on generated tiles: each
 guide picture pasted onto a game-style tile (rarity colour, dot pattern, a
-count, the cube mark, sometimes a pin), then damaged the way a phone photo of
+count, the cube mark, sometimes a pin; blueprint items also on the
+backpack's blue blueprint tile, and the weapon manual mostly on its TSD
+stamp), then damaged the way a phone photo of
 a TV is (colour cast, blur, moire, glare, JPEG, a slight tilt).
 
 Retrain it when ingredients or their pictures change:
 
 ```sh
 cd MW4CamoTracker/Tools/stash-scan
-python3 fetch_icons.py /tmp/stash        # guide pictures -> /tmp/stash/refs, refs_other
+python3 fetch_icons.py /tmp/stash        # guide pictures (from the repo's Images/DMZ) -> /tmp/stash/refs, refs_other
 python3 synth.py /tmp/stash/refs /tmp/stash/syn 90
 python3 synth.py /tmp/stash/refs_other_unique /tmp/stash/syn 40   # one file per distinct picture
 swiftc -O train.swift -o /tmp/stash/train   # augmentation off: with ~125 classes it runs out of buffers

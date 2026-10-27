@@ -1,6 +1,6 @@
 """Downloads the guide's item pictures into refs/ (ingredients) and
 refs_other/ (everything else that has one), for synth.py."""
-import json, os, sys, urllib.request
+import json, os, shutil, sys, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 guide = json.load(open(os.path.join(HERE, '..', '..', 'Resources', 'hajin.json')))
 for item in guide['items']:
@@ -10,7 +10,14 @@ for item in guide['items']:
     os.makedirs(folder, exist_ok=True)
     path = os.path.join(folder, item['id'] + '.png')
     if not os.path.exists(path):
-        urllib.request.urlretrieve(item['image'], path)
+        # The site serves the repo's Images/DMZ: copy from there when it's
+        # checked out, else download (the site refuses Python's default agent)
+        local = os.path.join(HERE, '..', '..', '..', 'Images', 'DMZ', item['image'].split('/')[-1].split('?')[0])
+        if os.path.exists(local):
+            shutil.copy(local, path)
+        else:
+            request = urllib.request.Request(item['image'], headers={'User-Agent': 'Mozilla/5.0'})
+            open(path, 'wb').write(urllib.request.urlopen(request).read())
 print('ok')
 
 # One file per distinct picture of the non-ingredients: items that share a
