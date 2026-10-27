@@ -42,7 +42,7 @@
 "mw4.ui.max" = "MÁX";
 "mw4.ui.cancel" = "Cancelar";
 "mw4.ui.save" = "Guardar";
-"mw4.onboarding.welcome.title" = "Camo Tracker";
+"mw4.onboarding.welcome.title" = "Camo Track";
 "mw4.onboarding.welcome.body" = "Sigue tus camuflajes en Multijugador, Warzone y DMZ. Cada modo tiene su propia pestaña.";
 "mw4.onboarding.mark.title" = "Dos formas de registrar el progreso";
 "mw4.onboarding.mark.tap_circle" = "Toca el círculo para marcar un camuflaje como hecho.";
@@ -180,7 +180,7 @@
 "mw4.widget.guide.title" = "Widgets";
 "mw4.widget.guide.step1" = "Mantén pulsado un espacio vacío de la pantalla de inicio.";
 "mw4.widget.guide.step2" = "Toca Editar y luego Añadir widget.";
-"mw4.widget.guide.step3" = "Busca Camo Tracker y elige un tamaño.";
+"mw4.widget.guide.step3" = "Busca Camo Track y elige un tamaño.";
 "mw4.widget.guide.lock" = "También hay un anillo de progreso para la pantalla de bloqueo.";
 "mw4.widget.guide.mode_hint" = "Para cambiar el modo de un widget de progreso, mantenlo pulsado y toca Editar widget.";
 "mw4.onboarding.yours.widget" = "Añade un widget para tener tu arma fijada y el progreso de tus modos en la pantalla de inicio.";
@@ -428,3 +428,13 @@
 "mw4.ui.premium.retry" = "Reintentar";
 "mw4.ui.premium.no_ad_title" = "Ahora no hay anuncio";
 "mw4.ui.premium.no_ad_message" = "No se pudo cargar un anuncio y ya usaste el escaneo gratis de hoy. Inténtalo con conexión, o hazte Premium para escanear sin anuncios.";
+
+/* Unlockable app icons */
+"mw4.ui.app_icon.title" = "Icono de la app";
+"mw4.ui.app_icon.standard" = "Original";
+"mw4.ui.app_icon.footer" = "Consigue un camuflaje para desbloquear su icono. El de Oro es gratis; los demás también requieren Premium.";
+"mw4.ui.app_icon.need_weapon" = "Consigue %@ con cualquier arma";
+"mw4.ui.app_icon.need_mode" = "Consigue %@ en %@";
+"mw4.ui.app_icon.premium" = "Con Premium";
+"mw4.ui.app_icon.in_use" = "En uso";
+"mw4.ui.premium.remove_ads" = "Quitar anuncios";

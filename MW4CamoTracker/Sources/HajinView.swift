@@ -423,11 +423,35 @@ struct HajinMinePage: View {
     @AppStorage(HajinMineCard.orderKey) private var orderRaw = ""
     @AppStorage(HajinMineCard.hiddenKey) private var hiddenRaw = ""
     @State private var customising = false
+    @ObservedObject private var premium = Premium.shared
+    @State private var showsPremium = false
 
     var body: some View {
         let hidden = Set(hiddenRaw.split(separator: ","))
         ForEach(HajinMineCard.order(orderRaw).filter { !hidden.contains(Substring($0.rawValue)) }) { card in
             self.card(card)
+        }
+        // Free players: what Premium gets them, under their own cards
+        if !premium.isPremium {
+            Button { showsPremium = true } label: {
+                HStack(spacing: 12) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.accentDMZ))
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("mw4.ui.premium.title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                        Text("mw4.ui.premium.subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                            .multilineTextAlignment(.leading)
+                    }
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+                }
+            }
+            .buttonStyle(.plain)
+            .hajinCard(accent: .accentDMZ)
+            .sheet(isPresented: $showsPremium) { PremiumView() }
         }
         Button { customising = true } label: {
             Label("mw4.ui.hajin.mine_customise".localized(), systemImage: "slider.horizontal.3")

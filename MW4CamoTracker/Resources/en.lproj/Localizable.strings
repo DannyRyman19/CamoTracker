@@ -42,7 +42,7 @@
 "mw4.ui.max" = "MAX";
 "mw4.ui.cancel" = "Cancel";
 "mw4.ui.save" = "Save";
-"mw4.onboarding.welcome.title" = "Camo Tracker";
+"mw4.onboarding.welcome.title" = "Camo Track";
 "mw4.onboarding.welcome.body" = "Track your camos across Multiplayer, Warzone and DMZ. Every mode gets its own tab.";
 "mw4.onboarding.mark.title" = "Two ways to log progress";
 "mw4.onboarding.mark.tap_circle" = "Tap the circle to mark a camo done.";
@@ -180,7 +180,7 @@
 "mw4.widget.guide.title" = "Widgets";
 "mw4.widget.guide.step1" = "Touch and hold an empty spot on your Home Screen.";
 "mw4.widget.guide.step2" = "Tap Edit, then Add Widget.";
-"mw4.widget.guide.step3" = "Search for Camo Tracker and pick a size.";
+"mw4.widget.guide.step3" = "Search for Camo Track and pick a size.";
 "mw4.widget.guide.lock" = "There's a completion ring for your Lock Screen too.";
 "mw4.widget.guide.mode_hint" = "To change a Mode progress widget's mode, touch and hold it and tap Edit Widget.";
 "mw4.onboarding.yours.widget" = "Add a widget to keep your pinned gun and mode progress on your Home Screen.";
@@ -428,3 +428,13 @@
 "mw4.ui.premium.retry" = "Try again";
 "mw4.ui.premium.no_ad_title" = "No ad right now";
 "mw4.ui.premium.no_ad_message" = "Couldn't load an ad, and today's free scan is used. Try again when you're online, or go Premium to scan with no ads.";
+
+/* Unlockable app icons */
+"mw4.ui.app_icon.title" = "App icon";
+"mw4.ui.app_icon.standard" = "Original";
+"mw4.ui.app_icon.footer" = "Earn a camo to unlock its icon. Gold's is free; the rest also need Premium.";
+"mw4.ui.app_icon.need_weapon" = "Earn %@ on any weapon";
+"mw4.ui.app_icon.need_mode" = "Earn %@ in %@";
+"mw4.ui.app_icon.premium" = "With Premium";
+"mw4.ui.app_icon.in_use" = "In use";
+"mw4.ui.premium.remove_ads" = "Remove ads";

@@ -42,7 +42,7 @@
 "mw4.ui.max" = "MAX";
 "mw4.ui.cancel" = "Annuleren";
 "mw4.ui.save" = "Opslaan";
-"mw4.onboarding.welcome.title" = "Camo Tracker";
+"mw4.onboarding.welcome.title" = "Camo Track";
 "mw4.onboarding.welcome.body" = "Volg je camouflages in Multiplayer, Warzone en DMZ. Elke modus heeft een eigen tabblad.";
 "mw4.onboarding.mark.title" = "Twee manieren om voortgang bij te houden";
 "mw4.onboarding.mark.tap_circle" = "Tik op de cirkel om een camouflage als voltooid te markeren.";
@@ -180,7 +180,7 @@
 "mw4.widget.guide.title" = "Widgets";
 "mw4.widget.guide.step1" = "Houd een lege plek op je beginscherm ingedrukt.";
 "mw4.widget.guide.step2" = "Tik op Wijzig en dan op Voeg widget toe.";
-"mw4.widget.guide.step3" = "Zoek naar Camo Tracker en kies een formaat.";
+"mw4.widget.guide.step3" = "Zoek naar Camo Track en kies een formaat.";
 "mw4.widget.guide.lock" = "Er is ook een voortgangsring voor je toegangsscherm.";
 "mw4.widget.guide.mode_hint" = "Om de modus van een voortgangswidget te wijzigen, houd je hem ingedrukt en tik je op Wijzig widget.";
 "mw4.onboarding.yours.widget" = "Voeg een widget toe om je vastgezette wapen en je voortgang per modus op je beginscherm te houden.";
@@ -428,3 +428,13 @@
 "mw4.ui.premium.retry" = "Opnieuw proberen";
 "mw4.ui.premium.no_ad_title" = "Nu geen advertentie";
 "mw4.ui.premium.no_ad_message" = "Er kon geen advertentie laden en de gratis scan van vandaag is al gebruikt. Probeer het opnieuw als je online bent, of neem Premium om zonder advertenties te scannen.";
+
+/* Unlockable app icons */
+"mw4.ui.app_icon.title" = "App-icoon";
+"mw4.ui.app_icon.standard" = "Origineel";
+"mw4.ui.app_icon.footer" = "Verdien een camo om het icoon te ontgrendelen. Goud is gratis; de rest heeft ook Premium nodig.";
+"mw4.ui.app_icon.need_weapon" = "Verdien %@ met een wapen";
+"mw4.ui.app_icon.need_mode" = "Verdien %@ in %@";
+"mw4.ui.app_icon.premium" = "Met Premium";
+"mw4.ui.app_icon.in_use" = "In gebruik";
+"mw4.ui.premium.remove_ads" = "Advertenties verwijderen";

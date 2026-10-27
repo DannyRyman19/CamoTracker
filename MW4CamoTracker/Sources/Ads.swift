@@ -206,21 +206,34 @@ extension Ads: @preconcurrency LPMRewardedAdDelegate {
 }
 
 /// A banner at the foot of a list screen: a solid strip with a hairline
-/// above it, the ad pinned inside so it never hangs over the list. Empty
-/// for Premium and until the SDK is ready.
+/// above it, the ad pinned inside so it never hangs over the list, and a
+/// "Remove ads" link to Premium above the ad. Empty for Premium and until
+/// the SDK is ready.
 struct AdBanner: View {
     @ObservedObject private var ads = Ads.shared
     @ObservedObject private var premium = Premium.shared
+    @State private var showsPremium = false
 
     var body: some View {
         if ads.ready, !premium.isPremium {
             let size = BannerController.size
-            AdBannerView()
-                .frame(width: CGFloat(size.width), height: CGFloat(size.height))
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 6)
-                .background(Color.appBackground)
-                .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
+            VStack(spacing: 4) {
+                Button { showsPremium = true } label: {
+                    Label("mw4.ui.premium.remove_ads".localized(), systemImage: "xmark.circle.fill")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(Color.appInkMuted)
+                }
+                .buttonStyle(.plain)
+                .frame(width: CGFloat(size.width), alignment: .trailing)
+                AdBannerView()
+                    .frame(width: CGFloat(size.width), height: CGFloat(size.height))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 4)
+            .padding(.bottom, 6)
+            .background(Color.appBackground)
+            .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
+            .sheet(isPresented: $showsPremium) { PremiumView() }
         }
     }
 }

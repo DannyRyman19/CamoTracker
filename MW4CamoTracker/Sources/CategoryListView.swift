@@ -586,6 +586,7 @@ struct CustomiseHomeSheet: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
+    @State private var showsIcons = false
     @Environment(\.dismiss) private var dismiss
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
@@ -684,6 +685,22 @@ struct CustomiseHomeSheet: View {
                 }
 
                 Section {
+                    // A button, not a NavigationLink: the list is in edit mode
+                    Button { showsIcons = true } label: {
+                        HStack {
+                            Label("mw4.ui.app_icon.title".localized(), systemImage: "app.badge.fill")
+                            Spacer()
+                            Image(AppIconChoice.current.previewName)
+                                .resizable()
+                                .frame(width: 28, height: 28)
+                                .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                        }
+                    }
+                    .foregroundStyle(accent)
+                    .accessibilityIdentifier("customise.appIcon")
+                }
+
+                Section {
                     Button { showsPremium = true } label: {
                         Label(premium.isPremium ? "mw4.ui.premium.active".localized() : "mw4.ui.premium.title".localized(),
                               systemImage: premium.isPremium ? "checkmark.seal.fill" : "sparkles")
@@ -709,6 +726,11 @@ struct CustomiseHomeSheet: View {
                 }
             }
             .environment(\.editMode, .constant(.active))
+            .navigationDestination(isPresented: $showsIcons) { AppIconPicker(accent: accent) }
+            #if DEBUG
+            // `SS_APP_ICONS=1` (with SS_CUSTOMISE=1) opens App icon too.
+            .onAppear { if ProcessInfo.processInfo.environment["SS_APP_ICONS"] == "1" { showsIcons = true } }
+            #endif
             .navigationTitle("mw4.ui.customise".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

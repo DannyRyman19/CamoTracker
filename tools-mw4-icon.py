@@ -1,12 +1,18 @@
 """Renders the MW4 Camo Tracker app icon and splash foreground.
 
     python3 tools-mw4-icon.py <latin font> <hangul font> <icon-1024.png> <splash-fg.png>
+    python3 tools-mw4-icon.py variants <latin font> <hangul font> <AppIcon folder parent>
+
+The second form writes the unlockable icons (one `.appiconset` per camo in
+VARIANTS, next to AppIcon): the same layout with the nebula and the 사 in
+that camo's colours, from the app's own gradients in Theme.swift (never the
+camo art itself, which is Activision's).
 
   latin font   MW4CamoTracker/Resources/HitmarkerText-VF.ttf
   hangul font  any heavy Hangul face (AppleSDGothicNeo.ttc on a Mac,
                wqy-zenhei.ttc on Linux)
 
-Layout: CAMO, a gold 사 (Korean "four"), TRACKER, over an amber nebula. No
+Layout: CAMO, a gold 사 (Korean "four"), TRACK (the app is Camo Track), over an amber nebula. No
 "MW", "MW4" or game logo art anywhere: App Review rejected the game's lockup
 (4.1) and then the typed "MW4" too, as another developer's product name.
 
@@ -55,7 +61,28 @@ class Noise:
         return f / norm
 
 
-def nebula():
+# The default: amber nebula, gold 사. (dark, mid, bright) ramp stops, 0…1.
+AMBER = ((0.030, 0.014, 0.004), (0.450, 0.214, 0.014), (1.000, 0.820, 0.070))
+
+# Unlockable icons: asset name -> (ramp mid, ramp bright, 사), from Theme.swift
+VARIANTS = {
+    "AppIcon-Gold":               ((0.55, 0.45, 0.16), (1.00, 0.95, 0.72), (1.00, 0.97, 0.80)),
+    "AppIcon-Platinum":           ((0.34, 0.38, 0.42), (0.86, 0.90, 0.95), (0.96, 0.98, 1.00)),
+    "AppIcon-HarmonicBreak":      ((0.22, 0.05, 0.05), (0.82, 0.31, 0.30), (0.95, 0.61, 0.60)),
+    "AppIcon-Divergence":         ((0.05, 0.08, 0.22), (0.43, 0.61, 0.91), (0.91, 0.78, 0.29)),
+    "AppIcon-MercurialDrift":     ((0.45, 0.03, 0.24), (0.94, 0.28, 0.58), (1.00, 0.70, 0.28)),
+    "AppIcon-PolyatomicReforged": ((0.16, 0.16, 0.48), (0.42, 0.50, 0.95), (0.31, 0.85, 0.91)),
+    "AppIcon-OrionReforged":      ((0.32, 0.10, 0.20), (0.80, 0.42, 0.60), (0.89, 0.61, 0.75)),
+    "AppIcon-Parallax":           ((0.32, 0.24, 0.34), (0.82, 0.70, 0.84), (0.94, 0.87, 0.95)),
+    "AppIcon-DamascusReforged":   ((0.04, 0.11, 0.40), (0.30, 0.45, 0.92), (1.00, 0.54, 0.36)),
+    "AppIcon-Empyros":            ((0.05, 0.30, 0.34), (0.25, 0.76, 0.80), (0.94, 0.42, 0.66)),
+    "AppIcon-Chiral":             ((0.40, 0.00, 0.00), (0.90, 0.16, 0.13), (1.00, 0.45, 0.40)),
+    "AppIcon-RippleTide":         ((0.40, 0.25, 0.05), (0.92, 0.70, 0.25), (1.00, 0.83, 0.31)),
+    "AppIcon-Helio":              ((0.40, 0.05, 0.09), (0.92, 0.30, 0.40), (1.00, 0.42, 0.51)),
+}
+
+
+def nebula(ramp=AMBER):
     n1, n2 = Noise(20260908), Noise(77123)
     ys, xs = np.mgrid[0:H, 0:W].astype(np.float64)
     fx, fy = xs / W, ys / H
@@ -68,11 +95,13 @@ def nebula():
     t = np.clip(v * (0.35 + 0.85 * vign), 0, 1)
     lo = t < 0.40
     k_lo, k_hi = t / 0.40, (t - 0.40) / 0.60
-    rr = np.where(lo, 0.030 + k_lo * 0.42, 0.450 + k_hi * 0.550)
-    gg = np.where(lo, 0.014 + k_lo * 0.20, 0.214 + k_hi * 0.606)
-    bb = np.where(lo, 0.004 + k_lo * 0.010, 0.014 + k_hi * 0.056)
+    if len(ramp) == 2:  # a variant: its own mid and bright, a near-black low of the mid
+        ramp = (tuple(c * 0.07 for c in ramp[0]),) + tuple(ramp)
+    dark, mid, bright = (np.array(c) for c in ramp)
+    k_lo, k_hi = k_lo[..., None], k_hi[..., None]
+    rgb = np.where(lo[..., None], dark + k_lo * (mid - dark), mid + k_hi * (bright - mid))
     grain = (n2.value(xs * 0.7, ys * 0.7) - 0.5) * 0.05
-    rgb = np.stack([rr + grain, gg + grain, bb + grain], axis=-1)
+    rgb = rgb + grain[..., None]
     alpha = np.ones((H, W, 1))
     return Image.fromarray((np.clip(np.concatenate([rgb, alpha], -1), 0, 1) * 255).astype(np.uint8), "RGBA")
 
@@ -123,10 +152,10 @@ def distressed(layer, mask, tint_base, tint_span):
     return Image.fromarray(np.dstack([rgb, a * 255]).clip(0, 255).astype(np.uint8), "RGBA")
 
 
-def render(latin, hangul, transparent):
-    base = Image.new("RGBA", (W, H), (0, 0, 0, 0)) if transparent else nebula()
+def render(latin, hangul, transparent, ramp=AMBER, glyph=GOLD):
+    base = Image.new("RGBA", (W, H), (0, 0, 0, 0)) if transparent else nebula(ramp)
     mask = distress()
-    for word, target_w, centre_y in (("CAMO", 700, 262), ("TRACKER", 880, 942)):
+    for word, target_w, centre_y in (("CAMO", 700, 262), ("TRACK", 760, 942)):
         font = fitted(latin, word, target_w, axes=[700])
         # CoreGraphics' line width is the whole stroke; Pillow's is per side.
         layer = text_layer(font, word, centre_y, (255, 255, 255, 255), round(font.size * 0.045 / 2))
@@ -136,17 +165,45 @@ def render(latin, hangul, transparent):
     l, t, r, b = probe.getbbox("사")
     four = ImageFont.truetype(hangul, round(200 * 380 / (b - t)))
     # Thickened with a stroke so it carries the same weight as the Latin type.
-    layer = text_layer(four, "사", 602, GOLD + (255,), round(four.size * 0.04))
+    layer = text_layer(four, "사", 602, tuple(glyph) + (255,), round(four.size * 0.04))
     return with_shadow(base, distressed(layer, mask, 0.92, 0.08), (0, 7), 20 / 2, 0.6)
 
 
+def icon_png(image, path):
+    top = (H - W) // 2
+    image.crop((0, top, W, top + W)).resize((1024, 1024), Image.LANCZOS).convert("RGB").save(path)
+
+
+def variants(latin, hangul, assets):
+    import json, os
+    for name, (mid, bright, glyph) in VARIANTS.items():
+        folder = os.path.join(assets, name + ".appiconset")
+        os.makedirs(folder, exist_ok=True)
+        icon_png(render(latin, hangul, False, (mid, bright), tuple(round(c * 255) for c in glyph)),
+                 os.path.join(folder, "icon-1024.png"))
+        with open(os.path.join(folder, "Contents.json"), "w") as f:
+            json.dump({"images": [{"filename": "icon-1024.png", "idiom": "universal", "platform": "ios", "size": "1024x1024"}],
+                       "info": {"author": "xcode", "version": 1}}, f, indent=2)
+            f.write("\n")
+        # The in-app picker can't load an alternate icon by name, so each
+        # gets a small preview image too
+        preview = os.path.join(assets, name + "-Preview.imageset")
+        os.makedirs(preview, exist_ok=True)
+        Image.open(os.path.join(folder, "icon-1024.png")).resize((240, 240), Image.LANCZOS).save(os.path.join(preview, "preview.png"))
+        with open(os.path.join(preview, "Contents.json"), "w") as f:
+            json.dump({"images": [{"filename": "preview.png", "idiom": "universal"}],
+                       "info": {"author": "xcode", "version": 1}}, f, indent=2)
+            f.write("\n")
+        print("wrote", folder)
+
+
 def main():
+    if len(sys.argv) == 5 and sys.argv[1] == "variants":
+        return variants(*sys.argv[2:])
     if len(sys.argv) != 5:
         sys.exit(__doc__)
     latin, hangul, icon_out, splash_out = sys.argv[1:]
-    icon = render(latin, hangul, transparent=False)
-    top = (H - W) // 2
-    icon.crop((0, top, W, top + W)).resize((1024, 1024), Image.LANCZOS).convert("RGB").save(icon_out)
+    icon_png(render(latin, hangul, transparent=False), icon_out)
     render(latin, hangul, transparent=True).save(splash_out)
     print(f"wrote {icon_out} and {splash_out}")
 

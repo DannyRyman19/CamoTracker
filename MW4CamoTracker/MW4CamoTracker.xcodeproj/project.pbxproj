@@ -98,6 +98,7 @@
 		39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFC2C043486400F10E42010 /* Ads.swift */; };
 		1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18584995CE0647A750FAF9 /* PremiumView.swift */; };
 		526CD7FDF12954A43CA48504 /* UnityAdsAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 3B4630512069BC35E2FFB348 /* UnityAdsAdapter */; };
+		399D56FFC2F55F4A0FF93789 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C12525E32F5F8867F49126 /* AppIcons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		202E4FC72459A6253A5B2B7C /* Premium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Premium.swift; sourceTree = "<group>"; };
 		ABFC2C043486400F10E42010 /* Ads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		9E18584995CE0647A750FAF9 /* PremiumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
+		61C12525E32F5F8867F49126 /* AppIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
 				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
 				137CA712348610EDF30BE314 /* HajinModels.swift */,
+				61C12525E32F5F8867F49126 /* AppIcons.swift */,
 				9E18584995CE0647A750FAF9 /* PremiumView.swift */,
 				ABFC2C043486400F10E42010 /* Ads.swift */,
 				202E4FC72459A6253A5B2B7C /* Premium.swift */,
@@ -597,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399D56FFC2F55F4A0FF93789 /* AppIcons.swift in Sources */,
 				1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */,
 				39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */,
 				B03484AF158879AA9D495A96 /* Premium.swift in Sources */,
@@ -742,6 +746,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 44G72CWWEW;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Gold AppIcon-Platinum AppIcon-HarmonicBreak AppIcon-Divergence AppIcon-MercurialDrift AppIcon-PolyatomicReforged AppIcon-OrionReforged AppIcon-Parallax AppIcon-DamascusReforged AppIcon-Empyros AppIcon-Chiral AppIcon-RippleTide AppIcon-Helio";
 				INFOPLIST_FILE = Resources/Info.plist;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1020,6 +1025,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 44G72CWWEW;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Gold AppIcon-Platinum AppIcon-HarmonicBreak AppIcon-Divergence AppIcon-MercurialDrift AppIcon-PolyatomicReforged AppIcon-OrionReforged AppIcon-Parallax AppIcon-DamascusReforged AppIcon-Empyros AppIcon-Chiral AppIcon-RippleTide AppIcon-Helio";
 				INFOPLIST_FILE = Resources/Info.plist;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
