@@ -23,8 +23,10 @@ struct HajinView: View {
             AppBackground(accent: accent)
             if let guide = store.guide {
                 if width >= 700 {
-                    // iPad: the map is the page, the guide beside or under it
+                    // iPad: the map is the page, the guide beside or under it,
+                    // and the banner along the foot of both
                     HajinWideLayout()
+                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
                 } else {
                     phoneList(guide)
                         .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
