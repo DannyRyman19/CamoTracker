@@ -563,8 +563,10 @@ struct StatSummaryCard: View {
                                     .foregroundStyle(Color.appInkMuted)
                             }
                             .frame(width: 40, height: 40)
+                            // Proportional, not monospaced: "8/33 Harmonic Break"
+                            // then fits a column instead of wrapping cramped
                             Text(hint)
-                                .font(.system(size: 10, weight: .semibold, design: .monospaced))
+                                .font(.system(size: 10, weight: .semibold))
                                 .foregroundStyle(Color.appInkMuted)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)

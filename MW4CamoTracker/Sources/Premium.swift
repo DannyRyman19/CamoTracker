@@ -49,6 +49,9 @@ final class Premium: ObservableObject {
     /// Premium while a verified, unrevoked yearly or lifetime purchase is held.
     func refresh() async {
         var owned = false
+        #if DEBUG
+        if UserDefaults.standard.bool(forKey: Self.fakeKey) { owned = true }
+        #endif
         for await result in Transaction.currentEntitlements {
             if case .verified(let transaction) = result, Self.productIDs.contains(transaction.productID),
                transaction.revocationDate == nil {
@@ -85,6 +88,25 @@ final class Premium: ObservableObject {
     }
 
     #if DEBUG
+    /// Debug builds on a device (not run from Xcode, so no StoreKit test
+    /// file): when the App Store has no products, the Premium sheet offers
+    /// test ones that unlock straight away, and a reset back to free.
+    static let fakeKey = "mw4_debug_fake_premium"
+    var hasFakePurchase: Bool { UserDefaults.standard.bool(forKey: Self.fakeKey) }
+
+    func fakeBuy() async {
+        purchasing = true
+        try? await Task.sleep(for: .milliseconds(600))
+        UserDefaults.standard.set(true, forKey: Self.fakeKey)
+        purchasing = false
+        await refresh()
+    }
+
+    func resetFakePurchase() async {
+        UserDefaults.standard.set(false, forKey: Self.fakeKey)
+        await refresh()
+    }
+
     /// `MW4_PREMIUM=1` launches as Premium, for screenshots, and holds it
     /// against the App Store's answer.
     private var forced = false

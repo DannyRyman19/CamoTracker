@@ -36,6 +36,23 @@ struct PremiumView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 14)
                             .borderedCard()
+                        #if DEBUG
+                        if premium.hasFakePurchase {
+                            Button("Reset test purchase (debug)") { Task { await premium.resetFakePurchase() } }
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(Color.accentDMZ)
+                                .frame(maxWidth: .infinity)
+                        }
+                        #endif
+                    } else if premium.products.isEmpty, premium.loadFailed, fakeStore {
+                        #if DEBUG
+                        fakeButton(yearly: true)
+                        fakeButton(yearly: false)
+                        Text(verbatim: "Debug build: test purchases, nothing is charged.")
+                            .font(.caption2)
+                            .foregroundStyle(Color.appInkMuted)
+                            .frame(maxWidth: .infinity)
+                        #endif
                     } else if premium.products.isEmpty, premium.loadFailed {
                         VStack(spacing: 10) {
                             Text("mw4.ui.premium.load_failed".localized())
@@ -100,6 +117,38 @@ struct PremiumView: View {
         }
         .presentationDetents([.large])
     }
+
+    private var fakeStore: Bool {
+        #if DEBUG
+        true
+        #else
+        false
+        #endif
+    }
+
+    #if DEBUG
+    /// A stand-in for a product the App Store didn't return, in the same look.
+    private func fakeButton(yearly: Bool) -> some View {
+        Button {
+            Task { await premium.fakeBuy(); dismiss() }
+        } label: {
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text((yearly ? "mw4.ui.premium.yearly" : "mw4.ui.premium.lifetime").localized()).font(.headline)
+                    Text((yearly ? "mw4.ui.premium.yearly_hint" : "mw4.ui.premium.lifetime_hint").localized()).font(.caption).opacity(0.8)
+                }
+                Spacer()
+                Text(verbatim: yearly ? "£1.99 (test)" : "£6.99 (test)")
+                    .font(.system(size: 16, weight: .bold, design: .monospaced))
+            }
+            .foregroundStyle(yearly ? Color.black.opacity(0.85) : Color.appInk)
+            .padding(14)
+            .background(RoundedRectangle(cornerRadius: 12).fill(yearly ? Color.accentDMZ : Color.appSurface))
+        }
+        .buttonStyle(.plain)
+        .disabled(premium.purchasing)
+    }
+    #endif
 
     private func perk(_ symbol: String, _ key: String) -> some View {
         HStack(spacing: 12) {

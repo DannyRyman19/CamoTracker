@@ -106,6 +106,20 @@ struct HajinRarityLine: View {
     }
 }
 
+/// The round icon a My DMZ card leads with (Level, Cash, Tracking...).
+struct HajinCardSymbol: View {
+    let name: String
+    init(_ name: String) { self.name = name }
+
+    var body: some View {
+        Image(systemName: name)
+            .font(.system(size: 14, weight: .bold))
+            .foregroundStyle(.white)
+            .frame(width: 30, height: 30)
+            .background(Circle().fill(Color.accentDMZ))
+    }
+}
+
 extension View {
     /// The app's card: each row its own outlined 8pt card in a plain list,
     /// as on the Weapons and Stats tabs.

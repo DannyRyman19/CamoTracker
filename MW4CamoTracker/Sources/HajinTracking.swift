@@ -74,7 +74,8 @@ struct HajinTrackingCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
+            HStack(spacing: 12) {
+                HajinCardSymbol("scope")
                 Text("mw4.ui.hajin.tracking".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
                 Spacer()
                 Text("\(store.tracked.count)/\(HajinStore.maxTracked)")
@@ -390,7 +391,8 @@ struct HajinBuildNextCard: View {
     var body: some View {
         let picks = store.buildNext()
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
+            HStack(spacing: 12) {
+                HajinCardSymbol("hammer.fill")
                 Text("mw4.ui.hajin.build_next".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
                 Spacer()
                 if store.stash.isEmpty {
