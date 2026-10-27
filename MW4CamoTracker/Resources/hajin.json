@@ -4544,9 +4544,10 @@
     {
      "title": "Gunsmith",
      "value": "Lv 10",
-     "subtitle": "Extract a weapon's Manual once, then buy that gun here whenever you like. Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I",
+     "subtitle": "Extract a gun's Weapon Manual once, then buy that gun here whenever you like. Weapon Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I",
      "links": [
-      "gunsmith-upgrade-i"
+      "gunsmith-upgrade-i",
+      "weapon-manual"
      ]
     },
     {
@@ -4804,7 +4805,7 @@
    "id": "gunsmith",
    "title": "Gunsmith prices",
    "symbol": "scope",
-   "intro": "What a base weapon costs at the Gunsmith (level 10). Discounts from level 25 and Gunsmith Upgrade I come off these. Tick a weapon once you've extracted its Manual.",
+   "intro": "What a base weapon costs at the Gunsmith (level 10). Discounts from level 25 and Gunsmith Upgrade I come off these. Tick a weapon once you've extracted its Weapon Manual.",
    "rows": [
     {
      "title": "Han 86",
@@ -4816,84 +4817,84 @@
     {
      "title": "M4",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$6,250",
      "weapon": 1
     },
     {
      "title": "Hyeon Burst",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$5,250",
      "weapon": 2
     },
     {
      "title": "Kastov 762",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$5,500",
      "weapon": 3
     },
     {
      "title": "Patriot XMR",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$6,500",
      "weapon": 4
     },
     {
      "title": "Oden",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$6,250",
      "weapon": 20
     },
     {
      "title": "Axion",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$5,750",
      "weapon": 19
     },
     {
      "title": "Cronen Squall",
      "group": "Assault Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$6,750",
      "weapon": 21
     },
     {
      "title": "ISO Nightshade",
      "group": "SMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$4,250",
      "weapon": 5
     },
     {
      "title": "VEL 46",
      "group": "SMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$4,500",
      "weapon": 22
     },
     {
      "title": "Wz.55 Striga",
      "group": "SMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$3,500",
      "weapon": 23
     },
     {
      "title": "PPSh-41",
      "group": "SMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$3,750",
      "weapon": 6
     },
     {
      "title": "X-58 Nyx",
      "group": "SMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$4,000",
      "weapon": 7
     },
@@ -4907,49 +4908,49 @@
     {
      "title": "Warlord",
      "group": "Shotguns",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$3,500",
      "weapon": 24
     },
     {
      "title": "FiNN LMG",
      "group": "LMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$8,000",
      "weapon": 9
     },
     {
      "title": "Type 73",
      "group": "LMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$7,500",
      "weapon": 10
     },
     {
      "title": "APOC-338",
      "group": "LMGs",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$7,750",
      "weapon": 25
     },
     {
      "title": "MAR-9",
      "group": "Marksman Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$6,500",
      "weapon": 11
     },
     {
      "title": "Oris 8.6",
      "group": "Marksman Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$7,000",
      "weapon": 12
     },
     {
      "title": "Mosin-Nagant",
      "group": "Marksman Rifles",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$7,500",
      "weapon": 26
     },
@@ -4963,49 +4964,49 @@
     {
      "title": "Krait P68",
      "group": "Pistols",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$1,000",
      "weapon": 15
     },
     {
      "title": ".50 GS",
      "group": "Pistols",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$4,000",
      "weapon": 16
     },
     {
      "title": "Mojave .357",
      "group": "Pistols",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$2,500",
      "weapon": 29
     },
     {
      "title": "RPG-8",
      "group": "Launchers",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$9,500",
      "weapon": 30
     },
     {
      "title": "PILA",
      "group": "Launchers",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$23,750",
      "weapon": 17
     },
     {
      "title": "PM-40 Anvil",
      "group": "Launchers",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$28,500",
      "weapon": 32
     },
     {
      "title": "JOKR",
      "group": "Launchers",
-     "subtitle": "Needs its Manual",
+     "subtitle": "Needs its Weapon Manual",
      "value": "$47,500",
      "weapon": 31
     },
@@ -6642,10 +6643,11 @@
      "subtitle": "Anything outside your Secure Slots is lost if you don't make it out. Dog tags and bosses' guns only count once extracted"
     },
     {
-     "title": "Recipes and Manuals",
+     "title": "Recipes and Weapon Manuals",
      "value": "$5,000",
-     "subtitle": "Used up when you extract with them: the recipe goes to your printer, the Manual to the Gunsmith",
+     "subtitle": "Used up when you extract with them: the recipe goes to your printer, the Weapon Manual to the Gunsmith",
      "links": [
+      "weapon-manual",
       "recipe"
      ]
     },

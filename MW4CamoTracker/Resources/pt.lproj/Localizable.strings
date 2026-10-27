@@ -92,7 +92,7 @@
 "mw4.ui.stats.100_plus" = "100%+";
 "mw4.ui.stats.dmz" = "DMZ";
 "mw4.ui.stats.dmz_upgrades" = "Melhorias da FOB";
-"mw4.ui.stats.dmz_finds" = "Plantas e manuais";
+"mw4.ui.stats.dmz_finds" = "Receitas e manuais de armas";
 "mw4.ui.stats.dmz_bosses" = "Chefes derrotados";
 "mw4.ui.stats.dmz_ops" = "Missões e operações";
 "mw4.onboarding.mark.celebration_subtitle" = "Você verá isto de verdade quando acontecer.";
@@ -277,8 +277,8 @@
 "mw4.ui.keep.use_consumable" = "Use it in a match; sell spares if you're short on space.";
 "mw4.ui.hajin.inside" = "Inside";
 "mw4.ui.hajin.tiers" = "Tiers";
-"mw4.ui.hajin.manual_needed" = "Needs Manual";
-"mw4.ui.hajin.manual_done" = "Manual got";
+"mw4.ui.hajin.manual_needed" = "Precisa do manual da arma";
+"mw4.ui.hajin.manual_done" = "Manual da arma obtido";
 "mw4.ui.keep.keep_short" = "%d needed for upgrades you haven't printed:";
 "mw4.ui.keep.crafting_short" = "Only used to print these; keep it if you make them:";
 "mw4.ui.hajin.dmz_level" = "DMZ Level";
@@ -312,13 +312,13 @@
 "mw4.ui.hajin.shop_done" = "Your stash covers everything here";
 "mw4.ui.hajin.shop_empty_tracked" = "Track a recipe or upgrade to see what it needs here.";
 "mw4.ui.hajin.blueprints" = "Still to find";
-"mw4.ui.hajin.blueprints_subtitle" = "Every blueprint and Weapon Manual, to tick off";
+"mw4.ui.hajin.blueprints_subtitle" = "Todas as receitas e manuais de armas para encontrar e marcar";
 "mw4.ui.hajin.blueprints_intro" = "Recipes and Weapon Manuals you find in Hajin and extract with. Tick each one once you have it.";
 "mw4.ui.hajin.blueprints_progress" = "%1$d of %2$d found";
 "mw4.ui.hajin.blueprints_hide" = "Hide found";
 "mw4.ui.hajin.blueprints_all" = "Everything found";
-"mw4.ui.hajin.blueprint_found" = "Blueprint found";
-"mw4.ui.hajin.blueprint_missing" = "Blueprint still to find";
+"mw4.ui.hajin.blueprint_found" = "Receita encontrada";
+"mw4.ui.hajin.blueprint_missing" = "Receita por encontrar";
 "mw4.ui.hajin.weapon_manuals" = "Weapon Manuals";
 "mw4.ui.hajin.cash_title" = "DMZ Cash";
 "mw4.ui.hajin.cash_hint" = "Add your balance to see what you can afford";

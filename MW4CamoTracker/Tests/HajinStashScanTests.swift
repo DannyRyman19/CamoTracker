@@ -92,3 +92,19 @@ struct HajinStashScanTests {
         #expect(flow.merged(HajinGridResult(counts: ["cpu": 4], unsure: [])).counts == ["cpu": 4])
     }
 }
+/// Runs the grid finder over a folder of real stash photos and writes the
+/// corners it finds to `corners.json` there, for checking by eye. Only runs
+/// when GRID_PHOTOS is set (TEST_RUNNER_GRID_PHOTOS=<folder> on xcodebuild).
+struct HajinGridFinderHarness {
+    @Test func findGridsInRealPhotos() throws {
+        guard let folder = ProcessInfo.processInfo.environment["GRID_PHOTOS"] else { return }
+        var out: [String: [[Double]]] = [:]
+        for name in try FileManager.default.contentsOfDirectory(atPath: folder).sorted() where name.hasSuffix(".jpg") || name.hasSuffix(".png") {
+            guard let image = UIImage(contentsOfFile: folder + "/" + name)?.normalisedUp(),
+                  let corners = HajinStashGridFinder.guess(image) else { out[name] = []; continue }
+            out[name] = corners.map { [Double($0.x), Double($0.y)] }
+        }
+        try JSONSerialization.data(withJSONObject: out, options: [.prettyPrinted, .sortedKeys])
+            .write(to: URL(fileURLWithPath: folder + "/corners.json"))
+    }
+}

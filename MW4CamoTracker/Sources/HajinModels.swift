@@ -413,10 +413,25 @@ final class HajinStore: ObservableObject {
         ["Resource", "Ingredient", "Valuable"].contains(item.kind) && !item.id.contains("dog-tag")
     }
 
-    /// The stash covers every part of the item's recipe or upgrade cost.
+    /// The recipe is unlocked and the stash covers every part of its cost
+    /// (or an upgrade's).
     func canPrint(_ item: HajinGuide.Item) -> Bool {
-        guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty else { return false }
+        guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty, hasRecipe(item) else { return false }
         return cost.allSatisfy { count(of: $0.item) >= $0.qty }
+    }
+
+    /// Whether the player can print it at all: a recipe found in Hajin once
+    /// it's ticked found, a level one at that level (or no level set), an
+    /// Uncommon or Epic ingredient once that Ingredient Printing upgrade is
+    /// ticked. Ones unlocked by Orders can't be told, so count as unlocked.
+    func hasRecipe(_ item: HajinGuide.Item) -> Bool {
+        if item.blueprint == true { return hasBlueprint(item.id) }
+        if isLocked(item.requiredLevel) { return false }
+        if let needs = item.effect?.values["en"], let r = needs.range(of: #"Needs (\w+) Ingredient Printing"#, options: .regularExpression) {
+            let upgrade = needs[r].dropFirst("Needs ".count).lowercased().replacingOccurrences(of: " ", with: "-")
+            return checked.contains("upgrade-\(upgrade)")
+        }
+        return true
     }
 
     static let printableGreen = Color(red: 0.42, green: 0.80, blue: 0.36)

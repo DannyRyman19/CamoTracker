@@ -264,7 +264,7 @@ def apply(guide, rows):
     # stations: the Gunsmith row now points at the price list
     for r in sec["stations"]["rows"]:
         if r["title"] == "Gunsmith":
-            r["subtitle"] = "Extract a weapon's Manual once, then buy that gun here whenever you like. Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I"
+            r["subtitle"] = "Extract a gun's Weapon Manual once, then buy that gun here whenever you like. Weapon Manuals turn up most in military containers and safes. Prices in Gunsmith prices. 5% off from level 25, and 5% more with Gunsmith Upgrade I"
         if r["title"] == "Bank":
             r["subtitle"] = "Holds your DMZ Cash; cash you extract goes here. Bank Upgrade III raises the cap to $1 million"
         if r["title"] == "Vendor":
@@ -283,7 +283,7 @@ def apply(guide, rows):
             if price: row["value"] = f"${price:,}"
             grows.append(row)
     guide.insert(i + 1, {"id": "gunsmith", "title": "Gunsmith prices", "symbol": "scope",
-        "intro": "What a base weapon costs at the Gunsmith (level 10). Discounts from level 25 and Gunsmith Upgrade I come off these. Tick a weapon once you've extracted its Manual.",
+        "intro": "What a base weapon costs at the Gunsmith (level 10). Discounts from level 25 and Gunsmith Upgrade I come off these. Tick a weapon once you've extracted its Weapon Manual.",
         "rows": grows})
     guide.append({"id": "traits", "title": "Traits", "symbol": "brain.head.profile",
         "intro": "Each operator spends trait points across three trees: Warfighter, Scout and Survivalist. Points come from levelling your operator's dog tag (Steel to Onyx III; about 1,900 XP for a point at Silver). The full Scout tree, top to bottom, and what's known of Warfighter:",
@@ -744,7 +744,7 @@ def polish(guide, items):
                 # sentences glued on without a full stop
                 r["subtitle"] = _re.sub(r"([a-z0-9)])  ?([A-Z][a-z]+ (?:an|a|the) )", r"\1. \2", sub.replace("Village Uses", "Village. Uses"))
     for r in sec["gunsmith"]["rows"]:
-        r["subtitle"] = "Starter weapon" if r.get("subtitle", "").startswith("Unlocked") else "Needs its Manual"
+        r["subtitle"] = "Starter weapon" if r.get("subtitle", "").startswith("Unlocked") else "Needs its Weapon Manual"
 
 # ---- FOB upgrades in families, tier by tier
 UPGRADE_GROUPS = [  # (name prefix, family, station group)

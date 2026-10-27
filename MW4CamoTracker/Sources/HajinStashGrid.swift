@@ -650,6 +650,7 @@ struct HajinScanHost: ViewModifier {
             flow.captured = nil
             flow.showsIntro = false
         }
+        .photosPicker(isPresented: $flow.showsPicker, selection: $flow.pick, matching: .images)
         .onChange(of: flow.pick) { chosen in
             guard let chosen else { return }
             Task {
@@ -659,18 +660,28 @@ struct HajinScanHost: ViewModifier {
                     let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                     try? image.normalisedUp().jpegData(compressionQuality: 0.9)?.write(to: docs.appendingPathComponent("last_grid_photo.jpg"))
                     #endif
-                    await MainActor.run { flow.pending = HajinPickedPhoto(image: image.normalisedUp()); flow.showsIntro = false }
+                    await MainActor.run {
+                        let picked = HajinPickedPhoto(image: image.normalisedUp())
+                        // From the intro: read once it has closed; straight from the picker: now
+                        if flow.showsIntro { flow.pending = picked; flow.showsIntro = false } else { route(picked) }
+                    }
                 }
                 await MainActor.run { flow.pick = nil }
             }
         }
-        .fullScreenCover(item: $flow.photo, onDismiss: {
-            if flow.reopenIntro { flow.reopenIntro = false; flow.showsIntro = true }
-        }) { photo in
-            HajinStashGridFrameView(image: photo.image, onRetake: { flow.reopenIntro = true }, state: photo.frame)
+        // One cover for the whole read: picking another photo from inside it
+        // swaps the photo in place rather than closing and reopening
+        .fullScreenCover(isPresented: Binding(get: { flow.photo != nil }, set: { if !$0 { flow.photo = nil } }), onDismiss: {
+            flow.carried = nil
+            flow.carriedPhotos = 0
+        }) {
+            if let photo = flow.photo {
+                HajinStashGridFrameView(image: photo.image, state: photo.frame, onPicked: { flow.photo = HajinPickedPhoto(image: $0) })
+                    .id(photo.id)
+            }
         }
         .sheet(item: $flow.textRead, onDismiss: {
-            if flow.reopenIntro { flow.reopenIntro = false; flow.showsIntro = true }
+            if flow.pickNext { flow.pickNext = false; flow.showsPicker = true }
         }) { r in
             HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level, photos: r.photos,
                                  onAddPhoto: { flow.addPhoto($0, photos: r.photos) })
@@ -816,7 +827,10 @@ final class HajinScanFlow: ObservableObject {
     @Published var captured: UIImage?
     /// A 3D Printer screen (no stash grid): read straight to the review
     @Published var textRead: HajinGridResult?
-    var reopenIntro = false
+    var pickNext = false
+    /// The photo picker on its own, without the intro (another photo after
+    /// a 3D Printer screen)
+    @Published var showsPicker = false
     @Published var sorting = false
     /// "Add another photo": the counts read so far, and from how many
     /// photos, added to whatever the next photo reads
@@ -840,7 +854,7 @@ final class HajinScanFlow: ObservableObject {
     func addPhoto(_ counts: [String: Int], photos: Int) {
         carried = counts
         carriedPhotos = photos
-        reopenIntro = true
+        pickNext = true
     }
     #if DEBUG
     /// SS_GRID_DEMO: the photo the intro picks by itself
@@ -862,9 +876,14 @@ extension UIImage {
 @available(iOS 17.0, *)
 struct HajinStashGridFrameView: View {
     let image: UIImage
-    /// Choose another photo: the caller reopens the photo picker after this closes.
-    var onRetake: (() -> Void)? = nil
     @ObservedObject var state: HajinFrameState
+    /// Another photo, picked or taken from this screen: shown in its place.
+    var onPicked: ((UIImage) -> Void)? = nil
+    @State private var picking = false
+    @State private var newPick: PhotosPickerItem?
+    @State private var showsCamera = false
+    /// "Add another photo" in the review: pick once the review has closed
+    @State private var pickAfterReview = false
     /// 1 just as the guess lands, fading to 0
     @State private var lockGlow = 0.0
     @EnvironmentObject private var store: HajinStore
@@ -881,8 +900,8 @@ struct HajinStashGridFrameView: View {
                             ForEach(state.quality, id: \.self) { issue in
                                 Text(issue.message).font(.subheadline).foregroundStyle(Color.appInk)
                             }
-                            if onRetake != nil {
-                                Button("mw4.ui.hajin.quality_retake".localized()) { onRetake?(); dismiss() }
+                            if onPicked != nil {
+                                anotherPhoto("mw4.ui.hajin.quality_retake".localized())
                                     .font(.subheadline.weight(.semibold))
                                     .foregroundStyle(Color.accentDMZ)
                             }
@@ -946,13 +965,30 @@ struct HajinStashGridFrameView: View {
                     }
                 }
             }
-            .sheet(item: $state.result, onDismiss: { if state.result == nil { } }) { r in
+            .sheet(item: $state.result, onDismiss: {
+                if pickAfterReview { pickAfterReview = false; askForPhoto() }
+            }) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
                                      sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
                                      photos: r.photos, onAddPhoto: { counts in
                                          HajinScanFlow.shared.addPhoto(counts, photos: r.photos)
-                                         dismiss()
+                                         HajinScanFlow.shared.pickNext = false   // picked here, not by the host
+                                         pickAfterReview = true
                                      })
+            }
+            .photosPicker(isPresented: $picking, selection: $newPick, matching: .images)
+            .onChange(of: newPick) { chosen in
+                guard let chosen else { return }
+                Task {
+                    if let data = try? await chosen.loadTransferable(type: Data.self), let picked = UIImage(data: data) {
+                        await MainActor.run { onPicked?(picked.normalisedUp()) }
+                    }
+                    await MainActor.run { newPick = nil }
+                }
+            }
+            .fullScreenCover(isPresented: $showsCamera) {
+                HajinCamera { onPicked?($0.normalisedUp()) }
+                    .ignoresSafeArea()
             }
             .overlay(alignment: .bottom) {
                 if state.finding {
@@ -1008,6 +1044,21 @@ struct HajinStashGridFrameView: View {
             }
         }
     }
+
+    /// "Choose another photo": the library, or the camera where there is one.
+    @ViewBuilder private func anotherPhoto(_ title: String) -> some View {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            Menu(title) {
+                Button { picking = true } label: { Label("mw4.ui.hajin.grid_choose".localized(), systemImage: "photo.stack") }
+                Button { showsCamera = true } label: { Label("mw4.ui.hajin.grid_camera".localized(), systemImage: "camera.fill") }
+            }
+        } else {
+            Button(title) { picking = true }
+        }
+    }
+
+    /// Straight to the photo library (the camera's in the banner's menu).
+    private func askForPhoto() { picking = true }
 
     private func fitted(_ size: CGSize, in box: CGSize) -> CGSize {
         let s = min(box.width / size.width, box.height / size.height)

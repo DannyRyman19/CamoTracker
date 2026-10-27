@@ -92,7 +92,7 @@
 "mw4.ui.stats.100_plus" = "100%+";
 "mw4.ui.stats.dmz" = "DMZ";
 "mw4.ui.stats.dmz_upgrades" = "Mejoras de la FOB";
-"mw4.ui.stats.dmz_finds" = "Planos y manuales";
+"mw4.ui.stats.dmz_finds" = "Recetas y manuales de armas";
 "mw4.ui.stats.dmz_bosses" = "Jefes abatidos";
 "mw4.ui.stats.dmz_ops" = "Misiones y operaciones";
 "mw4.onboarding.mark.celebration_subtitle" = "Lo verás de verdad cuando ocurra.";
@@ -276,8 +276,8 @@
 "mw4.ui.keep.use_consumable" = "Úsalo en partida; vende los que te sobren si te falta espacio.";
 "mw4.ui.hajin.inside" = "Dentro";
 "mw4.ui.hajin.tiers" = "Niveles";
-"mw4.ui.hajin.manual_needed" = "Falta el manual";
-"mw4.ui.hajin.manual_done" = "Manual listo";
+"mw4.ui.hajin.manual_needed" = "Falta el manual de arma";
+"mw4.ui.hajin.manual_done" = "Manual de arma listo";
 "mw4.ui.keep.keep_short" = "Necesitas %d para mejoras sin imprimir:";
 "mw4.ui.keep.crafting_short" = "Solo sirve para imprimir esto; guárdalo si lo fabricas:";
 "mw4.ui.hajin.dmz_level" = "Nivel DMZ";
@@ -311,13 +311,13 @@
 "mw4.ui.hajin.shop_done" = "Tu alijo lo cubre todo";
 "mw4.ui.hajin.shop_empty_tracked" = "Sigue una receta o mejora para ver aquí lo que necesita.";
 "mw4.ui.hajin.blueprints" = "Por encontrar";
-"mw4.ui.hajin.blueprints_subtitle" = "Todos los planos y manuales de armas, para marcarlos";
+"mw4.ui.hajin.blueprints_subtitle" = "Todas las recetas y manuales de armas por encontrar, para marcarlos";
 "mw4.ui.hajin.blueprints_intro" = "Recetas y manuales de armas que encuentras en Hajin y con los que extraes. Marca cada uno cuando lo tengas.";
 "mw4.ui.hajin.blueprints_progress" = "%1$d de %2$d encontrados";
 "mw4.ui.hajin.blueprints_hide" = "Ocultar encontrados";
 "mw4.ui.hajin.blueprints_all" = "Todo encontrado";
-"mw4.ui.hajin.blueprint_found" = "Plano encontrado";
-"mw4.ui.hajin.blueprint_missing" = "Plano por encontrar";
+"mw4.ui.hajin.blueprint_found" = "Receta encontrada";
+"mw4.ui.hajin.blueprint_missing" = "Receta por encontrar";
 "mw4.ui.hajin.weapon_manuals" = "Manuales de armas";
 "mw4.ui.hajin.cash_title" = "Dinero DMZ";
 "mw4.ui.hajin.cash_hint" = "Añade tu saldo para ver qué puedes pagar";

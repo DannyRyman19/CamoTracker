@@ -292,7 +292,7 @@ guide = [
   "rows": rows([
    ("3D Printer", "Lv 2", "Crafts gear and upgrades your FOB: Bank and Stash size, MIA rescue discounts, rarer ingredients. Print upgrades: Tacticals (4), Lethals (7), Field Upgrades (12), Fire Support (28)"),
    ("Vendor", "Lv 5", "Sells weapons and items for DMZ Cash. Stock rotates daily; upgrades at 18 and 32 add more"),
-   ("Gunsmith", "Lv 10", "Extract a weapon's Manual once, then buy that gun here whenever you like. Base M4 about $5,000, assault rifles $4,750, SMGs $2,850, each attachment slot $1,000. 5% off from level 25"),
+   ("Gunsmith", "Lv 10", "Extract a gun's Weapon Manual once, then buy that gun here whenever you like. Base M4 about $5,000, assault rifles $4,750, SMGs $2,850, each attachment slot $1,000. 5% off from level 25"),
    ("Dog Tag Case", "Lv 20", "Stores and shows off the dog tags you've extracted"),
    ("Boss Board", "2nd Order", "Lieutenant intel costs DMZ Cash and lasts one deployment. Commander intel is free"),
    ("Stash", None, "Starts at 40 items and 12 weapons, shared by your operators. +18 at levels 22, 45 and 70; +6 weapons at 35 and 60"),
@@ -411,7 +411,7 @@ guide = [
   "rows": rows([
    ("Exfil", None, "Green smoke marks the helicopter exfils. Call it in and hold the area until it lands. A Fulton balloon or a Flare also gets you out; flares are loud and visible from far away"),
    ("Only extracted loot counts", None, "Anything outside your Secure Slots is lost if you don't make it out. Dog tags and bosses' guns only count once extracted"),
-   ("Recipes and Manuals", "$5,000", "Used up when you extract with them: the recipe goes to your printer, the Manual to the Gunsmith"),
+   ("Recipes and Weapon Manuals", "$5,000", "Used up when you extract with them: the recipe goes to your printer, the Weapon Manual to the Gunsmith"),
    ("Dying", None, "Your gear stays in Hajin. A squadmate can rescue you as MIA; the rescue costs more the more Traits you have. Traits are kept"),
    ("Failed exfil", None, "You still get the XP"),
    ("Radiation", None, "The Reactor needs radiation gear and a gas mask. Radiation Blockers help in irradiated areas"),
