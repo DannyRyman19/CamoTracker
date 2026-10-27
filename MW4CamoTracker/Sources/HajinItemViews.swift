@@ -130,6 +130,28 @@ extension View {
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
     }
+
+    /// `hajinCard` for a button whose whole card is the tap target, gaps
+    /// and padding included, not just the text and icons in it.
+    func hajinCardButton(accent: Color? = nil) -> some View {
+        buttonStyle(HajinCardButtonStyle(accent: accent))
+            .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+    }
+}
+
+private struct HajinCardButtonStyle: ButtonStyle {
+    let accent: Color?
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(12)
+            .contentShape(Rectangle())
+            .borderedCard(accent: accent)
+            .opacity(configuration.isPressed ? 0.6 : 1)
+    }
 }
 
 /// "Can print": the stash covers this recipe.

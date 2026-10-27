@@ -150,18 +150,17 @@ private struct GuideSearchResults: View {
         if !uniquePlaces.isEmpty {
             HajinHeading(title: "mw4.ui.hajin.map".localized())
                 ForEach(uniquePlaces) { marker in
-                    Group {
-                        if let pick {
-                            Button { pick(marker) } label: { MarkerRow(marker: marker, category: guide.category(marker.cat)) }
-                        } else {
-                            NavigationLink {
-                                HajinMapScreen(startAt: marker)
-                            } label: {
-                                MarkerRow(marker: marker, category: guide.category(marker.cat))
-                            }
+                    if let pick {
+                        Button { pick(marker) } label: { MarkerRow(marker: marker, category: guide.category(marker.cat)) }
+                            .hajinCardButton()
+                    } else {
+                        NavigationLink {
+                            HajinMapScreen(startAt: marker)
+                        } label: {
+                            MarkerRow(marker: marker, category: guide.category(marker.cat))
                         }
+                        .hajinCard()
                     }
-                    .hajinCard()
                 }
         }
         ForEach(sections, id: \.0.id) { section, rows in
@@ -451,8 +450,7 @@ struct HajinMinePage: View {
                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
                 }
             }
-            .buttonStyle(.plain)
-            .hajinCard(accent: .accentDMZ)
+            .hajinCardButton(accent: .accentDMZ)
             .sheet(isPresented: $showsPremium) { PremiumView() }
         }
         Button { if premium.isPremium { customising = true } else { showsPremium = true } } label: {
@@ -501,8 +499,7 @@ struct HajinMinePage: View {
                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
                 }
             }
-            .buttonStyle(.plain)
-            .hajinCard()
+            .hajinCardButton()
         } else {
             NavigationLink(destination: destination, label: label).hajinCard()
         }
@@ -731,6 +728,9 @@ struct HajinMapPane: View {
     @Binding var focus: HajinMapView.Focus?
     var inline = false
     var startAt: HajinGuide.Marker? = nil
+    /// iPad portrait: how much of the map's foot the guide covers, to keep
+    /// the legend and the marker card above it.
+    var bottomInset: CGFloat = 0
 
     @EnvironmentObject private var store: HajinStore
     @State private var image: UIImage?
@@ -754,6 +754,7 @@ struct HajinMapPane: View {
                 ThreatLegend(guide: guide)
                     .padding(10)
                     .padding(.top, inline ? 0 : 46)
+                    .padding(.bottom, bottomInset)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: inline ? .bottomTrailing : .topTrailing)
                     .allowsHitTesting(false)
 
@@ -774,6 +775,7 @@ struct HajinMapPane: View {
                         .id(selected.id)
                         .frame(maxWidth: 400)
                         .padding(12)
+                        .padding(.bottom, bottomInset)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
@@ -858,8 +860,8 @@ struct HajinMapScreen: View {
 }
 
 /// iPad: the map and the guide side by side in landscape, stacked in
-/// portrait, where the line between them drags to give either more room.
-/// Picking a place in the guide flies the map to it.
+/// portrait, where the guide drags up over the map (or down) for more
+/// room. Picking a place in the guide flies the map to it.
 struct HajinWideLayout: View {
     @EnvironmentObject private var store: HajinStore
     @State private var selection: HajinSelection?
@@ -867,8 +869,10 @@ struct HajinWideLayout: View {
     /// The screen's size without the keyboard: typing into a field shrinks
     /// the height, which mustn't flip portrait to landscape.
     @State private var fullSize: CGSize = .zero
-    /// Portrait: the map's share of the height.
+    /// Portrait: how far down the guide's top edge sits, as a share of the height.
     @AppStorage("mw4.hajin.mapShare") private var mapShare = 0.6
+    /// Mid-drag: where the edge is now, and where it started.
+    @State private var liveShare: Double?
     @State private var dragFrom: Double?
 
     private static let defaultShare = 0.6
@@ -878,20 +882,29 @@ struct HajinWideLayout: View {
         GeometryReader { geo in
             let size = fullSize == .zero ? geo.size : fullSize
             let landscape = size.width > size.height
+            let height = geo.size.height
+            let share = liveShare ?? mapShare
             // One layout either way, so turning the iPad (or the keyboard)
-            // never rebuilds the guide and loses the page it's on
-            let layout = landscape ? AnyLayout(HStackLayout(spacing: 0)) : AnyLayout(VStackLayout(spacing: 0))
+            // never rebuilds the guide and loses the page it's on. Portrait
+            // stacks the guide over the map: the map keeps one size, so a
+            // drag only slides the guide rather than redrawing the map
+            let layout = landscape ? AnyLayout(HStackLayout(spacing: 0)) : AnyLayout(ZStackLayout(alignment: .top))
             layout {
-                HajinMapPane(selection: $selection, focus: $focus, inline: true)
-                    .frame(height: landscape ? nil : geo.size.height * mapShare)
+                HajinMapPane(selection: $selection, focus: $focus, inline: true,
+                             bottomInset: landscape ? 0 : height * (Self.shares.upperBound - mapShare))
+                    .frame(height: landscape ? nil : height * Self.shares.upperBound)
                 if landscape {
                     Rectangle().fill(Color.appInkMuted.opacity(0.15)).frame(width: 1)
-                } else {
-                    grabber(height: geo.size.height)
                 }
                 HajinGuidePanel(pick: fly(to:)).environment(\.hajinShowMarker, fly(to:))
-                    .frame(width: landscape ? 380 : nil)
+                    // Mid-drag the guide keeps its tallest size and only moves
+                    .frame(width: landscape ? 380 : nil,
+                           height: landscape ? nil : height * (1 - (liveShare == nil ? share : Self.shares.lowerBound)))
+                    .overlay(alignment: .top) { if !landscape { grabber(height: height) } }
+                    .offset(y: landscape ? 0 : height * share)
             }
+            .frame(width: geo.size.width, height: height, alignment: .top)
+            .clipped()
         }
         .background(GeometryReader { geo in
             Color.clear
@@ -900,25 +913,30 @@ struct HajinWideLayout: View {
         }.ignoresSafeArea(.keyboard))
     }
 
-    /// The line under the map, with a handle: drag it up to give the guide
-    /// more room, down for the map; a tap puts it back halfway.
+    /// The guide's top edge, with a handle: drag it up over the map for more
+    /// guide, down for more map; a tap switches between halfway and up.
     private func grabber(height: CGFloat) -> some View {
         Rectangle().fill(Color.appInkMuted.opacity(0.15)).frame(height: 1)
             .overlay {
                 Capsule().fill(Color.appInkMuted.opacity(0.6))
                     .frame(width: 44, height: 5)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 30)
+                    // Narrow, so the back button under its left end still takes taps
+                    .frame(width: 140, height: 30)
                     .contentShape(Rectangle())
                     .gesture(
-                        DragGesture(minimumDistance: 2)
+                        DragGesture(minimumDistance: 2, coordinateSpace: .global)
                             .onChanged { drag in
                                 let from = dragFrom ?? mapShare
                                 if dragFrom == nil { dragFrom = from }
                                 let share = from + drag.translation.height / max(height, 1)
-                                mapShare = min(max(share, Self.shares.lowerBound), Self.shares.upperBound)
+                                liveShare = min(max(share, Self.shares.lowerBound), Self.shares.upperBound)
                             }
-                            .onEnded { _ in dragFrom = nil }
+                            .onEnded { _ in
+                                // Saved once, at the end, rather than every frame
+                                if let liveShare { mapShare = liveShare }
+                                liveShare = nil
+                                dragFrom = nil
+                            }
                     )
                     .onTapGesture {
                         Haptics.step()
@@ -933,7 +951,6 @@ struct HajinWideLayout: View {
                         mapShare = min(max(mapShare + step, Self.shares.lowerBound), Self.shares.upperBound)
                     }
             }
-            .zIndex(1)
     }
 
     private func fly(to marker: HajinGuide.Marker) {
@@ -1115,7 +1132,7 @@ struct HajinGuidePanel: View {
                                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
                                 }
                             }
-                            .hajinCard()
+                            .hajinCardButton()
                         }
                         GuideFooter(guide: guide)
                             .listRowBackground(Color.clear)

@@ -553,7 +553,8 @@ struct HajinStashGridButton: View {
 
     var body: some View {
         Button { flow.requestScan() } label: {
-            if hero { heroLabel } else { rowLabel }
+            // The whole card or row takes the tap, gaps included
+            Group { if hero { heroLabel } else { rowLabel } }.contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .overlay(alignment: .trailing) {
