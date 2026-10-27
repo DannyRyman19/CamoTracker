@@ -20,6 +20,13 @@ Link to privacy policy of third party service providers used by the app
 
 *   [Google Play Services](https://www.google.com/policies/privacy/)
 *   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
+*   [Unity Ads and LevelPlay](https://unity.com/legal/game-player-and-app-user-privacy-policy)
+
+**Advertising and Premium**
+
+The free version of the app shows ads through Unity LevelPlay, including a short ad before reading a stash photo. Unity and its ad partners may collect your device's advertising identifier, IP address and how you interact with ads in order to show and measure them. On iPhone and iPad the app asks before allowing tracking, and you can change that answer at any time in Settings > Privacy & Security > Tracking. Stash photos are read on your device and are never sent to Unity or to me.
+
+Premium (a yearly subscription or a one-off purchase) removes the ads. Purchases are handled by Apple; I never see your payment details.
 
 **Log Data**
 
@@ -58,7 +65,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2020-11-29
+This policy is effective as of 2026-10-27
 
 **Contact Us**
 
