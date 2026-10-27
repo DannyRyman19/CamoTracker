@@ -1,5 +1,5 @@
 {
- "version": "0.9.33",
+ "version": "0.9.34",
  "updated": "2026-10-27",
  "map": {
   "image": "hajin_map",
@@ -234,6 +234,14 @@
    "color": "#8E8C99",
    "visible": false,
    "blurb": "A missile silo."
+  },
+  {
+   "id": "chem",
+   "name": "Chemical Storage",
+   "symbol": "flask.fill",
+   "color": "#5EEAD4",
+   "visible": true,
+   "blurb": "A chemical storage locker."
   }
  ],
  "markers": [
@@ -3086,6 +3094,69 @@
    "x": 0.7032,
    "y": 0.6455,
    "note": "Commander. A huge drone that roams over The Grid and NuriGO Mall and shows on your Tac Map. A captured SAM site can shoot it down."
+  },
+  {
+   "id": "chem-tong-il-village",
+   "cat": "chem",
+   "name": "Tong-il Village",
+   "x": 0.3383,
+   "y": 0.3827
+  },
+  {
+   "id": "chem-pyonghwa-village",
+   "cat": "chem",
+   "name": "Pyonghwa Village",
+   "x": 0.2744,
+   "y": 0.4718
+  },
+  {
+   "id": "chem-chang-san-air-base",
+   "cat": "chem",
+   "name": "Chang-san Air Base",
+   "x": 0.1222,
+   "y": 0.5707
+  },
+  {
+   "id": "chem-north-of-imjin-suburbs",
+   "cat": "chem",
+   "name": "North of Imjin Suburbs",
+   "x": 0.382,
+   "y": 0.5383
+  },
+  {
+   "id": "chem-cheongun-village",
+   "cat": "chem",
+   "name": "Cheongun Village",
+   "x": 0.5026,
+   "y": 0.4883
+  },
+  {
+   "id": "chem-northeast-of-imjin-farmland",
+   "cat": "chem",
+   "name": "Northeast of Imjin Farmland",
+   "x": 0.4177,
+   "y": 0.7297
+  },
+  {
+   "id": "chem-wolves-stadium",
+   "cat": "chem",
+   "name": "Wolves Stadium",
+   "x": 0.5669,
+   "y": 0.7714
+  },
+  {
+   "id": "chem-haneul-nuclear-reactor-reactor-01",
+   "cat": "chem",
+   "name": "Haneul Nuclear Reactor (Reactor 01)",
+   "x": 0.8,
+   "y": 0.444
+  },
+  {
+   "id": "chem-haneul-nuclear-reactor-reactor-02",
+   "cat": "chem",
+   "name": "Haneul Nuclear Reactor (Reactor 02)",
+   "x": 0.8,
+   "y": 0.444
   }
  ],
  "guide": [

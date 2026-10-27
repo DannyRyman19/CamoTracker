@@ -41,6 +41,7 @@ CATS = [
     ("phone", "Dynamic Op Phones", "phone.fill", "#8DA4EF", ["dynamic-ops-phone"], False),
     ("vehicle", "Vehicle Sightings", "car.fill", "#D0B3FF", ["vehicle-sightings"], False),
     ("silo", "Silos", "cylinder.fill", "#8E8C99", ["silos"], False),
+    ("chem", "Chemical Storage", "flask.fill", "#5EEAD4", [], True),
 ]
 CAT_BLURB = {
     "fortress": "A Fortress: a heavily guarded stronghold with tougher enemies and better loot.",
@@ -69,6 +70,7 @@ CAT_BLURB = {
     "phone": "Pick up the field phone here to start a Dynamic Operation.",
     "vehicle": "Vehicles players have seen here. They move, get taken or get destroyed, so nothing is guaranteed.",
     "silo": "A missile silo.",
+    "chem": "A chemical storage locker.",
 }
 # Community-reported spots, from dmzcodex.com/map (fetch_codex_map.py)
 CODEX = json.load(open(os.path.join(_HERE, "codex_map.json")))
@@ -219,6 +221,17 @@ for boss, near, note in BOSS_SPAWNS:
     a = _anchor[near]; n = _used[near] = _used.get(near, 0) + 1
     markers.append({"id": "b-" + re.sub(r"[^a-z0-9]+", "-", boss.lower()).strip("-"), "cat": "boss", "name": boss,
                     "x": round(a["x"] + 0.014 * n, 4), "y": round(a["y"] - 0.012, 4), "note": note})
+
+# Chemical storage lockers, in the 4096 px official map's pixels
+CHEMICAL_STORAGE = [
+    ("Tong-il Village", 1650, 1758), ("Pyonghwa Village", 1480, 1995), ("Chang-san Air Base", 1075, 2258),
+    ("North of Imjin Suburbs", 1766, 2172), ("Cheongun Village", 2087, 2039), ("Northeast of Imjin Farmland", 1861, 2681),
+    ("Wolves Stadium", 2258, 2792), ("Haneul Nuclear Reactor (Reactor 01)", 2878, 1921),
+    ("Haneul Nuclear Reactor (Reactor 02)", 2878, 1921),
+]
+for name, px, py in CHEMICAL_STORAGE:
+    markers.append({"id": "chem-" + re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), "cat": "chem", "name": name,
+                    "x": round((px - CROP[0]) / CROP[2], 4), "y": round((py - CROP[1]) / CROP[2], 4)})
 
 def rows(items): return [dict(zip(("title", "value", "subtitle"), r)) if isinstance(r, tuple) else r for r in items]
 
@@ -450,7 +463,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.33", "updated": "2026-10-27",
+data = {"version": "0.9.34", "updated": "2026-10-27",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
