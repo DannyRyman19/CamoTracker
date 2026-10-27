@@ -58,7 +58,7 @@
 "mw4.onboarding.suggested.demo" = "1 camo from Gold";
 "mw4.onboarding.yours.title" = "Make it yours";
 "mw4.onboarding.yours.pin" = "Pin the gun you're grinding and it sits at the top of every tab.";
-"mw4.onboarding.yours.customise" = "Customise changes the modes you play and the language, reorders or hides the home sections, switches quick tick on or off, and can show challenges on locked camos.";
+"mw4.onboarding.yours.customise" = "Customise sets the modes you play, the language and quick tick. Premium adds your own home layout, card outlines, challenges on locked camos and camo app icons.";
 "mw4.onboarding.yours.report" = "Spot a wrong challenge, level or name? Report it from the weapon's page and the fix reaches everyone without an app update.";
 "mw4.onboarding.suggested.title" = "Know what to grind next";
 "mw4.onboarding.suggested.body1" = "Every tab points you at the weapon closest to Gold. Sometimes that's the last one holding up a whole category.";
@@ -440,5 +440,14 @@
 "mw4.ui.premium.remove_ads" = "Remove ads";
 "mw4.ui.premium.perk_icons" = "Camo app icons, as you earn the camos";
 "mw4.ui.premium.customise_title" = "Customising is part of Premium";
-"mw4.ui.premium.customise_body" = "Layouts, card outlines, quick tick and camo app icons. Modes, language and iCloud stay free.";
-"mw4.ui.premium.perk_customise" = "Your layouts, card outlines and quick tick";
+"mw4.ui.premium.customise_body" = "Layouts, card outlines, locked-camo challenges and camo app icons. Modes, language, quick tick and iCloud stay free.";
+"mw4.ui.premium.perk_customise" = "Your layouts, card outlines and locked-camo challenges";
+
+/* Onboarding: free and Premium */
+"mw4.onboarding.premium.title" = "Free and Premium";
+"mw4.onboarding.premium.free" = "Free";
+"mw4.onboarding.premium.free_track" = "Every camo, challenge and Mastery, in every mode";
+"mw4.onboarding.premium.free_dmz" = "The DMZ map, guide and your own stash";
+"mw4.onboarding.premium.free_scan" = "Read your stash from a photo after a short ad";
+"mw4.onboarding.premium.premium" = "Premium";
+"mw4.onboarding.premium.footer" = "Pay yearly or once, any time from Customise. Nothing you track is ever locked.";

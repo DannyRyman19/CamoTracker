@@ -670,10 +670,10 @@ struct CustomiseHomeSheet: View {
                         get: { viewModel.quickTick },
                         set: { viewModel.setQuickTick($0) }))
                         .tint(accent)
-                        .disabled(locked)
                         .accessibilityIdentifier("customise.quickTick")
                 } header: {
-                    premiumHeader("mw4.ui.tracking".localized())
+                    // Free: it's how you track, and onboarding asks it
+                    Text("mw4.ui.tracking".localized())
                 } footer: {
                     Text("mw4.ui.quick_tick.footer".localized())
                 }
@@ -775,7 +775,7 @@ struct CustomiseHomeSheet: View {
     }
 
     /// Free players: the layout and look settings show, locked, and open
-    /// Premium; modes, language and iCloud stay free.
+    /// Premium; modes, language, quick tick and iCloud stay free.
     private var locked: Bool { !premium.isPremium }
 
     /// A section header with a Premium lock for free players; tapping it

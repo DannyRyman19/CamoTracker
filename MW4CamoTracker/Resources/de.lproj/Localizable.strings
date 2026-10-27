@@ -58,7 +58,7 @@
 "mw4.onboarding.suggested.demo" = "1 Tarnung bis Gold";
 "mw4.onboarding.yours.title" = "Mach sie zu deiner";
 "mw4.onboarding.yours.pin" = "Pinne die Waffe, an der du arbeitest, dann steht sie in jedem Tab ganz oben.";
-"mw4.onboarding.yours.customise" = "Anpassen ändert deine Modi und die Sprache, ordnet die Startseiten-Bereiche neu oder blendet sie aus, schaltet schnelles Abhaken ein oder aus und kann Herausforderungen gesperrter Tarnungen zeigen.";
+"mw4.onboarding.yours.customise" = "Unter Anpassen wählst du Modi, Sprache und Schnell-Abhaken. Premium bringt dein eigenes Layout, Kartenrahmen, Herausforderungen auf gesperrten Tarnungen und Tarnungs-App-Symbole.";
 "mw4.onboarding.yours.report" = "Eine Herausforderung, Stufe oder ein Name stimmt nicht? Melde es auf der Seite der Waffe, und die Korrektur erreicht alle ohne App-Update.";
 "mw4.onboarding.suggested.title" = "Wisse, was als Nächstes dran ist";
 "mw4.onboarding.suggested.body1" = "Jeder Tab zeigt dir die Waffe, die Gold am nächsten ist. Manchmal ist das die letzte, die eine ganze Kategorie aufhält.";
@@ -440,5 +440,14 @@
 "mw4.ui.premium.remove_ads" = "Werbung entfernen";
 "mw4.ui.premium.perk_icons" = "Tarnungs-App-Symbole, sobald du die Tarnungen verdienst";
 "mw4.ui.premium.customise_title" = "Anpassen gehört zu Premium";
-"mw4.ui.premium.customise_body" = "Layouts, Kartenrahmen, Schnell-Abhaken und Tarnungs-App-Symbole. Modi, Sprache und iCloud bleiben gratis.";
-"mw4.ui.premium.perk_customise" = "Eigene Layouts, Kartenrahmen und Schnell-Abhaken";
+"mw4.ui.premium.customise_body" = "Layouts, Kartenrahmen, Herausforderungen auf gesperrten Tarnungen und Tarnungs-App-Symbole. Modi, Sprache, Schnell-Abhaken und iCloud bleiben gratis.";
+"mw4.ui.premium.perk_customise" = "Eigene Layouts, Kartenrahmen und Herausforderungen auf gesperrten Tarnungen";
+
+/* Onboarding: free and Premium */
+"mw4.onboarding.premium.title" = "Gratis und Premium";
+"mw4.onboarding.premium.free" = "Gratis";
+"mw4.onboarding.premium.free_track" = "Jede Tarnung, Herausforderung und Meisterschaft, in jedem Modus";
+"mw4.onboarding.premium.free_dmz" = "Die DMZ-Karte, der Guide und dein eigenes Lager";
+"mw4.onboarding.premium.free_scan" = "Lies dein Lager nach kurzer Werbung von einem Foto ein";
+"mw4.onboarding.premium.premium" = "Premium";
+"mw4.onboarding.premium.footer" = "Jährlich oder einmalig, jederzeit unter Anpassen. Nichts, was du trackst, wird je gesperrt.";

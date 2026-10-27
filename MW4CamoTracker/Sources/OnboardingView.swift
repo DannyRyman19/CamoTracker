@@ -30,7 +30,7 @@ struct OnboardingView: View {
         #endif
     }
 
-    private var pageCount: Int { asksForNotifications ? 6 : 5 }
+    private var pageCount: Int { asksForNotifications ? 7 : 6 }
 
     /// Each page borrows the accent of whatever it's actually demoing, so the
     /// walkthrough previews the app's multi-mode palette instead of painting
@@ -42,6 +42,7 @@ struct OnboardingView: View {
         case 2:  return .accentMultiplayer
         case 3:  return .camoPlatinum
         case 4:  return .camoMercurialDrift
+        case 5:  return .accentDMZ
         default: return .camoGold
         }
     }
@@ -56,8 +57,9 @@ struct OnboardingView: View {
                 MarkProgressPage().tag(2)
                 SuggestedPage().tag(3)
                 MakeItYoursPage(accent: accent).tag(4)
+                FreeAndPremiumPage(accent: accent).tag(5)
                 if asksForNotifications {
-                    NotificationsPage().tag(5)
+                    NotificationsPage().tag(6)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -434,6 +436,49 @@ private struct MakeItYoursPage: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
         }
+        .padding(14)
+        .borderedCard()
+    }
+}
+
+/// What's free and what Premium adds, said once, plainly, before anything
+/// asks for money.
+private struct FreeAndPremiumPage: View {
+    let accent: Color
+
+    var body: some View {
+        OnboardingScaffold("mw4.onboarding.premium.title".localized(), accent: accent) {
+            VStack(alignment: .leading, spacing: 12) {
+                group("mw4.onboarding.premium.free".localized(), symbol: "checkmark.circle.fill", rows: [
+                    "mw4.onboarding.premium.free_track", "mw4.onboarding.premium.free_dmz", "mw4.onboarding.premium.free_scan"
+                ])
+                group("mw4.onboarding.premium.premium".localized(), symbol: "sparkles", rows: [
+                    "mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_scans", "mw4.ui.premium.perk_icons", "mw4.ui.premium.perk_customise"
+                ])
+                Text("mw4.onboarding.premium.footer".localized())
+                    .font(.footnote)
+                    .foregroundStyle(Color.appInkMuted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+
+    private func group(_ title: String, symbol: String, rows: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Label(title, systemImage: symbol)
+                .font(.hitmarker(16))
+                .foregroundStyle(accent)
+            ForEach(rows, id: \.self) { key in
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(verbatim: "•").foregroundStyle(Color.appInkMuted)
+                    Text(key.localized())
+                        .font(.system(size: 14.5))
+                        .foregroundStyle(Color.appInk)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
         .borderedCard()
     }

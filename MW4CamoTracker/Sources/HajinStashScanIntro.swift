@@ -3,7 +3,8 @@ import SwiftUI
 
 /// What "Read a stash photo" does, before the photo picker: a looping
 /// demo (a scan line sweeps a little stash and the totals fill in), tips for
-/// a good photo, and the Choose a photo button.
+/// a good photo, and the Take / Choose a photo buttons. Free players get
+/// Watch an ad and Go Premium in their place until the ad has played.
 @available(iOS 17.0, *)
 struct HajinStashScanIntro: View {
     @Binding var pick: PhotosPickerItem?
@@ -11,6 +12,14 @@ struct HajinStashScanIntro: View {
     @Binding var captured: UIImage?
     @Environment(\.dismiss) private var dismiss
     @State private var showsCamera = false
+    @ObservedObject private var premium = Premium.shared
+    /// This scan's ad has been watched (or there was none to show)
+    @State private var watched = false
+    @State private var showsPremium = false
+    @State private var showsNoAd = false
+
+    /// Free players, before this scan's ad. Buying Premium clears it too.
+    private var needsAd: Bool { !premium.isPremium && Ads.shared.showsAds && !watched }
 
     var body: some View {
         NavigationStack {
@@ -37,11 +46,80 @@ struct HajinStashScanIntro: View {
                     }
                     .padding(14)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+                }
+                .padding(16)
+            }
+            .background(Color.appBackground)
+            // Pinned under the tips, so the next step is always in view
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                VStack(spacing: 10) {
+                    if needsAd { adButtons } else { photoButtons }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .padding(.bottom, 8)
+                .background(Color.appBackground)
+                .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
+            }
+            .navigationTitle("mw4.ui.hajin.grid_scan".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("mw4.ui.hajin.cancel".localized()) { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.large])
+        .fullScreenCover(isPresented: $showsCamera) {
+            HajinCamera { image in captured = image }
+                .ignoresSafeArea()
+        }
+        .sheet(isPresented: $showsPremium) { PremiumView() }
+        .alert("mw4.ui.premium.no_ad_title".localized(), isPresented: $showsNoAd) {
+            Button("mw4.ui.premium.scan_premium".localized()) { showsPremium = true }
+            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
+        } message: {
+            Text("mw4.ui.premium.no_ad_message".localized())
+        }
+    }
+
+    /// Free players: an ad for this scan, or Premium for none.
+    @ViewBuilder private var adButtons: some View {
+        Button {
+            Ads.shared.afterRewardedAd({ withAnimation { watched = true } }, unavailable: { showsNoAd = true })
+        } label: {
+            Label("mw4.ui.premium.scan_watch".localized(), systemImage: "play.rectangle.fill")
+                .font(.headline)
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 14)
+                .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
+        }
+        .buttonStyle(.plain)
+        Button { showsPremium = true } label: {
+            HStack(spacing: 12) {
+                HajinCardSymbol("sparkles")
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("mw4.ui.premium.scan_premium".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                    Text("mw4.ui.premium.subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+            }
+            .padding(12)
+            .borderedCard(accent: .accentDMZ)
+        }
+        .buttonStyle(.plain)
+    }
+
+    @ViewBuilder private var photoButtons: some View {
                     if UIImagePickerController.isSourceTypeAvailable(.camera) {
                         Button { showsCamera = true } label: {
                             Label("mw4.ui.hajin.grid_camera".localized(), systemImage: "camera.fill")
                                 .font(.headline)
-                                .foregroundStyle(Color.black.opacity(0.85))
+                                .foregroundStyle(.white)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 14)
                                 .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
@@ -57,23 +135,6 @@ struct HajinStashScanIntro: View {
                             .background(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.accentDMZ, lineWidth: 2))
                     }
                     .buttonStyle(.plain)
-                }
-                .padding(16)
-            }
-            .background(Color.appBackground)
-            .navigationTitle("mw4.ui.hajin.grid_scan".localized())
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("mw4.ui.hajin.cancel".localized()) { dismiss() }
-                }
-            }
-        }
-        .presentationDetents([.large])
-        .fullScreenCover(isPresented: $showsCamera) {
-            HajinCamera { image in captured = image }
-                .ignoresSafeArea()
-        }
     }
 
     private func tip(_ symbol: String, _ key: String, best: Bool = false) -> some View {

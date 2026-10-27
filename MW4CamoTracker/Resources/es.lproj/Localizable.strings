@@ -58,7 +58,7 @@
 "mw4.onboarding.suggested.demo" = "A 1 camuflaje del Oro";
 "mw4.onboarding.yours.title" = "Hazla tuya";
 "mw4.onboarding.yours.pin" = "Fija el arma que estás subiendo y aparecerá arriba en cada pestaña.";
-"mw4.onboarding.yours.customise" = "Personalizar cambia los modos que juegas y el idioma, reordena u oculta las secciones de inicio, activa o desactiva el marcado rápido y puede mostrar los desafíos de camuflajes bloqueados.";
+"mw4.onboarding.yours.customise" = "En Personalizar eliges los modos, el idioma y el marcado rápido. Premium añade tu propio diseño, bordes de tarjeta, desafíos en camuflajes bloqueados e iconos de camuflaje.";
 "mw4.onboarding.yours.report" = "¿Un desafío, nivel o nombre está mal? Repórtalo desde la página del arma y la corrección llegará a todos sin actualizar la app.";
 "mw4.onboarding.suggested.title" = "Sabe qué toca después";
 "mw4.onboarding.suggested.body1" = "Cada pestaña te señala el arma más cercana al Oro. A veces es la última que frena a toda una categoría.";
@@ -440,5 +440,14 @@
 "mw4.ui.premium.remove_ads" = "Quitar anuncios";
 "mw4.ui.premium.perk_icons" = "Iconos de camuflaje para la app, al conseguir cada camuflaje";
 "mw4.ui.premium.customise_title" = "Personalizar es parte de Premium";
-"mw4.ui.premium.customise_body" = "Diseños, bordes de tarjeta, marcado rápido e iconos de camuflaje. Modos, idioma e iCloud siguen gratis.";
-"mw4.ui.premium.perk_customise" = "Tus diseños, bordes de tarjeta y marcado rápido";
+"mw4.ui.premium.customise_body" = "Diseños, bordes de tarjeta, desafíos en camuflajes bloqueados e iconos de camuflaje. Modos, idioma, marcado rápido e iCloud siguen gratis.";
+"mw4.ui.premium.perk_customise" = "Tus diseños, bordes de tarjeta y desafíos en camuflajes bloqueados";
+
+/* Onboarding: free and Premium */
+"mw4.onboarding.premium.title" = "Gratis y Premium";
+"mw4.onboarding.premium.free" = "Gratis";
+"mw4.onboarding.premium.free_track" = "Cada camuflaje, desafío y Maestría, en cada modo";
+"mw4.onboarding.premium.free_dmz" = "El mapa de DMZ, la guía y tu propio alijo";
+"mw4.onboarding.premium.free_scan" = "Lee tu alijo desde una foto tras un anuncio corto";
+"mw4.onboarding.premium.premium" = "Premium";
+"mw4.onboarding.premium.footer" = "Paga al año o una sola vez, cuando quieras desde Personalizar. Nada de lo que sigues se bloquea nunca.";

@@ -638,24 +638,6 @@ struct HajinScanHost: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-        // The choice is a sheet in the app's own look; whatever was picked
-        // starts once it has gone, so the ad or Premium never stacks on it
-        .sheet(isPresented: $flow.showsScanChoice, onDismiss: {
-            switch flow.scanChoice {
-            case .ad: Ads.shared.afterRewardedAd({ flow.showsIntro = true }, unavailable: { flow.showsNoAd = true })
-            case .premium: flow.showsPremium = true
-            case nil: break
-            }
-            flow.scanChoice = nil
-        }) {
-            HajinScanChoiceSheet { flow.scanChoice = $0; flow.showsScanChoice = false }
-        }
-        .alert("mw4.ui.premium.no_ad_title".localized(), isPresented: $flow.showsNoAd) {
-            Button("mw4.ui.premium.scan_premium".localized()) { flow.showsPremium = true }
-            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
-        } message: {
-            Text("mw4.ui.premium.no_ad_message".localized())
-        }
         .sheet(isPresented: $flow.showsPremium) { PremiumView() }
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
             if let pending = flow.pending { route(pending); flow.pending = nil } else { flow.carried = nil }
@@ -862,59 +844,6 @@ final class HajinFrameState: ObservableObject {
 
 /// The photo reader's flow: the intro sheet, the picked photo, the framing
 /// screen. One for the app, started by any reader button.
-/// Free players' "Read your stash": watch a short ad for this scan, or
-/// Premium for scans with no ads. Swipe down to cancel.
-@available(iOS 17.0, *)
-struct HajinScanChoiceSheet: View {
-    let pick: (HajinScanFlow.ScanChoice) -> Void
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("mw4.ui.premium.scan_title".localized())
-                    .font(.hitmarker(22))
-                    .foregroundStyle(Color.appInk)
-                Text("mw4.ui.premium.scan_message".localized())
-                    .font(.subheadline)
-                    .foregroundStyle(Color.appInkMuted)
-            }
-            Button { pick(.ad) } label: {
-                Label("mw4.ui.premium.scan_watch".localized(), systemImage: "play.rectangle.fill")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.accentDMZ))
-            }
-            .buttonStyle(.plain)
-            Button { pick(.premium) } label: {
-                HStack(spacing: 12) {
-                    HajinCardSymbol("sparkles")
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("mw4.ui.premium.scan_premium".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
-                        Text("mw4.ui.premium.subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
-                            .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    Spacer(minLength: 0)
-                    Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
-                }
-                .padding(12)
-                .borderedCard(accent: .accentDMZ)
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 28)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        // The whole sheet in the app's background, not iOS's glass with a
-        // solid band painted across the middle of it
-        .presentationBackground(Color.appBackground)
-        .presentationDetents([.height(320)])
-        .presentationDragIndicator(.visible)
-    }
-}
-
 @available(iOS 17.0, *)
 @MainActor
 final class HajinScanFlow: ObservableObject {
@@ -933,20 +862,11 @@ final class HajinScanFlow: ObservableObject {
     /// a 3D Printer screen)
     @Published var showsPicker = false
     @Published var sorting = false
-    /// Free players: watch an ad to scan, or go Premium
-    @Published var showsScanChoice = false
-    enum ScanChoice { case ad, premium }
-    /// What the choice sheet picked, acted on once it has closed
-    var scanChoice: ScanChoice?
+    /// The Premium sheet, from anywhere the scan flow reaches it
     @Published var showsPremium = false
-    /// No ad to show and today's no-ad scan already used
-    @Published var showsNoAd = false
 
-    /// A reader button: straight to the intro for Premium (or with ads off),
-    /// otherwise the ad-or-Premium choice first.
-    func requestScan() {
-        if Ads.shared.showsAds { showsScanChoice = true } else { showsIntro = true }
-    }
+    /// A reader button: the intro, which asks free players for an ad first.
+    func requestScan() { showsIntro = true }
     /// "Add another photo": the counts read so far, and from how many
     /// photos, added to whatever the next photo reads
     var carried: [String: Int]?

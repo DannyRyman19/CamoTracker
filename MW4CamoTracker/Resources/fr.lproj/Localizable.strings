@@ -58,7 +58,7 @@
 "mw4.onboarding.suggested.demo" = "À 1 camouflage de l'Or";
 "mw4.onboarding.yours.title" = "À votre image";
 "mw4.onboarding.yours.pin" = "Épinglez l'arme que vous montez : elle reste en haut de chaque onglet.";
-"mw4.onboarding.yours.customise" = "Personnaliser change les modes auxquels vous jouez et la langue, réorganise ou masque les sections de l'accueil, active ou désactive la coche rapide et peut afficher les défis des camouflages verrouillés.";
+"mw4.onboarding.yours.customise" = "Personnaliser règle les modes, la langue et la coche rapide. Premium ajoute votre propre disposition, les contours de carte, les défis des camos verrouillés et les icônes camo.";
 "mw4.onboarding.yours.report" = "Un défi, un niveau ou un nom est faux ? Signalez-le depuis la page de l'arme : la correction arrive chez tout le monde sans mise à jour de l'app.";
 "mw4.onboarding.suggested.title" = "Sachez quoi enchaîner";
 "mw4.onboarding.suggested.body1" = "Chaque onglet vous indique l'arme la plus proche de l'Or. Parfois c'est la dernière qui bloque toute une catégorie.";
@@ -440,5 +440,14 @@
 "mw4.ui.premium.remove_ads" = "Retirer les pubs";
 "mw4.ui.premium.perk_icons" = "Icônes d'app camo, au fil des camos obtenus";
 "mw4.ui.premium.customise_title" = "La personnalisation fait partie de Premium";
-"mw4.ui.premium.customise_body" = "Dispositions, contours de carte, coche rapide et icônes camo. Modes, langue et iCloud restent gratuits.";
-"mw4.ui.premium.perk_customise" = "Vos dispositions, contours de carte et coche rapide";
+"mw4.ui.premium.customise_body" = "Dispositions, contours de carte, défis des camos verrouillés et icônes camo. Modes, langue, coche rapide et iCloud restent gratuits.";
+"mw4.ui.premium.perk_customise" = "Vos dispositions, contours de carte et défis des camos verrouillés";
+
+/* Onboarding: free and Premium */
+"mw4.onboarding.premium.title" = "Gratuit et Premium";
+"mw4.onboarding.premium.free" = "Gratuit";
+"mw4.onboarding.premium.free_track" = "Chaque camo, défi et Maîtrise, dans chaque mode";
+"mw4.onboarding.premium.free_dmz" = "La carte DMZ, le guide et votre propre stock";
+"mw4.onboarding.premium.free_scan" = "Lisez votre stock depuis une photo après une courte pub";
+"mw4.onboarding.premium.premium" = "Premium";
+"mw4.onboarding.premium.footer" = "Paiement annuel ou unique, à tout moment depuis Personnaliser. Rien de ce que vous suivez n'est jamais bloqué.";

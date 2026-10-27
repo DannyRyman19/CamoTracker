@@ -58,7 +58,7 @@
 "mw4.onboarding.suggested.demo" = "Falta 1 camuflagem para o Ouro";
 "mw4.onboarding.yours.title" = "Deixe com a sua cara";
 "mw4.onboarding.yours.pin" = "Fixe a arma que você está upando e ela fica no topo de todas as abas.";
-"mw4.onboarding.yours.customise" = "Em Personalizar você escolhe os modos que joga e o idioma, reordena ou oculta as seções da tela inicial, liga ou desliga a marcação rápida e pode mostrar os desafios das camuflagens bloqueadas.";
+"mw4.onboarding.yours.customise" = "Personalizar define os modos, o idioma e a marcação rápida. O Premium adiciona seu próprio layout, bordas dos cartões, desafios em camuflagens bloqueadas e ícones de camuflagem.";
 "mw4.onboarding.yours.report" = "Viu um desafio, nível ou nome errado? Informe na página da arma e a correção chega a todos sem atualizar o app.";
 "mw4.onboarding.suggested.title" = "Saiba o que upar em seguida";
 "mw4.onboarding.suggested.body1" = "Cada aba aponta a arma mais perto do Ouro. Às vezes é a última que falta para uma categoria inteira.";
@@ -441,5 +441,14 @@
 "mw4.ui.premium.remove_ads" = "Remover anúncios";
 "mw4.ui.premium.perk_icons" = "Ícones de camuflagem para o app, ao conquistar cada uma";
 "mw4.ui.premium.customise_title" = "Personalizar faz parte do Premium";
-"mw4.ui.premium.customise_body" = "Layouts, bordas dos cartões, marcação rápida e ícones de camuflagem. Modos, idioma e iCloud continuam grátis.";
-"mw4.ui.premium.perk_customise" = "Seus layouts, bordas dos cartões e marcação rápida";
+"mw4.ui.premium.customise_body" = "Layouts, bordas dos cartões, desafios em camuflagens bloqueadas e ícones de camuflagem. Modos, idioma, marcação rápida e iCloud continuam grátis.";
+"mw4.ui.premium.perk_customise" = "Seus layouts, bordas dos cartões e desafios em camuflagens bloqueadas";
+
+/* Onboarding: free and Premium */
+"mw4.onboarding.premium.title" = "Grátis e Premium";
+"mw4.onboarding.premium.free" = "Grátis";
+"mw4.onboarding.premium.free_track" = "Cada camuflagem, desafio e Maestria, em cada modo";
+"mw4.onboarding.premium.free_dmz" = "O mapa da DMZ, o guia e seu próprio estoque";
+"mw4.onboarding.premium.free_scan" = "Leia seu estoque de uma foto após um anúncio curto";
+"mw4.onboarding.premium.premium" = "Premium";
+"mw4.onboarding.premium.footer" = "Pague por ano ou uma vez, quando quiser em Personalizar. Nada do que você acompanha fica bloqueado.";
