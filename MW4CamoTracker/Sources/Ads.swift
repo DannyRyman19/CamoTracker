@@ -45,6 +45,7 @@ final class Ads: NSObject, ObservableObject {
     private var starting = false
     private var rewarded: LPMRewardedAd?
     private var onReward: (() -> Void)?
+    private var onUnavailable: (() -> Void)?
     private var earned = false
     private var closed = false
     private var retry = 0
@@ -116,17 +117,32 @@ final class Ads: NSObject, ObservableObject {
 
     /// Runs `action` straight away for Premium (or with ads off); otherwise
     /// after a rewarded ad is watched to the end. No ad to show (none loaded,
-    /// no network) never blocks the player: the action runs anyway.
-    func afterRewardedAd(_ action: @escaping () -> Void) {
-        guard showsAds, ready, let rewarded, rewarded.isAdReady(), let root = Self.topController() else {
-            if showsAds, ready { loadRewarded() } else { start() }
-            action()
+    /// no network): one a day runs anyway, after that `unavailable`.
+    func afterRewardedAd(_ action: @escaping () -> Void, unavailable: @escaping () -> Void) {
+        guard showsAds else { action(); return }
+        guard ready, let rewarded, rewarded.isAdReady(), let root = Self.topController() else {
+            if ready { loadRewarded() } else { start() }
+            withoutAd(action, unavailable: unavailable)
             return
         }
         onReward = action
+        onUnavailable = unavailable
         earned = false
         closed = false
         rewarded.showAd(viewController: root, placementName: nil)
+    }
+
+    /// No ad to show: one scan a day goes ahead anyway, so a bad connection
+    /// doesn't lock anyone out, but going offline isn't a way round the ads.
+    private static let freeDayKey = "mw4_ads_free_scan_day"
+    private func withoutAd(_ action: () -> Void, unavailable: () -> Void) {
+        let today = Calendar.current.startOfDay(for: Date()).timeIntervalSince1970
+        if UserDefaults.standard.double(forKey: Self.freeDayKey) != today {
+            UserDefaults.standard.set(today, forKey: Self.freeDayKey)
+            action()
+        } else {
+            unavailable()
+        }
     }
 
     /// The reward and the close arrive in either order; the scan starts once
@@ -135,6 +151,7 @@ final class Ads: NSObject, ObservableObject {
         guard closed else { return }
         if earned { onReward?() }
         onReward = nil
+        onUnavailable = nil
         earned = false
         closed = false
         rewarded?.loadAd()
@@ -180,26 +197,30 @@ extension Ads: @preconcurrency LPMRewardedAdDelegate {
     }
 
     func didFailToDisplayAd(with adInfo: LPMAdInfo, error: Error) {
-        // Couldn't show it: let them scan rather than lose the tap
-        earned = true
-        closed = true
-        finishIfDone()
+        // Couldn't show it: the same as no ad at all
+        if let action = onReward, let unavailable = onUnavailable { withoutAd(action, unavailable: unavailable) }
+        onReward = nil
+        onUnavailable = nil
+        rewarded?.loadAd()
     }
 }
 
-/// A banner at the foot of a list screen, 50pt tall (90 on iPad). Empty
+/// A banner at the foot of a list screen: a solid strip with a hairline
+/// above it, the ad pinned inside so it never hangs over the list. Empty
 /// for Premium and until the SDK is ready.
 struct AdBanner: View {
     @ObservedObject private var ads = Ads.shared
     @ObservedObject private var premium = Premium.shared
-    @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
         if ads.ready, !premium.isPremium {
+            let size = BannerController.size
             AdBannerView()
-                .frame(height: sizeClass == .regular ? 90 : 50)
+                .frame(width: CGFloat(size.width), height: CGFloat(size.height))
                 .frame(maxWidth: .infinity)
+                .padding(.vertical, 6)
                 .background(Color.appBackground)
+                .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
         }
     }
 }
@@ -213,20 +234,27 @@ private struct AdBannerView: UIViewControllerRepresentable {
 }
 
 private final class BannerController: UIViewController, @preconcurrency LPMBannerAdViewDelegate {
+    /// Banner on iPhone, leaderboard on iPad; worked out once so the strip
+    /// and the ad agree on it.
+    static let size: LPMAdSize = LPMAdSize.createAdaptive() ?? LPMAdSize.banner()
+
     var banner: LPMBannerAdView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
-        let config = LPMBannerAdViewConfigBuilder()
-        if let size = LPMAdSize.createAdaptive() { config.set(adSize: size) }
-        let banner = LPMBannerAdView(adUnitId: AdConfig.bannerUnit, config: config.build())
+        view.clipsToBounds = true
+        let size = Self.size
+        let config = LPMBannerAdViewConfigBuilder().set(adSize: size).build()
+        let banner = LPMBannerAdView(adUnitId: AdConfig.bannerUnit, config: config)
         banner.setDelegate(self)
         banner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(banner)
         NSLayoutConstraint.activate([
             banner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            banner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            banner.topAnchor.constraint(equalTo: view.topAnchor),
+            banner.widthAnchor.constraint(equalToConstant: CGFloat(size.width)),
+            banner.heightAnchor.constraint(equalToConstant: CGFloat(size.height)),
         ])
         banner.loadAd(with: self)
         self.banner = banner

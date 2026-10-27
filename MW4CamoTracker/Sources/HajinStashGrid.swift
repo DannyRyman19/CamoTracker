@@ -631,12 +631,18 @@ struct HajinScanHost: ViewModifier {
         content
         .confirmationDialog("mw4.ui.premium.scan_title".localized(), isPresented: $flow.showsScanChoice, titleVisibility: .visible) {
             Button("mw4.ui.premium.scan_watch".localized()) {
-                Ads.shared.afterRewardedAd { flow.showsIntro = true }
+                Ads.shared.afterRewardedAd({ flow.showsIntro = true }, unavailable: { flow.showsNoAd = true })
             }
             Button("mw4.ui.premium.scan_premium".localized()) { flow.showsPremium = true }
             Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
         } message: {
             Text("mw4.ui.premium.scan_message".localized())
+        }
+        .alert("mw4.ui.premium.no_ad_title".localized(), isPresented: $flow.showsNoAd) {
+            Button("mw4.ui.premium.scan_premium".localized()) { flow.showsPremium = true }
+            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
+        } message: {
+            Text("mw4.ui.premium.no_ad_message".localized())
         }
         .sheet(isPresented: $flow.showsPremium) { PremiumView() }
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
@@ -865,6 +871,8 @@ final class HajinScanFlow: ObservableObject {
     /// Free players: watch an ad to scan, or go Premium
     @Published var showsScanChoice = false
     @Published var showsPremium = false
+    /// No ad to show and today's no-ad scan already used
+    @Published var showsNoAd = false
 
     /// A reader button: straight to the intro for Premium (or with ads off),
     /// otherwise the ad-or-Premium choice first.
