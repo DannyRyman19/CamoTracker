@@ -456,3 +456,33 @@
 "mw4.ui.premium.per_year" = " / Jahr";
 "mw4.ui.premium.perk_pins" = "Bis zu 5 Waffen anpinnen und alle Vorschläge sehen";
 "mw4.ui.premium.more_suggestions" = "%d weitere Vorschläge mit Premium";
+
+/* After a match: the backpack reader */
+"mw4.ui.postmatch.card" = "Nach dem Match";
+"mw4.ui.postmatch.card_hint" = "Rucksack einlesen: was du verkaufst, und was du behältst ins Lager";
+"mw4.ui.postmatch.title" = "Nach dem Match";
+"mw4.ui.postmatch.intro" = "Mach nach dem Exfil ein Foto oder einen Screenshot deines Rucksacks: die Extraktionsübersicht oder den Rucksack-Bildschirm. Die App liest jedes Feld, sagt dir, was du verkaufen kannst, und legt Behaltenes in Mein Lager.";
+"mw4.ui.postmatch.tip_screen" = "Die Extraktionsübersicht geht, oder öffne den Rucksack im Menü";
+"mw4.ui.postmatch.tip_whole" = "Den ganzen Rucksack aufs Bild, mit Sicheren Plätzen und dem SORT-Feld daneben";
+"mw4.ui.postmatch.frame" = "Zieh die Ecken an das Rucksackraster (ohne die Sicheren Plätze darunter).";
+"mw4.ui.postmatch.items" = "Mitgebracht";
+"mw4.ui.postmatch.resources_footer" = "Aus dem SORT-Feld. Kommen ins Lager.";
+"mw4.ui.postmatch.sell_total" = "%d verkaufen";
+"mw4.ui.postmatch.sell_none" = "Nichts zu verkaufen";
+"mw4.ui.postmatch.sold" = "Verkauft";
+"mw4.ui.postmatch.keep" = "Behalten";
+"mw4.ui.postmatch.remove" = "Entfernen";
+"mw4.ui.postmatch.blueprints" = "%d Baupläne eingesammelt";
+"mw4.ui.postmatch.unread" = "%d Felder nicht lesbar (Waffen und manche Ausrüstung)";
+"mw4.ui.postmatch.blueprints_footer" = "Abgehakte verschwinden aus deiner Bauplanliste. Prüf die Vermutung am Bild.";
+"mw4.ui.postmatch.blueprint_pick" = "Welcher Bauplan?";
+"mw4.ui.postmatch.blueprint_clear" = "Keiner davon";
+"mw4.ui.postmatch.blueprint_had" = "Schon abgehakt";
+"mw4.ui.postmatch.blueprint_guess" = "Sieht aus wie %@";
+"mw4.ui.postmatch.manual" = "Waffenhandbuch dabei?";
+"mw4.ui.postmatch.manual_found" = "Waffenhandbuch eingesammelt";
+"mw4.ui.postmatch.manual_hint" = "Hak die Waffe unter Gunsmith prices ab, um zu sehen, was du kaufen kannst";
+"mw4.ui.postmatch.gear" = "Ausrüstung und Schlüssel";
+"mw4.ui.postmatch.spare" = "Übrig";
+"mw4.ui.postmatch.needed" = "Noch gebraucht";
+"mw4.ui.postmatch.items_footer" = "Übrig ist, was deine Upgrades und Rezepte nicht mehr brauchen (einstellbar unter Übrig zum Verkaufen). Verkauftes kommt nicht ins Lager. Wisch über Fehler, um sie zu ändern oder zu entfernen.";

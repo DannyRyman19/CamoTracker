@@ -456,3 +456,33 @@
 "mw4.ui.premium.per_year" = " / year";
 "mw4.ui.premium.perk_pins" = "Pin up to 5 guns and see every suggestion";
 "mw4.ui.premium.more_suggestions" = "%d more suggestions with Premium";
+
+/* After a match: the backpack reader */
+"mw4.ui.postmatch.card" = "After a match";
+"mw4.ui.postmatch.card_hint" = "Read your backpack: what to sell, and add what you keep to your stash";
+"mw4.ui.postmatch.title" = "After a match";
+"mw4.ui.postmatch.intro" = "Take a photo or screenshot of your backpack after you exfil: the Extraction summary or the backpack screen. The app reads every tile, says what to sell, and adds what you keep to My stash.";
+"mw4.ui.postmatch.tip_screen" = "The Extraction summary works, or open the backpack in the menu";
+"mw4.ui.postmatch.tip_whole" = "Get the whole backpack in, with Secure slots and the SORT panel beside it";
+"mw4.ui.postmatch.frame" = "Drag the corners to the backpack grid (not the Secure slots under it).";
+"mw4.ui.postmatch.items" = "Brought out";
+"mw4.ui.postmatch.resources_footer" = "From the SORT panel. Added to My stash.";
+"mw4.ui.postmatch.sell_total" = "Sell %d";
+"mw4.ui.postmatch.sell_none" = "Nothing to sell";
+"mw4.ui.postmatch.sold" = "Sold";
+"mw4.ui.postmatch.keep" = "Keep";
+"mw4.ui.postmatch.remove" = "Remove";
+"mw4.ui.postmatch.blueprints" = "%d blueprints picked up";
+"mw4.ui.postmatch.unread" = "%d tiles couldn't be read (weapons and some gear)";
+"mw4.ui.postmatch.blueprints_footer" = "Ticked ones come off your Blueprints list. Check the guess against the picture.";
+"mw4.ui.postmatch.blueprint_pick" = "Which blueprint?";
+"mw4.ui.postmatch.blueprint_clear" = "Not this one";
+"mw4.ui.postmatch.blueprint_had" = "Already ticked";
+"mw4.ui.postmatch.blueprint_guess" = "Looks like %@";
+"mw4.ui.postmatch.manual" = "Got a weapon manual?";
+"mw4.ui.postmatch.manual_found" = "Weapon manual picked up";
+"mw4.ui.postmatch.manual_hint" = "Tick its gun in Gunsmith prices to keep track of what you can buy";
+"mw4.ui.postmatch.gear" = "Gear and keys";
+"mw4.ui.postmatch.spare" = "Spare";
+"mw4.ui.postmatch.needed" = "Still needed";
+"mw4.ui.postmatch.items_footer" = "Spare is beyond what your upgrades and recipes still need (set in Spare to sell). Sold items don't go into My stash. Swipe a misread to fix or remove it.";

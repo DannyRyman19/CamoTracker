@@ -99,6 +99,7 @@
 		1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18584995CE0647A750FAF9 /* PremiumView.swift */; };
 		526CD7FDF12954A43CA48504 /* UnityAdsAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 3B4630512069BC35E2FFB348 /* UnityAdsAdapter */; };
 		399D56FFC2F55F4A0FF93789 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C12525E32F5F8867F49126 /* AppIcons.swift */; };
+		31D63926C7C4A366C052DC7E /* HajinPostMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C16FB38FF86F93546E5F2D5 /* HajinPostMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		ABFC2C043486400F10E42010 /* Ads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		9E18584995CE0647A750FAF9 /* PremiumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		61C12525E32F5F8867F49126 /* AppIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
+		3C16FB38FF86F93546E5F2D5 /* HajinPostMatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinPostMatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +330,7 @@
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
 				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
 				137CA712348610EDF30BE314 /* HajinModels.swift */,
+				3C16FB38FF86F93546E5F2D5 /* HajinPostMatch.swift */,
 				61C12525E32F5F8867F49126 /* AppIcons.swift */,
 				9E18584995CE0647A750FAF9 /* PremiumView.swift */,
 				ABFC2C043486400F10E42010 /* Ads.swift */,
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D63926C7C4A366C052DC7E /* HajinPostMatch.swift in Sources */,
 				399D56FFC2F55F4A0FF93789 /* AppIcons.swift in Sources */,
 				1955A2C979B45D9B9B145B56 /* PremiumView.swift in Sources */,
 				39E5BB05AF84DC80AD6494B9 /* Ads.swift in Sources */,

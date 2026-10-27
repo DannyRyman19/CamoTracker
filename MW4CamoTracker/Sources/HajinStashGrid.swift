@@ -4,12 +4,14 @@ import PhotosUI
 import SwiftUI
 import Vision
 
-/// Reads the stash grid from a photo. The grid is always 6 tiles wide; the
+/// Reads the stash grid from a photo. The stash is 6 tiles wide (a
+/// backpack, after a match, 4; every call takes the width); the
 /// player drags four handles to its corners, the photo is straightened so
 /// every tile is a square, then each tile's icon is named by a classifier
 /// trained on the guide's item art (HajinStashIcons.mlmodel) and its stack
 /// count is read from the top-right corner.
 enum HajinStashGrid {
+    /// The stash's width; a backpack is `HajinBackpack.columns`.
     static let columns = 6
     static let cell: CGFloat = 200
 
@@ -18,10 +20,15 @@ enum HajinStashGrid {
         let id: String          // item id, "empty" or "other"
         let confidence: Float
         let count: Int?
+        /// A blueprint: its tile as read, and the model's best guess among
+        /// the blueprint items (it was trained on plain tiles, so a guess)
+        var image: CGImage? = nil
+        var guess: String? = nil
+        var guessConfidence: Float = 0
     }
 
     /// Rows that fit the framed area, from its shape (tiles are square).
-    static func rows(for corners: [CGPoint], size: CGSize) -> Int {
+    static func rows(for corners: [CGPoint], size: CGSize, columns: Int = columns) -> Int {
         let p = corners.map { CGPoint(x: $0.x * size.width, y: $0.y * size.height) }
         func d(_ a: CGPoint, _ b: CGPoint) -> CGFloat { hypot(a.x - b.x, a.y - b.y) }
         let width = (d(p[0], p[1]) + d(p[3], p[2])) / 2
@@ -34,8 +41,8 @@ enum HajinStashGrid {
     /// lines repeat once per row, so the repeat length gives the row count.
     /// (The frame's shape alone misleads when the photo is taken at an angle
     /// and the grid looks squashed.) Falls back to the shape estimate.
-    static func measureRows(_ image: CGImage, corners: [CGPoint]) -> Int {
-        let estimate = rows(for: corners, size: CGSize(width: image.width, height: image.height))
+    static func measureRows(_ image: CGImage, corners: [CGPoint], columns: Int = columns) -> Int {
+        let estimate = rows(for: corners, size: CGSize(width: image.width, height: image.height), columns: columns)
         let cw: CGFloat = 40, height: CGFloat = 640
         guard let flat = straighten(image, corners: corners, size: CGSize(width: cw * CGFloat(columns), height: height)) else { return estimate }
         let w = flat.width, h = flat.height
@@ -89,8 +96,9 @@ enum HajinStashGrid {
     }
 
     @available(iOS 17.0, *)
-    static func read(_ image: CGImage, corners: [CGPoint], rows known: Int? = nil) -> [Tile] {
-        let rows = known ?? measureRows(image, corners: corners)
+    static func read(_ image: CGImage, corners: [CGPoint], rows known: Int? = nil, columns: Int = columns,
+                     blueprints: Set<String> = []) -> [Tile] {
+        let rows = known ?? measureRows(image, corners: corners, columns: columns)
         // Half a tile of margin all round, so a frame dragged slightly inside
         // the grid still has its borders in the picture
         let margin = expanded(corners, du: 0.5 / CGFloat(columns), dv: 0.5 / CGFloat(rows))
@@ -104,6 +112,7 @@ enum HajinStashGrid {
         do { model = try VNCoreMLModel(for: HajinStashIcons(configuration: config).model) } catch {
             HajinGridDebug.log("model \(error)"); return [] }
         HajinGridDebug.log("rows \(rows) flat \(flat.width)x\(flat.height)")
+        HajinGridDebug.save(flat, "grid_flat_\(columns)x\(rows)")
         let lattice = HajinGridLattice.fit(flat, columns: columns, rows: rows, cell: cell)
         let ci = CIContext()
         // Two guesses at each tile: straight from the frame, and from the
@@ -119,6 +128,25 @@ enum HajinStashGrid {
         }
         func readTile(_ r: CGRect, _ row: Int, _ column: Int) -> Tile? {
             guard let raw = flat.cropping(to: r.integral), let tile = resized(raw, to: cell, ci) else { return nil }
+            // A blueprint (a recipe picked up in a match) is the item drawn
+            // on a blue grid, which the icon model has never seen
+            if blueFraction(tile) > 0.5 {
+                var guess: VNClassificationObservation?
+                if !blueprints.isEmpty {
+                    let request = VNCoreMLRequest(model: model)
+                    request.imageCropAndScaleOption = .scaleFill
+                    #if targetEnvironment(simulator)
+                    request.usesCPUOnly = true
+                    #endif
+                    try? VNImageRequestHandler(cgImage: tile).perform([request])
+                    guess = (request.results as? [VNClassificationObservation])?.first { obs in
+                        blueprints.contains(obs.identifier.hasPrefix("x-") ? String(obs.identifier.dropFirst(2)) : obs.identifier)
+                    }
+                }
+                return Tile(row: row, column: column, id: "blueprint", confidence: 1, count: nil, image: tile,
+                            guess: guess.map { $0.identifier.hasPrefix("x-") ? String($0.identifier.dropFirst(2)) : $0.identifier },
+                            guessConfidence: guess?.confidence ?? 0)
+            }
             let request = VNCoreMLRequest(model: model)
             request.imageCropAndScaleOption = .scaleFill
             #if targetEnvironment(simulator)
@@ -150,7 +178,9 @@ enum HajinStashGrid {
                 let votes = Dictionary(grouping: counts, by: { $0 }).mapValues(\.count)
                 let top = votes.values.max() ?? 0
                 let count = counts.first { votes[$0] == top }
-                tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count))
+                let best = mine.max { $0.guessConfidence < $1.guessConfidence }
+                tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count,
+                                  image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0))
             }
         }
         HajinGridDebug.log(tiles.filter { $0.id != "empty" }.map { "\($0.row)\($0.column) \($0.id) \(String(format: "%.2f", $0.confidence)) \($0.count.map(String.init) ?? "?")" }.joined(separator: "\n"))
@@ -174,13 +204,33 @@ enum HajinStashGrid {
         return ci.createCGImage(scaled, from: CGRect(x: 0, y: 0, width: side, height: side))
     }
 
+    /// How much of a tile, its middle, is a blueprint's blue: 0.8 to 0.95 on
+    /// blueprints, under 0.25 on anything else (a blue rarity's tint included).
+    static func blueFraction(_ tile: CGImage) -> Double {
+        let w = tile.width, h = tile.height
+        var px = [UInt8](repeating: 0, count: w * h * 4)
+        guard w > 8, h > 8, let ctx = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                                                space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 0 }
+        ctx.draw(tile, in: CGRect(x: 0, y: 0, width: w, height: h))
+        var blue = 0, n = 0
+        for y in stride(from: h / 8, to: h * 7 / 8, by: 2) {
+            for x in stride(from: w / 8, to: w * 7 / 8, by: 2) {
+                let i = (y * w + x) * 4
+                let r = Int(px[i]), g = Int(px[i + 1]), b = Int(px[i + 2])
+                if b > 110 && b > r + 50 && b > g + 15 { blue += 1 }
+                n += 1
+            }
+        }
+        return n > 0 ? Double(blue) / Double(n) : 0
+    }
+
     /// Stacks of the same item added together. A stack whose count couldn't
     /// be read counts as 1 and is listed in `unsure`, as is a weak match.
     static func totals(_ tiles: [Tile]) -> (counts: [String: Int], unsure: Set<String>, sureness: [String: Float], stacks: [String: Int]) {
         var counts: [String: Int] = [:], unsure = Set<String>(), sureness: [String: Float] = [:], stacks: [String: Int] = [:]
         // "other" is anything that isn't an ingredient (gear, keys, valuables
         // on the All tab): not tracked in My stash, so left out
-        for t in tiles where t.id != "empty" && t.id != "other" {
+        for t in tiles where !["empty", "other", "blueprint"].contains(t.id) {
             counts[t.id, default: 0] += t.count ?? 1
             stacks[t.id, default: 0] += 1
             // how sure of the item: its least certain stack
@@ -309,6 +359,14 @@ enum HajinGridDebug {
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("grid_debug.txt")
         let line = Data((text + "\n").utf8)
         if let h = try? FileHandle(forWritingTo: url) { h.seekToEndOfFile(); h.write(line); try? h.close() } else { try? line.write(to: url) }
+        #endif
+    }
+
+    /// An image the reader worked on, as Documents/<name>.png.
+    static func save(_ image: CGImage, _ name: String) {
+        #if DEBUG
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name + ".png")
+        try? UIImage(cgImage: image).pngData()?.write(to: url)
         #endif
     }
 }
@@ -643,7 +701,7 @@ struct HajinScanHost: ViewModifier {
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
             if let pending = flow.pending { route(pending); flow.pending = nil } else { flow.carried = nil }
         }) {
-            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
+            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured, postMatch: flow.postMatch)
         }
         #if DEBUG
         // SS_GRID_DEMO: the intro "picks" the demo photo after a few seconds
@@ -689,7 +747,8 @@ struct HajinScanHost: ViewModifier {
             flow.carriedPhotos = 0
         }) {
             if let photo = flow.photo {
-                HajinStashGridFrameView(image: photo.image, state: photo.frame, onPicked: { flow.photo = HajinPickedPhoto(image: $0) })
+                HajinStashGridFrameView(image: photo.image, state: photo.frame,
+                                        onPicked: { flow.photo = HajinPickedPhoto(image: $0, postMatch: photo.frame.postMatch) })
                     .id(photo.id)
             }
         }
@@ -740,7 +799,10 @@ struct HajinScanHost: ViewModifier {
             if flow.photo == nil, var path = ProcessInfo.processInfo.environment["SS_GRID_PHOTO"] {
                 if !path.hasPrefix("/") { path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(path).path }
                 guard let image = UIImage(contentsOfFile: path) else { return }
-                flow.photo = HajinPickedPhoto(image: image.normalisedUp())
+                // SS_POSTMATCH=1: read it as a backpack after a match
+                let postMatch = ProcessInfo.processInfo.environment["SS_POSTMATCH"] == "1"
+                flow.postMatch = postMatch
+                flow.photo = HajinPickedPhoto(image: image.normalisedUp(), postMatch: postMatch)
             }
         }
         #endif
@@ -761,6 +823,8 @@ extension HajinScanHost {
     /// screen; anything else, like a 3D Printer recipe screen, is read for
     /// its have/need counts and the bank and goes straight to the review.
     fileprivate func route(_ picked: HajinPickedPhoto) {
+        // After a match it's always the backpack: straight to framing it
+        if flow.postMatch { flow.photo = HajinPickedPhoto(image: picked.image, postMatch: true); return }
         guard let cg = picked.image.cgImage else { return }
         let items = (store.guide?.items ?? []).filter(HajinStore.inStash)
         flow.sorting = true
@@ -822,11 +886,21 @@ struct HajinPickedPhoto: Identifiable {
     let image: UIImage
     /// The framing screen's state, kept with the photo so a rebuilt screen
     /// picks up where it was rather than finding the grid again
-    let frame = HajinFrameState()
+    let frame: HajinFrameState
+
+    init(image: UIImage, postMatch: Bool = false) {
+        self.image = image
+        frame = HajinFrameState(postMatch: postMatch)
+    }
 }
 
 /// What the framing screen has worked out for one photo.
 final class HajinFrameState: ObservableObject {
+    /// A backpack after a match (4 wide, to the post-match review) rather
+    /// than the stash
+    let postMatch: Bool
+    var columns: Int { postMatch ? HajinBackpack.columns : HajinStashGrid.columns }
+    init(postMatch: Bool = false) { self.postMatch = postMatch }
     @Published var quality: [HajinPhotoQuality] = []
     @Published var corners: [CGPoint] = [CGPoint(x: 0.15, y: 0.25), CGPoint(x: 0.85, y: 0.25), CGPoint(x: 0.85, y: 0.75), CGPoint(x: 0.15, y: 0.75)]
     @Published var reading = false
@@ -841,6 +915,7 @@ final class HajinFrameState: ObservableObject {
     /// Rows measured from the photo for the current frame (nil until known)
     @Published var rowCount: Int?
     @Published var result: HajinGridResult?
+    @Published var postMatchResult: HajinPostMatchResult?
 }
 
 /// The photo reader's flow: the intro sheet, the picked photo, the framing
@@ -866,8 +941,14 @@ final class HajinScanFlow: ObservableObject {
     /// The Premium sheet, from anywhere the scan flow reaches it
     @Published var showsPremium = false
 
+    /// Reading a backpack after a match rather than the stash
+    @Published var postMatch = false
+
     /// A reader button: the intro, which asks free players for an ad first.
-    func requestScan() { showsIntro = true }
+    func requestScan(postMatch: Bool = false) {
+        self.postMatch = postMatch
+        showsIntro = true
+    }
     /// "Add another photo": the counts read so far, and from how many
     /// photos, added to whatever the next photo reads
     var carried: [String: Int]?
@@ -948,7 +1029,7 @@ struct HajinStashGridFrameView: View {
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
                     .padding(.horizontal, 12)
                 }
-                Text("mw4.ui.hajin.grid_frame".localized())
+                Text((state.postMatch ? "mw4.ui.postmatch.frame" : "mw4.ui.hajin.grid_frame").localized())
                     .font(.subheadline)
                     .foregroundStyle(Color.appInkMuted)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -989,7 +1070,7 @@ struct HajinStashGridFrameView: View {
                 .padding(.horizontal, 8)
             }
             .background(Color.appBackground)
-            .navigationTitle("mw4.ui.hajin.grid_scan".localized())
+            .navigationTitle((state.postMatch ? "mw4.ui.postmatch.title" : "mw4.ui.hajin.grid_scan").localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -1011,6 +1092,9 @@ struct HajinStashGridFrameView: View {
                                          HajinScanFlow.shared.pickNext = false   // picked here, not by the host
                                          pickAfterReview = true
                                      })
+            }
+            .sheet(item: $state.postMatchResult) { r in
+                HajinPostMatchReview(result: r, onDone: { dismiss() })
             }
             .photosPicker(isPresented: $picking, selection: $newPick, matching: .images)
             .onChange(of: newPick) { chosen in
@@ -1045,7 +1129,11 @@ struct HajinStashGridFrameView: View {
                 let issues = await Task.detached(priority: .userInitiated) { HajinPhotoQuality.issues(cg) }.value
                 withAnimation(.snappy) { state.quality = issues }
                 let started = Date()
-                let guess = await Task.detached(priority: .userInitiated) { HajinStashGridFinder.guess(cg) }.value
+                let postMatch = state.postMatch
+                let guess = await Task.detached(priority: .userInitiated) {
+                    postMatch ? HajinBackpack.guess(HajinStashScanner.lines(in: cg), size: CGSize(width: cg.width, height: cg.height))
+                              : HajinStashGridFinder.guess(cg)
+                }.value
                 // Let the scan run at least one sweep, so a quick find on a
                 // screenshot still reads as a scan rather than a flicker
                 let left = 1.3 - Date().timeIntervalSince(started)
@@ -1060,6 +1148,10 @@ struct HajinStashGridFrameView: View {
                 }
                 remeasure()
                 #if DEBUG
+                // SS_GRID_READ=1 without SS_GRID_CORNERS: read the guessed frame
+                if ProcessInfo.processInfo.environment["SS_GRID_READ"] == "1", ProcessInfo.processInfo.environment["SS_GRID_CORNERS"] == nil {
+                    read()
+                }
                 if ProcessInfo.processInfo.environment["SS_GRID_DEMO"] != nil {
                     try? await Task.sleep(for: .seconds(2))
                     read()
@@ -1071,6 +1163,12 @@ struct HajinStashGridFrameView: View {
                 // SS_GRID_CORNERS=x,y,... (fractions, TL TR BR BL) sets the
                 // frame and reads straight away, for screenshots
                 let v = (ProcessInfo.processInfo.environment["SS_GRID_CORNERS"] ?? "").split(separator: ",").compactMap { Double($0) }
+                // SS_POSTMATCH_SAMPLE=1: the sample review; =2 without its items, for the sections below them
+                if let sample = ProcessInfo.processInfo.environment["SS_POSTMATCH_SAMPLE"] {
+                    var r = HajinPostMatchResult.sample
+                    if sample == "2" { r.counts = ["stim": 2, "medkit": 1] }
+                    state.postMatchResult = r
+                }
                 if v.count == 8 {
                     state.moved = true
                     state.corners = stride(from: 0, to: 8, by: 2).map { CGPoint(x: v[$0], y: v[$0 + 1]) }
@@ -1107,15 +1205,16 @@ struct HajinStashGridFrameView: View {
     }
 
     private func frameLines(_ fit: CGSize) -> Path {
-        let rows = state.rowCount ?? HajinStashGrid.rows(for: state.corners, size: image.size)
+        let columns = state.columns
+        let rows = state.rowCount ?? HajinStashGrid.rows(for: state.corners, size: image.size, columns: columns)
         return Path { p in
             func at(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
                 let top = CGPoint(x: state.corners[0].x + (state.corners[1].x - state.corners[0].x) * u, y: state.corners[0].y + (state.corners[1].y - state.corners[0].y) * u)
                 let bottom = CGPoint(x: state.corners[3].x + (state.corners[2].x - state.corners[3].x) * u, y: state.corners[3].y + (state.corners[2].y - state.corners[3].y) * u)
                 return CGPoint(x: (top.x + (bottom.x - top.x) * v) * fit.width, y: (top.y + (bottom.y - top.y) * v) * fit.height)
             }
-            for c in 0...HajinStashGrid.columns {
-                let u = CGFloat(c) / CGFloat(HajinStashGrid.columns)
+            for c in 0...columns {
+                let u = CGFloat(c) / CGFloat(columns)
                 p.move(to: at(u, 0)); p.addLine(to: at(u, 1))
             }
             for r in 0...rows {
@@ -1128,9 +1227,15 @@ struct HajinStashGridFrameView: View {
     /// Counts the rows for the current frame in the background.
     private func remeasure() {
         guard let cg = image.cgImage else { return }
-        let frame = state.corners
+        let frame = state.corners, columns = state.columns
+        // A backpack is a few rows of square tiles: its shape says how many
+        // (the stash's line counting is tuned to the stash's long grid)
+        if state.postMatch {
+            state.rowCount = HajinBackpack.rows(for: frame, size: image.size)
+            return
+        }
         Task.detached(priority: .utility) {
-            let n = HajinStashGrid.measureRows(cg, corners: frame)
+            let n = HajinStashGrid.measureRows(cg, corners: frame, columns: columns)
             await MainActor.run { if frame == state.corners { state.rowCount = n } }
         }
     }
@@ -1141,6 +1246,18 @@ struct HajinStashGridFrameView: View {
         let frame = state.corners
         let resources = (store.guide?.items ?? []).filter { $0.kind == "Resource" }
         let image = image, quality = state.quality, guess = state.guess, moved = state.moved
+        if state.postMatch {
+            let guide = store.guide
+            Task.detached(priority: .userInitiated) {
+                let lines = HajinStashScanner.lines(in: cg)
+                let result = HajinBackpack.read(cg, corners: frame, lines: lines, known: guide)
+                await MainActor.run {
+                    state.reading = false
+                    state.postMatchResult = result
+                }
+            }
+            return
+        }
         Task.detached(priority: .userInitiated) {
             let tiles = HajinStashGrid.read(cg, corners: frame)
             var totals = HajinStashGrid.totals(tiles)

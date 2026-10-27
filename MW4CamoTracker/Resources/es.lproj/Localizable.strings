@@ -456,3 +456,33 @@
 "mw4.ui.premium.per_year" = " / año";
 "mw4.ui.premium.perk_pins" = "Fija hasta 5 armas y ve todas las sugerencias";
 "mw4.ui.premium.more_suggestions" = "%d sugerencias más con Premium";
+
+/* After a match: the backpack reader */
+"mw4.ui.postmatch.card" = "Tras la partida";
+"mw4.ui.postmatch.card_hint" = "Lee tu mochila: qué vender, y lo que guardes va a tu alijo";
+"mw4.ui.postmatch.title" = "Tras la partida";
+"mw4.ui.postmatch.intro" = "Haz una foto o captura de tu mochila tras la extracción: el resumen de extracción o la pantalla de la mochila. La app lee cada casilla, te dice qué vender y añade lo que guardes a Mi alijo.";
+"mw4.ui.postmatch.tip_screen" = "Vale el resumen de extracción, o abre la mochila en el menú";
+"mw4.ui.postmatch.tip_whole" = "Que salga la mochila entera, con las ranuras seguras y el panel SORT al lado";
+"mw4.ui.postmatch.frame" = "Arrastra las esquinas a la cuadrícula de la mochila (sin las ranuras seguras de debajo).";
+"mw4.ui.postmatch.items" = "Extraído";
+"mw4.ui.postmatch.resources_footer" = "Del panel SORT. Se añaden a Mi alijo.";
+"mw4.ui.postmatch.sell_total" = "Vender %d";
+"mw4.ui.postmatch.sell_none" = "Nada que vender";
+"mw4.ui.postmatch.sold" = "Vendido";
+"mw4.ui.postmatch.keep" = "Guardar";
+"mw4.ui.postmatch.remove" = "Quitar";
+"mw4.ui.postmatch.blueprints" = "%d planos recogidos";
+"mw4.ui.postmatch.unread" = "%d casillas sin leer (armas y algo de equipo)";
+"mw4.ui.postmatch.blueprints_footer" = "Los marcados salen de tu lista de planos. Compara la suposición con la imagen.";
+"mw4.ui.postmatch.blueprint_pick" = "¿Qué plano?";
+"mw4.ui.postmatch.blueprint_clear" = "Ninguno";
+"mw4.ui.postmatch.blueprint_had" = "Ya marcado";
+"mw4.ui.postmatch.blueprint_guess" = "Parece %@";
+"mw4.ui.postmatch.manual" = "¿Traes un manual de arma?";
+"mw4.ui.postmatch.manual_found" = "Manual de arma recogido";
+"mw4.ui.postmatch.manual_hint" = "Marca su arma en Gunsmith prices para saber qué puedes comprar";
+"mw4.ui.postmatch.gear" = "Equipo y llaves";
+"mw4.ui.postmatch.spare" = "Sobra";
+"mw4.ui.postmatch.needed" = "Aún hace falta";
+"mw4.ui.postmatch.items_footer" = "Sobra lo que tus mejoras y recetas ya no necesitan (se ajusta en Sobrante para vender). Lo vendido no entra en Mi alijo. Desliza un error para corregirlo o quitarlo.";

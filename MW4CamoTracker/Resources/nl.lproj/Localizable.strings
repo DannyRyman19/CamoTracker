@@ -456,3 +456,33 @@
 "mw4.ui.premium.per_year" = " / jaar";
 "mw4.ui.premium.perk_pins" = "Pin tot 5 wapens en zie elke suggestie";
 "mw4.ui.premium.more_suggestions" = "Nog %d suggesties met Premium";
+
+/* After a match: the backpack reader */
+"mw4.ui.postmatch.card" = "Na de match";
+"mw4.ui.postmatch.card_hint" = "Lees je rugzak: wat je verkoopt, en wat je houdt gaat naar je opslag";
+"mw4.ui.postmatch.title" = "Na de match";
+"mw4.ui.postmatch.intro" = "Maak na je exfil een foto of screenshot van je rugzak: het extractieoverzicht of het rugzakscherm. De app leest elk vakje, zegt wat je kunt verkopen en zet wat je houdt in Mijn opslag.";
+"mw4.ui.postmatch.tip_screen" = "Het extractieoverzicht werkt, of open de rugzak in het menu";
+"mw4.ui.postmatch.tip_whole" = "Zet de hele rugzak in beeld, met de veilige vakken en het SORT-paneel ernaast";
+"mw4.ui.postmatch.frame" = "Sleep de hoeken naar het rugzakraster (zonder de veilige vakken eronder).";
+"mw4.ui.postmatch.items" = "Meegenomen";
+"mw4.ui.postmatch.resources_footer" = "Uit het SORT-paneel. Gaan naar Mijn opslag.";
+"mw4.ui.postmatch.sell_total" = "%d verkopen";
+"mw4.ui.postmatch.sell_none" = "Niets te verkopen";
+"mw4.ui.postmatch.sold" = "Verkocht";
+"mw4.ui.postmatch.keep" = "Houden";
+"mw4.ui.postmatch.remove" = "Weghalen";
+"mw4.ui.postmatch.blueprints" = "%d blauwdrukken opgepakt";
+"mw4.ui.postmatch.unread" = "%d vakjes niet gelezen (wapens en wat uitrusting)";
+"mw4.ui.postmatch.blueprints_footer" = "Afgevinkte gaan van je blauwdrukkenlijst af. Check de gok met de afbeelding.";
+"mw4.ui.postmatch.blueprint_pick" = "Welke blauwdruk?";
+"mw4.ui.postmatch.blueprint_clear" = "Geen van deze";
+"mw4.ui.postmatch.blueprint_had" = "Al afgevinkt";
+"mw4.ui.postmatch.blueprint_guess" = "Lijkt op %@";
+"mw4.ui.postmatch.manual" = "Een wapenhandleiding mee?";
+"mw4.ui.postmatch.manual_found" = "Wapenhandleiding opgepakt";
+"mw4.ui.postmatch.manual_hint" = "Vink het wapen aan bij Gunsmith prices om bij te houden wat je kunt kopen";
+"mw4.ui.postmatch.gear" = "Uitrusting en sleutels";
+"mw4.ui.postmatch.spare" = "Over";
+"mw4.ui.postmatch.needed" = "Nog nodig";
+"mw4.ui.postmatch.items_footer" = "Over is meer dan je upgrades en recepten nog nodig hebben (in te stellen bij Over om te verkopen). Verkochte spullen gaan niet naar Mijn opslag. Veeg over een fout om die te verbeteren of weg te halen.";

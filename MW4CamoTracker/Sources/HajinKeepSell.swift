@@ -49,11 +49,13 @@ struct HajinVerdict {
         }
     }
 
+    static let sellColor = Color(red: 0.42, green: 0.80, blue: 0.36)
+
     var color: Color {
         switch kind {
         case .keep: return Color(red: 0.96, green: 0.66, blue: 0.24)
         case .crafting: return Color(red: 0.36, green: 0.62, blue: 0.98)
-        case .sell: return Color(red: 0.42, green: 0.80, blue: 0.36)
+        case .sell: return Self.sellColor
         case .use, .resource: return Color(white: 0.7)
         }
     }
@@ -149,6 +151,21 @@ extension HajinStore {
     /// value: most valuable first.
     func spare() -> (lines: [(item: HajinGuide.Item, count: Int, worth: Int)], total: Int) {
         guard let guide else { return ([], 0) }
+        let need = keepNeeds()
+        let lines = stash.compactMap { id, have -> (item: HajinGuide.Item, count: Int, worth: Int)? in
+            guard let item = guide.item(id), let value = item.value, value > 0 else { return nil }
+            let extra = have - (need[id] ?? 0)
+            return extra > 0 ? (item, extra, extra * value) : nil
+        }
+        .sorted { $0.worth > $1.worth }
+        return (lines, lines.reduce(0) { $0 + $1.worth })
+    }
+
+    /// How many of each item to hold on to, by the Spare to sell options:
+    /// what unfinished upgrades need, one print of each recipe the player
+    /// has, what tracked items need, and the buffer on each ingredient.
+    func keepNeeds() -> [String: Int] {
+        guard let guide else { return [:] }
         let keepTracked = UserDefaults.standard.object(forKey: Self.spareTrackedKey) as? Bool ?? true
         let buffer = UserDefaults.standard.integer(forKey: Self.spareBufferKey)
         let keepRecipes = UserDefaults.standard.object(forKey: Self.spareRecipesKey) as? Bool ?? true
@@ -169,13 +186,10 @@ extension HajinStore {
         for id in recipes {
             for part in guide.item(id)?.cost ?? [] { need[part.item, default: 0] += part.qty }
         }
-        let lines = stash.compactMap { id, have -> (item: HajinGuide.Item, count: Int, worth: Int)? in
-            guard let item = guide.item(id), let value = item.value, value > 0 else { return nil }
-            let extra = have - (need[id] ?? 0) - (item.kind == "Ingredient" ? buffer : 0)
-            return extra > 0 ? (item, extra, extra * value) : nil
+        if buffer > 0 {
+            for item in guide.items ?? [] where item.kind == "Ingredient" { need[item.id, default: 0] += buffer }
         }
-        .sorted { $0.worth > $1.worth }
-        return (lines, lines.reduce(0) { $0 + $1.worth })
+        return need
     }
 }
 

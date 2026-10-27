@@ -456,3 +456,33 @@
 "mw4.ui.premium.per_year" = " / an";
 "mw4.ui.premium.perk_pins" = "Épinglez jusqu'à 5 armes et voyez toutes les suggestions";
 "mw4.ui.premium.more_suggestions" = "%d suggestions de plus avec Premium";
+
+/* After a match: the backpack reader */
+"mw4.ui.postmatch.card" = "Après la partie";
+"mw4.ui.postmatch.card_hint" = "Lis ton sac : quoi vendre, et ce que tu gardes va dans ta réserve";
+"mw4.ui.postmatch.title" = "Après la partie";
+"mw4.ui.postmatch.intro" = "Prends une photo ou une capture de ton sac après l'exfil : le résumé d'extraction ou l'écran du sac. L'app lit chaque case, te dit quoi vendre et ajoute ce que tu gardes à Ma réserve.";
+"mw4.ui.postmatch.tip_screen" = "Le résumé d'extraction marche, ou ouvre le sac dans le menu";
+"mw4.ui.postmatch.tip_whole" = "Tout le sac dans le cadre, avec les emplacements sécurisés et le panneau SORT à côté";
+"mw4.ui.postmatch.frame" = "Place les coins sur la grille du sac (sans les emplacements sécurisés dessous).";
+"mw4.ui.postmatch.items" = "Ramené";
+"mw4.ui.postmatch.resources_footer" = "Du panneau SORT. Ajoutées à Ma réserve.";
+"mw4.ui.postmatch.sell_total" = "Vendre %d";
+"mw4.ui.postmatch.sell_none" = "Rien à vendre";
+"mw4.ui.postmatch.sold" = "Vendu";
+"mw4.ui.postmatch.keep" = "Garder";
+"mw4.ui.postmatch.remove" = "Retirer";
+"mw4.ui.postmatch.blueprints" = "%d plans récupérés";
+"mw4.ui.postmatch.unread" = "%d cases illisibles (armes et certains équipements)";
+"mw4.ui.postmatch.blueprints_footer" = "Ceux cochés quittent ta liste de plans. Vérifie la supposition avec l’image.";
+"mw4.ui.postmatch.blueprint_pick" = "Quel plan ?";
+"mw4.ui.postmatch.blueprint_clear" = "Aucun";
+"mw4.ui.postmatch.blueprint_had" = "Déjà coché";
+"mw4.ui.postmatch.blueprint_guess" = "Ressemble à %@";
+"mw4.ui.postmatch.manual" = "Un manuel d’arme ?";
+"mw4.ui.postmatch.manual_found" = "Manuel d’arme récupéré";
+"mw4.ui.postmatch.manual_hint" = "Coche son arme dans Gunsmith prices pour suivre ce que tu peux acheter";
+"mw4.ui.postmatch.gear" = "Équipement et clés";
+"mw4.ui.postmatch.spare" = "En trop";
+"mw4.ui.postmatch.needed" = "Encore utile";
+"mw4.ui.postmatch.items_footer" = "En trop, c’est au-delà de ce qu’il faut encore à tes améliorations et recettes (réglable dans Surplus à vendre). Ce qui est vendu ne va pas dans Ma réserve. Balaie une erreur pour la corriger ou la retirer.";

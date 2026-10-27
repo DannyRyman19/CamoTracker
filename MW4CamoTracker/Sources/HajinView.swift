@@ -373,11 +373,12 @@ struct HajinPagePicker: View {
 enum HajinMineCard: String, CaseIterable, Identifiable {
     // Default order: the scan, then the player's numbers and plan, then the
     // stash and the tools that work on it
-    case scan, level, cash, tracking, buildNext, stash, keepSell, shopping, blueprints
+    case scan, postMatch, level, cash, tracking, buildNext, stash, keepSell, shopping, blueprints
     var id: String { rawValue }
     var title: String {
         switch self {
         case .scan: return "mw4.ui.hajin.scan_card".localized()
+        case .postMatch: return "mw4.ui.postmatch.card".localized()
         case .level: return "mw4.ui.hajin.dmz_level".localized()
         case .cash: return "mw4.ui.hajin.cash_title".localized()
         case .tracking: return "mw4.ui.hajin.tracking".localized()
@@ -391,6 +392,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
     var symbol: String {
         switch self {
         case .scan: return "camera.viewfinder"
+        case .postMatch: return "bag.fill"
         case .level: return "chart.bar.fill"
         case .cash: return "banknote.fill"
         case .tracking: return "scope"
@@ -404,10 +406,14 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
 
     static let orderKey = "mw4_hajin_mine_order"
     static let hiddenKey = "mw4_hajin_mine_hidden"
-    /// Saved order, with any card added since appended in default order.
+    /// Saved order, with any card added since slotted in after the card
+    /// it follows by default.
     static func order(_ raw: String) -> [HajinMineCard] {
         var out = raw.split(separator: ",").compactMap { HajinMineCard(rawValue: String($0)) }
-        for card in allCases where !out.contains(card) { out.append(card) }
+        for (i, card) in allCases.enumerated() where !out.contains(card) {
+            let after = i > 0 ? out.firstIndex(of: allCases[i - 1]) : nil
+            out.insert(card, at: after.map { $0 + 1 } ?? (i == 0 ? 0 : out.count))
+        }
         return out
     }
 }
@@ -480,6 +486,8 @@ struct HajinMinePage: View {
                     HajinStashGridButton(bare: true).hajinCard()
                 }
             }
+        case .postMatch:
+            if #available(iOS 17.0, *) { HajinPostMatchButton() }
         case .level: HajinLevelCard().hajinCard()
         case .cash: HajinCashCard().hajinCard()
         case .tracking: HajinTrackingCard().hajinCard()
