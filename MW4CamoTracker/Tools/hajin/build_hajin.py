@@ -1,6 +1,6 @@
 """Builds MW4CamoTracker/Resources/hajin.json from the official Tac Map markers
 (markers.json) plus our own write-ups and guide tables below."""
-import os, json, sys
+import os, json, re, sys
 
 # python3 Tools/hajin/build_hajin.py [markers.json] [out.json]; defaults build
 # the bundled guide from the saved Activision Tac Map markers
@@ -24,6 +24,23 @@ CATS = [
     ("police", "Police Stations", "light.beacon.max.fill", "#9EB1FF", ["dmz_policeStation"], False),
     ("gas", "Gas Stations", "fuelpump.fill", "#B5B3AD", ["dmz_gasStation"], False),
     ("marine", "Marine Gas Stations", "sailboat.fill", "#7CE2FE", ["dmz_marineGasStation"], False),
+    # community layers (codex_map.json); the source names are dmzcodex layers
+    ("boss", "Boss Spawns", "exclamationmark.shield.fill", "#FF6369", [], True),
+    ("exfil", "Exfils", "arrow.up.circle.fill", "#00E5A0", ["exfils"], True),
+    ("spawn", "Player Spawns", "figure.walk", "#B197FC", ["player-spawns"], False),
+    ("safe", "Safes", "lock.square.fill", "#D4A72C", ["safes"], False),
+    ("hidden", "Hidden Caches", "archivebox.fill", "#C08532", ["hidden-caches"], False),
+    ("supply", "Lost Supply Drops", "shippingbox.circle.fill", "#86EAD4", ["lost-supply-drops"], False),
+    ("loot", "Loot Spots", "bag.fill", "#FFB224", ["loot-rockets", "loot-bags", "dead-corpses", "military-boxes",
+                                                    "medicine-cabinets", "pc-cases", "dressers", "refrigerators"], False),
+    ("deaddrop", "Dead Drops", "tray.and.arrow.down.fill", "#D19DFF", ["dead-drops"], False),
+    ("sam", "SAM Sites", "scope", "#E54D2E", ["sam-sites"], False),
+    ("radiation", "Radiation Zones", "exclamationmark.triangle.fill", "#BDEE63", ["radiation-zones"], False),
+    ("decon", "Decontamination", "shower.fill", "#99D52A", ["decontamination-stations"], False),
+    ("bounty", "Bounty Stations", "dollarsign.circle.fill", "#F1A10D", ["bounty-stations"], False),
+    ("phone", "Dynamic Op Phones", "phone.fill", "#8DA4EF", ["dynamic-ops-phone"], False),
+    ("vehicle", "Vehicle Sightings", "car.fill", "#D0B3FF", ["vehicle-sightings"], False),
+    ("silo", "Silos", "cylinder.fill", "#8E8C99", ["silos"], False),
 ]
 CAT_BLURB = {
     "fortress": "A Fortress: a heavily guarded stronghold with tougher enemies and better loot.",
@@ -37,7 +54,24 @@ CAT_BLURB = {
     "gas": "Gas Station: refuel vehicles here.",
     "marine": "Marine Gas Station: refuel boats here.",
     "key": "A locked room. Find its key in Hajin (keys can drop from Lieutenants) and bring it here; the key's description names its grid square.",
+    "boss": "Where this boss is usually reported. Lieutenants aren't in every deployment: buy their intel on the Boss Board, or climb a Lieutenant Tower to find the nearest one.",
+    "exfil": "A helicopter exfil site. Only some are active each deployment, so check your Tac Map. Call it in and hold the area until you can board.",
+    "spawn": "Where squads start a deployment. Expect another squad nearby at the start.",
+    "safe": "A safe to crack for cash and valuables. Opening safes is a DMZ Order objective too.",
+    "hidden": "A hidden loot cache, tucked away off the main routes.",
+    "supply": "A lost supply drop can land here. It isn't there every deployment; opening one completes the Side Op.",
+    "loot": "Lootable spots players have reported: rockets, bags, bodies and containers worth checking.",
+    "deaddrop": "A dead-drop container, where mission and Order items are handed in.",
+    "sam": "Hack and defend a SAM site to turn its missiles on enemy aircraft, Deathstalker included.",
+    "radiation": "Radiation reported here. Bring a gas mask and radiation gear, and check your Tac Map for the current spread.",
+    "decon": "Decontaminates an Irradiated Container.",
+    "bounty": "Check operator bounties or pay off your own here ($5,000).",
+    "phone": "Pick up the field phone here to start a Dynamic Operation.",
+    "vehicle": "Vehicles players have seen here. They move, get taken or get destroyed, so nothing is guaranteed.",
+    "silo": "A missile silo.",
 }
+# Community-reported spots, from dmzcodex.com/map (fetch_codex_map.py)
+CODEX = json.load(open(os.path.join(_HERE, "codex_map.json")))
 THREAT = {  # level 1 low .. 5 extreme
     "Imjin Farmland": 1, "Cheongun Village": 1, "Mirae General Hospital": 1, "Songdo Wharf": 1,
     "Cheonwang Peak Array": 2, "Wolves Stadium": 2, "Hajin River Heights": 2, "NuriGO East": 2,
@@ -119,6 +153,73 @@ for entry in KEY_ROOMS:
     markers.append({"id": kid, "cat": "key", "name": kname,
                     "x": round((x + dx - CROP[0]) / CROP[2], 4), "y": round((y + dy - CROP[1]) / CROP[2], 4), "note": knote})
 
+# Key doors players have pinned (dmzcodex.com/map): a room we already pin
+# moves onto its door, the rest become key rooms of their own
+DOOR_ALIASES = {"Rail Depot Storage": "Traindepot Storage Room", "Shopping DRC Weapons Locker": "Shopping DRC Locker",
+                "Black Market Weapons Locker": "Blackmarket Weapons Locker", "Key Room": "Locked room"}
+def door_name(label):
+    name = re.sub(r"(,| -| ·) [A-I]\d(, [A-I]\d)?$", "", label.replace("’", "'"))
+    name = re.sub(r" · .*$| (search )?area$", "", name)
+    return DOOR_ALIASES.get(name, name)
+UNKNOWN_ROOMS = {"Locked room", "Fire Station Storage", "Field Depot", "Mirae General Hospital Ward", "Silo Control Room",
+                 "Underground Equipment Storage", "Heavenly Luck Casino Ground Floor", "Rice Mill Bunker"}
+by_key_name = {m["name"]: m for m in markers if m["cat"] == "key"}
+for p in CODEX["pins"]:
+    if p["layer"] not in ("key-rooms", "keypad-doors"): continue
+    name, grid = door_name(p["label"]), re.search(r"[A-I]\d", p["label"][-6:])
+    rough = " area" in p["label"] or "reported location" in p["label"]
+    if p["layer"] == "keypad-doors":
+        markers.append({"id": "k-" + p["id"], "cat": "key", "name": "Eundeok Restaurant keypad door", "x": p["x"], "y": p["y"],
+                        "note": "A keypad-locked door players have reported around the Eundeok Restaurant, grid B7. The code isn't known yet."})
+        continue
+    if name in by_key_name and not by_key_name[name].get("moved"):
+        m = by_key_name[name]; m["x"], m["y"], m["moved"] = p["x"], p["y"], True
+        continue
+    at = f", grid {grid.group(0)}." if grid else "."
+    note = "A locked room players have reported" + at + " Which key opens it isn't known yet." if name in UNKNOWN_ROOMS else "The door its key opens" + at
+    if rough: note += " Roughly here: the exact door isn't pinned yet."
+    base = mid = "k-" + re.sub(r"[^a-z0-9]+", "-", name.lower().replace("'", "")).strip("-")
+    n = 1
+    while any(m["id"] == mid for m in markers): n += 1; mid = f"{base}-{n}"
+    markers.append({"id": mid, "cat": "key", "name": name, "x": p["x"], "y": p["y"], "note": note})
+    by_key_name.setdefault(name, markers[-1])["moved"] = True
+for m in markers: m.pop("moved", None)
+
+# Community layers: exfils, spawns, loot spots... one marker per pin
+CODEX_CATS = {"exfil", "spawn", "safe", "hidden", "supply", "loot", "deaddrop", "sam", "radiation", "decon", "bounty", "phone", "vehicle", "silo"}
+LAYER_CAT = {src: c[0] for c in CATS if c[0] in CODEX_CATS for src in c[4]}
+for p in CODEX["pins"]:
+    cid = LAYER_CAT.get(p["layer"])
+    if not cid: continue
+    name = re.sub(r" · ([A-I]\d)(, [A-I]\d)?$", r", \1\2", p["label"]).replace("’", "'")
+    markers.append({"id": "c-" + p["id"], "cat": cid, "name": name, "x": p["x"], "y": p["y"]})
+    counts[cid] = counts.get(cid, 0) + 1
+
+# Where each boss is usually reported (dmzcodex.com/bosses, the official
+# blog and the guide's boss notes): next to that place's marker
+BOSS_SPAWNS = [
+    ("Bale", "Admin Complex No. 2", "Lieutenant. Holds the Tank Depot in the Chang-san Air Base bunker (the Paid Intel Side Op). Some players report him at the Re-Education Center in Deadtown instead."),
+    ("Gorani", "Hanrim Village", "Lieutenant. A ghillie-suited sniper with an escort in the woods above Hanrim Village; also reported around Mujin Pass. Watch for decoys."),
+    ("Jang-ui", "NuriGO Mall", "Lieutenant. Camps in the NuriGO Mall shopping district; also reported in the upper server halls of the Netshin Tech Complex."),
+    ("The Doctor", "Mirae General Hospital", "Lieutenant. Mirae General Hospital. Sometimes drops The Doctor's Command Office key."),
+    ("Jin-Tae", "Heavenly Luck Casino", "Lieutenant. The casino gaming floor and the staff offices behind it."),
+    ("Scavenger", "Cheongun Village", "Lieutenant. Reported around Cheongun Village, including a car park on South Island, and in an Imjin Farmland warehouse."),
+    ("Iskra", "Cheonwang Peak Array", "Lieutenant. Up the stairs toward the Data Farm in the broadcast building. Her Control Room is upstairs too."),
+    ("Roze", "DBN Headquarters", "Lieutenant. Reported on the DBN Headquarters rooftop and in a dark parking garage, with a scoped rifle."),
+    ("The Chemist", "Haneul Nuclear Reactor", "Lieutenant. A blue-and-white warehouse beside the reactor's tanks; the yellow-suited Chemist waits near the rear bay. Bring radiation gear."),
+    ("The Warden", "14th Political Prison", "Lieutenant. The prison mess hall, carrying a riot shield. His key opens a sealed door under NuriGO Mall."),
+    ("Colossus", "The Citadel", "Commander. Roams and shows on your Tac Map: reported around the Citadel, the North Korean wilderness and the Air Base bunker."),
+    ("Deathstalker", "DBN Headquarters", "Commander. A huge drone that roams over The Grid and NuriGO Mall and shows on your Tac Map. A captured SAM site can shoot it down."),
+]
+_anchor = {}
+for m in markers:
+    if m["cat"] in ("area", "place", "fortress"): _anchor.setdefault(m["name"], m)
+_used = {}
+for boss, near, note in BOSS_SPAWNS:
+    a = _anchor[near]; n = _used[near] = _used.get(near, 0) + 1
+    markers.append({"id": "b-" + re.sub(r"[^a-z0-9]+", "-", boss.lower()).strip("-"), "cat": "boss", "name": boss,
+                    "x": round(a["x"] + 0.014 * n, 4), "y": round(a["y"] - 0.012, 4), "note": note})
+
 def rows(items): return [dict(zip(("title", "value", "subtitle"), r)) if isinstance(r, tuple) else r for r in items]
 
 LEVELS = [
@@ -177,7 +278,7 @@ guide = [
    ("Biomaterials", "Uncommon", "Medkit, Self-Revive Kit. Level 39 gives 2"), ("Rigid Synthetics", "Uncommon", "Medium Backpack, Disposable Parachute, Small Secure Backpack, Tempered Armor Vest. Sells for $200. Level 6 gives 2"),
    ("Reactive Metals", "Uncommon", "Industrial areas and toolboxes. 2-Plate Armor Vest, Armor Box, Secure Scavenger Backpack. Sells for $400. Level 11 gives 2"), ("Binding Catalyst", "Rare", "Medkit, Self-Revive Kit. Level 49 gives 2"),
    ("Stock Rod", "Rare", "Door Breacher Charge, Bomb Glider. Sells for $500. Level 51 gives 2"), ("Detonators", None, "Level 29 gives 2"),
-   ("Control Unit", None, "Level 38 gives 2"), ("Structural Alloy", "Rare", "Small Secure Backpack. Level 43 gives 2"), ("CPU", "Rare", "Level 44 gives 2"),
+   ("Control Unit", "Uncommon", "Level 38 gives 2"), ("Structural Alloy", "Rare", "Small Secure Backpack. Level 43 gives 2"), ("CPU", "Rare", "Level 44 gives 2"),
    ("Nitro Compounds", "Rare", "Level 47 gives 2"), ("High-Tenacity Fibers", "Rare", "Level 53 gives 2"),
    ("Printed Circuit Board", "Rare", "Level 56 gives 2"), ("Nylon Cloth", "Rare", "Level 57 gives 2"),
    ("Electronic Sensors", "Uncommon", "Stash upgrade (+18 slots). Sells for $800"),
@@ -262,6 +363,14 @@ guide = [
    ("Air Base Access Card - Multi Use", "B5", "Epic. Opens doors around Chang-san Air Base, and can be used more than once"),
    ("Weapons Mod Workshop", "B5", "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base"),
    ("Commandant Office", "B5", "Epic. The commandant's office on the second floor of Admin Complex No. 2, Chang-san Air Base"),
+   # dmzcodex.com/keys (2026-10-27)
+   ("Haejeok Radio Station", "D6", "Rare. The broadcast room in the white transmitter building under Imjin Suburb's red radio mast"),
+   ("Hanwoori Art Records Room", None, "Rare. The ground-floor records room of the Hanwoori Design Complex, The Grid"),
+   ("Jin-Tae's Private Lounge", "F4", "The upper-floor lounge of the Heavenly Luck Casino: take the lobby elevator to the penthouse. Reported as a drop from Jin-Tae"),
+   ("Gorani's Scout Overlook", "D8", "The Scout Overlook, reached from the Rice Mill roof, Imjin Farmland. Gorani sometimes drops it"),
+   ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
+   ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
+   ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
@@ -339,9 +448,11 @@ _vd.tier_upgrades(guide, items)
 _vd.new_pictures(items)
 _vd.sell_values(items)
 _vd.key_pictures(items)
+_vd.fob_pictures(items)
+_vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.31", "updated": "2026-10-25",
+data = {"version": "0.9.32", "updated": "2026-10-27",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

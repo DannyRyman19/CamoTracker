@@ -19,9 +19,16 @@ xcodebuild test -scheme MW4CamoTrackerTests -destination 'platform=iOS Simulator
 - `markers.json`: the official Activision Tac Map markers. Refresh with
   `curl -s 'https://map-vnext-server.infra-ext.activision.com/mapdata/all?mapPath=/content/atvi/callofduty/guides/web/en/modernwarfare4/dmz-maps/hajin' -o Tools/hajin/markers.json`
 - `imgmap.json`: item name to picture URL.
+- `codex_map.json`: community map layers from dmzcodex.com/map (exfils,
+  player spawns, safes and other loot spots, key doors, and where each key
+  turns up), already in our map's coordinates. Refresh with
+  `python3 Tools/hajin/fetch_codex_map.py`; it fits dmzcodex's crop of the
+  same official map onto ours from the markers both share, and stops if
+  the fit is off. Boss spawn areas are `BOSS_SPAWNS` in `build_hajin.py`.
 
 Pictures: an item gets `Images/DMZ/<item id>.png` and a trait gets
-`Images/DMZ/traits/<trait id>.png` when that file exists in this repo, so add
+`Images/DMZ/traits/<trait id>.png` when that file exists in this repo
+(FOB upgrades use their station's icon from `Images/DMZ/fob/`), so add
 the picture to `Images/DMZ` (it is served from camotracker.djr.li) and
 rebuild. Keys without their own picture use one per rarity.
 

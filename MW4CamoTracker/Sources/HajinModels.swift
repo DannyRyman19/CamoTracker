@@ -267,6 +267,12 @@ final class HajinStore: ObservableObject {
     static let maxTracked = 5
     static let maxLevel = 70
     static let hiddenKey = "mw4_hajin_hidden_categories"
+    /// The categories the player's saved filter was set against, so a
+    /// category added by a newer guide starts from its own default.
+    static let seenCategoriesKey = "mw4_hajin_seen_categories"
+    /// The categories before `seenCategoriesKey` was saved.
+    private static let firstCategories: Set<String> = ["area", "place", "fortress", "compound", "lieutenant", "uav", "key",
+                                                       "cache", "clinic", "fire", "police", "gas", "marine"]
 
     @Published private(set) var guide: HajinGuide?
     @Published var pins: [HajinPin] = [] {
@@ -538,15 +544,21 @@ final class HajinStore: ObservableObject {
     }
 
     /// Categories the player switched off on the map. Starts from each
-    /// category's own `visible` default until they touch a filter.
+    /// category's own `visible` default until they touch a filter, and so
+    /// does any category added since they last did.
     var hiddenCategories: Set<String> {
         get {
-            if let saved = defaults.array(forKey: Self.hiddenKey) as? [String] { return Set(saved) }
-            return Set(guide?.categories.filter { !$0.visible }.map(\.id) ?? [])
+            let categories = guide?.categories ?? []
+            guard let saved = defaults.array(forKey: Self.hiddenKey) as? [String] else {
+                return Set(categories.filter { !$0.visible }.map(\.id))
+            }
+            let seen = (defaults.array(forKey: Self.seenCategoriesKey) as? [String]).map(Set.init) ?? Self.firstCategories
+            return Set(saved).union(categories.filter { !$0.visible && !seen.contains($0.id) }.map(\.id))
         }
         set {
             objectWillChange.send()
             defaults.set(Array(newValue).sorted(), forKey: Self.hiddenKey)
+            defaults.set((guide?.categories ?? []).map(\.id), forKey: Self.seenCategoriesKey)
         }
     }
 

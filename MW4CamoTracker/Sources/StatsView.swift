@@ -8,6 +8,7 @@ import SwiftUI
 struct StatsView: View {
     @AppStorage(AppMode.playedKey) private var playedRaw = ""
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @EnvironmentObject private var hajin: HajinStore
     @State private var width: CGFloat = 0
 
     private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
@@ -62,6 +63,12 @@ struct StatsView: View {
                             .listRowInsets(Self.rowInsets)
                             .listRowBackground(Color.clear)
                     }
+                }
+
+                if modes.contains(.dmz), hajin.guide != nil {
+                    DMZStatsCard()
+                        .listRowInsets(Self.rowInsets)
+                        .listRowBackground(Color.clear)
                 }
 
                 SupportRow()
@@ -123,6 +130,84 @@ private struct OverallStatsHero: View {
         }
         .padding(.vertical, 20)
         .frame(maxHeight: fillsHeight ? .infinity : nil)
+        .borderedCard()
+    }
+}
+
+/// The DMZ grind beyond camos: DMZ level, FOB upgrades printed, blueprints
+/// and Manuals found, bosses taken down and missions done, from what's
+/// ticked on the DMZ tab. The ring is the average of the five.
+private struct DMZStatsCard: View {
+    @EnvironmentObject private var store: HajinStore
+
+    private struct Line: Identifiable {
+        let symbol: String
+        let title: String
+        let done: Int
+        let total: Int
+        var id: String { title }
+        var fraction: Double { total > 0 ? Double(done) / Double(total) : 0 }
+    }
+
+    private var lines: [Line] {
+        let guide = store.guide
+        let upgrades = (guide?.items ?? []).filter { $0.kind == "FOB Upgrade" }
+        func checks(_ section: String) -> [String] {
+            (guide?.guide.first { $0.id == section }?.rows ?? []).compactMap(\.check)
+        }
+        let bosses = checks("bosses"), ops = checks("ops")
+        let finds = store.findProgress
+        return [
+            Line(symbol: "chart.bar.fill", title: "mw4.ui.hajin.dmz_level".localized(), done: store.dmzLevel, total: HajinStore.maxLevel),
+            Line(symbol: "arrow.up.circle.fill", title: "mw4.ui.stats.dmz_upgrades".localized(),
+                 done: upgrades.filter { store.checked.contains("upgrade-\($0.id)") }.count, total: upgrades.count),
+            Line(symbol: "doc.text.magnifyingglass", title: "mw4.ui.stats.dmz_finds".localized(), done: finds.found, total: finds.total),
+            Line(symbol: "exclamationmark.shield.fill", title: "mw4.ui.stats.dmz_bosses".localized(),
+                 done: bosses.filter(store.checked.contains).count, total: bosses.count),
+            Line(symbol: "checklist", title: "mw4.ui.stats.dmz_ops".localized(),
+                 done: ops.filter(store.checked.contains).count, total: ops.count),
+        ].filter { $0.total > 0 }
+    }
+
+    var body: some View {
+        let lines = lines
+        let overall = lines.isEmpty ? 0 : lines.map(\.fraction).reduce(0, +) / Double(lines.count)
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 14) {
+                ProgressRing(fraction: overall, accent: .accentDMZ, lineWidth: 6, size: 56)
+                VStack(alignment: .leading, spacing: 2) {
+                    Label("mw4.ui.stats.dmz".localized(), systemImage: AppMode.dmz.symbol)
+                        .font(.headline)
+                        .foregroundStyle(Color.accentDMZ)
+                    if store.cash > 0 {
+                        Text("mw4.ui.hajin.cash_title".localized() + " $\(store.cash.formatted())")
+                            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            ForEach(lines) { line in
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 8) {
+                        Image(systemName: line.symbol)
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundStyle(Color.accentDMZ)
+                            .frame(width: 18)
+                        Text(line.title)
+                            .font(.subheadline)
+                            .foregroundStyle(Color.appInk)
+                        Spacer(minLength: 6)
+                        Text("\(line.done)/\(line.total)")
+                            .font(.system(size: 13, weight: .bold, design: .monospaced))
+                            .foregroundStyle(line.done >= line.total ? Color.accentDMZ : Color.appInkMuted)
+                    }
+                    ProgressBar(fraction: line.fraction, accent: .accentDMZ)
+                }
+                .accessibilityElement(children: .combine)
+            }
+        }
+        .padding(16)
         .borderedCard()
     }
 }

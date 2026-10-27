@@ -1,0 +1,2432 @@
+{
+ "source": "dmzcodex.com/map",
+ "fit": {
+  "shared": 95,
+  "worst": 1e-05
+ },
+ "pins": [
+  {
+   "layer": "exfils",
+   "id": "exfils-124",
+   "label": "Exfil, C6",
+   "x": 0.2432,
+   "y": 0.6254
+  },
+  {
+   "layer": "exfils",
+   "id": "exfils-125",
+   "label": "Exfil, D7",
+   "x": 0.3807,
+   "y": 0.7193
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-sam-deadtown-b7",
+   "label": "SAM Site — Deadtown, B7",
+   "x": 0.1065,
+   "y": 0.7577
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-sam-farmland-c7",
+   "label": "SAM Site — Imjin Farmland west, C8",
+   "x": 0.2616,
+   "y": 0.8027
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-dmzhub-23",
+   "label": "Radiation Zone, H7",
+   "x": 0.7675,
+   "y": 0.7141
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-107",
+   "label": "Exfil, D4",
+   "x": 0.3608,
+   "y": 0.4029
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-126",
+   "label": "Exfil, F8",
+   "x": 0.5721,
+   "y": 0.8878
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-127",
+   "label": "Exfil, I7",
+   "x": 0.8722,
+   "y": 0.7515
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-128",
+   "label": "SAM Site, I7",
+   "x": 0.8381,
+   "y": 0.7302
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-129",
+   "label": "SAM Site, G7",
+   "x": 0.599,
+   "y": 0.7392
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-130",
+   "label": "SAM Site, G7",
+   "x": 0.6431,
+   "y": 0.6994
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-131",
+   "label": "SAM Site, G6",
+   "x": 0.6389,
+   "y": 0.6563
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-132",
+   "label": "SAM Site, G7",
+   "x": 0.6816,
+   "y": 0.7986
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-dmzhub-133",
+   "label": "SAM Site, F8",
+   "x": 0.5527,
+   "y": 0.8027
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-136",
+   "label": "Exfil, G7",
+   "x": 0.6103,
+   "y": 0.7869
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-137",
+   "label": "Exfil, C5",
+   "x": 0.211,
+   "y": 0.5852
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-147",
+   "label": "Re-Education Center Annex, B7",
+   "x": 0.146,
+   "y": 0.7398
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-148",
+   "label": "The Doctor's Command Office, F5",
+   "x": 0.559,
+   "y": 0.5528
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-149",
+   "label": "Exfil, E4",
+   "x": 0.4449,
+   "y": 0.4888
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-150",
+   "label": "Exfil, B6",
+   "x": 0.1636,
+   "y": 0.5951
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-dmzhub-151",
+   "label": "Radiation Zone, C8",
+   "x": 0.2548,
+   "y": 0.8697
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-152",
+   "label": "Key Room, G6",
+   "x": 0.6622,
+   "y": 0.6154
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-dmzhub-161",
+   "label": "Radiation Zone, D6",
+   "x": 0.3058,
+   "y": 0.6152
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-162",
+   "label": "Police Station Armory · reported location, D3",
+   "x": 0.3354,
+   "y": 0.2919
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-163",
+   "label": "Fire Station Storage · reported location, D8",
+   "x": 0.3196,
+   "y": 0.8823
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-dmzhub-164",
+   "label": "Radiation Zone, F7",
+   "x": 0.5226,
+   "y": 0.7699
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-165",
+   "label": "Exfil, E7",
+   "x": 0.4792,
+   "y": 0.7848
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-166",
+   "label": "Exfil, C4",
+   "x": 0.2743,
+   "y": 0.4821
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-dmzhub-167",
+   "label": "Exfil, H6",
+   "x": 0.7322,
+   "y": 0.6814
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-168",
+   "label": "Gas Station Electrical Room, H7",
+   "x": 0.7367,
+   "y": 0.7431
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-169",
+   "label": "Coin Mining Den, G6",
+   "x": 0.6602,
+   "y": 0.6166
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-170",
+   "label": "Counting Room Vault, F4",
+   "x": 0.5577,
+   "y": 0.4443
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-171",
+   "label": "Vault Armory, F4",
+   "x": 0.5381,
+   "y": 0.4443
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-172",
+   "label": "Iskra's Control Room, F7",
+   "x": 0.4939,
+   "y": 0.701
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-supplement-173",
+   "label": "Field Depot, B5",
+   "x": 0.1378,
+   "y": 0.5591
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-supplement-174",
+   "label": "Gun Store Weapons Locker, I6",
+   "x": 0.8107,
+   "y": 0.6789
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-supplement-175",
+   "label": "Gun Store Weapons Locker, E4",
+   "x": 0.4805,
+   "y": 0.4349
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-supplement-176",
+   "label": "Radiation Zone, E8",
+   "x": 0.4582,
+   "y": 0.8531
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-supplement-177",
+   "label": "Exfil, C3",
+   "x": 0.2223,
+   "y": 0.3203
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-supplement-178",
+   "label": "Exfil, C5",
+   "x": 0.2157,
+   "y": 0.5483
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-supplement-179",
+   "label": "Exfil, H5",
+   "x": 0.7119,
+   "y": 0.5927
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-supplement-180",
+   "label": "Radiation Zone, D3",
+   "x": 0.3288,
+   "y": 0.3753
+  },
+  {
+   "layer": "silos",
+   "id": "cod-supplement-181",
+   "label": "Silo · C3, C4",
+   "x": 0.2591,
+   "y": 0.406
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-supplement-184",
+   "label": "Final Exfil, B1",
+   "x": 0.0985,
+   "y": 0.1559
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-supplement-propaganda-area",
+   "label": "Underground Propaganda Store Room area, B7",
+   "x": 0.1478,
+   "y": 0.7298
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-wolves-stadium-northern-exfil",
+   "label": "Wolves Stadium Northern Exfil, G7",
+   "x": 0.6248,
+   "y": 0.7368
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-hajin-river-heights-southern-spawn",
+   "label": "Hajin River Heights Southern Spawn area, H9",
+   "x": 0.7015,
+   "y": 0.9594
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-community-haneul-nuclear-reactor-radiation-area",
+   "label": "Haneul Nuclear Reactor Radiation Area, I4",
+   "x": 0.8083,
+   "y": 0.4586
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-wolves-stadium-southern-exfil",
+   "label": "Wolves Stadium Southern Exfil, F8",
+   "x": 0.5632,
+   "y": 0.8451
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-deadtown-western-exfil",
+   "label": "Deadtown Western Exfil, B7",
+   "x": 0.109,
+   "y": 0.7278
+  },
+  {
+   "layer": "dead-drops",
+   "id": "cod-community-hajin-river-heights-dead-drop",
+   "label": "Hajin River Heights Dead Drop, G8",
+   "x": 0.688,
+   "y": 0.8451
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-cheongun-village-southern-spawn",
+   "label": "Cheongun Village Southern Spawn area, F5",
+   "x": 0.491,
+   "y": 0.5293
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-tong-il-village-island-spawn",
+   "label": "Tong-il Village Island Spawn area, D3",
+   "x": 0.3752,
+   "y": 0.3714
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-mujin-pass-exfil",
+   "label": "Mujin Pass Exfil, E5",
+   "x": 0.4684,
+   "y": 0.594
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-hanuel-nuclear-reactor-southern-spawn",
+   "label": "Haneul Nuclear Reactor Southern Spawn area, I5",
+   "x": 0.8323,
+   "y": 0.5474
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-mirae-general-hospital-southern-exfil",
+   "label": "Mirae General Hospital Southern Exfil, G5",
+   "x": 0.6263,
+   "y": 0.5925
+  },
+  {
+   "layer": "dead-drops",
+   "id": "cod-community-nurigo-mall-dead-drop",
+   "label": "NuriGo Mall Dead Drop, H6",
+   "x": 0.7571,
+   "y": 0.6226
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-deadtown-northern-exfil",
+   "label": "Deadtown Northern Exfil, C6",
+   "x": 0.1962,
+   "y": 0.6466
+  },
+  {
+   "layer": "dead-drops",
+   "id": "cod-community-hanrim-village-dead-drop",
+   "label": "Hanrim Village Dead Drop, C2",
+   "x": 0.2023,
+   "y": 0.2271
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-deadtown-south-western-spawn",
+   "label": "Deadtown South Western Spawn area, A8",
+   "x": 0.0609,
+   "y": 0.8617
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-14th-political-prison-western-spawn",
+   "label": "14th Political Prison Western Spawn area, A3",
+   "x": 0.0759,
+   "y": 0.3233
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-jayon-warehouses-spawn",
+   "label": "Jayon Warehouses Spawn area, B1",
+   "x": 0.0985,
+   "y": 0.1444
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-community-songdo-wharf-northern-island-final-exfil",
+   "label": "Songdo Wharf Northern Island Final Exfil, I6",
+   "x": 0.8534,
+   "y": 0.6211
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-hajin-river-heights-south-eastern-spawn",
+   "label": "Hajin River Heights South Eastern Spawn area, I9",
+   "x": 0.8414,
+   "y": 0.9308
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-community-cheongun-village-western-bridge-spawn",
+   "label": "Cheongun Village Western Bridge Spawn area, E4",
+   "x": 0.4489,
+   "y": 0.406
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-militia-arms-depot",
+   "label": "Militia Arms Depot area, G7",
+   "x": 0.6835,
+   "y": 0.7985
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-mirae-general-hospital-ward",
+   "label": "Mirae General Hospital Ward area, F5",
+   "x": 0.5782,
+   "y": 0.5699
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-hanex-guard-station",
+   "label": "Hanex Guard Station area, G6",
+   "x": 0.6913,
+   "y": 0.6719
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-silo-control-room",
+   "label": "Silo Control Room area, A7",
+   "x": 0.0624,
+   "y": 0.7278
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-mechanic-s-shack",
+   "label": "Mechanic's Shack area, F5",
+   "x": 0.4992,
+   "y": 0.5149
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-commandant-office",
+   "label": "Commandant Office area, B6",
+   "x": 0.115,
+   "y": 0.597
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-utility-maintenance-storage",
+   "label": "Utility Maintenance Storage search area, I4",
+   "x": 0.8,
+   "y": 0.444
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-supplement-spawn-190",
+   "label": "Player spawn area, E9",
+   "x": 0.4496,
+   "y": 0.9558
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-supplement-spawn-191",
+   "label": "Player spawn area, B9",
+   "x": 0.1791,
+   "y": 0.9291
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-supplement-spawn-192",
+   "label": "Player spawn area, I7",
+   "x": 0.8618,
+   "y": 0.7905
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-supplement-spawn-193",
+   "label": "Dam Spawn Location area, D2",
+   "x": 0.3363,
+   "y": 0.2783
+  },
+  {
+   "layer": "bounty-stations",
+   "id": "cod-bounty-nurigo-east-h6",
+   "label": "NuriGO East rooftop Bounty Station, H6",
+   "x": 0.7412,
+   "y": 0.6593
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-02",
+   "label": "The Grid Ground vehicle Sighting, H6",
+   "x": 0.7386,
+   "y": 0.6381
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-07",
+   "label": "The Grid Ground vehicle Sighting, H6",
+   "x": 0.7536,
+   "y": 0.6804
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-footage-bounties-08",
+   "label": "The Grid SAM Site, H6",
+   "x": 0.7023,
+   "y": 0.6954
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-09",
+   "label": "The Grid Ground vehicle Sighting, H7",
+   "x": 0.7438,
+   "y": 0.7045
+  },
+  {
+   "layer": "dynamic-ops-phone",
+   "id": "cod-footage-bounties-10",
+   "label": "The Grid Dynamic Op Phone, H7",
+   "x": 0.7232,
+   "y": 0.7362
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-17",
+   "label": "Songdo Wharf Vehicle Sighting, I6",
+   "x": 0.8399,
+   "y": 0.6926
+  },
+  {
+   "layer": "dynamic-ops-phone",
+   "id": "cod-footage-bounties-18",
+   "label": "Songdo Wharf Dynamic Op Phone, I7",
+   "x": 0.8305,
+   "y": 0.7059
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-20",
+   "label": "Songdo Wharf Ground vehicle Sighting, I7",
+   "x": 0.8339,
+   "y": 0.7195
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-21",
+   "label": "Songdo Wharf Ground vehicle Sighting, I7",
+   "x": 0.8594,
+   "y": 0.7174
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-25",
+   "label": "Songdo Wharf Vehicle Sighting, I7",
+   "x": 0.8165,
+   "y": 0.7345
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-26",
+   "label": "Songdo Wharf Boat Sighting, I8",
+   "x": 0.8594,
+   "y": 0.8138
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-bounties-27",
+   "label": "Songdo Wharf Ground vehicle Sighting, I6",
+   "x": 0.805,
+   "y": 0.6887
+  },
+  {
+   "layer": "vehicle-sightings",
+   "id": "cod-footage-millzaa-north-vehicle-sightings",
+   "label": "North Mirae Ground Vehicle Sighting, G5",
+   "x": 0.6121,
+   "y": 0.5188
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-224",
+   "label": "Lucera Suite 703 Bedroom, H7",
+   "x": 0.6992,
+   "y": 0.6982
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-204",
+   "label": "Reactor DRC Locker, I4",
+   "x": 0.7965,
+   "y": 0.42
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-235",
+   "label": "Haksan School Armory, B7",
+   "x": 0.1727,
+   "y": 0.7118
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-dmzhub-213",
+   "label": "Blackmarket Weapons Locker, B7",
+   "x": 0.1348,
+   "y": 0.7667
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-134",
+   "label": "Loot bag · E8, E9",
+   "x": 0.4617,
+   "y": 0.9422
+  },
+  {
+   "layer": "pc-cases",
+   "id": "cod-survey-hajin-135",
+   "label": "Computer · E8, E9",
+   "x": 0.4579,
+   "y": 0.9459
+  },
+  {
+   "layer": "dressers",
+   "id": "cod-survey-hajin-138",
+   "label": "Furniture container · B8",
+   "x": 0.1695,
+   "y": 0.8978
+  },
+  {
+   "layer": "medicine-cabinets",
+   "id": "cod-survey-hajin-139",
+   "label": "Medical container · B8",
+   "x": 0.1715,
+   "y": 0.8972
+  },
+  {
+   "layer": "medicine-cabinets",
+   "id": "cod-survey-hajin-140",
+   "label": "Medical container · B8",
+   "x": 0.1634,
+   "y": 0.8968
+  },
+  {
+   "layer": "medicine-cabinets",
+   "id": "cod-survey-hajin-141",
+   "label": "Medical container · B8",
+   "x": 0.1765,
+   "y": 0.8941
+  },
+  {
+   "layer": "refrigerators",
+   "id": "cod-survey-hajin-142",
+   "label": "Refrigerator · B8",
+   "x": 0.1772,
+   "y": 0.8958
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-143",
+   "label": "Loot bag · C8",
+   "x": 0.182,
+   "y": 0.8897
+  },
+  {
+   "layer": "military-boxes",
+   "id": "cod-survey-hajin-144",
+   "label": "Military box · C8",
+   "x": 0.1853,
+   "y": 0.8693
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-145",
+   "label": "Loot bag · C8",
+   "x": 0.1804,
+   "y": 0.8661
+  },
+  {
+   "layer": "military-boxes",
+   "id": "cod-survey-hajin-146",
+   "label": "Military box · C8",
+   "x": 0.1797,
+   "y": 0.8688
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-153",
+   "label": "Loot bag · F8, F9",
+   "x": 0.5584,
+   "y": 0.9387
+  },
+  {
+   "layer": "dressers",
+   "id": "cod-survey-hajin-154",
+   "label": "Furniture container · F8, F9",
+   "x": 0.558,
+   "y": 0.9376
+  },
+  {
+   "layer": "medicine-cabinets",
+   "id": "cod-survey-hajin-155",
+   "label": "Medical container · F8, F9",
+   "x": 0.5589,
+   "y": 0.9368
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-156",
+   "label": "Loot bag · F8, F9",
+   "x": 0.5568,
+   "y": 0.9368
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-157",
+   "label": "Jacket loot container, F9",
+   "x": 0.5571,
+   "y": 0.9388
+  },
+  {
+   "layer": "pc-cases",
+   "id": "cod-survey-hajin-158",
+   "label": "Computer · F8, F9",
+   "x": 0.5519,
+   "y": 0.9406
+  },
+  {
+   "layer": "loot-bags",
+   "id": "cod-survey-hajin-159",
+   "label": "Loot bag · F8, F9",
+   "x": 0.5508,
+   "y": 0.9376
+  },
+  {
+   "layer": "medicine-cabinets",
+   "id": "cod-survey-hajin-160",
+   "label": "Medical container · F8, F9",
+   "x": 0.5521,
+   "y": 0.9389
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-survey-hajin-182",
+   "label": "Loot rocket · E8, E9",
+   "x": 0.4311,
+   "y": 0.9057
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-survey-hajin-185",
+   "label": "Loot rocket · I5, I6",
+   "x": 0.8491,
+   "y": 0.5961
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-survey-hajin-186",
+   "label": "Loot rocket · I5",
+   "x": 0.8515,
+   "y": 0.5919
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-survey-hajin-187",
+   "label": "Loot rocket · I5",
+   "x": 0.8574,
+   "y": 0.5895
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-188",
+   "label": "Hidden cache · I5, I6",
+   "x": 0.8583,
+   "y": 0.5998
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-189",
+   "label": "Hidden cache · F3, F4",
+   "x": 0.5508,
+   "y": 0.3965
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-198",
+   "label": "Haejeok Radio Station, D6",
+   "x": 0.3442,
+   "y": 0.678
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-survey-hajin-199",
+   "label": "Radiation area · I8, I9",
+   "x": 0.8777,
+   "y": 0.9209
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-survey-hajin-200",
+   "label": "Player starting area · D8, D9",
+   "x": 0.2944,
+   "y": 0.9557
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-survey-hajin-201",
+   "label": "Player starting area · G3, G4",
+   "x": 0.6043,
+   "y": 0.4088
+  },
+  {
+   "layer": "silos",
+   "id": "cod-survey-hajin-202",
+   "label": "Silo · A6, A7",
+   "x": 0.0604,
+   "y": 0.721
+  },
+  {
+   "layer": "silos",
+   "id": "cod-survey-hajin-203",
+   "label": "Silo · B2",
+   "x": 0.1761,
+   "y": 0.2587
+  },
+  {
+   "layer": "silos",
+   "id": "cod-survey-hajin-205",
+   "label": "Silo · D2, D3",
+   "x": 0.3021,
+   "y": 0.3261
+  },
+  {
+   "layer": "silos",
+   "id": "cod-survey-hajin-206",
+   "label": "Silo · A5",
+   "x": 0.0274,
+   "y": 0.5548
+  },
+  {
+   "layer": "silos",
+   "id": "cod-survey-hajin-207",
+   "label": "Silo · A7",
+   "x": 0.042,
+   "y": 0.8
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-208",
+   "label": "Hidden cache · C2, C3",
+   "x": 0.2689,
+   "y": 0.2941
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-209",
+   "label": "Hidden cache · B2, B3",
+   "x": 0.1153,
+   "y": 0.3029
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-210",
+   "label": "Police Weapon Depository area, G7",
+   "x": 0.6341,
+   "y": 0.7639
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-survey-hajin-212",
+   "label": "Player starting area · C1, C2",
+   "x": 0.2533,
+   "y": 0.2035
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-214",
+   "label": "Prison Encampment Storage - C3",
+   "x": 0.2376,
+   "y": 0.3634
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-survey-hajin-215",
+   "label": "SAM site · H8",
+   "x": 0.7683,
+   "y": 0.8779
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-survey-hajin-216",
+   "label": "SAM site · G5",
+   "x": 0.6683,
+   "y": 0.5932
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-survey-hajin-218",
+   "label": "Radiation area · B2, B3",
+   "x": 0.1467,
+   "y": 0.3197
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-219",
+   "label": "Inside a Rusty Old Shack, B2",
+   "x": 0.1446,
+   "y": 0.2401
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-220",
+   "label": "Highway Service Tunnel, C5",
+   "x": 0.2313,
+   "y": 0.5336
+  },
+  {
+   "layer": "decontamination-stations",
+   "id": "cod-survey-hajin-221",
+   "label": "Reactor decontamination station · I3, I4",
+   "x": 0.802,
+   "y": 0.4198
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-222",
+   "label": "Hidden cache · G5",
+   "x": 0.6433,
+   "y": 0.5456
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-survey-hajin-223",
+   "label": "Player starting area · C1",
+   "x": 0.2063,
+   "y": 0.1685
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-survey-hajin-227",
+   "label": "Lootable corpse · C2",
+   "x": 0.1845,
+   "y": 0.2476
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-survey-hajin-228",
+   "label": "Lootable corpse · B2",
+   "x": 0.1314,
+   "y": 0.2823
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-survey-hajin-229",
+   "label": "Lootable corpse · B2",
+   "x": 0.1648,
+   "y": 0.2843
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-survey-hajin-232",
+   "label": "SAM site · H4",
+   "x": 0.7706,
+   "y": 0.4545
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-survey-hajin-233",
+   "label": "Radiation area · D8, D9",
+   "x": 0.3472,
+   "y": 0.9058
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-234",
+   "label": "Hoesik Supply Room, D8",
+   "x": 0.3633,
+   "y": 0.8668
+  },
+  {
+   "layer": "safes",
+   "id": "cod-survey-hajin-236",
+   "label": "Safe · E7",
+   "x": 0.4452,
+   "y": 0.7876
+  },
+  {
+   "layer": "safes",
+   "id": "cod-survey-hajin-237",
+   "label": "Safe · G7",
+   "x": 0.6793,
+   "y": 0.7949
+  },
+  {
+   "layer": "safes",
+   "id": "cod-survey-hajin-238",
+   "label": "Safe · F8",
+   "x": 0.5145,
+   "y": 0.8551
+  },
+  {
+   "layer": "bounty-stations",
+   "id": "cod-survey-hajin-240",
+   "label": "Bounty Station · F4",
+   "x": 0.5005,
+   "y": 0.459
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-survey-hajin-241",
+   "label": "SAM site · F4, F5",
+   "x": 0.5159,
+   "y": 0.519
+  },
+  {
+   "layer": "bounty-stations",
+   "id": "cod-survey-hajin-242",
+   "label": "Bounty Station · D8",
+   "x": 0.3715,
+   "y": 0.8565
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-survey-hajin-244",
+   "label": "Lootable corpse · I4, I5",
+   "x": 0.8446,
+   "y": 0.5219
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-survey-hajin-245",
+   "label": "Lootable corpse · I4, I5",
+   "x": 0.8446,
+   "y": 0.513
+  },
+  {
+   "layer": "exfils",
+   "id": "cod-survey-hajin-247",
+   "label": "Final exfil · E4, F5",
+   "x": 0.4884,
+   "y": 0.4925
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-survey-hajin-248",
+   "label": "Hidden cache · G9",
+   "x": 0.6199,
+   "y": 0.9838
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-gangbyeon-apartment-b",
+   "label": "Gangbyeon Apartment B, G7",
+   "x": 0.6778,
+   "y": 0.7977
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-underground-equipment-storage",
+   "label": "Underground Equipment Storage, B7",
+   "x": 0.1432,
+   "y": 0.7265
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-fire-station-storage-central",
+   "label": "Fire Station Storage · additional location, E4",
+   "x": 0.4827,
+   "y": 0.4872
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-police-station-armory-south",
+   "label": "Police Station Armory · southern location, G7",
+   "x": 0.6377,
+   "y": 0.773
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-gorani-scout-overlook",
+   "label": "Gorani’s Scout Overlook, D8",
+   "x": 0.3562,
+   "y": 0.8274
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-casino-ground-floor",
+   "label": "Heavenly Luck Casino Ground Floor, F4",
+   "x": 0.5256,
+   "y": 0.4515
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-jin-tae-private-lounge",
+   "label": "Jin-Tae’s Private Lounge, F4",
+   "x": 0.5417,
+   "y": 0.4395
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-silo-control-room-central",
+   "label": "Silo Control Room · northern location, C4",
+   "x": 0.2617,
+   "y": 0.403
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-silo-control-room-west",
+   "label": "Silo Control Room · western location, A5",
+   "x": 0.0233,
+   "y": 0.5594
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-survey-hajin-citadel-secondary-control-room",
+   "label": "The Citadel Secondary Control Room, B3",
+   "x": 0.1703,
+   "y": 0.3511
+  },
+  {
+   "layer": "dead-drops",
+   "id": "cod-survey-hajin-deadtown-dead-drop",
+   "label": "Deadtown Dead Drop, B6",
+   "x": 0.1707,
+   "y": 0.6827
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-refresh-hajin-249",
+   "label": "Hidden cache · C4",
+   "x": 0.2262,
+   "y": 0.4735
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-refresh-hajin-250",
+   "label": "Bungalow loot rocket · C4",
+   "x": 0.2253,
+   "y": 0.4755
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-251",
+   "label": "Old Barber Shop, I7",
+   "x": 0.8121,
+   "y": 0.7724
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-252",
+   "label": "Safe east · B5",
+   "x": 0.1315,
+   "y": 0.5581
+  },
+  {
+   "layer": "radiation-zones",
+   "id": "cod-refresh-hajin-253",
+   "label": "Radiation area · H7, H8",
+   "x": 0.7477,
+   "y": 0.8335
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-254",
+   "label": "Shop Records Room, F7",
+   "x": 0.5679,
+   "y": 0.7833
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-255",
+   "label": "Safe · F6",
+   "x": 0.4923,
+   "y": 0.6912
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-refresh-hajin-256",
+   "label": "Player starting area · A6",
+   "x": 0.051,
+   "y": 0.6906
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-257",
+   "label": "Black Market Weapons Locker · C2",
+   "x": 0.2685,
+   "y": 0.2491
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-refresh-hajin-259",
+   "label": "Player starting area · B8, B9",
+   "x": 0.1145,
+   "y": 0.9034
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-260",
+   "label": "Rice Mill Bunker area, D8",
+   "x": 0.3513,
+   "y": 0.8286
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-261",
+   "label": "Imjin Mill Foreman's Office, D8",
+   "x": 0.3555,
+   "y": 0.8299
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-refresh-hajin-262",
+   "label": "Roze's High-Rise Armory, G6",
+   "x": 0.6561,
+   "y": 0.6657
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-264",
+   "label": "Safe west · H4, H5",
+   "x": 0.7692,
+   "y": 0.5369
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-refresh-hajin-265",
+   "label": "Loot rocket · E5",
+   "x": 0.3991,
+   "y": 0.5826
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-refresh-hajin-269",
+   "label": "Shopping Hacks · Story Mission spawn, G6",
+   "x": 0.6723,
+   "y": 0.6029
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-refresh-hajin-270",
+   "label": "Silent Ledger · Story Mission spawn, F5",
+   "x": 0.493,
+   "y": 0.5227
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-refresh-hajin-271",
+   "label": "Critical Extraction · Story Mission spawn, G5",
+   "x": 0.6703,
+   "y": 0.5343
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-272",
+   "label": "Safe east · H4, H5",
+   "x": 0.7725,
+   "y": 0.5392
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-273",
+   "label": "Safe south · E6",
+   "x": 0.4844,
+   "y": 0.6899
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-274",
+   "label": "Safe west · B5",
+   "x": 0.1203,
+   "y": 0.5625
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-275",
+   "label": "Safe north · E6",
+   "x": 0.4733,
+   "y": 0.6704
+  },
+  {
+   "layer": "safes",
+   "id": "cod-refresh-hajin-276",
+   "label": "Safe · G7, G8",
+   "x": 0.6779,
+   "y": 0.8026
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-refresh-hajin-277",
+   "label": "Hidden cache · E8, E9",
+   "x": 0.3917,
+   "y": 0.9331
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-executive-arms-auction",
+   "label": "Executive Arms Auction area, G6",
+   "x": 0.6756,
+   "y": 0.6571
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-netshin-it-room",
+   "label": "Netshin IT Room area, G6",
+   "x": 0.6429,
+   "y": 0.656
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-community-shopping-drc-locker",
+   "label": "Shopping DRC Weapons Locker area, H6",
+   "x": 0.7192,
+   "y": 0.6162
+  },
+  {
+   "layer": "sam-sites",
+   "id": "cod-community-cheongun-village-northern-sam-site",
+   "label": "Cheongun Village Northern SAM Site, E4",
+   "x": 0.4789,
+   "y": 0.406
+  },
+  {
+   "layer": "keypad-doors",
+   "id": "cod-review-hajin-20261024-279",
+   "label": "Eundeok Restaurant keypad-door area, B7",
+   "x": 0.1449,
+   "y": 0.7569
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261024-281",
+   "label": "Deadtown sewer cache area, B7",
+   "x": 0.1614,
+   "y": 0.731
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261024-282",
+   "label": "Electrical hut cache area, F7",
+   "x": 0.5308,
+   "y": 0.6984
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-1",
+   "label": "Lost Supply Drop area · B6",
+   "x": 0.1064,
+   "y": 0.6519
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-2",
+   "label": "Lost Supply Drop area · C6, C7",
+   "x": 0.2466,
+   "y": 0.7128
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-3",
+   "label": "Lost Supply Drop area · H5",
+   "x": 0.7493,
+   "y": 0.5466
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-4",
+   "label": "Lost Supply Drop area · D4",
+   "x": 0.3586,
+   "y": 0.4695
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-5",
+   "label": "Lost Supply Drop area · E8",
+   "x": 0.4241,
+   "y": 0.8729
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-6",
+   "label": "Lost Supply Drop area · E6, E7",
+   "x": 0.4436,
+   "y": 0.7466
+  },
+  {
+   "layer": "lost-supply-drops",
+   "id": "cod-review-hajin-20261024-drop-7",
+   "label": "Lost Supply Drop area · F6",
+   "x": 0.5252,
+   "y": 0.6541
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261025-291",
+   "label": "Hidden cache · D4",
+   "x": 0.3432,
+   "y": 0.4871
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261025-293",
+   "label": "Hidden cache · D8",
+   "x": 0.3421,
+   "y": 0.9014
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261025-297",
+   "label": "Hidden cache · I7, I8",
+   "x": 0.8205,
+   "y": 0.8051
+  },
+  {
+   "layer": "hidden-caches",
+   "id": "cod-review-hajin-20261025-301",
+   "label": "Hidden cache · F5",
+   "x": 0.5092,
+   "y": 0.5733
+  },
+  {
+   "layer": "loot-rockets",
+   "id": "cod-review-hajin-20261025-304",
+   "label": "Loot rocket · E8",
+   "x": 0.4173,
+   "y": 0.8705
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-review-hajin-20261025-294",
+   "label": "Lootable corpse · I7",
+   "x": 0.8583,
+   "y": 0.7873
+  },
+  {
+   "layer": "dead-corpses",
+   "id": "cod-review-hajin-20261025-298",
+   "label": "Lootable corpse · B3",
+   "x": 0.1424,
+   "y": 0.3804
+  },
+  {
+   "layer": "key-rooms",
+   "id": "cod-review-hajin-20261025-296",
+   "label": "Rail Depot Storage area, E5",
+   "x": 0.4796,
+   "y": 0.496
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-ghbsmith-story-iron-citadel",
+   "label": "Iron Citadel · Story Mission spawn, A6",
+   "x": 0.0566,
+   "y": 0.6555
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-ghbsmith-story-grid-assault",
+   "label": "Grid Assault · Story Mission spawn, H6",
+   "x": 0.703,
+   "y": 0.663
+  },
+  {
+   "layer": "player-spawns",
+   "id": "cod-ghbsmith-story-fallen-ember",
+   "label": "Fallen Ember · Story Mission spawn, H5",
+   "x": 0.767,
+   "y": 0.539
+  }
+ ],
+ "keys": [
+  {
+   "name": "The Chemist's Secure Armory",
+   "doors": [
+    {
+     "name": "Haneul Nuclear Reactor",
+     "scope": "area",
+     "grid": "I4",
+     "x": 0.8,
+     "y": 0.444
+    }
+   ],
+   "sources": [
+    {
+     "name": "The Chemist at Haneul Nuclear Reactor",
+     "kind": "Reported boss drop"
+    }
+   ]
+  },
+  {
+   "name": "Gun Store Weapons Locker Key",
+   "doors": [
+    {
+     "name": "Gun Store Weapons Locker",
+     "scope": "door",
+     "grid": null,
+     "x": 0.8107,
+     "y": 0.6789
+    },
+    {
+     "name": "Gun Store Weapons Locker",
+     "scope": "door",
+     "grid": null,
+     "x": 0.4805,
+     "y": 0.4349
+    }
+   ],
+   "sources": []
+  },
+  {
+   "name": "Police Station Key",
+   "doors": [],
+   "sources": []
+  },
+  {
+   "name": "Black Market Weapons Locker Key",
+   "doors": [
+    {
+     "name": "Blackmarket Weapons Locker",
+     "scope": "door",
+     "grid": null,
+     "x": 0.1348,
+     "y": 0.7667
+    },
+    {
+     "name": "Black Market Weapons Locker · C2",
+     "scope": "area",
+     "grid": "C2",
+     "x": 0.2685,
+     "y": 0.2491
+    },
+    {
+     "name": "Hanrim Village",
+     "scope": "area",
+     "grid": "C2",
+     "x": 0.2534,
+     "y": 0.2429
+    }
+   ],
+   "sources": []
+  },
+  {
+   "name": "Iskra's Control Room",
+   "doors": [
+    {
+     "name": "Iskra's Control Room",
+     "scope": "door",
+     "grid": null,
+     "x": 0.4939,
+     "y": 0.701
+    }
+   ],
+   "sources": [
+    {
+     "name": "Iskra",
+     "kind": "Reported boss drop"
+    }
+   ]
+  },
+  {
+   "name": "Netshin IT Room",
+   "doors": [
+    {
+     "name": "Netshin IT Room area",
+     "scope": "area",
+     "grid": "G6",
+     "x": 0.6429,
+     "y": 0.656
+    }
+   ],
+   "sources": [
+    {
+     "name": "Residential lockers",
+     "kind": "Reported world loot"
+    }
+   ]
+  },
+  {
+   "name": "Reactor DRC Locker",
+   "doors": [
+    {
+     "name": "Reactor DRC Locker",
+     "scope": "door",
+     "grid": null,
+     "x": 0.7965,
+     "y": 0.42
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Fallen Ember",
+     "kind": "Mission reward"
+    }
+   ]
+  },
+  {
+   "name": "Counting Room Vault",
+   "doors": [
+    {
+     "name": "Counting Room Vault",
+     "scope": "door",
+     "grid": null,
+     "x": 0.5577,
+     "y": 0.4443
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Silent Ledger",
+     "kind": "Mission reward"
+    },
+    {
+     "name": "Rice Mill industrial locker",
+     "kind": "Observed world loot"
+    },
+    {
+     "name": "Haksan School Armory military locker",
+     "kind": "Reported world loot"
+    }
+   ]
+  },
+  {
+   "name": "Air Base DRC Weapons Locker",
+   "doors": [
+    {
+     "name": "Chang-san Air Base",
+     "scope": "area",
+     "grid": "B5–B6",
+     "x": 0.103,
+     "y": 0.5925
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Vault Armory",
+   "doors": [
+    {
+     "name": "Vault Armory",
+     "scope": "door",
+     "grid": null,
+     "x": 0.5381,
+     "y": 0.4443
+    }
+   ],
+   "sources": [
+    {
+     "name": "Songdo Wharf duffel",
+     "kind": "Reported world loot"
+    }
+   ]
+  },
+  {
+   "name": "The Citadel South Wing",
+   "doors": [
+    {
+     "name": "The Citadel",
+     "scope": "area",
+     "grid": "B3–C3",
+     "x": 0.1692,
+     "y": 0.35
+    }
+   ],
+   "sources": [
+    {
+     "name": "Prison guards at 14th Political Prison",
+     "kind": "Reported guard drop"
+    }
+   ]
+  },
+  {
+   "name": "Imjin Mill Foreman's Office",
+   "doors": [
+    {
+     "name": "Imjin Mill Foreman's Office",
+     "scope": "area",
+     "grid": "D8",
+     "x": 0.3555,
+     "y": 0.8299
+    }
+   ],
+   "sources": [
+    {
+     "name": "Other players' loot",
+     "kind": "Reported player loot"
+    }
+   ]
+  },
+  {
+   "name": "Haksan School Armory",
+   "doors": [
+    {
+     "name": "Haksan School Armory",
+     "scope": "door",
+     "grid": null,
+     "x": 0.1727,
+     "y": 0.7118
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Bank Branch Vault Access",
+   "doors": [],
+   "sources": [
+    {
+     "name": "Bank interior",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Re-Education Center Annex",
+   "doors": [
+    {
+     "name": "Re-Education Center Annex",
+     "scope": "area",
+     "grid": "B7",
+     "x": 0.146,
+     "y": 0.7398
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Train Depot Storageroom",
+   "doors": [
+    {
+     "name": "Rail Depot Storage area",
+     "scope": "area",
+     "grid": "E5",
+     "x": 0.4796,
+     "y": 0.496
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Mirae Electrical Room",
+   "doors": [
+    {
+     "name": "Mirae General Hospital",
+     "scope": "area",
+     "grid": "F5",
+     "x": 0.5752,
+     "y": 0.5429
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Critical Extraction",
+     "kind": "Mission reward"
+    }
+   ]
+  },
+  {
+   "name": "Coin Mining Den Key",
+   "doors": [
+    {
+     "name": "Coin Mining Den",
+     "scope": "door",
+     "grid": null,
+     "x": 0.6602,
+     "y": 0.6166
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Shopping Hacks",
+     "kind": "Mission reward"
+    }
+   ]
+  },
+  {
+   "name": "Supreme Leader Access Card",
+   "doors": [
+    {
+     "name": "Chang-san Air Base",
+     "scope": "area",
+     "grid": "B5–B6",
+     "x": 0.103,
+     "y": 0.5925
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Iron Citadel",
+     "kind": "Mission reward"
+    }
+   ]
+  },
+  {
+   "name": "Roze's High-Rise Armory",
+   "doors": [
+    {
+     "name": "Roze's High-Rise Armory",
+     "scope": "area",
+     "grid": "G6",
+     "x": 0.6561,
+     "y": 0.6657
+    }
+   ],
+   "sources": [
+    {
+     "name": "Operation Grid Assault",
+     "kind": "Mission reward"
+    }
+   ]
+  },
+  {
+   "name": "The Doctor's Command Office",
+   "doors": [
+    {
+     "name": "The Doctor's Command Office",
+     "scope": "door",
+     "grid": null,
+     "x": 0.559,
+     "y": 0.5528
+    }
+   ],
+   "sources": [
+    {
+     "name": "The Doctor",
+     "kind": "Boss drop"
+    }
+   ]
+  },
+  {
+   "name": "Shop Records Room",
+   "doors": [
+    {
+     "name": "Shop Records Room",
+     "scope": "area",
+     "grid": "F7",
+     "x": 0.5679,
+     "y": 0.7833
+    }
+   ],
+   "sources": [
+    {
+     "name": "Compound Charlie military bag",
+     "kind": "Reported container find"
+    }
+   ]
+  },
+  {
+   "name": "Police Weapon Depository",
+   "doors": [
+    {
+     "name": "Police Weapon Depository area",
+     "scope": "area",
+     "grid": "G7",
+     "x": 0.6341,
+     "y": 0.7639
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Underground Propaganda Store Room",
+   "doors": [
+    {
+     "name": "Underground Propaganda Store Room area",
+     "scope": "area",
+     "grid": "B7",
+     "x": 0.1478,
+     "y": 0.7298
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Executive Arms Auction",
+   "doors": [
+    {
+     "name": "Executive Arms Auction area",
+     "scope": "area",
+     "grid": "G6",
+     "x": 0.6756,
+     "y": 0.6571
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Reactor 02 Control Room",
+   "doors": [
+    {
+     "name": "Haneul Nuclear Reactor",
+     "scope": "area",
+     "grid": "H4–I4",
+     "x": 0.8,
+     "y": 0.444
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Gas Station Electrical Room",
+   "doors": [
+    {
+     "name": "Gas Station Electrical Room",
+     "scope": "area",
+     "grid": "H7",
+     "x": 0.7367,
+     "y": 0.7431
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Shopping DRC Locker",
+   "doors": [
+    {
+     "name": "Shopping DRC Weapons Locker area",
+     "scope": "area",
+     "grid": "H6",
+     "x": 0.7192,
+     "y": 0.6162
+    }
+   ],
+   "sources": [
+    {
+     "name": "Cheonwang Peak Array server-building safe",
+     "kind": "Observed safe find"
+    },
+    {
+     "name": "Random loot, container unspecified",
+     "kind": "Reported world loot"
+    }
+   ]
+  },
+  {
+   "name": "Mechanic's Shack",
+   "doors": [
+    {
+     "name": "Mechanic's Shack area",
+     "scope": "area",
+     "grid": "F5",
+     "x": 0.4992,
+     "y": 0.5149
+    }
+   ],
+   "sources": [
+    {
+     "name": "Train military lockers",
+     "kind": "Reported world loot"
+    }
+   ]
+  },
+  {
+   "name": "Militia Arms Depot",
+   "doors": [
+    {
+     "name": "Militia Arms Depot area",
+     "scope": "area",
+     "grid": "G7",
+     "x": 0.6835,
+     "y": 0.7985
+    }
+   ],
+   "sources": [
+    {
+     "name": "The Citadel East Wing",
+     "kind": "Observed world loot"
+    }
+   ]
+  },
+  {
+   "name": "Lucera Suite 703 Bedroom",
+   "doors": [
+    {
+     "name": "Lucera Suite 703 Bedroom",
+     "scope": "area",
+     "grid": "H7",
+     "x": 0.6992,
+     "y": 0.6982
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Jang-ui's Converted Power Room",
+   "doors": [
+    {
+     "name": "NuriGO Mall",
+     "scope": "area",
+     "grid": "H6",
+     "x": 0.709,
+     "y": 0.6165
+    }
+   ],
+   "sources": [
+    {
+     "name": "Jang-ui encounter at Netshin Tech Complex",
+     "kind": "Reported boss drop"
+    }
+   ]
+  },
+  {
+   "name": "Weapons Mod Workshop",
+   "doors": [
+    {
+     "name": "Chang-san Air Base",
+     "scope": "area",
+     "grid": "B5",
+     "x": 0.103,
+     "y": 0.5925
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Hazard Storehouse",
+   "doors": [
+    {
+     "name": "Haneul Nuclear Reactor",
+     "scope": "area",
+     "grid": "I4–I5",
+     "x": 0.8,
+     "y": 0.444
+    }
+   ],
+   "sources": [
+    {
+     "name": "Defeated operator at Cheongun Outskirts exfil",
+     "kind": "Reported player loot"
+    }
+   ]
+  },
+  {
+   "name": "Hanex Guard Station",
+   "doors": [
+    {
+     "name": "Hanex Guard Station area",
+     "scope": "area",
+     "grid": "G6",
+     "x": 0.6913,
+     "y": 0.6719
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Old Barber Shop",
+   "doors": [
+    {
+     "name": "Old Barber Shop",
+     "scope": "area",
+     "grid": "I7",
+     "x": 0.8121,
+     "y": 0.7724
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Hoesik Supply Room",
+   "doors": [
+    {
+     "name": "Hoesik Supply Room",
+     "scope": "area",
+     "grid": "D8",
+     "x": 0.3633,
+     "y": 0.8668
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Prison Encampment Storage",
+   "doors": [
+    {
+     "name": "14th Political Prison",
+     "scope": "area",
+     "grid": "C3",
+     "x": 0.1872,
+     "y": 0.3316
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Gangbyeon Apartment B",
+   "doors": [
+    {
+     "name": "Compound Echo",
+     "scope": "area",
+     "grid": "G7",
+     "x": 0.6744,
+     "y": 0.7951
+    }
+   ],
+   "sources": [
+    {
+     "name": "Compound Echo first apartment building",
+     "kind": "Observed loose-loot find"
+    }
+   ]
+  },
+  {
+   "name": "Mill Explosives Lab",
+   "doors": [
+    {
+     "name": "Rice Mill",
+     "scope": "area",
+     "grid": "D8",
+     "x": 0.3496,
+     "y": 0.8282
+    }
+   ],
+   "sources": [
+    {
+     "name": "Rice Mill control-room desk",
+     "kind": "Observed loose-loot find"
+    }
+   ]
+  },
+  {
+   "name": "Air Base Access Card - Multi Use",
+   "doors": [
+    {
+     "name": "Chang-san Air Base",
+     "scope": "area",
+     "grid": "B5",
+     "x": 0.103,
+     "y": 0.5925
+    }
+   ],
+   "sources": [
+    {
+     "name": "Iron Citadel mission search",
+     "kind": "Observed mission pickup"
+    }
+   ]
+  },
+  {
+   "name": "Jin-Tae's Private Lounge",
+   "doors": [
+    {
+     "name": "Jin-Tae’s Private Lounge",
+     "scope": "area",
+     "grid": "F4",
+     "x": 0.5417,
+     "y": 0.4395
+    }
+   ],
+   "sources": [
+    {
+     "name": "Lieutenant boss drop — creator description",
+     "kind": "Reported Lieutenant drop"
+    }
+   ]
+  },
+  {
+   "name": "Commandant Office",
+   "doors": [
+    {
+     "name": "Commandant Office area",
+     "scope": "area",
+     "grid": "B5–B6",
+     "x": 0.115,
+     "y": 0.597
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "The Citadel Main Control Room",
+   "doors": [
+    {
+     "name": "The Citadel",
+     "scope": "area",
+     "grid": "B3–C3",
+     "x": 0.1692,
+     "y": 0.35
+    }
+   ],
+   "sources": [
+    {
+     "name": "Citadel East Wing K9 terminal",
+     "kind": "Observed field pickup"
+    }
+   ]
+  },
+  {
+   "name": "South Block Armory",
+   "doors": [
+    {
+     "name": "The Citadel",
+     "scope": "area",
+     "grid": "B3–C3",
+     "x": 0.1692,
+     "y": 0.35
+    }
+   ],
+   "sources": [
+    {
+     "name": "Citadel main control-room counter",
+     "kind": "Observed field pickup"
+    }
+   ]
+  },
+  {
+   "name": "The Citadel Secondary Control Room",
+   "doors": [
+    {
+     "name": "The Citadel Secondary Control Room",
+     "scope": "area",
+     "grid": "B3",
+     "x": 0.1703,
+     "y": 0.3511
+    }
+   ],
+   "sources": [
+    {
+     "name": "Citadel South Wing control sequence",
+     "kind": "Observed field pickup"
+    }
+   ]
+  },
+  {
+   "name": "Utility Maintenance Storage",
+   "doors": [
+    {
+     "name": "Utility Maintenance Storage search area",
+     "scope": "area",
+     "grid": "H4–I4",
+     "x": 0.8,
+     "y": 0.444
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Hanwoori Art Records Room",
+   "doors": [
+    {
+     "name": "The Grid",
+     "scope": "area",
+     "grid": "G6–G7",
+     "x": 0.6477,
+     "y": 0.6823
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  },
+  {
+   "name": "Gorani's Scout Overlook",
+   "doors": [
+    {
+     "name": "Gorani’s Scout Overlook",
+     "scope": "landmark",
+     "grid": null,
+     "x": 0.3562,
+     "y": 0.8274
+    }
+   ],
+   "sources": [
+    {
+     "name": "Gorani",
+     "kind": "Boss drop"
+    }
+   ]
+  },
+  {
+   "name": "Haejeok Radio Station",
+   "doors": [
+    {
+     "name": "Imjin Farmland",
+     "scope": "area",
+     "grid": "D7",
+     "x": 0.3177,
+     "y": 0.7741
+    }
+   ],
+   "sources": [
+    {
+     "name": "Loot containers",
+     "kind": "World loot"
+    }
+   ]
+  }
+ ]
+}

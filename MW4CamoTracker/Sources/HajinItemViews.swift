@@ -816,7 +816,7 @@ struct HajinItemView: View {
     }
 
     private static func roman(_ n: Int) -> String {
-        ["I", "II", "III", "IV", "V"].indices.contains(n - 1) ? ["I", "II", "III", "IV", "V"][n - 1] : "\(n)"
+        HajinUpgradeFamilyCard.roman(n)
     }
 
     private func panelTitle(_ text: String) -> some View {
@@ -946,8 +946,8 @@ struct HajinUpgradeFamilyCard: View {
             ?? tiers.last!
     }
 
-    private static func roman(_ n: Int) -> String {
-        let all = ["I", "II", "III", "IV", "V"]
+    static func roman(_ n: Int) -> String {
+        let all = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
         return all.indices.contains(n - 1) ? all[n - 1] : "\(n)"
     }
 

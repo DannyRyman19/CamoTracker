@@ -116,7 +116,7 @@ UPGRADES = [
  ("Stash Weapon Upgrade I", "$50,000", "20 Reactive Metals, 10 Stock Rod, 5 Comms Module. +6 Stash weapon slots"),
  ("MIA Recovery Discount I", None, "5 Regional Combat Notes, 10 Control Unit, 10 Rigid Synthetics. Rescuing an MIA operator costs 5% less"),
  ("MIA Recovery Discount II", None, "5 Nuclear Program Files, 5 Degraded Execution Footage, 10 Binding Catalyst, 10 Nitro Compounds. Rescuing an MIA operator costs another 5% less, 10% with Discount I"),
- ("MIA Recovery Discount III", None, "5 W.M.D Manifest, 5 Foreign Intelligence Targets, 10 Power Regulator, 10 Comms Module. Rescuing an MIA operator costs another 5% less (reported; the cash cost isn't known yet)"),
+ ("MIA Recovery Discount III", None, "5 W.M.D Manifest, 5 Foreign Intelligence Targets, 10 Power Regulator, 10 Comms Module. Rescuing an MIA operator costs another 5% less"),
  ("Bank Upgrade I", "$20,000", "Cash only. Your Bank holds up to $250,000"),
  ("Bank Upgrade II", "$50,000", "Cash only. Your Bank holds up to $500,000"),
  ("Bank Upgrade III", "$100,000", "5 Infantry Invasion Plans. Your Bank holds up to $1 million"),
@@ -127,6 +127,20 @@ UPGRADES = [
  ("Epic Ingredient Printing", "$100,000", "10 Binding Catalyst, 10 Printed Circuit Board, 5 Military Composites. Print Alloyed Plating, Ballistic Fabric, Comms Module, Nylon Laminate, Power Regulator, Stabilized Reagents, Turned Components and Volatile Explosives"),
  ("Dog Tag Case Upgrade I", "$10,000", "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case"),
  ("Dog Tag Case Upgrade II", "$50,000", "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More dog tag storage"),
+ # the higher tiers, from the in-game upgrade lists the user sent (2026-10-27);
+ # Stash Item IV, Stash Weapon III and every MIA tier cost no cash
+ ("Bank Upgrade V", "$500,000", "10 Degraded Execution Footage. Your Bank holds up to $5 million"),
+ ("Bank Upgrade VI", "$500,000", "10 Nuclear Program Files, 10 Encrypted Archive. Your Bank holds up to $10 million"),
+ ("Bank Upgrade VII", "$500,000", "10 W.M.D Manifest. Your Bank holds up to $25 million"),
+ ("Bank Upgrade VIII", "$500,000", "10 Foreign Intelligence Targets, 10 Cipher Code Ledger. Your Bank holds up to $50 million"),
+ ("Bank Upgrade IX", "$500,000", "10 Sanctioned Assassination List. Your Bank holds up to $100 million"),
+ ("Stash Item Upgrade IV", None, "5 Gold Skull, 30 Alloyed Plating, 10 Experimental Compounds, 30 Turned Components. +18 Stash item slots"),
+ ("Stash Weapon Upgrade II", "$100,000", "20 Structural Alloy, 20 High-Tenacity Fibers, 10 Turned Components. +6 Stash weapon slots"),
+ ("Stash Weapon Upgrade III", None, "5 Gold Bar, 30 Stabilized Reagents, 30 Volatile Explosives, 10 Nano-Structured Alloy. +6 Stash weapon slots"),
+ ("MIA Recovery Discount IV", None, "5 Sanctioned Assassination List, 30 Ballistic Fabric, 30 Nylon Laminate, 10 Prototype RF Module. Rescuing an MIA operator costs another 5% less"),
+ # dmzcodex.com upgrade pages (2026-10-27), not confirmed in game yet
+ ("Gunsmith Upgrade II", "$100,000", "20 Nitro Compounds, 10 Comms Module, 10 Military Composites. Another 5% off at the Gunsmith (reported)"),
+ ("Vendor Item Upgrade II", None, "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported; the cash cost isn't known yet)"),
 ]
 GUNS = [
  ("Assault Rifles", [("Han 86", 6000, True), ("M4", 6250), ("Hyeon Burst", 5250), ("Kastov 762", 5500), ("Patriot XMR", 6500), ("Oden", 6250), ("Axion", 5750), ("Cronen Squall", 6750)]),
@@ -173,7 +187,7 @@ TRAITS = [
 NEW_INGREDIENTS = [
  ("Stabilized Reagents", "Epic", "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst"),
  ("Experimental Compounds", "Legendary", "3-Plate Ballistic Gel Vest"),
- ("Nano-Structured Alloy", None, "3-Plate Helmet Armor Vest"),
+ ("Nano-Structured Alloy", "Legendary", "3-Plate Helmet Armor Vest"),
  ("Alloyed Plating", None, "3-Plate Helmet Armor Vest, Medium Secure Backpack"),
  ("Turned Components", "Epic", "Parachute"),
  ("Comms Module", None, "Stash Weapon Upgrade, Uncommon Ingredient Printing"),
@@ -407,6 +421,22 @@ EXTRA_ITEMS = [
  {"id": "car-battery", "name": "Car Battery", "kind": "Gear", "rarity": "Uncommon", "value": 200, "note": "A repair item for vehicles. Where to find it isn't known yet"},
  {"id": "spark-plug", "name": "Spark Plug", "kind": "Gear", "rarity": "Uncommon", "value": 100, "note": "A repair item for vehicles. Where to find it isn't known yet"},
  {"id": "night-vision-goggles", "name": "Night Vision Goggles", "kind": "Gear", "value": None, "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"},
+ # dmzcodex.com/items (2026-10-27)
+ {"id": "radiation-gear", "name": "Radiation Gear", "kind": "Gear", "note": "Protects you in radiation; the Haneul Nuclear Reactor needs it and a Gas Mask. Search Fire Stations for it"},
+ {"id": "lieutenant-dog-tag-case", "name": "Lieutenant Dog Tag Case", "kind": "Valuable", "note": "Dropped when you kill a Lieutenant. Extract it for Boss Board progress"},
+ {"id": "weapon-insurance-contract", "name": "Weapon Insurance Contract", "kind": "Gear", "note": "Gets back an insured weapon you lose, up to the number of contracts you hold. Two come with the Vault Edition, and some DMZ Order pages give one"},
+ {"id": "operator-rescue-beacon", "name": "Operator Rescue Beacon", "kind": "Gear", "note": "Recovers an MIA operator without paying DMZ Cash. Two come with the Vault Edition, and some DMZ Order pages give one"},
+ {"id": "recipe", "name": "Recipe", "kind": "Gear", "note": "A recipe found in Hajin. Extract with it to add it to your 3D Printer; it's used up when you do"},
+ {"id": "steel-dog-tag", "name": "Steel Dog Tag", "kind": "Valuable", "note": "Looted from a downed operator. The tag's metal shows how far that operator has ranked up; store extracted tags in the Dog Tag Case"},
+ {"id": "bronze-dog-tag", "name": "Bronze Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
+ {"id": "silver-dog-tag", "name": "Silver Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
+ {"id": "gold-dog-tag", "name": "Gold Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
+ {"id": "damascus-dog-tag", "name": "Damascus Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
+ {"id": "onyx-dog-tag", "name": "Onyx Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
+ {"id": "counterfeit-cash", "name": "Counterfeit Cash", "kind": "Other", "note": "A DMZ Order item: in Execute Intel, hack a UAV Tower in Deadtown and loot it from the soldiers it pings"},
+ {"id": "k9-battery-core", "name": "K9 Battery Core", "kind": "Other", "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones"},
+ {"id": "drone-motherboard", "name": "Drone Motherboard", "kind": "Other", "note": "A DMZ Order item: in Death from Above, take it from a drone you destroy"},
+ {"id": "encrypted-voice-logs", "name": "Encrypted Voice Logs", "kind": "Other", "note": "A mission item: hack the communications broadcast system at Cheonwang Peak Array"},
 ]
 
 def link_rows(guide, items, weapons):
@@ -724,7 +754,7 @@ UPGRADE_GROUPS = [  # (name prefix, family, station group)
  ("Epic Ingredient Printing", "Ingredient Printing", "3D Printer"), ("MIA Recovery Discount", "MIA Recovery Discount", "Operators"),
  ("Dog Tag Case Upgrade", "Dog Tag Case Upgrade", "Dog Tag Case"),
 ]
-ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5}
+ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
 
 def tier_upgrades(guide, items):
     sec = next(s for s in guide if s["id"] == "upgrades")
@@ -875,3 +905,46 @@ def structured_ops(guide):
                     "Finish a random Story Mission three times a week for the weekly rewards. "
                     "Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. "
                     "A Bounty Station clears your bounty for $5,000; four kills make you Wanted.")
+
+# ---- Where keys turn up, from the sources players report (dmzcodex.com/map)
+KEY_ALIASES = {"supremeleaderaccesscard": "supreme-leaders-bunker-access-card"}
+# where the listed source reads badly as a sentence
+KEY_FOUND = {"jin-taes-private-lounge": "Dropped by Jin-Tae (reported)",
+             "jang-uis-converted-power-room": "Dropped by Jang-ui at the Netshin Tech Complex (reported)",
+             "shopping-drc-locker": "A safe in the Cheonwang Peak Array server building. Random loot elsewhere (reported)",
+             "air-base-access-card-multi-use": "Found during Operation Iron Citadel"}
+
+def key_sources(items, markers, codex_keys):
+    norm = lambda s: _re.sub(r"[^a-z0-9]", "", s.lower().replace("black market", "blackmarket").removesuffix(" key"))
+    by_norm = {norm(i["name"]): i for i in items if i["kind"] == "Key"}
+    places = sorted(((m["name"], m["id"]) for m in markers if m["cat"] in ("area", "place", "fortress")), key=lambda p: -len(p[0]))
+    for k in codex_keys:
+        n = norm(k["name"])
+        it = by_norm.get(n) or next((i for i in items if i["id"] == KEY_ALIASES.get(n)), None)
+        if not it or it.get("found") or not k["sources"]: continue
+        lines, found_at = [], []
+        for s in k["sources"]:
+            name, kind = s["name"], (s.get("kind") or "")
+            reported = kind.startswith("Reported")
+            if "Mission reward" in kind: line = f"A reward from {name}"
+            elif "drop" in kind.lower() and ("boss" in kind.lower() or "Lieutenant" in kind): line = f"Dropped by {name}"
+            elif name == "Loot containers": line = "Loot containers around Hajin"
+            else: line = name
+            lines.append(line + (" (reported)" if reported and not line.endswith(")") else ""))
+            low = name.lower()
+            for pname, mid in places:
+                if pname.lower() in low and mid not in found_at: found_at.append(mid); break
+        it["found"] = KEY_FOUND.get(it["id"]) or ". ".join(lines)
+        if found_at: it["foundPlaces"] = found_at
+
+# ---- FOB upgrades: each family shows its FOB station's icon
+FAMILY_PICTURE = {"Bank Upgrade": "bank", "Stash Item Upgrade": "stash", "Stash Weapon Upgrade": "stash",
+                  "MIA Recovery Discount": "operators", "Gunsmith Upgrade": "gunsmith", "Vendor Item Upgrade": "vendor",
+                  "Ingredient Printing": "printer", "Dog Tag Case Upgrade": "dog-tag-case"}
+
+def fob_pictures(items):
+    for it in items:
+        pic = FAMILY_PICTURE.get(it.get("family", ""))
+        if it["kind"] == "FOB Upgrade" and pic and "image" not in it:
+            it["image"] = IMG_BASE + "fob/" + pic + ".png?v=1"
+            it.pop("symbol", None)

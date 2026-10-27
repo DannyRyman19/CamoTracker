@@ -30,6 +30,7 @@ struct HajinStashScanIntro: View {
                             .font(.system(size: 11, weight: .bold)).tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
                         tip("photo.on.rectangle", "mw4.ui.hajin.grid_tip_screenshot", best: true)
+                        tip("crop", "mw4.ui.hajin.grid_tip_crop")
                         tip("camera.viewfinder", "mw4.ui.hajin.grid_tip_straight")
                         tip("square.grid.3x3", "mw4.ui.hajin.grid_tip_tab")
                         tip("sun.max", "mw4.ui.hajin.grid_tip_glare")
