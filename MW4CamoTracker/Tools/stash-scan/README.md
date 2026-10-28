@@ -24,13 +24,15 @@ python3 synth.py /tmp/stash/refs_other_unique /tmp/stash/syn 40   # one file per
 # tiles: train on 60 a class, picked at random (~7,400)
 python3 -c "import os,random;random.seed(1);s='/tmp/stash/syn';[os.makedirs(f'/tmp/stash/cap/{c}',exist_ok=True) or [os.link(f'{s}/{c}/{f}',f'/tmp/stash/cap/{c}/{f}') for f in random.sample(sorted(os.listdir(f'{s}/{c}')),min(60,len(os.listdir(f'{s}/{c}'))))] for c in os.listdir(s)]"
 swiftc -O train.swift -o /tmp/stash/train   # augmentation off: with ~125 classes it runs out of buffers
-/tmp/stash/train /tmp/stash/cap <real-tiles-dir> /tmp/stash/HajinStashIcons.mlmodel 25
+/tmp/stash/train /tmp/stash/cap real /tmp/stash/HajinStashIcons.mlmodel 25
 cp /tmp/stash/HajinStashIcons.mlmodel ../../Sources/
 ```
 
-`synth.py` needs Pillow (`/usr/bin/python3` on this Mac has it). The real
-tiles folder is for checking only: straightened 200 px tiles from real stash
-photos, in one folder per item id. The model uses Vision's scene print
+`synth.py` needs Pillow (`/usr/bin/python3` on this Mac has it). `real/` is
+for checking only: 200 px tiles cut from real stash and backpack photos and
+screenshots, in one folder per item id (161 on 2026-10-28; the model gets
+160). Add tiles from new photos there, especially of anything it misreads.
+The model uses Vision's scene print
 revision 2, so the feature is iOS 17+ (revision 1 works on iOS 16 but scored
 94% on real tiles against 100%).
 
