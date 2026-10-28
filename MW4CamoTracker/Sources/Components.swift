@@ -979,33 +979,33 @@ struct FilterSortMenu<T: Hashable>: View {
     @Binding var selection: T
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.system(size: 11, weight: .bold))
-                .textCase(.uppercase)
-                .foregroundStyle(Color.appInkMuted)
-            Menu {
-                Picker(title, selection: Binding(get: { selection }, set: { if $0 != selection { Haptics.step() }; selection = $0 })) {
-                    ForEach(options, id: \.self) { option in
-                        Text(label(option)).tag(option)
-                    }
+        // What it is and what it's set to in the one pill ("Sort  Default"),
+        // not a capitals label over it
+        Menu {
+            Picker(title, selection: Binding(get: { selection }, set: { if $0 != selection { Haptics.step() }; selection = $0 })) {
+                ForEach(options, id: \.self) { option in
+                    Text(label(option)).tag(option)
                 }
-            } label: {
-                HStack(spacing: 4) {
-                    Text(label(selection))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.85)
-                    Image(systemName: "chevron.up.chevron.down")
-                        .font(.system(size: 9, weight: .bold))
-                }
-                .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                .foregroundStyle(accent)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
-                .background(Capsule().fill(Color.appSurface2))
-                .overlay(Capsule().strokeBorder(accent.opacity(0.4), lineWidth: 1))
             }
+        } label: {
+            HStack(spacing: 6) {
+                Text(title)
+                    .foregroundStyle(Color.appInkMuted)
+                Text(label(selection))
+                    .foregroundStyle(accent)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                Image(systemName: "chevron.up.chevron.down")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundStyle(accent)
+            }
+            .font(.system(size: 13, weight: .semibold))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 9)
+            .background(Capsule().fill(Color.appSurface))
+            .overlay(Capsule().strokeBorder(Color.appSurface2, lineWidth: 1))
         }
+        .accessibilityLabel("\(title): \(label(selection))")
     }
 }
 

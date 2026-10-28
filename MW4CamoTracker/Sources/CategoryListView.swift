@@ -93,13 +93,14 @@ struct CategoryListView: View {
     private func chip(_ title: String, id: Int) -> some View {
         let on = classId == id
         return Button { classId = id } label: {
+            // Lit like the tab switchers: a tint of the accent and its edge
             Text(title)
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(on ? Color.black : Color.appInk)
-                .padding(.horizontal, 12)
+                .font(.hitmarker(14))
+                .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
+                .padding(.horizontal, 13)
                 .padding(.vertical, 7)
-                .background(on ? mode.accent : Color.appSurface, in: Capsule())
-                .overlay(Capsule().strokeBorder(Color.appInkMuted.opacity(on ? 0 : 0.25), lineWidth: 1))
+                .background(on ? mode.accent.opacity(0.18) : Color.appSurface, in: Capsule())
+                .overlay(Capsule().strokeBorder(on ? mode.accent.opacity(0.7) : Color.appSurface2, lineWidth: 1))
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("classChip.\(id)")
