@@ -35,7 +35,8 @@ struct HajinView: View {
         }
         .readingWidth($width)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) { HajinNumbersChip() }
+            // iPad: in the guide panel's header instead
+            if width < 700 { ToolbarItem(placement: .topBarTrailing) { HajinNumbersChip() } }
         }
         .navigationTitle("mw4.ui.hajin.title".localized())
         .navigationBarTitleDisplayMode(width >= 700 ? .inline : .automatic)
@@ -1182,6 +1183,9 @@ struct HajinGuidePanel: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            // A back row only once something is open; at the top the search
+            // row carries level and cash
+            if !stack.isEmpty {
             HStack(spacing: 8) {
                 if let page = stack.last {
                     // The chevron and the title together, at a full tap size
@@ -1196,8 +1200,6 @@ struct HajinGuidePanel: View {
                     .buttonStyle(.plain)
                     .foregroundStyle(Color.accentDMZ)
                     .accessibilityLabel("mw4.ui.hajin.guide".localized())
-                } else {
-                    Text("mw4.ui.hajin.guide".localized()).font(.headline).foregroundStyle(Color.appInk)
                 }
                 Spacer()
             }
@@ -1205,6 +1207,7 @@ struct HajinGuidePanel: View {
             .padding(.horizontal, 16)
             .padding(.top, 4)
             .padding(.bottom, 2)
+            }
 
             if case .item(let id) = stack.last {
                 HajinItemView(id: id)
@@ -1227,7 +1230,11 @@ struct HajinGuidePanel: View {
             .padding(.horizontal, 10)
             .padding(.vertical, 8)
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface2))
+            // Level and cash beside the search at the top (the app's own bar
+            // is the Weapons / DMZ / Stats switcher here, not a title bar)
+            .modifier(HajinTrailing(show: stack.isEmpty) { HajinNumbersChip(standalone: true) })
             .padding(.horizontal, 12)
+            .padding(.top, stack.isEmpty ? 10 : 0)
             .padding(.bottom, 6)
 
             if stack.last == .stash {
@@ -1973,9 +1980,23 @@ struct HajinNumbersCard: View {
     }
 }
 
+/// Something beside a view, when `show`.
+struct HajinTrailing<T: View>: ViewModifier {
+    let show: Bool
+    @ViewBuilder let trailing: () -> T
+    func body(content: Content) -> some View {
+        HStack(spacing: 8) {
+            content
+            if show { trailing() }
+        }
+    }
+}
+
 /// DMZ Level and Cash in the title bar, on every DMZ page: tap for the
 /// card that sets them.
 struct HajinNumbersChip: View {
+    /// Not in a toolbar, so no glass behind it: draw its own capsule
+    var standalone = false
     @EnvironmentObject private var store: HajinStore
     @State private var open = false
 
@@ -1991,7 +2012,15 @@ struct HajinNumbersChip: View {
             .font(.hitmarker(15))
             .padding(.horizontal, 6)
             // iOS 26 sets toolbar items on glass; before it, a capsule of our own
-            .background { if #unavailable(iOS 26.0) { Capsule().fill(Color.appSurface).padding(.vertical, -5) } }
+            .padding(.vertical, standalone ? 7 : 0)
+            .padding(.horizontal, standalone ? 6 : 0)
+            .background {
+                if standalone {
+                    Capsule().fill(Color.appSurface).overlay(Capsule().strokeBorder(Color.appSurface2, lineWidth: 1))
+                } else if #unavailable(iOS 26.0) {
+                    Capsule().fill(Color.appSurface).padding(.vertical, -5)
+                }
+            }
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\("mw4.ui.hajin.dmz_level".localized()) \(store.dmzLevel), \("mw4.ui.hajin.cash_title".localized()) $\(store.cash)")
