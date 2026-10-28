@@ -254,25 +254,27 @@ enum HajinStashGrid {
     }
 
     /// A tile's box with each side moved onto the tile's thin light outline
-    /// if one is near (a fifth of a tile either way), so the review's
+    /// if one is near (an eighth of a tile either way), so the review's
     /// highlight sits on the tile itself rather than on the frame's guess.
     /// A side with no clear line stays put.
     static func snapped(_ r: CGRect, _ grey: [UInt8], width w: Int, height h: Int) -> CGRect {
         guard grey.count == w * h, r.width > 20 else { return r }
-        let reach = Int(r.width * 0.2)
+        let reach = Int(r.width * 0.12)
         func at(_ x: Int, _ y: Int) -> Double { Double(grey[min(max(y, 0), h - 1) * w + min(max(x, 0), w - 1)]) }
-        // How much a line stands out from just either side of it
+        // How much a thin line stands out from both sides of it: the
+        // lesser of the two, so the edge of a bright patch (white space
+        // round the grid, a label), bright on one side only, scores nothing
         func vertical(_ x: Int) -> Double {
             let y0 = Int(r.minY + r.height * 0.2), y1 = Int(r.maxY - r.height * 0.2)
-            var line = 0.0, side = 0.0
-            for y in stride(from: y0, to: y1, by: 2) { line += at(x, y); side += (at(x - 3, y) + at(x + 3, y)) / 2 }
-            return (line - side) / Double(max((y1 - y0) / 2, 1))
+            var line = 0.0, before = 0.0, after = 0.0
+            for y in stride(from: y0, to: y1, by: 2) { line += at(x, y); before += at(x - 3, y); after += at(x + 3, y) }
+            return min(line - before, line - after) / Double(max((y1 - y0) / 2, 1))
         }
         func horizontal(_ y: Int) -> Double {
             let x0 = Int(r.minX + r.width * 0.2), x1 = Int(r.maxX - r.width * 0.2)
-            var line = 0.0, side = 0.0
-            for x in stride(from: x0, to: x1, by: 2) { line += at(x, y); side += (at(x, y - 3) + at(x, y + 3)) / 2 }
-            return (line - side) / Double(max((x1 - x0) / 2, 1))
+            var line = 0.0, before = 0.0, after = 0.0
+            for x in stride(from: x0, to: x1, by: 2) { line += at(x, y); before += at(x, y - 3); after += at(x, y + 3) }
+            return min(line - before, line - after) / Double(max((x1 - x0) / 2, 1))
         }
         func best(_ from: CGFloat, _ score: (Int) -> Double) -> CGFloat {
             let start = Int(from)
@@ -283,8 +285,8 @@ enum HajinStashGrid {
         let left = best(r.minX, vertical), right = best(r.maxX, vertical)
         let top = best(r.minY, horizontal), bottom = best(r.maxY, horizontal)
         // Still about a tile, or the snap's gone wrong: keep the box
-        guard right - left > r.width * 0.75, right - left < r.width * 1.25,
-              bottom - top > r.height * 0.75, bottom - top < r.height * 1.25 else { return r }
+        guard right - left > r.width * 0.85, right - left < r.width * 1.15,
+              bottom - top > r.height * 0.85, bottom - top < r.height * 1.15 else { return r }
         return CGRect(x: left, y: top, width: right - left, height: bottom - top)
     }
 

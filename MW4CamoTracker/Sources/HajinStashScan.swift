@@ -685,6 +685,13 @@ struct HajinStashScanReview: View {
                     fixButton("mw4.ui.hajin.scan_change", "arrow.left.arrow.right") { swapping = row.item }
                 }
                 fixButton("mw4.ui.hajin.scan_edit", "pencil") { editText = "\(row.read)"; editing = row.item }
+                // A misread to drop: the stash keeps what it has
+                if !same {
+                    fixButton("mw4.ui.postmatch.remove", "trash") {
+                        skip.insert(row.item.id)
+                        withAnimation(.snappy) { opened = nil }
+                    }
+                }
             }
             .transition(.opacity)
         }

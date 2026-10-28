@@ -78,3 +78,15 @@ struct HajinSnapTests {
         #expect(HajinStashGrid.snapped(box, grey, width: 300, height: 300) == box)
     }
 }
+
+/// A bright patch beside the tile (white space round the grid) isn't its outline.
+struct HajinSnapEdgeTests {
+    @Test func theEdgeOfABrightPatchIsNotAnOutline() {
+        let w = 300, h = 300
+        var grey = [UInt8](repeating: 30, count: w * h)
+        // White from x 190 rightwards: its edge is bright on one side only
+        for y in 0..<h { for x in 190..<w { grey[y * w + x] = 220 } }
+        let box = CGRect(x: 96, y: 96, width: 104, height: 104)
+        #expect(HajinStashGrid.snapped(box, grey, width: w, height: h) == box)
+    }
+}
