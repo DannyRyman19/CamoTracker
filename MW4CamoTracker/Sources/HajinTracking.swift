@@ -3,6 +3,8 @@ import SwiftUI
 /// − count + for one stash entry, tap the number to type it.
 struct HajinStashStepper: View {
     let id: String
+    /// The count large, as the headline number of a card
+    var big = false
     @EnvironmentObject private var store: HajinStore
     @State private var entering = false
     @State private var text = ""
@@ -16,8 +18,10 @@ struct HajinStashStepper: View {
                 entering = true
             } label: {
                 Text("\(count)")
-                    .font(.system(size: 14, weight: .bold, design: .monospaced))
-                    .foregroundStyle(count > 0 ? Color.accentDMZ : Color.appInkMuted)
+                    .font(big ? .hitmarker(30) : .system(size: 14, weight: .bold, design: .monospaced))
+                    .foregroundStyle(big ? (count > 0 ? Color.appInk : Color.appInkMuted) : count > 0 ? Color.accentDMZ : Color.appInkMuted)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                     .contentTransition(.numericText())
                     .frame(minWidth: 40)
             }

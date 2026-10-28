@@ -660,13 +660,27 @@ struct HajinItemView: View {
             HajinTrackButton(id: item.id)
         }
         if HajinStore.inStash(item) {
-            HStack {
-                Text("mw4.ui.hajin.in_stash".localized().uppercased())
-                    .font(.caption.weight(.semibold))
-                    .tracking(0.6)
-                    .foregroundStyle(Color.appInkMuted)
-                Spacer()
-                HajinStashStepper(id: item.id)
+            // How many you have and what one sells for, side by side, like
+            // My DMZ's level and cash
+            let have = store.count(of: item.id)
+            HStack(alignment: .top, spacing: 14) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("mw4.ui.hajin.in_stash".localized()).font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+                    HajinStashStepper(id: item.id, big: true)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                if let value = item.value {
+                    Rectangle().fill(Color.appSurface2).frame(width: 1)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("mw4.ui.hajin.sells_for".localized()).font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+                        Text("$\(value.formatted())").font(.hitmarker(30)).foregroundStyle(Color.appInk)
+                            .lineLimit(1).minimumScaleFactor(0.5)
+                        if have > 1 {
+                            Text("$\((value * have).formatted()) ×\(have)").font(.caption).foregroundStyle(Color.appInkMuted)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
             .padding(12)
             .background(panel)
@@ -804,16 +818,16 @@ struct HajinItemView: View {
         let lines: [(String, String)] = [
             item.cost == nil ? item.unlock.map { ("mw4.ui.hajin.unlock".localized(), $0.resolved) } : nil,
             item.grid.map { ("mw4.ui.hajin.grid".localized(), $0) },
-            item.value.map { ("mw4.ui.hajin.sells_for".localized(), "$\($0.formatted())") },
+            // In the stash card above for what My stash counts
+            HajinStore.inStash(item) ? nil : item.value.map { ("mw4.ui.hajin.sells_for".localized(), "$\($0.formatted())") },
             item.note.map { ("mw4.ui.hajin.notes".localized(), $0.resolved) },
         ].compactMap { $0 }
         if !lines.isEmpty {
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(Array(lines.enumerated()), id: \.offset) { index, line in
                     HStack(alignment: .firstTextBaseline, spacing: 12) {
-                        Text(line.0.uppercased())
+                        Text(line.0)
                             .font(.caption.weight(.semibold))
-                            .tracking(0.6)
                             .foregroundStyle(Color.appInkMuted)
                             .frame(width: 92, alignment: .leading)
                         Text(line.1).font(.subheadline).foregroundStyle(Color.appInk)
@@ -1009,11 +1023,12 @@ struct HajinItemView: View {
         HajinUpgradeFamilyCard.roman(n)
     }
 
+    /// A section's heading, as My DMZ's: Hitmarker, sentence case
     private func panelTitle(_ text: String) -> some View {
-        Text(text.uppercased())
-            .font(.caption.weight(.heavy))
-            .tracking(1.2)
-            .foregroundStyle(Color.appInkMuted)
+        Text(text)
+            .font(.hitmarker(18))
+            .foregroundStyle(Color.appInk)
+            .padding(.top, 4)
     }
 
     /// The panel, outlined in a colour when it has something to say.

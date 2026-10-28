@@ -88,8 +88,10 @@ struct HajinBlueprintsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 ForEach(groups, id: \.kind) { group in
-                    let have = group.items.filter { store.hasBlueprint($0.id) }.count
-                    HajinHeading(title: "\(group.kind)  \(have)/\(store.blueprints.filter { $0.kind == group.kind }.count)")
+                    // Out of the whole tab, not just the rows shown: Hide found
+                    // leaves the found ones out of the list
+                    let tab = store.blueprints.filter { $0.kind == group.kind }
+                    HajinHeading(title: "\(group.kind)  \(tab.filter { store.hasBlueprint($0.id) }.count)/\(tab.count)")
                     ForEach(group.items) { item in
                         HajinBlueprintRow(item: item).hajinCard()
                     }

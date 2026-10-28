@@ -34,6 +34,9 @@ struct HajinView: View {
             }
         }
         .readingWidth($width)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) { HajinNumbersChip() }
+        }
         .navigationTitle("mw4.ui.hajin.title".localized())
         .navigationBarTitleDisplayMode(width >= 700 ? .inline : .automatic)
         .navigationDestination(isPresented: $showsMap) { HajinMapScreen() }
@@ -80,7 +83,7 @@ struct HajinView: View {
         }
         .scrollContentBackground(.hidden)
         .listStyle(.plain)
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_guide".localized())
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "mw4.ui.hajin.search_guide".localized())
     }
 
     /// `SS_HAJIN=map`, `keep`, `stash` or `<section id>` opens that screen for the
@@ -385,14 +388,13 @@ struct HajinPagePicker: View {
 enum HajinMineCard: String, CaseIterable, Identifiable {
     // Default order: the scan, then the player's numbers and plan, then the
     // stash and the tools that work on it
-    case scan, postMatch, level, cash, tracking, buildNext, orders, upgrades, bosses, manuals, prestige, stash, keepSell, shopping, blueprints
+    // (DMZ Level and Cash sit in the title bar, on every page)
+    case scan, postMatch, tracking, buildNext, orders, upgrades, blueprints, bosses, manuals, prestige, stash, keepSell, shopping
     var id: String { rawValue }
     var title: String {
         switch self {
         case .scan: return "mw4.ui.hajin.scan_card".localized()
         case .postMatch: return "mw4.ui.postmatch.card".localized()
-        case .level: return "mw4.ui.hajin.dmz_level".localized()
-        case .cash: return "mw4.ui.hajin.cash_title".localized()
         case .tracking: return "mw4.ui.hajin.tracking".localized()
         case .buildNext: return "mw4.ui.hajin.build_next".localized()
         case .shopping: return "mw4.ui.hajin.shop".localized()
@@ -422,8 +424,6 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         switch self {
         case .scan: return "camera.viewfinder"
         case .postMatch: return "bag.fill"
-        case .level: return "chart.bar.fill"
-        case .cash: return "banknote.fill"
         case .tracking: return "scope"
         case .buildNext: return "hammer.fill"
         case .shopping: return "list.bullet.clipboard.fill"
@@ -487,8 +487,6 @@ struct HajinMinePage: View {
                 HajinReaderTiles(cards: readers)
             }
         }
-        let numbers = shown.filter { [.level, .cash].contains($0) }
-        if !numbers.isEmpty { HajinNumbersCard(cards: numbers).hajinCard() }
         ForEach(shown.filter { [.tracking, .buildNext].contains($0) }) { card in
             if card == .tracking { HajinTrackingCard().hajinCard() } else { HajinBuildNextCard().hajinCard() }
         }
@@ -1900,17 +1898,16 @@ struct HajinReaderTiles: View {
 /// DMZ Level and DMZ Cash in one card, side by side: the two numbers
 /// everything else is weighed against. Tap either to type it in.
 struct HajinNumbersCard: View {
-    let cards: [HajinMineCard]
+    private enum Field { case level, cash }
     @EnvironmentObject private var store: HajinStore
-    @State private var editing: HajinMineCard?
+    @State private var editing: Field?
     @State private var text = ""
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
-            ForEach(Array(cards.enumerated()), id: \.element) { i, card in
-                if i > 0 { Rectangle().fill(Color.appSurface2).frame(width: 1) }
-                if card == .level { level } else { cash }
-            }
+            level
+            Rectangle().fill(Color.appSurface2).frame(width: 1)
+            cash
         }
         .alert(editing == .cash ? "mw4.ui.hajin.cash_title".localized() : "mw4.ui.hajin.dmz_level".localized(),
                isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {
@@ -1972,6 +1969,42 @@ struct HajinNumbersCard: View {
                 .lineLimit(2)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// DMZ Level and Cash in the title bar, on every DMZ page: tap for the
+/// card that sets them.
+struct HajinNumbersChip: View {
+    @EnvironmentObject private var store: HajinStore
+    @State private var open = false
+
+    var body: some View {
+        Button { open = true } label: {
+            HStack(spacing: 8) {
+                Text("Lv ").font(.hitmarker(11)).foregroundColor(Color.appInkMuted)
+                    + Text(store.dmzLevel > 0 ? "\(store.dmzLevel)" : "–").foregroundColor(Color.appInk)
+                Rectangle().fill(Color.appInkMuted.opacity(0.4)).frame(width: 1, height: 14)
+                Text(store.cash > 0 ? "$" + Self.short(store.cash) : "$–")
+                    .foregroundStyle(Color.accentDMZ)
+            }
+            .font(.hitmarker(15))
+            .padding(.horizontal, 6)
+            // iOS 26 sets toolbar items on glass; before it, a capsule of our own
+            .background { if #unavailable(iOS 26.0) { Capsule().fill(Color.appSurface).padding(.vertical, -5) } }
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\("mw4.ui.hajin.dmz_level".localized()) \(store.dmzLevel), \("mw4.ui.hajin.cash_title".localized()) $\(store.cash)")
+        .popover(isPresented: $open) {
+            let card = HajinNumbersCard().padding(16).frame(minWidth: 320).environmentObject(store)
+            if #available(iOS 16.4, *) { card.presentationCompactAdaptation(.popover) } else { card }
+        }
+    }
+
+    /// 33,050 -> 33K, 1,250,000 -> 1.25M
+    static func short(_ n: Int) -> String {
+        if n >= 1_000_000 { return (Double(n) / 1_000_000).formatted(.number.precision(.fractionLength(0...2))) + "M" }
+        if n >= 10_000 { return "\(n / 1000)K" }
+        return n.formatted()
     }
 }
 
