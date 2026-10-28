@@ -854,6 +854,109 @@ extension HajinScanHost {
     }
 }
 
+/// From the framing screen: drag the box's corners in to just the stash (or
+/// the backpack), or drag inside it to move it, so the grid finder sees
+/// nothing else and the tiles fill more of the photo.
+struct HajinCropView: View {
+    let image: UIImage
+    let onDone: (UIImage) -> Void
+    let onCancel: () -> Void
+    /// The box, as fractions of the photo
+    @State private var box = CGRect(x: 0, y: 0, width: 1, height: 1)
+    @State private var boxAtStart = CGRect(x: 0, y: 0, width: 1, height: 1)
+    private let minSide: CGFloat = 0.1
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 12) {
+                Text("mw4.ui.hajin.crop_hint".localized())
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInkMuted)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                GeometryReader { geo in
+                    let fit = fitted(geo.size)
+                    let r = CGRect(x: box.minX * fit.width, y: box.minY * fit.height, width: box.width * fit.width, height: box.height * fit.height)
+                    ZStack(alignment: .topLeading) {
+                        Image(uiImage: image).resizable().frame(width: fit.width, height: fit.height)
+                        // Dim what's cut away
+                        Path { p in
+                            p.addRect(CGRect(origin: .zero, size: fit))
+                            p.addRect(r)
+                        }
+                        .fill(Color.black.opacity(0.6), style: FillStyle(eoFill: true))
+                        .allowsHitTesting(false)
+                        Rectangle()
+                            .strokeBorder(Color.accentDMZ, lineWidth: 2)
+                            .frame(width: r.width, height: r.height)
+                            .offset(x: r.minX, y: r.minY)
+                            .contentShape(Rectangle())
+                            // Drag inside to move the box
+                            .gesture(DragGesture().onChanged { g in move(g.translation, fit) }.onEnded { _ in boxAtStart = box })
+                        ForEach(0..<4, id: \.self) { i in
+                            let x = i == 0 || i == 3 ? r.minX : r.maxX
+                            let y = i < 2 ? r.minY : r.maxY
+                            Circle()
+                                .fill(Color.accentDMZ)
+                                .overlay(Circle().strokeBorder(Color.white, lineWidth: 2))
+                                .frame(width: 26, height: 26)
+                                .frame(width: 48, height: 48)
+                                .contentShape(Rectangle())
+                                .position(x: x, y: y)
+                                .gesture(DragGesture().onChanged { g in corner(i, g.translation, fit) }.onEnded { _ in boxAtStart = box })
+                        }
+                    }
+                    .frame(width: fit.width, height: fit.height)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                .padding(.horizontal, 12)
+            }
+            .padding(.vertical, 8)
+            .background(Color.appBackground)
+            .navigationTitle("mw4.ui.hajin.crop_title".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("mw4.ui.hajin.cancel".localized(), action: onCancel)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("mw4.ui.hajin.crop_done".localized()) { onDone(cropped()) }
+                        .font(.headline)
+                        .disabled(box == CGRect(x: 0, y: 0, width: 1, height: 1))
+                }
+            }
+        }
+    }
+
+    private func fitted(_ size: CGSize) -> CGSize {
+        let s = min(size.width / max(image.size.width, 1), size.height / max(image.size.height, 1))
+        return CGSize(width: image.size.width * s, height: image.size.height * s)
+    }
+
+    private func corner(_ i: Int, _ t: CGSize, _ fit: CGSize) {
+        let dx = t.width / fit.width, dy = t.height / fit.height
+        var minX = boxAtStart.minX, maxX = boxAtStart.maxX, minY = boxAtStart.minY, maxY = boxAtStart.maxY
+        if i == 0 || i == 3 { minX = min(max(0, minX + dx), maxX - minSide) } else { maxX = max(min(1, maxX + dx), minX + minSide) }
+        if i < 2 { minY = min(max(0, minY + dy), maxY - minSide) } else { maxY = max(min(1, maxY + dy), minY + minSide) }
+        box = CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
+    }
+
+    private func move(_ t: CGSize, _ fit: CGSize) {
+        let x = min(max(0, boxAtStart.minX + t.width / fit.width), 1 - boxAtStart.width)
+        let y = min(max(0, boxAtStart.minY + t.height / fit.height), 1 - boxAtStart.height)
+        box = CGRect(x: x, y: y, width: boxAtStart.width, height: boxAtStart.height)
+    }
+
+    /// The photo cut to the box (the whole photo when it's untouched).
+    private func cropped() -> UIImage {
+        guard box != CGRect(x: 0, y: 0, width: 1, height: 1), let cg = image.cgImage else { return image }
+        let px = CGRect(x: box.minX * CGFloat(cg.width), y: box.minY * CGFloat(cg.height),
+                        width: box.width * CGFloat(cg.width), height: box.height * CGFloat(cg.height)).integral
+        guard let cut = cg.cropping(to: px) else { return image }
+        return UIImage(cgImage: cut)
+    }
+}
+
 /// Whether a photo is good enough to read: sharp, lit, without glare, and
 /// big enough. Thresholds from the user's real stash photos against
 /// blurred and darkened copies of them.
@@ -985,6 +1088,7 @@ struct HajinStashGridFrameView: View {
     @State private var picking = false
     @State private var newPick: PhotosPickerItem?
     @State private var showsCamera = false
+    @State private var showsCrop = false
     /// Zoomed in on the photo to place the corners exactly
     @State private var zoom: CGFloat = 1
     @State private var zoomAtStart: CGFloat = 1
@@ -998,18 +1102,28 @@ struct HajinStashGridFrameView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 12) {
-                if !state.quality.isEmpty {
-                    // The photo looks poor: say why and offer another
+                let lost = !state.finding && state.guessed && state.guess == nil
+                if !state.quality.isEmpty || lost {
+                    // The photo looks poor or the grid wasn't found: say why,
+                    // and offer a crop to just the grid or another photo
                     HStack(alignment: .top, spacing: 10) {
                         Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
                         VStack(alignment: .leading, spacing: 4) {
+                            if lost {
+                                Text("mw4.ui.hajin.grid_not_found".localized()).font(.subheadline).foregroundStyle(Color.appInk)
+                            }
                             ForEach(state.quality, id: \.self) { issue in
                                 Text(issue.message).font(.subheadline).foregroundStyle(Color.appInk)
                             }
                             if onPicked != nil {
-                                anotherPhoto("mw4.ui.hajin.quality_retake".localized())
-                                    .font(.subheadline.weight(.semibold))
-                                    .foregroundStyle(Color.accentDMZ)
+                                HStack(spacing: 16) {
+                                    Button { showsCrop = true } label: {
+                                        Label("mw4.ui.hajin.crop_offer".localized(), systemImage: "crop")
+                                    }
+                                    anotherPhoto("mw4.ui.hajin.quality_retake".localized())
+                                }
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(Color.accentDMZ)
                             }
                         }
                         Spacer(minLength: 0)
@@ -1116,6 +1230,28 @@ struct HajinStashGridFrameView: View {
                     onPicked?(up)
                 }
                     .ignoresSafeArea()
+            }
+            .fullScreenCover(isPresented: $showsCrop) {
+                HajinCropView(image: image) { cropped in
+                    showsCrop = false
+                    onPicked?(cropped)
+                } onCancel: {
+                    showsCrop = false
+                }
+            }
+            .overlay(alignment: .bottomLeading) {
+                // Crop is always to hand, for a big photo with the grid small in it
+                if !state.finding && !state.reading && onPicked != nil {
+                    Button { showsCrop = true } label: {
+                        Label("mw4.ui.hajin.crop_title".localized(), systemImage: "crop")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.appInk)
+                            .padding(.horizontal, 14).padding(.vertical, 8)
+                            .background(Capsule().fill(Color.appSurface2))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.leading, 16).padding(.bottom, 24)
+                }
             }
             .overlay(alignment: .bottom) {
                 if state.finding || state.reading {

@@ -269,8 +269,14 @@ struct HajinZoomPhoto: View {
             }
                 .frame(width: geo.size.width, height: geo.size.height)
                 .onChange(of: marks.flatMap { $0 }.map(\.x)) { _ in focus(geo.size, fit) }
+                .onAppear { if !marks.isEmpty { focus(geo.size, fit) } }
                 .scaleEffect(scale)
                 .offset(offset)
+                // Zoomed, the photo spills past its box: only the box takes
+                // touches, or it swallows taps on the list below
+                .allowsHitTesting(false)
+                .frame(width: geo.size.width, height: geo.size.height)
+                .contentShape(Rectangle())
                 .gesture(MagnificationGesture()
                     .onChanged { scale = min(max(lastScale * $0, 1), 6) }
                     .onEnded { _ in lastScale = scale; clamp(geo.size) }
@@ -688,7 +694,11 @@ struct HajinStashScanReview: View {
         // With the photo: a drag on the list scrolls it, never moves the sheet
         // (and the photo with it); Cancel closes it
         .modifier(HajinScrollsNotSheet(on: photo != nil))
-        .onAppear { if photo != nil { detent = .large } }
+        .onAppear {
+            if photo != nil { detent = .large }
+            // Start with the first item that can be found on the photo lit
+            if highlighted == nil { highlighted = rows.first { !marks(for: $0.item.id).isEmpty }?.item.id }
+        }
     }
 
     #if DEBUG

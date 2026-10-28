@@ -366,6 +366,11 @@
 "mw4.ui.hajin.grid_frame" = "Drag the four circles to the outside corners of the tile grid. The lines show where each tile will be read.";
 "mw4.ui.hajin.grid_read" = "Read";
 "mw4.ui.hajin.grid_finding" = "Finding the grid...";
+"mw4.ui.hajin.crop_title" = "Crop";
+"mw4.ui.hajin.crop_hint" = "Drag the corners in to just your stash or backpack. It helps the reader find the grid.";
+"mw4.ui.hajin.crop_done" = "Crop";
+"mw4.ui.hajin.grid_not_found" = "Couldn't find the grid. Crop to just your stash, or drag the corners onto it.";
+"mw4.ui.hajin.crop_offer" = "Crop to the grid";
 "mw4.ui.hajin.grid_reading" = "Reading your stash...";
 "mw4.ui.hajin.zoom_hint" = "Pinch to zoom";
 "mw4.ui.hajin.grid_intro" = "Take a photo of your stash grid and the app reads every stack: which ingredient it is and how many. Stacks of the same thing are added up, and you check the totals before your stash is updated.";
