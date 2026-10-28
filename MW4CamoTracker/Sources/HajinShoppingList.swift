@@ -117,11 +117,10 @@ struct HajinShoppingListView: View {
         let targets = store.shoppingTargets(scope)
         let cash = targets.reduce(0) { $0 + ($1.cash ?? 0) }
         return VStack(alignment: .leading, spacing: 12) {
-            Picker("", selection: $scopeRaw) {
-                Text("mw4.ui.hajin.shop_all".localized()).tag(HajinStore.ShoppingScope.upgrades.rawValue)
-                Text("mw4.ui.hajin.shop_tracked".localized()).tag(HajinStore.ShoppingScope.tracked.rawValue)
-            }
-            .pickerStyle(.segmented)
+            SegmentTabs(selection: $scopeRaw, items: [
+                (HajinStore.ShoppingScope.upgrades.rawValue, "mw4.ui.hajin.shop_all".localized()),
+                (HajinStore.ShoppingScope.tracked.rawValue, "mw4.ui.hajin.shop_tracked".localized()),
+            ], accent: .accentDMZ)
             Text((scope == .upgrades ? "mw4.ui.hajin.shop_intro" : "mw4.ui.hajin.shop_intro_tracked").localized())
                 .font(.subheadline)
                 .foregroundStyle(Color.appInkMuted)

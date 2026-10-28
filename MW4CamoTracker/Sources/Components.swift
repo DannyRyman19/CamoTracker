@@ -1200,3 +1200,51 @@ enum Haptics {
         MainActor.assumeIsolated(body)
     }
 }
+
+/// The app's tab switcher, in place of a plain segmented picker: a
+/// loadout-menu bar where the picked tab is lit in the accent, with a bar
+/// along its foot, and the light slides across when you switch.
+struct SegmentTabs<T: Hashable>: View {
+    @Binding var selection: T
+    let items: [(value: T, title: String)]
+    var accent: Color = .accentMultiplayer
+    @Namespace private var light
+
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(items, id: \.value) { item in
+                let on = item.value == selection
+                Button {
+                    guard !on else { return }
+                    Haptics.step()
+                    withAnimation(.snappy(duration: 0.28)) { selection = item.value }
+                } label: {
+                    Text(item.title)
+                        .font(.hitmarker(15))
+                        .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 9)
+                        .background {
+                            if on {
+                                RoundedRectangle(cornerRadius: 6)
+                                    .fill(accent.opacity(0.18))
+                                    .overlay(alignment: .bottom) {
+                                        Capsule().fill(accent).frame(height: 2.5).padding(.horizontal, 14)
+                                    }
+                                    .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(accent.opacity(0.45), lineWidth: 1))
+                                    .matchedGeometryEffect(id: "light", in: light)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(on ? .isSelected : [])
+            }
+        }
+        .padding(4)
+        .background(RoundedRectangle(cornerRadius: 9).fill(Color.appSurface))
+        .overlay(RoundedRectangle(cornerRadius: 9).strokeBorder(Color.appSurface2, lineWidth: 1))
+    }
+}

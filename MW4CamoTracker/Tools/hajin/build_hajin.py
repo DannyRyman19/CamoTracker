@@ -314,15 +314,15 @@ guide = [
  {"id": "bosses", "title": "Bosses", "symbol": "scope",
   "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients.",
   "rows": rows([
-   ("Gorani", "Lieutenant", "Ghillie-suited sniper in the woods above Hanrim Village. Pays $10,000"),
+   ("Gorani", "Lieutenant", "Ghillie-suited sniper in the woods above Hanrim Village. Drops Gorani's Dog Tag (Legendary), which sells for $25,000"),
    ("Bale", "Lieutenant", "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract"),
    ("Jang-ui", "Lieutenant", "Camp in the NuriGO Mall shopping district"),
-   ("The Doctor", "Lieutenant", "Drops The Doctor's Dog Tag (Legendary), and sometimes The Doctor's Command Office key. Pays $10,000"),
-   ("Jin-Tae", "Lieutenant", "The target in Operation Critical Extraction. Drops Jin-Tae's Dog Tag (Legendary) and Radiation Blockers. Pays $10,000"),
-   ("Scavenger", "Lieutenant", "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000"),
-   ("Iskra", "Lieutenant", "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Pays $10,000"),
+   ("The Doctor", "Lieutenant", "Drops The Doctor's Dog Tag (Legendary), and sometimes The Doctor's Command Office key. Their dog tag sells for $25,000"),
+   ("Jin-Tae", "Lieutenant", "The target in Operation Critical Extraction. Drops Jin-Tae's Dog Tag (Legendary) and Radiation Blockers. Their dog tag sells for $25,000"),
+   ("Scavenger", "Lieutenant", "Drops the Scavenger's Dog Tag (Legendary). Their dog tag sells for $25,000"),
+   ("Iskra", "Lieutenant", "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Their dog tag sells for $25,000"),
    ("Roze", "Lieutenant", "Drops Roze's Dog Tag (Legendary)"),
-   ("The Chemist", "Lieutenant", "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse. Pays $10,000"),
+   ("The Chemist", "Lieutenant", "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse"),
    ("The Warden", "Lieutenant", "Northern hills. Drops a key to a sealed door under NuriGO Mall"),
    ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
    ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
@@ -463,7 +463,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.42", "updated": "2026-10-28",
+data = {"version": "0.9.43", "updated": "2026-10-28",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

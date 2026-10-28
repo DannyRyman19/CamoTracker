@@ -639,7 +639,7 @@ struct HajinStashGridButton: View {
     private var heroLabel: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 8) {
-                Text("mw4.ui.hajin.scan_new".localized().uppercased())
+                Text("mw4.ui.hajin.beta".localized().uppercased())
                     .font(.system(size: 10, weight: .heavy)).tracking(0.8)
                     .foregroundStyle(Color.black.opacity(0.85))
                     .padding(.horizontal, 7).padding(.vertical, 3)

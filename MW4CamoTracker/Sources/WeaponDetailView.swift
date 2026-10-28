@@ -209,12 +209,8 @@ struct WeaponDetailView: View {
     }
 
     private var partPicker: some View {
-        Picker("mw4.ui.section.camos".localized(), selection: Binding(get: { shownPart }, set: { if $0 != shownPart { Haptics.step() }; pickedPart = $0 })) {
-            ForEach(parts, id: \.part) { entry in
-                Text(entry.title).tag(entry.part)
-            }
-        }
-        .pickerStyle(.segmented)
+        SegmentTabs(selection: Binding(get: { shownPart }, set: { pickedPart = $0 }),
+                    items: parts.map { ($0.part, $0.title) }, accent: mode.accent)
         .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)

@@ -374,10 +374,7 @@ struct HajinPagePicker: View {
     @Binding var page: String
 
     var body: some View {
-        Picker("", selection: Binding(get: { page }, set: { if $0 != page { Haptics.step() }; page = $0 })) {
-            ForEach(HajinPage.allCases, id: \.rawValue) { Text($0.title).tag($0.rawValue) }
-        }
-        .pickerStyle(.segmented)
+        SegmentTabs(selection: $page, items: HajinPage.allCases.map { ($0.rawValue, $0.title) }, accent: .accentDMZ)
         .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
@@ -495,7 +492,7 @@ struct HajinMinePage: View {
         ForEach(shown.filter { [.tracking, .buildNext].contains($0) }) { card in
             if card == .tracking { HajinTrackingCard().hajinCard() } else { HajinBuildNextCard().hajinCard() }
         }
-        let progress = shown.filter { $0.section != nil }
+        let progress = shown.filter { $0.section != nil || $0 == .blueprints }
         if !progress.isEmpty {
             HajinHeading(title: "mw4.ui.hajin.mine_progress".localized())
             // Two a row; an odd one out takes the full width
@@ -510,7 +507,7 @@ struct HajinMinePage: View {
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
         }
-        let tools = shown.filter { [.stash, .keepSell, .shopping, .blueprints].contains($0) }
+        let tools = shown.filter { [.stash, .keepSell, .shopping].contains($0) }
         if !tools.isEmpty {
             VStack(spacing: 0) {
                 ForEach(Array(tools.enumerated()), id: \.element) { i, card in
@@ -559,7 +556,14 @@ struct HajinMinePage: View {
 
     /// A tracked guide section as a tile: its ring, title and x/y.
     @ViewBuilder private func progressTile(_ card: HajinMineCard, wide: Bool = false) -> some View {
-        if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
+        if card == .blueprints {
+            let progress = store.findProgress
+            open(openBlueprints, .blueprints) { HajinBlueprintsView() } label: {
+                HajinProgressTile(title: card.title, symbol: card.symbol,
+                                  fraction: Double(progress.found) / Double(max(progress.total, 1)),
+                                  count: "\(progress.found)/\(progress.total)", wide: wide)
+            }
+        } else if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
             // A row's tick: its own, or a Gunsmith weapon's manual (starter
             // weapons have none)
             let keys = section.rows.compactMap { row -> String? in
@@ -582,7 +586,6 @@ struct HajinMinePage: View {
     @ViewBuilder private func toolRow(_ card: HajinMineCard) -> some View {
         switch card {
         case .shopping: open(openShopping, .shopping, plain: true) { HajinShoppingListView() } label: { HajinShoppingEntry() }
-        case .blueprints: open(openBlueprints, .blueprints, plain: true) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
         case .stash: open(openStash, .stash, plain: true) { HajinStashView() } label: { HajinStashEntry() }
         case .keepSell: open(openKeepSell, .keepSell, plain: true) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
         default: EmptyView()
@@ -1856,7 +1859,16 @@ struct HajinReaderTiles: View {
                                 .frame(width: 38, height: 38)
                                 .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
                             Spacer(minLength: 0)
-                            if flow.sorting && !postMatch { ProgressView() }
+                            if flow.sorting && !postMatch {
+                                ProgressView()
+                            } else {
+                                // Both readers are still learning the game's screens
+                                Text("mw4.ui.hajin.beta".localized())
+                                    .font(.caption2.weight(.bold))
+                                    .foregroundStyle(Color.accentDMZ)
+                                    .padding(.horizontal, 7).padding(.vertical, 3)
+                                    .overlay(Capsule().strokeBorder(Color.accentDMZ.opacity(0.6), lineWidth: 1))
+                            }
                         }
                         Text((postMatch ? "mw4.ui.postmatch.card" : "mw4.ui.hajin.grid_scan").localized())
                             .font(.hitmarker(16))

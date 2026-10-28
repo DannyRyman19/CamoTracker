@@ -1,5 +1,5 @@
 {
- "version": "0.9.42",
+ "version": "0.9.43",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -5110,7 +5110,10 @@
    "rows": [
     {
      "title": "Gorani",
-     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village. Pays $10,000. Uses an M4.",
+     "subtitle": "Ghillie-suited sniper in the woods above Hanrim Village. Drops Gorani's Dog Tag (Legendary), which sells for $25,000. Uses an M4.",
+     "links": [
+      "goranis-dog-tag"
+     ],
      "group": "Lieutenants",
      "check": "boss-gorani"
     },
@@ -5131,7 +5134,7 @@
     },
     {
      "title": "The Doctor",
-     "subtitle": "Drops The Doctor's Dog Tag (Legendary), and sometimes The Doctor's Command Office key. Pays $10,000",
+     "subtitle": "Drops The Doctor's Dog Tag (Legendary), and sometimes The Doctor's Command Office key. Their dog tag sells for $25,000",
      "links": [
       "the-doctors-command-office",
       "the-doctors-dog-tag"
@@ -5141,7 +5144,7 @@
     },
     {
      "title": "Jin-Tae",
-     "subtitle": "The target in Operation Critical Extraction. Drops Jin-Tae's Dog Tag (Legendary) and Radiation Blockers. Pays $10,000",
+     "subtitle": "The target in Operation Critical Extraction. Drops Jin-Tae's Dog Tag (Legendary) and Radiation Blockers. Their dog tag sells for $25,000",
      "links": [
       "radiation-blockers",
       "jin-taes-dog-tag"
@@ -5151,7 +5154,7 @@
     },
     {
      "title": "Scavenger",
-     "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Pays $10,000",
+     "subtitle": "Drops the Scavenger's Dog Tag (Legendary). Their dog tag sells for $25,000",
      "links": [
       "scavengers-dog-tag"
      ],
@@ -5160,7 +5163,7 @@
     },
     {
      "title": "Iskra",
-     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Pays $10,000",
+     "subtitle": "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Their dog tag sells for $25,000",
      "links": [
       "iskras-dog-tag"
      ],
@@ -5178,7 +5181,7 @@
     },
     {
      "title": "The Chemist",
-     "subtitle": "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse. Pays $10,000",
+     "subtitle": "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse",
      "links": [
       "the-chemists-secure-armory"
      ],

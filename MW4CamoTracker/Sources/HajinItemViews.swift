@@ -1272,12 +1272,9 @@ struct HajinUpgradeFamilyCard: View {
                     .onChange(of: item.id) { id in withAnimation(.snappy) { proxy.scrollTo(id, anchor: .center) } }
                 }
             } else {
-                Picker("mw4.ui.hajin.tiers".localized(), selection: Binding(get: { item.id }, set: { Haptics.step(); picked = $0 })) {
-                    ForEach(tiers) { tier in
-                        Text((store.checked.contains("upgrade-\(tier.id)") ? "✓ " : "") + Self.roman(tier.tier ?? 1)).tag(tier.id)
-                    }
-                }
-                .pickerStyle(.segmented)
+                SegmentTabs(selection: Binding(get: { item.id }, set: { picked = $0 }),
+                            items: tiers.map { ($0.id, (store.checked.contains("upgrade-\($0.id)") ? "✓ " : "") + Self.roman($0.tier ?? 1)) },
+                            accent: .accentDMZ)
             }
             HStack(alignment: .top, spacing: 10) {
                 HajinTick(done: store.checked.contains(key), label: item.name.resolved) {
