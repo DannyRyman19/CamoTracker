@@ -13,7 +13,7 @@ struct HajinView: View {
     @State private var showsKeepSell = false
     @State private var showsStash = false
     @State private var showsBlueprints = false
-    @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
+    @AppStorage(HajinPage.key) private var page = HajinPage.mine.rawValue
     @State private var width: CGFloat = 0
 
     private var accent: Color { .accentDMZ }
@@ -67,7 +67,7 @@ struct HajinView: View {
                 .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
-                ForEach(guide.guide) { section in
+                ForEach(guide.guide.filter { !HajinGuide.trackedSections.contains($0.id) }) { section in
                     NavigationLink {
                         GuideSectionView(section: section)
                     } label: {
@@ -258,6 +258,9 @@ private struct HajinMapThumbnail: View {
 
 private struct SectionRow: View {
     let section: HajinGuide.Section
+    /// How many of its rows are ticked, for the sections My DMZ tracks.
+    var done: Int? = nil
+    var total: Int? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -270,9 +273,10 @@ private struct SectionRow: View {
                 .font(.hitmarker(16))
                 .foregroundStyle(Color.appInk)
             Spacer()
-            Text("\(section.rows.count)")
+            let total = total ?? section.rows.count
+            Text(done.map { "\($0)/\(total)" } ?? "\(total)")
                 .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                .foregroundStyle(Color.appInkMuted)
+                .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
         }
     }
 }
@@ -350,7 +354,8 @@ struct GuideSectionView: View {
 /// The Hajin tab's two halves: the reference guide, and the player's own
 /// plan (level, tracking, what to build, stash, keep or sell).
 enum HajinPage: String, CaseIterable {
-    case guide, mine
+    // My DMZ first: the player's own progress; the guide is the wiki
+    case mine, guide
     static let key = "mw4_hajin_page"
     var title: String { self == .guide ? "mw4.ui.hajin.page_guide".localized() : "mw4.ui.hajin.page_mine".localized() }
 }
@@ -373,7 +378,7 @@ struct HajinPagePicker: View {
 enum HajinMineCard: String, CaseIterable, Identifiable {
     // Default order: the scan, then the player's numbers and plan, then the
     // stash and the tools that work on it
-    case scan, postMatch, level, cash, tracking, buildNext, stash, keepSell, shopping, blueprints
+    case scan, postMatch, level, cash, tracking, buildNext, orders, upgrades, bosses, manuals, stash, keepSell, shopping, blueprints
     var id: String { rawValue }
     var title: String {
         switch self {
@@ -387,6 +392,21 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .blueprints: return "mw4.ui.hajin.blueprints".localized()
         case .stash: return "mw4.ui.hajin.stash".localized()
         case .keepSell: return "mw4.ui.keep.title".localized()
+        case .orders: return "mw4.ui.hajin.mine_orders".localized()
+        case .upgrades: return "mw4.ui.hajin.mine_upgrades".localized()
+        case .bosses: return "mw4.ui.hajin.mine_bosses".localized()
+        case .manuals: return "mw4.ui.hajin.mine_manuals".localized()
+        }
+    }
+
+    /// The guide section a tracking card opens.
+    var section: String? {
+        switch self {
+        case .orders: return "ops"
+        case .upgrades: return "upgrades"
+        case .bosses: return "bosses"
+        case .manuals: return "gunsmith"
+        default: return nil
         }
     }
     var symbol: String {
@@ -401,6 +421,10 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .blueprints: return "doc.text.magnifyingglass"
         case .stash: return "shippingbox.fill"
         case .keepSell: return "arrow.left.arrow.right"
+        case .orders: return "checklist"
+        case .upgrades: return "building.2.fill"
+        case .bosses: return "person.fill.viewfinder"
+        case .manuals: return "wrench.and.screwdriver.fill"
         }
     }
 
@@ -427,6 +451,7 @@ struct HajinMinePage: View {
     var openKeepSell: (() -> Void)? = nil
     var openShopping: (() -> Void)? = nil
     var openBlueprints: (() -> Void)? = nil
+    var openSection: ((HajinGuide.Section) -> Void)? = nil
     @AppStorage(HajinMineCard.orderKey) private var orderRaw = ""
     @AppStorage(HajinMineCard.hiddenKey) private var hiddenRaw = ""
     @State private var customising = false
@@ -496,6 +521,20 @@ struct HajinMinePage: View {
         case .blueprints: entry(openBlueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
         case .stash: entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
         case .keepSell: entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+        case .orders, .upgrades, .bosses, .manuals:
+            // The guide's tickable sections live here, with how far along
+            if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
+                // A row's tick: its own, or a Gunsmith weapon's manual (starter
+                // weapons have none)
+                let keys = section.rows.compactMap { row -> String? in
+                    if let key = row.check { return key }
+                    if let weapon = row.weapon, !(row.subtitle?.values["en"]?.hasPrefix("Starter") ?? false) { return "manual-\(weapon)" }
+                    return nil
+                }
+                entry(openSection.map { open in { open(section) } }) { GuideSectionView(section: section) } label: {
+                    SectionRow(section: section, done: keys.filter(store.checked.contains).count, total: keys.count)
+                }
+            }
         }
     }
 
@@ -1043,11 +1082,12 @@ struct HajinGuidePanel: View {
     @State private var query = ""
     @State private var stack: [Page] = []
     @State private var panelWidth: CGFloat = 0
-    @AppStorage(HajinPage.key) private var page = HajinPage.guide.rawValue
+    @AppStorage(HajinPage.key) private var page = HajinPage.mine.rawValue
 
     private enum Page: Hashable {
         case section(HajinGuide.Section)
         case item(String)
+        case order(String)
         case stash
         case keepSell
         case shopping
@@ -1088,6 +1128,10 @@ struct HajinGuidePanel: View {
             if case .item(let id) = stack.last {
                 HajinItemView(id: id)
                     .id(id)
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
+            } else if case .order(let check) = stack.last {
+                HajinOrderView(check: check)
+                    .id(check)
                     .transition(.move(edge: .trailing).combined(with: .opacity))
             } else {
             HStack(spacing: 6) {
@@ -1131,9 +1175,10 @@ struct HajinGuidePanel: View {
                             HajinMinePage(openStash: { withAnimation(.snappy) { stack = [.stash]; query = "" } },
                                           openKeepSell: { withAnimation(.snappy) { stack = [.keepSell]; query = "" } },
                                           openShopping: { withAnimation(.snappy) { stack = [.shopping]; query = "" } },
-                                          openBlueprints: { withAnimation(.snappy) { stack = [.blueprints]; query = "" } })
+                                          openBlueprints: { withAnimation(.snappy) { stack = [.blueprints]; query = "" } },
+                                          openSection: { section in withAnimation(.snappy) { stack = [.section(section)]; query = "" } })
                         } else {
-                        ForEach(guide.guide) { section in
+                        ForEach(guide.guide.filter { !HajinGuide.trackedSections.contains($0.id) }) { section in
                             Button { withAnimation(.snappy) { stack = [.section(section)] } } label: {
                                 HStack {
                                     SectionRow(section: section)
@@ -1156,6 +1201,7 @@ struct HajinGuidePanel: View {
         .background(Color.appBackground)
         .readingWidth($panelWidth)
         .environment(\.hajinOpenItem) { id in withAnimation(.snappy) { stack.append(.item(id)) } }
+        .environment(\.hajinOpenOrder) { check in withAnimation(.snappy) { stack.append(.order(check)) } }
         #if DEBUG
         // SS_PANEL=stash, keep, shop, blueprints, item:<id> or a section opens that page in the panel for screenshots
         .onAppear {
@@ -1178,6 +1224,7 @@ struct HajinGuidePanel: View {
         switch page {
         case .section(let section): return section.title.resolved
         case .item(let id): return store.guide?.item(id)?.name.resolved ?? ""
+        case .order(let check): return store.guide?.guide.first { $0.id == "ops" }?.rows.first { $0.check == check }?.title.resolved ?? ""
         case .stash: return "mw4.ui.hajin.stash".localized()
         case .keepSell: return "mw4.ui.keep.title".localized()
         case .shopping: return "mw4.ui.hajin.shop".localized()

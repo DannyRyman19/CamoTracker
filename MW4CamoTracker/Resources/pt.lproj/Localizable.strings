@@ -273,6 +273,8 @@
 "mw4.ui.keep.resource" = "Scrapped automatically";
 "mw4.ui.keep.keep_reason" = "%d needed for upgrades you haven't printed: %@";
 "mw4.ui.keep.orders_reason" = "%d needed for DMZ Orders you haven't finished: %@";
+"mw4.ui.keep.keep_short" = "%d needed for these:";
+"mw4.ui.keep.crafting_short" = "Used in these recipes:";
 "mw4.ui.keep.crafting_reason" = "Only used to print %@. Keep it if you make those; otherwise sell.";
 "mw4.ui.keep.sell_reason" = "Nothing known needs it. Sells for %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Nothing known needs it.";
@@ -333,6 +335,10 @@
 "mw4.ui.hajin.cash_short" = "You have %1$@, %2$@ short";
 "mw4.ui.hajin.cash_covered" = "You have %@, enough for all of it";
 "mw4.ui.hajin.mine_customise" = "Customise My DMZ";
+"mw4.ui.hajin.mine_orders" = "Missions & Orders";
+"mw4.ui.hajin.mine_upgrades" = "FOB upgrades";
+"mw4.ui.hajin.mine_bosses" = "Bosses";
+"mw4.ui.hajin.mine_manuals" = "Weapon Manuals";
 "mw4.ui.hajin.mine_customise_hint" = "Drag to reorder. Switch off anything you don't use.";
 "mw4.ui.hajin.mine_reset" = "Reset to default";
 "mw4.ui.hajin.scan" = "Read counts from photos";

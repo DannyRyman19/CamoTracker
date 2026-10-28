@@ -272,6 +272,8 @@
 "mw4.ui.keep.resource" = "Wordt automatisch gesloopt";
 "mw4.ui.keep.keep_reason" = "%d nodig voor upgrades die je nog niet hebt geprint: %@";
 "mw4.ui.keep.orders_reason" = "%d nodig voor DMZ-orders die je nog niet hebt afgerond: %@";
+"mw4.ui.keep.keep_short" = "%d nodig voor:";
+"mw4.ui.keep.crafting_short" = "Gebruikt in deze recepten:";
 "mw4.ui.keep.crafting_reason" = "Alleen nodig voor %@. Houd het als je dat maakt, anders verkopen.";
 "mw4.ui.keep.sell_reason" = "Niets bekends heeft het nodig. Verkoopt voor %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Niets bekends heeft het nodig.";
@@ -332,6 +334,10 @@
 "mw4.ui.hajin.cash_short" = "Je hebt %1$@, %2$@ tekort";
 "mw4.ui.hajin.cash_covered" = "Je hebt %@, genoeg voor alles";
 "mw4.ui.hajin.mine_customise" = "Mijn DMZ aanpassen";
+"mw4.ui.hajin.mine_orders" = "Missies & orders";
+"mw4.ui.hajin.mine_upgrades" = "FOB-upgrades";
+"mw4.ui.hajin.mine_bosses" = "Bazen";
+"mw4.ui.hajin.mine_manuals" = "Wapenhandleidingen";
 "mw4.ui.hajin.mine_customise_hint" = "Sleep om te ordenen. Zet uit wat je niet gebruikt.";
 "mw4.ui.hajin.mine_reset" = "Standaard herstellen";
 "mw4.ui.hajin.scan" = "Aantallen uit foto's lezen";

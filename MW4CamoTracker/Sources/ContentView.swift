@@ -179,8 +179,10 @@ struct ContentView: View {
                 NavigationStack(path: $hajinPath) {
                     HajinView()
                         .navigationDestination(for: HajinItemRoute.self) { route in HajinItemView(id: route.id) }
+                        .navigationDestination(for: HajinOrderRoute.self) { route in HajinOrderView(check: route.check) }
                 }
                 .environment(\.hajinOpenItem) { id in hajinPath.append(HajinItemRoute(id: id)) }
+                .environment(\.hajinOpenOrder) { check in hajinPath.append(HajinOrderRoute(check: check)) }
                 .overlay(alignment: .bottom) { HajinUndoOverlay().padding(.bottom, 70) }
                     .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
                     .tag(Self.hajinTab)

@@ -77,6 +77,17 @@ struct HajinVerdict {
         }
     }
 
+    /// The banner's line when the chips below it name what needs the item.
+    var summary: String {
+        switch kind {
+        case .keep:
+            let total = upgrades.reduce(0) { $0 + $1.qty } + orders.reduce(0) { $0 + $1.qty }
+            return String(format: "mw4.ui.keep.keep_short".localized(), total)
+        case .crafting: return "mw4.ui.keep.crafting_short".localized()
+        default: return reason
+        }
+    }
+
     /// One line on why: what needs it, or what it sells for.
     var reason: String {
         switch kind {
@@ -127,7 +138,7 @@ struct HajinVerdictBadge: View {
                         .tracking(0.8)
                         .foregroundStyle(verdict.color)
                 }
-                Text(verdict.reason)
+                Text(compact ? verdict.reason : verdict.summary)
                     .font(compact ? .caption : .subheadline)
                     .foregroundStyle(Color.appInk.opacity(0.85))
                     .lineLimit(compact ? 2 : nil)
@@ -141,7 +152,12 @@ struct HajinVerdictBadge: View {
             let needs = verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []
             if !needs.isEmpty {
                 HajinLinkChips(ids: needs.map(\.item.id),
-                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:])
+                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:],
+                               arrows: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            if verdict.kind == .keep, !verdict.orders.isEmpty {
+                HajinOrderChips(orders: verdict.orders)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
         }

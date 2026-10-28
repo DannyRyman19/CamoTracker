@@ -272,6 +272,8 @@
 "mw4.ui.keep.resource" = "Recyclé automatiquement";
 "mw4.ui.keep.keep_reason" = "%d nécessaires pour des améliorations pas encore imprimées : %@";
 "mw4.ui.keep.orders_reason" = "%d nécessaires pour des ordres DMZ pas encore terminés : %@";
+"mw4.ui.keep.keep_short" = "%d nécessaires pour :";
+"mw4.ui.keep.crafting_short" = "Utilisé dans ces recettes :";
 "mw4.ui.keep.crafting_reason" = "Sert seulement à imprimer %@. Gardez-le si vous en fabriquez, sinon vendez.";
 "mw4.ui.keep.sell_reason" = "Rien de connu n'en a besoin. Se vend %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Rien de connu n'en a besoin.";
@@ -332,6 +334,10 @@
 "mw4.ui.hajin.cash_short" = "Tu as %1$@, il manque %2$@";
 "mw4.ui.hajin.cash_covered" = "Tu as %@, assez pour tout";
 "mw4.ui.hajin.mine_customise" = "Personnaliser Ma DMZ";
+"mw4.ui.hajin.mine_orders" = "Missions et ordres";
+"mw4.ui.hajin.mine_upgrades" = "Améliorations de la FOB";
+"mw4.ui.hajin.mine_bosses" = "Boss";
+"mw4.ui.hajin.mine_manuals" = "Manuels d'armes";
 "mw4.ui.hajin.mine_customise_hint" = "Fais glisser pour réordonner. Désactive ce que tu n'utilises pas.";
 "mw4.ui.hajin.mine_reset" = "Réinitialiser";
 "mw4.ui.hajin.scan" = "Lire les quantités sur des photos";

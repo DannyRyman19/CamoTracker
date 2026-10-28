@@ -220,6 +220,9 @@ struct HajinGuide: Codable {
 
     func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
 
+    /// Sections the player ticks off: they're on My DMZ, not in the guide.
+    static let trackedSections: Set<String> = ["ops", "upgrades", "bosses", "gunsmith"]
+
     /// What the DMZ Orders not yet ticked need from the stash: each print's
     /// recipe cost times how many, and the ingredients to extract.
     func orderNeeds(done: Set<String>) -> [(order: Row, item: String, qty: Int)] {

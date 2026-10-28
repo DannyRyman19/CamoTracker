@@ -275,6 +275,10 @@ private struct OpenItemKey: EnvironmentKey {
     static let defaultValue: (@MainActor (String) -> Void)? = nil
 }
 
+private struct OpenOrderKey: EnvironmentKey {
+    static let defaultValue: (@MainActor (String) -> Void)? = nil
+}
+
 private struct ShowMarkerKey: EnvironmentKey {
     static let defaultValue: (@MainActor (HajinGuide.Marker) -> Void)? = nil
 }
@@ -283,6 +287,12 @@ extension EnvironmentValues {
     var hajinOpenItem: (@MainActor (String) -> Void)? {
         get { self[OpenItemKey.self] }
         set { self[OpenItemKey.self] = newValue }
+    }
+
+    /// Opens a DMZ Order's card, by its tick key.
+    var hajinOpenOrder: (@MainActor (String) -> Void)? {
+        get { self[OpenOrderKey.self] }
+        set { self[OpenOrderKey.self] = newValue }
     }
 
     var hajinShowMarker: (@MainActor (HajinGuide.Marker) -> Void)? {
@@ -294,6 +304,11 @@ extension EnvironmentValues {
 /// An item pushed onto the Hajin tab's navigation stack.
 struct HajinItemRoute: Hashable {
     let id: String
+}
+
+/// A DMZ Order (or mission) pushed onto the Hajin tab's navigation stack.
+struct HajinOrderRoute: Hashable {
+    let check: String
 }
 
 /// Opens an item's screen, however the current layout navigates.
@@ -941,6 +956,8 @@ struct HajinLinkChips: View {
     let ids: [String]
     /// Optional amount per id, shown as "×20" on the chip.
     var amounts: [String: Int] = [:]
+    /// A chevron on each chip, where it reads as a way through.
+    var arrows = false
     @EnvironmentObject private var store: HajinStore
 
     var body: some View {
@@ -959,6 +976,7 @@ struct HajinLinkChips: View {
                                         .font(.caption.weight(.bold).monospacedDigit())
                                         .foregroundStyle(Color.appInkMuted)
                                 }
+                                if arrows { HajinChipArrow() }
                             }
                             .padding(3)
                             .padding(.trailing, 6)
@@ -970,6 +988,98 @@ struct HajinLinkChips: View {
                     }
                 }
         }
+    }
+}
+
+struct HajinChipArrow: View {
+    var body: some View {
+        Image(systemName: "chevron.right")
+            .font(.system(size: 10, weight: .bold))
+            .foregroundStyle(Color.appInkMuted)
+    }
+}
+
+/// DMZ Orders as tappable chips, each opening its card: what needs an item.
+struct HajinOrderChips: View {
+    let orders: [(order: HajinGuide.Row, qty: Int)]
+    @Environment(\.hajinOpenOrder) private var openOrder
+
+    var body: some View {
+        HajinWrap(spacing: 6) {
+            ForEach(orders.indices, id: \.self) { i in
+                let order = orders[i].order
+                if let check = order.check {
+                    if let openOrder {
+                        Button { openOrder(check) } label: { chip(order, orders[i].qty).contentShape(Rectangle()) }
+                            .buttonStyle(.borderless)
+                    } else {
+                        NavigationLink { HajinOrderView(check: check) } label: { chip(order, orders[i].qty) }
+                            .buttonStyle(.plain)
+                    }
+                }
+            }
+        }
+    }
+
+    private func chip(_ order: HajinGuide.Row, _ qty: Int) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: "checklist")
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(Color.accentDMZ)
+                .frame(width: 22, height: 22)
+                .background(RoundedRectangle(cornerRadius: 4).fill(Color.accentDMZ.opacity(0.15)))
+            Text(order.title.resolved)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Color.appInk)
+                .lineLimit(1)
+            if let page = HajinOrderView.page(order) {
+                Text(page).font(.caption).foregroundStyle(Color.appInkMuted).lineLimit(1)
+            }
+            Text("×\(qty)")
+                .font(.caption.weight(.bold).monospacedDigit())
+                .foregroundStyle(Color.appInkMuted)
+            HajinChipArrow()
+        }
+        .padding(3)
+        .padding(.trailing, 6)
+        .background(
+            RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2)
+                .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(Color.accentDMZ.opacity(0.5), lineWidth: 1))
+        )
+    }
+}
+
+/// One mission or DMZ Order's card on its own, from a link.
+struct HajinOrderView: View {
+    let check: String
+    @EnvironmentObject private var store: HajinStore
+
+    /// "Page 10" from "DMZ Orders: Page 10": where the order sits.
+    static func page(_ row: HajinGuide.Row) -> String? {
+        guard let group = row.group?.resolved, group.hasPrefix("DMZ Orders: ") else { return nil }
+        return String(group.dropFirst("DMZ Orders: ".count))
+    }
+
+    var body: some View {
+        let row = store.guide?.guide.first { $0.id == "ops" }?.rows.first { $0.check == check }
+        List {
+            if let row {
+                if let group = row.group {
+                    Text(group.resolved.uppercased())
+                        .font(.system(size: 11, weight: .bold))
+                        .tracking(0.8)
+                        .foregroundStyle(Color.appInkMuted)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                }
+                HajinMissionRow(row: row).hajinCard()
+            }
+        }
+        .scrollContentBackground(.hidden)
+        .listStyle(.plain)
+        .background(Color.appBackground)
+        .navigationTitle(row?.title.resolved ?? "")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
