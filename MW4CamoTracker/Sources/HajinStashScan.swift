@@ -268,7 +268,8 @@ struct HajinZoomPhoto: View {
                 .allowsHitTesting(false)
             }
                 .frame(width: geo.size.width, height: geo.size.height)
-                .onChange(of: marks.flatMap { $0 }.map(\.x)) { _ in focus(geo.size, fit) }
+                // Every point, not just the x's: two items in the same column differ only in y
+                .onChange(of: marks.flatMap { $0 }.map { "\($0.x),\($0.y)" }) { _ in focus(geo.size, fit) }
                 .onAppear { if !marks.isEmpty { focus(geo.size, fit) } }
                 .scaleEffect(scale)
                 .offset(offset)
