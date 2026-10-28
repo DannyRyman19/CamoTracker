@@ -725,10 +725,11 @@ struct HajinItemView: View {
 
     /// When a recipe unlocks, or which levels hand the item out.
     private func unlocks(_ item: HajinGuide.Item, _ levels: [(section: HajinGuide.Section, row: HajinGuide.Row)]) -> some View {
-        let craftable = !(item.cost ?? []).isEmpty
+        // Only the recipe's own level unlocks it; any other level that
+        // names the item hands out one (UAV: the recipe at 31, one at 13 and 65)
         var rows: [(level: Int, text: String)] = levels.compactMap { mention in
             guard let level = mention.row.level else { return nil }
-            return (level, craftable ? "mw4.ui.hajin.unlock_recipe".localized() : "mw4.ui.hajin.unlock_reward".localized())
+            return (level, level == item.requiredLevel ? "mw4.ui.hajin.unlock_recipe".localized() : "mw4.ui.hajin.unlock_reward".localized())
         }
         if let needed = item.requiredLevel, !rows.contains(where: { $0.level == needed }) {
             rows.insert((needed, "mw4.ui.hajin.unlock_recipe".localized()), at: 0)
