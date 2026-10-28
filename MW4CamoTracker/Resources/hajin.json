@@ -1,5 +1,5 @@
 {
- "version": "0.9.38",
+ "version": "0.9.39",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -4865,6 +4865,14 @@
      "item": "dog-tag-case-upgrade-ii",
      "check": "upgrade-dog-tag-case-upgrade-ii",
      "group": "Dog Tag Case"
+    },
+    {
+     "title": "Dog Tag Case Upgrade IV",
+     "subtitle": "20 CPU, 10 Stabilized Reagents, 5 Experimental Compounds. +20 dog tags",
+     "value": "$200,000",
+     "item": "dog-tag-case-upgrade-iv",
+     "check": "upgrade-dog-tag-case-upgrade-iv",
+     "group": "Dog Tag Case"
     }
    ]
   },
@@ -8591,6 +8599,30 @@
    "effect": "More dog tag storage",
    "family": "Dog Tag Case Upgrade",
    "tier": 2,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/dog-tag-case.png?v=1"
+  },
+  {
+   "id": "dog-tag-case-upgrade-iv",
+   "name": "Dog Tag Case Upgrade IV",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "cpu",
+     "qty": 20
+    },
+    {
+     "item": "stabilized-reagents",
+     "qty": 10
+    },
+    {
+     "item": "experimental-compounds",
+     "qty": 5
+    }
+   ],
+   "cash": 200000,
+   "effect": "+20 dog tags",
+   "family": "Dog Tag Case Upgrade",
+   "tier": 4,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/dog-tag-case.png?v=1"
   },
   {
