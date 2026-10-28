@@ -221,11 +221,19 @@ enum HajinStashGrid {
                 let top = votes.values.max() ?? 0
                 let count = counts.first { votes[$0] == top }
                 let best = mine.max { $0.guessConfidence < $1.guessConfidence }
-                // Lit on the review on the tile's own borders where they were
-                // found (the frame can be a little big or off, and a read
-                // from it still lands); else where its surest read was taken
+                // Lit on the review where a read that agreed was taken: the
+                // tile's own borders first (the frame can be a little big or
+                // off), but only if they read this item too, since borders
+                // fitted a row out read the next row's; then the frame's
+                // crop; then the surest read
                 let surest = mine.max { $0.confidence < $1.confidence }
-                let lit = b.map(place) ?? surest?.place
+                let agreed = Set(mine.compactMap(\.place).map { $0.map { "\($0.x),\($0.y)" }.joined(separator: ";") })
+                func agrees(_ r: CGRect?) -> [CGPoint]? {
+                    guard let r else { return nil }
+                    let p = place(r)
+                    return agreed.contains(p.map { "\($0.x),\($0.y)" }.joined(separator: ";")) ? p : nil
+                }
+                let lit = agrees(b) ?? agrees(a) ?? surest?.place
                 tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count,
                                   image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0,
                                   place: lit))
