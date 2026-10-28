@@ -586,6 +586,13 @@ struct HajinItemView: View {
         .readingWidth($width)
         .navigationTitle(store.guide?.item(shownId)?.name.resolved ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                if let item = store.guide?.item(shownId) {
+                    HajinReportMenu(lines: ["Item: \(item.name.values["en"] ?? item.name.resolved)", "Item ID: \(item.id)", "Kind: \(item.kind)"])
+                }
+            }
+        }
     }
 
     /// The left column's parts, for when the right has nothing of its own:

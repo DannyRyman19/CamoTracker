@@ -29,6 +29,8 @@
 "mw4.ui.prestige.none" = "Nenhum ainda";
 "mw4.ui.prestige.hint" = "Alcance o nível %d para entrar em Prestígio.";
 "mw4.ui.prestige.undo" = "Desfazer Prestígio";
+"mw4.ui.prestige.ready" = "Maxed: ready to prestige";
+"mw4.ui.prestige.done" = "Prestiged";
 "mw4.ui.max_level" = "Máx. %d";
 "mw4.ui.no_camo_data" = "Ainda não há dados de camuflagens de %@ para esta arma.";
 "mw4.ui.locked" = "Conclua o nível acima primeiro.";
@@ -110,6 +112,8 @@
 "mw4.ui.report.image" = "Imagem faltando ou errada";
 "mw4.ui.report.name" = "Nome errado";
 "mw4.ui.report.other" = "Outra coisa";
+"mw4.ui.report.dmz_info" = "Wrong info";
+"mw4.ui.report.dmz_missing" = "Something missing";
 "mw4.ui.report.max_level.field" = "Nível máximo correto";
 "mw4.ui.report.max_level.message" = "O app tem %d. Deixe em branco se não tiver certeza.";
 "mw4.ui.report.send" = "Enviar";

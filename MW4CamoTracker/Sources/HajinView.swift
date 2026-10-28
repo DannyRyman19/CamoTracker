@@ -70,9 +70,7 @@ struct HajinView: View {
                 .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
-                ForEach(guide.guide.filter { !HajinGuide.trackedSections.contains($0.id) }) { section in
-                    HajinPushLink(screen: .section(section.id)) { GuideSectionView(section: section) } label: { SectionRow(section: section) }
-                }
+                HajinGuideTiles(sections: guide.guide.filter { !HajinGuide.trackedSections.contains($0.id) })
                 GuideFooter(guide: guide)
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
@@ -337,7 +335,12 @@ struct GuideSectionView: View {
             }
         }
         .readingWidth($width)
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_section".localized())
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "mw4.ui.hajin.search_section".localized())
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                HajinReportMenu(lines: ["Section: \(section.title.values["en"] ?? section.title.resolved)", "Section ID: \(section.id)"])
+            }
+        }
         .navigationTitle(section.title.resolved)
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -2003,6 +2006,81 @@ struct HajinNumbersChip: View {
         if n >= 1_000_000 { return (Double(n) / 1_000_000).formatted(.number.precision(.fractionLength(0...2))) + "M" }
         if n >= 10_000 { return "\(n / 1000)K" }
         return n.formatted()
+    }
+}
+
+/// The guide's sections as a two-column grid of tiles, like My DMZ's
+/// Progress: an odd one out at the end takes the full width.
+struct HajinGuideTiles: View {
+    let sections: [HajinGuide.Section]
+    @Environment(\.hajinPush) private var push
+
+    var body: some View {
+        let paired = sections.count.isMultiple(of: 2) ? sections : Array(sections.dropLast())
+        VStack(spacing: 10) {
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
+                ForEach(paired) { tile($0, wide: false) }
+            }
+            if paired.count < sections.count, let last = sections.last { tile(last, wide: true) }
+        }
+        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+
+    @ViewBuilder private func tile(_ section: HajinGuide.Section, wide: Bool) -> some View {
+        let label = HajinGuideTile(section: section, wide: wide)
+        if let push {
+            Button { push(.section(section.id)) } label: { label }.buttonStyle(HajinPressStyle())
+        } else {
+            NavigationLink { GuideSectionView(section: section) } label: { label }.buttonStyle(HajinPressStyle())
+        }
+    }
+}
+
+struct HajinGuideTile: View {
+    let section: HajinGuide.Section
+    var wide = false
+
+    var body: some View {
+        Group {
+            if wide {
+                HStack(spacing: 12) { icon; title; Spacer(minLength: 4); count }
+            } else {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .top) { icon; Spacer(minLength: 4); count }
+                    title.frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer(minLength: 0)
+                }
+                .frame(minHeight: 80, alignment: .topLeading)
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .contentShape(Rectangle())
+        .borderedCard()
+    }
+
+    private var icon: some View {
+        Image(systemName: section.symbol)
+            .font(.system(size: 16, weight: .bold))
+            .foregroundStyle(Color.accentDMZ)
+            .frame(width: 36, height: 36)
+            .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
+    }
+
+    private var title: some View {
+        Text(section.title.resolved)
+            .font(.hitmarker(15))
+            .foregroundStyle(Color.appInk)
+            .multilineTextAlignment(.leading)
+            .lineLimit(2)
+    }
+
+    private var count: some View {
+        Text("\(section.rows.count)")
+            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+            .foregroundStyle(Color.appInkMuted)
     }
 }
 

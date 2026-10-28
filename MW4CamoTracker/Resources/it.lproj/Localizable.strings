@@ -29,6 +29,8 @@
 "mw4.ui.prestige.none" = "Non ancora";
 "mw4.ui.prestige.hint" = "Raggiungi il livello %d per il Prestigio.";
 "mw4.ui.prestige.undo" = "Annulla Prestigio";
+"mw4.ui.prestige.ready" = "Al massimo: pronto per il prestigio";
+"mw4.ui.prestige.done" = "Prestigio ottenuto";
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Ancora nessun dato sulle mimetiche %@ per quest'arma.";
 "mw4.ui.locked" = "Completa prima il livello precedente.";
@@ -110,6 +112,8 @@
 "mw4.ui.report.image" = "Immagine mancante o sbagliata";
 "mw4.ui.report.name" = "Nome sbagliato";
 "mw4.ui.report.other" = "Altro";
+"mw4.ui.report.dmz_info" = "Info errate";
+"mw4.ui.report.dmz_missing" = "Manca qualcosa";
 "mw4.ui.report.max_level.field" = "Livello massimo corretto";
 "mw4.ui.report.max_level.message" = "Al momento l'app indica %d. Lascia vuoto se non sei sicuro.";
 "mw4.ui.report.send" = "Invia";

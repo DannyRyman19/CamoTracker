@@ -75,6 +75,13 @@ enum SupportMail {
         }
     }
 
+    /// A DMZ guide report: what's wrong, then which item or section it's on
+    /// and the guide version, so the row can be found without a reply.
+    static func dmzURL(kind: String, lines: [String], guideVersion: String?) -> URL? {
+        let body = (["Issue type: \(kind)"] + lines + ["Guide data: \(guideVersion ?? "?")"]).joined(separator: "\n")
+        return url(subject: "Camo Tracker DMZ: \(kind)", body: body + "\n\n" + diagnosticsFooter())
+    }
+
     /// General feedback, no item context.
     static func url(subject: String) -> URL? {
         url(subject: subject, body: diagnosticsFooter())
@@ -145,6 +152,40 @@ enum SupportMail {
         guard let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: allowed),
               let encodedBody = fullBody.addingPercentEncoding(withAllowedCharacters: allowed) else { return nil }
         return URL(string: "mailto:\(address)?subject=\(encodedSubject)&body=\(encodedBody)")
+    }
+}
+
+/// "Report a data issue" on a DMZ item or guide section: the same glyph as a
+/// weapon's, with the kinds that fit guide data.
+struct HajinReportMenu: View {
+    /// What it's about: "Item: Military Composites", "Item ID: ..."
+    let lines: [String]
+    @EnvironmentObject private var store: HajinStore
+    @Environment(\.openURL) private var openURL
+
+    private static let kinds: [(mail: String, key: String, symbol: String)] = [
+        ("Wrong info", "mw4.ui.report.dmz_info", "exclamationmark.circle"),
+        ("Something missing", "mw4.ui.report.dmz_missing", "plus.circle"),
+        ("Missing or wrong image", "mw4.ui.report.image", "photo"),
+        ("Wrong name", "mw4.ui.report.name", "textformat"),
+        ("Something else", "mw4.ui.report.other", "ellipsis.circle"),
+    ]
+
+    var body: some View {
+        Menu {
+            Section("mw4.ui.report.title".localized()) {
+                ForEach(Self.kinds, id: \.mail) { kind in
+                    Button {
+                        if let url = SupportMail.dmzURL(kind: kind.mail, lines: lines, guideVersion: store.guide?.version) { openURL(url) }
+                    } label: {
+                        Label(kind.key.localized(), systemImage: kind.symbol)
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "exclamationmark.bubble")
+                .accessibilityLabel("mw4.ui.report.title".localized())
+        }
     }
 }
 

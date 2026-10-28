@@ -29,6 +29,8 @@
 "mw4.ui.prestige.none" = "None yet";
 "mw4.ui.prestige.hint" = "Reach level %d to prestige.";
 "mw4.ui.prestige.undo" = "Undo prestige";
+"mw4.ui.prestige.ready" = "Maxed: ready to prestige";
+"mw4.ui.prestige.done" = "Prestiged";
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "No %@ camo data for this weapon yet.";
 "mw4.ui.locked" = "Finish the tier above first.";
@@ -110,6 +112,8 @@
 "mw4.ui.report.image" = "Missing or wrong image";
 "mw4.ui.report.name" = "Wrong name";
 "mw4.ui.report.other" = "Something else";
+"mw4.ui.report.dmz_info" = "Wrong info";
+"mw4.ui.report.dmz_missing" = "Something missing";
 "mw4.ui.report.max_level.field" = "Correct max level";
 "mw4.ui.report.max_level.message" = "The app currently has %d. Leave blank if you are not sure.";
 "mw4.ui.report.send" = "Send";

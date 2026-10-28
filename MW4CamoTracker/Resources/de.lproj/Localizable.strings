@@ -29,6 +29,8 @@
 "mw4.ui.prestige.none" = "Noch keins";
 "mw4.ui.prestige.hint" = "Erreiche Stufe %d, um aufzusteigen.";
 "mw4.ui.prestige.undo" = "Prestige zurücknehmen";
+"mw4.ui.prestige.ready" = "Maximal: bereit fürs Prestige";
+"mw4.ui.prestige.done" = "Prestige erreicht";
 "mw4.ui.max_level" = "Max %d";
 "mw4.ui.no_camo_data" = "Noch keine %@-Tarnungsdaten für diese Waffe.";
 "mw4.ui.locked" = "Schließe zuerst die Stufe davor ab.";
@@ -110,6 +112,8 @@
 "mw4.ui.report.image" = "Fehlendes oder falsches Bild";
 "mw4.ui.report.name" = "Falscher Name";
 "mw4.ui.report.other" = "Etwas anderes";
+"mw4.ui.report.dmz_info" = "Falsche Angaben";
+"mw4.ui.report.dmz_missing" = "Etwas fehlt";
 "mw4.ui.report.max_level.field" = "Korrekte Maximalstufe";
 "mw4.ui.report.max_level.message" = "Die App hat derzeit %d. Leer lassen, wenn du unsicher bist.";
 "mw4.ui.report.send" = "Senden";
