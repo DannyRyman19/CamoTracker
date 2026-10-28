@@ -552,24 +552,3 @@ struct HajinPostMatchReview: View {
     }
 }
 
-/// My DMZ's "After a match" card: starts the reader on a backpack photo.
-@available(iOS 17.0, *)
-struct HajinPostMatchButton: View {
-    @ObservedObject private var flow = HajinScanFlow.shared
-
-    var body: some View {
-        Button { flow.requestScan(postMatch: true) } label: {
-            HStack(spacing: 12) {
-                HajinCardSymbol("bag.fill")
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("mw4.ui.postmatch.card".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
-                    Text("mw4.ui.postmatch.card_hint".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
-                        .multilineTextAlignment(.leading)
-                }
-                Spacer(minLength: 0)
-                Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
-            }
-        }
-        .hajinCardButton()
-    }
-}

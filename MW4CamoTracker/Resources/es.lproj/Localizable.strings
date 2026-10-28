@@ -362,7 +362,10 @@
 "mw4.ui.hajin.scan_same" = "Ya es correcto";
 "mw4.ui.hajin.scan_updated" = "%d objetos actualizados desde tus fotos";
 "mw4.ui.hajin.grid_scan" = "Leer de una foto";
-"mw4.ui.hajin.grid_scan_hint" = "Tu alijo (objetos, recursos y banco) o una pantalla de la impresora 3D";
+"mw4.ui.hajin.grid_scan_hint" = "Tu alijo o tu mochila tras una partida";
+"mw4.ui.hajin.read_as_backpack" = "Mochila";
+"mw4.ui.hajin.read_as_stash" = "Alijo";
+"mw4.ui.hajin.read_auto" = "Haz o elige una foto: detecta sola qué pantalla es";
 "mw4.ui.hajin.grid_frame" = "Comprueba que las líneas caen sobre las casillas. Si no, toca Recortar para dejar solo la cuadrícula y se buscará de nuevo. ¿Sigue mal? Arrastra los cuatro círculos a las esquinas exteriores de la cuadrícula.";
 "mw4.ui.hajin.grid_check_title" = "¿Las líneas no caen en las casillas?";
 "mw4.ui.hajin.grid_check_body" = "Recorta a la cuadrícula para buscar de nuevo, o arrastra los círculos a sus esquinas.";
@@ -375,7 +378,7 @@
 "mw4.ui.hajin.crop_offer" = "Recortar a la cuadrícula";
 "mw4.ui.hajin.grid_reading" = "Leyendo tu alijo...";
 "mw4.ui.hajin.zoom_hint" = "Pellizca para ampliar";
-"mw4.ui.hajin.grid_intro" = "Haz una foto de la cuadrícula de tu alijo y la app lee cada montón: qué ingrediente es y cuántos hay. Los montones iguales se suman y revisas los totales antes de actualizar tu alijo.";
+"mw4.ui.hajin.grid_intro" = "Haz una foto de tu alijo, o de tu mochila tras la extracción, y la app lee cada casilla: qué es y cuántos hay. Detecta sola qué pantalla es, y tú lo revisas todo antes de que cambie nada.";
 "mw4.ui.hajin.grid_private" = "Se lee por completo en tu móvil. No se sube nada ni se usa ningún servicio en línea.";
 "mw4.ui.hajin.grid_tips_title" = "Para mejores resultados";
 "mw4.ui.hajin.grid_tip_straight" = "Sujeta el móvil de frente a la pantalla, con toda la cuadrícula en la foto, y el borde izquierdo si quieres que se lea tu nivel";

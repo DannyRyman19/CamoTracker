@@ -362,7 +362,10 @@
 "mw4.ui.hajin.scan_same" = "Già giusto";
 "mw4.ui.hajin.scan_updated" = "%d oggetti aggiornati dalle tue foto";
 "mw4.ui.hajin.grid_scan" = "Leggi da una foto";
-"mw4.ui.hajin.grid_scan_hint" = "La tua scorta (oggetti, risorse e banca) o una schermata della stampante 3D";
+"mw4.ui.hajin.grid_scan_hint" = "La tua scorta o il tuo zaino dopo una partita";
+"mw4.ui.hajin.read_as_backpack" = "Zaino";
+"mw4.ui.hajin.read_as_stash" = "Scorta";
+"mw4.ui.hajin.read_auto" = "Scatta o scegli una foto: capisce da sola che schermata è";
 "mw4.ui.hajin.grid_frame" = "Controlla che le linee cadano sulle caselle. Se no, tocca Ritaglia per tenere solo la griglia: verrà cercata di nuovo. Ancora sbagliata? Trascina i quattro cerchi sugli angoli esterni della griglia.";
 "mw4.ui.hajin.grid_check_title" = "Le linee non cadono sulle caselle?";
 "mw4.ui.hajin.grid_check_body" = "Ritaglia sulla griglia per cercare di nuovo, o trascina i cerchi sui suoi angoli.";
@@ -375,7 +378,7 @@
 "mw4.ui.hajin.crop_offer" = "Ritaglia sulla griglia";
 "mw4.ui.hajin.grid_reading" = "Lettura della scorta...";
 "mw4.ui.hajin.zoom_hint" = "Pizzica per ingrandire";
-"mw4.ui.hajin.grid_intro" = "Fotografa la griglia della tua scorta e l'app legge ogni pila: quale ingrediente è e quanti. Le pile uguali vengono sommate e controlli i totali prima che la scorta venga aggiornata.";
+"mw4.ui.hajin.grid_intro" = "Scatta una foto della tua scorta, o del tuo zaino dopo l'esfiltrazione, e l'app legge ogni casella: cos'è e quanti sono. Capisce da sola che schermata è, e tu controlli tutto prima che cambi qualcosa.";
 "mw4.ui.hajin.grid_private" = "Letto interamente sul telefono. Non viene caricato nulla e non si usa nessun servizio online.";
 "mw4.ui.hajin.grid_tips_title" = "Per risultati migliori";
 "mw4.ui.hajin.grid_tip_straight" = "Tieni il telefono dritto davanti allo schermo, con tutta la griglia inquadrata, e il bordo sinistro se vuoi che venga letto il tuo livello";

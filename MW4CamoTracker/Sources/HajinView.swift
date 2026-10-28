@@ -398,7 +398,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .scan: return "mw4.ui.hajin.scan_card".localized()
+        case .scan: return "mw4.ui.hajin.grid_scan".localized()
         case .postMatch: return "mw4.ui.postmatch.card".localized()
         case .tracking: return "mw4.ui.hajin.tracking".localized()
         case .buildNext: return "mw4.ui.hajin.build_next".localized()
@@ -450,7 +450,9 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
             let after = i > 0 ? out.firstIndex(of: allCases[i - 1]) : nil
             out.insert(card, at: after.map { $0 + 1 } ?? (i == 0 ? 0 : out.count))
         }
-        return out
+        // "After a match" is read by the one photo reader now, which tells a
+        // backpack from the stash by itself (the case stays for saved orders)
+        return out.filter { $0 != .postMatch }
     }
 }
 
@@ -476,17 +478,15 @@ struct HajinMinePage: View {
         let shown = HajinMineCard.order(orderRaw).filter { !hidden.contains($0.rawValue) }
         // The cards in groups, each kept in the player's order: the readers,
         // their numbers, the plan, progress, then the stash tools
-        let readers = shown.filter { [.scan, .postMatch].contains($0) }
-        if #available(iOS 17.0, *), !readers.isEmpty {
-            if readers.contains(.scan) && store.stash.isEmpty {
+        if #available(iOS 17.0, *), shown.contains(.scan) {
+            if store.stash.isEmpty {
                 // The big card until there's a stash
                 HajinStashGridButton(hero: true)
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                if readers.contains(.postMatch) { HajinPostMatchButton() }
             } else {
-                HajinReaderTiles(cards: readers)
+                HajinReaderTile()
             }
         }
         ForEach(shown.filter { [.tracking, .buildNext].contains($0) }) { card in
@@ -1845,61 +1845,70 @@ struct HajinPressStyle: ButtonStyle {
     }
 }
 
-/// The two photo readers side by side: the stash, and the backpack after a
-/// match.
+/// The photo reader: one card for the stash and the backpack after a
+/// match. Which one a photo shows is worked out from its text, so the card
+/// lists both rather than asking. (A 3D Printer screen still reads, as the
+/// fallback when it's neither.)
 @available(iOS 17.0, *)
-struct HajinReaderTiles: View {
-    let cards: [HajinMineCard]
+struct HajinReaderTile: View {
     @ObservedObject private var flow = HajinScanFlow.shared
 
     var body: some View {
-        HStack(spacing: 10) {
-            ForEach(cards) { card in
-                let postMatch = card == .postMatch
-                Button { flow.requestScan(postMatch: postMatch) } label: {
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: postMatch ? "bag.fill" : "camera.viewfinder")
-                                .font(.system(size: 17, weight: .bold))
+        Button { flow.requestScan() } label: {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: "camera.viewfinder")
+                        .font(.system(size: 17, weight: .bold))
+                        .foregroundStyle(Color.accentDMZ)
+                        .frame(width: 38, height: 38)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
+                    VStack(alignment: .leading, spacing: 2) {
+                        HStack(spacing: 8) {
+                            Text("mw4.ui.hajin.grid_scan".localized())
+                                .font(.hitmarker(16))
+                                .foregroundStyle(Color.appInk)
+                            // Still learning the game's screens
+                            Text("mw4.ui.hajin.beta".localized())
+                                .font(.caption2.weight(.bold))
                                 .foregroundStyle(Color.accentDMZ)
-                                .frame(width: 38, height: 38)
-                                .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
-                            Spacer(minLength: 0)
-                            if flow.sorting && !postMatch {
-                                ProgressView()
-                            } else {
-                                // Both readers are still learning the game's screens
-                                Text("mw4.ui.hajin.beta".localized())
-                                    .font(.caption2.weight(.bold))
-                                    .foregroundStyle(Color.accentDMZ)
-                                    .padding(.horizontal, 7).padding(.vertical, 3)
-                                    .overlay(Capsule().strokeBorder(Color.accentDMZ.opacity(0.6), lineWidth: 1))
-                            }
+                                .padding(.horizontal, 7).padding(.vertical, 3)
+                                .overlay(Capsule().strokeBorder(Color.accentDMZ.opacity(0.6), lineWidth: 1))
                         }
-                        Text((postMatch ? "mw4.ui.postmatch.card" : "mw4.ui.hajin.grid_scan").localized())
-                            .font(.hitmarker(16))
-                            .foregroundStyle(Color.appInk)
-                            .lineLimit(2)
-                            .fixedSize(horizontal: false, vertical: true)
-                        Text((postMatch ? "mw4.ui.postmatch.card_hint" : "mw4.ui.hajin.grid_scan_hint").localized())
+                        Text("mw4.ui.hajin.read_auto".localized())
                             .font(.caption)
                             .foregroundStyle(Color.appInkMuted)
                             .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
-                        Spacer(minLength: 0)
                     }
-                    .padding(12)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .contentShape(Rectangle())
-                    .borderedCard()
+                    Spacer(minLength: 0)
+                    if flow.sorting { ProgressView() }
                 }
-                .buttonStyle(HajinPressStyle())
+                // What it can read, each with the screen's own symbol
+                HStack(spacing: 6) {
+                    kind("square.grid.3x3.fill", "mw4.ui.hajin.read_as_stash")
+                    kind("bag.fill", "mw4.ui.hajin.read_as_backpack")
+                }
             }
+            .padding(12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+            .borderedCard()
         }
-        .fixedSize(horizontal: false, vertical: true)
+        .buttonStyle(HajinPressStyle())
         .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
+    }
+
+    private func kind(_ symbol: String, _ key: String) -> some View {
+        Label(key.localized(), systemImage: symbol)
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(Color.appInk)
+            .lineLimit(1)
+            .minimumScaleFactor(0.75)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 7)
+            .background(RoundedRectangle(cornerRadius: 7).fill(Color.appSurface2))
     }
 }
 

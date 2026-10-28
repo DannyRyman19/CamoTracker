@@ -10,8 +10,6 @@ struct HajinStashScanIntro: View {
     @Binding var pick: PhotosPickerItem?
     /// A photo taken with the camera instead of picked
     @Binding var captured: UIImage?
-    /// After a match: a backpack photo rather than the stash
-    var postMatch = false
     @Environment(\.dismiss) private var dismiss
     @State private var showsCamera = false
     @ObservedObject private var premium = Premium.shared
@@ -31,7 +29,7 @@ struct HajinStashScanIntro: View {
                     HajinStashScanDemo()
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 6)
-                    Text((postMatch ? "mw4.ui.postmatch.intro" : "mw4.ui.hajin.grid_intro").localized())
+                    Text("mw4.ui.hajin.grid_intro".localized())
                         .font(.subheadline)
                         .foregroundStyle(Color.appInk)
                     Label("mw4.ui.hajin.grid_private".localized(), systemImage: "lock.iphone")
@@ -42,15 +40,15 @@ struct HajinStashScanIntro: View {
                             .font(.system(size: 11, weight: .bold)).tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
                         tip("photo.on.rectangle", "mw4.ui.hajin.grid_tip_screenshot", best: true)
-                        if postMatch {
-                            tip("bag", "mw4.ui.postmatch.tip_screen")
-                            tip("square.grid.3x3", "mw4.ui.postmatch.tip_whole")
-                        } else {
-                            tip("crop", "mw4.ui.hajin.grid_tip_crop")
-                        }
                         tip("camera.viewfinder", "mw4.ui.hajin.grid_tip_straight")
-                        if !postMatch { tip("square.grid.3x3", "mw4.ui.hajin.grid_tip_tab") }
                         tip("sun.max", "mw4.ui.hajin.grid_tip_glare")
+                        // The rest depends on which screen it is
+                        tipsHeading("square.grid.3x3.fill", "mw4.ui.hajin.read_as_stash")
+                        tip("square.grid.3x3", "mw4.ui.hajin.grid_tip_tab")
+                        tip("crop", "mw4.ui.hajin.grid_tip_crop")
+                        tipsHeading("bag.fill", "mw4.ui.postmatch.title")
+                        tip("bag", "mw4.ui.postmatch.tip_screen")
+                        tip("square.grid.3x3", "mw4.ui.postmatch.tip_whole")
                     }
                     .padding(14)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
@@ -69,7 +67,7 @@ struct HajinStashScanIntro: View {
                 .background(Color.appBackground)
                 .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
             }
-            .navigationTitle((postMatch ? "mw4.ui.postmatch.title" : "mw4.ui.hajin.grid_scan").localized())
+            .navigationTitle("mw4.ui.hajin.grid_scan".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -202,6 +200,14 @@ struct HajinStashScanIntro: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
+    }
+
+    /// Over the tips for one kind of screen.
+    private func tipsHeading(_ symbol: String, _ key: String) -> some View {
+        Label(key.localized(), systemImage: symbol)
+            .font(.hitmarker(15))
+            .foregroundStyle(Color.appInk)
+            .padding(.top, 8)
     }
 }
 

@@ -726,7 +726,7 @@ struct HajinScanHost: ViewModifier {
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
             if let pending = flow.pending { route(pending); flow.pending = nil }
         }) {
-            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured, postMatch: flow.postMatch)
+            HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured)
         }
         #if DEBUG
         // SS_GRID_DEMO: the intro "picks" the demo photo after a few seconds
@@ -823,7 +823,6 @@ struct HajinScanHost: ViewModifier {
                 guard let image = UIImage(contentsOfFile: path) else { return }
                 // SS_POSTMATCH=1: read it as a backpack after a match
                 let postMatch = ProcessInfo.processInfo.environment["SS_POSTMATCH"] == "1"
-                flow.postMatch = postMatch
                 flow.photo = HajinPickedPhoto(image: image.normalisedUp(), postMatch: postMatch)
             }
         }
@@ -841,25 +840,35 @@ extension View {
 
 @available(iOS 17.0, *)
 extension HajinScanHost {
-    /// A stash grid (its header says ITEMS / STASH) goes to the framing
-    /// screen; anything else, like a 3D Printer recipe screen, is read for
-    /// its have/need counts and the bank and goes straight to the review.
+    /// What the photo shows, from its text: a backpack (its "… BACKPACK"
+    /// header or SECURE SLOTS) goes to the framing screen as one; a stash
+    /// grid (ITEMS / STASH) as the stash; anything else, like a 3D Printer
+    /// recipe screen, is read for its have/need counts and the bank and goes
+    /// straight to the review. No counts either: framed as the stash, and the
+    /// framing screen's switch puts a wrong guess right.
     fileprivate func route(_ picked: HajinPickedPhoto) {
-        // After a match it's always the backpack: straight to framing it
-        if flow.postMatch { flow.photo = HajinPickedPhoto(image: picked.image, postMatch: true); return }
         guard let cg = picked.image.cgImage else { return }
         let items = (store.guide?.items ?? []).filter(HajinStore.inStash)
         flow.sorting = true
         let flow = flow
         Task { @MainActor in
-            let (isStash, counts, cash, level) = await Task.detached(priority: .userInitiated) {
+            let (isBackpack, isStash, counts, cash, level) = await Task.detached(priority: .userInitiated) {
                 let lines = HajinStashScanner.lines(in: cg)
+                let marks = HajinBackpack.landmarks(lines)
+                let isBackpack = marks.header != nil || marks.secure != nil
                 let isStash = lines.contains { let t = $0.text.uppercased(); return t.contains("ITEMS") || t.contains("STASH") }
-                let counts = isStash ? [:] : HajinStashScanner.counts(in: lines, items: items)
-                return (isStash, counts, HajinStashScanner.bank(in: lines), HajinStashScanner.level(in: lines))
+                let counts = isBackpack || isStash ? [:] : HajinStashScanner.counts(in: lines, items: items)
+                return (isBackpack, isStash, counts, HajinStashScanner.bank(in: lines), HajinStashScanner.level(in: lines))
             }.value
             flow.sorting = false
-            if isStash || counts.isEmpty { flow.photo = picked } else { flow.textRead = HajinGridResult(counts: counts, unsure: [], cash: cash, level: level) }
+            HajinGridDebug.log("route: backpack \(isBackpack) stash \(isStash) printer counts \(counts.count)")
+            if isBackpack {
+                flow.photo = HajinPickedPhoto(image: picked.image, postMatch: true)
+            } else if isStash || counts.isEmpty {
+                flow.photo = picked
+            } else {
+                flow.textRead = HajinGridResult(counts: counts, unsure: [], cash: cash, level: level)
+            }
         }
     }
 }
@@ -1037,8 +1046,9 @@ struct HajinPickedPhoto: Identifiable {
 /// What the framing screen has worked out for one photo.
 final class HajinFrameState: ObservableObject {
     /// A backpack after a match (4 wide, to the post-match review) rather
-    /// than the stash
-    let postMatch: Bool
+    /// than the stash: guessed from the photo's text, switchable on the
+    /// framing screen
+    @Published var postMatch: Bool
     var columns: Int { postMatch ? HajinBackpack.columns : HajinStashGrid.columns }
     init(postMatch: Bool = false) { self.postMatch = postMatch }
     @Published var quality: [HajinPhotoQuality] = []
@@ -1079,12 +1089,8 @@ final class HajinScanFlow: ObservableObject {
     /// The Premium sheet, from anywhere the scan flow reaches it
     @Published var showsPremium = false
 
-    /// Reading a backpack after a match rather than the stash
-    @Published var postMatch = false
-
     /// A reader button: the intro, which asks free players for an ad first.
-    func requestScan(postMatch: Bool = false) {
-        self.postMatch = postMatch
+    func requestScan() {
         showsIntro = true
     }
     #if DEBUG
@@ -1128,6 +1134,15 @@ struct HajinStashGridFrameView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 12) {
+                // What's being read, as guessed from the photo: switch it
+                // if the guess is wrong, and the grid's looked for again
+                SegmentTabs(selection: Binding(get: { state.postMatch }, set: { switchKind(backpack: $0) }),
+                            items: [(false, "mw4.ui.hajin.read_as_stash".localized()),
+                                    (true, "mw4.ui.hajin.read_as_backpack".localized())],
+                            accent: .accentDMZ)
+                    .disabled(state.finding || state.reading)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 4)
                 let lost = !state.finding && state.guessed && state.guess == nil
                 if !state.quality.isEmpty || lost {
                     // The photo looks poor or the grid wasn't found: say why,
@@ -1319,25 +1334,7 @@ struct HajinStashGridFrameView: View {
                 guard let cg = image.cgImage else { return }
                 let issues = await Task.detached(priority: .userInitiated) { HajinPhotoQuality.issues(cg) }.value
                 withAnimation(.snappy) { state.quality = issues }
-                let started = Date()
-                let postMatch = state.postMatch
-                let guess = await Task.detached(priority: .userInitiated) {
-                    postMatch ? HajinBackpack.guess(HajinStashScanner.lines(in: cg), size: CGSize(width: cg.width, height: cg.height))
-                              : HajinStashGridFinder.guess(cg)
-                }.value
-                // Let the scan run at least one sweep, so a quick find on a
-                // screenshot still reads as a scan rather than a flicker
-                let left = 1.3 - Date().timeIntervalSince(started)
-                if left > 0 { try? await Task.sleep(for: .seconds(left)) }
-                state.guess = guess
-                if let guess, !state.moved { state.corners = guess }
-                withAnimation(.spring(duration: 0.45, bounce: 0.3)) { state.finding = false }
-                if guess != nil {
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    lockGlow = 1
-                    withAnimation(.easeOut(duration: 0.9).delay(0.2)) { lockGlow = 0 }
-                }
-                remeasure()
+                await findGrid()
                 #if DEBUG
                 // SS_GRID_READ=1 without SS_GRID_CORNERS: read the guessed frame
                 if ProcessInfo.processInfo.environment["SS_GRID_READ"] == "1", ProcessInfo.processInfo.environment["SS_GRID_CORNERS"] == nil {
@@ -1368,6 +1365,45 @@ struct HajinStashGridFrameView: View {
                 #endif
             }
         }
+    }
+
+    /// Looks for the grid (the stash's lines, or the backpack's from the
+    /// text round it) and frames it, with the scan sweeping meanwhile.
+    private func findGrid() async {
+        guard let cg = image.cgImage else { return }
+        let started = Date()
+        let postMatch = state.postMatch
+        let guess = await Task.detached(priority: .userInitiated) {
+            postMatch ? HajinBackpack.guess(HajinStashScanner.lines(in: cg), size: CGSize(width: cg.width, height: cg.height))
+                      : HajinStashGridFinder.guess(cg)
+        }.value
+        // Switched again while looking: that search has taken over
+        guard postMatch == state.postMatch else { return }
+        // Let the scan run at least one sweep, so a quick find on a
+        // screenshot still reads as a scan rather than a flicker
+        let left = 1.3 - Date().timeIntervalSince(started)
+        if left > 0 { try? await Task.sleep(for: .seconds(left)) }
+        state.guess = guess
+        if let guess, !state.moved { state.corners = guess }
+        withAnimation(.spring(duration: 0.45, bounce: 0.3)) { state.finding = false }
+        if guess != nil {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            lockGlow = 1
+            withAnimation(.easeOut(duration: 0.9).delay(0.2)) { lockGlow = 0 }
+        }
+        remeasure()
+    }
+
+    /// Stash ⇄ backpack: a different grid (6 or 4 wide), so it's looked
+    /// for again from scratch, dragged corners and all.
+    private func switchKind(backpack: Bool) {
+        guard backpack != state.postMatch else { return }
+        state.postMatch = backpack
+        state.moved = false
+        state.guess = nil
+        state.rowCount = nil
+        withAnimation(.snappy) { state.finding = true }
+        Task { await findGrid() }
     }
 
     /// "Choose another photo": the library, or the camera where there is one.
