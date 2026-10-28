@@ -1,6 +1,6 @@
 {
- "version": "0.9.34",
- "updated": "2026-10-27",
+ "version": "0.9.35",
+ "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -6557,6 +6557,190 @@
      ]
     },
     {
+     "title": "How Bulletproof?",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-how-bulletproof",
+     "objectives": [
+      "Eliminate 30 enemy soldiers",
+      "Eliminate 15 armored soldiers",
+      "Eliminate 5 Lieutenants"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Nitro Compounds and a SERE Kit"
+     ]
+    },
+    {
+     "title": "Abandoned",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-abandoned",
+     "place": "Underground, NuriGO Mall",
+     "objectives": [
+      "Enter the underground area of NuriGO Mall",
+      "Eliminate 10 K9 robots",
+      "Extract 3 working K9 Battery Cores"
+     ],
+     "links": [
+      "k9-battery-core"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Nitro Compounds and a SERE Kit"
+     ]
+    },
+    {
+     "title": "Locksmith",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-locksmith",
+     "objectives": [
+      "Loot 5 keys",
+      "Unlock 3 locked spaces"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Nitro Compounds and a SERE Kit"
+     ]
+    },
+    {
+     "title": "Avionics",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-avionics",
+     "objectives": [
+      "Print or extract 5 Electronic Sensors",
+      "Extract 1 Structural Alloy",
+      "Print a UAV at the FOB"
+     ],
+     "links": [
+      "electronic-sensors",
+      "structural-alloy",
+      "uav"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Binding Catalyst and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "Philanthropist",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-philanthropist",
+     "objectives": [
+      "Complete the Weekly Random Mission Deploy Challenge"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Binding Catalyst and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "Multi-Talented",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-multi-talented",
+     "objectives": [
+      "Open 12 supply drops",
+      "Capture 6 SAM Sites",
+      "Clear 4 compounds"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 Binding Catalyst and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "DRC",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-drc",
+     "place": "Chang-san Air Base, Haneul Nuclear Reactor, NuriGO Mall labs",
+     "objectives": [
+      "Loot a DRC Weapon Locker at Chang-san Air Base, Haneul Nuclear Reactor or the NuriGO Mall labs"
+     ],
+     "links": [
+      "air-base-drc-weapons-locker",
+      "reactor-drc-locker"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 High-Tenacity Fibers and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "Unstoppable",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-unstoppable",
+     "objectives": [
+      "Kill 10 Commanders",
+      "Kill 15 Lieutenants",
+      "Extract 5 Lieutenant Dog Tags"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 High-Tenacity Fibers and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "Astronaut",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-astronaut",
+     "objectives": [
+      "Loot containers in radiation without taking radiation damage",
+      "Extract 3 times with the white final-exfil helicopter"
+     ],
+     "links": [
+      "gas-mask",
+      "radiation-gear"
+     ],
+     "rewards": [
+      "Page reward: $20,000, 2 High-Tenacity Fibers and an Explosives Equipment Kit"
+     ]
+    },
+    {
+     "title": "Ears Everywhere",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-ears-everywhere",
+     "place": "Cheonwang Peak Array",
+     "objectives": [
+      "Hack the communications broadcast system",
+      "Collect Encrypted Voice Logs"
+     ],
+     "links": [
+      "encrypted-voice-logs"
+     ]
+    },
+    {
+     "title": "Hard Carry",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-hard-carry",
+     "objectives": [
+      "Collect Nylon Laminate",
+      "Collect Structural Alloy",
+      "Print a Large Backpack"
+     ],
+     "links": [
+      "nylon-laminate",
+      "structural-alloy",
+      "large-backpack"
+     ]
+    },
+    {
+     "title": "Stalking the Stalker",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-stalking-the-stalker",
+     "objectives": [
+      "Use a DDOS against Deathstalker",
+      "Use launcher weapons against Deathstalker",
+      "Use a SAM Site against Deathstalker"
+     ],
+     "links": [
+      "ddos"
+     ]
+    },
+    {
+     "title": "The Vault",
+     "group": "DMZ Orders: Page not known yet",
+     "check": "op-the-vault",
+     "place": "Hanex Bank branch, Cheongun Village or Wolves Stadium",
+     "objectives": [
+      "Enter a Hanex Bank branch in Cheongun Village or Wolves Stadium",
+      "Open the branch vault"
+     ],
+     "links": [
+      "car-battery",
+      "bank-branch-vault-access"
+     ]
+    },
+    {
      "title": "Dead Man's Cache",
      "group": "Dynamic Ops",
      "check": "op-dead-mans-cache",
@@ -7727,6 +7911,15 @@
    ],
    "effect": "Calls in a supply drop",
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
+  },
+  {
+   "id": "cash-bag",
+   "name": "Cash Bag",
+   "kind": "Valuable",
+   "rarity": "Rare",
+   "value": 1500,
+   "note": "Carried out of the casino vault in Silent Ledger, about twelve optional ones. It only pays if it reaches extraction (reported)",
+   "symbol": "diamond.fill"
   },
   {
    "id": "chemicals",
