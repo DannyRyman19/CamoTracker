@@ -2050,13 +2050,12 @@ struct HajinGuideTile: View {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(alignment: .top) { icon; Spacer(minLength: 4); count }
                     title.frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer(minLength: 0)
                 }
-                .frame(minHeight: 80, alignment: .topLeading)
             }
         }
         .padding(12)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        // The full height of its grid row, so a row's tiles match
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .contentShape(Rectangle())
         .borderedCard()
     }
@@ -2112,13 +2111,11 @@ struct HajinProgressTile: View {
                         countText
                     }
                     titleText.frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer(minLength: 0)
                 }
-                .frame(minHeight: 80, alignment: .topLeading)
             }
         }
         .padding(12)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .borderedCard()
     }
 
