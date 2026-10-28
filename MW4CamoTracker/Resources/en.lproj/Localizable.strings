@@ -388,13 +388,13 @@
 "mw4.ui.hajin.scan_check" = "Check";
 "mw4.ui.hajin.scan_sure" = "%1$d stacks · %2$d%% sure";
 "mw4.ui.hajin.scan_edit" = "Edit";
-"mw4.ui.hajin.scan_edit_hint" = "Tap a row to skip it. Swipe or hold to fix a count.";
+"mw4.ui.hajin.scan_edit_hint" = "Tap − or + to fix a count, or the number to type it. Tap the circle to leave a row out.";
 "mw4.ui.hajin.send_scan" = "Send this photo to improve the reader";
 "mw4.ui.hajin.send_scan_footer" = "Sends the photo, what the reader found and any counts you changed to the developer by email, so misreads can be fixed. Nothing is sent unless you send it.";
 "mw4.ui.hajin.send_scan_body" = "Anything the reader got wrong? Tell us here (optional).\n\n\nThe photo and the reader's working are attached.";
 "mw4.ui.hajin.send_scan_share" = "Stash reader report for %@";
 "mw4.ui.hajin.send_ask_title" = "Help improve the reader?";
-"mw4.ui.hajin.send_ask_message" = "Send this photo and the counts you changed to the developer by email, so misreads can be fixed. Nothing is sent unless you send it.";
+"mw4.ui.hajin.send_ask_message" = "If the reader got anything wrong, sending this photo and the counts you changed helps us improve it. It goes to the developer by email, and nothing is sent unless you send it.";
 "mw4.ui.hajin.send_ask_send" = "Send";
 "mw4.ui.hajin.send_ask_later" = "Not now";
 "mw4.ui.hajin.send_ask_never" = "Don't ask again";

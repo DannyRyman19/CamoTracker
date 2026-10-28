@@ -388,13 +388,13 @@
 "mw4.ui.hajin.scan_check" = "À vérifier";
 "mw4.ui.hajin.scan_sure" = "%1$d piles · sûr à %2$d %%";
 "mw4.ui.hajin.scan_edit" = "Modifier";
-"mw4.ui.hajin.scan_edit_hint" = "Touche une ligne pour l'ignorer. Balaie ou maintiens pour corriger une quantité.";
+"mw4.ui.hajin.scan_edit_hint" = "Touche − ou + pour corriger une quantité, ou le nombre pour la saisir. Touche le cercle pour ignorer une ligne.";
 "mw4.ui.hajin.send_scan" = "Envoyer cette photo pour améliorer le lecteur";
 "mw4.ui.hajin.send_scan_footer" = "Envoie la photo, ce que le lecteur a trouvé et vos corrections au développeur par e-mail, pour corriger les erreurs. Rien n'est envoyé sans votre accord.";
 "mw4.ui.hajin.send_scan_body" = "Le lecteur s'est trompé ? Dites-le ici (facultatif).\n\n\nLa photo et les données du lecteur sont jointes.";
 "mw4.ui.hajin.send_scan_share" = "Rapport du lecteur de réserve pour %@";
 "mw4.ui.hajin.send_ask_title" = "Aider à améliorer la lecture ?";
-"mw4.ui.hajin.send_ask_message" = "Envoie cette photo et les quantités que tu as modifiées au développeur par e-mail, pour corriger les erreurs de lecture. Rien n'est envoyé sans toi.";
+"mw4.ui.hajin.send_ask_message" = "Si la lecture s'est trompée, envoyer cette photo et les quantités modifiées nous aide à l'améliorer. Elle part au développeur par e-mail, et rien n'est envoyé sans toi.";
 "mw4.ui.hajin.send_ask_send" = "Envoyer";
 "mw4.ui.hajin.send_ask_later" = "Pas maintenant";
 "mw4.ui.hajin.send_ask_never" = "Ne plus demander";

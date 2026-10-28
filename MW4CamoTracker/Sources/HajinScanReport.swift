@@ -66,39 +66,8 @@ struct HajinScanReport {
     }
 }
 
-/// "Send this photo to improve the reader": the photo and the report by
-/// email (Mail when it's set up, the share sheet otherwise). Nothing leaves
-/// the phone unless the player sends it.
-struct HajinSendScanButton: View {
-    let report: HajinScanReport
-    /// The review's state at the moment of sending: what the stash had, and
-    /// the player's corrections
-    let review: () -> (had: [String: Int], edited: [String: Int], skipped: Set<String>)
-    @State private var mail: HajinMailDraft?
-    @State private var share: [Any]?
-
-    var body: some View {
-        Button(action: send) {
-            Label("mw4.ui.hajin.send_scan".localized(), systemImage: "paperplane")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
-        }
-        .sheet(item: $mail) { draft in HajinMailView(draft: draft).ignoresSafeArea() }
-        .sheet(isPresented: Binding(get: { share != nil }, set: { if !$0 { share = nil } })) {
-            if let share { HajinShareSheet(items: share) }
-        }
-    }
-
-    private func send() {
-        let state = review()
-        switch report.outgoing(had: state.had, edited: state.edited, skipped: state.skipped) {
-        case .mail(let draft): mail = draft
-        case .share(let items): share = items
-        case nil: break
-        }
-    }
-}
-
+/// Sending the photo and report: offered after Update in the review. Nothing
+/// leaves the phone unless the player sends it.
 extension HajinScanReport {
     enum Outgoing { case mail(HajinMailDraft), share([Any]) }
 

@@ -318,48 +318,84 @@ struct HajinStashScanReview: View {
     @ViewBuilder private func itemRow(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> some View {
         let same = row.now == row.read
         let on = !same && !skip.contains(row.item.id)
-        Button {
-            guard !same else { return }
-            if skip.contains(row.item.id) { skip.remove(row.item.id) } else { skip.insert(row.item.id) }
-        } label: {
-            HStack(spacing: 12) {
-                HajinItemTile(item: row.item, size: 32)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
-                    HStack(spacing: 6) {
-                        if unsure.contains(row.item.id) && edited[row.item.id] == nil {
-                            Text("mw4.ui.hajin.scan_check".localized().uppercased())
-                                .font(.system(size: 10, weight: .bold)).tracking(0.6)
-                                .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
-                        }
-                        if let sure = sureness[row.item.id] {
-                            Text(String(format: "mw4.ui.hajin.scan_sure".localized(), stacks[row.item.id] ?? 1, Int((sure * 100).rounded())))
-                                .font(.caption2)
-                                .foregroundStyle(sure < 0.5 ? Color(red: 0.96, green: 0.66, blue: 0.24) : Color.appInkMuted)
-                        }
+        HStack(spacing: 10) {
+            HajinItemTile(item: row.item, size: 32)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                    .lineLimit(2)
+                HStack(spacing: 6) {
+                    if unsure.contains(row.item.id) && edited[row.item.id] == nil {
+                        Text("mw4.ui.hajin.scan_check".localized().uppercased())
+                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                            .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                    }
+                    if let sure = sureness[row.item.id] {
+                        Text(String(format: "mw4.ui.hajin.scan_sure".localized(), stacks[row.item.id] ?? 1, Int((sure * 100).rounded())))
+                            .font(.caption2)
+                            .foregroundStyle(sure < 0.5 ? Color(red: 0.96, green: 0.66, blue: 0.24) : Color.appInkMuted)
                     }
                 }
-                Spacer(minLength: 8)
-                if same {
-                    sameLabel("\(row.read)")
-                } else {
-                    Text("\(row.now) → \(row.read)")
-                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
-                        .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
-                        .strikethrough(!on)
+            }
+            Spacer(minLength: 6)
+            if !same {
+                // What the stash has now, then the count it becomes
+                Text("\(row.now) →")
+                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            countControl(row, on: on || same)
+            if same {
+                Image(systemName: "checkmark")
+                    .font(.body.weight(.bold))
+                    .foregroundStyle(HajinStore.printableGreen)
+                    .frame(width: 24)
+                    .accessibilityLabel("mw4.ui.hajin.scan_same".localized())
+            } else {
+                // Include or leave out this change
+                Button {
+                    Haptics.step()
+                    if skip.contains(row.item.id) { skip.remove(row.item.id) } else { skip.insert(row.item.id) }
+                } label: {
                     Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                        .font(.title3)
                         .foregroundStyle(on ? Color.accentDMZ : Color.appInkMuted)
+                        .frame(width: 24, height: 32)
                 }
+                .buttonStyle(.borderless)
             }
         }
-        .buttonStyle(.plain)
-        .contextMenu {
-            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }
-        }
-        .swipeActions {
-            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(row.read)"; editing = row.item }.tint(.accentDMZ)
-        }
+    }
 
+    /// − count +: steps the count read from the photo, or tap the number
+    /// to type it. Changing it includes the row again.
+    private func countControl(_ row: (item: HajinGuide.Item, now: Int, read: Int), on: Bool) -> some View {
+        HStack(spacing: 0) {
+            Button { setCount(row.item.id, row.read - 1) } label: {
+                Image(systemName: "minus").font(.footnote.weight(.bold)).frame(width: 28, height: 30)
+            }
+            .buttonStyle(.borderless)
+            .disabled(row.read == 0)
+            Button { editText = "\(row.read)"; editing = row.item } label: {
+                Text("\(row.read)")
+                    .font(.system(size: 14, weight: .semibold, design: .monospaced))
+                    .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
+                    .strikethrough(!on)
+                    .frame(minWidth: 30, minHeight: 30)
+            }
+            .buttonStyle(.borderless)
+            Button { setCount(row.item.id, row.read + 1) } label: {
+                Image(systemName: "plus").font(.footnote.weight(.bold)).frame(width: 28, height: 30)
+            }
+            .buttonStyle(.borderless)
+        }
+        .foregroundStyle(Color.accentDMZ)
+        .background(Capsule().fill(Color.appSurface2))
+    }
+
+    private func setCount(_ id: String, _ count: Int) {
+        Haptics.step()
+        edited[id] = max(0, count)
+        skip.remove(id)
     }
 
     var body: some View {
@@ -381,16 +417,6 @@ struct HajinStashScanReview: View {
                         .font(.caption)
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
-                }
-                // Sending the photo comes first, so it's seen without scrolling
-                if let report {
-                    Section {
-                        HajinSendScanButton(report: report) {
-                            (Dictionary(uniqueKeysWithValues: all.map { ($0.item.id, $0.now) }), edited, skip)
-                        }
-                    } footer: {
-                        Text("mw4.ui.hajin.send_scan_footer".localized())
-                    }
                 }
                 // Level, cash, resources and ingredients each in their own section
                 if let level {
