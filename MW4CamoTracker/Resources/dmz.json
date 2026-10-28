@@ -1,5 +1,5 @@
 {
-  "version": "0.8.18",
+  "version": "0.8.19",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -7991,6 +7991,62 @@
               "it": "Esegui 100 colpi alla testa contro i nemici.",
               "pt": "Acerte 100 tiros na cabeça de inimigos."
             }
+          },
+          "1": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 Enemy Kills from Behind"
+            }
+          },
+          "2": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 Hipfire Kills against Enemies"
+            }
+          },
+          "3": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Enemy Kills without taking damage 50 times"
+            }
+          },
+          "4": {
+            "amount": 150,
+            "unit": "kills",
+            "description": {
+              "en": "Get 150 Enemy Kills while Prone"
+            }
+          },
+          "5": {
+            "amount": 150,
+            "unit": "kills",
+            "description": {
+              "en": "Get 150 Enemy Kills while Prone"
+            }
+          },
+          "6": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 Enemy Kills from Behind"
+            }
+          },
+          "7": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Enemy Kills without taking Damage 50 times"
+            }
+          },
+          "8": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Kills without taking Damage against Enemies 50 times"
+            }
           }
         }
       },
@@ -8009,6 +8065,62 @@
               "nl": "Behaal 50 dubbele kills tegen vijanden.",
               "it": "Esegui 50 doppie uccisioni contro i nemici.",
               "pt": "Obtenha 50 baixas duplas contra inimigos."
+            }
+          },
+          "1": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Hipfire Kills against Enemies"
+            }
+          },
+          "2": {
+            "amount": 50,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Enemy Kills without Reloading 50 times"
+            }
+          },
+          "3": {
+            "amount": 75,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Enemy Kills without releasing the trigger 75 times"
+            }
+          },
+          "4": {
+            "amount": 150,
+            "unit": "kills",
+            "description": {
+              "en": "Get 150 One Shot Kills against Enemies"
+            }
+          },
+          "5": {
+            "amount": 150,
+            "unit": "kills",
+            "description": {
+              "en": "Get 150 One Shot Kills against Enemies"
+            }
+          },
+          "6": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Hipfire Kills against Enemies"
+            }
+          },
+          "7": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 10 Enemy Kills in a match 15 times"
+            }
+          },
+          "8": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 Enemy Kills from Behind"
             }
           }
         }
