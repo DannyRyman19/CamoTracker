@@ -470,11 +470,59 @@ struct HajinMinePage: View {
     @State private var customising = false
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
+    @Environment(\.hajinPush) private var push
 
     var body: some View {
-        let hidden = Set(hiddenRaw.split(separator: ","))
-        ForEach(HajinMineCard.order(orderRaw).filter { !hidden.contains(Substring($0.rawValue)) }) { card in
-            self.card(card)
+        let hidden = Set(hiddenRaw.split(separator: ",").map(String.init))
+        let shown = HajinMineCard.order(orderRaw).filter { !hidden.contains($0.rawValue) }
+        // The cards in groups, each kept in the player's order: the readers,
+        // their numbers, the plan, progress, then the stash tools
+        let readers = shown.filter { [.scan, .postMatch].contains($0) }
+        if #available(iOS 17.0, *), !readers.isEmpty {
+            if readers.contains(.scan) && store.stash.isEmpty {
+                // The big card until there's a stash
+                HajinStashGridButton(hero: true)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                if readers.contains(.postMatch) { HajinPostMatchButton() }
+            } else {
+                HajinReaderTiles(cards: readers)
+            }
+        }
+        let numbers = shown.filter { [.level, .cash].contains($0) }
+        if !numbers.isEmpty { HajinNumbersCard(cards: numbers).hajinCard() }
+        ForEach(shown.filter { [.tracking, .buildNext].contains($0) }) { card in
+            if card == .tracking { HajinTrackingCard().hajinCard() } else { HajinBuildNextCard().hajinCard() }
+        }
+        let progress = shown.filter { $0.section != nil }
+        if !progress.isEmpty {
+            HajinHeading(title: "mw4.ui.hajin.mine_progress".localized())
+            // Two a row; an odd one out takes the full width
+            let paired = progress.count.isMultiple(of: 2) ? progress : Array(progress.dropLast())
+            VStack(spacing: 10) {
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
+                    ForEach(paired) { progressTile($0) }
+                }
+                if paired.count < progress.count, let last = progress.last { progressTile(last, wide: true) }
+            }
+            .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+        }
+        let tools = shown.filter { [.stash, .keepSell, .shopping, .blueprints].contains($0) }
+        if !tools.isEmpty {
+            VStack(spacing: 0) {
+                ForEach(Array(tools.enumerated()), id: \.element) { i, card in
+                    if i > 0 { Divider().overlay(Color.appSurface2).padding(.leading, 54) }
+                    toolRow(card)
+                }
+            }
+            .borderedCard()
+            .padding(.top, 10)
+            .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
         }
         // Free players: what Premium gets them, under their own cards
         if !premium.isPremium {
@@ -509,66 +557,56 @@ struct HajinMinePage: View {
         .sheet(isPresented: $customising) { HajinMineCustomise(orderRaw: $orderRaw, hiddenRaw: $hiddenRaw) }
     }
 
-    @ViewBuilder private func card(_ card: HajinMineCard) -> some View {
-        switch card {
-        case .scan:
-            // The headline feature: reading the stash from a screenshot. The
-            // big card until there's a stash; after that, one row
-            if #available(iOS 17.0, *) {
-                if store.stash.isEmpty {
-                    HajinStashGridButton(hero: true)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                } else {
-                    HajinStashGridButton(bare: true).hajinCard()
-                }
+    /// A tracked guide section as a tile: its ring, title and x/y.
+    @ViewBuilder private func progressTile(_ card: HajinMineCard, wide: Bool = false) -> some View {
+        if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
+            // A row's tick: its own, or a Gunsmith weapon's manual (starter
+            // weapons have none)
+            let keys = section.rows.compactMap { row -> String? in
+                if let key = row.check { return key }
+                if let weapon = row.weapon, !(row.subtitle?.values["en"]?.hasPrefix("Starter") ?? false) { return "manual-\(weapon)" }
+                return nil
             }
-        case .postMatch:
-            if #available(iOS 17.0, *) { HajinPostMatchButton() }
-        case .level: HajinLevelCard().hajinCard()
-        case .cash: HajinCashCard().hajinCard()
-        case .tracking: HajinTrackingCard().hajinCard()
-        case .buildNext: HajinBuildNextCard().hajinCard()
-        case .shopping: entry(openShopping, .shopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
-        case .blueprints: entry(openBlueprints, .blueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
-        case .stash: entry(openStash, .stash) { HajinStashView() } label: { HajinStashEntry() }
-        case .keepSell: entry(openKeepSell, .keepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-        case .orders, .upgrades, .bosses, .manuals, .prestige:
-            // The guide's tickable sections live here, with how far along
-            if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
-                // A row's tick: its own, or a Gunsmith weapon's manual (starter
-                // weapons have none)
-                let keys = section.rows.compactMap { row -> String? in
-                    if let key = row.check { return key }
-                    if let weapon = row.weapon, !(row.subtitle?.values["en"]?.hasPrefix("Starter") ?? false) { return "manual-\(weapon)" }
-                    return nil
-                }
-                entry(openSection.map { open in { open(section) } }, .section(section.id)) { GuideSectionView(section: section) } label: {
-                    if keys.isEmpty {
-                        // Prestige: how many operators are being tracked
-                        SectionRow(section: section, done: nil, total: store.operators.count)
-                    } else {
-                        SectionRow(section: section, done: keys.filter(store.checked.contains).count, total: keys.count)
-                    }
-                }
+            let done = keys.filter(store.checked.contains).count
+            open(openSection.map { open in { open(section) } }, .section(section.id)) {
+                GuideSectionView(section: section)
+            } label: {
+                HajinProgressTile(title: card.title, symbol: card.symbol,
+                                  // Prestige has no ticks: how many operators are tracked
+                                  fraction: keys.isEmpty ? nil : Double(done) / Double(max(keys.count, 1)),
+                                  count: keys.isEmpty ? "\(store.operators.count)" : "\(done)/\(keys.count)", wide: wide)
             }
         }
     }
 
-    @ViewBuilder private func entry<D: View, L: View>(_ open: (() -> Void)?, _ screen: HajinScreen, @ViewBuilder destination: @escaping () -> D, @ViewBuilder label: @escaping () -> L) -> some View {
-        if let open {
-            Button(action: open) {
-                HStack {
-                    label()
-                    Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
-                }
-            }
-            .hajinCardButton()
-        } else {
-            HajinPushLink(screen: screen, destination: destination, label: label)
+    @ViewBuilder private func toolRow(_ card: HajinMineCard) -> some View {
+        switch card {
+        case .shopping: open(openShopping, .shopping, plain: true) { HajinShoppingListView() } label: { HajinShoppingEntry() }
+        case .blueprints: open(openBlueprints, .blueprints, plain: true) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
+        case .stash: open(openStash, .stash, plain: true) { HajinStashView() } label: { HajinStashEntry() }
+        case .keepSell: open(openKeepSell, .keepSell, plain: true) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+        default: EmptyView()
         }
     }
+
+    /// Opens a screen from a tile or a row in the tools card: the iPad
+    /// panel's closure, else pushed by value (iPhone), else a link.
+    @ViewBuilder private func open<D: View, L: View>(_ action: (() -> Void)?, _ screen: HajinScreen, plain: Bool = false, @ViewBuilder destination: @escaping () -> D, @ViewBuilder label: @escaping () -> L) -> some View {
+        let row = {
+            HStack(spacing: 8) {
+                label()
+                if plain { Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted) }
+            }
+            .padding(plain ? 12 : 0)
+            .contentShape(Rectangle())
+        }
+        if let action = action ?? push.map({ push in { push(screen) } }) {
+            Button(action: action, label: row).buttonStyle(HajinPressStyle())
+        } else {
+            NavigationLink(destination: destination, label: row).buttonStyle(HajinPressStyle())
+        }
+    }
+
 }
 
 /// A card that opens a screen: pushed by value onto the tab's path where
@@ -1791,97 +1829,204 @@ struct HajinHeading: View {
     }
 }
 
-/// The player's DMZ level, stepped like Weapon Level on a weapon. Set it
-/// and the guide shows what's unlocked and what's still locked.
-struct HajinLevelCard: View {
-    @EnvironmentObject private var store: HajinStore
-    @State private var entering = false
-    @State private var text = ""
-
-    var body: some View {
-        let level = store.dmzLevel
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 12) {
-                Image(systemName: "chart.bar.fill")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(.white)
-                    .frame(width: 30, height: 30)
-                    .background(Circle().fill(Color.accentDMZ))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("mw4.ui.hajin.dmz_level".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
-                    Text(level > 0 ? "mw4.ui.hajin.dmz_level_set".localized() : "mw4.ui.hajin.dmz_level_hint".localized())
-                        .font(.caption).foregroundStyle(Color.appInkMuted)
-                }
-                Spacer(minLength: 4)
-                // Unset: one Set button, like Cash's Add. Set: the stepper
-                if level > 0 {
-                    stepButton(systemName: "minus", enabled: true, size: 26, accent: .accentDMZ) { store.setLevel(level - 1) }
-                }
-                Button {
-                    text = level > 0 ? "\(level)" : ""
-                    entering = true
-                } label: {
-                    Text(level > 0 ? "\(level)/\(HajinStore.maxLevel)" : "mw4.ui.hajin.dmz_level_button".localized())
-                        .font(.system(size: 14, weight: .bold, design: .monospaced))
-                        .foregroundStyle(Color.accentDMZ)
-                        .contentTransition(.numericText())
-                        .frame(minWidth: level > 0 ? 56 : nil)
-                }
-                .buttonStyle(.borderless)
-                if level > 0 {
-                    stepButton(systemName: "plus", enabled: level < HajinStore.maxLevel, size: 26, accent: .accentDMZ) { store.setLevel(level + 1) }
-                }
-            }
-            if level > 0 {
-                ProgressBar(fraction: Double(level) / Double(HajinStore.maxLevel), accent: .accentDMZ)
-            }
-        }
-        .alert("mw4.ui.hajin.dmz_level".localized(), isPresented: $entering) {
-            TextField("1–\(HajinStore.maxLevel)", text: $text).keyboardType(.numberPad)
-            Button("mw4.ui.hajin.save".localized()) { if let n = Int(text) { store.setLevel(n) } }
-            Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
-        }
+/// A tile or row that dims while pressed, nothing more.
+struct HajinPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label.opacity(configuration.isPressed ? 0.6 : 1)
     }
 }
 
-/// The player's DMZ Cash: tap to type it in. The shopping list and Build
-/// next weigh upgrades' cash costs against it.
-struct HajinCashCard: View {
+/// The two photo readers side by side: the stash, and the backpack after a
+/// match.
+@available(iOS 17.0, *)
+struct HajinReaderTiles: View {
+    let cards: [HajinMineCard]
+    @ObservedObject private var flow = HajinScanFlow.shared
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(cards) { card in
+                let postMatch = card == .postMatch
+                Button { flow.requestScan(postMatch: postMatch) } label: {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            Image(systemName: postMatch ? "bag.fill" : "camera.viewfinder")
+                                .font(.system(size: 17, weight: .bold))
+                                .foregroundStyle(Color.accentDMZ)
+                                .frame(width: 38, height: 38)
+                                .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
+                            Spacer(minLength: 0)
+                            if flow.sorting && !postMatch { ProgressView() }
+                        }
+                        Text((postMatch ? "mw4.ui.postmatch.card" : "mw4.ui.hajin.grid_scan").localized())
+                            .font(.hitmarker(16))
+                            .foregroundStyle(Color.appInk)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Text((postMatch ? "mw4.ui.postmatch.card_hint" : "mw4.ui.hajin.grid_scan_hint").localized())
+                            .font(.caption)
+                            .foregroundStyle(Color.appInkMuted)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 0)
+                    }
+                    .padding(12)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .contentShape(Rectangle())
+                    .borderedCard()
+                }
+                .buttonStyle(HajinPressStyle())
+            }
+        }
+        .fixedSize(horizontal: false, vertical: true)
+        .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+}
+
+/// DMZ Level and DMZ Cash in one card, side by side: the two numbers
+/// everything else is weighed against. Tap either to type it in.
+struct HajinNumbersCard: View {
+    let cards: [HajinMineCard]
     @EnvironmentObject private var store: HajinStore
-    @State private var entering = false
+    @State private var editing: HajinMineCard?
     @State private var text = ""
 
     var body: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "banknote.fill")
-                .font(.system(size: 14, weight: .bold))
-                .foregroundStyle(.white)
-                .frame(width: 30, height: 30)
-                .background(Circle().fill(Color.accentDMZ))
-            VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.hajin.cash_title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
-                Text((store.cash > 0 ? "mw4.ui.hajin.cash_set" : "mw4.ui.hajin.cash_hint").localized())
-                    .font(.caption).foregroundStyle(Color.appInkMuted)
+        HStack(alignment: .top, spacing: 14) {
+            ForEach(Array(cards.enumerated()), id: \.element) { i, card in
+                if i > 0 { Rectangle().fill(Color.appSurface2).frame(width: 1) }
+                if card == .level { level } else { cash }
             }
-            Spacer()
-            Button {
-                text = store.cash > 0 ? "\(store.cash)" : ""
-                entering = true
-            } label: {
-                Text(store.cash > 0 ? "$\(store.cash.formatted())" : "mw4.ui.hajin.cash_add".localized())
-                    .font(.system(size: 14, weight: .bold, design: .monospaced))
-                    .foregroundStyle(Color.accentDMZ)
-                    .contentTransition(.numericText())
-            }
-            .buttonStyle(.borderless)
         }
-        .alert("mw4.ui.hajin.cash_title".localized(), isPresented: $entering) {
-            TextField("0", text: $text).keyboardType(.numberPad)
+        .alert(editing == .cash ? "mw4.ui.hajin.cash_title".localized() : "mw4.ui.hajin.dmz_level".localized(),
+               isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {
+            TextField(editing == .cash ? "0" : "1–\(HajinStore.maxLevel)", text: $text).keyboardType(.numberPad)
             Button("mw4.ui.hajin.save".localized()) {
-                store.setCash(Int(text.filter(\.isNumber)) ?? 0)
+                let n = Int(text.filter(\.isNumber))
+                if editing == .cash { store.setCash(n ?? 0) } else if let n { store.setLevel(n) }
             }
             Button("mw4.ui.hajin.cancel".localized(), role: .cancel) {}
         }
+    }
+
+    private func label(_ key: String) -> some View {
+        Text(key.localized()).font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+    }
+
+    private var level: some View {
+        let level = store.dmzLevel
+        return VStack(alignment: .leading, spacing: 8) {
+            label("mw4.ui.hajin.dmz_level")
+            HStack(alignment: .firstTextBaseline, spacing: 2) {
+                Button { text = level > 0 ? "\(level)" : ""; editing = .level } label: {
+                    if level > 0 {
+                        (Text("\(level)").font(.hitmarker(30)).foregroundColor(Color.appInk)
+                         + Text(" /\(HajinStore.maxLevel)").font(.hitmarker(15)).foregroundColor(Color.appInkMuted))
+                            .contentTransition(.numericText())
+                    } else {
+                        Text("mw4.ui.hajin.dmz_level_button".localized()).font(.hitmarker(18)).foregroundStyle(Color.accentDMZ)
+                    }
+                }
+                .buttonStyle(.borderless)
+                Spacer(minLength: 4)
+                if level > 0 {
+                    HStack(spacing: 6) {
+                        stepButton(systemName: "minus", enabled: true, size: 24, accent: .accentDMZ) { store.setLevel(level - 1) }
+                        stepButton(systemName: "plus", enabled: level < HajinStore.maxLevel, size: 24, accent: .accentDMZ) { store.setLevel(level + 1) }
+                    }
+                }
+            }
+            ProgressBar(fraction: Double(level) / Double(HajinStore.maxLevel), accent: .accentDMZ)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var cash: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            label("mw4.ui.hajin.cash_title")
+            Button { text = store.cash > 0 ? "\(store.cash)" : ""; editing = .cash } label: {
+                Text(store.cash > 0 ? "$\(store.cash.formatted())" : "mw4.ui.hajin.cash_add".localized())
+                    .font(.hitmarker(store.cash > 0 ? 30 : 18))
+                    .foregroundStyle(store.cash > 0 ? Color.appInk : Color.accentDMZ)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    .contentTransition(.numericText())
+            }
+            .buttonStyle(.borderless)
+            Text((store.cash > 0 ? "mw4.ui.hajin.cash_set" : "mw4.ui.hajin.cash_hint").localized())
+                .font(.caption2).foregroundStyle(Color.appInkMuted)
+                .lineLimit(2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// A tracked guide section on My DMZ: its symbol in a ring of how much is
+/// ticked, the title, and the count.
+struct HajinProgressTile: View {
+    let title: String
+    let symbol: String
+    /// nil: nothing to tick (prestige), so a plain symbol
+    let fraction: Double?
+    let count: String
+    /// The full width, as a row: an odd tile out at the end
+    var wide = false
+
+    var body: some View {
+        Group {
+            if wide {
+                HStack(spacing: 12) {
+                    ring
+                    titleText
+                    Spacer(minLength: 4)
+                    countText
+                }
+            } else {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .top) {
+                        ring
+                        Spacer(minLength: 4)
+                        countText
+                    }
+                    titleText.frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer(minLength: 0)
+                }
+                .frame(minHeight: 80, alignment: .topLeading)
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .borderedCard()
+    }
+
+    private var ring: some View {
+        ZStack {
+            // Nothing ticked yet: the bare track, not a dot of progress
+            if let fraction, fraction > 0 {
+                ProgressRing(fraction: fraction, accent: .accentDMZ, lineWidth: 4, size: 40, showsPercentage: false)
+            } else {
+                Circle().stroke(Color.appSurface2, lineWidth: 4).frame(width: 40, height: 40)
+            }
+            Image(systemName: symbol)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(Color.accentDMZ)
+        }
+    }
+
+    private var titleText: some View {
+        Text(title)
+            .font(.hitmarker(15))
+            .foregroundStyle(Color.appInk)
+            .multilineTextAlignment(.leading)
+            .lineLimit(2)
+    }
+
+    private var countText: some View {
+        Text(count)
+            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+            .foregroundStyle(fraction == 1 ? Color.accentDMZ : Color.appInkMuted)
     }
 }
 
