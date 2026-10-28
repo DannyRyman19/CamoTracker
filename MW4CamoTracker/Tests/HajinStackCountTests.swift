@@ -41,3 +41,20 @@ struct HajinBlueprintTileTests {
         #expect(HajinStashGrid.blueFraction(try tile(name)) < 0.25)
     }
 }
+
+/// Where a straightened tile sits back on the photo.
+struct HajinOnPhotoTests {
+    @Test func cornersMapToCorners() {
+        let q = [CGPoint(x: 0.1, y: 0.2), CGPoint(x: 0.9, y: 0.15), CGPoint(x: 0.85, y: 0.8), CGPoint(x: 0.12, y: 0.9)]
+        for (u, v, p) in [(0.0, 0.0, q[0]), (1.0, 0.0, q[1]), (1.0, 1.0, q[2]), (0.0, 1.0, q[3])] {
+            let m = HajinStashGrid.onPhoto(q, u: u, v: v)
+            #expect(abs(m.x - p.x) < 1e-9 && abs(m.y - p.y) < 1e-9)
+        }
+    }
+
+    @Test func aRectangleIsEvenlySplit() {
+        let q = [CGPoint(x: 0.2, y: 0.2), CGPoint(x: 0.6, y: 0.2), CGPoint(x: 0.6, y: 0.8), CGPoint(x: 0.2, y: 0.8)]
+        let m = HajinStashGrid.onPhoto(q, u: 0.25, v: 0.5)
+        #expect(abs(m.x - 0.3) < 1e-9 && abs(m.y - 0.5) < 1e-9)
+    }
+}

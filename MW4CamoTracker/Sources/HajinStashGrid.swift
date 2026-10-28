@@ -25,6 +25,23 @@ enum HajinStashGrid {
         var image: CGImage? = nil
         var guess: String? = nil
         var guessConfidence: Float = 0
+        /// Where it was read, on the photo: four corners (TL, TR, BR, BL)
+        /// as fractions, from the tile's own borders where they were found
+        var place: [CGPoint]? = nil
+    }
+
+    /// A point of the unit square (u across, v down) on the photo quad
+    /// `q` (TL, TR, BR, BL): the perspective mapping straightening undoes.
+    static func onPhoto(_ q: [CGPoint], u: CGFloat, v: CGFloat) -> CGPoint {
+        let sx = q[0].x - q[1].x + q[2].x - q[3].x, sy = q[0].y - q[1].y + q[2].y - q[3].y
+        let dx1 = q[1].x - q[2].x, dx2 = q[3].x - q[2].x, dy1 = q[1].y - q[2].y, dy2 = q[3].y - q[2].y
+        let det = dx1 * dy2 - dx2 * dy1
+        let g = det == 0 ? 0 : (sx * dy2 - dx2 * sy) / det
+        let h = det == 0 ? 0 : (dx1 * sy - sx * dy1) / det
+        let a = q[1].x - q[0].x + g * q[1].x, b = q[3].x - q[0].x + h * q[3].x
+        let d = q[1].y - q[0].y + g * q[1].y, e = q[3].y - q[0].y + h * q[3].y
+        let w = g * u + h * v + 1
+        return CGPoint(x: (a * u + b * v + q[0].x) / w, y: (d * u + e * v + q[0].y) / w)
     }
 
     /// Rows that fit the framed area, from its shape (tiles are square).
@@ -131,7 +148,17 @@ enum HajinStashGrid {
             return CGRect(x: lattice.xs[column], y: lattice.ys[row],
                           width: lattice.xs[column + 1] - lattice.xs[column], height: lattice.ys[row + 1] - lattice.ys[row])
         }
+        let flatW = CGFloat(flat.width), flatH = CGFloat(flat.height)
+        func place(_ r: CGRect) -> [CGPoint] {
+            [(r.minX, r.minY), (r.maxX, r.minY), (r.maxX, r.maxY), (r.minX, r.maxY)]
+                .map { onPhoto(margin, u: $0.0 / flatW, v: $0.1 / flatH) }
+        }
         func readTile(_ r: CGRect, _ row: Int, _ column: Int) -> Tile? {
+            var read = classify(r, row, column)
+            read?.place = place(r)
+            return read
+        }
+        func classify(_ r: CGRect, _ row: Int, _ column: Int) -> Tile? {
             guard let raw = flat.cropping(to: r.integral), let tile = resized(raw, to: cell, ci) else { return nil }
             // A blueprint (a recipe picked up in a match) is the item drawn
             // on a blue grid, which the icon model has never seen
@@ -194,8 +221,11 @@ enum HajinStashGrid {
                 let top = votes.values.max() ?? 0
                 let count = counts.first { votes[$0] == top }
                 let best = mine.max { $0.guessConfidence < $1.guessConfidence }
+                // Lit on the review where its surest read was taken
+                let surest = mine.max { $0.confidence < $1.confidence }
                 tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count,
-                                  image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0))
+                                  image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0,
+                                  place: surest?.place))
             }
         }
         HajinGridDebug.log(tiles.filter { $0.id != "empty" }.map { "\($0.row)\($0.column) \($0.id) \(String(format: "%.2f", $0.confidence)) \($0.count.map(String.init) ?? "?")" }.joined(separator: "\n"))

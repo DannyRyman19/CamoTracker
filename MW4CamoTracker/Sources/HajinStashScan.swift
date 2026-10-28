@@ -694,6 +694,8 @@ struct HajinStashScanReview: View {
             return CGPoint(x: top.x + (bottom.x - top.x) * v, y: top.y + (bottom.y - top.y) * v)
         }
         return tiles.filter { (swaps[$0.id] ?? $0.id) == id }.map { t in
+            // Where the tile was really read, from its own borders
+            if let place = t.place { return place }
             let u0 = CGFloat(t.column) / CGFloat(columns), u1 = CGFloat(t.column + 1) / CGFloat(columns)
             let v0 = CGFloat(t.row) / CGFloat(rows), v1 = CGFloat(t.row + 1) / CGFloat(rows)
             return [at(u0, v0), at(u1, v0), at(u1, v1), at(u0, v1)]

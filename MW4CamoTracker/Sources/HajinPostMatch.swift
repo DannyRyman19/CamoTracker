@@ -128,7 +128,7 @@ enum HajinBackpack {
         let secureCorners = secureRow(corners, lines: lines, size: size)
         // Each tile with where it is on the photo, for the review to light up
         var tiles = HajinStashGrid.read(image, corners: corners, rows: gridRows, columns: columns, blueprints: blueprints)
-            .map { ($0, quad(corners, row: $0.row, column: $0.column, rows: gridRows)) }
+            .map { ($0, $0.place ?? quad(corners, row: $0.row, column: $0.column, rows: gridRows)) }
         // The secure row, read where it is rather than fitted to lines: the
         // SECURE SLOTS label's box looks like another row
         let secure = HajinStashGrid.read(image, corners: secureCorners, rows: 1, columns: columns,
@@ -138,8 +138,8 @@ enum HajinBackpack {
         tiles += secure.filter { !($0.id == "riot-shield" && $0.confidence < 0.7) }
             // Read after the grid: its row sits under the last one
             .map { HajinStashGrid.Tile(row: gridRows, column: $0.column, id: $0.id, confidence: $0.confidence, count: $0.count,
-                                       image: $0.image, guess: $0.guess, guessConfidence: $0.guessConfidence) }
-            .map { ($0, quad(secureCorners, row: 0, column: $0.column, rows: 1)) }
+                                       image: $0.image, guess: $0.guess, guessConfidence: $0.guessConfidence, place: $0.place) }
+            .map { ($0, $0.place ?? quad(secureCorners, row: 0, column: $0.column, rows: 1)) }
         var result = HajinPostMatchResult()
         for (t, place) in tiles {
             switch t.id {
@@ -224,7 +224,7 @@ struct HajinPostMatchResult: Identifiable {
         var r = HajinPostMatchResult()
         r.counts = ["ballistic-flight-logs": 9, "nuclear-program-files": 5, "degraded-execution-footage": 4, "electronic-sensors": 1,
                     "control-unit": 1, "regional-combat-notes": 6, "rigid-synthetics": 6, "stim": 2, "cpu": 1, "encrypted-archive": 7,
-                    "sanctioned-assassination-list": 1, "binding-catalyst": 1, "cipher-code-ledger": 2, "infantry-invasion-plans": 2]
+                    "sanctioned-assassination-list": 1, "binding-catalyst": 1, "cipher-code-ledger": 2, "infantry-invasion-plans": 2, "traindepot-storage-room": 1, "bank-branch-vault-access": 1]
         r.unsure = ["electronic-sensors"]
         r.places = ["ballistic-flight-logs": [HajinBackpack.quad([CGPoint(x: 0.1, y: 0.15), CGPoint(x: 0.85, y: 0.15), CGPoint(x: 0.85, y: 0.6), CGPoint(x: 0.1, y: 0.6)], row: 0, column: 0, rows: 2)]]
         r.resources = ["synthetics": 43, "electronics": 10, "chemicals": 29, "metals": 80]
@@ -315,14 +315,27 @@ struct HajinPostMatchReview: View {
         }
     }
 
-    /// Everything else read: gear, keys and the like, which My stash doesn't count.
+    /// Everything else read: gear and the like, which My stash doesn't
+    /// count. Keys are apart: they share a few pictures, so which key it is
+    /// can't be told.
     private var gear: [(item: HajinGuide.Item, count: Int)] {
         guard let guide = store.guide else { return [] }
         return counts.compactMap { id, n in
-            guard !removed.contains(id), let item = guide.item(id), !HajinStore.inStash(item) else { return nil }
+            guard !removed.contains(id), let item = guide.item(id), !HajinStore.inStash(item), item.kind != "Key" else { return nil }
             return (item, edited[id] ?? n)
         }
         .sorted { (order[$0.item.id] ?? .max, $0.item.name.resolved) < (order[$1.item.id] ?? .max, $1.item.name.resolved) }
+    }
+
+    /// Keys read, as one count, and where they all are.
+    private var keys: (count: Int, places: [[CGPoint]]) {
+        guard let guide = store.guide else { return (0, []) }
+        var count = 0, at: [[CGPoint]] = []
+        for (id, n) in counts where !removed.contains(id) && guide.item(id)?.kind == "Key" {
+            count += edited[id] ?? n
+            at += places[id] ?? []
+        }
+        return (count, at)
     }
 
     private func sells(_ row: Row) -> Bool { row.spare != flipped.contains(row.key) }
@@ -368,7 +381,7 @@ struct HajinPostMatchReview: View {
                 if result.manuals > 0 {
                     Section { manualRow }
                 }
-                if !gear.isEmpty {
+                if !gear.isEmpty || keys.count > 0 {
                     Section("mw4.ui.postmatch.gear".localized()) {
                         ForEach(gear, id: \.item.id) { line in
                             HStack(spacing: 12) {
@@ -384,6 +397,7 @@ struct HajinPostMatchReview: View {
                                 Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(line.item.id) }
                             }
                         }
+                        if keys.count > 0 { keysRow }
                     }
                 }
                 if result.unread > 0 {
@@ -448,9 +462,28 @@ struct HajinPostMatchReview: View {
         .modifier(HajinScrollsNotSheet(on: photo != nil))
     }
 
+    /// Every key, unnamed: a key's picture doesn't say which it is.
+    private var keysRow: some View {
+        HStack(spacing: 12) {
+            HajinCardSymbol("key.fill")
+            Text("mw4.ui.postmatch.keys".localized()).font(.subheadline).foregroundStyle(Color.appInk)
+            Spacer()
+            Text("×\(keys.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
+        }
+        .contentShape(Rectangle())
+        .onTapGesture { light("keys") }
+        .listRowBackground(highlighted == "keys" ? Color.accentDMZ.opacity(0.14) : nil)
+        .swipeActions {
+            Button("mw4.ui.postmatch.remove".localized(), role: .destructive) {
+                for (id, _) in counts where store.guide?.item(id)?.kind == "Key" { removed.insert(id) }
+            }
+        }
+    }
+
     /// Where a lit row's tiles are on the photo.
     private func marks(_ key: String) -> [[CGPoint]] {
         guard photo != nil else { return [] }
+        if key == "keys" { return keys.places }
         if key.hasPrefix("bp:") {
             return result.blueprints.first { "bp:\($0.id)" == key }?.place.map { [$0] } ?? []
         }
