@@ -7,7 +7,8 @@ sharing a picture share a class, named `x-<first id>`), plus `empty` (a blank
 tile). Only ingredient counts reach My stash; the rest are recognised so they
 aren't mistaken for ingredients on the All or Misc tabs. It's trained only on generated tiles: each
 guide picture pasted onto a game-style tile (rarity colour, dot pattern, a
-count, the cube mark, sometimes a pin; blueprint items also on the
+count, the cube mark or a valuable's diamond, sometimes a pin; valuables get
+as many tiles as an ingredient; blueprint items also on the
 backpack's blue blueprint tile, and the weapon manual mostly on its TSD
 stamp), then damaged the way a phone photo of
 a TV is (colour cast, blur, moire, glare, JPEG, a slight tilt).
@@ -19,8 +20,11 @@ cd MW4CamoTracker/Tools/stash-scan
 python3 fetch_icons.py /tmp/stash        # guide pictures (from the repo's Images/DMZ) -> /tmp/stash/refs, refs_other
 python3 synth.py /tmp/stash/refs /tmp/stash/syn 90
 python3 synth.py /tmp/stash/refs_other_unique /tmp/stash/syn 40   # one file per distinct picture
+# Create ML fails ("Failed to create CVPixelBufferPool") on all ~8,800
+# tiles: train on 60 a class, picked at random (~7,400)
+python3 -c "import os,random;random.seed(1);s='/tmp/stash/syn';[os.makedirs(f'/tmp/stash/cap/{c}',exist_ok=True) or [os.link(f'{s}/{c}/{f}',f'/tmp/stash/cap/{c}/{f}') for f in random.sample(sorted(os.listdir(f'{s}/{c}')),min(60,len(os.listdir(f'{s}/{c}'))))] for c in os.listdir(s)]"
 swiftc -O train.swift -o /tmp/stash/train   # augmentation off: with ~125 classes it runs out of buffers
-/tmp/stash/train /tmp/stash/syn <real-tiles-dir> /tmp/stash/HajinStashIcons.mlmodel 25
+/tmp/stash/train /tmp/stash/cap <real-tiles-dir> /tmp/stash/HajinStashIcons.mlmodel 25
 cp /tmp/stash/HajinStashIcons.mlmodel ../../Sources/
 ```
 

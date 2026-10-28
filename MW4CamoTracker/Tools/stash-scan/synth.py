@@ -34,6 +34,20 @@ def cube(d, x, y, s):
     d.rectangle([x, y, x + s, y + s], outline=(235, 235, 235), width=2)
     d.polygon([(x, y), (x + s // 3, y - s // 3), (x + s + s // 3, y - s // 3), (x + s, y)], outline=(235, 235, 235))
 
+# Valuables (not dog tags) and the intel ingredients sit on the stash's
+# Valuables tab and carry a diamond, not the cube
+DIAMOND = {i['id'] for i in guide['items'] if i['kind'] == 'Valuable' and 'dog-tag' not in i['id']} | {
+    'ballistic-flight-logs', 'degraded-execution-footage', 'infantry-invasion-plans', 'nuclear-program-files', 'regional-combat-notes'}
+
+def diamond(d, x, y, s):
+    """The cut-gem mark: a flat top, a crown line, facets to the point."""
+    w = (235, 235, 235)
+    top, crown, bottom = y - s // 2, y - s // 5, y + s // 2
+    d.polygon([(x + s // 4, top), (x + s - s // 4, top), (x + s, crown), (x + s // 2, bottom), (x, crown)], outline=w, width=2)
+    d.line([(x, crown), (x + s, crown)], fill=w, width=2)
+    for fx in (s // 3, s * 2 // 3):
+        d.line([(x + fx, crown), (x + s // 2, bottom)], fill=w, width=1)
+
 def tile(icon, rid):
     col = RARITY.get(rarity.get(rid) or '', None)
     if random.random() < 0.15:
@@ -51,7 +65,10 @@ def tile(icon, rid):
     f = ImageFont.truetype(FONT, random.randint(30, 42)); f.set_variation_by_name(b'Bold')
     n = str(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]))
     d.text((random.randint(150, 168) - 18 * (len(n) - 1), random.randint(10, 22)), n, font=f, fill=(240, 240, 240))
-    cube(d, random.randint(10, 18), random.randint(165, 178), random.randint(10, 14))
+    if (rid[2:] if rid.startswith('x-') else rid) in DIAMOND:
+        diamond(d, random.randint(8, 16), random.randint(172, 182), random.randint(20, 26))
+    else:
+        cube(d, random.randint(10, 18), random.randint(165, 178), random.randint(10, 14))
     if random.random() < 0.4:  # pin
         d.line([(8, 30), (26, 12)], fill=(230, 230, 230), width=4)
     # frame lines from neighbours
@@ -154,7 +171,9 @@ for f in sorted(os.listdir(REFS)):
     icon = Image.open(os.path.join(REFS, f)).convert('RGBA')
     os.makedirs(os.path.join(OUT, rid), exist_ok=True)
     item = rid[2:] if rid.startswith('x-') else rid
-    for k in range(N):
+    # Valuables get as many tiles as an ingredient: with fewer, a look-alike
+    # ingredient (a paper one) wins the close calls
+    for k in range(max(N, 90) if item in DIAMOND else N):
         # A manual is nearly always on its stamp
         styled = manual_tile(icon) if item == 'weapon-manual' and random.random() < 0.7 else tile(icon, rid)
         photograph(styled).save(os.path.join(OUT, rid, f'{k:04d}.jpg'), quality=92)
