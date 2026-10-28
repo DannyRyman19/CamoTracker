@@ -281,9 +281,8 @@ struct WeaponDetailView: View {
         VStack(alignment: .leading, spacing: 3) {
             if let category {
                 Text(category.name.resolved())
-                    .font(.system(size: 11, weight: .bold))
-                    .textCase(.uppercase)
-                    .foregroundStyle(Color.appInkMuted)
+                    .font(.hitmarker(15))
+                    .foregroundStyle(Color.appInk)
             }
             AcquiredByLabel(weapon: weapon)
         }
@@ -830,6 +829,8 @@ private struct CompactLevelRow: View {
 
     @State private var showValueEntry = false
     @State private var valueText = ""
+    /// Why unlocks, not level: behind the (i) by the label, not always shown
+    @State private var showsUnlocksHint = false
     /// The Prestige camos list's open state (shared with the page): opened
     /// on prestiging, which is when the first of them becomes earnable
     @AppStorage("mw4.prestigeCamosOpen") private var prestigeCamosOpen = false
@@ -852,7 +853,7 @@ private struct CompactLevelRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             levelLine
-            if countsUnlocks {
+            if countsUnlocks && showsUnlocksHint {
                 // Why the game's weapon level can be well ahead of this
                 Text("mw4.ui.unlocks_hint".localized())
                     .font(.system(size: 11))
@@ -1024,6 +1025,17 @@ private struct CompactLevelRow: View {
                     label.minimumScaleFactor(0.7)
                 }
                 .layoutPriority(1)
+                if countsUnlocks && prestige == 0 {
+                    Button {
+                        withAnimation(.snappy) { showsUnlocksHint.toggle() }
+                    } label: {
+                        Image(systemName: showsUnlocksHint ? "info.circle.fill" : "info.circle")
+                            .font(.system(size: 13))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("mw4.ui.unlocks_hint".localized())
+                }
 
                 Spacer(minLength: 4)
 
@@ -1035,9 +1047,9 @@ private struct CompactLevelRow: View {
                     valueText = "\(shown)"
                     showValueEntry = true
                 } label: {
-                    Text("\(shown)/\(shownMax)")
-                        .font(.system(size: 14, weight: .bold, design: .monospaced))
-                        .foregroundStyle(mode.accent)
+                    (Text("\(shown)").font(.hitmarker(20)).foregroundColor(Color.appInk)
+                     + Text("/\(shownMax)").font(.hitmarker(12)).foregroundColor(Color.appInkMuted))
+                        .lineLimit(1)
                         .contentTransition(.numericText())
                         .frame(minWidth: 56)
                 }
