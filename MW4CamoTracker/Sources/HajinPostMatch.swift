@@ -262,6 +262,8 @@ struct HajinPostMatchReview: View {
     @State private var swapping: HajinGuide.Item?
     /// The item (or "bp:" and a blueprint's id) lit on the photo
     @State private var highlighted: String?
+    /// The row tapped open, showing its fixes
+    @State private var opened: String?
     @State private var size: CGSize = .zero
     @Environment(\.dismiss) private var dismiss
     /// Rows the player has switched away from the suggestion
@@ -437,8 +439,8 @@ struct HajinPostMatchReview: View {
                     Button("mw4.ui.hajin.cancel".localized()) { dismiss(); onDone?() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("mw4.ui.hajin.scan_apply".localized()) { apply(kept, blueprints: ticked) }
-                        .disabled(kept.isEmpty && result.resources.isEmpty && ticked.isEmpty)
+                    Button("mw4.ui.hajin.scan_apply".localized()) { apply(kept, blueprints: ticked, sold: total) }
+                        .disabled(kept.isEmpty && result.resources.isEmpty && ticked.isEmpty && total == 0)
                 }
             }
             .onAppear {
@@ -537,9 +539,16 @@ struct HajinPostMatchReview: View {
             Image(systemName: "dollarsign.circle.fill")
                 .font(.system(size: 30))
                 .foregroundStyle(sold > 0 ? HajinVerdict.sellColor : Color.appInkMuted)
-            Text(sold > 0 ? String(format: "mw4.ui.postmatch.sell_total".localized(), sold) : "mw4.ui.postmatch.sell_none".localized())
-                .font(.headline)
-                .foregroundStyle(Color.appInk)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(sold > 0 ? String(format: "mw4.ui.postmatch.sell_total".localized(), sold) : "mw4.ui.postmatch.sell_none".localized())
+                    .font(.headline)
+                    .foregroundStyle(Color.appInk)
+                if total > 0 {
+                    Text("mw4.ui.postmatch.sell_cash".localized())
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                }
+            }
             Spacer(minLength: 8)
             if total > 0 {
                 Text("$\(total.formatted())")
@@ -569,63 +578,83 @@ struct HajinPostMatchReview: View {
         }
     }
 
+    /// One item: its picture, name and a line of what it is (count, worth,
+    /// a check mark when the read was weak), and Sold | Keep. Tapped, it's
+    /// lit on the photo and opens its fixes: the right item, or the count.
     private func itemRow(_ row: Row) -> some View {
         let check = unsure.contains(row.item.id) && edited[row.item.id] == nil
         let wasSwapped = swapped.contains(row.item.id)
-        return HStack(spacing: 12) {
+        let selected = highlighted == row.item.id
+        let open = opened == row.item.id
+        return VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 12) {
-            findableTile(row.item, size: 40)
-            VStack(alignment: .leading, spacing: 3) {
-                HStack(spacing: 6) {
-                    Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk).lineLimit(2)
-                    Text("×\(row.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
-                }
-                HStack(spacing: 6) {
-                    // Why it's suggested: spare beyond what you need, or still needed
-                    Text((row.spare ? "mw4.ui.postmatch.spare" : "mw4.ui.postmatch.needed").localized().uppercased())
-                        .font(.system(size: 10, weight: .heavy)).tracking(0.5)
-                        .foregroundStyle(row.spare ? HajinVerdict.sellColor : Color(red: 0.96, green: 0.66, blue: 0.24))
-                    if let value = row.item.value, value > 0 {
-                        Text("$\((value * row.count).formatted())").font(.caption2).foregroundStyle(Color.appInkMuted)
+                HStack(spacing: 12) {
+                    findableTile(row.item, size: 40)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk).lineLimit(2)
+                        HStack(spacing: 6) {
+                            Text("×\(row.count)").font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            if let value = row.item.value, value > 0 {
+                                Text("$\((value * row.count).formatted())").font(.caption)
+                            }
+                            if wasSwapped {
+                                Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZ)
+                                    .accessibilityLabel("mw4.ui.hajin.scan_swapped".localized())
+                            } else if check {
+                                Text("mw4.ui.hajin.scan_check".localized())
+                                    .font(.caption2.weight(.bold))
+                                    .foregroundStyle(Color.black.opacity(0.85))
+                                    .padding(.horizontal, 6).padding(.vertical, 1)
+                                    .background(Capsule().fill(Color(red: 0.96, green: 0.66, blue: 0.24)))
+                            }
+                        }
+                        .foregroundStyle(Color.appInkMuted)
                     }
-                    if wasSwapped {
-                        Label("mw4.ui.hajin.scan_swapped".localized(), systemImage: "arrow.left.arrow.right")
-                            .font(.caption2.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
-                    } else if check {
-                        Text("mw4.ui.hajin.scan_check".localized().uppercased())
-                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
-                            .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
-                    }
+                    Spacer(minLength: 6)
                 }
-                // Read off the photo's tiles: wrong item? pick the right one
-                if photo != nil {
-                    Button { swapping = row.item } label: {
-                        Text("mw4.ui.hajin.scan_not_this".localized())
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
-                    }
-                    .buttonStyle(.borderless)
-                }
+                // Tap the item to see its tiles on the photo, and its fixes
+                .contentShape(Rectangle())
+                .onTapGesture { select(row.item.id) }
+                soldKeep(row)
             }
-            Spacer(minLength: 6)
+            if open {
+                HStack(spacing: 8) {
+                    if photo != nil {
+                        fixButton("mw4.ui.hajin.scan_not_this", "arrow.left.arrow.right") { swapping = row.item }
+                    }
+                    fixButton("mw4.ui.hajin.scan_edit", "pencil") {
+                        editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item
+                    }
+                    fixButton("mw4.ui.postmatch.remove", "trash") { removed.insert(row.item.id) }
+                    Spacer(minLength: 0)
+                }
+                .padding(.leading, 52)
+                .transition(.opacity)
             }
-            // Tap the item to see its tiles on the photo
-            .contentShape(Rectangle())
-            .onTapGesture { light(row.item.id) }
-            soldKeep(row)
         }
-        .listRowBackground(highlighted == row.item.id ? Color.accentDMZ.opacity(0.14) : nil)
-        .contextMenu {
-            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item }
-            Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(row.item.id) }
-        }
+        .listRowBackground(selected ? Color.accentDMZ.opacity(0.14) : nil)
         .swipeActions {
             Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(row.item.id) }
-            Button("mw4.ui.hajin.scan_edit".localized()) {
-                editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item
-            }
-            .tint(.accentDMZ)
+        }
+    }
+
+    /// A small fix under the selected row.
+    private func fixButton(_ key: String, _ symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label(key.localized(), systemImage: symbol)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Color.accentDMZ)
+                .padding(.horizontal, 10).padding(.vertical, 6)
+                .background(Capsule().fill(Color.accentDMZ.opacity(0.14)))
+        }
+        .buttonStyle(.borderless)
+    }
+
+    /// Taps a row: its tiles lit and its fixes open (tap again to close).
+    private func select(_ key: String) {
+        Haptics.step()
+        withAnimation(.snappy) {
+            if opened == key { opened = nil } else { opened = key; highlighted = key }
         }
     }
 
@@ -732,8 +761,10 @@ struct HajinPostMatchReview: View {
         .listRowBackground(Color.accentDMZ.opacity(0.15))
     }
 
-    private func apply(_ kept: [Row], blueprints: [String]) {
+    private func apply(_ kept: [Row], blueprints: [String], sold: Int) {
         Haptics.step()
+        // What's sold is paid into DMZ Cash
+        if sold > 0 { store.setCash(store.cash + sold) }
         var counts: [String: Int] = [:]
         for row in kept { counts[row.item.id] = (counts[row.item.id] ?? store.count(of: row.item.id)) + row.count }
         for (id, n) in result.resources { counts[id] = store.count(of: id) + n }

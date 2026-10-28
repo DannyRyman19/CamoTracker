@@ -632,7 +632,8 @@ struct HajinStashScanReview: View {
                     }
                 }
                 // Read off the photo's tiles: wrong item? pick the right one
-                if swapped || sureness[row.item.id] != nil {
+                // (on the item tapped, so the list isn't full of it)
+                if highlighted == row.item.id && (swapped || sureness[row.item.id] != nil) {
                     Button { swapping = row.item } label: {
                         Text("mw4.ui.hajin.scan_not_this".localized())
                             .font(.caption.weight(.semibold))

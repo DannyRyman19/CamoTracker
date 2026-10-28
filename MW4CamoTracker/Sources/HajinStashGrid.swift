@@ -221,11 +221,14 @@ enum HajinStashGrid {
                 let top = votes.values.max() ?? 0
                 let count = counts.first { votes[$0] == top }
                 let best = mine.max { $0.guessConfidence < $1.guessConfidence }
-                // Lit on the review where its surest read was taken
+                // Lit on the review on the tile's own borders where they were
+                // found (the frame can be a little big or off, and a read
+                // from it still lands); else where its surest read was taken
                 let surest = mine.max { $0.confidence < $1.confidence }
+                let lit = b.map(place) ?? surest?.place
                 tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count,
                                   image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0,
-                                  place: surest?.place))
+                                  place: lit))
             }
         }
         HajinGridDebug.log(tiles.filter { $0.id != "empty" }.map { "\($0.row)\($0.column) \($0.id) \(String(format: "%.2f", $0.confidence)) \($0.count.map(String.init) ?? "?")" }.joined(separator: "\n"))
