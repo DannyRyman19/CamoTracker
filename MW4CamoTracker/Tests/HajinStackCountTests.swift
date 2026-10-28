@@ -58,3 +58,23 @@ struct HajinOnPhotoTests {
         #expect(abs(m.x - 0.3) < 1e-9 && abs(m.y - 0.5) < 1e-9)
     }
 }
+
+/// The review's highlight moved onto a tile's own outline.
+struct HajinSnapTests {
+    @Test func aBoxOffTheTileSnapsOntoItsOutline() {
+        let w = 300, h = 300
+        var grey = [UInt8](repeating: 30, count: w * h)
+        // The tile's outline: 100...200 both ways
+        for i in 100...200 {
+            for k in [100, 200] { grey[k * w + i] = 120; grey[i * w + k] = 120 }
+        }
+        let r = HajinStashGrid.snapped(CGRect(x: 88, y: 92, width: 104, height: 104), grey, width: w, height: h)
+        #expect(r == CGRect(x: 100, y: 100, width: 100, height: 100))
+    }
+
+    @Test func noOutlineLeavesTheBox() {
+        let grey = [UInt8](repeating: 30, count: 300 * 300)
+        let box = CGRect(x: 88, y: 92, width: 104, height: 104)
+        #expect(HajinStashGrid.snapped(box, grey, width: 300, height: 300) == box)
+    }
+}

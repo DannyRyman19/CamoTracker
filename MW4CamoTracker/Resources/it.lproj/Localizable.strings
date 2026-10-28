@@ -406,6 +406,7 @@
 "mw4.ui.hajin.scan_check" = "Controlla";
 "mw4.ui.hajin.scan_swapped" = "Scambiato";
 "mw4.ui.hajin.scan_not_this" = "Non è questo oggetto?";
+"mw4.ui.hajin.scan_change" = "Cambia";
 "mw4.ui.hajin.scan_swap_title" = "In realtà è…";
 "mw4.ui.hajin.scan_sure" = "%1$d pile · sicuro al %2$d%%";
 "mw4.ui.hajin.scan_edit" = "Modifica";
@@ -511,7 +512,7 @@
 "mw4.ui.postmatch.intro" = "Scatta una foto o uno screenshot dello zaino dopo l'esfiltrazione: il riepilogo o la schermata dello zaino. L'app legge ogni casella, ti dice cosa vendere e aggiunge ciò che tieni alla Mia scorta.";
 "mw4.ui.postmatch.tip_screen" = "Va bene il riepilogo, oppure apri lo zaino dal menu";
 "mw4.ui.postmatch.tip_whole" = "Inquadra tutto lo zaino, con gli slot sicuri e il pannello SORT accanto";
-"mw4.ui.postmatch.frame" = "Trascina gli angoli sulla griglia dello zaino (senza gli slot sicuri sotto).";
+"mw4.ui.postmatch.frame" = "Trascina gli angoli sulla griglia dello zaino. Gli slot sicuri sotto vengono trovati e letti a parte.";
 "mw4.ui.postmatch.items" = "Portato fuori";
 "mw4.ui.postmatch.resources_footer" = "Dal pannello SORT. Aggiunte alla scorta.";
 "mw4.ui.postmatch.sell_total" = "Vendi %d";

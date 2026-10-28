@@ -406,6 +406,7 @@
 "mw4.ui.hajin.scan_check" = "Check";
 "mw4.ui.hajin.scan_swapped" = "Swapped";
 "mw4.ui.hajin.scan_not_this" = "Not this item?";
+"mw4.ui.hajin.scan_change" = "Change";
 "mw4.ui.hajin.scan_swap_title" = "It's really…";
 "mw4.ui.hajin.scan_sure" = "%1$d stacks · %2$d%% sure";
 "mw4.ui.hajin.scan_edit" = "Edit";
@@ -511,7 +512,7 @@
 "mw4.ui.postmatch.intro" = "Take a photo or screenshot of your backpack after you exfil: the Extraction summary or the backpack screen. The app reads every tile, says what to sell, and adds what you keep to My stash.";
 "mw4.ui.postmatch.tip_screen" = "The Extraction summary works, or open the backpack in the menu";
 "mw4.ui.postmatch.tip_whole" = "Get the whole backpack in, with Secure slots and the SORT panel beside it";
-"mw4.ui.postmatch.frame" = "Drag the corners to the backpack grid (not the Secure slots under it).";
+"mw4.ui.postmatch.frame" = "Drag the corners onto the backpack grid. The Secure slots under it are found and read on their own.";
 "mw4.ui.postmatch.items" = "Brought out";
 "mw4.ui.postmatch.resources_footer" = "From the SORT panel. Added to My stash.";
 "mw4.ui.postmatch.sell_total" = "Sell %d";

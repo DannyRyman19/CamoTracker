@@ -628,15 +628,13 @@ struct HajinPostMatchReview: View {
             if open {
                 HStack(spacing: 8) {
                     if photo != nil {
-                        fixButton("mw4.ui.hajin.scan_not_this", "arrow.left.arrow.right") { swapping = row.item }
+                        fixButton("mw4.ui.hajin.scan_change", "arrow.left.arrow.right") { swapping = row.item }
                     }
                     fixButton("mw4.ui.hajin.scan_edit", "pencil") {
                         editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item
                     }
                     fixButton("mw4.ui.postmatch.remove", "trash") { removed.insert(row.item.id) }
-                    Spacer(minLength: 0)
                 }
-                .padding(.leading, 52)
                 .transition(.opacity)
             }
         }
@@ -649,10 +647,14 @@ struct HajinPostMatchReview: View {
     /// A small fix under the selected row.
     private func fixButton(_ key: String, _ symbol: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
+            // Three to a row, sharing it: one line each
             Label(key.localized(), systemImage: symbol)
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(Color.accentDMZ)
-                .padding(.horizontal, 10).padding(.vertical, 6)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
                 .background(Capsule().fill(Color.accentDMZ.opacity(0.14)))
         }
         .buttonStyle(.borderless)

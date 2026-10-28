@@ -149,6 +149,7 @@ enum HajinStashGrid {
                           width: lattice.xs[column + 1] - lattice.xs[column], height: lattice.ys[row + 1] - lattice.ys[row])
         }
         let flatW = CGFloat(flat.width), flatH = CGFloat(flat.height)
+        let grey = greyPixels(flat)
         func place(_ r: CGRect) -> [CGPoint] {
             [(r.minX, r.minY), (r.maxX, r.minY), (r.maxX, r.maxY), (r.minX, r.maxY)]
                 .map { onPhoto(margin, u: $0.0 / flatW, v: $0.1 / flatH) }
@@ -228,12 +229,12 @@ enum HajinStashGrid {
                 // crop; then the surest read
                 let surest = mine.max { $0.confidence < $1.confidence }
                 let agreed = Set(mine.compactMap(\.place).map { $0.map { "\($0.x),\($0.y)" }.joined(separator: ";") })
-                func agrees(_ r: CGRect?) -> [CGPoint]? {
+                func agrees(_ r: CGRect?) -> CGRect? {
                     guard let r else { return nil }
-                    let p = place(r)
-                    return agreed.contains(p.map { "\($0.x),\($0.y)" }.joined(separator: ";")) ? p : nil
+                    return agreed.contains(place(r).map { "\($0.x),\($0.y)" }.joined(separator: ";")) ? r : nil
                 }
-                let lit = agrees(b) ?? agrees(a) ?? surest?.place
+                // Then each side snapped onto the tile's own outline nearby
+                let lit = (agrees(b) ?? agrees(a)).map { place(snapped($0, grey, width: flat.width, height: flat.height)) } ?? surest?.place
                 tiles.append(Tile(row: row, column: column, id: id, confidence: weight[id]! / Float(reads.count), count: count,
                                   image: best?.image, guess: best?.guess, guessConfidence: best?.guessConfidence ?? 0,
                                   place: lit))
@@ -241,6 +242,50 @@ enum HajinStashGrid {
         }
         HajinGridDebug.log(tiles.filter { $0.id != "empty" }.map { "\($0.row)\($0.column) \($0.id) \(String(format: "%.2f", $0.confidence)) \($0.count.map(String.init) ?? "?")" }.joined(separator: "\n"))
         return tiles
+    }
+
+    /// The straightened grid in grey, one byte a pixel, for `snapped`.
+    static func greyPixels(_ image: CGImage) -> [UInt8] {
+        var px = [UInt8](repeating: 0, count: image.width * image.height)
+        guard let ctx = CGContext(data: &px, width: image.width, height: image.height, bitsPerComponent: 8, bytesPerRow: image.width,
+                                  space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue) else { return [] }
+        ctx.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
+        return px
+    }
+
+    /// A tile's box with each side moved onto the tile's thin light outline
+    /// if one is near (a fifth of a tile either way), so the review's
+    /// highlight sits on the tile itself rather than on the frame's guess.
+    /// A side with no clear line stays put.
+    static func snapped(_ r: CGRect, _ grey: [UInt8], width w: Int, height h: Int) -> CGRect {
+        guard grey.count == w * h, r.width > 20 else { return r }
+        let reach = Int(r.width * 0.2)
+        func at(_ x: Int, _ y: Int) -> Double { Double(grey[min(max(y, 0), h - 1) * w + min(max(x, 0), w - 1)]) }
+        // How much a line stands out from just either side of it
+        func vertical(_ x: Int) -> Double {
+            let y0 = Int(r.minY + r.height * 0.2), y1 = Int(r.maxY - r.height * 0.2)
+            var line = 0.0, side = 0.0
+            for y in stride(from: y0, to: y1, by: 2) { line += at(x, y); side += (at(x - 3, y) + at(x + 3, y)) / 2 }
+            return (line - side) / Double(max((y1 - y0) / 2, 1))
+        }
+        func horizontal(_ y: Int) -> Double {
+            let x0 = Int(r.minX + r.width * 0.2), x1 = Int(r.maxX - r.width * 0.2)
+            var line = 0.0, side = 0.0
+            for x in stride(from: x0, to: x1, by: 2) { line += at(x, y); side += (at(x, y - 3) + at(x, y + 3)) / 2 }
+            return (line - side) / Double(max((x1 - x0) / 2, 1))
+        }
+        func best(_ from: CGFloat, _ score: (Int) -> Double) -> CGFloat {
+            let start = Int(from)
+            let found = (start - reach...start + reach).max { score($0) < score($1) } ?? start
+            // Only a clear line: a few levels brighter than beside it
+            return score(found) > 12 ? CGFloat(found) : from
+        }
+        let left = best(r.minX, vertical), right = best(r.maxX, vertical)
+        let top = best(r.minY, horizontal), bottom = best(r.maxY, horizontal)
+        // Still about a tile, or the snap's gone wrong: keep the box
+        guard right - left > r.width * 0.75, right - left < r.width * 1.25,
+              bottom - top > r.height * 0.75, bottom - top < r.height * 1.25 else { return r }
+        return CGRect(x: left, y: top, width: right - left, height: bottom - top)
     }
 
     /// The quad grown outward by fractions of its width and height, along

@@ -498,6 +498,8 @@ struct HajinStashScanReview: View {
     @State private var detent = PresentationDetent.medium
     /// The item whose tiles are lit on the photo
     @State private var highlighted: String?
+    /// The row tapped open, showing its fixes
+    @State private var opened: String?
     /// After Update: offer to send the photo and corrections, unless the
     /// player has said not to ask again
     @AppStorage("mw4_hajin_ask_send_scan") private var askToSend = true
@@ -598,6 +600,8 @@ struct HajinStashScanReview: View {
         let same = row.now == row.read
         let on = !same && !skip.contains(row.item.id)
         let findable = !marks(for: row.item.id).isEmpty
+        let swapped = Set(swaps.values).contains(row.item.id)
+        VStack(alignment: .leading, spacing: 10) {
         HStack(spacing: 10) {
             HStack(spacing: 10) {
             HajinItemTile(item: row.item, size: 32)
@@ -614,16 +618,16 @@ struct HajinStashScanReview: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                     .lineLimit(2)
-                let swapped = Set(swaps.values).contains(row.item.id)
                 HStack(spacing: 6) {
                     if swapped {
-                        Label("mw4.ui.hajin.scan_swapped".localized(), systemImage: "arrow.left.arrow.right")
-                            .font(.caption2.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
+                        Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZ)
+                            .accessibilityLabel("mw4.ui.hajin.scan_swapped".localized())
                     } else if unsure.contains(row.item.id) && edited[row.item.id] == nil {
-                        Text("mw4.ui.hajin.scan_check".localized().uppercased())
-                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
-                            .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
+                        Text("mw4.ui.hajin.scan_check".localized())
+                            .font(.caption2.weight(.bold))
+                            .foregroundStyle(Color.black.opacity(0.85))
+                            .padding(.horizontal, 6).padding(.vertical, 1)
+                            .background(Capsule().fill(Color(red: 0.96, green: 0.66, blue: 0.24)))
                     }
                     if !swapped, let sure = sureness[row.item.id] {
                         Text(String(format: "mw4.ui.hajin.scan_sure".localized(), stacks[row.item.id] ?? 1, Int((sure * 100).rounded())))
@@ -631,25 +635,19 @@ struct HajinStashScanReview: View {
                             .foregroundStyle(sure < 0.5 ? Color(red: 0.96, green: 0.66, blue: 0.24) : Color.appInkMuted)
                     }
                 }
-                // Read off the photo's tiles: wrong item? pick the right one
-                // (on the item tapped, so the list isn't full of it)
-                if highlighted == row.item.id && (swapped || sureness[row.item.id] != nil) {
-                    Button { swapping = row.item } label: {
-                        Text("mw4.ui.hajin.scan_not_this".localized())
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
-                    }
-                    .buttonStyle(.borderless)
-                }
             }
             Spacer(minLength: 6)
             }
             // Tap the item to see its tiles on the photo
             .contentShape(Rectangle())
             .onTapGesture {
-                guard findable else { return }
                 Haptics.step()
-                withAnimation(.snappy) { highlighted = highlighted == row.item.id ? nil : row.item.id }
+                withAnimation(.snappy) {
+                    if opened == row.item.id { opened = nil } else {
+                        opened = row.item.id
+                        if findable { highlighted = row.item.id }
+                    }
+                }
             }
             if !same {
                 // What the stash has now, then the count it becomes
@@ -679,7 +677,34 @@ struct HajinStashScanReview: View {
                 .buttonStyle(.borderless)
             }
         }
+        // Tapped: its fixes, sharing the row's width
+        if opened == row.item.id {
+            HStack(spacing: 8) {
+                // Read off the photo's tiles: wrong item? pick the right one
+                if swapped || sureness[row.item.id] != nil {
+                    fixButton("mw4.ui.hajin.scan_change", "arrow.left.arrow.right") { swapping = row.item }
+                }
+                fixButton("mw4.ui.hajin.scan_edit", "pencil") { editText = "\(row.read)"; editing = row.item }
+            }
+            .transition(.opacity)
+        }
+        }
         .listRowBackground(highlighted == row.item.id ? Color.accentDMZ.opacity(0.14) : nil)
+    }
+
+    /// A fix under the tapped row.
+    private func fixButton(_ key: String, _ symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label(key.localized(), systemImage: symbol)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Color.accentDMZ)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .background(Capsule().fill(Color.accentDMZ.opacity(0.14)))
+        }
+        .buttonStyle(.borderless)
     }
 
     /// Where an item's tiles are in the photo: each tile's four corners, as

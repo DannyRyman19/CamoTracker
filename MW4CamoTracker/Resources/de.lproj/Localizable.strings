@@ -406,6 +406,7 @@
 "mw4.ui.hajin.scan_check" = "Prüfen";
 "mw4.ui.hajin.scan_swapped" = "Getauscht";
 "mw4.ui.hajin.scan_not_this" = "Nicht dieser Gegenstand?";
+"mw4.ui.hajin.scan_change" = "Ändern";
 "mw4.ui.hajin.scan_swap_title" = "Es ist eigentlich …";
 "mw4.ui.hajin.scan_sure" = "%1$d Stapel · %2$d %% sicher";
 "mw4.ui.hajin.scan_edit" = "Ändern";
@@ -511,7 +512,7 @@
 "mw4.ui.postmatch.intro" = "Mach nach dem Exfil ein Foto oder einen Screenshot deines Rucksacks: die Extraktionsübersicht oder den Rucksack-Bildschirm. Die App liest jedes Feld, sagt dir, was du verkaufen kannst, und legt Behaltenes in Mein Lager.";
 "mw4.ui.postmatch.tip_screen" = "Die Extraktionsübersicht geht, oder öffne den Rucksack im Menü";
 "mw4.ui.postmatch.tip_whole" = "Den ganzen Rucksack aufs Bild, mit Sicheren Plätzen und dem SORT-Feld daneben";
-"mw4.ui.postmatch.frame" = "Zieh die Ecken an das Rucksackraster (ohne die Sicheren Plätze darunter).";
+"mw4.ui.postmatch.frame" = "Zieh die Ecken auf das Rucksackraster. Die Sicheren Plätze darunter werden selbst gefunden und gelesen.";
 "mw4.ui.postmatch.items" = "Mitgebracht";
 "mw4.ui.postmatch.resources_footer" = "Aus dem SORT-Feld. Kommen ins Lager.";
 "mw4.ui.postmatch.sell_total" = "%d verkaufen";
