@@ -830,6 +830,9 @@ private struct CompactLevelRow: View {
 
     @State private var showValueEntry = false
     @State private var valueText = ""
+    /// The Prestige camos list's open state (shared with the page): opened
+    /// on prestiging, which is when the first of them becomes earnable
+    @AppStorage("mw4.prestigeCamosOpen") private var prestigeCamosOpen = false
 
     private var level: Int { viewModel.level(for: weapon.weaponId) }
     private var maxLevel: Int { viewModel.maxLevel(for: weapon) }
@@ -900,7 +903,7 @@ private struct CompactLevelRow: View {
             .buttonStyle(.plain)
         } else if viewModel.canPrestige(weapon) {
             Button {
-                withAnimation(.snappy) { viewModel.prestigeUp(weapon) }
+                withAnimation(.snappy) { viewModel.prestigeUp(weapon); prestigeCamosOpen = true }
             } label: {
                 Label("mw4.ui.prestige".localized(), systemImage: "chevron.up.2")
                     .font(.system(size: 14, weight: .bold))
@@ -969,7 +972,7 @@ private struct CompactLevelRow: View {
                 if prestige < stageCount {
                     let ready = viewModel.canPrestige(weapon)
                     Button {
-                        withAnimation(.snappy) { viewModel.prestigeUp(weapon) }
+                        withAnimation(.snappy) { viewModel.prestigeUp(weapon); prestigeCamosOpen = true }
                     } label: {
                         HStack(spacing: 5) {
                             Image(systemName: ready ? "chevron.up.2" : "lock.fill")
