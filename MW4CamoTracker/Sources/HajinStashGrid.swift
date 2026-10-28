@@ -232,7 +232,10 @@ enum HajinStashGrid {
             for x in stride(from: w / 8, to: w * 7 / 8, by: 2) {
                 let i = (y * w + x) * 4
                 let r = Int(px[i]), g = Int(px[i + 1]), b = Int(px[i + 2])
-                if b > 110 && b > r + 50 && b > g + 15 { blue += 1 }
+                // The blueprint's blue leans to cyan (green well over red);
+                // a rare item's tile is a purple-blue (green near red), and a
+                // key's blue fob on one passed the old test
+                if b > 110 && b > r + 50 && b > g + 15 && g > r + 30 { blue += 1 }
                 n += 1
             }
         }

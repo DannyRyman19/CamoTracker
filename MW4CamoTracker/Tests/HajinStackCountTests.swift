@@ -20,3 +20,24 @@ struct HajinStackCountTests {
         #expect(HajinStackCount.read(try tile(name)) == count)
     }
 }
+
+/// Blueprint tiles told from blue-tinted ones, on tiles from a backpack
+/// photo (read from beside this file, so they need no bundle).
+struct HajinBlueprintTileTests {
+
+    private func tile(_ name: String) throws -> CGImage {
+        let url = URL(fileURLWithPath: #filePath).deletingLastPathComponent().appendingPathComponent("backpack_tile_\(name).png")
+        let source = try #require(CGImageSourceCreateWithURL(url as CFURL, nil))
+        return try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))
+    }
+
+    @Test func aBlueprintIsBlue() throws {
+        #expect(HajinStashGrid.blueFraction(try tile("blueprint")) > 0.5)
+    }
+
+    /// A key's blue fob on a rare item's purple-blue tile was read as a blueprint
+    @Test(arguments: ["key", "rare"])
+    func aBlueTintIsNot(name: String) throws {
+        #expect(HajinStashGrid.blueFraction(try tile(name)) < 0.25)
+    }
+}

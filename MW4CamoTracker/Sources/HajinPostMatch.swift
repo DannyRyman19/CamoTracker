@@ -136,6 +136,9 @@ enum HajinBackpack {
         // A free secure slot shows a grey shield, which a weak read takes
         // for a Riot Shield
         tiles += secure.filter { !($0.id == "riot-shield" && $0.confidence < 0.7) }
+            // Read after the grid: its row sits under the last one
+            .map { HajinStashGrid.Tile(row: gridRows, column: $0.column, id: $0.id, confidence: $0.confidence, count: $0.count,
+                                       image: $0.image, guess: $0.guess, guessConfidence: $0.guessConfidence) }
             .map { ($0, quad(secureCorners, row: 0, column: $0.column, rows: 1)) }
         var result = HajinPostMatchResult()
         for (t, place) in tiles {
@@ -159,6 +162,8 @@ enum HajinBackpack {
             guard t.id != "other", t.confidence >= 0.3, guide?.item(id) != nil else { result.unread += 1; continue }
             result.counts[id, default: 0] += t.count ?? 1
             result.places[id, default: []].append(place)
+            // Where it first is, reading across then down
+            result.order[id] = min(result.order[id] ?? .max, t.row * 100 + t.column)
             if t.count == nil || t.confidence < 0.5 { result.unsure.insert(id) }
         }
         result.resources = resources(lines)
@@ -192,6 +197,9 @@ struct HajinPostMatchResult: Identifiable {
     /// Where each item's tiles are on the photo (four corners each, as
     /// fractions), for the review to light up
     var places: [String: [[CGPoint]]] = [:]
+    /// Each item's first tile, row * 100 + column, to list them in the
+    /// backpack's own order
+    var order: [String: Int] = [:]
 
     /// A blueprint tile, as read: the picture, and the model's guess at it.
     struct Blueprint: Identifiable {
@@ -247,6 +255,7 @@ struct HajinPostMatchReview: View {
     @State private var unsure: Set<String>
     /// Each item's tiles on the photo, swaps applied
     @State private var places: [String: [[CGPoint]]]
+    @State private var order: [String: Int]
     /// Items a misread was swapped to
     @State private var swapped: Set<String> = []
     /// The row whose item is being swapped
@@ -273,6 +282,7 @@ struct HajinPostMatchReview: View {
         _counts = State(initialValue: result.counts)
         _unsure = State(initialValue: result.unsure)
         _places = State(initialValue: result.places)
+        _order = State(initialValue: result.order)
     }
 
     private struct Row {
@@ -283,8 +293,8 @@ struct HajinPostMatchReview: View {
         var key: String { item.id + (spare ? "#spare" : "#needed") }
     }
 
-    /// Stash items, split into what's still needed and the spare: spare
-    /// first, the most valuable first.
+    /// Stash items, split into what's still needed and the spare, in the
+    /// backpack's order (across, then down), as the stash review lists them.
     private var rows: [Row] {
         guard let guide = store.guide else { return [] }
         let need = store.keepNeeds()
@@ -298,8 +308,10 @@ struct HajinPostMatchReview: View {
             if keep > 0 { out.append(Row(item: item, count: keep, spare: false)) }
         }
         return out.sorted { a, b in
-            if a.spare != b.spare { return a.spare }
-            return ((a.item.value ?? 0) * a.count, a.item.name.resolved) > ((b.item.value ?? 0) * b.count, b.item.name.resolved)
+            let x = order[a.item.id] ?? .max, y = order[b.item.id] ?? .max
+            if x != y { return x < y }
+            if a.item.id != b.item.id { return a.item.name.resolved < b.item.name.resolved }
+            return a.spare && !b.spare
         }
     }
 
@@ -310,7 +322,7 @@ struct HajinPostMatchReview: View {
             guard !removed.contains(id), let item = guide.item(id), !HajinStore.inStash(item) else { return nil }
             return (item, edited[id] ?? n)
         }
-        .sorted { $0.item.name.resolved < $1.item.name.resolved }
+        .sorted { (order[$0.item.id] ?? .max, $0.item.name.resolved) < (order[$1.item.id] ?? .max, $1.item.name.resolved) }
     }
 
     private func sells(_ row: Row) -> Bool { row.spare != flipped.contains(row.key) }
@@ -476,6 +488,7 @@ struct HajinPostMatchReview: View {
         counts[id] = nil
         places[to, default: []] += places[id] ?? []
         places[id] = nil
+        if let at = order[id] { order[to] = min(order[to] ?? .max, at); order[id] = nil }
         if let n = edited[id] { edited[to] = (edited[to] ?? 0) + n; edited[id] = nil }
         unsure.remove(id)
         removed.remove(to)
