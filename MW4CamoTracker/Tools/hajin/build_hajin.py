@@ -324,9 +324,9 @@ guide = [
    ("Roze", "Lieutenant", "Drops Roze's Dog Tag (Legendary)"),
    ("The Chemist", "Lieutenant", "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse. Pays $10,000"),
    ("The Warden", "Lieutenant", "Northern hills. Drops a key to a sealed door under NuriGO Mall"),
-   ("Colossus", "Commander", "A seven-foot armored soldier with a minigun"),
-   ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it"),
-   ("NK Battle Tank", "Commander", "Roams Hajin"),
+   ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
+   ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
+   ("NK Battle Tank", "Commander", "Roams the roads and highways across Hajin. Drops Nano-Structured Alloy, and the first kill pays $50,000"),
   ])},
  {"id": "keys", "title": "Keys", "symbol": "key.fill",
   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
@@ -463,7 +463,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.37", "updated": "2026-10-28",
+data = {"version": "0.9.38", "updated": "2026-10-28",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

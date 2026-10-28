@@ -1,5 +1,5 @@
 {
- "version": "0.9.37",
+ "version": "0.9.38",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -5177,19 +5177,29 @@
     },
     {
      "title": "Colossus",
-     "subtitle": "A seven-foot armored soldier with a minigun The minigun fires depleted uranium rounds.",
+     "subtitle": "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000. The minigun fires depleted uranium rounds.",
+     "links": [
+      "experimental-compounds",
+      "military-composites"
+     ],
      "group": "Commanders",
      "check": "boss-colossus"
     },
     {
      "title": "Deathstalker",
-     "subtitle": "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it",
+     "subtitle": "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000",
+     "links": [
+      "prototype-rf-module"
+     ],
      "group": "Commanders",
      "check": "boss-deathstalker"
     },
     {
      "title": "NK Battle Tank",
-     "subtitle": "Roams Hajin",
+     "subtitle": "Roams the roads and highways across Hajin. Drops Nano-Structured Alloy, and the first kill pays $50,000",
+     "links": [
+      "nano-structured-alloy"
+     ],
      "group": "Commanders",
      "check": "boss-nk-battle-tank"
     }
