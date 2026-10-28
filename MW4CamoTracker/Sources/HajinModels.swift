@@ -432,6 +432,13 @@ final class HajinStore: ObservableObject {
     /// What My stash counts: resources, ingredients and valuables (which
     /// the higher FOB upgrades cost), less dog tags, which are sold as soon
     /// as you extract them.
+    /// Resources in the game's order: the backpack's Sort column, top down
+    nonisolated static let resourceOrder = ["synthetics", "electronics", "chemicals", "metals"]
+
+    nonisolated static func resourceRank(_ id: String) -> Int {
+        resourceOrder.firstIndex(of: id) ?? resourceOrder.count
+    }
+
     nonisolated static func inStash(_ item: HajinGuide.Item) -> Bool {
         ["Resource", "Ingredient", "Valuable"].contains(item.kind) && !item.id.contains("dog-tag")
     }

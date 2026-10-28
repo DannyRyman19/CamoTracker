@@ -349,6 +349,7 @@ struct HajinStashScanReview: View {
                 Text("\(row.now) →")
                     .font(.system(size: 12, weight: .semibold, design: .monospaced))
                     .foregroundStyle(Color.appInkMuted)
+                    .lineLimit(1).fixedSize()
             }
             countControl(row, on: on || same)
             if same {
@@ -387,6 +388,7 @@ struct HajinStashScanReview: View {
                     .font(.system(size: 14, weight: .semibold, design: .monospaced))
                     .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
                     .strikethrough(!on)
+                    .lineLimit(1).fixedSize()
                     .frame(minWidth: 30, minHeight: 30)
             }
             .buttonStyle(.borderless)
@@ -397,6 +399,7 @@ struct HajinStashScanReview: View {
         }
         .foregroundStyle(Color.accentDMZ)
         .background(Capsule().fill(Color.appSurface2))
+        .fixedSize()
     }
 
     private func setCount(_ id: String, _ count: Int) {
@@ -457,6 +460,7 @@ struct HajinStashScanReview: View {
                     }
                 }
                 let resources = all.filter { $0.item.kind == "Resource" }
+                    .sorted { HajinStore.resourceRank($0.item.id) < HajinStore.resourceRank($1.item.id) }
                 let ingredients = all.filter { $0.item.kind == "Ingredient" }
                 let valuables = all.filter { $0.item.kind == "Valuable" }
                 if !resources.isEmpty {
