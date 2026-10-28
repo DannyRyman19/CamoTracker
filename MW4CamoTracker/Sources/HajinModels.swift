@@ -223,7 +223,7 @@ struct HajinGuide: Codable {
     func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
 
     /// Sections the player ticks off: they're on My DMZ, not in the guide.
-    static let trackedSections: Set<String> = ["ops", "upgrades", "bosses", "gunsmith"]
+    static let trackedSections: Set<String> = ["ops", "upgrades", "bosses", "gunsmith", "prestige"]
 
     /// What the DMZ Orders not yet ticked need from the stash: each print's
     /// recipe cost times how many, and the ingredients to extract.
@@ -633,3 +633,60 @@ final class HajinStore: ObservableObject {
         if let data = try? JSONEncoder().encode(pins) { defaults.set(data, forKey: Self.pinsKey) }
     }
 }
+
+// MARK: - Operator Prestige
+
+/// The player's operators and their Prestige, kept as tick keys so they sync
+/// with the rest of My DMZ (and an older app version passes them through):
+/// "prestige|<name>|<level>" and "prestige-trait|<name>|<trait>".
+extension HajinStore {
+    static let maxPrestigeTraits = 3
+
+    var operators: [(name: String, level: Int)] {
+        checked.compactMap { key -> (String, Int)? in
+            let parts = key.split(separator: "|", omittingEmptySubsequences: false)
+            guard parts.count == 3, parts[0] == "prestige", let level = Int(parts[2]) else { return nil }
+            return (String(parts[1]), level)
+        }
+        .sorted { $0.0.localizedCaseInsensitiveCompare($1.0) == .orderedAscending }
+    }
+
+    func prestigeTraits(of name: String) -> [String] {
+        checked.compactMap { key in
+            let parts = key.split(separator: "|", omittingEmptySubsequences: false)
+            return parts.count == 3 && parts[0] == "prestige-trait" && parts[1] == name ? String(parts[2]) : nil
+        }
+        .sorted()
+    }
+
+    func addOperator(_ raw: String) {
+        let name = raw.replacingOccurrences(of: "|", with: " ").trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty, !operators.contains(where: { $0.name.caseInsensitiveCompare(name) == .orderedSame }) else { return }
+        checked.insert("prestige|\(name)|0")
+        saveAndSync()
+    }
+
+    func setPrestige(_ level: Int, of name: String) {
+        checked = checked.filter { !$0.hasPrefix("prestige|\(name)|") }
+        checked.insert("prestige|\(name)|\(max(0, min(level, 99)))")
+        saveAndSync()
+    }
+
+    func removeOperator(_ name: String) {
+        checked = checked.filter { !$0.hasPrefix("prestige|\(name)|") && !$0.hasPrefix("prestige-trait|\(name)|") }
+        saveAndSync()
+    }
+
+    /// Adds or removes a Prestige trait; an operator holds three at most.
+    func togglePrestigeTrait(_ trait: String, of name: String) {
+        let key = "prestige-trait|\(name)|\(trait)"
+        if checked.contains(key) {
+            checked.remove(key)
+        } else {
+            guard prestigeTraits(of: name).count < Self.maxPrestigeTraits else { return }
+            checked.insert(key)
+        }
+        saveAndSync()
+    }
+}
+

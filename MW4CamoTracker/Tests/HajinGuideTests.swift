@@ -132,4 +132,22 @@ struct HajinGuideTests {
         // Manuals and dog tags have to be found in the match, so never held
         #expect(!guide.orderNeeds(done: []).contains { $0.item == "weapon-manual" || $0.item.contains("dog-tag") })
     }
+
+    @MainActor @Test func operatorsKeepTheirPrestigeAndUpToThreeTraits() throws {
+        let defaults = try #require(UserDefaults(suiteName: "hajin-prestige-\(UUID().uuidString)"))
+        let store = HajinStore(defaults: defaults)
+        store.addOperator(" Ghost ")
+        store.addOperator("ghost")   // the same operator
+        store.addOperator("Roze|")
+        #expect(store.operators.map(\.name) == ["Ghost", "Roze"])
+        store.setPrestige(2, of: "Ghost")
+        #expect(store.operators.first { $0.name == "Ghost" }?.level == 2)
+        for trait in ["Possum Pro", "Overwatch Pro", "Die Hard Pro", "Quick Fix Pro"] { store.togglePrestigeTrait(trait, of: "Ghost") }
+        #expect(store.prestigeTraits(of: "Ghost") == ["Die Hard Pro", "Overwatch Pro", "Possum Pro"])
+        // Kept in the synced ticks, and gone with the operator
+        #expect(HajinStore(defaults: defaults).operators.count == 2)
+        store.removeOperator("Ghost")
+        #expect(store.operators.map(\.name) == ["Roze"])
+        #expect(store.prestigeTraits(of: "Ghost").isEmpty)
+    }
 }

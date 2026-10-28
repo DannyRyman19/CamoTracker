@@ -310,7 +310,14 @@ struct GuideSectionView: View {
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
-            if section.id == "ops" {
+            if section.id == "prestige" {
+                List {
+                    HajinPrestigeTracker()
+                    GroupedGuideRows(rows: rows, highlight: query.lowercased())
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
+            } else if section.id == "ops" {
                 List {
                     if let intro = section.intro, query.isEmpty {
                         Text(intro.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted)
@@ -381,7 +388,7 @@ struct HajinPagePicker: View {
 enum HajinMineCard: String, CaseIterable, Identifiable {
     // Default order: the scan, then the player's numbers and plan, then the
     // stash and the tools that work on it
-    case scan, postMatch, level, cash, tracking, buildNext, orders, upgrades, bosses, manuals, stash, keepSell, shopping, blueprints
+    case scan, postMatch, level, cash, tracking, buildNext, orders, upgrades, bosses, manuals, prestige, stash, keepSell, shopping, blueprints
     var id: String { rawValue }
     var title: String {
         switch self {
@@ -399,6 +406,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .upgrades: return "mw4.ui.hajin.mine_upgrades".localized()
         case .bosses: return "mw4.ui.hajin.mine_bosses".localized()
         case .manuals: return "mw4.ui.hajin.mine_manuals".localized()
+        case .prestige: return "mw4.ui.hajin.mine_prestige".localized()
         }
     }
 
@@ -409,6 +417,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .upgrades: return "upgrades"
         case .bosses: return "bosses"
         case .manuals: return "gunsmith"
+        case .prestige: return "prestige"
         default: return nil
         }
     }
@@ -428,6 +437,7 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .upgrades: return "building.2.fill"
         case .bosses: return "person.fill.viewfinder"
         case .manuals: return "wrench.and.screwdriver.fill"
+        case .prestige: return "star.fill"
         }
     }
 
@@ -524,7 +534,7 @@ struct HajinMinePage: View {
         case .blueprints: entry(openBlueprints, .blueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
         case .stash: entry(openStash, .stash) { HajinStashView() } label: { HajinStashEntry() }
         case .keepSell: entry(openKeepSell, .keepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
-        case .orders, .upgrades, .bosses, .manuals:
+        case .orders, .upgrades, .bosses, .manuals, .prestige:
             // The guide's tickable sections live here, with how far along
             if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
                 // A row's tick: its own, or a Gunsmith weapon's manual (starter
@@ -535,7 +545,12 @@ struct HajinMinePage: View {
                     return nil
                 }
                 entry(openSection.map { open in { open(section) } }, .section(section.id)) { GuideSectionView(section: section) } label: {
-                    SectionRow(section: section, done: keys.filter(store.checked.contains).count, total: keys.count)
+                    if keys.isEmpty {
+                        // Prestige: how many operators are being tracked
+                        SectionRow(section: section, done: nil, total: store.operators.count)
+                    } else {
+                        SectionRow(section: section, done: keys.filter(store.checked.contains).count, total: keys.count)
+                    }
                 }
             }
         }
@@ -1183,6 +1198,13 @@ struct HajinGuidePanel: View {
                 HajinShoppingListView(embeddedQuery: query)
             } else if stack.last == .blueprints {
                 HajinBlueprintsView(embeddedQuery: query)
+            } else if let section = open, section.id == "prestige" {
+                List {
+                    HajinPrestigeTracker()
+                    GroupedGuideRows(rows: section.rows)
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
             } else if let section = open, section.id == "ops" {
                 let needle = query.lowercased()
                 List { HajinOrdersList(rows: needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }) }
@@ -1627,6 +1649,134 @@ struct HajinOrdersList: View {
         .listRowInsets(EdgeInsets(top: 14, leading: 16, bottom: 4, trailing: 16))
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
+    }
+}
+
+/// The player's operators: each one's Prestige, what the next costs (against
+/// the cash they've entered) and the Prestige traits it holds.
+struct HajinPrestigeTracker: View {
+    @EnvironmentObject private var store: HajinStore
+    @State private var newName = ""
+
+    /// The guide's Prestige rows ("Prestige 1", "2", "3 and later").
+    private var tiers: [HajinGuide.Row] {
+        store.guide?.guide.first { $0.id == "prestige" }?.rows.filter { $0.title.resolved.hasPrefix("Prestige ") } ?? []
+    }
+    private var proTraits: [HajinGuide.Row] {
+        store.guide?.guide.first { $0.id == "traits" }?.rows.filter { $0.group?.resolved == "Prestige traits" } ?? []
+    }
+
+    var body: some View {
+        HajinHeading(title: "mw4.ui.opprestige.operators".localized())
+        ForEach(store.operators, id: \.name) { op in
+            card(op.name, op.level).hajinCard()
+                .contextMenu {
+                    Button(role: .destructive) { store.removeOperator(op.name) } label: {
+                        Label("mw4.ui.opprestige.remove".localized(), systemImage: "trash")
+                    }
+                }
+        }
+        HStack(spacing: 8) {
+            TextField("mw4.ui.opprestige.name".localized(), text: $newName)
+                .textInputAutocapitalization(.words)
+                .autocorrectionDisabled()
+                .onSubmit(add)
+            Button("mw4.ui.opprestige.add".localized(), action: add)
+                .font(.subheadline.weight(.semibold))
+                .disabled(newName.trimmingCharacters(in: .whitespaces).isEmpty)
+        }
+        .hajinCard()
+    }
+
+    private func add() {
+        Haptics.step()
+        store.addOperator(newName)
+        newName = ""
+    }
+
+    private func card(_ name: String, _ level: Int) -> some View {
+        let next = tiers.isEmpty ? nil : tiers[min(level, tiers.count - 1)]
+        let held = store.prestigeTraits(of: name)
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                Text(name).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Spacer(minLength: 8)
+                Button { Haptics.step(); store.setPrestige(level - 1, of: name) } label: {
+                    Image(systemName: "minus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
+                }
+                .buttonStyle(.borderless)
+                .disabled(level == 0)
+                Text(String(format: "mw4.ui.opprestige.level".localized(), level))
+                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                    .foregroundStyle(level > 0 ? Color.accentDMZ : Color.appInkMuted)
+                Button { Haptics.step(); store.setPrestige(level + 1, of: name) } label: {
+                    Image(systemName: "plus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
+                }
+                .buttonStyle(.borderless)
+            }
+            if let next {
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(spacing: 6) {
+                        Text(String(format: "mw4.ui.opprestige.next".localized(), level + 1).uppercased())
+                            .font(.system(size: 11, weight: .bold)).tracking(0.8)
+                            .foregroundStyle(Color.appInkMuted)
+                        if let cost = next.value?.resolved { cashBadge(cost) }
+                    }
+                    if let needs = next.subtitle {
+                        Text(needs.resolved).font(.caption).foregroundStyle(Color.appInkMuted)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+            }
+            VStack(alignment: .leading, spacing: 6) {
+                Text("mw4.ui.opprestige.traits".localized().uppercased() + " \(held.count)/\(HajinStore.maxPrestigeTraits)")
+                    .font(.system(size: 11, weight: .bold)).tracking(0.8)
+                    .foregroundStyle(Color.appInkMuted)
+                HajinWrap(spacing: 6) {
+                    ForEach(held, id: \.self) { trait in
+                        Button { store.togglePrestigeTrait(trait, of: name) } label: {
+                            HStack(spacing: 4) {
+                                Text(trait).font(.caption.weight(.semibold)).foregroundStyle(Color.appInk)
+                                Image(systemName: "xmark").font(.system(size: 9, weight: .bold)).foregroundStyle(Color.appInkMuted)
+                            }
+                            .padding(.horizontal, 8).padding(.vertical, 5)
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color.accentDMZ.opacity(0.18)))
+                        }
+                        .buttonStyle(.borderless)
+                    }
+                    if held.count < HajinStore.maxPrestigeTraits {
+                        Menu {
+                            ForEach(proTraits.filter { !held.contains($0.title.resolved) }, id: \.self) { row in
+                                Button(row.title.resolved) { store.togglePrestigeTrait(row.title.resolved, of: name) }
+                            }
+                        } label: {
+                            Label("mw4.ui.opprestige.add_trait".localized(), systemImage: "plus")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(Color.accentDMZ)
+                                .padding(.horizontal, 8).padding(.vertical, 5)
+                                .background(RoundedRectangle(cornerRadius: 6).strokeBorder(Color.accentDMZ.opacity(0.5), lineWidth: 1))
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// The next Prestige's cash, ticked when the cash entered covers it.
+    @ViewBuilder private func cashBadge(_ cost: String) -> some View {
+        let needed = Int(cost.filter(\.isNumber)) ?? 0
+        HStack(spacing: 4) {
+            HajinValueBadge(text: cost)
+            if store.cash > 0, needed > 0 {
+                if store.cash >= needed {
+                    Image(systemName: "checkmark.circle.fill").font(.caption).foregroundStyle(HajinStore.printableGreen)
+                } else {
+                    Text(String(format: "mw4.ui.opprestige.short".localized(), "$\((needed - store.cash).formatted())"))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(Color(red: 0.93, green: 0.32, blue: 0.30))
+                }
+            }
+        }
     }
 }
 
