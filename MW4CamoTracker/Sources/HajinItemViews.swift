@@ -695,7 +695,15 @@ struct HajinItemView: View {
         let found = mentions.filter { $0.section.id != "levels" }
         let showsWhere = !found.isEmpty || item.found != nil
         // Ingredients with a known location lead with where to look
-        if showsWhere, item.found != nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized(), inGame: item.found?.resolved, places: (item.foundPlaces ?? []).compactMap { guide.marker($0) }) }
+        // The in-game line, unless it only names a row listed under it
+        // ("Colossus" over the Colossus boss row)
+        let places = (item.foundPlaces ?? []).compactMap { guide.marker($0) }
+        let inGame: String? = item.found.map(\.resolved).flatMap { text in
+            let lower = text.lowercased()
+            let name = lower.hasSuffix("s") ? String(lower.dropLast()) : lower
+            return places.isEmpty && found.contains { $0.row.title.resolved.lowercased().contains(name) } ? nil : text
+        }
+        if showsWhere, item.found != nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized(), inGame: inGame, places: places) }
         if !users.isEmpty { usedIn(users) }
         if showsWhere, item.found == nil { whereFrom(found, title: "mw4.ui.hajin.where_find".localized()) }
         if !levels.isEmpty || item.requiredLevel != nil { unlocks(item, levels) }
