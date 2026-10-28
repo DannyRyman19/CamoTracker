@@ -402,13 +402,13 @@ def build_items(guide, markers):
 
 # ---- Drops, rewards and weapons
 EXTRA_ITEMS = [
- {"id": "bales-dog-tag", "name": "Bale's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract. Reported to sell for $10,000 (not confirmed)"},
- {"id": "scavengers-dog-tag", "name": "Scavenger's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Scavenger. Reported to sell for $10,000 (not confirmed)"},
- {"id": "rozes-dog-tag", "name": "Roze's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
- {"id": "iskras-dog-tag", "name": "Iskra's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Iskra. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
- {"id": "jin-taes-dog-tag", "name": "Jin-Tae's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Jin-Tae. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
- {"id": "the-doctors-dog-tag", "name": "The Doctor's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Doctor. Extract it for Boss Board progress. Reported to sell for $10,000 (not confirmed)"},
- {"id": "goranis-dog-tag", "name": "Gorani's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Gorani. Reported to sell for $10,000 (not confirmed)"},
+ {"id": "bales-dog-tag", "name": "Bale's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract. Sells for $25,000"},
+ {"id": "scavengers-dog-tag", "name": "Scavenger's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Scavenger. Sells for $25,000"},
+ {"id": "rozes-dog-tag", "name": "Roze's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress. Sells for $25,000"},
+ {"id": "iskras-dog-tag", "name": "Iskra's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Iskra. Extract it for Boss Board progress. Sells for $25,000"},
+ {"id": "jin-taes-dog-tag", "name": "Jin-Tae's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Jin-Tae. Extract it for Boss Board progress. Sells for $25,000"},
+ {"id": "the-doctors-dog-tag", "name": "The Doctor's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Doctor. Extract it for Boss Board progress. Sells for $25,000"},
+ {"id": "goranis-dog-tag", "name": "Gorani's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Gorani. Sells for $25,000"},
  {"id": "hazmat-suit", "name": "Hazmat Suit", "kind": "Gear", "rarity": "Legendary", "note": "Protective suit that shields you from radiation. Discarded when you extract"},
  {"id": "irradiated-container", "name": "Irradiated Container", "kind": "Gear", "rarity": "Ultra", "note": "An Ultra item listed on dmzhub.gg. What it does isn't known yet"},
  {"id": "armor-plate", "name": "Armor Plate", "kind": "Gear", "rarity": "Common", "note": "Extra protection in combat; stacks to 6. Your armor slot fills with plates when you infil, and Ammo Armor Caches refill them (with a cooldown)"},
@@ -423,11 +423,11 @@ EXTRA_ITEMS = [
  {"id": "night-vision-goggles", "name": "Night Vision Goggles", "kind": "Gear", "value": None, "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"},
  # dmzcodex.com/items (2026-10-27)
  {"id": "radiation-gear", "name": "Radiation Gear", "kind": "Gear", "note": "Protects you in radiation; the Haneul Nuclear Reactor needs it and a Gas Mask. Search Fire Stations for it"},
- {"id": "lieutenant-dog-tag-case", "name": "Lieutenant Dog Tag Case", "kind": "Valuable", "note": "Dropped when you kill a Lieutenant. Extract it for Boss Board progress"},
+ {"id": "lieutenant-dog-tag-case", "name": "Lieutenant Dog Tag Case", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped when you kill a Lieutenant. Extract it for Boss Board progress"},
  {"id": "weapon-insurance-contract", "name": "Weapon Insurance Contract", "kind": "Gear", "note": "Gets back an insured weapon you lose, up to the number of contracts you hold. Two come with the Vault Edition, and some DMZ Order pages give one"},
  {"id": "operator-rescue-beacon", "name": "Operator Rescue Beacon", "kind": "Gear", "note": "Recovers an MIA operator without paying DMZ Cash. Two come with the Vault Edition, and some DMZ Order pages give one"},
  {"id": "recipe", "name": "Recipe", "kind": "Gear", "note": "A recipe found in Hajin. Extract with it to add it to your 3D Printer; it's used up when you do"},
- {"id": "steel-dog-tag", "name": "Steel Dog Tag", "kind": "Valuable", "note": "Looted from a downed operator. The tag's metal shows how far that operator has ranked up; store extracted tags in the Dog Tag Case"},
+ {"id": "steel-dog-tag", "name": "Steel Dog Tag", "kind": "Valuable", "rarity": "Common", "note": "Looted from a downed operator. The tag's metal shows how far that operator has ranked up; store extracted tags in the Dog Tag Case"},
  {"id": "bronze-dog-tag", "name": "Bronze Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
  {"id": "silver-dog-tag", "name": "Silver Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
  {"id": "gold-dog-tag", "name": "Gold Dog Tag", "kind": "Valuable", "note": "An operator Dog Tag tier, reached by ranking up an active operator. Loot them from downed operators and keep them in the Dog Tag Case"},
@@ -788,9 +788,12 @@ SELL_VALUES = {"biomaterials": 800, "cpu": 500, "infantry-invasion-plans": 1000,
                "stabilized-reagents": 1500, "structural-alloy": 500,
                # listed on dmzcodex.com item pages (2026-10-23)
                "turned-components": 1500, "volatile-explosives": 1500,
-               # dog tags: the user thinks all sell for $10,000 (not confirmed)
-               "bales-dog-tag": 10000, "iskras-dog-tag": 10000, "jin-taes-dog-tag": 10000, "rozes-dog-tag": 10000,
-               "scavengers-dog-tag": 10000, "the-doctors-dog-tag": 10000, "goranis-dog-tag": 10000}
+               # lieutenant dog tags: $25,000 each on the extraction summary (2026-10-28)
+               "bales-dog-tag": 25000, "iskras-dog-tag": 25000, "jin-taes-dog-tag": 25000, "rozes-dog-tag": 25000,
+               "scavengers-dog-tag": 25000, "the-doctors-dog-tag": 25000, "goranis-dog-tag": 25000,
+               "lieutenant-dog-tag-case": 25000,
+               # the manual's tooltip: "WEAPON MANUAL | $5000"
+               "weapon-manual": 5000}
 
 def sell_values(items):
     for it in items:
