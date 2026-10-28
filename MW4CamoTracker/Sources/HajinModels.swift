@@ -439,8 +439,15 @@ final class HajinStore: ObservableObject {
     /// The recipe is unlocked and the stash covers every part of its cost
     /// (or an upgrade's).
     func canPrint(_ item: HajinGuide.Item) -> Bool {
-        guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty, hasRecipe(item) else { return false }
+        guard let cost = item.cost, !cost.isEmpty, !stash.isEmpty, hasRecipe(item), affords(item) else { return false }
         return cost.allSatisfy { count(of: $0.item) >= $0.qty }
+    }
+
+    /// Whether the DMZ Cash entered covers what it costs. Something with a
+    /// price never counts as affordable while the cash isn't entered.
+    func affords(_ item: HajinGuide.Item) -> Bool {
+        guard let price = item.cash, price > 0 else { return true }
+        return cash >= price
     }
 
     /// Whether the player can print it at all: a recipe found in Hajin once

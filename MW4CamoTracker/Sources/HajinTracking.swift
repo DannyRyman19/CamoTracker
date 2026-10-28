@@ -118,7 +118,7 @@ private struct TrackedRow: View {
 
     var body: some View {
         let cost = item.cost ?? []
-        let ready = !cost.isEmpty && cost.allSatisfy { store.count(of: $0.item) >= $0.qty }
+        let ready = !cost.isEmpty && store.affords(item) && cost.allSatisfy { store.count(of: $0.item) >= $0.qty }
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 10) {
                 HajinItemLink(id: item.id) {
@@ -403,7 +403,7 @@ struct HajinBuildNextCard: View {
                 Text("mw4.ui.hajin.build_next_done".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             ForEach(picks, id: \.item.id) { pick in
-                let ready = pick.missing.isEmpty && !(pick.item.cost ?? []).isEmpty
+                let ready = pick.missing.isEmpty && !(pick.item.cost ?? []).isEmpty && store.affords(pick.item)
                 VStack(alignment: .leading, spacing: 6) {
                     HStack(spacing: 10) {
                         HajinItemLink(id: pick.item.id) {

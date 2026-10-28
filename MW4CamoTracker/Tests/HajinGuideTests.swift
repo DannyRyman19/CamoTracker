@@ -150,4 +150,19 @@ struct HajinGuideTests {
         #expect(store.operators.map(\.name) == ["Roze"])
         #expect(store.prestigeTraits(of: "Ghost").isEmpty)
     }
+
+    @MainActor @Test func canPrintNeedsTheCashToo() throws {
+        let defaults = try #require(UserDefaults(suiteName: "hajin-cash-\(UUID().uuidString)"))
+        let store = HajinStore(defaults: defaults)
+        let guide = try #require(store.guide)
+        // An upgrade with a cash price, its ingredients all in the stash
+        let upgrade = try #require(guide.items?.first { $0.kind == "FOB Upgrade" && ($0.cash ?? 0) > 0 && !($0.cost ?? []).isEmpty && $0.requiredLevel == nil && $0.effect?.values["en"]?.contains("Ingredient Printing") != true })
+        for part in upgrade.cost ?? [] { store.setCount(part.qty, of: part.item) }
+        let price = try #require(upgrade.cash)
+        #expect(!store.canPrint(upgrade), "no cash entered")
+        store.setCash(price - 1)
+        #expect(!store.canPrint(upgrade))
+        store.setCash(price)
+        #expect(store.canPrint(upgrade))
+    }
 }
