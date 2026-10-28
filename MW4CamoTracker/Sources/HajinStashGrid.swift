@@ -407,6 +407,7 @@ enum HajinStackCount {
         // digit shapes. A digit broken into pieces fits badly, so it loses.
         var best: (value: Int, fit: Double)?
         var fallback: String?
+        var sawTen = false
         for threshold in [195, 180, 165, 150, 135] {
             let chain = digitChain(components(low, w, h, threshold), w, h)
             guard !chain.isEmpty else { continue }
@@ -414,9 +415,14 @@ enum HajinStackCount {
             let text = reads.map(\.digit).joined()
             if fallback == nil { fallback = text }
             guard let n = Int(text), (1...10).contains(n) else { continue }
+            if n == 10 { sawTen = true }
             let fit = reads.map(\.distance).reduce(0, +) / Double(reads.count)
             if best == nil || fit < best!.fit { best = (n, fit) }
         }
+        // A 10 seen at any cut-off beats a 1: a stray 0 can't come from
+        // nowhere, but a real one is easily lost (a 10 read as 1, its stack
+        // counted as 1 instead of 10)
+        if best?.value == 1, sawTen { return 10 }
         if let best { return best.value }
         guard let text = fallback, let last = text.last, let n = Int(String(last)), n > 0 else { return nil }
         return n
@@ -448,7 +454,11 @@ enum HajinStackCount {
         // Blobs touching the crop's edge, or hairline-thin, are the tile's
         // border, not digits
         var cs = all.filter { Double($0.height) > Double(h) * 0.28 && Double($0.height) < Double(h) * 0.9 && Double($0.width) < Double(w) * 0.45
-            && $0.maxX < w - 2 && $0.minX > 1 && Double($0.width) >= Double($0.height) * 0.18 }
+            && $0.minX > 1 && Double($0.width) >= Double($0.height) * 0.18 }
+        // At the right edge: the tile's border, unless it's a digit's height
+        // and width (the 0 of a 10 on a grid framed a little off)
+        let digitHeight = cs.filter { $0.maxX < w - 2 }.map(\.height).max() ?? 0
+        cs = cs.filter { $0.maxX < w - 2 || (digitHeight > 0 && abs($0.height - digitHeight) < digitHeight / 4 && Double($0.width) >= Double($0.height) * 0.35) }
         guard let tallest = cs.max(by: { $0.height < $1.height }) else { return [] }
         let mid = Double(tallest.minY + tallest.maxY) / 2
         cs = cs.filter { abs(Double($0.minY + $0.maxY) / 2 - mid) < Double(tallest.height) * 0.4 }.sorted { $0.minX < $1.minX }
@@ -854,6 +864,21 @@ extension HajinScanHost {
     }
 }
 
+/// A sheet on a phone, the whole screen on an iPad.
+struct HajinReviewCover<Item: Identifiable, V: View>: ViewModifier {
+    @Binding var item: Item?
+    let regular: Bool
+    @ViewBuilder let content: (Item) -> V
+
+    func body(content view: Content) -> some View {
+        if regular {
+            view.fullScreenCover(item: $item, content: content)
+        } else {
+            view.sheet(item: $item, content: content)
+        }
+    }
+}
+
 /// From the framing screen: drag the box's corners in to just the stash (or
 /// the backpack), or drag inside it to move it, so the grid finder sees
 /// nothing else and the tiles fill more of the photo.
@@ -1089,6 +1114,7 @@ struct HajinStashGridFrameView: View {
     @State private var newPick: PhotosPickerItem?
     @State private var showsCamera = false
     @State private var showsCrop = false
+    @Environment(\.horizontalSizeClass) private var sizeClass
     /// Zoomed in on the photo to place the corners exactly
     @State private var zoom: CGFloat = 1
     @State private var zoomAtStart: CGFloat = 1
@@ -1240,11 +1266,12 @@ struct HajinStashGridFrameView: View {
                     }
                 }
             }
-            .sheet(item: $state.result) { r in
+            // iPad: the whole screen, for the photo and counts side by side
+            .modifier(HajinReviewCover(item: $state.result, regular: sizeClass == .regular) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
                                      sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
                                      photo: image)
-            }
+            })
             .sheet(item: $state.postMatchResult) { r in
                 HajinPostMatchReview(result: r, onDone: { dismiss() })
             }

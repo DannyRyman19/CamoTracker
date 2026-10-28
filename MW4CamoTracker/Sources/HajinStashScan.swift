@@ -275,6 +275,29 @@ struct HajinItemPicker: View {
     }
 }
 
+/// The review's photo: on top of the counts, or to their left when the
+/// screen is wide and held sideways (an iPad in landscape).
+struct HajinPhotoBeside<P: View>: ViewModifier {
+    let size: CGSize
+    @ViewBuilder let photo: () -> P
+
+    func body(content: Content) -> some View {
+        if size.width >= 700 && size.width > size.height {
+            content.safeAreaInset(edge: .leading, spacing: 0) {
+                photo()
+                    .frame(width: size.width * 0.55)
+                    .overlay(alignment: .trailing) { Rectangle().fill(Color.appSurface2).frame(width: 1) }
+            }
+        } else {
+            content.safeAreaInset(edge: .top, spacing: 0) {
+                photo()
+                    .frame(height: max(size.height, 1) * 0.45)
+                    .overlay(alignment: .bottom) { Rectangle().fill(Color.appSurface2).frame(height: 1) }
+            }
+        }
+    }
+}
+
 /// A sheet whose content scrolls rather than resizing or closing it.
 struct HajinScrollsNotSheet: ViewModifier {
     let on: Bool
@@ -486,6 +509,8 @@ struct HajinStashScanReview: View {
     @State private var swaps: [String: String] = [:]
     /// The row whose item is being swapped
     @State private var swapping: HajinGuide.Item?
+    /// The screen's size: the photo goes beside the counts when it's wide
+    @State private var size: CGSize = .zero
 
     /// What was read, with the player's swaps applied (a swap onto an item
     /// also read adds the two together)
@@ -505,9 +530,9 @@ struct HajinStashScanReview: View {
         // The photo reader also recognises keys and gear, and leaves them out.
         counts.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.inStash($0) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
-            // Ones to check first, then anything under 100% sure (least sure
-            // first), then changes, then ones already right. Ordered by what
-            // was read, not edits, so a row stays put while you change it.
+            // The photo's grid order (a 3D Printer screen: ones to check
+            // first, then the least sure). Ordered by what was read, not
+            // edits, so a row stays put while you change it.
             .sorted(by: before)
     }
 
@@ -519,6 +544,12 @@ struct HajinStashScanReview: View {
     private func order(_ id: String) -> (Int, Int) {
         // A swapped row keeps the place of the item it was read as
         let id = source(id)
+        // A stash photo: the grid's order, A1 across then down, as on the
+        // photo above (resources, read from the text, first)
+        if let tiles = report?.tiles {
+            let first = tiles.filter { $0.id == id }.map { $0.row * 100 + $0.column }.min()
+            return (first.map { $0 + 1 } ?? 0, 0)
+        }
         let sure = sureness[id].map { Int(($0 * 100).rounded()) } ?? 100
         if unsure.contains(id) { return (0, sure) }
         if sure < 100 { return (1, sure) }
@@ -775,13 +806,12 @@ struct HajinStashScanReview: View {
                 }
             }
             // The photo over the counts, half and half, to zoom and compare
-            .safeAreaInset(edge: .top, spacing: 0) {
+            // (beside them on a wide screen held sideways)
+            .modifier(HajinPhotoBeside(size: size) {
                 if let photo {
                     HajinZoomPhoto(image: photo, marks: highlighted.map { marks(for: $0) } ?? [])
-                        .frame(height: UIScreen.main.bounds.height * 0.42)
-                        .overlay(alignment: .bottom) { Rectangle().fill(Color.appSurface2).frame(height: 1) }
                 }
-            }
+            })
             #if DEBUG
             .task { await demo(proxy) }
             #endif
@@ -823,6 +853,11 @@ struct HajinStashScanReview: View {
             }
             }
         }
+        .background(GeometryReader { geo in
+            Color.clear
+                .onAppear { size = geo.size }
+                .onChange(of: geo.size) { size = $0 }
+        })
         .presentationDetents(photo == nil ? [.medium, .large] : [.large], selection: $detent)
         // With the photo: a drag on the list scrolls it, never moves the sheet
         // (and the photo with it); Cancel closes it
