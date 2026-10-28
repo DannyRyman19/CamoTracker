@@ -1132,11 +1132,6 @@ struct HajinStashGridFrameView: View {
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
                     .padding(.horizontal, 12)
                 }
-                Text((state.postMatch ? "mw4.ui.postmatch.frame" : "mw4.ui.hajin.grid_frame").localized())
-                    .font(.subheadline)
-                    .foregroundStyle(Color.appInkMuted)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 16)
                 GeometryReader { geo in
                     let fit = fitted(image.size, in: geo.size)
                     ZStack(alignment: .topLeading) {
@@ -1177,7 +1172,12 @@ struct HajinStashGridFrameView: View {
                     // Pinch in to place the corners exactly; one finger moves
                     // the photo while zoomed (a handle under it moves the handle)
                     .simultaneousGesture(MagnificationGesture()
-                        .onChanged { zoom = min(max(zoomAtStart * $0, 1), 5) }
+                        .onChanged { m in
+                            zoom = min(max(zoomAtStart * m, 1), 5)
+                            // Scale the pan with it, so the photo grows about
+                            // the same spot instead of sliding away
+                            pan = CGSize(width: panAtStart.width * zoom / zoomAtStart, height: panAtStart.height * zoom / zoomAtStart)
+                        }
                         .onEnded { _ in zoomAtStart = zoom; keepInView(fit) })
                     .gesture(DragGesture(minimumDistance: 8)
                         .onChanged { g in
@@ -1191,6 +1191,41 @@ struct HajinStashGridFrameView: View {
                     .clipped()
                 }
                 .padding(.horizontal, 8)
+                // Once the grid's been looked for: what to check, and Crop
+                if !state.finding && !state.reading {
+                    HStack(spacing: 12) {
+                        Image(systemName: "square.grid.3x3")
+                            .font(.system(size: 15, weight: .bold))
+                            .foregroundStyle(Color.accentDMZ)
+                            .frame(width: 34, height: 34)
+                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("mw4.ui.hajin.grid_check_title".localized())
+                                .font(.hitmarker(15))
+                                .foregroundStyle(Color.appInk)
+                            Text((state.postMatch ? "mw4.ui.postmatch.frame" : "mw4.ui.hajin.grid_check_body").localized())
+                                .font(.caption)
+                                .foregroundStyle(Color.appInkMuted)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        Spacer(minLength: 4)
+                        if onPicked != nil {
+                            Button { showsCrop = true } label: {
+                                Label("mw4.ui.hajin.crop_title".localized(), systemImage: "crop")
+                                    .font(.subheadline.weight(.bold))
+                                    .foregroundStyle(Color.black.opacity(0.85))
+                                    .padding(.horizontal, 14).padding(.vertical, 9)
+                                    .background(Capsule().fill(Color.accentDMZ))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(12)
+                    .borderedCard()
+                    .padding(.horizontal, 12)
+                    .padding(.bottom, 8)
+                    .transition(.opacity)
+                }
             }
             .background(Color.appBackground)
             .navigationTitle((state.postMatch ? "mw4.ui.postmatch.title" : "mw4.ui.hajin.grid_scan").localized())
@@ -1237,20 +1272,6 @@ struct HajinStashGridFrameView: View {
                     onPicked?(cropped)
                 } onCancel: {
                     showsCrop = false
-                }
-            }
-            .overlay(alignment: .bottomLeading) {
-                // Crop is always to hand, for a big photo with the grid small in it
-                if !state.finding && !state.reading && onPicked != nil {
-                    Button { showsCrop = true } label: {
-                        Label("mw4.ui.hajin.crop_title".localized(), systemImage: "crop")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.appInk)
-                            .padding(.horizontal, 14).padding(.vertical, 8)
-                            .background(Capsule().fill(Color.appSurface2))
-                    }
-                    .buttonStyle(.plain)
-                    .padding(.leading, 16).padding(.bottom, 24)
                 }
             }
             .overlay(alignment: .bottom) {

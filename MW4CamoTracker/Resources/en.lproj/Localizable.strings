@@ -364,6 +364,8 @@
 "mw4.ui.hajin.grid_scan" = "Read from a photo";
 "mw4.ui.hajin.grid_scan_hint" = "Your stash (items, resources and bank) or a 3D Printer screen";
 "mw4.ui.hajin.grid_frame" = "Check the lines sit on the tiles. If they don't, tap Crop to cut the photo down to just the grid, and it's looked for again. Still off? Drag the four circles onto the grid's outside corners.";
+"mw4.ui.hajin.grid_check_title" = "Lines not on the tiles?";
+"mw4.ui.hajin.grid_check_body" = "Crop to just the grid to look again, or drag the circles onto its corners.";
 "mw4.ui.hajin.grid_read" = "Read";
 "mw4.ui.hajin.grid_finding" = "Finding the grid...";
 "mw4.ui.hajin.crop_title" = "Crop";
@@ -397,6 +399,9 @@
 "mw4.ui.hajin.quality_dark" = "This photo is quite dark.";
 "mw4.ui.hajin.quality_blurry" = "This photo looks blurry, so some counts may be misread.";
 "mw4.ui.hajin.scan_check" = "Check";
+"mw4.ui.hajin.scan_swapped" = "Swapped";
+"mw4.ui.hajin.scan_not_this" = "Not this item?";
+"mw4.ui.hajin.scan_swap_title" = "It's really…";
 "mw4.ui.hajin.scan_sure" = "%1$d stacks · %2$d%% sure";
 "mw4.ui.hajin.scan_edit" = "Edit";
 "mw4.ui.hajin.scan_edit_hint" = "Tap − or + to fix a count, or the number to type it. Tap the circle to leave a row out.";

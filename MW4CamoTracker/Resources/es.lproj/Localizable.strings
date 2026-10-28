@@ -364,6 +364,8 @@
 "mw4.ui.hajin.grid_scan" = "Leer de una foto";
 "mw4.ui.hajin.grid_scan_hint" = "Tu alijo (objetos, recursos y banco) o una pantalla de la impresora 3D";
 "mw4.ui.hajin.grid_frame" = "Comprueba que las líneas caen sobre las casillas. Si no, toca Recortar para dejar solo la cuadrícula y se buscará de nuevo. ¿Sigue mal? Arrastra los cuatro círculos a las esquinas exteriores de la cuadrícula.";
+"mw4.ui.hajin.grid_check_title" = "¿Las líneas no caen en las casillas?";
+"mw4.ui.hajin.grid_check_body" = "Recorta a la cuadrícula para buscar de nuevo, o arrastra los círculos a sus esquinas.";
 "mw4.ui.hajin.grid_read" = "Leer";
 "mw4.ui.hajin.grid_finding" = "Buscando la cuadrícula...";
 "mw4.ui.hajin.crop_title" = "Recortar";
@@ -397,6 +399,9 @@
 "mw4.ui.hajin.quality_dark" = "La foto está bastante oscura.";
 "mw4.ui.hajin.quality_blurry" = "La foto parece borrosa, puede que algunas cantidades se lean mal.";
 "mw4.ui.hajin.scan_check" = "Revisar";
+"mw4.ui.hajin.scan_swapped" = "Cambiado";
+"mw4.ui.hajin.scan_not_this" = "¿No es este objeto?";
+"mw4.ui.hajin.scan_swap_title" = "En realidad es…";
 "mw4.ui.hajin.scan_sure" = "%1$d montones · %2$d %% seguro";
 "mw4.ui.hajin.scan_edit" = "Editar";
 "mw4.ui.hajin.scan_edit_hint" = "Toca − o + para corregir una cantidad, o el número para escribirla. Toca el círculo para omitir una fila.";

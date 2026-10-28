@@ -364,6 +364,8 @@
 "mw4.ui.hajin.grid_scan" = "Aus Foto lesen";
 "mw4.ui.hajin.grid_scan_hint" = "Dein Lager (Gegenstände, Ressourcen und Bank) oder ein 3D-Drucker-Bildschirm";
 "mw4.ui.hajin.grid_frame" = "Prüfe, ob die Linien auf den Feldern liegen. Wenn nicht, tippe auf Zuschneiden, um das Foto aufs Raster zu verkleinern – dann wird es neu gesucht. Immer noch daneben? Zieh die vier Kreise auf die äußeren Ecken des Rasters.";
+"mw4.ui.hajin.grid_check_title" = "Linien nicht auf den Feldern?";
+"mw4.ui.hajin.grid_check_body" = "Aufs Raster zuschneiden und neu suchen, oder die Kreise auf die Ecken ziehen.";
 "mw4.ui.hajin.grid_read" = "Lesen";
 "mw4.ui.hajin.grid_finding" = "Raster wird gesucht...";
 "mw4.ui.hajin.crop_title" = "Zuschneiden";
@@ -397,6 +399,9 @@
 "mw4.ui.hajin.quality_dark" = "Das Foto ist ziemlich dunkel.";
 "mw4.ui.hajin.quality_blurry" = "Das Foto wirkt unscharf, manche Zahlen werden vielleicht falsch gelesen.";
 "mw4.ui.hajin.scan_check" = "Prüfen";
+"mw4.ui.hajin.scan_swapped" = "Getauscht";
+"mw4.ui.hajin.scan_not_this" = "Nicht dieser Gegenstand?";
+"mw4.ui.hajin.scan_swap_title" = "Es ist eigentlich …";
 "mw4.ui.hajin.scan_sure" = "%1$d Stapel · %2$d %% sicher";
 "mw4.ui.hajin.scan_edit" = "Ändern";
 "mw4.ui.hajin.scan_edit_hint" = "Tippe auf − oder +, um eine Zahl zu korrigieren, oder auf die Zahl, um sie einzugeben. Tippe auf den Kreis, um eine Zeile auszulassen.";

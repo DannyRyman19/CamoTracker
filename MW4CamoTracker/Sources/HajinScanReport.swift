@@ -32,7 +32,7 @@ struct HajinScanReport {
     }
 
     /// The reader's working plus what the player had and changed in the review.
-    @MainActor func json(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Data? {
+    @MainActor func json(had: [String: Int], edited: [String: Int], skipped: Set<String>, swapped: [String: String] = [:]) -> Data? {
         func round4(_ v: CGFloat) -> Double { (Double(v) * 10_000).rounded() / 10_000 }
         func points(_ p: [CGPoint]?) -> [[Double]]? { p?.map { [round4($0.x), round4($0.y)] } }
         var device = utsname()
@@ -61,6 +61,8 @@ struct HajinScanReport {
             "had": had,
             "editedByPlayer": edited,
             "skippedByPlayer": skipped.sorted(),
+            // Read as → really is: the player's labels for misread tiles
+            "swappedByPlayer": swapped,
         ]
         return try? JSONSerialization.data(withJSONObject: report.compactMapValues { $0 }, options: [.prettyPrinted, .sortedKeys])
     }
@@ -73,8 +75,8 @@ extension HajinScanReport {
 
     /// The photo and report as an email (Mail set up) or, with no Mail
     /// account, files for the share sheet with the address to send to.
-    @MainActor func outgoing(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Outgoing? {
-        guard let photo = photoData(), let json = json(had: had, edited: edited, skipped: skipped) else { return nil }
+    @MainActor func outgoing(had: [String: Int], edited: [String: Int], skipped: Set<String>, swapped: [String: String] = [:]) -> Outgoing? {
+        guard let photo = photoData(), let json = json(had: had, edited: edited, skipped: skipped, swapped: swapped) else { return nil }
         if MFMailComposeViewController.canSendMail() {
             return .mail(HajinMailDraft(subject: "MW4 Tracker: stash reader report", body: "mw4.ui.hajin.send_scan_body".localized(), attachments: [
                 (photo, "image/jpeg", "stash.jpg"), (json, "application/json", "stash-report.json"),

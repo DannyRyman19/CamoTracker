@@ -364,6 +364,8 @@
 "mw4.ui.hajin.grid_scan" = "Uit een foto lezen";
 "mw4.ui.hajin.grid_scan_hint" = "Je voorraad (items, grondstoffen en bank) of een 3D-printerscherm";
 "mw4.ui.hajin.grid_frame" = "Controleer of de lijnen op de vakjes liggen. Zo niet, tik op Bijsnijden om alleen het raster over te houden; dan wordt het opnieuw gezocht. Nog steeds mis? Sleep de vier cirkels naar de buitenhoeken van het raster.";
+"mw4.ui.hajin.grid_check_title" = "Lijnen niet op de vakjes?";
+"mw4.ui.hajin.grid_check_body" = "Snijd bij tot het raster om opnieuw te zoeken, of sleep de cirkels naar de hoeken.";
 "mw4.ui.hajin.grid_read" = "Lezen";
 "mw4.ui.hajin.grid_finding" = "Raster zoeken...";
 "mw4.ui.hajin.crop_title" = "Bijsnijden";
@@ -397,6 +399,9 @@
 "mw4.ui.hajin.quality_dark" = "De foto is vrij donker.";
 "mw4.ui.hajin.quality_blurry" = "De foto lijkt wazig, sommige aantallen worden misschien verkeerd gelezen.";
 "mw4.ui.hajin.scan_check" = "Controleren";
+"mw4.ui.hajin.scan_swapped" = "Gewisseld";
+"mw4.ui.hajin.scan_not_this" = "Niet dit item?";
+"mw4.ui.hajin.scan_swap_title" = "Het is eigenlijk…";
 "mw4.ui.hajin.scan_sure" = "%1$d stapels · %2$d%% zeker";
 "mw4.ui.hajin.scan_edit" = "Wijzigen";
 "mw4.ui.hajin.scan_edit_hint" = "Tik op − of + om een aantal te verbeteren, of op het getal om het te typen. Tik op het rondje om een rij over te slaan.";

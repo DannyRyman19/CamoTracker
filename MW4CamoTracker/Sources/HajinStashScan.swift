@@ -221,6 +221,60 @@ struct HajinStashScanButton: View {
     }
 }
 
+/// "Not this item?": every item My stash counts, the same kind as the
+/// misread one first, to pick the one it really is.
+struct HajinItemPicker: View {
+    let current: HajinGuide.Item
+    let pick: (String) -> Void
+    @EnvironmentObject private var store: HajinStore
+    @Environment(\.dismiss) private var dismiss
+    @State private var query = ""
+
+    var body: some View {
+        let needle = query.lowercased()
+        let all = (store.guide?.items ?? [])
+            .filter { HajinStore.inStash($0) && $0.kind != "Resource" && $0.id != current.id }
+            .filter { needle.isEmpty || $0.name.resolved.lowercased().contains(needle) }
+            .sorted { $0.name.resolved < $1.name.resolved }
+        let alike = all.filter { $0.kind == current.kind }
+        let rest = all.filter { $0.kind != current.kind }
+        NavigationStack {
+            List {
+                if !alike.isEmpty { Section(current.kind == "Valuable" ? "mw4.ui.hajin.valuables".localized() : "mw4.ui.hajin.ingredients".localized()) { rowsView(alike) } }
+                if !rest.isEmpty { Section(current.kind == "Valuable" ? "mw4.ui.hajin.ingredients".localized() : "mw4.ui.hajin.valuables".localized()) { rowsView(rest) } }
+            }
+            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "mw4.ui.hajin.search_guide".localized())
+            .navigationTitle("mw4.ui.hajin.scan_swap_title".localized())
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("mw4.ui.hajin.cancel".localized()) { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.large])
+    }
+
+    private func rowsView(_ items: [HajinGuide.Item]) -> some View {
+        ForEach(items) { item in
+            Button { pick(item.id) } label: {
+                HStack(spacing: 12) {
+                    HajinItemTile(item: item, size: 36)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
+                        if let rarity = item.rarity {
+                            Text(rarity).font(.caption).foregroundStyle(HajinRarity.color(rarity))
+                        }
+                    }
+                    Spacer(minLength: 0)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+        }
+    }
+}
+
 /// A sheet whose content scrolls rather than resizing or closing it.
 struct HajinScrollsNotSheet: ViewModifier {
     let on: Bool
@@ -233,121 +287,160 @@ struct HajinScrollsNotSheet: ViewModifier {
     }
 }
 
-/// A photo to pinch and drag: double-tap zooms in there, or back out.
+/// A photo to pinch and drag (iOS's own zooming, as in Photos): double-tap
+/// zooms in there or back out, and lit tiles are zoomed to.
 struct HajinZoomPhoto: View {
     let image: UIImage
-    /// Tiles to light up, each four corners as fractions of the photo; the
-    /// photo zooms to them
+    /// Tiles to light up, each four corners as fractions of the photo
     var marks: [[CGPoint]] = []
-    @State private var scale: CGFloat = 1
-    @State private var lastScale: CGFloat = 1
-    @State private var offset: CGSize = .zero
-    @State private var lastOffset: CGSize = .zero
+    @State private var zoomed = false
 
     var body: some View {
-        GeometryReader { geo in
-            let fit = fitted(geo.size)
-            ZStack {
-                Image(uiImage: image)
-                    .resizable()
-                    .frame(width: fit.width, height: fit.height)
-                Path { p in
-                    for quad in marks {
-                        p.addLines(quad.map { CGPoint(x: $0.x * fit.width, y: $0.y * fit.height) })
-                        p.closeSubpath()
-                    }
+        HajinZoomScroll(image: image, marks: marks, zoomed: $zoomed)
+            .background(Color.black)
+            .overlay(alignment: .bottomTrailing) {
+                if !zoomed {
+                    Label("mw4.ui.hajin.zoom_hint".localized(), systemImage: "arrow.up.left.and.arrow.down.right")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .padding(.horizontal, 8).padding(.vertical, 4)
+                        .background(Capsule().fill(.black.opacity(0.55)))
+                        .padding(8)
+                        .allowsHitTesting(false)
                 }
-                .fill(Color.accentDMZ.opacity(0.25))
-                .overlay(Path { p in
-                    for quad in marks {
-                        p.addLines(quad.map { CGPoint(x: $0.x * fit.width, y: $0.y * fit.height) })
-                        p.closeSubpath()
-                    }
-                }.stroke(Color.accentDMZ, lineWidth: 2.5 / scale))
-                .frame(width: fit.width, height: fit.height)
-                .allowsHitTesting(false)
             }
-                .frame(width: geo.size.width, height: geo.size.height)
-                // Every point, not just the x's: two items in the same column differ only in y
-                .onChange(of: marks.flatMap { $0 }.map { "\($0.x),\($0.y)" }) { _ in focus(geo.size, fit) }
-                .onAppear { if !marks.isEmpty { focus(geo.size, fit) } }
-                .scaleEffect(scale)
-                .offset(offset)
-                // Zoomed, the photo spills past its box: only the box takes
-                // touches, or it swallows taps on the list below
-                .allowsHitTesting(false)
-                .frame(width: geo.size.width, height: geo.size.height)
-                .contentShape(Rectangle())
-                .gesture(MagnificationGesture()
-                    .onChanged { scale = min(max(lastScale * $0, 1), 6) }
-                    .onEnded { _ in lastScale = scale; clamp(geo.size) }
-                    .simultaneously(with: DragGesture()
-                        .onChanged { g in
-                            guard scale > 1 else { return }
-                            offset = CGSize(width: lastOffset.width + g.translation.width, height: lastOffset.height + g.translation.height)
-                        }
-                        .onEnded { _ in clamp(geo.size) }))
-                .onTapGesture(count: 2) { location in
-                    withAnimation(.snappy) {
-                        if scale > 1 {
-                            scale = 1; offset = .zero
-                        } else {
-                            // Zoom in on where was tapped
-                            scale = 3
-                            offset = CGSize(width: (geo.size.width / 2 - location.x) * 2, height: (geo.size.height / 2 - location.y) * 2)
-                        }
-                        lastScale = scale
-                        clamp(geo.size)
-                    }
-                }
-        }
-        .clipped()
-        .background(Color.black)
-        .overlay(alignment: .bottomTrailing) {
-            if scale == 1 {
-                Label("mw4.ui.hajin.zoom_hint".localized(), systemImage: "arrow.up.left.and.arrow.down.right")
-                    .font(.caption2.weight(.semibold))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .padding(.horizontal, 8).padding(.vertical, 4)
-                    .background(Capsule().fill(.black.opacity(0.55)))
-                    .padding(8)
-                    .allowsHitTesting(false)
-            }
+    }
+}
+
+private struct HajinZoomScroll: UIViewRepresentable {
+    let image: UIImage
+    let marks: [[CGPoint]]
+    @Binding var zoomed: Bool
+
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
+    /// Lays the photo out once it has a size (it has none when made)
+    final class Scroll: UIScrollView {
+        var onLayout: ((UIScrollView) -> Void)?
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            onLayout?(self)
         }
     }
 
-    private func fitted(_ box: CGSize) -> CGSize {
-        let s = min(box.width / max(image.size.width, 1), box.height / max(image.size.height, 1))
-        return CGSize(width: image.size.width * s, height: image.size.height * s)
+    func makeUIView(context: Context) -> UIScrollView {
+        let scroll = Scroll()
+        let coordinator = context.coordinator
+        scroll.onLayout = { [weak coordinator] scroll in
+            guard let coordinator else { return }
+            coordinator.layout(scroll)
+            coordinator.show(coordinator.parent.marks, in: scroll)
+        }
+        scroll.delegate = context.coordinator
+        scroll.minimumZoomScale = 1
+        scroll.maximumZoomScale = 6
+        scroll.showsHorizontalScrollIndicator = false
+        scroll.showsVerticalScrollIndicator = false
+        scroll.contentInsetAdjustmentBehavior = .never
+        scroll.bouncesZoom = true
+        let content = context.coordinator.content
+        content.image = image
+        content.contentMode = .scaleToFill
+        content.isUserInteractionEnabled = true
+        content.layer.addSublayer(context.coordinator.marksLayer)
+        scroll.addSubview(content)
+        let doubleTap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.doubleTapped(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        scroll.addGestureRecognizer(doubleTap)
+        return scroll
     }
 
-    /// Zooms to the lit tiles (all of them in view), or back out with none.
-    private func focus(_ box: CGSize, _ fit: CGSize) {
-        let points = marks.flatMap { $0 }
-        withAnimation(.snappy) {
+    func updateUIView(_ scroll: UIScrollView, context: Context) {
+        context.coordinator.parent = self
+        context.coordinator.layout(scroll)
+        context.coordinator.show(marks, in: scroll)
+    }
+
+    final class Coordinator: NSObject, UIScrollViewDelegate {
+        var parent: HajinZoomScroll
+        let content = UIImageView()
+        let marksLayer = CAShapeLayer()
+        private var shown: [[CGPoint]]?
+        private var laidOutFor: CGSize = .zero
+
+        init(_ parent: HajinZoomScroll) {
+            self.parent = parent
+            marksLayer.fillColor = UIColor(Color.accentDMZ.opacity(0.25)).cgColor
+            marksLayer.strokeColor = UIColor(Color.accentDMZ).cgColor
+            marksLayer.lineWidth = 2.5
+        }
+
+        /// The photo at its fitted size in the middle of the box, at 1x.
+        func layout(_ scroll: UIScrollView) {
+            let box = scroll.bounds.size
+            guard box.width > 0, box.height > 0, box != laidOutFor else { return }
+            laidOutFor = box
+            scroll.zoomScale = 1
+            let size = parent.image.size
+            let s = min(box.width / max(size.width, 1), box.height / max(size.height, 1))
+            content.frame = CGRect(x: 0, y: 0, width: size.width * s, height: size.height * s)
+            scroll.contentSize = content.frame.size
+            marksLayer.frame = content.bounds
+            center(scroll)
+            shown = nil
+        }
+
+        /// Draws the lit tiles and zooms to fit them (or back out with none).
+        func show(_ marks: [[CGPoint]], in scroll: UIScrollView) {
+            guard laidOutFor != .zero, shown != marks else { return }
+            shown = marks
+            let w = content.bounds.width, h = content.bounds.height
+            let path = UIBezierPath()
+            for quad in marks where quad.count == 4 {
+                path.move(to: CGPoint(x: quad[0].x * w, y: quad[0].y * h))
+                for p in quad.dropFirst() { path.addLine(to: CGPoint(x: p.x * w, y: p.y * h)) }
+                path.close()
+            }
+            marksLayer.path = path.cgPath
+            let points = marks.flatMap { $0 }
             guard let minX = points.map(\.x).min(), let maxX = points.map(\.x).max(),
                   let minY = points.map(\.y).min(), let maxY = points.map(\.y).max() else {
-                scale = 1; offset = .zero; lastScale = 1; lastOffset = .zero
+                scroll.setZoomScale(1, animated: true)
                 return
             }
-            let w = (maxX - minX) * fit.width, h = (maxY - minY) * fit.height
-            scale = min(4, max(1, 0.7 * min(box.width / max(w, 1), box.height / max(h, 1))))
-            // The middle of the tiles, from the middle of the box, scaled
-            let cx = (minX + maxX) / 2 * fit.width + (box.width - fit.width) / 2
-            let cy = (minY + maxY) / 2 * fit.height + (box.height - fit.height) / 2
-            offset = CGSize(width: (box.width / 2 - cx) * scale, height: (box.height / 2 - cy) * scale)
-            lastScale = scale
+            let rect = CGRect(x: minX * w, y: minY * h, width: (maxX - minX) * w, height: (maxY - minY) * h)
+            // Room round the tiles, and no closer than 4x
+            let side = max(rect.width, rect.height, min(w, h) / 4) * 1.6
+            scroll.zoom(to: CGRect(x: rect.midX - side / 2, y: rect.midY - side / 2, width: side, height: side), animated: true)
         }
-        clamp(box)
-    }
 
-    /// Keeps the photo covering its box: no dragging it off into the black.
-    private func clamp(_ size: CGSize) {
-        let maxX = size.width * (scale - 1) / 2, maxY = size.height * (scale - 1) / 2
-        withAnimation(.snappy) {
-            offset = CGSize(width: min(max(offset.width, -maxX), maxX), height: min(max(offset.height, -maxY), maxY))
+        /// Smaller than the box: keep it in the middle.
+        private func center(_ scroll: UIScrollView) {
+            let box = scroll.bounds.size, size = scroll.contentSize
+            scroll.contentInset = UIEdgeInsets(top: max(0, (box.height - size.height) / 2), left: max(0, (box.width - size.width) / 2),
+                                               bottom: 0, right: 0)
         }
-        lastOffset = offset
+
+        func viewForZooming(in scrollView: UIScrollView) -> UIView? { content }
+
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            center(scrollView)
+            // Lines the same width on screen at any zoom
+            marksLayer.lineWidth = 2.5 / scrollView.zoomScale
+            let zoomed = scrollView.zoomScale > 1.01
+            if zoomed != parent.zoomed { DispatchQueue.main.async { self.parent.zoomed = zoomed } }
+        }
+
+        @objc func doubleTapped(_ tap: UITapGestureRecognizer) {
+            guard let scroll = tap.view as? UIScrollView else { return }
+            if scroll.zoomScale > 1.01 {
+                scroll.setZoomScale(1, animated: true)
+            } else {
+                let p = tap.location(in: content)
+                let w = content.bounds.width / 3, h = content.bounds.height / 3
+                scroll.zoom(to: CGRect(x: p.x - w / 2, y: p.y - h / 2, width: w, height: h), animated: true)
+            }
+        }
     }
 }
 
@@ -386,14 +479,31 @@ struct HajinStashScanReview: View {
     /// player has said not to ask again
     @AppStorage("mw4_hajin_ask_send_scan") private var askToSend = true
     @State private var asking = false
-    @State private var sentState: (had: [String: Int], edited: [String: Int], skipped: Set<String>)?
+    @State private var sentState: (had: [String: Int], edited: [String: Int], skipped: Set<String>, swapped: [String: String])?
     @State private var mail: HajinMailDraft?
     @State private var share: [Any]?
+    /// Items the player said the reader got wrong: what it read → what it is
+    @State private var swaps: [String: String] = [:]
+    /// The row whose item is being swapped
+    @State private var swapping: HajinGuide.Item?
+
+    /// What was read, with the player's swaps applied (a swap onto an item
+    /// also read adds the two together)
+    private var counts: [String: Int] {
+        var out: [String: Int] = [:]
+        for (id, n) in found { out[swaps[id] ?? id, default: 0] += n }
+        return out
+    }
+
+    /// The id the reader actually read for a row (itself unless swapped in).
+    private func source(_ id: String) -> String {
+        found[id] != nil ? id : (swaps.first { $0.value == id }?.key ?? id)
+    }
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: resources, ingredients and valuables.
         // The photo reader also recognises keys and gear, and leaves them out.
-        found.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.inStash($0) ? $0 : nil }
+        counts.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.inStash($0) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
             // Ones to check first, then anything under 100% sure (least sure
             // first), then changes, then ones already right. Ordered by what
@@ -407,6 +517,8 @@ struct HajinStashScanReview: View {
     }
 
     private func order(_ id: String) -> (Int, Int) {
+        // A swapped row keeps the place of the item it was read as
+        let id = source(id)
         let sure = sureness[id].map { Int(($0 * 100).rounded()) } ?? 100
         if unsure.contains(id) { return (0, sure) }
         if sure < 100 { return (1, sure) }
@@ -471,17 +583,31 @@ struct HajinStashScanReview: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                     .lineLimit(2)
+                let swapped = Set(swaps.values).contains(row.item.id)
                 HStack(spacing: 6) {
-                    if unsure.contains(row.item.id) && edited[row.item.id] == nil {
+                    if swapped {
+                        Label("mw4.ui.hajin.scan_swapped".localized(), systemImage: "arrow.left.arrow.right")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                    } else if unsure.contains(row.item.id) && edited[row.item.id] == nil {
                         Text("mw4.ui.hajin.scan_check".localized().uppercased())
                             .font(.system(size: 10, weight: .bold)).tracking(0.6)
                             .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
                     }
-                    if let sure = sureness[row.item.id] {
+                    if !swapped, let sure = sureness[row.item.id] {
                         Text(String(format: "mw4.ui.hajin.scan_sure".localized(), stacks[row.item.id] ?? 1, Int((sure * 100).rounded())))
                             .font(.caption2)
                             .foregroundStyle(sure < 0.5 ? Color(red: 0.96, green: 0.66, blue: 0.24) : Color.appInkMuted)
                     }
+                }
+                // Read off the photo's tiles: wrong item? pick the right one
+                if swapped || sureness[row.item.id] != nil {
+                    Button { swapping = row.item } label: {
+                        Text("mw4.ui.hajin.scan_not_this".localized())
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                    }
+                    .buttonStyle(.borderless)
                 }
             }
             Spacer(minLength: 6)
@@ -536,7 +662,7 @@ struct HajinStashScanReview: View {
             let bottom = CGPoint(x: k[3].x + (k[2].x - k[3].x) * u, y: k[3].y + (k[2].y - k[3].y) * u)
             return CGPoint(x: top.x + (bottom.x - top.x) * v, y: top.y + (bottom.y - top.y) * v)
         }
-        return tiles.filter { $0.id == id }.map { t in
+        return tiles.filter { (swaps[$0.id] ?? $0.id) == id }.map { t in
             let u0 = CGFloat(t.column) / CGFloat(columns), u1 = CGFloat(t.column + 1) / CGFloat(columns)
             let v0 = CGFloat(t.row) / CGFloat(rows), v1 = CGFloat(t.row + 1) / CGFloat(rows)
             return [at(u0, v0), at(u1, v0), at(u1, v1), at(u0, v1)]
@@ -678,6 +804,12 @@ struct HajinStashScanReview: View {
             .sheet(isPresented: Binding(get: { share != nil }, set: { if !$0 { share = nil } }), onDismiss: finish) {
                 if let share { HajinShareSheet(items: share) }
             }
+            .sheet(item: $swapping) { item in
+                HajinItemPicker(current: item) { picked in
+                    swap(item.id, to: picked)
+                    swapping = nil
+                }
+            }
             .navigationTitle("mw4.ui.hajin.scan_title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -733,16 +865,29 @@ struct HajinStashScanReview: View {
         if let levelChange { store.setLevel(levelChange) }
         // Stash photos: with everything applied, offer to send the photo
         if ask, askToSend, report != nil {
-            sentState = (had, edited, skip)
+            sentState = (had, edited, skip, swaps)
             asking = true
         } else {
             finish()
         }
     }
 
+    /// Everything read as `id` (or swapped onto it) is really `to`.
+    private func swap(_ id: String, to: String) {
+        guard id != to else { return }
+        Haptics.step()
+        for (from, target) in swaps where target == id { swaps[from] = to }
+        if found[id] != nil { swaps[id] = to }
+        // Back to what it was read as: no swap at all
+        for (from, target) in swaps where from == target { swaps[from] = nil }
+        edited[id] = nil; edited[to] = nil
+        skip.remove(to)
+        if highlighted == id { highlighted = to }
+    }
+
     private func sendReport() {
         guard let report, let state = sentState else { finish(); return }
-        switch report.outgoing(had: state.had, edited: state.edited, skipped: state.skipped) {
+        switch report.outgoing(had: state.had, edited: state.edited, skipped: state.skipped, swapped: state.swapped) {
         case .mail(let draft): mail = draft
         case .share(let items): share = items
         case nil: finish()
