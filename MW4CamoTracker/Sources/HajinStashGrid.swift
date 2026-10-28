@@ -985,6 +985,11 @@ struct HajinStashGridFrameView: View {
     @State private var picking = false
     @State private var newPick: PhotosPickerItem?
     @State private var showsCamera = false
+    /// Zoomed in on the photo to place the corners exactly
+    @State private var zoom: CGFloat = 1
+    @State private var zoomAtStart: CGFloat = 1
+    @State private var pan: CGSize = .zero
+    @State private var panAtStart: CGSize = .zero
     /// 1 just as the guess lands, fading to 0
     @State private var lockGlow = 0.0
     @EnvironmentObject private var store: HajinStore
@@ -1040,7 +1045,8 @@ struct HajinStashGridFrameView: View {
                                 .fill(Color.accentDMZ.opacity(0.35))
                                 .overlay(Circle().strokeBorder(Color.white, lineWidth: 2))
                                 .frame(width: 34, height: 34)
-                                .scaleEffect(state.finding ? 0.2 : 1)
+                                // The same size on screen however far in it's zoomed
+                                .scaleEffect((state.finding ? 0.2 : 1) / zoom)
                                 .opacity(state.finding || state.reading ? 0 : 1)
                                 .position(x: state.corners[i].x * fit.width, y: state.corners[i].y * fit.height)
                                 .gesture(DragGesture().onEnded { _ in remeasure() }.simultaneously(with: DragGesture().onChanged { g in
@@ -1050,7 +1056,25 @@ struct HajinStashGridFrameView: View {
                         }
                     }
                     .frame(width: fit.width, height: fit.height)
+                    .scaleEffect(zoom)
+                    .offset(pan)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .contentShape(Rectangle())
+                    // Pinch in to place the corners exactly; one finger moves
+                    // the photo while zoomed (a handle under it moves the handle)
+                    .simultaneousGesture(MagnificationGesture()
+                        .onChanged { zoom = min(max(zoomAtStart * $0, 1), 5) }
+                        .onEnded { _ in zoomAtStart = zoom; keepInView(fit) })
+                    .gesture(DragGesture(minimumDistance: 8)
+                        .onChanged { g in
+                            guard zoom > 1 else { return }
+                            pan = CGSize(width: panAtStart.width + g.translation.width, height: panAtStart.height + g.translation.height)
+                        }
+                        .onEnded { _ in keepInView(fit) })
+                    .onTapGesture(count: 2) {
+                        withAnimation(.snappy) { zoom = 1; zoomAtStart = 1; pan = .zero; panAtStart = .zero }
+                    }
+                    .clipped()
                 }
                 .padding(.horizontal, 8)
             }
@@ -1184,7 +1208,16 @@ struct HajinStashGridFrameView: View {
 
     /// The framed quad with the column lines and estimated row lines.
     private func overlay(_ fit: CGSize) -> some View {
-        frameLines(fit).stroke(Color.accentDMZ, lineWidth: 1.5)
+        frameLines(fit).stroke(Color.accentDMZ, lineWidth: 1.5 / zoom)
+    }
+
+    /// No panning the photo out of its box.
+    private func keepInView(_ fit: CGSize) {
+        let maxX = fit.width * (zoom - 1) / 2, maxY = fit.height * (zoom - 1) / 2
+        withAnimation(.snappy) {
+            pan = CGSize(width: min(max(pan.width, -maxX), maxX), height: min(max(pan.height, -maxY), maxY))
+        }
+        panAtStart = pan
     }
 
     private func frameLines(_ fit: CGSize) -> Path {

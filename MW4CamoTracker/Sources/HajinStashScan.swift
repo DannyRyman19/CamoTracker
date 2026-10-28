@@ -221,9 +221,24 @@ struct HajinStashScanButton: View {
     }
 }
 
+/// A sheet whose content scrolls rather than resizing or closing it.
+struct HajinScrollsNotSheet: ViewModifier {
+    let on: Bool
+    func body(content: Content) -> some View {
+        if on, #available(iOS 16.4, *) {
+            content.presentationContentInteraction(.scrolls).interactiveDismissDisabled()
+        } else {
+            content
+        }
+    }
+}
+
 /// A photo to pinch and drag: double-tap zooms in there, or back out.
 struct HajinZoomPhoto: View {
     let image: UIImage
+    /// Tiles to light up, each four corners as fractions of the photo; the
+    /// photo zooms to them
+    var marks: [[CGPoint]] = []
     @State private var scale: CGFloat = 1
     @State private var lastScale: CGFloat = 1
     @State private var offset: CGSize = .zero
@@ -231,10 +246,29 @@ struct HajinZoomPhoto: View {
 
     var body: some View {
         GeometryReader { geo in
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFit()
+            let fit = fitted(geo.size)
+            ZStack {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: fit.width, height: fit.height)
+                Path { p in
+                    for quad in marks {
+                        p.addLines(quad.map { CGPoint(x: $0.x * fit.width, y: $0.y * fit.height) })
+                        p.closeSubpath()
+                    }
+                }
+                .fill(Color.accentDMZ.opacity(0.25))
+                .overlay(Path { p in
+                    for quad in marks {
+                        p.addLines(quad.map { CGPoint(x: $0.x * fit.width, y: $0.y * fit.height) })
+                        p.closeSubpath()
+                    }
+                }.stroke(Color.accentDMZ, lineWidth: 2.5 / scale))
+                .frame(width: fit.width, height: fit.height)
+                .allowsHitTesting(false)
+            }
                 .frame(width: geo.size.width, height: geo.size.height)
+                .onChange(of: marks.flatMap { $0 }.map(\.x)) { _ in focus(geo.size, fit) }
                 .scaleEffect(scale)
                 .offset(offset)
                 .gesture(MagnificationGesture()
@@ -273,6 +307,31 @@ struct HajinZoomPhoto: View {
                     .allowsHitTesting(false)
             }
         }
+    }
+
+    private func fitted(_ box: CGSize) -> CGSize {
+        let s = min(box.width / max(image.size.width, 1), box.height / max(image.size.height, 1))
+        return CGSize(width: image.size.width * s, height: image.size.height * s)
+    }
+
+    /// Zooms to the lit tiles (all of them in view), or back out with none.
+    private func focus(_ box: CGSize, _ fit: CGSize) {
+        let points = marks.flatMap { $0 }
+        withAnimation(.snappy) {
+            guard let minX = points.map(\.x).min(), let maxX = points.map(\.x).max(),
+                  let minY = points.map(\.y).min(), let maxY = points.map(\.y).max() else {
+                scale = 1; offset = .zero; lastScale = 1; lastOffset = .zero
+                return
+            }
+            let w = (maxX - minX) * fit.width, h = (maxY - minY) * fit.height
+            scale = min(4, max(1, 0.7 * min(box.width / max(w, 1), box.height / max(h, 1))))
+            // The middle of the tiles, from the middle of the box, scaled
+            let cx = (minX + maxX) / 2 * fit.width + (box.width - fit.width) / 2
+            let cy = (minY + maxY) / 2 * fit.height + (box.height - fit.height) / 2
+            offset = CGSize(width: (box.width / 2 - cx) * scale, height: (box.height / 2 - cy) * scale)
+            lastScale = scale
+        }
+        clamp(box)
     }
 
     /// Keeps the photo covering its box: no dragging it off into the black.
@@ -314,6 +373,8 @@ struct HajinStashScanReview: View {
     @State private var skipCash = false
     @State private var skipLevel = false
     @State private var detent = PresentationDetent.medium
+    /// The item whose tiles are lit on the photo
+    @State private var highlighted: String?
     /// After Update: offer to send the photo and corrections, unless the
     /// player has said not to ask again
     @AppStorage("mw4_hajin_ask_send_scan") private var askToSend = true
@@ -386,8 +447,20 @@ struct HajinStashScanReview: View {
     @ViewBuilder private func itemRow(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> some View {
         let same = row.now == row.read
         let on = !same && !skip.contains(row.item.id)
+        let findable = !marks(for: row.item.id).isEmpty
         HStack(spacing: 10) {
+            HStack(spacing: 10) {
             HajinItemTile(item: row.item, size: 32)
+                .overlay(alignment: .bottomTrailing) {
+                    if findable {
+                        Image(systemName: "viewfinder")
+                            .font(.system(size: 9, weight: .bold))
+                            .foregroundStyle(.white)
+                            .padding(2)
+                            .background(Circle().fill(highlighted == row.item.id ? Color.accentDMZ : Color.black.opacity(0.6)))
+                            .offset(x: 4, y: 4)
+                    }
+                }
             VStack(alignment: .leading, spacing: 2) {
                 Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                     .lineLimit(2)
@@ -405,6 +478,14 @@ struct HajinStashScanReview: View {
                 }
             }
             Spacer(minLength: 6)
+            }
+            // Tap the item to see its tiles on the photo
+            .contentShape(Rectangle())
+            .onTapGesture {
+                guard findable else { return }
+                Haptics.step()
+                withAnimation(.snappy) { highlighted = highlighted == row.item.id ? nil : row.item.id }
+            }
             if !same {
                 // What the stash has now, then the count it becomes
                 Text("\(row.now) →")
@@ -432,6 +513,26 @@ struct HajinStashScanReview: View {
                 }
                 .buttonStyle(.borderless)
             }
+        }
+        .listRowBackground(highlighted == row.item.id ? Color.accentDMZ.opacity(0.14) : nil)
+    }
+
+    /// Where an item's tiles are in the photo: each tile's four corners, as
+    /// fractions of the photo, from the grid the player framed.
+    private func marks(for id: String) -> [[CGPoint]] {
+        guard photo != nil, let report, report.corners.count == 4 else { return [] }
+        let tiles = report.tiles
+        let rows = (tiles.map(\.row).max() ?? 0) + 1, columns = max((tiles.map(\.column).max() ?? 0) + 1, HajinStashGrid.columns)
+        let k = report.corners
+        func at(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
+            let top = CGPoint(x: k[0].x + (k[1].x - k[0].x) * u, y: k[0].y + (k[1].y - k[0].y) * u)
+            let bottom = CGPoint(x: k[3].x + (k[2].x - k[3].x) * u, y: k[3].y + (k[2].y - k[3].y) * u)
+            return CGPoint(x: top.x + (bottom.x - top.x) * v, y: top.y + (bottom.y - top.y) * v)
+        }
+        return tiles.filter { $0.id == id }.map { t in
+            let u0 = CGFloat(t.column) / CGFloat(columns), u1 = CGFloat(t.column + 1) / CGFloat(columns)
+            let v0 = CGFloat(t.row) / CGFloat(rows), v1 = CGFloat(t.row + 1) / CGFloat(rows)
+            return [at(u0, v0), at(u1, v0), at(u1, v1), at(u0, v1)]
         }
     }
 
@@ -543,7 +644,7 @@ struct HajinStashScanReview: View {
             // The photo over the counts, half and half, to zoom and compare
             .safeAreaInset(edge: .top, spacing: 0) {
                 if let photo {
-                    HajinZoomPhoto(image: photo)
+                    HajinZoomPhoto(image: photo, marks: highlighted.map { marks(for: $0) } ?? [])
                         .frame(height: UIScreen.main.bounds.height * 0.42)
                         .overlay(alignment: .bottom) { Rectangle().fill(Color.appSurface2).frame(height: 1) }
                 }
@@ -584,6 +685,9 @@ struct HajinStashScanReview: View {
             }
         }
         .presentationDetents(photo == nil ? [.medium, .large] : [.large], selection: $detent)
+        // With the photo: a drag on the list scrolls it, never moves the sheet
+        // (and the photo with it); Cancel closes it
+        .modifier(HajinScrollsNotSheet(on: photo != nil))
         .onAppear { if photo != nil { detent = .large } }
     }
 
