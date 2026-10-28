@@ -272,8 +272,8 @@
 "mw4.ui.keep.resource" = "Smontato in automatico";
 "mw4.ui.keep.keep_reason" = "Ne servono %d per potenziamenti non ancora stampati: %@";
 "mw4.ui.keep.orders_reason" = "Ne servono %d per ordini DMZ non ancora completati: %@";
-"mw4.ui.keep.keep_short" = "Ne servono %d per:";
-"mw4.ui.keep.crafting_short" = "Usato in queste ricette:";
+"mw4.ui.keep.keep_left" = "Ne servono %1$d per questi, ne hai %2$d: ne mancano %3$d";
+"mw4.ui.keep.keep_covered" = "Ne servono %1$d per questi, e ne hai %2$d";
 "mw4.ui.keep.crafting_reason" = "Serve solo per stampare %@. Tienilo se lo crei, altrimenti vendi.";
 "mw4.ui.keep.sell_reason" = "Niente di noto lo richiede. Si vende a %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Niente di noto lo richiede.";
@@ -400,6 +400,8 @@
 "mw4.ui.hajin.dmz_level_n" = "Livello DMZ %d";
 "mw4.ui.hajin.rewards" = "Ricompense";
 "mw4.ui.hajin.needs" = "Serve";
+"mw4.ui.hajin.hide_done" = "Nascondi completati";
+"mw4.ui.hajin.up_next" = "Prossimo";
 "mw4.ui.hajin.can_print" = "Stampabile";
 "mw4.ui.hajin.can_print_title" = "Puoi stamparlo";
 "mw4.ui.hajin.can_print_detail" = "Il tuo deposito ha tutto il necessario.";

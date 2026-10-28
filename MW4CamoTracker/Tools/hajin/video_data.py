@@ -519,6 +519,93 @@ UNPLACED = [
  ("Plate Speed", "Plates go in faster (Warfighter)"),
 ]
 
+# ---- Traits as a wiki: every trait each tree can roll (codcentral.net's
+# list, 2026-10-28, cross-checked with allthings.how and games.gg, plus the
+# ones seen in our own trees). Majors are fixed; Minors are random per operator.
+TRAIT_MAJORS = {
+    "Warfighter": [("Equipment Professional", 3), ("Combat Resistance", 3), ("Viper Sense", 6), ("Quick Fix", 6), ("Possum", 9), ("Adaptive Restock", 9)],
+    "Scout": [("Hostile Looter", 3), ("Container Looter", 3), ("Field Crafting", 6), ("UAV Upgrade", 6), ("Overwatch", 9), ("Thermal Padding", 9)],
+    "Survivalist": [("Faster Revive", 3), ("Consumable Duration", 3), ("Impact Smokes", 6), ("Free Revive", 6), ("Numb the Pain", 9), ("Die Hard", 9)],
+}
+TRAIT_MINORS = {
+    "Warfighter": ["Adrenaline Burst", "Auto Fill", "Bounty Hunter", "Bounty Intel", "Combat Scanner", "Final Intel", "Free Prep", "Hostile Ammo",
+                   "Killing Spree", "LT Hunter", "Plate Pouch", "Plate Speed", "Popcorn Lethals", "Popcorn Tacticals", "Quick Knife", "Resupply"],
+    "Scout": ["Ammo Reserves", "Ammo Scavenger", "Auto Fill", "Cash Ops", "Combat Scavenger", "Fast Learner", "Faster Learner", "Field Medic", "Final Intel",
+              "Investor", "Key Cash", "Mini Tracker", "Operator Tracker", "Pack Rat", "Quick Knife", "Quick Regen", "Resource Hoarder",
+              "Resource Management", "Resource Pockets", "Resupply", "Stealthy"],
+    "Survivalist": ["Air Superiority", "Consumable Stacker", "Deep Breath", "Expedited Extraction", "Fast Learner", "Faster Learner", "Final Intel",
+                    "Fuel Economy", "Lucky", "Mechanic", "Metabolism", "Objective Oriented", "Operator Tracker", "Plate Organization", "Rad Blocker",
+                    "Rampage", "Rescuer", "Resupply", "Strong Arm"],
+}
+# effects for traits the older lists didn't have (the rest come from TRAITS)
+TRAIT_EFFECTS = {
+    "Auto Fill": "Lethals and Tacticals refill from your backpack by themselves",
+    "Bounty Hunter": "Bigger rewards for collecting bounties",
+    "Bounty Intel": "Bounty Intel costs less",
+    "Combat Scanner": "Downing a player sends one UAV pulse at where they fell",
+    "Free Prep": "A Free Loadout adds a random Consumable to your backpack",
+    "Hostile Ammo": "Hostiles drop an extra ammo pack",
+    "LT Hunter": "Activating a Lieutenant Tower reveals an extra Lieutenant",
+    "Plate Pouch": "2 more reserve plates. Stacks with Plate Organization",
+    "Plate Speed": "Plates go in faster",
+    "Ammo Reserves": "More reserve ammo for every ammo type",
+    "Combat Scavenger": "Hostiles have a small chance to drop an ingredient or a valuable",
+    "Faster Learner": "Slightly more operator XP. Stacks with Fast Learner",
+    "Operator Tracker": "Track enemy operators by their footprints",
+    "Quick Regen": "Health starts regenerating a little sooner",
+    "Consumable Stacker": "Using a consumable that's already running adds to its time, up to twice as long",
+    "Deep Breath": "Hold your breath longer underwater",
+    "Lucky": "When you're hurt or short on supplies, you're more likely to find something useful",
+    "Mechanic": "Refuel and repair vehicles twice as fast",
+    "Objective Oriented": "Op reward crates are one rarity higher, up to Rare",
+    "Plate Organization": "2 more reserve plates. Stacks with Plate Pouch",
+    "Rad Blocker": "Less damage from radiation",
+    "Rampage": "Killing an enemy operator gives you a short Painkiller effect",
+    "Rescuer": "Move faster while dragging a downed teammate",
+    "Strong Arm": "Throw equipment farther, with a line showing where it lands",
+}
+# Prestige traits: Pro versions of the row 6 and 9 Majors, random, up to three
+TRAIT_PROS = [
+    ("Adaptive Restock Pro", "Warfighter", "Hostiles drop rarer extra items"),
+    ("Possum Pro", "Warfighter", "Self revive into Last Stand from death once a match, without the tourniquet's health penalty"),
+    ("Quick Fix Pro", "Warfighter", "Health starts regenerating straight away when you kill an operator or hostile"),
+    ("Viper Sense Pro", "Warfighter", "Hidden from thermal optics and AI targeting, and warned when an enemy operator aims at you"),
+    ("Overwatch Pro", "Scout", "UAV Towers you activate never expire, and reach further"),
+    ("UAV Upgrade Pro", "Scout", "Longer-lasting, longer-range Advanced UAVs, and a bigger minimap"),
+    ("Thermal Padding Pro", "Scout", "Hidden from UAVs, and so is a vehicle you're in"),
+    ("Field Crafting Pro", "Scout", "Craft from Common printer resources while deployed, for half the resources"),
+    ("Free Revive Pro", "Survivalist", "Your first Wound repairs itself, and you can tourniquet while Wounded"),
+    ("Numb the Pain Pro", "Survivalist", "Longer Painkiller and Smelling Salts effects on revives"),
+    ("Impact Smokes Pro", "Survivalist", "Bigger, longer smoke when you're downed"),
+    ("Die Hard Pro", "Survivalist", "Last Stand calls an exfil you reach, never bleeds out, and moves faster"),
+]
+TRAITS_INTRO = ("Each operator has three trees, Warfighter, Scout and Survivalist, of nine rows, climbed from the bottom one trait a row. "
+                "Rows 3, 6 and 9 are a choice of two Major traits, the same for everyone. The other rows offer three Minor traits picked at random for "
+                "each operator, from the lists below; a row shows once you take one from the row under it, and some Minors turn up in more than one tree. "
+                "Each operator earns 18 points, one per dog tag rank from Steel I to Onyx III, so two full trees; there's no respec. "
+                "Prestiging an operator resets its trees and gives it a random Prestige trait (a Pro Major), up to three; from the fourth Prestige you can swap one.")
+
+def traits_wiki(guide, traits):
+    """The Traits section as a list of everything each tree can roll."""
+    import os
+    icons = {os.path.basename(f)[:-4] for f in __import__("glob").glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "Images", "DMZ", "traits", "*.png"))}
+    known = {t["name"]: t.get("effect") for t in traits.values() if t.get("name")} | dict(UNPLACED)
+    def row(name, group, value=None, effect=None):
+        effect = effect or TRAIT_EFFECTS.get(name) or known.get(name)
+        assert effect, f"no effect for trait {name}"
+        r = {"title": name, "subtitle": effect, "group": group}
+        if value: r["value"] = value
+        if item_id(name) in icons: r["image"] = TRAIT_IMG + item_id(name) + ".png?v=2"
+        return r
+    rows = []
+    for tree in ("Warfighter", "Scout", "Survivalist"):
+        rows += [row(n, f"{tree}: fixed", f"Row {r}") for n, r in TRAIT_MAJORS[tree]]
+        rows += [row(n, f"{tree}: random") for n in TRAIT_MINORS[tree]]
+    rows += [row(n, "Prestige traits", tree, effect) for n, tree, effect in TRAIT_PROS]
+    sec = next(s for s in guide if s["id"] == "traits")
+    sec["intro"] = TRAITS_INTRO
+    sec["rows"] = rows
+
 def build_traits(guide):
     import os
     icons = {os.path.basename(f)[:-4] for f in __import__("glob").glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "Images", "DMZ", "traits", "*.png"))}
@@ -550,6 +637,8 @@ def build_traits(guide):
     for name, effect in UNPLACED:
         rows.append({"title": name, "subtitle": effect, "group": "Not placed in a tree yet"})
     sec["rows"] = rows
+    # the app shows the wiki list; the trees stay for older app versions
+    traits_wiki(guide, traits)
     return TRAIT_TREES, sorted(traits.values(), key=lambda t: t["id"])
 
 def group_bosses(guide):
@@ -975,37 +1064,75 @@ ORDER_TIPS = {
 # page's Healer keeps the plain key (it's the earlier page)
 CHECK_KEYS = {("DMZ Orders: Page 10", "Healer"): "op-page-10-healer"}
 
+# DMZ Orders pages in the game's order (page numbers from the Gamer's Heroes
+# orders guide; the route you take can change which page comes next)
+ORDER_PAGES = {
+    "Story Missions": (0, "Story Missions"),
+    "DMZ Orders: Chapter 1": (1, "DMZ Orders: Page 1"),
+    "DMZ Orders: Counterfeit": (2, "DMZ Orders: Pages 2-3, Counterfeit"),
+    "DMZ Orders: Operation Rewards page": (4, "DMZ Orders: Page 4"),
+    "DMZ Orders: Underground": (5, "DMZ Orders: Pages 5-6, Underground"),
+    "DMZ Orders: Radiation and medical page": (7, "DMZ Orders: Page 7"),
+    "DMZ Orders: Human Intel": (8, "DMZ Orders: Pages 8-9, Human Intel"),
+    "DMZ Orders: Goliath page": (12, "DMZ Orders: Page 12, Hornet's Nest"),
+    "DMZ Orders: Jail Break page": (13, "DMZ Orders: Page 13, Hornet's Nest"),
+    "DMZ Orders: Fire Insurance page": (15, "DMZ Orders: Page 15"),
+    "DMZ Orders: The Grid": (16, "DMZ Orders: Pages 16-17, The Grid"),
+    "DMZ Orders: Page 23, other route": (23.5, "DMZ Orders: Page 23, other route"),
+}
+# Repeatable ops: guide reading, not ticked
+REPEATABLE = ("Dynamic Ops", "Side Ops")
+
 def structured_ops(guide):
     sec = next(s for s in guide if s["id"] == "ops")
-    rows = []
+    rows, wiki = [], []
     seen = set()
     for g, title, place, objectives, cash, items, other in MISSIONS:
-        check = CHECK_KEYS.get((g, title)) or "op-" + item_id(title)
-        n = 2
-        while check in seen:   # a later order with the same title
-            check = f"op-{item_id(title)}-{n}"; n += 1
-        seen.add(check)
-        r = {"title": title, "group": g, "check": check}
-        if check in ORDER_PRINTS: r["prints"] = [{"item": i, "qty": q} for i, q in ORDER_PRINTS[check]]
-        if check in ORDER_EXTRACTS: r["extracts"] = [{"item": i, "qty": q} for i, q in ORDER_EXTRACTS[check]]
-        if check in ORDER_TIPS: r["tips"] = ORDER_TIPS[check]
-        # what an order needs shows as its own line, not with the rewards
-        needed = {n["item"] for n in r.get("prints", []) + r.get("extracts", [])}
-        items = [i for i in items if i not in needed]
+        r = {"title": title, "group": g}
+        if g not in REPEATABLE:
+            # tick keys come from the list's own order, so they never change
+            check = CHECK_KEYS.get((g, title)) or "op-" + item_id(title)
+            n = 2
+            while check in seen:   # a later order with the same title
+                check = f"op-{item_id(title)}-{n}"; n += 1
+            seen.add(check)
+            r["check"] = check
+            if check in ORDER_PRINTS: r["prints"] = [{"item": i, "qty": q} for i, q in ORDER_PRINTS[check]]
+            if check in ORDER_EXTRACTS: r["extracts"] = [{"item": i, "qty": q} for i, q in ORDER_EXTRACTS[check]]
+            if check in ORDER_TIPS: r["tips"] = ORDER_TIPS[check]
+            # what an order needs shows as its own line, not with the rewards
+            needed = {n["item"] for n in r.get("prints", []) + r.get("extracts", [])}
+            items = [i for i in items if i not in needed]
+        # a page's reward is shown once, with the page
+        page_reward = next((o[len("Page reward: "):] for o in other if o.startswith("Page reward: ")), None)
+        other = [o for o in other if not o.startswith("Page reward: ")]
+        if page_reward: r["pageReward"] = page_reward
         if place: r["place"] = place
         if objectives: r["objectives"] = objectives
         if cash: r["cash"] = cash
         if items: r["links"] = items
         if other: r["rewards"] = other
         if not objectives and not cash and not items and not other: r["subtitle"] = "Objectives not confirmed yet"
-        rows.append(r)
+        (wiki if g in REPEATABLE else rows).append(r)
     unknown = (set(ORDER_PRINTS) | set(ORDER_EXTRACTS) | set(ORDER_TIPS)) - seen
     assert not unknown, f"order needs or tips for no order: {unknown}"
+
+    def page(r):
+        g = r["group"]
+        if g in ORDER_PAGES: return ORDER_PAGES[g][0]
+        return float(g.split("Page ")[1])   # "DMZ Orders: Page 10"
+    rows.sort(key=page)   # stable: orders keep their order within a page
+    for r in rows: r["group"] = ORDER_PAGES.get(r["group"], (0, r["group"]))[1]
+    sec["title"] = "Missions & Orders"
+    sec["symbol"] = "checklist"
     sec["rows"] = rows
-    sec["intro"] = ("Tick missions, orders and ops as you finish them, or tick each step as you go. "
-                    "Finish a random Story Mission three times a week for the weekly rewards. "
-                    "Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. "
-                    "A Bounty Station clears your bounty for $5,000; four kills make you Wanted.")
+    sec["intro"] = ("Story Missions, then the DMZ Orders pages in the game's order. Tick an order, or each step, as you finish it. "
+                    "Which page comes next can depend on the route you take.")
+    guide.insert(guide.index(sec) + 1, {
+        "id": "dynamic-ops", "title": "Dynamic & Side Ops", "symbol": "bolt.fill", "rows": wiki,
+        "intro": ("Finish a random Story Mission three times a week for the weekly rewards. "
+                  "Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. "
+                  "A Bounty Station clears your bounty for $5,000; four kills make you Wanted.")})
 
 # ---- Where keys turn up, from the sources players report (dmzcodex.com/map)
 KEY_ALIASES = {"supremeleaderaccesscard": "supreme-leaders-bunker-access-card"}

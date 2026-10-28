@@ -226,8 +226,7 @@ struct HajinValueBadge: View {
         }
             .font(.system(size: 11, weight: .semibold, design: .monospaced))
             .foregroundStyle(locked ? Color.appInkMuted : Color.appInk.opacity(0.9))
-            .lineLimit(1)
-            .fixedSize()
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal, 7)
             .padding(.vertical, 3)
             .background(
@@ -246,7 +245,7 @@ struct HajinWrap: Layout {
         let width = proposal.width ?? .infinity
         var x: CGFloat = 0, y: CGFloat = 0, row: CGFloat = 0, widest: CGFloat = 0
         for view in subviews {
-            let size = view.sizeThatFits(.unspecified)
+            let size = Self.size(view, within: width)
             if x > 0, x + size.width > width { x = 0; y += row + spacing; row = 0 }
             x += size.width + spacing
             row = max(row, size.height)
@@ -258,12 +257,19 @@ struct HajinWrap: Layout {
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         var x = bounds.minX, y = bounds.minY, row: CGFloat = 0
         for view in subviews {
-            let size = view.sizeThatFits(.unspecified)
+            let size = Self.size(view, within: bounds.width)
             if x > bounds.minX, x + size.width > bounds.maxX { x = bounds.minX; y += row + spacing; row = 0 }
             view.place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(size))
             x += size.width + spacing
             row = max(row, size.height)
         }
+    }
+
+    /// Its natural size, or, when that's wider than the row, that width
+    /// (so long text wraps instead of running off the card).
+    private static func size(_ view: LayoutSubview, within width: CGFloat) -> CGSize {
+        let natural = view.sizeThatFits(.unspecified)
+        return natural.width > width ? view.sizeThatFits(ProposedViewSize(width: width, height: nil)) : natural
     }
 }
 
@@ -277,6 +283,10 @@ private struct OpenItemKey: EnvironmentKey {
 
 private struct OpenOrderKey: EnvironmentKey {
     static let defaultValue: (@MainActor (String) -> Void)? = nil
+}
+
+private struct PushScreenKey: EnvironmentKey {
+    static let defaultValue: (@MainActor (HajinScreen) -> Void)? = nil
 }
 
 private struct ShowMarkerKey: EnvironmentKey {
@@ -295,6 +305,13 @@ extension EnvironmentValues {
         set { self[OpenOrderKey.self] = newValue }
     }
 
+    /// iPhone: pushes a screen onto the Hajin tab's path, the same path
+    /// item links use, so Back always steps back one screen.
+    var hajinPush: (@MainActor (HajinScreen) -> Void)? {
+        get { self[PushScreenKey.self] }
+        set { self[PushScreenKey.self] = newValue }
+    }
+
     var hajinShowMarker: (@MainActor (HajinGuide.Marker) -> Void)? {
         get { self[ShowMarkerKey.self] }
         set { self[ShowMarkerKey.self] = newValue }
@@ -304,6 +321,30 @@ extension EnvironmentValues {
 /// An item pushed onto the Hajin tab's navigation stack.
 struct HajinItemRoute: Hashable {
     let id: String
+}
+
+/// A screen pushed onto the Hajin tab's navigation stack: a guide section
+/// or one of My DMZ's tools. Pushing these by value (not a NavigationLink's
+/// view) keeps them on one path with item links; mixed, SwiftUI pops back
+/// to the start.
+enum HajinScreen: Hashable {
+    case section(String), keepSell, stash, shopping, blueprints
+}
+
+struct HajinScreenView: View {
+    let screen: HajinScreen
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        switch screen {
+        case .section(let id):
+            if let section = store.guide?.guide.first(where: { $0.id == id }) { GuideSectionView(section: section) }
+        case .keepSell: HajinKeepSellView()
+        case .stash: HajinStashView()
+        case .shopping: HajinShoppingListView()
+        case .blueprints: HajinBlueprintsView()
+        }
+    }
 }
 
 /// A DMZ Order (or mission) pushed onto the Hajin tab's navigation stack.
@@ -529,7 +570,7 @@ struct HajinItemView: View {
     @ViewBuilder private func primaryHead(_ item: HajinGuide.Item, _ guide: HajinGuide) -> some View {
         header(item)
         if HajinVerdict.applies(to: item) {
-            HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked))
+            HajinVerdictBadge(verdict: HajinVerdict(item: item, guide: guide, done: store.checked), have: store.count(of: item.id))
         }
         // Blueprints: tick once found (the "Still to find" list)
         if item.blueprint == true {

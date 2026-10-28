@@ -273,8 +273,8 @@
 "mw4.ui.keep.resource" = "Scrapped automatically";
 "mw4.ui.keep.keep_reason" = "%d needed for upgrades you haven't printed: %@";
 "mw4.ui.keep.orders_reason" = "%d needed for DMZ Orders you haven't finished: %@";
-"mw4.ui.keep.keep_short" = "%d needed for these:";
-"mw4.ui.keep.crafting_short" = "Used in these recipes:";
+"mw4.ui.keep.keep_left" = "%1$d needed for these, you have %2$d: %3$d to go";
+"mw4.ui.keep.keep_covered" = "%1$d needed for these, and you have %2$d";
 "mw4.ui.keep.crafting_reason" = "Only used to print %@. Keep it if you make those; otherwise sell.";
 "mw4.ui.keep.sell_reason" = "Nothing known needs it. Sells for %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Nothing known needs it.";
@@ -401,6 +401,8 @@
 "mw4.ui.hajin.dmz_level_n" = "DMZ level %d";
 "mw4.ui.hajin.rewards" = "Rewards";
 "mw4.ui.hajin.needs" = "Needs";
+"mw4.ui.hajin.hide_done" = "Hide finished";
+"mw4.ui.hajin.up_next" = "Up next";
 "mw4.ui.hajin.can_print" = "Can print";
 "mw4.ui.hajin.can_print_title" = "You can print this";
 "mw4.ui.hajin.can_print_detail" = "Your stash has everything it needs.";

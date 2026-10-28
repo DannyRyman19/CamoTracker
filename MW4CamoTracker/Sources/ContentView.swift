@@ -180,9 +180,11 @@ struct ContentView: View {
                     HajinView()
                         .navigationDestination(for: HajinItemRoute.self) { route in HajinItemView(id: route.id) }
                         .navigationDestination(for: HajinOrderRoute.self) { route in HajinOrderView(check: route.check) }
+                        .navigationDestination(for: HajinScreen.self) { screen in HajinScreenView(screen: screen) }
                 }
                 .environment(\.hajinOpenItem) { id in hajinPath.append(HajinItemRoute(id: id)) }
                 .environment(\.hajinOpenOrder) { check in hajinPath.append(HajinOrderRoute(check: check)) }
+                .environment(\.hajinPush) { screen in hajinPath.append(screen) }
                 .overlay(alignment: .bottom) { HajinUndoOverlay().padding(.bottom, 70) }
                     .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
                     .tag(Self.hajinTab)

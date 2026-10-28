@@ -77,12 +77,14 @@ struct HajinVerdict {
         }
     }
 
-    /// The banner's line when the chips below it name what needs the item.
-    var summary: String {
+    /// The banner's line when the chips below it name what needs the item:
+    /// for a Keep, how many are needed against how many the stash has.
+    func summary(have: Int) -> String {
         switch kind {
         case .keep:
             let total = upgrades.reduce(0) { $0 + $1.qty } + orders.reduce(0) { $0 + $1.qty }
-            return String(format: "mw4.ui.keep.keep_short".localized(), total)
+            if have >= total { return String(format: "mw4.ui.keep.keep_covered".localized(), total, have) }
+            return String(format: "mw4.ui.keep.keep_left".localized(), total, have, total - have)
         case .crafting: return "mw4.ui.keep.crafting_short".localized()
         default: return reason
         }
@@ -124,6 +126,8 @@ struct HajinVerdict {
 struct HajinVerdictBadge: View {
     let verdict: HajinVerdict
     var compact = false
+    /// How many the stash holds, for "x needed, you have y".
+    var have = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -138,7 +142,7 @@ struct HajinVerdictBadge: View {
                         .tracking(0.8)
                         .foregroundStyle(verdict.color)
                 }
-                Text(compact ? verdict.reason : verdict.summary)
+                Text(compact ? verdict.reason : verdict.summary(have: have))
                     .font(compact ? .caption : .subheadline)
                     .foregroundStyle(Color.appInk.opacity(0.85))
                     .lineLimit(compact ? 2 : nil)
@@ -409,6 +413,7 @@ extension HajinKeepSellView {
 struct HajinKeepSellRow: View {
     let item: HajinGuide.Item
     let verdict: HajinVerdict
+    @EnvironmentObject private var store: HajinStore
 
     private var needs: [(item: HajinGuide.Item, qty: Int)] {
         verdict.kind == .keep ? verdict.upgrades : verdict.kind == .crafting ? verdict.recipes : []
@@ -416,8 +421,7 @@ struct HajinKeepSellRow: View {
 
     private var line: String {
         switch verdict.kind {
-        case .keep:
-            return String(format: "mw4.ui.keep.keep_short".localized(), verdict.upgrades.reduce(0) { $0 + $1.qty })
+        case .keep: return verdict.summary(have: store.count(of: item.id))
         case .crafting: return "mw4.ui.keep.crafting_short".localized()
         default: return verdict.reason
         }
@@ -443,7 +447,12 @@ struct HajinKeepSellRow: View {
             }
             if !needs.isEmpty {
                 HajinLinkChips(ids: needs.map(\.item.id),
-                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:])
+                               amounts: verdict.kind == .keep ? Dictionary(needs.map { ($0.item.id, $0.qty) }, uniquingKeysWith: +) : [:],
+                               arrows: true)
+                    .padding(.leading, 56)
+            }
+            if verdict.kind == .keep, !verdict.orders.isEmpty {
+                HajinOrderChips(orders: verdict.orders)
                     .padding(.leading, 56)
             }
         }

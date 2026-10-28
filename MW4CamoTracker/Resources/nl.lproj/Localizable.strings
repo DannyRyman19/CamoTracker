@@ -272,8 +272,8 @@
 "mw4.ui.keep.resource" = "Wordt automatisch gesloopt";
 "mw4.ui.keep.keep_reason" = "%d nodig voor upgrades die je nog niet hebt geprint: %@";
 "mw4.ui.keep.orders_reason" = "%d nodig voor DMZ-orders die je nog niet hebt afgerond: %@";
-"mw4.ui.keep.keep_short" = "%d nodig voor:";
-"mw4.ui.keep.crafting_short" = "Gebruikt in deze recepten:";
+"mw4.ui.keep.keep_left" = "%1$d nodig hiervoor, je hebt er %2$d: nog %3$d";
+"mw4.ui.keep.keep_covered" = "%1$d nodig hiervoor, en je hebt er %2$d";
 "mw4.ui.keep.crafting_reason" = "Alleen nodig voor %@. Houd het als je dat maakt, anders verkopen.";
 "mw4.ui.keep.sell_reason" = "Niets bekends heeft het nodig. Verkoopt voor %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Niets bekends heeft het nodig.";
@@ -400,6 +400,8 @@
 "mw4.ui.hajin.dmz_level_n" = "DMZ-niveau %d";
 "mw4.ui.hajin.rewards" = "Beloningen";
 "mw4.ui.hajin.needs" = "Nodig";
+"mw4.ui.hajin.hide_done" = "Verberg afgeronde";
+"mw4.ui.hajin.up_next" = "Hierna";
 "mw4.ui.hajin.can_print" = "Printbaar";
 "mw4.ui.hajin.can_print_title" = "Je kunt dit printen";
 "mw4.ui.hajin.can_print_detail" = "Je voorraad heeft alles wat nodig is.";

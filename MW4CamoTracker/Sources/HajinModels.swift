@@ -99,6 +99,8 @@ struct HajinGuide: Codable {
         let extracts: [Item.Cost]?
         /// Tips for doing it.
         let tips: [GuideText]?
+        /// What finishing the DMZ Orders page this order is on gives.
+        let pageReward: GuideText?
 
         /// The DMZ level this row needs: a level-unlock row's level, or a
         /// "Lv 12" badge.

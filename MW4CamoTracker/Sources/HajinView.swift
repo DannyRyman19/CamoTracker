@@ -68,12 +68,7 @@ struct HajinView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 ForEach(guide.guide.filter { !HajinGuide.trackedSections.contains($0.id) }) { section in
-                    NavigationLink {
-                        GuideSectionView(section: section)
-                    } label: {
-                        SectionRow(section: section)
-                    }
-                    .hajinCard()
+                    HajinPushLink(screen: .section(section.id)) { GuideSectionView(section: section) } label: { SectionRow(section: section) }
                 }
                 GuideFooter(guide: guide)
                     .listRowBackground(Color.clear)
@@ -315,8 +310,16 @@ struct GuideSectionView: View {
     var body: some View {
         ZStack {
             AppBackground(accent: .accentDMZ)
-            if section.id == "traits", query.isEmpty, let trees = store.guide?.traitTrees {
-                HajinTraitsView(trees: trees)
+            if section.id == "ops" {
+                List {
+                    if let intro = section.intro, query.isEmpty {
+                        Text(intro.resolved).font(.subheadline).foregroundStyle(Color.appInkMuted)
+                            .listRowBackground(Color.clear).listRowSeparator(.hidden)
+                    }
+                    HajinOrdersList(rows: rows)
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
             } else if width >= 700, !rows.isEmpty {
                 HajinRowColumns(rows: hajinCollapseTiers(rows, store.guide), intro: query.isEmpty ? section.intro?.resolved : nil, highlight: query.lowercased())
             } else {
@@ -517,10 +520,10 @@ struct HajinMinePage: View {
         case .cash: HajinCashCard().hajinCard()
         case .tracking: HajinTrackingCard().hajinCard()
         case .buildNext: HajinBuildNextCard().hajinCard()
-        case .shopping: entry(openShopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
-        case .blueprints: entry(openBlueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
-        case .stash: entry(openStash) { HajinStashView() } label: { HajinStashEntry() }
-        case .keepSell: entry(openKeepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
+        case .shopping: entry(openShopping, .shopping) { HajinShoppingListView() } label: { HajinShoppingEntry() }
+        case .blueprints: entry(openBlueprints, .blueprints) { HajinBlueprintsView() } label: { HajinBlueprintsEntry() }
+        case .stash: entry(openStash, .stash) { HajinStashView() } label: { HajinStashEntry() }
+        case .keepSell: entry(openKeepSell, .keepSell) { HajinKeepSellView() } label: { HajinKeepSellEntry() }
         case .orders, .upgrades, .bosses, .manuals:
             // The guide's tickable sections live here, with how far along
             if let id = card.section, let section = store.guide?.guide.first(where: { $0.id == id }) {
@@ -531,16 +534,39 @@ struct HajinMinePage: View {
                     if let weapon = row.weapon, !(row.subtitle?.values["en"]?.hasPrefix("Starter") ?? false) { return "manual-\(weapon)" }
                     return nil
                 }
-                entry(openSection.map { open in { open(section) } }) { GuideSectionView(section: section) } label: {
+                entry(openSection.map { open in { open(section) } }, .section(section.id)) { GuideSectionView(section: section) } label: {
                     SectionRow(section: section, done: keys.filter(store.checked.contains).count, total: keys.count)
                 }
             }
         }
     }
 
-    @ViewBuilder private func entry<D: View, L: View>(_ open: (() -> Void)?, @ViewBuilder destination: () -> D, @ViewBuilder label: () -> L) -> some View {
+    @ViewBuilder private func entry<D: View, L: View>(_ open: (() -> Void)?, _ screen: HajinScreen, @ViewBuilder destination: @escaping () -> D, @ViewBuilder label: @escaping () -> L) -> some View {
         if let open {
             Button(action: open) {
+                HStack {
+                    label()
+                    Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
+                }
+            }
+            .hajinCardButton()
+        } else {
+            HajinPushLink(screen: screen, destination: destination, label: label)
+        }
+    }
+}
+
+/// A card that opens a screen: pushed by value onto the tab's path where
+/// there is one (iPhone), else an ordinary navigation link.
+struct HajinPushLink<D: View, L: View>: View {
+    let screen: HajinScreen
+    @ViewBuilder let destination: () -> D
+    @ViewBuilder let label: () -> L
+    @Environment(\.hajinPush) private var push
+
+    var body: some View {
+        if let push {
+            Button { push(screen) } label: {
                 HStack {
                     label()
                     Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(Color.appInkMuted)
@@ -1157,8 +1183,11 @@ struct HajinGuidePanel: View {
                 HajinShoppingListView(embeddedQuery: query)
             } else if stack.last == .blueprints {
                 HajinBlueprintsView(embeddedQuery: query)
-            } else if let guide = store.guide, let section = open, section.id == "traits", query.isEmpty, let trees = guide.traitTrees {
-                HajinTraitsView(trees: trees)
+            } else if let section = open, section.id == "ops" {
+                let needle = query.lowercased()
+                List { HajinOrdersList(rows: needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }) }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
             } else if let section = open, panelWidth >= 700 {
                 let needle = query.lowercased()
                 HajinRowColumns(rows: hajinCollapseTiers(needle.isEmpty ? section.rows : section.rows.filter { $0.matches(needle) }, store.guide),
@@ -1512,6 +1541,95 @@ private struct ThreatLegend: View {
 }
 
 /// A group heading that scrolls with the cards, in the app's bold style.
+/// Missions & Orders: Story Missions, then each DMZ Orders page in the
+/// game's order. A page folds away once it's all ticked, shows its progress
+/// and its reward, and the first unfinished one is marked Up next.
+struct HajinOrdersList: View {
+    let rows: [HajinGuide.Row]
+    @EnvironmentObject private var store: HajinStore
+    @AppStorage("mw4_hajin_orders_hide_done") private var hideDone = false
+    /// Pages opened or closed against their default (open until finished).
+    @State private var flipped: Set<String> = []
+
+    private var pages: [(title: String, rows: [HajinGuide.Row])] {
+        var out: [(title: String, rows: [HajinGuide.Row])] = []
+        for row in rows {
+            let title = row.group?.resolved ?? ""
+            if let last = out.indices.last, out[last].title == title { out[last].rows.append(row) } else { out.append((title, [row])) }
+        }
+        return out
+    }
+
+    private func isDone(_ row: HajinGuide.Row) -> Bool { row.check.map(store.checked.contains) ?? false }
+
+    var body: some View {
+        let pages = pages
+        let upNext = pages.first { $0.title.hasPrefix("DMZ Orders") && !$0.rows.allSatisfy(isDone) }?.title
+        Toggle("mw4.ui.hajin.hide_done".localized(), isOn: $hideDone)
+            .font(.subheadline.weight(.semibold))
+            .tint(.accentDMZ)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+        ForEach(pages, id: \.title) { page in
+            let done = page.rows.filter(isDone).count
+            let finished = done == page.rows.count
+            let open = finished ? flipped.contains(page.title) : !flipped.contains(page.title)
+            if !(hideDone && finished) {
+                header(page.title, done: done, total: page.rows.count, open: open, upNext: page.title == upNext,
+                       reward: page.rows.lazy.compactMap(\.pageReward).first?.resolved)
+                if open {
+                    ForEach(page.rows.filter { !(hideDone && isDone($0)) }, id: \.self) { row in
+                        GuideRowView(row: row).hajinCard()
+                    }
+                }
+            }
+        }
+    }
+
+    private func header(_ title: String, done: Int, total: Int, open: Bool, upNext: Bool, reward: String?) -> some View {
+        Button {
+            Haptics.step()
+            withAnimation(.snappy) { if flipped.contains(title) { flipped.remove(title) } else { flipped.insert(title) } }
+        } label: {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 8) {
+                    Image(systemName: "chevron.right")
+                        .font(.footnote.weight(.bold))
+                        .foregroundStyle(Color.appInkMuted)
+                        .rotationEffect(.degrees(open ? 90 : 0))
+                    Text(title.hasPrefix("DMZ Orders: ") ? String(title.dropFirst("DMZ Orders: ".count)) : title)
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(Color.appInk)
+                        .multilineTextAlignment(.leading)
+                    if upNext {
+                        Text("mw4.ui.hajin.up_next".localized().uppercased())
+                            .font(.system(size: 10, weight: .heavy))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 6).padding(.vertical, 2)
+                            .background(Capsule().fill(Color.accentDMZ))
+                    }
+                    Spacer(minLength: 8)
+                    Text("\(done)/\(total)")
+                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
+                }
+                if let reward {
+                    Label(reward, systemImage: "gift.fill")
+                        .font(.caption)
+                        .foregroundStyle(Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.leading, 22)
+                }
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .listRowInsets(EdgeInsets(top: 14, leading: 16, bottom: 4, trailing: 16))
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+}
+
 struct HajinHeading: View {
     let title: String
 
@@ -1632,7 +1750,9 @@ struct HajinMissionRow: View {
         let objectives = row.objectives ?? []
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top, spacing: 12) {
-                HajinTick(done: done, label: row.title.resolved) { store.toggle(key) }
+                if row.check != nil {
+                    HajinTick(done: done, label: row.title.resolved) { store.toggle(key) }
+                }
                 VStack(alignment: .leading, spacing: 3) {
                     Text(row.title.resolved)
                         .font(.hitmarker(15))

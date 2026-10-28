@@ -272,8 +272,8 @@
 "mw4.ui.keep.resource" = "Se recicla solo";
 "mw4.ui.keep.keep_reason" = "Necesitas %d para mejoras que no has impreso: %@";
 "mw4.ui.keep.orders_reason" = "Necesitas %d para órdenes DMZ sin terminar: %@";
-"mw4.ui.keep.keep_short" = "Necesitas %d para:";
-"mw4.ui.keep.crafting_short" = "Se usa en estas recetas:";
+"mw4.ui.keep.keep_left" = "Necesitas %1$d para esto y tienes %2$d: faltan %3$d";
+"mw4.ui.keep.keep_covered" = "Necesitas %1$d para esto y tienes %2$d";
 "mw4.ui.keep.crafting_reason" = "Solo sirve para imprimir %@. Guárdalo si lo fabricas; si no, véndelo.";
 "mw4.ui.keep.sell_reason" = "Nada conocido lo necesita. Se vende por %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Nada conocido lo necesita.";
@@ -400,6 +400,8 @@
 "mw4.ui.hajin.dmz_level_n" = "Nivel DMZ %d";
 "mw4.ui.hajin.rewards" = "Recompensas";
 "mw4.ui.hajin.needs" = "Necesita";
+"mw4.ui.hajin.hide_done" = "Ocultar terminadas";
+"mw4.ui.hajin.up_next" = "Siguiente";
 "mw4.ui.hajin.can_print" = "Se puede imprimir";
 "mw4.ui.hajin.can_print_title" = "Puedes imprimirlo";
 "mw4.ui.hajin.can_print_detail" = "Tu alijo tiene todo lo necesario.";
