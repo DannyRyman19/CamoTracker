@@ -91,22 +91,32 @@ struct HajinSendScanButton: View {
 
     private func send() {
         let state = review()
-        guard let photo = report.photoData(), let json = report.json(had: state.had, edited: state.edited, skipped: state.skipped) else { return }
-        let subject = "MW4 Tracker: stash reader report"
-        let body = "mw4.ui.hajin.send_scan_body".localized()
-        if MFMailComposeViewController.canSendMail() {
-            mail = HajinMailDraft(subject: subject, body: body, attachments: [
-                (photo, "image/jpeg", "stash.jpg"), (json, "application/json", "stash-report.json"),
-            ])
-        } else {
-            // No Mail account: hand the two files to the share sheet with the address
-            let dir = FileManager.default.temporaryDirectory.appendingPathComponent("stash-report-\(UUID().uuidString)")
-            try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-            let photoURL = dir.appendingPathComponent("stash.jpg"), jsonURL = dir.appendingPathComponent("stash-report.json")
-            try? photo.write(to: photoURL)
-            try? json.write(to: jsonURL)
-            share = [String(format: "mw4.ui.hajin.send_scan_share".localized(), SupportMail.address), photoURL, jsonURL]
+        switch report.outgoing(had: state.had, edited: state.edited, skipped: state.skipped) {
+        case .mail(let draft): mail = draft
+        case .share(let items): share = items
+        case nil: break
         }
+    }
+}
+
+extension HajinScanReport {
+    enum Outgoing { case mail(HajinMailDraft), share([Any]) }
+
+    /// The photo and report as an email (Mail set up) or, with no Mail
+    /// account, files for the share sheet with the address to send to.
+    @MainActor func outgoing(had: [String: Int], edited: [String: Int], skipped: Set<String>) -> Outgoing? {
+        guard let photo = photoData(), let json = json(had: had, edited: edited, skipped: skipped) else { return nil }
+        if MFMailComposeViewController.canSendMail() {
+            return .mail(HajinMailDraft(subject: "MW4 Tracker: stash reader report", body: "mw4.ui.hajin.send_scan_body".localized(), attachments: [
+                (photo, "image/jpeg", "stash.jpg"), (json, "application/json", "stash-report.json"),
+            ]))
+        }
+        let dir = FileManager.default.temporaryDirectory.appendingPathComponent("stash-report-\(UUID().uuidString)")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        let photoURL = dir.appendingPathComponent("stash.jpg"), jsonURL = dir.appendingPathComponent("stash-report.json")
+        try? photo.write(to: photoURL)
+        try? json.write(to: jsonURL)
+        return .share([String(format: "mw4.ui.hajin.send_scan_share".localized(), SupportMail.address), photoURL, jsonURL])
     }
 }
 

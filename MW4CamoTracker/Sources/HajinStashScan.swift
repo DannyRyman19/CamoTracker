@@ -253,6 +253,13 @@ struct HajinStashScanReview: View {
     @State private var skipCash = false
     @State private var skipLevel = false
     @State private var detent = PresentationDetent.medium
+    /// After Update: offer to send the photo and corrections, unless the
+    /// player has said not to ask again
+    @AppStorage("mw4_hajin_ask_send_scan") private var askToSend = true
+    @State private var asking = false
+    @State private var sentState: (had: [String: Int], edited: [String: Int], skipped: Set<String>)?
+    @State private var mail: HajinMailDraft?
+    @State private var share: [Any]?
 
     private var rows: [(item: HajinGuide.Item, now: Int, read: Int)] {
         // Only what My stash tracks: resources, ingredients and valuables.
@@ -465,6 +472,17 @@ struct HajinStashScanReview: View {
                 }
                 Button("mw4.ui.hajin.cancel".localized(), role: .cancel) { editing = nil }
             }
+            .alert("mw4.ui.hajin.send_ask_title".localized(), isPresented: $asking) {
+                Button("mw4.ui.hajin.send_ask_send".localized()) { sendReport() }
+                Button("mw4.ui.hajin.send_ask_never".localized()) { askToSend = false; finish() }
+                Button("mw4.ui.hajin.send_ask_later".localized(), role: .cancel) { finish() }
+            } message: {
+                Text("mw4.ui.hajin.send_ask_message".localized())
+            }
+            .sheet(item: $mail, onDismiss: finish) { draft in HajinMailView(draft: draft).ignoresSafeArea() }
+            .sheet(isPresented: Binding(get: { share != nil }, set: { if !$0 { share = nil } }), onDismiss: finish) {
+                if let share { HajinShareSheet(items: share) }
+            }
             .navigationTitle("mw4.ui.hajin.scan_title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -497,17 +515,38 @@ struct HajinStashScanReview: View {
         }
         try? await Task.sleep(for: .seconds(1.5))
         apply(all.filter { $0.now != $0.read && !skip.contains($0.item.id) },
-              cash: cash.flatMap { $0 != store.cash ? $0 : nil }, level: level.flatMap { $0 != store.dmzLevel ? $0 : nil })
+              cash: cash.flatMap { $0 != store.cash ? $0 : nil }, level: level.flatMap { $0 != store.dmzLevel ? $0 : nil }, ask: false)
         try? await Task.sleep(for: .seconds(2.5))
         NotificationCenter.default.post(name: .hajinDemoOpenStash, object: nil)
     }
     #endif
 
-    private func apply(_ changes: [(item: HajinGuide.Item, now: Int, read: Int)], cash cashChange: Int?, level levelChange: Int?) {
+    private func apply(_ changes: [(item: HajinGuide.Item, now: Int, read: Int)], cash cashChange: Int?, level levelChange: Int?, ask: Bool = true) {
         Haptics.step()
+        // What the stash had before this update, for the report
+        let had = Dictionary(uniqueKeysWithValues: rows.map { ($0.item.id, $0.now) })
         store.applyScannedCounts(Dictionary(uniqueKeysWithValues: changes.map { ($0.item.id, $0.read) }))
         if let cashChange { store.setCash(cashChange) }
         if let levelChange { store.setLevel(levelChange) }
+        // Stash photos: with everything applied, offer to send the photo
+        if ask, askToSend, report != nil {
+            sentState = (had, edited, skip)
+            asking = true
+        } else {
+            finish()
+        }
+    }
+
+    private func sendReport() {
+        guard let report, let state = sentState else { finish(); return }
+        switch report.outgoing(had: state.had, edited: state.edited, skipped: state.skipped) {
+        case .mail(let draft): mail = draft
+        case .share(let items): share = items
+        case nil: finish()
+        }
+    }
+
+    private func finish() {
         dismiss()
         onDone?()
     }
