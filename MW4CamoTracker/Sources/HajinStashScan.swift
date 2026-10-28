@@ -221,6 +221,70 @@ struct HajinStashScanButton: View {
     }
 }
 
+/// A photo to pinch and drag: double-tap zooms in there, or back out.
+struct HajinZoomPhoto: View {
+    let image: UIImage
+    @State private var scale: CGFloat = 1
+    @State private var lastScale: CGFloat = 1
+    @State private var offset: CGSize = .zero
+    @State private var lastOffset: CGSize = .zero
+
+    var body: some View {
+        GeometryReader { geo in
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: geo.size.width, height: geo.size.height)
+                .scaleEffect(scale)
+                .offset(offset)
+                .gesture(MagnificationGesture()
+                    .onChanged { scale = min(max(lastScale * $0, 1), 6) }
+                    .onEnded { _ in lastScale = scale; clamp(geo.size) }
+                    .simultaneously(with: DragGesture()
+                        .onChanged { g in
+                            guard scale > 1 else { return }
+                            offset = CGSize(width: lastOffset.width + g.translation.width, height: lastOffset.height + g.translation.height)
+                        }
+                        .onEnded { _ in clamp(geo.size) }))
+                .onTapGesture(count: 2) { location in
+                    withAnimation(.snappy) {
+                        if scale > 1 {
+                            scale = 1; offset = .zero
+                        } else {
+                            // Zoom in on where was tapped
+                            scale = 3
+                            offset = CGSize(width: (geo.size.width / 2 - location.x) * 2, height: (geo.size.height / 2 - location.y) * 2)
+                        }
+                        lastScale = scale
+                        clamp(geo.size)
+                    }
+                }
+        }
+        .clipped()
+        .background(Color.black)
+        .overlay(alignment: .bottomTrailing) {
+            if scale == 1 {
+                Label("mw4.ui.hajin.zoom_hint".localized(), systemImage: "arrow.up.left.and.arrow.down.right")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.white.opacity(0.85))
+                    .padding(.horizontal, 8).padding(.vertical, 4)
+                    .background(Capsule().fill(.black.opacity(0.55)))
+                    .padding(8)
+                    .allowsHitTesting(false)
+            }
+        }
+    }
+
+    /// Keeps the photo covering its box: no dragging it off into the black.
+    private func clamp(_ size: CGSize) {
+        let maxX = size.width * (scale - 1) / 2, maxY = size.height * (scale - 1) / 2
+        withAnimation(.snappy) {
+            offset = CGSize(width: min(max(offset.width, -maxX), maxX), height: min(max(offset.height, -maxY), maxY))
+        }
+        lastOffset = offset
+    }
+}
+
 /// What the photos said against what the stash has; tick off anything
 /// misread, then update the stash in one go.
 struct HajinStashScanReview: View {
@@ -239,6 +303,8 @@ struct HajinStashScanReview: View {
     var report: HajinScanReport? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
+    /// Stash photos: the photo, in the top half to check the counts against
+    var photo: UIImage? = nil
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
     @State private var skip: Set<String> = []
@@ -474,6 +540,14 @@ struct HajinStashScanReview: View {
                     }
                 }
             }
+            // The photo over the counts, half and half, to zoom and compare
+            .safeAreaInset(edge: .top, spacing: 0) {
+                if let photo {
+                    HajinZoomPhoto(image: photo)
+                        .frame(height: UIScreen.main.bounds.height * 0.42)
+                        .overlay(alignment: .bottom) { Rectangle().fill(Color.appSurface2).frame(height: 1) }
+                }
+            }
             #if DEBUG
             .task { await demo(proxy) }
             #endif
@@ -509,7 +583,8 @@ struct HajinStashScanReview: View {
             }
             }
         }
-        .presentationDetents([.medium, .large], selection: $detent)
+        .presentationDetents(photo == nil ? [.medium, .large] : [.large], selection: $detent)
+        .onAppear { if photo != nil { detent = .large } }
     }
 
     #if DEBUG

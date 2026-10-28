@@ -1022,12 +1022,13 @@ struct HajinStashGridFrameView: View {
                     let fit = fitted(image.size, in: geo.size)
                     ZStack(alignment: .topLeading) {
                         Image(uiImage: image).resizable().frame(width: fit.width, height: fit.height)
-                        if state.finding {
+                        // Finding the grid, then reading it: the scan sweeps the photo
+                        if state.finding || state.reading {
                             HajinGridScanning(size: fit)
                                 .transition(.opacity)
                         }
                         overlay(fit)
-                            .opacity(state.finding ? 0 : 1)
+                            .opacity(state.finding || state.reading ? 0 : 1)
                         // A glow round the frame as it locks on
                         frameLines(fit)
                             .stroke(Color.accentDMZ, lineWidth: 6)
@@ -1040,7 +1041,7 @@ struct HajinStashGridFrameView: View {
                                 .overlay(Circle().strokeBorder(Color.white, lineWidth: 2))
                                 .frame(width: 34, height: 34)
                                 .scaleEffect(state.finding ? 0.2 : 1)
-                                .opacity(state.finding ? 0 : 1)
+                                .opacity(state.finding || state.reading ? 0 : 1)
                                 .position(x: state.corners[i].x * fit.width, y: state.corners[i].y * fit.height)
                                 .gesture(DragGesture().onEnded { _ in remeasure() }.simultaneously(with: DragGesture().onChanged { g in
                                     state.moved = true
@@ -1068,7 +1069,8 @@ struct HajinStashGridFrameView: View {
             }
             .sheet(item: $state.result) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
-                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() })
+                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
+                                     photo: image)
             }
             .sheet(item: $state.postMatchResult) { r in
                 HajinPostMatchReview(result: r, onDone: { dismiss() })
@@ -1092,8 +1094,8 @@ struct HajinStashGridFrameView: View {
                     .ignoresSafeArea()
             }
             .overlay(alignment: .bottom) {
-                if state.finding {
-                    Label("mw4.ui.hajin.grid_finding".localized(), systemImage: "viewfinder")
+                if state.finding || state.reading {
+                    Label((state.reading ? "mw4.ui.hajin.grid_reading" : "mw4.ui.hajin.grid_finding").localized(), systemImage: "viewfinder")
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 14).padding(.vertical, 8)
                         .background(Capsule().fill(Color.appSurface2))
