@@ -491,8 +491,16 @@ final class HajinStore: ObservableObject {
 
     /// Green card border for a row whose item the stash can print.
     func printableAccent(_ row: HajinGuide.Row) -> Color? {
-        guard let id = row.item, let item = guide?.item(id), canPrint(item) else { return nil }
+        guard let id = row.item, let item = guide?.item(id), let next = nextToPrint(item), canPrint(next) else { return nil }
         return Self.printableGreen
+    }
+
+    /// The tier of an upgrade still to print (the first not ticked), or the
+    /// item itself when it isn't an upgrade; nil once every tier is done.
+    func nextToPrint(_ item: HajinGuide.Item) -> HajinGuide.Item? {
+        guard item.kind == "FOB Upgrade" else { return item }
+        let tiers = guide?.tiers(of: item) ?? []
+        return (tiers.isEmpty ? [item] : tiers).first { !checked.contains("upgrade-\($0.id)") }
     }
 
     func setCount(_ count: Int, of id: String) {

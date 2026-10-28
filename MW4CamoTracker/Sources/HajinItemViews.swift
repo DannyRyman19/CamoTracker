@@ -459,15 +459,27 @@ struct HajinItemRow: View {
                     let item = store.guide?.item(part.item)
                     HStack(spacing: 3) {
                         HajinItemTile(item: item, size: 22)
-                        Text("\(part.qty)")
-                            .font(.caption.weight(.semibold).monospacedDigit())
-                            .foregroundStyle(Color.appInk)
+                        HajinCostAmount(part: part)
                     }
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(part.qty) \(item?.name.resolved ?? part.item)")
                 }
             }
         }
+    }
+}
+
+/// An ingredient's amount on a recipe or upgrade: "4/16" (what the stash
+/// has of what it needs), green once covered; just "16" with no stash.
+struct HajinCostAmount: View {
+    let part: HajinGuide.Item.Cost
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        let have = store.count(of: part.item)
+        Text(store.stash.isEmpty ? "\(part.qty)" : "\(have)/\(part.qty)")
+            .font(.caption.weight(.semibold).monospacedDigit())
+            .foregroundStyle(!store.stash.isEmpty && have >= part.qty ? HajinStore.printableGreen : Color.appInk)
     }
 }
 
@@ -1260,13 +1272,14 @@ struct HajinUpgradeFamilyCard: View {
                             if let cash = item.cash { HajinValueBadge(text: "$\(cash.formatted())") }
                             Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
                         }
+                        if store.canPrint(item) && !store.checked.contains(key) { HajinCanPrintTag() }
                         if let cost = item.cost, !cost.isEmpty {
-                            HStack(spacing: 8) {
+                            HajinWrap(spacing: 8) {
                                 ForEach(cost, id: \.item) { part in
                                     let ingredient = store.guide?.item(part.item)
                                     HStack(spacing: 3) {
                                         HajinItemTile(item: ingredient, size: 22)
-                                        Text("\(part.qty)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInk)
+                                        HajinCostAmount(part: part)
                                     }
                                 }
                             }
