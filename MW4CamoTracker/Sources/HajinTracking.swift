@@ -418,6 +418,7 @@ struct HajinBuildNextCard: View {
                                             Text("$\(cash.formatted())")
                                                 .font(.system(size: 11, weight: .semibold, design: .monospaced))
                                                 .foregroundStyle(store.cash > 0 && cash > store.cash ? Color(red: 0.93, green: 0.32, blue: 0.30) : Color.appInkMuted)
+                                            HajinCashShort(price: cash)
                                         }
                                     }
                                 }

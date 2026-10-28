@@ -454,6 +454,7 @@ struct HajinItemRow: View {
                     Text("$\(cash.formatted())")
                         .font(.caption.weight(.semibold).monospacedDigit())
                         .foregroundStyle(Color.appInk)
+                    HajinCashShort(price: cash)
                 }
                 ForEach(cost, id: \.item) { part in
                     let item = store.guide?.item(part.item)
@@ -465,6 +466,23 @@ struct HajinItemRow: View {
                     .accessibilityLabel("\(part.qty) \(item?.name.resolved ?? part.item)")
                 }
             }
+        }
+    }
+}
+
+/// "$12,000 short" in red, beside a price the cash entered doesn't cover;
+/// nothing when it does or no cash is entered.
+struct HajinCashShort: View {
+    let price: Int
+    var font: Font = .caption2.weight(.semibold)
+    @EnvironmentObject private var store: HajinStore
+
+    var body: some View {
+        if store.cash > 0, price > store.cash {
+            Text(String(format: "mw4.ui.hajin.short".localized(), "$\((price - store.cash).formatted())"))
+                .font(font)
+                .foregroundStyle(Color(red: 0.93, green: 0.32, blue: 0.30))
+                .fixedSize()
         }
     }
 }
@@ -749,9 +767,12 @@ struct HajinItemView: View {
                             .frame(width: 40, height: 40)
                         Text("mw4.ui.hajin.cash".localized()).font(.subheadline.weight(.medium)).foregroundStyle(Color.appInk)
                         Spacer()
-                        Text("$\(cash.formatted())")
-                            .font(.system(.body, design: .monospaced).weight(.semibold))
-                            .foregroundStyle(Color.appInk)
+                        VStack(alignment: .trailing, spacing: 1) {
+                            Text("$\(cash.formatted())")
+                                .font(.system(.body, design: .monospaced).weight(.semibold))
+                                .foregroundStyle(Color.appInk)
+                            HajinCashShort(price: cash)
+                        }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
@@ -1269,7 +1290,10 @@ struct HajinUpgradeFamilyCard: View {
                         HStack {
                             Text(item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                             Spacer(minLength: 6)
-                            if let cash = item.cash { HajinValueBadge(text: "$\(cash.formatted())") }
+                            if let cash = item.cash {
+                                HajinCashShort(price: cash)
+                                HajinValueBadge(text: "$\(cash.formatted())")
+                            }
                             Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted.opacity(0.6))
                         }
                         if store.canPrint(item) && !store.checked.contains(key) { HajinCanPrintTag() }

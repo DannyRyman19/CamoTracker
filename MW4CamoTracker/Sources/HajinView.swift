@@ -1771,9 +1771,7 @@ struct HajinPrestigeTracker: View {
                 if store.cash >= needed {
                     Image(systemName: "checkmark.circle.fill").font(.caption).foregroundStyle(HajinStore.printableGreen)
                 } else {
-                    Text(String(format: "mw4.ui.opprestige.short".localized(), "$\((needed - store.cash).formatted())"))
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(Color(red: 0.93, green: 0.32, blue: 0.30))
+                    HajinCashShort(price: needed)
                 }
             }
         }
