@@ -126,7 +126,7 @@ UPGRADES = [
  ("Uncommon Ingredient Printing", "$50,000", "20 Biomaterials, 10 High-Tenacity Fibers, 5 Comms Module. Print Biomaterials, Detonators, Electronic Sensors, Reactive Metals and Rigid Synthetics"),
  ("Epic Ingredient Printing", "$100,000", "10 Binding Catalyst, 10 Printed Circuit Board, 5 Military Composites. Print Alloyed Plating, Ballistic Fabric, Comms Module, Nylon Laminate, Power Regulator, Stabilized Reagents, Turned Components and Volatile Explosives"),
  ("Dog Tag Case Upgrade I", "$10,000", "10 Rigid Synthetics, 10 Biomaterials. +20 dog tags. Needs the Dog Tag Case"),
- ("Dog Tag Case Upgrade II", "$50,000", "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More dog tag storage"),
+ ("Dog Tag Case Upgrade II", "$50,000", "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. +20 dog tags"),
  # the higher tiers, from the in-game upgrade lists the user sent (2026-10-27);
  # Stash Item IV, Stash Weapon III and every MIA tier cost no cash
  ("Bank Upgrade V", "$500,000", "10 Degraded Execution Footage. Your Bank holds up to $5 million"),
@@ -137,6 +137,7 @@ UPGRADES = [
  ("Stash Item Upgrade IV", None, "5 Gold Skull, 30 Alloyed Plating, 10 Experimental Compounds, 30 Turned Components. +18 Stash item slots"),
  ("Stash Weapon Upgrade II", "$100,000", "20 Structural Alloy, 20 High-Tenacity Fibers, 10 Turned Components. +6 Stash weapon slots"),
  ("Stash Weapon Upgrade III", None, "5 Gold Bar, 30 Stabilized Reagents, 30 Volatile Explosives, 10 Nano-Structured Alloy. +6 Stash weapon slots"),
+ ("Dog Tag Case Upgrade III", "$100,000", "10 Printed Circuit Board, 10 Structural Alloy, 5 Power Regulator. +20 dog tags"),
  ("Dog Tag Case Upgrade IV", "$200,000", "20 CPU, 10 Stabilized Reagents, 5 Experimental Compounds. +20 dog tags"),
  ("MIA Recovery Discount IV", None, "5 Sanctioned Assassination List, 30 Ballistic Fabric, 30 Nylon Laminate, 10 Prototype RF Module. Rescuing an MIA operator costs another 5% less"),
  # dmzcodex.com upgrade pages (2026-10-27), not confirmed in game yet
@@ -802,7 +803,7 @@ def relink(guide, items, section_ids):
 ITEM_SYMBOLS = {
  "stash-item-upgrade-i": "archivebox.fill", "stash-item-upgrade-ii": "archivebox.fill", "stash-item-upgrade-iii": "archivebox.fill", "stash-weapon-upgrade-i": "scope", "mia-recovery-discount-i": "cross.case.fill", "mia-recovery-discount-ii": "cross.case.fill",
  "bank-upgrade-iii": "building.columns.fill", "bank-upgrade-iv": "building.columns.fill", "bank-upgrade-i": "building.columns.fill", "bank-upgrade-ii": "building.columns.fill", "gunsmith-upgrade-i": "wrench.and.screwdriver.fill", "vendor-item-upgrade-i": "cart.fill",
- "uncommon-ingredient-printing": "printer.fill", "epic-ingredient-printing": "printer.filled.and.paper", "dog-tag-case-upgrade-i": "tag.fill", "dog-tag-case-upgrade-ii": "tag.fill", "dog-tag-case-upgrade-iv": "tag.fill",
+ "uncommon-ingredient-printing": "printer.fill", "epic-ingredient-printing": "printer.filled.and.paper", "dog-tag-case-upgrade-i": "tag.fill", "dog-tag-case-upgrade-ii": "tag.fill", "dog-tag-case-upgrade-iii": "tag.fill", "dog-tag-case-upgrade-iv": "tag.fill",
  "cpu": "cpu.fill", "comms-module": "antenna.radiowaves.left.and.right", "control-unit": "slider.horizontal.3",
  "electronic-sensors": "sensor.fill", "structural-alloy": "cube.fill", "printed-circuit-board": "memorychip.fill",
  "nitro-compounds": "flame.fill", "high-tenacity-fibers": "wind", "nylon-cloth": "tshirt.fill",

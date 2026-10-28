@@ -1,5 +1,5 @@
 {
- "version": "0.9.39",
+ "version": "0.9.41",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -4860,10 +4860,18 @@
     },
     {
      "title": "Dog Tag Case Upgrade II",
-     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. More dog tag storage",
+     "subtitle": "20 Detonators, 10 Nylon Cloth, 5 Power Regulator. +20 dog tags",
      "value": "$50,000",
      "item": "dog-tag-case-upgrade-ii",
      "check": "upgrade-dog-tag-case-upgrade-ii",
+     "group": "Dog Tag Case"
+    },
+    {
+     "title": "Dog Tag Case Upgrade III",
+     "subtitle": "10 Printed Circuit Board, 10 Structural Alloy, 5 Power Regulator. +20 dog tags",
+     "value": "$100,000",
+     "item": "dog-tag-case-upgrade-iii",
+     "check": "upgrade-dog-tag-case-upgrade-iii",
      "group": "Dog Tag Case"
     },
     {
@@ -8596,9 +8604,33 @@
     }
    ],
    "cash": 50000,
-   "effect": "More dog tag storage",
+   "effect": "+20 dog tags",
    "family": "Dog Tag Case Upgrade",
    "tier": 2,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/dog-tag-case.png?v=1"
+  },
+  {
+   "id": "dog-tag-case-upgrade-iii",
+   "name": "Dog Tag Case Upgrade III",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "printed-circuit-board",
+     "qty": 10
+    },
+    {
+     "item": "structural-alloy",
+     "qty": 10
+    },
+    {
+     "item": "power-regulator",
+     "qty": 5
+    }
+   ],
+   "cash": 100000,
+   "effect": "+20 dog tags",
+   "family": "Dog Tag Case Upgrade",
+   "tier": 3,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/dog-tag-case.png?v=1"
   },
   {
