@@ -267,14 +267,21 @@ struct HajinStashScanReview: View {
         found.compactMap { id, n in store.guide?.item(id).flatMap { HajinStore.inStash($0) ? $0 : nil }
             .map { ($0, store.count(of: id), edited[id] ?? n) } }
             // Ones to check first, then anything under 100% sure (least sure
-            // first), then changes, then ones already right
-            .sorted { (rank($0), percent($0), $0.item.name.resolved) < (rank($1), percent($1), $1.item.name.resolved) }
+            // first), then changes, then ones already right. Ordered by what
+            // was read, not edits, so a row stays put while you change it.
+            .sorted(by: before)
     }
 
-    private func rank(_ row: (item: HajinGuide.Item, now: Int, read: Int)) -> Int {
-        if unsure.contains(row.item.id) && edited[row.item.id] == nil { return 0 }
-        if percent(row) < 100 { return 1 }
-        return row.now == row.read ? 3 : 2
+    private func before(_ a: (item: HajinGuide.Item, now: Int, read: Int), _ b: (item: HajinGuide.Item, now: Int, read: Int)) -> Bool {
+        let x = order(a.item.id), y = order(b.item.id)
+        return x != y ? x < y : a.item.name.resolved < b.item.name.resolved
+    }
+
+    private func order(_ id: String) -> (Int, Int) {
+        let sure = sureness[id].map { Int(($0 * 100).rounded()) } ?? 100
+        if unsure.contains(id) { return (0, sure) }
+        if sure < 100 { return (1, sure) }
+        return (store.count(of: id) == found[id] ? 3 : 2, sure)
     }
 
     /// How sure the reader was, as shown on the row; 100 for edited rows and

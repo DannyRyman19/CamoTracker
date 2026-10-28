@@ -1,5 +1,5 @@
 {
- "version": "0.9.41",
+ "version": "0.9.42",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -7927,7 +7927,7 @@
    "name": "Ballistic Flight Logs",
    "image": "https://camotracker.djr.li/Images/DMZ/ballistic-flight-logs.png?v=1",
    "rarity": "Uncommon",
-   "kind": "Ingredient",
+   "kind": "Valuable",
    "value": 1000,
    "found": "Civilian and military areas"
   },
@@ -8522,7 +8522,7 @@
    "id": "degraded-execution-footage",
    "name": "Degraded Execution Footage",
    "rarity": "Rare",
-   "kind": "Ingredient",
+   "kind": "Valuable",
    "image": "https://camotracker.djr.li/Images/DMZ/degraded-execution-footage.png?v=1",
    "value": 2000
   },
@@ -9261,7 +9261,7 @@
    "id": "infantry-invasion-plans",
    "name": "Infantry Invasion Plans",
    "rarity": "Uncommon",
-   "kind": "Ingredient",
+   "kind": "Valuable",
    "found": "Civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/infantry-invasion-plans.png?v=1",
    "value": 1000
@@ -9819,7 +9819,7 @@
    "id": "nuclear-program-files",
    "name": "Nuclear Program Files",
    "rarity": "Rare",
-   "kind": "Ingredient",
+   "kind": "Valuable",
    "found": "Computers, and civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/nuclear-program-files.png?v=1",
    "value": 2000
@@ -10246,7 +10246,7 @@
    "id": "regional-combat-notes",
    "name": "Regional Combat Notes",
    "rarity": "Uncommon",
-   "kind": "Ingredient",
+   "kind": "Valuable",
    "found": "Civilian and military areas",
    "image": "https://camotracker.djr.li/Images/DMZ/regional-combat-notes.png?v=1",
    "value": 1000

@@ -307,6 +307,9 @@ def parse_cost(text):
         out.append((int(m.group(1)), m.group(2)))
     return out
 
+INTEL = {"ballistic-flight-logs", "degraded-execution-footage", "infantry-invasion-plans",
+         "nuclear-program-files", "regional-combat-notes"}
+
 def build_items(guide, markers):
     imgs = _imgs()
     items = {}
@@ -398,6 +401,9 @@ def build_items(guide, markers):
             if mid and mid not in [p for _, p in places]: places.append((i, mid))
         if places: it["foundPlaces"] = [p for _, p in sorted(places)]
     for it in items.values():
+        # intel is listed with the ingredients (upgrades use it) but sits on
+        # the stash's Valuables tab with a diamond, like Encrypted Archive
+        if it["id"] in INTEL: it["kind"] = "Valuable"
         it.setdefault("kind", "Ingredient")
         if it.get("symbol") is None: it.pop("symbol", None)
     return sorted(items.values(), key=lambda i: i["name"])
