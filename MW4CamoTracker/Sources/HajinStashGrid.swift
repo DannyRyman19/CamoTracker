@@ -714,7 +714,7 @@ struct HajinScanHost: ViewModifier {
         content
         .sheet(isPresented: $flow.showsPremium) { PremiumView() }
         .sheet(isPresented: $flow.showsIntro, onDismiss: {
-            if let pending = flow.pending { route(pending); flow.pending = nil } else { flow.carried = nil }
+            if let pending = flow.pending { route(pending); flow.pending = nil }
         }) {
             HajinStashScanIntro(pick: $flow.pick, captured: $flow.captured, postMatch: flow.postMatch)
         }
@@ -732,11 +732,14 @@ struct HajinScanHost: ViewModifier {
         #endif
         .onChange(of: flow.captured) { image in
             guard let image else { return }
-            flow.pending = HajinPickedPhoto(image: image.normalisedUp())
+            // Camera shots are kept for a rescan; a recent one coming back is already there
+            let up = image.normalisedUp()
+            if !flow.fromRecent { HajinRecentPhotos.save(up) }
+            flow.fromRecent = false
+            flow.pending = HajinPickedPhoto(image: up)
             flow.captured = nil
             flow.showsIntro = false
         }
-        .photosPicker(isPresented: $flow.showsPicker, selection: $flow.pick, matching: .images)
         .onChange(of: flow.pick) { chosen in
             guard let chosen else { return }
             Task {
@@ -757,21 +760,15 @@ struct HajinScanHost: ViewModifier {
         }
         // One cover for the whole read: picking another photo from inside it
         // swaps the photo in place rather than closing and reopening
-        .fullScreenCover(isPresented: Binding(get: { flow.photo != nil }, set: { if !$0 { flow.photo = nil } }), onDismiss: {
-            flow.carried = nil
-            flow.carriedPhotos = 0
-        }) {
+        .fullScreenCover(isPresented: Binding(get: { flow.photo != nil }, set: { if !$0 { flow.photo = nil } })) {
             if let photo = flow.photo {
                 HajinStashGridFrameView(image: photo.image, state: photo.frame,
                                         onPicked: { flow.photo = HajinPickedPhoto(image: $0, postMatch: photo.frame.postMatch) })
                     .id(photo.id)
             }
         }
-        .sheet(item: $flow.textRead, onDismiss: {
-            if flow.pickNext { flow.pickNext = false; flow.showsPicker = true }
-        }) { r in
-            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level, photos: r.photos,
-                                 onAddPhoto: { flow.addPhoto($0, photos: r.photos) })
+        .sheet(item: $flow.textRead) { r in
+            HajinStashScanReview(found: r.counts, cash: r.cash, level: r.level)
         }
         #if DEBUG
         // SS_GRID_PHOTO=<file> opens that photo in the framing screen;
@@ -852,7 +849,7 @@ extension HajinScanHost {
                 return (isStash, counts, HajinStashScanner.bank(in: lines), HajinStashScanner.level(in: lines))
             }.value
             flow.sorting = false
-            if isStash || counts.isEmpty { flow.photo = picked } else { flow.textRead = flow.merged(HajinGridResult(counts: counts, unsure: [], cash: cash, level: level)) }
+            if isStash || counts.isEmpty { flow.photo = picked } else { flow.textRead = HajinGridResult(counts: counts, unsure: [], cash: cash, level: level) }
         }
     }
 }
@@ -946,12 +943,10 @@ final class HajinScanFlow: ObservableObject {
     /// The picked photo, held until the intro sheet has gone
     var pending: HajinPickedPhoto?
     @Published var captured: UIImage?
+    /// `captured` is one of the recent photos, not a new camera shot
+    var fromRecent = false
     /// A 3D Printer screen (no stash grid): read straight to the review
     @Published var textRead: HajinGridResult?
-    var pickNext = false
-    /// The photo picker on its own, without the intro (another photo after
-    /// a 3D Printer screen)
-    @Published var showsPicker = false
     @Published var sorting = false
     /// The Premium sheet, from anywhere the scan flow reaches it
     @Published var showsPremium = false
@@ -963,30 +958,6 @@ final class HajinScanFlow: ObservableObject {
     func requestScan(postMatch: Bool = false) {
         self.postMatch = postMatch
         showsIntro = true
-    }
-    /// "Add another photo": the counts read so far, and from how many
-    /// photos, added to whatever the next photo reads
-    var carried: [String: Int]?
-    var carriedPhotos = 0
-
-    /// The next photo's read with the carried counts added in. An item in
-    /// both (the All tab and the Valuables tab, say) keeps the higher count
-    /// rather than being counted twice.
-    func merged(_ r: HajinGridResult) -> HajinGridResult {
-        guard let carried else { return r }
-        var out = r
-        out.counts = r.counts.merging(carried) { max($0, $1) }
-        out.photos = carriedPhotos + 1
-        self.carried = nil
-        carriedPhotos = 0
-        return out
-    }
-
-    /// Keeps what's been read and opens the photo picker again.
-    func addPhoto(_ counts: [String: Int], photos: Int) {
-        carried = counts
-        carriedPhotos = photos
-        pickNext = true
     }
     #if DEBUG
     /// SS_GRID_DEMO: the photo the intro picks by itself
@@ -1014,8 +985,6 @@ struct HajinStashGridFrameView: View {
     @State private var picking = false
     @State private var newPick: PhotosPickerItem?
     @State private var showsCamera = false
-    /// "Add another photo" in the review: pick once the review has closed
-    @State private var pickAfterReview = false
     /// 1 just as the guess lands, fading to 0
     @State private var lockGlow = 0.0
     @EnvironmentObject private var store: HajinStore
@@ -1097,16 +1066,9 @@ struct HajinStashGridFrameView: View {
                     }
                 }
             }
-            .sheet(item: $state.result, onDismiss: {
-                if pickAfterReview { pickAfterReview = false; askForPhoto() }
-            }) { r in
+            .sheet(item: $state.result) { r in
                 HajinStashScanReview(found: r.counts, unsure: r.unsure, cash: r.cash, level: r.level,
-                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
-                                     photos: r.photos, onAddPhoto: { counts in
-                                         HajinScanFlow.shared.addPhoto(counts, photos: r.photos)
-                                         HajinScanFlow.shared.pickNext = false   // picked here, not by the host
-                                         pickAfterReview = true
-                                     })
+                                     sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() })
             }
             .sheet(item: $state.postMatchResult) { r in
                 HajinPostMatchReview(result: r, onDone: { dismiss() })
@@ -1122,7 +1084,11 @@ struct HajinStashGridFrameView: View {
                 }
             }
             .fullScreenCover(isPresented: $showsCamera) {
-                HajinCamera { onPicked?($0.normalisedUp()) }
+                HajinCamera { image in
+                    let up = image.normalisedUp()
+                    HajinRecentPhotos.save(up)
+                    onPicked?(up)
+                }
                     .ignoresSafeArea()
             }
             .overlay(alignment: .bottom) {
@@ -1287,8 +1253,8 @@ struct HajinStashGridFrameView: View {
                                          cash: cash, level: level)
             await MainActor.run {
                 state.reading = false
-                state.result = HajinScanFlow.shared.merged(HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
-                                                                     sureness: totals.sureness, stacks: totals.stacks, report: report))
+                state.result = HajinGridResult(counts: totals.counts, unsure: totals.unsure, cash: cash, level: level,
+                                               sureness: totals.sureness, stacks: totals.stacks, report: report)
             }
         }
     }
@@ -1385,8 +1351,6 @@ struct HajinGridResult: Identifiable {
     var stacks: [String: Int] = [:]
     /// The photo and the reader's working, for "Send this photo"
     var report: HajinScanReport? = nil
-    /// How many photos the counts come from
-    var photos = 1
 }
 
 /// A first guess at the grid's corners, for the player to adjust:

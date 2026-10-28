@@ -389,7 +389,8 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
     // Default order: the scan, then the player's numbers and plan, then the
     // stash and the tools that work on it
     // (DMZ Level and Cash sit in the title bar, on every page)
-    case scan, postMatch, tracking, buildNext, orders, upgrades, blueprints, bosses, manuals, prestige, stash, keepSell, shopping
+    // (weapon manuals are on Recipes & Manuals)
+    case scan, postMatch, tracking, buildNext, orders, upgrades, blueprints, bosses, prestige, stash, keepSell, shopping
     var id: String { rawValue }
     var title: String {
         switch self {
@@ -404,7 +405,6 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .orders: return "mw4.ui.hajin.mine_orders".localized()
         case .upgrades: return "mw4.ui.hajin.mine_upgrades".localized()
         case .bosses: return "mw4.ui.hajin.mine_bosses".localized()
-        case .manuals: return "mw4.ui.hajin.mine_manuals".localized()
         case .prestige: return "mw4.ui.hajin.mine_prestige".localized()
         }
     }
@@ -415,7 +415,6 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .orders: return "ops"
         case .upgrades: return "upgrades"
         case .bosses: return "bosses"
-        case .manuals: return "gunsmith"
         case .prestige: return "prestige"
         default: return nil
         }
@@ -433,7 +432,6 @@ enum HajinMineCard: String, CaseIterable, Identifiable {
         case .orders: return "checklist"
         case .upgrades: return "building.2.fill"
         case .bosses: return "person.fill.viewfinder"
-        case .manuals: return "wrench.and.screwdriver.fill"
         case .prestige: return "star.fill"
         }
     }

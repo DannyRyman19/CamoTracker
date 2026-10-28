@@ -39,11 +39,32 @@ struct HajinStashStepper: View {
 /// Track button for a recipe or upgrade's screen: up to five at once.
 struct HajinTrackButton: View {
     let id: String
+    /// A small pill, beside a section heading
+    var compact = false
     @EnvironmentObject private var store: HajinStore
 
     var body: some View {
         let on = store.isTracked(id)
         let full = !on && store.tracked.count >= HajinStore.maxTracked
+        if compact {
+            Button {
+                Haptics.step()
+                store.toggleTracked(id)
+            } label: {
+                Label(on ? "mw4.ui.hajin.tracking".localized()
+                         : full ? String(format: "mw4.ui.hajin.track_full".localized(), HajinStore.maxTracked)
+                         : "mw4.ui.hajin.track".localized(),
+                      systemImage: on ? "checkmark" : "plus")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(on ? Color.black.opacity(0.85) : full ? Color.appInkMuted : Color.accentDMZ)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Capsule().fill(on ? Color.accentDMZ : Color.clear))
+                    .overlay(Capsule().strokeBorder(on ? Color.clear : Color.accentDMZ.opacity(full ? 0.3 : 0.7), lineWidth: 1))
+            }
+            .buttonStyle(.borderless)
+            .disabled(full)
+        } else {
         Button {
             Haptics.step()
             store.toggleTracked(id)
@@ -68,6 +89,7 @@ struct HajinTrackButton: View {
         }
         .buttonStyle(.borderless)
         .disabled(full)
+        }
     }
 }
 

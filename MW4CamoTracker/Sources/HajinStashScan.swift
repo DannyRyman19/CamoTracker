@@ -239,11 +239,6 @@ struct HajinStashScanReview: View {
     var report: HajinScanReport? = nil
     /// Called after Update or Cancel, e.g. to close the framing screen too.
     var onDone: (() -> Void)? = nil
-    /// How many photos these counts come from (stash photos added together).
-    var photos = 1
-    /// Stash photos: read another photo (the Valuables tab after the
-    /// Ingredients tab, say) and add it to these counts, as edited.
-    var onAddPhoto: (([String: Int]) -> Void)? = nil
     @EnvironmentObject private var store: HajinStore
     @Environment(\.dismiss) private var dismiss
     @State private var skip: Set<String> = []
@@ -476,25 +471,6 @@ struct HajinStashScanReview: View {
                 if !valuables.isEmpty {
                     Section("mw4.ui.hajin.valuables".localized()) {
                         ForEach(valuables, id: \.item.id) { row in itemRow(row) }
-                    }
-                }
-                if let onAddPhoto {
-                    Section {
-                        Button {
-                            Haptics.step()
-                            // What's been read so far, as edited, less anything skipped
-                            var carried = found.merging(edited) { _, new in new }
-                            for id in skip { carried[id] = nil }
-                            onAddPhoto(carried)
-                            dismiss()
-                        } label: {
-                            Label("mw4.ui.hajin.scan_add_photo".localized(), systemImage: "plus.viewfinder")
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(Color.accentDMZ)
-                        }
-                    } footer: {
-                        Text(photos > 1 ? String(format: "mw4.ui.hajin.scan_photos".localized(), photos)
-                                        : "mw4.ui.hajin.scan_add_photo_footer".localized())
                     }
                 }
             }

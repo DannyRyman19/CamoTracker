@@ -19,6 +19,7 @@ struct HajinStashScanIntro: View {
     @State private var watched = false
     @State private var showsPremium = false
     @State private var showsNoAd = false
+    @State private var recent: [URL] = HajinRecentPhotos.all()
 
     /// Free players, before this scan's ad. Buying Premium clears it too.
     private var needsAd: Bool { !premium.isPremium && Ads.shared.showsAds && !watched }
@@ -122,6 +123,7 @@ struct HajinStashScanIntro: View {
     }
 
     @ViewBuilder private var photoButtons: some View {
+                    if !recent.isEmpty { recentStrip }
                     if UIImagePickerController.isSourceTypeAvailable(.camera) {
                         Button { showsCamera = true } label: {
                             Label("mw4.ui.hajin.grid_camera".localized(), systemImage: "camera.fill")
@@ -142,6 +144,42 @@ struct HajinStashScanIntro: View {
                             .background(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.accentDMZ, lineWidth: 2))
                     }
                     .buttonStyle(.plain)
+    }
+
+    /// The last few camera shots, to read again without retaking them.
+    private var recentStrip: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("mw4.ui.hajin.recent_photos".localized())
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Color.appInkMuted)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(recent, id: \.self) { url in
+                        if let image = UIImage(contentsOfFile: url.path) {
+                            Button {
+                                HajinScanFlow.shared.fromRecent = true
+                                captured = image
+                            } label: {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 72, height: 54)
+                                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                                    .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(Color.appSurface2, lineWidth: 1))
+                            }
+                            .buttonStyle(.plain)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    HajinRecentPhotos.remove(url)
+                                    recent = HajinRecentPhotos.all()
+                                } label: { Label("mw4.ui.hajin.remove".localized(), systemImage: "trash") }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func tip(_ symbol: String, _ key: String, best: Bool = false) -> some View {
@@ -165,6 +203,34 @@ struct HajinStashScanIntro: View {
             }
         }
     }
+}
+
+/// The last few stash photos taken with the camera, kept in the app (not
+/// the photo library) so a scan can be run again on one.
+enum HajinRecentPhotos {
+    static let limit = 6
+
+    private static var folder: URL {
+        let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("ScanPhotos", isDirectory: true)
+        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
+        return url
+    }
+
+    /// Newest first.
+    static func all() -> [URL] {
+        let files = (try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)) ?? []
+        return files.filter { $0.pathExtension == "jpg" }.sorted { $0.lastPathComponent > $1.lastPathComponent }
+    }
+
+    static func save(_ image: UIImage) {
+        guard let data = image.jpegData(compressionQuality: 0.85) else { return }
+        let name = String(format: "%013.0f.jpg", Date().timeIntervalSince1970 * 1000)
+        try? data.write(to: folder.appendingPathComponent(name))
+        for old in all().dropFirst(limit) { remove(old) }
+    }
+
+    static func remove(_ url: URL) { try? FileManager.default.removeItem(at: url) }
 }
 
 /// The system camera, for a photo of the stash taken there and then.

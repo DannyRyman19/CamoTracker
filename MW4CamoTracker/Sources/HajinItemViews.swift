@@ -637,27 +637,6 @@ struct HajinItemView: View {
             }
             .padding(12)
             .background(statusPanel(ready ? HajinStore.printableGreen : nil))
-        } else if store.canPrint(item) {
-            let locked = store.isLocked(item.requiredLevel)
-            HStack(spacing: 10) {
-                Image(systemName: locked ? "lock.fill" : "printer.fill")
-                    .foregroundStyle(locked ? Color.appInkMuted : HajinStore.printableGreen)
-                    .frame(width: 24)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(locked ? "mw4.ui.hajin.have_all".localized() : "mw4.ui.hajin.can_print_title".localized())
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(locked ? Color.appInk : HajinStore.printableGreen)
-                    Text(locked ? String(format: "mw4.ui.hajin.unlocks_at".localized(), item.requiredLevel ?? 0) : "mw4.ui.hajin.can_print_detail".localized())
-                        .font(.caption).foregroundStyle(Color.appInkMuted)
-                }
-                Spacer()
-            }
-            .padding(12)
-            .background(statusPanel(locked ? nil : HajinStore.printableGreen))
-        }
-        // Recipes and upgrades can be tracked; what My stash counts shows it
-        if !(item.cost ?? []).isEmpty || item.kind == "FOB Upgrade" {
-            HajinTrackButton(id: item.id)
         }
         if HajinStore.inStash(item) {
             // How many you have and what one sells for, side by side, like
@@ -779,8 +758,17 @@ struct HajinItemView: View {
     }
 
     private func recipe(_ item: HajinGuide.Item, _ cost: [HajinGuide.Item.Cost]) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            panelTitle(item.kind == "FOB Upgrade" ? "mw4.ui.hajin.cost".localized() : "mw4.ui.hajin.recipe".localized())
+        // A recipe (not an upgrade, whose status row says it) the stash covers:
+        // the card outlined green, and a line under it
+        let covered = item.kind != "FOB Upgrade" && store.canPrint(item)
+        let locked = store.isLocked(item.requiredLevel)
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center) {
+                panelTitle(item.kind == "FOB Upgrade" ? "mw4.ui.hajin.cost".localized() : "mw4.ui.hajin.recipe".localized())
+                Spacer()
+                // Tracked recipes and upgrades show on My DMZ and in My stash
+                HajinTrackButton(id: item.id, compact: true)
+            }
             VStack(spacing: 0) {
                 if let cash = item.cash {
                     HStack(spacing: 12) {
@@ -806,7 +794,17 @@ struct HajinItemView: View {
                     if index < cost.count - 1 { Divider().overlay(Color.appInkMuted.opacity(0.2)).padding(.leading, 64) }
                 }
             }
-            .background(panel)
+            .background(statusPanel(covered && !locked ? HajinStore.printableGreen : nil))
+            if covered {
+                Label {
+                    Text(locked ? String(format: "mw4.ui.hajin.unlocks_at".localized(), item.requiredLevel ?? 0)
+                                : "\("mw4.ui.hajin.can_print_title".localized()). \("mw4.ui.hajin.can_print_detail".localized())")
+                } icon: {
+                    Image(systemName: locked ? "lock.fill" : "printer.fill")
+                }
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(locked ? Color.appInkMuted : HajinStore.printableGreen)
+            }
             if let unlock = item.unlock, item.requiredLevel == nil {
                 Text(unlock.resolved)
                     .font(.footnote)
