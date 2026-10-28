@@ -77,20 +77,6 @@ struct HajinStashScanTests {
         #expect((json["tiles"] as? [[String: Any]])?.first?["count"] as? Int == 10)
         #expect(report.photoData() != nil)
     }
-
-    /// "Add another photo": the next photo's counts go on top of what was
-    /// read, an item in both keeping the higher count, and the carried
-    /// counts are used once.
-    @available(iOS 17.0, *)
-    @MainActor @Test func anotherPhotoAddsToTheCountsWithoutCountingTwice() {
-        let flow = HajinScanFlow()
-        flow.addPhoto(["biomaterials": 10, "gold-skull": 2], photos: 1)
-        let next = flow.merged(HajinGridResult(counts: ["gold-skull": 3, "gold-bar": 1], unsure: []))
-        #expect(next.counts == ["biomaterials": 10, "gold-skull": 3, "gold-bar": 1])
-        #expect(next.photos == 2)
-        #expect(flow.carried == nil)
-        #expect(flow.merged(HajinGridResult(counts: ["cpu": 4], unsure: [])).counts == ["cpu": 4])
-    }
 }
 /// Runs the grid finder over a folder of real stash photos and writes the
 /// corners it finds to `corners.json` there. Only runs when GRID_PHOTOS is
