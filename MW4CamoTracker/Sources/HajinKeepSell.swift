@@ -1,8 +1,8 @@
 import SwiftUI
 
 /// Whether a looted item is worth keeping, worked out from every known
-/// recipe and FOB upgrade that needs it, minus the upgrades the player has
-/// ticked as done.
+/// recipe and FOB upgrade that needs it, and the DMZ Orders that print with
+/// it, minus the upgrades and orders the player has ticked as done.
 struct HajinVerdict {
     /// Only loot you'd weigh up selling gets a verdict: materials,
     /// and valuables. Loadout items and keys are simply used.
@@ -17,6 +17,8 @@ struct HajinVerdict {
     let upgrades: [(item: HajinGuide.Item, qty: Int)]
     /// Recipes that use it.
     let recipes: [(item: HajinGuide.Item, qty: Int)]
+    /// Unticked DMZ Orders that need it, with amounts.
+    let orders: [(order: HajinGuide.Row, qty: Int)]
     let value: Int?
     let itemKind: String
 
@@ -24,11 +26,16 @@ struct HajinVerdict {
         let users = guide.usedIn(item.id).map { user in (item: user, qty: user.cost?.first { $0.item == item.id }?.qty ?? 0) }
         upgrades = users.filter { $0.item.kind == "FOB Upgrade" && !done.contains("upgrade-\($0.item.id)") }
         recipes = users.filter { $0.item.kind != "FOB Upgrade" }
+        var orders: [(order: HajinGuide.Row, qty: Int)] = []
+        for need in guide.orderNeeds(done: done) where need.item == item.id {
+            if let i = orders.firstIndex(where: { $0.order == need.order }) { orders[i].qty += need.qty } else { orders.append((need.order, need.qty)) }
+        }
+        self.orders = orders
         value = item.value
         itemKind = item.kind
         if item.kind == "Resource" {
             kind = .resource
-        } else if !upgrades.isEmpty {
+        } else if !upgrades.isEmpty || !orders.isEmpty {
             kind = .keep
         } else if !recipes.isEmpty {
             kind = .crafting
@@ -74,9 +81,18 @@ struct HajinVerdict {
     var reason: String {
         switch kind {
         case .keep:
-            let total = upgrades.reduce(0) { $0 + $1.qty }
-            let names = upgrades.map { "\($0.item.name.resolved) ×\($0.qty)" }.joined(separator: ", ")
-            return String(format: "mw4.ui.keep.keep_reason".localized(), total, names)
+            var lines: [String] = []
+            if !upgrades.isEmpty {
+                let total = upgrades.reduce(0) { $0 + $1.qty }
+                let names = upgrades.map { "\($0.item.name.resolved) ×\($0.qty)" }.joined(separator: ", ")
+                lines.append(String(format: "mw4.ui.keep.keep_reason".localized(), total, names))
+            }
+            if !orders.isEmpty {
+                let total = orders.reduce(0) { $0 + $1.qty }
+                let names = orders.map { "\($0.order.title.resolved) ×\($0.qty)" }.joined(separator: ", ")
+                lines.append(String(format: "mw4.ui.keep.orders_reason".localized(), total, names))
+            }
+            return lines.joined(separator: " ")
         case .crafting:
             return String(format: "mw4.ui.keep.crafting_reason".localized(), recipes.map { $0.item.name.resolved }.joined(separator: ", "))
         case .sell:
@@ -144,6 +160,7 @@ extension HajinStore {
     static let spareTrackedKey = "mw4_hajin_spare_tracked"
     static let spareBufferKey = "mw4_hajin_spare_buffer"
     static let spareRecipesKey = "mw4_hajin_spare_recipes"
+    static let spareOrdersKey = "mw4_hajin_spare_orders"
 
     /// What the stash holds beyond what the unfinished FOB upgrades still
     /// need (and, as the player chooses, one print of every recipe they
@@ -169,8 +186,13 @@ extension HajinStore {
         let keepTracked = UserDefaults.standard.object(forKey: Self.spareTrackedKey) as? Bool ?? true
         let buffer = UserDefaults.standard.integer(forKey: Self.spareBufferKey)
         let keepRecipes = UserDefaults.standard.object(forKey: Self.spareRecipesKey) as? Bool ?? true
+        let keepOrders = UserDefaults.standard.object(forKey: Self.spareOrdersKey) as? Bool ?? true
         var need: [String: Int] = [:]
         for line in shoppingList(.upgrades) { need[line.item.id] = line.need }
+        // What the DMZ Orders not yet ticked print with or want extracted
+        if keepOrders {
+            for order in guide.orderNeeds(done: checked) { need[order.item, default: 0] += order.qty }
+        }
         // Recipes to keep the makings of: one print of each one the player
         // has (found, at their level, or unlocked by Ingredient Printing)
         var recipes = Set<String>()
@@ -200,10 +222,11 @@ struct HajinSpareCard: View {
     @AppStorage(HajinStore.spareTrackedKey) private var keepTracked = true
     @AppStorage(HajinStore.spareBufferKey) private var buffer = 0
     @AppStorage(HajinStore.spareRecipesKey) private var keepRecipes = true
+    @AppStorage(HajinStore.spareOrdersKey) private var keepOrders = true
 
     var body: some View {
         // Read so the card redraws when either setting changes
-        let _ = (keepTracked, buffer, keepRecipes)
+        let _ = (keepTracked, buffer, keepRecipes, keepOrders)
         let spare = store.spare()
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
@@ -232,6 +255,7 @@ struct HajinSpareCard: View {
         Menu {
             Toggle("mw4.ui.keep.spare_keep_recipes".localized(), isOn: $keepRecipes)
             Toggle("mw4.ui.keep.spare_keep_tracked".localized(), isOn: $keepTracked)
+            Toggle("mw4.ui.keep.spare_keep_orders".localized(), isOn: $keepOrders)
             Picker("mw4.ui.keep.spare_buffer".localized(), selection: $buffer) {
                 Text("mw4.ui.keep.spare_buffer_none".localized()).tag(0)
                 Text(String(format: "mw4.ui.keep.spare_buffer_n".localized(), 5)).tag(5)
@@ -251,6 +275,7 @@ struct HajinSpareCard: View {
         guard !store.stash.isEmpty else { return "mw4.ui.keep.spare_empty".localized() }
         var text = "mw4.ui.keep.spare_detail".localized()
         if keepTracked { text += " " + "mw4.ui.keep.spare_detail_tracked".localized() }
+        if keepOrders { text += " " + "mw4.ui.keep.spare_detail_orders".localized() }
         if buffer > 0 { text += " " + String(format: "mw4.ui.keep.spare_detail_buffer".localized(), buffer) }
         return text
     }

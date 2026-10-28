@@ -1634,6 +1634,31 @@ struct HajinMissionRow: View {
                 }
                 .padding(.leading, 36)
             }
+            // An order's prints and the ingredients it wants extracted
+            let needs = (row.prints ?? []) + (row.extracts ?? [])
+            if !needs.isEmpty {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("mw4.ui.hajin.needs".localized().uppercased())
+                        .font(.system(size: 11, weight: .bold))
+                        .tracking(0.8)
+                        .foregroundStyle(Color.appInkMuted)
+                    HajinLinkChips(ids: needs.map(\.item), amounts: Dictionary(needs.map { ($0.item, $0.qty) }, uniquingKeysWith: +))
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 36)
+            }
+            if let tips = row.tips, !tips.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(tips.indices, id: \.self) { i in
+                        Label(tips[i].resolved, systemImage: "lightbulb.fill")
+                            .font(.caption)
+                            .foregroundStyle(Color.appInkMuted)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 36)
+            }
             let items = row.links ?? []
             let other = row.rewards ?? []
             if row.cash != nil || !items.isEmpty || !other.isEmpty {

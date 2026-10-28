@@ -258,8 +258,10 @@
 "mw4.ui.keep.spare_buffer" = "Houd een buffer";
 "mw4.ui.keep.spare_keep_recipes" = "Houd genoeg over om elk recept dat je hebt één keer te printen";
 "mw4.ui.keep.spare_keep_tracked" = "Houd wat gevolgd nodig heeft";
+"mw4.ui.keep.spare_keep_orders" = "Houd wat open DMZ-orders nodig hebben";
 "mw4.ui.keep.spare_detail_buffer" = "Houdt %d van elk ingrediënt.";
 "mw4.ui.keep.spare_detail_tracked" = "Houdt ook wat je gevolgde recepten nodig hebben.";
+"mw4.ui.keep.spare_detail_orders" = "Houdt ook waarmee je niet-afgevinkte DMZ-orders printen.";
 "mw4.ui.keep.row_subtitle" = "Zoek alles wat je hebt gelooted";
 "mw4.ui.keep.search" = "Zoek voorwerpen";
 "mw4.ui.keep.intro" = "Berekend uit alle bekende recepten en FOB-upgrades. Vink geprinte FOB-upgrades af en wat ze nodig hadden telt niet meer. Sommige receptkosten zijn nog onbekend, dus een Verkopen kan later nog veranderen.";
@@ -269,6 +271,7 @@
 "mw4.ui.keep.use" = "Gebruik het";
 "mw4.ui.keep.resource" = "Wordt automatisch gesloopt";
 "mw4.ui.keep.keep_reason" = "%d nodig voor upgrades die je nog niet hebt geprint: %@";
+"mw4.ui.keep.orders_reason" = "%d nodig voor DMZ-orders die je nog niet hebt afgerond: %@";
 "mw4.ui.keep.crafting_reason" = "Alleen nodig voor %@. Houd het als je dat maakt, anders verkopen.";
 "mw4.ui.keep.sell_reason" = "Niets bekends heeft het nodig. Verkoopt voor %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Niets bekends heeft het nodig.";
@@ -390,6 +393,7 @@
 "mw4.ui.hajin.unlock_reward" = "Niveaubeloning";
 "mw4.ui.hajin.dmz_level_n" = "DMZ-niveau %d";
 "mw4.ui.hajin.rewards" = "Beloningen";
+"mw4.ui.hajin.needs" = "Nodig";
 "mw4.ui.hajin.can_print" = "Printbaar";
 "mw4.ui.hajin.can_print_title" = "Je kunt dit printen";
 "mw4.ui.hajin.can_print_detail" = "Je voorraad heeft alles wat nodig is.";

@@ -258,8 +258,10 @@
 "mw4.ui.keep.spare_buffer" = "Tieni una riserva";
 "mw4.ui.keep.spare_keep_recipes" = "Tieni abbastanza per stampare una volta ogni ricetta che hai";
 "mw4.ui.keep.spare_keep_tracked" = "Tieni per i seguiti";
+"mw4.ui.keep.spare_keep_orders" = "Tieni per gli ordini DMZ in sospeso";
 "mw4.ui.keep.spare_detail_buffer" = "Tiene %d di ogni ingrediente.";
 "mw4.ui.keep.spare_detail_tracked" = "Tiene anche ciò che serve alle ricette che segui.";
+"mw4.ui.keep.spare_detail_orders" = "Tiene anche ciò che stampano gli ordini DMZ non ancora spuntati.";
 "mw4.ui.keep.row_subtitle" = "Cerca qualsiasi cosa tu abbia raccolto";
 "mw4.ui.keep.search" = "Cerca oggetti";
 "mw4.ui.keep.intro" = "Calcolato da tutte le ricette e i potenziamenti della FOB noti. Spunta i potenziamenti stampati e il loro fabbisogno non conta più. Alcuni costi delle ricette non sono ancora noti, quindi un Vendi potrebbe cambiare.";
@@ -269,6 +271,7 @@
 "mw4.ui.keep.use" = "Usalo";
 "mw4.ui.keep.resource" = "Smontato in automatico";
 "mw4.ui.keep.keep_reason" = "Ne servono %d per potenziamenti non ancora stampati: %@";
+"mw4.ui.keep.orders_reason" = "Ne servono %d per ordini DMZ non ancora completati: %@";
 "mw4.ui.keep.crafting_reason" = "Serve solo per stampare %@. Tienilo se lo crei, altrimenti vendi.";
 "mw4.ui.keep.sell_reason" = "Niente di noto lo richiede. Si vende a %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Niente di noto lo richiede.";
@@ -390,6 +393,7 @@
 "mw4.ui.hajin.unlock_reward" = "Ricompensa di livello";
 "mw4.ui.hajin.dmz_level_n" = "Livello DMZ %d";
 "mw4.ui.hajin.rewards" = "Ricompense";
+"mw4.ui.hajin.needs" = "Serve";
 "mw4.ui.hajin.can_print" = "Stampabile";
 "mw4.ui.hajin.can_print_title" = "Puoi stamparlo";
 "mw4.ui.hajin.can_print_detail" = "Il tuo deposito ha tutto il necessario.";

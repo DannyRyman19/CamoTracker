@@ -873,6 +873,27 @@ MISSIONS = [
  ('DMZ Orders: Fire Insurance page', 'Mechanic', None, ['Repair a radar truck', 'Kill 19 enemies pinged by a radar truck'], None, [], ['Page reward: $20,000, 2 CPU, 2 Nylon Cloth and an Inflatable Decoy']),
  ('DMZ Orders: Jail Break page', 'Jail Break', None, ['Kill 15 enemies in the 14th Political Prison', 'Destroy a reinforcement helicopter', 'Kill 10 enemies in the Citadel'], None, [], ['Page reward: $20,000, an Armor Survival Kit (variant not confirmed), an Operator Rescue Beacon and a Weapon Insurance Contract']),
  ('DMZ Orders: Jail Break page', 'Keep Out', None, ['Kill 3 Lieutenants', "Loot a Lieutenant's key", "Enter a Lieutenant's room and loot the Lieutenant's gun"], None, [], ['Page reward: $20,000, an Armor Survival Kit (variant not confirmed), an Operator Rescue Beacon and a Weapon Insurance Contract']),
+ # pages 18 to 23 from the Gamer's Heroes orders guide (2026-10-28); pages can differ by the route you take
+ ('DMZ Orders: Page 18', 'How Bulletproof?', None, ['Kill 30 soldiers', 'Kill 15 armored soldiers', 'Kill 5 Lieutenants'], None, [], []),
+ ('DMZ Orders: Page 18', 'Abandoned', 'NuriGO Mall', ['Kill 10 K9 enemies during Operation Shopping Hacks', 'Extract 3 Pristine Cores (reach the body before it explodes)'], None, [], []),
+ ('DMZ Orders: Page 18', 'Locksmith', None, ['Find 5 keys (opening any 3 locked doors also counts)'], None, [], []),
+ ('DMZ Orders: Page 19', 'Avionics', None, ['Find or print 5 Electronic Sensors and Structural Alloy', 'Print a UAV'], None, [], []),
+ ('DMZ Orders: Page 19', 'Philanthropist', None, ['Complete the weekly Random Mission Deploy 3 times'], None, [], []),
+ ('DMZ Orders: Page 19', 'Multi-Talented', None, ['Capture 6 SAM sites', 'Clear 4 Compounds', 'Open 12 Supply Drops (Care Packages count)'], None, [], []),
+ ('DMZ Orders: Page 20', 'Ears Everywhere', 'Cheonwang Peak Array', ['Hack the Communications Broadcast System on the OBN TV building\'s second floor', 'Loot the Encrypted Voice Logs'], None, [], []),
+ ('DMZ Orders: Page 20', 'The Vault', 'Wolves Stadium, Hanex Branch Bank', ['Find a Battery and put it in the Electric Panel', 'Take the Bank Branch Vault Access Key from behind the teller stations', 'Find the Note with 3 of the code\'s digits, then work out the last one at the vault'], None, [], []),
+ ('DMZ Orders: Page 20', 'Massive Damage', None, ['Hit a tank with a DDOS 3 times', 'Destroy it with a rocket launcher (RPG or JOKR)'], None, [], []),
+ ('DMZ Orders: Page 21', 'Hard Carry', None, ['Print or extract 2 Nylon Laminate (you can bring them in, drop them and pick them up)', 'Gather Structural Alloy', 'Print a Large Backpack'], None, [], []),
+ ('DMZ Orders: Page 21', 'Stalking the Stalker', 'The Grid', ['Take a SAM site at the edge of The Grid', 'Kill the Deathstalkers, one with an RPG or JOKR'], None, [], []),
+ ('DMZ Orders: Page 22', 'DRC', None, ['Loot a DRC Weapon Locker (Chang-san Air Base Armory, Haneul Nuclear Reactor or NuriGO Mall labs)'], None, [], []),
+ ('DMZ Orders: Page 22', 'Unstoppable', None, ['Kill 10 Commanders', 'Kill 15 Lieutenants', 'Extract 5 Lieutenant Dog Tags'], None, [], []),
+ ('DMZ Orders: Page 22', 'Astronaut', 'Haneul Nuclear Reactor', ['Loot containers at the reactor with at least a purple Gas Mask', 'Take the last exfil after the timer runs out'], None, [], []),
+ ('DMZ Orders: Page 23', 'Rule of Three', None, ['Print or extract 2 Ballistic Fabric', 'Extract 5 Nylon Cloth', 'Print a 3-Plate Armor Vest'], None, [], []),
+ ('DMZ Orders: Page 23', 'Temp Job', None, ['Complete 40 Side Ops'], None, [], []),
+ ('DMZ Orders: Page 23', 'No Time', None, ['Complete 4 Dynamic Ops in one deployment'], None, [], []),
+ ('DMZ Orders: Page 23, other route', 'Rule of Three', None, ['Extract 2 Weapon Manuals', 'Extract 4 Recipes', 'Extract 1 Ultra weapon'], None, [], []),
+ ('DMZ Orders: Page 23, other route', 'Rule of Three', None, ['Build a Legendary sniper rifle with at least 5 attachments at the Gunsmith', 'Kill 100 enemies with it'], None, [], []),
+ ('DMZ Orders: Page 23, other route', 'Rule of Three', None, ['Earn $250,000 from Story Missions or Dynamic Ops'], None, [], []),
  ("Dynamic Ops", "Dead Man's Cache", "Cheongun Outskirts", ["Find the enemy comms server", "Collect the Encrypted Drive"], None, [], ["$10,000 to $20,000", "Supply Drop"]),
  ("Dynamic Ops", "Chemical Denial", "Tank Depot, Chang-san Air Base bunker", ["Investigate the power outage"], None, [], ["$10,000 to $20,000", "Supply Drop"]),
  ("Dynamic Ops", "Hunt Operators", None, ["Take out a rival squad of Operators"], None, [], ["$10,000 to $20,000", "Supply Drop"]),
@@ -891,11 +912,86 @@ OPS_NOTES = [
  ("Reduce Bounty", "$5,000 at a Bounty Station. Four kills make you Wanted"),
 ]
 
+# What an order's prints use up, and the ingredients it wants extracted
+# (which can be brought in from the stash and extracted again), by tick
+# key: Keep/Sell holds them back until the order is ticked. Manuals,
+# recipes and dog tags have to be found in that match, so aren't here.
+ORDER_PRINTS = {
+    "op-eyes-everywhere": [("recon-drone", 1)],
+    "op-preparation": [("medium-backpack", 1), ("2-plate-armor-vest", 1)],
+    "op-work-quietly": [("throwing-knife", 1)],
+    "op-healer": [("medkit", 1)],
+    "op-blindness": [("flash", 4)],
+    "op-dead-battery": [("ddos", 1)],
+    "op-click-boom": [("c4", 5)],
+    "op-fire-insurance": [("thermite", 5)],
+    "op-page-10-healer": [("armor-box", 1)],
+    "op-avionics": [("uav", 1)],
+    "op-hard-carry": [("large-backpack", 1)],
+    "op-rule-of-three": [("3-plate-armor-vest", 1)],
+}
+ORDER_EXTRACTS = {
+    "op-page-10-healer": [("reactive-metals", 3)],
+    "op-hard-carry": [("nylon-laminate", 2)],
+    "op-rule-of-three": [("ballistic-fabric", 2), ("nylon-cloth", 5)],
+}
+# Tips for orders, by tick key (Gamer's Heroes orders guide, 2026-10-28)
+ORDER_TIPS = {
+    "op-execute-intel": ["Kill the 5 the tower pings, then clear the rest of them for the Counterfeit Cash"],
+    "op-suit-breach": ["The Nuclear Reactor Checkpoint is full of them, and you don't need radiation gear there"],
+    "op-eyes-everywhere": ["Each tag only lasts a few seconds, so mark them one after another"],
+    "op-operation-rewards": ["If no Dynamic Op phone turns up in Cheongun Village, deploy again"],
+    "op-eye-in-the-sky": ["Songdo Wharf's SAM site works well"],
+    "op-watch-for-bumps": ["Clear the gas station's enemies before you refuel"],
+    "op-triangulation": ["Climb the radio towers marked with the DMZ Orders icon"],
+    "op-dead-battery": ["A vehicle or drone only counts when it shows red"],
+    "op-death-from-above": ["The Drone Motherboard stays on the last drone after it goes down"],
+    "op-radiation-station": ["There's a Fire Station south of the reactor, in the mall",
+                             "Enemies at the Nuclear Reactor Checkpoint drop Gas Masks and Radiation Pill Bottles",
+                             "For containers in radiation, try the reactor's outskirts or that match's bomb site (the yellow area)"],
+    "op-healer": ["The Medkit recipe is under Consumables at the 3D Printer"],
+    "op-crashed-crate": ["Lost supply crates are the red smoke at the West Bridge, the hospital and a small island to the east; usually 2 of the 3 spawn",
+                         "They aren't shared: each player needs their own 3"],
+    "op-page-10-healer": ["Reactive Metals turn up in garages, construction sites and around vehicles"],
+    "op-goliath": ["The Shock Stick has to physically hit Colossus"],
+    "op-click-boom": ["Shoot an armored enemy's armor off before the C4"],
+    "op-navigate-with-care": ["Cancel the infil (or swap squad leader) for a refund and you can pay for it again"],
+    "op-keep-out": ["Lieutenants rarely drop keys: Operation Grid Assault gives Roze's High-Rise Armory key, or a friend can drop you one"],
+    "op-nothing-is-secure": ["Most compounds have a safe, and Cheonwang Peak Array has three"],
+    "op-mechanic": ["Gas stations often have repair parts, and stripping one radar truck's parts fixes the next"],
+    "op-no-time": ["Ghost Shipment is a quick one"],
+    "op-civil-service": ["Deploy into Operation Shopping Hacks to start at NuriGO Mall"],
+    "op-abandoned": ["Get to a K9's body before it explodes"],
+    "op-locksmith": ["Keys you bring in, drop and pick up again count"],
+    "op-multi-talented": ["The same SAM site can be taken again"],
+    "op-massive-damage": ["A Shock Stick works on it once the DDOS is used up"],
+    "op-the-vault": ["The battery's spot changes from match to match"],
+    "op-hard-carry": ["Nylon Laminate you bring in, drop and pick up again counts"],
+    "op-stalking-the-stalker": ["Rice Mills usually has an enemy with an RPG"],
+    "op-astronaut": ["Stay until the final exfil once the timer runs out"],
+    "op-no-time-2": ["Stay out of The Grid"],
+}
+# Orders that share a title get their page in the tick key; the radiation
+# page's Healer keeps the plain key (it's the earlier page)
+CHECK_KEYS = {("DMZ Orders: Page 10", "Healer"): "op-page-10-healer"}
+
 def structured_ops(guide):
     sec = next(s for s in guide if s["id"] == "ops")
     rows = []
+    seen = set()
     for g, title, place, objectives, cash, items, other in MISSIONS:
-        r = {"title": title, "group": g, "check": "op-" + item_id(title)}
+        check = CHECK_KEYS.get((g, title)) or "op-" + item_id(title)
+        n = 2
+        while check in seen:   # a later order with the same title
+            check = f"op-{item_id(title)}-{n}"; n += 1
+        seen.add(check)
+        r = {"title": title, "group": g, "check": check}
+        if check in ORDER_PRINTS: r["prints"] = [{"item": i, "qty": q} for i, q in ORDER_PRINTS[check]]
+        if check in ORDER_EXTRACTS: r["extracts"] = [{"item": i, "qty": q} for i, q in ORDER_EXTRACTS[check]]
+        if check in ORDER_TIPS: r["tips"] = ORDER_TIPS[check]
+        # what an order needs shows as its own line, not with the rewards
+        needed = {n["item"] for n in r.get("prints", []) + r.get("extracts", [])}
+        items = [i for i in items if i not in needed]
         if place: r["place"] = place
         if objectives: r["objectives"] = objectives
         if cash: r["cash"] = cash
@@ -903,6 +999,8 @@ def structured_ops(guide):
         if other: r["rewards"] = other
         if not objectives and not cash and not items and not other: r["subtitle"] = "Objectives not confirmed yet"
         rows.append(r)
+    unknown = (set(ORDER_PRINTS) | set(ORDER_EXTRACTS) | set(ORDER_TIPS)) - seen
+    assert not unknown, f"order needs or tips for no order: {unknown}"
     sec["rows"] = rows
     sec["intro"] = ("Tick missions, orders and ops as you finish them, or tick each step as you go. "
                     "Finish a random Story Mission three times a week for the weekly rewards. "

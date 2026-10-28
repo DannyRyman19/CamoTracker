@@ -1,5 +1,5 @@
 {
- "version": "0.9.35",
+ "version": "0.9.36",
  "updated": "2026-10-28",
  "map": {
   "image": "hajin_map",
@@ -6028,6 +6028,9 @@
      "title": "Execute Intel",
      "group": "DMZ Orders: Counterfeit",
      "check": "op-execute-intel",
+     "tips": [
+      "Kill the 5 the tower pings, then clear the rest of them for the Counterfeit Cash"
+     ],
      "place": "Deadtown",
      "objectives": [
       "Hack a UAV Tower in Deadtown",
@@ -6045,13 +6048,19 @@
      "title": "Eyes Everywhere",
      "group": "DMZ Orders: Counterfeit",
      "check": "op-eyes-everywhere",
+     "prints": [
+      {
+       "item": "recon-drone",
+       "qty": 1
+      }
+     ],
+     "tips": [
+      "Each tag only lasts a few seconds, so mark them one after another"
+     ],
      "place": "Heavenly Luck Casino",
      "objectives": [
       "Print a Recon Drone",
       "Mark 10 enemies in Heavenly Luck Casino with it"
-     ],
-     "links": [
-      "recon-drone"
      ],
      "rewards": [
       "Page reward: $20,000, an Operator Rescue Beacon and a Weapon Insurance Contract"
@@ -6061,6 +6070,9 @@
      "title": "Suit Breach",
      "group": "DMZ Orders: Counterfeit",
      "check": "op-suit-breach",
+     "tips": [
+      "The Nuclear Reactor Checkpoint is full of them, and you don't need radiation gear there"
+     ],
      "objectives": [
       "Eliminate 15 enemies wearing hazmat suits"
      ],
@@ -6103,12 +6115,15 @@
      "title": "Blindness",
      "group": "DMZ Orders: Human Intel",
      "check": "op-blindness",
+     "prints": [
+      {
+       "item": "flash",
+       "qty": 4
+      }
+     ],
      "objectives": [
       "Print 4 Flash grenades",
       "Kill 8 flashed enemies"
-     ],
-     "links": [
-      "flash"
      ]
     },
     {
@@ -6124,6 +6139,9 @@
      "title": "Eye in the Sky",
      "group": "DMZ Orders: Underground",
      "check": "op-eye-in-the-sky",
+     "tips": [
+      "Songdo Wharf's SAM site works well"
+     ],
      "place": "Any SAM site",
      "objectives": [
       "Take control of a SAM site",
@@ -6143,6 +6161,9 @@
      "title": "Watch for Bumps",
      "group": "DMZ Orders: Underground",
      "check": "op-watch-for-bumps",
+     "tips": [
+      "Clear the gas station's enemies before you refuel"
+     ],
      "objectives": [
       "Steal an enemy vehicle",
       "Refuel and repair a vehicle at a gas station",
@@ -6161,6 +6182,9 @@
      "title": "Triangulation",
      "group": "DMZ Orders: Underground",
      "check": "op-triangulation",
+     "tips": [
+      "Climb the radio towers marked with the DMZ Orders icon"
+     ],
      "place": "Radio towers, La Grande Vie in Songdo Wharf",
      "objectives": [
       "Place a transmitter on top of 2 radio towers",
@@ -6179,12 +6203,18 @@
      "title": "Dead Battery",
      "group": "DMZ Orders: Underground",
      "check": "op-dead-battery",
+     "prints": [
+      {
+       "item": "ddos",
+       "qty": 1
+      }
+     ],
+     "tips": [
+      "A vehicle or drone only counts when it shows red"
+     ],
      "objectives": [
       "Print a DDOS field upgrade",
       "Disable 3 enemy vehicles or drones with it"
-     ],
-     "links": [
-      "ddos"
      ],
      "rewards": [
       "Page reward: $20,000 and a Basic Restock Kit"
@@ -6194,6 +6224,9 @@
      "title": "Death from Above",
      "group": "DMZ Orders: Underground",
      "check": "op-death-from-above",
+     "tips": [
+      "The Drone Motherboard stays on the last drone after it goes down"
+     ],
      "objectives": [
       "Distract a drone with a Decoy Grenade",
       "Destroy 3 drones",
@@ -6233,6 +6266,9 @@
      "title": "No Time",
      "group": "DMZ Orders: The Grid",
      "check": "op-no-time",
+     "tips": [
+      "Ghost Shipment is a quick one"
+     ],
      "objectives": [
       "Finish a Dynamic Operation in under 8 minutes"
      ]
@@ -6249,6 +6285,9 @@
      "title": "Civil Service",
      "group": "DMZ Orders: The Grid",
      "check": "op-civil-service",
+     "tips": [
+      "Deploy into Operation Shopping Hacks to start at NuriGO Mall"
+     ],
      "place": "City Hall, NuriGO Mall",
      "objectives": [
       "Enter NuriGO Mall",
@@ -6263,6 +6302,10 @@
      "title": "Crashed Crate",
      "group": "DMZ Orders: Page 10",
      "check": "op-crashed-crate",
+     "tips": [
+      "Lost supply crates are the red smoke at the West Bridge, the hospital and a small island to the east; usually 2 of the 3 spawn",
+      "They aren't shared: each player needs their own 3"
+     ],
      "objectives": [
       "Retrieve 3 lost supply drops",
       "Complete a Loot Radio Tower Side Op"
@@ -6286,16 +6329,29 @@
     {
      "title": "Healer",
      "group": "DMZ Orders: Page 10",
-     "check": "op-healer",
+     "check": "op-page-10-healer",
+     "prints": [
+      {
+       "item": "armor-box",
+       "qty": 1
+      }
+     ],
+     "extracts": [
+      {
+       "item": "reactive-metals",
+       "qty": 3
+      }
+     ],
+     "tips": [
+      "Reactive Metals turn up in garages, construction sites and around vehicles"
+     ],
      "objectives": [
       "Print or extract 3 Reactive Metals",
       "Extract 30 Metals",
       "Print an Armor Box"
      ],
      "links": [
-      "reactive-metals",
-      "metals",
-      "armor-box"
+      "metals"
      ],
      "rewards": [
       "Page reward: $20,000, a Large Backpack and a Basic Triage Kit"
@@ -6363,6 +6419,9 @@
      "title": "Nothing Is Secure",
      "group": "DMZ Orders: Page 14",
      "check": "op-nothing-is-secure",
+     "tips": [
+      "Most compounds have a safe, and Cheonwang Peak Array has three"
+     ],
      "objectives": [
       "Open 4 safes",
       "Extract with at least $20,000 of backpack and loadout value"
@@ -6386,6 +6445,11 @@
      "title": "Radiation Station",
      "group": "DMZ Orders: Radiation and medical page",
      "check": "op-radiation-station",
+     "tips": [
+      "There's a Fire Station south of the reactor, in the mall",
+      "Enemies at the Nuclear Reactor Checkpoint drop Gas Masks and Radiation Pill Bottles",
+      "For containers in radiation, try the reactor's outskirts or that match's bomb site (the yellow area)"
+     ],
      "place": "Any Fire Station",
      "objectives": [
       "Find a Fire Station",
@@ -6403,12 +6467,18 @@
      "title": "Healer",
      "group": "DMZ Orders: Radiation and medical page",
      "check": "op-healer",
+     "prints": [
+      {
+       "item": "medkit",
+       "qty": 1
+      }
+     ],
+     "tips": [
+      "The Medkit recipe is under Consumables at the 3D Printer"
+     ],
      "objectives": [
       "Track the Medkit recipe at the 3D Printer",
       "Print a Medkit"
-     ],
-     "links": [
-      "medkit"
      ],
      "rewards": [
       "Page reward: $20,000, a UAV and an Armor Box"
@@ -6418,6 +6488,9 @@
      "title": "Operation Rewards",
      "group": "DMZ Orders: Operation Rewards page",
      "check": "op-operation-rewards",
+     "tips": [
+      "If no Dynamic Op phone turns up in Cheongun Village, deploy again"
+     ],
      "place": "Cheongun Village",
      "objectives": [
       "Collect a Dynamic Op Phone in Cheongun Village",
@@ -6429,32 +6502,44 @@
      "title": "Preparation",
      "group": "DMZ Orders: Operation Rewards page",
      "check": "op-preparation",
+     "prints": [
+      {
+       "item": "medium-backpack",
+       "qty": 1
+      },
+      {
+       "item": "2-plate-armor-vest",
+       "qty": 1
+      }
+     ],
      "objectives": [
       "Print a Medium Backpack",
       "Print a 2-Plate Armor Vest"
-     ],
-     "links": [
-      "medium-backpack",
-      "2-plate-armor-vest"
      ]
     },
     {
      "title": "Work Quietly",
      "group": "DMZ Orders: Operation Rewards page",
      "check": "op-work-quietly",
+     "prints": [
+      {
+       "item": "throwing-knife",
+       "qty": 1
+      }
+     ],
      "objectives": [
       "Fit a suppressor to a weapon at the Gunsmith",
       "Print a Throwing Knife",
       "Kill 8 enemies in a row without taking damage"
-     ],
-     "links": [
-      "throwing-knife"
      ]
     },
     {
      "title": "Goliath",
      "group": "DMZ Orders: Goliath page",
      "check": "op-goliath",
+     "tips": [
+      "The Shock Stick has to physically hit Colossus"
+     ],
      "objectives": [
       "Hit Colossus with Thermite or a Drill Charge",
       "Hit Colossus with a Shock Stick"
@@ -6467,13 +6552,19 @@
      "title": "Click, Boom",
      "group": "DMZ Orders: Goliath page",
      "check": "op-click-boom",
+     "prints": [
+      {
+       "item": "c4",
+       "qty": 5
+      }
+     ],
+     "tips": [
+      "Shoot an armored enemy's armor off before the C4"
+     ],
      "objectives": [
       "Print 5 C4 charges",
       "Kill 12 armored enemies with C4",
       "Kill 5 enemies with one C4 blast"
-     ],
-     "links": [
-      "c4"
      ],
      "rewards": [
       "Page reward: $20,000, the Large Backpack recipe and a Weapon Restock Kit"
@@ -6483,6 +6574,9 @@
      "title": "Navigate With Care",
      "group": "DMZ Orders: Goliath page",
      "check": "op-navigate-with-care",
+     "tips": [
+      "Cancel the infil (or swap squad leader) for a refund and you can pay for it again"
+     ],
      "objectives": [
       "Pay for a Polaris DAGOR A1 infil",
       "Clear a North Korean convoy",
@@ -6496,12 +6590,15 @@
      "title": "Fire Insurance",
      "group": "DMZ Orders: Fire Insurance page",
      "check": "op-fire-insurance",
+     "prints": [
+      {
+       "item": "thermite",
+       "qty": 5
+      }
+     ],
      "objectives": [
       "Print 5 Thermite Lethals",
       "Stick 5 enemy vehicles with Thermite"
-     ],
-     "links": [
-      "thermite"
      ],
      "rewards": [
       "Page reward: $20,000, 2 CPU, 2 Nylon Cloth and an Inflatable Decoy"
@@ -6522,6 +6619,9 @@
      "title": "Mechanic",
      "group": "DMZ Orders: Fire Insurance page",
      "check": "op-mechanic",
+     "tips": [
+      "Gas stations often have repair parts, and stripping one radar truck's parts fixes the next"
+     ],
      "objectives": [
       "Repair a radar truck",
       "Kill 19 enemies pinged by a radar truck"
@@ -6547,6 +6647,9 @@
      "title": "Keep Out",
      "group": "DMZ Orders: Jail Break page",
      "check": "op-keep-out",
+     "tips": [
+      "Lieutenants rarely drop keys: Operation Grid Assault gives Roze's High-Rise Armory key, or a friend can drop you one"
+     ],
      "objectives": [
       "Kill 3 Lieutenants",
       "Loot a Lieutenant's key",
@@ -6554,6 +6657,253 @@
      ],
      "rewards": [
       "Page reward: $20,000, an Armor Survival Kit (variant not confirmed), an Operator Rescue Beacon and a Weapon Insurance Contract"
+     ]
+    },
+    {
+     "title": "How Bulletproof?",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-how-bulletproof",
+     "objectives": [
+      "Kill 30 soldiers",
+      "Kill 15 armored soldiers",
+      "Kill 5 Lieutenants"
+     ]
+    },
+    {
+     "title": "Abandoned",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-abandoned",
+     "tips": [
+      "Get to a K9's body before it explodes"
+     ],
+     "place": "NuriGO Mall",
+     "objectives": [
+      "Kill 10 K9 enemies during Operation Shopping Hacks",
+      "Extract 3 Pristine Cores (reach the body before it explodes)"
+     ]
+    },
+    {
+     "title": "Locksmith",
+     "group": "DMZ Orders: Page 18",
+     "check": "op-locksmith",
+     "tips": [
+      "Keys you bring in, drop and pick up again count"
+     ],
+     "objectives": [
+      "Find 5 keys (opening any 3 locked doors also counts)"
+     ]
+    },
+    {
+     "title": "Avionics",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-avionics",
+     "prints": [
+      {
+       "item": "uav",
+       "qty": 1
+      }
+     ],
+     "objectives": [
+      "Find or print 5 Electronic Sensors and Structural Alloy",
+      "Print a UAV"
+     ]
+    },
+    {
+     "title": "Philanthropist",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-philanthropist",
+     "objectives": [
+      "Complete the weekly Random Mission Deploy 3 times"
+     ]
+    },
+    {
+     "title": "Multi-Talented",
+     "group": "DMZ Orders: Page 19",
+     "check": "op-multi-talented",
+     "tips": [
+      "The same SAM site can be taken again"
+     ],
+     "objectives": [
+      "Capture 6 SAM sites",
+      "Clear 4 Compounds",
+      "Open 12 Supply Drops (Care Packages count)"
+     ]
+    },
+    {
+     "title": "Ears Everywhere",
+     "group": "DMZ Orders: Page 20",
+     "check": "op-ears-everywhere",
+     "place": "Cheonwang Peak Array",
+     "objectives": [
+      "Hack the Communications Broadcast System on the OBN TV building's second floor",
+      "Loot the Encrypted Voice Logs"
+     ]
+    },
+    {
+     "title": "The Vault",
+     "group": "DMZ Orders: Page 20",
+     "check": "op-the-vault",
+     "tips": [
+      "The battery's spot changes from match to match"
+     ],
+     "place": "Wolves Stadium, Hanex Branch Bank",
+     "objectives": [
+      "Find a Battery and put it in the Electric Panel",
+      "Take the Bank Branch Vault Access Key from behind the teller stations",
+      "Find the Note with 3 of the code's digits, then work out the last one at the vault"
+     ]
+    },
+    {
+     "title": "Massive Damage",
+     "group": "DMZ Orders: Page 20",
+     "check": "op-massive-damage",
+     "tips": [
+      "A Shock Stick works on it once the DDOS is used up"
+     ],
+     "objectives": [
+      "Hit a tank with a DDOS 3 times",
+      "Destroy it with a rocket launcher (RPG or JOKR)"
+     ]
+    },
+    {
+     "title": "Hard Carry",
+     "group": "DMZ Orders: Page 21",
+     "check": "op-hard-carry",
+     "prints": [
+      {
+       "item": "large-backpack",
+       "qty": 1
+      }
+     ],
+     "extracts": [
+      {
+       "item": "nylon-laminate",
+       "qty": 2
+      }
+     ],
+     "tips": [
+      "Nylon Laminate you bring in, drop and pick up again counts"
+     ],
+     "objectives": [
+      "Print or extract 2 Nylon Laminate (you can bring them in, drop them and pick them up)",
+      "Gather Structural Alloy",
+      "Print a Large Backpack"
+     ]
+    },
+    {
+     "title": "Stalking the Stalker",
+     "group": "DMZ Orders: Page 21",
+     "check": "op-stalking-the-stalker",
+     "tips": [
+      "Rice Mills usually has an enemy with an RPG"
+     ],
+     "place": "The Grid",
+     "objectives": [
+      "Take a SAM site at the edge of The Grid",
+      "Kill the Deathstalkers, one with an RPG or JOKR"
+     ]
+    },
+    {
+     "title": "DRC",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-drc",
+     "objectives": [
+      "Loot a DRC Weapon Locker (Chang-san Air Base Armory, Haneul Nuclear Reactor or NuriGO Mall labs)"
+     ]
+    },
+    {
+     "title": "Unstoppable",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-unstoppable",
+     "objectives": [
+      "Kill 10 Commanders",
+      "Kill 15 Lieutenants",
+      "Extract 5 Lieutenant Dog Tags"
+     ]
+    },
+    {
+     "title": "Astronaut",
+     "group": "DMZ Orders: Page 22",
+     "check": "op-astronaut",
+     "tips": [
+      "Stay until the final exfil once the timer runs out"
+     ],
+     "place": "Haneul Nuclear Reactor",
+     "objectives": [
+      "Loot containers at the reactor with at least a purple Gas Mask",
+      "Take the last exfil after the timer runs out"
+     ]
+    },
+    {
+     "title": "Rule of Three",
+     "group": "DMZ Orders: Page 23",
+     "check": "op-rule-of-three",
+     "prints": [
+      {
+       "item": "3-plate-armor-vest",
+       "qty": 1
+      }
+     ],
+     "extracts": [
+      {
+       "item": "ballistic-fabric",
+       "qty": 2
+      },
+      {
+       "item": "nylon-cloth",
+       "qty": 5
+      }
+     ],
+     "objectives": [
+      "Print or extract 2 Ballistic Fabric",
+      "Extract 5 Nylon Cloth",
+      "Print a 3-Plate Armor Vest"
+     ]
+    },
+    {
+     "title": "Temp Job",
+     "group": "DMZ Orders: Page 23",
+     "check": "op-temp-job",
+     "objectives": [
+      "Complete 40 Side Ops"
+     ]
+    },
+    {
+     "title": "No Time",
+     "group": "DMZ Orders: Page 23",
+     "check": "op-no-time-2",
+     "tips": [
+      "Stay out of The Grid"
+     ],
+     "objectives": [
+      "Complete 4 Dynamic Ops in one deployment"
+     ]
+    },
+    {
+     "title": "Rule of Three",
+     "group": "DMZ Orders: Page 23, other route",
+     "check": "op-rule-of-three-2",
+     "objectives": [
+      "Extract 2 Weapon Manuals",
+      "Extract 4 Recipes",
+      "Extract 1 Ultra weapon"
+     ]
+    },
+    {
+     "title": "Rule of Three",
+     "group": "DMZ Orders: Page 23, other route",
+     "check": "op-rule-of-three-3",
+     "objectives": [
+      "Build a Legendary sniper rifle with at least 5 attachments at the Gunsmith",
+      "Kill 100 enemies with it"
+     ]
+    },
+    {
+     "title": "Rule of Three",
+     "group": "DMZ Orders: Page 23, other route",
+     "check": "op-rule-of-three-4",
+     "objectives": [
+      "Earn $250,000 from Story Missions or Dynamic Ops"
      ]
     },
     {

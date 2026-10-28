@@ -93,6 +93,12 @@ struct HajinGuide: Codable {
         let objectives: [GuideText]?
         let cash: Int?
         let rewards: [GuideText]?
+        /// DMZ Orders: what the order has you print, and the ingredients it
+        /// has you extract (which can be carried in from the stash).
+        let prints: [Item.Cost]?
+        let extracts: [Item.Cost]?
+        /// Tips for doing it.
+        let tips: [GuideText]?
 
         /// The DMZ level this row needs: a level-unlock row's level, or a
         /// "Lv 12" badge.
@@ -213,6 +219,18 @@ struct HajinGuide: Codable {
     }
 
     func marker(_ id: String) -> Marker? { markers.first { $0.id == id } }
+
+    /// What the DMZ Orders not yet ticked need from the stash: each print's
+    /// recipe cost times how many, and the ingredients to extract.
+    func orderNeeds(done: Set<String>) -> [(order: Row, item: String, qty: Int)] {
+        let orders = guide.first { $0.id == "ops" }?.rows.filter { $0.check.map { !done.contains($0) } ?? false } ?? []
+        return orders.flatMap { order in
+            let printed = (order.prints ?? []).flatMap { print in
+                (item(print.item)?.cost ?? []).map { (order: order, item: $0.item, qty: $0.qty * print.qty) }
+            }
+            return printed + (order.extracts ?? []).map { (order: order, item: $0.item, qty: $0.qty) }
+        }
+    }
 
     /// Every tier of an upgrade family, lowest first.
     func tiers(of item: Item) -> [Item] {

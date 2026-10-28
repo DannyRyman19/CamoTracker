@@ -258,8 +258,10 @@
 "mw4.ui.keep.spare_buffer" = "Garder une réserve";
 "mw4.ui.keep.spare_keep_recipes" = "Garder de quoi imprimer une fois chaque recette que tu as";
 "mw4.ui.keep.spare_keep_tracked" = "Garder pour les suivis";
+"mw4.ui.keep.spare_keep_orders" = "Garder pour les ordres DMZ en cours";
 "mw4.ui.keep.spare_detail_buffer" = "Garde %d de chaque ingrédient.";
 "mw4.ui.keep.spare_detail_tracked" = "Garde aussi ce que tes recettes suivies demandent.";
+"mw4.ui.keep.spare_detail_orders" = "Garde aussi ce qu'impriment les ordres DMZ pas encore cochés.";
 "mw4.ui.keep.row_subtitle" = "Cherchez tout ce que vous avez ramassé";
 "mw4.ui.keep.search" = "Rechercher des objets";
 "mw4.ui.keep.intro" = "Calculé à partir de toutes les recettes et améliorations de FOB connues. Cochez les améliorations imprimées et leurs besoins ne comptent plus. Certains coûts de recettes sont encore inconnus, un Vendre peut donc changer.";
@@ -269,6 +271,7 @@
 "mw4.ui.keep.use" = "Utilisez-le";
 "mw4.ui.keep.resource" = "Recyclé automatiquement";
 "mw4.ui.keep.keep_reason" = "%d nécessaires pour des améliorations pas encore imprimées : %@";
+"mw4.ui.keep.orders_reason" = "%d nécessaires pour des ordres DMZ pas encore terminés : %@";
 "mw4.ui.keep.crafting_reason" = "Sert seulement à imprimer %@. Gardez-le si vous en fabriquez, sinon vendez.";
 "mw4.ui.keep.sell_reason" = "Rien de connu n'en a besoin. Se vend %@.";
 "mw4.ui.keep.sell_reason_novalue" = "Rien de connu n'en a besoin.";
@@ -390,6 +393,7 @@
 "mw4.ui.hajin.unlock_reward" = "Récompense de niveau";
 "mw4.ui.hajin.dmz_level_n" = "Niveau DMZ %d";
 "mw4.ui.hajin.rewards" = "Récompenses";
+"mw4.ui.hajin.needs" = "Il faut";
 "mw4.ui.hajin.can_print" = "Imprimable";
 "mw4.ui.hajin.can_print_title" = "Vous pouvez l'imprimer";
 "mw4.ui.hajin.can_print_detail" = "Votre réserve a tout ce qu'il faut.";

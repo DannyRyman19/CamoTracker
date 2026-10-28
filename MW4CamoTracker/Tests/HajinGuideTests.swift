@@ -117,4 +117,19 @@ struct HajinGuideTests {
         #expect(store.isTracked("stash-weapon-upgrade-i"))
         #expect(store.checked.contains("upgrade-stash-weapon-upgrade-i"))
     }
+
+    @Test func unfinishedOrdersKeepWhatTheyPrintWith() throws {
+        let guide = try #require(DataService().loadSeedGuide(name: "hajin"))
+        let reactive = try #require(guide.item("reactive-metals"))
+        // Page 10's Healer: 3 to extract plus the Armor Box's 3
+        let open = HajinVerdict(item: reactive, guide: guide, done: [])
+        #expect(open.kind == .keep)
+        #expect(open.orders.first { $0.order.check == "op-page-10-healer" }?.qty == 6)
+        // Every order ticked: nothing left to hold for
+        let ticks = Set(guide.guide.first { $0.id == "ops" }?.rows.compactMap(\.check) ?? [])
+        #expect(guide.orderNeeds(done: ticks).isEmpty)
+        #expect(HajinVerdict(item: reactive, guide: guide, done: ticks).orders.isEmpty)
+        // Manuals and dog tags have to be found in the match, so never held
+        #expect(!guide.orderNeeds(done: []).contains { $0.item == "weapon-manual" || $0.item.contains("dog-tag") })
+    }
 }
