@@ -436,7 +436,15 @@ struct HajinPostMatchReview: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("mw4.ui.hajin.cancel".localized()) { dismiss(); onDone?() }
+                    // Over the framing screen: back to it, to fix the frame
+                    // and read again (Cancel there ends the scan)
+                    if photo != nil {
+                        Button { dismiss() } label: {
+                            Label("mw4.ui.hajin.back".localized(), systemImage: "chevron.left").labelStyle(.titleAndIcon)
+                        }
+                    } else {
+                        Button("mw4.ui.hajin.cancel".localized()) { dismiss(); onDone?() }
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("mw4.ui.hajin.scan_apply".localized()) { apply(kept, blueprints: ticked, sold: total) }
