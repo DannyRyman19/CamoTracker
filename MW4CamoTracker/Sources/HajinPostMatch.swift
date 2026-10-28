@@ -124,21 +124,26 @@ enum HajinBackpack {
     static func read(_ image: CGImage, corners: [CGPoint], lines: [HajinStashScanner.Line], known guide: HajinGuide?) -> HajinPostMatchResult {
         let size = CGSize(width: image.width, height: image.height)
         let blueprints = Set((guide?.items ?? []).filter { $0.blueprint == true }.map(\.id))
-        var tiles = HajinStashGrid.read(image, corners: corners, rows: rows(for: corners, size: size), columns: columns, blueprints: blueprints)
+        let gridRows = rows(for: corners, size: size)
+        let secureCorners = secureRow(corners, lines: lines, size: size)
+        // Each tile with where it is on the photo, for the review to light up
+        var tiles = HajinStashGrid.read(image, corners: corners, rows: gridRows, columns: columns, blueprints: blueprints)
+            .map { ($0, quad(corners, row: $0.row, column: $0.column, rows: gridRows)) }
         // The secure row, read where it is rather than fitted to lines: the
         // SECURE SLOTS label's box looks like another row
-        let secure = HajinStashGrid.read(image, corners: secureRow(corners, lines: lines, size: size), rows: 1, columns: columns,
+        let secure = HajinStashGrid.read(image, corners: secureCorners, rows: 1, columns: columns,
                                          blueprints: blueprints, fitBorders: false)
         // A free secure slot shows a grey shield, which a weak read takes
         // for a Riot Shield
         tiles += secure.filter { !($0.id == "riot-shield" && $0.confidence < 0.7) }
+            .map { ($0, quad(secureCorners, row: 0, column: $0.column, rows: 1)) }
         var result = HajinPostMatchResult()
-        for t in tiles {
+        for (t, place) in tiles {
             switch t.id {
             case "empty": continue
             case "blueprint":
                 if let picture = t.image {
-                    result.blueprints.append(.init(image: picture, guess: t.guess, sure: t.guessConfidence >= 0.6))
+                    result.blueprints.append(.init(image: picture, guess: t.guess, sure: t.guessConfidence >= 0.6, place: place))
                 }
                 continue
             case "weapon-manual": result.manuals += 1; continue
@@ -153,10 +158,24 @@ enum HajinBackpack {
             // left out rather than offered as something it isn't
             guard t.id != "other", t.confidence >= 0.3, guide?.item(id) != nil else { result.unread += 1; continue }
             result.counts[id, default: 0] += t.count ?? 1
+            result.places[id, default: []].append(place)
             if t.count == nil || t.confidence < 0.5 { result.unsure.insert(id) }
         }
         result.resources = resources(lines)
         return result
+    }
+
+    /// One tile's four corners (TL, TR, BR, BL) inside a framed grid, as
+    /// fractions of the photo.
+    static func quad(_ k: [CGPoint], row: Int, column: Int, rows: Int) -> [CGPoint] {
+        func at(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
+            let top = CGPoint(x: k[0].x + (k[1].x - k[0].x) * u, y: k[0].y + (k[1].y - k[0].y) * u)
+            let bottom = CGPoint(x: k[3].x + (k[2].x - k[3].x) * u, y: k[3].y + (k[2].y - k[3].y) * u)
+            return CGPoint(x: top.x + (bottom.x - top.x) * v, y: top.y + (bottom.y - top.y) * v)
+        }
+        let u0 = CGFloat(column) / CGFloat(columns), u1 = CGFloat(column + 1) / CGFloat(columns)
+        let v0 = CGFloat(row) / CGFloat(max(rows, 1)), v1 = CGFloat(row + 1) / CGFloat(max(rows, 1))
+        return [at(u0, v0), at(u1, v0), at(u1, v1), at(u0, v1)]
     }
 
     /// Never reaches the stash: armor plates, dog tags, Lieutenant tag cases.
@@ -170,6 +189,9 @@ struct HajinPostMatchResult: Identifiable {
     var counts: [String: Int] = [:]
     var unsure: Set<String> = []
     var resources: [String: Int] = [:]
+    /// Where each item's tiles are on the photo (four corners each, as
+    /// fractions), for the review to light up
+    var places: [String: [[CGPoint]]] = [:]
 
     /// A blueprint tile, as read: the picture, and the model's guess at it.
     struct Blueprint: Identifiable {
@@ -178,6 +200,8 @@ struct HajinPostMatchResult: Identifiable {
         let guess: String?
         /// Sure enough to start ticked
         let sure: Bool
+        /// Its tile on the photo
+        var place: [CGPoint]? = nil
     }
     var blueprints: [Blueprint] = []
     /// Weapon manuals read
@@ -194,6 +218,7 @@ struct HajinPostMatchResult: Identifiable {
                     "control-unit": 1, "regional-combat-notes": 6, "rigid-synthetics": 6, "stim": 2, "cpu": 1, "encrypted-archive": 7,
                     "sanctioned-assassination-list": 1, "binding-catalyst": 1, "cipher-code-ledger": 2, "infantry-invasion-plans": 2]
         r.unsure = ["electronic-sensors"]
+        r.places = ["ballistic-flight-logs": [HajinBackpack.quad([CGPoint(x: 0.1, y: 0.15), CGPoint(x: 0.85, y: 0.15), CGPoint(x: 0.85, y: 0.6), CGPoint(x: 0.1, y: 0.6)], row: 0, column: 0, rows: 2)]]
         r.resources = ["synthetics": 43, "electronics": 10, "chemicals": 29, "metals": 80]
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 60, height: 60))
         let blue = renderer.image { ctx in UIColor(red: 0.1, green: 0.35, blue: 0.85, alpha: 1).setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 60, height: 60)) }.cgImage!
@@ -213,7 +238,22 @@ struct HajinPostMatchResult: Identifiable {
 struct HajinPostMatchReview: View {
     let result: HajinPostMatchResult
     var onDone: (() -> Void)? = nil
+    /// The backpack photo, over the list (beside it on a wide screen held
+    /// sideways): tap an item to light its tiles
+    var photo: UIImage? = nil
     @EnvironmentObject private var store: HajinStore
+    /// What was read, with the player's swaps applied
+    @State private var counts: [String: Int]
+    @State private var unsure: Set<String>
+    /// Each item's tiles on the photo, swaps applied
+    @State private var places: [String: [[CGPoint]]]
+    /// Items a misread was swapped to
+    @State private var swapped: Set<String> = []
+    /// The row whose item is being swapped
+    @State private var swapping: HajinGuide.Item?
+    /// The item (or "bp:" and a blueprint's id) lit on the photo
+    @State private var highlighted: String?
+    @State private var size: CGSize = .zero
     @Environment(\.dismiss) private var dismiss
     /// Rows the player has switched away from the suggestion
     @State private var flipped: Set<String> = []
@@ -225,6 +265,15 @@ struct HajinPostMatchReview: View {
     /// Which blueprint each blueprint tile is, as picked (nil: not ticked)
     @State private var picked: [UUID: String] = [:]
     @State private var pickedReady = false
+
+    init(result: HajinPostMatchResult, onDone: (() -> Void)? = nil, photo: UIImage? = nil) {
+        self.result = result
+        self.onDone = onDone
+        self.photo = photo
+        _counts = State(initialValue: result.counts)
+        _unsure = State(initialValue: result.unsure)
+        _places = State(initialValue: result.places)
+    }
 
     private struct Row {
         let item: HajinGuide.Item
@@ -240,7 +289,7 @@ struct HajinPostMatchReview: View {
         guard let guide = store.guide else { return [] }
         let need = store.keepNeeds()
         var out: [Row] = []
-        for (id, read) in result.counts where !removed.contains(id) {
+        for (id, read) in counts where !removed.contains(id) {
             guard let item = guide.item(id), HajinStore.inStash(item), item.kind != "Resource" else { continue }
             let count = edited[id] ?? read
             let short = max(0, (need[id] ?? 0) - store.count(of: id))
@@ -257,7 +306,7 @@ struct HajinPostMatchReview: View {
     /// Everything else read: gear, keys and the like, which My stash doesn't count.
     private var gear: [(item: HajinGuide.Item, count: Int)] {
         guard let guide = store.guide else { return [] }
-        return result.counts.compactMap { id, n in
+        return counts.compactMap { id, n in
             guard !removed.contains(id), let item = guide.item(id), !HajinStore.inStash(item) else { return nil }
             return (item, edited[id] ?? n)
         }
@@ -311,11 +360,14 @@ struct HajinPostMatchReview: View {
                     Section("mw4.ui.postmatch.gear".localized()) {
                         ForEach(gear, id: \.item.id) { line in
                             HStack(spacing: 12) {
-                                HajinItemTile(item: line.item, size: 32)
+                                findableTile(line.item, size: 32)
                                 Text(line.item.name.resolved).font(.subheadline).foregroundStyle(Color.appInk)
                                 Spacer()
                                 Text("×\(line.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
                             }
+                            .contentShape(Rectangle())
+                            .onTapGesture { light(line.item.id) }
+                            .listRowBackground(highlighted == line.item.id ? Color.accentDMZ.opacity(0.14) : nil)
                             .swipeActions {
                                 Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(line.item.id) }
                             }
@@ -339,6 +391,19 @@ struct HajinPostMatchReview: View {
                 }
                 Button("mw4.ui.hajin.cancel".localized(), role: .cancel) { editing = nil }
             }
+            // The photo over the list, to compare (beside it on a wide
+            // screen held sideways)
+            .modifier(HajinPhotoBeside(size: size) {
+                if let photo {
+                    HajinZoomPhoto(image: photo, marks: highlighted.map(marks) ?? [])
+                }
+            })
+            .sheet(item: $swapping) { item in
+                HajinItemPicker(current: item) { picked in
+                    swap(item.id, to: picked)
+                    swapping = nil
+                }
+            }
             .navigationTitle("mw4.ui.postmatch.title".localized())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -357,9 +422,67 @@ struct HajinPostMatchReview: View {
                 for blueprint in result.blueprints where blueprint.sure {
                     if let guess = blueprint.guess { picked[blueprint.id] = guess }
                 }
+                // Start with the first item that can be found on the photo lit
+                if photo != nil { highlighted = all.first { places[$0.item.id] != nil }?.item.id }
             }
         }
+        .background(GeometryReader { geo in
+            Color.clear
+                .onAppear { size = geo.size }
+                .onChange(of: geo.size) { size = $0 }
+        })
         .presentationDetents([.large])
+        // With the photo: a drag on the list scrolls it, never moves the sheet
+        .modifier(HajinScrollsNotSheet(on: photo != nil))
+    }
+
+    /// Where a lit row's tiles are on the photo.
+    private func marks(_ key: String) -> [[CGPoint]] {
+        guard photo != nil else { return [] }
+        if key.hasPrefix("bp:") {
+            return result.blueprints.first { "bp:\($0.id)" == key }?.place.map { [$0] } ?? []
+        }
+        return places[key] ?? []
+    }
+
+    /// Lights a row's tiles on the photo, or puts them out.
+    private func light(_ key: String) {
+        guard !marks(key).isEmpty else { return }
+        Haptics.step()
+        withAnimation(.snappy) { highlighted = highlighted == key ? nil : key }
+    }
+
+    /// The item's picture, with a viewfinder badge when its tiles can be
+    /// lit on the photo.
+    private func findableTile(_ item: HajinGuide.Item, size: CGFloat) -> some View {
+        HajinItemTile(item: item, size: size)
+            .overlay(alignment: .bottomTrailing) {
+                if !marks(item.id).isEmpty {
+                    Image(systemName: "viewfinder")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(2)
+                        .background(Circle().fill(highlighted == item.id ? Color.accentDMZ : Color.black.opacity(0.6)))
+                        .offset(x: 4, y: 4)
+                }
+            }
+    }
+
+    /// Everything read as `id` is really `to`: its count, tiles and any
+    /// edit move over, and it's no longer one to check.
+    private func swap(_ id: String, to: String) {
+        Haptics.step()
+        counts[to, default: 0] += counts[id] ?? 0
+        counts[id] = nil
+        places[to, default: []] += places[id] ?? []
+        places[id] = nil
+        if let n = edited[id] { edited[to] = (edited[to] ?? 0) + n; edited[id] = nil }
+        unsure.remove(id)
+        removed.remove(to)
+        flipped = flipped.filter { !$0.hasPrefix(id + "#") }
+        swapped.remove(id)
+        swapped.insert(to)
+        if highlighted == id { highlighted = to }
     }
 
     /// "Sell 6 · $41,200": the sell pile at a glance.
@@ -401,12 +524,14 @@ struct HajinPostMatchReview: View {
     }
 
     private func itemRow(_ row: Row) -> some View {
-        let unsure = result.unsure.contains(row.item.id) && edited[row.item.id] == nil
+        let check = unsure.contains(row.item.id) && edited[row.item.id] == nil
+        let wasSwapped = swapped.contains(row.item.id)
         return HStack(spacing: 12) {
-            HajinItemTile(item: row.item, size: 40)
+            HStack(spacing: 12) {
+            findableTile(row.item, size: 40)
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 6) {
-                    Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk).lineLimit(1)
+                    Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk).lineLimit(2)
                     Text("×\(row.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
                 }
                 HStack(spacing: 6) {
@@ -417,24 +542,42 @@ struct HajinPostMatchReview: View {
                     if let value = row.item.value, value > 0 {
                         Text("$\((value * row.count).formatted())").font(.caption2).foregroundStyle(Color.appInkMuted)
                     }
-                    if unsure {
+                    if wasSwapped {
+                        Label("mw4.ui.hajin.scan_swapped".localized(), systemImage: "arrow.left.arrow.right")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                    } else if check {
                         Text("mw4.ui.hajin.scan_check".localized().uppercased())
                             .font(.system(size: 10, weight: .bold)).tracking(0.6)
                             .foregroundStyle(Color(red: 0.96, green: 0.66, blue: 0.24))
                     }
                 }
+                // Read off the photo's tiles: wrong item? pick the right one
+                if photo != nil {
+                    Button { swapping = row.item } label: {
+                        Text("mw4.ui.hajin.scan_not_this".localized())
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.accentDMZ)
+                    }
+                    .buttonStyle(.borderless)
+                }
             }
             Spacer(minLength: 6)
+            }
+            // Tap the item to see its tiles on the photo
+            .contentShape(Rectangle())
+            .onTapGesture { light(row.item.id) }
             soldKeep(row)
         }
+        .listRowBackground(highlighted == row.item.id ? Color.accentDMZ.opacity(0.14) : nil)
         .contextMenu {
-            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(edited[row.item.id] ?? result.counts[row.item.id] ?? row.count)"; editing = row.item }
+            Button("mw4.ui.hajin.scan_edit".localized()) { editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item }
             Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(row.item.id) }
         }
         .swipeActions {
             Button("mw4.ui.postmatch.remove".localized(), role: .destructive) { removed.insert(row.item.id) }
             Button("mw4.ui.hajin.scan_edit".localized()) {
-                editText = "\(edited[row.item.id] ?? result.counts[row.item.id] ?? row.count)"; editing = row.item
+                editText = "\(edited[row.item.id] ?? counts[row.item.id] ?? row.count)"; editing = row.item
             }
             .tint(.accentDMZ)
         }
@@ -478,6 +621,9 @@ struct HajinPostMatchReview: View {
                 .resizable()
                 .frame(width: 44, height: 44)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                .overlay(RoundedRectangle(cornerRadius: 6).strokeBorder(Color.accentDMZ, lineWidth: highlighted == "bp:\(blueprint.id)" ? 2 : 0))
+                // Tap the tile to see it on the photo
+                .onTapGesture { light("bp:\(blueprint.id)") }
             Menu {
                 if let guess = blueprint.guess, let guessed = store.guide?.item(guess) {
                     Button { picked[blueprint.id] = guess } label: {

@@ -1178,8 +1178,14 @@ struct HajinStashGridFrameView: View {
                     ZStack(alignment: .topLeading) {
                         Image(uiImage: image).resizable().frame(width: fit.width, height: fit.height)
                         // Finding the grid, then reading it: the scan sweeps the photo
-                        if state.finding || state.reading {
+                        // Finding the grid: the scan sweeps the whole photo.
+                        // Reading it: the framed tiles light up one by one
+                        if state.finding {
                             HajinGridScanning(size: fit)
+                                .transition(.opacity)
+                        } else if state.reading {
+                            HajinGridReading(size: fit, corners: state.corners, columns: state.columns,
+                                             rows: state.rowCount ?? HajinStashGrid.rows(for: state.corners, size: image.size, columns: state.columns))
                                 .transition(.opacity)
                         }
                         overlay(fit)
@@ -1287,9 +1293,9 @@ struct HajinStashGridFrameView: View {
                                      sureness: r.sureness, stacks: r.stacks, report: r.report, onDone: { dismiss() },
                                      photo: image)
             })
-            .sheet(item: $state.postMatchResult) { r in
-                HajinPostMatchReview(result: r, onDone: { dismiss() })
-            }
+            .modifier(HajinReviewCover(item: $state.postMatchResult, regular: sizeClass == .regular) { r in
+                HajinPostMatchReview(result: r, onDone: { dismiss() }, photo: image)
+            })
             .photosPicker(isPresented: $picking, selection: $newPick, matching: .images)
             .onChange(of: newPick) { chosen in
                 guard let chosen else { return }
@@ -1318,7 +1324,9 @@ struct HajinStashGridFrameView: View {
             }
             .overlay(alignment: .bottom) {
                 if state.finding || state.reading {
-                    Label((state.reading ? "mw4.ui.hajin.grid_reading" : "mw4.ui.hajin.grid_finding").localized(), systemImage: "viewfinder")
+                    Label((state.reading ? (state.postMatch ? "mw4.ui.hajin.grid_reading_backpack" : "mw4.ui.hajin.grid_reading")
+                                         : "mw4.ui.hajin.grid_finding").localized(),
+                          systemImage: state.reading ? "square.grid.3x3" : "viewfinder")
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 14).padding(.vertical, 8)
                         .background(Capsule().fill(Color.appSurface2))
@@ -1518,6 +1526,71 @@ struct HajinStashGridFrameView: View {
 /// Over the photo while the grid is being found: the photo dims, a scan
 /// line sweeps down and back, crosshair marks light up as it passes, and
 /// viewfinder brackets breathe at the corners.
+/// Reading the framed grid: everything outside it dimmed, and its tiles
+/// lit one at a time in reading order (across, then down), the ones done
+/// left faintly ticked, round and round until the read is back.
+struct HajinGridReading: View {
+    let size: CGSize
+    /// TL, TR, BR, BL, as fractions of the photo
+    let corners: [CGPoint]
+    let columns: Int
+    let rows: Int
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// Seconds per tile
+    private static let step = 0.07
+
+    var body: some View {
+        TimelineView(.animation(paused: reduceMotion)) { context in
+            let cells = max(columns * max(rows, 1), 1)
+            let t = context.date.timeIntervalSinceReferenceDate / Self.step
+            // A short pause on the full grid before going round again
+            let cycle = Double(cells + 6)
+            let at = reduceMotion ? Double(cells) : t.truncatingRemainder(dividingBy: cycle)
+            Canvas { ctx, canvas in
+                func point(_ u: CGFloat, _ v: CGFloat) -> CGPoint {
+                    let k = corners
+                    let top = CGPoint(x: k[0].x + (k[1].x - k[0].x) * u, y: k[0].y + (k[1].y - k[0].y) * u)
+                    let bottom = CGPoint(x: k[3].x + (k[2].x - k[3].x) * u, y: k[3].y + (k[2].y - k[3].y) * u)
+                    return CGPoint(x: (top.x + (bottom.x - top.x) * v) * canvas.width, y: (top.y + (bottom.y - top.y) * v) * canvas.height)
+                }
+                func cell(_ r: Int, _ c: Int, inset: CGFloat) -> Path {
+                    let u0 = (CGFloat(c) + inset) / CGFloat(columns), u1 = (CGFloat(c + 1) - inset) / CGFloat(columns)
+                    let v0 = (CGFloat(r) + inset) / CGFloat(rows), v1 = (CGFloat(r + 1) - inset) / CGFloat(rows)
+                    var p = Path()
+                    p.move(to: point(u0, v0)); p.addLine(to: point(u1, v0)); p.addLine(to: point(u1, v1)); p.addLine(to: point(u0, v1))
+                    p.closeSubpath()
+                    return p
+                }
+                guard corners.count == 4 else { return }
+                // Dim all but the grid
+                var grid = Path()
+                grid.move(to: point(0, 0)); grid.addLine(to: point(1, 0)); grid.addLine(to: point(1, 1)); grid.addLine(to: point(0, 1)); grid.closeSubpath()
+                var outside = Path(CGRect(origin: .zero, size: canvas))
+                outside.addPath(grid)
+                ctx.fill(outside, with: .color(.black.opacity(0.55)), style: FillStyle(eoFill: true))
+                ctx.stroke(grid, with: .color(Color.accentDMZ.opacity(0.8)), lineWidth: 1.5)
+                let current = Int(at)
+                for i in 0..<cells {
+                    let r = i / columns, c = i % columns
+                    if i < current {
+                        // Read: a faint fill
+                        ctx.fill(cell(r, c, inset: 0.08), with: .color(Color.accentDMZ.opacity(0.18)))
+                    } else if i == current {
+                        // Being read: bright, with a glow
+                        let p = cell(r, c, inset: 0.04)
+                        ctx.fill(p, with: .color(Color.accentDMZ.opacity(0.35)))
+                        var glow = ctx
+                        glow.addFilter(.shadow(color: Color.accentDMZ, radius: 8))
+                        glow.stroke(p, with: .color(.white), lineWidth: 2)
+                    }
+                }
+            }
+        }
+        .frame(width: size.width, height: size.height)
+        .allowsHitTesting(false)
+    }
+}
+
 struct HajinGridScanning: View {
     let size: CGSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
