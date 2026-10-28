@@ -881,21 +881,50 @@ private struct CompactLevelRow: View {
     /// With a single stage (MW4's Prestige Master) there's nothing to count:
     /// no pips and no "None yet", just a Prestige button, then the stage's
     /// name once the weapon is in it.
-    private var prestigeLine: some View {
+    @ViewBuilder private var prestigeLine: some View {
+        if stageCount == 1 { singlePrestigeLine } else { stagedPrestigeLine }
+    }
+
+    /// One prestige stage. Once it's done the level line already says so
+    /// (its name replaces Weapon Unlocks), so all that's left is undo; until
+    /// then, what it takes, or the button once it's ready.
+    @ViewBuilder private var singlePrestigeLine: some View {
+        if prestige > 0 {
+            Button {
+                withAnimation(.snappy) { viewModel.prestigeDown(weapon) }
+            } label: {
+                Label("mw4.ui.prestige.undo".localized(), systemImage: "arrow.uturn.backward")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            .buttonStyle(.plain)
+        } else if viewModel.canPrestige(weapon) {
+            Button {
+                withAnimation(.snappy) { viewModel.prestigeUp(weapon) }
+            } label: {
+                Label("mw4.ui.prestige".localized(), systemImage: "chevron.up.2")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(Color.appBackground)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 38)
+                    .background(Capsule().fill(mode.accent))
+            }
+            .buttonStyle(.plain)
+        } else {
+            HStack(spacing: 6) {
+                Image(systemName: "lock.fill").font(.system(size: 10, weight: .bold))
+                Text(countsUnlocks ? String(format: "mw4.ui.prestige.hint_unlocks".localized(), shownMax)
+                                   : String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
+                    .font(.system(size: 12, weight: .semibold))
+            }
+            .foregroundStyle(Color.appInkMuted)
+        }
+    }
+
+    private var stagedPrestigeLine: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 5) {
-                    if stageCount == 1 {
-                        // One stage: where the weapon stands, and the button
-                        // beside it says Prestige (not a label saying it too)
-                        Text(prestige > 0 ? "mw4.ui.prestige.done".localized()
-                             : viewModel.canPrestige(weapon) ? "mw4.ui.prestige.ready".localized()
-                             : countsUnlocks ? String(format: "mw4.ui.prestige.hint_unlocks".localized(), shownMax)
-                             : String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(prestige > 0 || viewModel.canPrestige(weapon) ? mode.accent : Color.appInkMuted)
-                            .fixedSize(horizontal: false, vertical: true)
-                    } else {
                     Text("mw4.ui.prestige".localized())
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(Color.appInkMuted)
@@ -918,7 +947,6 @@ private struct CompactLevelRow: View {
                             .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
-                    }
                     }
                 }
 
@@ -965,7 +993,7 @@ private struct CompactLevelRow: View {
                         .foregroundStyle(mode.accent)
                 }
             }
-            if stageCount > 1, prestige < stageCount, level < maxLevel {
+            if prestige < stageCount, level < maxLevel {
                 Text(countsUnlocks ? String(format: "mw4.ui.prestige.hint_unlocks".localized(), shownMax)
                                    : String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
                     .font(.system(size: 11))
