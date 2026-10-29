@@ -1,6 +1,6 @@
 {
- "version": "0.9.43",
- "updated": "2026-10-28",
+ "version": "0.9.44",
+ "updated": "2026-10-29",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5387,12 +5387,14 @@
     },
     {
      "title": "Blackmarket Weapons Locker",
-     "subtitle": "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet",
+     "value": "C2",
+     "subtitle": "Rare. The green weapons locker in the shop stockroom at Hanrim Village: go behind the counter and through the green double doors. Comes in DMZ level reward kits (level 46 Recon Equipment Kit)",
      "item": "blackmarket-weapons-locker"
     },
     {
      "title": "Underground Propaganda Store Room",
-     "subtitle": "Rare. Where its door is isn't known yet",
+     "value": "B7",
+     "subtitle": "Rare. Reported to open the store room under the Re-Education Center, Deadtown. The exact entrance isn't known yet",
      "item": "underground-propaganda-store-room"
     },
     {
@@ -5451,7 +5453,8 @@
     },
     {
      "title": "The Citadel South Wing",
-     "subtitle": "Uncommon. The Citadel's South Wing, 14th Political Prison",
+     "value": "B3",
+     "subtitle": "Uncommon. The outside door of the Citadel's South Wing, 14th Political Prison. The cell keypad inside is a separate puzzle. A player found the key on a prison guard",
      "item": "the-citadel-south-wing"
     },
     {
@@ -5514,7 +5517,8 @@
     },
     {
      "title": "Mill Explosives Lab",
-     "subtitle": "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+     "value": "D8",
+     "subtitle": "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. The exact doorway isn't known yet",
      "item": "mill-explosives-lab"
     },
     {
@@ -5571,6 +5575,7 @@
     },
     {
      "title": "Hanwoori Art Records Room",
+     "value": "G7",
      "subtitle": "Rare. The ground-floor records room of the Hanwoori Design Complex, The Grid",
      "item": "hanwoori-art-records-room"
     },
@@ -5588,6 +5593,7 @@
     },
     {
      "title": "The Citadel Main Control Room",
+     "value": "B3",
      "subtitle": "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence",
      "item": "the-citadel-main-control-room"
     },
@@ -5598,7 +5604,14 @@
      "item": "the-citadel-secondary-control-room"
     },
     {
+     "title": "Kang's Arms Incinerator",
+     "value": "B3",
+     "subtitle": "Legendary. Reported to open the fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. B3 is a search square, not an exact door. Where to get the key isn't known yet",
+     "item": "kangs-arms-incinerator"
+    },
+    {
      "title": "South Block Armory",
+     "value": "B3",
      "subtitle": "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter",
      "item": "south-block-armory"
     }
@@ -8148,7 +8161,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Comes in DMZ level reward kits. Where its door is isn't known yet",
+   "note": "The green weapons locker in the shop stockroom at Hanrim Village: go behind the counter and through the green double doors. Comes in DMZ level reward kits (level 46 Recon Equipment Kit)",
+   "grid": "C2",
    "marker": "k-blackmarket-weapons-locker-2",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
@@ -9152,6 +9166,7 @@
    "symbol": "key.fill",
    "rarity": "Rare",
    "note": "The ground-floor records room of the Hanwoori Design Complex, The Grid",
+   "grid": "G7",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
    "found": "Loot containers around Hajin"
@@ -9356,6 +9371,17 @@
    "kind": "Other",
    "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones",
    "symbol": "cube.fill"
+  },
+  {
+   "id": "kangs-arms-incinerator",
+   "name": "Kang's Arms Incinerator",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "Reported to open the fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. B3 is a search square, not an exact door. Where to get the key isn't known yet",
+   "grid": "B3",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "large-backpack",
@@ -9718,7 +9744,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+   "note": "The Explosives Lab in the Rice Mill, Imjin Farmland. The exact doorway isn't known yet",
+   "grid": "D8",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1",
    "found": "Rice Mill control-room desk",
@@ -10685,6 +10712,7 @@
    "symbol": "key.fill",
    "rarity": "Legendary",
    "note": "An armory in the Citadel. Players have found the key on the main control room's counter",
+   "grid": "B3",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1",
    "found": "Citadel main control-room counter"
@@ -11044,6 +11072,7 @@
    "symbol": "key.fill",
    "rarity": "Uncommon",
    "note": "The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence",
+   "grid": "B3",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1",
    "found": "Citadel East Wing K9 terminal"
@@ -11067,7 +11096,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "The Citadel's South Wing, 14th Political Prison",
+   "note": "The outside door of the Citadel's South Wing, 14th Political Prison. The cell keypad inside is a separate puzzle. A player found the key on a prison guard",
+   "grid": "B3",
    "marker": "k-citadel-south",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1",
@@ -11266,7 +11296,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Where its door is isn't known yet",
+   "note": "Reported to open the store room under the Re-Education Center, Deadtown. The exact entrance isn't known yet",
+   "grid": "B7",
    "marker": "k-underground-propaganda-store-room",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
