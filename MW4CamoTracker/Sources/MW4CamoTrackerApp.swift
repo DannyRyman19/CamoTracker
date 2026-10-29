@@ -20,8 +20,10 @@ struct MW4CamoTrackerApp: App {
         WindowGroup {
             ContentView()
                 .screenshotWidth()
-                .environmentObject(viewModel)
+                // The scanner sits outside the tabs, so it's given both too
+                // (the Gunsmith list it opens reads the weapons)
                 .hajinScanHost()
+                .environmentObject(viewModel)
                 .environmentObject(hajin)
                 .preferredColorScheme(.dark)
                 .task {
