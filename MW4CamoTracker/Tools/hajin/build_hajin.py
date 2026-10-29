@@ -42,8 +42,10 @@ CATS = [
     ("vehicle", "Vehicle Sightings", "car.fill", "#D0B3FF", ["vehicle-sightings"], False),
     ("silo", "Silos", "cylinder.fill", "#8E8C99", ["silos"], False),
     ("chem", "Chemical Storage", "flask.fill", "#5EEAD4", [], True),
+    ("ember", "Fallen Ember Safes", "lock.square.fill", "#FF7A45", [], False),
 ]
 CAT_BLURB = {
+    "ember": "A safe run during Operation Fallen Ember (Story Missions), numbered in route order from the reactor gate round to the west. A filled number is always a safe; an outlined one only sometimes. Route by Lulla & Bbreadman.",
     "fortress": "A Fortress: a heavily guarded stronghold with tougher enemies and better loot.",
     "compound": "An enemy Compound: a fortified military position inside a normal building, with a guard force and loot to match.",
     "lieutenant": "Climb a Lieutenant Hunt tower to reveal the nearest Lieutenant boss on your map.",
@@ -229,6 +231,39 @@ CHEMICAL_STORAGE = [
     ("Wolves Stadium", 2258, 2792), ("Haneul Nuclear Reactor (Reactor 01)", 2878, 1921),
     ("Haneul Nuclear Reactor (Reactor 02)", 2878, 1921),
 ]
+# The Operation Fallen Ember safe route (Lulla & Bbreadman's route map, sent
+# by the user 2026-10-29), fitted onto ours from the safes both maps share.
+# (stop, where, always a safe)
+EMBER_SAFES = [
+    (1, 0.7684, 0.5363, "Left tent", "Inside the left tent, on its left side", True),
+    (2, 0.7495, 0.6954, "Staff room", "The staff room", False),
+    (3, 0.8170, 0.7001, "Bank, east", "Solve the bank puzzle: two safes in the vault", True),
+    (4, 0.8170, 0.7063, "Bank, east", "Solve the bank puzzle: two safes in the vault", True),
+    (5, 0.6768, 0.8007, "Parkour building", "Take the parkour route up the left building and cross the bridge; the safe is on the other building's roof", True),
+    (6, 0.6740, 0.7894, "Parking garage", "Down in the parking garage", True),
+    (7, 0.6480, 0.7360, "Bank, central", "Solve the bank puzzle: two safes in the vault", True),
+    (8, 0.6537, 0.7370, "Bank, central", "Solve the bank puzzle: two safes in the vault", True),
+    (9, 0.5866, 0.8087, "Bank, southwest", "Solve the bank puzzle: two safes in the vault", True),
+    (10, 0.5914, 0.8064, "Bank, southwest", "Solve the bank puzzle: two safes in the vault", True),
+    (11, 0.5947, 0.8120, "Bank, southwest", "A third one in the bank, no puzzle needed", False),
+    (12, 0.5139, 0.8555, "Southern compound", "The compound tower", True),
+    (13, 0.4474, 0.7894, "Western compound", "First floor of the compound building", True),
+    (14, 0.4417, 0.7875, "Western compound", "The compound's second floor", False),
+    (15, 0.4922, 0.6907, "Array, east", "Top floor of the array building", True),
+    (16, 0.4837, 0.6888, "Array, middle", "Top floor of the array building", True),
+    (17, 0.4719, 0.6714, "Array, northwest", "First floor of the array building", True),
+    (18, 0.4436, 0.6005, "House", "The house", False),
+    (19, 0.5238, 0.4830, "Bank, north", "Solve the bank puzzle: two safes in the vault", True),
+    (20, 0.5290, 0.4830, "Bank, north", "Solve the bank puzzle: two safes in the vault", True),
+    (21, 0.3572, 0.5038, "Riverside compound", "First floor of the compound building", True),
+    (22, 0.3534, 0.5014, "Riverside compound", "The compound's top floor", False),
+    (23, 0.1240, 0.4693, "Final compound, west", "Top floor of the compound building", True),
+]
+for n, x, y, name, where, sure in EMBER_SAFES:
+    markers.append({"id": f"ember-{n}", "cat": "ember", "name": f"{n}. {name}", "x": x, "y": y,
+                    "symbol": f"{n}.circle.fill" if sure else f"{n}.circle",
+                    "note": where + "." + ("" if sure else " Only sometimes a safe.")})
+
 for name, px, py in CHEMICAL_STORAGE:
     markers.append({"id": "chem-" + re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), "cat": "chem", "name": name,
                     "x": round((px - CROP[0]) / CROP[2], 4), "y": round((py - CROP[1]) / CROP[2], 4)})
@@ -463,7 +498,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.46", "updated": "2026-10-29",
+data = {"version": "0.9.47", "updated": "2026-10-29",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

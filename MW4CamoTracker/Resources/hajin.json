@@ -1,5 +1,5 @@
 {
- "version": "0.9.46",
+ "version": "0.9.47",
  "updated": "2026-10-29",
  "map": {
   "image": "hajin_map",
@@ -242,6 +242,14 @@
    "color": "#5EEAD4",
    "visible": true,
    "blurb": "A chemical storage locker."
+  },
+  {
+   "id": "ember",
+   "name": "Fallen Ember Safes",
+   "symbol": "lock.square.fill",
+   "color": "#FF7A45",
+   "visible": false,
+   "blurb": "A safe run during Operation Fallen Ember (Story Missions), numbered in route order from the reactor gate round to the west. A filled number is always a safe; an outlined one only sometimes. Route by Lulla & Bbreadman."
   }
  ],
  "markers": [
@@ -3094,6 +3102,213 @@
    "x": 0.7032,
    "y": 0.6455,
    "note": "Commander. A huge drone that roams over The Grid and NuriGO Mall and shows on your Tac Map. A captured SAM site can shoot it down."
+  },
+  {
+   "id": "ember-1",
+   "cat": "ember",
+   "name": "1. Left tent",
+   "x": 0.7684,
+   "y": 0.5363,
+   "symbol": "1.circle.fill",
+   "note": "Inside the left tent, on its left side."
+  },
+  {
+   "id": "ember-2",
+   "cat": "ember",
+   "name": "2. Staff room",
+   "x": 0.7495,
+   "y": 0.6954,
+   "symbol": "2.circle",
+   "note": "The staff room. Only sometimes a safe."
+  },
+  {
+   "id": "ember-3",
+   "cat": "ember",
+   "name": "3. Bank, east",
+   "x": 0.817,
+   "y": 0.7001,
+   "symbol": "3.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-4",
+   "cat": "ember",
+   "name": "4. Bank, east",
+   "x": 0.817,
+   "y": 0.7063,
+   "symbol": "4.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-5",
+   "cat": "ember",
+   "name": "5. Parkour building",
+   "x": 0.6768,
+   "y": 0.8007,
+   "symbol": "5.circle.fill",
+   "note": "Take the parkour route up the left building and cross the bridge; the safe is on the other building's roof."
+  },
+  {
+   "id": "ember-6",
+   "cat": "ember",
+   "name": "6. Parking garage",
+   "x": 0.674,
+   "y": 0.7894,
+   "symbol": "6.circle.fill",
+   "note": "Down in the parking garage."
+  },
+  {
+   "id": "ember-7",
+   "cat": "ember",
+   "name": "7. Bank, central",
+   "x": 0.648,
+   "y": 0.736,
+   "symbol": "7.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-8",
+   "cat": "ember",
+   "name": "8. Bank, central",
+   "x": 0.6537,
+   "y": 0.737,
+   "symbol": "8.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-9",
+   "cat": "ember",
+   "name": "9. Bank, southwest",
+   "x": 0.5866,
+   "y": 0.8087,
+   "symbol": "9.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-10",
+   "cat": "ember",
+   "name": "10. Bank, southwest",
+   "x": 0.5914,
+   "y": 0.8064,
+   "symbol": "10.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-11",
+   "cat": "ember",
+   "name": "11. Bank, southwest",
+   "x": 0.5947,
+   "y": 0.812,
+   "symbol": "11.circle",
+   "note": "A third one in the bank, no puzzle needed. Only sometimes a safe."
+  },
+  {
+   "id": "ember-12",
+   "cat": "ember",
+   "name": "12. Southern compound",
+   "x": 0.5139,
+   "y": 0.8555,
+   "symbol": "12.circle.fill",
+   "note": "The compound tower."
+  },
+  {
+   "id": "ember-13",
+   "cat": "ember",
+   "name": "13. Western compound",
+   "x": 0.4474,
+   "y": 0.7894,
+   "symbol": "13.circle.fill",
+   "note": "First floor of the compound building."
+  },
+  {
+   "id": "ember-14",
+   "cat": "ember",
+   "name": "14. Western compound",
+   "x": 0.4417,
+   "y": 0.7875,
+   "symbol": "14.circle",
+   "note": "The compound's second floor. Only sometimes a safe."
+  },
+  {
+   "id": "ember-15",
+   "cat": "ember",
+   "name": "15. Array, east",
+   "x": 0.4922,
+   "y": 0.6907,
+   "symbol": "15.circle.fill",
+   "note": "Top floor of the array building."
+  },
+  {
+   "id": "ember-16",
+   "cat": "ember",
+   "name": "16. Array, middle",
+   "x": 0.4837,
+   "y": 0.6888,
+   "symbol": "16.circle.fill",
+   "note": "Top floor of the array building."
+  },
+  {
+   "id": "ember-17",
+   "cat": "ember",
+   "name": "17. Array, northwest",
+   "x": 0.4719,
+   "y": 0.6714,
+   "symbol": "17.circle.fill",
+   "note": "First floor of the array building."
+  },
+  {
+   "id": "ember-18",
+   "cat": "ember",
+   "name": "18. House",
+   "x": 0.4436,
+   "y": 0.6005,
+   "symbol": "18.circle",
+   "note": "The house. Only sometimes a safe."
+  },
+  {
+   "id": "ember-19",
+   "cat": "ember",
+   "name": "19. Bank, north",
+   "x": 0.5238,
+   "y": 0.483,
+   "symbol": "19.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-20",
+   "cat": "ember",
+   "name": "20. Bank, north",
+   "x": 0.529,
+   "y": 0.483,
+   "symbol": "20.circle.fill",
+   "note": "Solve the bank puzzle: two safes in the vault."
+  },
+  {
+   "id": "ember-21",
+   "cat": "ember",
+   "name": "21. Riverside compound",
+   "x": 0.3572,
+   "y": 0.5038,
+   "symbol": "21.circle.fill",
+   "note": "First floor of the compound building."
+  },
+  {
+   "id": "ember-22",
+   "cat": "ember",
+   "name": "22. Riverside compound",
+   "x": 0.3534,
+   "y": 0.5014,
+   "symbol": "22.circle",
+   "note": "The compound's top floor. Only sometimes a safe."
+  },
+  {
+   "id": "ember-23",
+   "cat": "ember",
+   "name": "23. Final compound, west",
+   "x": 0.124,
+   "y": 0.4693,
+   "symbol": "23.circle.fill",
+   "note": "Top floor of the compound building."
   },
   {
    "id": "chem-tong-il-village",
@@ -6023,7 +6238,8 @@
      ],
      "rewards": [
       "Unlocks the Cargo Plane infil ($100,000)",
-      "Bring radiation gear: hazmat suits hang on the reactor walls"
+      "Bring radiation gear: hazmat suits hang on the reactor walls",
+      "While it runs you can loot a route of 23 safes across the map: turn on Fallen Ember Safes on the Tac Map"
      ]
     },
     {

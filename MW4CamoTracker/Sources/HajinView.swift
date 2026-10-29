@@ -284,7 +284,7 @@ struct MarkerRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: category?.symbol ?? "mappin")
+            Image(systemName: marker.symbol ?? category?.symbol ?? "mappin")
                 .foregroundStyle(category?.tint ?? .appInk)
                 .frame(width: 28)
             VStack(alignment: .leading, spacing: 2) {

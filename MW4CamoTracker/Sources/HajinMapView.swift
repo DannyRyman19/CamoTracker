@@ -175,7 +175,7 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
                              colour: colour, selected: selected)
                 minZoom = area ? 0 : 2.5
             } else {
-                view = badge(symbol: category.symbol, tint: UIColor(category.tint), selected: selected)
+                view = badge(symbol: marker.symbol ?? category.symbol, tint: UIColor(category.tint), selected: selected)
                 minZoom = 0
             }
             place(view, x: marker.x, y: marker.y, tag: .marker(marker), minZoom: minZoom)

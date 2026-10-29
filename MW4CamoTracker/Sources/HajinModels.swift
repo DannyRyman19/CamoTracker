@@ -63,6 +63,8 @@ struct HajinGuide: Codable {
         let note: GuideText?
         /// The named places inside an area, each with its own threat.
         let parts: [Part]?
+        /// Its own symbol in place of its category's (a stop's number on a route).
+        let symbol: String?
 
         struct Part: Codable, Hashable {
             let name: GuideText
