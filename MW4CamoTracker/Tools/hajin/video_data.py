@@ -135,10 +135,10 @@ UPGRADES = [
  ("Bank Upgrade VIII", "$500,000", "10 Foreign Intelligence Targets, 10 Cipher Code Ledger. Your Bank holds up to $50 million"),
  ("Bank Upgrade IX", "$500,000", "10 Sanctioned Assassination List. Your Bank holds up to $100 million"),
  # from a community recipe sheet the user sent (2026-10-29); the user says XIII holds $2 billion
- # and Vendor Item II costs no cash; the caps for X to XII aren't known
- ("Bank Upgrade X", "$500,000", "10 Gold Bar. Raises your Bank's cap"),
- ("Bank Upgrade XI", "$500,000", "10 Gold Skull. Raises your Bank's cap"),
- ("Bank Upgrade XII", None, "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Raises your Bank's cap"),
+ # and Vendor Item II costs no cash; X to XII follow the 1-2.5-5 steps below it (XII is $1 billion, per the user)
+ ("Bank Upgrade X", "$500,000", "10 Gold Bar. Your Bank holds up to $250 million"),
+ ("Bank Upgrade XI", "$500,000", "10 Gold Skull. Your Bank holds up to $500 million"),
+ ("Bank Upgrade XII", None, "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Your Bank holds up to $1 billion"),
  ("Bank Upgrade XIII", None, "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Your Bank holds up to $2 billion"),
  ("Stash Item Upgrade IV", None, "5 Gold Skull, 30 Alloyed Plating, 10 Experimental Compounds, 30 Turned Components. +18 Stash item slots"),
  ("Stash Weapon Upgrade II", "$100,000", "20 Structural Alloy, 20 High-Tenacity Fibers, 10 Turned Components. +6 Stash weapon slots"),

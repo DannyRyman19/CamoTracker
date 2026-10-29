@@ -1,5 +1,5 @@
 {
- "version": "0.9.45",
+ "version": "0.9.46",
  "updated": "2026-10-29",
  "map": {
   "image": "hajin_map",
@@ -4778,7 +4778,7 @@
     },
     {
      "title": "Bank Upgrade X",
-     "subtitle": "10 Gold Bar. Raises your Bank's cap",
+     "subtitle": "10 Gold Bar. Your Bank holds up to $250 million",
      "value": "$500,000",
      "item": "bank-upgrade-x",
      "check": "upgrade-bank-upgrade-x",
@@ -4786,7 +4786,7 @@
     },
     {
      "title": "Bank Upgrade XI",
-     "subtitle": "10 Gold Skull. Raises your Bank's cap",
+     "subtitle": "10 Gold Skull. Your Bank holds up to $500 million",
      "value": "$500,000",
      "item": "bank-upgrade-xi",
      "check": "upgrade-bank-upgrade-xi",
@@ -4794,7 +4794,7 @@
     },
     {
      "title": "Bank Upgrade XII",
-     "subtitle": "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Raises your Bank's cap",
+     "subtitle": "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Your Bank holds up to $1 billion",
      "item": "bank-upgrade-xii",
      "check": "upgrade-bank-upgrade-xii",
      "group": "Bank"
@@ -8151,7 +8151,7 @@
     }
    ],
    "cash": 500000,
-   "effect": "Raises your Bank's cap",
+   "effect": "Your Bank holds up to $250 million",
    "family": "Bank Upgrade",
    "tier": 10,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
@@ -8167,7 +8167,7 @@
     }
    ],
    "cash": 500000,
-   "effect": "Raises your Bank's cap",
+   "effect": "Your Bank holds up to $500 million",
    "family": "Bank Upgrade",
    "tier": 11,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
@@ -8194,7 +8194,7 @@
      "qty": 3
     }
    ],
-   "effect": "Raises your Bank's cap",
+   "effect": "Your Bank holds up to $1 billion",
    "family": "Bank Upgrade",
    "tier": 12,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
