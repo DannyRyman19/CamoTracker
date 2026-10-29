@@ -241,7 +241,34 @@ enum HajinStashGrid {
             }
         }
         HajinGridDebug.log(tiles.filter { $0.id != "empty" }.map { "\($0.row)\($0.column) \($0.id) \(String(format: "%.2f", $0.confidence)) \($0.count.map(String.init) ?? "?")" }.joined(separator: "\n"))
-        return tiles
+        return pinned(tiles, image)
+    }
+
+    /// Each tile's highlight moved onto the tile the tile detector found
+    /// under it (the one it overlaps most), so the review lights the tile
+    /// itself even when the frame was a little off. Left as it was where
+    /// the detector found nothing (it doesn't run in the simulator).
+    static func pinned(_ tiles: [Tile], _ image: CGImage) -> [Tile] {
+        guard #available(iOS 17.0, *) else { return tiles }
+        let W = CGFloat(image.width), H = CGFloat(image.height)
+        let boxes = HajinTileLattice.tiles(in: image)
+        guard !boxes.isEmpty else { return tiles }
+        return tiles.map { tile in
+            guard let place = tile.place else { return tile }
+            let xs = place.map { $0.x * W }, ys = place.map { $0.y * H }
+            let lit = CGRect(x: xs.min()!, y: ys.min()!, width: xs.max()! - xs.min()!, height: ys.max()! - ys.min()!)
+            func shared(_ box: CGRect) -> CGFloat {
+                let i = box.intersection(lit)
+                return i.isNull ? 0 : i.width * i.height
+            }
+            // At least a third of the highlight on it, and about a tile's size
+            guard let box = boxes.max(by: { shared($0) < shared($1) }), shared(box) > lit.width * lit.height / 3,
+                  box.width > lit.width * 0.6, box.width < lit.width * 1.6 else { return tile }
+            var out = tile
+            out.place = [CGPoint(x: box.minX / W, y: box.minY / H), CGPoint(x: box.maxX / W, y: box.minY / H),
+                         CGPoint(x: box.maxX / W, y: box.maxY / H), CGPoint(x: box.minX / W, y: box.maxY / H)]
+            return out
+        }
     }
 
     /// The straightened grid in grey, one byte a pixel, for `snapped`.
