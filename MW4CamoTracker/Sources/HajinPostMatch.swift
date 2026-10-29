@@ -458,8 +458,9 @@ struct HajinPostMatchReview: View {
                 for blueprint in result.blueprints where blueprint.sure {
                     if let guess = blueprint.guess { picked[blueprint.id] = guess }
                 }
-                // Start with the first item that can be found on the photo lit
-                if photo != nil { highlighted = all.first { places[$0.item.id] != nil }?.item.id }
+                // Start with the first item that can be found on the photo
+                // selected: lit, its fixes open
+                if photo != nil { highlighted = all.first { places[$0.item.id] != nil }?.item.id; opened = highlighted }
             }
         }
         .background(GeometryReader { geo in
@@ -504,7 +505,7 @@ struct HajinPostMatchReview: View {
     private func light(_ key: String) {
         guard !marks(key).isEmpty else { return }
         Haptics.step()
-        withAnimation(.snappy) { highlighted = highlighted == key ? nil : key }
+        withAnimation(.snappy) { highlighted = highlighted == key ? nil : key; opened = nil }
     }
 
     /// The item's picture, with a viewfinder badge when its tiles can be
@@ -539,6 +540,7 @@ struct HajinPostMatchReview: View {
         swapped.remove(id)
         swapped.insert(to)
         if highlighted == id { highlighted = to }
+        if opened == id { opened = to }
     }
 
     /// "Sell 6 · $41,200": the sell pile at a glance.
@@ -660,11 +662,12 @@ struct HajinPostMatchReview: View {
         .buttonStyle(.borderless)
     }
 
-    /// Taps a row: its tiles lit and its fixes open (tap again to close).
+    /// Taps a row: selected, its tiles lit and its fixes open in one go
+    /// (tap again to let go of it).
     private func select(_ key: String) {
         Haptics.step()
         withAnimation(.snappy) {
-            if opened == key { opened = nil } else { opened = key; highlighted = key }
+            if opened == key { opened = nil; highlighted = nil } else { opened = key; highlighted = key }
         }
     }
 

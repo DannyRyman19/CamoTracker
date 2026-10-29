@@ -642,10 +642,11 @@ struct HajinStashScanReview: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 Haptics.step()
+                // Selected means lit and its fixes open, in one tap
                 withAnimation(.snappy) {
-                    if opened == row.item.id { opened = nil } else {
+                    if opened == row.item.id { opened = nil; highlighted = nil } else {
                         opened = row.item.id
-                        if findable { highlighted = row.item.id }
+                        highlighted = row.item.id
                     }
                 }
             }
@@ -689,7 +690,7 @@ struct HajinStashScanReview: View {
                 if !same {
                     fixButton("mw4.ui.postmatch.remove", "trash") {
                         skip.insert(row.item.id)
-                        withAnimation(.snappy) { opened = nil }
+                        withAnimation(.snappy) { opened = nil; highlighted = nil }
                     }
                 }
             }
@@ -908,7 +909,7 @@ struct HajinStashScanReview: View {
         .onAppear {
             if photo != nil { detent = .large }
             // Start with the first item that can be found on the photo lit
-            if highlighted == nil { highlighted = rows.first { !marks(for: $0.item.id).isEmpty }?.item.id }
+            if highlighted == nil { highlighted = rows.first { !marks(for: $0.item.id).isEmpty }?.item.id; opened = highlighted }
         }
     }
 
@@ -961,6 +962,7 @@ struct HajinStashScanReview: View {
         edited[id] = nil; edited[to] = nil
         skip.remove(to)
         if highlighted == id { highlighted = to }
+        if opened == id { opened = to }
     }
 
     private func sendReport() {
