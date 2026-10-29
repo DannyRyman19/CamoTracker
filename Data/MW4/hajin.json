@@ -1,6 +1,6 @@
 {
- "version": "0.9.43",
- "updated": "2026-10-28",
+ "version": "0.9.44",
+ "updated": "2026-10-29",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -4777,6 +4777,36 @@
      "group": "Bank"
     },
     {
+     "title": "Bank Upgrade X",
+     "subtitle": "10 Gold Bar. Raises your Bank's cap",
+     "value": "$500,000",
+     "item": "bank-upgrade-x",
+     "check": "upgrade-bank-upgrade-x",
+     "group": "Bank"
+    },
+    {
+     "title": "Bank Upgrade XI",
+     "subtitle": "10 Gold Skull. Raises your Bank's cap",
+     "value": "$500,000",
+     "item": "bank-upgrade-xi",
+     "check": "upgrade-bank-upgrade-xi",
+     "group": "Bank"
+    },
+    {
+     "title": "Bank Upgrade XII",
+     "subtitle": "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Raises your Bank's cap",
+     "item": "bank-upgrade-xii",
+     "check": "upgrade-bank-upgrade-xii",
+     "group": "Bank"
+    },
+    {
+     "title": "Bank Upgrade XIII",
+     "subtitle": "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Raises your Bank's cap",
+     "item": "bank-upgrade-xiii",
+     "check": "upgrade-bank-upgrade-xiii",
+     "group": "Bank"
+    },
+    {
      "title": "Gunsmith Upgrade I",
      "subtitle": "20 Reactive Metals, 10 CPU, 5 Power Regulator. 5% off at the Gunsmith",
      "value": "$50,000",
@@ -8111,6 +8141,92 @@
    "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
   },
   {
+   "id": "bank-upgrade-x",
+   "name": "Bank Upgrade X",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "gold-bar",
+     "qty": 10
+    }
+   ],
+   "cash": 500000,
+   "effect": "Raises your Bank's cap",
+   "family": "Bank Upgrade",
+   "tier": 10,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
+  },
+  {
+   "id": "bank-upgrade-xi",
+   "name": "Bank Upgrade XI",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "gold-skull",
+     "qty": 10
+    }
+   ],
+   "cash": 500000,
+   "effect": "Raises your Bank's cap",
+   "family": "Bank Upgrade",
+   "tier": 11,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
+  },
+  {
+   "id": "bank-upgrade-xii",
+   "name": "Bank Upgrade XII",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "gold-bar",
+     "qty": 20
+    },
+    {
+     "item": "gold-skull",
+     "qty": 20
+    },
+    {
+     "item": "irradiated-container",
+     "qty": 3
+    },
+    {
+     "item": "fulton-drop-marker",
+     "qty": 3
+    }
+   ],
+   "effect": "Raises your Bank's cap",
+   "family": "Bank Upgrade",
+   "tier": 12,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
+  },
+  {
+   "id": "bank-upgrade-xiii",
+   "name": "Bank Upgrade XIII",
+   "kind": "FOB Upgrade",
+   "cost": [
+    {
+     "item": "reactor-drc-locker",
+     "qty": 1
+    },
+    {
+     "item": "shopping-drc-locker",
+     "qty": 1
+    },
+    {
+     "item": "air-base-drc-weapons-locker",
+     "qty": 1
+    },
+    {
+     "item": "door-breacher-charge",
+     "qty": 5
+    }
+   ],
+   "effect": "Raises your Bank's cap",
+   "family": "Bank Upgrade",
+   "tier": 13,
+   "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
+  },
+  {
    "id": "binding-catalyst",
    "name": "Binding Catalyst",
    "image": "https://camotracker.djr.li/Images/DMZ/binding-catalyst.png?v=1",
@@ -9291,7 +9407,7 @@
   {
    "id": "irradiated-container",
    "name": "Irradiated Container",
-   "kind": "Gear",
+   "kind": "Ingredient",
    "rarity": "Ultra",
    "note": "An Ultra item listed on dmzhub.gg. What it does isn't known yet",
    "image": "https://camotracker.djr.li/Images/DMZ/irradiated-container.png?v=1"

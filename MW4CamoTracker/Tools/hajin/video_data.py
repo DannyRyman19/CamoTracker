@@ -134,6 +134,11 @@ UPGRADES = [
  ("Bank Upgrade VII", "$500,000", "10 W.M.D Manifest. Your Bank holds up to $25 million"),
  ("Bank Upgrade VIII", "$500,000", "10 Foreign Intelligence Targets, 10 Cipher Code Ledger. Your Bank holds up to $50 million"),
  ("Bank Upgrade IX", "$500,000", "10 Sanctioned Assassination List. Your Bank holds up to $100 million"),
+ # from a community recipe sheet the user sent (2026-10-29); the caps past IX aren't known
+ ("Bank Upgrade X", "$500,000", "10 Gold Bar. Raises your Bank's cap"),
+ ("Bank Upgrade XI", "$500,000", "10 Gold Skull. Raises your Bank's cap"),
+ ("Bank Upgrade XII", None, "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Raises your Bank's cap"),
+ ("Bank Upgrade XIII", None, "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Raises your Bank's cap"),
  ("Stash Item Upgrade IV", None, "5 Gold Skull, 30 Alloyed Plating, 10 Experimental Compounds, 30 Turned Components. +18 Stash item slots"),
  ("Stash Weapon Upgrade II", "$100,000", "20 Structural Alloy, 20 High-Tenacity Fibers, 10 Turned Components. +6 Stash weapon slots"),
  ("Stash Weapon Upgrade III", None, "5 Gold Bar, 30 Stabilized Reagents, 30 Volatile Explosives, 10 Nano-Structured Alloy. +6 Stash weapon slots"),
@@ -851,7 +856,7 @@ UPGRADE_GROUPS = [  # (name prefix, family, station group)
  ("Epic Ingredient Printing", "Ingredient Printing", "3D Printer"), ("MIA Recovery Discount", "MIA Recovery Discount", "Operators"),
  ("Dog Tag Case Upgrade", "Dog Tag Case Upgrade", "Dog Tag Case"),
 ]
-ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
+ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XI": 11, "XII": 12, "XIII": 13}
 
 def tier_upgrades(guide, items):
     sec = next(s for s in guide if s["id"] == "upgrades")
