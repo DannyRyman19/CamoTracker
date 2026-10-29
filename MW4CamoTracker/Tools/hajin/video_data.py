@@ -134,11 +134,12 @@ UPGRADES = [
  ("Bank Upgrade VII", "$500,000", "10 W.M.D Manifest. Your Bank holds up to $25 million"),
  ("Bank Upgrade VIII", "$500,000", "10 Foreign Intelligence Targets, 10 Cipher Code Ledger. Your Bank holds up to $50 million"),
  ("Bank Upgrade IX", "$500,000", "10 Sanctioned Assassination List. Your Bank holds up to $100 million"),
- # from a community recipe sheet the user sent (2026-10-29); the caps past IX aren't known
+ # from a community recipe sheet the user sent (2026-10-29); the user says XIII holds $2 billion
+ # and Vendor Item II costs no cash; the caps for X to XII aren't known
  ("Bank Upgrade X", "$500,000", "10 Gold Bar. Raises your Bank's cap"),
  ("Bank Upgrade XI", "$500,000", "10 Gold Skull. Raises your Bank's cap"),
  ("Bank Upgrade XII", None, "20 Gold Bar, 20 Gold Skull, 3 Irradiated Container, 3 Fulton Drop Marker. Raises your Bank's cap"),
- ("Bank Upgrade XIII", None, "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Raises your Bank's cap"),
+ ("Bank Upgrade XIII", None, "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Your Bank holds up to $2 billion"),
  ("Stash Item Upgrade IV", None, "5 Gold Skull, 30 Alloyed Plating, 10 Experimental Compounds, 30 Turned Components. +18 Stash item slots"),
  ("Stash Weapon Upgrade II", "$100,000", "20 Structural Alloy, 20 High-Tenacity Fibers, 10 Turned Components. +6 Stash weapon slots"),
  ("Stash Weapon Upgrade III", None, "5 Gold Bar, 30 Stabilized Reagents, 30 Volatile Explosives, 10 Nano-Structured Alloy. +6 Stash weapon slots"),
@@ -147,7 +148,7 @@ UPGRADES = [
  ("MIA Recovery Discount IV", None, "5 Sanctioned Assassination List, 30 Ballistic Fabric, 30 Nylon Laminate, 10 Prototype RF Module. Rescuing an MIA operator costs another 5% less"),
  # dmzcodex.com upgrade pages (2026-10-27), not confirmed in game yet
  ("Gunsmith Upgrade II", "$100,000", "20 Nitro Compounds, 10 Comms Module, 10 Military Composites. Another 5% off at the Gunsmith (reported)"),
- ("Vendor Item Upgrade II", None, "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported; the cash cost isn't known yet)"),
+ ("Vendor Item Upgrade II", None, "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported)"),
 ]
 GUNS = [
  ("Assault Rifles", [("Han 86", 6000, True), ("M4", 6250), ("Hyeon Burst", 5250), ("Kastov 762", 5500), ("Patriot XMR", 6500), ("Oden", 6250), ("Axion", 5750), ("Cronen Squall", 6750)]),

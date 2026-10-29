@@ -1,5 +1,5 @@
 {
- "version": "0.9.44",
+ "version": "0.9.45",
  "updated": "2026-10-29",
  "map": {
   "image": "hajin_map",
@@ -4801,7 +4801,7 @@
     },
     {
      "title": "Bank Upgrade XIII",
-     "subtitle": "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Raises your Bank's cap",
+     "subtitle": "1 Reactor DRC Locker, 1 Shopping DRC Locker, 1 Air Base DRC Weapons Locker, 5 Door Breacher Charge. Your Bank holds up to $2 billion",
      "item": "bank-upgrade-xiii",
      "check": "upgrade-bank-upgrade-xiii",
      "group": "Bank"
@@ -4831,7 +4831,7 @@
     },
     {
      "title": "Vendor Item Upgrade II",
-     "subtitle": "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported; the cash cost isn't known yet)",
+     "subtitle": "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported)",
      "item": "vendor-item-upgrade-ii",
      "check": "upgrade-vendor-item-upgrade-ii",
      "group": "Vendor"
@@ -8221,7 +8221,7 @@
      "qty": 5
     }
    ],
-   "effect": "Raises your Bank's cap",
+   "effect": "Your Bank holds up to $2 billion",
    "family": "Bank Upgrade",
    "tier": 13,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/bank.png?v=1"
@@ -11466,7 +11466,7 @@
      "qty": 2
     }
    ],
-   "effect": "More to buy at the Vendor (reported; the cash cost isn't known yet)",
+   "effect": "More to buy at the Vendor (reported)",
    "family": "Vendor Item Upgrade",
    "tier": 2,
    "image": "https://camotracker.djr.li/Images/DMZ/fob/vendor.png?v=1"
