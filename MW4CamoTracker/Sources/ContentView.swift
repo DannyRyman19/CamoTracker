@@ -67,6 +67,7 @@ struct ContentView: View {
     @AppStorage(AppMode.playedKey) private var playedRaw = ""
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @AppStorage(AppMode.startKey) private var startRaw = ""
+    @AppStorage(StartTab.key) private var startTabRaw = StartTab.weapons.rawValue
     @State private var paths: [Int: NavigationPath] = [:]
 
     /// Outside the mode and Stats indices, so adding it moved no other tab.
@@ -261,6 +262,14 @@ struct ContentView: View {
             // Weapons opens in the mode last picked in its title
             if !startRaw.isEmpty {
                 primaryModeRaw = AppMode.start(startRaw, played: playedRaw).rawValue
+            }
+            // The tab picked in Customise; Mastery is beside the weapons on
+            // an iPad, so that opens on Weapons
+            switch StartTab(rawValue: startTabRaw) ?? .weapons {
+            case .weapons: selectedTab = 0
+            case .mastery: selectedTab = hasMasteryColumn ? 0 : 2
+            case .dmz: selectedTab = Self.hajinTab
+            case .stats: selectedTab = 1
             }
             if !hasOnboarded { showOnboarding = true }
         }

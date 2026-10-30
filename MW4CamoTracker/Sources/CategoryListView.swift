@@ -529,6 +529,22 @@ enum CategoryStats {
 
 // MARK: - Customise
 
+/// The tab the app opens on, picked in Customise.
+enum StartTab: String, CaseIterable, Identifiable {
+    case weapons, mastery, dmz, stats
+    static let key = "mw4_start_tab"
+    var id: String { rawValue }
+
+    var titleKey: String {
+        switch self {
+        case .weapons: return "mw4.ui.section.weapons"
+        case .mastery: return "mw4.ui.section.mastery"
+        case .dmz: return "mw4.ui.hajin.title"
+        case .stats: return "mw4.ui.tab.stats"
+        }
+    }
+}
+
 /// A section of a mode tab, in the order Customise lists them by default.
 enum HomeSection: String, CaseIterable, Identifiable {
     case summary, pinned, suggested, weapons, objectives
@@ -602,6 +618,7 @@ struct CustomiseHomeSheet: View {
     @AppStorage(CardOutline.key) private var cardOutline = CardOutline.prestige.rawValue
     @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
+    @AppStorage(StartTab.key) private var startTab = StartTab.weapons.rawValue
     @EnvironmentObject private var viewModel: TrackerViewModel
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
@@ -663,6 +680,13 @@ struct CustomiseHomeSheet: View {
                     }
                     .tint(accent)
                     .accessibilityIdentifier("customise.language")
+                    Picker("mw4.ui.start_tab".localized(), selection: $startTab) {
+                        ForEach(StartTab.allCases) { tab in
+                            Text(tab.titleKey.localized()).tag(tab.rawValue)
+                        }
+                    }
+                    .tint(accent)
+                    .accessibilityIdentifier("customise.startTab")
                 }
 
                 Section {
