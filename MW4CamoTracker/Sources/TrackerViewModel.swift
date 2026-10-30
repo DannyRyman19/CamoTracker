@@ -386,8 +386,9 @@ final class TrackerViewModel: ObservableObject {
         let camo = prestigeCamos[index]
         let wasDone = isPrestigeCamoComplete(weaponId: weaponId, index: index)
         if camo.weaponsNeeded != nil {
-            // Earned across weapons, so no one weapon's level sets it: a
-            // tap is a plain tick
+            // Earned across weapons and worked out from them, so only quick
+            // tick (which has no levels to count) ticks it by hand
+            guard quickTick else { return }
             let key = prestigeCamoKey(weaponId, index)
             if completed.contains(key) { completed.remove(key) } else { completed.insert(key) }
         } else if wasDone {
