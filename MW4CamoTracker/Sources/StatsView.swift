@@ -243,9 +243,10 @@ private struct ModeStatsCard: View {
     /// Gold, Platinum, Harmonic Break and the final camo: how many of the
     /// mode's weapons have each.
     private var completionistNodes: [MasteryTrack.Node] {
-        let total = viewModel.totalWeaponCount
+        // Out of the launch roster; 100%+ below counts every weapon
+        let total = viewModel.launchRoster
         var nodes: [MasteryTrack.Node] = mode.completionistCamos.enumerated().map { index, camo in
-            let done = viewModel.completionistCount(mode: mode.rawValue, step: index)
+            let done = viewModel.launchProgress(viewModel.completionistCount(mode: mode.rawValue, step: index)).done
             return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
                          achieved: total > 0 && done >= total, detail: "\(done)/\(total)")
         }

@@ -166,6 +166,16 @@ struct WeaponDetailView: View {
     /// The camo list split the way the game shows it: Military, then
     /// Special. Camos with no group (older data) stay one "Camos" list.
     private var camoGroups: [(title: String, camos: [ChallengeItem])] {
+        groups(camos.filter { $0.extra != true })
+    }
+
+    /// Challenges tracked beside the camos (BO6's elimination badges), in
+    /// their own tab.
+    private var badgeGroups: [(title: String, camos: [ChallengeItem])] {
+        groups(camos.filter { $0.extra == true })
+    }
+
+    private func groups(_ camos: [ChallengeItem]) -> [(title: String, camos: [ChallengeItem])] {
         var groups: [(title: String, camos: [ChallengeItem])] = []
         for camo in camos {
             let title: String
@@ -197,16 +207,23 @@ struct WeaponDetailView: View {
         case camos
         case completionist
         case mastery
+        case badges
     }
 
     private var parts: [(part: Part, title: String)] {
+        // Badges, where the weapon has them, go last under their own name
+        let badges = badgeGroups.first.map { [(Part.badges, $0.title)] } ?? []
         // A game without account Mastery (Black Ops) calls its per-weapon
         // Completionist camos Mastery, as the game does
         guard GameRegistry.hasMastery else {
             return [(.camos, "mw4.ui.section.camos".localized()),
-                    (.completionist, "mw4.ui.section.mastery".localized())]
+                    (.completionist, "mw4.ui.section.mastery".localized())] + badges
         }
-        return [(.camos, "mw4.ui.section.camos".localized()),
+        return mainParts + badges
+    }
+
+    private var mainParts: [(part: Part, title: String)] {
+        [(.camos, "mw4.ui.section.camos".localized()),
          (.completionist, "mw4.ui.section.completionist".localized()),
          (.mastery, "mw4.ui.section.mastery".localized())]
     }
@@ -241,9 +258,9 @@ struct WeaponDetailView: View {
         modeSwitchRow
         partPicker
 
-        if shownPart == .camos {
-            // Military and Special, each under its own header.
-            ForEach(Array(camoGroups.enumerated()), id: \.offset) { _, group in
+        if shownPart == .camos || shownPart == .badges {
+            // Military and Special, each under its own header (or the badges).
+            ForEach(Array((shownPart == .badges ? badgeGroups : camoGroups).enumerated()), id: \.offset) { _, group in
                 Section(group.title) {
                     ForEach(group.camos) { camo in
                         camoRow(camo)
@@ -255,7 +272,7 @@ struct WeaponDetailView: View {
 
         Section {
             switch shownPart {
-            case .camos:
+            case .camos, .badges:
                 EmptyView()
             case .completionist:
                 // Finishing the camo list opens this weapon's Completionist
@@ -428,6 +445,12 @@ struct WeaponDetailView: View {
             tileRows(steps + final, columns: fitColumns(steps.count + final.count))
         case .mastery:
             tileRows((1...3).map { tier in AnyView(masteryRow(tier)) }, columns: fitColumns(3))
+        case .badges:
+            ForEach(Array(badgeGroups.enumerated()), id: \.offset) { _, group in
+                Section(group.title) {
+                    tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
+                }
+            }
         }
     }
 

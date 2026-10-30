@@ -31,8 +31,8 @@ extension TrackerViewModel {
             let raw = mode.rawValue
             let camos = mode.completionistCamos
             let steps = camos.enumerated().map { index, camo in
-                WidgetSnapshot.Step(name: camo.name, done: completionistCount(mode: raw, step: index),
-                                    total: weapons, colorHex: camo.color.hexString)
+                WidgetSnapshot.Step(name: camo.name, done: launchProgress(completionistCount(mode: raw, step: index)).done,
+                                    total: launchRoster, colorHex: camo.color.hexString)
             }
             let tiers = mode.masteryCamos
             let mastery = [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in

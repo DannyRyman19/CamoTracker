@@ -166,13 +166,16 @@ struct CategoryListView: View {
             // distinct number worth acting on.
             StatSummaryCard(
                 stats: {
-                    let total = viewModel.totalWeaponCount
+                    // Out of the launch roster until it's done; 100%+
+                    // then counts every weapon
+                    let total = viewModel.launchRoster
+                    let capped: (Int) -> Int = { viewModel.launchProgress($0).done }
                     let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
-                    let completeCount = viewModel.totalGoldWeaponCount(mode: mode.rawValue)
+                    let completeCount = capped(viewModel.totalGoldWeaponCount(mode: mode.rawValue))
                     let harmonic = mode.completionist.steps[2]
-                    let harmonicCount = viewModel.harmonicBreakCount(mode: mode.rawValue)
+                    let harmonicCount = capped(viewModel.harmonicBreakCount(mode: mode.rawValue))
                     let final = mode.completionist.final
-                    let finalCount = viewModel.finalCamoCount(mode: mode.rawValue)
+                    let finalCount = capped(viewModel.finalCamoCount(mode: mode.rawValue))
                     // The Mastery tier being worked on: the first not
                     // yet earned, or the last once all three are.
                     let tier = (1...3).first { !viewModel.isMasteryAchieved(mode: mode.rawValue, tier: $0) } ?? 3
@@ -185,7 +188,7 @@ struct CategoryListView: View {
                     // Mastery camo being worked on takes its place
                     let locks = CategoryStats.Locks(viewModel: viewModel, mode: mode)
                     let gold = mode.completionist.steps[0], platinum = mode.completionist.steps[1]
-                    let platinumCount = viewModel.completionistCount(mode: mode.rawValue, step: 1)
+                    let platinumCount = capped(viewModel.completionistCount(mode: mode.rawValue, step: 1))
                     var stats: [StatSummaryCard.Stat] = [
                         .init(value: "\(completeCount)/\(total)", label: gold.name, labelGradient: total > 0 && completeCount == total ? gold.gradient : nil, ringFraction: fraction(completeCount, total), ringColor: .camoGold),
                         .init(value: "\(platinumCount)/\(total)", label: platinum.name, labelGradient: total > 0 && platinumCount == total ? platinum.gradient : nil, ringFraction: fraction(platinumCount, total), ringColor: platinum.color, ringGradient: platinum.gradient),
@@ -198,9 +201,11 @@ struct CategoryListView: View {
                         stats.append(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))
                     }
                     // Only worth showing once the last Mastery camo is
-                    // earned; before then "100%+" is a goal past one
-                    // not reached yet.
-                    if viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3) {
+                    // earned (or, in a game without Mastery, the last
+                    // Completionist camo on the launch roster); before
+                    // then "100%+" is a goal past one not reached yet.
+                    if GameRegistry.hasMastery ? viewModel.isMasteryAchieved(mode: mode.rawValue, tier: 3)
+                        : (mode.hasFinalCamo ? finalCount : harmonicCount) >= total {
                         let fullRoster = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
                         stats.append(.init(value: "\(fullRoster.done)/\(fullRoster.total)", label: "mw4.ui.stats.100_plus".localized(), labelGradient: viewModel.is100PlusAchieved(mode: mode.rawValue) ? .platinum : nil, ringFraction: fraction(fullRoster.done, fullRoster.total), ringColor: .camoPlatinum, ringGradient: .platinum))
                     }

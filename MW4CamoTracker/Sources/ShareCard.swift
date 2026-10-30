@@ -62,10 +62,9 @@ enum ShareCard {
             overall = modes.isEmpty ? 0 : modes.map(\.fraction).reduce(0, +) / Double(modes.count)
             // Camos are one track per weapon, read from the first mode as Stats does
             let first = visible.first ?? .multiplayer
-            let total = viewModel.totalWeaponCount
             completionist = first.completionistCamos.enumerated().map { index, camo in
-                Camo(name: camo.name, gradient: camo.gradient,
-                     done: viewModel.completionistCount(mode: first.rawValue, step: index), total: total)
+                let progress = viewModel.launchProgress(viewModel.completionistCount(mode: first.rawValue, step: index))
+                return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
             }
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []

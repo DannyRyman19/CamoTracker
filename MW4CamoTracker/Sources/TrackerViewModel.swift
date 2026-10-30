@@ -935,7 +935,15 @@ final class TrackerViewModel: ObservableObject {
         return configured ?? max(1, Int((Double(launchRoster) * Double(tier) / 3).rounded(.up)))
     }
 
-    private var launchRoster: Int { max(1, min(totalWeaponCount, baseWeaponCount)) }
+    /// The weapons the game launched with: what the mode-wide counts are
+    /// out of until it's done, when 100%+ counts every weapon.
+    var launchRoster: Int { max(1, min(totalWeaponCount, baseWeaponCount)) }
+
+    /// A mode-wide count out of the launch roster, a weapon added later
+    /// standing in for a launch one, so it never reads past full.
+    func launchProgress(_ done: Int) -> (done: Int, total: Int) {
+        (min(done, launchRoster), launchRoster)
+    }
 
     /// Count Mastery: weapons with the last Completionist camo out of the
     /// tier's count. Challenge Mastery: weapons with this tier out of the
