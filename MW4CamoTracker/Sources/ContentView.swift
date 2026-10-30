@@ -315,7 +315,7 @@ struct ContentView: View {
                 try? await Task.sleep(for: .milliseconds(50)); waited += 1
             }
             try? await Task.sleep(for: .seconds(1))
-            let mode = AppMode.multiplayer.rawValue
+            let mode = ProcessInfo.processInfo.environment["MW4_FORCE_MODE"] ?? AppMode.multiplayer.rawValue
             let before = viewModel.weaponsWithBaseCamosComplete
             for camo in viewModel.camos(weaponId: weaponId, mode: mode)
             where !viewModel.isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) {

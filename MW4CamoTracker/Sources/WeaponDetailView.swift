@@ -502,6 +502,11 @@ struct WeaponDetailView: View {
         }
         .readingWidth($width)
         .navigationTitle(weapon.name.resolved())
+        // Finishing the last camo moves on to what it opens, even after
+        // the Camos tab was picked by hand
+        .onChange(of: viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue)) { done in
+            if done, pickedPart == .camos { withAnimation { pickedPart = nil } }
+        }
         .alert("mw4.ui.report.max_level".localized(), isPresented: $askingMaxLevel) {
             TextField("mw4.ui.report.max_level.field".localized(), text: $maxLevelText)
                 .keyboardType(.numberPad)

@@ -69,10 +69,23 @@ enum ShareCard {
             tracks = (shared ? Array(visible.prefix(1)) : visible).map { mode in
                 Track(name: shared ? nil : mode.displayName, accent: mode.accent,
                       fraction: viewModel.trueCompletionFraction(mode: mode.rawValue),
-                      camos: mode.completionistCamos.enumerated().map { index, camo in
-                          let progress = viewModel.launchProgress(viewModel.completionistCount(mode: mode.rawValue, step: index))
-                          return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
-                      })
+                      camos: {
+                          var camos = mode.completionistCamos.enumerated().map { index, camo in
+                              let count = index < TrackerViewModel.completionistStepCount
+                                  ? viewModel.completionistCount(mode: mode.rawValue, step: index)
+                                  : viewModel.finalCamoCount(mode: mode.rawValue)
+                              let progress = viewModel.launchProgress(count)
+                              return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
+                          }
+                          // 100%+ once the last camo is on the launch roster:
+                          // every weapon, new ones too
+                          if let last = camos.last, last.done >= last.total {
+                              let full = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
+                              camos.append(Camo(name: "mw4.ui.stats.100_plus".localized(), gradient: .platinum,
+                                                done: full.done, total: full.total))
+                          }
+                          return camos
+                      }())
             }
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
