@@ -44,10 +44,15 @@ struct StatsView: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .top)
                     }
-                } else if let first = modes.first {
-                    ModeStatsCard(mode: first, part: .weapons)
-                        .listRowInsets(Self.rowInsets)
-                        .listRowBackground(Color.clear)
+                } else {
+                    // One weapons card where camos count in every mode
+                    // (MW4), else one per mode: each is its own grind
+                    let weaponModes = GameRegistry.current.sharedCamos == true ? Array(modes.prefix(1)) : modes
+                    ForEach(weaponModes) { mode in
+                        ModeStatsCard(mode: mode, part: .weapons)
+                            .listRowInsets(Self.rowInsets)
+                            .listRowBackground(Color.clear)
+                    }
                 }
                 if width >= 800 || !GameRegistry.hasMastery {
                     // Mastery is in the row above, or the game has none
@@ -277,10 +282,13 @@ private struct ModeStatsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 10) {
-                Image(systemName: part == .weapons ? "scope" : mode.symbol)
+                // A mode's own weapons card (Black Ops) is named for the mode
+                let ownGrind = part == .weapons && GameRegistry.current.sharedCamos != true
+                Image(systemName: part == .weapons && !ownGrind ? "scope" : mode.symbol)
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(mode.accent)
-                Text(part == .weapons ? "mw4.ui.section.weapons".localized()
+                Text(ownGrind ? mode.displayName
+                     : part == .weapons ? "mw4.ui.section.weapons".localized()
                      : "\(mode.displayName) \("mw4.ui.section.mastery".localized())")
                     .font(.hitmarker(17))
                     .foregroundStyle(Color.appInk)
@@ -299,7 +307,8 @@ private struct ModeStatsCard: View {
 
             if part == .weapons {
                 VStack(spacing: 8) {
-                    trackTitle("mw4.ui.section.completionist".localized())
+                    // Black Ops calls these per-weapon camos Mastery
+                    trackTitle((GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized())
                     MasteryTrack(nodes: completionistNodes)
                 }
             } else {

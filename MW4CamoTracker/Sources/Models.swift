@@ -302,6 +302,10 @@ struct ChallengeItem: Codable, Identifiable {
     /// Tracked on the weapon's page but not part of the camo chain: it
     /// doesn't hold up Gold or count in progress (BO6's elimination badges).
     var extra: Bool? = nil
+    /// The `itemId` whose count this camo reads, for camos on one running
+    /// count (BO6's Military camos: 5, 10, 15... headshots): each is earned
+    /// once the shared count reaches its own requirement.
+    var counter: Int? = nil
     var id: Int { itemId }
 
     var isLeaf: Bool { children.isEmpty }

@@ -396,7 +396,21 @@ final class TrackerViewModel: ObservableObject {
     /// straight to 5, but the stored 8 stays, so raising it again later
     /// gives the player their real progress back.
     func camoAmount(mode: String, weaponId: Int, camo: ChallengeItem) -> Int {
-        min(amounts[camoKey(mode, weaponId, camo.itemId)] ?? 0, camo.requirement?.amount ?? .max)
+        min(amounts[counterKey(mode, weaponId, camo)] ?? 0, camo.requirement?.amount ?? .max)
+    }
+
+    /// Where a camo's count is kept: its own, or the `counter` camo's when
+    /// several camos share one running count (Black Ops' Military camos:
+    /// 5, 10, 15... headshots), each earned once the count reaches its own
+    /// requirement.
+    private func counterKey(_ mode: String, _ weaponId: Int, _ camo: ChallengeItem) -> String {
+        camoKey(mode, weaponId, camo.counter ?? camo.itemId)
+    }
+
+    /// The camos sharing this camo's count, itself included, in list order.
+    private func counterGroup(mode: String, weaponId: Int, camo: ChallengeItem) -> [ChallengeItem] {
+        guard let counter = camo.counter else { return [camo] }
+        return allCamos(weaponId: weaponId, mode: mode).filter { $0.counter == counter }
     }
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
@@ -429,9 +443,8 @@ final class TrackerViewModel: ObservableObject {
 
     /// Finished in this mode's own count.
     private func isCamoDone(in mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
-        let k = camoKey(mode, weaponId, camo.itemId)
-        guard let req = camo.requirement else { return completed.contains(k) }
-        return (amounts[k] ?? 0) >= req.amount
+        guard let req = camo.requirement else { return completed.contains(camoKey(mode, weaponId, camo.itemId)) }
+        return (amounts[counterKey(mode, weaponId, camo)] ?? 0) >= req.amount
     }
 
     /// The weapon level that earns this Military camo, or nil for any other
@@ -467,8 +480,9 @@ final class TrackerViewModel: ObservableObject {
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-        let req = camo.requirement?.amount ?? 1
-        amounts[camoKey(mode, weaponId, camo.itemId)] = max(0, min(newAmount, req))
+        // A shared count runs up to the last camo on it
+        let req = counterGroup(mode: mode, weaponId: weaponId, camo: camo).compactMap(\.requirement?.amount).max() ?? 1
+        amounts[counterKey(mode, weaponId, camo)] = max(0, min(newAmount, req))
         saveProgress()
         objectWillChange.send()
         checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
@@ -503,7 +517,16 @@ final class TrackerViewModel: ObservableObject {
         }
         let wasGold = allCamosComplete(weaponId: weaponId, mode: mode)
         let wasDone = isCamoComplete(mode: mode, weaponId: weaponId, camo: camo)
-        if wasDone {
+        if camo.counter != nil, let req = camo.requirement {
+            // A shared count: ticking runs it up to this camo, unticking
+            // back to the camo before it, so earlier ones stay earned
+            let below = counterGroup(mode: mode, weaponId: weaponId, camo: camo)
+                .compactMap(\.requirement?.amount).filter { $0 < req.amount }.max() ?? 0
+            for other in wasDone ? countingModes(mode) : [mode] {
+                let k = counterKey(other, weaponId, camo)
+                amounts[k] = wasDone ? min(amounts[k] ?? 0, below) : max(amounts[k] ?? 0, req.amount)
+            }
+        } else if wasDone {
             // Unticking clears it in every mode, or a finish elsewhere would
             // keep it ticked here
             for other in countingModes(mode) {
