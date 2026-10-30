@@ -81,7 +81,8 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
         case .multiplayer: return "person.3.fill"
         case .warzone:     return "circle.dashed"
         case .dmz:         return "shippingbox.fill"
-        case .zombies:     return "flame.fill"
+        // The zombie thing; the filled brain is newer than iOS 16
+        case .zombies:     return UIImage(systemName: "brain.fill") != nil ? "brain.fill" : "brain"
         case .campaign:    return "film.fill"
         default:           return "gamecontroller.fill"
         }

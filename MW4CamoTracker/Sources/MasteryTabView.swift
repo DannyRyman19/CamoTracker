@@ -176,12 +176,14 @@ private struct TrackCamoRows: View {
         }
     }
 
-    /// Each class's count of the camo before, as Stats lists its classes:
-    /// two columns where every name fits whole, else one
+    /// The classes still shut, with their count of the camo before, as
+    /// Stats lists its classes: two columns where every name fits whole,
+    /// else one. Open classes drop off, since no class has to be done for
+    /// another to open.
     private func classCounts(step: Int) -> some View {
         let rows = (viewModel.catalog?.categories ?? []).map { category in
             (category, viewModel.completionistCategoryGateProgress(category, mode: mode.rawValue, step: step))
-        }
+        }.filter { $0.1.done < $0.1.total }
         let half = (rows.count + 1) / 2
         return ViewThatFits(in: .horizontal) {
             HStack(alignment: .top, spacing: 16) {
