@@ -565,4 +565,6 @@
 "ct.import.failed" = "Dat bestand is geen export van %@.";
 "ct.mastery.gate_camos" = "Opent op een wapen zodra zijn camo's klaar zijn (%d klaar).";
 "ct.mastery.gate_weapons" = "Vereist %1$@ op %2$d wapens (%3$d/%2$d).";
-"ct.mastery.gate_class" = "Opent per klasse met genoeg %@:";
+"ct.mastery.weapons" = "%1$d/%2$d wapens.";
+"ct.mastery.gate_class" = "Opent per klasse met %1$@ (%2$d van %3$d klassen open):";
+"ct.mastery.capstone" = "Vereist %1$@ (%2$d/%3$d).";

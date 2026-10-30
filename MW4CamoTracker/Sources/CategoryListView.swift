@@ -703,20 +703,6 @@ struct CustomiseHomeSheet: View {
                     Text("mw4.ui.modes.footer".localized())
                 }
 
-                if let legacy = GameRegistry.current.legacyApp {
-                    Section {
-                        Button {
-                            importing = true
-                        } label: {
-                            Label(String(format: "ct.import.button".localized(), legacy), systemImage: "square.and.arrow.down")
-                                .foregroundStyle(accent)
-                        }
-                        .accessibilityIdentifier("customise.import")
-                    } footer: {
-                        Text(String(format: "ct.import.footer".localized(), legacy))
-                    }
-                }
-
                 Section {
                     Picker("mw4.ui.language".localized(), selection: $languageRaw) {
                         Text("mw4.ui.language.system".localized()).tag("")
@@ -800,6 +786,20 @@ struct CustomiseHomeSheet: View {
                     premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.card_outline.footer".localized())
+                }
+
+                if let legacy = GameRegistry.current.legacyApp {
+                    Section {
+                        Button {
+                            importing = true
+                        } label: {
+                            Label(String(format: "ct.import.button".localized(), legacy), systemImage: "square.and.arrow.down")
+                                .foregroundStyle(accent)
+                        }
+                        .accessibilityIdentifier("customise.import")
+                    } footer: {
+                        Text(String(format: "ct.import.footer".localized(), legacy))
+                    }
                 }
 
                 Section {

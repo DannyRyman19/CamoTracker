@@ -565,4 +565,6 @@
 "ct.import.failed" = "Diese Datei ist kein %@-Export.";
 "ct.mastery.gate_camos" = "Öffnet sich, sobald die Tarnungen einer Waffe fertig sind (%d bereit).";
 "ct.mastery.gate_weapons" = "Benötigt %1$@ auf %2$d Waffen (%3$d/%2$d).";
-"ct.mastery.gate_class" = "Öffnet sich je Klasse mit genug %@:";
+"ct.mastery.weapons" = "%1$d/%2$d Waffen.";
+"ct.mastery.gate_class" = "Öffnet je Klasse mit %1$@ (%2$d von %3$d Klassen offen):";
+"ct.mastery.capstone" = "Benötigt %1$@ (%2$d/%3$d).";

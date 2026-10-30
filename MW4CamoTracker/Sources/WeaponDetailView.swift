@@ -824,7 +824,7 @@ private struct MasteryChallengeRow: View {
 
 /// A camo earned by reaching a count rather than by hand: a check once
 /// earned, a lock until then, with the count under its name.
-private struct StatusRow: View {
+struct StatusRow: View {
     let name: String
     let achieved: Bool
     let color: Color

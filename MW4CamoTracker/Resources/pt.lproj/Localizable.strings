@@ -566,4 +566,6 @@
 "ct.import.failed" = "Esse ficheiro não é uma exportação da %@.";
 "ct.mastery.gate_camos" = "Abre numa arma quando as suas camuflagens estiverem feitas (%d prontas).";
 "ct.mastery.gate_weapons" = "Precisa de %1$@ em %2$d armas (%3$d/%2$d).";
-"ct.mastery.gate_class" = "Abre por classe com %@ suficiente:";
+"ct.mastery.weapons" = "%1$d/%2$d armas.";
+"ct.mastery.gate_class" = "Abre por classe com %1$@ (%2$d de %3$d classes abertas):";
+"ct.mastery.capstone" = "Precisa de %1$@ (%2$d/%3$d).";

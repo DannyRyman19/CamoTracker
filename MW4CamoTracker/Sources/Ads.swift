@@ -60,6 +60,8 @@ final class Ads: NSObject, ObservableObject {
     func start() {
         #if DEBUG
         print("[Ads] start: showsAds \(showsAds) ready \(ready) starting \(starting) onboarded \(UserDefaults.standard.bool(forKey: "mw4_has_onboarded")) premium \(Premium.shared.isPremium)")
+        // Screenshot launches (SS_SCREEN) never ask: the prompt would be in the shot
+        if ProcessInfo.processInfo.environment["SS_SCREEN"] != nil { return }
         #endif
         guard showsAds, AdConfig.isConfigured, !AdConfig.simulated, !ready, !starting,
               UserDefaults.standard.bool(forKey: "mw4_has_onboarded") else { return }
