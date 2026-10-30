@@ -306,10 +306,13 @@ private struct ModeStatsCard: View {
             }
 
             if part == .weapons {
-                VStack(spacing: 8) {
-                    // Black Ops calls these per-weapon camos Mastery
-                    trackTitle((GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized())
-                    MasteryTrack(nodes: completionistNodes)
+                // Black Ops' ladder lives on its Mastery tab; Stats keeps
+                // the percentages and the class breakdown
+                if GameRegistry.hasMastery {
+                    VStack(spacing: 8) {
+                        trackTitle("mw4.ui.section.completionist".localized())
+                        MasteryTrack(nodes: completionistNodes)
+                    }
                 }
             } else {
                 VStack(spacing: 8) {

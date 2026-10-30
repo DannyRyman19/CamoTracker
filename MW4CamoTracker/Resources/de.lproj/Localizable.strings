@@ -563,3 +563,6 @@
 "ct.import.footer" = "Exportiere deine Daten in der %@-App und wähle die Datei hier aus. Zählerstände steigen nur, hier Erfasstes geht nicht verloren.";
 "ct.import.done" = "Fortschritt für %d Waffen importiert.";
 "ct.import.failed" = "Diese Datei ist kein %@-Export.";
+"ct.mastery.gate_camos" = "Öffnet sich, sobald die Tarnungen einer Waffe fertig sind (%d bereit).";
+"ct.mastery.gate_weapons" = "Benötigt %1$@ auf %2$d Waffen (%3$d/%2$d).";
+"ct.mastery.gate_class" = "Öffnet sich je Klasse mit genug %@:";

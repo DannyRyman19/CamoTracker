@@ -81,8 +81,9 @@ struct MasteryTabView: View {
 }
 
 /// A Black Ops mode's Mastery camos (Gold to Dark Matter, Shattered Gold
-/// to Singularity) as the game counts them: weapons with each, out of the
-/// launch roster, then 100%+ over every weapon once that's done.
+/// to Singularity): weapons with each, out of the launch roster, and what
+/// still holds each one shut ("4/6 Assault Rifles with Shattered Gold"),
+/// then 100%+ over every weapon once the last is on the launch roster.
 private struct TrackCamoRows: View {
     let mode: AppMode
     @EnvironmentObject private var viewModel: TrackerViewModel
@@ -91,17 +92,79 @@ private struct TrackCamoRows: View {
         let camos = mode.completionistCamos
         ForEach(camos.indices, id: \.self) { index in
             let camo = camos[index]
-            let count = index < TrackerViewModel.completionistStepCount
+            let isStep = index < TrackerViewModel.completionistStepCount
+            let count = isStep
                 ? viewModel.completionistCount(mode: mode.rawValue, step: index)
                 : viewModel.finalCamoCount(mode: mode.rawValue)
             let progress = viewModel.launchProgress(count)
-            row(name: camo.name, colors: camo.gradient, imageURL: camo.imageURL, done: progress.done, total: progress.total)
+            VStack(alignment: .leading, spacing: 8) {
+                row(name: camo.name, colors: camo.gradient, imageURL: camo.imageURL, done: progress.done, total: progress.total)
+                gate(index: index, before: index > 0 ? camos[index - 1].name : nil)
+                    .padding(.leading, 52)
+            }
         }
         let full = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
         if let last = camos.last, viewModel.launchProgress(viewModel.finalCamoCount(mode: mode.rawValue)).done >= viewModel.launchRoster, full.total > viewModel.launchRoster {
             row(name: "mw4.ui.stats.100_plus".localized() + " · " + last.name, colors: .platinum, imageURL: nil,
                 done: full.done, total: full.total)
         }
+    }
+
+    /// What opens this camo, and how far along that is
+    @ViewBuilder private func gate(index: Int, before: String?) -> some View {
+        let raw = mode.rawValue
+        if index >= TrackerViewModel.completionistStepCount {
+            // The final camo: the step before on enough weapons
+            let needed = viewModel.harmonicBreaksNeeded(mode: raw)
+            let have = min(viewModel.harmonicBreakCount(mode: raw), needed)
+            gateLine(String(format: "ct.mastery.gate_weapons".localized(), before ?? "", needed, have), met: have >= needed)
+        } else {
+            switch viewModel.completionistGate(mode: raw, step: index) {
+            case .weapon:
+                // Each weapon opens it by finishing its own camos
+                let ready = viewModel.launchProgress(viewModel.totalGoldWeaponCount(mode: raw)).done
+                gateLine(String(format: "ct.mastery.gate_camos".localized(), ready), met: false)
+            case .mode:
+                let gate = viewModel.completionistModeGateProgress(mode: raw, step: index)
+                gateLine(String(format: "ct.mastery.gate_weapons".localized(), before ?? "", gate.total, min(gate.done, gate.total)),
+                         met: gate.done >= gate.total)
+            case .category:
+                // Each class opens on its own: its count of the camo before
+                let classes = viewModel.catalog?.categories ?? []
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(String(format: "ct.mastery.gate_class".localized(), before ?? ""))
+                        .font(.system(size: 12))
+                        .foregroundStyle(Color.appInkMuted)
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 4)], alignment: .leading, spacing: 4) {
+                        ForEach(classes) { category in
+                            let p = viewModel.completionistCategoryGateProgress(category, mode: raw, step: index)
+                            let open = p.done >= p.total
+                            HStack(spacing: 4) {
+                                Image(systemName: open ? "lock.open.fill" : "lock.fill")
+                                    .font(.system(size: 8, weight: .bold))
+                                Text(category.name.resolved())
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                                Spacer(minLength: 2)
+                                Text("\(p.done)/\(p.total)")
+                                    .font(.system(size: 10.5, weight: .bold, design: .monospaced))
+                            }
+                            .font(.system(size: 10.5, weight: .semibold))
+                            .foregroundStyle(open ? mode.accent : Color.appInkMuted)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 4)
+                            .background(RoundedRectangle(cornerRadius: 5).fill(Color.appSurface2))
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private func gateLine(_ text: String, met: Bool) -> some View {
+        Label(text, systemImage: met ? "lock.open.fill" : "lock.fill")
+            .font(.system(size: 12))
+            .foregroundStyle(met ? mode.accent : Color.appInkMuted)
     }
 
     private func row(name: String, colors: [Color], imageURL: String?, done: Int, total: Int) -> some View {

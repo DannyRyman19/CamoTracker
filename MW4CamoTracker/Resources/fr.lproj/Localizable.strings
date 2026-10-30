@@ -563,3 +563,6 @@
 "ct.import.footer" = "Dans l'app %@, exporte tes données, puis choisis le fichier ici. Les compteurs ne font que monter : rien de ce que tu as suivi ici n'est perdu.";
 "ct.import.done" = "Progression importée pour %d armes.";
 "ct.import.failed" = "Ce fichier n'est pas un export de %@.";
+"ct.mastery.gate_camos" = "S'ouvre sur une arme une fois ses camos terminés (%d prêtes).";
+"ct.mastery.gate_weapons" = "Nécessite %1$@ sur %2$d armes (%3$d/%2$d).";
+"ct.mastery.gate_class" = "S'ouvre par classe avec assez de %@ :";
