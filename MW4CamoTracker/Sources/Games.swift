@@ -28,6 +28,8 @@ struct Game: Codable, Identifiable, Hashable {
     var sharedCamos: Bool? = nil
     /// The game's own look: colours, title font and splash. Absent: MW4's.
     var theme: GameTheme? = nil
+    /// The camo for unlocking every mode's final camo (BO7's Nexus Horizon)
+    var capstone: CapstoneCamo? = nil
 
     static func == (a: Game, b: Game) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
@@ -66,6 +68,14 @@ struct GameTheme: Codable, Hashable {
     var markColor: String?
     /// The game's own colour for buttons and highlights outside a mode
     var accent: String?
+}
+
+/// A camo earned across the whole game rather than on one weapon.
+struct CapstoneCamo: Codable {
+    let name: LocalizedText
+    var imageURL: String? = nil
+    /// "#RRGGBB" shimmer colours for its name
+    var colors: [String]? = nil
 }
 
 /// A mode as a game defines it. Name, symbol and colour fall back to the

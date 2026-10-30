@@ -340,6 +340,14 @@ final class TrackerViewModel: ObservableObject {
             || completed.contains(prestigeCamoKey(weaponId, index))
     }
 
+    /// Each mode with a final camo, and whether it's unlocked: what the
+    /// game's capstone camo (BO7's Nexus Horizon) asks for. Every mode the
+    /// game has, played or not, since the game counts them all.
+    var capstoneModes: [(mode: AppMode, done: Bool)] {
+        AppMode.allCases.filter { $0.hasFinalCamo && modes[$0.rawValue] != nil }
+            .map { ($0, finalCamoCount(mode: $0.rawValue) > 0) }
+    }
+
     /// Weapons that have reached this camo's stage and level: what a camo
     /// with `weaponsNeeded` counts.
     func prestigeCamoWeaponCount(_ camo: PrestigeCamo) -> Int {
