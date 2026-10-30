@@ -15,16 +15,17 @@ struct PinnedWeaponView: View {
             content(pinned)
                 .widgetURL(WidgetSnapshot.link(mode: pinned.mode, weaponId: pinned.weaponId, game: snapshot?.game))
         } else {
-            VStack(alignment: .leading, spacing: 8) {
+            // Centred in the widget, not stuck to its top
+            VStack(spacing: 8) {
                 Image(systemName: "pin.fill")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(Color.widgetAccent)
                 Text(snapshot?.pinPrompt ?? String(localized: "widget.pin_prompt"))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.white.opacity(0.85))
-                Spacer(minLength: 0)
+                    .multilineTextAlignment(.center)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 
@@ -141,10 +142,13 @@ struct ModeProgressView: View {
                         .lineLimit(1)
                     Spacer(minLength: 0)
                 }
+                // Without a Mastery row (Black Ops) the track's last camo
+                // takes its place, and the block sits in the middle
+                if mode.mastery.isEmpty { Spacer(minLength: 0) }
                 HStack(spacing: 10) {
                     ring.frame(width: 58, height: 58)
                     VStack(alignment: .leading, spacing: 3) {
-                        ForEach(Array(mode.steps.prefix(3).enumerated()), id: \.offset) { _, step in
+                        ForEach(Array(mode.steps.prefix(mode.mastery.isEmpty ? 4 : 3).enumerated()), id: \.offset) { _, step in
                             HStack(spacing: 4) {
                                 Circle().fill(Color(widgetHex: step.colorHex) ?? .white).frame(width: 6, height: 6)
                                 Text("\(step.done)/\(step.total)")

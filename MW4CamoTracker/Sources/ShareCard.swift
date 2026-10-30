@@ -427,8 +427,12 @@ struct MilestoneCardView: View {
         }
         .padding(20)
         .background(CardBackground(glow: main))
-        .overlay(Rectangle().strokeBorder(LinearGradient(colors: banner.titleGradient, startPoint: .topLeading,
-                                                         endPoint: .bottomTrailing).opacity(0.5), lineWidth: 3))
+        // Inset and rounded: apps show shared pictures with rounded corners,
+        // which cut a frame drawn on the edge
+        .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous)
+            .strokeBorder(LinearGradient(colors: banner.titleGradient, startPoint: .topLeading,
+                                         endPoint: .bottomTrailing).opacity(0.45), lineWidth: 2)
+            .padding(10))
     }
 }
 
