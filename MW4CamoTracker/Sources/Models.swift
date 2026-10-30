@@ -86,6 +86,10 @@ struct PrestigeCamo: Codable {
     /// A weapon's own name, image or level for this camo, keyed by `weaponId` as a
     /// string, for a weapon whose Prestige camos differ.
     let byWeapon: [String: PrestigeCamoOverride]?
+    /// Earned on every weapon once this many weapons have reached the
+    /// camo's stage and level (BO7's Cold Snap: Prestige Master level 250
+    /// on 50 weapons). Absent: each weapon earns it itself.
+    var weaponsNeeded: Int? = nil
 }
 
 struct PrestigeCamoOverride: Codable {

@@ -332,8 +332,18 @@ final class TrackerViewModel: ObservableObject {
 
     func isPrestigeCamoComplete(weaponId: Int, index: Int) -> Bool {
         guard prestigeCamos.indices.contains(index) else { return false }
-        return hasReachedPrestigeCamo(prestigeCamos[index], weaponId: weaponId)
+        let camo = prestigeCamos[index]
+        if let needed = camo.weaponsNeeded {
+            return prestigeCamoWeaponCount(camo) >= needed || completed.contains(prestigeCamoKey(weaponId, index))
+        }
+        return hasReachedPrestigeCamo(camo, weaponId: weaponId)
             || completed.contains(prestigeCamoKey(weaponId, index))
+    }
+
+    /// Weapons that have reached this camo's stage and level: what a camo
+    /// with `weaponsNeeded` counts.
+    func prestigeCamoWeaponCount(_ camo: PrestigeCamo) -> Int {
+        allWeapons.filter { hasReachedPrestigeCamo(camo, weaponId: $0.weaponId) }.count
     }
 
     /// Like a Military camo: tapping one sets the weapon's Prestige and
@@ -344,7 +354,12 @@ final class TrackerViewModel: ObservableObject {
               let stage = prestigeCamoStage(prestigeCamos[index]) else { return }
         let camo = prestigeCamos[index]
         let wasDone = isPrestigeCamoComplete(weaponId: weaponId, index: index)
-        if wasDone {
+        if camo.weaponsNeeded != nil {
+            // Earned across weapons, so no one weapon's level sets it: a
+            // tap is a plain tick
+            let key = prestigeCamoKey(weaponId, index)
+            if completed.contains(key) { completed.remove(key) } else { completed.insert(key) }
+        } else if wasDone {
             for later in index..<prestigeCamos.count { completed.remove(prestigeCamoKey(weaponId, later)) }
             if hasReachedPrestigeCamo(camo, weaponId: weaponId) {
                 if let level = prestigeCamoLevel(camo, weaponId: weaponId), level > 1 {

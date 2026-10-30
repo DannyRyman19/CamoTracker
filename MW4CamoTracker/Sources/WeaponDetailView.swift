@@ -360,6 +360,11 @@ struct WeaponDetailView: View {
     /// "Prestige the HAN 86." or "Reach Prestige Master level 73."
     private func prestigeCamoDetail(_ camo: PrestigeCamo) -> String? {
         guard let stage = viewModel.prestigeCamoStage(camo) else { return nil }
+        if let needed = camo.weaponsNeeded {
+            // Counted across weapons: "Reach Prestige Master level 250 on 50 weapons (12/50)."
+            return String(format: "ct.ui.prestige_camo.weapons".localized(), viewModel.prestigeStages[stage - 1].name.resolved(),
+                          camo.level ?? 1, needed, min(viewModel.prestigeCamoWeaponCount(camo), needed))
+        }
         guard let level = viewModel.prestigeCamoLevel(camo, weaponId: weapon.weaponId) else {
             return String(format: "mw4.ui.prestige_camo.enter".localized(), weapon.name.resolved())
         }
