@@ -1,6 +1,6 @@
 {
- "version": "0.9.43",
- "updated": "2026-10-28",
+ "version": "0.9.44",
+ "updated": "2026-10-30",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5387,12 +5387,14 @@
     },
     {
      "title": "Blackmarket Weapons Locker",
-     "subtitle": "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet",
+     "value": "C2",
+     "subtitle": "Rare. Comes in the Recon Equipment Kit (DMZ level 46). Reported to open a green weapons locker in a shop stockroom at Hanrim Village: go behind the counter and through the green double doors. Another basement with Black Market lockers is reported in B7 but not checked",
      "item": "blackmarket-weapons-locker"
     },
     {
      "title": "Underground Propaganda Store Room",
-     "subtitle": "Rare. Where its door is isn't known yet",
+     "value": "B7",
+     "subtitle": "Rare. Reported to open the store room in the underground utility corridors beneath the Re-Education Center, Deadtown. The exact entrance isn't known yet",
      "item": "underground-propaganda-store-room"
     },
     {
@@ -5509,12 +5511,14 @@
     },
     {
      "title": "Hoesik Supply Room",
-     "subtitle": "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+     "value": "D8",
+     "subtitle": "Epic. The upstairs supply room in the small office building at the south edge of the Rice Mill, Imjin Farmland: a brown single door beside a pale-blue wall. The grid square is a search area, not an exact door",
      "item": "hoesik-supply-room"
     },
     {
      "title": "Mill Explosives Lab",
-     "subtitle": "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+     "value": "D8",
+     "subtitle": "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. The key has been seen on the control-room desk (Comms Station Six). The exact doorway isn't known yet",
      "item": "mill-explosives-lab"
     },
     {
@@ -8148,7 +8152,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Comes in DMZ level reward kits. Where its door is isn't known yet",
+   "note": "Comes in the Recon Equipment Kit (DMZ level 46). Reported to open a green weapons locker in a shop stockroom at Hanrim Village: go behind the counter and through the green double doors. Another basement with Black Market lockers is reported in B7 but not checked",
+   "grid": "C2",
    "marker": "k-blackmarket-weapons-locker-2",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
@@ -9217,7 +9222,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Epic",
-   "note": "Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+   "note": "The upstairs supply room in the small office building at the south edge of the Rice Mill, Imjin Farmland: a brown single door beside a pale-blue wall. The grid square is a search area, not an exact door",
+   "grid": "D8",
    "marker": "k-hoesik-supply-room",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1",
@@ -9718,7 +9724,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet",
+   "note": "The Explosives Lab in the Rice Mill, Imjin Farmland. The key has been seen on the control-room desk (Comms Station Six). The exact doorway isn't known yet",
+   "grid": "D8",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1",
    "found": "Rice Mill control-room desk",
@@ -11266,7 +11273,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Where its door is isn't known yet",
+   "note": "Reported to open the store room in the underground utility corridors beneath the Re-Education Center, Deadtown. The exact entrance isn't known yet",
+   "grid": "B7",
    "marker": "k-underground-propaganda-store-room",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
