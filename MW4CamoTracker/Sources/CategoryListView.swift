@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 /// Top of each mode tab: a Suggested section (what to grind next), the shared
 /// weapon categories (from the catalog), and that mode's own mode-exclusive
@@ -633,6 +634,8 @@ struct CustomiseHomeSheet: View {
     @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
     @AppStorage(StartTab.key) private var startTab = StartTab.weapons.rawValue
+    @State private var importing = false
+    @State private var importMessage: String?
     @EnvironmentObject private var viewModel: TrackerViewModel
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
@@ -646,6 +649,22 @@ struct CustomiseHomeSheet: View {
         #else
         false
         #endif
+    }
+
+    /// Reads the old app's export and merges it in, then says how it went.
+    private func importFile(_ result: Result<URL, Error>) {
+        let legacy = GameRegistry.current.legacyApp ?? ""
+        guard case .success(let url) = result else { return }
+        let scoped = url.startAccessingSecurityScopedResource()
+        defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+        do {
+            let progress = try LegacyImport.read(try Data(contentsOf: url), into: viewModel)
+            viewModel.applyImport(progress)
+            Haptics.milestone()
+            importMessage = String(format: "ct.import.done".localized(), progress.weapons.count)
+        } catch {
+            importMessage = String(format: "ct.import.failed".localized(), legacy)
+        }
     }
 
     private var layout: HomeLayout { HomeLayout(order: order, hidden: hidden) }
@@ -683,6 +702,20 @@ struct CustomiseHomeSheet: View {
                     Text("mw4.ui.modes".localized())
                 } footer: {
                     Text("mw4.ui.modes.footer".localized())
+                }
+
+                if let legacy = GameRegistry.current.legacyApp {
+                    Section {
+                        Button {
+                            importing = true
+                        } label: {
+                            Label(String(format: "ct.import.button".localized(), legacy), systemImage: "square.and.arrow.down")
+                                .foregroundStyle(accent)
+                        }
+                        .accessibilityIdentifier("customise.import")
+                    } footer: {
+                        Text(String(format: "ct.import.footer".localized(), legacy))
+                    }
                 }
 
                 Section {
@@ -827,6 +860,12 @@ struct CustomiseHomeSheet: View {
             }
             .environment(\.editMode, .constant(.active))
             .navigationDestination(isPresented: $showsIcons) { AppIconPicker(accent: accent) }
+            .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .data]) { result in
+                importFile(result)
+            }
+            .alert(importMessage ?? "", isPresented: Binding(get: { importMessage != nil }, set: { if !$0 { importMessage = nil } })) {
+                Button("mw4.ui.done".localized(), role: .cancel) {}
+            }
             #if DEBUG
             // `SS_APP_ICONS=1` (with SS_CUSTOMISE=1) opens App icon too.
             .onAppear { if ProcessInfo.processInfo.environment["SS_APP_ICONS"] == "1" { showsIcons = true } }

@@ -559,3 +559,7 @@
 "ct.ui.stats.game_camos" = "Camos du jeu";
 "ct.ui.stats.capstone_detail" = "Débloque le dernier camo de Maîtrise dans chaque mode.";
 "ct.ui.prestige_camo.weapons_goal" = "Atteins %1$@ niveau %2$d sur %3$d armes.";
+"ct.import.button" = "Importer depuis %@";
+"ct.import.footer" = "Dans l'app %@, exporte tes données, puis choisis le fichier ici. Les compteurs ne font que monter : rien de ce que tu as suivi ici n'est perdu.";
+"ct.import.done" = "Progression importée pour %d armes.";
+"ct.import.failed" = "Ce fichier n'est pas un export de %@.";

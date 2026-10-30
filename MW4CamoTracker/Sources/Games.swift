@@ -30,6 +30,9 @@ struct Game: Codable, Identifiable, Hashable {
     var theme: GameTheme? = nil
     /// The camo for unlocking every mode's final camo (BO7's Nexus Horizon)
     var capstone: CapstoneCamo? = nil
+    /// The game's own older tracker ("BO6 Camo Tracker"), whose exported
+    /// file Customise can import (see `LegacyImport`)
+    var legacyApp: String? = nil
 
     static func == (a: Game, b: Game) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

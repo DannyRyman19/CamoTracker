@@ -21,6 +21,7 @@
 		258A36FB90154BE1773C3A32 /* MW4CamoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9609BFBA582D6262A98AD63A /* MW4CamoTrackerApp.swift */; };
 		28C95A58BA9A07D1A6D557BC /* stash_tile_r4c3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E99897AFAD8B8C42566C95F /* stash_tile_r4c3.png */; };
 		2988474E82544904AE8410B8 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CE3E33B1F795FA8614EBD /* Suggestions.swift */; };
+		F232E4EB1262B8606A18D98B /* LegacyImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */; };
 		1BF00A9ABB744995496686E3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123056CE45A50392C830785 /* Games.swift */; };
 		A1C0DE5A1E00000000000001 /* ShareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE5A1E00000000000002 /* ShareCard.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
@@ -195,6 +196,7 @@
 		6FE011B12DC06CD3532E4EFB /* SupportMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMail.swift; sourceTree = "<group>"; };
 		721F171FEBB0173685265D18 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		782CE3E33B1F795FA8614EBD /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyImport.swift; sourceTree = "<group>"; };
 		E123056CE45A50392C830785 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		A1C0DE5A1E00000000000002 /* ShareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCard.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				6FE011B12DC06CD3532E4EFB /* SupportMail.swift */,
 				613DA0B92D98434F953C3144 /* StatsView.swift */,
 				782CE3E33B1F795FA8614EBD /* Suggestions.swift */,
+				31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */,
 				E123056CE45A50392C830785 /* Games.swift */,
 				A1C0DE5A1E00000000000002 /* ShareCard.swift */,
 				5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */,
@@ -679,6 +682,7 @@
 				D69692F3FBBF248C85FC8F56 /* SupportMail.swift in Sources */,
 				05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */,
 				2988474E82544904AE8410B8 /* Suggestions.swift in Sources */,
+				F232E4EB1262B8606A18D98B /* LegacyImport.swift in Sources */,
 				1BF00A9ABB744995496686E3 /* Games.swift in Sources */,
 				A1C0DE5A1E00000000000001 /* ShareCard.swift in Sources */,
 				3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */,

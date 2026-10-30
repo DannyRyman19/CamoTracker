@@ -323,6 +323,28 @@ struct ContentView: View {
             }
             print("MW4REVIEW forced weapon \(weaponId): complete \(before) -> \(viewModel.weaponsWithBaseCamosComplete), token \(viewModel.reviewRequestToken)")
         }
+        // MW4_IMPORT=<file> runs Customise's import on an old app's export
+        // and prints what it brought in.
+        .task {
+            guard let path = ProcessInfo.processInfo.environment["MW4_IMPORT"] else { return }
+            var waited = 0
+            while viewModel.catalog == nil, waited < 200 {
+                try? await Task.sleep(for: .milliseconds(50)); waited += 1
+            }
+            do {
+                let progress = try LegacyImport.read(try Data(contentsOf: URL(fileURLWithPath: path)), into: viewModel)
+                viewModel.applyImport(progress)
+                let mode = viewModel.visibleModes.first?.rawValue ?? ""
+                let camos = viewModel.camos(weaponId: 0, mode: mode)
+                print("MW4IMPORT weapons=\(progress.weapons.count) level=\(viewModel.level(for: 0)) "
+                      + camos.map { "\($0.name.resolved())=\(viewModel.camoAmount(mode: mode, weaponId: 0, camo: $0))" }.joined(separator: ",")
+                      + " gold=\(viewModel.completionistAmount(mode: mode, weaponId: 0, step: 0))"
+                      + " badges=" + viewModel.allCamos(weaponId: 0, mode: mode).filter { $0.extra == true }
+                        .map { "\(viewModel.camoAmount(mode: mode, weaponId: 0, camo: $0))" }.joined(separator: "/"))
+            } catch {
+                print("MW4IMPORT failed \(error)")
+            }
+        }
         // MW4_SHARE_CARDS=1 writes the progress card and a Gold milestone
         // card to the app's tmp folder, to look at without tapping through.
         .task {

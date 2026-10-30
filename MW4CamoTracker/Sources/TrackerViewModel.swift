@@ -340,6 +340,29 @@ final class TrackerViewModel: ObservableObject {
             || completed.contains(prestigeCamoKey(weaponId, index))
     }
 
+    /// Progress read from another tracker's export, merged in: each count
+    /// and level only ever goes up, so nothing tracked here is lost.
+    func applyImport(_ progress: ProgressImport) {
+        for (weaponId, entry) in progress.levels {
+            let current = (prestige(for: weaponId), level(for: weaponId))
+            if (entry.prestige, entry.level) > current {
+                weaponPrestige[weaponId] = entry.prestige
+                weaponLevels[weaponId] = entry.level
+            }
+        }
+        for entry in progress.camos where entry.amount > 0 {
+            let key = camoKey(entry.mode, entry.weaponId, entry.itemId)
+            amounts[key] = max(amounts[key] ?? 0, entry.amount)
+        }
+        for entry in progress.steps where entry.amount > 0 {
+            let key = completionistKey(entry.mode, entry.weaponId, entry.step)
+            amounts[key] = max(amounts[key] ?? 0, entry.amount)
+        }
+        saveProgress()
+        objectWillChange.send()
+        refreshWidgets()
+    }
+
     /// Each mode with a final camo, and whether it's unlocked: what the
     /// game's capstone camo (BO7's Nexus Horizon) asks for. Every mode the
     /// game has, played or not, since the game counts them all.

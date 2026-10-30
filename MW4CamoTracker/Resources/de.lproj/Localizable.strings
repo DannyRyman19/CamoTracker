@@ -559,3 +559,7 @@
 "ct.ui.stats.game_camos" = "Spiel-Tarnungen";
 "ct.ui.stats.capstone_detail" = "Schalte in jedem Modus die letzte Meisterschafts-Tarnung frei.";
 "ct.ui.prestige_camo.weapons_goal" = "Erreiche %1$@ Stufe %2$d mit %3$d Waffen.";
+"ct.import.button" = "Aus %@ importieren";
+"ct.import.footer" = "Exportiere deine Daten in der %@-App und wähle die Datei hier aus. Zählerstände steigen nur, hier Erfasstes geht nicht verloren.";
+"ct.import.done" = "Fortschritt für %d Waffen importiert.";
+"ct.import.failed" = "Diese Datei ist kein %@-Export.";
