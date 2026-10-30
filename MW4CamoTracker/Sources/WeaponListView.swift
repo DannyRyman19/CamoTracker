@@ -95,6 +95,7 @@ struct WeaponListView: View {
         }
         .readingWidth($width)
         .navigationTitle(category.name.resolved())
+        .onAppear { Interstitials.shared.weaponClosed() }
     }
 }
 

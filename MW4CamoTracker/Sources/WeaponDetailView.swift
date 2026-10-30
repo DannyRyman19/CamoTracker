@@ -502,6 +502,7 @@ struct WeaponDetailView: View {
         }
         .readingWidth($width)
         .navigationTitle(weapon.name.resolved())
+        .onAppear { Interstitials.shared.leftWeapon = true }
         // Finishing the last camo moves on to what it opens, even after
         // the Camos tab was picked by hand
         .onChange(of: viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue)) { done in

@@ -3,16 +3,46 @@ import AppTrackingTransparency
 import IronSource
 import SwiftUI
 
-/// Unity LevelPlay: a banner under the Weapons and DMZ lists, and a
-/// rewarded ad before each stash scan. Premium players see neither.
+/// Unity LevelPlay: a banner under the Weapons, Mastery, Stats and DMZ
+/// screens, now and then a full-screen ad on leaving a weapon (see
+/// `Interstitials`), and a rewarded ad before each stash scan. Premium
+/// players see none of them.
 enum AdConfig {
     // LevelPlay dashboard: the app's key, and its Banner and Rewarded ad
     // units. Empty values switch the ads off and make scans free.
     static let appKey = "290d2170d"
-    static let bannerUnit = "fcdqqqb7rfkcj4ar"
+    static let defaultBannerUnit = "fcdqqqb7rfkcj4ar"
     static let rewardedUnit = "gd1lxhzn6xvf29nk"
 
-    static var isConfigured: Bool { !appKey.isEmpty && !bannerUnit.isEmpty && !rewardedUnit.isEmpty }
+    /// Each game's own Banner and Interstitial units, so the dashboard
+    /// shows what each game earns. A game without its own banner unit uses
+    /// the default one; without an interstitial unit it shows none.
+    static let units: [String: (banner: String, interstitial: String)] = [
+        "mw4": (banner: "", interstitial: ""),
+        "bo6": (banner: "", interstitial: ""),
+        "bo7": (banner: "", interstitial: ""),
+    ]
+
+    /// The placement names set up in the dashboard ("weapons", "stats"...):
+    /// a banner reports under its screen's once it's listed here. LevelPlay
+    /// refuses a placement it doesn't know, so none are sent until then.
+    static let placements: Set<String> = []
+
+    static var bannerUnit: String {
+        let own = units[GameRegistry.current.id]?.banner ?? ""
+        return own.isEmpty ? defaultBannerUnit : own
+    }
+
+    static var interstitialUnit: String? {
+        let own = units[GameRegistry.current.id]?.interstitial ?? ""
+        return own.isEmpty ? nil : own
+    }
+
+    static func placement(_ name: String?) -> String? {
+        name.flatMap { placements.contains($0) ? $0 : nil }
+    }
+
+    static var isConfigured: Bool { !appKey.isEmpty && !defaultBannerUnit.isEmpty && !rewardedUnit.isEmpty }
 
     /// `MW4_ADS=1` (DEBUG) acts as a free player with ads on, without
     /// starting the SDK: the scan asks first, and with no ad goes straight on.
@@ -93,6 +123,7 @@ final class Ads: NSObject, ObservableObject {
                 guard error == nil else { return }  // tried again next time the app is opened
                 self.ready = true
                 self.loadRewarded()
+                Interstitials.shared.prepare()
                 if AdConfig.testSuite {
                     // Logs whether each network's SDK and adapter are wired up
                     LevelPlay.validateIntegration()
@@ -214,6 +245,8 @@ extension Ads: @preconcurrency LPMRewardedAdDelegate {
 /// it never pushes the layout wider. Empty for Premium and until the SDK is
 /// ready.
 struct AdBanner: View {
+    /// The screen it's on, reported as its placement once that's set up
+    var placement: String? = nil
     @ObservedObject private var ads = Ads.shared
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
@@ -236,7 +269,7 @@ struct AdBanner: View {
                         // MW4_ADS=1: a stand-in the size of a real banner, for layout
                         Rectangle().fill(Color.gray.opacity(0.35)).overlay(Text(verbatim: "Test banner").font(.caption))
                     } else {
-                        AdBannerView(size: size)
+                        AdBannerView(size: size, placement: placement)
                             .id(size.width)  // a new banner when the strip changes size class
                     }
                 }
@@ -261,7 +294,8 @@ struct AdBanner: View {
 /// in one of its own.
 private struct AdBannerView: UIViewControllerRepresentable {
     let size: LPMAdSize
-    func makeUIViewController(context: Context) -> BannerController { BannerController(size: size) }
+    let placement: String?
+    func makeUIViewController(context: Context) -> BannerController { BannerController(size: size, placement: placement) }
     func updateUIViewController(_ controller: BannerController, context: Context) {}
     static func dismantleUIViewController(_ controller: BannerController, coordinator: ()) { controller.banner?.destroy() }
 }
@@ -274,10 +308,12 @@ private final class BannerController: UIViewController, @preconcurrency LPMBanne
     }
 
     let size: LPMAdSize
+    let placement: String?
     var banner: LPMBannerAdView?
 
-    init(size: LPMAdSize) {
+    init(size: LPMAdSize, placement: String?) {
         self.size = size
+        self.placement = placement
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -287,7 +323,9 @@ private final class BannerController: UIViewController, @preconcurrency LPMBanne
         super.viewDidLoad()
         view.backgroundColor = .clear
         view.clipsToBounds = true
-        let config = LPMBannerAdViewConfigBuilder().set(adSize: size).build()
+        var builder = LPMBannerAdViewConfigBuilder().set(adSize: size)
+        if let placement = AdConfig.placement(placement) { builder = builder.set(placementName: placement) }
+        let config = builder.build()
         let banner = LPMBannerAdView(adUnitId: AdConfig.bannerUnit, config: config)
         banner.setDelegate(self)
         banner.translatesAutoresizingMaskIntoConstraints = false
@@ -304,4 +342,73 @@ private final class BannerController: UIViewController, @preconcurrency LPMBanne
 
     func didLoadAd(with adInfo: LPMAdInfo) {}
     func didFailToLoadAd(withAdUnitId adUnitId: String, error: Error) {}
+}
+
+/// A full-screen ad now and then, on the way back from a weapon to the
+/// list: never while ticking, at most one every ten minutes, and none in a
+/// player's first two days. Only for games with an interstitial unit.
+@MainActor
+final class Interstitials: NSObject, @preconcurrency LPMInterstitialAdDelegate {
+    static let shared = Interstitials()
+
+    private static let lastShownKey = "ct_ads_interstitial_last"
+    private static let firstSeenKey = "ct_ads_first_seen"
+    private static let gap: TimeInterval = 10 * 60
+    private static let grace: TimeInterval = 2 * 24 * 60 * 60
+
+    private var ad: LPMInterstitialAd?
+    private var unit: String?
+    private var retry = 0
+    /// A weapon was open: the next list screen to appear is the way back
+    var leftWeapon = false
+
+    /// Loads the current game's ad, a new one when the game changed.
+    func prepare() {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: Self.firstSeenKey) == nil { defaults.set(Date(), forKey: Self.firstSeenKey) }
+        guard Ads.shared.ready, let wanted = AdConfig.interstitialUnit else { ad = nil; unit = nil; return }
+        if unit != wanted || ad == nil {
+            let ad = LPMInterstitialAd(adUnitId: wanted)
+            ad.setDelegate(self)
+            self.ad = ad
+            unit = wanted
+            retry = 0
+        }
+        if ad?.isAdReady() != true { ad?.loadAd() }
+    }
+
+    /// Back on a list from a weapon: shows one if it's due.
+    func weaponClosed() {
+        guard leftWeapon else { return }
+        leftWeapon = false
+        let defaults = UserDefaults.standard
+        guard Ads.shared.showsAds, !AdConfig.simulated else { return }
+        prepare()
+        let now = Date()
+        if let first = defaults.object(forKey: Self.firstSeenKey) as? Date, now.timeIntervalSince(first) < Self.grace { return }
+        if let last = defaults.object(forKey: Self.lastShownKey) as? Date, now.timeIntervalSince(last) < Self.gap { return }
+        guard let ad, ad.isAdReady() else { return }
+        Task { @MainActor in
+            // After the list has finished sliding back in
+            try? await Task.sleep(for: .milliseconds(450))
+            guard let root = Ads.topController() else { return }
+            defaults.set(Date(), forKey: Self.lastShownKey)
+            ad.showAd(viewController: root, placementName: AdConfig.placement("weapon_exit"))
+        }
+    }
+
+    func didLoadAd(with adInfo: LPMAdInfo) { retry = 0 }
+
+    func didFailToLoadAd(withAdUnitId adUnitId: String, error: Error) {
+        retry += 1
+        let delay = min(64, 1 << min(retry, 6))
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(delay))
+            self.ad?.loadAd()
+        }
+    }
+
+    func didDisplayAd(with adInfo: LPMAdInfo) {}
+    func didCloseAd(with adInfo: LPMAdInfo) { ad?.loadAd() }
+    func didFailToDisplayAd(with adInfo: LPMAdInfo, error: Error) { ad?.loadAd() }
 }

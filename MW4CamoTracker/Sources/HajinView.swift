@@ -26,10 +26,10 @@ struct HajinView: View {
                     // iPad: the map is the page, the guide beside or under it,
                     // and the banner along the foot of both
                     HajinWideLayout()
-                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
+                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner(placement: "dmz") }
                 } else {
                     phoneList(guide)
-                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
+                        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner(placement: "dmz") }
                 }
             }
         }

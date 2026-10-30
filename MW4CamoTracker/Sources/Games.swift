@@ -155,6 +155,8 @@ final class GameStore: ObservableObject {
         let model = TrackerViewModel(game: game)
         viewModel = model
         self.game = game
+        // This game's own ad units
+        Interstitials.shared.prepare()
         Task { await model.refresh() }
     }
 }

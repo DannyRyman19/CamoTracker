@@ -85,6 +85,7 @@ struct StatsView: View {
             .listStyle(.plain)
         }
         .readingWidth($width)
+        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner(placement: "stats") }
         .navigationTitle("mw4.ui.tab.stats".localized())
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

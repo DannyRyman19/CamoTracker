@@ -322,7 +322,9 @@ struct CategoryListView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
         }
-        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
+        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner(placement: "weapons") }
+        // Back from a weapon: now and then a full-screen ad (see `Interstitials`)
+        .onAppear { Interstitials.shared.weaponClosed() }
         .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
         .navigationTitle(mode.displayName)

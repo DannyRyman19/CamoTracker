@@ -28,6 +28,7 @@ struct MasteryTabView: View {
                 AppBackground(accent: ordered.first?.accent ?? .accentMultiplayer)
                 list
             }
+            .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner(placement: "mastery") }
             .navigationTitle("mw4.ui.section.mastery".localized())
         }
     }
