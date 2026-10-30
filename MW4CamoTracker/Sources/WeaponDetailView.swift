@@ -350,7 +350,7 @@ struct WeaponDetailView: View {
             accent: mode.accent,
             amount: 0,
             isDone: viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: index),
-            titleGradient: [Color].prestige(camo, index: index),
+            titleGradient: viewModel.prestigeCamoColors(camo, index: index, weaponId: weapon.weaponId),
             detail: prestigeCamoDetail(camo),
             onToggle: { viewModel.togglePrestigeCamo(weaponId: weapon.weaponId, index: index) },
             onSetAmount: { _ in }

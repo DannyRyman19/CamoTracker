@@ -92,6 +92,9 @@ struct PrestigeCamoOverride: Codable {
     let name: LocalizedText?
     let imageURL: String?
     let level: Int?
+    /// This weapon's own shimmer colours, for a camo whose look differs
+    /// per weapon (BO7's Prestige 1, 2 and Max).
+    var colors: [String]? = nil
 }
 
 /// One Weapon Prestige stage. `maxLevel` is that stage's level cap; `nil`

@@ -336,7 +336,8 @@ struct ContentView: View {
             try? progress?.pngData()?.write(to: dir.appendingPathComponent("share_progress.png"))
             let weaponId = viewModel.allWeapons.first?.weaponId
             let banner = MilestoneBanner(id: UUID(), title: String(format: "mw4.ui.milestone.unlocked_title".localized(), "Gold"),
-                                         subtitle: "", titleGradient: .gold, icon: "medal.fill", weaponId: weaponId)
+                                         subtitle: "", titleGradient: .gold, icon: "medal.fill", weaponId: weaponId,
+                                         mode: viewModel.visibleModes.first?.rawValue)
             let milestone = await ShareCard.milestoneImage(banner, viewModel: viewModel)
             try? milestone?.pngData()?.write(to: dir.appendingPathComponent("share_milestone.png"))
             print("MW4SHARE \(dir.path) \(ShareCard.milestoneMessage(banner, viewModel: viewModel))")

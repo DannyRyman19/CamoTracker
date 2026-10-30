@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /// Deliberately `ObservableObject` + `@Published`, not `@Observable` — the latter
 /// is iOS 17+ only, and this app targets iOS 16.
@@ -375,6 +376,12 @@ final class TrackerViewModel: ObservableObject {
 
     func prestigeCamoImageURL(_ camo: PrestigeCamo, weaponId: Int) -> String? {
         camo.byWeapon?[String(weaponId)]?.imageURL ?? camo.imageURL
+    }
+
+    /// The camo's name colours: the weapon's own, else the camo's.
+    func prestigeCamoColors(_ camo: PrestigeCamo, index: Int, weaponId: Int) -> [Color] {
+        let own = (camo.byWeapon?[String(weaponId)]?.colors ?? []).compactMap(Color.init(hex:))
+        return own.count > 1 ? own : [Color].prestige(camo, index: index)
     }
 
     // MARK: - Camo challenges (per mode, per weapon)

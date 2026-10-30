@@ -132,7 +132,7 @@ struct WeaponRow: View {
     private var borderGradient: [Color]? {
         let prestige: [Color]? = viewModel.prestigeCamos.indices
             .last(where: { viewModel.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0) })
-            .map { [Color].prestige(viewModel.prestigeCamos[$0], index: $0) }
+            .map { viewModel.prestigeCamoColors(viewModel.prestigeCamos[$0], index: $0, weaponId: weapon.weaponId) }
         let completionist: [Color]? = highest.map { highest in
             let track = mode.completionist
             return highest < track.steps.count ? track.steps[highest].gradient : track.final.gradient

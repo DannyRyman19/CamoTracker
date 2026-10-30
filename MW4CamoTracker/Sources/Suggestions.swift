@@ -28,6 +28,8 @@ struct MilestoneBanner: Identifiable, Equatable {
     let icon: String
     /// The weapon it's for, whose picture goes on the share card.
     var weaponId: Int? = nil
+    /// The mode it was earned in, named on the share card.
+    var mode: String? = nil
 }
 
 extension TrackerViewModel {
@@ -101,7 +103,7 @@ extension TrackerViewModel {
     func checkMilestone(weaponId: Int, mode: String, wasGold: Bool) {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
         let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
-        announce(title: "mw4.ui.milestone.camos_complete_title".localized(),
+        announce(mode: mode, title: "mw4.ui.milestone.camos_complete_title".localized(),
                  subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill", weaponId: weaponId)
 
         // Finishing a weapon is the high point worth asking on. The gate
@@ -126,7 +128,7 @@ extension TrackerViewModel {
         for step in (0..<Self.completionistStepCount).reversed()
         where !before.steps[step] && isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) {
             let camo = completionist.steps[step]
-            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
+            announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
                      subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step], weaponId: weaponId)
             break
         }
@@ -135,7 +137,7 @@ extension TrackerViewModel {
         if finals > before.finalCamoCount {
             let gained = finals - before.finalCamoCount
             let one = gained == 1 && hasFinalCamo(mode: mode, weaponId: weaponId)
-            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), completionist.final.name),
+            announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), completionist.final.name),
                      subtitle: one
                         ? weaponName
                         : String(format: "mw4.ui.milestone.final_many".localized(), gained),
@@ -147,12 +149,12 @@ extension TrackerViewModel {
         // A challenge Mastery tier on this weapon.
         for tier in (1...3).reversed()
         where !before.weaponMastery[tier - 1] && isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) {
-            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
+            announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
                      subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill", weaponId: weaponId)
             break
         }
         for tier in (1...3).reversed() where !before.mastery[tier - 1] && isMasteryAchieved(mode: mode, tier: tier) {
-            announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
+            announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
                      subtitle: tier == 3
                         ? "mw4.ui.milestone.tier3_subtitle".localized()
                         : masteryKind(mode: mode, tier: tier) == .mode
@@ -165,16 +167,16 @@ extension TrackerViewModel {
         }
 
         if !before.is100Plus, is100PlusAchieved(mode: mode) {
-            announce(title: "mw4.ui.milestone.100_plus_title".localized(),
+            announce(mode: mode, title: "mw4.ui.milestone.100_plus_title".localized(),
                      subtitle: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(),
                                       masteryKind(mode: mode, tier: 3) == .challenge ? tierCamos[2].name : appMode.lastCompletionist.name),
                      titleGradient: .platinum, icon: "crown.fill")
         }
     }
 
-    private func announce(title: String, subtitle: String, titleGradient: [Color], icon: String, weaponId: Int? = nil) {
+    private func announce(mode: String, title: String, subtitle: String, titleGradient: [Color], icon: String, weaponId: Int? = nil) {
         let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon,
-                                     weaponId: weaponId)
+                                     weaponId: weaponId, mode: mode)
         milestoneBanner = banner
         Haptics.milestone()
         Task { [weak self] in

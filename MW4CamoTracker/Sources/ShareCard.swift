@@ -41,9 +41,12 @@ enum ShareCard {
     /// the app's environment).
     struct Progress {
         struct Camo { let name: String; let gradient: [Color]; let done: Int; let total: Int }
+        /// One mode's camo track, or the one shared by every mode (MW4),
+        /// which has no name of its own
+        struct Track { let name: String?; let accent: Color; let fraction: Double; let camos: [Camo] }
         struct Mode { let name: String; let symbol: String; let accent: Color; let fraction: Double; let tiers: [(name: String, gradient: [Color], achieved: Bool)] }
         let overall: Double
-        let completionist: [Camo]
+        let tracks: [Track]
         let modes: [Mode]
         let dmz: [DMZStatLine]
         let cash: Int
@@ -60,11 +63,16 @@ enum ShareCard {
                             })
             }
             overall = modes.isEmpty ? 0 : modes.map(\.fraction).reduce(0, +) / Double(modes.count)
-            // Camos are one track per weapon, read from the first mode as Stats does
-            let first = visible.first ?? .multiplayer
-            completionist = first.completionistCamos.enumerated().map { index, camo in
-                let progress = viewModel.launchProgress(viewModel.completionistCount(mode: first.rawValue, step: index))
-                return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
+            // MW4's camos are one track across modes, read from the first
+            // mode as Stats does; Black Ops modes are each their own
+            let shared = GameRegistry.current.sharedCamos == true
+            tracks = (shared ? Array(visible.prefix(1)) : visible).map { mode in
+                Track(name: shared ? nil : mode.displayName, accent: mode.accent,
+                      fraction: viewModel.trueCompletionFraction(mode: mode.rawValue),
+                      camos: mode.completionistCamos.enumerated().map { index, camo in
+                          let progress = viewModel.launchProgress(viewModel.completionistCount(mode: mode.rawValue, step: index))
+                          return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
+                      })
             }
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
@@ -73,7 +81,8 @@ enum ShareCard {
     }
 
     static func progressMessage(_ data: Progress) -> String {
-        message(String(format: "mw4.ui.share.progress_line".localized(), Int(data.overall * 100)))
+        message(String(format: "mw4.ui.share.progress_line".localized(), Int(data.overall * 100))
+            .replacingOccurrences(of: "MW4", with: GameRegistry.current.shortName))
     }
 
     // MARK: Milestone
@@ -92,6 +101,13 @@ enum ShareCard {
 
     @MainActor
     static func milestoneMessage(_ banner: MilestoneBanner, viewModel: TrackerViewModel) -> String {
+        let game = GameRegistry.current
+        let context = [game.shortName, banner.mode.flatMap(AppMode.init(rawValue:))?.displayName].compactMap { $0 }.joined(separator: " ")
+        return context + ": " + milestoneLine(banner, viewModel: viewModel)
+    }
+
+    @MainActor
+    private static func milestoneLine(_ banner: MilestoneBanner, viewModel: TrackerViewModel) -> String {
         if let name = banner.weaponId.flatMap(viewModel.weapon(id:))?.name.resolved() {
             return message(String(format: "mw4.ui.share.milestone_weapon".localized(), banner.title, name))
         }
@@ -104,16 +120,33 @@ enum ShareCard {
 /// The app's mark and name across the top of a card.
 private struct CardHeader: View {
     var trailing: String? = nil
+    /// The mode the card is about, after the game's name; none for a card
+    /// about the whole game
+    var mode: AppMode? = nil
+
+    private var game: Game { GameRegistry.current }
 
     var body: some View {
         HStack(spacing: 8) {
             Image("AppIcon-Preview")
                 .resizable()
-                .frame(width: 26, height: 26)
-                .clipShape(RoundedRectangle(cornerRadius: 6))
-            Text("Camo Track")
-                .font(.hitmarker(15))
-                .foregroundStyle(Color.appInk)
+                .frame(width: 30, height: 30)
+                .clipShape(RoundedRectangle(cornerRadius: 7))
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Camo Track")
+                    .font(.hitmarker(15))
+                    .foregroundStyle(Color.appInk)
+                // "BO7 Multiplayer", or the game's full name
+                HStack(spacing: 5) {
+                    Text(mode == nil ? game.name.resolved() : game.shortName)
+                        .foregroundStyle(Palette.accent ?? mode?.accent ?? .camoGold)
+                    if let mode {
+                        Text(mode.displayName)
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                }
+                .font(.hitmarker(12))
+            }
             Spacer()
             if let trailing {
                 Text(trailing)
@@ -200,9 +233,26 @@ struct ProgressCardView: View {
     let data: ShareCard.Progress
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: data.tracks.count > 1 ? 8 : 14) {
             CardHeader(trailing: Date.now.formatted(date: .abbreviated, time: .omitted))
 
+            if data.tracks.count > 1 {
+                // A row per mode below names each mode, so the ring stands alone
+                HStack(spacing: 12) {
+                    ZStack {
+                        StillRing(fraction: data.overall, accent: .camoGold, lineWidth: 6)
+                        Text("\(min(Int(data.overall * 100), 100))%")
+                            .font(.system(size: 14, weight: .bold, design: .monospaced))
+                            .foregroundStyle(Color.appInk)
+                    }
+                    .frame(width: 48, height: 48)
+                    Text("mw4.ui.stats.overall".localized())
+                        .font(.system(size: 12, weight: .bold))
+                        .textCase(.uppercase)
+                        .foregroundStyle(Color.appInkMuted)
+                    Spacer()
+                }
+            } else {
             HStack(spacing: 16) {
                 ZStack {
                     StillRing(fraction: data.overall, accent: .camoGold, lineWidth: 9)
@@ -240,22 +290,43 @@ struct ProgressCardView: View {
                     }
                 }
             }
+            }
 
-            HStack(spacing: 6) {
-                ForEach(data.completionist, id: \.name) { camo in
-                    VStack(spacing: 3) {
-                        CamoText(text: camo.name, gradient: camo.gradient, font: .hitmarker(11))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.6)
-                        Text("\(camo.done)/\(camo.total)")
-                            .font(.system(size: 13, weight: .bold, design: .monospaced))
-                            .foregroundStyle(camo.done > 0 ? Color.appInk : Color.appInkMuted)
+            // Smaller tiles when there's a row per mode
+            let compact = data.tracks.count > 1
+            VStack(alignment: .leading, spacing: compact ? 8 : 0) {
+                ForEach(data.tracks.indices, id: \.self) { t in
+                    let track = data.tracks[t]
+                    if let name = track.name {
+                        HStack {
+                            Text(name)
+                                .font(.system(size: 11, weight: .bold))
+                                .foregroundStyle(track.accent)
+                            Spacer()
+                            Text("\(Int(track.fraction * 100))%")
+                                .font(.system(size: 11, weight: .bold, design: .monospaced))
+                                .foregroundStyle(track.accent)
+                        }
+                        .padding(.bottom, -4)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                    .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
-                    .overlay(RoundedRectangle(cornerRadius: 6)
-                        .strokeBorder((camo.gradient.first ?? .appInkMuted).opacity(camo.done > 0 ? 0.55 : 0.15), lineWidth: 1))
+                    HStack(spacing: 6) {
+                        ForEach(track.camos, id: \.name) { camo in
+                            VStack(spacing: compact ? 1 : 3) {
+                                CamoText(text: camo.name, gradient: camo.gradient, font: .hitmarker(compact ? 9.5 : 11))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.6)
+                                Text("\(camo.done)/\(camo.total)")
+                                    .font(.system(size: compact ? 11 : 13, weight: .bold, design: .monospaced))
+                                    .foregroundStyle(camo.done > 0 ? Color.appInk : Color.appInkMuted)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, compact ? 5 : 8)
+                            .padding(.horizontal, 2)
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
+                            .overlay(RoundedRectangle(cornerRadius: 6)
+                                .strokeBorder((camo.gradient.first ?? .appInkMuted).opacity(camo.done > 0 ? 0.55 : 0.15), lineWidth: 1))
+                        }
+                    }
                 }
             }
 
@@ -304,12 +375,13 @@ struct MilestoneCardView: View {
     let banner: MilestoneBanner
     let weaponName: String?
     let picture: UIImage?
+    private var mode: AppMode? { banner.mode.flatMap(AppMode.init(rawValue:)) }
 
     private var main: Color { banner.titleGradient.first ?? .camoGold }
 
     var body: some View {
         VStack(spacing: 0) {
-            CardHeader(trailing: Date.now.formatted(date: .abbreviated, time: .omitted))
+            CardHeader(trailing: Date.now.formatted(date: .abbreviated, time: .omitted), mode: mode)
             Spacer(minLength: 0)
             Group {
                 if let picture {
