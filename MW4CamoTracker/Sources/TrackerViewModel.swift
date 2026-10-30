@@ -472,8 +472,10 @@ final class TrackerViewModel: ObservableObject {
 
     func isCamoComplete(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if let level = militaryLevel(mode: mode, weaponId: weaponId, camo: camo) {
-            // By level, or ticked by hand in quick tick.
-            return hasReached(level, weaponId: weaponId) || completed.contains(camoKey(mode, weaponId, camo.itemId))
+            // By level, or ticked by hand in quick tick, in any mode whose
+            // camos count for this one (all of them in MW4), as levels do.
+            return hasReached(level, weaponId: weaponId)
+                || countingModes(mode).contains { completed.contains(camoKey($0, weaponId, camo.itemId)) }
         }
         // One camo grind per weapon across modes (launch blog, 19 Oct
         // 2026): finished in any mode is unlocked in all. Each mode keeps
@@ -559,7 +561,9 @@ final class TrackerViewModel: ObservableObject {
             // A level change checks its own milestones, in every mode.
             if wasDone {
                 // This one and every one after it, as lowering the level would.
-                for later in military[index...] { completed.remove(camoKey(mode, weaponId, later.itemId)) }
+                for later in military[index...] {
+                    for other in countingModes(mode) { completed.remove(camoKey(other, weaponId, later.itemId)) }
+                }
                 if hasReached(level, weaponId: weaponId) { applyLevel(level - 1, for: weapon) }
             } else if !quickTick {
                 applyLevel(level, for: weapon)

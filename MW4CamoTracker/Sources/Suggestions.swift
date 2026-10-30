@@ -30,6 +30,9 @@ struct MilestoneBanner: Identifiable, Equatable {
     var weaponId: Int? = nil
     /// The mode it was earned in, named on the share card.
     var mode: String? = nil
+    /// The camo's own picture, shown on the share card when it isn't
+    /// about one weapon.
+    var imageURL: String? = nil
 }
 
 extension TrackerViewModel {
@@ -129,7 +132,8 @@ extension TrackerViewModel {
         where !before.steps[step] && isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) {
             let camo = completionist.steps[step]
             announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
-                     subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step], weaponId: weaponId)
+                     subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step], weaponId: weaponId,
+                     imageURL: camo.imageURL)
             break
         }
 
@@ -141,7 +145,8 @@ extension TrackerViewModel {
                      subtitle: one
                         ? weaponName
                         : String(format: "mw4.ui.milestone.final_many".localized(), gained),
-                     titleGradient: completionist.final.gradient, icon: "sparkles", weaponId: one ? weaponId : nil)
+                     titleGradient: completionist.final.gradient, icon: "sparkles", weaponId: one ? weaponId : nil,
+                     imageURL: completionist.final.imageURL)
         }
 
         let tiers = appMode.masteryCamos
@@ -150,7 +155,8 @@ extension TrackerViewModel {
         for tier in (1...3).reversed()
         where !before.weaponMastery[tier - 1] && isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) {
             announce(mode: mode, perMode: true, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
-                     subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill", weaponId: weaponId)
+                     subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill", weaponId: weaponId,
+                     imageURL: tierCamos[tier - 1].imageURL)
             break
         }
         for tier in (1...3).reversed() where !before.mastery[tier - 1] && isMasteryAchieved(mode: mode, tier: tier) {
@@ -158,11 +164,12 @@ extension TrackerViewModel {
                      subtitle: tier == 3
                         ? "mw4.ui.milestone.tier3_subtitle".localized()
                         : masteryKind(mode: mode, tier: tier) == .mode
-                        ? "mw4.ui.milestone.mode_mastery_subtitle".localized()
+                        ? appMode.displayName
                         : String(format: "mw4.ui.milestone.mastery_subtitle".localized(),
                                  masteryProgress(mode: mode, tier: tier).total,
                                  masteryKind(mode: mode, tier: tier) == .challenge ? tierCamos[tier - 1].name : appMode.lastCompletionist.name),
-                     titleGradient: tierCamos[tier - 1].gradient, icon: tier == 3 ? "star.fill" : "diamond.fill")
+                     titleGradient: tierCamos[tier - 1].gradient, icon: tier == 3 ? "star.fill" : "diamond.fill",
+                     imageURL: tierCamos[tier - 1].imageURL)
             break
         }
 
@@ -177,10 +184,10 @@ extension TrackerViewModel {
     /// `perMode` for a milestone that belongs to its mode (Mastery, 100%+).
     /// Camos shared by every mode (MW4) don't name one on the share card.
     private func announce(mode: String, perMode: Bool = false, title: String, subtitle: String, titleGradient: [Color],
-                          icon: String, weaponId: Int? = nil) {
+                          icon: String, weaponId: Int? = nil, imageURL: String? = nil) {
         let named = perMode || game.sharedCamos != true
         let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon,
-                                     weaponId: weaponId, mode: named ? mode : nil)
+                                     weaponId: weaponId, mode: named ? mode : nil, imageURL: imageURL)
         milestoneBanner = banner
         Haptics.milestone()
         Task { [weak self] in

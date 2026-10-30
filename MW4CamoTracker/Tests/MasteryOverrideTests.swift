@@ -752,6 +752,13 @@ struct TrackerViewModelTests {
         model.toggleCompletionist(mode: mp, weaponId: id, step: 0)
         #expect(model.allCamosComplete(weaponId: id, mode: mp))
         #expect(model.isCompletionistComplete(mode: mp, weaponId: id, step: 0))
+        // MW4's camos are one grind: ticked in Multiplayer, done in DMZ too,
+        // Military included
+        #expect(model.allCamosComplete(weaponId: id, mode: "dmz"))
+        // And unticking a Military camo in DMZ clears it everywhere
+        let first = try #require(model.camos(weaponId: id, mode: "dmz").first { $0.group == "military" })
+        model.toggleCamo(mode: "dmz", weaponId: id, camo: first)
+        #expect(!model.isCamoComplete(mode: mp, weaponId: id, camo: first))
     }
 
     /// In quick tick, unticking a camo earned by level steps the level

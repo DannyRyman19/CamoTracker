@@ -109,7 +109,13 @@ enum ShareCard {
         if let url = weapon?.imageURL.flatMap(URL.init(string:)) {
             picture = await ImageStore.shared.image(for: url)
         }
-        return render(MilestoneCardView(banner: banner, weaponName: weapon?.name.resolved(), picture: picture))
+        // The camo itself: the picture when it isn't about one weapon, a
+        // swatch on the weapon when it is
+        var camo: UIImage?
+        if let url = banner.imageURL.flatMap(URL.init(string:)) {
+            camo = await ImageStore.shared.image(for: url)
+        }
+        return render(MilestoneCardView(banner: banner, weaponName: weapon?.name.resolved(), picture: picture, camo: camo))
     }
 
     @MainActor
@@ -388,6 +394,7 @@ struct MilestoneCardView: View {
     let banner: MilestoneBanner
     let weaponName: String?
     let picture: UIImage?
+    var camo: UIImage? = nil
     private var mode: AppMode? { banner.mode.flatMap(AppMode.init(rawValue:)) }
 
     private var main: Color { banner.titleGradient.first ?? .camoGold }
@@ -403,6 +410,14 @@ struct MilestoneCardView: View {
                         .scaledToFit()
                         .frame(maxWidth: 300, maxHeight: 140)
                         .shadow(color: main.opacity(0.55), radius: 18)
+                } else if let camo {
+                    // The camo's own swatch, as the app shows it
+                    Image(uiImage: camo)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 130, height: 130)
+                        .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                        .shadow(color: main.opacity(0.55), radius: 18)
                 } else {
                     Image(systemName: banner.icon)
                         .font(.system(size: 64, weight: .bold))
@@ -412,10 +427,22 @@ struct MilestoneCardView: View {
             }
             .frame(height: 150)
             Spacer(minLength: 0)
-            CamoText(text: banner.title, gradient: banner.titleGradient, font: .hitmarker(30))
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .minimumScaleFactor(0.6)
+            HStack(spacing: 14) {
+                // On a weapon's card, which camo it earned, beside its name
+                if picture != nil, let camo {
+                    Image(uiImage: camo)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 54, height: 54)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .strokeBorder(main.opacity(0.6), lineWidth: 1.5))
+                }
+                CamoText(text: banner.title, gradient: banner.titleGradient, font: .hitmarker(30))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.6)
+            }
             Text(weaponName ?? banner.subtitle)
                 .font(weaponName == nil ? .system(size: 14) : .hitmarker(20))
                 .foregroundStyle(weaponName == nil ? Color.appInkMuted : Color.appInk)
