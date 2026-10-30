@@ -344,8 +344,8 @@ guide = [
    ("Shopping DRC Locker", "H5", "Ultra. Reported to open the DRC Locker in the DRC Labs under NuriGO Mall, in the secured lower car park"),
    ("Mechanic's Shack", "F5", "Rare. The standalone shack south of the clinic, Cheongun Village"),
    ("Militia Arms Depot", "G7", "Rare. The lower-floor armory in Gangbyeon Apartment B, Hajin River Heights. Players have found it in a duffel bag in the Citadel East Wing"),
-   ("Blackmarket Weapons Locker", None, "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet"),
-   ("Underground Propaganda Store Room", None, "Rare. Where its door is isn't known yet"),
+   ("Blackmarket Weapons Locker", "C2", "Rare. Comes in the Recon Equipment Kit (DMZ level 46). Reported to open a green weapons locker in a shop stockroom at Hanrim Village: go behind the counter and through the green double doors. Another basement with Black Market lockers is reported in B7 but not checked"),
+   ("Underground Propaganda Store Room", "B7", "Rare. Reported to open the store room in the underground utility corridors beneath the Re-Education Center, Deadtown. The exact entrance isn't known yet"),
    ("Air Base DRC Weapons Locker", "B6", "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker"),
    ("Vault Armory", "F4", "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village"),
    ("Imjin Mill Foreman's Office", "D8", "Rare. First floor of the Rice Mill, Imjin Farmland"),
@@ -365,8 +365,8 @@ guide = [
    ("Coin Mining Den", "G6", "Rare. The e-coin mining lab in an upper apartment east of the westernmost gas station, NuriGO West: a grey office door beside a red fire alarm. Reported as a reward from Operation Shopping Hacks"),
    ("Supreme Leader's Bunker Access Card", "B6", "Legendary. The Supreme Leader's Bunker deep in the Chang-san Air Base bunker; Bale cloned its credentials onto a new card. Reported as a reward from Operation Iron Citadel"),
    ("Roze's High-Rise Armory", "G6", "Legendary. The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault"),
-   ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
-   ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
+   ("Hoesik Supply Room", "D8", "Epic. The upstairs supply room in the small office building at the south edge of the Rice Mill, Imjin Farmland: a brown single door beside a pale-blue wall. The grid square is a search area, not an exact door"),
+   ("Mill Explosives Lab", "D8", "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. The key has been seen on the control-room desk (Comms Station Six). The exact doorway isn't known yet"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
    ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
    ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound"),
@@ -463,7 +463,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.43", "updated": "2026-10-28",
+data = {"version": "0.9.44", "updated": "2026-10-30",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
