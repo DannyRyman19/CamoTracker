@@ -544,7 +544,6 @@ enum StartTab: String, CaseIterable, Identifiable {
     /// The current game has this tab
     var isAvailable: Bool {
         switch self {
-        case .mastery: return GameRegistry.hasMastery
         case .dmz: return GameRegistry.current.hasHajin
         default: return true
         }

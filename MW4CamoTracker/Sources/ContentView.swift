@@ -84,7 +84,7 @@ struct ContentView: View {
 
     /// Room for Mastery beside the weapons: an iPad, or an unfolded iPhone
     /// Duo held sideways. Upright the Duo (about 670pt) keeps the tab.
-    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 && GameRegistry.hasMastery }
+    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 }
 
     /// iPad: Mastery in a column beside the weapons, shown or hidden from
     /// the toolbar. It stands in for the Mastery tab, which iPad drops.
@@ -184,7 +184,7 @@ struct ContentView: View {
                 .tag(index)
 
                 // iPad has Mastery beside the weapons instead
-                if !hasMasteryColumn && GameRegistry.hasMastery {
+                if !hasMasteryColumn {
                     NavigationStack { MasteryTabView() }
                         .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
                         .tag(2)
@@ -281,7 +281,7 @@ struct ContentView: View {
             // an iPad, so that opens on Weapons
             switch StartTab(rawValue: startTabRaw) ?? .weapons {
             case .weapons: selectedTab = 0
-            case .mastery: selectedTab = hasMasteryColumn || !GameRegistry.hasMastery ? 0 : 2
+            case .mastery: selectedTab = hasMasteryColumn ? 0 : 2
             case .dmz: selectedTab = gameStore.game.hasHajin ? Self.hajinTab : 0
             case .stats: selectedTab = 1
             }

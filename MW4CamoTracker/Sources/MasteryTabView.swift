@@ -41,10 +41,23 @@ struct MasteryTabView: View {
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                 }
+                if !GameRegistry.hasMastery {
+                    // Black Ops: the game-wide camos first, then each mode's
+                    // four Mastery camos counted across its weapons
+                    if GameRegistry.current.capstone != nil || viewModel.prestigeCamos.contains(where: { $0.weaponsNeeded != nil }) {
+                        GameCamosCard()
+                            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                            .listRowBackground(Color.clear)
+                    }
+                }
                 ForEach(ordered) { mode in
                     Section {
-                        ForEach(1...3, id: \.self) { tier in
-                            row(mode: mode, tier: tier)
+                        if GameRegistry.hasMastery {
+                            ForEach(1...3, id: \.self) { tier in
+                                row(mode: mode, tier: tier)
+                            }
+                        } else {
+                            TrackCamoRows(mode: mode)
                         }
                     } header: {
                         Label(mode.displayName, systemImage: mode.symbol)
@@ -64,5 +77,54 @@ struct MasteryTabView: View {
         } else {
             MasteryModeRow(mode: mode, tier: tier)
         }
+    }
+}
+
+/// A Black Ops mode's Mastery camos (Gold to Dark Matter, Shattered Gold
+/// to Singularity) as the game counts them: weapons with each, out of the
+/// launch roster, then 100%+ over every weapon once that's done.
+private struct TrackCamoRows: View {
+    let mode: AppMode
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    var body: some View {
+        let camos = mode.completionistCamos
+        ForEach(camos.indices, id: \.self) { index in
+            let camo = camos[index]
+            let count = index < TrackerViewModel.completionistStepCount
+                ? viewModel.completionistCount(mode: mode.rawValue, step: index)
+                : viewModel.finalCamoCount(mode: mode.rawValue)
+            let progress = viewModel.launchProgress(count)
+            row(name: camo.name, colors: camo.gradient, imageURL: camo.imageURL, done: progress.done, total: progress.total)
+        }
+        let full = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
+        if let last = camos.last, viewModel.launchProgress(viewModel.finalCamoCount(mode: mode.rawValue)).done >= viewModel.launchRoster, full.total > viewModel.launchRoster {
+            row(name: "mw4.ui.stats.100_plus".localized() + " · " + last.name, colors: .platinum, imageURL: nil,
+                done: full.done, total: full.total)
+        }
+    }
+
+    private func row(name: String, colors: [Color], imageURL: String?, done: Int, total: Int) -> some View {
+        HStack(spacing: 12) {
+            CamoThumbnail(urlString: imageURL, size: 40)
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    if done >= total, total > 0 {
+                        AnimatedGradientText(text: name, colors: colors, font: .hitmarker(15))
+                    } else {
+                        Text(name)
+                            .font(.hitmarker(15))
+                            .foregroundStyle(colors.first ?? Color.appInk)
+                    }
+                    Spacer()
+                    Text("\(done)/\(total)")
+                        .font(.system(size: 13, weight: .bold, design: .monospaced))
+                        .foregroundStyle(done >= total ? (colors.first ?? .camoGold) : Color.appInkMuted)
+                }
+                ProgressBar(fraction: total > 0 ? Double(done) / Double(total) : 0, accent: colors.first ?? .camoGold)
+            }
+        }
+        .padding(.vertical, 2)
+        .accessibilityElement(children: .combine)
     }
 }

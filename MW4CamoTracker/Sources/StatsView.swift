@@ -31,11 +31,6 @@ struct StatsView: View {
                 OverallStatsHero()
                     .listRowInsets(Self.rowInsets)
                     .listRowBackground(Color.clear)
-                if GameRegistry.current.capstone != nil || viewModel.prestigeCamos.contains(where: { $0.weaponsNeeded != nil }) {
-                    GameCamosCard()
-                        .listRowInsets(Self.rowInsets)
-                        .listRowBackground(Color.clear)
-                }
                 if width >= 800, GameRegistry.hasMastery, let first = modes.first {
                     // iPad: the weapons on the left, each mode's Mastery
                     // stacked beside them
@@ -440,7 +435,7 @@ extension HajinStore {
 /// Camos earned across the whole game rather than on one weapon: a
 /// Prestige camo counted over weapons (BO7's Cold Snap) and the capstone
 /// for every mode's final camo (Nexus Horizon), each with how far along.
-private struct GameCamosCard: View {
+struct GameCamosCard: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
 
     var body: some View {
