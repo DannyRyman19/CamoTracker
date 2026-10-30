@@ -62,7 +62,10 @@ enum LegacyImport {
         func level(_ weapon: [String: Any], _ weaponId: Int) {
             let level = (weapon["CurrentLevel"] as? Int) ?? 0
             let prestige = (weapon["PrestigeLevel"] as? Int) ?? 0
-            if level > 1 || prestige > 0 { result.levels[weaponId] = (prestige, level) }
+            // BO6 keeps a copy of each weapon per mode: the highest wins
+            guard level > 1 || prestige > 0 else { return }
+            if let known = result.levels[weaponId], (known.prestige, known.level) >= (prestige, level) { return }
+            result.levels[weaponId] = (prestige, level)
         }
 
         if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
