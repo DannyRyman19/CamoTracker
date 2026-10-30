@@ -19,6 +19,10 @@ struct OnboardingView: View {
     var asksForNotifications = false
     let onFinish: () -> Void
     @State private var page = OnboardingView.firstPage
+    /// The game picked on the first page. It's the current game from the
+    /// moment it's tapped, so the pages after it show that game's modes and
+    /// look; the tracker itself switches when the walkthrough ends.
+    @State private var gameID = GameRegistry.current.id
 
     /// Screenshot harness: `SS_ONBOARDING_PAGE=<index>` opens the walkthrough
     /// on that page. DEBUG-only; a normal launch starts at the beginning.
@@ -30,19 +34,20 @@ struct OnboardingView: View {
         #endif
     }
 
-    private var pageCount: Int { asksForNotifications ? 7 : 6 }
+    private var pageCount: Int { asksForNotifications ? 8 : 7 }
 
     /// Each page borrows the accent of whatever it's actually demoing, so the
     /// walkthrough previews the app's multi-mode palette instead of painting
     /// everything Multiplayer red.
     private var accent: Color {
         switch page {
-        case 0:  return .camoGold
-        case 1:  return .accentWarzone
-        case 2:  return .accentMultiplayer
-        case 3:  return .camoPlatinum
-        case 4:  return .camoMercurialDrift
-        case 5:  return .accentDMZ
+        case 0:  return Palette.accent ?? .camoGold
+        case 1:  return Palette.accent ?? .camoGold
+        case 2:  return .accentWarzone
+        case 3:  return .accentMultiplayer
+        case 4:  return .camoPlatinum
+        case 5:  return .camoMercurialDrift
+        case 6:  return .accentDMZ
         default: return .camoGold
         }
     }
@@ -52,14 +57,16 @@ struct OnboardingView: View {
             header
 
             TabView(selection: $page) {
-                WelcomePage(accent: accent).tag(0)
-                TrackingStylePage(accent: accent).tag(1)
-                MarkProgressPage().tag(2)
-                SuggestedPage().tag(3)
-                MakeItYoursPage(accent: accent).tag(4)
-                FreeAndPremiumPage(accent: accent).tag(5)
+                GamePickerPage(gameID: $gameID).tag(0)
+                // Rebuilt for each game, so its modes and settings are that game's
+                WelcomePage(accent: accent).id(gameID).tag(1)
+                TrackingStylePage(accent: accent).tag(2)
+                MarkProgressPage().tag(3)
+                SuggestedPage().tag(4)
+                MakeItYoursPage(accent: accent).tag(5)
+                FreeAndPremiumPage(accent: accent).tag(6)
                 if asksForNotifications {
-                    NotificationsPage().tag(6)
+                    NotificationsPage().tag(7)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -191,20 +198,87 @@ private struct OnboardingScaffold<Content: View>: View {
     }
 }
 
+/// Which game to track. Each keeps its own progress, so this only picks
+/// what the app opens on; the title on the Weapons tab switches later.
+private struct GamePickerPage: View {
+    @Binding var gameID: String
+
+    var body: some View {
+        OnboardingScaffold("ct.onboarding.game.title".localized(), accent: Palette.accent ?? .camoGold) {
+            VStack(spacing: 12) {
+                Text("ct.onboarding.game.body".localized())
+                    .font(.system(size: 14))
+                    .foregroundStyle(Color.appInkMuted)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                ForEach(GameRegistry.games) { game in
+                    card(game)
+                }
+            }
+        }
+    }
+
+    private func card(_ game: Game) -> some View {
+        let on = game.id == gameID
+        let color = game.theme?.accent.flatMap(Color.init(hex:)) ?? .camoGold
+        let modes = ListFormatter.localizedString(byJoining: game.modes.map { mode in
+            mode.name?.resolved() ?? "mw4.mode.\(mode.id)".localized()
+        })
+        return Button {
+            guard !on else { return }
+            Haptics.light()
+            gameID = game.id
+            GameRegistry.current = game
+        } label: {
+            HStack(spacing: 14) {
+                Text(game.shortName)
+                    .font(.custom(game.theme?.font ?? "Hitmarker Text VF", size: 26 * (game.theme?.fontScale ?? 1)).weight(.bold))
+                    .foregroundStyle(color)
+                    .frame(width: 74)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(game.name.resolved())
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(Color.appInk)
+                    Text(modes)
+                        .font(.system(size: 12.5))
+                        .foregroundStyle(Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(on ? color : Color.appInkMuted.opacity(0.5))
+            }
+            .padding(14)
+            .background(RoundedRectangle(cornerRadius: 10).fill(on ? color.opacity(0.14) : Color.appSurface))
+            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(on ? color : Color.appInkMuted.opacity(0.25), lineWidth: on ? 2 : 1))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("game.\(game.id)")
+    }
+}
+
 private struct WelcomePage: View {
     let accent: Color
+
+    /// MW4 keeps its own line; another game lists its modes
+    private var welcomeBody: String {
+        let game = GameRegistry.current
+        guard !game.isMW4 else { return "mw4.onboarding.welcome.body".localized() }
+        let modes = ListFormatter.localizedString(byJoining: AppMode.allCases.map(\.displayName))
+        return String(format: "ct.onboarding.welcome.body".localized(), game.shortName, modes)
+    }
 
     var body: some View {
         OnboardingScaffold("mw4.onboarding.welcome.title".localized(), accent: accent) {
             VStack(spacing: 20) {
                 // The real lockup rather than a stand-in SF Symbol — this is
                 // the same art the splash and app icon use.
-                Image("SplashForeground")
-                    .resizable()
-                    .scaledToFit()
+                SplashMark()
                     .frame(maxWidth: 240)
 
-                Text("mw4.onboarding.welcome.body".localized())
+                Text(welcomeBody)
                     .font(.system(size: 15))
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
@@ -363,7 +437,7 @@ private struct TrackingStylePage: View {
             VStack(alignment: .leading, spacing: 14) {
                 option(quick: false, symbol: "chart.bar.fill",
                        title: "mw4.onboarding.tracking.full.title".localized(),
-                       body: "mw4.onboarding.tracking.full.body".localized())
+                       body: (GameRegistry.current.sharedCamos == true ? "mw4.onboarding.tracking.full.body" : "ct.onboarding.tracking.full.body").localized())
                 option(quick: true, symbol: "checkmark.circle.fill",
                        title: "mw4.ui.quick_tick.title".localized(),
                        body: "mw4.onboarding.tracking.quick.body".localized())
@@ -539,7 +613,7 @@ private struct NotificationsPage: View {
                         .scaledToFill()
                         .frame(width: 40, height: 40)
                         .overlay {
-                            Image("SplashForeground").resizable().scaledToFit().padding(4)
+                            SplashMark().padding(4)
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 9))
 

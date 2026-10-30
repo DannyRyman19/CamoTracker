@@ -52,14 +52,15 @@ enum BackgroundRefreshCoordinator {
     }
 
     private static func checkForUpdates() async {
-        let dataService = DataService()
+        let game = GameRegistry.current
+        let dataService = DataService(game: game)
         // Fall back to the bundled seed exactly as `TrackerViewModel` does.
         // Nothing is cached until a version actually changes, so comparing
         // against the cache alone made every fresh install treat the whole
         // feed as new and post a bogus "New Content Available".
         let knownCatalogVersion = (dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog())?.version
         let knownModeVersions = Dictionary(uniqueKeysWithValues:
-            ["multiplayer", "warzone", "dmz"].compactMap { mode -> (String, String)? in
+            game.modes.map(\.id).compactMap { mode -> (String, String)? in
                 guard let version = (dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode))?.version else { return nil }
                 return (mode, version)
             }

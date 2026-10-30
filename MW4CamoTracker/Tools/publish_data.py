@@ -9,6 +9,11 @@ an App Store update. The full workflow is in MW4CamoTracker/CONTENT.md.
     python3 MW4CamoTracker/Tools/publish_data.py \\
         --title "Season 1 is live" --body "New weapons and camos to track."
     python3 MW4CamoTracker/Tools/publish_data.py --dry-run       # check only
+    python3 MW4CamoTracker/Tools/publish_data.py --game bo6      # another game
+
+Every game in Resources/games.json publishes to its own `path` (BO6 to
+Data/CT/BO6/) from its own bundled files (`bo6_weapons.json`...), with the
+prefix dropped there. MW4, with no prefix, is the default.
 
 DataService fetches Data/MW4/manifest.json first and only downloads a file
 whose `version` differs from the one it has, so the manifest is generated from
@@ -51,6 +56,26 @@ MODES = ["multiplayer", "warzone", "dmz"]
 # versions read every "modes" entry as a camo file). A guide change never
 # posts a notification; the app picks it up quietly.
 GUIDES = ["hajin"]
+# Bundled files are `<PREFIX><name>.json`; MW4's have none
+PREFIX = ""
+
+
+def use_game(game_id):
+    """Point OUT, MODES, GUIDES and PREFIX at a game from games.json."""
+    global OUT, MODES, GUIDES, PREFIX
+    games = {g["id"]: g for g in load(RES / "games.json")}
+    if game_id not in games:
+        raise SystemExit(f"--game: no game {game_id!r} (games.json has {', '.join(games)})")
+    game = games[game_id]
+    OUT = ROOT / game["path"]
+    MODES = [m["id"] for m in game["modes"]]
+    PREFIX = game["seedPrefix"]
+    if game_id != "mw4":
+        GUIDES = []
+
+
+def src(name):
+    return RES / f"{PREFIX}{name}.json"
 LANGS = ["en", "fr", "es", "de", "it", "nl"]
 
 
@@ -88,7 +113,7 @@ def localized(value, flag):
 
 def check(problems, warnings):
     """Things that would break installed apps or lose players' progress."""
-    catalog = load(RES / "weapons.json")
+    catalog = load(src("weapons"))
     weapon_ids = [w["weaponId"] for c in catalog["categories"] for w in c["weapons"]]
     category_ids = [c["categoryId"] for c in catalog["categories"]]
     for name, ids in (("weaponId", weapon_ids), ("categoryId", category_ids)):
@@ -113,7 +138,7 @@ def check(problems, warnings):
             problems.append(f"weapons.json: weaponId {gone} is published but missing now; ids must never be removed or renumbered")
 
     for mode in MODES:
-        data = load(RES / f"{mode}.json")
+        data = load(src(mode))
         if data.get("mode") != mode:
             problems.append(f"{mode}.json: \"mode\" is {data.get('mode')!r}")
         seen = [e["weaponId"] for e in data["weaponCamos"]]
@@ -143,20 +168,22 @@ def main():
     ap.add_argument("--body", help="notification body, same forms as --title")
     ap.add_argument("--silent", action="store_true", help="publish without notifying anyone")
     ap.add_argument("--dry-run", action="store_true", help="check and report; write nothing")
+    ap.add_argument("--game", default="mw4", help="which game in Resources/games.json (default mw4)")
     args = ap.parse_args()
+    use_game(args.game)
     if args.silent and (args.title or args.body):
         raise SystemExit("--silent and --title/--body contradict each other")
 
     files = ["weapons"] + MODES + GUIDES
     problems, warnings, changed = [], [], []
     for name in files:
-        src, dst = RES / f"{name}.json", OUT / f"{name}.json"
+        source, dst = src(name), OUT / f"{name}.json"
         try:
-            new = load(src)
+            new = load(source)
         except json.JSONDecodeError as error:
-            raise SystemExit(f"{src.name} is not valid JSON: {error}")
+            raise SystemExit(f"{source.name} is not valid JSON: {error}")
         if not new.get("version"):
-            problems.append(f"{src.name}: no top-level \"version\"")
+            problems.append(f"{source.name}: no top-level \"version\"")
             continue
         if not dst.exists():
             changed.append((name, None, new["version"]))
@@ -165,7 +192,7 @@ def main():
         if old == new:
             continue
         if old.get("version") == new["version"]:
-            problems.append(f"{src.name}: the content changed but \"version\" is still {new['version']}; bump it or installed apps never fetch the change")
+            problems.append(f"{source.name}: the content changed but \"version\" is still {new['version']}; bump it or installed apps never fetch the change")
         else:
             changed.append((name, old.get("version"), new["version"]))
     check(problems, warnings)
@@ -187,10 +214,11 @@ def main():
         if args.body:
             notification["body"] = localized(args.body, "--body")
 
-    manifest = {"catalog": {"version": version_of(RES / "weapons.json"), "path": "weapons.json"}, "modes": {}}
+    manifest = {"catalog": {"version": version_of(src("weapons")), "path": "weapons.json"}, "modes": {}}
     for mode in MODES:
-        manifest["modes"][mode] = {"version": version_of(RES / f"{mode}.json"), "path": f"{mode}.json"}
-    manifest["guides"] = {g: {"version": version_of(RES / f"{g}.json"), "path": f"{g}.json"} for g in GUIDES}
+        manifest["modes"][mode] = {"version": version_of(src(mode)), "path": f"{mode}.json"}
+    if GUIDES:
+        manifest["guides"] = {g: {"version": version_of(src(g)), "path": f"{g}.json"} for g in GUIDES}
     if notification:
         manifest["notification"] = notification
 
@@ -221,11 +249,11 @@ def main():
 
     OUT.mkdir(parents=True, exist_ok=True)
     for name in files:
-        shutil.copy2(RES / f"{name}.json", OUT / f"{name}.json")
+        shutil.copy2(src(name), OUT / f"{name}.json")
     (OUT / "manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"published -> {OUT}")
-    print("next: commit Resources/ and Data/MW4/ together and push to master. It is live once pushed (purge jsDelivr to skip its cache).")
+    print(f"next: commit Resources/ and {OUT.relative_to(ROOT)}/ together and push to master. It is live once pushed (purge jsDelivr to skip its cache).")
 
 
 if __name__ == "__main__":

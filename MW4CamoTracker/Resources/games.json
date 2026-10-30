@@ -1,0 +1,106 @@
+[
+  {
+    "id": "mw4",
+    "name": {
+      "en": "Modern Warfare 4"
+    },
+    "shortName": "MW4",
+    "path": "Data/MW4/",
+    "seedPrefix": "",
+    "countsUnlocks": true,
+    "levelCategories": [
+      7,
+      8
+    ],
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "warzone"
+      },
+      {
+        "id": "dmz"
+      }
+    ],
+    "sharedCamos": true
+  },
+  {
+    "id": "bo7",
+    "name": {
+      "en": "Black Ops 7"
+    },
+    "shortName": "BO7",
+    "path": "Data/CT/BO7/",
+    "seedPrefix": "bo7_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#FF5A1F"
+      },
+      {
+        "id": "zombies",
+        "accent": "#8FD14F"
+      },
+      {
+        "id": "warzone",
+        "accent": "#3FA9F5"
+      },
+      {
+        "id": "campaign",
+        "accent": "#C9A24B"
+      }
+    ],
+    "theme": {
+      "background": "#0B0A0B",
+      "surface": "#161416",
+      "surface2": "#211E21",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF6A2A",
+      "mark": "BO7",
+      "markWhite": 2,
+      "markColor": "#FF5A1F",
+      "accent": "#FF5A1F"
+    }
+  },
+  {
+    "id": "bo6",
+    "name": {
+      "en": "Black Ops 6"
+    },
+    "shortName": "BO6",
+    "path": "Data/CT/BO6/",
+    "seedPrefix": "bo6_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#FF6B1A"
+      },
+      {
+        "id": "zombies",
+        "accent": "#8CC63F"
+      },
+      {
+        "id": "warzone",
+        "accent": "#3FA9F5"
+      }
+    ],
+    "theme": {
+      "background": "#0D0B0A",
+      "surface": "#191512",
+      "surface2": "#241E1A",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF8A2A",
+      "mark": "BO6",
+      "markWhite": 2,
+      "markColor": "#FF6B1A",
+      "accent": "#FF6B1A"
+    }
+  }
+]

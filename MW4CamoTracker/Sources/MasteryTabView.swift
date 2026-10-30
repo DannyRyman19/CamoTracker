@@ -47,7 +47,7 @@ struct MasteryTabView: View {
                             row(mode: mode, tier: tier)
                         }
                     } header: {
-                        Label(mode.displayNameKey.localized(), systemImage: mode.symbol)
+                        Label(mode.displayName, systemImage: mode.symbol)
                             .foregroundStyle(mode.accent)
                     }
                     .listRowBackground(Color.appSurface)

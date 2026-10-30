@@ -81,7 +81,7 @@ struct PlayedModesPicker: View {
             VStack(spacing: 5) {
                 Image(systemName: mode.symbol)
                     .font(.system(size: 17, weight: .semibold))
-                Text(mode.displayNameKey.localized())
+                Text(mode.displayName)
                     .font(.system(size: 12, weight: .bold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)

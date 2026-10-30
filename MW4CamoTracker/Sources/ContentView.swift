@@ -4,6 +4,7 @@ import StoreKit
 struct ContentView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @EnvironmentObject private var hajin: HajinStore
+    @EnvironmentObject private var gameStore: GameStore
     @Environment(\.requestReview) private var requestReview
     @State private var selectedTab = 0
     /// "I mostly play": the mode the Weapons tab opens in.
@@ -83,7 +84,7 @@ struct ContentView: View {
 
     /// Room for Mastery beside the weapons: an iPad, or an unfolded iPhone
     /// Duo held sideways. Upright the Duo (about 670pt) keeps the tab.
-    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 }
+    private var hasMasteryColumn: Bool { sizeClass == .regular && rootWidth >= 800 && GameRegistry.hasMastery }
 
     /// iPad: Mastery in a column beside the weapons, shown or hidden from
     /// the toolbar. It stands in for the Mastery tab, which iPad drops.
@@ -127,12 +128,23 @@ struct ContentView: View {
                                 Menu {
                                     Picker("mw4.ui.mostly_play".localized(), selection: $primaryModeRaw) {
                                         ForEach(viewModel.visibleModes) { m in
-                                            Label(m.displayNameKey.localized(), systemImage: m.symbol).tag(m.rawValue)
+                                            Label(m.displayName, systemImage: m.symbol).tag(m.rawValue)
                                         }
                                     }
+                                    Picker("ct.ui.game".localized(), selection: Binding(
+                                        get: { gameStore.game.id },
+                                        set: { id in if let game = GameRegistry.game(id) { gameStore.select(game) } })) {
+                                        ForEach(GameRegistry.games) { game in
+                                            Text(game.name.resolved()).tag(game.id)
+                                        }
+                                    }
+                                    .pickerStyle(.menu)
                                 } label: {
                                     HStack(spacing: 6) {
-                                        Text(mode.displayNameKey.localized())
+                                        Text(gameStore.game.shortName)
+                                            .font(.hitmarker(22))
+                                            .foregroundStyle(mode.accent)
+                                        Text(mode.displayName)
                                             .font(.hitmarker(22))
                                             .foregroundStyle(Color.appInk)
                                         Image(systemName: "chevron.down.circle.fill")
@@ -172,7 +184,7 @@ struct ContentView: View {
                 .tag(index)
 
                 // iPad has Mastery beside the weapons instead
-                if !hasMasteryColumn {
+                if !hasMasteryColumn && GameRegistry.hasMastery {
                     NavigationStack { MasteryTabView() }
                         .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
                         .tag(2)
@@ -180,6 +192,7 @@ struct ContentView: View {
 
                 // Item links push here, so a chain of items keeps its back stack
                 // and links inside lists don't get the system's disclosure arrows
+                if gameStore.game.hasHajin {
                 NavigationStack(path: $hajinPath) {
                     HajinView()
                         .navigationDestination(for: HajinItemRoute.self) { route in HajinItemView(id: route.id) }
@@ -192,6 +205,7 @@ struct ContentView: View {
                 .overlay(alignment: .bottom) { HajinUndoOverlay().padding(.bottom, 70) }
                     .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
                     .tag(Self.hajinTab)
+                }
 
                 NavigationStack { StatsView() }
                     .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
@@ -267,8 +281,8 @@ struct ContentView: View {
             // an iPad, so that opens on Weapons
             switch StartTab(rawValue: startTabRaw) ?? .weapons {
             case .weapons: selectedTab = 0
-            case .mastery: selectedTab = hasMasteryColumn ? 0 : 2
-            case .dmz: selectedTab = Self.hajinTab
+            case .mastery: selectedTab = hasMasteryColumn || !GameRegistry.hasMastery ? 0 : 2
+            case .dmz: selectedTab = gameStore.game.hasHajin ? Self.hajinTab : 0
             case .stats: selectedTab = 1
             }
             if !hasOnboarded { showOnboarding = true }
@@ -387,6 +401,11 @@ struct ContentView: View {
                 }
                 hasOnboarded = true
                 showOnboarding = false
+                // The game picked in the walkthrough gets its tracker now
+                let picked = GameRegistry.current
+                if picked != gameStore.game {
+                    gameStore.select(picked)
+                }
             }
             .environmentObject(viewModel)
         }

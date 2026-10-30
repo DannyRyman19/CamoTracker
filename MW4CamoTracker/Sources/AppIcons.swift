@@ -69,7 +69,7 @@ enum AppIconChoice: String, CaseIterable, Identifiable {
     var requirement: String {
         if step != nil { return String(format: "mw4.ui.app_icon.need_weapon".localized(), title) }
         if let (mode, _) = mastery {
-            return String(format: "mw4.ui.app_icon.need_mode".localized(), title, mode.displayNameKey.localized())
+            return String(format: "mw4.ui.app_icon.need_mode".localized(), title, mode.displayName)
         }
         return ""
     }

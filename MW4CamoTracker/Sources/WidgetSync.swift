@@ -43,7 +43,7 @@ extension TrackerViewModel {
                                            done: achieved ? max(progress.total, 1) : min(progress.done, progress.total),
                                            total: max(progress.total, 1), colorHex: camo.color.hexString)
             }
-            return WidgetSnapshot.Mode(id: raw, name: mode.displayNameKey.localized(), accentHex: mode.accent.hexString,
+            return WidgetSnapshot.Mode(id: raw, name: mode.displayName, accentHex: mode.accent.hexString,
                                        fraction: trueCompletionFraction(mode: raw), weaponCount: weapons,
                                        steps: steps, mastery: mastery)
         }
@@ -95,7 +95,7 @@ extension TrackerViewModel {
         return WidgetSnapshot.Pinned(
             weaponId: weapon.weaponId, name: weapon.name.resolved(),
             category: category(containingWeaponId: weapon.weaponId)?.name.resolved() ?? "",
-            mode: raw, modeName: mode.displayNameKey.localized(), accentHex: mode.accent.hexString,
+            mode: raw, modeName: mode.displayName, accentHex: mode.accent.hexString,
             camosDone: counts.done, camosTotal: counts.total,
             nextName: nextName, nextDetail: nextDetail, nextDone: nextDone, nextTotal: nextTotal)
     }

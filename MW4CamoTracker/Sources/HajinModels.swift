@@ -329,7 +329,7 @@ final class HajinStore: ObservableObject {
     private let defaults: UserDefaults
     private var refreshed = false
 
-    init(dataService: DataService = DataService(), defaults: UserDefaults = .standard) {
+    init(dataService: DataService = DataService(game: GameRegistry.game("mw4") ?? GameRegistry.fallback), defaults: UserDefaults = .standard) {
         self.dataService = dataService
         self.defaults = defaults
         let seed = dataService.loadSeedGuide(name: "hajin")

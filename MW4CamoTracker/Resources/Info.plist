@@ -8,8 +8,6 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Take a photo of your DMZ stash so the app can read your ingredient counts. The photo stays on your device.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Camo Track</string>
 	<key>CFBundleExecutable</key>
@@ -51,39 +49,15 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>HitmarkerText-VF.ttf</string>
-	</array>
-	<key>UIApplicationSceneManifest</key>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://postbacks-is.com/</string>
+	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>fetch</string>
-	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string>LaunchBackground</string>
-	</dict>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo of your DMZ stash so the app can read your ingredient counts. The photo stays on your device.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Lets ads be more relevant to you. Premium has no ads at all.</string>
 	<key>SKAdNetworkItems</key>
@@ -697,12 +671,39 @@
 			<string>zq492l623r.skadnetwork</string>
 		</dict>
 	</array>
-	<key>NSAdvertisingAttributionReportEndpoint</key>
-	<string>https://postbacks-is.com/</string>
-	<key>NSAppTransportSecurity</key>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HitmarkerText-VF.ttf</string>
+		<string>Teko-VF.ttf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict/>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>

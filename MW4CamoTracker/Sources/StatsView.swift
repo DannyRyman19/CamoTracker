@@ -31,7 +31,7 @@ struct StatsView: View {
                 OverallStatsHero()
                     .listRowInsets(Self.rowInsets)
                     .listRowBackground(Color.clear)
-                if width >= 800, let first = modes.first {
+                if width >= 800, GameRegistry.hasMastery, let first = modes.first {
                     // iPad: the weapons on the left, each mode's Mastery
                     // stacked beside them
                     cardRow {
@@ -49,8 +49,8 @@ struct StatsView: View {
                         .listRowInsets(Self.rowInsets)
                         .listRowBackground(Color.clear)
                 }
-                if width >= 800 {
-                    // Mastery is in the row above
+                if width >= 800 || !GameRegistry.hasMastery {
+                    // Mastery is in the row above, or the game has none
                     EmptyView()
                 } else if width >= 600 {
                     cardRow {
@@ -132,7 +132,7 @@ private struct OverallStatsHero: View {
                         Text("\(Int(entry.fraction * 100))%")
                             .font(.system(size: 14, weight: .bold, design: .monospaced))
                             .foregroundStyle(Color.appInk)
-                        Text(entry.mode.displayNameKey.localized())
+                        Text(entry.mode.displayName)
                             .font(.system(size: 10))
                             .foregroundStyle(Color.appInkMuted)
                     }
@@ -280,7 +280,7 @@ private struct ModeStatsCard: View {
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(mode.accent)
                 Text(part == .weapons ? "mw4.ui.section.weapons".localized()
-                     : "\(mode.displayNameKey.localized()) \("mw4.ui.section.mastery".localized())")
+                     : "\(mode.displayName) \("mw4.ui.section.mastery".localized())")
                     .font(.hitmarker(17))
                     .foregroundStyle(Color.appInk)
                 Spacer()

@@ -3,7 +3,8 @@ import SwiftUI
 @main
 struct MW4CamoTrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    @StateObject private var viewModel = TrackerViewModel()
+    @StateObject private var gameStore = GameStore()
+    private var viewModel: TrackerViewModel { gameStore.viewModel }
     @StateObject private var hajin = HajinStore(defaults: HajinStore.launchDefaults())
     @Environment(\.scenePhase) private var scenePhase
 
@@ -25,6 +26,9 @@ struct MW4CamoTrackerApp: App {
                 .hajinScanHost()
                 .environmentObject(viewModel)
                 .environmentObject(hajin)
+                .environmentObject(gameStore)
+                // Each game's screens start fresh on its own tracker and look
+                .id(gameStore.game.id)
                 .preferredColorScheme(.dark)
                 .task {
                     Premium.shared.start()

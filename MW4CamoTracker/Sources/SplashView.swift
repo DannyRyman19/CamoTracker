@@ -35,10 +35,11 @@ struct SplashView: View {
                     .rotationEffect(.degrees(drift ? 1.6 : -1.6))
                     .position(x: geo.size.width / 2, y: geo.size.height / 2)
                     .blur(radius: 0.5)
+                    // Each game's nebula in its own colour: the gold art as
+                    // greys, multiplied by the tint
+                    .modifier(SplashTint(tint: Palette.tint))
 
-                Image("SplashForeground")
-                    .resizable()
-                    .scaledToFit()
+                SplashMark()
                     .frame(width: min(geo.size.width * 0.82, 460))
                     .position(x: geo.size.width / 2, y: geo.size.height / 2)
                     // A touch of scale-in so the mark lands rather than just
@@ -57,5 +58,66 @@ struct SplashView: View {
                 drift = true
             }
         }
+    }
+}
+
+private struct SplashTint: ViewModifier {
+    let tint: Color?
+    func body(content: Content) -> some View {
+        if let tint {
+            content.saturation(0).brightness(0.08).colorMultiply(tint)
+        } else {
+            content
+        }
+    }
+}
+
+/// "CAMO / 사 / TRACK" for MW4, the art as drawn. Another game keeps the
+/// art's CAMO and TRACK and puts its own mark between them ("BO6") in its
+/// title font, white then its colour, the way the old trackers' icons read.
+/// Text only: no game logos.
+struct SplashMark: View {
+    private var theme: GameTheme? { GameRegistry.current.theme }
+
+    var body: some View {
+        if let mark = theme?.mark {
+            Image("SplashForeground")
+                .resizable()
+                .scaledToFit()
+                // Rows 389 to 830 of the art's 1200 are MW4's 사: cut them
+                // out and put this game's mark there
+                .mask {
+                    GeometryReader { geo in
+                        VStack(spacing: 0) {
+                            Rectangle().frame(height: geo.size.height * 0.324)
+                            Color.clear
+                            Rectangle().frame(height: geo.size.height * 0.308)
+                        }
+                    }
+                }
+                .overlay {
+                    GeometryReader { geo in
+                        markText(mark)
+                            .font(.custom(theme?.font ?? "Hitmarker Text VF", size: geo.size.height * 0.46 * (theme?.fontScale ?? 1)))
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.4)
+                            .shadow(color: .black.opacity(0.45), radius: 6, y: 3)
+                            .frame(width: geo.size.width * 0.92, height: geo.size.height * 0.36)
+                            .position(x: geo.size.width / 2, y: geo.size.height * 0.515)
+                    }
+                }
+        } else {
+            Image("SplashForeground")
+                .resizable()
+                .scaledToFit()
+        }
+    }
+
+    private func markText(_ mark: String) -> Text {
+        let white = min(theme?.markWhite ?? 0, mark.count)
+        let color = theme?.markColor.flatMap(Color.init(hex:)) ?? .white
+        return Text(String(mark.prefix(white))).foregroundColor(Color(white: 0.93))
+            + Text(String(mark.dropFirst(white))).foregroundColor(color)
     }
 }

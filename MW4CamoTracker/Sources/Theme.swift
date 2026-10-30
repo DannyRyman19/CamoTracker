@@ -2,13 +2,39 @@ import SwiftUI
 
 /// Modes each carry their own accent so the shared component shell (row, chip, tab)
 /// reads as a different mode without any layout changes. See design-system v0.1.
-enum AppMode: String, CaseIterable, Identifiable {
-    case multiplayer, warzone, dmz
+/// A mode of the game being tracked (Multiplayer, Zombies, Warzone, DMZ...).
+/// Which modes exist comes from the current game's entry in `games.json`;
+/// the usual ones have names, symbols and colours built in, and a game can
+/// override any of them.
+struct AppMode: Hashable, Identifiable, RawRepresentable {
+    let rawValue: String
     var id: String { rawValue }
 
+    /// Only modes the current game has
+    init?(rawValue: String) {
+        guard GameRegistry.current.modes.contains(where: { $0.id == rawValue }) else { return nil }
+        self.rawValue = rawValue
+    }
+
+    private init(_ id: String) { rawValue = id }
+
+    static let multiplayer = AppMode("multiplayer")
+    static let warzone = AppMode("warzone")
+    static let dmz = AppMode("dmz")
+    static let zombies = AppMode("zombies")
+    static let campaign = AppMode("campaign")
+
+    /// The current game's modes, in its order
+    static var allCases: [AppMode] { GameRegistry.current.modes.map { AppMode($0.id) } }
+
+    private var definition: GameMode? { GameRegistry.current.modes.first { $0.id == rawValue } }
+
+    /// The game's own name for the mode, else the built-in one
+    var displayName: String { definition?.name?.resolved() ?? displayNameKey.localized() }
+
     /// The modes the player picked in onboarding or Customise, as a
-    /// comma-separated list. Empty means all of them.
-    static let playedKey = "mw4_played_modes"
+    /// comma-separated list. Empty means all of them. Each game keeps its own.
+    static var playedKey: String { GameRegistry.current.key("mw4_played_modes", "played_modes") }
 
     /// The modes that get a tab and count in Stats, in their usual order.
     /// Never empty: a list that names none of them means all.
@@ -20,7 +46,7 @@ enum AppMode: String, CaseIterable, Identifiable {
 
     /// The mode the app opens on (a raw value; empty means the first one
     /// played). Only offered when more than one mode is played.
-    static let startKey = "mw4_start_mode"
+    static var startKey: String { GameRegistry.current.key("mw4_start_mode", "start_mode") }
 
     /// Where the app opens: the picked mode if it's still played, else the
     /// first played one.
@@ -42,15 +68,10 @@ enum AppMode: String, CaseIterable, Identifiable {
         return modes.count == allCases.count ? "" : allCases.filter(modes.contains).map(\.rawValue).joined(separator: ",")
     }
 
-    var displayNameKey: String {
-        switch self {
-        case .multiplayer: return "mw4.mode.multiplayer"
-        case .warzone:     return "mw4.mode.warzone"
-        case .dmz:         return "mw4.mode.dmz"
-        }
-    }
+    var displayNameKey: String { "mw4.mode.\(rawValue)" }
 
     var symbol: String {
+        if let symbol = definition?.symbol { return symbol }
         switch self {
         // One idea each, distinct in silhouette at 13pt: team play, the
         // collapsing BR circle, and the loot you exfil with. `scope` is
@@ -60,14 +81,21 @@ enum AppMode: String, CaseIterable, Identifiable {
         case .multiplayer: return "person.3.fill"
         case .warzone:     return "circle.dashed"
         case .dmz:         return "shippingbox.fill"
+        case .zombies:     return "flame.fill"
+        case .campaign:    return "film.fill"
+        default:           return "gamecontroller.fill"
         }
     }
 
     var accent: Color {
+        if let hex = definition?.accent, let color = Color(hex: hex) { return color }
         switch self {
         case .multiplayer: return .accentMultiplayer
         case .warzone:     return .accentWarzone
         case .dmz:         return .accentDMZ
+        case .zombies:     return Color(hex: "#8CC63F") ?? .accentDMZ
+        case .campaign:    return Color(hex: "#C9A24B") ?? .accentWarzone
+        default:           return .accentMultiplayer
         }
     }
 
@@ -105,6 +133,14 @@ enum AppMode: String, CaseIterable, Identifiable {
                 MasteryCamo(nameKey: "mw4.ui.ripple_tide", color: .camoRippleTide, gradient: .rippleTide),
                 MasteryCamo(nameKey: "mw4.ui.helio", color: .camoHelio, gradient: .helio)
             )
+        default:
+            // Only MW4 has account Mastery; another game names its own in
+            // its mode files
+            return (
+                MasteryCamo(nameKey: "mw4.ui.mercurial_drift", color: .camoMercurialDrift, gradient: .mercurialDrift),
+                MasteryCamo(nameKey: "mw4.ui.polyatomic_reforged", color: .camoPolyatomicReforged, gradient: .polyatomicReforged),
+                MasteryCamo(nameKey: "mw4.ui.orion_reforged", color: .camoOrionReforged, gradient: .orionReforged)
+            )
         }
     }
 
@@ -127,7 +163,7 @@ enum AppMode: String, CaseIterable, Identifiable {
         // Multiplayer's is Divergence; the other modes' haven't been shown,
         // so they read "Final camo" until their mode file names them.
         let builtInFinal = MasteryCamo(nameKey: "mw4.ui.completionist.final", color: .camoDivergence, gradient: .divergence,
-                                       nameOverride: source == .multiplayer ? LocalizedText("Divergence") : nil)
+                                       nameOverride: source == .multiplayer && GameRegistry.current.isMW4 ? LocalizedText("Divergence") : nil)
         let final = builtInFinal.overriding(name: config?.final?.name, colors: config?.final?.colors, imageURL: config?.final?.imageURL)
         return (steps, final)
     }
@@ -328,9 +364,10 @@ extension Color {
     static let camoRippleTide         = Color(red: 0.765, green: 0.584, blue: 0.165) // #C3952A — amber lava marble
     static let camoHelio              = Color(red: 0.769, green: 0.141, blue: 0.216) // #C42437 — crimson-pink translucent
 
-    static let appBackground = Color(red: 0.043, green: 0.059, blue: 0.051) // #0B0F0D
-    static let appSurface    = Color(red: 0.082, green: 0.102, blue: 0.090) // #151A17
-    static let appSurface2   = Color(red: 0.114, green: 0.141, blue: 0.125) // #1D2420
+    /// The current game's page and card colours (`Palette`).
+    static var appBackground: Color { Palette.background }
+    static var appSurface: Color { Palette.surface }
+    static var appSurface2: Color { Palette.surface2 }
     static let appInk        = Color(red: 0.929, green: 0.937, blue: 0.918) // #EDEFEA
     static let appInkMuted   = Color(red: 0.545, green: 0.584, blue: 0.553) // #8B958D
 }
@@ -339,8 +376,40 @@ extension Font {
     /// Hitmarker Text (variable weight) — titles and labels only, never body copy.
     /// Bold, per design-system v0.1: Hitmarker is the identity face and always
     /// reads at 700 there, with Regular reserved for secondary display text.
+    /// The current game's title face stands in: Hitmarker for MW4, Teko for
+    /// Black Ops (`GameTheme.font`), scaled to read the same size.
     static func hitmarker(_ size: CGFloat) -> Font {
-        .custom("Hitmarker Text VF", size: size).weight(.bold)
+        let font = Font.custom(Palette.font, size: size * Palette.fontScale)
+        return Palette.fontIsRegular ? font : font.weight(Palette.fontWeight)
+    }
+}
+
+/// The current game's look, worked out once when the game changes so the
+/// colour lookups stay as cheap as the constants they replaced. MW4's values
+/// are the defaults.
+enum Palette {
+    nonisolated(unsafe) static var background = Color(red: 0.043, green: 0.059, blue: 0.051) // #0B0F0D
+    nonisolated(unsafe) static var surface = Color(red: 0.082, green: 0.102, blue: 0.090) // #151A17
+    nonisolated(unsafe) static var surface2 = Color(red: 0.114, green: 0.141, blue: 0.125) // #1D2420
+    nonisolated(unsafe) static var font = "Hitmarker Text VF"
+    nonisolated(unsafe) static var fontScale: CGFloat = 1
+    nonisolated(unsafe) static var fontWeight: Font.Weight = .bold
+    nonisolated(unsafe) static var fontIsRegular = false
+    /// The splash nebula's tint; nil keeps the art's own gold
+    nonisolated(unsafe) static var tint: Color?
+    /// The game's own colour outside a mode; nil keeps MW4's gold
+    nonisolated(unsafe) static var accent: Color?
+
+    static func apply(_ theme: GameTheme?) {
+        background = theme?.background.flatMap(Color.init(hex:)) ?? Color(red: 0.043, green: 0.059, blue: 0.051)
+        surface = theme?.surface.flatMap(Color.init(hex:)) ?? Color(red: 0.082, green: 0.102, blue: 0.090)
+        surface2 = theme?.surface2.flatMap(Color.init(hex:)) ?? Color(red: 0.114, green: 0.141, blue: 0.125)
+        font = theme?.font ?? "Hitmarker Text VF"
+        fontScale = CGFloat(theme?.fontScale ?? 1)
+        fontIsRegular = theme?.fontWeight == "regular"
+        fontWeight = theme?.fontWeight == "semibold" ? .semibold : .bold
+        tint = theme?.tint.flatMap(Color.init(hex:))
+        accent = theme?.accent.flatMap(Color.init(hex:))
     }
 }
 

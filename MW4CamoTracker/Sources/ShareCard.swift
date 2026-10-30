@@ -53,7 +53,7 @@ enum ShareCard {
             let visible = viewModel.visibleModes
             modes = visible.map { mode in
                 let tiers = mode.masteryCamos
-                return Mode(name: mode.displayNameKey.localized(), symbol: mode.symbol, accent: mode.accent,
+                return Mode(name: mode.displayName, symbol: mode.symbol, accent: mode.accent,
                             fraction: viewModel.trueCompletionFraction(mode: mode.rawValue),
                             tiers: [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
                                 (camo.name, camo.gradient, viewModel.isMasteryAchieved(mode: mode.rawValue, tier: index + 1))
@@ -67,7 +67,7 @@ enum ShareCard {
                 Camo(name: camo.name, gradient: camo.gradient,
                      done: viewModel.completionistCount(mode: first.rawValue, step: index), total: total)
             }
-            let showsDMZ = visible.contains(.dmz) && hajin.guide != nil
+            let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
             cash = showsDMZ ? hajin.cash : 0
         }
@@ -223,6 +223,7 @@ struct ProgressCardView: View {
                                 .font(.system(size: 12, weight: .semibold))
                                 .foregroundStyle(Color.appInk)
                             Spacer(minLength: 4)
+                            if GameRegistry.hasMastery {
                             HStack(spacing: 2) {
                                 ForEach(mode.tiers.indices, id: \.self) { i in
                                     Image(systemName: mode.tiers[i].achieved ? "diamond.fill" : "diamond")
@@ -230,6 +231,7 @@ struct ProgressCardView: View {
                                         .foregroundStyle(mode.tiers[i].achieved ? (mode.tiers[i].gradient.first ?? mode.accent)
                                                                                 : Color.appInkMuted.opacity(0.5))
                                 }
+                            }
                             }
                             Text("\(Int(mode.fraction * 100))%")
                                 .font(.system(size: 12, weight: .bold, design: .monospaced))

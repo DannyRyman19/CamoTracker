@@ -1,0 +1,23 @@
+{
+  "catalog": {
+    "version": "1.0.1",
+    "path": "weapons.json"
+  },
+  "modes": {
+    "multiplayer": {
+      "version": "1.0.0",
+      "path": "multiplayer.json"
+    },
+    "zombies": {
+      "version": "1.0.0",
+      "path": "zombies.json"
+    },
+    "warzone": {
+      "version": "1.0.0",
+      "path": "warzone.json"
+    }
+  },
+  "notification": {
+    "silent": true
+  }
+}

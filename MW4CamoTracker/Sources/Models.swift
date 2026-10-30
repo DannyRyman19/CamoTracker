@@ -201,6 +201,9 @@ struct CompletionistStepConfig: Codable {
     /// before ("Complete 5 Gold Camo Challenges using Assault Rifles"),
     /// capped at the class or roster size. Absent: all of its launch weapons.
     var needed: Int?
+    /// A "category" gate's count per class, keyed by `categoryId` as a
+    /// string, over `needed` (BO6: 7 Assault Rifles, 6 SMGs, 2 Shotguns...).
+    var neededByCategory: [String: Int]?
 }
 
 /// The fourth Completionist camo (Divergence in Multiplayer). It has no
@@ -292,6 +295,13 @@ struct ChallengeItem: Codable, Identifiable {
     /// camo sits in. A Military camo with an `unlockLevel` and no challenge
     /// is earned by reaching that level. Absent means the plain "Camos" list.
     var group: String? = nil
+    /// The heading this camo sits under on the weapon's page ("Badges"),
+    /// over its `group`'s. Camos in a row with the same heading share one
+    /// section.
+    var section: LocalizedText? = nil
+    /// Tracked on the weapon's page but not part of the camo chain: it
+    /// doesn't hold up Gold or count in progress (BO6's elimination badges).
+    var extra: Bool? = nil
     var id: Int { itemId }
 
     var isLeaf: Bool { children.isEmpty }

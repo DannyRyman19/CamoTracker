@@ -193,7 +193,7 @@ struct CategoryListView: View {
                     ]
                     let divergenceDone = !mode.hasFinalCamo || (total > 0 && finalCount >= total)
                     if divergenceDone {
-                        stats.append(.init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil))
+                        if GameRegistry.hasMastery { stats.append(.init(value: "\(masteryProgress.done)/\(masteryProgress.total)", label: mastery.name, labelGradient: masteryDone ? mastery.gradient : nil, ringFraction: fraction(masteryProgress.done, masteryProgress.total), ringColor: mastery.color, ringGradient: mastery.gradient, lockedHint: masteryProgress.done == 0 ? locks.mastery(tier: tier) : nil)) }
                     } else {
                         stats.append(.init(value: "\(finalCount)/\(total)", label: final.name, labelGradient: nil, ringFraction: fraction(finalCount, total), ringColor: final.color, ringGradient: final.gradient, lockedHint: finalCount == 0 ? locks.final : nil))
                     }
@@ -319,7 +319,7 @@ struct CategoryListView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
         .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
-        .navigationTitle(mode.displayNameKey.localized())
+        .navigationTitle(mode.displayName)
         .refreshable { await viewModel.refresh() }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -535,6 +535,15 @@ enum StartTab: String, CaseIterable, Identifiable {
     static let key = "mw4_start_tab"
     var id: String { rawValue }
 
+    /// The current game has this tab
+    var isAvailable: Bool {
+        switch self {
+        case .mastery: return GameRegistry.hasMastery
+        case .dmz: return GameRegistry.current.hasHajin
+        default: return true
+        }
+    }
+
     var titleKey: String {
         switch self {
         case .weapons: return "mw4.ui.section.weapons"
@@ -681,7 +690,7 @@ struct CustomiseHomeSheet: View {
                     .tint(accent)
                     .accessibilityIdentifier("customise.language")
                     Picker("mw4.ui.start_tab".localized(), selection: $startTab) {
-                        ForEach(StartTab.allCases) { tab in
+                        ForEach(StartTab.allCases.filter(\.isAvailable)) { tab in
                             Text(tab.titleKey.localized()).tag(tab.rawValue)
                         }
                     }

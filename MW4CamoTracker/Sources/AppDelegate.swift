@@ -1,3 +1,4 @@
+import SwiftUI
 import UIKit
 import BackgroundTasks
 
@@ -38,14 +39,16 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     /// Apple's docs, `standardAppearance` is used as the fallback everywhere
     /// `scrollEdgeAppearance` isn't set, including the at-rest/large-title
     /// state, so nothing is lost by leaving it alone.
-    private static func configureNavigationBarAppearance() {
+    /// Run again when the game changes: bars made after it take the new
+    /// game's face and background.
+    static func configureNavigationBarAppearance() {
         let titleFont = hitmarkerBold(size: 34) // large-title size; UIKit scales down for inline
         let inlineFont = hitmarkerBold(size: 17)
         let ink = UIColor(red: 0.929, green: 0.937, blue: 0.918, alpha: 1) // Color.appInk
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 0.043, green: 0.059, blue: 0.051, alpha: 1) // Color.appBackground
+        appearance.backgroundColor = UIColor(Color.appBackground)
         appearance.largeTitleTextAttributes = [.font: titleFont, .foregroundColor: ink]
         appearance.titleTextAttributes = [.font: inlineFont, .foregroundColor: ink]
 
@@ -61,13 +64,16 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     /// instance. Starts from that known-good regular instance and layers the
     /// axis on top, rather than building a descriptor from scratch — falls
     /// back to the system bold face if the named font isn't registered at all.
+    /// The current game's title face (`Palette.font`), at its scale.
     private static func hitmarkerBold(size: CGFloat) -> UIFont {
-        guard let base = UIFont(name: "Hitmarker Text VF", size: size) else {
+        let size = size * Palette.fontScale
+        guard let base = UIFont(name: Palette.font, size: size) else {
             return .boldSystemFont(ofSize: size)
         }
         let wghtAxis: UInt32 = 0x77676874 // 'wght'
+        let weight = Palette.fontIsRegular ? 400 : Palette.fontWeight == .semibold ? 600 : 700
         let boldDescriptor = base.fontDescriptor.addingAttributes([
-            kCTFontVariationAttribute as UIFontDescriptor.AttributeName: [wghtAxis: 700]
+            kCTFontVariationAttribute as UIFontDescriptor.AttributeName: [wghtAxis: weight]
         ])
         return UIFont(descriptor: boldDescriptor, size: size)
     }

@@ -5,7 +5,7 @@ import Foundation
 @MainActor
 final class TrackerViewModel: ObservableObject {
     @Published private(set) var catalog: WeaponCatalog?
-    @Published private(set) var modes: [String: ModeFile] = [:]
+    @Published private(set) var modes: [String: ModeFile] = [:] { didSet { autoMemo = [:] } }
     @Published private(set) var isRefreshing = false
     @Published var refreshError: String?
 
@@ -28,8 +28,8 @@ final class TrackerViewModel: ObservableObject {
     /// The newest pin: the widget's, and the free tier's only one.
     var pinnedWeaponId: Int? { pinnedWeaponIds.first }
     static let maxPremiumPins = 5
-    private let pinnedWeaponKey = "mw4_pinned_weapon_v1"
-    private let pinnedWeaponsKey = "mw4_pinned_weapons_v2"
+    private var pinnedWeaponKey: String { game.key("mw4_pinned_weapon_v1", "pinned_weapon") }
+    private var pinnedWeaponsKey: String { game.key("mw4_pinned_weapons_v2", "pinned_weapons") }
 
     /// The pending widget refresh (see WidgetSync.swift), so a burst of
     /// ticks writes the snapshot once.
@@ -39,41 +39,49 @@ final class TrackerViewModel: ObservableObject {
 
     /// Weapon level is the one thing genuinely global: keyed by `weaponId` alone,
     /// so it reads the same from the Multiplayer tab or the DMZ tab.
-    private var weaponLevels: [Int: Int] = [:]
+    private var weaponLevels: [Int: Int] = [:] { didSet { autoMemo = [:] } }
 
     /// Weapon Prestige reached, per weapon — global like level. 0 is the
     /// weapon's normal levels; n is `prestigeStages[n - 1]`. `weaponLevels`
     /// is always the level *within* the current stage.
-    private var weaponPrestige: [Int: Int] = [:]
+    private var weaponPrestige: [Int: Int] = [:] { didSet { autoMemo = [:] } }
 
     /// Camo and objective completion, keyed by mode — each mode has its own
     /// camo track for the same weapon.
-    private var amounts: [String: Int] = [:]
-    private var completed: Set<String> = []
+    private var amounts: [String: Int] = [:] { didSet { autoMemo = [:] } }
+    private var completed: Set<String> = [] { didSet { autoMemo = [:] } }
+    /// `auto` Completionist steps already worked out, by key: each one counts
+    /// a class or the roster, so a list would otherwise redo it per row.
+    /// Cleared on any change to progress or data.
+    private var autoMemo: [String: Bool] = [:]
 
-    private let storeKey = "mw4_progress_v2"
+    private var storeKey: String { game.key("mw4_progress_v2", "progress") }
     private let defaults: UserDefaults
+    /// The game this tracker holds; each game has its own tracker, data
+    /// and saved progress.
+    let game: Game
     /// iCloud sync of the same progress; only for the real store, never a
     /// test suite.
     private var cloud: CloudSync?
 
     /// `defaults` is where progress and the pin are kept; tests pass a
     /// throwaway suite.
-    init(dataService: DataService = DataService(), defaults: UserDefaults = .standard) {
-        self.dataService = dataService
+    init(game: Game = GameRegistry.current, dataService: DataService? = nil, defaults: UserDefaults = .standard) {
+        self.game = game
+        self.dataService = dataService ?? DataService(game: game)
         self.defaults = defaults
         loadProgress()
         if defaults == .standard {
-            let cloud = CloudSync(cloudKey: "mw4_progress_sync", defaults: defaults)
+            let cloud = CloudSync(cloudKey: game.key("mw4_progress_sync", "sync"), defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in self?.applySynced(values) }
             self.cloud = cloud
             cloud.start(current: syncValues())
             wipeIfAsked()
         }
-        catalog = dataService.loadCachedCatalog() ?? dataService.loadSeedCatalog()
+        catalog = self.dataService.loadCachedCatalog() ?? self.dataService.loadSeedCatalog()
         var loaded: [String: ModeFile] = [:]
-        for mode in ["multiplayer", "warzone", "dmz"] {
-            loaded[mode] = dataService.loadCached(mode: mode) ?? dataService.loadSeed(mode: mode)
+        for mode in game.modes.map(\.id) {
+            loaded[mode] = self.dataService.loadCached(mode: mode) ?? self.dataService.loadSeed(mode: mode)
         }
         MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
         CompletionistOverrides.byMode = loaded.compactMapValues(\.completionist)
@@ -207,9 +215,9 @@ final class TrackerViewModel: ObservableObject {
     /// Launchers (7) and melee (8) have no shared attachments, so the game
     /// keeps counting them in levels; so does any weapon in Weapon Prestige.
     func countsUnlocks(weaponId: Int) -> Bool {
-        guard prestige(for: weaponId) == 0 else { return false }
+        guard game.countsUnlocks == true, prestige(for: weaponId) == 0 else { return false }
         guard let category = category(containingWeaponId: weaponId)?.categoryId else { return true }
-        return ![7, 8].contains(category)
+        return !(game.levelCategories ?? []).contains(category)
     }
 
     /// What a level gate reads as for this weapon: "Needs 43 weapon unlocks."
@@ -374,6 +382,12 @@ final class TrackerViewModel: ObservableObject {
     /// That mode's camo track for a weapon — empty if the mode file doesn't
     /// cover it.
     func camos(weaponId: Int, mode: String) -> [ChallengeItem] {
+        allCamos(weaponId: weaponId, mode: mode).filter { $0.extra != true }
+    }
+
+    /// Everything on the weapon's page: the camo chain and its `extra`
+    /// challenges after it (BO6's elimination badges).
+    func allCamos(weaponId: Int, mode: String) -> [ChallengeItem] {
         modes[trackMode(mode)]?.weaponCamos.first { $0.weaponId == weaponId }?.camos ?? []
     }
 
@@ -393,9 +407,9 @@ final class TrackerViewModel: ObservableObject {
         // One camo grind per weapon across modes (launch blog, 19 Oct
         // 2026): finished in any mode is unlocked in all. Each mode keeps
         // its own count, read as saved, progress from before this included.
-        return camoTrackModes.contains { other in
+        return countingModes(mode).contains { other in
             let own = trackMode(other) == trackMode(mode) ? camo
-                : camos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
+                : allCamos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
             return own.map { isCamoDone(in: other, weaponId: weaponId, camo: $0) } ?? false
         }
     }
@@ -404,6 +418,13 @@ final class TrackerViewModel: ObservableObject {
     /// as that one).
     private var camoTrackModes: [String] {
         Array(Set(modes.keys.map(trackMode))).sorted()
+    }
+
+    /// The modes whose progress counts for this one: all of them in MW4,
+    /// where a camo finished in one mode is unlocked in every mode, else
+    /// just its own (Black Ops' Zombies camos are their own grind).
+    private func countingModes(_ mode: String) -> [String] {
+        game.sharedCamos == true ? camoTrackModes : [trackMode(mode)]
     }
 
     /// Finished in this mode's own count.
@@ -439,7 +460,8 @@ final class TrackerViewModel: ObservableObject {
     /// Level gates are on the weapon's normal levels, so a prestiged weapon
     /// has passed every one of them even though its level has reset.
     private func hasReached(_ unlockLevel: Int, weaponId: Int) -> Bool {
-        prestige(for: weaponId) > 0 || level(for: weaponId) >= unlockLevel
+        // Level 1 is where every weapon starts, set or not
+        unlockLevel <= 1 || prestige(for: weaponId) > 0 || level(for: weaponId) >= unlockLevel
     }
 
     func setCamoAmount(mode: String, weaponId: Int, camo: ChallengeItem, amount newAmount: Int) {
@@ -484,7 +506,7 @@ final class TrackerViewModel: ObservableObject {
         if wasDone {
             // Unticking clears it in every mode, or a finish elsewhere would
             // keep it ticked here
-            for other in camoTrackModes {
+            for other in countingModes(mode) {
                 let k = camoKey(other, weaponId, camo.itemId)
                 amounts[k] = nil
                 completed.remove(k)
@@ -654,7 +676,7 @@ final class TrackerViewModel: ObservableObject {
     /// Like camos, Gold, Platinum and Harmonic Break count in every mode
     /// once done in one ("wholly or partly in Multiplayer or DMZ").
     func isCompletionistComplete(mode: String, weaponId: Int, step: Int) -> Bool {
-        camoTrackModes.contains { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
+        countingModes(mode).contains { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
     }
 
     private func isCompletionistDone(in mode: String, weaponId: Int, step: Int) -> Bool {
@@ -710,7 +732,8 @@ final class TrackerViewModel: ObservableObject {
     /// weapon added later can stand in for a launch one left unfinished.
     func completionistCategoryGateProgress(_ category: WeaponCategory, mode: String, step: Int) -> (done: Int, total: Int) {
         let launch = category.weapons.filter { $0.weaponId < baseWeaponCount }.count
-        let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
+        let config = completionistStepConfig(mode: mode, step: step)
+        let total = gateTotal(needed: config?.neededByCategory?[String(category.categoryId)] ?? config?.needed,
                               available: category.weapons.count, launch: launch)
         let done = category.weapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
         return (min(done, total), total)
@@ -750,7 +773,7 @@ final class TrackerViewModel: ObservableObject {
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
         for each in run(step, through: Self.completionistStepCount, done: !wasDone) {
             // Unticking clears it in every mode; ticking marks this mode
-            for other in wasDone ? camoTrackModes : [mode] {
+            for other in wasDone ? countingModes(mode) : [mode] {
                 mark(completionistKey(other, weaponId, each),
                      requirement: completionistRequirement(mode: other, weaponId: weaponId, step: each), done: !wasDone)
             }
@@ -942,6 +965,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func isMasteryAchieved(mode: String, tier: Int) -> Bool {
+        guard game.hasMastery != false else { return false }
         guard tier <= 1 || isMasteryAchieved(mode: mode, tier: tier - 1) else { return false }
         let progress = masteryProgress(mode: mode, tier: tier)
         return progress.done >= progress.total
