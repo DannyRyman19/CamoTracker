@@ -11,11 +11,16 @@ extension TrackerViewModel {
         widgetTask = Task { @MainActor [weak self] in
             try? await Task.sleep(nanoseconds: 600_000_000)
             guard !Task.isCancelled, let self, let snapshot = self.widgetSnapshot(),
-                  let url = WidgetSnapshot.fileURL else { return }
-            if WidgetSnapshot.load() == snapshot { return }
-            guard let data = try? JSONEncoder().encode(snapshot) else { return }
-            try? data.write(to: url, options: .atomic)
-            WidgetCenter.shared.reloadAllTimelines()
+                  let data = try? JSONEncoder().encode(snapshot) else { return }
+            // The current game's (what "Current game" widgets show) and this
+            // game's own (widgets set to this game)
+            var changed = false
+            for game in [nil, self.game.id] where WidgetSnapshot.load(game: game) != snapshot {
+                guard let url = WidgetSnapshot.fileURL(game: game) else { continue }
+                try? data.write(to: url, options: .atomic)
+                changed = true
+            }
+            if changed { WidgetCenter.shared.reloadAllTimelines() }
         }
     }
 
@@ -35,7 +40,8 @@ extension TrackerViewModel {
                                     total: launchRoster, colorHex: camo.color.hexString)
             }
             let tiers = mode.masteryCamos
-            let mastery = [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
+            // Black Ops has no account Mastery after the weapon camos
+            let mastery: [WidgetSnapshot.Step] = game.hasMastery == false ? [] : [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
                 let tier = index + 1
                 let progress = masteryProgress(mode: raw, tier: tier)
                 let achieved = isMasteryAchieved(mode: raw, tier: tier)
@@ -56,7 +62,8 @@ extension TrackerViewModel {
                               overallLabel: "mw4.ui.stats.overall".localized(),
                               pinPrompt: "mw4.widget.pin_prompt".localized(),
                               allDoneLabel: "mw4.widget.all_done".localized(),
-                              masteryLabel: "mw4.ui.section.mastery".localized())
+                              masteryLabel: "mw4.ui.section.mastery".localized(),
+                              game: game.id, gameName: game.shortName)
     }
 
     /// The pinned weapon in `mode`: its camo count and the next thing to

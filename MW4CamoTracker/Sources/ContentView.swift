@@ -216,20 +216,7 @@ struct ContentView: View {
             .id(languageRaw)
             // A widget tap: mw4camo://mode/<mode>[/weapon/<id>] opens that
             // mode's tab, and the weapon on it when there is one.
-            .onOpenURL { url in
-                guard url.scheme == "mw4camo", url.host == "mode" else { return }
-                let parts = url.pathComponents.filter { $0 != "/" }
-                guard let mode = parts.first.flatMap(AppMode.init(rawValue:)),
-                      viewModel.visibleModes.contains(mode) else { return }
-                // The Weapons tab, in that mode
-                primaryModeRaw = mode.rawValue
-                selectedTab = 0
-                var path = NavigationPath()
-                if parts.count >= 3, parts[1] == "weapon", let id = Int(parts[2]) {
-                    path.append(Route.weapon(id))
-                }
-                paths[0] = path
-            }
+            .onOpenURL { url in openLink(url) }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
             .onChange(of: hasMasteryColumn) { column in
                 if column, selectedTab == 2 { selectedTab = 0 }
@@ -286,6 +273,11 @@ struct ContentView: View {
             case .stats: selectedTab = 1
             }
             if !hasOnboarded { showOnboarding = true }
+            // A widget's link that switched game: open it now
+            if let link = GameStore.pendingLink {
+                GameStore.pendingLink = nil
+                openLink(link)
+            }
         }
         .overlay {
             if !splashDone, Self.screenshotScreen == nil {
@@ -432,6 +424,32 @@ struct ContentView: View {
             }
             .environmentObject(viewModel)
         }
+    }
+
+    /// A widget tap: mw4camo://mode/<mode>[/weapon/<id>][?game=<game>]
+    /// opens the mode's tab, and the weapon on it when there is one, in the
+    /// widget's game (switching to it first).
+    private func openLink(_ url: URL) {
+        guard url.scheme == "mw4camo", url.host == "mode" else { return }
+        let gameID = URLComponents(url: url, resolvingAgainstBaseURL: false)?
+            .queryItems?.first { $0.name == "game" }?.value
+        if let gameID, gameID != gameStore.game.id, let game = GameRegistry.game(gameID) {
+            // The screens rebuild for the new game and open it on appearing
+            GameStore.pendingLink = url
+            gameStore.select(game)
+            return
+        }
+        let parts = url.pathComponents.filter { $0 != "/" }
+        guard let mode = parts.first.flatMap(AppMode.init(rawValue:)),
+              viewModel.visibleModes.contains(mode) else { return }
+        // The Weapons tab, in that mode
+        primaryModeRaw = mode.rawValue
+        selectedTab = 0
+        var path = NavigationPath()
+        if parts.count >= 3, parts[1] == "weapon", let id = Int(parts[2]) {
+            path.append(Route.weapon(id))
+        }
+        paths[0] = path
     }
 
     private var currentAccent: Color {

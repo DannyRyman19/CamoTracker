@@ -13,7 +13,7 @@ struct PinnedWeaponView: View {
     var body: some View {
         if let pinned = snapshot?.pinned {
             content(pinned)
-                .widgetURL(WidgetSnapshot.link(mode: pinned.mode, weaponId: pinned.weaponId))
+                .widgetURL(WidgetSnapshot.link(mode: pinned.mode, weaponId: pinned.weaponId, game: snapshot?.game))
         } else {
             VStack(alignment: .leading, spacing: 8) {
                 Image(systemName: "pin.fill")
@@ -54,7 +54,7 @@ struct PinnedWeaponView: View {
 
     private func details(_ pinned: WidgetSnapshot.Pinned, accent: Color) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(pinned.modeName.uppercased())
+            Text((snapshot?.titled(pinned.modeName) ?? pinned.modeName).uppercased())
                 .font(.system(size: 10, weight: .heavy))
                 .foregroundStyle(accent)
             Text(pinned.name)
@@ -99,7 +99,7 @@ struct ModeProgressView: View {
         // A mode the player has switched off in the app isn't in the
         // snapshot; show the first one they do play instead.
         if let mode = snapshot?.modes.first(where: { $0.id == modeID }) ?? snapshot?.modes.first {
-            content(mode).widgetURL(WidgetSnapshot.link(mode: mode.id))
+            content(mode).widgetURL(WidgetSnapshot.link(mode: mode.id, game: snapshot?.game))
         } else {
             Text("widget.open_app")
                 .font(.system(size: 13, weight: .semibold))
@@ -119,7 +119,7 @@ struct ModeProgressView: View {
             HStack(spacing: 16) {
                 VStack(spacing: 6) {
                     ring.frame(width: 80, height: 80)
-                    Text(mode.name.uppercased())
+                    Text((snapshot?.titled(mode.name) ?? mode.name).uppercased())
                         .font(.system(size: 10, weight: .heavy))
                         .foregroundStyle(accent)
                         .lineLimit(1)
@@ -135,7 +135,7 @@ struct ModeProgressView: View {
         } else {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Text(mode.name.uppercased())
+                    Text((snapshot?.titled(mode.name) ?? mode.name).uppercased())
                         .font(.system(size: 10, weight: .heavy))
                         .foregroundStyle(accent)
                         .lineLimit(1)
@@ -190,6 +190,11 @@ private struct MasteryPips: View {
     var compact = false
 
     var body: some View {
+        // None for a game without account Mastery
+        if !steps.isEmpty { bars }
+    }
+
+    private var bars: some View {
         VStack(alignment: .leading, spacing: 3) {
             if let label {
                 Text(label.uppercased())
@@ -234,7 +239,7 @@ struct CompletionView: View {
             .widgetAccentable()
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 2) {
-                Text(snapshot?.overallLabel ?? String(localized: "widget.completion.name"))
+                Text(snapshot.map { $0.titled($0.overallLabel) } ?? String(localized: "widget.completion.name"))
                     .font(.system(size: 12, weight: .bold))
                     .widgetAccentable()
                     .lineLimit(1)
@@ -257,7 +262,7 @@ struct CompletionView: View {
                         .foregroundStyle(.white)
                 }
                 .frame(width: 92, height: 92)
-                Text((snapshot?.overallLabel ?? "").uppercased())
+                Text((snapshot.map { $0.titled($0.overallLabel) } ?? "").uppercased())
                     .font(.system(size: 9.5, weight: .heavy))
                     .foregroundStyle(.white.opacity(0.7))
                     .lineLimit(1)

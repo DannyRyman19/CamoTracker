@@ -742,6 +742,18 @@ struct TrackerViewModelTests {
         #expect((1...3).allSatisfy { model.isMasteryAchieved(mode: mp, tier: $0) })
     }
 
+    /// In quick tick, ticking a Completionist camo ticks the weapon's whole
+    /// camo list (Military and Special) with it: they come before it.
+    @Test func quickTickCompletionistTicksTheCamoList() throws {
+        let model = try model()
+        let id = try #require(weapons(model).first?.weaponId)
+        model.setQuickTick(true)
+        #expect(!model.allCamosComplete(weaponId: id, mode: mp))
+        model.toggleCompletionist(mode: mp, weaponId: id, step: 0)
+        #expect(model.allCamosComplete(weaponId: id, mode: mp))
+        #expect(model.isCompletionistComplete(mode: mp, weaponId: id, step: 0))
+    }
+
     /// In quick tick, unticking a camo earned by level steps the level
     /// below it, as it does with levels on.
     @Test func quickTickUntickingALevelledCamoLowersTheLevel() throws {

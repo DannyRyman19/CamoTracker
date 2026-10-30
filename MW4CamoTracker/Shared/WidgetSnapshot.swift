@@ -58,24 +58,40 @@ struct WidgetSnapshot: Codable, Equatable {
     /// "Mastery", over the three Mastery bars. Optional so a snapshot
     /// written before it existed still reads.
     var masteryLabel: String? = nil
+    /// The game it's for ("bo7") and its short name ("BO7"). Optional so a
+    /// snapshot written before there were games still reads (as MW4).
+    var game: String? = nil
+    var gameName: String? = nil
 
     static let appGroup = "group.com.DannyRyman.MW4CamoTracker"
     static let fileName = "widget-snapshot.json"
 
-    static var fileURL: URL? {
+    /// The current game's snapshot, or one game's own: each game keeps its
+    /// own, written whenever it's the game open in the app, so a widget can
+    /// follow one game whatever the app has open.
+    static func fileURL(game: String? = nil) -> URL? {
         FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)?
-            .appendingPathComponent(fileName)
+            .appendingPathComponent(game.map { "widget-snapshot-\($0).json" } ?? fileName)
     }
 
-    static func load() -> WidgetSnapshot? {
-        guard let url = fileURL, let data = try? Data(contentsOf: url) else { return nil }
+    static var fileURL: URL? { fileURL() }
+
+    static func load(game: String? = nil) -> WidgetSnapshot? {
+        guard let url = fileURL(game: game), let data = try? Data(contentsOf: url) else { return nil }
         return try? JSONDecoder().decode(WidgetSnapshot.self, from: data)
     }
 
-    /// The URL a widget opens: a mode tab, or one weapon in a mode.
-    static func link(mode: String, weaponId: Int? = nil) -> URL {
+    /// The URL a widget opens: a mode tab, or one weapon in a mode, in the
+    /// game the widget shows (the app switches to it first).
+    static func link(mode: String, weaponId: Int? = nil, game: String? = nil) -> URL {
         var string = "mw4camo://mode/\(mode)"
         if let weaponId { string += "/weapon/\(weaponId)" }
+        if let game { string += "?game=\(game)" }
         return URL(string: string)!
+    }
+
+    /// "BO7 Multiplayer": a mode's name after its game's
+    func titled(_ name: String) -> String {
+        gameName.map { "\($0) \(name)" } ?? name
     }
 }

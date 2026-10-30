@@ -137,6 +137,10 @@ enum GameRegistry {
 /// one and the root view rebuilds around it.
 @MainActor
 final class GameStore: ObservableObject {
+    /// A widget's link for another game: the app switches game, and the
+    /// new game's screens open it once they're up.
+    static var pendingLink: URL?
+
     @Published private(set) var game: Game
     @Published private(set) var viewModel: TrackerViewModel
 
@@ -157,6 +161,8 @@ final class GameStore: ObservableObject {
         self.game = game
         // This game's own ad units
         Interstitials.shared.prepare()
+        // The "Current game" widgets follow the switch
+        model.refreshWidgets()
         Task { await model.refresh() }
     }
 }

@@ -22,25 +22,48 @@ struct SnapshotEntry: TimelineEntry {
     var mode: String? = nil
 }
 
-private func currentSnapshot(preview: Bool) -> WidgetSnapshot? {
-    WidgetSnapshot.load() ?? (preview ? .preview : nil)
+/// The snapshot of the game a widget is set to: the one open in the app
+/// (the default), or one game's own.
+private func widgetSnapshot(game: GameChoice, preview: Bool) -> WidgetSnapshot? {
+    WidgetSnapshot.load(game: game == .current ? nil : game.rawValue) ?? (preview ? .preview : nil)
+}
+
+// MARK: - Game (every widget can follow one game)
+
+enum GameChoice: String, AppEnum {
+    case current, mw4, bo7, bo6
+
+    static var typeDisplayRepresentation: TypeDisplayRepresentation { TypeDisplayRepresentation(name: "widget.game") }
+    static var caseDisplayRepresentations: [GameChoice: DisplayRepresentation] {
+        [.current: DisplayRepresentation(title: "widget.game.current"),
+         .mw4: DisplayRepresentation(title: "widget.game.mw4"),
+         .bo7: DisplayRepresentation(title: "widget.game.bo7"),
+         .bo6: DisplayRepresentation(title: "widget.game.bo6")]
+    }
+}
+
+struct GameIntent: WidgetConfigurationIntent {
+    static var title: LocalizedStringResource { "widget.game" }
+    @Parameter(title: "widget.game", default: .current)
+    var game: GameChoice
+}
+
+struct GameProvider: AppIntentTimelineProvider {
+    func placeholder(in context: Context) -> SnapshotEntry { SnapshotEntry(date: .now, snapshot: .preview) }
+    func snapshot(for configuration: GameIntent, in context: Context) async -> SnapshotEntry {
+        SnapshotEntry(date: .now, snapshot: widgetSnapshot(game: configuration.game, preview: context.isPreview))
+    }
+    func timeline(for configuration: GameIntent, in context: Context) async -> Timeline<SnapshotEntry> {
+        Timeline(entries: [SnapshotEntry(date: .now, snapshot: widgetSnapshot(game: configuration.game, preview: false))],
+                 policy: .never)
+    }
 }
 
 // MARK: - Pinned weapon
 
-struct SnapshotProvider: TimelineProvider {
-    func placeholder(in context: Context) -> SnapshotEntry { SnapshotEntry(date: .now, snapshot: .preview) }
-    func getSnapshot(in context: Context, completion: @escaping (SnapshotEntry) -> Void) {
-        completion(SnapshotEntry(date: .now, snapshot: currentSnapshot(preview: context.isPreview)))
-    }
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SnapshotEntry>) -> Void) {
-        completion(Timeline(entries: [SnapshotEntry(date: .now, snapshot: currentSnapshot(preview: false))], policy: .never))
-    }
-}
-
 struct PinnedWeaponWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "PinnedWeapon", provider: SnapshotProvider()) { entry in
+        AppIntentConfiguration(kind: "PinnedWeapon", intent: GameIntent.self, provider: GameProvider()) { entry in
             PinnedWeaponFace(snapshot: entry.snapshot)
                 .containerBackground(Color.widgetBackground, for: .widget)
         }
@@ -53,13 +76,15 @@ struct PinnedWeaponWidget: Widget {
 // MARK: - Mode progress (the mode is picked when editing the widget)
 
 enum ModeChoice: String, AppEnum {
-    case multiplayer, warzone, dmz
+    case multiplayer, warzone, dmz, zombies, campaign
 
     static var typeDisplayRepresentation: TypeDisplayRepresentation { TypeDisplayRepresentation(name: "widget.mode") }
     static var caseDisplayRepresentations: [ModeChoice: DisplayRepresentation] {
         [.multiplayer: DisplayRepresentation(title: "widget.mode.multiplayer"),
          .warzone: DisplayRepresentation(title: "widget.mode.warzone"),
-         .dmz: DisplayRepresentation(title: "widget.mode.dmz")]
+         .dmz: DisplayRepresentation(title: "widget.mode.dmz"),
+         .zombies: DisplayRepresentation(title: "widget.mode.zombies"),
+         .campaign: DisplayRepresentation(title: "widget.mode.campaign")]
     }
 }
 
@@ -67,6 +92,8 @@ struct ModeIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource { "widget.mode" }
     @Parameter(title: "widget.mode", default: .multiplayer)
     var mode: ModeChoice
+    @Parameter(title: "widget.game", default: .current)
+    var game: GameChoice
 }
 
 struct ModeProvider: AppIntentTimelineProvider {
@@ -74,10 +101,10 @@ struct ModeProvider: AppIntentTimelineProvider {
         SnapshotEntry(date: .now, snapshot: .preview, mode: ModeChoice.multiplayer.rawValue)
     }
     func snapshot(for configuration: ModeIntent, in context: Context) async -> SnapshotEntry {
-        SnapshotEntry(date: .now, snapshot: currentSnapshot(preview: context.isPreview), mode: configuration.mode.rawValue)
+        SnapshotEntry(date: .now, snapshot: widgetSnapshot(game: configuration.game, preview: context.isPreview), mode: configuration.mode.rawValue)
     }
     func timeline(for configuration: ModeIntent, in context: Context) async -> Timeline<SnapshotEntry> {
-        Timeline(entries: [SnapshotEntry(date: .now, snapshot: currentSnapshot(preview: false), mode: configuration.mode.rawValue)],
+        Timeline(entries: [SnapshotEntry(date: .now, snapshot: widgetSnapshot(game: configuration.game, preview: false), mode: configuration.mode.rawValue)],
                  policy: .never)
     }
 }
@@ -98,7 +125,7 @@ struct ModeProgressWidget: Widget {
 
 struct CompletionWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Completion", provider: SnapshotProvider()) { entry in
+        AppIntentConfiguration(kind: "Completion", intent: GameIntent.self, provider: GameProvider()) { entry in
             CompletionFace(snapshot: entry.snapshot)
                 .containerBackground(Color.widgetBackground, for: .widget)
         }

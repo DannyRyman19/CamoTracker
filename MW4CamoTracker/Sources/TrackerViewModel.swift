@@ -149,6 +149,9 @@ final class TrackerViewModel: ObservableObject {
             #if DEBUG
             print("MW4DATA refresh FAILED: \(error)")
             #endif
+            // Offline, or the game's data isn't online yet: the widgets
+            // still get this game's snapshot from what's on the phone
+            refreshWidgets()
         }
     }
 
@@ -848,6 +851,8 @@ final class TrackerViewModel: ObservableObject {
     func toggleCompletionist(mode: String, weaponId: Int, step: Int) {
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
+        // Quick tick: the camos it builds on come with it
+        if quickTick, !wasDone { completeCamoList(mode: mode, weaponId: weaponId) }
         for each in run(step, through: Self.completionistStepCount, done: !wasDone) {
             // Unticking clears it in every mode; ticking marks this mode
             for other in wasDone ? countingModes(mode) : [mode] {
@@ -859,6 +864,21 @@ final class TrackerViewModel: ObservableObject {
         objectWillChange.send()
         checkCompletionistMilestone(mode: mode, weaponId: weaponId, before: before)
         Haptics.change(wasDone: wasDone, isDone: isCompletionistComplete(mode: mode, weaponId: weaponId, step: step))
+    }
+
+    /// Quick tick: the weapon's whole camo list in this mode, Military and
+    /// Special (not its badges), ticked as a Mastery camo past it is.
+    private func completeCamoList(mode: String, weaponId: Int) {
+        for camo in camos(weaponId: weaponId, mode: mode) where !isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) {
+            if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil {
+                completed.insert(camoKey(mode, weaponId, camo.itemId))
+            } else if camo.counter != nil, let requirement = camo.requirement {
+                let key = counterKey(mode, weaponId, camo)
+                amounts[key] = max(amounts[key] ?? 0, requirement.amount)
+            } else {
+                mark(camoKey(mode, weaponId, camo.itemId), requirement: camo.requirement, done: true)
+            }
+        }
     }
 
     /// How many weapons have their Harmonic Break in this mode.
@@ -1227,6 +1247,14 @@ final class TrackerViewModel: ObservableObject {
     func toggleWeaponMastery(mode: String, weaponId: Int, tier: Int) {
         let before = completionistSnapshot(mode: mode, weaponId: weaponId)
         let wasDone = isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier)
+        // Quick tick: the camo list and every Completionist camo come with it
+        if quickTick, !wasDone {
+            completeCamoList(mode: mode, weaponId: weaponId)
+            for step in 0..<Self.completionistStepCount {
+                mark(completionistKey(mode, weaponId, step),
+                     requirement: completionistRequirement(mode: mode, weaponId: weaponId, step: step), done: true)
+            }
+        }
         for each in run(tier - 1, through: 3, done: !wasDone).map({ $0 + 1 })
         where masteryKind(mode: mode, tier: each) == .challenge {
             mark(masteryKey(mode, weaponId, each),
