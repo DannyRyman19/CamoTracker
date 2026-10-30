@@ -48,7 +48,8 @@ struct MasteryTabView: View {
                     Section {
                         GameCamoRows()
                     } header: {
-                        Label("ct.ui.stats.game_camos".localized(), systemImage: "sparkles")
+                        // Not sparkles: across the app those mean Premium
+                        Label("ct.ui.stats.game_camos".localized(), systemImage: "crown.fill")
                             .foregroundStyle(Palette.accent ?? .camoGold)
                     }
                     .listRowBackground(Color.appSurface)
@@ -175,24 +176,37 @@ private struct TrackCamoRows: View {
         }
     }
 
-    /// Each class's count of the camo before, as Stats lists its classes
+    /// Each class's count of the camo before, as Stats lists its classes:
+    /// two columns where every name fits whole, else one
     private func classCounts(step: Int) -> some View {
-        let classes = viewModel.catalog?.categories ?? []
-        return LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible())], alignment: .leading, spacing: 3) {
-            ForEach(classes) { category in
-                let p = viewModel.completionistCategoryGateProgress(category, mode: mode.rawValue, step: step)
-                HStack(spacing: 4) {
+        let rows = (viewModel.catalog?.categories ?? []).map { category in
+            (category, viewModel.completionistCategoryGateProgress(category, mode: mode.rawValue, step: step))
+        }
+        let half = (rows.count + 1) / 2
+        return ViewThatFits(in: .horizontal) {
+            HStack(alignment: .top, spacing: 16) {
+                classColumn(Array(rows.prefix(half)))
+                classColumn(Array(rows.dropFirst(half)))
+            }
+            classColumn(rows)
+        }
+        .padding(.bottom, 4)
+    }
+
+    private func classColumn(_ rows: [(WeaponCategory, (done: Int, total: Int))]) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            ForEach(rows, id: \.0.id) { category, p in
+                HStack(spacing: 8) {
                     Text(category.name.resolved())
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.65)
-                    Spacer(minLength: 4)
+                        .fixedSize()
+                    Spacer(minLength: 8)
                     Text("\(min(p.done, p.total))/\(p.total)")
                         .font(.system(size: 11, design: .monospaced))
+                        .fixedSize()
                 }
                 .font(.system(size: 12))
                 .foregroundStyle(p.done >= p.total ? mode.accent : Color.appInkMuted)
             }
         }
-        .padding(.bottom, 4)
     }
 }

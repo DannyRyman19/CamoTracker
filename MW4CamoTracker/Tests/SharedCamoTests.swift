@@ -19,7 +19,10 @@ struct SharedCamoTests {
 
     private func model() -> TrackerViewModel {
         try? FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
-        return TrackerViewModel(dataService: DataService(cacheDir: cache), defaults: defaults)
+        // MW4's rules and data, whichever game the simulator last had open
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        GameRegistry.current = mw4
+        return TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
     }
 
     /// The HAN 86's first Special (Smoke) in a mode.

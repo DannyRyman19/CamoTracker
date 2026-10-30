@@ -88,7 +88,10 @@ struct TrackerViewModelTests {
         try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
         try write("multiplayer", blocks)
         try write("warzone", warzone)
-        return TrackerViewModel(dataService: DataService(cacheDir: cache), defaults: defaults)
+        // MW4's rules and data, whichever game the simulator last had open
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        GameRegistry.current = mw4
+        return TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
     }
 
     /// The bundled mode file with `blocks` (top-level key to JSON) laid
