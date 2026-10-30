@@ -26,9 +26,14 @@ struct MilestoneBanner: Identifiable, Equatable {
     let subtitle: String
     let titleGradient: [Color]
     let icon: String
+    /// The weapon it's for, whose picture goes on the share card.
+    var weaponId: Int? = nil
 }
 
 extension TrackerViewModel {
+    /// How long a milestone banner stays up.
+    static let bannerNanoseconds: UInt64 = 6_000_000_000
+
     /// Ranks weapons by how close they are to their next camo. Weapons
     /// already into their Completionist camos come first, furthest along
     /// first; then weapons by fewest camos left on their list.
@@ -97,7 +102,7 @@ extension TrackerViewModel {
         guard !wasGold, allCamosComplete(weaponId: weaponId, mode: mode) else { return }
         let weaponName = weapon(id: weaponId)?.name.resolved() ?? "This weapon"
         announce(title: "mw4.ui.milestone.camos_complete_title".localized(),
-                 subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill")
+                 subtitle: "\(weaponName).", titleGradient: .gold, icon: "medal.fill", weaponId: weaponId)
 
         // Finishing a weapon is the high point worth asking on. The gate
         // reads the real count, and nothing is spent until the prompt is
@@ -122,18 +127,19 @@ extension TrackerViewModel {
         where !before.steps[step] && isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) {
             let camo = completionist.steps[step]
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), camo.name),
-                     subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step])
+                     subtitle: weaponName, titleGradient: camo.gradient, icon: icons[step], weaponId: weaponId)
             break
         }
 
         let finals = finalCamoCount(mode: mode)
         if finals > before.finalCamoCount {
             let gained = finals - before.finalCamoCount
+            let one = gained == 1 && hasFinalCamo(mode: mode, weaponId: weaponId)
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), completionist.final.name),
-                     subtitle: gained == 1 && hasFinalCamo(mode: mode, weaponId: weaponId)
+                     subtitle: one
                         ? weaponName
                         : String(format: "mw4.ui.milestone.final_many".localized(), gained),
-                     titleGradient: completionist.final.gradient, icon: "sparkles")
+                     titleGradient: completionist.final.gradient, icon: "sparkles", weaponId: one ? weaponId : nil)
         }
 
         let tiers = appMode.masteryCamos
@@ -142,7 +148,7 @@ extension TrackerViewModel {
         for tier in (1...3).reversed()
         where !before.weaponMastery[tier - 1] && isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: tier) {
             announce(title: String(format: "mw4.ui.milestone.unlocked_title".localized(), tierCamos[tier - 1].name),
-                     subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill")
+                     subtitle: weaponName, titleGradient: tierCamos[tier - 1].gradient, icon: "diamond.fill", weaponId: weaponId)
             break
         }
         for tier in (1...3).reversed() where !before.mastery[tier - 1] && isMasteryAchieved(mode: mode, tier: tier) {
@@ -166,12 +172,14 @@ extension TrackerViewModel {
         }
     }
 
-    private func announce(title: String, subtitle: String, titleGradient: [Color], icon: String) {
-        let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon)
+    private func announce(title: String, subtitle: String, titleGradient: [Color], icon: String, weaponId: Int? = nil) {
+        let banner = MilestoneBanner(id: UUID(), title: title, subtitle: subtitle, titleGradient: titleGradient, icon: icon,
+                                     weaponId: weaponId)
         milestoneBanner = banner
         Haptics.milestone()
         Task { [weak self] in
-            try? await Task.sleep(nanoseconds: 3_500_000_000)
+            // Long enough to reach its Share button
+            try? await Task.sleep(nanoseconds: Self.bannerNanoseconds)
             if self?.milestoneBanner?.id == banner.id {
                 self?.milestoneBanner = nil
             }

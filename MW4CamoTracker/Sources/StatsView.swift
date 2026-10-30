@@ -10,6 +10,7 @@ struct StatsView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @EnvironmentObject private var hajin: HajinStore
     @State private var width: CGFloat = 0
+    @State private var sharing = false
 
     private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
 
@@ -80,6 +81,17 @@ struct StatsView: View {
         }
         .readingWidth($width)
         .navigationTitle("mw4.ui.tab.stats".localized())
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button { sharing = true } label: { Image(systemName: "square.and.arrow.up") }
+                    .accessibilityLabel("mw4.ui.share.title".localized())
+            }
+        }
+        .sheet(isPresented: $sharing) {
+            ProgressShareSheet()
+                .environmentObject(viewModel)
+                .environmentObject(hajin)
+        }
     }
 }
 
@@ -140,34 +152,7 @@ private struct OverallStatsHero: View {
 private struct DMZStatsCard: View {
     @EnvironmentObject private var store: HajinStore
 
-    private struct Line: Identifiable {
-        let symbol: String
-        let title: String
-        let done: Int
-        let total: Int
-        var id: String { title }
-        var fraction: Double { total > 0 ? Double(done) / Double(total) : 0 }
-    }
-
-    private var lines: [Line] {
-        let guide = store.guide
-        let upgrades = (guide?.items ?? []).filter { $0.kind == "FOB Upgrade" }
-        func checks(_ section: String) -> [String] {
-            (guide?.guide.first { $0.id == section }?.rows ?? []).compactMap(\.check)
-        }
-        let bosses = checks("bosses"), ops = checks("ops")
-        let finds = store.findProgress
-        return [
-            Line(symbol: "chart.bar.fill", title: "mw4.ui.hajin.dmz_level".localized(), done: store.dmzLevel, total: HajinStore.maxLevel),
-            Line(symbol: "arrow.up.circle.fill", title: "mw4.ui.stats.dmz_upgrades".localized(),
-                 done: upgrades.filter { store.checked.contains("upgrade-\($0.id)") }.count, total: upgrades.count),
-            Line(symbol: "doc.text.magnifyingglass", title: "mw4.ui.stats.dmz_finds".localized(), done: finds.found, total: finds.total),
-            Line(symbol: "exclamationmark.shield.fill", title: "mw4.ui.stats.dmz_bosses".localized(),
-                 done: bosses.filter(store.checked.contains).count, total: bosses.count),
-            Line(symbol: "checklist", title: "mw4.ui.stats.dmz_ops".localized(),
-                 done: ops.filter(store.checked.contains).count, total: ops.count),
-        ].filter { $0.total > 0 }
-    }
+    private var lines: [DMZStatLine] { store.statLines }
 
     var body: some View {
         let lines = lines
@@ -401,5 +386,38 @@ private struct ModeStatsCard: View {
                 .font(.system(size: 12, design: .monospaced))
                 .foregroundStyle(Color.appInkMuted)
         }
+    }
+}
+
+/// One line of the DMZ grind, as Stats and the share card show it.
+struct DMZStatLine: Identifiable {
+    let symbol: String
+    let title: String
+    let done: Int
+    let total: Int
+    var id: String { title }
+    var fraction: Double { total > 0 ? Double(done) / Double(total) : 0 }
+}
+
+extension HajinStore {
+    /// DMZ level, FOB upgrades printed, blueprints and Manuals found, bosses
+    /// taken down and missions done, from what's ticked on the DMZ tab.
+    var statLines: [DMZStatLine] {
+        let upgrades = (guide?.items ?? []).filter { $0.kind == "FOB Upgrade" }
+        func checks(_ section: String) -> [String] {
+            (guide?.guide.first { $0.id == section }?.rows ?? []).compactMap(\.check)
+        }
+        let bosses = checks("bosses"), ops = checks("ops")
+        let finds = findProgress
+        return [
+            DMZStatLine(symbol: "chart.bar.fill", title: "mw4.ui.hajin.dmz_level".localized(), done: dmzLevel, total: Self.maxLevel),
+            DMZStatLine(symbol: "arrow.up.circle.fill", title: "mw4.ui.stats.dmz_upgrades".localized(),
+                        done: upgrades.filter { checked.contains("upgrade-\($0.id)") }.count, total: upgrades.count),
+            DMZStatLine(symbol: "doc.text.magnifyingglass", title: "mw4.ui.stats.dmz_finds".localized(), done: finds.found, total: finds.total),
+            DMZStatLine(symbol: "exclamationmark.shield.fill", title: "mw4.ui.stats.dmz_bosses".localized(),
+                        done: bosses.filter(checked.contains).count, total: bosses.count),
+            DMZStatLine(symbol: "checklist", title: "mw4.ui.stats.dmz_ops".localized(),
+                        done: ops.filter(checked.contains).count, total: ops.count),
+        ].filter { $0.total > 0 }
     }
 }

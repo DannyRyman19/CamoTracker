@@ -3,6 +3,7 @@ import StoreKit
 
 struct ContentView: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @EnvironmentObject private var hajin: HajinStore
     @Environment(\.requestReview) private var requestReview
     @State private var selectedTab = 0
     /// "I mostly play": the mode the Weapons tab opens in.
@@ -15,6 +16,8 @@ struct ContentView: View {
     @AppStorage("mw4_has_onboarded") private var hasOnboarded = false
     @State private var splashFinishing = false
     @State private var splashDone = false
+    /// The milestone whose share card is open.
+    @State private var sharingBanner: MilestoneBanner?
 
     /// Screenshot harness: `SS_SCREEN` picks a tab and suppresses the splash
     /// and onboarding so `Tools/screenshots/make.sh` can capture one screen per
@@ -233,7 +236,10 @@ struct ContentView: View {
                 ConfettiBurst(colors: banner.titleGradient)
                     .frame(height: 260)
                     .allowsHitTesting(false)
-                MilestoneBannerView(banner: banner)
+                MilestoneBannerView(banner: banner) {
+                    sharingBanner = banner
+                    viewModel.milestoneBanner = nil
+                }
                     .padding(.top, 8)
                     .transition(.move(edge: .top).combined(with: .opacity))
                     .animation(.spring(response: 0.4, dampingFraction: 0.8), value: viewModel.milestoneBanner)
@@ -294,6 +300,24 @@ struct ContentView: View {
             }
             print("MW4REVIEW forced weapon \(weaponId): complete \(before) -> \(viewModel.weaponsWithBaseCamosComplete), token \(viewModel.reviewRequestToken)")
         }
+        // MW4_SHARE_CARDS=1 writes the progress card and a Gold milestone
+        // card to the app's tmp folder, to look at without tapping through.
+        .task {
+            guard ProcessInfo.processInfo.environment["MW4_SHARE_CARDS"] != nil else { return }
+            var waited = 0
+            while viewModel.catalog == nil || hajin.guide == nil, waited < 200 {
+                try? await Task.sleep(for: .milliseconds(50)); waited += 1
+            }
+            let dir = URL(fileURLWithPath: NSTemporaryDirectory())
+            let progress = ShareCard.render(ProgressCardView(data: ShareCard.Progress(viewModel: viewModel, hajin: hajin)))
+            try? progress?.pngData()?.write(to: dir.appendingPathComponent("share_progress.png"))
+            let weaponId = viewModel.allWeapons.first?.weaponId
+            let banner = MilestoneBanner(id: UUID(), title: String(format: "mw4.ui.milestone.unlocked_title".localized(), "Gold"),
+                                         subtitle: "", titleGradient: .gold, icon: "medal.fill", weaponId: weaponId)
+            let milestone = await ShareCard.milestoneImage(banner, viewModel: viewModel)
+            try? milestone?.pngData()?.write(to: dir.appendingPathComponent("share_milestone.png"))
+            print("MW4SHARE \(dir.path) \(ShareCard.milestoneMessage(banner, viewModel: viewModel))")
+        }
         // Preview video: wait for make.sh to start recording (it drops `ss_go`
         // in the app's tmp dir), then play the take. Every change goes through
         // the real setCamoAmount / toggleCamo path, so the progress bars, the
@@ -333,15 +357,19 @@ struct ContentView: View {
             guard Self.demoTake == nil else { return }
             Task {
                 // Let the celebration land first: the milestone banner and
-                // its confetti are up for 3.5s, and a system rating sheet on
+                // its confetti are up for 6s, and a system rating sheet on
                 // top of that is both ugly and a worse moment to ask.
-                try? await Task.sleep(for: .seconds(4))
-                guard viewModel.milestoneBanner == nil, !showOnboarding, splashDone else { return }
+                try? await Task.sleep(nanoseconds: TrackerViewModel.bannerNanoseconds + 500_000_000)
+                guard viewModel.milestoneBanner == nil, sharingBanner == nil, !showOnboarding, splashDone else { return }
                 // Only spend the milestone once the prompt is really handed
                 // over, so a suppressed one is retried on the next weapon.
                 ReviewPrompt.markPrompted(weaponsComplete: viewModel.weaponsWithBaseCamosComplete)
                 requestReview()
             }
+        }
+        .sheet(item: $sharingBanner) { banner in
+            MilestoneShareSheet(banner: banner)
+                .environmentObject(viewModel)
         }
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView(asksForNotifications: !hasOnboarded) {

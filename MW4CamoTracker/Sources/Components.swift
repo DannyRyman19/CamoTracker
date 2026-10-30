@@ -1023,6 +1023,8 @@ struct FilterEmptyRow: View {
 /// A transient top banner for a Gold/Diamond crossing (see `Suggestions.swift`).
 struct MilestoneBannerView: View {
     let banner: MilestoneBanner
+    /// Shows a Share button, which opens the milestone's share card.
+    var onShare: (() -> Void)? = nil
 
     var body: some View {
         VStack(spacing: 4) {
@@ -1033,6 +1035,18 @@ struct MilestoneBannerView: View {
             Text(banner.subtitle)
                 .font(.system(size: 12.5))
                 .foregroundStyle(Color.appInkMuted)
+            if let onShare {
+                Button(action: onShare) {
+                    Label("mw4.ui.share.button".localized(), systemImage: "square.and.arrow.up")
+                        .font(.system(size: 12.5, weight: .semibold))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 6)
+                        .background(Capsule().fill((banner.titleGradient.first ?? .camoGold).opacity(0.22)))
+                        .overlay(Capsule().strokeBorder((banner.titleGradient.first ?? .camoGold).opacity(0.6), lineWidth: 1))
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 6)
+            }
         }
         .foregroundStyle(Color.appInk)
         .multilineTextAlignment(.center)
