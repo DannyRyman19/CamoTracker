@@ -638,6 +638,7 @@ struct CustomiseHomeSheet: View {
     @State private var importing = false
     @State private var importMessage: String?
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @AppStorage(AdConsent.key) private var adConsent = false
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
     @State private var showsIcons = false
@@ -814,6 +815,17 @@ struct CustomiseHomeSheet: View {
                     premiumHeader(nil)
                 } footer: {
                     Text("mw4.ui.icloud.footer".localized())
+                }
+
+                if AdConsent.applies && !premium.isPremium {
+                    Section {
+                        Toggle("ct.ads.consent.toggle".localized(), isOn: $adConsent)
+                            .tint(accent)
+                            .onChange(of: adConsent) { _ in AdConsent.apply() }
+                            .accessibilityIdentifier("customise.adConsent")
+                    } footer: {
+                        Text("ct.ads.consent.footer".localized())
+                    }
                 }
 
                 Section {

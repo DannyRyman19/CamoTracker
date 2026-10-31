@@ -568,3 +568,11 @@
 "ct.mastery.weapons" = "%1$d/%2$d weapons.";
 "ct.mastery.gate_class" = "Opens one class at a time, once it has enough %1$@ (%2$d of %3$d classes open). Still shut:";
 "ct.mastery.capstone" = "Needs %1$@ (%2$d/%3$d).";
+
+/* Consent for personalised ads (EU, EEA, UK, Switzerland) */
+"ct.ads.consent.title" = "About ads";
+"ct.ads.consent.message" = "Camo Track is free because of ads. Can our ad partners use data from this device, like its ID and rough location, to show you ads that suit you and measure them? Premium has no ads at all, and you can change this under Customise.";
+"ct.ads.consent.yes" = "Personalise ads";
+"ct.ads.consent.no" = "Keep ads general";
+"ct.ads.consent.toggle" = "Personalised ads";
+"ct.ads.consent.footer" = "Lets our ad partners use data from this device to choose and measure ads. Off still shows ads, just general ones.";

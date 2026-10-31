@@ -568,3 +568,11 @@
 "ct.mastery.weapons" = "%1$d/%2$d armes.";
 "ct.mastery.gate_class" = "S'ouvre classe par classe, dès qu'elle a assez de %1$@ (%2$d classes sur %3$d ouvertes). Encore fermées :";
 "ct.mastery.capstone" = "Nécessite %1$@ (%2$d/%3$d).";
+
+/* Consent for personalised ads (EU, EEA, UK, Switzerland) */
+"ct.ads.consent.title" = "À propos des pubs";
+"ct.ads.consent.message" = "Camo Track est gratuit grâce à la publicité. Nos partenaires publicitaires peuvent-ils utiliser des données de cet appareil, comme son identifiant et sa position approximative, pour te montrer des pubs adaptées et les mesurer ? Premium n'a aucune pub, et tu peux changer ça dans Personnaliser.";
+"ct.ads.consent.yes" = "Personnaliser les pubs";
+"ct.ads.consent.no" = "Pubs générales";
+"ct.ads.consent.toggle" = "Pubs personnalisées";
+"ct.ads.consent.footer" = "Permet à nos partenaires publicitaires d'utiliser des données de cet appareil pour choisir et mesurer les pubs. Désactivé, des pubs s'affichent toujours, mais générales.";

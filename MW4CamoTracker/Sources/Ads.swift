@@ -18,9 +18,9 @@ enum AdConfig {
     /// shows what each game earns. A game without its own banner unit uses
     /// the default one; without an interstitial unit it shows none.
     static let units: [String: (banner: String, interstitial: String)] = [
-        "mw4": (banner: "", interstitial: ""),
-        "bo6": (banner: "", interstitial: ""),
-        "bo7": (banner: "", interstitial: ""),
+        "mw4": (banner: "xkdnvyfkyx24ydzp", interstitial: "z1krvpx01jwlunnv"),
+        "bo6": (banner: "fipjry0oebp367c4", interstitial: "bgxevec9c92rww69"),
+        "bo7": (banner: "ptql35gzi327ljk0", interstitial: "cjumwhahmkvyqb0p"),
     ]
 
     /// The placement names set up in the dashboard ("weapons", "stats"...):
@@ -65,6 +65,52 @@ enum AdConfig {
     }
 }
 
+/// Consent for personalised ads where the law asks for it: GDPR in the EU
+/// and EEA, UK GDPR and Swiss law. Apple's tracking question is separate (that
+/// one is about the advertising ID; this one about using any personal data to
+/// pick ads), so both are asked. Players elsewhere never see it. The answer goes
+/// to LevelPlay and can be changed under Customise.
+enum AdConsent {
+    static let key = "ct_ads_consent"
+    private static let regions: Set<String> = [
+        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT",
+        "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",       // the EU
+        "IS", "LI", "NO",                                     // the rest of the EEA
+        "GB", "CH",
+    ]
+
+    /// From the phone's region setting, which most players have set to where they live
+    static var applies: Bool { Locale.current.region.map { regions.contains($0.identifier) } ?? false }
+
+    /// nil until answered
+    static var granted: Bool? { UserDefaults.standard.object(forKey: key) as? Bool }
+
+    static var needsAsking: Bool { applies && granted == nil }
+
+    /// Tells LevelPlay. Until there's an answer, ads in these regions are non-personalised.
+    static func apply() {
+        guard applies else { return }
+        LevelPlay.setConsent(granted ?? false)
+    }
+
+    static func set(_ value: Bool) {
+        UserDefaults.standard.set(value, forKey: key)
+        apply()
+    }
+
+    /// One plain question; both answers are one tap and either keeps the app the same.
+    @MainActor static func ask() async {
+        guard let root = Ads.topController() else { return }
+        await withCheckedContinuation { (done: CheckedContinuation<Void, Never>) in
+            let alert = UIAlertController(title: "ct.ads.consent.title".localized(), message: "ct.ads.consent.message".localized(),
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ct.ads.consent.yes".localized(), style: .default) { _ in set(true); done.resume() })
+            alert.addAction(UIAlertAction(title: "ct.ads.consent.no".localized(), style: .default) { _ in set(false); done.resume() })
+            root.present(alert, animated: true)
+        }
+    }
+}
+
 @MainActor
 final class Ads: NSObject, ObservableObject {
     static let shared = Ads()
@@ -104,6 +150,8 @@ final class Ads: NSObject, ObservableObject {
             for _ in 0..<20 where UIApplication.shared.applicationState != .active {
                 try? await Task.sleep(for: .milliseconds(300))
             }
+            // The law's question (EU, EEA, UK, Switzerland) before Apple's
+            if AdConsent.needsAsking { await AdConsent.ask() }
             _ = await ATTrackingManager.requestTrackingAuthorization()
             initialise()
         }
@@ -111,6 +159,7 @@ final class Ads: NSObject, ObservableObject {
 
     private func initialise() {
         if AdConfig.testSuite { LevelPlay.setMetaDataWithKey("is_test_suite", value: "enable") }
+        AdConsent.apply()
         let request = LPMInitRequestBuilder(appKey: AdConfig.appKey).build()
         LevelPlay.initWith(request) { _, error in
             Task { @MainActor in
