@@ -1,6 +1,6 @@
 {
- "version": "0.9.47",
- "updated": "2026-10-29",
+ "version": "0.9.48",
+ "updated": "2026-11-01",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -8603,6 +8603,15 @@
    ],
    "effect": "Calls in a supply drop",
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
+  },
+  {
+   "id": "cash-bag",
+   "name": "Cash Bag",
+   "kind": "Valuable",
+   "rarity": "Rare",
+   "value": 1500,
+   "note": "Carry it to extraction in Operation Silent Ledger to bank its money. The casino vault is reported to hold twelve optional bags",
+   "symbol": "diamond.fill"
   },
   {
    "id": "chemicals",
