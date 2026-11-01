@@ -438,6 +438,7 @@ EXTRA_ITEMS = [
  # dmzcodex.com/items (2026-10-27)
  {"id": "radiation-gear", "name": "Radiation Gear", "kind": "Gear", "note": "Protects you in radiation; the Haneul Nuclear Reactor needs it and a Gas Mask. Search Fire Stations for it"},
  {"id": "lieutenant-dog-tag-case", "name": "Lieutenant Dog Tag Case", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped when you kill a Lieutenant. Extract it for Boss Board progress"},
+ {"id": "cash-bag", "name": "Cash Bag", "kind": "Valuable", "rarity": "Rare", "value": 1500, "note": "Carry it to extraction in Operation Silent Ledger to bank its money. The casino vault is reported to hold twelve optional bags"},
  {"id": "weapon-insurance-contract", "name": "Weapon Insurance Contract", "kind": "Gear", "note": "Gets back an insured weapon you lose, up to the number of contracts you hold. Two come with the Vault Edition, and some DMZ Order pages give one"},
  {"id": "operator-rescue-beacon", "name": "Operator Rescue Beacon", "kind": "Gear", "note": "Recovers an MIA operator without paying DMZ Cash. Two come with the Vault Edition, and some DMZ Order pages give one"},
  {"id": "recipe", "name": "Recipe", "kind": "Gear", "note": "A recipe found in Hajin. Extract with it to add it to your 3D Printer; it's used up when you do"},
