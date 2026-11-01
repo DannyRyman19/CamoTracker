@@ -291,8 +291,9 @@ extension Ads: @preconcurrency LPMRewardedAdDelegate {
 /// above it, the ad pinned inside so it never hangs over the list, and a
 /// "Remove ads" link to Premium above the ad. The ad's size comes from the
 /// strip's own width (an iPad column can be narrower than the screen), so
-/// it never pushes the layout wider. Empty for Premium and until the SDK is
-/// ready.
+/// it never pushes the layout wider. Empty for Premium, until the SDK is
+/// ready, and until there's an ad to show: the banner loads out of sight and
+/// the strip only opens once one has arrived, so no ad means no blank space.
 struct AdBanner: View {
     /// The screen it's on, reported as its placement once that's set up
     var placement: String? = nil
@@ -300,40 +301,44 @@ struct AdBanner: View {
     @ObservedObject private var premium = Premium.shared
     @State private var showsPremium = false
     @State private var width: CGFloat = 0
+    @State private var loaded = false
 
     var body: some View {
         if ads.ready || AdConfig.simulated, !premium.isPremium {
             let size = BannerController.size(fitting: width)
+            let shown = loaded || AdConfig.simulated
             VStack(spacing: 4) {
-                Button { showsPremium = true } label: {
-                    // No ✕: beside an ad that reads as the ad's own close button
-                    Label("mw4.ui.premium.remove_ads".localized(), systemImage: "sparkles")
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(Color.appInkMuted)
+                if shown {
+                    Button { showsPremium = true } label: {
+                        // No ✕: beside an ad that reads as the ad's own close button
+                        Label("mw4.ui.premium.remove_ads".localized(), systemImage: "sparkles")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                    .buttonStyle(.plain)
+                    .frame(width: CGFloat(size.width), alignment: .trailing)
                 }
-                .buttonStyle(.plain)
-                .frame(width: CGFloat(size.width), alignment: .trailing)
                 Group {
                     if AdConfig.simulated {
                         // MW4_ADS=1: a stand-in the size of a real banner, for layout
                         Rectangle().fill(Color.gray.opacity(0.35)).overlay(Text(verbatim: "Test banner").font(.caption))
                     } else {
-                        AdBannerView(size: size, placement: placement)
+                        AdBannerView(size: size, placement: placement) { loaded = true }
                             .id(size.width)  // a new banner when the strip changes size class
                     }
                 }
-                .frame(width: CGFloat(size.width), height: CGFloat(size.height))
+                .frame(width: CGFloat(size.width), height: shown ? CGFloat(size.height) : 0)
             }
             .frame(maxWidth: .infinity)
-            .padding(.top, 4)
-            .padding(.bottom, 6)
-            .background(Color.appBackground)
+            .padding(.top, shown ? 4 : 0)
+            .padding(.bottom, shown ? 6 : 0)
+            .background(shown ? Color.appBackground : Color.clear)
             .background(GeometryReader { geo in
                 Color.clear
                     .onAppear { width = geo.size.width }
                     .onChange(of: geo.size.width) { width = $0 }
             })
-            .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
+            .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(shown ? 0.25 : 0)).frame(height: 0.5) }
             .sheet(isPresented: $showsPremium) { PremiumView() }
         }
     }
@@ -344,7 +349,8 @@ struct AdBanner: View {
 private struct AdBannerView: UIViewControllerRepresentable {
     let size: LPMAdSize
     let placement: String?
-    func makeUIViewController(context: Context) -> BannerController { BannerController(size: size, placement: placement) }
+    let onLoaded: () -> Void
+    func makeUIViewController(context: Context) -> BannerController { BannerController(size: size, placement: placement, onLoaded: onLoaded) }
     func updateUIViewController(_ controller: BannerController, context: Context) {}
     static func dismantleUIViewController(_ controller: BannerController, coordinator: ()) { controller.banner?.destroy() }
 }
@@ -358,11 +364,13 @@ private final class BannerController: UIViewController, @preconcurrency LPMBanne
 
     let size: LPMAdSize
     let placement: String?
+    let onLoaded: () -> Void
     var banner: LPMBannerAdView?
 
-    init(size: LPMAdSize, placement: String?) {
+    init(size: LPMAdSize, placement: String?, onLoaded: @escaping () -> Void) {
         self.size = size
         self.placement = placement
+        self.onLoaded = onLoaded
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -389,7 +397,7 @@ private final class BannerController: UIViewController, @preconcurrency LPMBanne
         self.banner = banner
     }
 
-    func didLoadAd(with adInfo: LPMAdInfo) {}
+    func didLoadAd(with adInfo: LPMAdInfo) { onLoaded() }
     func didFailToLoadAd(withAdUnitId adUnitId: String, error: Error) {}
 }
 
