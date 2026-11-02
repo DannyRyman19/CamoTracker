@@ -1,5 +1,5 @@
 {
-  "version": "0.8.17",
+  "version": "0.8.18",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -162,7 +162,19 @@
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Kills while Mounted against Players",
+              "fr": "Faites 20 éliminations de joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con un arma apoyada.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni di giocatori con l'arma posizionata.",
+              "pt": "Obtenha 20 baixas de jogadores enquanto usa a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_smoke.png",
           "group": "special"
@@ -180,7 +192,19 @@
           },
           "tier": 10,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while using a silencer",
+              "fr": "Éliminez 50 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 50 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 50 Spieler-Abschüsse mit einem Schalldämpfer",
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Esegui 50 uccisioni contro i giocatori usando un silenziatore.",
+              "pt": "Obtenha 50 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_stormwave.png",
           "group": "special"
@@ -198,7 +222,19 @@
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without dying 15 times",
+              "fr": "Éliminez 15 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
+              "de": "Erreiche 15-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 15 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/han_86_red.png",
           "group": "special"
@@ -365,7 +401,19 @@
           },
           "tier": 9,
           "unlockLevel": 26,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Point Blank Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à bout portant.",
+              "es": "Consigue 20 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 20 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Esegui 20 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_myriad.png",
           "group": "special"
@@ -383,7 +431,19 @@
           },
           "tier": 10,
           "unlockLevel": 51,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Mounted Kills against Players",
+              "fr": "Éliminez 20 joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_night_ops.png",
           "group": "special"
@@ -401,7 +461,19 @@
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Kills from behind Players",
+              "fr": "Éliminez 25 joueur(s) par-derrière.",
+              "es": "Consigue 25 bajas por la espalda contra jugadores.",
+              "de": "Erreiche 25 Abschüsse aus der Deckung hinter Spielern",
+              "nl": "Behaal 25 spelerkills van achteren.",
+              "it": "Esegui 25 uccisioni alle spalle contro i giocatori.",
+              "pt": "Obtenha 25 baixas por trás de jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/m4_green.png",
           "group": "special"
@@ -568,7 +640,19 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 10 times against Players",
+              "fr": "Éliminez 10 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 10 veces.",
+              "de": "Erreiche 10-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 10 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_ponderosa.png",
           "group": "special"
@@ -586,7 +670,19 @@
           },
           "tier": 10,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_red_rain.png",
           "group": "special"
@@ -604,7 +700,19 @@
           },
           "tier": 11,
           "unlockLevel": 68,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Player Kills while using a silencer",
+              "fr": "Éliminez 100 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 100 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 100 Spieler-Abschüsse mit einem Schalldämpfer",
+              "nl": "Behaal 100 spelerkills met volautomatisch vuur.",
+              "it": "Esegui 100 uccisioni contro i giocatori usando un silenziatore.",
+              "pt": "Obtenha 100 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/hyeon_burst_kitty_kaos.png",
           "group": "special"
@@ -771,7 +879,19 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Kills without dying 10 times",
+              "fr": "Faites 3 éliminations sans mourir 10 fois.",
+              "es": "Consigue 3 bajas sin morir 10 veces.",
+              "de": "Erreiche 10-mal 3 Abschüsse, ohne zu sterben.",
+              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni senza morire 10 volte.",
+              "pt": "Obtenha 3 baixas sem morrer 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_samnim.png",
           "group": "special"
@@ -789,7 +909,19 @@
           },
           "tier": 10,
           "unlockLevel": 48,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_raster_aux.png",
           "group": "special"
@@ -807,7 +939,19 @@
           },
           "tier": 11,
           "unlockLevel": 71,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Hipfire Kills against Players",
+              "fr": "Éliminez 30 joueur(s) en tirant au jugé.",
+              "es": "Consigue 30 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 30 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 30 heupvuurkills tegen spelers.",
+              "it": "Esegui 30 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 30 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kastov_762_yellow.png",
           "group": "special"
@@ -974,7 +1118,19 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Hipfire Kills against Players",
+              "fr": "Éliminez 20 joueur(s) en tirant au jugé.",
+              "es": "Consigue 20 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 20 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Esegui 20 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_dune_sea.png",
           "group": "special"
@@ -992,7 +1148,19 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills using a Silencer",
+              "fr": "Éliminez 50 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 50 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 50 Abschüsse gegen Spieler mit einem Schalldämpfer",
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Esegui 50 uccisioni contro giocatori usando un silenziatore",
+              "pt": "Obtenha 50 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_scorch.png",
           "group": "special"
@@ -1010,7 +1178,19 @@
           },
           "tier": 11,
           "unlockLevel": 72,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Longshot Kills against Players",
+              "fr": "Éliminez 30 joueur(s) à longue distance.",
+              "es": "Consigue 30 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 30 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 30 kills van lange afstand tegen spelers.",
+              "it": "Esegui 30 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 30 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/patriot_xmr_disperse.png",
           "group": "special"
@@ -1177,7 +1357,19 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while Aiming Down Sights",
+              "fr": "Faites 50 éliminations de joueurs en regardant dans le viseur.",
+              "es": "Consigue 50 bajas de jugadores mientras apuntas con la mira.",
+              "de": "Erreiche 50 Spieler-Abschüsse bei Verwendung der Zielvorrichtung",
+              "nl": "Behaal 50 spelerkills terwijl je richt.",
+              "it": "Esegui 50 uccisioni di giocatori in modalità mirino.",
+              "pt": "Obtenha 50 baixas de jogadores enquanto mira."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_asphalt.png",
           "group": "special"
@@ -1195,7 +1387,19 @@
           },
           "tier": 10,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double Kills against Players",
+              "fr": "Faites 10 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 10 dobles bajas de jugadores.",
+              "de": "Erreiche 10 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Esegui 10 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 10 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_black_topo.png",
           "group": "special"
@@ -1213,7 +1417,19 @@
           },
           "tier": 11,
           "unlockLevel": 64,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without dying 15 times",
+              "fr": "Éliminez 15 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
+              "de": "Erreiche 15-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 15 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/iso_nightshade_brown.png",
           "group": "special"
@@ -1380,7 +1596,19 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double Kills against Players",
+              "fr": "Faites 10 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 10 dobles bajas de jugadores.",
+              "de": "Erreiche 10 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Esegui 10 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 10 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_blackwell.png",
           "group": "special"
@@ -1398,7 +1626,19 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_iron.png",
           "group": "special"
@@ -1416,7 +1656,19 @@
           },
           "tier": 11,
           "unlockLevel": 62,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Player Kills while Aiming Down Sights",
+              "fr": "Faites 100 éliminations de joueurs en regardant dans le viseur.",
+              "es": "Consigue 100 bajas de jugadores mientras apuntas con la mira.",
+              "de": "Erreiche 100 Spieler-Abschüsse bei Verwendung der Zielvorrichtung",
+              "nl": "Behaal 100 spelerkills terwijl je richt.",
+              "it": "Esegui 100 uccisioni di giocatori in modalità mirino.",
+              "pt": "Obtenha 100 baixas de jogadores enquanto mira."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/ppsh_41_currents.png",
           "group": "special"
@@ -1583,7 +1835,19 @@
           },
           "tier": 9,
           "unlockLevel": 17,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Player Kills while Moving",
+              "fr": "Éliminez 20 joueur(s) en vous déplaçant.",
+              "es": "Consigue 20 bajas de jugadores mientras te mueves.",
+              "de": "Erreiche 20 Spieler-Abschüsse in Bewegung",
+              "nl": "Behaal 20 spelerkills terwijl je beweegt.",
+              "it": "Esegui 20 uccisioni di giocatori mentre ti muovi.",
+              "pt": "Obtenha 20 baixas de jogadores enquanto se move."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_sniper_veil.png",
           "group": "special"
@@ -1601,7 +1865,19 @@
           },
           "tier": 10,
           "unlockLevel": 35,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_carbonated.png",
           "group": "special"
@@ -1619,7 +1895,19 @@
           },
           "tier": 11,
           "unlockLevel": 53,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 40 Headshot Kills against Players",
+              "fr": "Éliminez 40 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 40 bajas de jugadores con tiros a la cabeza.",
+              "de": "Erreiche 40 Kopfschuss-Abschüsse gegen Spieler",
+              "nl": "Behaal 40 headshotkills tegen spelers.",
+              "it": "Esegui 40 uccisioni con colpi alla testa contro i giocatori.",
+              "pt": "Obtenha 40 baixas de jogadores com tiros na cabeça."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/x_58_nyx_lime.png",
           "group": "special"
@@ -1786,7 +2074,19 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Point Blank Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à bout portant.",
+              "es": "Consigue 20 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 20 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Esegui 20 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_struck_oil.png",
           "group": "special"
@@ -1804,7 +2104,19 @@
           },
           "tier": 10,
           "unlockLevel": 42,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Longshot Kills against Players",
+              "fr": "Éliminez 10 joueur(s) à longue distance.",
+              "es": "Consigue 10 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 10 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Esegui 10 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 10 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_brushstroke.png",
           "group": "special"
@@ -1822,7 +2134,19 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "kills",
+            "description": {
+              "en": "Get 40 Player Kills while Jumping",
+              "fr": "Éliminez 40 joueur(s) en sautant.",
+              "es": "Consigue 40 bajas de jugadores mientras saltas.",
+              "de": "Erreiche 40 Spieler-Abschüsse beim Springen",
+              "nl": "Behaal 40 spelerkills terwijl je springt.",
+              "it": "Esegui 40 uccisioni di giocatori mentre salti.",
+              "pt": "Obtenha 40 baixas de jogadores enquanto pula."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rezi_12_white_pine.png",
           "group": "special"
@@ -1989,7 +2313,19 @@
           },
           "tier": 9,
           "unlockLevel": 18,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Point Blank Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à bout portant.",
+              "es": "Consigue 20 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 20 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Esegui 20 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_desert_tactics.png",
           "group": "special"
@@ -2007,7 +2343,19 @@
           },
           "tier": 10,
           "unlockLevel": 39,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 10 times against Players",
+              "fr": "Éliminez 10 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 10 veces.",
+              "de": "Erreiche 10-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 10 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_green_tiger.png",
           "group": "special"
@@ -2025,7 +2373,19 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 30 Longshot Kills against Players",
+              "fr": "Éliminez 30 joueur(s) à longue distance.",
+              "es": "Consigue 30 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 30 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 30 keer 0 spelerkills zonder dood te gaan.",
+              "it": "Esegui 30 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 30 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/finn_lmg_thunderhead.png",
           "group": "special"
@@ -2192,7 +2552,19 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Mounted Kills against Players",
+              "fr": "Éliminez 20 joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_ash_pine.png",
           "group": "special"
@@ -2210,7 +2582,19 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double Kills against Players",
+              "fr": "Faites 10 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 10 dobles bajas de jugadores.",
+              "de": "Erreiche 10 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Esegui 10 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 10 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_outcrop.png",
           "group": "special"
@@ -2228,7 +2612,19 @@
           },
           "tier": 11,
           "unlockLevel": 65,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 40 Headshots against Players",
+              "fr": "Éliminez 40 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 40 tiros a la cabeza contra jugadores.",
+              "de": "Erreiche 40 Kopfschüsse gegen Spieler",
+              "nl": "Behaal 40 headshotkills tegen spelers.",
+              "it": "Esegui 40 colpi alla testa contro i giocatori.",
+              "pt": "Acerte 40 tiros na cabeça de jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/type_73_foxtrail.png",
           "group": "special"
@@ -2395,7 +2791,19 @@
           },
           "tier": 9,
           "unlockLevel": 26,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Mounted Kills against Players",
+              "fr": "Éliminez 20 joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_mangrove.png",
           "group": "special"
@@ -2413,7 +2821,19 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills while Crouched",
+              "fr": "Faites 25 éliminations de joueurs en étant accroupi.",
+              "es": "Consigue 25 bajas de jugadores estando agachado.",
+              "de": "Erreiche 25 Spieler-Abschüsse, während du geduckt bist",
+              "nl": "Behaal 25 spelerkills terwijl je hurkt.",
+              "it": "Esegui 25 uccisioni giocatore mentre sei accovacciato.",
+              "pt": "Obtenha 25 baixas de jogadores enquanto estiver agachado."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_fungal_grid.png",
           "group": "special"
@@ -2431,7 +2851,19 @@
           },
           "tier": 11,
           "unlockLevel": 73,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Longshot Kills against Players",
+              "fr": "Éliminez 30 joueur(s) à longue distance.",
+              "es": "Consigue 30 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 30 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 30 kills van lange afstand tegen spelers.",
+              "it": "Esegui 30 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 30 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mar_9_white.png",
           "group": "special"
@@ -2598,7 +3030,19 @@
           },
           "tier": 9,
           "unlockLevel": 27,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Quickscope Kills against Players",
+              "fr": "Éliminez 10 joueur(s) en visée rapide.",
+              "es": "Consigue 10 bajas de jugadores usando el método de mira rápida.",
+              "de": "Erreiche 10 Schnellvisier-Abschüsse gegen Spieler",
+              "nl": "Behaal 10 quickscopekills tegen spelers.",
+              "it": "Esegui 10 uccisioni puntamento rapido contro i giocatori.",
+              "pt": "Obtenha 10 baixas de jogadores com a mira rápida."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_hibiscus.png",
           "group": "special"
@@ -2616,7 +3060,19 @@
           },
           "tier": 10,
           "unlockLevel": 49,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Double Kills against Players",
+              "fr": "Faites 20 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 20 dobles bajas de jugadores.",
+              "de": "Erreiche 20 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 20 dubbele kills tegen spelers.",
+              "it": "Esegui 20 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 20 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_fire_topo.png",
           "group": "special"
@@ -2634,7 +3090,19 @@
           },
           "tier": 11,
           "unlockLevel": 70,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Kills without Dying against Players 15 times",
+              "fr": "Éliminez 15 fois 3 joueurs(s) sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
+              "de": "Erreiche 15-mal 3 Abschüsse gegen Spieler, ohne zu sterben",
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni senza morire contro i giocatori, 15 volte.",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oris_8_6_deep_space.png",
           "group": "special"
@@ -2801,7 +3269,19 @@
           },
           "tier": 9,
           "unlockLevel": 22,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Hipfire Kills against Players",
+              "fr": "Éliminez 10 joueur(s) en tirant au jugé.",
+              "es": "Consigue 10 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 10 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 10 heupvuurkills tegen spelers.",
+              "it": "Esegui 10 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 10 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_treeline.png",
           "group": "special"
@@ -2819,7 +3299,19 @@
           },
           "tier": 10,
           "unlockLevel": 47,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 20 Headshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 20 bajas de jugadores con tiros a la cabeza.",
+              "de": "Erreiche 20 Kopfschuss-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Esegui 20 uccisioni con colpi alla testa contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com tiros na cabeça."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_spidersilk.png",
           "group": "special"
@@ -2837,7 +3329,19 @@
           },
           "tier": 11,
           "unlockLevel": 75,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Player Kills without taking damage 20 times",
+              "fr": "Éliminez 20 fois 2 joueurs(s) sans subir de dégâts.",
+              "es": "Consigue 2 bajas de jugadores sin recibir daño 20 veces.",
+              "de": "Erreiche 20-mal 2 Spieler-Abschüsse, ohne Schaden zu erleiden",
+              "nl": "Behaal 20 keer 2 spelerkills zonder schade op te lopen.",
+              "it": "Esegui 2 uccisioni contro i giocatori senza subire danni, 20 volte.",
+              "pt": "Obtenha 2 baixas de jogadores sem sofrer dano 20 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/kg_7_vulcan_tension.png",
           "group": "special"
@@ -3004,7 +3508,19 @@
           },
           "tier": 9,
           "unlockLevel": 28,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Player Kills within 5 Seconds 10 times",
+              "fr": "Éliminez 10 fois 2 joueurs en moins de 5 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 5 segundos 10 veces.",
+              "de": "Erreiche 10-mal 2 Spieler-Abschüsse innerhalb von 5 Sekunden",
+              "nl": "Behaal 10 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Esegui 2 uccisioni contro giocatori in 5 secondi, 10 volte",
+              "pt": "Obtenha 2 baixas de jogador em 5 segundos 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_anaconda.png",
           "group": "special"
@@ -3022,7 +3538,19 @@
           },
           "tier": 10,
           "unlockLevel": 52,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Quickscope Kills against Players",
+              "fr": "Éliminez 20 joueur(s) en visée rapide.",
+              "es": "Consigue 20 bajas de jugadores usando el método de mira rápida.",
+              "de": "Erreiche 20 Schnellvisier-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 quickscopekills tegen spelers.",
+              "it": "Esegui 20 uccisioni puntamento rapido contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a mira rápida."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_ripplewave.png",
           "group": "special"
@@ -3040,7 +3568,19 @@
           },
           "tier": 11,
           "unlockLevel": 74,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "kills",
+            "description": {
+              "en": "Get 40 Longshot Kills against Players",
+              "fr": "Éliminez 40 joueur(s) à longue distance.",
+              "es": "Consigue 40 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 40 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 40 kills van lange afstand tegen spelers.",
+              "it": "Esegui 40 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 40 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/signal_50_sunburn.png",
           "group": "special"
@@ -3207,7 +3747,19 @@
           },
           "tier": 9,
           "unlockLevel": 13,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Player Kills while Ledge Hanging",
+              "fr": "Éliminez 15 joueur(s) en étant suspendu à un rebord.",
+              "es": "Consigue 15 bajas de jugadores mientras cuelgas de un saliente.",
+              "de": "Erreiche 15 Spieler-Abschüsse beim Hangeln an einer Kante",
+              "nl": "Behaal 15 spelerkills terwijl je aan een richel hangt.",
+              "it": "Esegui 15 uccisioni contro i giocatori mentre ti appendi a una sporgenza.",
+              "pt": "Obtenha 15 baixas de jogadores enquanto estiver pendurado."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_off_grid.png",
           "group": "special"
@@ -3225,7 +3777,19 @@
           },
           "tier": 10,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 Point Blank Kills against Players",
+              "fr": "Éliminez 15 joueur(s) à bout portant.",
+              "es": "Consigue 15 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 15 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 15 kills van dichtbij tegen spelers.",
+              "it": "Esegui 15 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 15 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_urban_flamingo.png",
           "group": "special"
@@ -3243,7 +3807,19 @@
           },
           "tier": 11,
           "unlockLevel": 38,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while using a silencer",
+              "fr": "Éliminez 50 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 50 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 50 Spieler-Abschüsse mit einem Schalldämpfer",
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Esegui 50 uccisioni contro i giocatori usando un silenziatore.",
+              "pt": "Obtenha 50 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/krait_p68_smokescreen.png",
           "group": "special"
@@ -3410,7 +3986,19 @@
           },
           "tier": 9,
           "unlockLevel": 18,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 20 Headshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 20 bajas de jugadores con tiros a la cabeza.",
+              "de": "Erreiche 20 Kopfschuss-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Esegui 20 uccisioni con colpi alla testa contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com tiros na cabeça."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_frosted.png",
           "group": "special"
@@ -3428,7 +4016,19 @@
           },
           "tier": 10,
           "unlockLevel": 34,
-          "requirement": null,
+          "requirement": {
+            "amount": 7,
+            "unit": "kills",
+            "description": {
+              "en": "Get 7 Double Kills against Players",
+              "fr": "Faites 7 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 7 dobles bajas de jugadores.",
+              "de": "Erreiche 7 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 7 dubbele kills tegen spelers.",
+              "it": "Esegui 7 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 7 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_splatter_ops.png",
           "group": "special"
@@ -3446,7 +4046,19 @@
           },
           "tier": 11,
           "unlockLevel": 50,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Point Blank Kills against Players",
+              "fr": "Éliminez 30 joueur(s) à bout portant.",
+              "es": "Consigue 30 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 30 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 30 kills van dichtbij tegen spelers.",
+              "it": "Esegui 30 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 30 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/50_gs_red_tiger.png",
           "group": "special"
@@ -3613,7 +4225,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Direct Shot Kills against Players",
+              "fr": "Éliminez 10 joueur(s) par tir direct.",
+              "es": "Consigue 10 bajas de jugadores con disparos directos.",
+              "de": "Erreiche 10 Direktabschüsse gegen Spieler",
+              "nl": "Behaal 10 kills met een voltreffer tegen spelers.",
+              "it": "Esegui 10 uccisioni colpo diretto contro i giocatori.",
+              "pt": "Obtenha 10 baixas de jogadores com disparos diretos."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_frontier.png",
           "group": "special"
@@ -3631,7 +4255,19 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 5,
+            "unit": "kills",
+            "description": {
+              "en": "Get 5 Double Kills against Players",
+              "fr": "Faites 5 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 5 dobles bajas de jugadores.",
+              "de": "Erreiche 5 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 5 dubbele kills tegen spelers.",
+              "it": "Esegui 5 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 5 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_sandwash.png",
           "group": "special"
@@ -3649,7 +4285,19 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 30 Killstreaks or Vehicles",
+              "fr": "Détruisez 30 série(s) d'éliminations ou véhicule(s).",
+              "es": "Destruye 30 rachas de bajas o vehículos.",
+              "de": "Zerstöre 30 Abschussserien oder Fahrzeuge",
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli.",
+              "pt": "Destrua 30 séries de baixas ou veículos."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pila_digital_fall.png",
           "group": "special"
@@ -3816,7 +4464,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills while Jumping",
+              "fr": "Éliminez 25 joueur(s) en sautant.",
+              "es": "Consigue 25 bajas de jugadores mientras saltas.",
+              "de": "Erreiche 25 Spieler-Abschüsse beim Springen",
+              "nl": "Behaal 25 spelerkills terwijl je springt.",
+              "it": "Esegui 25 uccisioni di giocatori mentre salti.",
+              "pt": "Obtenha 25 baixas de jogadores enquanto pula."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_raster_lite.png",
           "group": "special"
@@ -3834,7 +4494,19 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills using the Heavy Melee Finisher",
+              "fr": "Éliminez 25 joueurs(s) en utilisant l'exécution au corps à corps lourde.",
+              "es": "Consigue 25 bajas de jugadores con el remate cuerpo a cuerpo pesado.",
+              "de": "Erreiche 25 Spieler-Abschüsse mit dem schweren Nahkampf-Vollstrecker",
+              "nl": "Behaal 25 spelerkills met de zware melee-finisher.",
+              "it": "Esegui 25 uccisioni contro i giocatori usando il colpo di grazia corpo a corpo pesante.",
+              "pt": "Obtenha 25 baixas de jogadores usando o finalizador de corpo a corpo pesado."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_stockpile.png",
           "group": "special"
@@ -3852,7 +4524,19 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills in 5 seconds against Players 25 times",
+              "fr": "Éliminez 25 fois 2 joueurs(s) en 5 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 5 segundos 25 veces.",
+              "de": "Erreiche 25-mal 2 Abschüsse innerhalb von 5 Sekunden gegen Spieler",
+              "nl": "Behaal 25 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Esegui 2 uccisioni in 5 secondi contro i giocatori, 25 volte.",
+              "pt": "Obtenha 2 baixas em 5 segundos contra jogadores 25 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/fss_carbon_edge_1095_deathbed.png",
           "group": "special"
@@ -4019,7 +4703,19 @@
           },
           "tier": 9,
           "unlockLevel": 23,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_splinter_rock.png",
           "group": "special"
@@ -4037,7 +4733,19 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills with Miri 40MM Grenade Launcher",
+              "fr": "Éliminez 25 joueur(s) avec le lance-grenades Miri 40 mm.",
+              "es": "Consigue 25 bajas de jugadores con el lanzagranadas Miri de 40 mm.",
+              "de": "Erreiche 25 Abschüsse gegen Spieler mit dem Miri 40MM-Granatwerfer",
+              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper.",
+              "it": "Esegui 25 uccisioni contro i giocatori usando il lanciagranate Miri 40 mm.",
+              "pt": "Obtenha 25 baixas de jogadores com o lança-granadas Miri 40 mm."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_sunset_tropic.png",
           "group": "special"
@@ -4055,7 +4763,19 @@
           },
           "tier": 11,
           "unlockLevel": 69,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 25 times against Players",
+              "fr": "Éliminez 25 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 25 veces.",
+              "de": "Erreiche 25-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 25 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 25 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/axion_cyan.png",
           "group": "special"
@@ -4222,7 +4942,19 @@
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills with Miri 40MM Grenade Launcher",
+              "fr": "Éliminez 25 joueur(s) avec le lance-grenades Miri 40 mm.",
+              "es": "Consigue 25 bajas de jugadores con el lanzagranadas Miri de 40 mm.",
+              "de": "Erreiche 25 Abschüsse gegen Spieler mit dem Miri 40MM-Granatwerfer",
+              "nl": "Behaal 25 spelerkills met de Miri 40MM-granaatwerper.",
+              "it": "Esegui 25 uccisioni contro i giocatori usando il lanciagranate Miri 40 mm.",
+              "pt": "Obtenha 25 baixas de jogadores com o lança-granadas Miri 40 mm."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_dark_moss.png",
           "group": "special"
@@ -4240,7 +4972,19 @@
           },
           "tier": 10,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 10 times against Players",
+              "fr": "Éliminez 10 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 10 veces.",
+              "de": "Erreiche 10-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 10 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_shale.png",
           "group": "special"
@@ -4258,7 +5002,19 @@
           },
           "tier": 11,
           "unlockLevel": 65,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Kills while ADS against Players",
+              "fr": "Éliminez 100 joueur(s) en regardant dans le viseur.",
+              "es": "Consigue 100 bajas mientras apuntas con la mira a otros jugadores.",
+              "de": "Erreiche 100 ZV-Abschüsse gegen Spieler",
+              "nl": "Behaal 100 spelerkills terwijl je richt.",
+              "it": "Esegui 100 uccisioni in modalità mirino contro i giocatori.",
+              "pt": "Obtenha 100 baixas enquanto mira em jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/oden_hot_rod.png",
           "group": "special"
@@ -4425,7 +5181,19 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Point Blank Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à bout portant.",
+              "es": "Consigue 20 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 20 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
+              "it": "Esegui 20 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_oni.png",
           "group": "special"
@@ -4443,7 +5211,19 @@
           },
           "tier": 10,
           "unlockLevel": 45,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Mounted Kills against Players",
+              "fr": "Éliminez 20 joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_urban_smoke.png",
           "group": "special"
@@ -4461,7 +5241,19 @@
           },
           "tier": 11,
           "unlockLevel": 67,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Kills without Dying 15 times against Players",
+              "fr": "Éliminez 15 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
+              "de": "Erreiche 15-mal 3 Abschüsse gegen Spieler, ohne zu sterben",
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni senza morire, 15 volte, contro giocatori",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/cronen_squall_optical_reverb.png",
           "group": "special"
@@ -4628,7 +5420,19 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while Aiming Down Sight",
+              "fr": "Faites 50 éliminations de joueurs en regardant dans le viseur.",
+              "es": "Consigue 50 bajas de jugadores mientras apuntas con la mira.",
+              "de": "Erreiche 50 Spieler-Abschüsse mit der Zielvorrichtung",
+              "nl": "Behaal 20 spelerkills terwijl je ligt.",
+              "it": "Esegui 50 uccisioni di giocatori in modalità mirino.",
+              "pt": "Obtenha 50 baixas de jogadores enquanto mira."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_jungle_shadow.png",
           "group": "special"
@@ -4646,7 +5450,19 @@
           },
           "tier": 10,
           "unlockLevel": 40,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Player Kills while Prone",
+              "fr": "Éliminez 20 joueur(s) en position allongée.",
+              "es": "Consigue 20 bajas de jugadores estando cuerpo a tierra.",
+              "de": "Erreiche 20 Spieler-Abschüsse im Liegen",
+              "nl": "Behaal 20 spelerkills terwijl je ligt.",
+              "it": "Esegui 20 uccisioni contro giocatori in posizione sdraiata",
+              "pt": "Obtenha 20 baixas de jogadores enquanto estiver de bruços."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_ghast.png",
           "group": "special"
@@ -4664,7 +5480,19 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 20 Headshots against Players",
+              "fr": "Éliminez 20 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 20 tiros a la cabeza contra jugadores.",
+              "de": "Erreiche 20 Kopfschüsse gegen Spieler",
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Esegui 20 colpi alla testa contro i giocatori.",
+              "pt": "Acerte 20 tiros na cabeça de jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/vel_46_gunmetal.png",
           "group": "special"
@@ -4831,7 +5659,19 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills using a Silencer",
+              "fr": "Éliminez 50 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 50 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 50 Abschüsse gegen Spieler mit einem Schalldämpfer",
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Esegui 50 uccisioni contro giocatori usando un silenziatore",
+              "pt": "Obtenha 50 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_stellation.png",
           "group": "special"
@@ -4849,7 +5689,19 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Player Kills while Jumping",
+              "fr": "Éliminez 20 joueur(s) en sautant.",
+              "es": "Consigue 20 bajas de jugadores mientras saltas.",
+              "de": "Erreiche 20 Spieler-Abschüsse beim Springen",
+              "nl": "Behaal 20 spelerkills terwijl je springt.",
+              "it": "Esegui 20 uccisioni di giocatori mentre salti.",
+              "pt": "Obtenha 20 baixas de jogadores enquanto pula."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_rattlesnake.png",
           "group": "special"
@@ -4867,7 +5719,19 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "kills",
+            "description": {
+              "en": "Get 40 Point Blank Kills against Players",
+              "fr": "Éliminez 40 joueur(s) à bout portant.",
+              "es": "Consigue 40 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 40 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 40 kills van dichtbij tegen spelers.",
+              "it": "Esegui 40 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 40 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/wz_55_striga_dark_tan.png",
           "group": "special"
@@ -5034,7 +5898,19 @@
           },
           "tier": 9,
           "unlockLevel": 21,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Player Kills while Moving",
+              "fr": "Éliminez 20 joueur(s) en vous déplaçant.",
+              "es": "Consigue 20 bajas de jugadores mientras te mueves.",
+              "de": "Erreiche 20 Spieler-Abschüsse in Bewegung",
+              "nl": "Behaal 20 spelerkills terwijl je beweegt.",
+              "it": "Esegui 20 uccisioni di giocatori mentre ti muovi.",
+              "pt": "Obtenha 20 baixas de jogadores enquanto se move."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_redshift.png",
           "group": "special"
@@ -5052,7 +5928,19 @@
           },
           "tier": 10,
           "unlockLevel": 41,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Double Kills against Players",
+              "fr": "Faites 10 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 10 dobles bajas de jugadores.",
+              "de": "Erreiche 10 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 10 dubbele kills tegen spelers.",
+              "it": "Esegui 10 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 10 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_corrupted_clay.png",
           "group": "special"
@@ -5070,7 +5958,19 @@
           },
           "tier": 11,
           "unlockLevel": 60,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while Prone",
+              "fr": "Éliminez 50 joueur(s) en position allongée.",
+              "es": "Consigue 50 bajas de jugadores estando cuerpo a tierra.",
+              "de": "Erreiche 50 Spieler-Abschüsse im Liegen",
+              "nl": "Behaal 50 spelerkills terwijl je ligt.",
+              "it": "Esegui 50 uccisioni contro giocatori in posizione sdraiata",
+              "pt": "Obtenha 50 baixas de jogadores enquanto estiver de bruços."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/warlord_magma_ire.png",
           "group": "special"
@@ -5237,7 +6137,19 @@
           },
           "tier": 9,
           "unlockLevel": 15,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Hipfire Kills against Players",
+              "fr": "Éliminez 20 joueur(s) en tirant au jugé.",
+              "es": "Consigue 20 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 20 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Esegui 20 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_phantom_flux.png",
           "group": "special"
@@ -5255,7 +6167,19 @@
           },
           "tier": 10,
           "unlockLevel": 36,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Longshot Kills against Players",
+              "fr": "Éliminez 20 joueur(s) à longue distance.",
+              "es": "Consigue 20 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 20 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 20 kills van lange afstand tegen spelers.",
+              "it": "Esegui 20 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_mineral.png",
           "group": "special"
@@ -5273,7 +6197,19 @@
           },
           "tier": 11,
           "unlockLevel": 56,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Player Kills while Prone",
+              "fr": "Éliminez 100 joueur(s) en position allongée.",
+              "es": "Consigue 100 bajas de jugadores estando cuerpo a tierra.",
+              "de": "Erreiche 100 Spieler-Abschüsse im Liegen",
+              "nl": "Behaal 100 spelerkills terwijl je ligt.",
+              "it": "Esegui 100 uccisioni contro giocatori in posizione sdraiata",
+              "pt": "Obtenha 100 baixas de jogadores enquanto estiver de bruços."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/apoc_338_tiger_swipe.png",
           "group": "special"
@@ -5440,7 +6376,19 @@
           },
           "tier": 9,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "headshots",
+            "description": {
+              "en": "Get 25 Headshots against Players",
+              "fr": "Éliminez 25 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 25 tiros a la cabeza contra jugadores.",
+              "de": "Erreiche 25 Kopfschüsse gegen Spieler",
+              "nl": "Behaal 25 headshotkills tegen spelers.",
+              "it": "Esegui 25 colpi alla testa contro i giocatori.",
+              "pt": "Acerte 25 tiros na cabeça de jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_ice_sheer.png",
           "group": "special"
@@ -5458,7 +6406,19 @@
           },
           "tier": 10,
           "unlockLevel": 48,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Player Kills without Reloading 10 times",
+              "fr": "Éliminez 10 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 10 veces.",
+              "de": "Erreiche 10-mal 2 Spieler-Abschüsse, ohne nachzuladen",
+              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 2 uccisioni di giocatori senza ricaricare, 10 volte.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_fractal_snow.png",
           "group": "special"
@@ -5476,7 +6436,19 @@
           },
           "tier": 11,
           "unlockLevel": 69,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Player Kills while Focused",
+              "fr": "Faites 100 éliminations de joueurs en étant concentré.",
+              "es": "Consigue 100 bajas de jugadores mientras estás concentrado.",
+              "de": "Erreiche 100 Spieler-Abschüsse, während du fokussiert bist",
+              "nl": "Behaal 20 headshotkills tegen spelers.",
+              "it": "Esegui 100 uccisioni di giocatori mentre sei concentrato.",
+              "pt": "Obtenha 100 baixas de jogadores usando foco."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mosin_nagant_sticker_shock.png",
           "group": "special"
@@ -5643,7 +6615,19 @@
           },
           "tier": 9,
           "unlockLevel": 20,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without Dying 10 times",
+              "fr": "Éliminez 10 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 10 veces.",
+              "de": "Erreiche 10-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 10 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dry_brush.png",
           "group": "special"
@@ -5661,7 +6645,19 @@
           },
           "tier": 10,
           "unlockLevel": 37,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Mounted Kills against Players",
+              "fr": "Éliminez 20 joueurs en prenant appui.",
+              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
+              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_backcountry.png",
           "group": "special"
@@ -5679,7 +6675,19 @@
           },
           "tier": 11,
           "unlockLevel": 54,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Player Kills within 5 Seconds 20 times",
+              "fr": "Éliminez 20 fois 2 joueurs en moins de 5 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 5 segundos 20 veces.",
+              "de": "Erreiche 20-mal 2 Spieler-Abschüsse innerhalb von 5 Sekunden",
+              "nl": "Behaal 20 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Esegui 2 uccisioni contro giocatori in 5 secondi, 20 volte",
+              "pt": "Obtenha 2 baixas de jogador em 5 segundos 20 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/astaroth_57_dread_plague.png",
           "group": "special"
@@ -5846,7 +6854,19 @@
           },
           "tier": 9,
           "unlockLevel": 13,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Player Kills while Aiming Down Sights",
+              "fr": "Faites 25 éliminations de joueurs en regardant dans le viseur.",
+              "es": "Consigue 25 bajas de jugadores mientras apuntas con la mira.",
+              "de": "Erreiche 25 Spieler-Abschüsse bei Verwendung der Zielvorrichtung",
+              "nl": "Behaal 25 spelerkills terwijl je richt.",
+              "it": "Esegui 25 uccisioni di giocatori in modalità mirino.",
+              "pt": "Obtenha 25 baixas de jogadores enquanto mira."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_autumn.png",
           "group": "special"
@@ -5864,7 +6884,19 @@
           },
           "tier": 10,
           "unlockLevel": 25,
-          "requirement": null,
+          "requirement": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without dying 5 times",
+              "fr": "Éliminez 5 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 5 veces.",
+              "de": "Erreiche 5-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 5 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 5 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 5 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_snakeskin.png",
           "group": "special"
@@ -5882,7 +6914,19 @@
           },
           "tier": 11,
           "unlockLevel": 38,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while using Akimbo",
+              "fr": "Faites 50 éliminations de joueurs en utilisant l'Akimbo.",
+              "es": "Consigue 50 bajas de jugadores con un arma en cada mano.",
+              "de": "Erreiche 50 Spieler-Abschüsse mit Akimbo",
+              "nl": "Behaal 50 spelerkills met Akimbo.",
+              "it": "Esegui 50 uccisioni di giocatori mentre usi Akimbo.",
+              "pt": "Obtenha 50 baixas de jogadores usando armas duplas."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/sang_9mm_space_time.png",
           "group": "special"
@@ -6049,7 +7093,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 15,
+            "unit": "kills",
+            "description": {
+              "en": "Get 15 One Shot Kills against Players",
+              "fr": "Éliminez 15 joueur(s) en un tir.",
+              "es": "Consigue 15 bajas de jugadores de un tiro.",
+              "de": "Erreiche 15 Sofortabschüsse gegen Spieler",
+              "nl": "Behaal 15 kills met één schot tegen spelers.",
+              "it": "Esegui 15 uccisioni Colpo singolo contro i giocatori.",
+              "pt": "Obtenha 15 baixas de jogadores com um único tiro."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_miami.png",
           "group": "special"
@@ -6067,7 +7123,19 @@
           },
           "tier": 10,
           "unlockLevel": 30,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Player Kills without Reloading 10 times",
+              "fr": "Éliminez 10 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 10 veces.",
+              "de": "Erreiche 10-mal 2 Spieler-Abschüsse, ohne nachzuladen",
+              "nl": "Behaal 10 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni di giocatori senza ricaricare, 10 volte.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 10 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_wallpaper.png",
           "group": "special"
@@ -6085,7 +7153,19 @@
           },
           "tier": 11,
           "unlockLevel": 44,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Point Blank Kills against Players",
+              "fr": "Éliminez 30 joueur(s) à bout portant.",
+              "es": "Consigue 30 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 30 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 30 kills van dichtbij tegen spelers.",
+              "it": "Esegui 30 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 30 baixas de jogadores à queima-roupa."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/mojave_357_garland.png",
           "group": "special"
@@ -6252,7 +7332,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Player Kills while Prone",
+              "fr": "Éliminez 10 joueur(s) en position allongée.",
+              "es": "Consigue 10 bajas de jugadores estando cuerpo a tierra.",
+              "de": "Erreiche 10 Spieler-Abschüsse im Liegen",
+              "nl": "Behaal 10 spelerkills terwijl je ligt.",
+              "it": "Esegui 10 uccisioni contro giocatori in posizione sdraiata",
+              "pt": "Obtenha 10 baixas de jogadores enquanto estiver de bruços."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_digi_bark.png",
           "group": "special"
@@ -6270,7 +7362,19 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Longshot Kills against Players",
+              "fr": "Éliminez 10 joueur(s) à longue distance.",
+              "es": "Consigue 10 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 10 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Esegui 10 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 10 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_stone_bits.png",
           "group": "special"
@@ -6288,7 +7392,19 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 30 Killstreaks or Vehicles",
+              "fr": "Détruisez 30 série(s) d'éliminations ou véhicule(s).",
+              "es": "Destruye 30 rachas de bajas o vehículos.",
+              "de": "Zerstöre 30 Abschussserien oder Fahrzeuge",
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli.",
+              "pt": "Destrua 30 séries de baixas ou veículos."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/rpg_8_bubblegum_ops.png",
           "group": "special"
@@ -6455,7 +7571,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 5,
+            "unit": "kills",
+            "description": {
+              "en": "Get 5 Double Kills against Players",
+              "fr": "Faites 5 double(s) élimination(s) contre des joueurs.",
+              "es": "Consigue 5 dobles bajas de jugadores.",
+              "de": "Erreiche 5 Doppelabschüsse gegen Spieler",
+              "nl": "Behaal 5 dubbele kills tegen spelers.",
+              "it": "Esegui 5 doppie uccisioni contro i giocatori.",
+              "pt": "Obtenha 5 baixas duplas contra jogadores."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_thicket.png",
           "group": "special"
@@ -6473,7 +7601,19 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Longshot Kills against Players",
+              "fr": "Éliminez 10 joueur(s) à longue distance.",
+              "es": "Consigue 10 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 10 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 10 kills van lange afstand tegen spelers.",
+              "it": "Esegui 10 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 10 baixas de jogadores à longa distância."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_tectonic.png",
           "group": "special"
@@ -6491,7 +7631,19 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "destroyed",
+            "description": {
+              "en": "Destroy 30 Killstreaks or Vehicles",
+              "fr": "Détruisez 30 série(s) d'éliminations ou véhicule(s).",
+              "es": "Destruye 30 rachas de bajas o vehículos.",
+              "de": "Zerstöre 30 Abschussserien oder Fahrzeuge",
+              "nl": "Vernietig 30 killstreaks of voertuigen.",
+              "it": "Distruggi 30 serie di uccisioni o veicoli.",
+              "pt": "Destrua 30 séries de baixas ou veículos."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/jokr_blue_tiger.png",
           "group": "special"
@@ -6658,7 +7810,19 @@
           },
           "tier": 9,
           "unlockLevel": 16,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "kills",
+            "description": {
+              "en": "Get 25 Direct Shot Kills against Players",
+              "fr": "Éliminez 25 joueur(s) par tir direct.",
+              "es": "Consigue 25 bajas de jugadores con disparos directos.",
+              "de": "Erreiche 25 Direktabschüsse gegen Spieler",
+              "nl": "Behaal 25 kills met een voltreffer tegen spelers.",
+              "it": "Esegui 25 uccisioni colpo diretto contro i giocatori.",
+              "pt": "Obtenha 25 baixas de jogadores com disparos diretos."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_night_snow.png",
           "group": "special"
@@ -6676,7 +7840,19 @@
           },
           "tier": 10,
           "unlockLevel": 31,
-          "requirement": null,
+          "requirement": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 5 times against Players",
+              "fr": "Éliminez 5 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 5 veces.",
+              "de": "Erreiche 5-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 5 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 5 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 5 vezes."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_recursive.png",
           "group": "special"
@@ -6694,7 +7870,19 @@
           },
           "tier": 11,
           "unlockLevel": 46,
-          "requirement": null,
+          "requirement": {
+            "amount": 40,
+            "unit": "kills",
+            "description": {
+              "en": "Get 40 Player Kills while moving",
+              "fr": "Éliminez 40 joueur(s) en vous déplaçant.",
+              "es": "Consigue 40 bajas de jugadores mientras te mueves.",
+              "de": "Erreiche 40 Spieler-Abschüsse in Bewegung",
+              "nl": "Behaal 40 spelerkills terwijl je beweegt.",
+              "it": "Esegui 40 uccisioni di giocatori mentre ti muovi.",
+              "pt": "Obtenha 40 baixas de jogadores enquanto se move."
+            }
+          },
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/pm_40_anvil_urban_standard.png",
           "group": "special"
@@ -6703,7 +7891,7 @@
     }
   ],
   "objectives": [],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mode stays hidden until Season 1 (6 Nov).",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -6783,6 +7971,5 @@
         "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/harmonic_break.png"
       }
     ]
-  },
-  "hidden": true
+  }
 }
