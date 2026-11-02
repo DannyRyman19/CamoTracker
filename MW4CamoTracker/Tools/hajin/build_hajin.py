@@ -418,11 +418,13 @@ guide = [
    ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
    ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
    ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
+   ("Kang's Arms Incinerator", "B3", "Legendary. The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. B3 is a search area, not the exact door. Where the key drops isn't known yet"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
   "rows": rows([
    ("Gold Bar", "$25,000", "Ultra. Also a reward from Silent Ledger"), ("Gold Skull", "$25,000", "Ultra"),
+   ("Cash Bag", "$1,500", "Rare. Carried out of the casino vault during Silent Ledger"),
    ("Sanctioned Assassination List", "$10,000", "Legendary"), ("Foreign Intelligence Targets", "$5,000", "Epic. Five are needed for MIA Recovery Discount III"),
    ("Cipher Code Ledger", "$5,000", "Epic"), ("W.M.D Manifest", "$5,000", "Epic"),
    ("Parachute", "$5,000", "Legendary"), ("Revive Pistol", "$2,500", "Legendary"), ("Fulton Drop Marker", "$2,500", "Ultra"),
@@ -498,7 +500,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.47", "updated": "2026-10-29",
+data = {"version": "0.9.48", "updated": "2026-11-02",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
