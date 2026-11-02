@@ -894,16 +894,48 @@ struct TrackerViewModelTests {
         #expect(model.level(for: id) == weapon.maxLevel)
     }
 
-    @Test func quickTickTicksAPrestigeRunWithoutLevels() throws {
+    /// Quick tick: a Prestige camo ticks the ones before it and sets the
+    /// weapon's Prestige and level under the hood, so switching to full
+    /// tracking (or any mode) agrees; unticking steps back as it does there.
+    @Test func quickTickingAPrestigeCamoSetsPrestigeAndLevel() throws {
         let model = try model()
         let weapon = try anyWeapon(model)
+        let id = weapon.weaponId
         model.setQuickTick(true)
-        model.togglePrestigeCamo(weaponId: weapon.weaponId, index: 3)
-        #expect((0...3).allSatisfy { model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: $0) })
-        #expect(model.prestige(for: weapon.weaponId) == 0)
-        model.togglePrestigeCamo(weaponId: weapon.weaponId, index: 1)
-        #expect(model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 0))
-        #expect(!model.isPrestigeCamoComplete(weaponId: weapon.weaponId, index: 3))
+        model.togglePrestigeCamo(weaponId: id, index: 2)
+        #expect((0...2).allSatisfy { model.isPrestigeCamoComplete(weaponId: id, index: $0) })
+        #expect(model.prestige(for: id) == 1)
+        #expect(model.level(for: id) == 150)
+
+        model.togglePrestigeCamo(weaponId: id, index: 3)
+        #expect(model.level(for: id) == 250)
+        model.togglePrestigeCamo(weaponId: id, index: 1)
+        #expect(model.isPrestigeCamoComplete(weaponId: id, index: 0))
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 1))
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 3))
+        #expect(model.prestige(for: id) == 1)
+        #expect(model.level(for: id) == weapon.maxLevel)
+
+        model.setQuickTick(false)
+        #expect(model.isPrestigeCamoComplete(weaponId: id, index: 0))
+        #expect(!model.isPrestigeCamoComplete(weaponId: id, index: 1))
+    }
+
+    /// Prestige camos quick-ticked before a tick set levels get their
+    /// Prestige and level once, on the next launch, and never again.
+    @Test func earlierQuickTicksLiftPrestigeOnce() throws {
+        let weaponId = 0
+        // A save with Pyroclast and Pyroclast Scatter ticked, Prestige 0
+        let save = #"{"weaponLevels": {}, "weaponPrestige": {}, "amounts": {}, "completed": ["prestigecamo|0|0", "prestigecamo|0|2"]}"#
+        defaults.set(Data(save.utf8), forKey: "mw4_progress_v2")
+        let model = try model()
+        #expect(model.prestige(for: weaponId) == 1)
+        #expect(model.level(for: weaponId) == 150)
+
+        let weapon = try #require(model.weapon(id: weaponId))
+        model.setLevel(20, for: weapon)
+        let again = try self.model()
+        #expect(again.level(for: weaponId) == 20)
     }
 
     /// The widgets' snapshot: every played mode with its Completionist and

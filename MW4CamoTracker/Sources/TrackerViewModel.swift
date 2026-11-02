@@ -95,6 +95,7 @@ final class TrackerViewModel: ObservableObject {
             // The single pin from before there could be several
             pinnedWeaponIds = [defaults.integer(forKey: pinnedWeaponKey)]
         }
+        liftPrestigeFromTicks()
     }
 
     /// Checks the CDN manifest and pulls only the catalog/mode files whose version changed.
@@ -382,7 +383,8 @@ final class TrackerViewModel: ObservableObject {
 
     /// Like a Military camo: tapping one sets the weapon's Prestige and
     /// level to it, tapping an earned one steps back to just below it. In
-    /// quick tick it's a plain tick, with the ones before it.
+    /// quick tick it's also ticked, with the ones before it, so the Prestige
+    /// and level under the hood match it in every mode.
     func togglePrestigeCamo(weaponId: Int, index: Int) {
         guard prestigeCamos.indices.contains(index), let weapon = weapon(id: weaponId),
               let stage = prestigeCamoStage(prestigeCamos[index]) else { return }
@@ -407,16 +409,46 @@ final class TrackerViewModel: ObservableObject {
                     weaponLevels[weaponId] = maxLevel(for: weapon)
                 }
             }
-        } else if quickTick {
-            for earlier in 0...index { completed.insert(prestigeCamoKey(weaponId, earlier)) }
         } else {
-            let current = prestige(for: weaponId) == stage ? level(for: weaponId) : 1
-            weaponPrestige[weaponId] = stage
-            weaponLevels[weaponId] = max(current, prestigeCamoLevel(camo, weaponId: weaponId) ?? 1)
+            if quickTick {
+                for earlier in 0...index { completed.insert(prestigeCamoKey(weaponId, earlier)) }
+            }
+            reachPrestigeCamo(camo, stage: stage, weaponId: weaponId)
         }
         saveProgress()
         objectWillChange.send()
         Haptics.change(wasDone: wasDone, isDone: isPrestigeCamoComplete(weaponId: weaponId, index: index))
+    }
+
+    /// Sets the weapon's Prestige and level up to what the camo needs; never
+    /// lowers either.
+    private func reachPrestigeCamo(_ camo: PrestigeCamo, stage: Int, weaponId: Int) {
+        let current = prestige(for: weaponId)
+        guard current <= stage else { return }
+        let start = current == stage ? level(for: weaponId) : 1
+        weaponPrestige[weaponId] = stage
+        weaponLevels[weaponId] = max(start, prestigeCamoLevel(camo, weaponId: weaponId) ?? 1)
+    }
+
+    /// Once: Prestige camos quick-ticked before a tick set Prestige and
+    /// level (30 Oct 2026 and earlier) set them now, from each weapon's
+    /// furthest tick.
+    private var prestigeTicksLiftedKey: String { game.key("mw4_prestige_ticks_lifted", "prestige_ticks_lifted") }
+
+    private func liftPrestigeFromTicks() {
+        guard !defaults.bool(forKey: prestigeTicksLiftedKey) else { return }
+        defaults.set(true, forKey: prestigeTicksLiftedKey)
+        var changed = false
+        for weapon in allWeapons {
+            guard let index = prestigeCamos.indices.last(where: {
+                prestigeCamos[$0].weaponsNeeded == nil && completed.contains(prestigeCamoKey(weapon.weaponId, $0))
+            }) else { continue }
+            let camo = prestigeCamos[index]
+            guard let stage = prestigeCamoStage(camo), !hasReachedPrestigeCamo(camo, weaponId: weapon.weaponId) else { continue }
+            reachPrestigeCamo(camo, stage: stage, weaponId: weapon.weaponId)
+            changed = true
+        }
+        if changed { saveProgress() }
     }
 
     /// The camo's name, or the weapon's own when it has one.
