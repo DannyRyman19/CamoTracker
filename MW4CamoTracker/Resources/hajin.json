@@ -1,6 +1,6 @@
 {
- "version": "0.9.47",
- "updated": "2026-10-29",
+ "version": "0.9.48",
+ "updated": "2026-11-02",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5846,6 +5846,12 @@
      "title": "South Block Armory",
      "subtitle": "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter",
      "item": "south-block-armory"
+    },
+    {
+     "title": "Kang's Arms Incinerator",
+     "value": "B3",
+     "subtitle": "Legendary. The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. B3 is a search area, not the exact door. Where the key drops isn't known yet",
+     "item": "kangs-arms-incinerator"
     }
    ]
   },
@@ -5867,6 +5873,12 @@
      "value": "$25,000",
      "subtitle": "Ultra",
      "item": "gold-skull"
+    },
+    {
+     "title": "Cash Bag",
+     "value": "$1,500",
+     "subtitle": "Rare. Carried out of the casino vault during Silent Ledger",
+     "item": "cash-bag"
     },
     {
      "title": "Sanctioned Assassination List",
@@ -8605,6 +8617,14 @@
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
   },
   {
+   "id": "cash-bag",
+   "name": "Cash Bag",
+   "kind": "Valuable",
+   "value": 1500,
+   "rarity": "Rare",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "chemicals",
    "name": "Chemicals",
    "kind": "Resource",
@@ -9688,6 +9708,17 @@
    "kind": "Other",
    "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones",
    "symbol": "cube.fill"
+  },
+  {
+   "id": "kangs-arms-incinerator",
+   "name": "Kang's Arms Incinerator",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. B3 is a search area, not the exact door. Where the key drops isn't known yet",
+   "grid": "B3",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "large-backpack",
