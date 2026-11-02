@@ -1,5 +1,5 @@
 {
-  "version": "0.8.16",
+  "version": "0.8.17",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -6703,53 +6703,53 @@
     }
   ],
   "objectives": [],
-  "_note": "Mastery (Parallax, Damascus Reforged, Empyros) is classified until Season 1. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mastery images are real; tier 2/3 challenges in game: 'Get &&2 kills in a match &&1 times', 'Get &&2 kills without plating &&1 times'.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names and challenges are placeholders until this mode's own camo screens are seen. Mode stays hidden until Season 1 (6 Nov).",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
       "requirement": {
-        "amount": 1,
+        "amount": 300,
         "unit": "times",
         "description": {
-          "en": "Unlock Divergence, then complete the Mastery challenge (revealed in Season 1).",
-          "fr": "Débloquez Divergence, puis relevez le défi de Maîtrise (dévoilé à la Saison 1).",
-          "es": "Desbloquea Divergence y luego completa el desafío de Maestría (se revelará en la Temporada 1).",
-          "de": "Schalte Divergence frei, dann schließe die Meisterschafts-Herausforderung ab (wird in Season 1 enthüllt).",
-          "nl": "Ontgrendel Divergence en voltooi daarna de Mastery-uitdaging (onthuld in Seizoen 1).",
-          "it": "Sblocca Divergence, poi completa la sfida Maestria (svelata nella Stagione 1).",
-          "pt": "Desbloqueie Divergence e depois conclua o desafio de Maestria (revelado na Temporada 1)."
+          "en": "Unlock Divergence, then get 5 kills in a match 300 times.",
+          "fr": "Débloquez Divergence, puis obtenez 5 éliminations en une partie 300 fois.",
+          "es": "Desbloquea Divergence y luego consigue 5 bajas en una partida 300 veces.",
+          "de": "Schalte Divergence frei, dann erziele 300-mal 5 Abschüsse in einem Match.",
+          "nl": "Ontgrendel Divergence en behaal 300 keer 5 kills in één wedstrijd.",
+          "it": "Sblocca Divergence, poi ottieni 5 uccisioni in una partita 300 volte.",
+          "pt": "Desbloqueie Divergence e depois consiga 5 baixas em uma partida 300 vezes."
         }
       }
     },
     "tier2": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/damascus_reforged.png",
       "requirement": {
-        "amount": 1,
+        "amount": 200,
         "unit": "times",
         "description": {
-          "en": "Get kills in a match, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Obtenez des éliminations en une partie, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas en una partida un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele eine bestimmte Anzahl Male Abschüsse in einem Match (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal een bepaald aantal keer kills in één wedstrijd (de game toont de aantallen nog niet).",
-          "it": "Ottieni uccisioni in una partita, un certo numero di volte (il gioco non mostra ancora i numeri).",
-          "pt": "Consiga baixas em uma partida um número definido de vezes (o jogo ainda não mostrou os números)."
+          "en": "Get 2 kills without plating 200 times.",
+          "fr": "Obtenez 2 éliminations sans poser de plaques 200 fois.",
+          "es": "Consigue 2 bajas sin ponerte placas 200 veces.",
+          "de": "Erziele 200-mal 2 Abschüsse, ohne Platten einzusetzen.",
+          "nl": "Behaal 200 keer 2 kills zonder platen te plaatsen.",
+          "it": "Ottieni 2 uccisioni senza piastre 200 volte.",
+          "pt": "Consiga 2 baixas sem colocar placas 200 vezes."
         }
       }
     },
     "tier3": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/empyros.png",
       "requirement": {
-        "amount": 1,
+        "amount": 75,
         "unit": "times",
         "description": {
-          "en": "Get kills without plating, a set number of times (the game hasn't shown the numbers yet).",
-          "fr": "Obtenez des éliminations sans poser de plaques, un certain nombre de fois (le jeu n'affiche pas encore les chiffres).",
-          "es": "Consigue bajas sin ponerte placas un número determinado de veces (el juego aún no muestra las cifras).",
-          "de": "Erziele eine bestimmte Anzahl Male Abschüsse, ohne Platten einzusetzen (das Spiel zeigt die Zahlen noch nicht).",
-          "nl": "Behaal een bepaald aantal keer kills zonder platen te plaatsen (de game toont de aantallen nog niet).",
-          "it": "Ottieni uccisioni senza piastre, un certo numero di volte (il gioco non mostra ancora i numeri).",
-          "pt": "Consiga baixas sem colocar placas um número definido de vezes (o jogo ainda não mostrou os números)."
+          "en": "Place in the top 5 with at least 6 kills 75 times.",
+          "fr": "Terminez dans le top 5 avec au moins 6 éliminations 75 fois.",
+          "es": "Termina entre los 5 primeros con al menos 6 bajas 75 veces.",
+          "de": "Lande 75-mal mit mindestens 6 Abschüssen unter den Top 5.",
+          "nl": "Eindig 75 keer in de top 5 met minstens 6 kills.",
+          "it": "Piazzati tra i primi 5 con almeno 6 uccisioni 75 volte.",
+          "pt": "Fique entre os 5 primeiros com pelo menos 6 baixas 75 vezes."
         }
       }
     },
