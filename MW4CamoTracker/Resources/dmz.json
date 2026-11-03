@@ -1,5 +1,5 @@
 {
-  "version": "0.8.19",
+  "version": "0.8.20",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -7996,56 +7996,104 @@
             "amount": 75,
             "unit": "kills",
             "description": {
-              "en": "Get 75 Enemy Kills from Behind"
+              "en": "Get 75 Enemy Kills from Behind",
+              "fr": "Éliminez 75 ennemi(s) par-derrière.",
+              "es": "Consigue 75 bajas de enemigos por la espalda.",
+              "de": "Erreiche 75 Feind-Abschüsse von hinten",
+              "nl": "Behaal 75 vijandkills van achteren.",
+              "it": "Esegui 75 uccisioni di nemici da dietro.",
+              "pt": "Obtenha 75 baixas de inimigos pelas costas."
             }
           },
           "2": {
             "amount": 125,
             "unit": "kills",
             "description": {
-              "en": "Get 125 Hipfire Kills against Enemies"
+              "en": "Get 125 Hipfire Kills against Enemies",
+              "fr": "Éliminez 125 ennemi(s) en tirant au jugé.",
+              "es": "Consigue 125 bajas de enemigos con disparos desde la cadera.",
+              "de": "Erreiche 125 Abschüsse aus der Hüfte gegen Feinde",
+              "nl": "Behaal 125 heupvuurkills tegen vijanden.",
+              "it": "Esegui 125 uccisioni sparando senza mirare contro i nemici",
+              "pt": "Obtenha 125 baixas de inimigos com tiro livre."
             }
           },
           "3": {
             "amount": 50,
             "unit": "times",
             "description": {
-              "en": "Get 3 Enemy Kills without taking damage 50 times"
+              "en": "Get 3 Enemy Kills without taking damage 50 times",
+              "fr": "Éliminez 50 fois 3 ennemis sans subir de dégâts.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño 50 veces.",
+              "de": "Erreiche 50-mal 3 Feind-Abschüsse, ohne Schaden zu erleiden",
+              "nl": "Behaal 50 keer 3 vijandkills zonder schade op te lopen.",
+              "it": "Esegui 3 uccisioni contro i nemici senza subire danni, 50 volte.",
+              "pt": "Obtenha 3 baixas de inimigos sem sofrer dano 50 vezes."
             }
           },
           "4": {
             "amount": 150,
             "unit": "kills",
             "description": {
-              "en": "Get 150 Enemy Kills while Prone"
+              "en": "Get 150 Enemy Kills while Prone",
+              "fr": "Éliminez 150 ennemi(s) en position allongée.",
+              "es": "Consigue 150 bajas de enemigos estando cuerpo a tierra.",
+              "de": "Erreiche 150 Feind-Abschüsse im Liegen",
+              "nl": "Behaal 150 vijandkills terwijl je ligt.",
+              "it": "Esegui 150 uccisioni contro i nemici in posizione sdraiata",
+              "pt": "Obtenha 150 baixas de inimigos enquanto estiver de bruços."
             }
           },
           "5": {
             "amount": 150,
             "unit": "kills",
             "description": {
-              "en": "Get 150 Enemy Kills while Prone"
+              "en": "Get 150 Enemy Kills while Prone",
+              "fr": "Éliminez 150 ennemi(s) en position allongée.",
+              "es": "Consigue 150 bajas de enemigos estando cuerpo a tierra.",
+              "de": "Erreiche 150 Feind-Abschüsse im Liegen",
+              "nl": "Behaal 150 vijandkills terwijl je ligt.",
+              "it": "Esegui 150 uccisioni contro i nemici in posizione sdraiata",
+              "pt": "Obtenha 150 baixas de inimigos enquanto estiver de bruços."
             }
           },
           "6": {
             "amount": 75,
             "unit": "kills",
             "description": {
-              "en": "Get 75 Enemy Kills from Behind"
+              "en": "Get 75 Enemy Kills from Behind",
+              "fr": "Éliminez 75 ennemi(s) par-derrière.",
+              "es": "Consigue 75 bajas de enemigos por la espalda.",
+              "de": "Erreiche 75 Feind-Abschüsse von hinten",
+              "nl": "Behaal 75 vijandkills van achteren.",
+              "it": "Esegui 75 uccisioni di nemici da dietro.",
+              "pt": "Obtenha 75 baixas de inimigos pelas costas."
             }
           },
           "7": {
             "amount": 50,
             "unit": "times",
             "description": {
-              "en": "Get 2 Enemy Kills without taking Damage 50 times"
+              "en": "Get 2 Enemy Kills without taking Damage 50 times",
+              "fr": "Éliminez 50 fois 2 ennemis sans subir de dégâts.",
+              "es": "Consigue 2 bajas de enemigos sin recibir daño 50 veces.",
+              "de": "Erreiche 50-mal 2 Feind-Abschüsse, ohne Schaden zu erleiden",
+              "nl": "Behaal 50 keer 2 vijandkills zonder schade op te lopen.",
+              "it": "Esegui 2 uccisioni contro i nemici senza subire danni, 50 volte.",
+              "pt": "Obtenha 2 baixas de inimigos sem sofrer dano 50 vezes."
             }
           },
           "8": {
             "amount": 50,
             "unit": "times",
             "description": {
-              "en": "Get 3 Kills without taking Damage against Enemies 50 times"
+              "en": "Get 3 Kills without taking Damage against Enemies 50 times",
+              "fr": "Éliminez 50 fois 3 ennemis sans subir de dégâts.",
+              "es": "Consigue 3 bajas de enemigos sin recibir daño 50 veces.",
+              "de": "Erreiche 50-mal 3 Feind-Abschüsse, ohne Schaden zu erleiden",
+              "nl": "Behaal 50 keer 3 vijandkills zonder schade op te lopen.",
+              "it": "Esegui 3 uccisioni contro i nemici senza subire danni, 50 volte.",
+              "pt": "Obtenha 3 baixas de inimigos sem sofrer dano 50 vezes."
             }
           }
         }
@@ -8071,56 +8119,104 @@
             "amount": 100,
             "unit": "kills",
             "description": {
-              "en": "Get 100 Hipfire Kills against Enemies"
+              "en": "Get 100 Hipfire Kills against Enemies",
+              "fr": "Éliminez 100 ennemi(s) en tirant au jugé.",
+              "es": "Consigue 100 bajas de enemigos con disparos desde la cadera.",
+              "de": "Erreiche 100 Abschüsse aus der Hüfte gegen Feinde",
+              "nl": "Behaal 100 heupvuurkills tegen vijanden.",
+              "it": "Esegui 100 uccisioni sparando senza mirare contro i nemici",
+              "pt": "Obtenha 100 baixas de inimigos com tiro livre."
             }
           },
           "2": {
             "amount": 50,
             "unit": "times",
             "description": {
-              "en": "Get 2 Enemy Kills without Reloading 50 times"
+              "en": "Get 2 Enemy Kills without Reloading 50 times",
+              "fr": "Éliminez 50 fois 2 ennemis sans recharger.",
+              "es": "Consigue 2 bajas de enemigos sin recargar 50 veces.",
+              "de": "Erreiche 50-mal 2 Feind-Abschüsse, ohne nachzuladen",
+              "nl": "Behaal 50 keer 2 vijandkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni di nemici senza ricaricare, 50 volte.",
+              "pt": "Obtenha 2 baixas de inimigos sem recarregar 50 vezes."
             }
           },
           "3": {
             "amount": 75,
             "unit": "times",
             "description": {
-              "en": "Get 2 Enemy Kills without releasing the trigger 75 times"
+              "en": "Get 2 Enemy Kills without releasing the trigger 75 times",
+              "fr": "Éliminez 75 fois 2 ennemis sans relâcher la gâchette.",
+              "es": "Consigue 2 bajas de enemigos sin soltar el gatillo 75 veces.",
+              "de": "Erreiche 75-mal 2 Feind-Abschüsse, ohne den Auslöser loszulassen",
+              "nl": "Behaal 75 keer 2 vijandkills zonder de trekker los te laten.",
+              "it": "Esegui 2 uccisioni di nemici senza rilasciare il grilletto, 75 volte.",
+              "pt": "Obtenha 2 baixas de inimigos sem soltar o gatilho 75 vezes."
             }
           },
           "4": {
             "amount": 150,
             "unit": "kills",
             "description": {
-              "en": "Get 150 One Shot Kills against Enemies"
+              "en": "Get 150 One Shot Kills against Enemies",
+              "fr": "Éliminez 150 ennemi(s) en un tir.",
+              "es": "Consigue 150 bajas de enemigos de un tiro.",
+              "de": "Erreiche 150 Sofortabschüsse gegen Feinde",
+              "nl": "Behaal 150 one-shot kills tegen vijanden.",
+              "it": "Esegui 150 uccisioni Colpo singolo contro i nemici.",
+              "pt": "Obtenha 150 baixas de inimigos com um único tiro."
             }
           },
           "5": {
             "amount": 150,
             "unit": "kills",
             "description": {
-              "en": "Get 150 One Shot Kills against Enemies"
+              "en": "Get 150 One Shot Kills against Enemies",
+              "fr": "Éliminez 150 ennemi(s) en un tir.",
+              "es": "Consigue 150 bajas de enemigos de un tiro.",
+              "de": "Erreiche 150 Sofortabschüsse gegen Feinde",
+              "nl": "Behaal 150 one-shot kills tegen vijanden.",
+              "it": "Esegui 150 uccisioni Colpo singolo contro i nemici.",
+              "pt": "Obtenha 150 baixas de inimigos com um único tiro."
             }
           },
           "6": {
             "amount": 100,
             "unit": "kills",
             "description": {
-              "en": "Get 100 Hipfire Kills against Enemies"
+              "en": "Get 100 Hipfire Kills against Enemies",
+              "fr": "Éliminez 100 ennemi(s) en tirant au jugé.",
+              "es": "Consigue 100 bajas de enemigos con disparos desde la cadera.",
+              "de": "Erreiche 100 Abschüsse aus der Hüfte gegen Feinde",
+              "nl": "Behaal 100 heupvuurkills tegen vijanden.",
+              "it": "Esegui 100 uccisioni sparando senza mirare contro i nemici",
+              "pt": "Obtenha 100 baixas de inimigos com tiro livre."
             }
           },
           "7": {
             "amount": 15,
             "unit": "times",
             "description": {
-              "en": "Get 10 Enemy Kills in a match 15 times"
+              "en": "Get 10 Enemy Kills in a match 15 times",
+              "fr": "Éliminez 15 fois 10 ennemis dans une partie.",
+              "es": "Consigue 10 bajas de enemigos en una partida 15 veces.",
+              "de": "Erreiche 15-mal 10 Feind-Abschüsse in einem Spiel",
+              "nl": "Behaal 15 keer 10 vijandkills in één wedstrijd.",
+              "it": "Esegui 10 uccisioni contro i nemici in una partita, 15 volte.",
+              "pt": "Obtenha 10 baixas de inimigos em uma partida 15 vezes."
             }
           },
           "8": {
             "amount": 75,
             "unit": "kills",
             "description": {
-              "en": "Get 75 Enemy Kills from Behind"
+              "en": "Get 75 Enemy Kills from Behind",
+              "fr": "Éliminez 75 ennemi(s) par-derrière.",
+              "es": "Consigue 75 bajas de enemigos por la espalda.",
+              "de": "Erreiche 75 Feind-Abschüsse von hinten",
+              "nl": "Behaal 75 vijandkills van achteren.",
+              "it": "Esegui 75 uccisioni di nemici da dietro.",
+              "pt": "Obtenha 75 baixas de inimigos pelas costas."
             }
           }
         }
