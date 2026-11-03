@@ -12,6 +12,13 @@ struct StatsView: View {
     @State private var width: CGFloat = 0
     @State private var sharing = false
 
+    /// Something on the card besides 0%: a brand-new player has nothing
+    /// to share yet.
+    private var hasProgress: Bool {
+        viewModel.visibleModes.contains { viewModel.trueCompletionFraction(mode: $0.rawValue) >= 0.01 }
+            || (viewModel.visibleModes.contains(.dmz) && hajin.statLines.contains { $0.done > 0 })
+    }
+
     private static let rowInsets = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
 
     private func cardRow<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
@@ -90,8 +97,10 @@ struct StatsView: View {
         .navigationTitle("mw4.ui.tab.stats".localized())
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button { sharing = true } label: { Image(systemName: "square.and.arrow.up") }
-                    .accessibilityLabel("mw4.ui.share.title".localized())
+                if hasProgress {
+                    Button { sharing = true } label: { Image(systemName: "square.and.arrow.up") }
+                        .accessibilityLabel("mw4.ui.share.title".localized())
+                }
             }
         }
         .sheet(isPresented: $sharing) {

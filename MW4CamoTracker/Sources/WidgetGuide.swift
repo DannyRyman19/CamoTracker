@@ -2,7 +2,8 @@ import SwiftUI
 import WidgetKit
 
 /// The one-time "Add a widget" card at the top of the mode tabs, until it's
-/// opened or closed. Widgets need iOS 17, so older systems never see it.
+/// opened or closed; the guide stays a row in Customise after that.
+/// Widgets need iOS 17, so older systems never see it.
 struct WidgetTipCard: View {
     let accent: Color
     static let dismissedKey = "mw4_widget_tip_dismissed"
@@ -50,7 +51,7 @@ struct WidgetTipCard: View {
                             .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("mw4.ui.done".localized())
+                    .accessibilityLabel("ct.widget.tip.hide".localized())
                 }
                 .padding(14)
                 .borderedCard(accent: accent)

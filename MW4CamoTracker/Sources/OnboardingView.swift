@@ -172,6 +172,13 @@ private struct OnboardingScaffold<Content: View>: View {
         self.body_ = content
     }
 
+    /// The page runs on below the bottom edge: a fade and a chevron say so
+    /// until it's scrolled to the end. On a small phone the modes, the only
+    /// control on their page, sat below the fold with nothing to show it.
+    @State private var viewport: CGFloat = 0
+    @State private var contentBottom: CGFloat = 0
+    private var moreBelow: Bool { viewport > 0 && contentBottom > viewport + 8 }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -194,8 +201,47 @@ private struct OnboardingScaffold<Content: View>: View {
             }
             .padding(.top, 12)
             .padding(.bottom, 24)
+            .background(GeometryReader { geo in
+                Color.clear.preference(key: OnboardingContentBottom.self,
+                                       value: geo.frame(in: .named(OnboardingContentBottom.space)).maxY)
+            })
         }
+        .coordinateSpace(name: OnboardingContentBottom.space)
+        .background(GeometryReader { geo in
+            Color.clear.preference(key: OnboardingViewport.self, value: geo.size.height)
+        })
+        .onPreferenceChange(OnboardingContentBottom.self) { contentBottom = $0 }
+        .onPreferenceChange(OnboardingViewport.self) { viewport = $0 }
+        .overlay(alignment: .bottom) {
+            if moreBelow {
+                Image(systemName: "chevron.compact.down")
+                    .font(.system(size: 34, weight: .bold))
+                    .foregroundStyle(Color.appInk.opacity(0.85))
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 40)
+                    .padding(.bottom, 2)
+                    .background(LinearGradient(colors: [Color.appBackground.opacity(0), Color.appBackground.opacity(0.92)],
+                                               startPoint: .top, endPoint: .bottom))
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: moreBelow)
     }
+}
+
+/// Where an onboarding page's content ends, in its scroll view's own space.
+private enum OnboardingContentBottom: PreferenceKey {
+    static let space = "onboardingPage"
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = max(value, nextValue()) }
+}
+
+/// How tall an onboarding page's scroll view is.
+private enum OnboardingViewport: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = max(value, nextValue()) }
 }
 
 /// Which game to track. Each keeps its own progress, so this only picks

@@ -176,9 +176,10 @@ final class TrackerViewModel: ObservableObject {
             // add camos, so the widgets get a fresh snapshot.
             refreshWidgets()
             #if DEBUG
-            // `refreshError` is not shown anywhere, so a broken feed is
-            // invisible: Data/MW4 did not exist on the CDN for the app's
-            // whole life and every refresh threw without anyone noticing.
+            // `refreshError` is only shown after a pull to refresh, so a
+            // broken feed is otherwise invisible: Data/MW4 did not exist on
+            // the CDN for the app's whole life and every refresh threw
+            // without anyone noticing.
             let took = (result.catalog != nil ? ["catalog"] : []) + result.modes.keys.sorted()
             print("MW4DATA refresh ok, updated: \(took.isEmpty ? "nothing (all versions current)" : took.joined(separator: ", "))")
             #endif

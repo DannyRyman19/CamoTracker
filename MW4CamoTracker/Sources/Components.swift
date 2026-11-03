@@ -1183,8 +1183,9 @@ struct FilterSortMenu<T: Hashable>: View {
 
 /// Centered placeholder row for when a filter leaves nothing to show.
 struct FilterEmptyRow: View {
+    var text = "mw4.ui.filter.empty".localized()
     var body: some View {
-        Text("mw4.ui.filter.empty".localized())
+        Text(text)
             .scaledFont(13)
             .foregroundStyle(Color.appInkMuted)
             .frame(maxWidth: .infinity)

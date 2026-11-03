@@ -37,6 +37,9 @@ struct CategoryListView: View {
     @ObservedObject private var premium = Premium.shared
     @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
+    /// A pull to refresh that couldn't check: said only then, never for
+    /// the quiet checks at launch and on coming back to the app.
+    @State private var refreshFailed = false
 
     /// `weaponCategories` after the Filter/Sort pills are applied — everything
     /// else (Suggested, Pinned, Objectives) is untouched, since those aren't
@@ -308,8 +311,15 @@ struct CategoryListView: View {
             AppBackground(accent: mode.accent)
             List {
                 if !searchQuery.isEmpty {
-                    CardGrid(items: searchResults, columns: columns, route: { .weapon($0.weaponId) }) { weapon in
-                        WeaponRow(mode: mode, weapon: weapon)
+                    if searchResults.isEmpty {
+                        FilterEmptyRow(text: String(format: "ct.ui.search.none".localized(), searchQuery))
+                            .listRowInsets(EdgeInsets())
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                    } else {
+                        CardGrid(items: searchResults, columns: columns, route: { .weapon($0.weaponId) }) { weapon in
+                            WeaponRow(mode: mode, weapon: weapon)
+                        }
                     }
                 } else {
                     WidgetTipCard(accent: mode.accent)
@@ -330,7 +340,15 @@ struct CategoryListView: View {
         .readingWidth($width)
         .searchable(text: $searchQuery, prompt: "mw4.ui.search_weapons".localized())
         .navigationTitle(mode.displayName)
-        .refreshable { await viewModel.refresh() }
+        .refreshable {
+            await viewModel.refresh()
+            refreshFailed = viewModel.refreshError != nil
+        }
+        .alert("ct.ui.refresh.failed".localized(), isPresented: $refreshFailed) {
+            Button("mw4.ui.done".localized(), role: .cancel) {}
+        } message: {
+            Text("ct.ui.refresh.failed_message".localized())
+        }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button { isCustomising = true } label: {
@@ -649,6 +667,7 @@ struct CustomiseHomeSheet: View {
     @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
     @State private var showsIcons = false
+    @State private var showsWidgetGuide = false
     /// How a restore went (see `Premium.Notice`).
     @State private var premiumNotice: Premium.Notice?
     @State private var showsManage = false
@@ -885,6 +904,15 @@ struct CustomiseHomeSheet: View {
                     }
                     .foregroundStyle(accent)
                     .accessibilityIdentifier("customise.appIcon")
+                    // The home tab's widget card goes once it's opened or
+                    // closed; the guide stays here
+                    if #available(iOS 17, *) {
+                        Button { showsWidgetGuide = true } label: {
+                            Label("mw4.widget.tip.title".localized(), systemImage: "square.grid.2x2.fill")
+                        }
+                        .foregroundStyle(accent)
+                        .accessibilityIdentifier("customise.widgets")
+                    }
                 }
 
                 Section {
@@ -932,6 +960,9 @@ struct CustomiseHomeSheet: View {
             }
             .environment(\.editMode, .constant(.active))
             .navigationDestination(isPresented: $showsIcons) { AppIconPicker(accent: accent) }
+            .sheet(isPresented: $showsWidgetGuide) {
+                WidgetGuideSheet(accent: accent).environmentObject(viewModel)
+            }
             .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .data]) { result in
                 importFile(result)
             }
