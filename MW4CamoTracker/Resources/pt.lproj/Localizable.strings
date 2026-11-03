@@ -6,7 +6,6 @@
 "mw4.ui.section.weapons" = "Armas";
 "mw4.ui.section.objectives" = "Objetivos";
 "mw4.ui.section.camos" = "Camuflagens";
-"mw4.ui.gold" = "Concluído";
 "mw4.ui.mercurial_drift" = "Mercurial Drift";
 "mw4.ui.polyatomic_reforged" = "Polyatomic Reforged";
 "mw4.ui.orion_reforged" = "Orion Reforged";
@@ -589,3 +588,6 @@
 "ct.a11y.completion" = "Conclusão";
 "ct.ui.level_short" = "NV. %1$d/%2$d";
 "ct.ui.level_abbrev" = "Nv.";
+"ct.ui.suggestion.camos_left" = "Faltam %d camuflagens";
+"ct.lock.needs" = "Precisa de %1$d %2$@";
+"ct.lock.needs_camo" = "Precisa de %@";

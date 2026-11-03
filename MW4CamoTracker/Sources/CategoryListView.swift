@@ -361,9 +361,8 @@ struct CategoryListView: View {
 private struct SuggestionRow: View {
     let mode: AppMode
     let suggestion: Suggestion
-    @EnvironmentObject private var viewModel: TrackerViewModel
 
-    private var fraction: Double { viewModel.camoProgressFraction(weaponId: suggestion.weaponId, mode: mode.rawValue) }
+    private var fraction: Double { suggestion.progress }
 
     /// The camo's own gradient when it has one, else its color.
     private var badgeFill: AnyShapeStyle {
@@ -478,34 +477,39 @@ private struct ObjectiveCategoryRow: View {
 enum CategoryStats {
     /// What a mode-wide step still waits for, nil once it's open: Harmonic
     /// Break on every Platinum, the final camo on enough Harmonic Breaks,
-    /// Mastery on the final camo (or the tier before).
+    /// Mastery on the final camo (or the tier before). Worded as a need
+    /// ("Needs 33 Platinum"): in the count's place, "0/33 Platinum" read as
+    /// a count. How many there are so far is in the column beside it.
     @MainActor
     struct Locks {
         let viewModel: TrackerViewModel
         let mode: AppMode
 
+        static func needs(_ count: Int, _ camo: String) -> String {
+            String(format: "ct.lock.needs".localized(), count, camo)
+        }
+
         var harmonic: String? {
             let gate = viewModel.completionistModeGateProgress(mode: mode.rawValue, step: 2)
             guard gate.done < gate.total else { return nil }
-            return "\(gate.done)/\(gate.total) \(mode.completionist.steps[1].name)"
+            return Self.needs(gate.total, mode.completionist.steps[1].name)
         }
 
         var final: String? {
             let needed = viewModel.harmonicBreaksNeeded(mode: mode.rawValue)
             let have = viewModel.harmonicBreakCount(mode: mode.rawValue)
             guard needed > 0, have < needed else { return nil }
-            return "\(have)/\(needed) \(mode.completionist.steps[2].name)"
+            return Self.needs(needed, mode.completionist.steps[2].name)
         }
 
         func mastery(tier: Int) -> String? {
             guard viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode,
                   !viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier) else { return nil }
             if tier == 1 {
-                let total = viewModel.totalWeaponCount
-                return "\(min(viewModel.lastCompletionistCount(mode: mode.rawValue), total))/\(total) \(mode.lastCompletionist.name)"
+                return Self.needs(viewModel.totalWeaponCount, mode.lastCompletionist.name)
             }
             let tiers = mode.masteryCamos
-            return [tiers.tier1, tiers.tier2, tiers.tier3][tier - 2].name
+            return String(format: "ct.lock.needs_camo".localized(), [tiers.tier1, tiers.tier2, tiers.tier3][tier - 2].name)
         }
     }
 
@@ -525,7 +529,7 @@ enum CategoryStats {
             .init(value: "\(gold)/\(count)", label: mode.completionist.steps[0].name, labelGradient: count > 0 && gold == count ? mode.completionist.steps[0].gradient : nil, ringFraction: viewModel.weaponCategoryProgressFraction(category, mode: mode.rawValue), ringColor: .camoGold),
             // Platinum opens when every weapon in the class has Gold
             .init(value: "\(platinumCount)/\(count)", label: platinum.name, labelGradient: count > 0 && platinumCount == count ? platinum.gradient : nil, ringFraction: fraction(platinumCount), ringColor: platinum.color, ringGradient: platinum.gradient,
-                  lockedHint: platinumCount == 0 && gold < count ? "\(gold)/\(count) \("mw4.ui.gold".localized())" : nil),
+                  lockedHint: platinumCount == 0 && gold < count ? Locks.needs(count, mode.completionist.steps[0].name) : nil),
             .init(value: "\(harmonicCount)/\(count)", label: harmonic.name, labelGradient: count > 0 && harmonicCount == count ? harmonic.gradient : nil, ringFraction: fraction(harmonicCount), ringColor: harmonic.color, ringGradient: harmonic.gradient, lockedHint: harmonicCount == 0 ? locks.harmonic : nil)
         ]
         // The final camo's ring, when the track has one.

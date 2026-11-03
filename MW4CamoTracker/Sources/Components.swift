@@ -582,7 +582,7 @@ struct StatSummaryCard: View {
         /// ring that really does mean Gold.
         var ringGradient: [Color]? = nil
         /// Not open yet: a lock in place of the ring, and what it waits for
-        /// ("6/8 Gold") in place of the count.
+        /// ("Needs 8 Gold") in place of the count.
         var lockedHint: String? = nil
     }
     /// Omit both (leave `nil`) for a card with no separate leading ring —
@@ -609,7 +609,7 @@ struct StatSummaryCard: View {
         return "\(ring.percentText), \(count)"
     }
 
-    /// Two lines of a lock hint ("13/33" over "Platinum").
+    /// Two lines of a lock hint ("Needs 33" over "Platinum").
     /// Grows with the text, as far as the card's own cap on it, so two
     /// lines still fit at the larger sizes instead of cutting "Platinum".
     private var countHeight: CGFloat {
@@ -641,8 +641,8 @@ struct StatSummaryCard: View {
                                     .foregroundStyle(Color.appInkMuted)
                             }
                             .frame(width: 40, height: 40)
-                            // Proportional, not monospaced: "8/33 Harmonic Break"
-                            // then fits a column instead of wrapping cramped
+                            // Proportional, not monospaced: "Needs 33 Harmonic
+                            // Break" then fits a column instead of wrapping cramped
                             Text(hint)
                                 .scaledFont(10, weight: .semibold)
                                 .foregroundStyle(Color.appInkMuted)
@@ -689,7 +689,7 @@ struct StatSummaryCard: View {
                         .frame(height: countHeight, alignment: .top)
                     }
                     .frame(maxWidth: .infinity)
-                    // One stop per column: "Platinum, Locked, 0 of 33 Gold" or
+                    // One stop per column: "Platinum, Locked, Needs 33 Gold" or
                     // "Gold, 45%, 15 of 33", not the row's numbers then its names
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text(stats[index].label))

@@ -6,7 +6,6 @@
 "mw4.ui.section.weapons" = "Wapens";
 "mw4.ui.section.objectives" = "Doelen";
 "mw4.ui.section.camos" = "Camouflages";
-"mw4.ui.gold" = "Voltooid";
 "mw4.ui.mercurial_drift" = "Mercurial Drift";
 "mw4.ui.polyatomic_reforged" = "Polyatomic Reforged";
 "mw4.ui.orion_reforged" = "Orion Reforged";
@@ -588,3 +587,6 @@
 "ct.a11y.completion" = "Voltooiing";
 "ct.ui.level_short" = "NIV. %1$d/%2$d";
 "ct.ui.level_abbrev" = "Niv.";
+"ct.ui.suggestion.camos_left" = "Nog %d camouflages";
+"ct.lock.needs" = "Vereist %1$d %2$@";
+"ct.lock.needs_camo" = "Vereist %@";

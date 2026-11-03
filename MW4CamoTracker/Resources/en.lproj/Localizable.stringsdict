@@ -98,5 +98,21 @@
 			<string>%d weapons have it now.</string>
 		</dict>
 	</dict>
+	<key>ct.ui.suggestion.camos_left</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d camo to complete</string>
+			<key>other</key>
+			<string>%d camos to complete</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

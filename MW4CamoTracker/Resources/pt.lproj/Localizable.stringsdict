@@ -98,5 +98,21 @@
 			<string>%d armas já têm.</string>
 		</dict>
 	</dict>
+	<key>ct.ui.suggestion.camos_left</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Falta %d camuflagem</string>
+			<key>other</key>
+			<string>Faltam %d camuflagens</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

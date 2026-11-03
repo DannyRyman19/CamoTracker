@@ -6,7 +6,6 @@
 "mw4.ui.section.weapons" = "Waffen";
 "mw4.ui.section.objectives" = "Einsätze";
 "mw4.ui.section.camos" = "Tarnungen";
-"mw4.ui.gold" = "Abgeschlossen";
 "mw4.ui.mercurial_drift" = "Mercurial Drift";
 "mw4.ui.polyatomic_reforged" = "Polyatomic Reforged";
 "mw4.ui.orion_reforged" = "Orion Reforged";
@@ -588,3 +587,6 @@
 "ct.a11y.completion" = "Fortschritt";
 "ct.ui.level_short" = "STF. %1$d/%2$d";
 "ct.ui.level_abbrev" = "St.";
+"ct.ui.suggestion.camos_left" = "Noch %d Tarnungen";
+"ct.lock.needs" = "Braucht %1$d %2$@";
+"ct.lock.needs_camo" = "Braucht %@";

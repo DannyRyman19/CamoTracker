@@ -6,7 +6,6 @@
 "mw4.ui.section.weapons" = "Armi";
 "mw4.ui.section.objectives" = "Obiettivi";
 "mw4.ui.section.camos" = "Mimetiche";
-"mw4.ui.gold" = "Completate";
 "mw4.ui.mercurial_drift" = "Mercurial Drift";
 "mw4.ui.polyatomic_reforged" = "Polyatomic Reforged";
 "mw4.ui.orion_reforged" = "Orion Reforged";
@@ -588,3 +587,6 @@
 "ct.a11y.completion" = "Completamento";
 "ct.ui.level_short" = "LIV. %1$d/%2$d";
 "ct.ui.level_abbrev" = "Liv.";
+"ct.ui.suggestion.camos_left" = "Mancano %d mimetiche";
+"ct.lock.needs" = "Servono %1$d %2$@";
+"ct.lock.needs_camo" = "Serve %@";

@@ -13,6 +13,10 @@ struct Suggestion: Identifiable {
     /// That camo's gradient, where it has one (Gold to Mastery), drawn in
     /// place of the flat color.
     var gradient: [Color]? = nil
+    /// How far toward the camo it names: the camo list, or that camo's own
+    /// challenge (0 for a tick box). The list's fraction under "Next:
+    /// Platinum" read 100% before Platinum was started.
+    var progress: Double = 0
 }
 
 /// A brief celebration shown when a weapon, category, or the whole roster
@@ -63,12 +67,14 @@ extension TrackerViewModel {
                                 && isWeaponMasteryAvailable(mode: mode, weaponId: weaponId, tier: $0)
                         }) {
                             let camo = [tiers.tier1, tiers.tier2, tiers.tier3][tier - 1]
+                            let needed = masteryRequirement(mode: mode, weaponId: weaponId, tier: tier)?.amount ?? 0
                             onCompletionist.append((Suggestion(
                                 weaponId: weaponId,
                                 title: weapon.name.resolved(),
                                 subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), camo.name),
                                 highlight: camo.color,
-                                gradient: camo.gradient
+                                gradient: camo.gradient,
+                                progress: Self.fraction(weaponMasteryAmount(mode: mode, weaponId: weaponId, tier: tier), of: needed)
                             ), Self.completionistStepCount + tier))
                         }
                         continue
@@ -76,12 +82,14 @@ extension TrackerViewModel {
                     // Only once it can be worked on: Platinum waits for the
                     // class's Golds, Harmonic Break for every Platinum
                     guard isCompletionistAvailable(mode: mode, weaponId: weaponId, step: next) else { continue }
+                    let needed = completionistRequirement(mode: mode, weaponId: weaponId, step: next)?.amount ?? 0
                     onCompletionist.append((Suggestion(
                         weaponId: weaponId,
                         title: weapon.name.resolved(),
                         subtitle: String(format: "mw4.ui.suggestion.next_camo".localized(), steps[next].name),
                         highlight: steps[next].color,
-                        gradient: steps[next].gradient
+                        gradient: steps[next].gradient,
+                        progress: Self.fraction(completionistAmount(mode: mode, weaponId: weaponId, step: next), of: needed)
                     ), next))
                 } else {
                     let remaining = remainingCamoCount(weaponId: weaponId, mode: mode)
@@ -89,8 +97,9 @@ extension TrackerViewModel {
                     onCamoList.append((Suggestion(
                         weaponId: weaponId,
                         title: weapon.name.resolved(),
-                        subtitle: "\(remaining) camo\(remaining == 1 ? "" : "s") to complete",
-                        highlight: nil
+                        subtitle: String(format: "ct.ui.suggestion.camos_left".localized(), remaining),
+                        highlight: nil,
+                        progress: camoProgressFraction(weaponId: weaponId, mode: mode)
                     ), remaining))
                 }
             }
@@ -99,6 +108,11 @@ extension TrackerViewModel {
         onCompletionist.sort { $0.1 > $1.1 }
         onCamoList.sort { $0.1 < $1.1 }
         return Array((onCompletionist.map(\.0) + onCamoList.map(\.0)).prefix(limit))
+    }
+
+    /// A counter's progress; 0 for a tick box, which has nothing to count.
+    private static func fraction(_ done: Int, of needed: Int) -> Double {
+        needed > 0 ? min(Double(done) / Double(needed), 1) : 0
     }
 
     /// Called right after a camo or level change with whether the weapon's

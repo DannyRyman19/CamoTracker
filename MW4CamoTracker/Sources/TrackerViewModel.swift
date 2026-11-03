@@ -1388,19 +1388,20 @@ final class TrackerViewModel: ObservableObject {
         return Double(done) / Double(leaves.count)
     }
 
-    /// True completionist percentage toward the mode's last Mastery camo —
-    /// every camo in the weapon's list *and* its four Completionist camos,
-    /// not just the list `overallProgressFraction` counts. Computed fresh
-    /// from the current catalog every call, so new weapons count the moment
-    /// a content update adds them.
+    /// How far along the mode's whole track is, toward its last Mastery
+    /// camo: the camo lists, each Completionist camo and each Mastery tier
+    /// (see `fullTrackFraction`). Computed fresh from the current catalog
+    /// every call, so new weapons count the moment a content update adds
+    /// them.
     func trueCompletionFraction(mode: String) -> Double {
-        fullTrackFraction(of: catalog?.categories.flatMap(\.weapons) ?? [], mode: mode)
+        fullTrackFraction(of: catalog?.categories.flatMap(\.weapons) ?? [], mode: mode, modeMastery: true)
     }
 
     /// The same full-track measure for one weapon class, for the Stats
-    /// breakdown: its camo lists and its Completionist camos together.
+    /// breakdown: its camo lists, its Completionist camos and any Mastery
+    /// earned weapon by weapon (a mode-wide Mastery tier isn't the class's).
     func categoryTrueCompletionFraction(_ category: WeaponCategory, mode: String) -> Double {
-        fullTrackFraction(of: category.weapons, mode: mode)
+        fullTrackFraction(of: category.weapons, mode: mode, modeMastery: false)
     }
 
     /// How many weapons in this mode have this Completionist step, or the
@@ -1410,21 +1411,46 @@ final class TrackerViewModel: ObservableObject {
         return allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: step) }.count
     }
 
-    private func fullTrackFraction(of weapons: [WeaponEntry], mode: String) -> Double {
+    /// Each stage of the track counts the same: the camo lists (camos done
+    /// of every camo), each Completionist camo and the final camo (weapons
+    /// that have it), and each Mastery tier (weapons that have it, or the
+    /// mode's progress toward it). Counted camo by camo instead, the lists,
+    /// most of the camos, carried the figure: every Gold read 84% with
+    /// Divergence and Mastery not started.
+    private func fullTrackFraction(of weapons: [WeaponEntry], mode: String, modeMastery: Bool) -> Double {
+        guard !weapons.isEmpty else { return 0 }
+        let count = Double(weapons.count)
+        func share(_ has: (Int) -> Bool) -> Double { Double(weapons.filter { has($0.weaponId) }.count) / count }
+        var stages: [Double] = []
+
         var done = 0
         var total = 0
         for weapon in weapons {
             let leaves = camos(weaponId: weapon.weaponId, mode: mode).flatMap(leafItems)
-            let hasFinal = finalEnabled(mode: mode)
-            let weaponTiers = (1...3).filter { masteryKind(mode: mode, tier: $0) == .challenge }
-            total += leaves.count + Self.completionistStepCount + (hasFinal ? 1 : 0) + weaponTiers.count
+            total += leaves.count
             done += leaves.filter { isCamoComplete(mode: mode, weaponId: weapon.weaponId, camo: $0) }.count
-            done += (0..<Self.completionistStepCount).filter { isCompletionistComplete(mode: mode, weaponId: weapon.weaponId, step: $0) }.count
-            if hasFinalCamo(mode: mode, weaponId: weapon.weaponId) { done += 1 }
-            done += weaponTiers.filter { isWeaponMasteryComplete(mode: mode, weaponId: weapon.weaponId, tier: $0) }.count
         }
-        guard total > 0 else { return 0 }
-        return Double(done) / Double(total)
+        if total > 0 { stages.append(Double(done) / Double(total)) }
+
+        for step in 0..<Self.completionistStepCount {
+            stages.append(share { isCompletionistComplete(mode: mode, weaponId: $0, step: step) })
+        }
+        if finalEnabled(mode: mode) {
+            stages.append(share { hasFinalCamo(mode: mode, weaponId: $0) })
+        }
+        if game.hasMastery != false {
+            for tier in 1...3 {
+                if masteryKind(mode: mode, tier: tier) == .challenge {
+                    stages.append(share { isWeaponMasteryComplete(mode: mode, weaponId: $0, tier: tier) })
+                } else if modeMastery {
+                    let progress = masteryProgress(mode: mode, tier: tier)
+                    stages.append(isMasteryAchieved(mode: mode, tier: tier) ? 1
+                                  : progress.total > 0 ? min(Double(progress.done) / Double(progress.total), 1) : 0)
+                }
+            }
+        }
+        guard !stages.isEmpty else { return 0 }
+        return stages.reduce(0, +) / Double(stages.count)
     }
 
     // MARK: - Pinned weapon (quick-access card at the top of each mode tab)

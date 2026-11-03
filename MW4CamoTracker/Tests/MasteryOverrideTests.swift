@@ -315,6 +315,33 @@ struct TrackerViewModelTests {
         #expect(model.categoryTrueCompletionFraction(category, mode: mp) > afterCamos)
     }
 
+    /// Every stage of the track weighs the same, so a class whose camo
+    /// lists are done and nothing else is one stage along, not most of
+    /// the way.
+    @Test func finishedCamoListsAreOneStageOfTheTrack() throws {
+        let model = try model()
+        let category = try #require(model.catalog?.categories.first)
+        for weapon in category.weapons { finishCamos(model, weapon.weaponId) }
+        let stages = 1 + TrackerViewModel.completionistStepCount + (model.finalEnabled(mode: mp) ? 1 : 0)
+            + (1...3).filter { model.masteryKind(mode: mp, tier: $0) == .challenge }.count
+        #expect(abs(model.categoryTrueCompletionFraction(category, mode: mp) - 1 / Double(stages)) < 0.0001)
+        #expect(model.trueCompletionFraction(mode: mp) < 0.25)
+    }
+
+    /// "Next: Platinum" shows Platinum's own progress, not the finished
+    /// camo list's 100%.
+    @Test func aSuggestionShowsProgressTowardTheCamoItNames() throws {
+        let model = try model()
+        let category = try #require(model.catalog?.categories.first)
+        for weapon in category.weapons {
+            finishCamos(model, weapon.weaponId)
+            model.toggleCompletionist(mode: mp, weaponId: weapon.weaponId, step: 0)
+        }
+        let next = model.suggestions(mode: mp, limit: 50).filter { $0.highlight != nil }
+        #expect(!next.isEmpty)
+        #expect(next.allSatisfy { $0.progress == 0 })
+    }
+
     /// A `weaponCamos` block giving the weapon 8 Military camos with no
     /// published levels, so the spread fallback is what's tested.
     private func unpublishedMilitary(_ weaponId: Int) -> String {

@@ -98,5 +98,21 @@
 			<string>Ora ce l'hanno %d armi.</string>
 		</dict>
 	</dict>
+	<key>ct.ui.suggestion.camos_left</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Manca %d mimetica</string>
+			<key>other</key>
+			<string>Mancano %d mimetiche</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
