@@ -420,7 +420,9 @@ struct CamoPipRow: View {
 }
 
 /// The small circular +/- used by `ChallengeRow`'s inline amount nudges and
-/// `WeaponDetailView`'s compact level row.
+/// `WeaponDetailView`'s compact level row. Drawn at `size`, but 44pt to tap
+/// (see `hitTarget`), so a thumb on a 22pt circle doesn't miss it.
+@MainActor
 func stepButton(systemName: String, enabled: Bool, size: CGFloat, accent: Color = .accentMultiplayer, action: @escaping () -> Void) -> some View {
     Button(action: action) {
         Image(systemName: systemName)
@@ -428,9 +430,25 @@ func stepButton(systemName: String, enabled: Bool, size: CGFloat, accent: Color 
             .foregroundStyle(Color.appBackground)
             .frame(width: size, height: size)
             .background(Circle().fill(enabled ? accent : Color.appInkMuted.opacity(0.4)))
+            .hitTarget()
     }
     .buttonStyle(.plain)
+    .hitTargetSlot(visual: size)
     .disabled(!enabled)
+}
+
+extension View {
+    /// A 44pt tap target around a small control, taking no more room in the
+    /// layout than `visual` did: the extra reaches into the padding and
+    /// spacing around it instead of growing the row. Goes on the button's
+    /// label; `hitTargetSlot` goes on the button.
+    func hitTarget(_ size: CGFloat = 44) -> some View {
+        frame(minWidth: size, minHeight: size).contentShape(Rectangle())
+    }
+
+    func hitTargetSlot(visual: CGFloat, size: CGFloat = 44) -> some View {
+        padding(-max(0, (size - visual) / 2))
+    }
 }
 
 /// A circular completion meter — the one visual primitive the whole Stats
@@ -763,10 +781,13 @@ struct ChallengeRow: View {
                     .font(.system(size: isAvailable ? 21 : 17))
                     .foregroundStyle(isDone ? accent : Color.appInkMuted.opacity(isAvailable ? 1 : 0.5))
                     .frame(width: 21, height: 21)
+                    // 44pt to tap, so a near miss on a counter camo's tick
+                    // still ticks it; laid out at the glyph's size
+                    .hitTarget()
             }
             .buttonStyle(.plain)
+            .hitTargetSlot(visual: 21)
             .disabled(!isAvailable)
-            .accessibilityIdentifier("tick.\(item.name.resolved())")
 
             if item.imageURL != nil {
                 CamoThumbnail(urlString: item.imageURL, size: 34)
@@ -860,6 +881,69 @@ struct ChallengeRow: View {
             }
         }
         .preference(key: EarnedGradientKey.self, value: isDone ? titleGradient : nil)
+        // One VoiceOver stop per camo: its name, then whether it's done, its
+        // challenge and its count. Activating it ticks it, swiping up or down
+        // nudges a counter, and the exact amount is an action, rather than a
+        // row of "circle", "Remove", "12/150", "Add" with no camo named.
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(item.name.resolved()))
+        .accessibilityValue(Text(accessibilityState))
+        .accessibilityAddTraits(isAvailable ? .isButton : [])
+        .accessibilityAddTraits(isDone ? .isSelected : [])
+        .accessibilityIdentifier("tick.\(item.name.resolved())")
+        .accessibilityAction { if isAvailable { onToggle() } }
+        .accessibilityCounter(showsCounter, increment: { nudge(by: 1) }, decrement: { nudge(by: -1) })
+        .accessibilityActions {
+            if showsCounter {
+                Button("mw4.ui.set_amount.title".localized()) {
+                    amountText = "\(amount)"
+                    showAmountEntry = true
+                }
+            }
+        }
+    }
+
+    /// Whether the −/+ and count are on screen.
+    private var showsCounter: Bool { item.requirement != nil && hasCounter && isAvailable && !isDone }
+
+    private func nudge(by step: Int) {
+        guard let required = item.requirement?.amount else { return }
+        onSetAmount(min(required, max(0, amount + step)))
+    }
+
+    /// "Done", or "Not done, Get 10 kills, 6 of 10", or "Locked, Finish the
+    /// tier above first."
+    private var accessibilityState: String {
+        var parts = [(isDone ? "ct.a11y.done" : isAvailable ? "ct.a11y.not_done" : "ct.a11y.locked").localized()]
+        if let requirement = item.requirement {
+            if isAvailable || showLockedChallenges { parts.append(requirement.description.resolved()) }
+            if !isAvailable { parts.append(lockedReason ?? "mw4.ui.locked".localized()) }
+            if showsCounter {
+                parts.append(String(format: "ct.a11y.count".localized(), amount, requirement.amount))
+            }
+        } else if let line = isAvailable ? detail : lockedReason {
+            parts.append(line)
+        }
+        return parts.joined(separator: ", ")
+    }
+}
+
+extension View {
+    /// Swipe up or down with VoiceOver to step a count, when there is one.
+    @ViewBuilder
+    func accessibilityCounter(_ enabled: Bool, increment: @escaping () -> Void,
+                              decrement: @escaping () -> Void) -> some View {
+        if enabled {
+            accessibilityAdjustableAction { direction in
+                switch direction {
+                case .increment: increment()
+                case .decrement: decrement()
+                @unknown default: break
+                }
+            }
+        } else {
+            self
+        }
     }
 }
 

@@ -861,6 +861,12 @@ struct StatusRow: View {
         }
         .padding(.vertical, 5)
         .preference(key: EarnedGradientKey.self, value: achieved ? gradient : nil)
+        // "Mercurial Drift, Locked, Earn Divergence on any weapon first":
+        // one stop, said rather than a check or lock drawn beside the name
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(name))
+        .accessibilityValue(Text("\((achieved ? "ct.a11y.done" : "ct.a11y.locked").localized()), \(detail)"))
+        .accessibilityAddTraits(achieved ? .isSelected : [])
     }
 }
 
@@ -894,6 +900,11 @@ private struct CompactLevelRow: View {
     /// stage's level.
     private var shown: Int { countsUnlocks ? TrackerViewModel.unlocks(forLevel: level) : level }
     private var shownMax: Int { countsUnlocks ? TrackerViewModel.unlocks(forLevel: maxLevel) : maxLevel }
+    /// What the stepper counts: the Prestige stage's name, unlocks or level.
+    private var stepperName: String {
+        prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
+                     : (countsUnlocks ? "mw4.ui.weapon_unlocks" : "mw4.ui.weapon_level").localized()
+    }
     private func setShown(_ value: Int) {
         viewModel.setLevel(countsUnlocks ? TrackerViewModel.level(forUnlocks: value) : value, for: weapon)
     }
@@ -1013,8 +1024,10 @@ private struct CompactLevelRow: View {
                             .foregroundStyle(Color.appInkMuted)
                             .frame(width: 28, height: 28)
                             .background(Circle().stroke(Color.appInkMuted.opacity(0.35), lineWidth: 1))
+                            .hitTarget()
                     }
                     .buttonStyle(.plain)
+                    .hitTargetSlot(visual: 28)
                     .accessibilityLabel("mw4.ui.prestige.undo".localized())
                 }
 
@@ -1036,8 +1049,11 @@ private struct CompactLevelRow: View {
                         .background(
                             Capsule().fill(ready ? mode.accent : Color.appInkMuted.opacity(0.14))
                         )
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
+                    .padding(.vertical, -8)
                     .disabled(!ready)
                 } else {
                     Image(systemName: "checkmark.seal.fill")
@@ -1063,8 +1079,7 @@ private struct CompactLevelRow: View {
                 // on a narrow header: shrink a little before truncating.
                 // Full size whenever it fits. A bare minimumScaleFactor shrank
                 // it with room to spare (sized before the row had its width).
-                let label = Text(prestige > 0 ? (viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.weapon_level".localized())
-                                              : (countsUnlocks ? "mw4.ui.weapon_unlocks" : "mw4.ui.weapon_level").localized())
+                let label = Text(stepperName)
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1)
@@ -1080,32 +1095,54 @@ private struct CompactLevelRow: View {
                         Image(systemName: showsUnlocksHint ? "info.circle.fill" : "info.circle")
                             .font(.system(size: 13))
                             .foregroundStyle(Color.appInkMuted)
+                            .hitTarget()
                     }
                     .buttonStyle(.plain)
+                    .hitTargetSlot(visual: 13)
                     .accessibilityLabel("mw4.ui.unlocks_hint".localized())
                 }
 
                 Spacer(minLength: 4)
 
-                stepButton(systemName: "minus", enabled: shown > 0, size: 26, accent: mode.accent) {
-                    setShown(shown - 1)
-                }
+                HStack(spacing: 10) {
+                    stepButton(systemName: "minus", enabled: shown > 0, size: 26, accent: mode.accent) {
+                        setShown(shown - 1)
+                    }
 
-                Button {
+                    Button {
+                        valueText = "\(shown)"
+                        showValueEntry = true
+                    } label: {
+                        (Text("\(shown)").font(.hitmarker(20)).foregroundColor(Color.appInk)
+                         + Text("/\(shownMax)").font(.hitmarker(12)).foregroundColor(Color.appInkMuted))
+                            .lineLimit(1)
+                            .contentTransition(.numericText())
+                            .frame(minWidth: 56)
+                    }
+                    .buttonStyle(.plain)
+
+                    stepButton(systemName: "plus", enabled: shown < shownMax, size: 26, accent: mode.accent) {
+                        setShown(shown + 1)
+                    }
+                }
+                // One adjustable stop for VoiceOver ("Weapon level, 12 of
+                // 71"): swipe to step, double-tap to type it, instead of
+                // "Remove", "12/71", "Add" with nothing said they change
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text(stepperName))
+                .accessibilityValue(Text(String(format: "ct.a11y.count".localized(), shown, shownMax)))
+                .accessibilityAdjustableAction { direction in
+                    switch direction {
+                    case .increment: if shown < shownMax { setShown(shown + 1) }
+                    case .decrement: if shown > 0 { setShown(shown - 1) }
+                    @unknown default: break
+                    }
+                }
+                .accessibilityAction {
                     valueText = "\(shown)"
                     showValueEntry = true
-                } label: {
-                    (Text("\(shown)").font(.hitmarker(20)).foregroundColor(Color.appInk)
-                     + Text("/\(shownMax)").font(.hitmarker(12)).foregroundColor(Color.appInkMuted))
-                        .lineLimit(1)
-                        .contentTransition(.numericText())
-                        .frame(minWidth: 56)
                 }
-                .buttonStyle(.plain)
-
-                stepButton(systemName: "plus", enabled: shown < shownMax, size: 26, accent: mode.accent) {
-                    setShown(shown + 1)
-                }
+                .accessibilityIdentifier("levelStepper")
 
                 Button {
                     withAnimation(.snappy) { viewModel.setLevel(maxLevel, for: weapon) }
@@ -1118,8 +1155,12 @@ private struct CompactLevelRow: View {
                         .padding(.horizontal, 8)
                         .frame(height: 26)
                         .background(Capsule().stroke(level == maxLevel ? Color.appInkMuted.opacity(0.3) : mode.accent.opacity(0.6), lineWidth: 1))
+                        // 44pt tall to tap, drawn 26
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .padding(.vertical, -9)
                 .disabled(level == maxLevel)
             }
 
