@@ -54,6 +54,9 @@ struct MW4CamoTrackerApp: App {
             // Another device's progress may have landed while the app was
             // away, and iCloud doesn't always say so: merge it now.
             if newPhase == .active { CloudSync.syncAll() }
+            // A yearly plan can lapse, or a purchase be refunded, while the
+            // app sits in the background; launch isn't the only time to ask.
+            if newPhase == .active { Task { await Premium.shared.refresh() } }
             if newPhase == .active, !viewModel.isRefreshing {
                 Task { await viewModel.refresh() }
             }
