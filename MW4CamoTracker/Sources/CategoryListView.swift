@@ -34,6 +34,7 @@ struct CategoryListView: View {
     /// Free players see the top suggestion; Premium, all of them.
     private var suggestions: [Suggestion] { premium.isPremium ? allSuggestions : Array(allSuggestions.prefix(1)) }
     @ObservedObject private var premium = Premium.shared
+    @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
 
     /// `weaponCategories` after the Filter/Sort pills are applied — everything
@@ -640,6 +641,7 @@ struct CustomiseHomeSheet: View {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @AppStorage(AdConsent.key) private var adConsent = false
     @ObservedObject private var premium = Premium.shared
+    @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
     @State private var showsIcons = false
     @Environment(\.dismiss) private var dismiss
@@ -666,6 +668,14 @@ struct CustomiseHomeSheet: View {
             importMessage = String(format: "ct.import.done".localized(), progress.weapons.count)
         } catch {
             importMessage = String(format: "ct.import.failed".localized(), legacy)
+        }
+    }
+
+    private func syncProblemText(_ problem: CloudSync.Status) -> String {
+        switch problem {
+        case .accountChanged: return "mw4.ui.icloud.account_changed".localized()
+        case .needsUpdate: return "mw4.ui.icloud.needs_update".localized()
+        default: return "mw4.ui.icloud.full".localized()
         }
     }
 
@@ -811,6 +821,25 @@ struct CustomiseHomeSheet: View {
                         .tint(accent)
                         .disabled(locked)
                         .accessibilityIdentifier("customise.iCloudSync")
+                        // Switched on: merge with iCloud before anything is written
+                        .onChange(of: iCloudSync) { _ in CloudSync.syncAll() }
+                    if !locked, iCloudSync, let problem = syncState.problem {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(syncProblemText(problem))
+                                .font(.footnote)
+                                .foregroundStyle(Color.appInkMuted)
+                                .fixedSize(horizontal: false, vertical: true)
+                            if problem == .accountChanged {
+                                // Merging only once the player says so: this
+                                // device's progress then joins that account's,
+                                // nothing deleted
+                                Button("mw4.ui.icloud.use_account".localized()) { viewModel.useCurrentICloudAccount() }
+                                    .font(.footnote.weight(.semibold))
+                                    .foregroundStyle(accent)
+                                    .accessibilityIdentifier("customise.iCloudUseAccount")
+                            }
+                        }
+                    }
                 } header: {
                     premiumHeader(nil)
                 } footer: {

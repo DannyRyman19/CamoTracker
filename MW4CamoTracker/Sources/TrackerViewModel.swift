@@ -1608,6 +1608,12 @@ final class TrackerViewModel: ObservableObject {
         return values
     }
 
+    /// The player chose to sync with the iCloud account the device is now
+    /// signed in to; every game's sync and the DMZ guide's follow.
+    func useCurrentICloudAccount() {
+        if let cloud { cloud.useCurrentAccount() } else { CloudSync.syncAll() }
+    }
+
     /// Another device changed something: take the merged progress.
     private func applySynced(_ values: [String: Int]) {
         var levels: [Int: Int] = [:], prestige: [Int: Int] = [:], counts: [String: Int] = [:], done: Set<String> = []

@@ -51,6 +51,9 @@ struct MW4CamoTrackerApp: App {
             // while it sat in the background shows without a relaunch.
             // Ads start once the app is active: the tracking prompt needs it
             if newPhase == .active { Ads.shared.start() }
+            // Another device's progress may have landed while the app was
+            // away, and iCloud doesn't always say so: merge it now.
+            if newPhase == .active { CloudSync.syncAll() }
             if newPhase == .active, !viewModel.isRefreshing {
                 Task { await viewModel.refresh() }
             }

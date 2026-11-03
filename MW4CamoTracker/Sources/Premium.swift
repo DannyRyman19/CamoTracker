@@ -85,6 +85,9 @@ final class Premium: ObservableObject {
         guard owned != isPremium else { return }
         isPremium = owned
         UserDefaults.standard.set(owned, forKey: Self.cacheKey)
+        // Sync starts (or stops) with Premium: a merge pass, so a device
+        // that wasn't syncing takes in iCloud's progress before it writes
+        CloudSync.syncAll()
     }
 
     #if DEBUG
