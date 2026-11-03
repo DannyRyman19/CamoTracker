@@ -66,14 +66,19 @@ final class TrackerViewModel: ObservableObject {
     private var cloud: CloudSync?
 
     /// `defaults` is where progress and the pin are kept; tests pass a
-    /// throwaway suite.
-    init(game: Game = GameRegistry.current, dataService: DataService? = nil, defaults: UserDefaults = .standard) {
+    /// throwaway suite (and their own `cloud`, on a stand-in for iCloud).
+    init(game: Game = GameRegistry.current, dataService: DataService? = nil, defaults: UserDefaults = .standard,
+         cloud injected: CloudSync? = nil) {
         self.game = game
         self.dataService = dataService ?? DataService(game: game)
         self.defaults = defaults
-        loadProgress()
-        if defaults == .standard {
-            let cloud = CloudSync(cloudKey: game.key("mw4_progress_sync", "sync"), defaults: defaults)
+        let cloud = injected ?? (defaults == .standard ? CloudSync(cloudKey: game.key("mw4_progress_sync", "sync"), defaults: defaults) : nil)
+        let loadedCleanly = loadProgress(fallback: cloud?.snapshot.values)
+        if let cloud {
+            // A save that didn't load must never reach iCloud as "all of
+            // this was deleted": other devices' changes still come in, but
+            // nothing goes out until a save loads cleanly.
+            cloud.holdsWrites = !loadedCleanly
             cloud.onRemoteChange = { [weak self] values in self?.applySynced(values) }
             self.cloud = cloud
             cloud.start(current: syncValues())
@@ -1545,7 +1550,10 @@ final class TrackerViewModel: ObservableObject {
         "obj|\(mode)|\(categoryId)|\(itemId)"
     }
 
-    private func loadProgress() {
+    /// Reads the saved progress; false when there is a save and it can't
+    /// be read, in which case `fallback` (sync's copy of the last save's
+    /// entries) stands in for it.
+    private func loadProgress(fallback: [String: Int]?) -> Bool {
         #if DEBUG
         // A save copied onto a device (`devicectl device copy to` into
         // Documents/mw4_seed.json) replaces the stored one once, then goes.
@@ -1557,12 +1565,37 @@ final class TrackerViewModel: ObservableObject {
             }
         }
         #endif
-        guard let data = defaults.data(forKey: storeKey),
-              let store = try? JSONDecoder().decode(ProgressStore.self, from: data) else { return }
+        // Nothing saved yet is a clean start
+        guard let data = defaults.data(forKey: storeKey) else { return true }
+        guard let store = try? JSONDecoder().decode(ProgressStore.self, from: data) else {
+            // Corrupt, or written by a build whose format this one can't
+            // read. Starting empty would show zero progress, and the next
+            // tick would sync every missing entry as deleted to every
+            // device. Keep it aside instead, and pick up from the copy sync
+            // keeps of the last save.
+            keepUnreadableSave(data)
+            if let fallback { restore(from: fallback) }
+            return false
+        }
         weaponLevels = store.weaponLevels
         weaponPrestige = store.weaponPrestige ?? [:]
         amounts = store.amounts
         completed = Set(store.completed)
+        return true
+    }
+
+    /// The save as it was, under `<key>_unreadable`, with a timestamped
+    /// copy beside it (`<key>_unreadable_20261103-142501`) so a later
+    /// failure never replaces the first. A build that can read it can
+    /// bring it back; nothing here ever deletes them.
+    private func keepUnreadableSave(_ data: Data) {
+        let key = "\(storeKey)_unreadable"
+        guard defaults.data(forKey: key) != data else { return }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyyMMdd-HHmmss"
+        defaults.set(data, forKey: key)
+        defaults.set(data, forKey: "\(key)_\(formatter.string(from: Date()))")
     }
 
     private func saveProgress() {
@@ -1616,6 +1649,13 @@ final class TrackerViewModel: ObservableObject {
 
     /// Another device changed something: take the merged progress.
     private func applySynced(_ values: [String: Int]) {
+        objectWillChange.send()
+        restore(from: values)
+        writeProgress()
+    }
+
+    /// Progress from `syncValues`' flat entries.
+    private func restore(from values: [String: Int]) {
         var levels: [Int: Int] = [:], prestige: [Int: Int] = [:], counts: [String: Int] = [:], done: Set<String> = []
         for (key, value) in values {
             let kind = key.prefix(2), rest = String(key.dropFirst(2))
@@ -1627,12 +1667,10 @@ final class TrackerViewModel: ObservableObject {
             default: break
             }
         }
-        objectWillChange.send()
         weaponLevels = levels
         weaponPrestige = prestige
         amounts = counts
         completed = done
-        writeProgress()
     }
 }
 
