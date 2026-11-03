@@ -459,11 +459,10 @@
 
 /* Premium and ads */
 "mw4.ui.premium.title" = "Seja Premium";
-"mw4.ui.premium.subtitle" = "Sem anúncios, e leia seu estoque quantas vezes quiser. Pague por ano ou uma vez.";
+"mw4.ui.premium.subtitle" = "Nenhum anúncio, nenhum anúncio antes de ler o estoque, e os extras abaixo. Pague por ano ou uma vez.";
 "mw4.ui.premium.perk_ads" = "Nenhum anúncio";
-"mw4.ui.premium.perk_scans" = "Leituras do estoque ilimitadas, sem anúncio antes";
+"mw4.ui.premium.perk_scans" = "Leituras do estoque sem anúncio antes";
 "mw4.ui.premium.perk_support" = "Mantém o tracker vivo, novos jogos incluídos";
-"mw4.ui.premium.active" = "Premium ativo";
 "mw4.ui.premium.restore" = "Restaurar compras";
 "mw4.ui.premium.legal" = "O plano anual renova automaticamente, a menos que você cancele nos ajustes da sua conta Apple pelo menos 24 horas antes da renovação. Vitalício é uma compra única.";
 "mw4.ui.premium.terms" = "Termos de uso";
@@ -591,3 +590,24 @@
 "ct.ui.suggestion.camos_left" = "Faltam %d camuflagens";
 "ct.lock.needs" = "Precisa de %1$d %2$@";
 "ct.lock.needs_camo" = "Precisa de %@";
+"ct.premium.unavailable" = "O Premium não está disponível na App Store agora. Tente de novo mais tarde.";
+"ct.premium.you_have" = "Você tem Premium";
+"ct.premium.thanks" = "Obrigado pelo apoio. Seu Premium inclui:";
+"ct.premium.thanks_short" = "Obrigado pelo apoio. Toque para ver o que está incluído.";
+"ct.premium.manage" = "Gerenciar assinatura";
+"ct.premium.plan.unknown" = "Você é Premium";
+"ct.premium.plan.lifetime" = "Vitalício: seu para sempre";
+"ct.premium.plan.renews" = "Anual · renova em %@";
+"ct.premium.plan.ends" = "Anual · termina em %@";
+"ct.premium.notice.purchased" = "Agora você é Premium";
+"ct.premium.notice.purchased_message" = "Obrigado pelo apoio. Os anúncios sumiram e tudo o que o Premium traz está ativo.";
+"ct.premium.notice.restored" = "Premium restaurado";
+"ct.premium.notice.restored_message" = "Seu Premium voltou para este aparelho.";
+"ct.premium.notice.pending" = "Aguardando aprovação";
+"ct.premium.notice.pending_message" = "O Premium é liberado assim que a compra for aprovada.";
+"ct.premium.notice.purchase_failed" = "A compra não foi concluída";
+"ct.premium.notice.purchase_failed_message" = "A App Store não conseguiu concluí-la. Tente de novo daqui a pouco.";
+"ct.premium.notice.restore_failed" = "Não foi possível restaurar as compras";
+"ct.premium.notice.restore_failed_message" = "Não foi possível acessar a App Store. Tente de novo daqui a pouco.";
+"ct.premium.notice.nothing" = "Nenhuma compra encontrada";
+"ct.premium.notice.nothing_message" = "Não há Camo Track Premium para restaurar nesta Conta Apple.";

@@ -458,11 +458,10 @@
 
 /* Premium and ads */
 "mw4.ui.premium.title" = "Go Premium";
-"mw4.ui.premium.subtitle" = "No ads, and read your stash as often as you like. Pay yearly or once.";
+"mw4.ui.premium.subtitle" = "No ads anywhere, no ad before a stash scan, and the extras below. Pay yearly or once.";
 "mw4.ui.premium.perk_ads" = "No ads anywhere";
-"mw4.ui.premium.perk_scans" = "Unlimited stash scans, no ad first";
+"mw4.ui.premium.perk_scans" = "Stash scans with no ad first";
 "mw4.ui.premium.perk_support" = "Keeps the tracker going, new games included";
-"mw4.ui.premium.active" = "Premium is on";
 "mw4.ui.premium.restore" = "Restore purchases";
 "mw4.ui.premium.legal" = "The yearly plan renews automatically unless you cancel it in your Apple account settings at least 24 hours before it renews. Lifetime is a one-off purchase.";
 "mw4.ui.premium.terms" = "Terms of Use";
@@ -590,3 +589,24 @@
 "ct.ui.suggestion.camos_left" = "%d camos to complete";
 "ct.lock.needs" = "Needs %1$d %2$@";
 "ct.lock.needs_camo" = "Needs %@";
+"ct.premium.unavailable" = "Premium isn't available from the App Store right now. Please try again later.";
+"ct.premium.you_have" = "You have Premium";
+"ct.premium.thanks" = "Thanks for your support. Your Premium includes:";
+"ct.premium.thanks_short" = "Thanks for your support. Tap to see what's included.";
+"ct.premium.manage" = "Manage Subscription";
+"ct.premium.plan.unknown" = "You're Premium";
+"ct.premium.plan.lifetime" = "Lifetime: yours for good";
+"ct.premium.plan.renews" = "Yearly · renews %@";
+"ct.premium.plan.ends" = "Yearly · ends %@";
+"ct.premium.notice.purchased" = "You're Premium";
+"ct.premium.notice.purchased_message" = "Thanks for your support. The ads are gone and everything Premium adds is on.";
+"ct.premium.notice.restored" = "Premium restored";
+"ct.premium.notice.restored_message" = "Your Premium is back on this device.";
+"ct.premium.notice.pending" = "Waiting for approval";
+"ct.premium.notice.pending_message" = "Premium unlocks as soon as the purchase is approved.";
+"ct.premium.notice.purchase_failed" = "Purchase didn't go through";
+"ct.premium.notice.purchase_failed_message" = "The App Store couldn't complete it. Please try again in a moment.";
+"ct.premium.notice.restore_failed" = "Couldn't restore purchases";
+"ct.premium.notice.restore_failed_message" = "The App Store couldn't be reached. Please try again in a moment.";
+"ct.premium.notice.nothing" = "No purchases found";
+"ct.premium.notice.nothing_message" = "There's no Camo Track Premium on this Apple Account to restore.";

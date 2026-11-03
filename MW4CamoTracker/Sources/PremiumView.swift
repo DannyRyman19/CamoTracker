@@ -3,11 +3,16 @@ import SwiftUI
 
 /// The Premium sheet: what it gets you, the yearly and lifetime options,
 /// restore, and the links the App Store asks for beside a subscription.
+/// A Premium player gets their plan, the thanks and Manage Subscription
+/// instead of the pitch.
 struct PremiumView: View {
     @ObservedObject private var premium = Premium.shared
     @Environment(\.dismiss) private var dismiss
     @State private var restoring = false
     @State private var width: CGFloat = 0
+    /// How a purchase or restore went (see `Premium.Notice`).
+    @State private var notice: Premium.Notice?
+    @State private var showsManage = false
 
     var body: some View {
         NavigationStack {
@@ -39,20 +44,38 @@ struct PremiumView: View {
                 }
             }
             .task { await premium.loadProducts() }
+            // Premium's on: OK closes the sheet behind the message
+            .premiumNotice($notice) { dismiss() }
+            .manageSubscriptionsSheet(isPresented: $showsManage)
         }
         .presentationDetents([.large])
         .wideSheetOnPad()
         .appSheetBackground()
     }
 
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("mw4.ui.premium.title".localized())
-                .hitmarkerFont(26)
-                .foregroundStyle(Color.appInk)
-            Text("mw4.ui.premium.subtitle".localized())
-                .font(.subheadline)
-                .foregroundStyle(Color.appInkMuted)
+    @ViewBuilder private var header: some View {
+        if premium.isPremium {
+            // Thanked and told their plan, not sold to
+            VStack(alignment: .leading, spacing: 8) {
+                Text("ct.premium.you_have".localized())
+                    .hitmarkerFont(26)
+                    .foregroundStyle(Color.appInk)
+                Label(PremiumPlan.line(for: premium.plan), systemImage: "checkmark.seal.fill")
+                    .font(.headline)
+                    .foregroundStyle(Color.accentDMZText)
+                Text("ct.premium.thanks".localized())
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+        } else {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("mw4.ui.premium.title".localized())
+                    .hitmarkerFont(26)
+                    .foregroundStyle(Color.appInk)
+                Text("mw4.ui.premium.subtitle".localized())
+                    .font(.subheadline)
+                    .foregroundStyle(Color.appInkMuted)
+            }
         }
     }
 
@@ -71,12 +94,19 @@ struct PremiumView: View {
     /// The options (or Premium's on), restore and the legal links.
     @ViewBuilder private var purchase: some View {
         if premium.isPremium {
-            Label("mw4.ui.premium.active".localized(), systemImage: "checkmark.seal.fill")
-                .font(.headline)
+            // Lifetime never renews, so there's nothing to manage
+            if premium.isSubscriber {
+                Button { showsManage = true } label: {
+                    Text("ct.premium.manage".localized())
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .borderedCard()
+                }
+                .buttonStyle(.plain)
                 .foregroundStyle(Color.accentDMZText)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-                .borderedCard()
+                .accessibilityIdentifier("premium.manage")
+            }
             #if DEBUG
             if premium.hasFakePurchase {
                 Button("Reset test purchase (debug)") { Task { await premium.resetFakePurchase() } }
@@ -85,7 +115,7 @@ struct PremiumView: View {
                     .frame(maxWidth: .infinity)
             }
             #endif
-        } else if (premium.products.isEmpty && premium.loadFailed && fakeStore) || reviewShot {
+        } else if (premium.products.isEmpty && premium.loadProblem != nil && fakeStore) || reviewShot {
             #if DEBUG
             fakeButton(yearly: true)
             fakeButton(yearly: false)
@@ -96,9 +126,11 @@ struct PremiumView: View {
                     .frame(maxWidth: .infinity)
             }
             #endif
-        } else if premium.products.isEmpty, premium.loadFailed {
+        } else if premium.products.isEmpty, let problem = premium.loadProblem {
             VStack(spacing: 10) {
-                Text("mw4.ui.premium.load_failed".localized())
+                // Offline, or the App Store answered without them: only the
+                // first is the player's connection
+                Text((problem == .unreachable ? "mw4.ui.premium.load_failed" : "ct.premium.unavailable").localized())
                     .font(.subheadline)
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
@@ -121,7 +153,7 @@ struct PremiumView: View {
 
         Button {
             restoring = true
-            Task { await premium.restore(); restoring = false }
+            Task { notice = await premium.restore(); restoring = false }
         } label: {
             HStack(spacing: 6) {
                 if restoring { ProgressView() }
@@ -133,6 +165,14 @@ struct PremiumView: View {
         .foregroundStyle(Color.accentDMZText)
         .disabled(restoring)
 
+        if !premium.isPremium {
+            legal
+        }
+    }
+
+    /// The renewal terms and links the App Store asks for beside a
+    /// subscription on sale.
+    private var legal: some View {
         VStack(spacing: 6) {
             Text("mw4.ui.premium.legal".localized())
                 .font(.caption2)
@@ -211,7 +251,7 @@ struct PremiumView: View {
     private func productButton(_ product: Product) -> some View {
         let yearly = product.id == Premium.yearlyID
         return Button {
-            Task { if await premium.buy(product) { dismiss() } }
+            Task { notice = await premium.buy(product) }
         } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {

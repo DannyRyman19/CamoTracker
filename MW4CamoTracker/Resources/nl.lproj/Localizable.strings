@@ -458,11 +458,10 @@
 
 /* Premium and ads */
 "mw4.ui.premium.title" = "Neem Premium";
-"mw4.ui.premium.subtitle" = "Geen advertenties, en lees je voorraad zo vaak je wilt. Per jaar of eenmalig.";
+"mw4.ui.premium.subtitle" = "Nergens advertenties, geen advertentie voor een voorraadscan, en de extra's hieronder. Per jaar of eenmalig.";
 "mw4.ui.premium.perk_ads" = "Nergens advertenties";
-"mw4.ui.premium.perk_scans" = "Onbeperkt je voorraad scannen, zonder advertentie vooraf";
+"mw4.ui.premium.perk_scans" = "Voorraadscans zonder advertentie vooraf";
 "mw4.ui.premium.perk_support" = "Houdt de tracker draaiende, nieuwe games inbegrepen";
-"mw4.ui.premium.active" = "Premium staat aan";
 "mw4.ui.premium.restore" = "Aankopen herstellen";
 "mw4.ui.premium.legal" = "Het jaarabonnement wordt automatisch verlengd, tenzij je het minstens 24 uur voor de verlenging opzegt in je Apple-accountinstellingen. Levenslang is een eenmalige aankoop.";
 "mw4.ui.premium.terms" = "Gebruiksvoorwaarden";
@@ -590,3 +589,24 @@
 "ct.ui.suggestion.camos_left" = "Nog %d camouflages";
 "ct.lock.needs" = "Vereist %1$d %2$@";
 "ct.lock.needs_camo" = "Vereist %@";
+"ct.premium.unavailable" = "Premium is nu niet beschikbaar in de App Store. Probeer het later opnieuw.";
+"ct.premium.you_have" = "Je hebt Premium";
+"ct.premium.thanks" = "Bedankt voor je steun. Je Premium bevat:";
+"ct.premium.thanks_short" = "Bedankt voor je steun. Tik om te zien wat erbij zit.";
+"ct.premium.manage" = "Abonnement beheren";
+"ct.premium.plan.unknown" = "Je hebt Premium";
+"ct.premium.plan.lifetime" = "Levenslang: voorgoed van jou";
+"ct.premium.plan.renews" = "Per jaar · verlengt op %@";
+"ct.premium.plan.ends" = "Per jaar · stopt op %@";
+"ct.premium.notice.purchased" = "Je hebt nu Premium";
+"ct.premium.notice.purchased_message" = "Bedankt voor je steun. De advertenties zijn weg en alles wat Premium toevoegt staat aan.";
+"ct.premium.notice.restored" = "Premium hersteld";
+"ct.premium.notice.restored_message" = "Je Premium staat weer op dit apparaat.";
+"ct.premium.notice.pending" = "Wacht op goedkeuring";
+"ct.premium.notice.pending_message" = "Premium wordt ontgrendeld zodra de aankoop is goedgekeurd.";
+"ct.premium.notice.purchase_failed" = "Aankoop niet gelukt";
+"ct.premium.notice.purchase_failed_message" = "De App Store kon hem niet afronden. Probeer het zo opnieuw.";
+"ct.premium.notice.restore_failed" = "Aankopen herstellen mislukt";
+"ct.premium.notice.restore_failed_message" = "De App Store is niet bereikbaar. Probeer het zo opnieuw.";
+"ct.premium.notice.nothing" = "Geen aankopen gevonden";
+"ct.premium.notice.nothing_message" = "Er is geen Camo Track Premium om te herstellen op dit Apple-account.";

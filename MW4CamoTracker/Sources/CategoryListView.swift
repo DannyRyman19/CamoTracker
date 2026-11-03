@@ -1,3 +1,4 @@
+import StoreKit
 import SwiftUI
 import UniformTypeIdentifiers
 
@@ -648,6 +649,9 @@ struct CustomiseHomeSheet: View {
     @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
     @State private var showsIcons = false
+    /// How a restore went (see `Premium.Notice`).
+    @State private var premiumNotice: Premium.Notice?
+    @State private var showsManage = false
     @Environment(\.dismiss) private var dismiss
 
     /// `SS_APP_ICONS=1` (DEBUG): open full height for the screenshot.
@@ -884,20 +888,36 @@ struct CustomiseHomeSheet: View {
                 }
 
                 Section {
-                    Button { showsPremium = true } label: {
-                        Label(premium.isPremium ? "mw4.ui.premium.active".localized() : "mw4.ui.premium.title".localized(),
-                              systemImage: premium.isPremium ? "checkmark.seal.fill" : "sparkles")
-                    }
-                    .foregroundStyle(accent)
-                    .accessibilityIdentifier("customise.premium")
-                    if !premium.isPremium {
-                        Button("mw4.ui.premium.restore".localized()) {
-                            Task { await premium.restore() }
+                    if premium.isPremium {
+                        // The plan and the thanks, not the pitch; the sheet
+                        // lists what it includes
+                        Button { showsPremium = true } label: {
+                            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                                Image(systemName: "checkmark.seal.fill")
+                                    .foregroundStyle(accent)
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text(PremiumPlan.line(for: premium.plan))
+                                        .font(.headline)
+                                        .foregroundStyle(Color.appInk)
+                                    Text("ct.premium.thanks_short".localized())
+                                        .font(.footnote)
+                                        .foregroundStyle(Color.appInkMuted)
+                                }
+                            }
+                        }
+                        .accessibilityIdentifier("customise.premium")
+                    } else {
+                        Button { showsPremium = true } label: {
+                            Label("mw4.ui.premium.title".localized(), systemImage: "sparkles")
                         }
                         .foregroundStyle(accent)
+                        .accessibilityIdentifier("customise.premium")
                     }
+                    premiumLinks
                 } footer: {
-                    Text("mw4.ui.premium.subtitle".localized())
+                    if !premium.isPremium {
+                        Text("mw4.ui.premium.subtitle".localized())
+                    }
                 }
 
                 if !locked {
@@ -933,6 +953,36 @@ struct CustomiseHomeSheet: View {
         }
         .presentationDetents(Self.fullHeight ? [.large] : [.medium, .large])
         .sheet(isPresented: $showsPremium) { PremiumView() }
+        .premiumNotice($premiumNotice)
+        .manageSubscriptionsSheet(isPresented: $showsManage)
+    }
+
+    /// Manage Subscription (the yearly plan only: Lifetime never renews)
+    /// and Restore purchases as one row of small links, one under the
+    /// other when a large text size can't fit them side by side.
+    private var premiumLinks: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 24) {
+                premiumLinkButtons
+                Spacer(minLength: 0)
+            }
+            VStack(alignment: .leading, spacing: 12) { premiumLinkButtons }
+        }
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(accent)
+        // Each its own target, not the row's
+        .buttonStyle(.borderless)
+    }
+
+    @ViewBuilder private var premiumLinkButtons: some View {
+        if premium.isSubscriber {
+            Button("ct.premium.manage".localized()) { showsManage = true }
+                .accessibilityIdentifier("customise.manageSubscription")
+        }
+        Button("mw4.ui.premium.restore".localized()) {
+            Task { premiumNotice = await premium.restore() }
+        }
+        .accessibilityIdentifier("customise.restore")
     }
 
     /// Free players: the layout and look settings show, locked, and open
