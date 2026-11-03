@@ -99,11 +99,19 @@ new flags.
 ## Rules that protect players' progress
 
 Progress is saved against ids, so these matter more than anything else here.
-The publish script enforces the first two.
+The publish script enforces the first three.
 
 - **Never remove or renumber a `weaponId`.** A weapon that leaves the game
   stays in the file.
 - **Never remove or renumber a camo's `itemId`** within a weapon.
+- **Never reorder or remove a `prestigeCamos` entry.** Prestige camo ticks
+  are saved by position, so a new one goes at the end.
+- **Other saved ticks are keys too:** objective `itemId`s, and in
+  `hajin.json` each row's `check`, item ids, FOB upgrades, blueprints and
+  Gunsmith manuals. The script warns loudly when a publish drops one; if
+  that's intended (a retired op), say so with `--allow-removed KEY,KEY` (or
+  `--allow-removed all`). Changing a published mode's `trackFrom` strands
+  its camo progress and needs `--allow-trackfrom-change`.
 - **New weapons take the next unused `weaponId`** (one more than the highest
   in `weapons.json`), and need a camo entry in each mode file, or that mode
   shows "no camo data" for them.
