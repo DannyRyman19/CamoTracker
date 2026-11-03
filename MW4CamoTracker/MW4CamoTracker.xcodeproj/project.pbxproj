@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AB4A9029D4D7D0A1E13EB65 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 71B567DA50280AD4B947CE4C /* PrivacyInfo.xcprivacy */; };
+		BAC8184808A9C7CEC66D0AD6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 288D4FC985DA85C31FE88002 /* PrivacyInfo.xcprivacy */; };
 		03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */; };
 		05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613DA0B92D98434F953C3144 /* StatsView.swift */; };
 		061AF3F322A05D82472AD02D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00C36E336BC0A943B5CBFB /* SplashView.swift */; };
@@ -158,6 +160,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71B567DA50280AD4B947CE4C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		288D4FC985DA85C31FE88002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		09E7E53AF5B26DF707884D61 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		5E2A7B1D36F9C4809B1D2E3F /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		0C093C55B6D15F2A2B624938 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -332,6 +336,7 @@
 				ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */,
 				63D676EEC8CACBE3AB71F0CF /* hajin.json */,
 				C38D62716173086722580420 /* hajin_map.jpg */,
+				71B567DA50280AD4B947CE4C /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				D2545F0D6D707B0DFE010A2F /* MW4Widgets.swift */,
 				3B2CD37DED80EEB3CEA180AE /* Info.plist */,
 				55514122198FB86CDE06E404 /* MW4CamoTrackerWidgets.entitlements */,
+				288D4FC985DA85C31FE88002 /* PrivacyInfo.xcprivacy */,
 				E2E50AE42F063B3CFE85D63E /* en.lproj */,
 				8CFB66123432A590A91A8AA7 /* de.lproj */,
 				168914AE193FC3A43CA6E617 /* es.lproj */,
@@ -609,6 +615,7 @@
 				992D0DDC22EFE45CF3336AD8 /* it.lproj in Resources */,
 				3C9E5FB14D6F718293A41526 /* pt.lproj in Resources */,
 				598BA5E333739FF354F97685 /* nl.lproj in Resources */,
+				BAC8184808A9C7CEC66D0AD6 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +650,7 @@
 				A3F3BEF2E00C8D6C14B49857 /* weapons.json in Resources */,
 				8D7BE2A36F683B63203F1B3C /* hajin.json in Resources */,
 				57A4C1D86FEE9699E045533B /* hajin_map.jpg in Resources */,
+				6AB4A9029D4D7D0A1E13EB65 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
