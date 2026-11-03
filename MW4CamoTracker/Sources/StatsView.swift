@@ -259,7 +259,13 @@ private struct ModeStatsCard: View {
     let mode: AppMode
     let part: Part
     @EnvironmentObject private var viewModel: TrackerViewModel
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var breakdownExpanded = true
+
+    /// Black Ops has a card per mode, each with every class: two columns
+    /// keep the stack of them short. One column at accessibility sizes,
+    /// where half the card is too narrow for a class name.
+    private var twoColumns: Bool { !GameRegistry.hasMastery && !dynamicTypeSize.isAccessibilitySize }
 
     private var weaponCategories: [WeaponCategory] { viewModel.catalog?.categories ?? [] }
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
@@ -371,7 +377,7 @@ private struct ModeStatsCard: View {
                 .buttonStyle(.plain)
 
                 if breakdownExpanded {
-                    VStack(spacing: 10) {
+                    let rows = Group {
                         ForEach(part == .weapons ? weaponCategories : []) { category in
                             statRow(
                                 name: category.name.resolved(),
@@ -387,6 +393,14 @@ private struct ModeStatsCard: View {
                                 name: category.name.resolved(),
                                 fraction: viewModel.objectiveProgressFraction(of: category, mode: mode.rawValue)
                             )
+                        }
+                    }
+                    Group {
+                        if twoColumns {
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16, alignment: .top), count: 2),
+                                      alignment: .leading, spacing: 14) { rows }
+                        } else {
+                            VStack(spacing: 10) { rows }
                         }
                     }
                     .padding(.top, 10)
@@ -409,6 +423,44 @@ private struct ModeStatsCard: View {
     }
 
     private func statRow(name: String, fraction: Double, count: String? = nil) -> some View {
+        Group {
+            if twoColumns {
+                compactStatRow(name: name, fraction: fraction, count: count)
+            } else {
+                wideStatRow(name: name, fraction: fraction, count: count)
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(name))
+        .accessibilityValue(Text([fraction.percentText, count.map(Spoken.counts)].compactMap { $0 }.joined(separator: ", ")))
+    }
+
+    /// Half a card wide: the name and percentage over the bar, the count
+    /// under it.
+    private func compactStatRow(name: String, fraction: Double, count: String?) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                Text(name)
+                    .scaledFont(13)
+                    .foregroundStyle(Color.appInk)
+                    .lineLimit(2)
+                Spacer(minLength: 4)
+                Text(fraction.percentText)
+                    .scaledFont(12, design: .monospaced)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            ProgressBar(fraction: fraction, accent: mode.accent)
+            if let count {
+                Text(count)
+                    .scaledFont(11, design: .monospaced)
+                    .foregroundStyle(Color.appInkMuted)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+        }
+    }
+
+    private func wideStatRow(name: String, fraction: Double, count: String?) -> some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 6) {
@@ -427,9 +479,6 @@ private struct ModeStatsCard: View {
                 .scaledFont(12, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(name))
-        .accessibilityValue(Text([fraction.percentText, count.map(Spoken.counts)].compactMap { $0 }.joined(separator: ", ")))
     }
 }
 
