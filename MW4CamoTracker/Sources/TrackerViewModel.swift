@@ -79,10 +79,11 @@ final class TrackerViewModel: ObservableObject {
             cloud.start(current: syncValues())
             wipeIfAsked()
         }
-        catalog = self.dataService.loadCachedCatalog() ?? self.dataService.loadSeedCatalog()
+        // The kept download, unless this build bundles newer data
+        catalog = self.dataService.loadCatalog()
         var loaded: [String: ModeFile] = [:]
         for mode in game.modes.map(\.id) {
-            loaded[mode] = self.dataService.loadCached(mode: mode) ?? self.dataService.loadSeed(mode: mode)
+            loaded[mode] = self.dataService.load(mode: mode)
         }
         MasteryOverrides.byMode = loaded.compactMapValues(\.mastery)
         CompletionistOverrides.byMode = loaded.compactMapValues(\.completionist)
@@ -110,6 +111,21 @@ final class TrackerViewModel: ObservableObject {
         // Screenshots of the bundled data, whatever the CDN has right now.
         if ProcessInfo.processInfo.environment["MW4_OFFLINE"] != nil { return }
         #endif
+        // Launch and the first trip to the foreground both ask on a cold
+        // start (and pull to refresh can land mid-check): a second call
+        // joins the check already running instead of downloading again.
+        if let runningRefresh { return await runningRefresh.value }
+        let check = Task { await performRefresh() }
+        runningRefresh = check
+        // A game switch cancels the launch check (its screens go away), and
+        // that still stops the download, as it did before checks were shared.
+        await withTaskCancellationHandler { await check.value } onCancel: { check.cancel() }
+        runningRefresh = nil
+    }
+
+    private var runningRefresh: Task<Void, Never>?
+
+    private func performRefresh() async {
         isRefreshing = true
         defer { isRefreshing = false }
         do {
@@ -125,9 +141,15 @@ final class TrackerViewModel: ObservableObject {
                 knownCatalogVersion: forceFull ? nil : catalog?.version,
                 knownModeVersions: forceFull ? [:] : modes.mapValues { $0.version }
             )
-            if let newCatalog = result.catalog { catalog = newCatalog }
-            if !result.modes.isEmpty {
-                let merged = modes.merging(result.modes) { _, new in new }
+            // What is showing may have changed while this check waited:
+            // install only what is at least as new, never an older file.
+            if let newCatalog = result.catalog,
+               DataService.canReplace(catalog?.version, with: newCatalog.version) {
+                catalog = newCatalog
+            }
+            let fresh = result.modes.filter { DataService.canReplace(modes[$0.key]?.version, with: $0.value.version) }
+            if !fresh.isEmpty {
+                let merged = modes.merging(fresh) { _, new in new }
                 MasteryOverrides.byMode = merged.compactMapValues(\.mastery)
                 CompletionistOverrides.byMode = merged.compactMapValues(\.completionist)
                 TrackSharing.update(from: merged)

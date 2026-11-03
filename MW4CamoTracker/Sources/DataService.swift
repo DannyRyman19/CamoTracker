@@ -79,6 +79,12 @@ final class DataService: Sendable {
         decode(WeaponCatalog.self, from: cacheFileURL(name: "weapons"))
     }
 
+    /// The catalog to start on: the kept download, unless the app bundles a
+    /// newer one (an app update can ship newer data than an old download).
+    func loadCatalog() -> WeaponCatalog? {
+        Self.newest(seed: loadSeedCatalog(), cached: loadCachedCatalog(), version: \.version)
+    }
+
     // MARK: - Mode files
 
     /// Loads the bundled seed copy of a mode immediately (so the UI has content
@@ -91,8 +97,21 @@ final class DataService: Sendable {
         decode(ModeFile.self, from: cacheFileURL(name: mode))
     }
 
+    /// A mode to start on, the newer of the kept download and the bundled copy.
+    func load(mode: String) -> ModeFile? {
+        Self.newest(seed: loadSeed(mode: mode), cached: loadCached(mode: mode), version: \.version)
+    }
+
+    /// The bundled seed when it is newer than the kept download, otherwise
+    /// the download (or whichever of them there is), as `HajinStore` does.
+    static func newest<T>(seed: T?, cached: T?, version: (T) -> String) -> T? {
+        if let seed, let cached, isNewer(version(seed), than: version(cached)) { return seed }
+        return cached ?? seed
+    }
+
     /// Fetches the manifest, and for the catalog plus each mode whose version
-    /// differs from what's cached, downloads and writes it to disk.
+    /// is higher than the app's, downloads and writes it to disk. A file that
+    /// isn't kept (a newer copy already is) isn't returned either.
     func refreshIfNeeded(
         knownCatalogVersion: String?,
         knownModeVersions: [String: String]
@@ -107,9 +126,9 @@ final class DataService: Sendable {
         if Self.isNewer(manifest.catalog.version, than: knownCatalogVersion) {
             let catalogData = try await fetch(manifest.catalog.path)
             let catalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
-            if Self.isNewer(catalog.version, than: knownCatalogVersion) {
+            if Self.isNewer(catalog.version, than: knownCatalogVersion),
+               try keep(catalogData, name: "weapons", version: catalog.version) {
                 newCatalog = catalog
-                try catalogData.write(to: cacheFileURL(name: "weapons"), options: .atomic)
             }
         }
 
@@ -118,8 +137,8 @@ final class DataService: Sendable {
             guard Self.isNewer(entry.version, than: knownModeVersions[mode]) else { continue }
             let modeData = try await fetch(entry.path)
             let modeFile = try JSONDecoder().decode(ModeFile.self, from: modeData)
-            guard Self.isNewer(modeFile.version, than: knownModeVersions[mode]) else { continue }
-            try modeData.write(to: cacheFileURL(name: mode), options: .atomic)
+            guard Self.isNewer(modeFile.version, than: knownModeVersions[mode]),
+                  try keep(modeData, name: mode, version: modeFile.version) else { continue }
             updatedModes[mode] = modeFile
         }
         return (newCatalog, updatedModes, manifest.notification)
@@ -142,13 +161,16 @@ final class DataService: Sendable {
         guard let entry = manifest.guides?[name], Self.isNewer(entry.version, than: knownVersion) else { return nil }
         let data = try await fetch(entry.path)
         let guide = try JSONDecoder().decode(HajinGuide.self, from: data)
-        guard Self.isNewer(guide.version, than: knownVersion) else { return nil }
-        try data.write(to: cacheFileURL(name: "guide-\(name)"), options: .atomic)
+        guard Self.isNewer(guide.version, than: knownVersion),
+              try keep(data, name: "guide-\(name)", version: guide.version) else { return nil }
         return guide
     }
 
     /// Dotted versions compared number by number ("0.8.12" > "0.8.9"); any
-    /// version beats none.
+    /// version beats none. A part that isn't a number counts as 0, so
+    /// "0.9.11a" is not newer than "0.9.11". `Tools/publish_data.py` refuses
+    /// to publish a version this wouldn't fetch, with the same comparison
+    /// (`is_newer`): change one, change both.
     static func isNewer(_ version: String, than known: String?) -> Bool {
         guard let known else { return true }
         let a = version.split(separator: ".").map { Int($0) ?? 0 }
@@ -159,6 +181,29 @@ final class DataService: Sendable {
         }
         return false
     }
+
+    /// Whether a downloaded `version` may replace `current`: anything but an
+    /// older one (the same version again is harmless).
+    static func canReplace(_ current: String?, with version: String) -> Bool {
+        guard let current else { return true }
+        return !isNewer(current, than: version)
+    }
+
+    /// Writes a download to the cache unless a newer copy is already kept.
+    /// The launch, foreground and background checks can each be downloading
+    /// at once, right after a push two CDN edges can answer with different
+    /// versions, and the slower check must not leave the older file behind.
+    private func keep(_ data: Data, name: String, version: String) throws -> Bool {
+        Self.keepLock.lock()
+        defer { Self.keepLock.unlock() }
+        let url = cacheFileURL(name: name)
+        guard Self.canReplace(decode(Versioned.self, from: url)?.version, with: version) else { return false }
+        try data.write(to: url, options: .atomic)
+        return true
+    }
+
+    private static let keepLock = NSLock()
+    private struct Versioned: Decodable { let version: String }
 
     /// Always asks the server. jsDelivr sends `max-age=604800`, and a plain
     /// `session.data(from:)` honours it, so a phone that had fetched the
