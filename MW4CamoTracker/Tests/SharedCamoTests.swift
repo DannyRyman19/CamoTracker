@@ -64,10 +64,29 @@ struct SharedCamoTests {
         #expect(!vm.isCompletionistComplete(mode: "dmz", weaponId: 0, step: 0))
     }
 
-    @Test func aHiddenModeHasNoTab() {
-        // The shipped Warzone file is hidden until Season 1
+    /// A downloaded Warzone file, newer than the bundled one so the app
+    /// starts on it, with `hidden` set as given.
+    private func warzone(hidden: Bool) throws {
+        try FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
+        let url = try #require(Bundle.main.url(forResource: "warzone", withExtension: "json"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        json["version"] = "999.0.0"
+        json["hidden"] = hidden
+        try JSONSerialization.data(withJSONObject: json).write(to: cache.appendingPathComponent("warzone.json"))
+    }
+
+    @Test func aHiddenModeHasNoTab() throws {
+        // As Warzone was until Season 1, from a fixture rather than the
+        // shipped file, which the data can unhide at any time
+        try warzone(hidden: true)
         let vm = model()
+        #expect(vm.modes["warzone"]?.version == "999.0.0")
         #expect(!vm.visibleModes.contains(.warzone))
         #expect(vm.visibleModes.contains(.multiplayer) && vm.visibleModes.contains(.dmz))
+    }
+
+    @Test func unhidingAModeBringsItsTabBack() throws {
+        try warzone(hidden: false)
+        #expect(model().visibleModes.contains(.warzone))
     }
 }
