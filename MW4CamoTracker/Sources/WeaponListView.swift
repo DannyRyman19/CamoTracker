@@ -74,8 +74,8 @@ struct WeaponListView: View {
                 .listRowBackground(Color.clear)
 
                 HStack(spacing: 8) {
-                    FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: filterBinding)
-                    FilterSortMenu(title: "mw4.ui.sort".localized(), options: sortOptions, label: { $0.label }, accent: mode.accent, selection: sortBinding)
+                    FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.textAccent, selection: filterBinding)
+                    FilterSortMenu(title: "mw4.ui.sort".localized(), options: sortOptions, label: { $0.label }, accent: mode.textAccent, selection: sortBinding)
                 }
                 .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
                 .listRowBackground(Color.clear)
@@ -222,7 +222,8 @@ struct WeaponRow: View {
             if !viewModel.quickTick {
                 let prestige = viewModel.prestige(for: weapon.weaponId)
                 Text(!viewModel.countsUnlocks(weaponId: weapon.weaponId)
-                     ? "\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
+                     ? "\(prestige > 0 ? "P\(prestige) · " : "")" + String(format: "ct.ui.level_short".localized(),
+                                                                         viewModel.level(for: weapon.weaponId), viewModel.maxLevel(for: weapon))
                      : String(format: "mw4.ui.unlocks_short".localized(),
                               TrackerViewModel.unlocks(forLevel: viewModel.level(for: weapon.weaponId)),
                               TrackerViewModel.unlocks(forLevel: viewModel.maxLevel(for: weapon))))

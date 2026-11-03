@@ -284,7 +284,7 @@ struct HajinSpareCard: View {
         } label: {
             Image(systemName: "slider.horizontal.3")
                 .font(.body.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .padding(.leading, 6)
         }
         .accessibilityLabel("mw4.ui.keep.spare_options".localized())

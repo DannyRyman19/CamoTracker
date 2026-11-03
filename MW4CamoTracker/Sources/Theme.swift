@@ -100,6 +100,17 @@ struct AppMode: Hashable, Identifiable, RawRepresentable {
         }
     }
 
+    /// `accent` for small text (see `Color.accentMultiplayerText`). A
+    /// game's own accent from `games.json` is used as it is.
+    var textAccent: Color {
+        guard definition?.accent == nil else { return accent }
+        switch self {
+        case .multiplayer: return .accentMultiplayerText
+        case .dmz:         return .accentDMZText
+        default:           return accent
+        }
+    }
+
     /// This mode's own 3-tier Mastery camo progression — the real MW4 names
     /// and colors, not invented (see Theme.swift's `Color` extension for how
     /// each color was sampled). Mastery is mode-wide, not per weapon: the
@@ -333,6 +344,12 @@ extension Color {
     static let accentMultiplayer = Color(red: 0.788, green: 0.271, blue: 0.494) // #C9457E, Orion Reforged's magenta (crimson sat too close to DMZ's red)
     static let accentWarzone     = camoEmpyros        // Empyros — #26A0B5
     static let accentDMZ         = camoHelio          // Helio — #C42437
+    /// The same accents lightened for small text, where the brand colours
+    /// read at 3.9:1 (Multiplayer) and 3.1:1 (DMZ) on a card: these pass
+    /// 4.5:1 on the cards and the page. Fills, rings and tints keep the
+    /// brand colours.
+    static let accentMultiplayerText = Color(red: 0.878, green: 0.439, blue: 0.627) // #E070A0, 5.9:1 on a card
+    static let accentDMZText         = Color(red: 0.918, green: 0.361, blue: 0.439) // #EA5C70, 5.3:1 on a card
 
     /// Established CoD tier colors — fixed regardless of which mode's accent is active.
     static let camoGold    = Color(red: 0.831, green: 0.686, blue: 0.216) // #D4AF37

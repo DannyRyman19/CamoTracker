@@ -268,8 +268,8 @@ struct CategoryListView: View {
                     // Lined up with the cards below (whose chevron sits
                     // outside the card), no rules either side
                     HStack(spacing: 8) {
-                        FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.accent, selection: weaponFilterBinding)
-                        FilterSortMenu(title: "mw4.ui.sort".localized(), options: weaponSortOptions, label: { $0.label }, accent: mode.accent, selection: weaponSortBinding)
+                        FilterSortMenu(title: "mw4.ui.filter".localized(), options: WeaponFilter.allCases, label: { $0.label(mode: mode) }, accent: mode.textAccent, selection: weaponFilterBinding)
+                        FilterSortMenu(title: "mw4.ui.sort".localized(), options: weaponSortOptions, label: { $0.label }, accent: mode.textAccent, selection: weaponSortBinding)
                     }
                     .padding(.trailing, 22)
                     .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 6, trailing: 12))
@@ -399,9 +399,9 @@ private struct SuggestionRow: View {
             }
 
             Spacer(minLength: 8)
-            Text("\(Int(fraction * 100))%")
+            Text(fraction.percentText)
                 .scaledFont(13, weight: .semibold, design: .monospaced)
-                .foregroundStyle(mode.accent)
+                .foregroundStyle(mode.textAccent)
         }
         .padding(12)
         .borderedCard()

@@ -608,7 +608,7 @@ struct HajinPostMatchReview: View {
                                 Text("$\((value * row.count).formatted())").font(.caption)
                             }
                             if wasSwapped {
-                                Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZ)
+                                Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZText)
                                     .accessibilityLabel("mw4.ui.hajin.scan_swapped".localized())
                             } else if check {
                                 Text("mw4.ui.hajin.scan_check".localized())
@@ -652,7 +652,7 @@ struct HajinPostMatchReview: View {
             // Three to a row, sharing it: one line each
             Label(key.localized(), systemImage: symbol)
                 .font(.caption.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
                 .frame(maxWidth: .infinity)
@@ -731,7 +731,7 @@ struct HajinPostMatchReview: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(item?.name.resolved ?? "mw4.ui.postmatch.blueprint_pick".localized())
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(item == nil ? Color.accentDMZ : Color.appInk)
+                            .foregroundStyle(item == nil ? Color.accentDMZText : Color.appInk)
                         if let id = choice, store.hasBlueprint(id) {
                             Text("mw4.ui.postmatch.blueprint_had".localized()).font(.caption2).foregroundStyle(Color.appInkMuted)
                         } else if let guess = blueprint.guess, choice == nil, let guessed = store.guide?.item(guess) {
@@ -745,7 +745,7 @@ struct HajinPostMatchReview: View {
             Spacer(minLength: 6)
             Image(systemName: item == nil ? "circle" : "checkmark.circle.fill")
                 .font(.title3)
-                .foregroundStyle(item == nil ? Color.appInkMuted : Color.accentDMZ)
+                .foregroundStyle(item == nil ? Color.appInkMuted : Color.accentDMZText)
         }
     }
 

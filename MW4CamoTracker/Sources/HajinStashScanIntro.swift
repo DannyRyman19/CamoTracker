@@ -43,7 +43,7 @@ struct HajinStashScanIntro: View {
                         .foregroundStyle(Color.appInk)
                     Label("mw4.ui.hajin.grid_private".localized(), systemImage: "lock.iphone")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(Color.accentDMZ)
+                        .foregroundStyle(Color.accentDMZText)
                     VStack(alignment: .leading, spacing: 10) {
                         Text("mw4.ui.hajin.grid_tips_title".localized().uppercased())
                             .scaledFont(11, weight: .bold).tracking(0.8)
@@ -200,7 +200,7 @@ struct HajinStashScanIntro: View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {
             Image(systemName: symbol)
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .frame(width: 22)
             VStack(alignment: .leading, spacing: 3) {
                 if best {
@@ -295,10 +295,14 @@ struct HajinStashScanDemo: View {
     ]
     private static let cycle = 6.0
     private static let sweep = 3.0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        TimelineView(.animation) { context in
-            let t = context.date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: Self.cycle)
+        // With Reduce Motion the demo holds still on its finished frame:
+        // the stash read and the totals filled in
+        TimelineView(.animation(paused: reduceMotion)) { context in
+            let t = reduceMotion ? Self.sweep + 0.4
+                : context.date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: Self.cycle)
             // 0...1 while sweeping, then held at 1 while the totals rest
             let progress = min(1, max(0, (t - 0.4) / Self.sweep))
             let fade = t > Self.cycle - 0.5 ? (Self.cycle - t) / 0.5 : 1
@@ -370,7 +374,7 @@ struct HajinStashScanDemo: View {
                     Spacer(minLength: 2)
                     Text("\(soFar)")
                         .scaledFont(12, weight: .bold, design: .monospaced)
-                        .foregroundStyle(soFar > 0 ? Color.accentDMZ : Color.appInkMuted)
+                        .foregroundStyle(soFar > 0 ? Color.accentDMZText : Color.appInkMuted)
                         .contentTransition(.numericText())
                 }
                 .opacity(soFar > 0 ? 1 : 0.35)

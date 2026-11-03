@@ -815,7 +815,7 @@ struct HajinStashGridButton: View {
                 } else {
                     Image(systemName: "square.grid.3x3.fill")
                         .font(.body.weight(.semibold))
-                        .foregroundStyle(Color.accentDMZ)
+                        .foregroundStyle(Color.accentDMZText)
                 }
                 VStack(alignment: .leading, spacing: 2) {
                     Text("mw4.ui.hajin.grid_scan".localized())
@@ -1283,7 +1283,7 @@ struct HajinStashGridFrameView: View {
                                     anotherPhoto("mw4.ui.hajin.quality_retake".localized())
                                 }
                                 .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(Color.accentDMZ)
+                                .foregroundStyle(Color.accentDMZText)
                             }
                         }
                         Spacer(minLength: 0)
@@ -1362,7 +1362,7 @@ struct HajinStashGridFrameView: View {
                     HStack(spacing: 12) {
                         Image(systemName: "square.grid.3x3")
                             .font(.system(size: 15, weight: .bold))
-                            .foregroundStyle(Color.accentDMZ)
+                            .foregroundStyle(Color.accentDMZText)
                             .frame(width: 34, height: 34)
                             .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
                         VStack(alignment: .leading, spacing: 2) {

@@ -200,7 +200,7 @@ struct HajinShoppingRow: View {
                             Text(done ? String(format: "mw4.ui.hajin.shop_have".localized(), line.have, line.need)
                                       : String(format: "mw4.ui.hajin.shop_missing".localized(), line.missing, line.need))
                                 .font(.caption.weight(.semibold))
-                                .foregroundStyle(done ? HajinStore.printableGreen : Color.accentDMZ)
+                                .foregroundStyle(done ? HajinStore.printableGreen : Color.accentDMZText)
                         }
                         Spacer(minLength: 0)
                     }

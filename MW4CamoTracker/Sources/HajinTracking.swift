@@ -20,7 +20,7 @@ struct HajinStashStepper: View {
             } label: {
                 Text("\(count)")
                     .font(big ? .hitmarker(30, scaledFor: dynamicTypeSize) : .scaledSystem(14, weight: .bold, design: .monospaced, for: dynamicTypeSize))
-                    .foregroundStyle(big ? (count > 0 ? Color.appInk : Color.appInkMuted) : count > 0 ? Color.accentDMZ : Color.appInkMuted)
+                    .foregroundStyle(big ? (count > 0 ? Color.appInk : Color.appInkMuted) : count > 0 ? Color.accentDMZText : Color.appInkMuted)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .contentTransition(.numericText())
@@ -57,7 +57,7 @@ struct HajinTrackButton: View {
                          : "mw4.ui.hajin.track".localized(),
                       systemImage: on ? "checkmark" : "plus")
                     .font(.footnote.weight(.semibold))
-                    .foregroundStyle(on ? Color.black.opacity(0.85) : full ? Color.appInkMuted : Color.accentDMZ)
+                    .foregroundStyle(on ? Color.black.opacity(0.85) : full ? Color.appInkMuted : Color.accentDMZText)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 6)
                     .background(Capsule().fill(on ? Color.accentDMZ : Color.clear))
@@ -358,7 +358,7 @@ struct HajinStashUndoToast: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top, spacing: 10) {
-                Image(systemName: "shippingbox.fill").foregroundStyle(Color.accentDMZ)
+                Image(systemName: "shippingbox.fill").foregroundStyle(Color.accentDMZText)
                 Text(undo.message)
                     .font(.subheadline)
                     .foregroundStyle(Color.appInk)
@@ -369,7 +369,7 @@ struct HajinStashUndoToast: View {
                     withAnimation(.snappy) { store.undoStash() }
                 }
                 .font(.subheadline.weight(.bold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .buttonStyle(.borderless)
             }
             GeometryReader { geo in
@@ -458,12 +458,12 @@ struct HajinBuildNextCard: View {
                                 Haptics.step()
                                 store.toggleTracked(pick.item.id)
                             } label: {
-                                Image(systemName: "plus.viewfinder").font(.body.weight(.semibold)).foregroundStyle(Color.accentDMZ)
+                                Image(systemName: "plus.viewfinder").font(.body.weight(.semibold)).foregroundStyle(Color.accentDMZText)
                             }
                             .buttonStyle(.borderless)
                             .accessibilityLabel("mw4.ui.hajin.track".localized())
                         } else if store.isTracked(pick.item.id) {
-                            Image(systemName: "scope").foregroundStyle(Color.accentDMZ)
+                            Image(systemName: "scope").foregroundStyle(Color.accentDMZText)
                         }
                     }
                     if (pick.item.cost ?? []).isEmpty {

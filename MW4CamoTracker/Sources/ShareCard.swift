@@ -260,7 +260,7 @@ struct ProgressCardView: View {
                 HStack(spacing: 12) {
                     ZStack {
                         StillRing(fraction: data.overall, accent: .camoGold, lineWidth: 6)
-                        Text("\(min(Int(data.overall * 100), 100))%")
+                        Text(data.overall.percentText)
                             .font(.system(size: 14, weight: .bold, design: .monospaced))
                             .foregroundStyle(Color.appInk)
                     }
@@ -275,7 +275,7 @@ struct ProgressCardView: View {
             HStack(spacing: 16) {
                 ZStack {
                     StillRing(fraction: data.overall, accent: .camoGold, lineWidth: 9)
-                    Text("\(min(Int(data.overall * 100), 100))%")
+                    Text(data.overall.percentText)
                         .font(.system(size: 22, weight: .bold, design: .monospaced))
                         .foregroundStyle(Color.appInk)
                 }
@@ -301,7 +301,7 @@ struct ProgressCardView: View {
                                 }
                             }
                             }
-                            Text("\(Int(mode.fraction * 100))%")
+                            Text(mode.fraction.percentText)
                                 .font(.system(size: 12, weight: .bold, design: .monospaced))
                                 .foregroundStyle(mode.accent)
                                 .frame(width: 38, alignment: .trailing)
@@ -322,7 +322,7 @@ struct ProgressCardView: View {
                                 .font(.system(size: 11, weight: .bold))
                                 .foregroundStyle(track.accent)
                             Spacer()
-                            Text("\(Int(track.fraction * 100))%")
+                            Text(track.fraction.percentText)
                                 .font(.system(size: 11, weight: .bold, design: .monospaced))
                                 .foregroundStyle(track.accent)
                         }

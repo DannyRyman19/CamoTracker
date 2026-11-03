@@ -273,7 +273,7 @@ private struct SectionRow: View {
             let total = total ?? section.rows.count
             Text(done.map { "\($0)/\(total)" } ?? "\(total)")
                 .scaledFont(12, weight: .semibold, design: .monospaced)
-                .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
+                .foregroundStyle(done == total ? Color.accentDMZText : Color.appInkMuted)
         }
     }
 }
@@ -545,7 +545,7 @@ struct HajinMinePage: View {
         Button { if premium.isPremium { customising = true } else { showsPremium = true } } label: {
             Label("mw4.ui.hajin.mine_customise".localized(), systemImage: premium.isPremium ? "slider.horizontal.3" : "lock.fill")
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderless)
@@ -669,7 +669,7 @@ struct HajinMineCustomise: View {
                 }
                 Section {
                     Button("mw4.ui.hajin.mine_reset".localized()) { orderRaw = ""; hiddenRaw = "" }
-                        .foregroundStyle(Color.accentDMZ)
+                        .foregroundStyle(Color.accentDMZText)
                 }
             }
             .environment(\.editMode, .constant(.active))
@@ -811,7 +811,7 @@ struct GuideRowView: View {
                 // Level unlocks tick themselves up to the player's level
                 Image(systemName: level <= store.dmzLevel ? "checkmark.circle.fill" : "lock.fill")
                     .font(.system(size: level <= store.dmzLevel ? 21 : 16))
-                    .foregroundStyle(level <= store.dmzLevel ? Color.accentDMZ : Color.appInkMuted.opacity(0.6))
+                    .foregroundStyle(level <= store.dmzLevel ? Color.accentDMZText : Color.appInkMuted.opacity(0.6))
                     .frame(width: 24, height: 24)
             }
             if let image = row.image, let url = URL(string: image) {
@@ -1198,7 +1198,7 @@ struct HajinGuidePanel: View {
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .foregroundStyle(Color.accentDMZ)
+                    .foregroundStyle(Color.accentDMZText)
                     .accessibilityLabel("mw4.ui.hajin.guide".localized())
                 }
                 Spacer()
@@ -1680,7 +1680,7 @@ struct HajinOrdersList: View {
                     Spacer(minLength: 8)
                     Text("\(done)/\(total)")
                         .scaledFont(13, weight: .semibold, design: .monospaced)
-                        .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
+                        .foregroundStyle(done == total ? Color.accentDMZText : Color.appInkMuted)
                 }
                 if let reward {
                     Label(reward, systemImage: "gift.fill")
@@ -1749,15 +1749,15 @@ struct HajinPrestigeTracker: View {
                 Text(name).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer(minLength: 8)
                 Button { Haptics.step(); store.setPrestige(level - 1, of: name) } label: {
-                    Image(systemName: "minus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
+                    Image(systemName: "minus.circle").font(.title3).foregroundStyle(Color.accentDMZText)
                 }
                 .buttonStyle(.borderless)
                 .disabled(level == 0)
                 Text(String(format: "mw4.ui.opprestige.level".localized(), level))
                     .scaledFont(13, weight: .semibold, design: .monospaced)
-                    .foregroundStyle(level > 0 ? Color.accentDMZ : Color.appInkMuted)
+                    .foregroundStyle(level > 0 ? Color.accentDMZText : Color.appInkMuted)
                 Button { Haptics.step(); store.setPrestige(level + 1, of: name) } label: {
-                    Image(systemName: "plus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
+                    Image(systemName: "plus.circle").font(.title3).foregroundStyle(Color.accentDMZText)
                 }
                 .buttonStyle(.borderless)
             }
@@ -1799,7 +1799,7 @@ struct HajinPrestigeTracker: View {
                         } label: {
                             Label("mw4.ui.opprestige.add_trait".localized(), systemImage: "plus")
                                 .font(.caption.weight(.semibold))
-                                .foregroundStyle(Color.accentDMZ)
+                                .foregroundStyle(Color.accentDMZText)
                                 .padding(.horizontal, 8).padding(.vertical, 5)
                                 .background(RoundedRectangle(cornerRadius: 6).strokeBorder(Color.accentDMZ.opacity(0.5), lineWidth: 1))
                         }
@@ -1859,7 +1859,7 @@ struct HajinReaderTile: View {
                 HStack(alignment: .top, spacing: 12) {
                     Image(systemName: "camera.viewfinder")
                         .font(.system(size: 17, weight: .bold))
-                        .foregroundStyle(Color.accentDMZ)
+                        .foregroundStyle(Color.accentDMZText)
                         .frame(width: 38, height: 38)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
                     VStack(alignment: .leading, spacing: 2) {
@@ -1870,7 +1870,7 @@ struct HajinReaderTile: View {
                             // Still learning the game's screens
                             Text("mw4.ui.hajin.beta".localized())
                                 .font(.caption2.weight(.bold))
-                                .foregroundStyle(Color.accentDMZ)
+                                .foregroundStyle(Color.accentDMZText)
                                 .padding(.horizontal, 7).padding(.vertical, 3)
                                 .overlay(Capsule().strokeBorder(Color.accentDMZ.opacity(0.6), lineWidth: 1))
                         }
@@ -1953,7 +1953,7 @@ struct HajinNumbersCard: View {
                          + Text(" /\(HajinStore.maxLevel)").font(.hitmarker(15, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted))
                             .contentTransition(.numericText())
                     } else {
-                        Text("mw4.ui.hajin.dmz_level_button".localized()).hitmarkerFont(18).foregroundStyle(Color.accentDMZ)
+                        Text("mw4.ui.hajin.dmz_level_button".localized()).hitmarkerFont(18).foregroundStyle(Color.accentDMZText)
                     }
                 }
                 .buttonStyle(.borderless)
@@ -1976,7 +1976,7 @@ struct HajinNumbersCard: View {
             Button { text = store.cash > 0 ? "\(store.cash)" : ""; editing = .cash } label: {
                 Text(store.cash > 0 ? "$\(store.cash.formatted())" : "mw4.ui.hajin.cash_add".localized())
                     .hitmarkerFont(store.cash > 0 ? 30 : 18)
-                    .foregroundStyle(store.cash > 0 ? Color.appInk : Color.accentDMZ)
+                    .foregroundStyle(store.cash > 0 ? Color.appInk : Color.accentDMZText)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .contentTransition(.numericText())
@@ -2014,11 +2014,11 @@ struct HajinNumbersChip: View {
     var body: some View {
         Button { open = true } label: {
             HStack(spacing: 8) {
-                Text("Lv ").font(.hitmarker(11, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted)
+                Text("ct.ui.level_abbrev".localized() + " ").font(.hitmarker(11, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted)
                     + Text(store.dmzLevel > 0 ? "\(store.dmzLevel)" : "–").foregroundColor(Color.appInk)
                 Rectangle().fill(Color.appInkMuted.opacity(0.4)).frame(width: 1, height: 14)
                 Text(store.cash > 0 ? "$" + Self.short(store.cash) : "$–")
-                    .foregroundStyle(Color.accentDMZ)
+                    .foregroundStyle(Color.accentDMZText)
             }
             .hitmarkerFont(15)
             .padding(.horizontal, 6)
@@ -2103,7 +2103,7 @@ struct HajinGuideTile: View {
     private var icon: some View {
         Image(systemName: section.symbol)
             .font(.system(size: 16, weight: .bold))
-            .foregroundStyle(Color.accentDMZ)
+            .foregroundStyle(Color.accentDMZText)
             .frame(width: 36, height: 36)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
     }
@@ -2169,7 +2169,7 @@ struct HajinProgressTile: View {
             }
             Image(systemName: symbol)
                 .font(.system(size: 14, weight: .bold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
         }
     }
 
@@ -2184,7 +2184,7 @@ struct HajinProgressTile: View {
     private var countText: some View {
         Text(count)
             .scaledFont(12, weight: .semibold, design: .monospaced)
-            .foregroundStyle(fraction == 1 ? Color.accentDMZ : Color.appInkMuted)
+            .foregroundStyle(fraction == 1 ? Color.accentDMZText : Color.appInkMuted)
     }
 }
 
@@ -2221,7 +2221,7 @@ struct HajinMissionRow: View {
                     let stepsDone = objectives.indices.filter { done || store.checked.contains("\(key)#\($0)") }.count
                     Text("\(stepsDone)/\(objectives.count)")
                         .scaledFont(12, weight: .semibold, design: .monospaced)
-                        .foregroundStyle(stepsDone == objectives.count ? Color.accentDMZ : Color.appInkMuted)
+                        .foregroundStyle(stepsDone == objectives.count ? Color.accentDMZText : Color.appInkMuted)
                 }
             }
             if !objectives.isEmpty {
@@ -2236,7 +2236,7 @@ struct HajinMissionRow: View {
                             HStack(alignment: .firstTextBaseline, spacing: 8) {
                                 Image(systemName: stepDone ? "checkmark.circle.fill" : "circle")
                                     .font(.system(size: 14))
-                                    .foregroundStyle(stepDone ? Color.accentDMZ : Color.appInkMuted)
+                                    .foregroundStyle(stepDone ? Color.accentDMZText : Color.appInkMuted)
                                 Text(objective.resolved)
                                     .font(.subheadline)
                                     .foregroundStyle(stepDone ? Color.appInkMuted : Color.appInk)

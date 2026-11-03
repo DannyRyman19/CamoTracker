@@ -161,7 +161,7 @@ struct HajinStashScanButton: View {
             HStack(spacing: 10) {
                 Image(systemName: reading ? "hourglass" : "text.viewfinder")
                     .font(.body.weight(.semibold))
-                    .foregroundStyle(Color.accentDMZ)
+                    .foregroundStyle(Color.accentDMZText)
                 VStack(alignment: .leading, spacing: 2) {
                     Text((reading ? "mw4.ui.hajin.scan_reading" : "mw4.ui.hajin.scan").localized())
                         .font(.subheadline.weight(.semibold))
@@ -578,7 +578,7 @@ struct HajinStashScanReview: View {
     private func valueRow(symbol: String, title: String, now: String, read: String, same: Bool, skipped: Binding<Bool>) -> some View {
         Button { if !same { skipped.wrappedValue.toggle() } } label: {
             HStack(spacing: 12) {
-                Image(systemName: symbol).font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
+                Image(systemName: symbol).font(.title3).foregroundStyle(Color.accentDMZText).frame(width: 32)
                 Text(title).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                 Spacer(minLength: 8)
                 if same {
@@ -589,7 +589,7 @@ struct HajinStashScanReview: View {
                         .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.appInk)
                         .strikethrough(skipped.wrappedValue)
                     Image(systemName: skipped.wrappedValue ? "circle" : "checkmark.circle.fill")
-                        .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.accentDMZ)
+                        .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.accentDMZText)
                 }
             }
         }
@@ -620,7 +620,7 @@ struct HajinStashScanReview: View {
                     .lineLimit(2)
                 HStack(spacing: 6) {
                     if swapped {
-                        Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZ)
+                        Image(systemName: "arrow.left.arrow.right").font(.caption2.weight(.bold)).foregroundStyle(Color.accentDMZText)
                             .accessibilityLabel("mw4.ui.hajin.scan_swapped".localized())
                     } else if unsure.contains(row.item.id) && edited[row.item.id] == nil {
                         Text("mw4.ui.hajin.scan_check".localized())
@@ -672,7 +672,7 @@ struct HajinStashScanReview: View {
                 } label: {
                     Image(systemName: on ? "checkmark.circle.fill" : "circle")
                         .font(.title3)
-                        .foregroundStyle(on ? Color.accentDMZ : Color.appInkMuted)
+                        .foregroundStyle(on ? Color.accentDMZText : Color.appInkMuted)
                         .frame(width: 24, height: 32)
                 }
                 .buttonStyle(.borderless)
@@ -705,7 +705,7 @@ struct HajinStashScanReview: View {
         Button(action: action) {
             Label(key.localized(), systemImage: symbol)
                 .font(.caption.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
                 .frame(maxWidth: .infinity)
@@ -759,7 +759,7 @@ struct HajinStashScanReview: View {
             }
             .buttonStyle(.borderless)
         }
-        .foregroundStyle(Color.accentDMZ)
+        .foregroundStyle(Color.accentDMZText)
         .background(Capsule().fill(Color.appSurface2))
         .fixedSize()
     }
@@ -803,7 +803,7 @@ struct HajinStashScanReview: View {
                         let same = cash == store.cash
                         Button { if !same { skipCash.toggle() } } label: {
                             HStack(spacing: 12) {
-                                Image(systemName: "banknote.fill").font(.title3).foregroundStyle(Color.accentDMZ).frame(width: 32)
+                                Image(systemName: "banknote.fill").font(.title3).foregroundStyle(Color.accentDMZText).frame(width: 32)
                                 Text("mw4.ui.hajin.cash_title".localized()).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
                                 Spacer(minLength: 8)
                                 if same {
@@ -814,7 +814,7 @@ struct HajinStashScanReview: View {
                                         .foregroundStyle(skipCash ? Color.appInkMuted : Color.appInk)
                                         .strikethrough(skipCash)
                                     Image(systemName: skipCash ? "circle" : "checkmark.circle.fill")
-                                        .foregroundStyle(skipCash ? Color.appInkMuted : Color.accentDMZ)
+                                        .foregroundStyle(skipCash ? Color.appInkMuted : Color.accentDMZText)
                                 }
                             }
                         }

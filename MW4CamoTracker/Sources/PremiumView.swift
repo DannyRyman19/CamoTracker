@@ -73,7 +73,7 @@ struct PremiumView: View {
         if premium.isPremium {
             Label("mw4.ui.premium.active".localized(), systemImage: "checkmark.seal.fill")
                 .font(.headline)
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
                 .borderedCard()
@@ -81,7 +81,7 @@ struct PremiumView: View {
             if premium.hasFakePurchase {
                 Button("Reset test purchase (debug)") { Task { await premium.resetFakePurchase() } }
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Color.accentDMZ)
+                    .foregroundStyle(Color.accentDMZText)
                     .frame(maxWidth: .infinity)
             }
             #endif
@@ -106,7 +106,7 @@ struct PremiumView: View {
                     Task { await premium.loadProducts() }
                 }
                 .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
@@ -130,7 +130,7 @@ struct PremiumView: View {
             .font(.subheadline.weight(.semibold))
             .frame(maxWidth: .infinity)
         }
-        .foregroundStyle(Color.accentDMZ)
+        .foregroundStyle(Color.accentDMZText)
         .disabled(restoring)
 
         VStack(spacing: 6) {

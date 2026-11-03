@@ -355,7 +355,7 @@ private struct MarkProgressPage: View {
             demoRow(index: index)
             Label(hint, systemImage: "hand.tap.fill")
                 .scaledFont(12.5)
-                .foregroundStyle(Color.accentMultiplayer)
+                .foregroundStyle(Color.accentMultiplayerText)
         }
         .padding(12)
         .borderedCard()

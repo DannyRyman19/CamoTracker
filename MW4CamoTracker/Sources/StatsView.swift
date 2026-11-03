@@ -138,7 +138,7 @@ private struct OverallStatsHero: View {
                         Image(systemName: entry.mode.symbol)
                             .font(.system(size: 13, weight: .bold))
                             .foregroundStyle(entry.mode.accent)
-                        Text("\(Int(entry.fraction * 100))%")
+                        Text(entry.fraction.percentText)
                             .scaledFont(14, weight: .bold, design: .monospaced)
                             .foregroundStyle(Color.appInk)
                         Text(entry.mode.displayName)
@@ -149,7 +149,7 @@ private struct OverallStatsHero: View {
                     // "Multiplayer, 45%", not the three percentages then the names
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text(entry.mode.displayName))
-                    .accessibilityValue(Text("\(Int(entry.fraction * 100))%"))
+                    .accessibilityValue(Text(entry.fraction.percentText))
                 }
             }
         }
@@ -178,7 +178,7 @@ private struct DMZStatsCard: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Label("mw4.ui.stats.dmz".localized(), systemImage: AppMode.dmz.symbol)
                         .font(.headline)
-                        .foregroundStyle(Color.accentDMZ)
+                        .foregroundStyle(Color.accentDMZText)
                     if store.cash > 0 {
                         Text("mw4.ui.hajin.cash_title".localized() + " $\(store.cash.formatted())")
                             .scaledFont(12, weight: .semibold, design: .monospaced)
@@ -192,7 +192,7 @@ private struct DMZStatsCard: View {
                     HStack(spacing: 8) {
                         Image(systemName: line.symbol)
                             .font(.system(size: 12, weight: .bold))
-                            .foregroundStyle(Color.accentDMZ)
+                            .foregroundStyle(Color.accentDMZText)
                             .frame(width: 18)
                         Text(line.title)
                             .font(.subheadline)
@@ -200,7 +200,7 @@ private struct DMZStatsCard: View {
                         Spacer(minLength: 6)
                         Text("\(line.done)/\(line.total)")
                             .scaledFont(13, weight: .bold, design: .monospaced)
-                            .foregroundStyle(line.done >= line.total ? Color.accentDMZ : Color.appInkMuted)
+                            .foregroundStyle(line.done >= line.total ? Color.accentDMZText : Color.appInkMuted)
                     }
                     ProgressBar(fraction: line.fraction, accent: .accentDMZ)
                 }
@@ -310,9 +310,9 @@ private struct ModeStatsCard: View {
                 // of `ProgressRing`'s generic Gold default.
                 ProgressRing(fraction: completion, accent: mode.accent, lineWidth: 5, size: 42, showsPercentage: false, shimmerColors: mode.masteryCamos.tier3.gradient)
                     .overlay(
-                        Text("\(Int(completion * 100))%")
+                        Text(completion.percentText)
                             .scaledFont(11, weight: .bold, design: .monospaced)
-                            .foregroundStyle(mode.accent)
+                            .foregroundStyle(mode.textAccent)
                             .accessibilityHidden(true)
                     )
             }
@@ -414,13 +414,13 @@ private struct ModeStatsCard: View {
                 }
                 ProgressBar(fraction: fraction, accent: mode.accent)
             }
-            Text("\(Int(fraction * 100))%")
+            Text(fraction.percentText)
                 .scaledFont(12, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(name))
-        .accessibilityValue(Text(["\(Int(fraction * 100))%", count.map(Spoken.counts)].compactMap { $0 }.joined(separator: ", ")))
+        .accessibilityValue(Text([fraction.percentText, count.map(Spoken.counts)].compactMap { $0 }.joined(separator: ", ")))
     }
 }
 

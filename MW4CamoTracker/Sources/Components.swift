@@ -58,6 +58,15 @@ enum AppLanguage {
     }
 }
 
+extension Double {
+    /// A 0...1 fraction as a whole percentage in the app's language ("45%",
+    /// "45 %" in French), rounded down so 99.6% never reads as done.
+    var percentText: String {
+        let whole = Swift.min(Swift.max((self * 100).rounded(.down), 0), 100) / 100
+        return whole.formatted(.percent.precision(.fractionLength(0)).locale(AppLanguage.locale))
+    }
+}
+
 /// What VoiceOver says for the app's shorthand.
 enum Spoken {
     /// "12/33" as "12 of 33", in every count inside `text`.
@@ -536,7 +545,7 @@ struct ProgressRing: View {
             }
 
             if showsPercentage {
-                Text("\(min(Int(fraction * 100), 100))%")
+                Text(fraction.percentText)
                     .font(.system(size: size * 0.22, weight: .bold, design: .monospaced))
                     .foregroundStyle(Color.appInk)
                     .minimumScaleFactor(0.7)
@@ -545,7 +554,7 @@ struct ProgressRing: View {
         .frame(width: size, height: size)
         // A ring is its percentage to VoiceOver; where it sits says what of
         .accessibilityElement(children: .ignore)
-        .accessibilityValue(Text("\(min(Int(fraction * 100), 100))%"))
+        .accessibilityValue(Text(fraction.percentText))
     }
 }
 
@@ -597,7 +606,7 @@ struct StatSummaryCard: View {
         }
         let count = Spoken.counts(stat.value)
         guard let ring = stat.ringFraction else { return count }
-        return "\(min(Int(ring * 100), 100))%, \(count)"
+        return "\(ring.percentText), \(count)"
     }
 
     /// Two lines of a lock hint ("13/33" over "Platinum").

@@ -203,7 +203,7 @@ struct HajinTick: View {
         } label: {
             Image(systemName: done ? "checkmark.circle.fill" : "circle")
                 .font(.system(size: 21))
-                .foregroundStyle(done ? Color.accentDMZ : Color.appInkMuted)
+                .foregroundStyle(done ? Color.accentDMZText : Color.appInkMuted)
                 .frame(width: 24, height: 24)
                 .contentShape(Rectangle())
         }
@@ -616,9 +616,9 @@ struct HajinItemView: View {
                 HajinTick(done: found, label: item.name.resolved) { store.toggle(HajinStore.blueprintKey(item.id)) }
                 Text((found ? "mw4.ui.hajin.blueprint_found" : "mw4.ui.hajin.blueprint_missing").localized())
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(found ? Color.accentDMZ : Color.appInk)
+                    .foregroundStyle(found ? Color.accentDMZText : Color.appInk)
                 Spacer()
-                Image(systemName: "doc.text.magnifyingglass").foregroundStyle(found ? Color.accentDMZ : Color.appInkMuted)
+                Image(systemName: "doc.text.magnifyingglass").foregroundStyle(found ? Color.accentDMZText : Color.appInkMuted)
             }
             .padding(12)
             .background(statusPanel(nil))
@@ -634,7 +634,7 @@ struct HajinItemView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(done ? "mw4.ui.hajin.printed".localized() : ready ? "mw4.ui.hajin.can_print_title".localized() : "mw4.ui.hajin.not_printed".localized())
                         .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(done ? Color.accentDMZ : ready ? HajinStore.printableGreen : Color.appInk)
+                        .foregroundStyle(done ? Color.accentDMZText : ready ? HajinStore.printableGreen : Color.appInk)
                     if ready {
                         Text("mw4.ui.hajin.ready_tick".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
                     }
@@ -729,7 +729,7 @@ struct HajinItemView: View {
                     HStack(spacing: 12) {
                         Image(systemName: store.dmzLevel == 0 ? "chart.bar.fill" : locked ? "lock.fill" : "checkmark.circle.fill")
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(store.dmzLevel > 0 && !locked ? Color.accentDMZ : Color.appInkMuted)
+                            .foregroundStyle(store.dmzLevel > 0 && !locked ? Color.accentDMZText : Color.appInkMuted)
                             .frame(width: 28)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(String(format: "mw4.ui.hajin.dmz_level_n".localized(), row.level))
@@ -853,7 +853,7 @@ struct HajinItemView: View {
             Image(systemName: "map.fill").font(.caption2.weight(.semibold))
             Text(marker.name.resolved).font(.caption.weight(.semibold)).lineLimit(1)
         }
-        .foregroundStyle(Color.accentDMZ)
+        .foregroundStyle(Color.accentDMZText)
         .padding(.horizontal, 8)
         .padding(.vertical, 5)
         .background(RoundedRectangle(cornerRadius: 6).fill(Color.accentDMZ.opacity(0.15)))
@@ -870,7 +870,7 @@ struct HajinItemView: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.18)))
-            .foregroundStyle(Color.accentDMZ)
+            .foregroundStyle(Color.accentDMZText)
         if let showMarker {
             Button { showMarker(marker) } label: { label }.buttonStyle(.plain)
         } else {
@@ -925,7 +925,7 @@ struct HajinItemView: View {
                     HStack(alignment: .top, spacing: 12) {
                         Image(systemName: "mappin.and.ellipse")
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
+                            .foregroundStyle(Color.accentDMZText)
                             .frame(width: 28)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(inGame).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk)
@@ -947,7 +947,7 @@ struct HajinItemView: View {
                     HStack(alignment: .top, spacing: 12) {
                         Image(systemName: mention.section.symbol)
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.accentDMZ)
+                            .foregroundStyle(Color.accentDMZText)
                             .frame(width: 28)
                         VStack(alignment: .leading, spacing: 2) {
                             HStack {
@@ -1128,7 +1128,7 @@ struct HajinOrderChips: View {
         HStack(spacing: 6) {
             Image(systemName: "checklist")
                 .font(.system(size: 11, weight: .bold))
-                .foregroundStyle(Color.accentDMZ)
+                .foregroundStyle(Color.accentDMZText)
                 .frame(width: 22, height: 22)
                 .background(RoundedRectangle(cornerRadius: 4).fill(Color.accentDMZ.opacity(0.15)))
             Text(order.title.resolved)
@@ -1218,7 +1218,7 @@ struct HajinWeaponRow: View {
                     Text(manualDone ? "mw4.ui.hajin.manual_done".localized() : "mw4.ui.hajin.manual_needed".localized())
                         .scaledFont(11, weight: .bold)
                         .textCase(.uppercase)
-                        .foregroundStyle(manualDone ? Color.accentDMZ : Color.appInkMuted)
+                        .foregroundStyle(manualDone ? Color.accentDMZText : Color.appInkMuted)
                 } else if let subtitle = row.subtitle {
                     Text(subtitle.resolved)
                         .scaledFont(11, weight: .bold)
