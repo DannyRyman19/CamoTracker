@@ -344,7 +344,7 @@ final class HajinStore: ObservableObject {
            let saved = try? JSONDecoder().decode([HajinPin].self, from: data) {
             pins = saved
         }
-        checked = Set(defaults.stringArray(forKey: Self.checkedKey) ?? [])
+        checked = Self.withoutDuplicateOperators(Set(defaults.stringArray(forKey: Self.checkedKey) ?? []))
         dmzLevel = defaults.integer(forKey: Self.levelKey)
         cash = defaults.integer(forKey: Self.cashKey)
         tracked = defaults.stringArray(forKey: Self.trackedKey) ?? []
@@ -353,12 +353,15 @@ final class HajinStore: ObservableObject {
             let cloud = CloudSync(cloudKey: "mw4_hajin_sync", defaults: defaults)
             cloud.onRemoteChange = { [weak self] values in
                 guard let self else { return }
-                self.checked = Set(values.keys.filter { $0 != Self.levelSyncKey && $0 != Self.cashSyncKey && !$0.hasPrefix("track:") && !$0.hasPrefix("stash:") })
+                let ticks = Set(values.keys.filter { $0 != Self.levelSyncKey && $0 != Self.cashSyncKey && !$0.hasPrefix("track:") && !$0.hasPrefix("stash:") })
+                self.checked = Self.withoutDuplicateOperators(ticks)
                 self.dmzLevel = values[Self.levelSyncKey] ?? 0
                 self.cash = values[Self.cashSyncKey] ?? 0
                 self.tracked = values.filter { $0.key.hasPrefix("track:") }.sorted { $0.value < $1.value }.map { String($0.key.dropFirst(6)) }
                 self.stash = Dictionary(uniqueKeysWithValues: values.filter { $0.key.hasPrefix("stash:") }.map { (String($0.key.dropFirst(6)), $0.value) })
-                self.persistLocal()
+                // An operator's Prestige set on two devices before they
+                // synced: the lower one goes, here and on the others
+                if self.checked != ticks { self.saveAndSync() } else { self.persistLocal() }
             }
             self.cloud = cloud
             cloud.start(current: syncValues())
@@ -659,12 +662,34 @@ extension HajinStore {
     static let maxPrestigeTraits = 3
 
     var operators: [(name: String, level: Int)] {
-        checked.compactMap { key -> (String, Int)? in
+        Self.operatorLevels(checked)
+            .map { (name: $0.key, level: $0.value) }
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+    }
+
+    /// Each operator's Prestige in `ticks`, the highest where there are two.
+    nonisolated static func operatorLevels(_ ticks: Set<String>) -> [String: Int] {
+        var levels: [String: Int] = [:]
+        for key in ticks {
             let parts = key.split(separator: "|", omittingEmptySubsequences: false)
-            guard parts.count == 3, parts[0] == "prestige", let level = Int(parts[2]) else { return nil }
-            return (String(parts[1]), level)
+            guard parts.count == 3, parts[0] == "prestige", let level = Int(parts[2]) else { continue }
+            let name = String(parts[1])
+            levels[name] = max(levels[name] ?? level, level)
         }
-        .sorted { $0.0.localizedCaseInsensitiveCompare($1.0) == .orderedAscending }
+        return levels
+    }
+
+    /// `ticks` with one Prestige per operator. Two devices that each set
+    /// it before syncing leave both keys ("prestige|Ghost|3" and
+    /// "prestige|Ghost|4"), which listed the operator twice; the highest
+    /// stays.
+    nonisolated static func withoutDuplicateOperators(_ ticks: Set<String>) -> Set<String> {
+        let levels = operatorLevels(ticks)
+        return ticks.filter { key in
+            let parts = key.split(separator: "|", omittingEmptySubsequences: false)
+            guard parts.count == 3, parts[0] == "prestige", let level = Int(parts[2]) else { return true }
+            return levels[String(parts[1])] == level
+        }
     }
 
     func prestigeTraits(of name: String) -> [String] {

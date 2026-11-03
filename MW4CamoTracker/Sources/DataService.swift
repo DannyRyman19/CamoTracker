@@ -112,6 +112,11 @@ final class DataService: Sendable {
     /// Fetches the manifest, and for the catalog plus each mode whose version
     /// is higher than the app's, downloads and writes it to disk. A file that
     /// isn't kept (a newer copy already is) isn't returned either.
+    ///
+    /// Every file is downloaded and decoded before any is kept, and one that
+    /// fails is skipped, not the rest: a bad mode file used to stop the whole
+    /// refresh after `weapons.json` had already been replaced on disk. Only
+    /// when nothing at all came down does the error reach the caller.
     func refreshIfNeeded(
         knownCatalogVersion: String?,
         knownModeVersions: [String: String]
@@ -122,24 +127,39 @@ final class DataService: Sendable {
         // Only ever forward: the CDN can serve an older manifest or file for
         // a while after a push, and an app update ships newer data than the
         // CDN may have yet, so an older copy never replaces a newer one.
-        var newCatalog: WeaponCatalog?
+        var failure: Error?
+        var catalogDownload: (catalog: WeaponCatalog, data: Data)?
         if Self.isNewer(manifest.catalog.version, than: knownCatalogVersion) {
-            let catalogData = try await fetch(manifest.catalog.path)
-            let catalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
-            if Self.isNewer(catalog.version, than: knownCatalogVersion),
-               try keep(catalogData, name: "weapons", version: catalog.version) {
-                newCatalog = catalog
+            do {
+                let catalogData = try await fetch(manifest.catalog.path)
+                let catalog = try JSONDecoder().decode(WeaponCatalog.self, from: catalogData)
+                if Self.isNewer(catalog.version, than: knownCatalogVersion) { catalogDownload = (catalog, catalogData) }
+            } catch {
+                failure = error
             }
         }
 
+        var modeDownloads: [String: (file: ModeFile, data: Data)] = [:]
+        for (mode, entry) in manifest.modes where Self.isNewer(entry.version, than: knownModeVersions[mode]) {
+            do {
+                let modeData = try await fetch(entry.path)
+                let modeFile = try JSONDecoder().decode(ModeFile.self, from: modeData)
+                if Self.isNewer(modeFile.version, than: knownModeVersions[mode]) { modeDownloads[mode] = (modeFile, modeData) }
+            } catch {
+                failure = failure ?? error
+            }
+        }
+        if let failure, catalogDownload == nil, modeDownloads.isEmpty { throw failure }
+        // A check stopped part-way (a game switch) keeps nothing
+        try Task.checkCancellation()
+
+        var newCatalog: WeaponCatalog?
+        if let catalogDownload, try keep(catalogDownload.data, name: "weapons", version: catalogDownload.catalog.version) {
+            newCatalog = catalogDownload.catalog
+        }
         var updatedModes: [String: ModeFile] = [:]
-        for (mode, entry) in manifest.modes {
-            guard Self.isNewer(entry.version, than: knownModeVersions[mode]) else { continue }
-            let modeData = try await fetch(entry.path)
-            let modeFile = try JSONDecoder().decode(ModeFile.self, from: modeData)
-            guard Self.isNewer(modeFile.version, than: knownModeVersions[mode]),
-                  try keep(modeData, name: mode, version: modeFile.version) else { continue }
-            updatedModes[mode] = modeFile
+        for (mode, download) in modeDownloads {
+            if try keep(download.data, name: mode, version: download.file.version) { updatedModes[mode] = download.file }
         }
         return (newCatalog, updatedModes, manifest.notification)
     }

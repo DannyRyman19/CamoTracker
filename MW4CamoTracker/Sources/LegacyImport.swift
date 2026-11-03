@@ -16,7 +16,17 @@ struct ProgressImport {
 /// weapon. Weapons are matched by name and camos by their place, which is
 /// how this app's BO6 and BO7 data was made from theirs.
 enum LegacyImport {
-    enum Failure: Error { case notAnExport }
+    enum Failure: Error {
+        case notAnExport
+        /// The other old app's export (BO6's file while BO7 is open): its
+        /// weapons share names (the Knife), so it would land on the wrong
+        /// game's progress, and an import can't be undone.
+        case otherGame(Game)
+    }
+
+    /// Which game's old app wrote this shape of file: BO6's keeps a list
+    /// of weapons per mode, BO7's one list with a block per mode.
+    private static let modeListsGame = "bo6", weaponListGame = "bo7"
 
     /// The old apps spelt a few weapons differently
     private static let aliases = ["gravemark": "gravemark .357", "nuncahku": "nunchaku", "ps-21": "pu-21"]
@@ -26,9 +36,25 @@ enum LegacyImport {
         return aliases[plain] ?? plain
     }
 
+    /// The game whose old app wrote `json`, by its shape; `nil` for neither.
+    static func exportGame(_ json: Any) -> String? {
+        if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
+            return modeListsGame
+        }
+        if (json as? [[String: Any]] ?? (json as? [String: Any])?["weapons"] as? [[String: Any]]) != nil { return weaponListGame }
+        return nil
+    }
+
+    /// Refuses the other game's export rather than merge it by name.
+    static func check(_ json: Any, isFor game: Game) throws {
+        guard let owner = exportGame(json), owner != game.id else { return }
+        throw Failure.otherGame(GameRegistry.game(owner) ?? game)
+    }
+
     @MainActor
     static func read(_ data: Data, into viewModel: TrackerViewModel) throws -> ProgressImport {
         let json = try JSONSerialization.jsonObject(with: data)
+        try check(json, isFor: viewModel.game)
         let byName = Dictionary(viewModel.allWeapons.map { (key($0.name.resolved()), $0.weaponId) }, uniquingKeysWith: { a, _ in a })
         var result = ProgressImport()
 

@@ -152,4 +152,56 @@ struct DataServiceTests {
         await vm.refresh()
         #expect(RecordingProtocol.requests.filter { $0.url?.lastPathComponent == "manifest.json" }.count == 2)
     }
+
+    /// One file that won't decode doesn't stop the others, and nothing is
+    /// kept before every file has been downloaded and decoded.
+    @Test func oneBadModeFileDoesntStopTheRest() async throws {
+        let cache = newCache()
+        RecordingProtocol.requests = []
+        RecordingProtocol.bodies = [
+            "manifest.json": #"""
+                {"catalog": {"version": "999.0.0", "path": "weapons.json"},
+                 "modes": {"multiplayer": {"version": "999.0.0", "path": "multiplayer.json"},
+                           "warzone": {"version": "999.0.0", "path": "warzone.json"}}}
+                """#,
+            "weapons.json": try bundled("weapons", version: "999.0.0"),
+            "multiplayer.json": try bundled("multiplayer", version: "999.0.0"),
+            "warzone.json": #"{"version": "999.0.0", "mode": "warzone"}"#,
+        ]
+        let service = service(cache: cache)
+        let result = try await service.refreshIfNeeded(knownCatalogVersion: "1", knownModeVersions: ["multiplayer": "1", "warzone": "1"])
+        #expect(result.catalog?.version == "999.0.0")
+        #expect(result.modes.keys.sorted() == ["multiplayer"])
+        #expect(service.loadCached(mode: "multiplayer")?.version == "999.0.0")
+        #expect(service.loadCached(mode: "warzone") == nil)
+
+        // Nothing came down at all: the error still reaches the app
+        RecordingProtocol.bodies["weapons.json"] = "{}"
+        RecordingProtocol.bodies["multiplayer.json"] = "{}"
+        await #expect(throws: (any Error).self) {
+            try await self.service(cache: self.newCache()).refreshIfNeeded(knownCatalogVersion: "1", knownModeVersions: [:])
+        }
+    }
+
+    /// A check the previous game started can finish after a switch: it
+    /// keeps its own data, but the global Mastery and Completionist rules
+    /// stay the shown game's.
+    @MainActor @Test func aSlowCheckAfterAGameSwitchLeavesTheShownGamesRules() async throws {
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        let defaults = try #require(UserDefaults(suiteName: "DataServiceTests-\(UUID().uuidString)"))
+        let url = try #require(Bundle.main.url(forResource: "multiplayer", withExtension: "json"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        json["version"] = "999.0.0"
+        json["mastery"] = ["tier1": ["weaponsNeeded": 777]]
+        RecordingProtocol.requests = []
+        RecordingProtocol.bodies = [
+            "manifest.json": #"{"catalog": {"version": "0", "path": "weapons.json"}, "modes": {"multiplayer": {"version": "999.0.0", "path": "multiplayer.json"}}}"#,
+            "multiplayer.json": String(decoding: try JSONSerialization.data(withJSONObject: json), as: UTF8.self),
+        ]
+        let vm = TrackerViewModel(game: mw4, dataService: service(cache: newCache()), defaults: defaults)
+        vm.isShown = false
+        await vm.refresh()
+        #expect(vm.modes["multiplayer"]?.version == "999.0.0")
+        #expect(MasteryOverrides.byMode["multiplayer"]?.tier1?.weaponsNeeded != 777)
+    }
 }

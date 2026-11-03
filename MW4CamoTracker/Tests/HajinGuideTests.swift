@@ -151,6 +151,18 @@ struct HajinGuideTests {
         #expect(store.prestigeTraits(of: "Ghost").isEmpty)
     }
 
+    /// Prestige set on two devices before they synced leaves two keys:
+    /// the operator shows once, at the higher level, and the other key goes.
+    @MainActor @Test func anOperatorSetOnTwoDevicesShowsOnce() throws {
+        let defaults = try #require(UserDefaults(suiteName: "hajin-prestige-merge-\(UUID().uuidString)"))
+        defaults.set(["prestige|Ghost|3", "prestige|Ghost|4", "prestige|Roze|1", "prestige-trait|Ghost|Possum Pro"], forKey: HajinStore.checkedKey)
+        let store = HajinStore(defaults: defaults)
+        #expect(store.operators.map(\.name) == ["Ghost", "Roze"])
+        #expect(store.operators.first?.level == 4)
+        #expect(!store.checked.contains("prestige|Ghost|3"))
+        #expect(store.prestigeTraits(of: "Ghost") == ["Possum Pro"])
+    }
+
     @MainActor @Test func canPrintNeedsTheCashToo() throws {
         let defaults = try #require(UserDefaults(suiteName: "hajin-cash-\(UUID().uuidString)"))
         let store = HajinStore(defaults: defaults)

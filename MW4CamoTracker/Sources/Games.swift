@@ -156,6 +156,8 @@ final class GameStore: ObservableObject {
         guard game != self.game else { return }
         UserDefaults.standard.set(game.id, forKey: GameRegistry.key)
         GameRegistry.current = game
+        // A check the old game started can still be running
+        viewModel.isShown = false
         let model = TrackerViewModel(game: game)
         viewModel = model
         self.game = game

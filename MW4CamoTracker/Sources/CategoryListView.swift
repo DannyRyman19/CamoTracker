@@ -666,6 +666,8 @@ struct CustomiseHomeSheet: View {
             viewModel.applyImport(progress)
             Haptics.milestone()
             importMessage = String(format: "ct.import.done".localized(), progress.weapons.count)
+        } catch LegacyImport.Failure.otherGame(let other) {
+            importMessage = String(format: "ct.import.other_game".localized(), other.legacyApp ?? other.shortName, other.shortName)
         } catch {
             importMessage = String(format: "ct.import.failed".localized(), legacy)
         }

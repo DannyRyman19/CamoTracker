@@ -130,6 +130,11 @@ final class TrackerViewModel: ObservableObject {
 
     private var runningRefresh: Task<Void, Never>?
 
+    /// False once the player has switched to another game (`GameStore`):
+    /// this tracker's screens are gone, and its rules are no longer the
+    /// ones shown.
+    var isShown = true
+
     private func performRefresh() async {
         isRefreshing = true
         defer { isRefreshing = false }
@@ -155,10 +160,15 @@ final class TrackerViewModel: ObservableObject {
             let fresh = result.modes.filter { DataService.canReplace(modes[$0.key]?.version, with: $0.value.version) }
             if !fresh.isEmpty {
                 let merged = modes.merging(fresh) { _, new in new }
-                MasteryOverrides.byMode = merged.compactMapValues(\.mastery)
-                CompletionistOverrides.byMode = merged.compactMapValues(\.completionist)
-                TrackSharing.update(from: merged)
-                SpecialRule.update(from: merged)
+                // The Mastery and Completionist rules are global, keyed by
+                // mode name alone: a slow check for the game switched away
+                // from keeps its own data, but leaves the shown game's rules.
+                if isShown {
+                    MasteryOverrides.byMode = merged.compactMapValues(\.mastery)
+                    CompletionistOverrides.byMode = merged.compactMapValues(\.completionist)
+                    TrackSharing.update(from: merged)
+                    SpecialRule.update(from: merged)
+                }
                 modes = merged
             }
             refreshError = nil

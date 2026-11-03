@@ -567,6 +567,7 @@
 "ct.import.footer" = "En la app %@, exporta tus datos y elige el archivo aquí. Los contadores solo suben, así que no pierdes nada de lo registrado aquí.";
 "ct.import.done" = "Progreso importado de %d armas.";
 "ct.import.failed" = "Ese archivo no es una exportación de %@.";
+"ct.import.other_game" = "Es una exportación de %@. Cambia a %@ para importarla.";
 "ct.mastery.gate_camos" = "Se abre en un arma al completar sus camuflajes (%d listas).";
 "ct.mastery.gate_weapons" = "Necesita %1$@ en %2$d armas (%3$d/%2$d).";
 "ct.mastery.weapons" = "%1$d/%2$d armas.";
