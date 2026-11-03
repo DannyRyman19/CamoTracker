@@ -43,7 +43,7 @@
 "mw4.ui.cancel" = "Abbrechen";
 "mw4.ui.save" = "Speichern";
 "mw4.onboarding.welcome.title" = "Camo Track";
-"mw4.onboarding.welcome.body" = "Verfolge deine Tarnungen in Mehrspieler, Warzone und DMZ. Jeder Modus hat einen eigenen Tab.";
+"mw4.onboarding.welcome.body" = "Verfolge deine Tarnungen in Mehrspieler, Warzone und DMZ. Den Modus wechselst du über den Titel im Waffen-Tab.";
 "mw4.onboarding.mark.title" = "Zwei Wege, Fortschritt festzuhalten";
 "mw4.onboarding.mark.tap_circle" = "Tippe auf den Kreis, um eine Tarnung als erledigt zu markieren.";
 "mw4.onboarding.mark.tap_pill" = "Tippe auf die Zahl, um eine genaue Menge einzugeben. Praktisch bei langen Herausforderungen wie 200 Abschüssen.";
@@ -57,11 +57,11 @@
 "mw4.onboarding.mark.demo_challenge" = "Erziele %d Abschüsse mit dieser Waffe.";
 "mw4.onboarding.suggested.demo" = "1 Tarnung bis Gold";
 "mw4.onboarding.yours.title" = "Mach sie zu deiner";
-"mw4.onboarding.yours.pin" = "Pinne die Waffe, an der du arbeitest, dann steht sie in jedem Tab ganz oben.";
+"mw4.onboarding.yours.pin" = "Pinne die Waffe, an der du arbeitest, dann steht sie in jedem Modus ganz oben im Waffen-Tab.";
 "mw4.onboarding.yours.customise" = "Unter Anpassen wählst du Modi, Sprache und Schnell-Abhaken. Premium bringt dein eigenes Layout, Kartenrahmen, Herausforderungen auf gesperrten Tarnungen und Tarnungs-App-Symbole.";
 "mw4.onboarding.yours.report" = "Eine Herausforderung, Stufe oder ein Name stimmt nicht? Melde es auf der Seite der Waffe, und die Korrektur erreicht alle ohne App-Update.";
 "mw4.onboarding.suggested.title" = "Wisse, was als Nächstes dran ist";
-"mw4.onboarding.suggested.body1" = "Jeder Tab zeigt dir die Waffe, die Gold am nächsten ist. Manchmal ist das die letzte, die eine ganze Kategorie aufhält.";
+"mw4.onboarding.suggested.body1" = "In jedem Modus zeigt dir der Waffen-Tab die Waffe, die Gold am nächsten ist. Manchmal ist das die letzte, die eine ganze Kategorie aufhält.";
 "mw4.onboarding.suggested.body2" = "Schließe sie ab und du siehst die Freischaltung sofort.";
 "mw4.onboarding.next" = "Weiter";
 "mw4.onboarding.get_started" = "Loslegen";
@@ -164,7 +164,6 @@
 "mw4.ui.quick_tick.title" = "Schnell abhaken";
 "mw4.ui.quick_tick.footer" = "Hake ab, was du geschafft hast, ohne Waffenstufen oder Abschüsse zu zählen. Jede Tarnung ist ein Tipp, nichts ist gesperrt, und eine abzuhaken hakt alle davor mit ab. Jederzeit zurückschaltbar, nichts geht verloren.";
 
-"mw4.ui.counts_for" = "Zähler für";
 "mw4.ui.mostly_play" = "Ich spiele meist";
 "mw4.ui.mastery.locked_previous_mode" = "Schließe zuerst %@ ab.";
 "mw4.ui.prestige_camo.enter" = "Bringe %@ ins Prestige.";
@@ -174,7 +173,7 @@
 "mw4.ui.language" = "Sprache";
 "mw4.ui.language.system" = "Wie iPhone";
 "mw4.ui.opens_to" = "Startet mit";
-"mw4.onboarding.modes.hint" = "Tippe die an, die du spielst. Jeder bekommt einen eigenen Tab und zählt in der Statistik, der Rest bleibt aus dem Weg. Jederzeit in Anpassen änderbar.";
+"mw4.onboarding.modes.hint" = "Tippe die an, die du spielst. Sie stehen im Menü des Waffen-Titels und zählen in der Statistik, der Rest bleibt aus dem Weg. Jederzeit in Anpassen änderbar.";
 "mw4.widget.pin_prompt" = "Pinne in der App eine Waffe an, um sie hier zu verfolgen.";
 "mw4.widget.all_done" = "Alle Tarnungen erledigt";
 "mw4.widget.tip.title" = "Widget hinzufügen";
@@ -202,7 +201,7 @@
 "mw4.ui.camo_unlocks_reach" = "Erhalte %d Waffen-Freischaltungen.";
 "mw4.ui.camo_unlocks_earned" = "Erhalten bei %d Waffen-Freischaltungen.";
 /* Hajin tab: DMZ Tac Map and guide */
-"mw4.ui.hajin.title" = "DMZ";
+"mw4.ui.hajin.title" = "Hajin";
 "mw4.ui.hajin.guide" = "Guide";
 "mw4.ui.hajin.resize" = "Größe von Karte und Guide ändern";
 "mw4.ui.hajin.search_guide" = "Suchen";
@@ -553,7 +552,7 @@
 /* Games */
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Spiel";
-"ct.onboarding.welcome.body" = "Verfolge deine %1$@-Tarnungen in %2$@. Jeder Modus hat seinen eigenen Tab.";
+"ct.onboarding.welcome.body" = "Verfolge deine %1$@-Tarnungen in %2$@. Den Modus wechselst du über den Titel im Waffen-Tab.";
 "ct.onboarding.tracking.full.body" = "Speichere Waffenstufen und zähle jeden Abschuss. Tarnungen, die mit einer Waffenstufe öffnen, schalten sich beim Aufleveln frei.";
 "ct.ui.mode" = "Modus";
 "mw4.mode.campaign" = "Kampagne";

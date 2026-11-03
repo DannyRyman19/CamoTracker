@@ -43,7 +43,7 @@
 "mw4.ui.cancel" = "Cancelar";
 "mw4.ui.save" = "Salvar";
 "mw4.onboarding.welcome.title" = "Camo Track";
-"mw4.onboarding.welcome.body" = "Acompanhe suas camuflagens no Multijogador, no Warzone e na DMZ. Cada modo tem sua própria aba.";
+"mw4.onboarding.welcome.body" = "Acompanhe suas camuflagens no Multijogador, no Warzone e na DMZ. Troque de modo pelo título na aba Armas.";
 "mw4.onboarding.mark.title" = "Duas formas de registrar o progresso";
 "mw4.onboarding.mark.tap_circle" = "Toque no círculo para marcar uma camuflagem como concluída.";
 "mw4.onboarding.mark.tap_pill" = "Toque no número para digitar a quantidade exata. Útil para as mais demoradas, como 200 baixas.";
@@ -57,11 +57,11 @@
 "mw4.onboarding.mark.demo_challenge" = "Consiga %d baixas com esta arma.";
 "mw4.onboarding.suggested.demo" = "Falta 1 camuflagem para o Ouro";
 "mw4.onboarding.yours.title" = "Deixe com a sua cara";
-"mw4.onboarding.yours.pin" = "Fixe a arma que você está upando e ela fica no topo de todas as abas.";
+"mw4.onboarding.yours.pin" = "Fixe a arma que você está upando e ela fica no topo da aba Armas, em todos os modos.";
 "mw4.onboarding.yours.customise" = "Personalizar define os modos, o idioma e a marcação rápida. O Premium adiciona seu próprio layout, bordas dos cartões, desafios em camuflagens bloqueadas e ícones de camuflagem.";
 "mw4.onboarding.yours.report" = "Viu um desafio, nível ou nome errado? Informe na página da arma e a correção chega a todos sem atualizar o app.";
 "mw4.onboarding.suggested.title" = "Saiba o que upar em seguida";
-"mw4.onboarding.suggested.body1" = "Cada aba aponta a arma mais perto do Ouro. Às vezes é a última que falta para uma categoria inteira.";
+"mw4.onboarding.suggested.body1" = "Em cada modo, a aba Armas aponta a arma mais perto do Ouro. Às vezes é a última que falta para uma categoria inteira.";
 "mw4.onboarding.suggested.body2" = "Termine e você verá o desbloqueio na hora.";
 "mw4.onboarding.next" = "Avançar";
 "mw4.onboarding.get_started" = "Começar";
@@ -164,7 +164,6 @@
 "mw4.ui.quick_tick.title" = "Marcação rápida";
 "mw4.ui.quick_tick.footer" = "Marque o que já fez sem registrar níveis de arma nem contar baixas. Cada camuflagem é um toque, nada fica bloqueado, e marcar uma marca todas as anteriores. Volte quando quiser; nada é perdido.";
 
-"mw4.ui.counts_for" = "Vale para";
 "mw4.ui.mostly_play" = "Jogo mais";
 "mw4.ui.mastery.locked_previous_mode" = "Conclua %@ primeiro.";
 "mw4.ui.prestige_camo.enter" = "Entre em Prestígio com a %@.";
@@ -174,7 +173,7 @@
 "mw4.ui.language" = "Idioma";
 "mw4.ui.language.system" = "Igual ao iPhone";
 "mw4.ui.opens_to" = "Abre em";
-"mw4.onboarding.modes.hint" = "Toque para escolher os que você joga. Cada um ganha sua aba e conta nas Estatísticas; os outros ficam de fora. Mude quando quiser em Personalizar.";
+"mw4.onboarding.modes.hint" = "Toque para escolher os que você joga. Eles ficam no menu do título da aba Armas e contam nas Estatísticas; os outros ficam de fora. Mude quando quiser em Personalizar.";
 "mw4.widget.pin_prompt" = "Fixe uma arma no app para acompanhá-la aqui.";
 "mw4.widget.all_done" = "Todas as camuflagens concluídas";
 "mw4.widget.tip.title" = "Adicione um widget";
@@ -203,7 +202,7 @@
 "mw4.ui.card_outline.footer" = "Os cartões ganham bordas nas cores da melhor camuflagem que têm. Escolha se uma camuflagem de Prestígio ou Completista vence nos cartões das armas, ou desligue as bordas.";
 
 /* Hajin guide: not translated into Portuguese yet, English for now */
-"mw4.ui.hajin.title" = "DMZ";
+"mw4.ui.hajin.title" = "Hajin";
 "mw4.ui.hajin.guide" = "Guia";
 "mw4.ui.hajin.resize" = "Redimensionar o mapa e o guia";
 "mw4.ui.hajin.search_guide" = "Buscar";
@@ -554,7 +553,7 @@
 /* Games */
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Jogo";
-"ct.onboarding.welcome.body" = "Acompanhe suas camuflagens de %1$@ em %2$@. Cada modo tem sua própria aba.";
+"ct.onboarding.welcome.body" = "Acompanhe suas camuflagens de %1$@ em %2$@. Troque de modo pelo título na aba Armas.";
 "ct.onboarding.tracking.full.body" = "Registre os níveis das armas e conte cada baixa. As camuflagens que abrem em um nível de arma desbloqueiam conforme você sobe de nível.";
 "ct.ui.mode" = "Modo";
 "mw4.mode.campaign" = "Campanha";

@@ -43,7 +43,7 @@
 "mw4.ui.cancel" = "Cancelar";
 "mw4.ui.save" = "Guardar";
 "mw4.onboarding.welcome.title" = "Camo Track";
-"mw4.onboarding.welcome.body" = "Sigue tus camuflajes en Multijugador, Warzone y DMZ. Cada modo tiene su propia pestaña.";
+"mw4.onboarding.welcome.body" = "Sigue tus camuflajes en Multijugador, Warzone y DMZ. Cambia de modo desde el título de la pestaña Armas.";
 "mw4.onboarding.mark.title" = "Dos formas de registrar el progreso";
 "mw4.onboarding.mark.tap_circle" = "Toca el círculo para marcar un camuflaje como hecho.";
 "mw4.onboarding.mark.tap_pill" = "Toca el número para escribir una cantidad exacta. Útil para los desafíos largos como 200 bajas.";
@@ -57,11 +57,11 @@
 "mw4.onboarding.mark.demo_challenge" = "Consigue %d bajas con esta arma.";
 "mw4.onboarding.suggested.demo" = "A 1 camuflaje del Oro";
 "mw4.onboarding.yours.title" = "Hazla tuya";
-"mw4.onboarding.yours.pin" = "Fija el arma que estás subiendo y aparecerá arriba en cada pestaña.";
+"mw4.onboarding.yours.pin" = "Fija el arma que estás subiendo y aparecerá arriba en la pestaña Armas, en todos los modos.";
 "mw4.onboarding.yours.customise" = "En Personalizar eliges los modos, el idioma y el marcado rápido. Premium añade tu propio diseño, bordes de tarjeta, desafíos en camuflajes bloqueados e iconos de camuflaje.";
 "mw4.onboarding.yours.report" = "¿Un desafío, nivel o nombre está mal? Repórtalo desde la página del arma y la corrección llegará a todos sin actualizar la app.";
 "mw4.onboarding.suggested.title" = "Sabe qué toca después";
-"mw4.onboarding.suggested.body1" = "Cada pestaña te señala el arma más cercana al Oro. A veces es la última que frena a toda una categoría.";
+"mw4.onboarding.suggested.body1" = "En cada modo, la pestaña Armas te señala el arma más cercana al Oro. A veces es la última que frena a toda una categoría.";
 "mw4.onboarding.suggested.body2" = "Termínala y verás el desbloqueo al instante.";
 "mw4.onboarding.next" = "Siguiente";
 "mw4.onboarding.get_started" = "Comenzar";
@@ -164,7 +164,6 @@
 "mw4.ui.quick_tick.title" = "Marcado rápido";
 "mw4.ui.quick_tick.footer" = "Marca lo que has hecho sin llevar el nivel de las armas ni contar bajas. Cada camuflaje es un toque, nada está bloqueado y marcar uno marca todos los anteriores. Vuelve cuando quieras; no se pierde nada.";
 
-"mw4.ui.counts_for" = "Contadores de";
 "mw4.ui.mostly_play" = "Juego sobre todo";
 "mw4.ui.mastery.locked_previous_mode" = "Completa %@ primero.";
 "mw4.ui.prestige_camo.enter" = "Haz Prestigio con %@.";
@@ -174,7 +173,7 @@
 "mw4.ui.language" = "Idioma";
 "mw4.ui.language.system" = "Igual que el iPhone";
 "mw4.ui.opens_to" = "Abrir en";
-"mw4.onboarding.modes.hint" = "Toca los que juegas. Cada uno tiene su pestaña y cuenta en Estadísticas; el resto no estorba. Cámbialo cuando quieras en Personalizar.";
+"mw4.onboarding.modes.hint" = "Toca los que juegas. Aparecen en el menú del título de Armas y cuentan en Estadísticas; el resto no estorba. Cámbialo cuando quieras en Personalizar.";
 "mw4.widget.pin_prompt" = "Fija un arma en la app para seguirla aquí.";
 "mw4.widget.all_done" = "Todos los camuflajes hechos";
 "mw4.widget.tip.title" = "Añade un widget";
@@ -202,7 +201,7 @@
 "mw4.ui.camo_unlocks_reach" = "Consigue %d desbloqueos del arma.";
 "mw4.ui.camo_unlocks_earned" = "Conseguido con %d desbloqueos del arma.";
 /* Hajin tab: DMZ Tac Map and guide */
-"mw4.ui.hajin.title" = "DMZ";
+"mw4.ui.hajin.title" = "Hajin";
 "mw4.ui.hajin.guide" = "Guía";
 "mw4.ui.hajin.resize" = "Cambiar el tamaño del mapa y la guía";
 "mw4.ui.hajin.search_guide" = "Buscar";
@@ -553,7 +552,7 @@
 /* Games */
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Juego";
-"ct.onboarding.welcome.body" = "Sigue tus camuflajes de %1$@ en %2$@. Cada modo tiene su propia pestaña.";
+"ct.onboarding.welcome.body" = "Sigue tus camuflajes de %1$@ en %2$@. Cambia de modo desde el título de la pestaña Armas.";
 "ct.onboarding.tracking.full.body" = "Guarda los niveles de arma y cuenta cada baja. Los camuflajes que se abren con un nivel de arma se desbloquean al subir de nivel.";
 "ct.ui.mode" = "Modo";
 "mw4.mode.campaign" = "Campaña";

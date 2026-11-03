@@ -43,7 +43,7 @@
 "mw4.ui.cancel" = "Annuler";
 "mw4.ui.save" = "Enregistrer";
 "mw4.onboarding.welcome.title" = "Camo Track";
-"mw4.onboarding.welcome.body" = "Suivez vos camouflages dans Multijoueur, Warzone et DMZ. Chaque mode a son propre onglet.";
+"mw4.onboarding.welcome.body" = "Suivez vos camouflages dans Multijoueur, Warzone et DMZ. Changez de mode depuis le titre de l'onglet Armes.";
 "mw4.onboarding.mark.title" = "Deux façons de suivre votre progression";
 "mw4.onboarding.mark.tap_circle" = "Appuyez sur le cercle pour marquer un camouflage comme terminé.";
 "mw4.onboarding.mark.tap_pill" = "Appuyez sur le nombre pour saisir une quantité exacte. Pratique pour les défis longs comme 200 éliminations.";
@@ -57,11 +57,11 @@
 "mw4.onboarding.mark.demo_challenge" = "Obtenez %d éliminations avec cette arme.";
 "mw4.onboarding.suggested.demo" = "À 1 camouflage de l'Or";
 "mw4.onboarding.yours.title" = "À votre image";
-"mw4.onboarding.yours.pin" = "Épinglez l'arme que vous montez : elle reste en haut de chaque onglet.";
+"mw4.onboarding.yours.pin" = "Épinglez l'arme que vous montez : elle reste en haut de l'onglet Armes, dans chaque mode.";
 "mw4.onboarding.yours.customise" = "Personnaliser règle les modes, la langue et la coche rapide. Premium ajoute votre propre disposition, les contours de carte, les défis des camos verrouillés et les icônes camo.";
 "mw4.onboarding.yours.report" = "Un défi, un niveau ou un nom est faux ? Signalez-le depuis la page de l'arme : la correction arrive chez tout le monde sans mise à jour de l'app.";
 "mw4.onboarding.suggested.title" = "Sachez quoi enchaîner";
-"mw4.onboarding.suggested.body1" = "Chaque onglet vous indique l'arme la plus proche de l'Or. Parfois c'est la dernière qui bloque toute une catégorie.";
+"mw4.onboarding.suggested.body1" = "Dans chaque mode, l'onglet Armes vous indique l'arme la plus proche de l'Or. Parfois c'est la dernière qui bloque toute une catégorie.";
 "mw4.onboarding.suggested.body2" = "Terminez-la et le déblocage s'affiche aussitôt.";
 "mw4.onboarding.next" = "Suivant";
 "mw4.onboarding.get_started" = "Commencer";
@@ -164,7 +164,6 @@
 "mw4.ui.quick_tick.title" = "Coche rapide";
 "mw4.ui.quick_tick.footer" = "Cochez ce que vous avez fait sans suivre le niveau des armes ni compter les éliminations. Chaque camouflage se coche d'un geste, rien n'est verrouillé, et cocher un camouflage coche tous ceux d'avant. Revenez en arrière quand vous voulez, rien n'est perdu.";
 
-"mw4.ui.counts_for" = "Compteurs pour";
 "mw4.ui.mostly_play" = "Je joue surtout en";
 "mw4.ui.mastery.locked_previous_mode" = "Terminez d’abord %@.";
 "mw4.ui.prestige_camo.enter" = "Faites passer %@ en Prestige.";
@@ -174,7 +173,7 @@
 "mw4.ui.language" = "Langue";
 "mw4.ui.language.system" = "Comme l'iPhone";
 "mw4.ui.opens_to" = "Ouvrir sur";
-"mw4.onboarding.modes.hint" = "Touchez ceux auxquels vous jouez. Chacun a son onglet et compte dans les stats ; les autres restent à l'écart. Modifiable à tout moment dans Personnaliser.";
+"mw4.onboarding.modes.hint" = "Touchez ceux auxquels vous jouez. Ils sont dans le menu du titre de l'onglet Armes et comptent dans les stats ; les autres restent à l'écart. Modifiable à tout moment dans Personnaliser.";
 "mw4.widget.pin_prompt" = "Épinglez une arme dans l'app pour la suivre ici.";
 "mw4.widget.all_done" = "Tous les camouflages faits";
 "mw4.widget.tip.title" = "Ajoutez un widget";
@@ -202,7 +201,7 @@
 "mw4.ui.camo_unlocks_reach" = "Obtenez %d déblocages d'arme.";
 "mw4.ui.camo_unlocks_earned" = "Obtenu à %d déblocages d'arme.";
 /* Hajin tab: DMZ Tac Map and guide */
-"mw4.ui.hajin.title" = "DMZ";
+"mw4.ui.hajin.title" = "Hajin";
 "mw4.ui.hajin.guide" = "Guide";
 "mw4.ui.hajin.resize" = "Redimensionner la carte et le guide";
 "mw4.ui.hajin.search_guide" = "Rechercher";
@@ -553,7 +552,7 @@
 /* Games */
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Jeu";
-"ct.onboarding.welcome.body" = "Suivez vos camouflages %1$@ en %2$@. Chaque mode a son propre onglet.";
+"ct.onboarding.welcome.body" = "Suivez vos camouflages %1$@ en %2$@. Changez de mode depuis le titre de l'onglet Armes.";
 "ct.onboarding.tracking.full.body" = "Gardez les niveaux d'arme et comptez chaque élimination. Les camouflages liés à un niveau d'arme se débloquent quand vous montez de niveau.";
 "ct.ui.mode" = "Mode";
 "mw4.mode.campaign" = "Campagne";

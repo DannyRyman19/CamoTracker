@@ -17,11 +17,10 @@ struct WeaponDetailView: View {
         self.weapon = weapon
     }
 
-    /// "Counts for" where a camo counts in every mode (MW4), else "Mode":
-    /// each mode keeps its own camos.
-    private var countsLabel: String {
-        GameRegistry.current.sharedCamos == true ? "mw4.ui.counts_for".localized() : "ct.ui.mode".localized()
-    }
+    /// "Mode" in every game, as on the home title's menu: MW4's camos
+    /// count in every mode, but the challenge wording and Mastery are the
+    /// mode's own.
+    private var countsLabel: String { "ct.ui.mode".localized() }
 
     /// Multiplayer / DMZ (and Warzone once it's shown): which mode's counts.
     @ViewBuilder private var modeSwitch: some View {

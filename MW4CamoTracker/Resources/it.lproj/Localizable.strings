@@ -43,7 +43,7 @@
 "mw4.ui.cancel" = "Annulla";
 "mw4.ui.save" = "Salva";
 "mw4.onboarding.welcome.title" = "Camo Track";
-"mw4.onboarding.welcome.body" = "Tieni traccia delle tue mimetiche in Multigiocatore, Warzone e DMZ. Ogni modalità ha la sua scheda.";
+"mw4.onboarding.welcome.body" = "Tieni traccia delle tue mimetiche in Multigiocatore, Warzone e DMZ. Cambia modalità dal titolo nella scheda Armi.";
 "mw4.onboarding.mark.title" = "Due modi per segnare i progressi";
 "mw4.onboarding.mark.tap_circle" = "Tocca il cerchio per segnare una mimetica come completata.";
 "mw4.onboarding.mark.tap_pill" = "Tocca il numero per inserire un valore preciso. Comodo per quelle lunghe, come 200 uccisioni.";
@@ -57,11 +57,11 @@
 "mw4.onboarding.mark.demo_challenge" = "Ottieni %d uccisioni con quest'arma.";
 "mw4.onboarding.suggested.demo" = "1 mimetica all'Oro";
 "mw4.onboarding.yours.title" = "Rendila tua";
-"mw4.onboarding.yours.pin" = "Fissa l'arma che stai livellando e resterà in cima a ogni scheda.";
+"mw4.onboarding.yours.pin" = "Fissa l'arma che stai livellando e resterà in cima alla scheda Armi, in ogni modalità.";
 "mw4.onboarding.yours.customise" = "Personalizza imposta modalità, lingua e spunta rapida. Premium aggiunge il tuo layout, i bordi delle schede, le sfide sulle mimetiche bloccate e le icone mimetiche.";
 "mw4.onboarding.yours.report" = "Hai trovato una sfida, un livello o un nome sbagliato? Segnalalo dalla pagina dell'arma e la correzione arriva a tutti senza aggiornare l'app.";
 "mw4.onboarding.suggested.title" = "Sai sempre cosa fare dopo";
-"mw4.onboarding.suggested.body1" = "Ogni scheda ti indica l'arma più vicina all'Oro. A volte è l'ultima che blocca un'intera categoria.";
+"mw4.onboarding.suggested.body1" = "In ogni modalità, la scheda Armi ti indica l'arma più vicina all'Oro. A volte è l'ultima che blocca un'intera categoria.";
 "mw4.onboarding.suggested.body2" = "Completala e vedrai subito lo sblocco.";
 "mw4.onboarding.next" = "Avanti";
 "mw4.onboarding.get_started" = "Inizia";
@@ -170,7 +170,7 @@
 "mw4.ui.language" = "Lingua";
 "mw4.ui.language.system" = "Come l'iPhone";
 "mw4.ui.opens_to" = "Si apre su";
-"mw4.onboarding.modes.hint" = "Tocca quelle che giochi. Ognuna ha la sua scheda e conta nelle statistiche, le altre restano da parte. Puoi cambiarlo quando vuoi da Personalizza.";
+"mw4.onboarding.modes.hint" = "Tocca quelle che giochi. Sono nel menu del titolo della scheda Armi e contano nelle statistiche, le altre restano da parte. Puoi cambiarlo quando vuoi da Personalizza.";
 "mw4.widget.pin_prompt" = "Fissa un'arma nell'app per seguirla qui.";
 "mw4.widget.all_done" = "Tutte le mimetiche fatte";
 "mw4.widget.tip.title" = "Aggiungi un widget";
@@ -183,7 +183,6 @@
 "mw4.widget.guide.mode_hint" = "Per cambiare la modalità di un widget dei progressi, tienilo premuto e tocca Modifica widget.";
 "mw4.onboarding.yours.widget" = "Aggiungi un widget per tenere l'arma fissata e i progressi delle modalità nella schermata Home.";
 
-"mw4.ui.counts_for" = "Conteggi per";
 "mw4.ui.mostly_play" = "Gioco soprattutto a";
 "mw4.ui.mastery.locked_previous_mode" = "Completa prima %@.";
 
@@ -202,7 +201,7 @@
 "mw4.ui.camo_unlocks_reach" = "Ottieni %d sblocchi arma.";
 "mw4.ui.camo_unlocks_earned" = "Ottenuta a %d sblocchi arma.";
 /* Hajin tab: DMZ Tac Map and guide */
-"mw4.ui.hajin.title" = "DMZ";
+"mw4.ui.hajin.title" = "Hajin";
 "mw4.ui.hajin.guide" = "Guida";
 "mw4.ui.hajin.resize" = "Ridimensiona mappa e guida";
 "mw4.ui.hajin.search_guide" = "Cerca";
@@ -553,7 +552,7 @@
 /* Games */
 "mw4.mode.zombies" = "Zombies";
 "ct.ui.game" = "Gioco";
-"ct.onboarding.welcome.body" = "Tieni traccia delle tue mimetiche di %1$@ in %2$@. Ogni modalità ha la sua scheda.";
+"ct.onboarding.welcome.body" = "Tieni traccia delle tue mimetiche di %1$@ in %2$@. Cambia modalità dal titolo nella scheda Armi.";
 "ct.onboarding.tracking.full.body" = "Tieni i livelli delle armi e conta ogni uccisione. Le mimetiche che si aprono a un livello dell'arma si sbloccano salendo di livello.";
 "ct.ui.mode" = "Modalità";
 "mw4.mode.campaign" = "Campagna";

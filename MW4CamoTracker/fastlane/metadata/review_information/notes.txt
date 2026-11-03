@@ -1,11 +1,11 @@
 No account or login is required. All progress is entered by hand and stored on the device.
 
-Games: the app tracks Modern Warfare 4, Black Ops 7 and Black Ops 6, each with its own progress. The game is picked on the first onboarding page, and can be changed at any time from the title at the top of the Weapons tab (for example "MW4 Multiplayer" with a down arrow): it opens a menu with "I mostly play" (the mode) and "Game". The DMZ tab is part of Modern Warfare 4 only.
+Games: the app tracks Modern Warfare 4, Black Ops 7 and Black Ops 6, each with its own progress. The game is picked on the first onboarding page, and can be changed at any time from the title at the top of the Weapons tab (for example "MW4 Multiplayer" with a down arrow): it opens a menu with "I mostly play" (the mode) and "Game". The Hajin tab (the map, guide and stash for Modern Warfare 4's DMZ) is part of Modern Warfare 4 only.
 
 Ads: the app is free with ads from Unity LevelPlay (Unity Ads). Free users see:
-- a banner at the foot of the Weapons, Mastery, Stats and DMZ screens, shown only once an ad has loaded, with a "Remove ads" link to Premium above it;
+- a banner at the foot of the Weapons, Mastery, Stats and Hajin screens, shown only once an ad has loaded, with a "Remove ads" link to Premium above it;
 - now and then a full-screen ad when going back from a weapon to the weapons list. At most one every 10 minutes, never at launch, and none in a player's first two days, so you may not see one during review;
-- a short rewarded ad before each stash scan (DMZ tab > My DMZ > Read from a photo). If no ad can be shown, one scan a day still goes ahead.
+- a short rewarded ad before each stash scan (Hajin tab > My DMZ > Read from a photo). If no ad can be shown, one scan a day still goes ahead.
 
 Prompts: after onboarding and the notification prompt, the next time the app is active it asks:
 1. Only when the device's Region is in the EU, EEA, the UK or Switzerland: an "About ads" alert asking whether ad partners may personalise ads ("Personalise ads" or "Keep ads general"). Either answer keeps the app the same, and it can be changed later under Customise > Personalised ads. To see it, set Settings > General > Language & Region > Region to e.g. United Kingdom before installing.
