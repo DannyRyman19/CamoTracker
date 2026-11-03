@@ -610,7 +610,12 @@ struct StatSummaryCard: View {
     }
 
     /// Two lines of a lock hint ("13/33" over "Platinum").
-    private static let countHeight: CGFloat = 26
+    /// Grows with the text, as far as the card's own cap on it, so two
+    /// lines still fit at the larger sizes instead of cutting "Platinum".
+    private var countHeight: CGFloat {
+        ScaledType.size(26, relativeTo: .caption2, maxSize: 26 * 2.5, in: min(dynamicTypeSize, .xxxLarge))
+    }
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private var hasLock: Bool { stats.contains { $0.lockedHint != nil } }
 
     var body: some View {
@@ -644,7 +649,7 @@ struct StatSummaryCard: View {
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.8)
-                                .frame(height: Self.countHeight)
+                                .frame(height: countHeight)
                         } else if let ringFraction = stats[index].ringFraction {
                             ProgressRing(
                                 fraction: ringFraction,
@@ -658,7 +663,7 @@ struct StatSummaryCard: View {
                                 .foregroundStyle(Color.appInk)
                                 // Same height as a two-line lock hint, so
                                 // every column's label sits on one line
-                                .frame(height: hasLock ? Self.countHeight : nil)
+                                .frame(height: hasLock ? countHeight : nil)
                         } else {
                             Text(stats[index].value)
                                 .scaledFont(17, weight: .bold, design: .monospaced)
@@ -681,7 +686,7 @@ struct StatSummaryCard: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
                         .minimumScaleFactor(0.75)
-                        .frame(height: 26, alignment: .top)
+                        .frame(height: countHeight, alignment: .top)
                     }
                     .frame(maxWidth: .infinity)
                     // One stop per column: "Platinum, Locked, 0 of 33 Gold" or
