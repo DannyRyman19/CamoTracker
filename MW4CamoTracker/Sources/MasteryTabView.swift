@@ -65,7 +65,7 @@ struct MasteryTabView: View {
                         }
                     } header: {
                         ListHeading(title: Label(mode.displayName, systemImage: mode.symbol)
-                            .foregroundStyle(mode.textAccent))
+                            .foregroundStyle(mode.textAccent), opaque: false)
                     }
                     .listRowBackground(Color.appSurface)
                 }

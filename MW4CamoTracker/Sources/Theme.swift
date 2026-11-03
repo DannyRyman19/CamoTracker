@@ -501,8 +501,20 @@ private struct ScaledFontModifier: ViewModifier {
 /// iPad's narrow Mastery column "Multiplayer" broke mid-word.
 struct ListHeading<Title: View>: View {
     let title: Title
+    /// On the page's background, edge to edge: a plain list pins its
+    /// headings under the bar, and with nothing behind them the rows
+    /// scrolling under "Weapons" or "Military" printed through. Off in an
+    /// inset list, whose headings don't stay.
+    var opaque = true
     var body: some View {
         title.scaledFont(17, weight: .semibold, maxSize: 28)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background {
+                if opaque {
+                    // Out past the heading's own insets, to the screen's edges
+                    Color.appBackground.padding(.horizontal, -64).padding(.vertical, -6)
+                }
+            }
     }
 }
 
