@@ -6,12 +6,25 @@ import Testing
 final class RecordingProtocol: URLProtocol {
     nonisolated(unsafe) static var requests: [URLRequest] = []
     nonisolated(unsafe) static var bodies: [String: String] = [:]
+    /// Hosts that fail: with this HTTP status, or 0 for no answer at all.
+    nonisolated(unsafe) static var failingHosts: [String: Int] = [:]
 
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
 
     override func startLoading() {
         Self.requests.append(request)
+        if let status = Self.failingHosts[request.url?.host ?? ""] {
+            guard status != 0 else {
+                client?.urlProtocol(self, didFailWithError: URLError(.cannotConnectToHost))
+                return
+            }
+            let response = HTTPURLResponse(url: request.url!, statusCode: status, httpVersion: nil, headerFields: nil)!
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            client?.urlProtocol(self, didLoad: Data("Package size exceeded the configured limit of 50 MB.".utf8))
+            client?.urlProtocolDidFinishLoading(self)
+            return
+        }
         let body = Self.bodies[request.url?.lastPathComponent ?? ""] ?? "{}"
         let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil,
                                        headerFields: ["Cache-Control": "public, max-age=604800"])!
@@ -203,5 +216,55 @@ struct DataServiceTests {
         await vm.refresh()
         #expect(vm.modes["multiplayer"]?.version == "999.0.0")
         #expect(MasteryOverrides.byMode["multiplayer"]?.tier1?.weaponsNeeded != 777)
+    }
+
+    /// jsDelivr has answered 403 "Package size exceeded" for this repo's
+    /// files: each path it fails is asked of GitHub once, without the
+    /// phone's cache, and what arrives goes through the same version checks.
+    @Test(arguments: [403, 0])
+    func aFailedJsDelivrRequestIsAskedOfGitHubOnce(status: Int) async throws {
+        RecordingProtocol.requests = []
+        RecordingProtocol.failingHosts = ["cdn.jsdelivr.net": status]
+        defer { RecordingProtocol.failingHosts = [:] }
+        RecordingProtocol.bodies = [
+            "manifest.json": #"{"catalog": {"version": "999.0.0", "path": "weapons.json"}, "modes": {}}"#,
+            "weapons.json": try bundled("weapons", version: "999.0.0"),
+        ]
+        let result = try await service().refreshIfNeeded(knownCatalogVersion: "1", knownModeVersions: [:])
+        #expect(result.catalog?.version == "999.0.0")
+
+        let asked = RecordingProtocol.requests.compactMap(\.url?.absoluteString)
+        #expect(asked == [
+            "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/manifest.json",
+            "https://raw.githubusercontent.com/DannyRyman19/CamoTracker/master/Data/MW4/manifest.json",
+            "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/weapons.json",
+            "https://raw.githubusercontent.com/DannyRyman19/CamoTracker/master/Data/MW4/weapons.json",
+        ])
+        #expect(RecordingProtocol.requests.allSatisfy { $0.cachePolicy == .reloadIgnoringLocalCacheData })
+    }
+
+    @Test func gitHubsCopyIsVersionCheckedToo() async throws {
+        let cache = newCache()
+        try bundled("weapons", version: "9.9.9").write(to: cache.appendingPathComponent("weapons.json"), atomically: true, encoding: .utf8)
+        RecordingProtocol.failingHosts = ["cdn.jsdelivr.net": 403]
+        defer { RecordingProtocol.failingHosts = [:] }
+        RecordingProtocol.bodies = [
+            "manifest.json": #"{"catalog": {"version": "5.0.0", "path": "weapons.json"}, "modes": {}}"#,
+            "weapons.json": try bundled("weapons", version: "5.0.0"),
+        ]
+        let service = service(cache: cache)
+        #expect(try await service.refreshIfNeeded(knownCatalogVersion: "1", knownModeVersions: [:]).catalog == nil)
+        #expect(service.loadCachedCatalog()?.version == "9.9.9")
+    }
+
+    @Test func bothFailingIsAnError() async {
+        RecordingProtocol.requests = []
+        RecordingProtocol.failingHosts = ["cdn.jsdelivr.net": 403, "raw.githubusercontent.com": 404]
+        defer { RecordingProtocol.failingHosts = [:] }
+        await #expect(throws: (any Error).self) {
+            try await self.service().refreshIfNeeded(knownCatalogVersion: "1", knownModeVersions: [:])
+        }
+        // Once each, no more
+        #expect(RecordingProtocol.requests.count == 2)
     }
 }

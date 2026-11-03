@@ -43,8 +43,11 @@ struct Manifest: Codable {
 /// Data lives in the same GitHub repo as the app, served through jsDelivr's
 /// GitHub CDN rather than raw.githubusercontent.com — same $0 cost, but backed
 /// by a real CDN with no per-IP rate limit as the install base grows.
+/// raw.githubusercontent.com is only asked for a file jsDelivr fails on.
 final class DataService: Sendable {
     private let baseURL: URL
+    /// Asked once for a file jsDelivr didn't serve (`Game.dataMirrorURL`)
+    private let mirrorURL: URL
     private let cacheDir: URL
     private let session: URLSession
     /// Bundled seed files are named `<seedPrefix><file>.json` (MW4's have none)
@@ -57,6 +60,7 @@ final class DataService: Sendable {
         cacheDir: URL? = nil
     ) {
         self.baseURL = game.dataURL
+        self.mirrorURL = game.dataMirrorURL
         self.seedPrefix = game.seedPrefix
         self.session = session
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
@@ -230,10 +234,27 @@ final class DataService: Sendable {
     /// manifest once kept reading its own week-old copy and missed every
     /// update published in between. The files are tiny; the CDN still
     /// answers from its edge cache, so this costs nothing.
+    ///
+    /// When jsDelivr fails (an error status, such as its 403 for a repo
+    /// over its size limit, or no answer) the same path is asked of GitHub
+    /// once. Whichever copy arrives goes through the same version checks.
     private func fetch(_ path: String) async throws -> Data {
-        var request = URLRequest(url: baseURL.appendingPathComponent(path))
+        do {
+            return try await fetch(path, from: baseURL)
+        } catch {
+            // A check stopped on purpose (a game switch) stays stopped
+            if Task.isCancelled { throw error }
+            return try await fetch(path, from: mirrorURL)
+        }
+    }
+
+    private func fetch(_ path: String, from base: URL) async throws -> Data {
+        var request = URLRequest(url: base.appendingPathComponent(path))
         request.cachePolicy = .reloadIgnoringLocalCacheData
-        let (data, _) = try await session.data(for: request)
+        let (data, response) = try await session.data(for: request)
+        if let status = (response as? HTTPURLResponse)?.statusCode, !(200...299).contains(status) {
+            throw URLError(.badServerResponse, userInfo: [NSURLErrorFailingURLErrorKey: request.url as Any, "status": status])
+        }
         return data
     }
 

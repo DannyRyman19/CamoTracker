@@ -13,7 +13,7 @@ anything newer.
 | What | Where |
 |---|---|
 | The data you edit (source of truth) | `MW4CamoTracker/Resources/weapons.json`, `multiplayer.json`, `warzone.json`, `dmz.json` |
-| What installed apps download | `Data/MW4/` (same four files plus `manifest.json`), served by jsDelivr from the `master` branch |
+| What installed apps download | `Data/MW4/` (same four files plus `manifest.json`), served by jsDelivr from the `master` branch (a file jsDelivr fails to serve is fetched from raw.githubusercontent.com instead) |
 | The script that copies one to the other | `MW4CamoTracker/Tools/publish_data.py` |
 | A local editor for the JSON, with image upload | `python3 MW4CamoTracker/Tools/editor/serve.py` |
 | Weapon and camo images | `Images/Guns/MW4/`, `Images/Camos/MW4/` in this repo, served at `https://camotracker.djr.li/Images/...` |

@@ -41,6 +41,13 @@ struct Game: Codable, Identifiable, Hashable {
         URL(string: "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/")!.appendingPathComponent(path, isDirectory: true)
     }
 
+    /// The same files straight from GitHub, asked when jsDelivr fails: it
+    /// has answered 403 "Package size exceeded" for this repo's `@master`
+    /// files at times.
+    var dataMirrorURL: URL {
+        URL(string: "https://raw.githubusercontent.com/DannyRyman19/CamoTracker/master/")!.appendingPathComponent(path, isDirectory: true)
+    }
+
     /// MW4's saves and settings keep their original keys; every other game
     /// gets its own copy of each, named after it.
     var isMW4: Bool { id == "mw4" }
