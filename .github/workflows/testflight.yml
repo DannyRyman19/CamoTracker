@@ -20,8 +20,11 @@ concurrency:
 
 jobs:
   testflight:
+    # Only master or a v* tag uploads: "Run workflow" can be pointed at any
+    # branch, and side branches have uploaded before.
+    if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/v')
     runs-on: macos-15
-    timeout-minutes: 45
+    timeout-minutes: 60
     # Signing material lives in this environment's secrets, not the repo's, so
     # only runs on an allowed ref can read it. Add a required reviewer to the
     # environment for a manual "ship it" gate.
@@ -80,15 +83,62 @@ jobs:
           restore-keys: |
             deriveddata-${{ runner.os }}-${{ steps.xcode.outputs.id }}-
 
+      # The unit tests gate the upload: a build that fails them never gets
+      # as far as the signing secrets or TestFlight. They run unsigned, on
+      # the newest iPhone simulator the selected Xcode's SDK can run (the
+      # image's device names change too often to hard-code one). The UI
+      # tests are left out: they're written for an iPad's grid.
+      - name: Pick a simulator
+        id: sim
+        run: |
+          newest_iphone() {
+            xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          sdk = tuple(int(p) for p in sys.argv[1].split("."))
+          found = []
+          for runtime, devices in json.load(sys.stdin)["devices"].items():
+              if ".iOS-" not in runtime:
+                  continue
+              version = tuple(int(p) for p in runtime.rsplit(".iOS-", 1)[1].split("-"))
+              if version[:len(sdk)] > sdk:
+                  continue
+              found += [(version, d["name"], d["udid"]) for d in devices if d["name"].startswith("iPhone")]
+          if found:
+              version, name, udid = max(found)
+              print(udid, name, ".".join(map(str, version)), file=sys.stderr)
+              print(udid)
+          ' "$(xcrun --sdk iphonesimulator --show-sdk-version)"
+          }
+          udid=$(newest_iphone)
+          if [ -z "$udid" ]; then
+            xcrun simctl list runtimes
+            xcodebuild -downloadPlatform iOS
+            udid=$(newest_iphone)
+          fi
+          test -n "$udid" || { xcrun simctl list; exit 1; }
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+
+      - name: Unit tests
+        env:
+          SIM_UDID: ${{ steps.sim.outputs.udid }}
+        run: |
+          xcodebuild test \
+            -project MW4CamoTracker.xcodeproj \
+            -scheme MW4CamoTracker \
+            -destination "id=$SIM_UDID" \
+            -only-testing:MW4CamoTrackerTests \
+            -resultBundlePath "$RUNNER_TEMP/unit-tests.xcresult" \
+            -quiet \
+            CODE_SIGNING_ALLOWED=NO
+
+      # The lane reads the App Store Connect key from ASC_KEY_P8 itself, so
+      # only the certificate is written to disk.
       - name: Decode signing secrets
         env:
           DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
-          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
         run: |
           echo "$DIST_CERT_P12" | base64 --decode > fastlane/dist_cert.p12
           test -s fastlane/dist_cert.p12 || { echo "DIST_CERT_P12 secret is empty"; exit 1; }
-          echo "$ASC_KEY_P8" | base64 --decode > fastlane/AuthKey.p8
-          test -s fastlane/AuthKey.p8 || { echo "ASC_KEY_P8 secret is empty"; exit 1; }
 
       - name: Build and upload to TestFlight
         env:
@@ -110,9 +160,10 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: fastlane-logs
+          name: build-logs
           path: |
             ~/Library/Logs/gym
             MW4CamoTracker/fastlane/report.xml
+            ${{ runner.temp }}/unit-tests.xcresult
           if-no-files-found: ignore
           retention-days: 7
