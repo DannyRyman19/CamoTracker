@@ -72,7 +72,7 @@ private struct TreePanel: View {
                 // operator, written down the side
                 .overlay(alignment: .leading) {
                     Text((major ? "mw4.ui.hajin.trait_fixed" : "mw4.ui.hajin.trait_random").localized().uppercased())
-                        .font(.system(size: 8, weight: .heavy))
+                        .scaledFont(8, weight: .heavy)
                         .tracking(0.8)
                         .foregroundStyle(major ? tree.tint : Color.appInkMuted)
                         .fixedSize()
@@ -192,7 +192,7 @@ private struct TraitTooltip: View {
         HStack(alignment: .top, spacing: 14) {
             VStack(alignment: .leading, spacing: 6) {
                 Text((trait?.name?.resolved ?? (random ? "mw4.ui.hajin.random_trait".localized() : "mw4.ui.hajin.unknown_trait".localized())).uppercased())
-                    .font(.hitmarker(20))
+                    .hitmarkerFont(20)
                     .foregroundStyle(Color.appInk)
                 if let tree {
                     Text(tree.name.resolved.uppercased())

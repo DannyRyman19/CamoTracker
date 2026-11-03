@@ -30,8 +30,9 @@ struct WeaponDetailView: View {
             // segmented bar on the tabs below it
             HStack(spacing: 8) {
                 Text(countsLabel)
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(13, weight: .semibold)
                     .foregroundStyle(Color.appInkMuted)
+                    .lineLimit(1)
                 Menu {
                     Picker(countsLabel, selection: $mode) {
                         ForEach(viewModel.visibleModes) { m in
@@ -40,9 +41,13 @@ struct WeaponDetailView: View {
                     }
                 } label: {
                     HStack(spacing: 5) {
+                        // One line, shrinking if it must: at the largest
+                        // text sizes "Multiplayer" broke mid-word
                         Text(mode.displayName)
-                            .font(.system(size: 15, weight: .bold))
+                            .scaledFont(15, weight: .bold)
                             .foregroundStyle(Color.appInk)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.6)
                         Image(systemName: "chevron.down.circle.fill")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundStyle(mode.accent)
@@ -85,11 +90,11 @@ struct WeaponDetailView: View {
                 } label: {
                     HStack(spacing: 8) {
                         Text("mw4.ui.prestige_camos".localized())
-                            .font(.system(size: 12, weight: .semibold))
+                            .scaledFont(12, weight: .semibold)
                             .foregroundStyle(Color.appInkMuted)
                         Spacer(minLength: 8)
                         Text("\(done)/\(count)")
-                            .font(.system(size: 13, weight: .bold, design: .rounded))
+                            .scaledFont(13, weight: .bold, design: .rounded)
                             .monospacedDigit()
                             .foregroundStyle(done == count ? mode.accent : Color.appInk)
                         Image(systemName: "chevron.right")
@@ -261,7 +266,7 @@ struct WeaponDetailView: View {
         if shownPart == .camos || shownPart == .badges {
             // Military and Special, each under its own header (or the badges).
             ForEach(Array((shownPart == .badges ? badgeGroups : camoGroups).enumerated()), id: \.offset) { _, group in
-                Section(group.title) {
+                Section(heading: group.title) {
                     ForEach(group.camos) { camo in
                         camoRow(camo)
                     }
@@ -298,7 +303,7 @@ struct WeaponDetailView: View {
                 .font(.system(size: 21))
                 .foregroundStyle(Color.appInkMuted)
             Text(String(format: "mw4.ui.no_camo_data".localized(), mode.displayName))
-                .font(.system(size: 13))
+                .scaledFont(13)
                 .foregroundStyle(Color.appInkMuted)
                 .multilineTextAlignment(.center)
         }
@@ -312,7 +317,7 @@ struct WeaponDetailView: View {
         VStack(alignment: .leading, spacing: 3) {
             if let category {
                 Text(category.name.resolved())
-                    .font(.hitmarker(15))
+                    .hitmarkerFont(15)
                     .foregroundStyle(Color.appInk)
             }
             AcquiredByLabel(weapon: weapon)
@@ -437,7 +442,7 @@ struct WeaponDetailView: View {
                     .listRowSeparator(.hidden)
             } else {
                 ForEach(Array(camoGroups.enumerated()), id: \.offset) { _, group in
-                    Section(group.title) {
+                    Section(heading: group.title) {
                         tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
                     }
                 }
@@ -452,7 +457,7 @@ struct WeaponDetailView: View {
             tileRows((1...3).map { tier in AnyView(masteryRow(tier)) }, columns: fitColumns(3))
         case .badges:
             ForEach(Array(badgeGroups.enumerated()), id: \.offset) { _, group in
-                Section(group.title) {
+                Section(heading: group.title) {
                     tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
                 }
             }
@@ -848,14 +853,14 @@ struct StatusRow: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 if achieved {
-                    AnimatedGradientText(text: name, colors: gradient, font: .hitmarker(15))
+                    AnimatedGradientText(text: name, colors: gradient, size: 15)
                 } else {
                     Text(name)
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(Color.appInkMuted)
                 }
                 Text(detail)
-                    .font(.system(size: 13))
+                    .scaledFont(13)
                     .foregroundStyle(Color.appInkMuted)
             }
         }
@@ -883,6 +888,7 @@ private struct CompactLevelRow: View {
 
     @State private var showValueEntry = false
     @State private var valueText = ""
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     /// Why unlocks, not level: behind the (i) by the label, not always shown
     @State private var showsUnlocksHint = false
     /// The Prestige camos list's open state (shared with the page): opened
@@ -915,7 +921,7 @@ private struct CompactLevelRow: View {
             if countsUnlocks && showsUnlocksHint {
                 // Why the game's weapon level can be well ahead of this
                 Text("mw4.ui.unlocks_hint".localized())
-                    .font(.system(size: 11))
+                    .scaledFont(11)
                     .foregroundStyle(Color.appInkMuted)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -957,7 +963,7 @@ private struct CompactLevelRow: View {
                 withAnimation(.snappy) { viewModel.prestigeDown(weapon) }
             } label: {
                 Label("mw4.ui.prestige.undo".localized(), systemImage: "arrow.uturn.backward")
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(12, weight: .semibold)
                     .foregroundStyle(Color.appInkMuted)
             }
             .buttonStyle(.plain)
@@ -966,7 +972,7 @@ private struct CompactLevelRow: View {
                 withAnimation(.snappy) { viewModel.prestigeUp(weapon); prestigeCamosOpen = true }
             } label: {
                 Label("mw4.ui.prestige".localized(), systemImage: "chevron.up.2")
-                    .font(.system(size: 14, weight: .bold))
+                    .scaledFont(14, weight: .bold)
                     .foregroundStyle(Color.appBackground)
                     .frame(maxWidth: .infinity)
                     .frame(height: 38)
@@ -978,7 +984,7 @@ private struct CompactLevelRow: View {
                 Image(systemName: "lock.fill").font(.system(size: 10, weight: .bold))
                 Text(countsUnlocks ? String(format: "mw4.ui.prestige.hint_unlocks".localized(), shownMax)
                                    : String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
-                    .font(.system(size: 12, weight: .semibold))
+                    .scaledFont(12, weight: .semibold)
             }
             .foregroundStyle(Color.appInkMuted)
         }
@@ -989,7 +995,7 @@ private struct CompactLevelRow: View {
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 5) {
                     Text("mw4.ui.prestige".localized())
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(12, weight: .semibold)
                         .foregroundStyle(Color.appInkMuted)
                     HStack(spacing: 6) {
                         if stageCount <= 8 {
@@ -1002,11 +1008,11 @@ private struct CompactLevelRow: View {
                             }
                         } else {
                             Text("\(prestige)/\(stageCount)")
-                                .font(.system(size: 10, weight: .bold, design: .monospaced))
+                                .scaledFont(10, weight: .bold, design: .monospaced)
                                 .foregroundStyle(Color.appInkMuted)
                         }
                         Text(viewModel.prestigeName(for: weapon.weaponId) ?? "mw4.ui.prestige.none".localized())
-                            .font(.system(size: 13, weight: .bold))
+                            .scaledFont(13, weight: .bold)
                             .foregroundStyle(prestige > 0 ? mode.accent : Color.appInkMuted)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
@@ -1040,7 +1046,7 @@ private struct CompactLevelRow: View {
                             Image(systemName: ready ? "chevron.up.2" : "lock.fill")
                                 .font(.system(size: 10, weight: .bold))
                             Text(stageCount == 1 ? "mw4.ui.prestige".localized() : viewModel.prestigeStages[prestige].name.resolved())
-                                .font(.system(size: 12, weight: .bold))
+                                .scaledFont(12, weight: .bold)
                                 .lineLimit(1)
                         }
                         .foregroundStyle(ready ? Color.appBackground : Color.appInkMuted)
@@ -1064,7 +1070,7 @@ private struct CompactLevelRow: View {
             if prestige < stageCount, level < maxLevel {
                 Text(countsUnlocks ? String(format: "mw4.ui.prestige.hint_unlocks".localized(), shownMax)
                                    : String(format: "mw4.ui.prestige.hint".localized(), maxLevel))
-                    .font(.system(size: 11))
+                    .scaledFont(11)
                     .foregroundStyle(Color.appInkMuted)
             }
         }
@@ -1074,94 +1080,22 @@ private struct CompactLevelRow: View {
     /// stage the weapon is reads at a glance.
     private var levelLine: some View {
         VStack(spacing: 8) {
-            HStack(spacing: 10) {
-                // Longer in French and Spanish than the room beside the stepper
-                // on a narrow header: shrink a little before truncating.
-                // Full size whenever it fits. A bare minimumScaleFactor shrank
-                // it with room to spare (sized before the row had its width).
-                let label = Text(stepperName)
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(Color.appInkMuted)
-                    .lineLimit(1)
-                ViewThatFits(in: .horizontal) {
-                    label.fixedSize()
-                    label.minimumScaleFactor(0.7)
-                }
-                .layoutPriority(1)
-                if countsUnlocks && prestige == 0 {
-                    Button {
-                        withAnimation(.snappy) { showsUnlocksHint.toggle() }
-                    } label: {
-                        Image(systemName: showsUnlocksHint ? "info.circle.fill" : "info.circle")
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.appInkMuted)
-                            .hitTarget()
+            if dynamicTypeSize.isAccessibilitySize {
+                // At the accessibility text sizes the stepper gets its own
+                // line, so the label and count aren't both cut to "…"
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 10) { stepperLabel }
+                    HStack(spacing: 10) {
+                        stepperControls
+                        Spacer(minLength: 0)
                     }
-                    .buttonStyle(.plain)
-                    .hitTargetSlot(visual: 13)
-                    .accessibilityLabel("mw4.ui.unlocks_hint".localized())
                 }
-
-                Spacer(minLength: 4)
-
+            } else {
                 HStack(spacing: 10) {
-                    stepButton(systemName: "minus", enabled: shown > 0, size: 26, accent: mode.accent) {
-                        setShown(shown - 1)
-                    }
-
-                    Button {
-                        valueText = "\(shown)"
-                        showValueEntry = true
-                    } label: {
-                        (Text("\(shown)").font(.hitmarker(20)).foregroundColor(Color.appInk)
-                         + Text("/\(shownMax)").font(.hitmarker(12)).foregroundColor(Color.appInkMuted))
-                            .lineLimit(1)
-                            .contentTransition(.numericText())
-                            .frame(minWidth: 56)
-                    }
-                    .buttonStyle(.plain)
-
-                    stepButton(systemName: "plus", enabled: shown < shownMax, size: 26, accent: mode.accent) {
-                        setShown(shown + 1)
-                    }
+                    stepperLabel
+                    Spacer(minLength: 4)
+                    stepperControls
                 }
-                // One adjustable stop for VoiceOver ("Weapon level, 12 of
-                // 71"): swipe to step, double-tap to type it, instead of
-                // "Remove", "12/71", "Add" with nothing said they change
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(Text(stepperName))
-                .accessibilityValue(Text(String(format: "ct.a11y.count".localized(), shown, shownMax)))
-                .accessibilityAdjustableAction { direction in
-                    switch direction {
-                    case .increment: if shown < shownMax { setShown(shown + 1) }
-                    case .decrement: if shown > 0 { setShown(shown - 1) }
-                    @unknown default: break
-                    }
-                }
-                .accessibilityAction {
-                    valueText = "\(shown)"
-                    showValueEntry = true
-                }
-                .accessibilityIdentifier("levelStepper")
-
-                Button {
-                    withAnimation(.snappy) { viewModel.setLevel(maxLevel, for: weapon) }
-                } label: {
-                    Text("mw4.ui.max".localized())
-                        .font(.system(size: 10, weight: .bold))
-                        .lineLimit(1)
-                        .fixedSize()
-                        .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
-                        .padding(.horizontal, 8)
-                        .frame(height: 26)
-                        .background(Capsule().stroke(level == maxLevel ? Color.appInkMuted.opacity(0.3) : mode.accent.opacity(0.6), lineWidth: 1))
-                        // 44pt tall to tap, drawn 26
-                        .frame(minHeight: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .padding(.vertical, -9)
-                .disabled(level == maxLevel)
             }
 
             GeometryReader { proxy in
@@ -1176,6 +1110,96 @@ private struct CompactLevelRow: View {
             .animation(.snappy, value: level)
             .animation(.snappy, value: maxLevel)
         }
+    }
+
+    @ViewBuilder private var stepperLabel: some View {
+        // Longer in French and Spanish than the room beside the stepper
+        // on a narrow header: shrink a little before truncating.
+        // Full size whenever it fits. A bare minimumScaleFactor shrank
+        // it with room to spare (sized before the row had its width).
+        let label = Text(stepperName)
+            .scaledFont(12, weight: .semibold)
+            .foregroundStyle(Color.appInkMuted)
+            .lineLimit(1)
+        ViewThatFits(in: .horizontal) {
+            label.fixedSize()
+            label.minimumScaleFactor(0.7)
+        }
+        .layoutPriority(1)
+        if countsUnlocks && prestige == 0 {
+            Button {
+                withAnimation(.snappy) { showsUnlocksHint.toggle() }
+            } label: {
+                Image(systemName: showsUnlocksHint ? "info.circle.fill" : "info.circle")
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.appInkMuted)
+                    .hitTarget()
+            }
+            .buttonStyle(.plain)
+            .hitTargetSlot(visual: 13)
+            .accessibilityLabel("mw4.ui.unlocks_hint".localized())
+        }
+    }
+
+    @ViewBuilder private var stepperControls: some View {
+        HStack(spacing: 10) {
+            stepButton(systemName: "minus", enabled: shown > 0, size: 26, accent: mode.accent) {
+                setShown(shown - 1)
+            }
+
+            Button {
+                valueText = "\(shown)"
+                showValueEntry = true
+            } label: {
+                (Text("\(shown)").font(.hitmarker(20, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInk)
+                 + Text("/\(shownMax)").font(.hitmarker(12, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted))
+                    .lineLimit(1)
+                    .contentTransition(.numericText())
+                    .frame(minWidth: 56)
+            }
+            .buttonStyle(.plain)
+
+            stepButton(systemName: "plus", enabled: shown < shownMax, size: 26, accent: mode.accent) {
+                setShown(shown + 1)
+            }
+        }
+        // One adjustable stop for VoiceOver ("Weapon level, 12 of
+        // 71"): swipe to step, double-tap to type it, instead of
+        // "Remove", "12/71", "Add" with nothing said they change
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(stepperName))
+        .accessibilityValue(Text(String(format: "ct.a11y.count".localized(), shown, shownMax)))
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment: if shown < shownMax { setShown(shown + 1) }
+            case .decrement: if shown > 0 { setShown(shown - 1) }
+            @unknown default: break
+            }
+        }
+        .accessibilityAction {
+            valueText = "\(shown)"
+            showValueEntry = true
+        }
+        .accessibilityIdentifier("levelStepper")
+
+        Button {
+            withAnimation(.snappy) { viewModel.setLevel(maxLevel, for: weapon) }
+        } label: {
+            Text("mw4.ui.max".localized())
+                .scaledFont(10, weight: .bold)
+                .lineLimit(1)
+                .fixedSize()
+                .foregroundStyle(level == maxLevel ? Color.appInkMuted : mode.accent)
+                .padding(.horizontal, 8)
+                .frame(height: 26)
+                .background(Capsule().stroke(level == maxLevel ? Color.appInkMuted.opacity(0.3) : mode.accent.opacity(0.6), lineWidth: 1))
+                // 44pt tall to tap, drawn 26
+                .frame(minHeight: 44)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .padding(.vertical, -9)
+        .disabled(level == maxLevel)
     }
 }
 

@@ -179,7 +179,7 @@ struct HajinCanPrintTag: View {
             Image(systemName: "printer.fill").font(.system(size: 9, weight: .bold))
             Text("mw4.ui.hajin.can_print".localized().uppercased())
         }
-        .font(.system(size: 10, weight: .heavy))
+        .scaledFont(10, weight: .heavy)
         .tracking(0.5)
         .foregroundStyle(Color.black.opacity(0.85))
         .padding(.horizontal, 7)
@@ -224,7 +224,7 @@ struct HajinValueBadge: View {
             if locked { Image(systemName: "lock.fill").font(.system(size: 9, weight: .bold)) }
             Text(text)
         }
-            .font(.system(size: 11, weight: .semibold, design: .monospaced))
+            .scaledFont(11, weight: .semibold, design: .monospaced)
             .foregroundStyle(locked ? Color.appInkMuted : Color.appInk.opacity(0.9))
             .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal, 7)
@@ -406,7 +406,7 @@ struct HajinItemRow: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(alignment: .firstTextBaseline) {
                         Text(item.name.resolved)
-                            .font(.hitmarker(15))
+                            .hitmarkerFont(15)
                             .foregroundStyle(Color.appInk)
                         Spacer(minLength: 6)
                         if let value = row.value?.resolved, value != item.rarity, value != "Resource" {
@@ -659,7 +659,7 @@ struct HajinItemView: View {
                     Rectangle().fill(Color.appSurface2).frame(width: 1)
                     VStack(alignment: .leading, spacing: 6) {
                         Text("mw4.ui.hajin.sells_for".localized()).font(.caption.weight(.semibold)).foregroundStyle(Color.appInkMuted)
-                        Text("$\(value.formatted())").font(.hitmarker(30)).foregroundStyle(Color.appInk)
+                        Text("$\(value.formatted())").hitmarkerFont(30).foregroundStyle(Color.appInk)
                             .lineLimit(1).minimumScaleFactor(0.5)
                         if have > 1 {
                             Text("$\((value * have).formatted()) ×\(have)").font(.caption).foregroundStyle(Color.appInkMuted)
@@ -751,7 +751,7 @@ struct HajinItemView: View {
             HajinItemTile(item: item, size: 104)
             VStack(alignment: .leading, spacing: 8) {
                 Text(item.name.resolved.uppercased())
-                    .font(.hitmarker(26))
+                    .hitmarkerFont(26)
                     .foregroundStyle(Color.appInk)
                     .fixedSize(horizontal: false, vertical: true)
                 HajinRarityLine(item: item)
@@ -993,7 +993,7 @@ struct HajinItemView: View {
             let label = VStack(spacing: 3) {
                 HStack(spacing: 4) {
                     Text(Self.roman(tier.tier ?? 1))
-                        .font(.hitmarker(18))
+                        .hitmarkerFont(18)
                     if done { Image(systemName: "checkmark.circle.fill").font(.caption) }
                 }
                 .foregroundStyle(current ? Color.black.opacity(0.85) : Color.appInk)
@@ -1032,7 +1032,7 @@ struct HajinItemView: View {
     /// A section's heading, as My DMZ's: Hitmarker, sentence case
     private func panelTitle(_ text: String) -> some View {
         Text(text)
-            .font(.hitmarker(18))
+            .hitmarkerFont(18)
             .foregroundStyle(Color.appInk)
             .padding(.top, 4)
     }
@@ -1169,7 +1169,7 @@ struct HajinOrderView: View {
             if let row {
                 if let group = row.group {
                     Text(group.resolved.uppercased())
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .tracking(0.8)
                         .foregroundStyle(Color.appInkMuted)
                         .listRowBackground(Color.clear)
@@ -1212,16 +1212,16 @@ struct HajinWeaponRow: View {
                 .clipShape(RoundedRectangle(cornerRadius: 6))
             VStack(alignment: .leading, spacing: 3) {
                 Text(row.title.resolved)
-                    .font(.hitmarker(15))
+                    .hitmarkerFont(15)
                     .foregroundStyle(Color.appInk)
                 if needsManual {
                     Text(manualDone ? "mw4.ui.hajin.manual_done".localized() : "mw4.ui.hajin.manual_needed".localized())
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .textCase(.uppercase)
                         .foregroundStyle(manualDone ? Color.accentDMZ : Color.appInkMuted)
                 } else if let subtitle = row.subtitle {
                     Text(subtitle.resolved)
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .textCase(.uppercase)
                         .foregroundStyle(Color.appInkMuted)
                 }
@@ -1264,9 +1264,9 @@ struct HajinUpgradeFamilyCard: View {
             HStack(spacing: 10) {
                 HajinItemTile(item: item, size: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(item.family ?? item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                    Text(item.family ?? item.name.resolved).hitmarkerFont(15).foregroundStyle(Color.appInk)
                     Text("\(tiers.filter { store.checked.contains("upgrade-\($0.id)") }.count)/\(tiers.count) " + "mw4.ui.hajin.tiers".localized())
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .textCase(.uppercase)
                         .foregroundStyle(Color.appInkMuted)
                 }

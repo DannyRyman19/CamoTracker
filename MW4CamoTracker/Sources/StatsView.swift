@@ -125,7 +125,7 @@ private struct OverallStatsHero: View {
             ProgressRing(fraction: overallFraction, accent: .camoGold, lineWidth: 10, size: 110)
 
             Text("mw4.ui.stats.overall".localized())
-                .font(.system(size: 12, weight: .bold))
+                .scaledFont(12, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 
@@ -136,10 +136,10 @@ private struct OverallStatsHero: View {
                             .font(.system(size: 13, weight: .bold))
                             .foregroundStyle(entry.mode.accent)
                         Text("\(Int(entry.fraction * 100))%")
-                            .font(.system(size: 14, weight: .bold, design: .monospaced))
+                            .scaledFont(14, weight: .bold, design: .monospaced)
                             .foregroundStyle(Color.appInk)
                         Text(entry.mode.displayName)
-                            .font(.system(size: 10))
+                            .scaledFont(10)
                             .foregroundStyle(Color.appInkMuted)
                     }
                     .frame(maxWidth: .infinity)
@@ -172,7 +172,7 @@ private struct DMZStatsCard: View {
                         .foregroundStyle(Color.accentDMZ)
                     if store.cash > 0 {
                         Text("mw4.ui.hajin.cash_title".localized() + " $\(store.cash.formatted())")
-                            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            .scaledFont(12, weight: .semibold, design: .monospaced)
                             .foregroundStyle(Color.appInkMuted)
                     }
                 }
@@ -190,7 +190,7 @@ private struct DMZStatsCard: View {
                             .foregroundStyle(Color.appInk)
                         Spacer(minLength: 6)
                         Text("\(line.done)/\(line.total)")
-                            .font(.system(size: 13, weight: .bold, design: .monospaced))
+                            .scaledFont(13, weight: .bold, design: .monospaced)
                             .foregroundStyle(line.done >= line.total ? Color.accentDMZ : Color.appInkMuted)
                     }
                     ProgressBar(fraction: line.fraction, accent: .accentDMZ)
@@ -216,9 +216,9 @@ private struct SupportRow: View {
                     .font(.system(size: 12, weight: .semibold))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("mw4.ui.support".localized())
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(12, weight: .semibold)
                     Text(Self.address)
-                        .font(.system(size: 12, design: .monospaced))
+                        .scaledFont(12, design: .monospaced)
                 }
                 Spacer()
             }
@@ -291,7 +291,7 @@ private struct ModeStatsCard: View {
                 Text(ownGrind ? mode.displayName
                      : part == .weapons ? "mw4.ui.section.weapons".localized()
                      : "\(mode.displayName) \("mw4.ui.section.mastery".localized())")
-                    .font(.hitmarker(17))
+                    .hitmarkerFont(17)
                     .foregroundStyle(Color.appInk)
                 Spacer()
                 // `mode.accent` already *is* this mode's tier3 color (see
@@ -301,7 +301,7 @@ private struct ModeStatsCard: View {
                 ProgressRing(fraction: completion, accent: mode.accent, lineWidth: 5, size: 42, showsPercentage: false, shimmerColors: mode.masteryCamos.tier3.gradient)
                     .overlay(
                         Text("\(Int(completion * 100))%")
-                            .font(.system(size: 11, weight: .bold, design: .monospaced))
+                            .scaledFont(11, weight: .bold, design: .monospaced)
                             .foregroundStyle(mode.accent)
                     )
             }
@@ -335,7 +335,7 @@ private struct ModeStatsCard: View {
                 } label: {
                     HStack {
                         Text("mw4.ui.stats.breakdown".localized())
-                            .font(.system(size: 12, weight: .semibold))
+                            .scaledFont(12, weight: .semibold)
                             .foregroundStyle(Color.appInkMuted)
                         Spacer()
                         Image(systemName: "chevron.down")
@@ -376,7 +376,7 @@ private struct ModeStatsCard: View {
 
     private func trackTitle(_ title: String) -> some View {
         Text(title)
-            .font(.system(size: 12, weight: .semibold))
+            .scaledFont(12, weight: .semibold)
             .foregroundStyle(Color.appInkMuted)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -386,18 +386,18 @@ private struct ModeStatsCard: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 6) {
                     Text(name)
-                        .font(.system(size: 13))
+                        .scaledFont(13)
                         .foregroundStyle(Color.appInk)
                     if let count {
                         Text(count)
-                            .font(.system(size: 11, design: .monospaced))
+                            .scaledFont(11, design: .monospaced)
                             .foregroundStyle(Color.appInkMuted)
                     }
                 }
                 ProgressBar(fraction: fraction, accent: mode.accent)
             }
             Text("\(Int(fraction * 100))%")
-                .font(.system(size: 12, design: .monospaced))
+                .scaledFont(12, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
     }

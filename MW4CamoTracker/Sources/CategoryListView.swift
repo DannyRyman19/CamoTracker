@@ -97,7 +97,7 @@ struct CategoryListView: View {
         return Button { classId = id } label: {
             // Lit like the tab switchers: a tint of the accent and its edge
             Text(title)
-                .font(.hitmarker(14))
+                .hitmarkerFont(14)
                 .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
                 .padding(.horizontal, 13)
                 .padding(.vertical, 7)
@@ -219,7 +219,7 @@ struct CategoryListView: View {
 
         case .pinned:
             if !pinnedWeapons.isEmpty {
-                Section("mw4.ui.section.pinned".localized()) {
+                Section(heading: "mw4.ui.section.pinned".localized()) {
                     // Always the full row, even in a grid: a pin is its own
                     // card, and half a row beside a gap looks lost.
                     CardGrid(items: pinnedWeapons, columns: columns, fillsRow: true, route: { .weapon($0.weaponId) }) { weapon in
@@ -230,7 +230,7 @@ struct CategoryListView: View {
 
         case .suggested:
             if !suggestions.isEmpty {
-                Section("mw4.ui.section.suggested".localized()) {
+                Section(heading: "mw4.ui.section.suggested".localized()) {
                     CardGrid(items: suggestions, columns: columns, route: { .weapon($0.weaponId) }) { suggestion in
                         SuggestionRow(mode: mode, suggestion: suggestion)
                     }
@@ -287,13 +287,13 @@ struct CategoryListView: View {
                         }
                     }
                 } header: {
-                    Text("mw4.ui.section.weapons".localized())
+                    ListHeading("mw4.ui.section.weapons".localized())
                 }
             }
 
         case .objectives:
             if !objectiveCategories.isEmpty {
-                Section("mw4.ui.section.objectives".localized()) {
+                Section(heading: "mw4.ui.section.objectives".localized()) {
                     CardGrid(items: objectiveCategories, columns: columns, route: { .objectiveCategory($0.categoryId) }) { category in
                         ObjectiveCategoryRow(mode: mode, category: category)
                     }
@@ -390,17 +390,17 @@ private struct SuggestionRow: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(suggestion.title)
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(15, weight: .semibold)
                     .foregroundStyle(Color.appInk)
                 Text(suggestion.subtitle)
-                    .font(.system(size: 12.5, weight: suggestion.gradient != nil ? .semibold : .regular))
+                    .scaledFont(12.5, weight: suggestion.gradient != nil ? .semibold : .regular)
                     .foregroundStyle(subtitleStyle)
                 ProgressBar(fraction: fraction, accent: mode.accent)
             }
 
             Spacer(minLength: 8)
             Text("\(Int(fraction * 100))%")
-                .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                .scaledFont(13, weight: .semibold, design: .monospaced)
                 .foregroundStyle(mode.accent)
         }
         .padding(12)
@@ -427,12 +427,12 @@ private struct WeaponCategoryRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("\(category.weapons.count) \("mw4.ui.section.weapons".localized())")
-                .font(.system(size: 11, weight: .bold))
+                .scaledFont(11, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 
             Text(category.name.resolved())
-                .font(.hitmarker(16))
+                .hitmarkerFont(16)
                 .foregroundStyle(Color.appInk)
 
             // The same rings as this category's own weapon-list header.
@@ -459,11 +459,11 @@ private struct ObjectiveCategoryRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("\(category.items.count) \("mw4.ui.section.objectives".localized())")
-                .font(.system(size: 11, weight: .bold))
+                .scaledFont(11, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
             Text(category.name.resolved())
-                .font(.hitmarker(16))
+                .hitmarkerFont(16)
                 .foregroundStyle(Color.appInk)
             ProgressBar(fraction: fraction, accent: mode.accent)
         }
@@ -701,6 +701,10 @@ struct CustomiseHomeSheet: View {
                                     Text("mw4.ui.premium.customise_body".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
                                 }
                             }
+                            // Past the third accessibility size "Customising"
+                            // broke mid-word beside the symbol; whole words
+                            // still wrap up to here
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility3)
                         }
                         .accessibilityIdentifier("customise.premiumCard")
                     }

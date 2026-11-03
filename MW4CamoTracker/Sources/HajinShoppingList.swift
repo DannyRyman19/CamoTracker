@@ -155,9 +155,9 @@ struct HajinShoppingListView: View {
 
     private func stat(_ title: String, _ value: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(value).font(.system(size: 18, weight: .bold, design: .monospaced)).foregroundStyle(Color.appInk)
+            Text(value).scaledFont(18, weight: .bold, design: .monospaced).foregroundStyle(Color.appInk)
                 .lineLimit(1).minimumScaleFactor(0.6)
-            Text(title.uppercased()).font(.system(size: 10, weight: .bold)).tracking(0.6).foregroundStyle(Color.appInkMuted)
+            Text(title.uppercased()).scaledFont(10, weight: .bold).tracking(0.6).foregroundStyle(Color.appInkMuted)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(10)
@@ -195,7 +195,7 @@ struct HajinShoppingRow: View {
                     HStack(spacing: 12) {
                         HajinItemTile(item: line.item, size: 36)
                         VStack(alignment: .leading, spacing: 3) {
-                            Text(line.item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                            Text(line.item.name.resolved).hitmarkerFont(15).foregroundStyle(Color.appInk)
                                 .multilineTextAlignment(.leading)
                             Text(done ? String(format: "mw4.ui.hajin.shop_have".localized(), line.have, line.need)
                                       : String(format: "mw4.ui.hajin.shop_missing".localized(), line.missing, line.need))
@@ -232,13 +232,13 @@ struct HajinShoppingEntry: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.accentDMZ))
             VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.hajin.shop".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.hajin.shop".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Text("mw4.ui.hajin.shop_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
             if missing > 0 {
                 Text("\(missing)")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .scaledFont(12, weight: .semibold, design: .monospaced)
                     .foregroundStyle(Color.appInkMuted)
             }
         }

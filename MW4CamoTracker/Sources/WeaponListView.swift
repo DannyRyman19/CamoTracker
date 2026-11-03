@@ -127,6 +127,8 @@ struct WeaponRow: View {
     }
 
     @AppStorage(CardOutline.key) private var outline = CardOutline.prestige.rawValue
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    private var stacked: Bool { dynamicTypeSize.isAccessibilitySize }
 
     /// The border's colors: the best Prestige or Completionist camo earned,
     /// whichever Customise puts first. Nothing earned keeps the plain border.
@@ -154,55 +156,79 @@ struct WeaponRow: View {
             if showsCamoCount {
                 let counts = viewModel.camoCounts(weaponId: weapon.weaponId, mode: mode.rawValue)
                 Text("\(counts.done)/\(counts.total) \("mw4.ui.section.camos".localized())")
-                    .font(.system(size: 11, weight: .bold))
+                    .scaledFont(11, weight: .bold)
                     .textCase(.uppercase)
                     .foregroundStyle(Color.appInkMuted)
             }
 
-            HStack(spacing: 12) {
-                WeaponThumbnail(urlString: weapon.imageURL, size: 56)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(weapon.name.resolved())
-                        .font(.hitmarker(15))
-                        .foregroundStyle(Color.appInk)
-                        .lineLimit(1)
-                    AcquiredByLabel(weapon: weapon, font: .system(size: 10.5), color: .appInkMuted)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+            if stacked {
+                // At the accessibility text sizes the pips and level go
+                // under the name, which gets the card's whole width
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 12) {
+                        WeaponThumbnail(urlString: weapon.imageURL, size: 56)
+                        nameColumn
+                    }
+                    progress(alignment: .leading)
                 }
-                Spacer(minLength: 8)
-                // Pips stay right-aligned above the level, out of the name's
-                // way — sharing a line with the name pushed long weapon
-                // names off the edge instead of just truncating gracefully.
-                VStack(alignment: .trailing, spacing: 4) {
-                    if !camos.isEmpty {
-                        CamoPipRow(
-                            camos: camos,
-                            isComplete: { viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) },
-                            filledColor: mode.accent,
-                            // One diamond per Completionist camo: Gold,
-                            // Platinum, Harmonic Break, and the final camo
-                            // when the track has one.
-                            masteryTiers: mode.completionistCamos.indices.map { index in
-                                .init(achieved: (highest ?? -1) >= index, color: color(ofCompletionist: index))
-                            }
-                        )
-                    }
-                    // Weapon level is global — the same number shows up under every mode tab.
-                    if !viewModel.quickTick {
-                        let prestige = viewModel.prestige(for: weapon.weaponId)
-                        Text(!viewModel.countsUnlocks(weaponId: weapon.weaponId)
-                             ? "\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
-                             : String(format: "mw4.ui.unlocks_short".localized(),
-                                      TrackerViewModel.unlocks(forLevel: viewModel.level(for: weapon.weaponId)),
-                                      TrackerViewModel.unlocks(forLevel: viewModel.maxLevel(for: weapon))))
-                            .font(.system(size: 11, design: .monospaced))
-                            .foregroundStyle(Color.appInkMuted)
-                    }
+            } else {
+                HStack(spacing: 12) {
+                    WeaponThumbnail(urlString: weapon.imageURL, size: 56)
+                    nameColumn
+                    Spacer(minLength: 8)
+                    // Pips stay right-aligned above the level, out of the name's
+                    // way — sharing a line with the name pushed long weapon
+                    // names off the edge instead of just truncating gracefully.
+                    progress(alignment: .trailing)
                 }
             }
         }
         .padding(12)
         .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil), borderGradient: borderGradient)
+    }
+
+    private var nameColumn: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(weapon.name.resolved())
+                .hitmarkerFont(15)
+                .foregroundStyle(Color.appInk)
+                // Two lines at the accessibility sizes, so "Cronen Mar 22"
+                // isn't cut to "Cron…"
+                .lineLimit(stacked ? 2 : 1)
+                .minimumScaleFactor(stacked ? 0.8 : 1)
+            AcquiredByLabel(weapon: weapon, size: 10.5, color: .appInkMuted)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+    }
+
+    /// The camo pips over the level or unlocks.
+    private func progress(alignment: HorizontalAlignment) -> some View {
+        VStack(alignment: alignment, spacing: 4) {
+            if !camos.isEmpty {
+                CamoPipRow(
+                    camos: camos,
+                    isComplete: { viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) },
+                    filledColor: mode.accent,
+                    // One diamond per Completionist camo: Gold,
+                    // Platinum, Harmonic Break, and the final camo
+                    // when the track has one.
+                    masteryTiers: mode.completionistCamos.indices.map { index in
+                        .init(achieved: (highest ?? -1) >= index, color: color(ofCompletionist: index))
+                    }
+                )
+            }
+            // Weapon level is global — the same number shows up under every mode tab.
+            if !viewModel.quickTick {
+                let prestige = viewModel.prestige(for: weapon.weaponId)
+                Text(!viewModel.countsUnlocks(weaponId: weapon.weaponId)
+                     ? "\(prestige > 0 ? "P\(prestige) · " : "")LVL \(viewModel.level(for: weapon.weaponId))/\(viewModel.maxLevel(for: weapon))"
+                     : String(format: "mw4.ui.unlocks_short".localized(),
+                              TrackerViewModel.unlocks(forLevel: viewModel.level(for: weapon.weaponId)),
+                              TrackerViewModel.unlocks(forLevel: viewModel.maxLevel(for: weapon))))
+                    .scaledFont(11, design: .monospaced)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+        }
     }
 }

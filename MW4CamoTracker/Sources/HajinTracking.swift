@@ -8,6 +8,7 @@ struct HajinStashStepper: View {
     @EnvironmentObject private var store: HajinStore
     @State private var entering = false
     @State private var text = ""
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         let count = store.count(of: id)
@@ -18,7 +19,7 @@ struct HajinStashStepper: View {
                 entering = true
             } label: {
                 Text("\(count)")
-                    .font(big ? .hitmarker(30) : .system(size: 14, weight: .bold, design: .monospaced))
+                    .font(big ? .hitmarker(30, scaledFor: dynamicTypeSize) : .scaledSystem(14, weight: .bold, design: .monospaced, for: dynamicTypeSize))
                     .foregroundStyle(big ? (count > 0 ? Color.appInk : Color.appInkMuted) : count > 0 ? Color.accentDMZ : Color.appInkMuted)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
@@ -76,7 +77,7 @@ struct HajinTrackButton: View {
                         : "mw4.ui.hajin.track".localized())
                 Spacer()
                 Text("\(store.tracked.count)/\(HajinStore.maxTracked)")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .scaledFont(12, weight: .semibold, design: .monospaced)
                     .foregroundStyle(on ? Color.black.opacity(0.7) : Color.appInkMuted)
             }
             .font(.subheadline.weight(.semibold))
@@ -102,10 +103,10 @@ struct HajinTrackingCard: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 12) {
                 HajinCardSymbol("scope")
-                Text("mw4.ui.hajin.tracking".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.hajin.tracking".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer()
                 Text("\(store.tracked.count)/\(HajinStore.maxTracked)")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .scaledFont(12, weight: .semibold, design: .monospaced)
                     .foregroundStyle(Color.appInkMuted)
             }
             if let guide = store.guide {
@@ -124,7 +125,7 @@ struct HajinTrackingCard: View {
                             .foregroundStyle(Color(red: 0.42, green: 0.80, blue: 0.36))
                     } else {
                         Text("mw4.ui.hajin.look_out_for".localized().uppercased())
-                            .font(.system(size: 11, weight: .bold))
+                            .scaledFont(11, weight: .bold)
                             .tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
                             .padding(.top, 2)
@@ -174,7 +175,7 @@ private struct TrackedRow: View {
                         HStack(spacing: 3) {
                             HajinItemTile(item: store.guide?.item(part.item), size: 22)
                             Text("\(min(have, part.qty))/\(part.qty)")
-                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                .scaledFont(11, weight: .semibold, design: .monospaced)
                                 .foregroundStyle(enough ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInk)
                         }
                     }
@@ -314,7 +315,7 @@ struct HajinStashView: View {
             HajinItemLink(id: item.id) {
                 HStack(spacing: 12) {
                     HajinItemTile(item: item, size: 36)
-                    Text(item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                    Text(item.name.resolved).hitmarkerFont(15).foregroundStyle(Color.appInk)
                     Spacer(minLength: 0)
                 }
             }
@@ -335,12 +336,12 @@ struct HajinStashEntry: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.accentDMZ))
             VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.hajin.stash".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.hajin.stash".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Text("mw4.ui.hajin.stash_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
             Text("\(store.stash.values.reduce(0, +))")
-                .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                .scaledFont(12, weight: .semibold, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
     }
@@ -420,7 +421,7 @@ struct HajinBuildNextCard: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 12) {
                 HajinCardSymbol("hammer.fill")
-                Text("mw4.ui.hajin.build_next".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.hajin.build_next".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer()
                 if store.stash.isEmpty {
                     Text("mw4.ui.hajin.build_next_hint".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
@@ -443,7 +444,7 @@ struct HajinBuildNextCard: View {
                                         if let cash = pick.item.cash {
                                             // Red when it's more than the cash the player entered
                                             Text("$\(cash.formatted())")
-                                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                                .scaledFont(11, weight: .semibold, design: .monospaced)
                                                 .foregroundStyle(store.cash > 0 && cash > store.cash ? Color(red: 0.93, green: 0.32, blue: 0.30) : Color.appInkMuted)
                                             HajinCashShort(price: cash)
                                         }
@@ -467,7 +468,7 @@ struct HajinBuildNextCard: View {
                     }
                     if (pick.item.cost ?? []).isEmpty {
                         Text("mw4.ui.hajin.cash_only".localized().uppercased())
-                            .font(.system(size: 10, weight: .bold)).tracking(0.6)
+                            .scaledFont(10, weight: .bold).tracking(0.6)
                             .foregroundStyle(Color.appInkMuted)
                             .padding(.leading, 42)
                     } else {

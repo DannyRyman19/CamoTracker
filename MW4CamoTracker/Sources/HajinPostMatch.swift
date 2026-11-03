@@ -390,7 +390,7 @@ struct HajinPostMatchReview: View {
                                 findableTile(line.item, size: 32)
                                 Text(line.item.name.resolved).font(.subheadline).foregroundStyle(Color.appInk)
                                 Spacer()
-                                Text("×\(line.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
+                                Text("×\(line.count)").scaledFont(12, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInkMuted)
                             }
                             .contentShape(Rectangle())
                             .onTapGesture { light(line.item.id) }
@@ -479,7 +479,7 @@ struct HajinPostMatchReview: View {
             HajinCardSymbol("key.fill")
             Text("mw4.ui.postmatch.keys".localized()).font(.subheadline).foregroundStyle(Color.appInk)
             Spacer()
-            Text("×\(keys.count)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
+            Text("×\(keys.count)").scaledFont(12, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInkMuted)
         }
         .contentShape(Rectangle())
         .onTapGesture { light("keys") }
@@ -562,7 +562,7 @@ struct HajinPostMatchReview: View {
             Spacer(minLength: 8)
             if total > 0 {
                 Text("$\(total.formatted())")
-                    .font(.system(size: 18, weight: .bold, design: .monospaced))
+                    .scaledFont(18, weight: .bold, design: .monospaced)
                     .foregroundStyle(HajinVerdict.sellColor)
                     .contentTransition(.numericText())
             }
@@ -578,7 +578,7 @@ struct HajinPostMatchReview: View {
                 if let n = result.resources[id], let item = store.guide?.item(id) {
                     HStack(spacing: 6) {
                         HajinItemTile(item: item, size: 26)
-                        Text("+\(n)").font(.system(size: 13, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInk)
+                        Text("+\(n)").scaledFont(13, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInk)
                     }
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(item.name.resolved) +\(n)")
@@ -603,7 +603,7 @@ struct HajinPostMatchReview: View {
                     VStack(alignment: .leading, spacing: 3) {
                         Text(row.item.name.resolved).font(.subheadline.weight(.semibold)).foregroundStyle(Color.appInk).lineLimit(2)
                         HStack(spacing: 6) {
-                            Text("×\(row.count)").font(.system(size: 12, weight: .semibold, design: .monospaced))
+                            Text("×\(row.count)").scaledFont(12, weight: .semibold, design: .monospaced)
                             if let value = row.item.value, value > 0 {
                                 Text("$\((value * row.count).formatted())").font(.caption)
                             }
@@ -764,7 +764,7 @@ struct HajinPostMatchReview: View {
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(Color.appInk)
                         if result.manuals > 1 {
-                            Text("×\(result.manuals)").font(.system(size: 12, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInkMuted)
+                            Text("×\(result.manuals)").scaledFont(12, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInkMuted)
                         }
                     }
                     Text("mw4.ui.postmatch.manual_hint".localized()).font(.caption).foregroundStyle(Color.appInkMuted)

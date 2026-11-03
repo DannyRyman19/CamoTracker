@@ -142,10 +142,10 @@ struct ContentView: View {
                                 } label: {
                                     HStack(spacing: 6) {
                                         Text(gameStore.game.shortName)
-                                            .font(.hitmarker(22))
+                                            .hitmarkerFont(22)
                                             .foregroundStyle(mode.accent)
                                         Text(mode.displayName)
-                                            .font(.hitmarker(22))
+                                            .hitmarkerFont(22)
                                             .foregroundStyle(Color.appInk)
                                         Image(systemName: "chevron.down.circle.fill")
                                             .font(.system(size: 16, weight: .semibold))

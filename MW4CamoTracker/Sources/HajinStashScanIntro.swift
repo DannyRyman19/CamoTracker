@@ -18,6 +18,12 @@ struct HajinStashScanIntro: View {
     @State private var showsPremium = false
     @State private var showsNoAd = false
     @State private var recent: [URL] = HajinRecentPhotos.all()
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    /// At the accessibility text sizes the pinned buttons took most of the
+    /// screen, leaving a sliver for the explanation: there they scroll in
+    /// after the tips instead.
+    private var pinsButtons: Bool { !dynamicTypeSize.isAccessibilitySize }
 
     /// Free players, before this scan's ad. Buying Premium clears it too.
     private var needsAd: Bool { !premium.isPremium && Ads.shared.showsAds && !watched }
@@ -27,6 +33,9 @@ struct HajinStashScanIntro: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     HajinStashScanDemo()
+                        // A picture of a stash: its labels stop growing at
+                        // the largest standard size, so the names still fit
+                        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 6)
                     Text("mw4.ui.hajin.grid_intro".localized())
@@ -37,7 +46,7 @@ struct HajinStashScanIntro: View {
                         .foregroundStyle(Color.accentDMZ)
                     VStack(alignment: .leading, spacing: 10) {
                         Text("mw4.ui.hajin.grid_tips_title".localized().uppercased())
-                            .font(.system(size: 11, weight: .bold)).tracking(0.8)
+                            .scaledFont(11, weight: .bold).tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
                         tip("photo.on.rectangle", "mw4.ui.hajin.grid_tip_screenshot", best: true)
                         tip("camera.viewfinder", "mw4.ui.hajin.grid_tip_straight")
@@ -52,20 +61,21 @@ struct HajinStashScanIntro: View {
                     }
                     .padding(14)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.appSurface))
+                    if !pinsButtons { buttons }
                 }
                 .padding(16)
             }
             .background(Color.appBackground)
             // Pinned under the tips, so the next step is always in view
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                VStack(spacing: 10) {
-                    if needsAd { adButtons } else { photoButtons }
+                if pinsButtons {
+                    buttons
+                        .padding(.horizontal, 16)
+                        .padding(.top, 12)
+                        .padding(.bottom, 8)
+                        .background(Color.appBackground)
+                        .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 12)
-                .padding(.bottom, 8)
-                .background(Color.appBackground)
-                .overlay(alignment: .top) { Rectangle().fill(Color.appInkMuted.opacity(0.25)).frame(height: 0.5) }
             }
             .navigationTitle("mw4.ui.hajin.grid_scan".localized())
             .navigationBarTitleDisplayMode(.inline)
@@ -89,6 +99,12 @@ struct HajinStashScanIntro: View {
         }
     }
 
+    private var buttons: some View {
+        VStack(spacing: 10) {
+            if needsAd { adButtons } else { photoButtons }
+        }
+    }
+
     /// Free players: an ad for this scan, or Premium for none.
     @ViewBuilder private var adButtons: some View {
         Button {
@@ -106,7 +122,7 @@ struct HajinStashScanIntro: View {
             HStack(spacing: 12) {
                 HajinCardSymbol("sparkles")
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("mw4.ui.premium.scan_premium".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                    Text("mw4.ui.premium.scan_premium".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                     Text("mw4.ui.premium.subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
@@ -189,7 +205,7 @@ struct HajinStashScanIntro: View {
             VStack(alignment: .leading, spacing: 3) {
                 if best {
                     Text("mw4.ui.hajin.grid_tip_best".localized().uppercased())
-                        .font(.system(size: 10, weight: .heavy)).tracking(0.8)
+                        .scaledFont(10, weight: .heavy).tracking(0.8)
                         .foregroundStyle(Color.black.opacity(0.85))
                         .padding(.horizontal, 6).padding(.vertical, 2)
                         .background(Capsule().fill(Color.accentDMZ))
@@ -205,7 +221,7 @@ struct HajinStashScanIntro: View {
     /// Over the tips for one kind of screen.
     private func tipsHeading(_ symbol: String, _ key: String) -> some View {
         Label(key.localized(), systemImage: symbol)
-            .font(.hitmarker(15))
+            .hitmarkerFont(15)
             .foregroundStyle(Color.appInk)
             .padding(.top, 8)
     }
@@ -310,7 +326,7 @@ struct HajinStashScanDemo: View {
                             ZStack(alignment: .topTrailing) {
                                 HajinItemTile(item: store.guide?.item(stack.id), size: tile)
                                 Text("\(stack.count)")
-                                    .font(.system(size: 11, weight: .heavy, design: .monospaced))
+                                    .scaledFont(11, weight: .heavy, design: .monospaced)
                                     .foregroundStyle(.white)
                                     .shadow(color: .black, radius: 1)
                                     .padding(3)
@@ -353,7 +369,7 @@ struct HajinStashScanDemo: View {
                         .lineLimit(1)
                     Spacer(minLength: 2)
                     Text("\(soFar)")
-                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                        .scaledFont(12, weight: .bold, design: .monospaced)
                         .foregroundStyle(soFar > 0 ? Color.accentDMZ : Color.appInkMuted)
                         .contentTransition(.numericText())
                 }

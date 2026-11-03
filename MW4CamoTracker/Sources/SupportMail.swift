@@ -268,7 +268,7 @@ struct ReportIssueMenu: View {
                     Image(systemName: "exclamationmark.bubble")
                         .font(.system(size: 12, weight: .semibold))
                     Text("mw4.ui.report.title".localized())
-                        .font(.system(size: 12, weight: .semibold))
+                        .scaledFont(12, weight: .semibold)
                     Spacer()
                 }
                 .foregroundStyle(Color.appInkMuted)

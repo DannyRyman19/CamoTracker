@@ -37,7 +37,7 @@ struct MasteryTabView: View {
             List {
                 if embedded {
                     Text("mw4.ui.section.mastery".localized())
-                        .font(.hitmarker(22))
+                        .hitmarkerFont(22)
                         .foregroundStyle(Color.appInk)
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
@@ -64,8 +64,8 @@ struct MasteryTabView: View {
                             TrackCamoRows(mode: mode)
                         }
                     } header: {
-                        Label(mode.displayName, systemImage: mode.symbol)
-                            .foregroundStyle(mode.accent)
+                        ListHeading(title: Label(mode.displayName, systemImage: mode.symbol)
+                            .foregroundStyle(mode.accent))
                     }
                     .listRowBackground(Color.appSurface)
                 }
@@ -203,10 +203,10 @@ private struct TrackCamoRows: View {
                         .fixedSize()
                     Spacer(minLength: 8)
                     Text("\(min(p.done, p.total))/\(p.total)")
-                        .font(.system(size: 11, design: .monospaced))
+                        .scaledFont(11, design: .monospaced)
                         .fixedSize()
                 }
-                .font(.system(size: 12))
+                .scaledFont(12)
                 .foregroundStyle(p.done >= p.total ? mode.accent : Color.appInkMuted)
             }
         }

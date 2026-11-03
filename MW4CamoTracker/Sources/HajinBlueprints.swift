@@ -134,7 +134,7 @@ struct HajinBlueprintRow: View {
                         .opacity(done ? 0.55 : 1)
                     VStack(alignment: .leading, spacing: 3) {
                         Text(item.name.resolved)
-                            .font(.hitmarker(15))
+                            .hitmarkerFont(15)
                             .foregroundStyle(done ? Color.appInkMuted : Color.appInk)
                             .strikethrough(done, color: Color.appInkMuted)
                             .multilineTextAlignment(.leading)
@@ -164,12 +164,12 @@ struct HajinBlueprintsEntry: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.accentDMZ))
             VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.hajin.blueprints".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.hajin.blueprints".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Text("mw4.ui.hajin.blueprints_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
             Text("\(progress.found)/\(progress.total)")
-                .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                .scaledFont(12, weight: .semibold, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
     }

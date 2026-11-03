@@ -379,9 +379,138 @@ extension Font {
     /// reads at 700 there, with Regular reserved for secondary display text.
     /// The current game's title face stands in: Hitmarker for MW4, Teko for
     /// Black Ops (`GameTheme.font`), scaled to read the same size.
+    ///
+    /// Fixed at `size`, for what's drawn at a set size whatever the reader's
+    /// text setting (the share card image). On screen, text uses
+    /// `.hitmarkerFont(_:)`, which grows with Dynamic Type up to a cap.
     static func hitmarker(_ size: CGFloat) -> Font {
-        let font = Font.custom(Palette.font, size: size * Palette.fontScale)
+        let font = Font.custom(Palette.font, fixedSize: size * Palette.fontScale)
         return Palette.fontIsRegular ? font : font.weight(Palette.fontWeight)
+    }
+
+    /// The title face at `size` as the reader's text size would scale it
+    /// (see `ScaledType`), for a `Font` passed into a view rather than set
+    /// on one.
+    static func hitmarker(_ size: CGFloat, scaledFor dynamicTypeSize: DynamicTypeSize) -> Font {
+        hitmarker(ScaledType.size(size, relativeTo: ScaledType.style(for: size),
+                                  maxSize: ScaledType.displayCap(size), in: dynamicTypeSize))
+    }
+
+    /// The system font at a set size, as `.scaledFont` would scale it.
+    static func scaledSystem(_ size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default,
+                             for dynamicTypeSize: DynamicTypeSize) -> Font {
+        .system(size: ScaledType.size(size, relativeTo: ScaledType.style(for: size),
+                                      maxSize: ScaledType.systemCap(size), in: dynamicTypeSize),
+                weight: weight, design: design)
+    }
+}
+
+/// Text set at a fixed point size that still follows the reader's text
+/// size. The app's sizes were picked for the default setting, so at the
+/// default they're unchanged; past it they grow like the text style of a
+/// similar size does, with a cap: the title face stops at twice its size
+/// (one and a half for big titles), so a 15pt weapon name doesn't become a
+/// 50pt one that breaks mid-word, and small system text at two and a half
+/// times, so "0/33" and the challenge lines grow with everything else.
+enum ScaledType {
+    static func size(_ size: CGFloat, relativeTo style: Font.TextStyle,
+                     maxSize: CGFloat, in dynamicTypeSize: DynamicTypeSize) -> CGFloat {
+        let traits = UITraitCollection(preferredContentSizeCategory: UIContentSizeCategory(dynamicTypeSize))
+        let scaled = UIFontMetrics(forTextStyle: uiStyle(style)).scaledValue(for: size, compatibleWith: traits)
+        return min(scaled, max(size, maxSize))
+    }
+
+    static func displayCap(_ size: CGFloat) -> CGFloat { size >= 24 ? size * 1.5 : size * 2 }
+    static func systemCap(_ size: CGFloat) -> CGFloat { size * 2.5 }
+
+    /// The text style nearest `size` at the default setting, so each size
+    /// grows at the rate its neighbours in the system ramp do.
+    static func style(for size: CGFloat) -> Font.TextStyle {
+        switch size {
+        case ..<11.5: .caption2
+        case ..<12.5: .caption
+        case ..<14: .footnote
+        case ..<15.5: .subheadline
+        case ..<16.5: .callout
+        case ..<19: .body
+        case ..<21: .title3
+        case ..<25: .title2
+        case ..<31: .title
+        default: .largeTitle
+        }
+    }
+
+    private static func uiStyle(_ style: Font.TextStyle) -> UIFont.TextStyle {
+        switch style {
+        case .largeTitle: .largeTitle
+        case .title: .title1
+        case .title2: .title2
+        case .title3: .title3
+        case .headline: .headline
+        case .subheadline: .subheadline
+        case .callout: .callout
+        case .footnote: .footnote
+        case .caption: .caption1
+        case .caption2: .caption2
+        default: .body
+        }
+    }
+}
+
+private struct ScaledFontModifier: ViewModifier {
+    let size: CGFloat
+    /// nil is the title face; otherwise the system font at this weight.
+    var weight: Font.Weight?
+    var design: Font.Design = .default
+    var maxSize: CGFloat?
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    func body(content: Content) -> some View {
+        if let weight {
+            let scaled = ScaledType.size(size, relativeTo: ScaledType.style(for: size),
+                                         maxSize: maxSize ?? ScaledType.systemCap(size), in: dynamicTypeSize)
+            content.font(.system(size: scaled, weight: weight, design: design))
+        } else {
+            let scaled = ScaledType.size(size, relativeTo: ScaledType.style(for: size),
+                                         maxSize: maxSize ?? ScaledType.displayCap(size), in: dynamicTypeSize)
+            content.font(.hitmarker(scaled))
+        }
+    }
+}
+
+/// A list section's title ("Pinned", "Suggested", "Military"): the list's
+/// own 17pt semibold, growing with the reader's text size to 28pt and no
+/// further. Past that a one-word title filled the screen, and in the
+/// iPad's narrow Mastery column "Multiplayer" broke mid-word.
+struct ListHeading<Title: View>: View {
+    let title: Title
+    var body: some View {
+        title.scaledFont(17, weight: .semibold, maxSize: 28)
+    }
+}
+
+extension ListHeading where Title == Text {
+    init(_ text: String) { title = Text(text) }
+}
+
+extension Section where Parent == ListHeading<Text>, Content: View, Footer == EmptyView {
+    /// `Section(title)`, with the title capped as `ListHeading` does.
+    init(heading: String, @ViewBuilder content: () -> Content) {
+        self.init(content: content, header: { ListHeading(heading) })
+    }
+}
+
+extension View {
+    /// The title face at `size`, scaled with Dynamic Type up to a cap (see
+    /// `ScaledType`).
+    func hitmarkerFont(_ size: CGFloat, maxSize: CGFloat? = nil) -> some View {
+        modifier(ScaledFontModifier(size: size, maxSize: maxSize))
+    }
+
+    /// The system font at a set size, scaled with Dynamic Type up to a cap.
+    func scaledFont(_ size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default,
+                    maxSize: CGFloat? = nil) -> some View {
+        modifier(ScaledFontModifier(size: size, weight: weight, design: design, maxSize: maxSize))
     }
 }
 

@@ -82,7 +82,7 @@ struct PlayedModesPicker: View {
                 Image(systemName: mode.symbol)
                     .font(.system(size: 17, weight: .semibold))
                 Text(mode.displayName)
-                    .font(.system(size: 12, weight: .bold))
+                    .scaledFont(12, weight: .bold)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             }
@@ -124,7 +124,10 @@ struct PlayedModesPicker: View {
 struct AnimatedGradientText: View {
     let text: String
     let colors: [Color]
-    var font: Font = .hitmarker(16)
+    /// Set at this size in the title face, or in the system font at
+    /// `weight`, scaling with Dynamic Type either way (see `ScaledType`).
+    var size: CGFloat = 16
+    var weight: Font.Weight? = nil
     var period: Double = 3.2
     /// Glow the text in its own base color — this is the real sibling
     /// trackers' actual technique for a "special" title (BO7 Camo Tracker's
@@ -148,9 +151,17 @@ struct AnimatedGradientText: View {
         return LinearGradient(gradient: Gradient(stops: stops), startPoint: .leading, endPoint: .trailing)
     }
 
+    @ViewBuilder
+    private func sized(_ text: Text) -> some View {
+        if let weight {
+            text.scaledFont(size, weight: weight)
+        } else {
+            text.hitmarkerFont(size)
+        }
+    }
+
     private func styled(_ text: Text, phase: Double) -> some View {
-        text
-            .font(font)
+        sized(text)
             .foregroundStyle(gradient(phase: phase))
             .shadow(color: glow ? (colors.first ?? .clear).opacity(0.75) : .clear, radius: 6)
     }
@@ -584,7 +595,7 @@ struct StatSummaryCard: View {
                             // Proportional, not monospaced: "8/33 Harmonic Break"
                             // then fits a column instead of wrapping cramped
                             Text(hint)
-                                .font(.system(size: 10, weight: .semibold))
+                                .scaledFont(10, weight: .semibold)
                                 .foregroundStyle(Color.appInkMuted)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
@@ -599,14 +610,14 @@ struct StatSummaryCard: View {
                                 shimmerColors: stats[index].ringGradient ?? .gold
                             )
                             Text(stats[index].value)
-                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                .scaledFont(11, weight: .semibold, design: .monospaced)
                                 .foregroundStyle(Color.appInk)
                                 // Same height as a two-line lock hint, so
                                 // every column's label sits on one line
                                 .frame(height: hasLock ? Self.countHeight : nil)
                         } else {
                             Text(stats[index].value)
-                                .font(.system(size: 17, weight: .bold, design: .monospaced))
+                                .scaledFont(17, weight: .bold, design: .monospaced)
                                 .foregroundStyle(Color.appInk)
                         }
                         // Fixed height regardless of wrap ("Gold" vs.
@@ -615,10 +626,10 @@ struct StatSummaryCard: View {
                         // tallest label's column looking "right."
                         Group {
                             if let gradient = stats[index].labelGradient {
-                                AnimatedGradientText(text: stats[index].label, colors: gradient, font: .system(size: 11))
+                                AnimatedGradientText(text: stats[index].label, colors: gradient, size: 11, weight: .regular)
                             } else {
                                 Text(stats[index].label)
-                                    .font(.system(size: 11))
+                                    .scaledFont(11)
                                     .foregroundStyle(Color.appInkMuted)
                             }
                         }
@@ -640,6 +651,10 @@ struct StatSummaryCard: View {
         }
         .padding(.vertical, verticalPadding)
         .padding(.horizontal, horizontalPadding)
+        // Four columns a quarter of the card wide: past the largest
+        // standard size "PLATINUM" and "0/33 Harmonic Break" broke
+        // mid-word or were cut short. VoiceOver reads each column whole.
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .modifier(OptionalBorderedCard(bordered: bordered))
     }
 }
@@ -695,6 +710,9 @@ struct MasteryTrack: View {
                 }
             }
         }
+        // Up to five names side by side: past the largest standard size
+        // they broke mid-word ("Platinu / m", "Diverge / nce")
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
     }
 
     private func nodeCircle(_ node: Node) -> some View {
@@ -714,14 +732,14 @@ struct MasteryTrack: View {
     private func nodeLabel(_ node: Node) -> some View {
         VStack(spacing: 2) {
             if node.achieved {
-                AnimatedGradientText(text: node.name, colors: node.gradient, font: .system(size: 10.5, weight: .semibold))
+                AnimatedGradientText(text: node.name, colors: node.gradient, size: 10.5, weight: .semibold)
             } else {
                 Text(node.name)
-                    .font(.system(size: 10.5, weight: .semibold))
+                    .scaledFont(10.5, weight: .semibold)
                     .foregroundStyle(Color.appInk)
             }
             Text(node.detail)
-                .font(.system(size: 9.5, design: .monospaced))
+                .scaledFont(9.5, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
         .multilineTextAlignment(.center)
@@ -773,6 +791,7 @@ struct ChallengeRow: View {
     @AppStorage(TrackerViewModel.quickTickKey) private var quickTick = false
 
     private var hasCounter: Bool { !quickTick && (item.requirement?.amount ?? 0) > 1 }
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         HStack(spacing: 12) {
@@ -796,16 +815,16 @@ struct ChallengeRow: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 if isDone, let titleGradient {
-                    AnimatedGradientText(text: item.name.resolved(), colors: titleGradient, font: .hitmarker(15))
+                    AnimatedGradientText(text: item.name.resolved(), colors: titleGradient, size: 15)
                 } else {
                     Text(item.name.resolved())
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(isAvailable ? Color.appInk : Color.appInkMuted)
                 }
                 if let requirement = item.requirement {
                     if isAvailable || showLockedChallenges {
                         Text(requirement.description.resolved())
-                            .font(.system(size: 13))
+                            .scaledFont(13)
                             .foregroundStyle(Color.appInkMuted)
                     }
                     if !isAvailable {
@@ -814,10 +833,10 @@ struct ChallengeRow: View {
                         Group {
                             if showLockedChallenges {
                                 Text("\(Image(systemName: "lock.fill")) \(lockedReason ?? "mw4.ui.locked".localized())")
-                                    .font(.system(size: 11.5))
+                                    .scaledFont(11.5)
                             } else {
                                 Text(lockedReason ?? "mw4.ui.locked".localized())
-                                    .font(.system(size: 13))
+                                    .scaledFont(13)
                             }
                         }
                         .foregroundStyle(Color.appInkMuted.opacity(showLockedChallenges ? 0.75 : 1))
@@ -826,39 +845,17 @@ struct ChallengeRow: View {
                     // No challenge to describe: say what opens it while
                     // locked, and how it was earned once open.
                     Text(line)
-                        .font(.system(size: 13))
+                        .scaledFont(13)
                         .foregroundStyle(Color.appInkMuted)
                 }
+                // At the accessibility text sizes the −/+ go under the
+                // challenge, so a long name keeps the row's width
+                if stacksCounter { counter }
             }
 
             Spacer(minLength: 8)
 
-            // Done is done (here or in another mode): the tick says it, no count
-            if let requirement = item.requirement, hasCounter, isAvailable, !isDone {
-                HStack(spacing: 6) {
-                    stepButton(systemName: "minus", enabled: amount > 0, size: 22, accent: accent) {
-                        onSetAmount(max(0, amount - 1))
-                    }
-                    Button {
-                        amountText = "\(amount)"
-                        showAmountEntry = true
-                    } label: {
-                        Text("\(amount)/\(requirement.amount)")
-                            .font(.system(size: 12.5, design: .monospaced))
-                            .foregroundStyle(Color.appInkMuted)
-                            // The count never wraps; the description beside it gives way.
-                            .lineLimit(1)
-                            .fixedSize()
-                            .padding(.horizontal, 9)
-                            .padding(.vertical, 5)
-                            .background(Capsule().fill(Color.appSurface2))
-                    }
-                    .buttonStyle(.plain)
-                    stepButton(systemName: "plus", enabled: amount < requirement.amount, size: 22, accent: accent) {
-                        onSetAmount(min(requirement.amount, amount + 1))
-                    }
-                }
-            }
+            if !stacksCounter { counter }
         }
         .padding(.vertical, 5)
         // The whole card ticks a tick-box camo. A camo with a counter is
@@ -898,6 +895,37 @@ struct ChallengeRow: View {
                 Button("mw4.ui.set_amount.title".localized()) {
                     amountText = "\(amount)"
                     showAmountEntry = true
+                }
+            }
+        }
+    }
+
+    private var stacksCounter: Bool { dynamicTypeSize.isAccessibilitySize }
+
+    @ViewBuilder private var counter: some View {
+        // Done is done (here or in another mode): the tick says it, no count
+        if let requirement = item.requirement, hasCounter, isAvailable, !isDone {
+            HStack(spacing: 6) {
+                stepButton(systemName: "minus", enabled: amount > 0, size: 22, accent: accent) {
+                    onSetAmount(max(0, amount - 1))
+                }
+                Button {
+                    amountText = "\(amount)"
+                    showAmountEntry = true
+                } label: {
+                    Text("\(amount)/\(requirement.amount)")
+                        .scaledFont(12.5, design: .monospaced)
+                        .foregroundStyle(Color.appInkMuted)
+                        // The count never wraps; the description beside it gives way.
+                        .lineLimit(1)
+                        .fixedSize()
+                        .padding(.horizontal, 9)
+                        .padding(.vertical, 5)
+                        .background(Capsule().fill(Color.appSurface2))
+                }
+                .buttonStyle(.plain)
+                stepButton(systemName: "plus", enabled: amount < requirement.amount, size: 22, accent: accent) {
+                    onSetAmount(min(requirement.amount, amount + 1))
                 }
             }
         }
@@ -970,12 +998,12 @@ struct EarnedGradientKey: PreferenceKey {
 /// ("Unlock at level 9.") straight into the UI unlabeled.
 struct AcquiredByLabel: View {
     let weapon: WeaponEntry
-    var font: Font = .system(size: 12.5)
+    var size: CGFloat = 12.5
     var color: Color = .appInkMuted
 
     var body: some View {
         Text(text)
-            .font(font)
+            .scaledFont(size)
             .foregroundStyle(color)
     }
 
@@ -1083,7 +1111,7 @@ struct FilterSortMenu<T: Hashable>: View {
                     .font(.system(size: 9, weight: .bold))
                     .foregroundStyle(accent)
             }
-            .font(.system(size: 13, weight: .semibold))
+            .scaledFont(13, weight: .semibold)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 9)
             .background(Capsule().fill(Color.appSurface))
@@ -1097,7 +1125,7 @@ struct FilterSortMenu<T: Hashable>: View {
 struct FilterEmptyRow: View {
     var body: some View {
         Text("mw4.ui.filter.empty".localized())
-            .font(.system(size: 13))
+            .scaledFont(13)
             .foregroundStyle(Color.appInkMuted)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
@@ -1115,14 +1143,14 @@ struct MilestoneBannerView: View {
             Image(systemName: banner.icon)
                 .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(banner.titleGradient.first ?? .camoGold)
-            AnimatedGradientText(text: banner.title, colors: banner.titleGradient, font: .hitmarker(16))
+            AnimatedGradientText(text: banner.title, colors: banner.titleGradient, size: 16)
             Text(banner.subtitle)
-                .font(.system(size: 12.5))
+                .scaledFont(12.5)
                 .foregroundStyle(Color.appInkMuted)
             if let onShare {
                 Button(action: onShare) {
                     Label("mw4.ui.share.button".localized(), systemImage: "square.and.arrow.up")
-                        .font(.system(size: 12.5, weight: .semibold))
+                        .scaledFont(12.5, weight: .semibold)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
                         .background(Capsule().fill((banner.titleGradient.first ?? .camoGold).opacity(0.22)))
@@ -1318,10 +1346,10 @@ struct SegmentTabs<T: Hashable>: View {
                     withAnimation(.snappy(duration: 0.28)) { selection = item.value }
                 } label: {
                     Text(item.title)
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.7)
+                        .minimumScaleFactor(0.5)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 9)
                         .background {

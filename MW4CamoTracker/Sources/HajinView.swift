@@ -267,12 +267,12 @@ private struct SectionRow: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.accentDMZ))
             Text(section.title.resolved)
-                .font(.hitmarker(16))
+                .hitmarkerFont(16)
                 .foregroundStyle(Color.appInk)
             Spacer()
             let total = total ?? section.rows.count
             Text(done.map { "\($0)/\(total)" } ?? "\(total)")
-                .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                .scaledFont(12, weight: .semibold, design: .monospaced)
                 .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
         }
     }
@@ -531,7 +531,7 @@ struct HajinMinePage: View {
                         .frame(width: 30, height: 30)
                         .background(Circle().fill(Color.accentDMZ))
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("mw4.ui.premium.title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                        Text("mw4.ui.premium.title".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                         Text("mw4.ui.premium.subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
                             .multilineTextAlignment(.leading)
                     }
@@ -829,7 +829,7 @@ struct GuideRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(row.title.resolved)
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(Color.appInk)
                     Spacer(minLength: 8)
                     if let value = row.value { HajinValueBadge(text: value.resolved, locked: store.isLocked(row.requiredLevel)) }
@@ -1594,13 +1594,13 @@ private struct ThreatLegend: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text("mw4.ui.hajin.threat_legend".localized().uppercased())
-                .font(.system(size: 9, weight: .heavy))
+                .scaledFont(9, weight: .heavy)
                 .tracking(0.8)
                 .foregroundStyle(.white.opacity(0.7))
             ForEach(Array(guide.threatLevels.enumerated()), id: \.offset) { index, level in
                 HStack(spacing: 5) {
                     Circle().fill(HajinThreat.color(index + 1)).frame(width: 7, height: 7)
-                    Text(level.resolved).font(.system(size: 10, weight: .semibold)).foregroundStyle(.white.opacity(0.9))
+                    Text(level.resolved).scaledFont(10, weight: .semibold).foregroundStyle(.white.opacity(0.9))
                 }
             }
         }
@@ -1672,14 +1672,14 @@ struct HajinOrdersList: View {
                         .multilineTextAlignment(.leading)
                     if upNext {
                         Text("mw4.ui.hajin.up_next".localized().uppercased())
-                            .font(.system(size: 10, weight: .heavy))
+                            .scaledFont(10, weight: .heavy)
                             .foregroundStyle(.white)
                             .padding(.horizontal, 6).padding(.vertical, 2)
                             .background(Capsule().fill(Color.accentDMZ))
                     }
                     Spacer(minLength: 8)
                     Text("\(done)/\(total)")
-                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                        .scaledFont(13, weight: .semibold, design: .monospaced)
                         .foregroundStyle(done == total ? Color.accentDMZ : Color.appInkMuted)
                 }
                 if let reward {
@@ -1746,7 +1746,7 @@ struct HajinPrestigeTracker: View {
         let held = store.prestigeTraits(of: name)
         return VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                Text(name).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text(name).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer(minLength: 8)
                 Button { Haptics.step(); store.setPrestige(level - 1, of: name) } label: {
                     Image(systemName: "minus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
@@ -1754,7 +1754,7 @@ struct HajinPrestigeTracker: View {
                 .buttonStyle(.borderless)
                 .disabled(level == 0)
                 Text(String(format: "mw4.ui.opprestige.level".localized(), level))
-                    .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                    .scaledFont(13, weight: .semibold, design: .monospaced)
                     .foregroundStyle(level > 0 ? Color.accentDMZ : Color.appInkMuted)
                 Button { Haptics.step(); store.setPrestige(level + 1, of: name) } label: {
                     Image(systemName: "plus.circle").font(.title3).foregroundStyle(Color.accentDMZ)
@@ -1765,7 +1765,7 @@ struct HajinPrestigeTracker: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 6) {
                         Text(String(format: "mw4.ui.opprestige.next".localized(), level + 1).uppercased())
-                            .font(.system(size: 11, weight: .bold)).tracking(0.8)
+                            .scaledFont(11, weight: .bold).tracking(0.8)
                             .foregroundStyle(Color.appInkMuted)
                         if let cost = next.value?.resolved { cashBadge(cost) }
                     }
@@ -1777,7 +1777,7 @@ struct HajinPrestigeTracker: View {
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text("mw4.ui.opprestige.traits".localized().uppercased() + " \(held.count)/\(HajinStore.maxPrestigeTraits)")
-                    .font(.system(size: 11, weight: .bold)).tracking(0.8)
+                    .scaledFont(11, weight: .bold).tracking(0.8)
                     .foregroundStyle(Color.appInkMuted)
                 HajinWrap(spacing: 6) {
                     ForEach(held, id: \.self) { trait in
@@ -1865,7 +1865,7 @@ struct HajinReaderTile: View {
                     VStack(alignment: .leading, spacing: 2) {
                         HStack(spacing: 8) {
                             Text("mw4.ui.hajin.grid_scan".localized())
-                                .font(.hitmarker(16))
+                                .hitmarkerFont(16)
                                 .foregroundStyle(Color.appInk)
                             // Still learning the game's screens
                             Text("mw4.ui.hajin.beta".localized())
@@ -1919,6 +1919,7 @@ struct HajinNumbersCard: View {
     @EnvironmentObject private var store: HajinStore
     @State private var editing: Field?
     @State private var text = ""
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
@@ -1948,11 +1949,11 @@ struct HajinNumbersCard: View {
             HStack(alignment: .firstTextBaseline, spacing: 2) {
                 Button { text = level > 0 ? "\(level)" : ""; editing = .level } label: {
                     if level > 0 {
-                        (Text("\(level)").font(.hitmarker(30)).foregroundColor(Color.appInk)
-                         + Text(" /\(HajinStore.maxLevel)").font(.hitmarker(15)).foregroundColor(Color.appInkMuted))
+                        (Text("\(level)").font(.hitmarker(30, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInk)
+                         + Text(" /\(HajinStore.maxLevel)").font(.hitmarker(15, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted))
                             .contentTransition(.numericText())
                     } else {
-                        Text("mw4.ui.hajin.dmz_level_button".localized()).font(.hitmarker(18)).foregroundStyle(Color.accentDMZ)
+                        Text("mw4.ui.hajin.dmz_level_button".localized()).hitmarkerFont(18).foregroundStyle(Color.accentDMZ)
                     }
                 }
                 .buttonStyle(.borderless)
@@ -1974,7 +1975,7 @@ struct HajinNumbersCard: View {
             label("mw4.ui.hajin.cash_title")
             Button { text = store.cash > 0 ? "\(store.cash)" : ""; editing = .cash } label: {
                 Text(store.cash > 0 ? "$\(store.cash.formatted())" : "mw4.ui.hajin.cash_add".localized())
-                    .font(.hitmarker(store.cash > 0 ? 30 : 18))
+                    .hitmarkerFont(store.cash > 0 ? 30 : 18)
                     .foregroundStyle(store.cash > 0 ? Color.appInk : Color.accentDMZ)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
@@ -2008,17 +2009,18 @@ struct HajinNumbersChip: View {
     var standalone = false
     @EnvironmentObject private var store: HajinStore
     @State private var open = false
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
         Button { open = true } label: {
             HStack(spacing: 8) {
-                Text("Lv ").font(.hitmarker(11)).foregroundColor(Color.appInkMuted)
+                Text("Lv ").font(.hitmarker(11, scaledFor: dynamicTypeSize)).foregroundColor(Color.appInkMuted)
                     + Text(store.dmzLevel > 0 ? "\(store.dmzLevel)" : "–").foregroundColor(Color.appInk)
                 Rectangle().fill(Color.appInkMuted.opacity(0.4)).frame(width: 1, height: 14)
                 Text(store.cash > 0 ? "$" + Self.short(store.cash) : "$–")
                     .foregroundStyle(Color.accentDMZ)
             }
-            .font(.hitmarker(15))
+            .hitmarkerFont(15)
             .padding(.horizontal, 6)
             // iOS 26 sets toolbar items on glass; before it, a capsule of our own
             .padding(.vertical, standalone ? 7 : 0)
@@ -2108,7 +2110,7 @@ struct HajinGuideTile: View {
 
     private var title: some View {
         Text(section.title.resolved)
-            .font(.hitmarker(15))
+            .hitmarkerFont(15)
             .foregroundStyle(Color.appInk)
             .multilineTextAlignment(.leading)
             .lineLimit(2)
@@ -2116,7 +2118,7 @@ struct HajinGuideTile: View {
 
     private var count: some View {
         Text("\(section.rows.count)")
-            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+            .scaledFont(12, weight: .semibold, design: .monospaced)
             .foregroundStyle(Color.appInkMuted)
     }
 }
@@ -2173,7 +2175,7 @@ struct HajinProgressTile: View {
 
     private var titleText: some View {
         Text(title)
-            .font(.hitmarker(15))
+            .hitmarkerFont(15)
             .foregroundStyle(Color.appInk)
             .multilineTextAlignment(.leading)
             .lineLimit(2)
@@ -2181,7 +2183,7 @@ struct HajinProgressTile: View {
 
     private var countText: some View {
         Text(count)
-            .font(.system(size: 12, weight: .semibold, design: .monospaced))
+            .scaledFont(12, weight: .semibold, design: .monospaced)
             .foregroundStyle(fraction == 1 ? Color.accentDMZ : Color.appInkMuted)
     }
 }
@@ -2204,7 +2206,7 @@ struct HajinMissionRow: View {
                 }
                 VStack(alignment: .leading, spacing: 3) {
                     Text(row.title.resolved)
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(Color.appInk)
                     if let place = row.place {
                         Label(place.resolved, systemImage: "mappin.and.ellipse")
@@ -2218,7 +2220,7 @@ struct HajinMissionRow: View {
                 if !objectives.isEmpty {
                     let stepsDone = objectives.indices.filter { done || store.checked.contains("\(key)#\($0)") }.count
                     Text("\(stepsDone)/\(objectives.count)")
-                        .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                        .scaledFont(12, weight: .semibold, design: .monospaced)
                         .foregroundStyle(stepsDone == objectives.count ? Color.accentDMZ : Color.appInkMuted)
                 }
             }
@@ -2255,7 +2257,7 @@ struct HajinMissionRow: View {
             if !needs.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("mw4.ui.hajin.needs".localized().uppercased())
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .tracking(0.8)
                         .foregroundStyle(Color.appInkMuted)
                     HajinLinkChips(ids: needs.map(\.item), amounts: Dictionary(needs.map { ($0.item, $0.qty) }, uniquingKeysWith: +))
@@ -2280,7 +2282,7 @@ struct HajinMissionRow: View {
             if row.cash != nil || !items.isEmpty || !other.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("mw4.ui.hajin.rewards".localized().uppercased())
-                        .font(.system(size: 11, weight: .bold))
+                        .scaledFont(11, weight: .bold)
                         .tracking(0.8)
                         .foregroundStyle(Color.appInkMuted)
                     HajinWrap(spacing: 6) {

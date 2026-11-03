@@ -31,10 +31,10 @@ struct WidgetTipCard: View {
                         .frame(width: 28)
                     VStack(alignment: .leading, spacing: 3) {
                         Text("mw4.widget.tip.title".localized())
-                            .font(.hitmarker(16))
+                            .hitmarkerFont(16)
                             .foregroundStyle(Color.appInk)
                         Text("mw4.widget.tip.body".localized())
-                            .font(.system(size: 13.5))
+                            .scaledFont(13.5)
                             .foregroundStyle(Color.appInkMuted)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -85,7 +85,7 @@ struct WidgetGuideSheet: View {
                     .padding(14)
                     .borderedCard()
                     Text("mw4.widget.guide.mode_hint".localized() + " " + "mw4.widget.guide.lock".localized())
-                        .font(.system(size: 13))
+                        .scaledFont(13)
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -106,12 +106,12 @@ struct WidgetGuideSheet: View {
     private func step(_ number: Int, _ text: String) -> some View {
         HStack(alignment: .top, spacing: 10) {
             Text("\(number)")
-                .font(.system(size: 13, weight: .heavy, design: .rounded))
+                .scaledFont(13, weight: .heavy, design: .rounded)
                 .foregroundStyle(Color.appBackground)
                 .frame(width: 22, height: 22)
                 .background(Circle().fill(accent))
             Text(text)
-                .font(.system(size: 14.5))
+                .scaledFont(14.5)
                 .foregroundStyle(Color.appInk)
                 .fixedSize(horizontal: false, vertical: true)
         }

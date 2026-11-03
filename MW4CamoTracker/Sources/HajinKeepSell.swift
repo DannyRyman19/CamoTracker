@@ -138,7 +138,7 @@ struct HajinVerdictBadge: View {
             VStack(alignment: .leading, spacing: 2) {
                 if !compact {
                     Text(verdict.title.uppercased())
-                        .font(.system(size: 14, weight: .heavy))
+                        .scaledFont(14, weight: .heavy)
                         .tracking(0.8)
                         .foregroundStyle(verdict.color)
                 }
@@ -251,11 +251,11 @@ struct HajinSpareCard: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
                 Label("mw4.ui.keep.spare_title".localized(), systemImage: "dollarsign.circle.fill")
-                    .font(.hitmarker(16))
+                    .hitmarkerFont(16)
                     .foregroundStyle(Color.appInk)
                 Spacer()
                 Text("$\(spare.total.formatted())")
-                    .font(.system(size: 18, weight: .bold, design: .monospaced))
+                    .scaledFont(18, weight: .bold, design: .monospaced)
                     .foregroundStyle(spare.total > 0 ? Color(red: 0.42, green: 0.80, blue: 0.36) : Color.appInkMuted)
                 options
             }
@@ -433,7 +433,7 @@ struct HajinKeepSellRow: View {
                 HStack(spacing: 12) {
                     HajinItemTile(item: item, size: 44)
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(item.name.resolved).font(.hitmarker(15)).foregroundStyle(Color.appInk)
+                        Text(item.name.resolved).hitmarkerFont(15).foregroundStyle(Color.appInk)
                             .multilineTextAlignment(.leading)
                         HStack(alignment: .firstTextBaseline, spacing: 5) {
                             Image(systemName: verdict.symbol).font(.caption2.weight(.bold)).foregroundStyle(verdict.color)
@@ -473,13 +473,13 @@ struct HajinKeepSellEntry: View {
                 .frame(width: 30, height: 30)
                 .background(Circle().fill(Color.accentDMZ))
             VStack(alignment: .leading, spacing: 2) {
-                Text("mw4.ui.keep.title".localized()).font(.hitmarker(16)).foregroundStyle(Color.appInk)
+                Text("mw4.ui.keep.title".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Text("mw4.ui.keep.row_subtitle".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             }
             Spacer()
             if spare > 0 {
                 Text(String(format: "mw4.ui.keep.spare_short".localized(), "$\(spare.formatted())"))
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .scaledFont(12, weight: .semibold, design: .monospaced)
                     .foregroundStyle(Color(red: 0.42, green: 0.80, blue: 0.36))
             }
         }

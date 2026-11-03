@@ -103,7 +103,7 @@ struct OnboardingView: View {
     private var header: some View {
         VStack(spacing: 12) {
             Text("\("mw4.onboarding.step".localized()) \(page + 1)/\(pageCount)")
-                .font(.system(size: 11, weight: .bold))
+                .scaledFont(11, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(accent)
 
@@ -130,7 +130,7 @@ struct OnboardingView: View {
             } label: {
                 Text(page < pageCount - 1 ? "mw4.onboarding.next".localized()
                      : (asksForNotifications ? "mw4.onboarding.continue" : "mw4.onboarding.get_started").localized())
-                    .font(.hitmarker(16))
+                    .hitmarkerFont(16)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
                     .background(RoundedRectangle(cornerRadius: 8).fill(accent))
@@ -149,7 +149,7 @@ struct OnboardingView: View {
                         onFinish()
                     }
                 }
-                    .font(.system(size: 13, weight: .semibold))
+                    .scaledFont(13, weight: .semibold)
                     .foregroundStyle(Color.appInkMuted)
             }
         }
@@ -178,12 +178,12 @@ private struct OnboardingScaffold<Content: View>: View {
                 VStack(spacing: 8) {
                     if let kicker {
                         Text(kicker)
-                            .font(.system(size: 11, weight: .bold))
+                            .scaledFont(11, weight: .bold)
                             .textCase(.uppercase)
                             .foregroundStyle(Color.appInkMuted)
                     }
                     Text(title)
-                        .font(.hitmarker(27))
+                        .hitmarkerFont(27)
                         .foregroundStyle(Color.appInk)
                         .multilineTextAlignment(.center)
                 }
@@ -207,7 +207,7 @@ private struct GamePickerPage: View {
         OnboardingScaffold("ct.onboarding.game.title".localized(), accent: Palette.accent ?? .camoGold) {
             VStack(spacing: 12) {
                 Text("ct.onboarding.game.body".localized())
-                    .font(.system(size: 14))
+                    .scaledFont(14)
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
@@ -234,13 +234,17 @@ private struct GamePickerPage: View {
                 Text(game.shortName)
                     .font(.custom(game.theme?.font ?? "Hitmarker Text VF", size: 26 * (game.theme?.fontScale ?? 1)).weight(.bold))
                     .foregroundStyle(color)
+                    // One line, shrinking to fit its slot: at the largest
+                    // text sizes "MW4" stacked a letter per line
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.4)
                     .frame(width: 74)
                 VStack(alignment: .leading, spacing: 3) {
                     Text(game.name.resolved())
-                        .font(.system(size: 16, weight: .bold))
+                        .scaledFont(16, weight: .bold)
                         .foregroundStyle(Color.appInk)
                     Text(modes)
-                        .font(.system(size: 12.5))
+                        .scaledFont(12.5)
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -279,7 +283,7 @@ private struct WelcomePage: View {
                     .frame(maxWidth: 240)
 
                 Text(welcomeBody)
-                    .font(.system(size: 15))
+                    .scaledFont(15)
                     .foregroundStyle(Color.appInkMuted)
                     .multilineTextAlignment(.center)
                     .padding(14)
@@ -287,10 +291,10 @@ private struct WelcomePage: View {
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("mw4.ui.modes".localized())
-                        .font(.system(size: 13, weight: .bold))
+                        .scaledFont(13, weight: .bold)
                         .foregroundStyle(Color.appInk)
                     Text("mw4.onboarding.modes.hint".localized())
-                        .font(.system(size: 12.5))
+                        .scaledFont(12.5)
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                     PlayedModesPicker()
@@ -350,7 +354,7 @@ private struct MarkProgressPage: View {
         VStack(alignment: .leading, spacing: 10) {
             demoRow(index: index)
             Label(hint, systemImage: "hand.tap.fill")
-                .font(.system(size: 12.5))
+                .scaledFont(12.5)
                 .foregroundStyle(Color.accentMultiplayer)
         }
         .padding(12)
@@ -442,7 +446,7 @@ private struct TrackingStylePage: View {
                        title: "mw4.ui.quick_tick.title".localized(),
                        body: "mw4.onboarding.tracking.quick.body".localized())
                 Text("mw4.onboarding.tracking.footer".localized())
-                    .font(.system(size: 13))
+                    .scaledFont(13)
                     .foregroundStyle(Color.appInkMuted)
             }
         }
@@ -460,10 +464,10 @@ private struct TrackingStylePage: View {
                     .frame(width: 26)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(title)
-                        .font(.hitmarker(16))
+                        .hitmarkerFont(16)
                         .foregroundStyle(Color.appInk)
                     Text(body)
-                        .font(.system(size: 13.5))
+                        .scaledFont(13.5)
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -505,7 +509,7 @@ private struct MakeItYoursPage: View {
                 .foregroundStyle(accent)
                 .frame(width: 26)
             Text(text)
-                .font(.system(size: 14.5))
+                .scaledFont(14.5)
                 .foregroundStyle(Color.appInk)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
@@ -541,13 +545,13 @@ private struct FreeAndPremiumPage: View {
     private func group(_ title: String, symbol: String, rows: [String]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Label(title, systemImage: symbol)
-                .font(.hitmarker(16))
+                .hitmarkerFont(16)
                 .foregroundStyle(accent)
             ForEach(rows, id: \.self) { key in
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     Text(verbatim: "•").foregroundStyle(Color.appInkMuted)
                     Text(key.localized())
-                        .font(.system(size: 14.5))
+                        .scaledFont(14.5)
                         .foregroundStyle(Color.appInk)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -572,10 +576,10 @@ private struct SuggestedPage: View {
                         .background(Circle().fill(Color.camoGold))
                     VStack(alignment: .leading, spacing: 3) {
                         Text("Kastov 762")
-                            .font(.hitmarker(15))
+                            .hitmarkerFont(15)
                             .foregroundStyle(Color.appInk)
                         Text("mw4.onboarding.suggested.demo".localized())
-                            .font(.system(size: 12.5))
+                            .scaledFont(12.5)
                             .foregroundStyle(Color.appInkMuted)
                     }
                     Spacer(minLength: 0)
@@ -584,7 +588,7 @@ private struct SuggestedPage: View {
                 .borderedCard(accent: .camoGold)
 
                 Text("mw4.onboarding.suggested.body1".localized())
-                    .font(.system(size: 15))
+                    .scaledFont(15)
                     .foregroundStyle(Color.appInkMuted)
 
                 MilestoneBannerView(banner: MilestoneBanner(
@@ -594,7 +598,7 @@ private struct SuggestedPage: View {
                     titleGradient: platinum.gradient, icon: "diamond.fill"))
 
                 Text("mw4.onboarding.suggested.body2".localized())
-                    .font(.system(size: 15))
+                    .scaledFont(15)
                     .foregroundStyle(Color.appInkMuted)
             }
         }
@@ -620,15 +624,15 @@ private struct NotificationsPage: View {
                     VStack(alignment: .leading, spacing: 2) {
                         HStack(alignment: .firstTextBaseline) {
                             Text("mw4.notif.title".localized())
-                                .font(.system(size: 14, weight: .semibold))
+                                .scaledFont(14, weight: .semibold)
                                 .foregroundStyle(Color.appInk)
                             Spacer(minLength: 8)
                             Text("mw4.onboarding.notif.now".localized())
-                                .font(.system(size: 12))
+                                .scaledFont(12)
                                 .foregroundStyle(Color.appInkMuted)
                         }
                         Text("mw4.notif.generic_body".localized())
-                            .font(.system(size: 13.5))
+                            .scaledFont(13.5)
                             .foregroundStyle(Color.appInkMuted)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -638,11 +642,11 @@ private struct NotificationsPage: View {
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appInkMuted.opacity(0.25), lineWidth: 1))
 
                 Text("mw4.onboarding.notif.body".localized())
-                    .font(.system(size: 15))
+                    .scaledFont(15)
                     .foregroundStyle(Color.appInkMuted)
 
                 Text("mw4.onboarding.notif.next_step".localized())
-                    .font(.system(size: 13))
+                    .scaledFont(13)
                     .foregroundStyle(Color.appInkMuted.opacity(0.8))
             }
         }

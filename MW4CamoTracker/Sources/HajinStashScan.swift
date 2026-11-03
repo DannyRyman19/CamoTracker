@@ -568,7 +568,7 @@ struct HajinStashScanReview: View {
     /// "10 · Already right": the value, then the note.
     private func sameLabel(_ value: String) -> some View {
         HStack(spacing: 6) {
-            Text(value).font(.system(size: 13, weight: .semibold, design: .monospaced)).foregroundStyle(Color.appInk)
+            Text(value).scaledFont(13, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInk)
             Text("mw4.ui.hajin.scan_same".localized()).font(.caption).foregroundStyle(Color.appInkMuted)
             Image(systemName: "checkmark").font(.caption.weight(.bold)).foregroundStyle(HajinStore.printableGreen)
         }
@@ -585,7 +585,7 @@ struct HajinStashScanReview: View {
                     sameLabel(read)
                 } else {
                     Text("\(now) → \(read)")
-                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                        .scaledFont(13, weight: .semibold, design: .monospaced)
                         .foregroundStyle(skipped.wrappedValue ? Color.appInkMuted : Color.appInk)
                         .strikethrough(skipped.wrappedValue)
                     Image(systemName: skipped.wrappedValue ? "circle" : "checkmark.circle.fill")
@@ -653,7 +653,7 @@ struct HajinStashScanReview: View {
             if !same {
                 // What the stash has now, then the count it becomes
                 Text("\(row.now) →")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                    .scaledFont(12, weight: .semibold, design: .monospaced)
                     .foregroundStyle(Color.appInkMuted)
                     .lineLimit(1).fixedSize()
             }
@@ -747,7 +747,7 @@ struct HajinStashScanReview: View {
             .disabled(row.read == 0)
             Button { editText = "\(row.read)"; editing = row.item } label: {
                 Text("\(row.read)")
-                    .font(.system(size: 14, weight: .semibold, design: .monospaced))
+                    .scaledFont(14, weight: .semibold, design: .monospaced)
                     .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
                     .strikethrough(!on)
                     .lineLimit(1).fixedSize()
@@ -810,7 +810,7 @@ struct HajinStashScanReview: View {
                                     sameLabel("$\(cash.formatted())")
                                 } else {
                                     Text("$\(store.cash.formatted()) → $\(cash.formatted())")
-                                        .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                                        .scaledFont(13, weight: .semibold, design: .monospaced)
                                         .foregroundStyle(skipCash ? Color.appInkMuted : Color.appInk)
                                         .strikethrough(skipCash)
                                     Image(systemName: skipCash ? "circle" : "checkmark.circle.fill")

@@ -106,14 +106,14 @@ private struct ItemRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(category.name.resolved())
-                .font(.system(size: 11, weight: .bold))
+                .scaledFont(11, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
 
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(item.name.resolved())
-                        .font(.hitmarker(15))
+                        .hitmarkerFont(15)
                         .foregroundStyle(Color.appInk)
                     if !item.isLeaf {
                         ProgressBar(fraction: fraction, accent: mode.accent)

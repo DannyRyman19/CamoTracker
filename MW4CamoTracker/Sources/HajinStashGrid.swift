@@ -747,6 +747,7 @@ struct HajinStashGridButton: View {
     var hero = false
     /// The row without its own background, for inside a `hajinCard()`.
     var bare = false
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     /// The flow's sheets hang off the app root (`hajinScanHost()`), not
     /// this button: it sits in a List row, which SwiftUI rebuilds whenever
     /// it likes, and sheets there reset or bounce mid-scan
@@ -768,7 +769,7 @@ struct HajinStashGridButton: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 8) {
                 Text("mw4.ui.hajin.beta".localized().uppercased())
-                    .font(.system(size: 10, weight: .heavy)).tracking(0.8)
+                    .scaledFont(10, weight: .heavy).tracking(0.8)
                     .foregroundStyle(Color.black.opacity(0.85))
                     .padding(.horizontal, 7).padding(.vertical, 3)
                     .background(Capsule().fill(Color.accentDMZ))
@@ -777,7 +778,7 @@ struct HajinStashGridButton: View {
                     .foregroundStyle(Color.appInkMuted)
             }
             Text("mw4.ui.hajin.scan_hero_title".localized())
-                .font(.hitmarker(22))
+                .hitmarkerFont(22)
                 .foregroundStyle(Color.appInk)
                 .multilineTextAlignment(.leading)
             Text("mw4.ui.hajin.scan_hero_subtitle".localized())
@@ -818,7 +819,7 @@ struct HajinStashGridButton: View {
                 }
                 VStack(alignment: .leading, spacing: 2) {
                     Text("mw4.ui.hajin.grid_scan".localized())
-                        .font(bare ? .hitmarker(16) : .subheadline.weight(.semibold))
+                        .font(bare ? .hitmarker(16, scaledFor: dynamicTypeSize) : .subheadline.weight(.semibold))
                         .foregroundStyle(Color.appInk)
                     Text("mw4.ui.hajin.grid_scan_hint".localized())
                         .font(.caption)
@@ -1366,7 +1367,7 @@ struct HajinStashGridFrameView: View {
                             .background(RoundedRectangle(cornerRadius: 8).fill(Color.accentDMZ.opacity(0.16)))
                         VStack(alignment: .leading, spacing: 2) {
                             Text("mw4.ui.hajin.grid_check_title".localized())
-                                .font(.hitmarker(15))
+                                .hitmarkerFont(15)
                                 .foregroundStyle(Color.appInk)
                             Text((state.postMatch ? "mw4.ui.postmatch.frame" : "mw4.ui.hajin.grid_check_body").localized())
                                 .font(.caption)

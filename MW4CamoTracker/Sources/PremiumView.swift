@@ -48,7 +48,7 @@ struct PremiumView: View {
     private var header: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("mw4.ui.premium.title".localized())
-                .font(.hitmarker(26))
+                .hitmarkerFont(26)
                 .foregroundStyle(Color.appInk)
             Text("mw4.ui.premium.subtitle".localized())
                 .font(.subheadline)
@@ -183,7 +183,7 @@ struct PremiumView: View {
                 }
                 Spacer()
                 Text((yearly ? "£1.99" + "mw4.ui.premium.per_year".localized() : "£7.99") + (Self.reviewShot ? "" : " (test)"))
-                    .font(.system(size: 16, weight: .bold, design: .monospaced))
+                    .scaledFont(16, weight: .bold, design: .monospaced)
             }
             .foregroundStyle(yearly ? Color.white : Color.appInk)
             .padding(14)
@@ -224,7 +224,7 @@ struct PremiumView: View {
                 Spacer()
                 // A subscription's price always says what it's per
                 Text(yearly ? product.displayPrice + "mw4.ui.premium.per_year".localized() : product.displayPrice)
-                    .font(.system(size: 16, weight: .bold, design: .monospaced))
+                    .scaledFont(16, weight: .bold, design: .monospaced)
             }
             .foregroundStyle(yearly ? Color.white : Color.appInk)
             .padding(14)
