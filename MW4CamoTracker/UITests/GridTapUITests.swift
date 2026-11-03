@@ -28,18 +28,19 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(second.waitForExistence(timeout: 15))
 
         // The second card in the first row, the one a row-wide tap would miss.
+        // (MW4 counts a weapon's unlocks rather than its level.)
         second.tap()
-        XCTAssertTrue(app.staticTexts["Weapon Level"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Weapon Unlocks"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.navigationBars["M4"].exists)
 
         // One back returns to the list: nothing else was pushed with it.
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Assault Rifles"].waitForExistence(timeout: 5))
-        XCTAssertFalse(app.staticTexts["Weapon Level"].exists)
+        XCTAssertFalse(app.staticTexts["Weapon Unlocks"].exists)
 
         app.staticTexts["HAN 86"].tap()
         XCTAssertTrue(app.navigationBars["HAN 86"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Weapon Level"].exists)
+        XCTAssertTrue(app.staticTexts["Weapon Unlocks"].exists)
     }
 
     /// The class chips above the weapons filter the one list in place:
@@ -60,10 +61,12 @@ final class GridTapUITests: XCTestCase {
 
     /// Customise: switching Suggested off takes it off the tab, and Reset
     /// brings it back (which also leaves the layout clean for other tests).
+    /// The layout is Premium's, so this runs as a Premium player.
     func testCustomiseHidesASection() {
         let app = XCUIApplication()
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
         app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchEnvironment["MW4_PREMIUM"] = "1"
         app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
@@ -93,7 +96,11 @@ final class GridTapUITests: XCTestCase {
             // Under Modes and Language now: lift the sheet until it shows.
             let suggested = app.switches["Suggested"]
             for _ in 0..<4 where !(suggested.exists && suggested.isHittable) { app.swipeUp() }
-            suggested.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+            // Once the list has stopped: a tap while it's still gliding
+            // only stops it. Then the switch itself, which on an iPad is
+            // narrower than the row's element.
+            sleep(2)
+            suggested.switches.firstMatch.tap()
         }
         XCTAssertFalse(app.staticTexts["Suggested"].exists)
 
@@ -130,7 +137,7 @@ final class GridTapUITests: XCTestCase {
     }
 
     /// Tapping anywhere on a tick-box camo's card ticks it: here a Military
-    /// camo, whose tick sets the weapon level to it.
+    /// camo, whose tick sets the weapon's unlocks to it.
     func testTappingATickBoxCardCompletesIt() {
         let app = XCUIApplication()
         app.launchEnvironment["SS_SCREEN"] = "multiplayer"
@@ -139,24 +146,25 @@ final class GridTapUITests: XCTestCase {
         app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
-        let detail = app.staticTexts["Unlocks at weapon level 10."]
+        let detail = app.staticTexts["Needs 9 weapon unlocks."]
         XCTAssertTrue(detail.waitForExistence(timeout: 15))
         detail.tap()
-        XCTAssertTrue(app.staticTexts["Earned at weapon level 10."].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.descendants(matching: .any)["10/72"].exists)
+        XCTAssertTrue(app.staticTexts["Earned at 9 weapon unlocks."].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any)["9/71"].exists)
     }
 
     /// A camo with a counter isn't completed by a tap on its card, but its
     /// + still counts one up.
     func testTappingACounterCardLeavesItAlone() {
         let app = launchWithPlatinumOpen()
-        let tab = app.segmentedControls.buttons["Completionist"]
+        // The weapon page's own tabs, buttons rather than a system segmented control
+        let tab = app.buttons["Completionist"]
         XCTAssertTrue(tab.waitForExistence(timeout: 15))
         tab.tap()
 
         let count = app.descendants(matching: .any)["0/50"]
         XCTAssertTrue(count.waitForExistence(timeout: 5))
-        app.staticTexts["Get 50 headshot kills against players."].tap()
+        app.staticTexts["Get 50 Headshots against Players"].tap()
         XCTAssertTrue(app.descendants(matching: .any)["0/50"].waitForExistence(timeout: 2))
         XCTAssertFalse(app.descendants(matching: .any)["50/50"].exists)
 
@@ -165,8 +173,10 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["1/50"].waitForExistence(timeout: 5))
 
         // The tick box still completes it in one tap, no typing 50. A done
-        // camo drops its counter.
-        app.buttons["tick.Platinum"].tap()
+        // camo drops its counter. The camo is one element (for VoiceOver),
+        // so the tick is tapped where it sits, at the card's leading edge.
+        app.buttons["tick.Platinum"].coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5))
+            .withOffset(CGVector(dx: 12, dy: 0)).tap()
         let gone = expectation(for: NSPredicate(format: "exists == false"),
                                evaluatedWith: app.descendants(matching: .any)["1/50"])
         wait(for: [gone], timeout: 5)
