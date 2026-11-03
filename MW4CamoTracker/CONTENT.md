@@ -20,7 +20,9 @@ anything newer.
 
 An installed app fetches `manifest.json` when it opens, and again in the
 background every few hours when iOS allows. For each file whose `version` in
-the manifest differs from the one it has, it downloads that file. If the
+the manifest is **higher** than the one it has, it downloads that file. It
+starts on the newer of its bundled copy and its last download, so the copy
+inside an app update wins over an older download. If the
 check ran in the background and found something, it posts one notification.
 
 Nothing is live until the commit is **pushed to `master`**.
@@ -74,9 +76,16 @@ new flags.
 1. **Edit** the files in `MW4CamoTracker/Resources/` (by hand or with the
    editor).
 2. **Bump `version`** at the top of every file you changed (`0.7.0` to
-   `0.7.1`; any different string works, the app only checks that it differs).
-   The publish script refuses to run if a file changed and its version did
-   not, because installed apps would never fetch it.
+   `0.7.1`). It must be dotted numbers and **higher than the live one**,
+   compared number by number: `0.9.12` and `0.10.0` follow `0.9.11`, but
+   `0.9.1`, `0.9.11a` or `0.9.11-fix` would never be fetched by anyone (a
+   part with letters counts as 0). The publish script refuses to run if a
+   file changed and its version did not, if a version isn't plain numbers,
+   or if a changed file's version isn't higher than the live copy: the one
+   on jsDelivr, and the one on `origin/master` (which can be newer while
+   jsDelivr still caches the old one). When jsDelivr can't be reached it
+   says so and checks `origin/master` alone, as of your last `git fetch`, so
+   fetch first.
 3. **Publish** with one of the commands above. Read what it prints: which
    files changed, and what the notification will be.
 4. **Commit `Resources/` and `Data/MW4/` together and push to `master`.**

@@ -16,14 +16,20 @@ Data/CT/BO6/) from its own bundled files (`bo6_weapons.json`...), with the
 prefix dropped there. MW4, with no prefix, is the default.
 
 DataService fetches Data/MW4/manifest.json first and only downloads a file
-whose `version` differs from the one it has, so the manifest is generated from
-each file's own `version` field rather than typed by hand: a manifest version
-that disagrees with the file it points at either re-downloads forever or never
-updates at all.
+whose `version` is numerically higher than the one it has (DataService.isNewer:
+dotted numbers compared one by one, "0.9.12" > "0.9.9"), so the manifest is
+generated from each file's own `version` field rather than typed by hand: a
+manifest version that disagrees with the file it points at either re-downloads
+forever or never updates at all.
 
 Bump the `version` inside the source JSON when you change it, then run this.
 It refuses to publish a file whose content changed but whose version did not,
-because installed apps would never fetch it.
+a version that isn't plain dotted numbers ("0.9.11a"), and a changed file
+whose version isn't higher than the live one, because installed apps would
+never fetch it. "Live" is what the app reads: the file on jsDelivr, and the
+same file on origin/master (newer while jsDelivr still caches the old one).
+When jsDelivr can't be reached it says so and uses origin/master alone, as of
+the last `git fetch`.
 
 What the notification says is decided here, per publish, and written into the
 manifest's `notification` block:
@@ -44,8 +50,12 @@ live until the commit is pushed to master.
 """
 import argparse
 import json
+import re
 import shutil
+import subprocess
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]          # the CamoTracker repo
@@ -58,6 +68,9 @@ MODES = ["multiplayer", "warzone", "dmz"]
 GUIDES = ["hajin"]
 # Bundled files are `<PREFIX><name>.json`; MW4's have none
 PREFIX = ""
+# Where installed apps fetch from: Game.dataURL in Games.swift, plus OUT's
+# path in the repo
+CDN = "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/"
 
 
 def use_game(game_id):
@@ -88,6 +101,104 @@ def version_of(path):
     if not v:
         raise SystemExit(f"{path.name} has no top-level \"version\"")
     return v
+
+
+def swift_int(part):
+    """Swift's `Int(part) ?? 0`: an optional sign and digits, in range."""
+    if not re.fullmatch(r"[+-]?[0-9]+", part):
+        return 0
+    value = int(part)
+    return value if -2**63 <= value < 2**63 else 0
+
+
+def is_newer(version, known):
+    """DataService.isNewer, exactly: whether an installed app holding `known`
+    downloads `version`. Change one, change both."""
+    if known is None:
+        return True
+    # Swift's split(separator:) drops empty parts
+    a = [swift_int(p) for p in version.split(".") if p]
+    b = [swift_int(p) for p in known.split(".") if p]
+    for i in range(max(len(a), len(b))):
+        x = a[i] if i < len(a) else 0
+        y = b[i] if i < len(b) else 0
+        if x != y:
+            return x > y
+    return False
+
+
+def plain_version(version):
+    """Dotted numbers only: what is_newer reads the way it looks."""
+    return isinstance(version, str) and re.fullmatch(r"[0-9]+(\.[0-9]+)*", version) is not None
+
+
+def fetch_cdn(name):
+    """The live file from jsDelivr, as the app gets it: (data, None), (None,
+    None) when it isn't published, or (None, reason) when it can't be read."""
+    url = CDN + f"{OUT.relative_to(ROOT).as_posix()}/{name}.json"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"Cache-Control": "no-cache"}), timeout=20) as response:
+            return json.loads(response.read().decode("utf-8")), None
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            return None, None
+        return None, f"HTTP {error.code}"
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+        return None, str(getattr(error, "reason", error))
+
+
+def fetch_origin(name):
+    """The file on origin/master as of the last fetch: (data, None), (None,
+    None) when it isn't there, or (None, reason)."""
+    path = f"{OUT.relative_to(ROOT).as_posix()}/{name}.json"
+    run = subprocess.run(["git", "-C", str(ROOT), "show", f"origin/master:{path}"], capture_output=True, text=True)
+    if run.returncode != 0:
+        if "does not exist" in run.stderr or "exists on disk, but not in" in run.stderr:
+            return None, None
+        return None, run.stderr.strip() or "git show failed"
+    try:
+        return json.loads(run.stdout), None
+    except json.JSONDecodeError as error:
+        return None, f"not valid JSON ({error})"
+
+
+def live_problems(file_name, new, live, where):
+    """Why `new` can't replace a live copy (None if nothing is live): a file
+    that differs from it must carry a higher version, or no app fetches it."""
+    if live is None or live == new:
+        return []
+    old = live.get("version")
+    if old is None or is_newer(new["version"], old):
+        return []
+    return [f"{file_name}: \"version\" {new['version']} is not higher than the live {old} ({where}); "
+            "installed apps only fetch a higher number, so bump it past the live one"]
+
+
+def check_live(files, problems):
+    """Compares every file with what is live (see the top of this file)."""
+    cdn_failed = []
+    for name in files:
+        new = load(src(name))
+        if not new.get("version"):
+            continue
+        copies = []
+        live, failed = fetch_cdn(name)
+        if failed:
+            cdn_failed.append(f"{name}.json ({failed})")
+        else:
+            copies.append((live, "jsDelivr"))
+        origin, failed = fetch_origin(name)
+        if failed:
+            problems.append(f"{name}.json: can't read origin/master's copy to compare versions: {failed}")
+        elif origin != live:
+            copies.append((origin, "origin/master"))
+        for copy, where in copies:
+            problems.extend(live_problems(src(name).name, new, copy, where))
+    if cdn_failed:
+        print(f"warning: couldn't fetch the live copy from jsDelivr for {', '.join(cdn_failed)}; "
+              "compared versions with origin/master as of the last git fetch instead")
+    else:
+        print("versions compared with the live copies (jsDelivr and origin/master)")
 
 
 def localized(value, flag):
@@ -185,6 +296,9 @@ def main():
         if not new.get("version"):
             problems.append(f"{source.name}: no top-level \"version\"")
             continue
+        if not plain_version(new["version"]):
+            problems.append(f"{source.name}: \"version\" {new['version']!r} must be dotted numbers like 0.9.12; "
+                            "the app reads any other part as 0, so it would never fetch this file")
         if not dst.exists():
             changed.append((name, None, new["version"]))
             continue
@@ -196,6 +310,7 @@ def main():
         else:
             changed.append((name, old.get("version"), new["version"]))
     check(problems, warnings)
+    check_live(files, problems)
 
     for line in warnings:
         print(f"warning: {line}")
