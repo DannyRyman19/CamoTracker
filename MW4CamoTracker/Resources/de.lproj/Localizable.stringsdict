@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mw4.ui.postmatch.blueprints</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Bauplan eingesammelt</string>
+			<key>other</key>
+			<string>%d Baupläne eingesammelt</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.premium.more_suggestions</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d weiterer Vorschlag mit Premium</string>
+			<key>other</key>
+			<string>%d weitere Vorschläge mit Premium</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.hajin.scan_updated</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Eintrag aus deinen Fotos aktualisiert</string>
+			<key>other</key>
+			<string>%d Einträge aus deinen Fotos aktualisiert</string>
+		</dict>
+	</dict>
+	<key>ct.import.done</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Fortschritt für %d Waffe importiert.</string>
+			<key>other</key>
+			<string>Fortschritt für %d Waffen importiert.</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.postmatch.unread</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Feld nicht lesbar (Waffe oder Ausrüstung)</string>
+			<key>other</key>
+			<string>%d Felder nicht lesbar (Waffen und manche Ausrüstung)</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.milestone.final_many</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d Waffe hat sie jetzt.</string>
+			<key>other</key>
+			<string>%d Waffen haben sie jetzt.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

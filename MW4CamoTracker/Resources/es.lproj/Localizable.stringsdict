@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mw4.ui.postmatch.blueprints</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d plano recogido</string>
+			<key>other</key>
+			<string>%d planos recogidos</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.premium.more_suggestions</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d sugerencia más con Premium</string>
+			<key>other</key>
+			<string>%d sugerencias más con Premium</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.hajin.scan_updated</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d objeto actualizado desde tus fotos</string>
+			<key>other</key>
+			<string>%d objetos actualizados desde tus fotos</string>
+		</dict>
+	</dict>
+	<key>ct.import.done</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Progreso importado de %d arma.</string>
+			<key>other</key>
+			<string>Progreso importado de %d armas.</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.postmatch.unread</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d casilla sin leer (un arma o equipo)</string>
+			<key>other</key>
+			<string>%d casillas sin leer (armas y algo de equipo)</string>
+		</dict>
+	</dict>
+	<key>mw4.ui.milestone.final_many</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@count@</string>
+		<key>count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>%d arma ya lo tiene.</string>
+			<key>other</key>
+			<string>%d armas ya lo tienen.</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

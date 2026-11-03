@@ -73,3 +73,36 @@ struct NotificationTextTests {
         #expect(BackgroundRefreshCoordinator.shouldNotify(try announcement(#"{"silent": true}"#)) == false)
     }
 }
+
+/// Counts that can be 1 read in the singular ("1 blueprint picked up"), in
+/// every language, from `Localizable.stringsdict`.
+@Suite("Plural strings")
+struct PluralStringTests {
+    private static let keys = ["mw4.ui.postmatch.blueprints", "mw4.ui.premium.more_suggestions",
+                               "mw4.ui.hajin.scan_updated", "ct.import.done", "mw4.ui.postmatch.unread",
+                               "mw4.ui.milestone.final_many"]
+
+    private func format(_ key: String, _ count: Int, language: String) throws -> String {
+        let path = try #require(Bundle.main.path(forResource: language, ofType: "lproj"))
+        let bundle = try #require(Bundle(path: path))
+        return String(format: NSLocalizedString(key, bundle: bundle, comment: ""), count)
+    }
+
+    @Test func englishSingular() throws {
+        #expect(try format("mw4.ui.postmatch.blueprints", 1, language: "en") == "1 blueprint picked up")
+        #expect(try format("mw4.ui.postmatch.blueprints", 3, language: "en") == "3 blueprints picked up")
+        #expect(try format("mw4.ui.premium.more_suggestions", 1, language: "en") == "1 more suggestion with Premium")
+    }
+
+    @Test(arguments: ["en", "de", "es", "fr", "it", "nl", "pt"])
+    func everyLanguageHasBothForms(language: String) throws {
+        for key in Self.keys {
+            let one = try format(key, 1, language: language)
+            let many = try format(key, 2, language: language)
+            #expect(!one.contains("%") && !many.contains("%"), "\(language) \(key)")
+            #expect(many.contains("2"), "\(language) \(key)")
+            #expect(one.replacingOccurrences(of: "1", with: "") != many.replacingOccurrences(of: "2", with: ""),
+                    "\(language) \(key): \(one) / \(many)")
+        }
+    }
+}
