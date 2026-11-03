@@ -421,6 +421,7 @@ EXTRA_ITEMS = [
  {"id": "rozes-dog-tag", "name": "Roze's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress. Sells for $25,000"},
  {"id": "iskras-dog-tag", "name": "Iskra's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Iskra. Extract it for Boss Board progress. Sells for $25,000"},
  {"id": "jin-taes-dog-tag", "name": "Jin-Tae's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Jin-Tae. Extract it for Boss Board progress. Sells for $25,000"},
+ {"id": "the-chemists-dog-tag", "name": "The Chemist's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Chemist (reported). Extract his Lieutenant case for Boss Board progress. Carrying the case shows your position to other squads"},
  {"id": "the-doctors-dog-tag", "name": "The Doctor's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Doctor. Extract it for Boss Board progress. Sells for $25,000"},
  {"id": "goranis-dog-tag", "name": "Gorani's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Gorani. Sells for $25,000"},
  {"id": "hazmat-suit", "name": "Hazmat Suit", "kind": "Gear", "rarity": "Legendary", "note": "Protective suit that shields you from radiation. Discarded when you extract"},

@@ -357,7 +357,7 @@ guide = [
    ("Scavenger", "Lieutenant", "Drops the Scavenger's Dog Tag (Legendary). Their dog tag sells for $25,000"),
    ("Iskra", "Lieutenant", "Her Control Room is in the broadcast building at Cheonwang Peak Array. Drops Iskra's Dog Tag (Legendary). Their dog tag sells for $25,000"),
    ("Roze", "Lieutenant", "Drops Roze's Dog Tag (Legendary)"),
-   ("The Chemist", "Lieutenant", "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse"),
+   ("The Chemist", "Lieutenant", "Based around the Haneul Nuclear Reactor. Drops The Chemist's Dog Tag (Legendary, reported). The Chemist's Secure Armory key opens a bunker by the reactor boathouse"),
    ("The Warden", "Lieutenant", "Northern hills. Drops a key to a sealed door under NuriGO Mall"),
    ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
    ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
@@ -391,6 +391,8 @@ guide = [
    ("Traindepot Storage Room", "E5", "Rare. Basement of the train station by the fire station, Cheongun Village"),
    ("The Chemist's Secure Armory", "I4", "Legendary. A secured bunker by the Haneul Nuclear Reactor boathouse"),
    ("The Citadel South Wing", None, "Uncommon. The Citadel's South Wing, 14th Political Prison"),
+   ("Kang's Arms Incinerator", "B3", "Legendary. The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. Where its door is isn't known yet"),
+   ("Hospital Chemical Lab Key", "F5", "Rare. The chemical lab in the basement morgue of Mirae General Hospital. The chemical lockers inside need their own keys"),
    ("Bank Branch Vault Access", None, "Rare. The cash vaults of South Korean bank branches"),
    ("Hanex Guard Station", "G6", "Epic. The guard station on an upper floor near the Hanex Bank vault, The Grid"),
    ("Lucera Suite 703 Bedroom", "H7", "Epic. The upper-floor executive suite in Hotel Lucera, The Grid"),
@@ -498,7 +500,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.47", "updated": "2026-10-29",
+data = {"version": "0.9.48", "updated": "2026-11-03",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
