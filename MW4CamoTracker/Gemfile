@@ -2,5 +2,11 @@ source "https://rubygems.org"
 
 # CI-only. Fastlane drives the archive + TestFlight upload from
 # .github/workflows/testflight.yml; nothing in the app depends on Ruby.
+#
+# Gemfile.lock is tracked so every upload runs the same fastlane. It was
+# resolved on a TestFlight runner (Ruby 3.3, Bundler 2.5) and lists every
+# platform. Update it with a Ruby 3.3 Bundler, never macOS's system one
+# (Bundler 1.17 writes a lockfile Ruby 3.3 can't read):
+#   ~/.rbenv/versions/3.3.5/bin/bundle update fastlane
 gem "fastlane", "~> 2.226"
 gem "xcodeproj"
