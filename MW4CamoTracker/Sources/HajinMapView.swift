@@ -63,9 +63,20 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
     private let content = UIView()
     private let imageView: UIImageView
     private let mapSize: CGSize
-    /// Every marker view with how far past the whole-map zoom it starts to show.
-    private var overlays: [(view: UIView, minZoom: CGFloat)] = []
+    /// Every marker view with how far past the whole-map zoom it starts to
+    /// show, what a tap on it picks, and how to draw it picked or not.
+    private final class Overlay {
+        var view: UIView
+        let minZoom: CGFloat
+        let tag: HajinSelection
+        let make: (_ selected: Bool) -> UIView
+        init(view: UIView, minZoom: CGFloat, tag: HajinSelection, make: @escaping (Bool) -> UIView) {
+            self.view = view; self.minZoom = minZoom; self.tag = tag; self.make = make
+        }
+    }
+    private var overlays: [Overlay] = []
     private var renderedKey = ""
+    private var renderedSelection: HajinSelection?
     private var lastBounds: CGSize = .zero
 
     init(image: UIImage) {
@@ -152,63 +163,139 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
     // MARK: Markers
 
     func update(guide: HajinGuide, hidden: Set<String>, pins: [HajinPin], selection: HajinSelection?) {
-        let key = "\(guide.version)|\(hidden.sorted())|\(pins.map { "\($0.id)\($0.x)\($0.y)\($0.title)" })|\(selection?.id ?? "")"
-        guard key != renderedKey else { return }
+        let key = "\(guide.version)|\(hidden.sorted())|\(pins.map { "\($0.id)\($0.x)\($0.y)\($0.title)" })"
+        guard key != renderedKey else {
+            // Only the selection moved: redraw the one or two markers it
+            // touches, not all 400
+            if selection != renderedSelection { select(selection) }
+            return
+        }
         renderedKey = key
+        renderedSelection = selection
         overlays.forEach { $0.view.removeFromSuperview() }
         overlays = []
-        tags = [:]
 
+        // A Fortress named like its area (Mirae General Hospital) already
+        // has its name on the map
+        let areaNames = Set(guide.markers.filter { $0.cat == "area" }.map { $0.name.resolved.lowercased() })
         // Names first so the icons sit on top of them
         let ordered = guide.markers.sorted { (guide.category($0.cat)?.isLabel ?? false) && !(guide.category($1.cat)?.isLabel ?? false) }
         for marker in ordered where !hidden.contains(marker.cat) {
             guard let category = guide.category(marker.cat) else { continue }
-            let selected = selection == .marker(marker)
-            let view: UIView
+            let tag = HajinSelection.marker(marker)
+            // VoiceOver reads the marker's name and what it is ("Keycard
+            // Room 3, Passwords"), not its symbol's ("passwords")
+            let name = marker.name.resolved
+            let kind = category.name.resolved
+            let spoken = name.caseInsensitiveCompare(kind) == .orderedSame || name.isEmpty ? kind : "\(name), \(kind)"
+            let make: (Bool) -> UIView
             let minZoom: CGFloat
             if category.isLabel {
                 let area = category.id == "area"
                 // Area names take their threat colour, Low green to Extreme red
                 let colour = marker.threat.map { UIColor(HajinThreat.color($0)) }
                     ?? (area ? .white : UIColor(white: 0.85, alpha: 1))
-                view = label(marker.name.resolved, size: area ? 14 : 11, weight: area ? .heavy : .semibold,
-                             colour: colour, selected: selected)
+                make = { [unowned self] selected in
+                    accessible(label(name, size: area ? 14 : 11, weight: area ? .heavy : .semibold,
+                                     colour: colour, selected: selected), spoken: spoken, tag: tag, selected: selected)
+                }
                 minZoom = area ? 0 : 2.5
             } else {
-                view = badge(symbol: marker.symbol ?? category.symbol, tint: UIColor(category.tint), selected: selected)
+                make = { [unowned self] selected in
+                    accessible(badge(symbol: marker.symbol ?? category.symbol, tint: UIColor(category.tint), selected: selected),
+                               spoken: spoken, tag: tag, selected: selected)
+                }
                 minZoom = 0
             }
-            place(view, x: marker.x, y: marker.y, tag: .marker(marker), minZoom: minZoom)
-            // A Fortress named like its area (Mirae General Hospital) already
-            // has its name on the map
-            let areaNames = Set(guide.markers.filter { $0.cat == "area" }.map { $0.name.resolved.lowercased() })
-            if category.id == "fortress", let threat = marker.threat, !areaNames.contains(marker.name.resolved.lowercased()) {
-                let name = label(marker.name.resolved, size: 10, weight: .bold, colour: UIColor(HajinThreat.color(threat)), selected: selected)
-                name.isUserInteractionEnabled = false
-                // Sits under the icon; offset in map points at the zoom it shows from
-                place(name, x: marker.x, y: marker.y + 0.012, tag: .marker(marker), minZoom: 3)
+            place(make, x: marker.x, y: marker.y, tag: tag, minZoom: minZoom, selected: selection == tag)
+            if category.id == "fortress", let threat = marker.threat, !areaNames.contains(name.lowercased()) {
+                // Sits under the icon; offset in map points at the zoom it
+                // shows from. The icon already says its name to VoiceOver.
+                place({ [unowned self] selected in
+                    let view = label(name, size: 10, weight: .bold, colour: UIColor(HajinThreat.color(threat)), selected: selected)
+                    view.isUserInteractionEnabled = false
+                    view.isAccessibilityElement = false
+                    return view
+                }, x: marker.x, y: marker.y + 0.012, tag: tag, minZoom: 3, selected: selection == tag)
             }
         }
         for pin in pins {
-            let view = badge(symbol: "mappin", tint: UIColor(red: 1, green: 0.85, blue: 0.2, alpha: 1),
-                             selected: selection == .pin(pin.id), pin: true)
-            place(view, x: pin.x, y: pin.y, tag: .pin(pin.id), minZoom: 0)
+            let tag = HajinSelection.pin(pin.id)
+            let spoken = pin.title.isEmpty ? "mw4.ui.hajin.my_pin".localized() : pin.title
+            place({ [unowned self] selected in
+                accessible(badge(symbol: "mappin", tint: UIColor(red: 1, green: 0.85, blue: 0.2, alpha: 1),
+                                 selected: selected, pin: true), spoken: spoken, tag: tag, selected: selected)
+            }, x: pin.x, y: pin.y, tag: tag, minZoom: 0, selected: selection == tag)
         }
         rescaleOverlays()
     }
 
-    private var tags: [ObjectIdentifier: HajinSelection] = [:]
-
-    private func place(_ view: UIView, x: Double, y: Double, tag: HajinSelection, minZoom: CGFloat) {
+    private func place(_ make: @escaping (Bool) -> UIView, x: Double, y: Double, tag: HajinSelection,
+                       minZoom: CGFloat, selected: Bool) {
+        let view = make(selected)
         view.center = CGPoint(x: x * mapSize.width, y: y * mapSize.height)
         content.addSubview(view)
-        overlays.append((view, minZoom))
-        tags[ObjectIdentifier(view)] = tag
+        overlays.append(Overlay(view: view, minZoom: minZoom, tag: tag, make: make))
+    }
+
+    /// Swaps the old and new selection's views for their picked or unpicked
+    /// look, in the same place in the stack.
+    private func select(_ selection: HajinSelection?) {
+        let changed = Set([renderedSelection?.id, selection?.id].compactMap { $0 })
+        renderedSelection = selection
+        let zoom = scrollView.zoomScale
+        for overlay in overlays where changed.contains(overlay.tag.id) {
+            let old = overlay.view
+            let view = overlay.make(overlay.tag == selection)
+            view.center = old.center
+            view.transform = old.transform
+            view.isHidden = old.isHidden
+            content.insertSubview(view, aboveSubview: old)
+            old.removeFromSuperview()
+            overlay.view = view
+        }
+        if zoom > 0 { rescaleOverlays() }
+    }
+
+    /// A marker VoiceOver can find and open by name: a button saying what
+    /// it is, picked when it's the one shown.
+    private func accessible(_ view: UIView, spoken: String, tag: HajinSelection, selected: Bool) -> UIView {
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = spoken
+        view.accessibilityTraits = selected ? [.button, .selected] : .button
+        view.subviews.forEach { $0.isAccessibilityElement = false }
+        (view as? HajinMarkerAccessible)?.activate = { [weak self] in self?.onSelect?(tag) }
+        return view
+    }
+
+    /// Every marker on show, A to Z, for VoiceOver's rotor: a marker can be
+    /// reached by name without sweeping the whole map.
+    override var accessibilityCustomRotors: [UIAccessibilityCustomRotor]? {
+        get {
+            [UIAccessibilityCustomRotor(name: "ct.a11y.map_markers".localized()) { [weak self] predicate in
+                guard let self else { return nil }
+                let views = overlays.map(\.view)
+                    .filter { $0.isAccessibilityElement && !$0.isHidden }
+                    .sorted { ($0.accessibilityLabel ?? "").localizedStandardCompare($1.accessibilityLabel ?? "") == .orderedAscending }
+                guard !views.isEmpty else { return nil }
+                let current = predicate.currentItem.targetElement as? UIView
+                let index = current.flatMap { views.firstIndex(of: $0) }
+                let next: Int
+                switch predicate.searchDirection {
+                case .next: next = index.map { $0 + 1 } ?? 0
+                case .previous: next = index.map { $0 - 1 } ?? views.count - 1
+                @unknown default: return nil
+                }
+                guard views.indices.contains(next) else { return nil }
+                return UIAccessibilityCustomRotorItemResult(targetElement: views[next], targetRange: nil)
+            }]
+        }
+        set {}
     }
 
     private func badge(symbol: String, tint: UIColor, selected: Bool, pin: Bool = false) -> UIView {
         let side: CGFloat = selected ? 34 : 26
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: side, height: side))
+        let view = HajinMarkerBadge(frame: CGRect(x: 0, y: 0, width: side, height: side))
         view.layer.cornerRadius = side / 2
         view.backgroundColor = UIColor(red: 0.08, green: 0.10, blue: 0.09, alpha: 0.92)
         view.layer.borderColor = tint.cgColor
@@ -228,7 +315,7 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
     }
 
     private func label(_ text: String, size: CGFloat, weight: UIFont.Weight, colour: UIColor, selected: Bool) -> UIView {
-        let label = UILabel()
+        let label = HajinMarkerLabel()
         label.text = text.uppercased()
         label.font = .systemFont(ofSize: size, weight: weight)
         // Selected names go white and glow in their own colour, so the
@@ -266,7 +353,7 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         let reach = 28 / scrollView.zoomScale
         var best: (HajinSelection, CGFloat)?
         for overlay in overlays where !overlay.view.isHidden {
-            guard let tag = tags[ObjectIdentifier(overlay.view)] else { continue }
+            let tag = overlay.tag
             let frame = overlay.view.frame.insetBy(dx: -reach / 2, dy: -reach / 2)
             guard frame.contains(point) else { continue }
             let distance = hypot(overlay.view.center.x - point.x, overlay.view.center.y - point.y)
@@ -325,4 +412,20 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         centreContent()
         rescaleOverlays()
     }
+}
+
+/// A map marker VoiceOver opens with a double-tap, as a finger's tap does.
+@MainActor
+protocol HajinMarkerAccessible: AnyObject {
+    var activate: (() -> Void)? { get set }
+}
+
+final class HajinMarkerBadge: UIView, HajinMarkerAccessible {
+    var activate: (() -> Void)?
+    override func accessibilityActivate() -> Bool { activate?(); return activate != nil }
+}
+
+final class HajinMarkerLabel: UILabel, HajinMarkerAccessible {
+    var activate: (() -> Void)?
+    override func accessibilityActivate() -> Bool { activate?(); return activate != nil }
 }
