@@ -183,6 +183,9 @@ struct WeaponRow: View {
                 }
             }
         }
+        // The card's whole width whatever the name: at the accessibility
+        // sizes the stacked layout hugged it, so "HAN 86" was narrower than "M4"
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(12)
         .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil), borderGradient: borderGradient)
     }

@@ -96,26 +96,47 @@ struct PlayedModesPicker: View {
     var body: some View {
         let played = AppMode.played(playedRaw)
         let offered = AppMode.allCases.filter { viewModel.modes[$0.rawValue]?.hidden != true }
-        HStack(spacing: 8) {
-            ForEach(offered) { mode in
-                chip(mode, on: played.contains(mode))
+        // Side by side while every name fits whole; one under another at
+        // the larger text sizes, rather than "Multipl…"
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) {
+                ForEach(offered) { mode in
+                    chip(mode, on: played.contains(mode), stacked: false)
+                }
+            }
+            VStack(spacing: 8) {
+                ForEach(offered) { mode in
+                    chip(mode, on: played.contains(mode), stacked: true)
+                }
             }
         }
         .animation(.snappy, value: playedRaw)
     }
 
-    private func chip(_ mode: AppMode, on: Bool) -> some View {
+    private func chip(_ mode: AppMode, on: Bool, stacked: Bool) -> some View {
         Button {
             let next = AppMode.toggling(mode, in: playedRaw)
             if next != playedRaw { Haptics.light(); playedRaw = next }
         } label: {
-            VStack(spacing: 5) {
-                Image(systemName: mode.symbol)
-                    .font(.system(size: 17, weight: .semibold))
-                Text(mode.displayName)
-                    .scaledFont(12, weight: .bold)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+            let name = Text(mode.displayName)
+                .scaledFont(12, weight: .bold)
+                .lineLimit(1)
+            Group {
+                if stacked {
+                    HStack(spacing: 10) {
+                        Image(systemName: mode.symbol)
+                            .font(.system(size: 17, weight: .semibold))
+                        name.minimumScaleFactor(0.8)
+                    }
+                    .padding(.horizontal, 28)
+                } else {
+                    VStack(spacing: 5) {
+                        Image(systemName: mode.symbol)
+                            .font(.system(size: 17, weight: .semibold))
+                        // Its whole width, clear of the tick in the corner
+                        name.fixedSize().padding(.horizontal, 10)
+                    }
+                }
             }
             .foregroundStyle(on ? mode.accent : Color.appInkMuted.opacity(0.7))
             .frame(maxWidth: .infinity)
@@ -617,6 +638,12 @@ struct StatSummaryCard: View {
     }
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     private var hasLock: Bool { stats.contains { $0.lockedHint != nil } }
+    /// A lock hint's lines: two, or three past the default sizes, where
+    /// "Needs 33 Harmonic Break" no longer fits two ("Needs 33 Harmonic Br…").
+    private var hintLines: Int { dynamicTypeSize > .large ? 3 : 2 }
+    /// The count's slot in every column of a row with a lock, so the labels
+    /// under them stay on one line.
+    private var hintHeight: CGFloat { countHeight * CGFloat(hintLines) / 2 }
 
     var body: some View {
         HStack(spacing: 14) {
@@ -647,9 +674,9 @@ struct StatSummaryCard: View {
                                 .scaledFont(10, weight: .semibold)
                                 .foregroundStyle(Color.appInkMuted)
                                 .multilineTextAlignment(.center)
-                                .lineLimit(2)
+                                .lineLimit(hintLines)
                                 .minimumScaleFactor(0.8)
-                                .frame(height: countHeight)
+                                .frame(height: hintHeight)
                         } else if let ringFraction = stats[index].ringFraction {
                             ProgressRing(
                                 fraction: ringFraction,
@@ -663,7 +690,7 @@ struct StatSummaryCard: View {
                                 .foregroundStyle(Color.appInk)
                                 // Same height as a two-line lock hint, so
                                 // every column's label sits on one line
-                                .frame(height: hasLock ? countHeight : nil)
+                                .frame(height: hasLock ? hintHeight : nil)
                         } else {
                             Text(stats[index].value)
                                 .scaledFont(17, weight: .bold, design: .monospaced)
@@ -1403,6 +1430,19 @@ struct SegmentTabs<T: Hashable>: View {
     @Namespace private var light
 
     var body: some View {
+        // Every title at one size, the largest at which they all fit whole,
+        // rather than each shrinking on its own ("Completionist" smaller
+        // than "Camos" and "Mastery" beside it at the larger text sizes)
+        ViewThatFits(in: .horizontal) {
+            tabs(maxSize: nil)
+            tabs(maxSize: 24)
+            tabs(maxSize: 19)
+            tabs(maxSize: 15, fits: false)
+        }
+    }
+
+    /// `fits` false: the last resort, where a title may still shrink.
+    private func tabs(maxSize: CGFloat?, fits: Bool = true) -> some View {
         HStack(spacing: 4) {
             ForEach(items, id: \.value) { item in
                 let on = item.value == selection
@@ -1412,10 +1452,12 @@ struct SegmentTabs<T: Hashable>: View {
                     withAnimation(.snappy(duration: 0.28)) { selection = item.value }
                 } label: {
                     Text(item.title)
-                        .hitmarkerFont(15)
+                        .hitmarkerFont(15, maxSize: maxSize)
                         .foregroundStyle(on ? Color.appInk : Color.appInkMuted)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.5)
+                        .fixedSize(horizontal: fits, vertical: false)
+                        .minimumScaleFactor(fits ? 1 : 0.5)
+                        .padding(.horizontal, fits ? 6 : 0)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 9)
                         .background {
