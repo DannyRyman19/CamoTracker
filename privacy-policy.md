@@ -18,19 +18,29 @@ The app does use third party services that may collect information used to ident
 
 Link to privacy policy of third party service providers used by the app
 
-*   [Google Play Services](https://www.google.com/policies/privacy/)
-*   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
-*   [Unity Ads and LevelPlay](https://unity.com/legal/game-player-and-app-user-privacy-policy)
+*   [Unity LevelPlay (ironSource), LevelPlay Ad Quality and Unity Ads](https://unity.com/legal/game-player-and-app-user-privacy-policy)
 
 **Advertising and Premium**
 
-The free version of the app shows ads through Unity LevelPlay, including a short ad before reading a stash photo. Unity and its ad partners may collect your device's advertising identifier, IP address and how you interact with ads in order to show and measure them. On iPhone and iPad the app asks before allowing tracking, and you can change that answer at any time in Settings > Privacy & Security > Tracking. Stash photos are read on your device and are never sent to Unity or to me.
+The free version of the app shows ads through Unity LevelPlay, which serves them from Unity Ads. There are three kinds:
 
-Premium (a yearly subscription or a one-off purchase) removes the ads. Purchases are handled by Apple; I never see your payment details.
+*   a banner at the foot of some screens;
+*   now and then a full-screen ad when you go back from a weapon to the list (at most one every 10 minutes, and none in your first two days);
+*   a short ad you choose to watch before reading a stash photo.
+
+To show and measure these ads, Unity and its ad partners may collect your device's identifiers (the advertising identifier only if you allow tracking), your IP address and the rough location it gives, your device model, language and connection type, and how you interact with ads. I don't receive this data.
+
+If you live in the EU, the EEA, the UK or Switzerland (going by your device's Region setting), the app first asks whether ad partners may use this data to personalise ads. "Keep ads general" still shows ads, just not personalised ones, and you can change your answer at any time under Customise > Personalised ads.
+
+On iPhone and iPad the app then asks, through Apple's App Tracking Transparency, whether it may track you. If you don't allow it, your advertising identifier isn't shared. You can change that answer at any time in Settings > Privacy & Security > Tracking.
+
+Stash photos are read on your device and are never sent to Unity or to me.
+
+Premium (a yearly subscription or a one-off purchase) removes the ads, and once you have it the app no longer starts the ad services. Purchases are handled by Apple; I never see your payment details. Premium's iCloud sync keeps your progress in your own iCloud account, which I can't see.
 
 **Log Data**
 
-I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+I want to inform you that the app doesn't collect crash reports or usage statistics for me. If you send a data report from the app, it is an ordinary email from your own Mail app: I see your email address and whatever the email contains, and use them only to answer you and fix the data. The app downloads weapon and camo updates and pictures from jsDelivr, GitHub and this website, which see your IP address as any website does.
 
 **Cookies**
 
@@ -65,7 +75,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2026-10-27
+This policy is effective as of 2026-11-03
 
 **Contact Us**
 
