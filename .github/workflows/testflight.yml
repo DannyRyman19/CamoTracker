@@ -30,11 +30,13 @@ jobs:
       run:
         working-directory: MW4CamoTracker
 
+    # Third-party and actions/* steps are pinned to a commit SHA (the
+    # comment names its release), so a moved tag can't change a run.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Select Xcode
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
         with:
           # Match the version the project is developed against. If the runner
           # image doesn't carry it yet, pin to the closest it lists at
@@ -64,14 +66,14 @@ jobs:
           echo "version=$v" >> "$GITHUB_OUTPUT"
           echo "App version: $v"
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1.336.0
         with:
           ruby-version: "3.3"
           bundler-cache: true   # bundle install + cache from Gemfile.lock
           working-directory: MW4CamoTracker
 
       - name: Cache DerivedData
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: ~/Library/Developer/Xcode/DerivedData
           key: deriveddata-${{ runner.os }}-${{ steps.xcode.outputs.id }}-${{ hashFiles('MW4CamoTracker/**/*.swift') }}
@@ -106,7 +108,7 @@ jobs:
 
       - name: Upload build logs on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: fastlane-logs
           path: |
