@@ -43,6 +43,7 @@ struct StatsView: View {
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .top)
+                        .accessibilityElement(children: .contain)
                     }
                 } else {
                     // One weapons card where camos count in every mode
@@ -123,11 +124,13 @@ private struct OverallStatsHero: View {
     var body: some View {
         VStack(spacing: 14) {
             ProgressRing(fraction: overallFraction, accent: .camoGold, lineWidth: 10, size: 110)
+                .accessibilityLabel(Text("mw4.ui.stats.overall".localized()))
 
             Text("mw4.ui.stats.overall".localized())
                 .scaledFont(12, weight: .bold)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.appInkMuted)
+                .accessibilityHidden(true)
 
             HStack(spacing: 0) {
                 ForEach(perMode, id: \.mode.rawValue) { entry in
@@ -143,12 +146,17 @@ private struct OverallStatsHero: View {
                             .foregroundStyle(Color.appInkMuted)
                     }
                     .frame(maxWidth: .infinity)
+                    // "Multiplayer, 45%", not the three percentages then the names
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text(entry.mode.displayName))
+                    .accessibilityValue(Text("\(Int(entry.fraction * 100))%"))
                 }
             }
         }
         .padding(.vertical, 20)
         .frame(maxHeight: fillsHeight ? .infinity : nil)
         .borderedCard()
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -166,6 +174,7 @@ private struct DMZStatsCard: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(spacing: 14) {
                 ProgressRing(fraction: overall, accent: .accentDMZ, lineWidth: 6, size: 56)
+                    .accessibilityLabel(Text("mw4.ui.stats.dmz".localized()))
                 VStack(alignment: .leading, spacing: 2) {
                     Label("mw4.ui.stats.dmz".localized(), systemImage: AppMode.dmz.symbol)
                         .font(.headline)
@@ -200,6 +209,7 @@ private struct DMZStatsCard: View {
         }
         .padding(16)
         .borderedCard()
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -303,8 +313,12 @@ private struct ModeStatsCard: View {
                         Text("\(Int(completion * 100))%")
                             .scaledFont(11, weight: .bold, design: .monospaced)
                             .foregroundStyle(mode.accent)
+                            .accessibilityHidden(true)
                     )
             }
+            // The card's title and its percentage, one heading
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(.isHeader)
 
             if part == .weapons {
                 // Black Ops' ladder lives on its Mastery tab; Stats keeps
@@ -372,6 +386,9 @@ private struct ModeStatsCard: View {
         }
         .padding(14)
         .borderedCard(accent: mode.accent)
+        // Read card by card: on iPad, with Mastery in a column beside the
+        // weapons, VoiceOver otherwise went across both a line at a time
+        .accessibilityElement(children: .contain)
     }
 
     private func trackTitle(_ title: String) -> some View {
@@ -379,6 +396,7 @@ private struct ModeStatsCard: View {
             .scaledFont(12, weight: .semibold)
             .foregroundStyle(Color.appInkMuted)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityAddTraits(.isHeader)
     }
 
     private func statRow(name: String, fraction: Double, count: String? = nil) -> some View {
@@ -400,6 +418,9 @@ private struct ModeStatsCard: View {
                 .scaledFont(12, design: .monospaced)
                 .foregroundStyle(Color.appInkMuted)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(name))
+        .accessibilityValue(Text(["\(Int(fraction * 100))%", count.map(Spoken.counts)].compactMap { $0 }.joined(separator: ", ")))
     }
 }
 

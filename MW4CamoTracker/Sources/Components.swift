@@ -50,6 +50,28 @@ enum AppLanguage {
         if let code = override { return [code] }
         return Locale.preferredLanguages.compactMap { Locale(identifier: $0).language.languageCode?.identifier }
     }
+
+    /// Numbers formatted for the picked language ("45 %" in French), with
+    /// the iPhone's region when no language is picked.
+    static var locale: Locale {
+        override.map { Locale(identifier: $0) } ?? .current
+    }
+}
+
+/// What VoiceOver says for the app's shorthand.
+enum Spoken {
+    /// "12/33" as "12 of 33", in every count inside `text`.
+    static func counts(_ text: String) -> String {
+        guard let regex = try? NSRegularExpression(pattern: #"(\d+)\s*/\s*(\d+)"#) else { return text }
+        var result = text
+        for match in regex.matches(in: text, range: NSRange(text.startIndex..., in: text)).reversed() {
+            guard let whole = Range(match.range, in: result),
+                  let done = Range(match.range(at: 1), in: text).flatMap({ Int(text[$0]) }),
+                  let total = Range(match.range(at: 2), in: text).flatMap({ Int(text[$0]) }) else { continue }
+            result.replaceSubrange(whole, with: String(format: "ct.a11y.count".localized(), done, total))
+        }
+        return result
+    }
 }
 
 /// Multiplayer, Warzone and DMZ as switches, for picking the modes you
@@ -521,6 +543,9 @@ struct ProgressRing: View {
             }
         }
         .frame(width: size, height: size)
+        // A ring is its percentage to VoiceOver; where it sits says what of
+        .accessibilityElement(children: .ignore)
+        .accessibilityValue(Text("\(min(Int(fraction * 100), 100))%"))
     }
 }
 
@@ -566,6 +591,15 @@ struct StatSummaryCard: View {
     var horizontalPadding: CGFloat = 12
     var verticalPadding: CGFloat = 14
 
+    private func spokenValue(_ stat: Stat) -> String {
+        if let hint = stat.lockedHint {
+            return "\("ct.a11y.locked".localized()), \(Spoken.counts(hint))"
+        }
+        let count = Spoken.counts(stat.value)
+        guard let ring = stat.ringFraction else { return count }
+        return "\(min(Int(ring * 100), 100))%, \(count)"
+    }
+
     /// Two lines of a lock hint ("13/33" over "Platinum").
     private static let countHeight: CGFloat = 26
     private var hasLock: Bool { stats.contains { $0.lockedHint != nil } }
@@ -574,6 +608,7 @@ struct StatSummaryCard: View {
         HStack(spacing: 14) {
             if let heroFraction, let heroAccent {
                 ProgressRing(fraction: heroFraction, accent: heroAccent, lineWidth: 6, size: 56)
+                    .accessibilityLabel(Text("ct.a11y.completion".localized()))
 
                 Rectangle()
                     .fill(Color.appInkMuted.opacity(0.25))
@@ -640,6 +675,11 @@ struct StatSummaryCard: View {
                         .frame(height: 26, alignment: .top)
                     }
                     .frame(maxWidth: .infinity)
+                    // One stop per column: "Platinum, Locked, 0 of 33 Gold" or
+                    // "Gold, 45%, 15 of 33", not the row's numbers then its names
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text(stats[index].label))
+                    .accessibilityValue(Text(spokenValue(stats[index])))
 
                     if index < stats.count - 1 {
                         Rectangle()
@@ -695,6 +735,7 @@ struct MasteryTrack: View {
             HStack(spacing: 0) {
                 ForEach(nodes.indices, id: \.self) { index in
                     nodeCircle(nodes[index])
+                        .accessibilityHidden(true)
                     if index < nodes.count - 1 {
                         Rectangle()
                             .fill(nodes[index].achieved ? nodes[index].color.opacity(0.6) : Color.appInkMuted.opacity(0.25))
@@ -745,6 +786,11 @@ struct MasteryTrack: View {
         .multilineTextAlignment(.center)
         .lineLimit(2)
         .minimumScaleFactor(0.85)
+        // "Platinum, Done, 33 of 33": the node's tick said, not just drawn
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(node.name))
+        .accessibilityValue(Text("\((node.achieved ? "ct.a11y.done" : "ct.a11y.not_done").localized()), \(Spoken.counts(node.detail))"))
+        .accessibilityAddTraits(node.achieved ? .isSelected : [])
     }
 }
 
@@ -1143,6 +1189,7 @@ struct MilestoneBannerView: View {
             Image(systemName: banner.icon)
                 .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(banner.titleGradient.first ?? .camoGold)
+                .accessibilityHidden(true)
             AnimatedGradientText(text: banner.title, colors: banner.titleGradient, size: 16)
             Text(banner.subtitle)
                 .scaledFont(12.5)
@@ -1174,6 +1221,10 @@ struct MilestoneBannerView: View {
         )
         .padding(.horizontal, 24)
         .shadow(color: .black.opacity(0.35), radius: 12, y: 4)
+        // Earning Gold or a milestone is said as well as shown
+        .onAppear {
+            UIAccessibility.post(notification: .announcement, argument: "\(banner.title). \(banner.subtitle)")
+        }
     }
 }
 
