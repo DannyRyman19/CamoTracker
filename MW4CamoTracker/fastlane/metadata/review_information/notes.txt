@@ -7,9 +7,10 @@ Ads: the app is free with ads from Unity LevelPlay (Unity Ads). Free users see:
 - now and then a full-screen ad when going back from a weapon to the weapons list. At most one every 10 minutes, never at launch, and none in a player's first two days, so you may not see one during review;
 - a short rewarded ad before each stash scan (Hajin tab > My DMZ > Read from a photo). If no ad can be shown, one scan a day still goes ahead.
 
-Prompts: after onboarding and the notification prompt, the next time the app is active it asks:
-1. Only when the device's Region is in the EU, EEA, the UK or Switzerland: an "About ads" alert asking whether ad partners may personalise ads ("Personalise ads" or "Keep ads general"). Either answer keeps the app the same, and it can be changed later under Customise > Personalised ads. To see it, set Settings > General > Language & Region > Region to e.g. United Kingdom before installing.
+Prompts: onboarding ends with the notification prompt, and nothing else is asked, and no ad is loaded, until the player's second session. The next time the app is opened after going to the Home Screen (or the next launch), it asks:
+1. Only when the device's Region or its App Store country is in the EU, EEA, the UK or Switzerland: an "About ads" alert asking whether ad partners may personalise ads ("Personalise ads" or "Keep ads general"). Either answer keeps the app the same, and it can be changed later under Customise > Personalised ads. To see it, set Settings > General > Language & Region > Region to e.g. United Kingdom before installing.
 2. The App Tracking Transparency prompt, used only for ads.
+To see both after onboarding, go to the Home Screen and open the app again.
 Premium users never see either prompt, and the ad SDK is not started for them.
 
 Premium (com.DannyRyman.MW4CamoTracker.premium.yearly, an auto-renewing yearly subscription, or com.DannyRyman.MW4CamoTracker.premium.lifetime, a one-off purchase) removes all ads and adds stash scans with no ad, camo app icons, layout customisation and iCloud sync. Premium is reached from Customise (the sliders button at the top right of the Weapons tab, "Go Premium" section), the "Remove ads" link above a banner, or the stash scan sheet. Restore purchases is on the Premium sheet and also under Customise.

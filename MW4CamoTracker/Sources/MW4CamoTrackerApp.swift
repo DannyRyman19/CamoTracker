@@ -46,6 +46,9 @@ struct MW4CamoTrackerApp: App {
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .background {
                 BackgroundRefreshCoordinator.scheduleNext()
+                // The end of a session: onboarded by now, the next one may
+                // ask about ads (see `Ads.pastFirstSessionKey`)
+                Ads.sessionBoundary()
             }
             // Coming back to the app checks again, so an update published
             // while it sat in the background shows without a relaunch.

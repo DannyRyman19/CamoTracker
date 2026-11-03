@@ -1,6 +1,7 @@
 import AdSupport
 import AppTrackingTransparency
 import IronSource
+import StoreKit
 import SwiftUI
 
 /// Unity LevelPlay: a banner under the Weapons, Mastery, Stats and DMZ
@@ -68,8 +69,9 @@ enum AdConfig {
 /// Consent for personalised ads where the law asks for it: GDPR in the EU
 /// and EEA, UK GDPR and Swiss law. Apple's tracking question is separate (that
 /// one is about the advertising ID; this one about using any personal data to
-/// pick ads), so both are asked. Players elsewhere never see it. The answer goes
-/// to LevelPlay and can be changed under Customise.
+/// pick ads), so both are asked. Players elsewhere (by Region setting and App
+/// Store country) never see it. The answer goes to LevelPlay and can be
+/// changed under Customise.
 enum AdConsent {
     static let key = "ct_ads_consent"
     private static let regions: Set<String> = [
@@ -79,8 +81,35 @@ enum AdConsent {
         "GB", "CH",
     ]
 
-    /// From the phone's region setting, which most players have set to where they live
-    static var applies: Bool { Locale.current.region.map { regions.contains($0.identifier) } ?? false }
+    /// The same countries as App Store storefronts, which are ISO alpha-3.
+    private static let storefronts: Set<String> = [
+        "AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA",
+        "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE",
+        "ISL", "LIE", "NOR",
+        "GBR", "CHE",
+    ]
+    /// The App Store country last read (`updateStorefront`).
+    static let storefrontKey = "ct_ads_storefront"
+
+    /// The phone's Region setting or its App Store country is on the list:
+    /// a player in Germany with the Region set to the US still has a German
+    /// App Store account, so is still asked.
+    static var applies: Bool {
+        applies(region: Locale.current.region?.identifier,
+                storefront: UserDefaults.standard.string(forKey: storefrontKey))
+    }
+
+    static func applies(region: String?, storefront: String?) -> Bool {
+        region.map(regions.contains) == true || storefront.map(storefronts.contains) == true
+    }
+
+    /// Reads the App Store country, which only comes asynchronously, and
+    /// keeps it for `applies`. Kept as it was when there's no answer.
+    static func updateStorefront() async {
+        if let country = await Storefront.current?.countryCode {
+            UserDefaults.standard.set(country, forKey: storefrontKey)
+        }
+    }
 
     /// nil until answered
     static var granted: Bool? { UserDefaults.standard.object(forKey: key) as? Bool }
@@ -129,10 +158,28 @@ final class Ads: NSObject, ObservableObject {
     /// Whether this player gets ads at all.
     var showsAds: Bool { (AdConfig.isConfigured || AdConfig.simulated) && !Premium.shared.isPremium }
 
+    /// The session a player finishes onboarding in has no ad prompts and
+    /// no ads: a new player was asked about notifications, ads and tracking
+    /// in their first ten seconds. A session ends when the app goes to the
+    /// background, so the next launch or return to the app is the second.
+    static let pastFirstSessionKey = "ct_ads_past_first_session"
+
+    /// At launch and on going to the background: a session that starts,
+    /// or ends, onboarded makes the next one a later session.
+    static func sessionBoundary(defaults: UserDefaults = .standard) {
+        if defaults.bool(forKey: "mw4_has_onboarded") { defaults.set(true, forKey: pastFirstSessionKey) }
+    }
+
+    static func isPastFirstSession(defaults: UserDefaults = .standard) -> Bool {
+        defaults.bool(forKey: pastFirstSessionKey)
+    }
+
     /// Called once the app is active (the tracking prompt needs that): asks
-    /// about tracking, then starts the SDK. Nothing happens for Premium, or
-    /// before onboarding is done: the next time the app is active after it
-    /// (once the notification prompt has closed), so the prompts never stack.
+    /// about ads where the law says to, then about tracking, then starts
+    /// the SDK, so nothing is requested before both answers. Nothing happens
+    /// for Premium, or before the player's second session (see
+    /// `pastFirstSessionKey`), by when onboarding and the notification
+    /// prompt are long closed.
     func start() {
         #if DEBUG
         print("[Ads] start: showsAds \(showsAds) ready \(ready) starting \(starting) onboarded \(UserDefaults.standard.bool(forKey: "mw4_has_onboarded")) premium \(Premium.shared.isPremium)")
@@ -140,7 +187,7 @@ final class Ads: NSObject, ObservableObject {
         if ProcessInfo.processInfo.environment["SS_SCREEN"] != nil { return }
         #endif
         guard showsAds, AdConfig.isConfigured, !AdConfig.simulated, !ready, !starting,
-              UserDefaults.standard.bool(forKey: "mw4_has_onboarded") else { return }
+              UserDefaults.standard.bool(forKey: "mw4_has_onboarded"), Self.isPastFirstSession() else { return }
         starting = true
         Task { @MainActor in
             // iOS drops the tracking request, without asking, if the app isn't
@@ -151,6 +198,7 @@ final class Ads: NSObject, ObservableObject {
                 try? await Task.sleep(for: .milliseconds(300))
             }
             // The law's question (EU, EEA, UK, Switzerland) before Apple's
+            await AdConsent.updateStorefront()
             if AdConsent.needsAsking { await AdConsent.ask() }
             _ = await ATTrackingManager.requestTrackingAuthorization()
             initialise()

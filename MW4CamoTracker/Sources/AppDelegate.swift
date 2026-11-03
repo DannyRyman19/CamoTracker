@@ -25,6 +25,9 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             BackgroundRefreshCoordinator.handle(task: refreshTask)
         }
         Self.configureNavigationBarAppearance()
+        // Onboarded before this launch: this is a later session, which may
+        // ask about ads (see `Ads.pastFirstSessionKey`)
+        Ads.sessionBoundary()
         return true
     }
 
