@@ -1,6 +1,6 @@
 {
- "version": "0.9.47",
- "updated": "2026-10-29",
+ "version": "0.9.48",
+ "updated": "2026-11-03",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5426,9 +5426,10 @@
     },
     {
      "title": "The Chemist",
-     "subtitle": "Based around the Haneul Nuclear Reactor. The Chemist's Secure Armory key opens a bunker by the reactor boathouse",
+     "subtitle": "Based around the Haneul Nuclear Reactor. Drops The Chemist's Dog Tag (Legendary, reported). The Chemist's Secure Armory key opens a bunker by the reactor boathouse",
      "links": [
-      "the-chemists-secure-armory"
+      "the-chemists-secure-armory",
+      "the-chemists-dog-tag"
      ],
      "group": "Lieutenants",
      "check": "boss-the-chemist"
@@ -5698,6 +5699,18 @@
      "title": "The Citadel South Wing",
      "subtitle": "Uncommon. The Citadel's South Wing, 14th Political Prison",
      "item": "the-citadel-south-wing"
+    },
+    {
+     "title": "Kang's Arms Incinerator",
+     "value": "B3",
+     "subtitle": "Legendary. The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. Where its door is isn't known yet",
+     "item": "kangs-arms-incinerator"
+    },
+    {
+     "title": "Hospital Chemical Lab Key",
+     "value": "F5",
+     "subtitle": "Rare. The chemical lab in the basement morgue of Mirae General Hospital. The chemical lockers inside need their own keys",
+     "item": "hospital-chemical-lab-key"
     },
     {
      "title": "Bank Branch Vault Access",
@@ -9556,6 +9569,17 @@
    "found": "Loot containers around Hajin"
   },
   {
+   "id": "hospital-chemical-lab-key",
+   "name": "Hospital Chemical Lab Key",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The chemical lab in the basement morgue of Mirae General Hospital. The chemical lockers inside need their own keys",
+   "grid": "F5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "imjin-mill-foremans-office",
    "name": "Imjin Mill Foreman's Office",
    "kind": "Key",
@@ -9688,6 +9712,17 @@
    "kind": "Other",
    "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones",
    "symbol": "cube.fill"
+  },
+  {
+   "id": "kangs-arms-incinerator",
+   "name": "Kang's Arms Incinerator",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "The fortified incinerator room in the Citadel's northwestern wing, 14th Political Prison. Where its door is isn't known yet",
+   "grid": "B3",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "large-backpack",
@@ -11353,6 +11388,14 @@
     }
    ],
    "effect": "Heavy carrier that takes enhanced plates"
+  },
+  {
+   "id": "the-chemists-dog-tag",
+   "name": "The Chemist's Dog Tag",
+   "kind": "Valuable",
+   "rarity": "Legendary",
+   "note": "Dropped by The Chemist (reported). Extract his Lieutenant case for Boss Board progress. Carrying the case shows your position to other squads",
+   "symbol": "diamond.fill"
   },
   {
    "id": "the-chemists-secure-armory",
