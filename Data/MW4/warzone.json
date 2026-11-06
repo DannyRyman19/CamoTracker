@@ -1,5 +1,5 @@
 {
-  "version": "0.8.30",
+  "version": "0.8.31",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -4465,16 +4465,16 @@
           "tier": 9,
           "unlockLevel": 16,
           "requirement": {
-            "amount": 25,
+            "amount": 15,
             "unit": "kills",
             "description": {
-              "en": "Get 25 Player Kills while Jumping",
-              "fr": "Éliminez 25 joueur(s) en sautant.",
-              "es": "Consigue 25 bajas de jugadores mientras saltas.",
-              "de": "Erreiche 25 Spieler-Abschüsse beim Springen",
-              "nl": "Behaal 25 spelerkills terwijl je springt.",
-              "it": "Esegui 25 uccisioni di giocatori mentre salti.",
-              "pt": "Obtenha 25 baixas de jogadores enquanto pula."
+              "en": "Get 15 Player Kills while Jumping",
+              "fr": "Éliminez 15 joueur(s) en sautant.",
+              "es": "Consigue 15 bajas de jugadores mientras saltas.",
+              "de": "Erreiche 15 Spieler-Abschüsse beim Springen",
+              "nl": "Behaal 15 spelerkills terwijl je springt.",
+              "it": "Esegui 15 uccisioni di giocatori mentre salti.",
+              "pt": "Obtenha 15 baixas de jogadores enquanto pula."
             }
           },
           "children": [],
@@ -4495,16 +4495,16 @@
           "tier": 10,
           "unlockLevel": 31,
           "requirement": {
-            "amount": 25,
+            "amount": 15,
             "unit": "kills",
             "description": {
-              "en": "Get 25 Player Kills using the Heavy Melee Finisher",
-              "fr": "Éliminez 25 joueurs(s) en utilisant l'exécution au corps à corps lourde.",
-              "es": "Consigue 25 bajas de jugadores con el remate cuerpo a cuerpo pesado.",
-              "de": "Erreiche 25 Spieler-Abschüsse mit dem schweren Nahkampf-Vollstrecker",
-              "nl": "Behaal 25 spelerkills met de zware melee-finisher.",
-              "it": "Esegui 25 uccisioni contro i giocatori usando il colpo di grazia corpo a corpo pesante.",
-              "pt": "Obtenha 25 baixas de jogadores usando o finalizador de corpo a corpo pesado."
+              "en": "Get 15 Player Kills using the Heavy Melee Finisher",
+              "fr": "Éliminez 15 joueurs(s) en utilisant l'exécution au corps à corps lourde.",
+              "es": "Consigue 15 bajas de jugadores con el remate cuerpo a cuerpo pesado.",
+              "de": "Erreiche 15 Spieler-Abschüsse mit dem schweren Nahkampf-Vollstrecker",
+              "nl": "Behaal 15 spelerkills met de zware melee-finisher.",
+              "it": "Esegui 15 uccisioni contro i giocatori usando il colpo di grazia corpo a corpo pesante.",
+              "pt": "Obtenha 15 baixas de jogadores usando o finalizador de corpo a corpo pesado."
             }
           },
           "children": [],
@@ -4525,16 +4525,16 @@
           "tier": 11,
           "unlockLevel": 46,
           "requirement": {
-            "amount": 25,
+            "amount": 15,
             "unit": "times",
             "description": {
-              "en": "Get 2 Kills in 5 seconds against Players 25 times",
-              "fr": "Éliminez 25 fois 2 joueurs(s) en 5 secondes.",
-              "es": "Consigue 2 bajas de jugadores en 5 segundos 25 veces.",
-              "de": "Erreiche 25-mal 2 Abschüsse innerhalb von 5 Sekunden gegen Spieler",
-              "nl": "Behaal 25 keer 2 spelerkills binnen 5 seconden.",
-              "it": "Esegui 2 uccisioni in 5 secondi contro i giocatori, 25 volte.",
-              "pt": "Obtenha 2 baixas em 5 segundos contra jogadores 25 vezes."
+              "en": "Get 2 Kills in 5 seconds against Players 15 times",
+              "fr": "Éliminez 15 fois 2 joueurs(s) en 5 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 5 segundos 15 veces.",
+              "de": "Erreiche 15-mal 2 Abschüsse innerhalb von 5 Sekunden gegen Spieler",
+              "nl": "Behaal 15 keer 2 spelerkills binnen 5 seconden.",
+              "it": "Esegui 2 uccisioni in 5 secondi contro i giocatori, 15 volte.",
+              "pt": "Obtenha 2 baixas em 5 segundos contra jogadores 15 vezes."
             }
           },
           "children": [],
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game. FSS Carbon Edge 1095 Specials 15 each.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
