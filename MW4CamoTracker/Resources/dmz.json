@@ -1,5 +1,5 @@
 {
-  "version": "0.8.26",
+  "version": "0.8.27",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -8288,7 +8288,19 @@
           },
           "tier": 9,
           "unlockLevel": 10,
-          "requirement": null,
+          "requirement": {
+            "amount": 30,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Enemy Kills without dying 30 times",
+              "fr": "Éliminez 30 fois 3 ennemis sans mourir.",
+              "es": "Consigue 3 bajas de enemigos sin morir 30 veces.",
+              "de": "Erreiche 30-mal 3 Feind-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 30 keer 3 vijandkills zonder te sterven.",
+              "it": "Esegui 3 uccisioni di nemici senza morire, 30 volte.",
+              "pt": "Obtenha 3 baixas de inimigos sem morrer 30 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8306,7 +8318,19 @@
           },
           "tier": 10,
           "unlockLevel": 17,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 Enemy Kills using a Silencer",
+              "fr": "Éliminez 125 ennemi(s) en utilisant un silencieux.",
+              "es": "Consigue 125 bajas de enemigos usando un silenciador.",
+              "de": "Erreiche 125 Feind-Abschüsse mit einem Schalldämpfer",
+              "nl": "Behaal 125 vijandkills met een geluiddemper.",
+              "it": "Esegui 125 uccisioni di nemici usando un silenziatore.",
+              "pt": "Obtenha 125 baixas de inimigos usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8324,7 +8348,19 @@
           },
           "tier": 11,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "kills",
+            "description": {
+              "en": "Get 100 Enemy Kills while Moving",
+              "fr": "Éliminez 100 ennemi(s) en vous déplaçant.",
+              "es": "Consigue 100 bajas de enemigos en movimiento.",
+              "de": "Erreiche 100 Feind-Abschüsse in Bewegung",
+              "nl": "Behaal 100 vijandkills terwijl je beweegt.",
+              "it": "Esegui 100 uccisioni di nemici in movimento.",
+              "pt": "Obtenha 100 baixas de inimigos em movimento."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
