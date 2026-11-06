@@ -1,5 +1,5 @@
 {
-  "version": "0.8.27",
+  "version": "0.8.28",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -8690,16 +8690,16 @@
             }
           },
           "6": {
-            "amount": 20,
+            "amount": 10,
             "unit": "kills",
             "description": {
-              "en": "Get 20 Player Kills from Behind",
-              "fr": "Éliminez 20 joueur(s) par-derrière.",
-              "es": "Consigue 20 bajas de jugadores por la espalda.",
-              "de": "Erreiche 20 Spieler-Abschüsse von hinten",
-              "nl": "Behaal 20 spelerkills van achteren.",
-              "it": "Esegui 20 uccisioni di giocatori da dietro.",
-              "pt": "Obtenha 20 baixas de jogadores pelas costas."
+              "en": "Get 10 Player Kills from Behind",
+              "fr": "Éliminez 10 joueur(s) par-derrière.",
+              "es": "Consigue 10 bajas de jugadores por la espalda.",
+              "de": "Erreiche 10 Spieler-Abschüsse von hinten",
+              "nl": "Behaal 10 spelerkills van achteren.",
+              "it": "Esegui 10 uccisioni di giocatori da dietro.",
+              "pt": "Obtenha 10 baixas de jogadores pelas costas."
             }
           },
           "7": {
@@ -8828,16 +8828,16 @@
             }
           },
           "6": {
-            "amount": 40,
+            "amount": 20,
             "unit": "kills",
             "description": {
-              "en": "Get 40 Hipfire Kills against Players",
-              "fr": "Éliminez 40 joueur(s) en tirant au jugé.",
-              "es": "Consigue 40 bajas de jugadores con disparos desde la cadera.",
-              "de": "Erreiche 40 Abschüsse aus der Hüfte gegen Spieler",
-              "nl": "Behaal 40 heupvuurkills tegen spelers.",
-              "it": "Esegui 40 uccisioni sparando senza mirare contro giocatori",
-              "pt": "Obtenha 40 baixas de jogadores com tiro livre."
+              "en": "Get 20 Hipfire Kills against Players",
+              "fr": "Éliminez 20 joueur(s) en tirant au jugé.",
+              "es": "Consigue 20 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 20 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Esegui 20 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores com tiro livre."
             }
           },
           "7": {
