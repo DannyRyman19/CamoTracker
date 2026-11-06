@@ -1,5 +1,5 @@
 {
-  "version": "0.8.22",
+  "version": "0.8.23",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -8288,7 +8288,19 @@
           },
           "tier": 9,
           "unlockLevel": 10,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without dying 20 times",
+              "fr": "Éliminez 20 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 20 veces.",
+              "de": "Erreiche 20-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 20 keer 3 spelerkills zonder te sterven.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 20 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 20 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8306,7 +8318,19 @@
           },
           "tier": 10,
           "unlockLevel": 17,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills using a Silencer",
+              "fr": "Éliminez 50 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 50 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 50 Abschüsse gegen Spieler mit einem Schalldämpfer",
+              "nl": "Behaal 50 spelerkills met een geluiddemper.",
+              "it": "Esegui 50 uccisioni contro giocatori usando un silenziatore.",
+              "pt": "Obtenha 50 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8324,7 +8348,19 @@
           },
           "tier": 11,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 Player Kills while Moving",
+              "fr": "Éliminez 50 joueur(s) en vous déplaçant.",
+              "es": "Consigue 50 bajas de jugadores en movimiento.",
+              "de": "Erreiche 50 Spieler-Abschüsse in Bewegung",
+              "nl": "Behaal 50 spelerkills terwijl je beweegt.",
+              "it": "Esegui 50 uccisioni contro giocatori in movimento.",
+              "pt": "Obtenha 50 baixas de jogadores em movimento."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
