@@ -1,5 +1,5 @@
 {
- "version": "0.9.51",
+ "version": "0.9.52",
  "updated": "2026-11-06",
  "map": {
   "image": "hajin_map",
@@ -4767,13 +4767,13 @@
     },
     {
      "title": "Specter Fabric Sample",
-     "subtitle": "3.5-Plate Armor Vest, Argonaut Armor (Season 1). Where it drops isn't known yet",
+     "subtitle": "3.5-Plate Armor Vest, Argonaut Armor (Season 1). Found rarely in X01, and a reward for X01 orders page 3",
      "value": "Legendary",
      "item": "specter-fabric-sample"
     },
     {
      "title": "Nano-Structured Alloy",
-     "subtitle": "3-Plate Helmet Armor Vest",
+     "subtitle": "3-Plate Helmet Armor Vest. Printable from Season 1: 2 Turned Components, 5 Structural Alloy",
      "value": "Legendary",
      "item": "nano-structured-alloy"
     },
@@ -7030,10 +7030,7 @@
     {
      "title": "The Vault",
      "group": "DMZ Orders: Page 20",
-     "check": "op-the-vault",
-     "tips": [
-      "The battery's spot changes from match to match"
-     ],
+     "check": "op-the-vault-2",
      "place": "Wolves Stadium, Hanex Branch Bank",
      "objectives": [
       "Find a Battery and put it in the Electric Panel",
@@ -7217,34 +7214,136 @@
      "title": "First Win",
      "group": "DMZ Orders: X01 chapter, page 1 (Season 1)",
      "check": "op-first-win",
+     "pageReward": "a Medium Scavenger Backpack, 2 Encodable Blank Keycards and $20,000",
      "place": "X01",
      "objectives": [
       "Extract from X01"
+     ],
+     "links": [
+      "medium-scavenger-backpack"
+     ]
+    },
+    {
+     "title": "Explorer",
+     "group": "DMZ Orders: X01 chapter, page 2 (Season 1)",
+     "check": "op-explorer",
+     "place": "X01",
+     "objectives": [
+      "Find the hidden stash in Production Assembly",
+      "Search 5 unopened containers in the Tech Lab"
+     ]
+    },
+    {
+     "title": "Crafting Material",
+     "group": "DMZ Orders: X01 chapter, page 2 (Season 1)",
+     "check": "op-crafting-material",
+     "place": "X01",
+     "objectives": [
+      "Visit the X01 3D Printer",
+      "Visit any Keycard Encoder Station"
+     ]
+    },
+    {
+     "title": "Video Footage",
+     "group": "DMZ Orders: X01 chapter, page 2 (Season 1)",
+     "check": "op-video-footage",
+     "pageReward": "the Consumable Box and Medical Box recipes and $20,000",
+     "place": "X01",
+     "objectives": [
+      "Search for Ri's video footage in the surveillance room at the Admin Offices"
+     ]
+    },
+    {
+     "title": "Streaming Service Ep.1",
+     "group": "DMZ Orders: X01 chapter, page 3 (Season 1)",
+     "check": "op-streaming-service-ep1",
+     "place": "X01",
+     "objectives": [
+      "Intercept Ri's video feed in the Control Room",
+      "Eliminate 10 enemies in the Control Room"
+     ]
+    },
+    {
+     "title": "Streaming Service Ep.2",
+     "group": "DMZ Orders: X01 chapter, page 3 (Season 1)",
+     "check": "op-streaming-service-ep2",
+     "place": "X01",
+     "objectives": [
+      "Intercept Ri's video feed in the Medical Wing",
+      "Loot 10 healing items in the Medical Wing"
+     ]
+    },
+    {
+     "title": "Streaming Service Ep.3",
+     "group": "DMZ Orders: X01 chapter, page 3 (Season 1)",
+     "check": "op-streaming-service-ep3",
+     "pageReward": "a Specter Fabric Sample, the Hazmat Box recipe and $20,000",
+     "place": "X01",
+     "objectives": [
+      "Extract Ri's video log in the Data Center",
+      "Eliminate 3 Robot Dogs in X01"
+     ],
+     "links": [
+      "specter-fabric-sample"
+     ]
+    },
+    {
+     "title": "Racing the Hour",
+     "group": "DMZ Orders: X01 chapter, page 4 (Season 1)",
+     "check": "op-racing-the-hour",
+     "place": "X01",
+     "objectives": [
+      "Override the Bioweapon release in the Bio Lab's canister chamber"
+     ]
+    },
+    {
+     "title": "The Vault",
+     "group": "DMZ Orders: X01 chapter, page 4 (Season 1)",
+     "check": "op-the-vault",
+     "tips": [
+      "The battery's spot changes from match to match"
+     ],
+     "place": "X01",
+     "objectives": [
+      "Eliminate The Captain",
+      "Take the X01 Vault Access Keycard from his body"
+     ]
+    },
+    {
+     "title": "Complete Defusal",
+     "group": "DMZ Orders: X01 chapter, page 4 (Season 1)",
+     "check": "op-complete-defusal",
+     "pageReward": "a 3-Plate Ballistic Gel Vest, an SR-16 Bio Agent Sample, the Staff Emergency Exfil Keycard recipe and $20,000",
+     "place": "X01",
+     "objectives": [
+      "Enter the Deep Vault gate",
+      "Neutralize the Bioweapon in the core room",
+      "Eliminate Blix inside the Deep Vault"
+     ],
+     "links": [
+      "3-plate-ballistic-gel-vest"
      ]
     },
     {
      "title": "Door Opener",
      "group": "DMZ Orders: X01 chapter, page 5 (Season 1)",
      "check": "op-door-opener",
-     "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
      "place": "X01",
      "objectives": [
       "Destroy the Wheelson in the X01 Logistics Tunnel",
       "Cut off power in the X01 Power Generators"
-     ],
-     "links": [
-      "argonaut-armor",
-      "large-scavenger-backpack",
-      "parachute"
      ]
     },
     {
      "title": "Water Wading",
      "group": "DMZ Orders: X01 chapter, page 5 (Season 1)",
      "check": "op-water-wading",
-     "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
      "place": "X01",
-     "subtitle": "Objectives not confirmed yet"
+     "objectives": [
+      "With the power cut, enter the flooded barracks under the Supply Depot",
+      "Collect the Super User Data Access Keycard",
+      "Extract"
+     ]
     },
     {
      "title": "Source Code",
@@ -7252,7 +7351,15 @@
      "check": "op-source-code",
      "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
      "place": "X01",
-     "subtitle": "Objectives not confirmed yet"
+     "objectives": [
+      "Download the malicious AI source code in the Data Center dark room",
+      "Extract in the same match"
+     ],
+     "links": [
+      "argonaut-armor",
+      "large-scavenger-backpack",
+      "parachute"
+     ]
     }
    ],
    "intro": "Story Missions, then the DMZ Orders pages in the game's order. Tick an order, or each step, as you finish it. Which page comes next can depend on the route you take."
@@ -11235,7 +11342,7 @@
    "name": "Specter Fabric Sample",
    "rarity": "Legendary",
    "kind": "Ingredient",
-   "note": "3. 5-Plate Armor Vest, Argonaut Armor (Season 1). Where it drops isn't known yet",
+   "note": "3. 5-Plate Armor Vest, Argonaut Armor (Season 1). Found rarely in X01, and a reward for X01 orders page 3",
    "symbol": "cube.fill"
   },
   {
