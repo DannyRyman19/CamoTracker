@@ -708,6 +708,7 @@ struct CustomiseHomeSheet: View {
     /// The sections worth listing; the rest keep their saved place unseen.
     var offered: [HomeSection] = HomeSection.allCases
     @AppStorage(ChallengeRow.showLockedKey) private var showLockedChallenges = false
+    @AppStorage(MilitarySummaryPlacement.specialsFirstKey) private var specialsFirst = false
     @AppStorage(CardOutline.key) private var cardOutline = CardOutline.prestige.rawValue
     @AppStorage(CloudSync.enabledKey) private var iCloudSync = true
     @AppStorage(AppLanguage.key) private var languageRaw = ""
@@ -854,11 +855,14 @@ struct CustomiseHomeSheet: View {
                         set: { viewModel.setQuickTick($0) }))
                         .tint(accent)
                         .accessibilityIdentifier("customise.quickTick")
+                    Toggle("mw4.ui.specials_first.title".localized(), isOn: $specialsFirst)
+                        .tint(accent)
+                        .accessibilityIdentifier("customise.specialsFirst")
                 } header: {
                     // Free: it's how you track, and onboarding asks it
                     Text("mw4.ui.tracking".localized())
                 } footer: {
-                    Text("mw4.ui.quick_tick.footer".localized())
+                    Text("mw4.ui.quick_tick.footer".localized() + " " + "mw4.ui.specials_first.footer".localized())
                 }
 
                 Section {

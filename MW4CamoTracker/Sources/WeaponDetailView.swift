@@ -133,6 +133,10 @@ struct WeaponDetailView: View {
     /// Hosted here rather than inside the toolbar's menu: a `.alert` attached
     /// to `ToolbarItem` content does not reliably present.
     @State private var askingMaxLevel = false
+    /// The full Military list under its summary card.
+    @State private var showsMilitary = false
+    /// Specials above the Military card (a Customise switch); Military first by default.
+    @AppStorage(MilitarySummaryPlacement.specialsFirstKey) private var specialsFirst = false
     @State private var maxLevelText = ""
     @State private var askingUnlockLevel = false
     @State private var unlockLevelText = ""
@@ -171,6 +175,48 @@ struct WeaponDetailView: View {
     /// Special. Camos with no group (older data) stay one "Camos" list.
     private var camoGroups: [(title: String, camos: [ChallengeItem])] {
         groups(camos.filter { $0.extra != true })
+    }
+
+    /// Military camos earned by weapon level alone (MW4): they tick
+    /// themselves as the level goes up, so they fold into one card under the
+    /// Specials, which are the challenges to work on. Nil where Military
+    /// camos are challenges of their own (Black Ops), which keep the list.
+    private var levelMilitary: [ChallengeItem]? {
+        let military = camos.filter { $0.extra != true && $0.group == "military" }
+        guard !military.isEmpty, military.allSatisfy({
+            viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) != nil
+        }) else { return nil }
+        return military
+    }
+
+    @ViewBuilder private var phoneMilitary: some View {
+        if let military = levelMilitary {
+            Section(heading: "mw4.ui.section.military".localized()) {
+                MilitarySummary(mode: mode, weapon: weapon, camos: military, expanded: $showsMilitary)
+                if showsMilitary {
+                    ForEach(military) { camo in camoRow(camo) }
+                }
+            }
+            .listRowBackground(Color.appSurface)
+        }
+    }
+
+    @ViewBuilder private var tileMilitary: some View {
+        if let military = levelMilitary {
+            Section(heading: "mw4.ui.section.military".localized()) {
+                MilitarySummary(mode: mode, weapon: weapon, camos: military, expanded: $showsMilitary)
+                    .listRowBackground(Color.appSurface)
+                if showsMilitary {
+                    tileRows(military.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(military.count))
+                }
+            }
+        }
+    }
+
+    /// The camo groups to list in full: everything but level-earned Military.
+    private var listedCamoGroups: [(title: String, camos: [ChallengeItem])] {
+        guard levelMilitary != nil else { return camoGroups }
+        return camoGroups.filter { group in !group.camos.allSatisfy { $0.group == "military" } }
     }
 
     /// Challenges tracked beside the camos (BO6's elimination badges), in
@@ -264,7 +310,8 @@ struct WeaponDetailView: View {
 
         if shownPart == .camos || shownPart == .badges {
             // Military and Special, each under its own header (or the badges).
-            ForEach(Array((shownPart == .badges ? badgeGroups : camoGroups).enumerated()), id: \.offset) { _, group in
+            if shownPart == .camos, !specialsFirst { phoneMilitary }
+            ForEach(Array((shownPart == .badges ? badgeGroups : listedCamoGroups).enumerated()), id: \.offset) { _, group in
                 Section(heading: group.title) {
                     ForEach(group.camos) { camo in
                         camoRow(camo)
@@ -272,6 +319,7 @@ struct WeaponDetailView: View {
                 }
                 .listRowBackground(Color.appSurface)
             }
+            if shownPart == .camos, specialsFirst { phoneMilitary }
         }
 
         Section {
@@ -440,11 +488,13 @@ struct WeaponDetailView: View {
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
             } else {
-                ForEach(Array(camoGroups.enumerated()), id: \.offset) { _, group in
+                if !specialsFirst { tileMilitary }
+                ForEach(Array(listedCamoGroups.enumerated()), id: \.offset) { _, group in
                     Section(heading: group.title) {
                         tileRows(group.camos.map { camo in AnyView(camoRow(camo)) }, columns: fitColumns(group.camos.count))
                     }
                 }
+                if specialsFirst { tileMilitary }
             }
         case .completionist:
             let steps = (0..<TrackerViewModel.completionistStepCount).map { step in
@@ -1223,4 +1273,78 @@ private struct DetailTile: ViewModifier {
             }
             .transformPreference(EarnedGradientKey.self) { $0 = nil }
     }
+}
+
+/// A weapon's level-earned Military camos in one card: their swatches,
+/// how many are earned and the level the next one needs, with the full
+/// list a tap away (for ticking one by hand, as Quick Tick players do).
+private struct MilitarySummary: View {
+    let mode: AppMode
+    let weapon: WeaponEntry
+    let camos: [ChallengeItem]
+    @Binding var expanded: Bool
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private func done(_ camo: ChallengeItem) -> Bool {
+        viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
+    }
+    private var earned: Int { camos.filter(done).count }
+    private var next: ChallengeItem? { camos.first { !done($0) } }
+
+    private var nextText: String {
+        guard let next, let level = viewModel.militaryLevel(mode: mode.rawValue, weaponId: weapon.weaponId, camo: next) else {
+            return "mw4.ui.military.all_earned".localized()
+        }
+        return viewModel.levelGateText(level, weaponId: weapon.weaponId, kind: viewModel.quickTick ? "reach" : "locked")
+    }
+
+    var body: some View {
+        Button {
+            withAnimation(.snappy) { expanded.toggle() }
+        } label: {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(String(format: "mw4.ui.military.count".localized(), earned, camos.count))
+                        .hitmarkerFont(15)
+                        .foregroundStyle(Color.appInk)
+                    Spacer()
+                    Text(expanded ? "mw4.ui.military.hide".localized() : "mw4.ui.military.show".localized())
+                        .scaledFont(13, weight: .semibold)
+                        .foregroundStyle(mode.textAccent)
+                    Image(systemName: "chevron.down")
+                        .scaledFont(12, weight: .semibold)
+                        .foregroundStyle(mode.textAccent)
+                        .rotationEffect(.degrees(expanded ? 180 : 0))
+                }
+                HStack(spacing: 6) {
+                    ForEach(camos) { camo in
+                        CamoThumbnail(urlString: camo.imageURL, size: 28)
+                            .opacity(done(camo) ? 1 : 0.35)
+                            .overlay(alignment: .bottomTrailing) {
+                                if done(camo) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .font(.system(size: 11))
+                                        .foregroundStyle(mode.accent)
+                                        .background(Circle().fill(Color.appSurface))
+                                        .offset(x: 3, y: 3)
+                                }
+                            }
+                    }
+                }
+                Text(nextText)
+                    .scaledFont(13)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            .padding(.vertical, 4)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityHint(expanded ? "mw4.ui.military.hide".localized() : "mw4.ui.military.show".localized())
+    }
+}
+
+enum MilitarySummaryPlacement {
+    /// Customise: list a weapon's Specials above its level-earned Military card.
+    static let specialsFirstKey = "mw4_specials_first"
 }
