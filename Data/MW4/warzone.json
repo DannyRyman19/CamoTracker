@@ -1,5 +1,5 @@
 {
-  "version": "0.8.53",
+  "version": "0.8.54",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8559,13 +8559,13 @@
         {
           "itemId": 100,
           "name": {
-            "en": "Grind for Royalty",
-            "fr": "Grind for Royalty",
-            "es": "Grind for Royalty",
-            "de": "Grind for Royalty",
-            "nl": "Grind for Royalty",
-            "it": "Grind for Royalty",
-            "pt": "Grind for Royalty"
+            "en": "Grinding for Royalty",
+            "fr": "Grinding for Royalty",
+            "es": "Grinding for Royalty",
+            "de": "Grinding for Royalty",
+            "nl": "Grinding for Royalty",
+            "it": "Grinding for Royalty",
+            "pt": "Grinding for Royalty"
           },
           "imageURL": null,
           "tier": 1,
@@ -8576,13 +8576,13 @@
             {
               "itemId": 0,
               "name": {
-                "en": "First camo: 10 challenges",
-                "fr": "Premier camouflage : 10 défis",
-                "es": "Primer camuflaje: 10 desafíos",
-                "de": "Erste Tarnung: 10 Herausforderungen",
-                "nl": "Eerste camo: 10 uitdagingen",
-                "it": "Prima mimetica: 10 sfide",
-                "pt": "Primeira camuflagem: 10 desafios"
+                "en": "Gold Mosaic",
+                "fr": "Gold Mosaic",
+                "es": "Gold Mosaic",
+                "de": "Gold Mosaic",
+                "nl": "Gold Mosaic",
+                "it": "Gold Mosaic",
+                "pt": "Gold Mosaic"
               },
               "imageURL": null,
               "tier": 1,
@@ -8591,13 +8591,13 @@
                 "amount": 10,
                 "unit": "times",
                 "description": {
-                  "en": "Complete 10 Grind for Royalty challenges in Battle Royale or Resurgence. Unlocks Gold Excellence or Gold Mosaic.",
-                  "fr": "Terminez 10 défis Grind for Royalty en Battle Royale ou Résurgence. Débloque Gold Excellence ou Gold Mosaic.",
-                  "es": "Completa 10 desafíos de Grind for Royalty en Battle Royale o Resurgimiento. Desbloquea Gold Excellence o Gold Mosaic.",
-                  "de": "Schließe 10 Grind-for-Royalty-Herausforderungen in Battle Royale oder Resurgence ab. Schaltet Gold Excellence oder Gold Mosaic frei.",
-                  "nl": "Voltooi 10 Grind for Royalty-uitdagingen in Battle Royale of Resurgence. Ontgrendelt Gold Excellence of Gold Mosaic.",
-                  "it": "Completa 10 sfide Grind for Royalty in Battle Royale o Resurgence. Sblocca Gold Excellence o Gold Mosaic.",
-                  "pt": "Conclua 10 desafios do Grind for Royalty no Battle Royale ou Ressurgência. Desbloqueia Gold Excellence ou Gold Mosaic."
+                  "en": "Complete 10 Grinding for Royalty challenges in any stat track (Battle Royale or Resurgence).",
+                  "fr": "Terminez 10 défis Grinding for Royalty dans n’importe quelle catégorie (Battle Royale ou Résurgence).",
+                  "es": "Completa 10 desafíos de Grinding for Royalty en cualquier categoría (Battle Royale o Resurgimiento).",
+                  "de": "Schließe 10 Grinding-for-Royalty-Herausforderungen in einer beliebigen Statistik ab (Battle Royale oder Resurgence).",
+                  "nl": "Voltooi 10 Grinding for Royalty-uitdagingen in een willekeurige categorie (Battle Royale of Resurgence).",
+                  "it": "Completa 10 sfide Grinding for Royalty in qualsiasi categoria (Battle Royale o Resurgence).",
+                  "pt": "Conclua 10 desafios do Grinding for Royalty em qualquer categoria (Battle Royale ou Ressurgência)."
                 }
               },
               "children": []
@@ -8605,13 +8605,13 @@
             {
               "itemId": 1,
               "name": {
-                "en": "Second camo: 25 challenges",
-                "fr": "Deuxième camouflage : 25 défis",
-                "es": "Segundo camuflaje: 25 desafíos",
-                "de": "Zweite Tarnung: 25 Herausforderungen",
-                "nl": "Tweede camo: 25 uitdagingen",
-                "it": "Seconda mimetica: 25 sfide",
-                "pt": "Segunda camuflagem: 25 desafios"
+                "en": "Gold Excellence",
+                "fr": "Gold Excellence",
+                "es": "Gold Excellence",
+                "de": "Gold Excellence",
+                "nl": "Gold Excellence",
+                "it": "Gold Excellence",
+                "pt": "Gold Excellence"
               },
               "imageURL": null,
               "tier": 2,
@@ -8620,18 +8620,19 @@
                 "amount": 25,
                 "unit": "times",
                 "description": {
-                  "en": "Complete 25 Grind for Royalty challenges in total. Unlocks the other of Gold Excellence and Gold Mosaic.",
-                  "fr": "Terminez 25 défis Grind for Royalty au total. Débloque l’autre camouflage, Gold Excellence ou Gold Mosaic.",
-                  "es": "Completa 25 desafíos de Grind for Royalty en total. Desbloquea el otro camuflaje, Gold Excellence o Gold Mosaic.",
-                  "de": "Schließe insgesamt 25 Grind-for-Royalty-Herausforderungen ab. Schaltet die andere Tarnung frei, Gold Excellence oder Gold Mosaic.",
-                  "nl": "Voltooi in totaal 25 Grind for Royalty-uitdagingen. Ontgrendelt de andere camo, Gold Excellence of Gold Mosaic.",
-                  "it": "Completa 25 sfide Grind for Royalty in totale. Sblocca l’altra mimetica, Gold Excellence o Gold Mosaic.",
-                  "pt": "Conclua 25 desafios do Grind for Royalty no total. Desbloqueia a outra camuflagem, Gold Excellence ou Gold Mosaic."
+                  "en": "Complete 25 Grinding for Royalty challenges in total, in any stat track.",
+                  "fr": "Terminez 25 défis Grinding for Royalty au total, dans n’importe quelle catégorie.",
+                  "es": "Completa 25 desafíos de Grinding for Royalty en total, en cualquier categoría.",
+                  "de": "Schließe insgesamt 25 Grinding-for-Royalty-Herausforderungen in beliebigen Statistiken ab.",
+                  "nl": "Voltooi in totaal 25 Grinding for Royalty-uitdagingen, in een willekeurige categorie.",
+                  "it": "Completa 25 sfide Grinding for Royalty in totale, in qualsiasi categoria.",
+                  "pt": "Conclua 25 desafios do Grinding for Royalty no total, em qualquer categoria."
                 }
               },
               "children": []
             }
-          ]
+          ],
+          "ends": "2026-12-31"
         }
       ]
     }
