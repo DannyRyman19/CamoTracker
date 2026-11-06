@@ -1,5 +1,5 @@
 {
-  "version": "0.8.28",
+  "version": "0.8.29",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -8703,16 +8703,16 @@
             }
           },
           "7": {
-            "amount": 15,
+            "amount": 8,
             "unit": "times",
             "description": {
-              "en": "Get 2 Player Kills without taking Damage 15 times",
-              "fr": "Éliminez 15 fois 2 joueurs(s) sans subir de dégâts.",
-              "es": "Consigue 2 bajas de jugadores sin recibir daño 15 veces.",
-              "de": "Erreiche 15-mal 2 Spieler-Abschüsse, ohne Schaden zu erleiden",
-              "nl": "Behaal 15 keer 2 spelerkills zonder schade op te lopen.",
-              "it": "Esegui 2 uccisioni contro i giocatori senza subire danni, 15 volte.",
-              "pt": "Obtenha 2 baixas de jogadores sem sofrer dano 15 vezes."
+              "en": "Get 2 Player Kills without taking Damage 8 times",
+              "fr": "Éliminez 8 fois 2 joueurs(s) sans subir de dégâts.",
+              "es": "Consigue 2 bajas de jugadores sin recibir daño 8 veces.",
+              "de": "Erreiche 8-mal 2 Spieler-Abschüsse, ohne Schaden zu erleiden",
+              "nl": "Behaal 8 keer 2 spelerkills zonder schade op te lopen.",
+              "it": "Esegui 2 uccisioni contro i giocatori senza subire danni, 8 volte.",
+              "pt": "Obtenha 2 baixas de jogadores sem sofrer dano 8 vezes."
             }
           },
           "8": {
@@ -8841,16 +8841,16 @@
             }
           },
           "7": {
-            "amount": 7,
+            "amount": 5,
             "unit": "times",
             "description": {
-              "en": "Get 10 Player Kills in a match 7 times",
-              "fr": "Éliminez 7 fois 10 joueurs(s) dans une partie.",
-              "es": "Consigue 10 bajas de jugadores en una partida 7 veces.",
-              "de": "Erreiche 7-mal 10 Spieler-Abschüsse in einem Spiel",
-              "nl": "Behaal 7 keer 10 spelerkills in één wedstrijd.",
-              "it": "Esegui 10 uccisioni contro i giocatori in una partita, 7 volte.",
-              "pt": "Obtenha 10 baixas de jogadores em uma partida 7 vezes."
+              "en": "Get 10 Player Kills in a match 5 times",
+              "fr": "Éliminez 5 fois 10 joueurs(s) dans une partie.",
+              "es": "Consigue 10 bajas de jugadores en una partida 5 veces.",
+              "de": "Erreiche 5-mal 10 Spieler-Abschüsse in einem Spiel",
+              "nl": "Behaal 5 keer 10 spelerkills in één wedstrijd.",
+              "it": "Esegui 10 uccisioni contro i giocatori in una partita, 5 volte.",
+              "pt": "Obtenha 10 baixas de jogadores em uma partida 5 vezes."
             }
           },
           "8": {
