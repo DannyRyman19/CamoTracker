@@ -887,7 +887,7 @@ def tier_upgrades(guide, items):
 
 # Sell prices listed on dmzcodex.com item pages (2026-10-21) for ingredients
 # the in-game screens we read didn't price
-SELL_VALUES = {"biomaterials": 800, "cpu": 500, "infantry-invasion-plans": 1000, "military-composites": 3500,
+SELL_VALUES = {"argonaut-armor": 7500, "biomaterials": 800, "cpu": 500, "infantry-invasion-plans": 1000, "military-composites": 3500,
                "nuclear-program-files": 2000, "nylon-cloth": 1000,
                # from the user, read in game (2026-10-22)
                "alloyed-plating": 1500, "ballistic-fabric": 1500, "binding-catalyst": 500, "comms-module": 1500,
@@ -914,7 +914,7 @@ def new_pictures(items):
     have = {os.path.basename(f)[:-4] for f in glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "Images", "DMZ", "*.png"))}
     for it in items:
         if "image" not in it and it["id"] in have:
-            it["image"] = IMG_BASE + it["id"] + (".png?v=2" if it["id"] in ("bales-dog-tag",) else ".png?v=1")
+            it["image"] = IMG_BASE + it["id"] + (".png?v=2" if it["id"] in ("bales-dog-tag", "argonaut-armor") else ".png?v=1")
             it.pop("symbol", None) if it["kind"] != "Key" else None
 
 
