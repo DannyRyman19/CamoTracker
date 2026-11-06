@@ -1,5 +1,5 @@
 {
-  "version": "0.8.38",
+  "version": "0.8.39",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -2792,16 +2792,16 @@
           "tier": 9,
           "unlockLevel": 26,
           "requirement": {
-            "amount": 20,
+            "amount": 10,
             "unit": "kills",
             "description": {
-              "en": "Get 20 Mounted Kills against Players",
-              "fr": "Éliminez 20 joueurs en prenant appui.",
-              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
-              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
-              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
-              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+              "en": "Get 10 Mounted Kills against Players",
+              "fr": "Éliminez 10 joueurs en prenant appui.",
+              "es": "Consigue 10 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 10 Abschüsse gegen Spieler",
+              "nl": "Behaal 10 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 10 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 10 baixas de jogadores com a arma apoiada."
             }
           },
           "children": [],
@@ -2822,16 +2822,16 @@
           "tier": 10,
           "unlockLevel": 49,
           "requirement": {
-            "amount": 25,
+            "amount": 15,
             "unit": "kills",
             "description": {
-              "en": "Get 25 Player Kills while Crouched",
-              "fr": "Faites 25 éliminations de joueurs en étant accroupi.",
-              "es": "Consigue 25 bajas de jugadores estando agachado.",
-              "de": "Erreiche 25 Spieler-Abschüsse, während du geduckt bist",
-              "nl": "Behaal 25 spelerkills terwijl je hurkt.",
-              "it": "Esegui 25 uccisioni giocatore mentre sei accovacciato.",
-              "pt": "Obtenha 25 baixas de jogadores enquanto estiver agachado."
+              "en": "Get 15 Player Kills while Crouched",
+              "fr": "Faites 15 éliminations de joueurs en étant accroupi.",
+              "es": "Consigue 15 bajas de jugadores estando agachado.",
+              "de": "Erreiche 15 Spieler-Abschüsse, während du geduckt bist",
+              "nl": "Behaal 15 spelerkills terwijl je hurkt.",
+              "it": "Esegui 15 uccisioni giocatore mentre sei accovacciato.",
+              "pt": "Obtenha 15 baixas de jogadores enquanto estiver agachado."
             }
           },
           "children": [],
@@ -2852,16 +2852,16 @@
           "tier": 11,
           "unlockLevel": 73,
           "requirement": {
-            "amount": 30,
+            "amount": 15,
             "unit": "kills",
             "description": {
-              "en": "Get 30 Longshot Kills against Players",
-              "fr": "Éliminez 30 joueur(s) à longue distance.",
-              "es": "Consigue 30 bajas de jugadores con tiros lejanos.",
-              "de": "Erreiche 30 Fernkämpfer-Abschüsse gegen Spieler",
-              "nl": "Behaal 30 kills van lange afstand tegen spelers.",
-              "it": "Esegui 30 uccisioni Colpo a distanza contro giocatori",
-              "pt": "Obtenha 30 baixas de jogadores à longa distância."
+              "en": "Get 15 Longshot Kills against Players",
+              "fr": "Éliminez 15 joueur(s) à longue distance.",
+              "es": "Consigue 15 bajas de jugadores con tiros lejanos.",
+              "de": "Erreiche 15 Fernkämpfer-Abschüsse gegen Spieler",
+              "nl": "Behaal 15 kills van lange afstand tegen spelers.",
+              "it": "Esegui 15 uccisioni Colpo a distanza contro giocatori",
+              "pt": "Obtenha 15 baixas de jogadores à longa distância."
             }
           },
           "children": [],
@@ -8636,7 +8636,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game. FSS Carbon Edge 1095 Specials 15 each. Sang 9mm Specials 15, 3, 25. Krait P68 Specials 10, 10, 25. Krait P68 Off Grid is sliding kills in Warzone. KG-7 Vulcan Specials 5, 10, 10. Astaroth .57 Specials 5, 10, 10. Signal 50 Specials 5, 10, 20.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game. FSS Carbon Edge 1095 Specials 15 each. Sang 9mm Specials 15, 3, 25. Krait P68 Specials 10, 10, 25. Krait P68 Off Grid is sliding kills in Warzone. KG-7 Vulcan Specials 5, 10, 10. Astaroth .57 Specials 5, 10, 10. Signal 50 Specials 5, 10, 20. MAR-9 Specials 10, 15, 15.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
