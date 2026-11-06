@@ -153,8 +153,8 @@ UPGRADES = [
  ("Vendor Item Upgrade II", None, "20 Control Unit, 10 High-Tenacity Fibers, 10 Nylon Cloth, 2 Nano-Structured Alloy. More to buy at the Vendor (reported)"),
 ]
 GUNS = [
- ("Assault Rifles", [("Han 86", 6000, True), ("M4", 6250), ("Hyeon Burst", 5250), ("Kastov 762", 5500), ("Patriot XMR", 6500), ("Oden", 6250), ("Axion", 5750), ("Cronen Squall", 6750)]),
- ("SMGs", [("ISO Nightshade", 4250), ("VEL 46", 4500), ("Wz.55 Striga", 3500), ("PPSh-41", 3750), ("X-58 Nyx", 4000)]),
+ ("Assault Rifles", [("Han 86", 6000, True), ("M4", 6250), ("Hyeon Burst", 5250), ("Kastov 762", 5500), ("Patriot XMR", 6500), ("Oden", 6250), ("Axion", 5750), ("Cronen Squall", 6750), ("Cronen Osprey", None)]),
+ ("SMGs", [("ISO Nightshade", 4250), ("VEL 46", 4500), ("Wz.55 Striga", 3500), ("PPSh-41", 3750), ("X-58 Nyx", 4000), ("CSG-35", None)]),
  ("Shotguns", [("Rezi 12", 4000, True), ("Warlord", 3500)]),
  ("LMGs", [("FiNN LMG", 8000), ("Type 73", 7500), ("APOC-338", 7750)]),
  ("Marksman Rifles", [("MAR-9", 6500), ("Oris 8.6", 7000), ("Mosin-Nagant", 7500)]),
