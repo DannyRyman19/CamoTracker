@@ -1,5 +1,5 @@
 {
-  "version": "0.8.22",
+  "version": "0.8.23",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -5182,16 +5182,16 @@
           "tier": 9,
           "unlockLevel": 24,
           "requirement": {
-            "amount": 20,
+            "amount": 10,
             "unit": "kills",
             "description": {
-              "en": "Get 20 Point Blank Kills against Players",
-              "fr": "Éliminez 20 joueur(s) à bout portant.",
-              "es": "Consigue 20 bajas de jugadores a bocajarro.",
-              "de": "Erreiche 20 Abschüsse aus nächster Nähe gegen Spieler",
-              "nl": "Behaal 20 kills van dichtbij tegen spelers.",
-              "it": "Esegui 20 uccisioni bruciapelo contro i giocatori.",
-              "pt": "Obtenha 20 baixas de jogadores à queima-roupa."
+              "en": "Get 10 Point Blank Kills against Players",
+              "fr": "Éliminez 10 joueur(s) à bout portant.",
+              "es": "Consigue 10 bajas de jugadores a bocajarro.",
+              "de": "Erreiche 10 Abschüsse aus nächster Nähe gegen Spieler",
+              "nl": "Behaal 10 kills van dichtbij tegen spelers.",
+              "it": "Esegui 10 uccisioni bruciapelo contro i giocatori.",
+              "pt": "Obtenha 10 baixas de jogadores à queima-roupa."
             }
           },
           "children": [],
@@ -5212,16 +5212,16 @@
           "tier": 10,
           "unlockLevel": 45,
           "requirement": {
-            "amount": 20,
+            "amount": 10,
             "unit": "kills",
             "description": {
-              "en": "Get 20 Mounted Kills against Players",
-              "fr": "Éliminez 20 joueurs en prenant appui.",
-              "es": "Consigue 20 bajas de jugadores con armas apoyadas.",
-              "de": "Erreiche mit aufgestützter Waffe 20 Abschüsse gegen Spieler",
-              "nl": "Behaal 20 spelerkills met je wapen opgesteund.",
-              "it": "Esegui 20 uccisioni con arma posizionata contro i giocatori.",
-              "pt": "Obtenha 20 baixas de jogadores com a arma apoiada."
+              "en": "Get 10 Mounted Kills against Players",
+              "fr": "Éliminez 10 joueurs en prenant appui.",
+              "es": "Consigue 10 bajas de jugadores con armas apoyadas.",
+              "de": "Erreiche mit aufgestützter Waffe 10 Abschüsse gegen Spieler",
+              "nl": "Behaal 10 spelerkills met je wapen opgesteund.",
+              "it": "Esegui 10 uccisioni con arma posizionata contro i giocatori.",
+              "pt": "Obtenha 10 baixas de jogadores com a arma apoiada."
             }
           },
           "children": [],
@@ -5242,16 +5242,16 @@
           "tier": 11,
           "unlockLevel": 67,
           "requirement": {
-            "amount": 15,
+            "amount": 10,
             "unit": "times",
             "description": {
-              "en": "Get 3 Kills without Dying 15 times against Players",
-              "fr": "Éliminez 15 fois 3 joueurs sans mourir.",
-              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
-              "de": "Erreiche 15-mal 3 Abschüsse gegen Spieler, ohne zu sterben",
-              "nl": "Behaal 15 keer 3 spelerkills zonder dood te gaan.",
-              "it": "Esegui 3 uccisioni senza morire, 15 volte, contro giocatori",
-              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+              "en": "Get 3 Kills without Dying 10 times against Players",
+              "fr": "Éliminez 10 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 10 veces.",
+              "de": "Erreiche 10-mal 3 Abschüsse gegen Spieler, ohne zu sterben",
+              "nl": "Behaal 10 keer 3 spelerkills zonder dood te gaan.",
+              "it": "Esegui 3 uccisioni senza morire, 10 volte, contro giocatori",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 10 vezes."
             }
           },
           "children": [],
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders).",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -8625,16 +8625,16 @@
             }
           },
           "1": {
-            "amount": 25,
+            "amount": 15,
             "unit": "kills",
             "description": {
-              "en": "Get 25 Player Kills from Behind",
-              "fr": "Éliminez 25 joueur(s) par-derrière.",
-              "es": "Consigue 25 bajas de jugadores por la espalda.",
-              "de": "Erreiche 25 Spieler-Abschüsse von hinten",
-              "nl": "Behaal 25 spelerkills van achteren.",
-              "it": "Esegui 25 uccisioni di giocatori da dietro.",
-              "pt": "Obtenha 25 baixas de jogadores pelas costas."
+              "en": "Get 15 Player Kills from Behind",
+              "fr": "Éliminez 15 joueur(s) par-derrière.",
+              "es": "Consigue 15 bajas de jugadores por la espalda.",
+              "de": "Erreiche 15 Spieler-Abschüsse von hinten",
+              "nl": "Behaal 15 spelerkills van achteren.",
+              "it": "Esegui 15 uccisioni di giocatori da dietro.",
+              "pt": "Obtenha 15 baixas de jogadores pelas costas."
             }
           },
           "2": {
@@ -8763,16 +8763,16 @@
             }
           },
           "1": {
-            "amount": 50,
+            "amount": 25,
             "unit": "kills",
             "description": {
-              "en": "Get 50 Hipfire Kills against Players",
-              "fr": "Éliminez 50 joueur(s) en tirant au jugé.",
-              "es": "Consigue 50 bajas de jugadores con disparos desde la cadera.",
-              "de": "Erreiche 50 Abschüsse aus der Hüfte gegen Spieler",
-              "nl": "Behaal 50 heupvuurkills tegen spelers.",
-              "it": "Esegui 50 uccisioni sparando senza mirare contro giocatori",
-              "pt": "Obtenha 50 baixas de jogadores com tiro livre."
+              "en": "Get 25 Hipfire Kills against Players",
+              "fr": "Éliminez 25 joueur(s) en tirant au jugé.",
+              "es": "Consigue 25 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 25 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 25 heupvuurkills tegen spelers.",
+              "it": "Esegui 25 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 25 baixas de jogadores com tiro livre."
             }
           },
           "2": {
