@@ -1,5 +1,5 @@
 {
-  "version": "0.8.20",
+  "version": "0.8.21",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -7904,7 +7904,7 @@
             "pt": "Militar 1"
           },
           "tier": 1,
-          "unlockLevel": null,
+          "unlockLevel": 12,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
@@ -7922,7 +7922,7 @@
             "pt": "Militar 2"
           },
           "tier": 2,
-          "unlockLevel": null,
+          "unlockLevel": 19,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
@@ -7940,7 +7940,7 @@
             "pt": "Militar 3"
           },
           "tier": 3,
-          "unlockLevel": null,
+          "unlockLevel": 25,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
@@ -7958,7 +7958,7 @@
             "pt": "Militar 4"
           },
           "tier": 4,
-          "unlockLevel": null,
+          "unlockLevel": 33,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
@@ -7976,7 +7976,7 @@
             "pt": "Militar 5"
           },
           "tier": 5,
-          "unlockLevel": null,
+          "unlockLevel": 40,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
@@ -7994,7 +7994,7 @@
             "pt": "Militar 6"
           },
           "tier": 6,
-          "unlockLevel": null,
+          "unlockLevel": 42,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
@@ -8012,7 +8012,7 @@
             "pt": "Militar 7"
           },
           "tier": 7,
-          "unlockLevel": null,
+          "unlockLevel": 44,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
@@ -8030,7 +8030,7 @@
             "pt": "Militar 8"
           },
           "tier": 8,
-          "unlockLevel": null,
+          "unlockLevel": 46,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
@@ -8039,17 +8039,29 @@
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1",
-            "it": "Speciale 1",
-            "pt": "Especial 1"
+            "en": "In the Weeds",
+            "fr": "In the Weeds",
+            "es": "In the Weeds",
+            "de": "In the Weeds",
+            "nl": "In the Weeds",
+            "it": "In the Weeds",
+            "pt": "In the Weeds"
           },
           "tier": 9,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 10,
+            "unit": "kills",
+            "description": {
+              "en": "Get 10 Hipfire Kills against Players",
+              "fr": "Éliminez 10 joueur(s) en tirant au jugé.",
+              "es": "Consigue 10 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 10 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 10 heupvuurkills tegen spelers.",
+              "it": "Esegui 10 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 10 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8057,17 +8069,29 @@
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2",
-            "it": "Speciale 2",
-            "pt": "Especial 2"
+            "en": "Dark Ichor",
+            "fr": "Dark Ichor",
+            "es": "Dark Ichor",
+            "de": "Dark Ichor",
+            "nl": "Dark Ichor",
+            "it": "Dark Ichor",
+            "pt": "Dark Ichor"
           },
           "tier": 10,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 43,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 ADS Kills against Players",
+              "fr": "Éliminez 30 joueur(s) en visant.",
+              "es": "Consigue 30 bajas de jugadores apuntando.",
+              "de": "Erreiche 30 Abschüsse beim Zielen gegen Spieler",
+              "nl": "Behaal 30 kills tegen spelers terwijl je richt.",
+              "it": "Esegui 30 uccisioni mirando contro i giocatori.",
+              "pt": "Obtenha 30 baixas de jogadores mirando."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8075,17 +8099,29 @@
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3",
-            "it": "Speciale 3",
-            "pt": "Especial 3"
+            "en": "Chained",
+            "fr": "Chained",
+            "es": "Chained",
+            "de": "Chained",
+            "nl": "Chained",
+            "it": "Chained",
+            "pt": "Chained"
           },
           "tier": 11,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 48,
+          "requirement": {
+            "amount": 20,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 20 times against Players",
+              "fr": "Éliminez 20 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 20 veces.",
+              "de": "Erreiche 20-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 20 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 20 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 20 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
