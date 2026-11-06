@@ -1,6 +1,6 @@
 {
- "version": "0.9.47",
- "updated": "2026-10-29",
+ "version": "0.9.48",
+ "updated": "2026-11-06",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -4016,6 +4016,13 @@
      "item": "3-plate-helmet-armor-vest"
     },
     {
+     "title": "3.5-Plate Armor Vest",
+     "subtitle": "Ultra. 1 Specter Fabric Sample, 2 Power Regulator, 5 Structural Alloy. New in Season 1. Four plate slots, and the third plate counts as one and a half",
+     "group": "Plate Carriers",
+     "value": "Find",
+     "item": "35-plate-armor-vest"
+    },
+    {
      "title": "Tempered Armor Vest",
      "subtitle": "Ultra. 2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics. Heavy carrier that takes enhanced plates",
      "group": "Plate Carriers",
@@ -4434,6 +4441,13 @@
      "item": "railgun-sentry"
     },
     {
+     "title": "Argonaut Armor",
+     "subtitle": "Ultra. 1 Specter Fabric Sample, 2 Alloyed Plating, 5 High-Tenacity Fibers. New in Season 1. Heavy Argonaut armor for massive protection",
+     "group": "Fire Support",
+     "value": "Find",
+     "item": "argonaut-armor"
+    },
+    {
      "title": "Crossfire",
      "subtitle": "Ultra. 2 Prototype RF Module, 3 Volatile Explosives, 5 Electronic Sensors. Airstrikes from two directions at once",
      "group": "Fire Support",
@@ -4747,9 +4761,15 @@
     },
     {
      "title": "Experimental Compounds",
-     "subtitle": "3-Plate Ballistic Gel Vest",
+     "subtitle": "3-Plate Ballistic Gel Vest. Printable from Season 1: 2 Volatile Explosives, 5 Binding Catalyst",
      "value": "Legendary",
      "item": "experimental-compounds"
+    },
+    {
+     "title": "Specter Fabric Sample",
+     "subtitle": "3.5-Plate Armor Vest, Argonaut Armor (Season 1). Where it drops isn't known yet",
+     "value": "Legendary",
+     "item": "specter-fabric-sample"
     },
     {
      "title": "Nano-Structured Alloy",
@@ -5440,6 +5460,18 @@
      "check": "boss-the-warden"
     },
     {
+     "title": "Knuckle (Tae-Hyun)",
+     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "group": "Lieutenants",
+     "check": "boss-knuckle-tae-hyun"
+    },
+    {
+     "title": "The Wrench (Chol-Min)",
+     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "group": "Lieutenants",
+     "check": "boss-the-wrench-chol-min"
+    },
+    {
      "title": "Colossus",
      "subtitle": "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000. The minigun fires depleted uranium rounds.",
      "links": [
@@ -5466,6 +5498,18 @@
      ],
      "group": "Commanders",
      "check": "boss-nk-battle-tank"
+    },
+    {
+     "title": "The Captain",
+     "subtitle": "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad",
+     "group": "Commanders",
+     "check": "boss-the-captain"
+    },
+    {
+     "title": "Wheelson",
+     "subtitle": "New in Season 1. An autonomous robot vehicle on its own patrol route. Where it roams and what it drops isn't known yet",
+     "group": "Commanders",
+     "check": "boss-wheelson"
     }
    ]
   },
@@ -6037,6 +6081,11 @@
      "title": "Cargo Plane",
      "value": "$100,000",
      "subtitle": "Pick your exact drop point. Unlocked by Operation Fallen Ember"
+    },
+    {
+     "title": "X01 (Season 1)",
+     "value": "Elevator",
+     "subtitle": "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse and Motor Pool. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"
     }
    ]
   },
@@ -7120,6 +7169,34 @@
      "objectives": [
       "Earn $250,000 from Story Missions or Dynamic Ops"
      ]
+    },
+    {
+     "title": "Fresh Start",
+     "group": "DMZ Orders: X01 chapter, page 1 (Season 1)",
+     "check": "op-fresh-start",
+     "place": "X01",
+     "objectives": [
+      "Infil into X01 through the abandoned elevator shaft by the facility in Hajin's north-west"
+     ]
+    },
+    {
+     "title": "Sight Seeing",
+     "group": "DMZ Orders: X01 chapter, page 1 (Season 1)",
+     "check": "op-sight-seeing",
+     "place": "X01",
+     "objectives": [
+      "Search 5 unopened containers in the X01 Main Warehouse",
+      "Search 5 unopened containers in the X01 Control Room"
+     ]
+    },
+    {
+     "title": "First Win",
+     "group": "DMZ Orders: X01 chapter, page 1 (Season 1)",
+     "check": "op-first-win",
+     "place": "X01",
+     "objectives": [
+      "Extract from X01"
+     ]
     }
    ],
    "intro": "Story Missions, then the DMZ Orders pages in the game's order. Tick an order, or each step, as you finish it. Which page comes next can depend on the route you take."
@@ -7997,6 +8074,30 @@
    "effect": "Three plates, less damage from headshots"
   },
   {
+   "id": "35-plate-armor-vest",
+   "name": "3.5-Plate Armor Vest",
+   "kind": "Plate Carriers",
+   "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "blueprint": true,
+   "cost": [
+    {
+     "item": "specter-fabric-sample",
+     "qty": 1
+    },
+    {
+     "item": "power-regulator",
+     "qty": 2
+    },
+    {
+     "item": "structural-alloy",
+     "qty": 5
+    }
+   ],
+   "effect": "New in Season 1. Four plate slots, and the third plate counts as one and a half",
+   "symbol": "shield.fill"
+  },
+  {
    "id": "advanced-uav",
    "name": "Advanced UAV",
    "kind": "Fire Support",
@@ -8086,6 +8187,30 @@
    ],
    "effect": "Refills ammo and equipment for you and your allies",
    "image": "https://camotracker.djr.li/Images/DMZ/ammo-box.png?v=1"
+  },
+  {
+   "id": "argonaut-armor",
+   "name": "Argonaut Armor",
+   "kind": "Fire Support",
+   "rarity": "Ultra",
+   "unlock": "Find the recipe in Hajin and extract with it",
+   "blueprint": true,
+   "cost": [
+    {
+     "item": "specter-fabric-sample",
+     "qty": 1
+    },
+    {
+     "item": "alloyed-plating",
+     "qty": 2
+    },
+    {
+     "item": "high-tenacity-fibers",
+     "qty": 5
+    }
+   ],
+   "effect": "New in Season 1. Heavy Argonaut armor for massive protection",
+   "symbol": "airplane"
   },
   {
    "id": "armor-box",
@@ -11029,6 +11154,14 @@
    "value": 100,
    "note": "A repair item for vehicles. Where to find it isn't known yet",
    "image": "https://camotracker.djr.li/Images/DMZ/spark-plug.png?v=1"
+  },
+  {
+   "id": "specter-fabric-sample",
+   "name": "Specter Fabric Sample",
+   "rarity": "Legendary",
+   "kind": "Ingredient",
+   "note": "3. 5-Plate Armor Vest, Argonaut Armor (Season 1). Where it drops isn't known yet",
+   "symbol": "cube.fill"
   },
   {
    "id": "spotter-scope",

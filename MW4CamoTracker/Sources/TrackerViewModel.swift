@@ -1584,7 +1584,8 @@ final class TrackerViewModel: ObservableObject {
     }
 
     private func objectiveKey(_ mode: String, _ categoryId: Int, _ itemId: Int) -> String {
-        "obj|\(mode)|\(categoryId)|\(itemId)"
+        let shared = modes[mode]?.objectives.first { $0.categoryId == categoryId }?.shared == true
+        return "obj|\(shared ? "shared" : mode)|\(categoryId)|\(itemId)"
     }
 
     /// Reads the saved progress; false when there is a save and it can't

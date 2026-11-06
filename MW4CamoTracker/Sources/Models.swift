@@ -283,6 +283,10 @@ struct Category: Codable, Identifiable {
     let categoryId: Int
     let name: LocalizedText
     var items: [ChallengeItem]
+    /// `true` for objectives that are one track across modes (a BlackCell
+    /// camo earned in any mode): every mode with this `categoryId` reads
+    /// and writes the same progress. Absent: each mode keeps its own.
+    var shared: Bool? = nil
     var id: Int { categoryId }
 }
 

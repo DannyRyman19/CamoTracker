@@ -1,5 +1,5 @@
 {
-  "version": "0.9.11",
+  "version": "0.9.12",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -264,6 +264,29 @@
             "pt": "Desbloqueia no nível 55."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CRONEN_SQUALL.png"
+        },
+        {
+          "weaponId": 33,
+          "name": {
+            "en": "Cronen Osprey",
+            "fr": "Cronen Osprey",
+            "es": "Cronen Osprey",
+            "de": "Cronen Osprey",
+            "nl": "Cronen Osprey",
+            "it": "Cronen Osprey",
+            "pt": "Cronen Osprey"
+          },
+          "maxLevel": 70,
+          "unlockRequirement": {
+            "en": "Unlocked in the Battle Pass.",
+            "fr": "Débloqué dans le passe de combat.",
+            "es": "Se desbloquea en el pase de batalla.",
+            "de": "Freischaltung im Battle Pass.",
+            "nl": "Ontgrendel in de Battle Pass.",
+            "it": "Si sblocca nel Pass battaglia.",
+            "pt": "Desbloqueia no Passe de Batalha."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CRONEN_OSPREY.png"
         }
       ]
     },
@@ -393,6 +416,29 @@
             "pt": "Desbloqueia no nível 18."
           },
           "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/WZ_55_STRIGA_v2.png"
+        },
+        {
+          "weaponId": 34,
+          "name": {
+            "en": "CSG-35",
+            "fr": "CSG-35",
+            "es": "CSG-35",
+            "de": "CSG-35",
+            "nl": "CSG-35",
+            "it": "CSG-35",
+            "pt": "CSG-35"
+          },
+          "maxLevel": 42,
+          "unlockRequirement": {
+            "en": "Unlocked in the Battle Pass.",
+            "fr": "Débloqué dans le passe de combat.",
+            "es": "Se desbloquea en el pase de batalla.",
+            "de": "Freischaltung im Battle Pass.",
+            "nl": "Ontgrendel in de Battle Pass.",
+            "it": "Si sblocca nel Pass battaglia.",
+            "pt": "Desbloqueia no Passe de Batalha."
+          },
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CSG-35.png"
         }
       ]
     },

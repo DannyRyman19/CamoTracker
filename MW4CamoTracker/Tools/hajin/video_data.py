@@ -30,6 +30,7 @@ RECIPES = [
  ("Plate Carriers", "3-Plate Armor Vest", F, "Legendary", "2 Ballistic Fabric, 5 Nylon Cloth, 10 Reactive Metals", "Three armor plates"),
  ("Plate Carriers", "3-Plate Ballistic Gel Vest", F, "Ultra", "2 Experimental Compounds, 4 Stabilized Reagents, 10 Biomaterials", "Three plates that regenerate over time"),
  ("Plate Carriers", "3-Plate Helmet Armor Vest", F, "Ultra", "2 Nano-Structured Alloy, 4 Alloyed Plating, 10 Reactive Metals", "Three plates, less damage from headshots"),
+ ("Plate Carriers", "3.5-Plate Armor Vest", F, "Ultra", "1 Specter Fabric Sample, 2 Power Regulator, 5 Structural Alloy", "New in Season 1. Four plate slots, and the third plate counts as one and a half"),
  ("Plate Carriers", "Tempered Armor Vest", F, "Ultra", "2 Military Composites, 4 Ballistic Fabric, 10 Rigid Synthetics", "Heavy carrier that takes enhanced plates"),
  ("Backpacks", "Small Backpack", "Lv 2", "Uncommon", "25 Synthetics, 25 Metals", "Small, with limited space"),
  ("Backpacks", "Medium Backpack", "Lv 2", None, "50 Synthetics, 5 Rigid Synthetics", "One Secure Slot"),
@@ -87,6 +88,7 @@ RECIPES = [
  ("Fire Support", "Advanced UAV", F, "Legendary", "2 Comms Module, 3 Nitro Compounds, 5 Electronic Sensors", "An orbital UAV that can't be shot down; shows which way enemies face"),
  ("Fire Support", "Impact Warhead", F, "Legendary", "2 Turned Components, 3 Nitro Compounds, 5 Detonators", "A payload that drills through several floors"),
  ("Fire Support", "Railgun Sentry", F, "Legendary", "2 Power Regulator, 3 Nitro Compounds, 5 Control Unit", "Hypersonic flechette cannon that works as a sentry"),
+ ("Fire Support", "Argonaut Armor", F, "Ultra", "1 Specter Fabric Sample, 2 Alloyed Plating, 5 High-Tenacity Fibers", "New in Season 1. Heavy Argonaut armor for massive protection"),
  ("Fire Support", "Crossfire", F, "Ultra", "2 Prototype RF Module, 3 Volatile Explosives, 5 Electronic Sensors", "Airstrikes from two directions at once"),
  ("Gear", "Gas Mask", "Lv 26", "Rare", "30 Chemicals, 3 Rigid Synthetics", "Protects you from radiation"),
  ("Gear", "Durable Gas Mask", F, "Epic", "30 Chemicals, 1 High-Tenacity Fibers, 5 Biomaterials", "Protects you from radiation"),
@@ -194,7 +196,8 @@ TRAITS = [
 ]
 NEW_INGREDIENTS = [
  ("Stabilized Reagents", "Epic", "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst"),
- ("Experimental Compounds", "Legendary", "3-Plate Ballistic Gel Vest"),
+ ("Experimental Compounds", "Legendary", "3-Plate Ballistic Gel Vest. Printable from Season 1: 2 Volatile Explosives, 5 Binding Catalyst"),
+ ("Specter Fabric Sample", "Legendary", "3.5-Plate Armor Vest, Argonaut Armor (Season 1). Where it drops isn't known yet"),
  ("Nano-Structured Alloy", "Legendary", "3-Plate Helmet Armor Vest"),
  ("Alloyed Plating", None, "3-Plate Helmet Armor Vest, Medium Secure Backpack"),
  ("Turned Components", "Epic", "Parachute"),
@@ -930,6 +933,9 @@ MISSIONS = [
  ("Story Missions", "Operation Iron Citadel", "Chang-san Air Base", ["Approach the air base and find an Airbase Access Card", "Upgrade the card at the marked server", "Find the armory doors inside the bunker", "Recover the three keycode parts and open the armory", "Collect the armory manifest", "Plant explosives in the armory", "Plant explosives on three strike aircraft", "Capture the SAM site", "Exfil with the armory manifest"], 25000, ["supreme-leaders-bunker-access-card"], ["Unlocks the LTV infil ($25,000)"]),
  ("Story Missions", "Operation Grid Assault", "The Grid", ["Find the drone control at DBN Headquarters", "Recover the first and second code segments", "Compile the code", "Upload the code", "Broadcast the kill code"], 25000, ["rozes-high-rise-armory"], ["Unlocks the Helicopter infil ($50,000)"]),
  ("Story Missions", "Operation Fallen Ember", "Haneul Nuclear Reactor (Extreme)", ["Breach the reactor", "Secure the rods", "Extract the decontaminated rods"], 25000, ["reactor-drc-locker", "gas-mask"], ["Unlocks the Cargo Plane infil ($100,000)", "Bring radiation gear: hazmat suits hang on the reactor walls", "While it runs you can loot a route of 23 safes across the map: turn on Fallen Ember Safes on the Tac Map"]),
+ ("DMZ Orders: X01 Chapter", "Fresh Start", "X01", ["Infil into X01 through the abandoned elevator shaft by the facility in Hajin's north-west"], None, [], []),
+ ("DMZ Orders: X01 Chapter", "Sight Seeing", "X01", ["Search 5 unopened containers in the X01 Main Warehouse", "Search 5 unopened containers in the X01 Control Room"], None, [], []),
+ ("DMZ Orders: X01 Chapter", "First Win", "X01", ["Extract from X01"], None, [], []),
  ("DMZ Orders: Chapter 1", "Gear Up", None, ["Equip a weapon, a backpack, an armor vest and a medkit from your stash"], None, [], []),
  ("DMZ Orders: Chapter 1", "Crack Shot", None, ["Knock down three firing-range targets"], None, [], []),
  ("DMZ Orders: Chapter 1", "First OP", None, ["Deploy to DMZ in Dynamic Operations"], None, [], []),
@@ -1083,6 +1089,7 @@ CHECK_KEYS = {("DMZ Orders: Page 10", "Healer"): "op-page-10-healer"}
 ORDER_PAGES = {
     "Story Missions": (0, "Story Missions"),
     "DMZ Orders: Chapter 1": (1, "DMZ Orders: Page 1"),
+    "DMZ Orders: X01 Chapter": (100, "DMZ Orders: X01 chapter, page 1 (Season 1)"),
     "DMZ Orders: Counterfeit": (2, "DMZ Orders: Pages 2-3, Counterfeit"),
     "DMZ Orders: Operation Rewards page": (4, "DMZ Orders: Page 4"),
     "DMZ Orders: Underground": (5, "DMZ Orders: Pages 5-6, Underground"),

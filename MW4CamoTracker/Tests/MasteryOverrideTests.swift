@@ -116,6 +116,12 @@ struct TrackerViewModelTests {
         model.catalog?.categories.flatMap(\.weapons) ?? []
     }
 
+    /// The launch roster: ids below `baseWeaponCount`, so season weapons
+    /// added to the data don't change what a mode-wide gate counts.
+    private func launchWeapons(_ model: TrackerViewModel) -> [WeaponEntry] {
+        weapons(model).filter { $0.weaponId < model.baseWeaponCount }
+    }
+
     /// Ticks every camo in the weapon's list, opening its Completionist camos.
     private func finishCamos(_ model: TrackerViewModel, _ weaponId: Int) {
         for camo in model.camos(weaponId: weaponId, mode: mp) where !model.isCamoComplete(mode: mp, weaponId: weaponId, camo: camo) {
@@ -207,7 +213,7 @@ struct TrackerViewModelTests {
     /// Harmonic Break opens once the whole launch roster has Platinum.
     @Test func harmonicBreakWaitsForPlatinumOnEveryWeapon() throws {
         let model = try model()
-        let all = weapons(model).map(\.weaponId)
+        let all = launchWeapons(model).map(\.weaponId)
         for weapon in all.dropLast() {
             model.toggleCompletionist(mode: mp, weaponId: weapon, step: 1)
         }
@@ -555,7 +561,7 @@ struct TrackerViewModelTests {
                            "byCategory": {"0": {"amount": 40, "unit": "kills", "description": {"en": "Rifles."}}}}}
                 """#,
         ])
-        let all = weapons(model)
+        let all = launchWeapons(model)
         let rifle = try #require(model.catalog?.categories.first { $0.categoryId == 0 }?.weapons.first).weaponId
         let other = try #require(model.catalog?.categories.first { $0.categoryId != 0 }?.weapons.first).weaponId
         #expect(model.masteryRequirement(mode: mp, weaponId: rifle, tier: 1)?.amount == 40)
@@ -976,7 +982,7 @@ struct TrackerViewModelTests {
         let mp = try #require(snapshot.modes.first { $0.id == "multiplayer" })
         #expect(mp.steps.count == AppMode.multiplayer.completionistCamos.count)
         #expect(mp.mastery.count == 3)
-        #expect(mp.steps.allSatisfy { $0.total == mp.weaponCount })
+        #expect(mp.steps.allSatisfy { $0.total == model.launchRoster })
         let pinned = try #require(snapshot.pinned)
         #expect(pinned.weaponId == weapon.weaponId)
         #expect(pinned.nextName != nil)

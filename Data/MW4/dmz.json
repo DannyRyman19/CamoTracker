@@ -1,5 +1,5 @@
 {
-  "version": "0.8.20",
+  "version": "0.8.21",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -7888,9 +7888,605 @@
           "group": "special"
         }
       ]
+    },
+    {
+      "weaponId": 33,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1",
+            "it": "Militare 1",
+            "pt": "Militar 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2",
+            "it": "Militare 2",
+            "pt": "Militar 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3",
+            "it": "Militare 3",
+            "pt": "Militar 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4",
+            "it": "Militare 4",
+            "pt": "Militar 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
+          "group": "military"
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5",
+            "it": "Militare 5",
+            "pt": "Militar 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
+          "group": "military"
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6",
+            "it": "Militare 6",
+            "pt": "Militar 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
+          "group": "military"
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7",
+            "it": "Militare 7",
+            "pt": "Militar 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
+          "group": "military"
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8",
+            "it": "Militare 8",
+            "pt": "Militar 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
+          "group": "military"
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1",
+            "it": "Speciale 1",
+            "pt": "Especial 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2",
+            "it": "Speciale 2",
+            "pt": "Especial 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3",
+            "it": "Speciale 3",
+            "pt": "Especial 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        }
+      ]
+    },
+    {
+      "weaponId": 34,
+      "camos": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Military 1",
+            "fr": "Militaire 1",
+            "es": "Militar 1",
+            "de": "Militär 1",
+            "nl": "Militair 1",
+            "it": "Militare 1",
+            "pt": "Militar 1"
+          },
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
+          "group": "military"
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Military 2",
+            "fr": "Militaire 2",
+            "es": "Militar 2",
+            "de": "Militär 2",
+            "nl": "Militair 2",
+            "it": "Militare 2",
+            "pt": "Militar 2"
+          },
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
+          "group": "military"
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Military 3",
+            "fr": "Militaire 3",
+            "es": "Militar 3",
+            "de": "Militär 3",
+            "nl": "Militair 3",
+            "it": "Militare 3",
+            "pt": "Militar 3"
+          },
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
+          "group": "military"
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Military 4",
+            "fr": "Militaire 4",
+            "es": "Militar 4",
+            "de": "Militär 4",
+            "nl": "Militair 4",
+            "it": "Militare 4",
+            "pt": "Militar 4"
+          },
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
+          "group": "military"
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Military 5",
+            "fr": "Militaire 5",
+            "es": "Militar 5",
+            "de": "Militär 5",
+            "nl": "Militair 5",
+            "it": "Militare 5",
+            "pt": "Militar 5"
+          },
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
+          "group": "military"
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Military 6",
+            "fr": "Militaire 6",
+            "es": "Militar 6",
+            "de": "Militär 6",
+            "nl": "Militair 6",
+            "it": "Militare 6",
+            "pt": "Militar 6"
+          },
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
+          "group": "military"
+        },
+        {
+          "itemId": 6,
+          "name": {
+            "en": "Military 7",
+            "fr": "Militaire 7",
+            "es": "Militar 7",
+            "de": "Militär 7",
+            "nl": "Militair 7",
+            "it": "Militare 7",
+            "pt": "Militar 7"
+          },
+          "tier": 7,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
+          "group": "military"
+        },
+        {
+          "itemId": 7,
+          "name": {
+            "en": "Military 8",
+            "fr": "Militaire 8",
+            "es": "Militar 8",
+            "de": "Militär 8",
+            "nl": "Militair 8",
+            "it": "Militare 8",
+            "pt": "Militar 8"
+          },
+          "tier": 8,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
+          "group": "military"
+        },
+        {
+          "itemId": 8,
+          "name": {
+            "en": "Special 1",
+            "fr": "Spécial 1",
+            "es": "Especial 1",
+            "de": "Spezial 1",
+            "nl": "Speciaal 1",
+            "it": "Speciale 1",
+            "pt": "Especial 1"
+          },
+          "tier": 9,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        },
+        {
+          "itemId": 9,
+          "name": {
+            "en": "Special 2",
+            "fr": "Spécial 2",
+            "es": "Especial 2",
+            "de": "Spezial 2",
+            "nl": "Speciaal 2",
+            "it": "Speciale 2",
+            "pt": "Especial 2"
+          },
+          "tier": 10,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        },
+        {
+          "itemId": 10,
+          "name": {
+            "en": "Special 3",
+            "fr": "Spécial 3",
+            "es": "Especial 3",
+            "de": "Spezial 3",
+            "nl": "Speciaal 3",
+            "it": "Speciale 3",
+            "pt": "Especial 3"
+          },
+          "tier": 11,
+          "unlockLevel": null,
+          "requirement": null,
+          "children": [],
+          "imageURL": null,
+          "group": "special"
+        }
+      ]
     }
   ],
-  "objectives": [],
+  "objectives": [
+    {
+      "categoryId": 0,
+      "name": {
+        "en": "Season 1 BlackCell",
+        "fr": "BlackCell Saison 1",
+        "es": "BlackCell Temporada 1",
+        "de": "BlackCell Season 1",
+        "nl": "BlackCell Seizoen 1",
+        "it": "BlackCell Stagione 1",
+        "pt": "BlackCell Temporada 1"
+      },
+      "shared": true,
+      "items": [
+        {
+          "itemId": 0,
+          "name": {
+            "en": "Infiltrator",
+            "fr": "Infiltrator",
+            "es": "Infiltrator",
+            "de": "Infiltrator",
+            "nl": "Infiltrator",
+            "it": "Infiltrator",
+            "pt": "Infiltrator"
+          },
+          "imageURL": null,
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "Any one: Multiplayer: Get 10 Double Kills with Assault Rifles; DMZ: Get 20 Triple Kills with Assault Rifles; Warzone: Get 25 Kills with Ground Loot Assault Rifles.",
+              "fr": "Au choix : Multijoueur: Réussissez 10 doubles éliminations avec des fusils d'assaut; DMZ: Réussissez 20 triples éliminations avec des fusils d'assaut; Warzone: Faites 25 éliminations avec des fusils d'assaut ramassés au sol.",
+              "es": "Cualquiera: Multijugador: Consigue 10 bajas dobles con fusiles de asalto; DMZ: Consigue 20 bajas triples con fusiles de asalto; Warzone: Consigue 25 bajas con fusiles de asalto recogidos del suelo.",
+              "de": "Eine davon: Mehrspieler: Erziele 10 Doppelabschüsse mit Sturmgewehren; DMZ: Erziele 20 Dreifachabschüsse mit Sturmgewehren; Warzone: Erziele 25 Abschüsse mit Sturmgewehren vom Boden.",
+              "nl": "Eén van: Multiplayer: Behaal 10 dubbele kills met aanvalsgeweren; DMZ: Behaal 20 driedubbele kills met aanvalsgeweren; Warzone: Behaal 25 kills met aanvalsgeweren van de grond.",
+              "it": "Una a scelta: Multigiocatore: Esegui 10 uccisioni doppie con fucili d'assalto; DMZ: Esegui 20 uccisioni triple con fucili d'assalto; Warzone: Esegui 25 uccisioni con fucili d'assalto raccolti a terra.",
+              "pt": "Qualquer um: Multijogador: Consiga 10 baixas duplas com fuzis de assalto; DMZ: Consiga 20 baixas triplas com fuzis de assalto; Warzone: Consiga 25 baixas com fuzis de assalto pegos do chão."
+            }
+          },
+          "children": []
+        },
+        {
+          "itemId": 1,
+          "name": {
+            "en": "Cell Ops",
+            "fr": "Cell Ops",
+            "es": "Cell Ops",
+            "de": "Cell Ops",
+            "nl": "Cell Ops",
+            "it": "Cell Ops",
+            "pt": "Cell Ops"
+          },
+          "imageURL": null,
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "Any one: Multiplayer: Get 20 Point Blank Kills with SMGs; DMZ: Get 200 Kills with SMGs; Warzone: Get 10 Hipfire Kills with SMGs.",
+              "fr": "Au choix : Multijoueur: Éliminez 20 joueur(s) à bout portant avec des mitraillettes; DMZ: Faites 200 éliminations avec des mitraillettes; Warzone: Faites 10 éliminations sans viser avec des mitraillettes.",
+              "es": "Cualquiera: Multijugador: Consigue 20 bajas a bocajarro con subfusiles; DMZ: Consigue 200 bajas con subfusiles; Warzone: Consigue 10 bajas sin apuntar con subfusiles.",
+              "de": "Eine davon: Mehrspieler: Erziele 20 Abschüsse aus nächster Nähe mit MPs; DMZ: Erziele 200 Abschüsse mit MPs; Warzone: Erziele 10 Hüftfeuer-Abschüsse mit MPs.",
+              "nl": "Eén van: Multiplayer: Behaal 20 kills van dichtbij met SMG's; DMZ: Behaal 200 kills met SMG's; Warzone: Behaal 10 kills vanuit de heup met SMG's.",
+              "it": "Una a scelta: Multigiocatore: Esegui 20 uccisioni a bruciapelo con mitragliette; DMZ: Esegui 200 uccisioni con mitragliette; Warzone: Esegui 10 uccisioni senza mirare con mitragliette.",
+              "pt": "Qualquer um: Multijogador: Consiga 20 baixas à queima-roupa com submetralhadoras; DMZ: Consiga 200 baixas com submetralhadoras; Warzone: Consiga 10 baixas sem mirar com submetralhadoras."
+            }
+          },
+          "children": []
+        },
+        {
+          "itemId": 2,
+          "name": {
+            "en": "Gold Tiger",
+            "fr": "Gold Tiger",
+            "es": "Gold Tiger",
+            "de": "Gold Tiger",
+            "nl": "Gold Tiger",
+            "it": "Gold Tiger",
+            "pt": "Gold Tiger"
+          },
+          "imageURL": null,
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "Any one: Multiplayer: Get 3 Kills without Dying 5 times with Sniper Rifles; DMZ: Get 100 Headshot Kills with Sniper Rifles; Warzone: Get 10 Headshot Kills with Sniper Rifles.",
+              "fr": "Au choix : Multijoueur: Faites 3 éliminations sans mourir 5 fois avec des fusils de précision; DMZ: Faites 100 éliminations d'un tir dans la tête avec des fusils de précision; Warzone: Faites 10 éliminations d'un tir dans la tête avec des fusils de précision.",
+              "es": "Cualquiera: Multijugador: Consigue 3 bajas sin morir 5 veces con fusiles de francotirador; DMZ: Consigue 100 bajas con tiros a la cabeza con fusiles de francotirador; Warzone: Consigue 10 bajas con tiros a la cabeza con fusiles de francotirador.",
+              "de": "Eine davon: Mehrspieler: Erziele 5-mal 3 Abschüsse ohne zu sterben mit Scharfschützengewehren; DMZ: Erziele 100 Kopfschuss-Abschüsse mit Scharfschützengewehren; Warzone: Erziele 10 Kopfschuss-Abschüsse mit Scharfschützengewehren.",
+              "nl": "Eén van: Multiplayer: Behaal 5 keer 3 kills zonder te sterven met sluipschuttersgeweren; DMZ: Behaal 100 headshotkills met sluipschuttersgeweren; Warzone: Behaal 10 headshotkills met sluipschuttersgeweren.",
+              "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni senza morire 5 volte con fucili di precisione; DMZ: Esegui 100 uccisioni con colpi alla testa con fucili di precisione; Warzone: Esegui 10 uccisioni con colpi alla testa con fucili di precisione.",
+              "pt": "Qualquer um: Multijogador: Consiga 3 baixas sem morrer 5 vezes com fuzis de precisão; DMZ: Consiga 100 baixas com tiros na cabeça com fuzis de precisão; Warzone: Consiga 10 baixas com tiros na cabeça com fuzis de precisão."
+            }
+          },
+          "children": []
+        },
+        {
+          "itemId": 3,
+          "name": {
+            "en": "Whirlpool",
+            "fr": "Whirlpool",
+            "es": "Whirlpool",
+            "de": "Whirlpool",
+            "nl": "Whirlpool",
+            "it": "Whirlpool",
+            "pt": "Whirlpool"
+          },
+          "imageURL": null,
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "Any one: Multiplayer: Get 30 Longshot Kills with LMGs; DMZ: Get 5 Kills without Reloading 10 times with LMGs; Warzone: Get 2 Kills without Dying 10 times with LMGs.",
+              "fr": "Au choix : Multijoueur: Réussissez 30 éliminations à longue distance avec des mitrailleuses; DMZ: Faites 5 éliminations sans recharger 10 fois avec des mitrailleuses; Warzone: Faites 2 éliminations sans mourir 10 fois avec des mitrailleuses.",
+              "es": "Cualquiera: Multijugador: Consigue 30 bajas a larga distancia con ametralladoras ligeras; DMZ: Consigue 5 bajas sin recargar 10 veces con ametralladoras ligeras; Warzone: Consigue 2 bajas sin morir 10 veces con ametralladoras ligeras.",
+              "de": "Eine davon: Mehrspieler: Erziele 30 Weitschuss-Abschüsse mit LMGs; DMZ: Erziele 10-mal 5 Abschüsse ohne Nachladen mit LMGs; Warzone: Erziele 10-mal 2 Abschüsse ohne zu sterben mit LMGs.",
+              "nl": "Eén van: Multiplayer: Behaal 30 kills van grote afstand met LMG's; DMZ: Behaal 10 keer 5 kills zonder te herladen met LMG's; Warzone: Behaal 10 keer 2 kills zonder te sterven met LMG's.",
+              "it": "Una a scelta: Multigiocatore: Esegui 30 uccisioni a lunga distanza con mitragliatrici leggere; DMZ: Esegui 5 uccisioni senza ricaricare 10 volte con mitragliatrici leggere; Warzone: Esegui 2 uccisioni senza morire 10 volte con mitragliatrici leggere.",
+              "pt": "Qualquer um: Multijogador: Consiga 30 baixas de longa distância com metralhadoras leves; DMZ: Consiga 5 baixas sem recarregar 10 vezes com metralhadoras leves; Warzone: Consiga 2 baixas sem morrer 10 vezes com metralhadoras leves."
+            }
+          },
+          "children": []
+        },
+        {
+          "itemId": 4,
+          "name": {
+            "en": "Intercept",
+            "fr": "Intercept",
+            "es": "Intercept",
+            "de": "Intercept",
+            "nl": "Intercept",
+            "it": "Intercept",
+            "pt": "Intercept"
+          },
+          "imageURL": null,
+          "tier": 5,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "Any one: Multiplayer: Get 3 Kills in a single match 3 times with Melee weapons; DMZ: Get 50 Kills while Undetected with Melee weapons; Warzone: Get 5 Eliminations while in the Top 10 with Melee weapons.",
+              "fr": "Au choix : Multijoueur: Faites 3 éliminations en une partie 3 fois avec des armes de mêlée; DMZ: Faites 50 éliminations sans être détecté avec des armes de mêlée; Warzone: Faites 5 éliminations dans le top 10 avec des armes de mêlée.",
+              "es": "Cualquiera: Multijugador: Consigue 3 bajas en una sola partida 3 veces con armas cuerpo a cuerpo; DMZ: Consigue 50 bajas sin ser detectado con armas cuerpo a cuerpo; Warzone: Consigue 5 eliminaciones estando entre los 10 mejores con armas cuerpo a cuerpo.",
+              "de": "Eine davon: Mehrspieler: Erziele 3-mal 3 Abschüsse in einem Match mit Nahkampfwaffen; DMZ: Erziele 50 Abschüsse unentdeckt mit Nahkampfwaffen; Warzone: Erziele 5 Eliminierungen unter den Top 10 mit Nahkampfwaffen.",
+              "nl": "Eén van: Multiplayer: Behaal 3 keer 3 kills in één wedstrijd met slagwapens; DMZ: Behaal 50 kills onopgemerkt met slagwapens; Warzone: Behaal 5 eliminaties in de top 10 met slagwapens.",
+              "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni in una partita 3 volte con armi da mischia; DMZ: Esegui 50 uccisioni senza essere individuato con armi da mischia; Warzone: Esegui 5 eliminazioni nella top 10 con armi da mischia.",
+              "pt": "Qualquer um: Multijogador: Consiga 3 baixas em uma partida 3 vezes com armas brancas; DMZ: Consiga 50 baixas sem ser detectado com armas brancas; Warzone: Consiga 5 eliminações no top 10 com armas brancas."
+            }
+          },
+          "children": []
+        },
+        {
+          "itemId": 5,
+          "name": {
+            "en": "Spinal Verge",
+            "fr": "Spinal Verge",
+            "es": "Spinal Verge",
+            "de": "Spinal Verge",
+            "nl": "Spinal Verge",
+            "it": "Spinal Verge",
+            "pt": "Spinal Verge"
+          },
+          "imageURL": null,
+          "tier": 6,
+          "unlockLevel": null,
+          "requirement": {
+            "amount": 1,
+            "unit": "times",
+            "description": {
+              "en": "After all five class camos. Any one: Multiplayer: Place 1st on the scoreboard 3 times; DMZ: Exfil with over 150 Kills 5 times; Warzone: Get 2 Kills within 10 seconds 10 times.",
+              "fr": "Après les cinq camouflages de classe. Au choix : Multijoueur: Terminez 1er au tableau des scores 3 fois; DMZ: Exfiltrez avec plus de 150 éliminations 5 fois; Warzone: Faites 2 éliminations en 10 secondes 10 fois.",
+              "es": "Tras los cinco camuflajes de clase. Cualquiera: Multijugador: Termina 1.º en el marcador 3 veces; DMZ: Extrae con más de 150 bajas 5 veces; Warzone: Consigue 2 bajas en 10 segundos 10 veces.",
+              "de": "Nach allen fünf Klassen-Tarnungen. Eine davon: Mehrspieler: Belege 3-mal Platz 1 auf der Anzeigetafel; DMZ: Exfiltriere 5-mal mit über 150 Abschüssen; Warzone: Erziele 10-mal 2 Abschüsse innerhalb von 10 Sekunden.",
+              "nl": "Na alle vijf klassecamo's. Eén van: Multiplayer: Eindig 3 keer als 1e op het scorebord; DMZ: Exfiltreer 5 keer met meer dan 150 kills; Warzone: Behaal 10 keer 2 kills binnen 10 seconden.",
+              "it": "Dopo le cinque mimetiche di classe. Una a scelta: Multigiocatore: Arriva 1° nella classifica 3 volte; DMZ: Esfiltra con oltre 150 uccisioni 5 volte; Warzone: Esegui 2 uccisioni in 10 secondi 10 volte.",
+              "pt": "Depois das cinco camuflagens de classe. Qualquer um: Multijogador: Fique em 1º no placar 3 vezes; DMZ: Faça a exfiltração com mais de 150 baixas 5 vezes; Warzone: Consiga 2 baixas em 10 segundos 10 vezes."
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
   "_note": "Mastery is DMZ's own, from the same blog: Chiral 2,500 Tier 3+ enemy kills, Ripple Tide exfil 2 LT dog tags in one deployment 50 times, Helio 25,000 Legendary weapon kills on a max-level Operator. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special challenges read off DMZ's own camo screens (video, 20 Oct 2026). Mastery images are real; tier 2/3 challenges in game: 'Get &&2 Tier 3+ enemy kills and then successfully exfil &&1 times', 'Get &&2 1 shot headshot enemy kills with max level operators and then successfully exfil &&1 times'. DMZ Mastery 2 (Ripple Tide) and 3 (Helio) from @brokealx on 17 Oct 2026, with a clip: these replace the recording's placeholder wording (Tier 3+ kills then exfil; one-shot headshots on max-level operators then exfil), which the game appears to have changed.",
   "mastery": {
     "tier1": {

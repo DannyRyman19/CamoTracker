@@ -362,6 +362,10 @@ guide = [
    ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
    ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
    ("NK Battle Tank", "Commander", "Roams the roads and highways across Hajin. Drops Nano-Structured Alloy, and the first kill pays $50,000"),
+   ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
+   ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
+   ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
+   ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle on its own patrol route. Where it roams and what it drops isn't known yet"),
   ])},
  {"id": "keys", "title": "Keys", "symbol": "key.fill",
   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
@@ -442,6 +446,7 @@ guide = [
    ("LTV", "$25,000", "Random spot. Unlocked by Operation Iron Citadel"),
    ("Helicopter", "$50,000", "Flown in from the FOB. Unlocked by Operation Grid Assault"),
    ("Cargo Plane", "$100,000", "Pick your exact drop point. Unlocked by Operation Fallen Ember"),
+   ("X01 (Season 1)", "Elevator", "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse and Motor Pool. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"),
   ])},
  {"id": "ops", "title": "Missions & payouts", "symbol": "target",
   "rows": rows([
@@ -498,7 +503,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.47", "updated": "2026-10-29",
+data = {"version": "0.9.48", "updated": "2026-11-06",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
