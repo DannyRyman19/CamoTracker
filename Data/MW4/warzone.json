@@ -1,5 +1,5 @@
 {
-  "version": "0.8.73",
+  "version": "0.8.74",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -3512,13 +3512,13 @@
             "amount": 5,
             "unit": "times",
             "description": {
-              "en": "Get 2 Player Kills within 5 Seconds 5 times",
-              "fr": "Éliminez 5 fois 2 joueurs en moins de 5 secondes.",
-              "es": "Consigue 2 bajas de jugadores en 5 segundos 5 veces.",
-              "de": "Erreiche 5-mal 2 Spieler-Abschüsse innerhalb von 5 Sekunden",
-              "nl": "Behaal 5 keer 2 spelerkills binnen 5 seconden.",
-              "it": "Esegui 2 uccisioni contro giocatori in 5 secondi, 5 volte",
-              "pt": "Obtenha 2 baixas de jogador em 5 segundos 5 vezes."
+              "en": "Get 2 Player Kills within 10 seconds 5 times",
+              "fr": "Éliminez 5 fois 2 joueurs en moins de 10 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 10 segundos 5 veces.",
+              "de": "Erreiche 5-mal 2 Spieler-Abschüsse innerhalb von 10 Sekunden",
+              "nl": "Behaal 5 keer 2 spelerkills binnen 10 seconden.",
+              "it": "Esegui 2 uccisioni contro i giocatori entro 10 secondi, 5 volte.",
+              "pt": "Obtenha 2 baixas de jogadores em 10 segundos 5 vezes."
             }
           },
           "children": [],
@@ -6679,13 +6679,13 @@
             "amount": 10,
             "unit": "times",
             "description": {
-              "en": "Get 2 Player Kills within 5 Seconds 10 times",
-              "fr": "Éliminez 10 fois 2 joueurs en moins de 5 secondes.",
-              "es": "Consigue 2 bajas de jugadores en 5 segundos 10 veces.",
-              "de": "Erreiche 10-mal 2 Spieler-Abschüsse innerhalb von 5 Sekunden",
-              "nl": "Behaal 10 keer 2 spelerkills binnen 5 seconden.",
-              "it": "Esegui 2 uccisioni contro giocatori in 5 secondi, 10 volte",
-              "pt": "Obtenha 2 baixas de jogador em 5 segundos 10 vezes."
+              "en": "Get 2 Player Kills within 10 seconds 10 times",
+              "fr": "Éliminez 10 fois 2 joueurs en moins de 10 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 10 segundos 10 veces.",
+              "de": "Erreiche 10-mal 2 Spieler-Abschüsse innerhalb von 10 Sekunden",
+              "nl": "Behaal 10 keer 2 spelerkills binnen 10 seconden.",
+              "it": "Esegui 2 uccisioni contro i giocatori entro 10 secondi, 10 volte.",
+              "pt": "Obtenha 2 baixas de jogadores em 10 segundos 10 vezes."
             }
           },
           "children": [],
@@ -8620,7 +8620,7 @@
                 "it": "Gold Mosaic",
                 "pt": "Gold Mosaic"
               },
-              "imageURL": null,
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/gold_mosaic.png",
               "tier": 1,
               "unlockLevel": null,
               "requirement": {
@@ -8649,7 +8649,7 @@
                 "it": "Gold Excellence",
                 "pt": "Gold Excellence"
               },
-              "imageURL": null,
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/gold_excellence.png",
               "tier": 2,
               "unlockLevel": null,
               "requirement": {
