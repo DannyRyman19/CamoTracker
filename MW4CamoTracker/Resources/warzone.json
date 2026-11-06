@@ -1,5 +1,5 @@
 {
-  "version": "0.8.34",
+  "version": "0.8.35",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8336,189 +8336,302 @@
     {
       "categoryId": 0,
       "name": {
-        "en": "Season 1 BlackCell",
-        "fr": "BlackCell Saison 1",
-        "es": "BlackCell Temporada 1",
-        "de": "BlackCell Season 1",
-        "nl": "BlackCell Seizoen 1",
-        "it": "BlackCell Stagione 1",
-        "pt": "BlackCell Temporada 1"
+        "en": "BlackCell",
+        "fr": "BlackCell",
+        "es": "BlackCell",
+        "de": "BlackCell",
+        "nl": "BlackCell",
+        "it": "BlackCell",
+        "pt": "BlackCell"
       },
       "shared": true,
       "items": [
         {
-          "itemId": 0,
+          "itemId": 100,
           "name": {
-            "en": "Infiltrator",
-            "fr": "Infiltrator",
-            "es": "Infiltrator",
-            "de": "Infiltrator",
-            "nl": "Infiltrator",
-            "it": "Infiltrator",
-            "pt": "Infiltrator"
+            "en": "Season 1 BlackCell",
+            "fr": "BlackCell Saison 1",
+            "es": "BlackCell Temporada 1",
+            "de": "BlackCell Season 1",
+            "nl": "BlackCell Seizoen 1",
+            "it": "BlackCell Stagione 1",
+            "pt": "BlackCell Temporada 1"
           },
           "imageURL": null,
           "tier": 1,
           "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "Any one: Multiplayer: Get 10 Double Kills with Assault Rifles; DMZ: Get 20 Triple Kills with Assault Rifles; Warzone: Get 25 Kills with Ground Loot Assault Rifles.",
-              "fr": "Au choix : Multijoueur: Réussissez 10 doubles éliminations avec des fusils d'assaut; DMZ: Réussissez 20 triples éliminations avec des fusils d'assaut; Warzone: Faites 25 éliminations avec des fusils d'assaut ramassés au sol.",
-              "es": "Cualquiera: Multijugador: Consigue 10 bajas dobles con fusiles de asalto; DMZ: Consigue 20 bajas triples con fusiles de asalto; Warzone: Consigue 25 bajas con fusiles de asalto recogidos del suelo.",
-              "de": "Eine davon: Mehrspieler: Erziele 10 Doppelabschüsse mit Sturmgewehren; DMZ: Erziele 20 Dreifachabschüsse mit Sturmgewehren; Warzone: Erziele 25 Abschüsse mit Sturmgewehren vom Boden.",
-              "nl": "Eén van: Multiplayer: Behaal 10 dubbele kills met aanvalsgeweren; DMZ: Behaal 20 driedubbele kills met aanvalsgeweren; Warzone: Behaal 25 kills met aanvalsgeweren van de grond.",
-              "it": "Una a scelta: Multigiocatore: Esegui 10 uccisioni doppie con fucili d'assalto; DMZ: Esegui 20 uccisioni triple con fucili d'assalto; Warzone: Esegui 25 uccisioni con fucili d'assalto raccolti a terra.",
-              "pt": "Qualquer um: Multijogador: Consiga 10 baixas duplas com fuzis de assalto; DMZ: Consiga 20 baixas triplas com fuzis de assalto; Warzone: Consiga 25 baixas com fuzis de assalto pegos do chão."
+          "requirement": null,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Infiltrator",
+                "fr": "Infiltrator",
+                "es": "Infiltrator",
+                "de": "Infiltrator",
+                "nl": "Infiltrator",
+                "it": "Infiltrator",
+                "pt": "Infiltrator"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Any one: Multiplayer: Get 10 Double Kills with Assault Rifles; DMZ: Get 20 Triple Kills with Assault Rifles; Warzone: Get 25 Kills with Ground Loot Assault Rifles.",
+                  "fr": "Au choix : Multijoueur: Réussissez 10 doubles éliminations avec des fusils d'assaut; DMZ: Réussissez 20 triples éliminations avec des fusils d'assaut; Warzone: Faites 25 éliminations avec des fusils d'assaut ramassés au sol.",
+                  "es": "Cualquiera: Multijugador: Consigue 10 bajas dobles con fusiles de asalto; DMZ: Consigue 20 bajas triples con fusiles de asalto; Warzone: Consigue 25 bajas con fusiles de asalto recogidos del suelo.",
+                  "de": "Eine davon: Mehrspieler: Erziele 10 Doppelabschüsse mit Sturmgewehren; DMZ: Erziele 20 Dreifachabschüsse mit Sturmgewehren; Warzone: Erziele 25 Abschüsse mit Sturmgewehren vom Boden.",
+                  "nl": "Eén van: Multiplayer: Behaal 10 dubbele kills met aanvalsgeweren; DMZ: Behaal 20 driedubbele kills met aanvalsgeweren; Warzone: Behaal 25 kills met aanvalsgeweren van de grond.",
+                  "it": "Una a scelta: Multigiocatore: Esegui 10 uccisioni doppie con fucili d'assalto; DMZ: Esegui 20 uccisioni triple con fucili d'assalto; Warzone: Esegui 25 uccisioni con fucili d'assalto raccolti a terra.",
+                  "pt": "Qualquer um: Multijogador: Consiga 10 baixas duplas com fuzis de assalto; DMZ: Consiga 20 baixas triplas com fuzis de assalto; Warzone: Consiga 25 baixas com fuzis de assalto pegos do chão."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 1,
+              "name": {
+                "en": "Cell Ops",
+                "fr": "Cell Ops",
+                "es": "Cell Ops",
+                "de": "Cell Ops",
+                "nl": "Cell Ops",
+                "it": "Cell Ops",
+                "pt": "Cell Ops"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Any one: Multiplayer: Get 20 Point Blank Kills with SMGs; DMZ: Get 200 Kills with SMGs; Warzone: Get 10 Hipfire Kills with SMGs.",
+                  "fr": "Au choix : Multijoueur: Éliminez 20 joueur(s) à bout portant avec des mitraillettes; DMZ: Faites 200 éliminations avec des mitraillettes; Warzone: Faites 10 éliminations sans viser avec des mitraillettes.",
+                  "es": "Cualquiera: Multijugador: Consigue 20 bajas a bocajarro con subfusiles; DMZ: Consigue 200 bajas con subfusiles; Warzone: Consigue 10 bajas sin apuntar con subfusiles.",
+                  "de": "Eine davon: Mehrspieler: Erziele 20 Abschüsse aus nächster Nähe mit MPs; DMZ: Erziele 200 Abschüsse mit MPs; Warzone: Erziele 10 Hüftfeuer-Abschüsse mit MPs.",
+                  "nl": "Eén van: Multiplayer: Behaal 20 kills van dichtbij met SMG's; DMZ: Behaal 200 kills met SMG's; Warzone: Behaal 10 kills vanuit de heup met SMG's.",
+                  "it": "Una a scelta: Multigiocatore: Esegui 20 uccisioni a bruciapelo con mitragliette; DMZ: Esegui 200 uccisioni con mitragliette; Warzone: Esegui 10 uccisioni senza mirare con mitragliette.",
+                  "pt": "Qualquer um: Multijogador: Consiga 20 baixas à queima-roupa com submetralhadoras; DMZ: Consiga 200 baixas com submetralhadoras; Warzone: Consiga 10 baixas sem mirar com submetralhadoras."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 2,
+              "name": {
+                "en": "Gold Tiger",
+                "fr": "Gold Tiger",
+                "es": "Gold Tiger",
+                "de": "Gold Tiger",
+                "nl": "Gold Tiger",
+                "it": "Gold Tiger",
+                "pt": "Gold Tiger"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Any one: Multiplayer: Get 3 Kills without Dying 5 times with Sniper Rifles; DMZ: Get 100 Headshot Kills with Sniper Rifles; Warzone: Get 10 Headshot Kills with Sniper Rifles.",
+                  "fr": "Au choix : Multijoueur: Faites 3 éliminations sans mourir 5 fois avec des fusils de précision; DMZ: Faites 100 éliminations d'un tir dans la tête avec des fusils de précision; Warzone: Faites 10 éliminations d'un tir dans la tête avec des fusils de précision.",
+                  "es": "Cualquiera: Multijugador: Consigue 3 bajas sin morir 5 veces con fusiles de francotirador; DMZ: Consigue 100 bajas con tiros a la cabeza con fusiles de francotirador; Warzone: Consigue 10 bajas con tiros a la cabeza con fusiles de francotirador.",
+                  "de": "Eine davon: Mehrspieler: Erziele 5-mal 3 Abschüsse ohne zu sterben mit Scharfschützengewehren; DMZ: Erziele 100 Kopfschuss-Abschüsse mit Scharfschützengewehren; Warzone: Erziele 10 Kopfschuss-Abschüsse mit Scharfschützengewehren.",
+                  "nl": "Eén van: Multiplayer: Behaal 5 keer 3 kills zonder te sterven met sluipschuttersgeweren; DMZ: Behaal 100 headshotkills met sluipschuttersgeweren; Warzone: Behaal 10 headshotkills met sluipschuttersgeweren.",
+                  "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni senza morire 5 volte con fucili di precisione; DMZ: Esegui 100 uccisioni con colpi alla testa con fucili di precisione; Warzone: Esegui 10 uccisioni con colpi alla testa con fucili di precisione.",
+                  "pt": "Qualquer um: Multijogador: Consiga 3 baixas sem morrer 5 vezes com fuzis de precisão; DMZ: Consiga 100 baixas com tiros na cabeça com fuzis de precisão; Warzone: Consiga 10 baixas com tiros na cabeça com fuzis de precisão."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 3,
+              "name": {
+                "en": "Whirlpool",
+                "fr": "Whirlpool",
+                "es": "Whirlpool",
+                "de": "Whirlpool",
+                "nl": "Whirlpool",
+                "it": "Whirlpool",
+                "pt": "Whirlpool"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Any one: Multiplayer: Get 30 Longshot Kills with LMGs; DMZ: Get 5 Kills without Reloading 10 times with LMGs; Warzone: Get 2 Kills without Dying 10 times with LMGs.",
+                  "fr": "Au choix : Multijoueur: Réussissez 30 éliminations à longue distance avec des mitrailleuses; DMZ: Faites 5 éliminations sans recharger 10 fois avec des mitrailleuses; Warzone: Faites 2 éliminations sans mourir 10 fois avec des mitrailleuses.",
+                  "es": "Cualquiera: Multijugador: Consigue 30 bajas a larga distancia con ametralladoras ligeras; DMZ: Consigue 5 bajas sin recargar 10 veces con ametralladoras ligeras; Warzone: Consigue 2 bajas sin morir 10 veces con ametralladoras ligeras.",
+                  "de": "Eine davon: Mehrspieler: Erziele 30 Weitschuss-Abschüsse mit LMGs; DMZ: Erziele 10-mal 5 Abschüsse ohne Nachladen mit LMGs; Warzone: Erziele 10-mal 2 Abschüsse ohne zu sterben mit LMGs.",
+                  "nl": "Eén van: Multiplayer: Behaal 30 kills van grote afstand met LMG's; DMZ: Behaal 10 keer 5 kills zonder te herladen met LMG's; Warzone: Behaal 10 keer 2 kills zonder te sterven met LMG's.",
+                  "it": "Una a scelta: Multigiocatore: Esegui 30 uccisioni a lunga distanza con mitragliatrici leggere; DMZ: Esegui 5 uccisioni senza ricaricare 10 volte con mitragliatrici leggere; Warzone: Esegui 2 uccisioni senza morire 10 volte con mitragliatrici leggere.",
+                  "pt": "Qualquer um: Multijogador: Consiga 30 baixas de longa distância com metralhadoras leves; DMZ: Consiga 5 baixas sem recarregar 10 vezes com metralhadoras leves; Warzone: Consiga 2 baixas sem morrer 10 vezes com metralhadoras leves."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 4,
+              "name": {
+                "en": "Intercept",
+                "fr": "Intercept",
+                "es": "Intercept",
+                "de": "Intercept",
+                "nl": "Intercept",
+                "it": "Intercept",
+                "pt": "Intercept"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Any one: Multiplayer: Get 3 Kills in a single match 3 times with Melee weapons; DMZ: Get 50 Kills while Undetected with Melee weapons; Warzone: Get 5 Eliminations while in the Top 10 with Melee weapons.",
+                  "fr": "Au choix : Multijoueur: Faites 3 éliminations en une partie 3 fois avec des armes de mêlée; DMZ: Faites 50 éliminations sans être détecté avec des armes de mêlée; Warzone: Faites 5 éliminations dans le top 10 avec des armes de mêlée.",
+                  "es": "Cualquiera: Multijugador: Consigue 3 bajas en una sola partida 3 veces con armas cuerpo a cuerpo; DMZ: Consigue 50 bajas sin ser detectado con armas cuerpo a cuerpo; Warzone: Consigue 5 eliminaciones estando entre los 10 mejores con armas cuerpo a cuerpo.",
+                  "de": "Eine davon: Mehrspieler: Erziele 3-mal 3 Abschüsse in einem Match mit Nahkampfwaffen; DMZ: Erziele 50 Abschüsse unentdeckt mit Nahkampfwaffen; Warzone: Erziele 5 Eliminierungen unter den Top 10 mit Nahkampfwaffen.",
+                  "nl": "Eén van: Multiplayer: Behaal 3 keer 3 kills in één wedstrijd met slagwapens; DMZ: Behaal 50 kills onopgemerkt met slagwapens; Warzone: Behaal 5 eliminaties in de top 10 met slagwapens.",
+                  "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni in una partita 3 volte con armi da mischia; DMZ: Esegui 50 uccisioni senza essere individuato con armi da mischia; Warzone: Esegui 5 eliminazioni nella top 10 con armi da mischia.",
+                  "pt": "Qualquer um: Multijogador: Consiga 3 baixas em uma partida 3 vezes com armas brancas; DMZ: Consiga 50 baixas sem ser detectado com armas brancas; Warzone: Consiga 5 eliminações no top 10 com armas brancas."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 5,
+              "name": {
+                "en": "Spinal Verge",
+                "fr": "Spinal Verge",
+                "es": "Spinal Verge",
+                "de": "Spinal Verge",
+                "nl": "Spinal Verge",
+                "it": "Spinal Verge",
+                "pt": "Spinal Verge"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "After all five class camos. Any one: Multiplayer: Place 1st on the scoreboard 3 times; DMZ: Exfil with over 150 Kills 5 times; Warzone: Get 2 Kills within 10 seconds 10 times.",
+                  "fr": "Après les cinq camouflages de classe. Au choix : Multijoueur: Terminez 1er au tableau des scores 3 fois; DMZ: Exfiltrez avec plus de 150 éliminations 5 fois; Warzone: Faites 2 éliminations en 10 secondes 10 fois.",
+                  "es": "Tras los cinco camuflajes de clase. Cualquiera: Multijugador: Termina 1.º en el marcador 3 veces; DMZ: Extrae con más de 150 bajas 5 veces; Warzone: Consigue 2 bajas en 10 segundos 10 veces.",
+                  "de": "Nach allen fünf Klassen-Tarnungen. Eine davon: Mehrspieler: Belege 3-mal Platz 1 auf der Anzeigetafel; DMZ: Exfiltriere 5-mal mit über 150 Abschüssen; Warzone: Erziele 10-mal 2 Abschüsse innerhalb von 10 Sekunden.",
+                  "nl": "Na alle vijf klassecamo's. Eén van: Multiplayer: Eindig 3 keer als 1e op het scorebord; DMZ: Exfiltreer 5 keer met meer dan 150 kills; Warzone: Behaal 10 keer 2 kills binnen 10 seconden.",
+                  "it": "Dopo le cinque mimetiche di classe. Una a scelta: Multigiocatore: Arriva 1° nella classifica 3 volte; DMZ: Esfiltra con oltre 150 uccisioni 5 volte; Warzone: Esegui 2 uccisioni in 10 secondi 10 volte.",
+                  "pt": "Depois das cinco camuflagens de classe. Qualquer um: Multijogador: Fique em 1º no placar 3 vezes; DMZ: Faça a exfiltração com mais de 150 baixas 5 vezes; Warzone: Consiga 2 baixas em 10 segundos 10 vezes."
+                }
+              },
+              "children": [],
+              "afterSiblings": true
             }
-          },
-          "children": []
-        },
+          ],
+          "starts": "2026-11-05",
+          "ordered": false
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "Events",
+        "fr": "Événements",
+        "es": "Eventos",
+        "de": "Events",
+        "nl": "Evenementen",
+        "it": "Eventi",
+        "pt": "Eventos"
+      },
+      "shared": true,
+      "items": [
         {
-          "itemId": 1,
+          "itemId": 100,
           "name": {
-            "en": "Cell Ops",
-            "fr": "Cell Ops",
-            "es": "Cell Ops",
-            "de": "Cell Ops",
-            "nl": "Cell Ops",
-            "it": "Cell Ops",
-            "pt": "Cell Ops"
+            "en": "Grind for Royalty",
+            "fr": "Grind for Royalty",
+            "es": "Grind for Royalty",
+            "de": "Grind for Royalty",
+            "nl": "Grind for Royalty",
+            "it": "Grind for Royalty",
+            "pt": "Grind for Royalty"
           },
           "imageURL": null,
-          "tier": 2,
+          "tier": 1,
           "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "Any one: Multiplayer: Get 20 Point Blank Kills with SMGs; DMZ: Get 200 Kills with SMGs; Warzone: Get 10 Hipfire Kills with SMGs.",
-              "fr": "Au choix : Multijoueur: Éliminez 20 joueur(s) à bout portant avec des mitraillettes; DMZ: Faites 200 éliminations avec des mitraillettes; Warzone: Faites 10 éliminations sans viser avec des mitraillettes.",
-              "es": "Cualquiera: Multijugador: Consigue 20 bajas a bocajarro con subfusiles; DMZ: Consigue 200 bajas con subfusiles; Warzone: Consigue 10 bajas sin apuntar con subfusiles.",
-              "de": "Eine davon: Mehrspieler: Erziele 20 Abschüsse aus nächster Nähe mit MPs; DMZ: Erziele 200 Abschüsse mit MPs; Warzone: Erziele 10 Hüftfeuer-Abschüsse mit MPs.",
-              "nl": "Eén van: Multiplayer: Behaal 20 kills van dichtbij met SMG's; DMZ: Behaal 200 kills met SMG's; Warzone: Behaal 10 kills vanuit de heup met SMG's.",
-              "it": "Una a scelta: Multigiocatore: Esegui 20 uccisioni a bruciapelo con mitragliette; DMZ: Esegui 200 uccisioni con mitragliette; Warzone: Esegui 10 uccisioni senza mirare con mitragliette.",
-              "pt": "Qualquer um: Multijogador: Consiga 20 baixas à queima-roupa com submetralhadoras; DMZ: Consiga 200 baixas com submetralhadoras; Warzone: Consiga 10 baixas sem mirar com submetralhadoras."
+          "requirement": null,
+          "starts": "2026-11-05",
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "First camo: 10 challenges",
+                "fr": "Premier camouflage : 10 défis",
+                "es": "Primer camuflaje: 10 desafíos",
+                "de": "Erste Tarnung: 10 Herausforderungen",
+                "nl": "Eerste camo: 10 uitdagingen",
+                "it": "Prima mimetica: 10 sfide",
+                "pt": "Primeira camuflagem: 10 desafios"
+              },
+              "imageURL": null,
+              "tier": 1,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 10,
+                "unit": "times",
+                "description": {
+                  "en": "Complete 10 Grind for Royalty challenges in Battle Royale or Resurgence. Unlocks Gold Excellence or Gold Mosaic.",
+                  "fr": "Terminez 10 défis Grind for Royalty en Battle Royale ou Résurgence. Débloque Gold Excellence ou Gold Mosaic.",
+                  "es": "Completa 10 desafíos de Grind for Royalty en Battle Royale o Resurgimiento. Desbloquea Gold Excellence o Gold Mosaic.",
+                  "de": "Schließe 10 Grind-for-Royalty-Herausforderungen in Battle Royale oder Resurgence ab. Schaltet Gold Excellence oder Gold Mosaic frei.",
+                  "nl": "Voltooi 10 Grind for Royalty-uitdagingen in Battle Royale of Resurgence. Ontgrendelt Gold Excellence of Gold Mosaic.",
+                  "it": "Completa 10 sfide Grind for Royalty in Battle Royale o Resurgence. Sblocca Gold Excellence o Gold Mosaic.",
+                  "pt": "Conclua 10 desafios do Grind for Royalty no Battle Royale ou Ressurgência. Desbloqueia Gold Excellence ou Gold Mosaic."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 1,
+              "name": {
+                "en": "Second camo: 25 challenges",
+                "fr": "Deuxième camouflage : 25 défis",
+                "es": "Segundo camuflaje: 25 desafíos",
+                "de": "Zweite Tarnung: 25 Herausforderungen",
+                "nl": "Tweede camo: 25 uitdagingen",
+                "it": "Seconda mimetica: 25 sfide",
+                "pt": "Segunda camuflagem: 25 desafios"
+              },
+              "imageURL": null,
+              "tier": 2,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 25,
+                "unit": "times",
+                "description": {
+                  "en": "Complete 25 Grind for Royalty challenges in total. Unlocks the other of Gold Excellence and Gold Mosaic.",
+                  "fr": "Terminez 25 défis Grind for Royalty au total. Débloque l’autre camouflage, Gold Excellence ou Gold Mosaic.",
+                  "es": "Completa 25 desafíos de Grind for Royalty en total. Desbloquea el otro camuflaje, Gold Excellence o Gold Mosaic.",
+                  "de": "Schließe insgesamt 25 Grind-for-Royalty-Herausforderungen ab. Schaltet die andere Tarnung frei, Gold Excellence oder Gold Mosaic.",
+                  "nl": "Voltooi in totaal 25 Grind for Royalty-uitdagingen. Ontgrendelt de andere camo, Gold Excellence of Gold Mosaic.",
+                  "it": "Completa 25 sfide Grind for Royalty in totale. Sblocca l’altra mimetica, Gold Excellence o Gold Mosaic.",
+                  "pt": "Conclua 25 desafios do Grind for Royalty no total. Desbloqueia a outra camuflagem, Gold Excellence ou Gold Mosaic."
+                }
+              },
+              "children": []
             }
-          },
-          "children": []
-        },
-        {
-          "itemId": 2,
-          "name": {
-            "en": "Gold Tiger",
-            "fr": "Gold Tiger",
-            "es": "Gold Tiger",
-            "de": "Gold Tiger",
-            "nl": "Gold Tiger",
-            "it": "Gold Tiger",
-            "pt": "Gold Tiger"
-          },
-          "imageURL": null,
-          "tier": 3,
-          "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "Any one: Multiplayer: Get 3 Kills without Dying 5 times with Sniper Rifles; DMZ: Get 100 Headshot Kills with Sniper Rifles; Warzone: Get 10 Headshot Kills with Sniper Rifles.",
-              "fr": "Au choix : Multijoueur: Faites 3 éliminations sans mourir 5 fois avec des fusils de précision; DMZ: Faites 100 éliminations d'un tir dans la tête avec des fusils de précision; Warzone: Faites 10 éliminations d'un tir dans la tête avec des fusils de précision.",
-              "es": "Cualquiera: Multijugador: Consigue 3 bajas sin morir 5 veces con fusiles de francotirador; DMZ: Consigue 100 bajas con tiros a la cabeza con fusiles de francotirador; Warzone: Consigue 10 bajas con tiros a la cabeza con fusiles de francotirador.",
-              "de": "Eine davon: Mehrspieler: Erziele 5-mal 3 Abschüsse ohne zu sterben mit Scharfschützengewehren; DMZ: Erziele 100 Kopfschuss-Abschüsse mit Scharfschützengewehren; Warzone: Erziele 10 Kopfschuss-Abschüsse mit Scharfschützengewehren.",
-              "nl": "Eén van: Multiplayer: Behaal 5 keer 3 kills zonder te sterven met sluipschuttersgeweren; DMZ: Behaal 100 headshotkills met sluipschuttersgeweren; Warzone: Behaal 10 headshotkills met sluipschuttersgeweren.",
-              "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni senza morire 5 volte con fucili di precisione; DMZ: Esegui 100 uccisioni con colpi alla testa con fucili di precisione; Warzone: Esegui 10 uccisioni con colpi alla testa con fucili di precisione.",
-              "pt": "Qualquer um: Multijogador: Consiga 3 baixas sem morrer 5 vezes com fuzis de precisão; DMZ: Consiga 100 baixas com tiros na cabeça com fuzis de precisão; Warzone: Consiga 10 baixas com tiros na cabeça com fuzis de precisão."
-            }
-          },
-          "children": []
-        },
-        {
-          "itemId": 3,
-          "name": {
-            "en": "Whirlpool",
-            "fr": "Whirlpool",
-            "es": "Whirlpool",
-            "de": "Whirlpool",
-            "nl": "Whirlpool",
-            "it": "Whirlpool",
-            "pt": "Whirlpool"
-          },
-          "imageURL": null,
-          "tier": 4,
-          "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "Any one: Multiplayer: Get 30 Longshot Kills with LMGs; DMZ: Get 5 Kills without Reloading 10 times with LMGs; Warzone: Get 2 Kills without Dying 10 times with LMGs.",
-              "fr": "Au choix : Multijoueur: Réussissez 30 éliminations à longue distance avec des mitrailleuses; DMZ: Faites 5 éliminations sans recharger 10 fois avec des mitrailleuses; Warzone: Faites 2 éliminations sans mourir 10 fois avec des mitrailleuses.",
-              "es": "Cualquiera: Multijugador: Consigue 30 bajas a larga distancia con ametralladoras ligeras; DMZ: Consigue 5 bajas sin recargar 10 veces con ametralladoras ligeras; Warzone: Consigue 2 bajas sin morir 10 veces con ametralladoras ligeras.",
-              "de": "Eine davon: Mehrspieler: Erziele 30 Weitschuss-Abschüsse mit LMGs; DMZ: Erziele 10-mal 5 Abschüsse ohne Nachladen mit LMGs; Warzone: Erziele 10-mal 2 Abschüsse ohne zu sterben mit LMGs.",
-              "nl": "Eén van: Multiplayer: Behaal 30 kills van grote afstand met LMG's; DMZ: Behaal 10 keer 5 kills zonder te herladen met LMG's; Warzone: Behaal 10 keer 2 kills zonder te sterven met LMG's.",
-              "it": "Una a scelta: Multigiocatore: Esegui 30 uccisioni a lunga distanza con mitragliatrici leggere; DMZ: Esegui 5 uccisioni senza ricaricare 10 volte con mitragliatrici leggere; Warzone: Esegui 2 uccisioni senza morire 10 volte con mitragliatrici leggere.",
-              "pt": "Qualquer um: Multijogador: Consiga 30 baixas de longa distância com metralhadoras leves; DMZ: Consiga 5 baixas sem recarregar 10 vezes com metralhadoras leves; Warzone: Consiga 2 baixas sem morrer 10 vezes com metralhadoras leves."
-            }
-          },
-          "children": []
-        },
-        {
-          "itemId": 4,
-          "name": {
-            "en": "Intercept",
-            "fr": "Intercept",
-            "es": "Intercept",
-            "de": "Intercept",
-            "nl": "Intercept",
-            "it": "Intercept",
-            "pt": "Intercept"
-          },
-          "imageURL": null,
-          "tier": 5,
-          "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "Any one: Multiplayer: Get 3 Kills in a single match 3 times with Melee weapons; DMZ: Get 50 Kills while Undetected with Melee weapons; Warzone: Get 5 Eliminations while in the Top 10 with Melee weapons.",
-              "fr": "Au choix : Multijoueur: Faites 3 éliminations en une partie 3 fois avec des armes de mêlée; DMZ: Faites 50 éliminations sans être détecté avec des armes de mêlée; Warzone: Faites 5 éliminations dans le top 10 avec des armes de mêlée.",
-              "es": "Cualquiera: Multijugador: Consigue 3 bajas en una sola partida 3 veces con armas cuerpo a cuerpo; DMZ: Consigue 50 bajas sin ser detectado con armas cuerpo a cuerpo; Warzone: Consigue 5 eliminaciones estando entre los 10 mejores con armas cuerpo a cuerpo.",
-              "de": "Eine davon: Mehrspieler: Erziele 3-mal 3 Abschüsse in einem Match mit Nahkampfwaffen; DMZ: Erziele 50 Abschüsse unentdeckt mit Nahkampfwaffen; Warzone: Erziele 5 Eliminierungen unter den Top 10 mit Nahkampfwaffen.",
-              "nl": "Eén van: Multiplayer: Behaal 3 keer 3 kills in één wedstrijd met slagwapens; DMZ: Behaal 50 kills onopgemerkt met slagwapens; Warzone: Behaal 5 eliminaties in de top 10 met slagwapens.",
-              "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni in una partita 3 volte con armi da mischia; DMZ: Esegui 50 uccisioni senza essere individuato con armi da mischia; Warzone: Esegui 5 eliminazioni nella top 10 con armi da mischia.",
-              "pt": "Qualquer um: Multijogador: Consiga 3 baixas em uma partida 3 vezes com armas brancas; DMZ: Consiga 50 baixas sem ser detectado com armas brancas; Warzone: Consiga 5 eliminações no top 10 com armas brancas."
-            }
-          },
-          "children": []
-        },
-        {
-          "itemId": 5,
-          "name": {
-            "en": "Spinal Verge",
-            "fr": "Spinal Verge",
-            "es": "Spinal Verge",
-            "de": "Spinal Verge",
-            "nl": "Spinal Verge",
-            "it": "Spinal Verge",
-            "pt": "Spinal Verge"
-          },
-          "imageURL": null,
-          "tier": 6,
-          "unlockLevel": null,
-          "requirement": {
-            "amount": 1,
-            "unit": "times",
-            "description": {
-              "en": "After all five class camos. Any one: Multiplayer: Place 1st on the scoreboard 3 times; DMZ: Exfil with over 150 Kills 5 times; Warzone: Get 2 Kills within 10 seconds 10 times.",
-              "fr": "Après les cinq camouflages de classe. Au choix : Multijoueur: Terminez 1er au tableau des scores 3 fois; DMZ: Exfiltrez avec plus de 150 éliminations 5 fois; Warzone: Faites 2 éliminations en 10 secondes 10 fois.",
-              "es": "Tras los cinco camuflajes de clase. Cualquiera: Multijugador: Termina 1.º en el marcador 3 veces; DMZ: Extrae con más de 150 bajas 5 veces; Warzone: Consigue 2 bajas en 10 segundos 10 veces.",
-              "de": "Nach allen fünf Klassen-Tarnungen. Eine davon: Mehrspieler: Belege 3-mal Platz 1 auf der Anzeigetafel; DMZ: Exfiltriere 5-mal mit über 150 Abschüssen; Warzone: Erziele 10-mal 2 Abschüsse innerhalb von 10 Sekunden.",
-              "nl": "Na alle vijf klassecamo's. Eén van: Multiplayer: Eindig 3 keer als 1e op het scorebord; DMZ: Exfiltreer 5 keer met meer dan 150 kills; Warzone: Behaal 10 keer 2 kills binnen 10 seconden.",
-              "it": "Dopo le cinque mimetiche di classe. Una a scelta: Multigiocatore: Arriva 1° nella classifica 3 volte; DMZ: Esfiltra con oltre 150 uccisioni 5 volte; Warzone: Esegui 2 uccisioni in 10 secondi 10 volte.",
-              "pt": "Depois das cinco camuflagens de classe. Qualquer um: Multijogador: Fique em 1º no placar 3 vezes; DMZ: Faça a exfiltração com mais de 150 baixas 5 vezes; Warzone: Consiga 2 baixas em 10 segundos 10 vezes."
-            }
-          },
-          "children": []
+          ]
         }
       ]
     }

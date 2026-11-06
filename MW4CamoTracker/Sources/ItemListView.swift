@@ -71,14 +71,15 @@ struct ItemListView: View {
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.clear)
                 } else {
-                    ForEach(displayedItems) { item in
-                        NavigationLink {
-                            ItemDetailView(mode: mode, category: category, item: item)
-                        } label: {
-                            ItemRow(mode: mode, category: category, item: item)
+                    // Ended seasons and events move under Archive, below the
+                    // live and upcoming ones (and anything with no dates).
+                    let current = displayedItems.filter { $0.window() != .ended }
+                    let archive = displayedItems.filter { $0.window() == .ended }
+                    rows(current)
+                    if !archive.isEmpty {
+                        Section(heading: "mw4.ui.section.archive".localized()) {
+                            rows(archive)
                         }
-                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
-                        .listRowBackground(Color.clear)
                     }
                 }
             }
@@ -86,6 +87,18 @@ struct ItemListView: View {
             .listStyle(.plain)
         }
         .navigationTitle(category.name.resolved())
+    }
+
+    private func rows(_ items: [ChallengeItem]) -> some View {
+        ForEach(items) { item in
+            NavigationLink {
+                ItemDetailView(mode: mode, category: category, item: item)
+            } label: {
+                ItemRow(mode: mode, category: category, item: item)
+            }
+            .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            .listRowBackground(Color.clear)
+        }
     }
 }
 

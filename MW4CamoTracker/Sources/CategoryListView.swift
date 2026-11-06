@@ -295,6 +295,16 @@ struct CategoryListView: View {
                 }
             }
 
+        case .live:
+            let live = viewModel.liveObjectives(mode: mode.rawValue)
+            if !live.isEmpty {
+                Section(heading: "mw4.ui.section.live".localized()) {
+                    CardGrid(items: live, columns: columns, route: { .objectiveItem(categoryId: $0.categoryId, itemId: $0.item.itemId) }) { entry in
+                        LiveObjectiveRow(mode: mode, entry: entry, category: objectiveCategories.first { $0.categoryId == entry.categoryId })
+                    }
+                }
+            }
+
         case .objectives:
             if !objectiveCategories.isEmpty {
                 Section(heading: "mw4.ui.section.objectives".localized()) {
@@ -369,7 +379,12 @@ struct CategoryListView: View {
             CustomiseHomeSheet(
                 order: $layoutOrder, hidden: $layoutHidden, accent: mode.accent,
                 // Objectives only when some mode has any (none at launch).
-                offered: HomeSection.allCases.filter { $0 != .objectives || viewModel.modes.values.contains { !$0.objectives.isEmpty } }
+                offered: HomeSection.allCases.filter {
+                    switch $0 {
+                    case .objectives, .live: return viewModel.modes.values.contains { !$0.objectives.isEmpty }
+                    default: return true
+                    }
+                }
             )
             .environmentObject(viewModel)
         }
@@ -463,6 +478,42 @@ private struct WeaponCategoryRow: View {
         }
         .padding(12)
         .borderedCard(accent: categoryAccent)
+    }
+}
+
+/// A live BlackCell season or event on the mode tab: what it is, when it
+/// ends and how far along it is.
+private struct LiveObjectiveRow: View {
+    let mode: AppMode
+    let entry: LiveObjective
+    let category: Category?
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    private var fraction: Double {
+        viewModel.objectiveProgressFraction(of: entry.item, mode: mode.rawValue, categoryId: entry.categoryId)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(category?.name.resolved() ?? "")
+                    .scaledFont(11, weight: .bold)
+                    .textCase(.uppercase)
+                    .foregroundStyle(Color.appInkMuted)
+                Spacer()
+                if let end = entry.item.endDate {
+                    Text(String(format: "mw4.ui.objective.ends".localized(), end.formatted(.dateTime.day().month(.abbreviated))))
+                        .scaledFont(11, weight: .semibold)
+                        .foregroundStyle(Color.appInkMuted)
+                }
+            }
+            Text(entry.item.name.resolved())
+                .hitmarkerFont(16)
+                .foregroundStyle(Color.appInk)
+            ProgressBar(fraction: fraction, accent: mode.accent)
+        }
+        .padding(12)
+        .borderedCard(accent: fraction >= 1 ? mode.accent : nil)
     }
 }
 
@@ -587,13 +638,14 @@ enum StartTab: String, CaseIterable, Identifiable {
 
 /// A section of a mode tab, in the order Customise lists them by default.
 enum HomeSection: String, CaseIterable, Identifiable {
-    case summary, pinned, suggested, weapons, objectives
+    case summary, live, pinned, suggested, weapons, objectives
 
     var id: String { rawValue }
 
     var titleKey: String {
         switch self {
         case .summary: return "mw4.ui.section.summary"
+        case .live: return "mw4.ui.section.live"
         case .pinned: return "mw4.ui.section.pinned"
         case .suggested: return "mw4.ui.section.suggested"
         case .weapons: return "mw4.ui.section.weapons"
@@ -604,6 +656,7 @@ enum HomeSection: String, CaseIterable, Identifiable {
     var symbol: String {
         switch self {
         case .summary: return "chart.pie"
+        case .live: return "clock.badge"
         case .pinned: return "pin"
         case .suggested: return "arrow.up.right.circle"
         case .weapons: return "square.grid.2x2"

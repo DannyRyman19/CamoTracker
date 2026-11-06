@@ -317,7 +317,43 @@ struct ChallengeItem: Codable, Identifiable {
     /// count (BO6's Military camos: 5, 10, 15... headshots): each is earned
     /// once the shared count reaches its own requirement.
     var counter: Int? = nil
+    /// When a time-limited objective runs ("2026-11-06", UTC days, both
+    /// inclusive): a BlackCell season or an event. Live ones show on the
+    /// mode tab; ended ones move to their category's Archive. No `ends`:
+    /// live from `starts` on. Neither: not time-limited.
+    var starts: String? = nil
+    var ends: String? = nil
+    /// `false` lets this item's children be done in any order (an event's
+    /// challenges). Absent: each opens once the one before is done.
+    var ordered: Bool? = nil
+    /// `true` keeps this child shut until every other child is done (a
+    /// BlackCell Mastery camo after the class camos).
+    var afterSiblings: Bool? = nil
     var id: Int { itemId }
+
+    enum Window { case undated, upcoming, live, ended }
+
+    func window(at now: Date = Date()) -> Window {
+        let day = ChallengeItem.dayFormatter
+        let start = starts.flatMap(day.date(from:))
+        // `ends` is inclusive: live until the end of that day (UTC).
+        let end = ends.flatMap(day.date(from:)).map { $0.addingTimeInterval(86_400) }
+        if start == nil && end == nil { return .undated }
+        if let start, now < start { return .upcoming }
+        if let end, now >= end { return .ended }
+        return .live
+    }
+
+    var endDate: Date? { ends.flatMap(ChallengeItem.dayFormatter.date(from:)) }
+
+    static let dayFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.calendar = Calendar(identifier: .gregorian)
+        f.locale = Locale(identifier: "en_US_POSIX")
+        f.timeZone = TimeZone(identifier: "UTC")
+        f.dateFormat = "yyyy-MM-dd"
+        return f
+    }()
 
     var isLeaf: Bool { children.isEmpty }
 }
@@ -326,4 +362,15 @@ struct Requirement: Codable {
     let amount: Int
     let unit: String
     let description: LocalizedText
+}
+
+/// A time-limited objective that's live now, with the category it sits in
+/// (progress is keyed by category), for the mode tab's Live section.
+struct LiveObjective: Identifiable, Hashable {
+    let categoryId: Int
+    let item: ChallengeItem
+    var id: String { "\(categoryId)-\(item.itemId)" }
+
+    static func == (a: LiveObjective, b: LiveObjective) -> Bool { a.id == b.id }
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }

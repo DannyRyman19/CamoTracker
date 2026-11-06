@@ -1004,15 +1004,16 @@ struct HomeLayoutTests {
     @Test func aSavedOrderAndHiddenSetComeBack() {
         let order: [HomeSection] = [.weapons, .suggested, .summary, .pinned, .objectives]
         let layout = HomeLayout(order: HomeLayout.encode(order), hidden: HomeLayout.encode([.suggested, .pinned]))
-        #expect(layout.order == order)
-        #expect(layout.visible == [.weapons, .summary, .objectives])
+        // Live, saved before it existed, slots in after Summary
+        #expect(layout.order == [.weapons, .suggested, .summary, .live, .pinned, .objectives])
+        #expect(layout.visible == [.weapons, .summary, .live, .objectives])
     }
 
     /// An order saved before a section existed gets it in its default place:
     /// straight after the section it follows by default.
     @Test func aNewSectionSlotsInWhereItBelongs() {
         let layout = HomeLayout(order: "weapons,summary,suggested", hidden: "")
-        #expect(layout.order == [.weapons, .objectives, .summary, .pinned, .suggested])
+        #expect(layout.order == [.weapons, .objectives, .summary, .live, .pinned, .suggested])
     }
 
     @Test func weaponsCannotBeHiddenAndJunkIsIgnored() {
@@ -1021,5 +1022,49 @@ struct HomeLayoutTests {
         #expect(layout.order.count == HomeSection.allCases.count)
         #expect(layout.visible.contains(.weapons))
         #expect(!layout.visible.contains(.summary))
+    }
+}
+
+@Suite("Time-limited objectives")
+struct ObjectiveWindowTests {
+    private func item(_ json: String) throws -> ChallengeItem {
+        try JSONDecoder().decode(ChallengeItem.self, from: Data(json.utf8))
+    }
+    private func day(_ s: String, hour: Double = 12) -> Date {
+        ChallengeItem.dayFormatter.date(from: s)!.addingTimeInterval(hour * 3600)
+    }
+
+    @Test func aSeasonIsLiveFromItsStartAndAnEventUntilTheEndOfItsLastDay() throws {
+        let season = try item(#"{"itemId": 100, "name": {"en": "S1"}, "children": [], "starts": "2026-11-05"}"#)
+        #expect(season.window(at: day("2026-11-04")) == .upcoming)
+        #expect(season.window(at: day("2026-11-05", hour: 0)) == .live)
+        #expect(season.window(at: day("2027-03-01")) == .live)
+
+        let event = try item(#"{"itemId": 1, "name": {"en": "E"}, "children": [], "starts": "2026-11-06", "ends": "2026-11-13"}"#)
+        #expect(event.window(at: day("2026-11-13", hour: 23.9)) == .live)
+        #expect(event.window(at: day("2026-11-14", hour: 0)) == .ended)
+
+        let plain = try item(#"{"itemId": 2, "name": {"en": "P"}, "children": []}"#)
+        #expect(plain.window() == .undated)
+    }
+
+    /// BlackCell: class camos in any order, the Mastery camo after them all.
+    @MainActor @Test func unorderedChildrenOpenAtOnceAndAfterSiblingsWaitsForTheRest() throws {
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        let suite = "objective-window-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(suite)
+        let model = TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
+        let req = #""requirement": {"amount": 1, "unit": "times", "description": {"en": "x"}}"#
+        let kids = try [
+            item(#"{"itemId": 0, "name": {"en": "A"}, "children": [], "# + req + "}"),
+            item(#"{"itemId": 1, "name": {"en": "B"}, "children": [], "# + req + "}"),
+            item(#"{"itemId": 2, "name": {"en": "M"}, "children": [], "afterSiblings": true, "# + req + "}"),
+        ]
+        let cat = 9_999
+        #expect(model.isObjectiveAvailable(mode: "multiplayer", categoryId: cat, siblings: kids, item: kids[1], ordered: false))
+        #expect(!model.isObjectiveAvailable(mode: "multiplayer", categoryId: cat, siblings: kids, item: kids[1], ordered: true))
+        #expect(!model.isObjectiveAvailable(mode: "multiplayer", categoryId: cat, siblings: kids, item: kids[2], ordered: false))
     }
 }

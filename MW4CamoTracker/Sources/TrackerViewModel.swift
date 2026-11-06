@@ -702,9 +702,23 @@ final class TrackerViewModel: ObservableObject {
     }
 
     /// Same cascading rule for a mode-exclusive objective's sub-tiers (DMZ).
-    func isObjectiveAvailable(mode: String, categoryId: Int, siblings: [ChallengeItem], item: ChallengeItem) -> Bool {
+    func isObjectiveAvailable(mode: String, categoryId: Int, siblings: [ChallengeItem], item: ChallengeItem,
+                              ordered: Bool = true) -> Bool {
+        if item.afterSiblings == true {
+            return siblings.allSatisfy { $0.itemId == item.itemId || isObjectiveComplete(mode: mode, categoryId: categoryId, item: $0) }
+        }
+        guard ordered else { return true }
         guard let index = siblings.firstIndex(where: { $0.itemId == item.itemId }), index > 0 else { return true }
         return isObjectiveComplete(mode: mode, categoryId: categoryId, item: siblings[index - 1])
+    }
+
+    /// The time-limited objectives running now in this mode (a BlackCell
+    /// season, an event), soonest-ending first, for the tab's Live section.
+    func liveObjectives(mode: String, at now: Date = Date()) -> [LiveObjective] {
+        (modes[mode]?.objectives ?? []).flatMap { category in
+            category.items.filter { $0.window(at: now) == .live }.map { LiveObjective(categoryId: category.categoryId, item: $0) }
+        }
+        .sorted { ($0.item.endDate ?? .distantFuture) < ($1.item.endDate ?? .distantFuture) }
     }
 
     /// Whether every camo for this weapon, in this mode, is complete — "Gold."

@@ -8,6 +8,8 @@ enum Route: Hashable {
     case weaponCategory(Int)
     case weapon(Int)
     case objectiveCategory(Int)
+    /// One objective item (a live event or BlackCell season), straight to its challenges.
+    case objectiveItem(categoryId: Int, itemId: Int)
     /// Every weapon in one list, across classes.
     case allWeapons
 }
@@ -34,6 +36,11 @@ struct RouteDestinationView: View {
         case .objectiveCategory(let categoryId):
             if let category = viewModel.modes[mode.rawValue]?.objectives.first(where: { $0.categoryId == categoryId }) {
                 ItemListView(mode: mode, category: category)
+            }
+        case .objectiveItem(let categoryId, let itemId):
+            if let category = viewModel.modes[mode.rawValue]?.objectives.first(where: { $0.categoryId == categoryId }),
+               let item = category.items.first(where: { $0.itemId == itemId }) {
+                ItemDetailView(mode: mode, category: category, item: item)
             }
         }
     }

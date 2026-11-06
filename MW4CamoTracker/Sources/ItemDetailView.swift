@@ -20,7 +20,8 @@ struct ItemDetailView: View {
                         accent: mode.accent,
                         amount: viewModel.objectiveAmount(mode: mode.rawValue, categoryId: category.categoryId, item: row),
                         isDone: viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: row),
-                        isAvailable: viewModel.isObjectiveAvailable(mode: mode.rawValue, categoryId: category.categoryId, siblings: rows, item: row),
+                        isAvailable: viewModel.isObjectiveAvailable(mode: mode.rawValue, categoryId: category.categoryId, siblings: rows, item: row,
+                                                                    ordered: item.children.isEmpty || item.ordered != false),
                         onToggle: { viewModel.toggleObjective(mode: mode.rawValue, categoryId: category.categoryId, item: row) },
                         onSetAmount: { viewModel.setObjectiveAmount(mode: mode.rawValue, categoryId: category.categoryId, item: row, amount: $0) }
                     )
