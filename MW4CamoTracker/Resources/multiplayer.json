@@ -1,5 +1,5 @@
 {
-  "version": "0.8.21",
+  "version": "0.8.22",
   "mode": "multiplayer",
   "weaponCamos": [
     {
@@ -8049,7 +8049,19 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Hipfire Kills against Players",
+              "fr": "Éliminez 20 joueur(s) en tirant au jugé.",
+              "es": "Consigue 20 bajas de jugadores con disparos desde la cadera.",
+              "de": "Erreiche 20 Abschüsse aus der Hüfte gegen Spieler",
+              "nl": "Behaal 20 heupvuurkills tegen spelers.",
+              "it": "Esegui 20 uccisioni sparando senza mirare contro giocatori",
+              "pt": "Obtenha 20 baixas de jogadores com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8067,7 +8079,19 @@
           },
           "tier": 10,
           "unlockLevel": 43,
-          "requirement": null,
+          "requirement": {
+            "amount": 50,
+            "unit": "kills",
+            "description": {
+              "en": "Get 50 ADS Kills against Players",
+              "fr": "Éliminez 50 joueur(s) en visant.",
+              "es": "Consigue 50 bajas de jugadores apuntando.",
+              "de": "Erreiche 50 Abschüsse beim Zielen gegen Spieler",
+              "nl": "Behaal 50 kills tegen spelers terwijl je richt.",
+              "it": "Esegui 50 uccisioni mirando contro i giocatori.",
+              "pt": "Obtenha 50 baixas de jogadores mirando."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8085,7 +8109,19 @@
           },
           "tier": 11,
           "unlockLevel": 48,
-          "requirement": null,
+          "requirement": {
+            "amount": 25,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Kills without Reloading 25 times against Players",
+              "fr": "Éliminez 25 fois 2 joueurs sans recharger.",
+              "es": "Consigue 2 bajas de jugadores sin recargar 25 veces.",
+              "de": "Erreiche 25-mal 2 Abschüsse gegen Spieler, ohne nachzuladen",
+              "nl": "Behaal 25 keer 2 spelerkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni senza ricaricare, 25 volte, contro i giocatori.",
+              "pt": "Obtenha 2 baixas de jogadores sem recarregar 25 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
