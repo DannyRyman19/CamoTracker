@@ -1,5 +1,5 @@
 {
-  "version": "0.8.21",
+  "version": "0.8.22",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders).",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -8597,13 +8597,13 @@
           "amount": 1,
           "unit": "times",
           "description": {
-            "en": "Get 15 Player Kills in a single match",
-            "fr": "Éliminez 15 joueurs(s) au cours d'une même partie.",
-            "es": "Consigue 15 bajas de jugadores en una sola partida.",
-            "de": "Erreiche 15 Spieler-Abschüsse in einem einzigen Spiel",
-            "nl": "Behaal 15 spelerkills in één wedstrijd.",
-            "it": "Esegui 15 uccisioni contro i giocatori in una sola partita.",
-            "pt": "Obtenha 15 baixas de jogadores em uma única partida."
+            "en": "Get 8 Player Kills in a single match",
+            "fr": "Éliminez 8 joueurs(s) au cours d'une même partie.",
+            "es": "Consigue 8 bajas de jugadores en una sola partida.",
+            "de": "Erreiche 8 Spieler-Abschüsse in einem einzigen Spiel",
+            "nl": "Behaal 8 spelerkills in één wedstrijd.",
+            "it": "Esegui 8 uccisioni contro i giocatori in una sola partita.",
+            "pt": "Obtenha 8 baixas de jogadores em uma única partida."
           }
         }
       },
@@ -8612,16 +8612,16 @@
         "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/platinum.png",
         "byCategory": {
           "0": {
-            "amount": 50,
+            "amount": 25,
             "unit": "headshots",
             "description": {
-              "en": "Get 50 Headshots against Players",
-              "fr": "Éliminez 50 joueur(s) d'un tir dans la tête.",
-              "es": "Consigue 50 tiros a la cabeza contra jugadores.",
-              "de": "Erreiche 50 Kopfschüsse gegen Spieler",
-              "nl": "Behaal 50 headshotkills tegen spelers.",
-              "it": "Esegui 50 colpi alla testa contro i giocatori.",
-              "pt": "Acerte 50 tiros na cabeça de jogadores."
+              "en": "Get 25 Headshots against Players",
+              "fr": "Éliminez 25 joueur(s) d'un tir dans la tête.",
+              "es": "Consigue 25 tiros a la cabeza contra jugadores.",
+              "de": "Erreiche 25 Kopfschüsse gegen Spieler",
+              "nl": "Behaal 25 headshotkills tegen spelers.",
+              "it": "Esegui 25 colpi alla testa contro i giocatori.",
+              "pt": "Acerte 25 tiros na cabeça de jogadores."
             }
           },
           "1": {
@@ -8750,16 +8750,16 @@
         "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/harmonic_break.png",
         "byCategory": {
           "0": {
-            "amount": 25,
-            "unit": "kills",
+            "amount": 15,
+            "unit": "times",
             "description": {
-              "en": "Get 25 Double Kills against Players",
-              "fr": "Faites 25 double(s) élimination(s) contre des joueurs.",
-              "es": "Consigue 25 dobles bajas de jugadores.",
-              "de": "Erreiche 25 Doppelabschüsse gegen Spieler",
-              "nl": "Behaal 25 dubbele kills tegen spelers.",
-              "it": "Esegui 25 doppie uccisioni contro i giocatori.",
-              "pt": "Obtenha 25 baixas duplas contra jogadores."
+              "en": "Get 2 Player Kills within 10 seconds 15 times",
+              "fr": "Éliminez 15 fois 2 joueurs en moins de 10 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 10 segundos 15 veces.",
+              "de": "Erreiche 15-mal 2 Spieler-Abschüsse innerhalb von 10 Sekunden",
+              "nl": "Behaal 15 keer 2 spelerkills binnen 10 seconden.",
+              "it": "Esegui 2 uccisioni contro i giocatori entro 10 secondi, 15 volte.",
+              "pt": "Obtenha 2 baixas de jogadores em 10 segundos 15 vezes."
             }
           },
           "1": {
