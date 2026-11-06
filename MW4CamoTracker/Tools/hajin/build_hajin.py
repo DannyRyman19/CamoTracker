@@ -365,7 +365,7 @@ guide = [
    ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
    ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
    ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
-   ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle on its own patrol route. Where it roams and what it drops isn't known yet"),
+   ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet"),
   ])},
  {"id": "keys", "title": "Keys", "symbol": "key.fill",
   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
@@ -426,6 +426,7 @@ guide = [
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
   "rows": rows([
+   ("R-18: Grade 3 Bio-Toxin", "$50,000", "Ultra. New in Season 1, found in X01"), ("Gilded Guardian of Allegiance", "$30,000", "Ultra. New in Season 1, found in X01"),
    ("Gold Bar", "$25,000", "Ultra. Also a reward from Silent Ledger"), ("Gold Skull", "$25,000", "Ultra"),
    ("Sanctioned Assassination List", "$10,000", "Legendary"), ("Foreign Intelligence Targets", "$5,000", "Epic. Five are needed for MIA Recovery Discount III"),
    ("Cipher Code Ledger", "$5,000", "Epic"), ("W.M.D Manifest", "$5,000", "Epic"),
@@ -503,7 +504,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.48", "updated": "2026-11-06",
+data = {"version": "0.9.49", "updated": "2026-11-06",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

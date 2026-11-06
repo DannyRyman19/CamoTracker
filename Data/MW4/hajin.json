@@ -1,5 +1,5 @@
 {
- "version": "0.9.48",
+ "version": "0.9.49",
  "updated": "2026-11-06",
  "map": {
   "image": "hajin_map",
@@ -5507,7 +5507,7 @@
     },
     {
      "title": "Wheelson",
-     "subtitle": "New in Season 1. An autonomous robot vehicle on its own patrol route. Where it roams and what it drops isn't known yet",
+     "subtitle": "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet",
      "group": "Commanders",
      "check": "boss-wheelson"
     }
@@ -5899,6 +5899,18 @@
    "symbol": "diamond.fill",
    "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
    "rows": [
+    {
+     "title": "R-18: Grade 3 Bio-Toxin",
+     "value": "$50,000",
+     "subtitle": "Ultra. New in Season 1, found in X01",
+     "item": "r-18-grade-3-bio-toxin"
+    },
+    {
+     "title": "Gilded Guardian of Allegiance",
+     "value": "$30,000",
+     "subtitle": "Ultra. New in Season 1, found in X01",
+     "item": "gilded-guardian-of-allegiance"
+    },
     {
      "title": "Gold Bar",
      "value": "$25,000",
@@ -7197,6 +7209,38 @@
      "objectives": [
       "Extract from X01"
      ]
+    },
+    {
+     "title": "Door Opener",
+     "group": "DMZ Orders: X01 chapter, page 5 (Season 1)",
+     "check": "op-door-opener",
+     "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
+     "place": "X01",
+     "objectives": [
+      "Destroy the Wheelson in the X01 Logistics Tunnel",
+      "Cut off power in the X01 Power Generators"
+     ],
+     "links": [
+      "argonaut-armor",
+      "large-scavenger-backpack",
+      "parachute"
+     ]
+    },
+    {
+     "title": "Water Wading",
+     "group": "DMZ Orders: X01 chapter, page 5 (Season 1)",
+     "check": "op-water-wading",
+     "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
+     "place": "X01",
+     "subtitle": "Objectives not confirmed yet"
+    },
+    {
+     "title": "Source Code",
+     "group": "DMZ Orders: X01 chapter, page 5 (Season 1)",
+     "check": "op-source-code",
+     "pageReward": "Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000",
+     "place": "X01",
+     "subtitle": "Objectives not confirmed yet"
     }
    ],
    "intro": "Story Missions, then the DMZ Orders pages in the game's order. Tick an order, or each step, as you finish it. Which page comes next can depend on the route you take."
@@ -8095,7 +8139,7 @@
     }
    ],
    "effect": "New in Season 1. Four plate slots, and the third plate counts as one and a half",
-   "symbol": "shield.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/35-plate-armor-vest.png?v=1"
   },
   {
    "id": "advanced-uav",
@@ -8210,7 +8254,7 @@
     }
    ],
    "effect": "New in Season 1. Heavy Argonaut armor for massive protection",
-   "symbol": "airplane"
+   "image": "https://camotracker.djr.li/Images/DMZ/argonaut-armor.png?v=1"
   },
   {
    "id": "armor-box",
@@ -9461,6 +9505,15 @@
    "found": "Loot containers around Hajin"
   },
   {
+   "id": "gilded-guardian-of-allegiance",
+   "name": "Gilded Guardian of Allegiance",
+   "kind": "Valuable",
+   "value": 30000,
+   "rarity": "Ultra",
+   "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $30,000",
+   "image": "https://camotracker.djr.li/Images/DMZ/gilded-guardian-of-allegiance.png?v=1"
+  },
+  {
    "id": "gold-bar",
    "name": "Gold Bar",
    "image": "https://camotracker.djr.li/Images/DMZ/gold-bar.png?v=1",
@@ -10524,6 +10577,15 @@
    ],
    "effect": "Goes off when an enemy gets close; heavy damage to vehicles",
    "image": "https://camotracker.djr.li/Images/DMZ/proximity-mine.png?v=1"
+  },
+  {
+   "id": "r-18-grade-3-bio-toxin",
+   "name": "R-18: Grade 3 Bio-Toxin",
+   "kind": "Valuable",
+   "value": 50000,
+   "rarity": "Ultra",
+   "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $50,000",
+   "image": "https://camotracker.djr.li/Images/DMZ/r-18-grade-3-bio-toxin.png?v=1"
   },
   {
    "id": "radiation-blockers",

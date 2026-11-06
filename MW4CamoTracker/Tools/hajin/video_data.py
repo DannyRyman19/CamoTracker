@@ -419,6 +419,8 @@ def build_items(guide, markers):
 
 # ---- Drops, rewards and weapons
 EXTRA_ITEMS = [
+ {"id": "r-18-grade-3-bio-toxin", "name": "R-18: Grade 3 Bio-Toxin", "kind": "Valuable", "rarity": "Ultra", "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $50,000"},
+ {"id": "gilded-guardian-of-allegiance", "name": "Gilded Guardian of Allegiance", "kind": "Valuable", "rarity": "Ultra", "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $30,000"},
  {"id": "bales-dog-tag", "name": "Bale's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Bale. Carrying it marks you for nearby squads until you extract. Sells for $25,000"},
  {"id": "scavengers-dog-tag", "name": "Scavenger's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Scavenger. Sells for $25,000"},
  {"id": "rozes-dog-tag", "name": "Roze's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Roze. Extract it for Boss Board progress. Sells for $25,000"},
@@ -936,6 +938,9 @@ MISSIONS = [
  ("DMZ Orders: X01 Chapter", "Fresh Start", "X01", ["Infil into X01 through the abandoned elevator shaft by the facility in Hajin's north-west"], None, [], []),
  ("DMZ Orders: X01 Chapter", "Sight Seeing", "X01", ["Search 5 unopened containers in the X01 Main Warehouse", "Search 5 unopened containers in the X01 Control Room"], None, [], []),
  ("DMZ Orders: X01 Chapter", "First Win", "X01", ["Extract from X01"], None, [], []),
+ ("DMZ Orders: X01 Chapter page 5", "Door Opener", "X01", ["Destroy the Wheelson in the X01 Logistics Tunnel", "Cut off power in the X01 Power Generators"], None, ["argonaut-armor", "large-scavenger-backpack", "parachute"], ["Page reward: Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000"]),
+ ("DMZ Orders: X01 Chapter page 5", "Water Wading", "X01", [], None, [], ["Page reward: Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000"]),
+ ("DMZ Orders: X01 Chapter page 5", "Source Code", "X01", [], None, [], ["Page reward: Argonaut Armor, a Large Scavenger Backpack, a Parachute and $20,000"]),
  ("DMZ Orders: Chapter 1", "Gear Up", None, ["Equip a weapon, a backpack, an armor vest and a medkit from your stash"], None, [], []),
  ("DMZ Orders: Chapter 1", "Crack Shot", None, ["Knock down three firing-range targets"], None, [], []),
  ("DMZ Orders: Chapter 1", "First OP", None, ["Deploy to DMZ in Dynamic Operations"], None, [], []),
@@ -1090,6 +1095,7 @@ ORDER_PAGES = {
     "Story Missions": (0, "Story Missions"),
     "DMZ Orders: Chapter 1": (1, "DMZ Orders: Page 1"),
     "DMZ Orders: X01 Chapter": (100, "DMZ Orders: X01 chapter, page 1 (Season 1)"),
+    "DMZ Orders: X01 Chapter page 5": (105, "DMZ Orders: X01 chapter, page 5 (Season 1)"),
     "DMZ Orders: Counterfeit": (2, "DMZ Orders: Pages 2-3, Counterfeit"),
     "DMZ Orders: Operation Rewards page": (4, "DMZ Orders: Page 4"),
     "DMZ Orders: Underground": (5, "DMZ Orders: Pages 5-6, Underground"),
