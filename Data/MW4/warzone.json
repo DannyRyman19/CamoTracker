@@ -1,5 +1,5 @@
 {
-  "version": "0.8.24",
+  "version": "0.8.25",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8523,7 +8523,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
@@ -8651,16 +8651,16 @@
             }
           },
           "3": {
-            "amount": 15,
+            "amount": 10,
             "unit": "times",
             "description": {
-              "en": "Get 3 Player Kills without dying 15 times",
-              "fr": "Éliminez 15 fois 3 joueurs sans mourir.",
-              "es": "Consigue 3 bajas de jugadores sin morir 15 veces.",
-              "de": "Erreiche 15-mal 3 Spieler-Abschüsse, ohne zu sterben",
-              "nl": "Behaal 15 keer 3 spelerkills zonder te sterven.",
-              "it": "Esegui 3 uccisioni contro giocatori senza morire, 15 volte",
-              "pt": "Obtenha 3 baixas de jogadores sem morrer 15 vezes."
+              "en": "Get 3 Player Kills without dying 10 times",
+              "fr": "Éliminez 10 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 10 veces.",
+              "de": "Erreiche 10-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 10 keer 3 spelerkills zonder te sterven.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 10 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 10 vezes."
             }
           },
           "4": {
@@ -8789,16 +8789,16 @@
             }
           },
           "3": {
-            "amount": 25,
+            "amount": 15,
             "unit": "times",
             "description": {
-              "en": "Get 2 Player Kills without releasing the trigger 25 times",
-              "fr": "Éliminez 25 fois 2 joueurs sans relâcher la gâchette.",
-              "es": "Consigue 2 bajas de jugadores sin soltar el gatillo 25 veces.",
-              "de": "Erreiche 25-mal 2 Spieler-Abschüsse, ohne den Auslöser loszulassen",
-              "nl": "Behaal 25 keer 2 spelerkills zonder de trekker los te laten.",
-              "it": "Esegui 2 uccisioni di giocatori senza rilasciare il grilletto, 25 volte.",
-              "pt": "Obtenha 2 baixas de jogadores sem soltar o gatilho 25 vezes."
+              "en": "Get 2 Player Kills without releasing the trigger 15 times",
+              "fr": "Éliminez 15 fois 2 joueurs sans relâcher la gâchette.",
+              "es": "Consigue 2 bajas de jugadores sin soltar el gatillo 15 veces.",
+              "de": "Erreiche 15-mal 2 Spieler-Abschüsse, ohne den Auslöser loszulassen",
+              "nl": "Behaal 15 keer 2 spelerkills zonder de trekker los te laten.",
+              "it": "Esegui 2 uccisioni di giocatori senza rilasciare il grilletto, 15 volte.",
+              "pt": "Obtenha 2 baixas de jogadores sem soltar o gatilho 15 vezes."
             }
           },
           "4": {
