@@ -1,5 +1,5 @@
 {
-  "version": "0.8.67",
+  "version": "0.8.68",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -4226,16 +4226,16 @@
           "tier": 9,
           "unlockLevel": 16,
           "requirement": {
-            "amount": 10,
+            "amount": 5,
             "unit": "kills",
             "description": {
-              "en": "Get 10 Direct Shot Kills against Players",
-              "fr": "Éliminez 10 joueur(s) par tir direct.",
-              "es": "Consigue 10 bajas de jugadores con disparos directos.",
-              "de": "Erreiche 10 Direktabschüsse gegen Spieler",
-              "nl": "Behaal 10 kills met een voltreffer tegen spelers.",
-              "it": "Esegui 10 uccisioni colpo diretto contro i giocatori.",
-              "pt": "Obtenha 10 baixas de jogadores com disparos diretos."
+              "en": "Get 5 Direct Shot Kills against Players",
+              "fr": "Éliminez 5 joueur(s) par tir direct.",
+              "es": "Consigue 5 bajas de jugadores con disparos directos.",
+              "de": "Erreiche 5 Direktabschüsse gegen Spieler",
+              "nl": "Behaal 5 kills met een voltreffer tegen spelers.",
+              "it": "Esegui 5 uccisioni colpo diretto contro i giocatori.",
+              "pt": "Obtenha 5 baixas de jogadores com disparos diretos."
             }
           },
           "children": [],
@@ -4256,16 +4256,16 @@
           "tier": 10,
           "unlockLevel": 31,
           "requirement": {
-            "amount": 5,
+            "amount": 3,
             "unit": "times",
             "description": {
-              "en": "Get 2 Player Kills within 10 seconds 5 times",
-              "fr": "Éliminez 5 fois 2 joueurs en moins de 10 secondes.",
-              "es": "Consigue 2 bajas de jugadores en 10 segundos 5 veces.",
-              "de": "Erreiche 5-mal 2 Spieler-Abschüsse innerhalb von 10 Sekunden",
-              "nl": "Behaal 5 keer 2 spelerkills binnen 10 seconden.",
-              "it": "Esegui 2 uccisioni contro i giocatori entro 10 secondi, 5 volte.",
-              "pt": "Obtenha 2 baixas de jogadores em 10 segundos 5 vezes."
+              "en": "Get 2 Player Kills within 10 seconds 3 times",
+              "fr": "Éliminez 3 fois 2 joueurs en moins de 10 secondes.",
+              "es": "Consigue 2 bajas de jugadores en 10 segundos 3 veces.",
+              "de": "Erreiche 3-mal 2 Spieler-Abschüsse innerhalb von 10 Sekunden",
+              "nl": "Behaal 3 keer 2 spelerkills binnen 10 seconden.",
+              "it": "Esegui 2 uccisioni contro i giocatori entro 10 secondi, 3 volte.",
+              "pt": "Obtenha 2 baixas de jogadores em 10 segundos 3 vezes."
             }
           },
           "children": [],
@@ -4286,16 +4286,16 @@
           "tier": 11,
           "unlockLevel": 46,
           "requirement": {
-            "amount": 30,
+            "amount": 15,
             "unit": "destroyed",
             "description": {
-              "en": "Destroy 30 Killstreaks or Vehicles",
-              "fr": "Détruisez 30 série(s) d'éliminations ou véhicule(s).",
-              "es": "Destruye 30 rachas de bajas o vehículos.",
-              "de": "Zerstöre 30 Abschussserien oder Fahrzeuge",
-              "nl": "Vernietig 30 killstreaks of voertuigen.",
-              "it": "Distruggi 30 serie di uccisioni o veicoli.",
-              "pt": "Destrua 30 séries de baixas ou veículos."
+              "en": "Destroy 15 Killstreaks or Vehicles",
+              "fr": "Détruisez 15 série(s) d'éliminations ou véhicule(s).",
+              "es": "Destruye 15 rachas de bajas o vehículos.",
+              "de": "Zerstöre 15 Abschussserien oder Fahrzeuge",
+              "nl": "Vernietig 15 killstreaks of voertuigen.",
+              "it": "Distruggi 15 serie di uccisioni o veicoli.",
+              "pt": "Destrua 15 séries de baixas ou veículos."
             }
           },
           "children": [],
@@ -8673,7 +8673,7 @@
       ]
     }
   ],
-  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game. FSS Carbon Edge 1095 Specials 15 each. Sang 9mm Specials 15, 3, 25. Krait P68 Specials 10, 10, 25. Krait P68 Off Grid is sliding kills in Warzone. KG-7 Vulcan Specials 5, 10, 10. Astaroth .57 Specials 5, 10, 10. Signal 50 Specials 5, 10, 20. MAR-9 Specials 10, 15, 15. ORIS 8.6 Specials 5, 10, 10. ORIS 8.6 Fire Topo is 2 kills within 10 seconds x10 in Warzone. Mosin-Nagant Specials 15, 5, 45. Type 73 Specials 10, 5, 20. FINN LMG Specials 10, 5, 15. ISO Nightshade Specials 25, 5, 10. ISO Nightshade Black Topo is 2 kills within 10 seconds x5 in Warzone. ISO Nightshade Brown is 10 longshot kills in Warzone. VEL 46 Specials 25, 10, 10. WZ.55 Striga Specials 25, 10, 20. PPSh-41 Specials 5, 10, 45. Warzone has no Double Kill challenge: every one reads 2 kills within 10 seconds, same count. X-58 Nyx Specials 10, 10, 20. HAN 86 Specials 10, 25, 8. Warlord Specials 10, 5, 25. .50 GS Specials 10, 5, 15. Mojave .357 Specials 10, 5, 15. APOC-338 Specials 10, 10, 45. M4 Specials 10, 10, 15. Hyeon Burst Specials 5, 10, 45. Kastov 762 Specials 5, 10, 15. Patriot XMR Specials 10, 25, 15. Oden Specials 15, 5, 45. Axion Specials 10, 10, 15. RPG-8 Specials 5, 5, 15.",
+  "_note": "Mastery challenges from the Call of Duty blog's Warzone Season 1 post (2 Nov 2026): Parallax 5 kills in a match x300, Damascus Reforged 2 kills without plating x200, Empyros top 5 with 6+ kills x75. Military and Special unlockLevels copied from Multiplayer's in-game screens (16 Oct 2026; weapon level is shared). Special names match MP/DMZ; their challenges and amounts, and the Completionist (Gold, Platinum, Harmonic Break) challenges, are PLACEHOLDERS copied from Multiplayer (2 Nov 2026) until Warzone's own camo screens are seen in Season 1. Mode shown early (2 Nov) for checking. Season 1 (6 Nov 2026): Warzone's own Special and Completionist challenges still aren't published anywhere (codmunity shows 'Coming soon'), so the placeholders stay. Cronen Osprey and CSG-35 added with unknown Military levels and Special names (tick boxes) in every mode. Season 1 BlackCell track added as Objectives. Seen in game on the Cronen Osprey (6 Nov): Gold 8 player kills in a match (set for every weapon), Platinum 25 headshots and Harmonic Break 2 kills within 10 seconds x15 (set for all Assault Rifles; other classes still placeholders). Also seen in game: Cronen Squall's Warzone Specials are 10 each; SMG Platinum 15 kills from behind, Harmonic Break 25 hipfire kills. Shotgun Platinum 25 hipfire kills (Warlord too), Harmonic Break 2 kills without reloading x15; Rezi 12 Specials 10 point blank, 5 longshot, 20 while jumping. LMG Platinum 3 kills without dying x10, Harmonic Break 2 kills without releasing the trigger x15. Marksman Rifle Platinum 35 prone kills, Harmonic Break 45 kills without taking damage from the target. Sniper Platinum 35 prone kills, Harmonic Break 35 one shot kills. Pistol Platinum 10 kills from behind, Harmonic Break 20 hipfire kills. Launcher Platinum 2 kills without taking damage x8, Harmonic Break 10 kills in a match x5. Melee Platinum 3 kills without dying x10, Harmonic Break 15 kills from behind. All nine classes' Gold, Platinum and Harmonic Break are now from the game. FSS Carbon Edge 1095 Specials 15 each. Sang 9mm Specials 15, 3, 25. Krait P68 Specials 10, 10, 25. Krait P68 Off Grid is sliding kills in Warzone. KG-7 Vulcan Specials 5, 10, 10. Astaroth .57 Specials 5, 10, 10. Signal 50 Specials 5, 10, 20. MAR-9 Specials 10, 15, 15. ORIS 8.6 Specials 5, 10, 10. ORIS 8.6 Fire Topo is 2 kills within 10 seconds x10 in Warzone. Mosin-Nagant Specials 15, 5, 45. Type 73 Specials 10, 5, 20. FINN LMG Specials 10, 5, 15. ISO Nightshade Specials 25, 5, 10. ISO Nightshade Black Topo is 2 kills within 10 seconds x5 in Warzone. ISO Nightshade Brown is 10 longshot kills in Warzone. VEL 46 Specials 25, 10, 10. WZ.55 Striga Specials 25, 10, 20. PPSh-41 Specials 5, 10, 45. Warzone has no Double Kill challenge: every one reads 2 kills within 10 seconds, same count. X-58 Nyx Specials 10, 10, 20. HAN 86 Specials 10, 25, 8. Warlord Specials 10, 5, 25. .50 GS Specials 10, 5, 15. Mojave .357 Specials 10, 5, 15. APOC-338 Specials 10, 10, 45. M4 Specials 10, 10, 15. Hyeon Burst Specials 5, 10, 45. Kastov 762 Specials 5, 10, 15. Patriot XMR Specials 10, 25, 15. Oden Specials 15, 5, 45. Axion Specials 10, 10, 15. RPG-8 Specials 5, 5, 15. PILA Specials 5, 3, 15.",
   "mastery": {
     "tier1": {
       "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/parallax.png",
