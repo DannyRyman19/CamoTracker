@@ -1,5 +1,5 @@
 {
-  "version": "0.8.58",
+  "version": "0.8.59",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -7097,13 +7097,13 @@
             "amount": 10,
             "unit": "kills",
             "description": {
-              "en": "Get 10 One Shot Kills against Players",
-              "fr": "Éliminez 10 joueur(s) en un tir.",
-              "es": "Consigue 10 bajas de jugadores de un tiro.",
-              "de": "Erreiche 10 Sofortabschüsse gegen Spieler",
-              "nl": "Behaal 10 kills met één schot tegen spelers.",
-              "it": "Esegui 10 uccisioni Colpo singolo contro i giocatori.",
-              "pt": "Obtenha 10 baixas de jogadores com um único tiro."
+              "en": "Get 10 Player Kills without taking damage from the target",
+              "fr": "Éliminez 10 joueur(s) sans subir de dégâts de la cible.",
+              "es": "Consigue 10 bajas de jugadores sin recibir daño del objetivo.",
+              "de": "Erreiche 10 Spieler-Abschüsse, ohne Schaden vom Ziel zu erleiden",
+              "nl": "Behaal 10 spelerkills zonder schade van het doelwit op te lopen.",
+              "it": "Esegui 10 uccisioni contro giocatori senza subire danni dal bersaglio.",
+              "pt": "Obtenha 10 baixas de jogadores sem sofrer dano do alvo."
             }
           },
           "children": [],
