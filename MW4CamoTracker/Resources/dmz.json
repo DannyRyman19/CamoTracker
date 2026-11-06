@@ -1,5 +1,5 @@
 {
-  "version": "0.8.25",
+  "version": "0.8.26",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -8049,7 +8049,19 @@
           },
           "tier": 9,
           "unlockLevel": 24,
-          "requirement": null,
+          "requirement": {
+            "amount": 75,
+            "unit": "kills",
+            "description": {
+              "en": "Get 75 Hipfire Kills against Enemies",
+              "fr": "Éliminez 75 ennemi(s) en tirant au jugé.",
+              "es": "Consigue 75 bajas de enemigos con disparos desde la cadera.",
+              "de": "Erreiche 75 Abschüsse aus der Hüfte gegen Feinde",
+              "nl": "Behaal 75 heupvuurkills tegen vijanden.",
+              "it": "Esegui 75 uccisioni sparando senza mirare contro i nemici.",
+              "pt": "Obtenha 75 baixas de inimigos com tiro livre."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8067,7 +8079,19 @@
           },
           "tier": 10,
           "unlockLevel": 43,
-          "requirement": null,
+          "requirement": {
+            "amount": 125,
+            "unit": "kills",
+            "description": {
+              "en": "Get 125 ADS Kills against Enemies",
+              "fr": "Éliminez 125 ennemi(s) en visant.",
+              "es": "Consigue 125 bajas de enemigos apuntando.",
+              "de": "Erreiche 125 Abschüsse beim Zielen gegen Feinde",
+              "nl": "Behaal 125 kills tegen vijanden terwijl je richt.",
+              "it": "Esegui 125 uccisioni mirando contro i nemici.",
+              "pt": "Obtenha 125 baixas de inimigos mirando."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8085,7 +8109,19 @@
           },
           "tier": 11,
           "unlockLevel": 48,
-          "requirement": null,
+          "requirement": {
+            "amount": 100,
+            "unit": "times",
+            "description": {
+              "en": "Get 2 Enemy Kills without Reloading 100 times",
+              "fr": "Éliminez 100 fois 2 ennemis sans recharger.",
+              "es": "Consigue 2 bajas de enemigos sin recargar 100 veces.",
+              "de": "Erreiche 100-mal 2 Feind-Abschüsse, ohne nachzuladen",
+              "nl": "Behaal 100 keer 2 vijandkills zonder te herladen.",
+              "it": "Esegui 2 uccisioni di nemici senza ricaricare, 100 volte.",
+              "pt": "Obtenha 2 baixas de inimigos sem recarregar 100 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
