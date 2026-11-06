@@ -1,5 +1,5 @@
 {
-  "version": "0.8.54",
+  "version": "0.8.55",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8143,7 +8143,7 @@
             "pt": "Militar 1"
           },
           "tier": 1,
-          "unlockLevel": null,
+          "unlockLevel": 7,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_1.png",
@@ -8161,7 +8161,7 @@
             "pt": "Militar 2"
           },
           "tier": 2,
-          "unlockLevel": null,
+          "unlockLevel": 9,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_2.png",
@@ -8179,7 +8179,7 @@
             "pt": "Militar 3"
           },
           "tier": 3,
-          "unlockLevel": null,
+          "unlockLevel": 11,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_3.png",
@@ -8197,7 +8197,7 @@
             "pt": "Militar 4"
           },
           "tier": 4,
-          "unlockLevel": null,
+          "unlockLevel": 13,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_4.png",
@@ -8215,7 +8215,7 @@
             "pt": "Militar 5"
           },
           "tier": 5,
-          "unlockLevel": null,
+          "unlockLevel": 15,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_5.png",
@@ -8233,7 +8233,7 @@
             "pt": "Militar 6"
           },
           "tier": 6,
-          "unlockLevel": null,
+          "unlockLevel": 18,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_6.png",
@@ -8251,7 +8251,7 @@
             "pt": "Militar 7"
           },
           "tier": 7,
-          "unlockLevel": null,
+          "unlockLevel": 20,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_7.png",
@@ -8269,7 +8269,7 @@
             "pt": "Militar 8"
           },
           "tier": 8,
-          "unlockLevel": null,
+          "unlockLevel": 22,
           "requirement": null,
           "children": [],
           "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/military_8.png",
@@ -8278,17 +8278,29 @@
         {
           "itemId": 8,
           "name": {
-            "en": "Special 1",
-            "fr": "Spécial 1",
-            "es": "Especial 1",
-            "de": "Spezial 1",
-            "nl": "Speciaal 1",
-            "it": "Speciale 1",
-            "pt": "Especial 1"
+            "en": "Polyhedron",
+            "fr": "Polyhedron",
+            "es": "Polyhedron",
+            "de": "Polyhedron",
+            "nl": "Polyhedron",
+            "it": "Polyhedron",
+            "pt": "Polyhedron"
           },
           "tier": 9,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 10,
+          "requirement": {
+            "amount": 5,
+            "unit": "times",
+            "description": {
+              "en": "Get 3 Player Kills without dying 5 times",
+              "fr": "Éliminez 5 fois 3 joueurs sans mourir.",
+              "es": "Consigue 3 bajas de jugadores sin morir 5 veces.",
+              "de": "Erreiche 5-mal 3 Spieler-Abschüsse, ohne zu sterben",
+              "nl": "Behaal 5 keer 3 spelerkills zonder te sterven.",
+              "it": "Esegui 3 uccisioni contro giocatori senza morire, 5 volte",
+              "pt": "Obtenha 3 baixas de jogadores sem morrer 5 vezes."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8296,17 +8308,29 @@
         {
           "itemId": 9,
           "name": {
-            "en": "Special 2",
-            "fr": "Spécial 2",
-            "es": "Especial 2",
-            "de": "Spezial 2",
-            "nl": "Speciaal 2",
-            "it": "Speciale 2",
-            "pt": "Especial 2"
+            "en": "Rind",
+            "fr": "Rind",
+            "es": "Rind",
+            "de": "Rind",
+            "nl": "Rind",
+            "it": "Rind",
+            "pt": "Rind"
           },
           "tier": 10,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 17,
+          "requirement": {
+            "amount": 30,
+            "unit": "kills",
+            "description": {
+              "en": "Get 30 Player Kills using a Silencer",
+              "fr": "Éliminez 30 joueur(s) en utilisant un silencieux.",
+              "es": "Consigue 30 bajas de jugadores usando un silenciador.",
+              "de": "Erreiche 30 Abschüsse gegen Spieler mit einem Schalldämpfer",
+              "nl": "Behaal 30 spelerkills met een geluiddemper.",
+              "it": "Esegui 30 uccisioni contro giocatori usando un silenziatore.",
+              "pt": "Obtenha 30 baixas de jogadores usando um silenciador."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
@@ -8314,17 +8338,29 @@
         {
           "itemId": 10,
           "name": {
-            "en": "Special 3",
-            "fr": "Spécial 3",
-            "es": "Especial 3",
-            "de": "Spezial 3",
-            "nl": "Speciaal 3",
-            "it": "Speciale 3",
-            "pt": "Especial 3"
+            "en": "Black Grip",
+            "fr": "Black Grip",
+            "es": "Black Grip",
+            "de": "Black Grip",
+            "nl": "Black Grip",
+            "it": "Black Grip",
+            "pt": "Black Grip"
           },
           "tier": 11,
-          "unlockLevel": null,
-          "requirement": null,
+          "unlockLevel": 24,
+          "requirement": {
+            "amount": 20,
+            "unit": "kills",
+            "description": {
+              "en": "Get 20 Player Kills while Moving",
+              "fr": "Éliminez 20 joueur(s) en vous déplaçant.",
+              "es": "Consigue 20 bajas de jugadores en movimiento.",
+              "de": "Erreiche 20 Spieler-Abschüsse in Bewegung",
+              "nl": "Behaal 20 spelerkills terwijl je beweegt.",
+              "it": "Esegui 20 uccisioni contro giocatori in movimento.",
+              "pt": "Obtenha 20 baixas de jogadores em movimento."
+            }
+          },
           "children": [],
           "imageURL": null,
           "group": "special"
