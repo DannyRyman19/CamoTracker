@@ -1,5 +1,5 @@
 {
-  "version": "0.8.24",
+  "version": "0.8.25",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -8504,6 +8504,119 @@
           ],
           "starts": "2026-11-05",
           "ordered": false
+        }
+      ]
+    },
+    {
+      "categoryId": 1,
+      "name": {
+        "en": "Events",
+        "fr": "Événements",
+        "es": "Eventos",
+        "de": "Events",
+        "nl": "Evenementen",
+        "it": "Eventi",
+        "pt": "Eventos"
+      },
+      "shared": true,
+      "items": [
+        {
+          "itemId": 101,
+          "name": {
+            "en": "Wager Match",
+            "fr": "Wager Match",
+            "es": "Wager Match",
+            "de": "Wager Match",
+            "nl": "Wager Match",
+            "it": "Wager Match",
+            "pt": "Wager Match"
+          },
+          "imageURL": null,
+          "tier": 2,
+          "unlockLevel": null,
+          "requirement": null,
+          "starts": "2026-11-11",
+          "ordered": false,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Wager Match camo",
+                "fr": "Wager Match camo",
+                "es": "Wager Match camo",
+                "de": "Wager Match camo",
+                "nl": "Wager Match camo",
+                "it": "Wager Match camo",
+                "pt": "Wager Match camo"
+              },
+              "imageURL": null,
+              "tier": 1,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Earn Trophies in the Gauntlet 1v1 playlist and through Multiplayer, DMZ and Warzone challenges; the Mastery rewards include a weapon camo. Challenges show here once the event starts on 11 Nov.",
+                  "fr": "Gagnez des trophées dans la liste Gauntlet 1v1 et via les défis Multijoueur, DMZ et Warzone ; les récompenses de maîtrise incluent un camouflage. Les défis s’afficheront ici au lancement, le 11 nov.",
+                  "es": "Gana trofeos en la lista Gauntlet 1v1 y con desafíos de Multijugador, DMZ y Warzone; las recompensas de maestría incluyen un camuflaje. Los desafíos aparecerán aquí cuando empiece, el 11 de nov.",
+                  "de": "Verdiene Trophäen in der Gauntlet-1v1-Playlist und mit Herausforderungen in Mehrspieler, DMZ und Warzone; die Meisterschaftsbelohnungen enthalten eine Tarnung. Die Herausforderungen erscheinen hier zum Start am 11. Nov.",
+                  "nl": "Verdien trofeeën in de Gauntlet 1v1-playlist en met uitdagingen in Multiplayer, DMZ en Warzone; de masterybeloningen bevatten een camo. De uitdagingen verschijnen hier bij de start op 11 nov.",
+                  "it": "Ottieni trofei nella playlist Gauntlet 1v1 e con le sfide di Multigiocatore, DMZ e Warzone; le ricompense maestria includono una mimetica. Le sfide appariranno qui all’inizio, l’11 nov.",
+                  "pt": "Ganhe troféus na lista Gauntlet 1v1 e em desafios de Multijogador, DMZ e Warzone; as recompensas de maestria incluem uma camuflagem. Os desafios aparecem aqui quando o evento começar, em 11 de nov."
+                }
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "itemId": 102,
+          "name": {
+            "en": "Natural Concealment",
+            "fr": "Natural Concealment",
+            "es": "Natural Concealment",
+            "de": "Natural Concealment",
+            "nl": "Natural Concealment",
+            "it": "Natural Concealment",
+            "pt": "Natural Concealment"
+          },
+          "imageURL": null,
+          "tier": 3,
+          "unlockLevel": null,
+          "requirement": null,
+          "starts": "2026-11-16",
+          "ordered": false,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Natural Concealment camos",
+                "fr": "Natural Concealment camos",
+                "es": "Natural Concealment camos",
+                "de": "Natural Concealment camos",
+                "nl": "Natural Concealment camos",
+                "it": "Natural Concealment camos",
+                "pt": "Natural Concealment camos"
+              },
+              "imageURL": null,
+              "tier": 1,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "A camo challenge event. Its challenges and camos show here once it starts on 16 Nov.",
+                  "fr": "Un événement de défis de camouflage. Ses défis et camouflages s’afficheront ici au lancement, le 16 nov.",
+                  "es": "Un evento de desafíos de camuflaje. Sus desafíos y camuflajes aparecerán aquí cuando empiece, el 16 de nov.",
+                  "de": "Ein Tarnungs-Herausforderungsevent. Herausforderungen und Tarnungen erscheinen hier zum Start am 16. Nov.",
+                  "nl": "Een camo-uitdagingsevenement. De uitdagingen en camo’s verschijnen hier bij de start op 16 nov.",
+                  "it": "Un evento di sfide mimetiche. Sfide e mimetiche appariranno qui all’inizio, il 16 nov.",
+                  "pt": "Um evento de desafios de camuflagem. Os desafios e camuflagens aparecem aqui quando começar, em 16 de nov."
+                }
+              },
+              "children": []
+            }
+          ]
         }
       ]
     }
