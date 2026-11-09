@@ -637,6 +637,21 @@ struct TrackerViewModelTests {
         #expect(model.isWeaponMasteryAvailable(mode: mp, weaponId: ids[0], tier: 1) == false)
     }
 
+    @Test func globalMasteryCountsEveryModesTiers() throws {
+        let model = try model([
+            "completionist": #"{"final": {"harmonicBreaksNeeded": 0}}"#,
+            "mastery": #"{"unlock": "mode"}"#,
+        ])
+        let ids = weapons(model).prefix(1).map(\.weaponId)
+        let total = model.globalMasteryProgress.total
+        #expect(total == 9)
+        #expect(model.globalMasteryProgress.done == 0)
+        harmonicBreak(model, ids[0])
+        for tier in 1...3 { model.toggleModeMastery(mode: mp, tier: tier, weaponId: ids[0]) }
+        #expect(model.globalMasteryProgress.done == 3)
+        #expect(GameRegistry.current.capstone?.name.resolved() == "Flashpoint")
+    }
+
     /// A tier counted in Harmonic Breaks counts itself and can't be ticked.
     @Test func aHarmonicBreakTierCountsItself() throws {
         let model = try model([

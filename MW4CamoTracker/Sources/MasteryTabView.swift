@@ -69,6 +69,16 @@ struct MasteryTabView: View {
                     }
                     .listRowBackground(Color.appSurface)
                 }
+                if GameRegistry.hasMastery, let capstone = GameRegistry.current.capstone {
+                    // MW4: the camo for every mode's Mastery, under them as in the game
+                    Section {
+                        GlobalMasteryRow(capstone: capstone)
+                    } header: {
+                        Label("ct.mastery.global".localized(), systemImage: "crown.fill")
+                            .foregroundStyle(Palette.accent ?? .camoGold)
+                    }
+                    .listRowBackground(Color.appSurface)
+                }
             }
             .scrollContentBackground(.hidden)
     }
@@ -81,6 +91,23 @@ struct MasteryTabView: View {
         } else {
             MasteryModeRow(mode: mode, tier: tier)
         }
+    }
+}
+
+/// Flashpoint: every Mastery camo in every mode, counted as tiers earned.
+private struct GlobalMasteryRow: View {
+    let capstone: CapstoneCamo
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    var body: some View {
+        let progress = viewModel.globalMasteryProgress
+        let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
+        let names = ListFormatter.localizedString(byJoining: AppMode.allCases
+            .filter { viewModel.modes[$0.rawValue] != nil }.map(\.displayName))
+        StatusRow(name: capstone.name.resolved(), achieved: progress.total > 0 && progress.done >= progress.total,
+                  color: colors.first ?? .camoGold, gradient: colors,
+                  detail: String(format: "ct.mastery.global.detail".localized(), names, progress.done, progress.total),
+                  imageURL: capstone.imageURL)
     }
 }
 

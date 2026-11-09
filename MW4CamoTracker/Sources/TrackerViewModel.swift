@@ -413,6 +413,17 @@ final class TrackerViewModel: ObservableObject {
             .map { ($0, finalCamoCount(mode: $0.rawValue) > 0) }
     }
 
+    /// MW4's Global Mastery camo (Flashpoint) asks for every Mastery camo
+    /// in every mode the game has, played or not: the Mastery tiers earned
+    /// out of all of them.
+    var globalMasteryProgress: (done: Int, total: Int) {
+        let all = AppMode.allCases.filter { modes[$0.rawValue] != nil }
+        let done = all.reduce(0) { sum, mode in
+            sum + (1...3).filter { isMasteryAchieved(mode: mode.rawValue, tier: $0) }.count
+        }
+        return (done, all.count * 3)
+    }
+
     /// Weapons that have reached this camo's stage and level: what a camo
     /// with `weaponsNeeded` counts.
     func prestigeCamoWeaponCount(_ camo: PrestigeCamo) -> Int {
