@@ -50,6 +50,8 @@ enum ShareCard {
         let modes: [Mode]
         let dmz: [DMZStatLine]
         let cash: Int
+        /// MW4's Flashpoint: every mode's Mastery camos earned out of all
+        var global: Camo? = nil
 
         @MainActor
         init(viewModel: TrackerViewModel, hajin: HajinStore) {
@@ -90,6 +92,12 @@ enum ShareCard {
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
             cash = showsDMZ ? hajin.cash : 0
+            if GameRegistry.hasMastery, let capstone = GameRegistry.current.capstone {
+                let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
+                let progress = viewModel.globalMasteryProgress
+                global = Camo(name: capstone.name.resolved(), gradient: colors.isEmpty ? .gold : colors,
+                              done: progress.done, total: progress.total)
+            }
         }
     }
 
@@ -305,6 +313,21 @@ struct ProgressCardView: View {
                                 .font(.system(size: 12, weight: .bold, design: .monospaced))
                                 .foregroundStyle(mode.accent)
                                 .frame(width: 38, alignment: .trailing)
+                        }
+                    }
+                    if let global = data.global {
+                        // Flashpoint: every Mastery camo above
+                        HStack(spacing: 6) {
+                            Image(systemName: "crown.fill")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundStyle(global.gradient.first ?? .camoGold)
+                                .frame(width: 14)
+                            CamoText(text: global.name, gradient: global.gradient, font: .hitmarker(12))
+                                .lineLimit(1)
+                            Spacer(minLength: 4)
+                            Text("\(global.done)/\(global.total)")
+                                .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                .foregroundStyle(global.done > 0 ? Color.appInk : Color.appInkMuted)
                         }
                     }
                 }

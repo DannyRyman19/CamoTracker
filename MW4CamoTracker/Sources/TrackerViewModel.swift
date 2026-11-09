@@ -424,6 +424,14 @@ final class TrackerViewModel: ObservableObject {
         return (done, all.count * 3)
     }
 
+    /// Flashpoint earned: a game with Mastery and a capstone camo, and
+    /// every mode's three Mastery camos.
+    var isGlobalMasteryAchieved: Bool {
+        guard game.hasMastery != false, game.capstone != nil else { return false }
+        let progress = globalMasteryProgress
+        return progress.total > 0 && progress.done >= progress.total
+    }
+
     /// Weapons that have reached this camo's stage and level: what a camo
     /// with `weaponsNeeded` counts.
     func prestigeCamoWeaponCount(_ camo: PrestigeCamo) -> Int {
@@ -1388,6 +1396,8 @@ final class TrackerViewModel: ObservableObject {
         let finalCamoCount: Int
         let mastery: [Bool]
         let is100Plus: Bool
+        /// Every mode's Mastery (MW4's Flashpoint)
+        var globalMastery = false
     }
 
     func completionistSnapshot(mode: String, weaponId: Int) -> CompletionistSnapshot {
@@ -1396,7 +1406,8 @@ final class TrackerViewModel: ObservableObject {
             weaponMastery: (1...3).map { isWeaponMasteryComplete(mode: mode, weaponId: weaponId, tier: $0) },
             finalCamoCount: finalCamoCount(mode: mode),
             mastery: (1...3).map { isMasteryAchieved(mode: mode, tier: $0) },
-            is100Plus: is100PlusAchieved(mode: mode)
+            is100Plus: is100PlusAchieved(mode: mode),
+            globalMastery: isGlobalMasteryAchieved
         )
     }
 

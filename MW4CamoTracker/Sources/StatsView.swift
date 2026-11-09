@@ -48,6 +48,9 @@ struct StatsView: View {
                             ForEach(modes) { mode in
                                 ModeStatsCard(mode: mode, part: .mastery)
                             }
+                            if GameRegistry.current.capstone != nil {
+                                GlobalMasteryStatsCard()
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .top)
                         .accessibilityElement(children: .contain)
@@ -77,6 +80,12 @@ struct StatsView: View {
                             .listRowInsets(Self.rowInsets)
                             .listRowBackground(Color.clear)
                     }
+                }
+                if width < 800, GameRegistry.hasMastery, GameRegistry.current.capstone != nil {
+                    // On iPad it's under the Mastery cards in the row above
+                    GlobalMasteryStatsCard()
+                        .listRowInsets(Self.rowInsets)
+                        .listRowBackground(Color.clear)
                 }
 
                 if modes.contains(.dmz), hajin.guide != nil {
@@ -247,6 +256,53 @@ private struct SupportRow: View {
             .borderedCard()
         }
         .buttonStyle(.plain)
+    }
+}
+
+/// MW4's Flashpoint: each mode's three Mastery camos, then the camo for
+/// having all of them.
+private struct GlobalMasteryStatsCard: View {
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    var body: some View {
+        if let capstone = GameRegistry.current.capstone {
+            let progress = viewModel.globalMasteryProgress
+            let fraction = progress.total > 0 ? Double(progress.done) / Double(progress.total) : 0
+            let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
+            let accent = colors.first ?? .camoGold
+            let modes = AppMode.allCases.filter { viewModel.modes[$0.rawValue] != nil }
+            let nodes: [MasteryTrack.Node] = modes.map { mode in
+                let done = (1...3).filter { viewModel.isMasteryAchieved(mode: mode.rawValue, tier: $0) }.count
+                return .init(name: mode.displayName, color: mode.accent, gradient: mode.masteryCamos.tier3.gradient,
+                             achieved: done == 3, detail: "\(done)/3")
+            } + [.init(name: capstone.name.resolved(), color: accent, gradient: colors.isEmpty ? .gold : colors,
+                       achieved: viewModel.isGlobalMasteryAchieved, detail: "\(progress.done)/\(progress.total)")]
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(spacing: 10) {
+                    Image(systemName: "crown.fill")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(accent)
+                    Text("ct.mastery.global".localized())
+                        .hitmarkerFont(17)
+                        .foregroundStyle(Color.appInk)
+                    Spacer()
+                    ProgressRing(fraction: fraction, accent: accent, lineWidth: 5, size: 42, showsPercentage: false,
+                                 shimmerColors: colors.isEmpty ? .gold : colors)
+                        .overlay(
+                            Text(fraction.percentText)
+                                .scaledFont(11, weight: .bold, design: .monospaced)
+                                .foregroundStyle(Color.appInk)
+                                .accessibilityHidden(true)
+                        )
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityAddTraits(.isHeader)
+                MasteryTrack(nodes: nodes)
+            }
+            .padding(14)
+            .borderedCard(accent: accent)
+            .accessibilityElement(children: .contain)
+        }
     }
 }
 

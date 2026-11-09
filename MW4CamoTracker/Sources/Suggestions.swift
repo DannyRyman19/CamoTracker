@@ -193,6 +193,14 @@ extension TrackerViewModel {
                                       masteryKind(mode: mode, tier: 3) == .challenge ? tierCamos[2].name : appMode.lastCompletionist.name),
                      titleGradient: .platinum, icon: "crown.fill")
         }
+
+        // Last, so it's the one left showing: the camo for every mode's Mastery
+        if !before.globalMastery, isGlobalMasteryAchieved, let capstone = game.capstone {
+            let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
+            announce(mode: mode, title: String(format: "mw4.ui.milestone.unlocked_title".localized(), capstone.name.resolved()),
+                     subtitle: "ct.mastery.global".localized(), titleGradient: colors.isEmpty ? .gold : colors,
+                     icon: "crown.fill", imageURL: capstone.imageURL)
+        }
     }
 
     /// `perMode` for a milestone that belongs to its mode (Mastery, 100%+).
