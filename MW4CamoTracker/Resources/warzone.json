@@ -1,5 +1,5 @@
 {
-  "version": "0.8.74",
+  "version": "0.8.75",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8691,28 +8691,57 @@
             {
               "itemId": 0,
               "name": {
-                "en": "Wager Match camo",
-                "fr": "Wager Match camo",
-                "es": "Wager Match camo",
-                "de": "Wager Match camo",
-                "nl": "Wager Match camo",
-                "it": "Wager Match camo",
-                "pt": "Wager Match camo"
+                "en": "Venom Pile",
+                "fr": "Venom Pile",
+                "es": "Venom Pile",
+                "de": "Venom Pile",
+                "nl": "Venom Pile",
+                "it": "Venom Pile",
+                "pt": "Venom Pile"
+              },
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/venom_pile.png",
+              "tier": 1,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1000,
+                "unit": "times",
+                "description": {
+                  "en": "Redeem it for 1,000 Trophies in the Wager Match event. Collect Trophies from enemies in Multiplayer, DMZ and Warzone, and wager them in Wager Match playlists in Multiplayer to earn more.",
+                  "fr": "Échangez-le contre 1 000 trophées dans l’événement Wager Match. Récupérez des trophées sur les ennemis en Multijoueur, DMZ et Warzone, et pariez-les dans les listes Wager Match en Multijoueur pour en gagner plus.",
+                  "es": "Canjéalo por 1000 trofeos en el evento Wager Match. Consigue trofeos de los enemigos en Multijugador, DMZ y Warzone, y apuéstalos en las listas Wager Match de Multijugador para ganar más.",
+                  "de": "Für 1.000 Trophäen im Wager-Match-Event einlösen. Sammle Trophäen von Gegnern in Mehrspieler, DMZ und Warzone und setze sie in den Wager-Match-Playlists im Mehrspieler, um mehr zu verdienen.",
+                  "nl": "Wissel hem in voor 1.000 trofeeën in het Wager Match-evenement. Verzamel trofeeën van vijanden in Multiplayer, DMZ en Warzone, en zet ze in bij Wager Match-playlists in Multiplayer om er meer te verdienen.",
+                  "it": "Riscattala per 1.000 trofei nell’evento Wager Match. Raccogli trofei dai nemici in Multigiocatore, DMZ e Warzone, e scommettili nelle playlist Wager Match in Multigiocatore per guadagnarne di più.",
+                  "pt": "Resgate por 1.000 troféus no evento Wager Match. Colete troféus dos inimigos em Multijogador, DMZ e Warzone, e aposte-os nas listas Wager Match do Multijogador para ganhar mais."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 1,
+              "name": {
+                "en": "Week 2 camo",
+                "fr": "Camouflage de la semaine 2",
+                "es": "Camuflaje de la semana 2",
+                "de": "Tarnung aus Woche 2",
+                "nl": "Camo van week 2",
+                "it": "Mimetica della settimana 2",
+                "pt": "Camuflagem da semana 2"
               },
               "imageURL": null,
-              "tier": 1,
+              "tier": 2,
               "unlockLevel": null,
               "requirement": {
                 "amount": 1,
                 "unit": "times",
                 "description": {
-                  "en": "Earn Trophies in the Gauntlet 1v1 playlist and through Multiplayer, DMZ and Warzone challenges; the Mastery rewards include a weapon camo. Challenges show here once the event starts on 11 Nov.",
-                  "fr": "Gagnez des trophées dans la liste Gauntlet 1v1 et via les défis Multijoueur, DMZ et Warzone ; les récompenses de maîtrise incluent un camouflage. Les défis s’afficheront ici au lancement, le 11 nov.",
-                  "es": "Gana trofeos en la lista Gauntlet 1v1 y con desafíos de Multijugador, DMZ y Warzone; las recompensas de maestría incluyen un camuflaje. Los desafíos aparecerán aquí cuando empiece, el 11 de nov.",
-                  "de": "Verdiene Trophäen in der Gauntlet-1v1-Playlist und mit Herausforderungen in Mehrspieler, DMZ und Warzone; die Meisterschaftsbelohnungen enthalten eine Tarnung. Die Herausforderungen erscheinen hier zum Start am 11. Nov.",
-                  "nl": "Verdien trofeeën in de Gauntlet 1v1-playlist en met uitdagingen in Multiplayer, DMZ en Warzone; de masterybeloningen bevatten een camo. De uitdagingen verschijnen hier bij de start op 11 nov.",
-                  "it": "Ottieni trofei nella playlist Gauntlet 1v1 e con le sfide di Multigiocatore, DMZ e Warzone; le ricompense maestria includono una mimetica. Le sfide appariranno qui all’inizio, l’11 nov.",
-                  "pt": "Ganhe troféus na lista Gauntlet 1v1 e em desafios de Multijogador, DMZ e Warzone; as recompensas de maestria incluem uma camuflagem. Os desafios aparecem aqui quando o evento começar, em 11 de nov."
+                  "en": "Wager Match's second week of rewards opens around 18 Nov with the event's other camo. Its name and Trophy price show here once it's out.",
+                  "fr": "La deuxième semaine de récompenses de Wager Match ouvre vers le 18 nov. avec l’autre camouflage de l’événement. Son nom et son prix en trophées s’afficheront ici à sa sortie.",
+                  "es": "La segunda semana de recompensas de Wager Match se abre hacia el 18 de nov. con el otro camuflaje del evento. Su nombre y su precio en trofeos aparecerán aquí cuando salga.",
+                  "de": "Die zweite Belohnungswoche von Wager Match startet um den 18. Nov. mit der zweiten Tarnung des Events. Name und Trophäenpreis erscheinen hier, sobald sie da ist.",
+                  "nl": "De tweede week met Wager Match-beloningen opent rond 18 nov. met de andere camo van het evenement. De naam en de prijs in trofeeën verschijnen hier zodra hij uit is.",
+                  "it": "La seconda settimana di ricompense di Wager Match si apre intorno al 18 nov. con l’altra mimetica dell’evento. Nome e prezzo in trofei appariranno qui all’uscita.",
+                  "pt": "A segunda semana de recompensas do Wager Match abre por volta de 18 de nov. com a outra camuflagem do evento. O nome e o preço em troféus aparecem aqui quando sair."
                 }
               },
               "children": []
