@@ -18,6 +18,16 @@ for item in guide['items']:
         else:
             request = urllib.request.Request(item['image'], headers={'User-Agent': 'Mozilla/5.0'})
             open(path, 'wb').write(urllib.request.urlopen(request).read())
+# extra_refs/ holds cut-outs for items the guide has no picture of yet (none
+# of them ingredients): the model still has to know them, or it calls their
+# tiles the nearest thing it does know
+extra = os.path.join(HERE, 'extra_refs')
+pictured = {i['id'] for i in guide['items'] if i.get('image')}
+for f in sorted(os.listdir(extra)) if os.path.isdir(extra) else []:
+    if f.endswith('.png') and f[:-4] not in pictured:
+        folder = os.path.join(sys.argv[1] if len(sys.argv) > 1 else '.', 'refs_other')
+        os.makedirs(folder, exist_ok=True)
+        shutil.copy(os.path.join(extra, f), os.path.join(folder, f))
 print('ok')
 
 # One file per distinct picture of the non-ingredients: items that share a

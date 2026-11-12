@@ -28,10 +28,16 @@ swiftc -O train.swift -o /tmp/stash/train   # augmentation off: with ~125 classe
 cp /tmp/stash/HajinStashIcons.mlmodel ../../Sources/
 ```
 
+`extra_refs/` holds a cut-out for each item the guide has no picture of yet
+(a tile cut from a screenshot, its count and diamond faded out), so the model
+still knows the item: before 2026-11-12 it read the Trial Records discs as
+Stock Rod at 0.99. `fetch_icons.py` adds them to `refs_other`, and skips one
+once the guide has its own picture. None of them is an ingredient.
+
 `synth.py` needs Pillow (`/usr/bin/python3` on this Mac has it). `real/` is
 for checking only: 200 px tiles cut from real stash and backpack photos and
-screenshots, in one folder per item id (161 on 2026-10-28; the model gets
-160). Add tiles from new photos there, especially of anything it misreads.
+screenshots, in one folder per item id (218 on 2026-11-12; the model gets
+216). Add tiles from new photos there, especially of anything it misreads.
 The model uses Vision's scene print
 revision 2, so the feature is iOS 17+ (revision 1 works on iOS 16 but scored
 94% on real tiles against 100%).
