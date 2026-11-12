@@ -19,6 +19,11 @@ xcodebuild test -scheme MW4CamoTrackerTests -destination 'platform=iOS Simulator
 - `markers.json`: the official Activision Tac Map markers. Refresh with
   `curl -s 'https://map-vnext-server.infra-ext.activision.com/mapdata/all?mapPath=/content/atvi/callofduty/guides/web/en/modernwarfare4/dmz-maps/hajin' -o Tools/hajin/markers.json`
 - `imgmap.json`: item name to picture URL.
+- Item pictures added 2026-11-12 (the Season 1 valuables, the five loot
+  boxes, Specter Fabric Sample, SR-16 Bio Agent Sample, Counterfeit Cash,
+  K9 Battery Core, Jin-Tae's Private Lounge) are from the item pages on
+  dmzcodex.com, whose robots.txt allows automated reading and asks to be
+  cited as the source.
 - `codex_map.json`: community map layers from dmzcodex.com/map (exfils,
   player spawns, safes and other loot spots, key doors, and where each key
   turns up), already in our map's coordinates. Refresh with

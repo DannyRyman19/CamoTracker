@@ -1,5 +1,5 @@
 {
- "version": "0.9.53",
+ "version": "0.9.54",
  "updated": "2026-11-12",
  "map": {
   "image": "hajin_map",
@@ -5557,6 +5557,12 @@
      "item": "specter-fabric-sample"
     },
     {
+     "title": "SR-16 Bio Agent Sample",
+     "subtitle": "Survivor Box (X01). Where it's found isn't known yet",
+     "value": "Legendary",
+     "item": "sr-16-bio-agent-sample"
+    },
+    {
      "title": "Nano-Structured Alloy",
      "subtitle": "3-Plate Helmet Armor Vest. Printable from Season 1: 2 Turned Components, 5 Structural Alloy",
      "value": "Legendary",
@@ -9213,7 +9219,7 @@
    "rarity": "Rare",
    "found": "Modern computers, server racks and safes",
    "note": "Sells for $3,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/animal-trial-records-r-4.png?v=1"
   },
   {
    "id": "argonaut-armor",
@@ -9765,7 +9771,7 @@
    "rarity": "Epic",
    "found": "Safes, supply crates and chemical storage",
    "note": "Sells for $6,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/ceramic-pup-of-loyalty.png?v=1"
   },
   {
    "id": "chemicals",
@@ -9903,7 +9909,7 @@
    "value": 1000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet.",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/consumable-box.png?v=1"
   },
   {
    "id": "control-unit",
@@ -9929,7 +9935,7 @@
    "name": "Counterfeit Cash",
    "kind": "Other",
    "note": "A DMZ Order item: in Execute Intel, hack a UAV Tower in Deadtown and loot it from the soldiers it pings",
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/counterfeit-cash.png?v=1"
   },
   {
    "id": "counting-room-vault",
@@ -10557,7 +10563,7 @@
    "rarity": "Epic",
    "found": "Safes, supply crates and chemical storage",
    "note": "Sells for $7,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/gilded-maritime-relic.png?v=1"
   },
   {
    "id": "gilded-medal-of-absolute-loyalty",
@@ -10567,7 +10573,7 @@
    "rarity": "Legendary",
    "found": "Safes, supply crates and weapons lockers",
    "note": "Sells for $15,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/gilded-medal-of-absolute-loyalty.png?v=1"
   },
   {
    "id": "gold-bar",
@@ -10745,7 +10751,7 @@
    "value": 2500,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet.",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/hazmat-box.png?v=1"
   },
   {
    "id": "hazmat-suit",
@@ -10807,7 +10813,7 @@
    "rarity": "Epic",
    "found": "Modern computers, server racks and safes",
    "note": "Sells for $8,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/human-trial-records-r-18.png?v=1"
   },
   {
    "id": "imjin-mill-foremans-office",
@@ -10934,6 +10940,7 @@
    "grid": "F4",
    "marker": "k-jin-taes-private-lounge",
    "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/jin-taes-private-lounge.png?v=1",
    "found": "Dropped by Jin-Tae (reported)"
   },
   {
@@ -10941,7 +10948,7 @@
    "name": "K9 Battery Core",
    "kind": "Other",
    "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones",
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/k9-battery-core.png?v=1"
   },
   {
    "id": "large-backpack",
@@ -11161,7 +11168,7 @@
    "rarity": "Rare",
    "found": "Safes, supply crates and weapons lockers",
    "note": "Sells for $2,500",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/medal-of-unquestioning-service.png?v=1"
   },
   {
    "id": "medical-box",
@@ -11171,7 +11178,7 @@
    "value": 2500,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet.",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/medical-box.png?v=1"
   },
   {
    "id": "medium-backpack",
@@ -11691,7 +11698,7 @@
    "rarity": "Rare",
    "found": "Modern computers, server racks and crashed UAV hatches",
    "note": "Sells for $3,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/r-4-bio-compound.png?v=1"
   },
   {
    "id": "radiation-blockers",
@@ -11984,6 +11991,14 @@
    ],
    "effect": "Portable turret that shoots down aerial threats",
    "image": "https://camotracker.djr.li/Images/DMZ/sam-airburst-turret.png?v=1"
+  },
+  {
+   "id": "sr-16-bio-agent-sample",
+   "name": "SR-16 Bio Agent Sample",
+   "rarity": "Legendary",
+   "kind": "Ingredient",
+   "note": "Survivor Box (X01). Where it's found isn't known yet",
+   "image": "https://camotracker.djr.li/Images/DMZ/sr-16-bio-agent-sample.png?v=1"
   },
   {
    "id": "sanctioned-assassination-list",
@@ -12329,7 +12344,7 @@
    "rarity": "Legendary",
    "kind": "Ingredient",
    "note": "3. 5-Plate Armor Vest, Argonaut Armor (Season 1). Found rarely in X01, and a reward for X01 orders page 3",
-   "symbol": "cube.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/specter-fabric-sample.png?v=1"
   },
   {
    "id": "spotter-scope",
@@ -12616,7 +12631,7 @@
    "value": 3000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet. A recipe for it can be found too",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/survivor-box.png?v=1"
   },
   {
    "id": "synthetics",
@@ -12943,7 +12958,7 @@
    "value": 3000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet. A recipe for it can be found too",
-   "symbol": "bag.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/utility-box.png?v=1"
   },
   {
    "id": "utility-maintenance-storage",
@@ -13104,7 +13119,7 @@
    "rarity": "Legendary",
    "found": "Modern computers, server racks and crashed UAV hatches",
    "note": "Sells for $12,000",
-   "symbol": "diamond.fill"
+   "image": "https://camotracker.djr.li/Images/DMZ/weapons-grade-isotope.png?v=1"
   },
   {
    "id": "weapons-mod-workshop",

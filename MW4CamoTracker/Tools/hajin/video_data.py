@@ -198,6 +198,7 @@ NEW_INGREDIENTS = [
  ("Stabilized Reagents", "Epic", "Self-Revive Kit, 3-Plate Ballistic Gel Vest. Printable: 100 Chemicals, 3 Binding Catalyst"),
  ("Experimental Compounds", "Legendary", "3-Plate Ballistic Gel Vest. Printable from Season 1: 2 Volatile Explosives, 5 Binding Catalyst"),
  ("Specter Fabric Sample", "Legendary", "3.5-Plate Armor Vest, Argonaut Armor (Season 1). Found rarely in X01, and a reward for X01 orders page 3"),
+ ("SR-16 Bio Agent Sample", "Legendary", "Survivor Box (X01). Where it's found isn't known yet"),
  ("Nano-Structured Alloy", "Legendary", "3-Plate Helmet Armor Vest. Printable from Season 1: 2 Turned Components, 5 Structural Alloy"),
  ("Alloyed Plating", None, "3-Plate Helmet Armor Vest, Medium Secure Backpack"),
  ("Turned Components", "Epic", "Parachute"),
