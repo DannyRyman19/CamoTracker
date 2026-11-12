@@ -28,16 +28,24 @@ swiftc -O train.swift -o /tmp/stash/train   # augmentation off: with ~125 classe
 cp /tmp/stash/HajinStashIcons.mlmodel ../../Sources/
 ```
 
-`extra_refs/` holds a cut-out for each item the guide has no picture of yet
-(a tile cut from a screenshot, its count and diamond faded out), so the model
-still knows the item: before 2026-11-12 it read the Trial Records discs as
-Stock Rod at 0.99. `fetch_icons.py` adds them to `refs_other`, and skips one
-once the guide has its own picture. None of them is an ingredient.
+`fetch_icons.py` also takes cut-outs from an `extra_refs/` folder here, for
+items the guide has no picture of yet (none on 2026-11-12, so the folder is
+gone): the model has to know every item it will meet, or it calls the tile
+the nearest thing it does know. Before 2026-11-12 it read the Trial Records
+discs as Stock Rod at 0.99.
+
+With 167 classes, 60 tiles a class is too many for Create ML (the same
+CVPixelBufferPool failure at 8,600), so the 2026-11-12 model was trained on
+90 tiles for each ingredient and 34 for everything else (about 7,300). Of
+the mixes tried, that is the only one with no ingredient misread and nothing
+misread as an ingredient: its misses are one valuable read as another, which
+My stash never sees. Even shares (44 a class) lost a Turned Components tile
+to Hazmat Box; 90/60/26 read a Gold Bar as SR-16 Bio Agent Sample.
 
 `synth.py` needs Pillow (`/usr/bin/python3` on this Mac has it). `real/` is
 for checking only: 200 px tiles cut from real stash and backpack photos and
-screenshots, in one folder per item id (218 on 2026-11-12; the model gets
-216). Add tiles from new photos there, especially of anything it misreads.
+screenshots, in one folder per item id (220 on 2026-11-12; the model gets
+215). Add tiles from new photos there, especially of anything it misreads.
 The model uses Vision's scene print
 revision 2, so the feature is iOS 17+ (revision 1 works on iOS 16 but scored
 94% on real tiles against 100%).
