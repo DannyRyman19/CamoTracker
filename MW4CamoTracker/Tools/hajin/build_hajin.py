@@ -1,6 +1,6 @@
 """Builds MW4CamoTracker/Resources/hajin.json from the official Tac Map markers
 (markers.json) plus our own write-ups and guide tables below."""
-import os, json, re, sys
+import os, json, math, re, sys
 
 # python3 Tools/hajin/build_hajin.py [markers.json] [out.json]; defaults build
 # the bundled guide from the saved Activision Tac Map markers
@@ -165,7 +165,7 @@ def door_name(label):
     name = re.sub(r"(,| -| ·) [A-I]\d(, [A-I]\d)?$", "", label.replace("’", "'"))
     name = re.sub(r" · .*$| (search )?area$", "", name)
     return DOOR_ALIASES.get(name, name)
-UNKNOWN_ROOMS = {"Locked room", "Fire Station Storage", "Field Depot", "Mirae General Hospital Ward", "Silo Control Room",
+UNKNOWN_ROOMS = {"Locked room", "Fire Station Storage", "Mirae General Hospital Ward", "Silo Control Room",
                  "Underground Equipment Storage", "Heavenly Luck Casino Ground Floor", "Rice Mill Bunker"}
 by_key_name = {m["name"]: m for m in markers if m["cat"] == "key"}
 for p in CODEX["pins"]:
@@ -267,6 +267,29 @@ for n, x, y, name, where, sure in EMBER_SAFES:
 for name, px, py in CHEMICAL_STORAGE:
     markers.append({"id": "chem-" + re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), "cat": "chem", "name": name,
                     "x": round((px - CROP[0]) / CROP[2], 4), "y": round((py - CROP[1]) / CROP[2], 4)})
+
+# Safes, hidden caches, chemical storage and dead drops placed in the game's
+# own map data, as shown on the dmz.tips Hajin atlas (atlas_map.json, already
+# in our map's coordinates). A spot we already pin from another source is
+# skipped; the rest are named by grid square like the dmzcodex pins.
+ATLAS = json.load(open(os.path.join(_HERE, "atlas_map.json")))
+# The Tac Map's grid squares on our crop, fitted to the squares the dmzcodex pins name
+def _grid(x, y): return "ABCDEFGHIJ"[int((x + 0.025) / 0.1025)] + str(int((y + 0.0235) / 0.103))
+ATLAS_CAT = {"safes": ("safe", "Safe", ("safe", "ember")), "hidden-caches": ("hidden", "Hidden cache", ("hidden",)),
+             "chemical-storage": ("chem", "Chemical storage", ("chem",)), "dead-drops": ("deaddrop", "Dead drop", ("deaddrop",))}
+ATLAS_NOTE = {"deaddrop": "Placed in the game's map data. A dead drop isn't there in every deployment."}
+ATLAS_MANY = {"safe": "{n} safes close together here.", "chem": "{n} lockers close together here."}
+for layer, (cid, label, same) in ATLAS_CAT.items():
+    known = [(m["x"], m["y"]) for m in markers if m["cat"] in same]
+    for p in ATLAS["pins"]:
+        if p["layer"] != layer or not (0 <= p["x"] < 1 and 0 <= p["y"] < 1): continue
+        # chemical storage was pinned by hand, so its pins sit a little further from the real lockers
+        if any(math.hypot(p["x"] - kx, p["y"] - ky) < (0.02 if cid == "chem" else 0.012) for kx, ky in known): continue
+        m = {"id": f"a-{cid}-{round(p['x'] * 10000)}-{round(p['y'] * 10000)}", "cat": cid,
+             "name": f"{label}, {_grid(p['x'], p['y'])}", "x": p["x"], "y": p["y"]}
+        note = " ".join(t for t in (ATLAS_MANY.get(cid, "").format(n=p["count"]) if p.get("count") else "", ATLAS_NOTE.get(cid, "")) if t)
+        if note: m["note"] = note
+        markers.append(m); counts[cid] = counts.get(cid, 0) + 1
 
 def rows(items): return [dict(zip(("title", "value", "subtitle"), r)) if isinstance(r, tuple) else r for r in items]
 
@@ -406,6 +429,11 @@ guide = [
    ("Roze's High-Rise Armory", "G6", "Legendary. The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault"),
    ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
+   # in the game's loot tables (dmz.tips atlas, 2026-11-12); doors not found yet
+   ("The Citadel Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("The Grid Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("Field Depot", "B5", "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
    ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
    ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound"),
@@ -428,9 +456,19 @@ guide = [
   "rows": rows([
    ("R-18: Grade 3 Bio-Toxin", "$50,000", "Ultra. New in Season 1, found in X01"), ("Gilded Guardian of Allegiance", "$30,000", "Ultra. New in Season 1, found in X01"),
    ("Gold Bar", "$25,000", "Ultra. Also a reward from Silent Ledger"), ("Gold Skull", "$25,000", "Ultra"),
-   ("Sanctioned Assassination List", "$10,000", "Legendary"), ("Foreign Intelligence Targets", "$5,000", "Epic. Five are needed for MIA Recovery Discount III"),
+   ("Gilded Medal of Absolute Loyalty", "$15,000", "Legendary. Safes, supply crates and weapons lockers"),
+   ("Weapons Grade Isotope", "$12,000", "Legendary. Modern computers, server racks and crashed UAV hatches"),
+   ("Sanctioned Assassination List", "$10,000", "Legendary"),
+   ("Human Trial Records: R-18", "$8,000", "Epic. Modern computers, server racks and safes"),
+   ("Gilded Maritime Relic", "$7,000", "Epic. Safes, supply crates and chemical storage"),
+   ("Ceramic Pup of Loyalty", "$6,000", "Epic. Safes, supply crates and chemical storage"),
+   ("Foreign Intelligence Targets", "$5,000", "Epic. Five are needed for MIA Recovery Discount III"),
    ("Cipher Code Ledger", "$5,000", "Epic"), ("W.M.D Manifest", "$5,000", "Epic"),
-   ("Parachute", "$5,000", "Legendary"), ("Revive Pistol", "$2,500", "Legendary"), ("Fulton Drop Marker", "$2,500", "Ultra"),
+   ("Parachute", "$5,000", "Legendary"),
+   ("Animal Trial Records: R-4", "$3,000", "Rare. Modern computers, server racks and safes"),
+   ("R-4 Bio-Compound", "$3,000", "Rare. Modern computers, server racks and crashed UAV hatches"),
+   ("Medal of Unquestioning Service", "$2,500", "Rare. Safes, supply crates and weapons lockers"),
+   ("Revive Pistol", "$2,500", "Legendary"), ("Fulton Drop Marker", "$2,500", "Ultra"),
    ("Encrypted Archive", "$2,000", "Rare. Found in the Heavenly Luck Casino storage and counting rooms, and the Mirae Electrical Room"), ("Medkit", "$2,000", "Epic"), ("Keys", "$100", "Every key sells for $100"),
   ])},
  {"id": "threat", "title": "Threat levels", "symbol": "exclamationmark.triangle.fill",
@@ -504,7 +542,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.52", "updated": "2026-11-06",
+data = {"version": "0.9.53", "updated": "2026-11-12",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

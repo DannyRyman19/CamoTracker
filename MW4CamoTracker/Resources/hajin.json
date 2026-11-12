@@ -1,6 +1,6 @@
 {
- "version": "0.9.52",
- "updated": "2026-11-06",
+ "version": "0.9.53",
+ "updated": "2026-11-12",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -1572,7 +1572,7 @@
    "name": "Field Depot",
    "x": 0.1378,
    "y": 0.5591,
-   "note": "A locked room players have reported, grid B5. Which key opens it isn't known yet."
+   "note": "The door its key opens, grid B5."
   },
   {
    "id": "k-gun-store-weapons-locker",
@@ -3372,6 +3372,791 @@
    "name": "Haneul Nuclear Reactor (Reactor 02)",
    "x": 0.8,
    "y": 0.444
+  },
+  {
+   "id": "a-safe-5600-4487",
+   "cat": "safe",
+   "name": "Safe, F4",
+   "x": 0.56,
+   "y": 0.4487,
+   "note": "2 safes close together here."
+  },
+  {
+   "id": "a-safe-6470-6321",
+   "cat": "safe",
+   "name": "Safe, G6",
+   "x": 0.647,
+   "y": 0.6321,
+   "note": "2 safes close together here."
+  },
+  {
+   "id": "a-safe-6752-6571",
+   "cat": "safe",
+   "name": "Safe, G6",
+   "x": 0.6752,
+   "y": 0.6571
+  },
+  {
+   "id": "a-safe-6866-6670",
+   "cat": "safe",
+   "name": "Safe, G6",
+   "x": 0.6866,
+   "y": 0.667,
+   "note": "2 safes close together here."
+  },
+  {
+   "id": "a-safe-6924-6734",
+   "cat": "safe",
+   "name": "Safe, G6",
+   "x": 0.6924,
+   "y": 0.6734
+  },
+  {
+   "id": "a-safe-6860-6780",
+   "cat": "safe",
+   "name": "Safe, G6",
+   "x": 0.686,
+   "y": 0.678,
+   "note": "3 safes close together here."
+  },
+  {
+   "id": "a-safe-3439-6788",
+   "cat": "safe",
+   "name": "Safe, D6",
+   "x": 0.3439,
+   "y": 0.6788
+  },
+  {
+   "id": "a-safe-1476-7287",
+   "cat": "safe",
+   "name": "Safe, B7",
+   "x": 0.1476,
+   "y": 0.7287
+  },
+  {
+   "id": "a-safe-3510-8274",
+   "cat": "safe",
+   "name": "Safe, D8",
+   "x": 0.351,
+   "y": 0.8274
+  },
+  {
+   "id": "a-safe-3614-8655",
+   "cat": "safe",
+   "name": "Safe, D8",
+   "x": 0.3614,
+   "y": 0.8655
+  },
+  {
+   "id": "a-hidden-3514-3276",
+   "cat": "hidden",
+   "name": "Hidden cache, D3",
+   "x": 0.3514,
+   "y": 0.3276
+  },
+  {
+   "id": "a-hidden-3751-3679",
+   "cat": "hidden",
+   "name": "Hidden cache, D3",
+   "x": 0.3751,
+   "y": 0.3679
+  },
+  {
+   "id": "a-hidden-2795-3722",
+   "cat": "hidden",
+   "name": "Hidden cache, C3",
+   "x": 0.2795,
+   "y": 0.3722
+  },
+  {
+   "id": "a-hidden-5111-3912",
+   "cat": "hidden",
+   "name": "Hidden cache, F4",
+   "x": 0.5111,
+   "y": 0.3912
+  },
+  {
+   "id": "a-hidden-8265-3919",
+   "cat": "hidden",
+   "name": "Hidden cache, I4",
+   "x": 0.8265,
+   "y": 0.3919
+  },
+  {
+   "id": "a-hidden-780-3985",
+   "cat": "hidden",
+   "name": "Hidden cache, B4",
+   "x": 0.078,
+   "y": 0.3985
+  },
+  {
+   "id": "a-hidden-2262-4046",
+   "cat": "hidden",
+   "name": "Hidden cache, C4",
+   "x": 0.2262,
+   "y": 0.4046
+  },
+  {
+   "id": "a-hidden-7345-4344",
+   "cat": "hidden",
+   "name": "Hidden cache, H4",
+   "x": 0.7345,
+   "y": 0.4344
+  },
+  {
+   "id": "a-hidden-8798-4497",
+   "cat": "hidden",
+   "name": "Hidden cache, I4",
+   "x": 0.8798,
+   "y": 0.4497
+  },
+  {
+   "id": "a-hidden-1768-4507",
+   "cat": "hidden",
+   "name": "Hidden cache, B4",
+   "x": 0.1768,
+   "y": 0.4507
+  },
+  {
+   "id": "a-hidden-8612-4544",
+   "cat": "hidden",
+   "name": "Hidden cache, I4",
+   "x": 0.8612,
+   "y": 0.4544
+  },
+  {
+   "id": "a-hidden-4183-4610",
+   "cat": "hidden",
+   "name": "Hidden cache, E4",
+   "x": 0.4183,
+   "y": 0.461
+  },
+  {
+   "id": "a-hidden-799-4692",
+   "cat": "hidden",
+   "name": "Hidden cache, B4",
+   "x": 0.0799,
+   "y": 0.4692
+  },
+  {
+   "id": "a-hidden-8618-4743",
+   "cat": "hidden",
+   "name": "Hidden cache, I4",
+   "x": 0.8618,
+   "y": 0.4743
+  },
+  {
+   "id": "a-hidden-6564-4815",
+   "cat": "hidden",
+   "name": "Hidden cache, G4",
+   "x": 0.6564,
+   "y": 0.4815
+  },
+  {
+   "id": "a-hidden-8716-4857",
+   "cat": "hidden",
+   "name": "Hidden cache, I4",
+   "x": 0.8716,
+   "y": 0.4857
+  },
+  {
+   "id": "a-hidden-7448-4929",
+   "cat": "hidden",
+   "name": "Hidden cache, H5",
+   "x": 0.7448,
+   "y": 0.4929
+  },
+  {
+   "id": "a-hidden-587-5227",
+   "cat": "hidden",
+   "name": "Hidden cache, A5",
+   "x": 0.0587,
+   "y": 0.5227
+  },
+  {
+   "id": "a-hidden-4059-5536",
+   "cat": "hidden",
+   "name": "Hidden cache, E5",
+   "x": 0.4059,
+   "y": 0.5536
+  },
+  {
+   "id": "a-hidden-3417-5939",
+   "cat": "hidden",
+   "name": "Hidden cache, D5",
+   "x": 0.3417,
+   "y": 0.5939
+  },
+  {
+   "id": "a-hidden-4294-6271",
+   "cat": "hidden",
+   "name": "Hidden cache, E6",
+   "x": 0.4294,
+   "y": 0.6271
+  },
+  {
+   "id": "a-hidden-2717-6297",
+   "cat": "hidden",
+   "name": "Hidden cache, C6",
+   "x": 0.2717,
+   "y": 0.6297
+  },
+  {
+   "id": "a-hidden-223-6482",
+   "cat": "hidden",
+   "name": "Hidden cache, A6",
+   "x": 0.0223,
+   "y": 0.6482
+  },
+  {
+   "id": "a-hidden-1213-6488",
+   "cat": "hidden",
+   "name": "Hidden cache, B6",
+   "x": 0.1213,
+   "y": 0.6488
+  },
+  {
+   "id": "a-hidden-3911-7040",
+   "cat": "hidden",
+   "name": "Hidden cache, E7",
+   "x": 0.3911,
+   "y": 0.704
+  },
+  {
+   "id": "a-hidden-957-7079",
+   "cat": "hidden",
+   "name": "Hidden cache, B7",
+   "x": 0.0957,
+   "y": 0.7079
+  },
+  {
+   "id": "a-hidden-7470-7084",
+   "cat": "hidden",
+   "name": "Hidden cache, H7",
+   "x": 0.747,
+   "y": 0.7084
+  },
+  {
+   "id": "a-hidden-7559-7263",
+   "cat": "hidden",
+   "name": "Hidden cache, H7",
+   "x": 0.7559,
+   "y": 0.7263
+  },
+  {
+   "id": "a-hidden-2703-7447",
+   "cat": "hidden",
+   "name": "Hidden cache, C7",
+   "x": 0.2703,
+   "y": 0.7447
+  },
+  {
+   "id": "a-hidden-7348-7543",
+   "cat": "hidden",
+   "name": "Hidden cache, H7",
+   "x": 0.7348,
+   "y": 0.7543
+  },
+  {
+   "id": "a-hidden-4796-7612",
+   "cat": "hidden",
+   "name": "Hidden cache, E7",
+   "x": 0.4796,
+   "y": 0.7612
+  },
+  {
+   "id": "a-hidden-8695-7960",
+   "cat": "hidden",
+   "name": "Hidden cache, I7",
+   "x": 0.8695,
+   "y": 0.796
+  },
+  {
+   "id": "a-hidden-3892-8030",
+   "cat": "hidden",
+   "name": "Hidden cache, E8",
+   "x": 0.3892,
+   "y": 0.803
+  },
+  {
+   "id": "a-hidden-802-8134",
+   "cat": "hidden",
+   "name": "Hidden cache, B8",
+   "x": 0.0802,
+   "y": 0.8134
+  },
+  {
+   "id": "a-hidden-7296-8281",
+   "cat": "hidden",
+   "name": "Hidden cache, H8",
+   "x": 0.7296,
+   "y": 0.8281
+  },
+  {
+   "id": "a-hidden-1846-8351",
+   "cat": "hidden",
+   "name": "Hidden cache, C8",
+   "x": 0.1846,
+   "y": 0.8351
+  },
+  {
+   "id": "a-hidden-5519-8537",
+   "cat": "hidden",
+   "name": "Hidden cache, F8",
+   "x": 0.5519,
+   "y": 0.8537
+  },
+  {
+   "id": "a-hidden-2847-8665",
+   "cat": "hidden",
+   "name": "Hidden cache, D8",
+   "x": 0.2847,
+   "y": 0.8665
+  },
+  {
+   "id": "a-hidden-833-8767",
+   "cat": "hidden",
+   "name": "Hidden cache, B8",
+   "x": 0.0833,
+   "y": 0.8767
+  },
+  {
+   "id": "a-hidden-4596-8956",
+   "cat": "hidden",
+   "name": "Hidden cache, E8",
+   "x": 0.4596,
+   "y": 0.8956
+  },
+  {
+   "id": "a-hidden-6204-9090",
+   "cat": "hidden",
+   "name": "Hidden cache, G9",
+   "x": 0.6204,
+   "y": 0.909
+  },
+  {
+   "id": "a-hidden-2736-9212",
+   "cat": "hidden",
+   "name": "Hidden cache, C9",
+   "x": 0.2736,
+   "y": 0.9212
+  },
+  {
+   "id": "a-hidden-9089-9292",
+   "cat": "hidden",
+   "name": "Hidden cache, J9",
+   "x": 0.9089,
+   "y": 0.9292
+  },
+  {
+   "id": "a-hidden-7800-9741",
+   "cat": "hidden",
+   "name": "Hidden cache, H9",
+   "x": 0.78,
+   "y": 0.9741
+  },
+  {
+   "id": "a-chem-1920-3252",
+   "cat": "chem",
+   "name": "Chemical storage, C3",
+   "x": 0.192,
+   "y": 0.3252,
+   "note": "2 lockers close together here."
+  },
+  {
+   "id": "a-chem-7967-4129",
+   "cat": "chem",
+   "name": "Chemical storage, I4",
+   "x": 0.7967,
+   "y": 0.4129
+  },
+  {
+   "id": "a-chem-8208-4162",
+   "cat": "chem",
+   "name": "Chemical storage, I4",
+   "x": 0.8208,
+   "y": 0.4162
+  },
+  {
+   "id": "a-chem-8220-5148",
+   "cat": "chem",
+   "name": "Chemical storage, I5",
+   "x": 0.822,
+   "y": 0.5148,
+   "note": "2 lockers close together here."
+  },
+  {
+   "id": "a-chem-569-5215",
+   "cat": "chem",
+   "name": "Chemical storage, A5",
+   "x": 0.0569,
+   "y": 0.5215
+  },
+  {
+   "id": "a-chem-5669-5553",
+   "cat": "chem",
+   "name": "Chemical storage, F5",
+   "x": 0.5669,
+   "y": 0.5553,
+   "note": "4 lockers close together here."
+  },
+  {
+   "id": "a-chem-7123-5776",
+   "cat": "chem",
+   "name": "Chemical storage, H5",
+   "x": 0.7123,
+   "y": 0.5776,
+   "note": "2 lockers close together here."
+  },
+  {
+   "id": "a-chem-1009-6065",
+   "cat": "chem",
+   "name": "Chemical storage, B6",
+   "x": 0.1009,
+   "y": 0.6065,
+   "note": "3 lockers close together here."
+  },
+  {
+   "id": "a-chem-7031-6350",
+   "cat": "chem",
+   "name": "Chemical storage, H6",
+   "x": 0.7031,
+   "y": 0.635
+  },
+  {
+   "id": "a-chem-7518-6405",
+   "cat": "chem",
+   "name": "Chemical storage, H6",
+   "x": 0.7518,
+   "y": 0.6405,
+   "note": "2 lockers close together here."
+  },
+  {
+   "id": "a-chem-1336-7469",
+   "cat": "chem",
+   "name": "Chemical storage, B7",
+   "x": 0.1336,
+   "y": 0.7469
+  },
+  {
+   "id": "a-chem-3182-8841",
+   "cat": "chem",
+   "name": "Chemical storage, D8",
+   "x": 0.3182,
+   "y": 0.8841,
+   "note": "2 lockers close together here."
+  },
+  {
+   "id": "a-deaddrop-1863-3295",
+   "cat": "deaddrop",
+   "name": "Dead drop, C3",
+   "x": 0.1863,
+   "y": 0.3295,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3407-3894",
+   "cat": "deaddrop",
+   "name": "Dead drop, D4",
+   "x": 0.3407,
+   "y": 0.3894,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1609-4132",
+   "cat": "deaddrop",
+   "name": "Dead drop, B4",
+   "x": 0.1609,
+   "y": 0.4132,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-7977-4138",
+   "cat": "deaddrop",
+   "name": "Dead drop, I4",
+   "x": 0.7977,
+   "y": 0.4138,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6253-4437",
+   "cat": "deaddrop",
+   "name": "Dead drop, G4",
+   "x": 0.6253,
+   "y": 0.4437,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-4932-4576",
+   "cat": "deaddrop",
+   "name": "Dead drop, F4",
+   "x": 0.4932,
+   "y": 0.4576,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-4263-4715",
+   "cat": "deaddrop",
+   "name": "Dead drop, E4",
+   "x": 0.4263,
+   "y": 0.4715,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-5298-4899",
+   "cat": "deaddrop",
+   "name": "Dead drop, F4",
+   "x": 0.5298,
+   "y": 0.4899,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-2490-4903",
+   "cat": "deaddrop",
+   "name": "Dead drop, C4",
+   "x": 0.249,
+   "y": 0.4903,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-8298-5113",
+   "cat": "deaddrop",
+   "name": "Dead drop, I5",
+   "x": 0.8298,
+   "y": 0.5113,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-5525-5471",
+   "cat": "deaddrop",
+   "name": "Dead drop, F5",
+   "x": 0.5525,
+   "y": 0.5471,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-932-5504",
+   "cat": "deaddrop",
+   "name": "Dead drop, B5",
+   "x": 0.0932,
+   "y": 0.5504,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1121-5584",
+   "cat": "deaddrop",
+   "name": "Dead drop, B5",
+   "x": 0.1121,
+   "y": 0.5584,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1117-5642",
+   "cat": "deaddrop",
+   "name": "Dead drop, B5",
+   "x": 0.1117,
+   "y": 0.5642,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1503-5790",
+   "cat": "deaddrop",
+   "name": "Dead drop, B5",
+   "x": 0.1503,
+   "y": 0.579,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6024-6138",
+   "cat": "deaddrop",
+   "name": "Dead drop, G6",
+   "x": 0.6024,
+   "y": 0.6138,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6568-6190",
+   "cat": "deaddrop",
+   "name": "Dead drop, G6",
+   "x": 0.6568,
+   "y": 0.619,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3744-6271",
+   "cat": "deaddrop",
+   "name": "Dead drop, D6",
+   "x": 0.3744,
+   "y": 0.6271,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-5553-6304",
+   "cat": "deaddrop",
+   "name": "Dead drop, F6",
+   "x": 0.5553,
+   "y": 0.6304,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6319-6627",
+   "cat": "deaddrop",
+   "name": "Dead drop, G6",
+   "x": 0.6319,
+   "y": 0.6627,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3432-6850",
+   "cat": "deaddrop",
+   "name": "Dead drop, D6",
+   "x": 0.3432,
+   "y": 0.685,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-4860-7012",
+   "cat": "deaddrop",
+   "name": "Dead drop, E7",
+   "x": 0.486,
+   "y": 0.7012,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1771-7041",
+   "cat": "deaddrop",
+   "name": "Dead drop, B7",
+   "x": 0.1771,
+   "y": 0.7041,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1554-7183",
+   "cat": "deaddrop",
+   "name": "Dead drop, B7",
+   "x": 0.1554,
+   "y": 0.7183,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-8299-7226",
+   "cat": "deaddrop",
+   "name": "Dead drop, I7",
+   "x": 0.8299,
+   "y": 0.7226,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3322-7234",
+   "cat": "deaddrop",
+   "name": "Dead drop, D7",
+   "x": 0.3322,
+   "y": 0.7234,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-7434-7620",
+   "cat": "deaddrop",
+   "name": "Dead drop, H7",
+   "x": 0.7434,
+   "y": 0.762,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-8804-7625",
+   "cat": "deaddrop",
+   "name": "Dead drop, I7",
+   "x": 0.8804,
+   "y": 0.7625,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1583-7632",
+   "cat": "deaddrop",
+   "name": "Dead drop, B7",
+   "x": 0.1583,
+   "y": 0.7632,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1128-7687",
+   "cat": "deaddrop",
+   "name": "Dead drop, B7",
+   "x": 0.1128,
+   "y": 0.7687,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-5606-7713",
+   "cat": "deaddrop",
+   "name": "Dead drop, F7",
+   "x": 0.5606,
+   "y": 0.7713,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-1904-7804",
+   "cat": "deaddrop",
+   "name": "Dead drop, C7",
+   "x": 0.1904,
+   "y": 0.7804,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6329-7842",
+   "cat": "deaddrop",
+   "name": "Dead drop, G7",
+   "x": 0.6329,
+   "y": 0.7842,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6131-7949",
+   "cat": "deaddrop",
+   "name": "Dead drop, G7",
+   "x": 0.6131,
+   "y": 0.7949,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3134-7979",
+   "cat": "deaddrop",
+   "name": "Dead drop, D7",
+   "x": 0.3134,
+   "y": 0.7979,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-4928-8002",
+   "cat": "deaddrop",
+   "name": "Dead drop, F7",
+   "x": 0.4928,
+   "y": 0.8002,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-3588-8089",
+   "cat": "deaddrop",
+   "name": "Dead drop, D8",
+   "x": 0.3588,
+   "y": 0.8089,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-6030-8429",
+   "cat": "deaddrop",
+   "name": "Dead drop, G8",
+   "x": 0.603,
+   "y": 0.8429,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
+  },
+  {
+   "id": "a-deaddrop-5506-8860",
+   "cat": "deaddrop",
+   "name": "Dead drop, F8",
+   "x": 0.5506,
+   "y": 0.886,
+   "note": "Placed in the game's map data. A dead drop isn't there in every deployment."
   }
  ],
  "guide": [
@@ -5819,6 +6604,27 @@
      "item": "mill-explosives-lab"
     },
     {
+     "title": "The Citadel Side Access",
+     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "item": "the-citadel-side-access"
+    },
+    {
+     "title": "The Grid Side Access",
+     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "item": "the-grid-side-access"
+    },
+    {
+     "title": "Downtown Branch Lobby Main",
+     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "item": "downtown-branch-lobby-main"
+    },
+    {
+     "title": "Field Depot",
+     "value": "B5",
+     "subtitle": "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles",
+     "item": "field-depot"
+    },
+    {
      "title": "Prison Encampment Storage",
      "value": "C3",
      "subtitle": "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison",
@@ -5937,10 +6743,40 @@
      "item": "gold-skull"
     },
     {
+     "title": "Gilded Medal of Absolute Loyalty",
+     "value": "$15,000",
+     "subtitle": "Legendary. Safes, supply crates and weapons lockers",
+     "item": "gilded-medal-of-absolute-loyalty"
+    },
+    {
+     "title": "Weapons Grade Isotope",
+     "value": "$12,000",
+     "subtitle": "Legendary. Modern computers, server racks and crashed UAV hatches",
+     "item": "weapons-grade-isotope"
+    },
+    {
      "title": "Sanctioned Assassination List",
      "value": "$10,000",
      "subtitle": "Legendary",
      "item": "sanctioned-assassination-list"
+    },
+    {
+     "title": "Human Trial Records: R-18",
+     "value": "$8,000",
+     "subtitle": "Epic. Modern computers, server racks and safes",
+     "item": "human-trial-records-r-18"
+    },
+    {
+     "title": "Gilded Maritime Relic",
+     "value": "$7,000",
+     "subtitle": "Epic. Safes, supply crates and chemical storage",
+     "item": "gilded-maritime-relic"
+    },
+    {
+     "title": "Ceramic Pup of Loyalty",
+     "value": "$6,000",
+     "subtitle": "Epic. Safes, supply crates and chemical storage",
+     "item": "ceramic-pup-of-loyalty"
     },
     {
      "title": "Foreign Intelligence Targets",
@@ -5968,6 +6804,24 @@
      "subtitle": "Legendary",
      "image": "https://camotracker.djr.li/Images/DMZ/parachute.png?v=1",
      "item": "parachute"
+    },
+    {
+     "title": "Animal Trial Records: R-4",
+     "value": "$3,000",
+     "subtitle": "Rare. Modern computers, server racks and safes",
+     "item": "animal-trial-records-r-4"
+    },
+    {
+     "title": "R-4 Bio-Compound",
+     "value": "$3,000",
+     "subtitle": "Rare. Modern computers, server racks and crashed UAV hatches",
+     "item": "r-4-bio-compound"
+    },
+    {
+     "title": "Medal of Unquestioning Service",
+     "value": "$2,500",
+     "subtitle": "Rare. Safes, supply crates and weapons lockers",
+     "item": "medal-of-unquestioning-service"
     },
     {
      "title": "Revive Pistol",
@@ -8352,6 +9206,16 @@
    "image": "https://camotracker.djr.li/Images/DMZ/ammo-box.png?v=1"
   },
   {
+   "id": "animal-trial-records-r-4",
+   "name": "Animal Trial Records: R-4",
+   "kind": "Valuable",
+   "value": 3000,
+   "rarity": "Rare",
+   "found": "Modern computers, server racks and safes",
+   "note": "Sells for $3,000",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "argonaut-armor",
    "name": "Argonaut Armor",
    "kind": "Fire Support",
@@ -8894,6 +9758,16 @@
    "image": "https://camotracker.djr.li/Images/DMZ/care-package.png?v=1"
   },
   {
+   "id": "ceramic-pup-of-loyalty",
+   "name": "Ceramic Pup of Loyalty",
+   "kind": "Valuable",
+   "value": 6000,
+   "rarity": "Epic",
+   "found": "Safes, supply crates and chemical storage",
+   "note": "Sells for $6,000",
+   "symbol": "diamond.fill"
+  },
+  {
    "id": "chemicals",
    "name": "Chemicals",
    "kind": "Resource",
@@ -9022,6 +9896,16 @@
    "image": "https://camotracker.djr.li/Images/DMZ/concussion-grenade.png?v=1"
   },
   {
+   "id": "consumable-box",
+   "name": "Consumable Box",
+   "kind": "Gear",
+   "rarity": "Epic",
+   "value": 1000,
+   "found": "A rare find in weapons lockers and Lieutenant crates",
+   "note": "What it holds isn't known yet.",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "control-unit",
    "name": "Control Unit",
    "rarity": "Uncommon",
@@ -9029,6 +9913,16 @@
    "found": "Computers and tech bags",
    "image": "https://camotracker.djr.li/Images/DMZ/control-unit.png?v=1",
    "value": 200
+  },
+  {
+   "id": "counter-uav",
+   "name": "Counter UAV",
+   "kind": "Fire Support",
+   "rarity": "Rare",
+   "value": 300,
+   "found": "A rare find in Lieutenant crates",
+   "note": "Its recipe can be found in Hajin. What it costs to print isn't known yet",
+   "symbol": "airplane"
   },
   {
    "id": "counterfeit-cash",
@@ -9306,6 +10200,16 @@
    "effect": "Single-use charge that breaches a locked door"
   },
   {
+   "id": "downtown-branch-lobby-main",
+   "name": "Downtown Branch Lobby Main",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
+  },
+  {
    "id": "drill-charge",
    "name": "Drill Charge",
    "kind": "Lethals",
@@ -9501,6 +10405,18 @@
    "value": 3500
   },
   {
+   "id": "field-depot",
+   "name": "Field Depot",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Rare",
+   "note": "The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles",
+   "grid": "B5",
+   "marker": "k-field-depot",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
+  },
+  {
    "id": "flash",
    "name": "Flash",
    "kind": "Tacticals",
@@ -9632,6 +10548,26 @@
    "rarity": "Ultra",
    "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $30,000",
    "image": "https://camotracker.djr.li/Images/DMZ/gilded-guardian-of-allegiance.png?v=1"
+  },
+  {
+   "id": "gilded-maritime-relic",
+   "name": "Gilded Maritime Relic",
+   "kind": "Valuable",
+   "value": 7000,
+   "rarity": "Epic",
+   "found": "Safes, supply crates and chemical storage",
+   "note": "Sells for $7,000",
+   "symbol": "diamond.fill"
+  },
+  {
+   "id": "gilded-medal-of-absolute-loyalty",
+   "name": "Gilded Medal of Absolute Loyalty",
+   "kind": "Valuable",
+   "value": 15000,
+   "rarity": "Legendary",
+   "found": "Safes, supply crates and weapons lockers",
+   "note": "Sells for $15,000",
+   "symbol": "diamond.fill"
   },
   {
    "id": "gold-bar",
@@ -9802,6 +10738,16 @@
    ]
   },
   {
+   "id": "hazmat-box",
+   "name": "Hazmat Box",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "value": 2500,
+   "found": "A rare find in weapons lockers and Lieutenant crates",
+   "note": "What it holds isn't known yet.",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "hazmat-suit",
    "name": "Hazmat Suit",
    "kind": "Gear",
@@ -9852,6 +10798,16 @@
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1",
    "found": "Loot containers around Hajin"
+  },
+  {
+   "id": "human-trial-records-r-18",
+   "name": "Human Trial Records: R-18",
+   "kind": "Valuable",
+   "value": 8000,
+   "rarity": "Epic",
+   "found": "Modern computers, server racks and safes",
+   "note": "Sells for $8,000",
+   "symbol": "diamond.fill"
   },
   {
    "id": "imjin-mill-foremans-office",
@@ -10196,6 +11152,26 @@
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
    "found": "Train military lockers (reported)"
+  },
+  {
+   "id": "medal-of-unquestioning-service",
+   "name": "Medal of Unquestioning Service",
+   "kind": "Valuable",
+   "value": 2500,
+   "rarity": "Rare",
+   "found": "Safes, supply crates and weapons lockers",
+   "note": "Sells for $2,500",
+   "symbol": "diamond.fill"
+  },
+  {
+   "id": "medical-box",
+   "name": "Medical Box",
+   "kind": "Gear",
+   "rarity": "Legendary",
+   "value": 2500,
+   "found": "A rare find in weapons lockers and Lieutenant crates",
+   "note": "What it holds isn't known yet.",
+   "symbol": "bag.fill"
   },
   {
    "id": "medium-backpack",
@@ -10706,6 +11682,16 @@
    "rarity": "Ultra",
    "note": "New in Season 1, found in X01. Extract it and sell it in the FOB for $50,000",
    "image": "https://camotracker.djr.li/Images/DMZ/r-18-grade-3-bio-toxin.png?v=1"
+  },
+  {
+   "id": "r-4-bio-compound",
+   "name": "R-4 Bio-Compound",
+   "kind": "Valuable",
+   "value": 3000,
+   "rarity": "Rare",
+   "found": "Modern computers, server racks and crashed UAV hatches",
+   "note": "Sells for $3,000",
+   "symbol": "diamond.fill"
   },
   {
    "id": "radiation-blockers",
@@ -11623,6 +12609,16 @@
    "found": "A reward from Operation Iron Citadel"
   },
   {
+   "id": "survivor-box",
+   "name": "Survivor Box",
+   "kind": "Gear",
+   "rarity": "Ultra",
+   "value": 3000,
+   "found": "A rare find in weapons lockers and Lieutenant crates",
+   "note": "What it holds isn't known yet. A recipe for it can be found too",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "synthetics",
    "name": "Synthetics",
    "kind": "Resource",
@@ -11709,6 +12705,16 @@
    "found": "Citadel South Wing control sequence"
   },
   {
+   "id": "the-citadel-side-access",
+   "name": "The Citadel Side Access",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
+  },
+  {
    "id": "the-citadel-south-wing",
    "name": "The Citadel South Wing",
    "kind": "Key",
@@ -11744,6 +12750,16 @@
    "note": "Dropped by The Doctor. Extract it for Boss Board progress. Sells for $25,000",
    "image": "https://camotracker.djr.li/Images/DMZ/the-doctors-dog-tag.png?v=1",
    "value": 25000
+  },
+  {
+   "id": "the-grid-side-access",
+   "name": "The Grid Side Access",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Uncommon",
+   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
   {
    "id": "thermite",
@@ -11920,6 +12936,16 @@
    "found": "Loot containers around Hajin"
   },
   {
+   "id": "utility-box",
+   "name": "Utility Box",
+   "kind": "Gear",
+   "rarity": "Ultra",
+   "value": 3000,
+   "found": "A rare find in weapons lockers and Lieutenant crates",
+   "note": "What it holds isn't known yet. A recipe for it can be found too",
+   "symbol": "bag.fill"
+  },
+  {
    "id": "utility-maintenance-storage",
    "name": "Utility Maintenance Storage",
    "kind": "Key",
@@ -12069,6 +13095,16 @@
    "note": "Extract one to unlock its weapon for repeat buys at the Gunsmith, plus $5,000. Search military containers and safes",
    "image": "https://camotracker.djr.li/Images/DMZ/weapon-manual.png?v=1",
    "value": 5000
+  },
+  {
+   "id": "weapons-grade-isotope",
+   "name": "Weapons Grade Isotope",
+   "kind": "Valuable",
+   "value": 12000,
+   "rarity": "Legendary",
+   "found": "Modern computers, server racks and crashed UAV hatches",
+   "note": "Sells for $12,000",
+   "symbol": "diamond.fill"
   },
   {
    "id": "weapons-mod-workshop",

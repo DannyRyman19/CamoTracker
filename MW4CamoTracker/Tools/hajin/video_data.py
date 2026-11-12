@@ -456,6 +456,21 @@ EXTRA_ITEMS = [
  {"id": "k9-battery-core", "name": "K9 Battery Core", "kind": "Other", "note": "A mission item from Operation Shopping Hacks in NuriGO Mall: collect four working ones"},
  {"id": "drone-motherboard", "name": "Drone Motherboard", "kind": "Other", "note": "A DMZ Order item: in Death from Above, take it from a drone you destroy"},
  {"id": "encrypted-voice-logs", "name": "Encrypted Voice Logs", "kind": "Other", "note": "A mission item: hack the communications broadcast system at Cheonwang Peak Array"},
+ # in the game's loot tables, with sell values and the containers that can hold them (dmz.tips atlas, 2026-11-12)
+ {"id": "gilded-medal-of-absolute-loyalty", "name": "Gilded Medal of Absolute Loyalty", "kind": "Valuable", "rarity": "Legendary", "value": 15000, "found": "Safes, supply crates and weapons lockers", "note": "Sells for $15,000"},
+ {"id": "weapons-grade-isotope", "name": "Weapons Grade Isotope", "kind": "Valuable", "rarity": "Legendary", "value": 12000, "found": "Modern computers, server racks and crashed UAV hatches", "note": "Sells for $12,000"},
+ {"id": "human-trial-records-r-18", "name": "Human Trial Records: R-18", "kind": "Valuable", "rarity": "Epic", "value": 8000, "found": "Modern computers, server racks and safes", "note": "Sells for $8,000"},
+ {"id": "gilded-maritime-relic", "name": "Gilded Maritime Relic", "kind": "Valuable", "rarity": "Epic", "value": 7000, "found": "Safes, supply crates and chemical storage", "note": "Sells for $7,000"},
+ {"id": "ceramic-pup-of-loyalty", "name": "Ceramic Pup of Loyalty", "kind": "Valuable", "rarity": "Epic", "value": 6000, "found": "Safes, supply crates and chemical storage", "note": "Sells for $6,000"},
+ {"id": "animal-trial-records-r-4", "name": "Animal Trial Records: R-4", "kind": "Valuable", "rarity": "Rare", "value": 3000, "found": "Modern computers, server racks and safes", "note": "Sells for $3,000"},
+ {"id": "r-4-bio-compound", "name": "R-4 Bio-Compound", "kind": "Valuable", "rarity": "Rare", "value": 3000, "found": "Modern computers, server racks and crashed UAV hatches", "note": "Sells for $3,000"},
+ {"id": "medal-of-unquestioning-service", "name": "Medal of Unquestioning Service", "kind": "Valuable", "rarity": "Rare", "value": 2500, "found": "Safes, supply crates and weapons lockers", "note": "Sells for $2,500"},
+ {"id": "consumable-box", "name": "Consumable Box", "kind": "Gear", "rarity": "Epic", "value": 1000, "found": "A rare find in weapons lockers and Lieutenant crates", "note": "What it holds isn't known yet."},
+ {"id": "medical-box", "name": "Medical Box", "kind": "Gear", "rarity": "Legendary", "value": 2500, "found": "A rare find in weapons lockers and Lieutenant crates", "note": "What it holds isn't known yet."},
+ {"id": "hazmat-box", "name": "Hazmat Box", "kind": "Gear", "rarity": "Legendary", "value": 2500, "found": "A rare find in weapons lockers and Lieutenant crates", "note": "What it holds isn't known yet."},
+ {"id": "survivor-box", "name": "Survivor Box", "kind": "Gear", "rarity": "Ultra", "value": 3000, "found": "A rare find in weapons lockers and Lieutenant crates", "note": "What it holds isn't known yet. A recipe for it can be found too"},
+ {"id": "utility-box", "name": "Utility Box", "kind": "Gear", "rarity": "Ultra", "value": 3000, "found": "A rare find in weapons lockers and Lieutenant crates", "note": "What it holds isn't known yet. A recipe for it can be found too"},
+ {"id": "counter-uav", "name": "Counter UAV", "kind": "Fire Support", "rarity": "Rare", "value": 300, "found": "A rare find in Lieutenant crates", "note": "Its recipe can be found in Hajin. What it costs to print isn't known yet"},
 ]
 
 def link_rows(guide, items, weapons):

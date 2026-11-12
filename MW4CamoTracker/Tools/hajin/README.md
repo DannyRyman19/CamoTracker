@@ -25,6 +25,15 @@ xcodebuild test -scheme MW4CamoTrackerTests -destination 'platform=iOS Simulator
   `python3 Tools/hajin/fetch_codex_map.py`; it fits dmzcodex's crop of the
   same official map onto ours from the markers both share, and stops if
   the fit is off. Boss spawn areas are `BOSS_SPAWNS` in `build_hajin.py`.
+- `atlas_map.json`: safes, hidden caches, chemical storage and dead drops
+  placed in the game's own map data, as shown on the dmz.tips Hajin atlas
+  (viewed in a browser 2026-11-12; the site blocks automated fetching, so
+  there is no refresh script). Already in our map's coordinates: its world
+  positions were fitted onto ours from 94 markers both maps share. The build
+  skips a spot we already pin and names the rest by grid square. Dead drops
+  are placements, not a promise one is there every deployment. The atlas's
+  loot tables are also where the Season 1 valuables, loot boxes, Counter UAV
+  and four keys in `EXTRA_ITEMS` and the Keys table came from.
 
 Pictures: an item gets `Images/DMZ/<item id>.png` and a trait gets
 `Images/DMZ/traits/<trait id>.png` when that file exists in this repo
