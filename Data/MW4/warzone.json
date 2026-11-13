@@ -1,5 +1,5 @@
 {
-  "version": "0.8.80",
+  "version": "0.8.81",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8812,7 +8812,6 @@
           "tier": 4,
           "unlockLevel": null,
           "requirement": null,
-          "starts": "2026-11-06",
           "ordered": false,
           "children": [
             {
@@ -8827,7 +8826,7 @@
                 "pt": "Violet Striker"
               },
               "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/violet_striker.png?v=bl",
-              "tier": 1,
+              "tier": null,
               "unlockLevel": null,
               "requirement": {
                 "amount": 300,
@@ -8856,7 +8855,7 @@
                 "pt": "Neutral Ground"
               },
               "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/neutral_ground.png?v=bl",
-              "tier": 2,
+              "tier": null,
               "unlockLevel": null,
               "requirement": {
                 "amount": 1,
@@ -8885,7 +8884,7 @@
                 "pt": "Classified"
               },
               "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/classified.png?v=bl",
-              "tier": 3,
+              "tier": null,
               "unlockLevel": null,
               "requirement": {
                 "amount": 10,
