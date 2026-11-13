@@ -1,5 +1,5 @@
 {
-  "version": "0.9.21",
+  "version": "0.9.22",
   "baseWeaponCount": 33,
   "weaponPrestige": [
     {
@@ -286,7 +286,8 @@
             "it": "Si sblocca nel Pass battaglia.",
             "pt": "Desbloqueia no Passe de Batalha."
           },
-          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CRONEN_OSPREY.png?v=official"
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CRONEN_OSPREY.png?v=official",
+          "acquiredBy": "battlePass"
         }
       ]
     },
@@ -438,7 +439,8 @@
             "it": "Si sblocca nel Pass battaglia.",
             "pt": "Desbloqueia no Passe de Batalha."
           },
-          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CSG-35.png?v=official"
+          "imageURL": "https://camotracker.djr.li/Images/Guns/MW4/CSG-35.png?v=official",
+          "acquiredBy": "battlePass"
         }
       ]
     },

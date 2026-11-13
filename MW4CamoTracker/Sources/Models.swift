@@ -122,6 +122,10 @@ struct WeaponEntry: Codable, Identifiable {
     let imageURL: String?
     let maxLevel: Int
     let unlockRequirement: LocalizedText?
+    /// How a weapon with no unlock level is obtained: `"battlePass"` or
+    /// `"event"`. Absent: unlocked by default. (A sentence with no digits,
+    /// like "Unlocked in the Battle Pass.", can't say this by itself.)
+    var acquiredBy: String? = nil
     var id: Int { weaponId }
 
     /// The level this weapon unlocks at, pulled out of `unlockRequirement`'s

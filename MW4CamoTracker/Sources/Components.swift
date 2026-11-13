@@ -1097,6 +1097,10 @@ struct AcquiredByLabel: View {
     private var text: String {
         if let level = weapon.unlockLevel {
             String(format: "mw4.ui.acquired_by_level".localized(), level)
+        } else if weapon.acquiredBy == "battlePass" {
+            "mw4.ui.acquired_by_battle_pass".localized()
+        } else if weapon.acquiredBy == "event" {
+            "mw4.ui.acquired_by_event".localized()
         } else {
             "mw4.ui.acquired_by_default".localized()
         }

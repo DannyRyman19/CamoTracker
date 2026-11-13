@@ -129,7 +129,12 @@ The publish script enforces the first three.
 
 - `categories[]`: `categoryId`, `name`, `weapons[]`.
 - Each weapon: `weaponId`, `name`, `maxLevel`, `unlockRequirement` (a
-  sentence; the app reads the unlock level out of its digits), `imageURL`.
+  sentence; the app reads the unlock level out of its digits), `imageURL`,
+  and optional `acquiredBy` (`"battlePass"` or `"event"`) for a weapon with
+  no unlock level that isn't a default one: without it the app says
+  "Acquired by: Default". Keep digits out of such a weapon's
+  `unlockRequirement` (they'd show as a level). Apps before 1.0.2 ignore
+  `acquiredBy` and still say Default.
 - `weaponPrestige[]`: the prestige stages after a weapon's normal levels, in
   order. Each has a `name` and a `maxLevel` (`null` means the weapon's own).
   Add or remove entries to change how many times a weapon can prestige.

@@ -102,7 +102,9 @@ enum SupportMail {
         ]
         if let category { lines.append("Category: \(category)") }
         lines.append("Max level in app: \(weapon.maxLevel)")
-        lines.append("Unlock in app: " + (weapon.unlockLevel.map { "Player level \($0)" } ?? "Unlocked by default"))
+        lines.append("Unlock in app: " + (weapon.unlockLevel.map { "Player level \($0)" }
+            ?? weapon.acquiredBy.map { $0 == "battlePass" ? "Battle Pass" : $0 == "event" ? "Event" : $0 }
+            ?? "Unlocked by default"))
         // Filename only. The full URL would put the CDN's host and directory
         // layout in every report, and the name alone is enough to find the asset.
         let imageName = weapon.imageURL.flatMap { URL(string: $0)?.lastPathComponent } ?? "none"
