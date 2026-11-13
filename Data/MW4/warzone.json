@@ -1,5 +1,5 @@
 {
-  "version": "0.8.75",
+  "version": "0.8.76",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8791,6 +8791,113 @@
                   "nl": "Een camo-uitdagingsevenement. De uitdagingen en camo’s verschijnen hier bij de start op 16 nov.",
                   "it": "Un evento di sfide mimetiche. Sfide e mimetiche appariranno qui all’inizio, il 16 nov.",
                   "pt": "Um evento de desafios de camuflagem. Os desafios e camuflagens aparecem aqui quando começar, em 16 de nov."
+                }
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "itemId": 103,
+          "name": {
+            "en": "Rally Point",
+            "fr": "Rally Point",
+            "es": "Rally Point",
+            "de": "Rally Point",
+            "nl": "Rally Point",
+            "it": "Rally Point",
+            "pt": "Rally Point"
+          },
+          "imageURL": null,
+          "tier": 4,
+          "unlockLevel": null,
+          "requirement": null,
+          "starts": "2026-11-06",
+          "ordered": false,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Violet Striker",
+                "fr": "Violet Striker",
+                "es": "Violet Striker",
+                "de": "Violet Striker",
+                "nl": "Violet Striker",
+                "it": "Violet Striker",
+                "pt": "Violet Striker"
+              },
+              "imageURL": null,
+              "tier": 1,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 300,
+                "unit": "kills",
+                "description": {
+                  "en": "Get 300 eliminations in Rally Point. Players and AI enemies both count, across any number of matches.",
+                  "fr": "Réussissez 300 éliminations en Rally Point. Les joueurs et les ennemis IA comptent, sur autant de parties que nécessaire.",
+                  "es": "Consigue 300 bajas en Rally Point. Cuentan tanto los jugadores como los enemigos de la IA, en tantas partidas como haga falta.",
+                  "de": "Erziele 300 Abschüsse in Rally Point. Spieler und KI-Gegner zählen, über beliebig viele Matches.",
+                  "nl": "Behaal 300 eliminaties in Rally Point. Spelers en AI-vijanden tellen allebei, over zoveel potjes als nodig.",
+                  "it": "Ottieni 300 eliminazioni in Rally Point. Contano sia i giocatori sia i nemici IA, in tutte le partite che servono.",
+                  "pt": "Consiga 300 eliminações no Rally Point. Jogadores e inimigos de IA contam, em quantas partidas forem necessárias."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 1,
+              "name": {
+                "en": "Neutral Ground",
+                "fr": "Neutral Ground",
+                "es": "Neutral Ground",
+                "de": "Neutral Ground",
+                "nl": "Neutral Ground",
+                "it": "Neutral Ground",
+                "pt": "Neutral Ground"
+              },
+              "imageURL": null,
+              "tier": 2,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "In Rally Point, pick up the Camo Case, hold it for 3 minutes, then extract with it. Everyone in the squad that extracts it gets the camo.",
+                  "fr": "En Rally Point, ramassez la Camo Case, gardez-la 3 minutes, puis exfiltrez avec. Toute l’escouade qui l’exfiltre reçoit le camouflage.",
+                  "es": "En Rally Point, recoge el Camo Case, consérvalo 3 minutos y extráelo. Todo el escuadrón que lo extrae recibe el camuflaje.",
+                  "de": "Nimm in Rally Point den Camo Case auf, halte ihn 3 Minuten und exfiltriere damit. Der ganze Trupp, der ihn exfiltriert, erhält die Tarnung.",
+                  "nl": "Pak in Rally Point de Camo Case op, houd hem 3 minuten vast en exfiltreer ermee. Het hele team dat hem exfiltreert krijgt de camo.",
+                  "it": "In Rally Point, raccogli la Camo Case, tienila per 3 minuti ed estraila. Tutta la squadra che la estrae riceve la mimetica.",
+                  "pt": "No Rally Point, pegue a Camo Case, segure-a por 3 minutos e extraia com ela. Todo o esquadrão que a extrai recebe a camuflagem."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 2,
+              "name": {
+                "en": "Classified",
+                "fr": "Classified",
+                "es": "Classified",
+                "de": "Classified",
+                "nl": "Classified",
+                "it": "Classified",
+                "pt": "Classified"
+              },
+              "imageURL": null,
+              "tier": 3,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 10,
+                "unit": "kills",
+                "description": {
+                  "en": "Get 10 eliminations with a Classified weapon in Warzone (Rally Point or Resurgence). Animated camo.",
+                  "fr": "Réussissez 10 éliminations avec une arme Classified dans Warzone (Rally Point ou Résurgence). Camouflage animé.",
+                  "es": "Consigue 10 bajas con un arma Classified en Warzone (Rally Point o Resurgimiento). Camuflaje animado.",
+                  "de": "Erziele 10 Abschüsse mit einer Classified-Waffe in Warzone (Rally Point oder Resurgence). Animierte Tarnung.",
+                  "nl": "Behaal 10 eliminaties met een Classified-wapen in Warzone (Rally Point of Resurgence). Geanimeerde camo.",
+                  "it": "Ottieni 10 eliminazioni con un’arma Classified in Warzone (Rally Point o Resurgence). Mimetica animata.",
+                  "pt": "Consiga 10 eliminações com uma arma Classified no Warzone (Rally Point ou Ressurgência). Camuflagem animada."
                 }
               },
               "children": []
