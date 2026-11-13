@@ -1,6 +1,6 @@
 {
- "version": "0.9.54",
- "updated": "2026-11-12",
+ "version": "0.9.55",
+ "updated": "2026-11-13",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -6264,15 +6264,28 @@
     },
     {
      "title": "Knuckle (Tae-Hyun)",
-     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "subtitle": "New in Season 1, in X01. Holds the Data Center's dark server room behind reinforced glass, hiding behind a riot shield; bring night vision. Players report he drops a Legendary X01 key, but they don't agree which: Chol-Min's Stash Room or a Deep Vault key",
+     "links": [
+      "chol-mins-stash-room",
+      "riot-shield"
+     ],
      "group": "Lieutenants",
      "check": "boss-knuckle-tae-hyun"
     },
     {
      "title": "The Wrench (Chol-Min)",
-     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "subtitle": "New in Season 1, in X01. The Motor Pool: when you push in he runs and climbs into one of the parked tanks, and every tank has to be destroyed, not just disabled, to get at him. Drops the key to Chol-Min's Stash Room on the Motor Pool's upper level",
+     "links": [
+      "chol-mins-stash-room"
+     ],
      "group": "Lieutenants",
      "check": "boss-the-wrench-chol-min"
+    },
+    {
+     "title": "Blix",
+     "subtitle": "New in Season 1. Only in X01's Deep Vault, and not every match. Players report he drops his dog tag, a Rezi 12 and a backpack",
+     "group": "Lieutenants",
+     "check": "boss-blix"
     },
     {
      "title": "Colossus",
@@ -6304,7 +6317,10 @@
     },
     {
      "title": "The Captain",
-     "subtitle": "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad",
+     "subtitle": "New in Season 1. A Juggernaut with an elite guard inside X01. Usually drops the Deep Vault 301 Keycard, the way into the Deep Vault. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad",
+     "links": [
+      "deep-vault-301-keycard"
+     ],
      "group": "Commanders",
      "check": "boss-the-captain"
     },
@@ -6450,7 +6466,7 @@
     },
     {
      "title": "Gun Store Weapons Locker",
-     "subtitle": "Rare. Opens the three locked cabinets in a gun store basement. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
+     "subtitle": "Rare. Opens one of the three green lockers in a gun store basement, and is used up. The gun stores are in western Cheongun Village (E4, west of the Police Station toward the casino) and northern Songdo Wharf (I6); look for the winking cartoon mascot holding a gun on the sign. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
      "item": "gun-store-weapons-locker"
     },
     {
@@ -6479,12 +6495,14 @@
     },
     {
      "title": "Blackmarket Weapons Locker",
-     "subtitle": "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet",
+     "value": "C2",
+     "subtitle": "Rare. A locker in the Black Market stockroom of the Hanrim Village shop, through the green double doors behind the counter; a second Black Market is in the basement in southern Deadtown, B7. Each room has two lockers and a key opens one. Comes in the Recon Equipment Kit (DMZ level 46)",
      "item": "blackmarket-weapons-locker"
     },
     {
      "title": "Underground Propaganda Store Room",
-     "subtitle": "Rare. Where its door is isn't known yet",
+     "value": "B7",
+     "subtitle": "Rare. A blue door among the cells in the Re-Education Center's basement, Deadtown: two doors on separate levers, so pick one. The key turns up as random loot, often in the Re-Education Center's crates",
      "item": "underground-propaganda-store-room"
     },
     {
@@ -6655,7 +6673,7 @@
     },
     {
      "title": "Police Station Key",
-     "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet",
+     "subtitle": "Comes in the Recon Equipment Kit (DMZ level 19). Reported to open the Police Station Armory in the basement of the Pyonghwa Village station, and some say the Revolution Dam one too",
      "item": "police-station-key"
     },
     {
@@ -6714,6 +6732,18 @@
      "title": "South Block Armory",
      "subtitle": "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter",
      "item": "south-block-armory"
+    },
+    {
+     "title": "Chol-Min's Stash Room",
+     "value": "X01 E7",
+     "subtitle": "Legendary. Season 1, in X01: the stash room on the Motor Pool's upper level (floor 2), west of the tanks The Wrench hides in. Players report a Legendary Swaegolja LMG inside. The Wrench drops the key, though some say Knuckle does",
+     "item": "chol-mins-stash-room"
+    },
+    {
+     "title": "Deep Vault 301 Keycard",
+     "value": "X01",
+     "subtitle": "Legendary. Season 1, in X01: the way into the Deep Vault. The Captain usually drops it, and it isn't used up when you open the gate, so keep it in a Secure Slot",
+     "item": "deep-vault-301-keycard"
     }
    ]
   },
@@ -6969,7 +6999,7 @@
     {
      "title": "X01 (Season 1)",
      "value": "Elevator",
-     "subtitle": "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse and Motor Pool. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"
+     "subtitle": "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse, Motor Pool, Data Center, Medical Wing and the Deep Vault. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"
     }
    ]
   },
@@ -9639,7 +9669,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Comes in DMZ level reward kits. Where its door is isn't known yet",
+   "note": "A locker in the Black Market stockroom of the Hanrim Village shop, through the green double doors behind the counter; a second Black Market is in the basement in southern Deadtown, B7. Each room has two lockers and a key opens one. Comes in the Recon Equipment Kit (DMZ level 46)",
+   "grid": "C2",
    "marker": "k-blackmarket-weapons-locker-2",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
@@ -9778,6 +9809,17 @@
    "name": "Chemicals",
    "kind": "Resource",
    "image": "https://camotracker.djr.li/Images/DMZ/chemicals.png?v=1"
+  },
+  {
+   "id": "chol-mins-stash-room",
+   "name": "Chol-Min's Stash Room",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "Season 1, in X01: the stash room on the Motor Pool's upper level (floor 2), west of the tanks The Wrench hides in. Players report a Legendary Swaegolja LMG inside. The Wrench drops the key, though some say Knuckle does",
+   "grid": "X01 E7",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "cipher-code-ledger",
@@ -10021,6 +10063,17 @@
    ],
    "effect": "Fakes gunfire, movement and radar signatures",
    "image": "https://camotracker.djr.li/Images/DMZ/decoy-grenade.png?v=1"
+  },
+  {
+   "id": "deep-vault-301-keycard",
+   "name": "Deep Vault 301 Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "Season 1, in X01: the way into the Deep Vault. The Captain usually drops it, and it isn't used up when you open the gate, so keep it in a Secure Slot",
+   "grid": "X01",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
   },
   {
    "id": "defibrillator",
@@ -10625,7 +10678,7 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Opens the three locked cabinets in a gun store basement. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
+   "note": "Opens one of the three green lockers in a gun store basement, and is used up. The gun stores are in western Cheongun Village (E4, west of the Police Station toward the casino) and northern Songdo Wharf (I6); look for the winking cartoon mascot holding a gun on the sign. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)",
    "marker": "k-gun-store-weapons-locker-2",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1"
@@ -11568,7 +11621,7 @@
    "name": "Police Station Key",
    "kind": "Key",
    "symbol": "key.fill",
-   "note": "Where its door is isn't known yet",
+   "note": "Reported to open the Police Station Armory in the basement of the Pyonghwa Village station, and some say the Revolution Dam one too",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/police-station-key.png?v=1"
   },
@@ -12944,7 +12997,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Where its door is isn't known yet",
+   "note": "A blue door among the cells in the Re-Education Center's basement, Deadtown: two doors on separate levers, so pick one. The key turns up as random loot, often in the Re-Education Center's crates",
+   "grid": "B7",
    "marker": "k-underground-propaganda-store-room",
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
