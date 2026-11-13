@@ -385,9 +385,10 @@ guide = [
    ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
    ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
    ("NK Battle Tank", "Commander", "Roams the roads and highways across Hajin. Drops Nano-Structured Alloy, and the first kill pays $50,000"),
-   ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
-   ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
-   ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
+   ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, in X01. Holds the Data Center's dark server room behind reinforced glass, hiding behind a riot shield; bring night vision. Players report he drops a Legendary X01 key, but they don't agree which: Chol-Min's Stash Room or a Deep Vault key"),
+   ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, in X01. The Motor Pool: when you push in he runs and climbs into one of the parked tanks, and every tank has to be destroyed, not just disabled, to get at him. Drops the key to Chol-Min's Stash Room on the Motor Pool's upper level"),
+   ("Blix", "Lieutenant", "New in Season 1. Only in X01's Deep Vault, and not every match. Players report he drops his dog tag, a Rezi 12 and a backpack"),
+   ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. Usually drops the Deep Vault 301 Keycard, the way into the Deep Vault. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
    ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet"),
   ])},
  {"id": "keys", "title": "Keys", "symbol": "key.fill",
@@ -401,13 +402,14 @@ guide = [
    ("Shop Records Room", "F7", "Rare. The records room above the Goh24 supermarket south of the clinic, Wolves Stadium"),
    ("Reactor 02 Control Room", "H4", "Rare. The control room inside the Reactor 02 building, Haneul Nuclear Reactor"),
    ("The Doctor's Command Office", "F5", "Legendary. A converted conference room in the upper-floor offices of Mirae General Hospital, behind wooden double doors. The Doctor sometimes drops it"),
-   ("Gun Store Weapons Locker", None, "Rare. Opens the three locked cabinets in a gun store basement. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)"),
+   ("Gun Store Weapons Locker", None, "Rare. Opens one of the three green lockers in a gun store basement, and is used up. The gun stores are in western Cheongun Village (E4, west of the Police Station toward the casino) and northern Songdo Wharf (I6); look for the winking cartoon mascot holding a gun on the sign. Comes in the Explosives and Trap Equipment Kits (DMZ levels 16 and 42)"),
    ("Gas Station Electrical Room", "H6", "Rare. The gas station's electrical room at the Construction Zone, a grey metal door beside a noticeboard"),
    ("Shopping DRC Locker", "H5", "Ultra. Reported to open the DRC Locker in the DRC Labs under NuriGO Mall, in the secured lower car park"),
    ("Mechanic's Shack", "F5", "Rare. The standalone shack south of the clinic, Cheongun Village"),
    ("Militia Arms Depot", "G7", "Rare. The lower-floor armory in Gangbyeon Apartment B, Hajin River Heights. Players have found it in a duffel bag in the Citadel East Wing"),
-   ("Blackmarket Weapons Locker", None, "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet"),
-   ("Underground Propaganda Store Room", None, "Rare. Where its door is isn't known yet"),
+   # doors from the dexerto, game8, dmztracker and patchcrazy guides (2026-11-13); the pins were already on the map
+   ("Blackmarket Weapons Locker", "C2", "Rare. A locker in the Black Market stockroom of the Hanrim Village shop, through the green double doors behind the counter; a second Black Market is in the basement in southern Deadtown, B7. Each room has two lockers and a key opens one. Comes in the Recon Equipment Kit (DMZ level 46)"),
+   ("Underground Propaganda Store Room", "B7", "Rare. A blue door among the cells in the Re-Education Center's basement, Deadtown: two doors on separate levers, so pick one. The key turns up as random loot, often in the Re-Education Center's crates"),
    ("Air Base DRC Weapons Locker", "B6", "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker"),
    ("Vault Armory", "F4", "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village"),
    ("Imjin Mill Foreman's Office", "D8", "Rare. First floor of the Rice Mill, Imjin Farmland"),
@@ -438,7 +440,7 @@ guide = [
    ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
    ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound"),
    ("Police Station Armory", None, "Uncommon. Reported to open any Police Station armory: West Cheongun Village, north NuriGO Mall, Revolution Dam and south Pyonghwa Village. Whether it is the same key as the Police Station Key isn't known yet"),
-   ("Police Station Key", None, "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet"),
+   ("Police Station Key", None, "Comes in the Recon Equipment Kit (DMZ level 19). Reported to open the Police Station Armory in the basement of the Pyonghwa Village station, and some say the Revolution Dam one too"),
    ("Air Base Access Card - Multi Use", "B5", "Epic. Opens doors around Chang-san Air Base, and can be used more than once"),
    ("Weapons Mod Workshop", "B5", "Rare. The weapons workshop on the second floor of the military repair garage, directly west of the clinic, Chang-san Air Base"),
    ("Commandant Office", "B5", "Epic. The commandant's office on the second floor of Admin Complex No. 2, Chang-san Air Base"),
@@ -450,6 +452,9 @@ guide = [
    ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
    ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
    ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
+   # X01 (Season 1) keys players report (dmzmap, codcentral, gamerant, 2026-11-13); X01 has its own grid
+   ("Chol-Min's Stash Room", "X01 E7", "Legendary. Season 1, in X01: the stash room on the Motor Pool's upper level (floor 2), west of the tanks The Wrench hides in. Players report a Legendary Swaegolja LMG inside. The Wrench drops the key, though some say Knuckle does"),
+   ("Deep Vault 301 Keycard", "X01", "Legendary. Season 1, in X01: the way into the Deep Vault. The Captain usually drops it, and it isn't used up when you open the gate, so keep it in a Secure Slot"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
@@ -485,7 +490,7 @@ guide = [
    ("LTV", "$25,000", "Random spot. Unlocked by Operation Iron Citadel"),
    ("Helicopter", "$50,000", "Flown in from the FOB. Unlocked by Operation Grid Assault"),
    ("Cargo Plane", "$100,000", "Pick your exact drop point. Unlocked by Operation Fallen Ember"),
-   ("X01 (Season 1)", "Elevator", "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse and Motor Pool. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"),
+   ("X01 (Season 1)", "Elevator", "An underground GRANIT Arms facility in Hajin's far north-west, just north of the 14th Political Prison (the Iron Citadel spawn is closest). Open the gate on the east side with the wall switch, use the keypad, and the squad readies up in the elevator. No keycard needed. Inside: Cargo Bay, Control Room, Power Generators, Admin Offices, Main Warehouse, Motor Pool, Data Center, Medical Wing and the Deep Vault. One exfil plus the Final Exfil; toxic gas spreads after 20 minutes"),
   ])},
  {"id": "ops", "title": "Missions & payouts", "symbol": "target",
   "rows": rows([
@@ -542,7 +547,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.55", "updated": "2026-11-13",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
