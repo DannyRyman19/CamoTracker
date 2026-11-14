@@ -81,6 +81,12 @@ struct StatsView: View {
                             .listRowBackground(Color.clear)
                     }
                 }
+                if !viewModel.gameCamoProgress.isEmpty {
+                    // Black Ops: Cold Snap and Nexus Horizon, earned across the game
+                    GameCamosStatsCard()
+                        .listRowInsets(Self.rowInsets)
+                        .listRowBackground(Color.clear)
+                }
                 if width < 800, GameRegistry.hasMastery, GameRegistry.current.capstone != nil {
                     // On iPad it's under the Mastery cards in the row above
                     GlobalMasteryStatsCard()
@@ -256,6 +262,49 @@ private struct SupportRow: View {
             .borderedCard()
         }
         .buttonStyle(.plain)
+    }
+}
+
+/// A game's camos earned across the whole game (BO7's Cold Snap and Nexus
+/// Horizon), each with its count, as the Mastery tab's Game camos.
+private struct GameCamosStatsCard: View {
+    @EnvironmentObject private var viewModel: TrackerViewModel
+
+    var body: some View {
+        let accent = Palette.accent ?? .camoGold
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 10) {
+                Image(systemName: "crown.fill")
+                    .font(.system(size: 15, weight: .bold))
+                    .foregroundStyle(accent)
+                Text("ct.ui.stats.game_camos".localized())
+                    .hitmarkerFont(17)
+                    .foregroundStyle(Color.appInk)
+                Spacer()
+            }
+            .accessibilityAddTraits(.isHeader)
+            ForEach(viewModel.gameCamoProgress, id: \.name) { camo in
+                let fraction = camo.total > 0 ? Double(camo.done) / Double(camo.total) : 0
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        Text(camo.name)
+                            .hitmarkerFont(14)
+                            .foregroundStyle(LinearGradient(colors: camo.gradient, startPoint: .leading, endPoint: .trailing))
+                        Spacer()
+                        Text("\(camo.done)/\(camo.total)")
+                            .scaledFont(12, design: .monospaced)
+                            .foregroundStyle(Color.appInkMuted)
+                    }
+                    ProgressBar(fraction: fraction, accent: camo.gradient.first ?? accent)
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text(camo.name))
+                .accessibilityValue(Text(Spoken.counts("\(camo.done)/\(camo.total)")))
+            }
+        }
+        .padding(14)
+        .borderedCard(accent: accent)
+        .accessibilityElement(children: .contain)
     }
 }
 

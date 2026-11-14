@@ -57,6 +57,8 @@ enum ShareCard {
         let cash: Int
         /// MW4's Flashpoint: every mode's Mastery camos earned out of all
         var global: Camo? = nil
+        /// Black Ops' camos earned across the game (Cold Snap, Nexus Horizon)
+        var gameCamos: [Camo] = []
 
         @MainActor
         init(viewModel: TrackerViewModel, hajin: HajinStore) {
@@ -100,6 +102,7 @@ enum ShareCard {
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
             cash = showsDMZ ? hajin.cash : 0
+            gameCamos = viewModel.gameCamoProgress.map { Camo(name: $0.name, gradient: $0.gradient, done: $0.done, total: $0.total) }
             if GameRegistry.hasMastery, let capstone = GameRegistry.current.capstone {
                 let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
                 let progress = viewModel.globalMasteryProgress
@@ -383,6 +386,28 @@ struct ProgressCardView: View {
                             .foregroundStyle(Color.appInkMuted)
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
+                    }
+                }
+            }
+
+            if !data.gameCamos.isEmpty {
+                // Black Ops' camos earned across the game
+                HStack(spacing: 6) {
+                    ForEach(data.gameCamos, id: \.name) { camo in
+                        HStack(spacing: 6) {
+                            CamoText(text: camo.name, gradient: camo.gradient, font: .hitmarker(11))
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.6)
+                            Text("\(camo.done)/\(camo.total)")
+                                .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                .foregroundStyle(camo.done > 0 ? Color.appInk : Color.appInkMuted)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 4)
+                        .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
+                        .overlay(RoundedRectangle(cornerRadius: 6)
+                            .strokeBorder((camo.gradient.first ?? .appInkMuted).opacity(camo.done > 0 ? 0.55 : 0.15), lineWidth: 1))
                     }
                 }
             }

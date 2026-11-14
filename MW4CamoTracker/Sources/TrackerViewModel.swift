@@ -446,6 +446,32 @@ final class TrackerViewModel: ObservableObject {
         return progress.total > 0 && progress.done >= progress.total
     }
 
+    /// A game without account Mastery: its camos earned across the whole
+    /// game (BO7's Cold Snap on 50 weapons at Prestige Master 250, Nexus
+    /// Horizon from every mode's final camo), for Stats and the share card.
+    struct GameCamoProgress {
+        let name: String
+        let gradient: [Color]
+        let done: Int
+        let total: Int
+    }
+
+    var gameCamoProgress: [GameCamoProgress] {
+        guard game.hasMastery == false else { return [] }
+        var rows = prestigeCamos.enumerated().compactMap { index, camo -> GameCamoProgress? in
+            guard let needed = camo.weaponsNeeded else { return nil }
+            return GameCamoProgress(name: camo.name.resolved(), gradient: [Color].prestige(camo, index: index),
+                                    done: min(prestigeCamoWeaponCount(camo), needed), total: needed)
+        }
+        if let capstone = game.capstone {
+            let parts = capstoneModes
+            let colors = (capstone.colors ?? []).compactMap(Color.init(hex:))
+            rows.append(GameCamoProgress(name: capstone.name.resolved(), gradient: colors.isEmpty ? .gold : colors,
+                                         done: parts.filter(\.done).count, total: parts.count))
+        }
+        return rows
+    }
+
     /// Weapons that have reached this camo's stage and level: what a camo
     /// with `weaponsNeeded` counts.
     func prestigeCamoWeaponCount(_ camo: PrestigeCamo) -> Int {
