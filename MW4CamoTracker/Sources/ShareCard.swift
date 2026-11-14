@@ -351,11 +351,20 @@ struct ProgressCardView: View {
                 ForEach(data.tracks.indices, id: \.self) { t in
                     let track = data.tracks[t]
                     if let name = track.name {
-                        HStack {
+                        HStack(spacing: 8) {
                             Text(name)
                                 .font(.system(size: 11, weight: .bold))
                                 .foregroundStyle(track.accent)
                             Spacer()
+                            // Badges and Prestige beside the percentage, so
+                            // they cost no line of their own
+                            if !track.extras.isEmpty {
+                                Text(track.extras.map { "\($0.title) \($0.done)/\($0.total)" }.joined(separator: " · "))
+                                    .font(.system(size: 10, weight: .semibold, design: .monospaced))
+                                    .foregroundStyle(Color.appInkMuted)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                            }
                             Text(track.fraction.percentText)
                                 .font(.system(size: 11, weight: .bold, design: .monospaced))
                                 .foregroundStyle(track.accent)
@@ -373,19 +382,12 @@ struct ProgressCardView: View {
                                     .foregroundStyle(camo.done > 0 ? Color.appInk : Color.appInkMuted)
                             }
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, compact ? 5 : 8)
+                            .padding(.vertical, data.tracks.count >= 4 ? 3 : compact ? 5 : 8)
                             .padding(.horizontal, 2)
                             .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
                             .overlay(RoundedRectangle(cornerRadius: 6)
                                 .strokeBorder((camo.gradient.first ?? .appInkMuted).opacity(camo.done > 0 ? 0.55 : 0.15), lineWidth: 1))
                         }
-                    }
-                    if !track.extras.isEmpty {
-                        Text(track.extras.map { "\($0.title) \($0.done)/\($0.total)" }.joined(separator: "  ·  "))
-                            .font(.system(size: compact ? 10 : 11, weight: .semibold, design: .monospaced))
-                            .foregroundStyle(Color.appInkMuted)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
                     }
                 }
             }
