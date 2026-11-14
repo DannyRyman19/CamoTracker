@@ -885,16 +885,16 @@ struct ChallengeRow: View {
     /// it's open ("Earned at weapon level 12.").
     var detail: String? = nil
     /// When it was earned, shown under a done row ("Unlocked 12 Nov").
-    var earnedOn: Date? = nil
+    var earnedOn: UnlockDate? = nil
     /// How long it took, after the date ("· in 6 days").
-    var took: TimeInterval? = nil
+    var took: UnlockDuration? = nil
     let onToggle: () -> Void
     let onSetAmount: (Int) -> Void
 
     private var earnedText: String? {
         guard isDone, let earnedOn else { return nil }
-        let day = String(format: "ct.ui.earned_on".localized(), earnedOn.earnedDayText)
-        guard let took = took?.tookText else { return day }
+        let day = String(format: "ct.ui.earned_on".localized(), earnedOn.text)
+        guard let took = took?.text else { return day }
         return day + " · " + String(format: "ct.ui.took".localized(), took)
     }
 
@@ -1088,6 +1088,23 @@ extension TimeInterval {
         formatter.allowedUnits = self >= 86_400 ? [.day] : [.hour]
         return formatter.string(from: self)
     }
+}
+
+extension UnlockDate {
+    /// "12 Nov", "~12 Nov" for an estimate, "by 2 Nov" when it was only
+    /// known to be done by then.
+    var text: String {
+        switch kind {
+        case .exact: return date.earnedDayText
+        case .estimate: return "~" + date.earnedDayText
+        case .onOrBefore: return String(format: "ct.ui.by_date".localized(), date.earnedDayText)
+        }
+    }
+}
+
+extension UnlockDuration {
+    /// "6 days", or "~6 days" from an estimate.
+    var text: String? { seconds.tookText.map { estimate ? "~" + $0 : $0 } }
 }
 
 extension Date {

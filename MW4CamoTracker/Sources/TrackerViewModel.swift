@@ -769,8 +769,8 @@ final class TrackerViewModel: ObservableObject {
 
     // First earned: when each camo, Completionist camo and Mastery tier was
     // first done, kept for good (sync's stamps move with every later
-    // change). Kept on this device only. Anything already done when this was
-    // first saved is 0, "before tracking", so it never gets a made-up date.
+    // change). Kept on this device only. What was done before this existed
+    // is estimated from sync's stamps (stored negative), or 0 when unknown.
     private var firstEarnedKey: String { game.key("mw4_first_earned", "first_earned") }
     private var firstEarned: [String: Double] = [:]
 
@@ -811,73 +811,106 @@ final class TrackerViewModel: ObservableObject {
     }
 
     /// Notes the first time each thing is done. The first run on a device
-    /// marks what's already done as before tracking.
+    /// takes what's already done from sync's stamps as estimates (0 where
+    /// there's none), and so does a device that ran a build from before
+    /// estimates, for what it had marked 0.
     private func recordFirstEarned(remote: Bool = false) {
         guard !modes.isEmpty else { return }
         let baseline = defaults.object(forKey: firstEarnedKey) == nil
         if !baseline, firstEarned.isEmpty,
            let saved = defaults.dictionary(forKey: firstEarnedKey) as? [String: Double] {
             firstEarned = saved
+            bulkWindows = Self.bulkWindows(in: firstEarned)
         }
+        let estimatedKey = firstEarnedKey + "_estimated"
+        let estimating = baseline || !defaults.bool(forKey: estimatedKey)
         let now = Date().timeIntervalSince1970
         var changed = baseline
-        for (key, state) in earnedNow(stamped: remote && !baseline) {
-            let done = state.done
-            if done, firstEarned[key] == nil {
-                firstEarned[key] = baseline ? 0 : min(now, state.at?.timeIntervalSince1970 ?? now)
+        for (key, state) in earnedNow(stamped: remote || estimating) {
+            let stamp = state.at.map { min(now, $0.timeIntervalSince1970) }
+            if state.done, baseline {
+                firstEarned[key] = stamp.map { -$0 } ?? 0
                 changed = true
-            } else if !done, let at = firstEarned[key], at > 0, now - at < Self.mistapWindow {
+            } else if state.done, estimating, firstEarned[key] == 0, let stamp {
+                firstEarned[key] = -stamp
+                changed = true
+            } else if state.done, firstEarned[key] == nil {
+                firstEarned[key] = remote ? (stamp ?? now) : now
+                changed = true
+            } else if !state.done, let at = firstEarned[key], at > 0, now - at < Self.mistapWindow {
                 firstEarned[key] = nil
                 changed = true
             }
         }
-        if changed { defaults.set(firstEarned, forKey: firstEarnedKey) }
+        if changed {
+            defaults.set(firstEarned, forKey: firstEarnedKey)
+            bulkWindows = Self.bulkWindows(in: firstEarned)
+        }
+        if estimating { defaults.set(true, forKey: estimatedKey) }
     }
 
-    private func firstEarnedDate(_ key: String) -> Date? {
-        guard let at = firstEarned[key], at > 0 else { return nil }
-        return Date(timeIntervalSince1970: at)
+    /// Ten-minute windows holding 15 or more estimates: a restore or an
+    /// update re-saving everything, not 15 camos earned, so those read as
+    /// "by" that date.
+    private var bulkWindows: Set<Int> = []
+    private static let bulkWindow: Double = 600
+    private static func bulkWindows(in earned: [String: Double]) -> Set<Int> {
+        var counts: [Int: Int] = [:]
+        for value in earned.values where value < 0 { counts[Int(-value / bulkWindow), default: 0] += 1 }
+        return Set(counts.filter { $0.value >= 15 }.keys)
     }
 
-    /// When this camo was unlocked: its first-earned date, else sync's
-    /// stamp for what was ticked before first-earned existed.
-    func camoUnlockedDate(mode: String, weaponId: Int, camo: ChallengeItem) -> Date? {
+    /// A first-earned entry as a date: > 0 seen happen, < 0 estimated
+    /// from sync's stamp, 0 done before there was anything to go on.
+    private func unlock(_ key: String) -> UnlockDate? {
+        guard let value = firstEarned[key], value != 0 else { return nil }
+        if value > 0 { return UnlockDate(date: Date(timeIntervalSince1970: value), kind: .exact) }
+        let at = -value
+        return UnlockDate(date: Date(timeIntervalSince1970: at),
+                          kind: bulkWindows.contains(Int(at / Self.bulkWindow)) ? .onOrBefore : .estimate)
+    }
+
+    func camoUnlockedDate(mode: String, weaponId: Int, camo: ChallengeItem) -> UnlockDate? {
         guard isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) else { return nil }
-        return firstEarnedDate(firstEarnedCamoKey(mode, weaponId, camo.itemId))
-            ?? camoEarnedDate(mode: mode, weaponId: weaponId, camo: camo)
+        return unlock(firstEarnedCamoKey(mode, weaponId, camo.itemId))
     }
 
     /// When Gold, Platinum, Harmonic Break (or, at `completionistStepCount`,
     /// the final camo) was unlocked on this weapon.
-    func completionistUnlockedDate(mode: String, weaponId: Int, step: Int) -> Date? {
-        if step >= Self.completionistStepCount {
-            guard hasFinalCamo(mode: mode, weaponId: weaponId) else { return nil }
-            return firstEarnedDate(firstEarnedStepKey(mode, weaponId, step))
-        }
-        guard isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) else { return nil }
-        return firstEarnedDate(firstEarnedStepKey(mode, weaponId, step))
-            ?? completionistEarnedDate(mode: mode, weaponId: weaponId, step: step)
+    func completionistUnlockedDate(mode: String, weaponId: Int, step: Int) -> UnlockDate? {
+        let done = step >= Self.completionistStepCount
+            ? hasFinalCamo(mode: mode, weaponId: weaponId)
+            : isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
+        return done ? unlock(firstEarnedStepKey(mode, weaponId, step)) : nil
     }
 
-    /// How long a Completionist camo took on this weapon: from its first
-    /// camo to it, both first-earned since tracking began. Nil when any of
-    /// the weapon's camos was done before tracking (the start is unknown),
-    /// or under an hour, which is filling in old progress, not playing.
-    func completionistDuration(mode: String, weaponId: Int, step: Int) -> TimeInterval? {
-        guard let end = firstEarned[firstEarnedStepKey(mode, weaponId, step)], end > 0 else { return nil }
-        var start = end
+    /// How long a Completionist camo took on this weapon, from its first
+    /// camo with a date (a Military camo earned by level before tracking
+    /// has none, so it's skipped). Nil when the end or any other camo is
+    /// unknown or only "by" a date, or under an hour, which is filling in
+    /// old progress, not playing. An estimate when either end is one.
+    func completionistDuration(mode: String, weaponId: Int, step: Int) -> UnlockDuration? {
+        guard let end = unlock(firstEarnedStepKey(mode, weaponId, step)), end.kind != .onOrBefore else { return nil }
+        var start = end.date
+        var estimate = end.kind == .estimate
         for camo in camos(weaponId: weaponId, mode: mode).flatMap(leafItems) {
-            guard let at = firstEarned[firstEarnedCamoKey(mode, weaponId, camo.itemId)] else { continue }
-            guard at > 0 else { return nil }
-            start = min(start, at)
+            let key = firstEarnedCamoKey(mode, weaponId, camo.itemId)
+            guard let value = firstEarned[key] else { continue }
+            if value == 0 {
+                if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil { continue }
+                return nil
+            }
+            guard let at = unlock(key), at.kind != .onOrBefore else { return nil }
+            if at.kind == .estimate { estimate = true }
+            start = min(start, at.date)
         }
-        let took = end - start
-        return took >= 3600 ? took : nil
+        let took = end.date.timeIntervalSince(start)
+        return took >= 3600 ? UnlockDuration(seconds: took, estimate: estimate) : nil
     }
 
     /// When a mode's Mastery tier was first achieved, for Stats.
-    func masteryUnlockedDate(mode: String, tier: Int) -> Date? {
-        firstEarnedDate("m|\(mode)|\(tier)")
+    func masteryUnlockedDate(mode: String, tier: Int) -> UnlockDate? {
+        unlock("m|\(mode)|\(tier)")
     }
 
     /// Whether this camo's challenge is open yet. A camo with an
@@ -2017,6 +2050,20 @@ final class TrackerViewModel: ObservableObject {
         amounts = counts
         completed = done
     }
+}
+
+/// When something was unlocked, and how sure that is: seen happen,
+/// estimated from when its save last changed, or only that it was done by
+/// then (a bulk re-save).
+struct UnlockDate: Equatable {
+    enum Kind { case exact, estimate, onOrBefore }
+    let date: Date
+    let kind: Kind
+}
+
+struct UnlockDuration: Equatable {
+    let seconds: TimeInterval
+    let estimate: Bool
 }
 
 private struct ProgressStore: Codable {

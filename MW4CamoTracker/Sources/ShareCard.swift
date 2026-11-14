@@ -165,7 +165,7 @@ enum ShareCard {
         /// How long its furthest Completionist camo took
         let headline: Headline?
         /// The latest things earned on it, newest first
-        let latest: [(name: String, date: Date)]
+        let latest: [(name: String, date: UnlockDate)]
         var done: Int { camos.filter(\.done).count }
     }
 
@@ -173,7 +173,7 @@ enum ShareCard {
     static func weaponData(_ weapon: WeaponEntry, mode: AppMode, viewModel: TrackerViewModel) async -> Weapon {
         let id = weapon.weaponId, m = mode.rawValue
         let items = viewModel.camos(weaponId: id, mode: m).flatMap(viewModel.leafItems)
-        var dated: [(name: String, date: Date)] = []
+        var dated: [(name: String, date: UnlockDate)] = []
         var camos: [Weapon.Camo] = []
         for item in items {
             let name = item.name.resolved()
@@ -195,7 +195,7 @@ enum ShareCard {
         }
         // The furthest Completionist camo with a time to it: "Gold in 6 days"
         let headline = steps.indices.reversed().lazy.compactMap { step -> Weapon.Headline? in
-            guard steps[step].done, let took = viewModel.completionistDuration(mode: m, weaponId: id, step: step)?.tookText else { return nil }
+            guard steps[step].done, let took = viewModel.completionistDuration(mode: m, weaponId: id, step: step)?.text else { return nil }
             return Weapon.Headline(text: String(format: "mw4.ui.share.weapon_took".localized(), steps[step].name, took),
                                    gradient: steps[step].gradient)
         }.first
@@ -210,7 +210,7 @@ enum ShareCard {
                       stepsTitle: (GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized(),
                       steps: steps,
                       headline: headline,
-                      latest: Array(dated.sorted { $0.date > $1.date }.prefix(3)))
+                      latest: Array(dated.sorted { $0.date.date > $1.date.date }.prefix(3)))
     }
 
     private static func fetch(_ urlString: String?) async -> UIImage? {
@@ -703,7 +703,7 @@ struct WeaponCardView: View {
                                 .foregroundStyle(Color.appInk)
                                 .lineLimit(1)
                             Spacer()
-                            Text(data.latest[i].date.earnedDayText)
+                            Text(data.latest[i].date.text)
                                 .font(.system(size: 11, weight: .semibold, design: .monospaced))
                                 .foregroundStyle(Color.appInkMuted)
                         }
