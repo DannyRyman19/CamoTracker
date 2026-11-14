@@ -43,7 +43,12 @@ enum ShareCard {
         struct Camo { let name: String; let gradient: [Color]; let done: Int; let total: Int }
         /// One mode's camo track, or the one shared by every mode (MW4),
         /// which has no name of its own
-        struct Track { let name: String?; let accent: Color; let fraction: Double; let camos: [Camo] }
+        struct Track {
+            let name: String?; let accent: Color; let fraction: Double; let camos: [Camo]
+            /// Each badge section (Badges, Prestige) earned across the
+            /// mode's weapons, as Stats counts them
+            var extras: [(title: String, done: Int, total: Int)] = []
+        }
         struct Mode { let name: String; let symbol: String; let accent: Color; let fraction: Double; let tiers: [(name: String, gradient: [Color], achieved: Bool)] }
         let overall: Double
         let tracks: [Track]
@@ -87,7 +92,10 @@ enum ShareCard {
                                                 done: full.done, total: full.total))
                           }
                           return camos
-                      }())
+                      }(),
+                      extras: viewModel.extraStats(mode: mode.rawValue).map { section in
+                          (section.title, section.rows.reduce(0) { $0 + $1.done }, section.rows.reduce(0) { $0 + $1.total })
+                      })
             }
             let showsDMZ = GameRegistry.current.hasHajin && visible.contains(.dmz) && hajin.guide != nil
             dmz = showsDMZ ? hajin.statLines : []
@@ -368,6 +376,13 @@ struct ProgressCardView: View {
                             .overlay(RoundedRectangle(cornerRadius: 6)
                                 .strokeBorder((camo.gradient.first ?? .appInkMuted).opacity(camo.done > 0 ? 0.55 : 0.15), lineWidth: 1))
                         }
+                    }
+                    if !track.extras.isEmpty {
+                        Text(track.extras.map { "\($0.title) \($0.done)/\($0.total)" }.joined(separator: "  ·  "))
+                            .font(.system(size: compact ? 10 : 11, weight: .semibold, design: .monospaced))
+                            .foregroundStyle(Color.appInkMuted)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
                     }
                 }
             }
