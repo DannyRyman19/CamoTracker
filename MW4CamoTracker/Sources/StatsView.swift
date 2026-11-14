@@ -394,9 +394,10 @@ private struct ModeStatsCard: View {
             if part == .weapons {
                 // Black Ops' ladder lives on its Mastery tab; Stats keeps
                 // the percentages and the class breakdown
-                if GameRegistry.hasMastery {
+                if GameRegistry.hasMastery || GameRegistry.current.statsLadder == true {
                     VStack(spacing: 8) {
-                        trackTitle("mw4.ui.section.completionist".localized())
+                        // A game without account Mastery calls these Mastery
+                        trackTitle((GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized())
                         MasteryTrack(nodes: completionistNodes)
                     }
                 }

@@ -30,6 +30,11 @@ struct Game: Codable, Identifiable, Hashable {
     var theme: GameTheme? = nil
     /// The camo for unlocking every mode's final camo (BO7's Nexus Horizon)
     var capstone: CapstoneCamo? = nil
+    /// A game without account Mastery that still shows its Completionist
+    /// ladder (Gilded > Forged > Priceless > Interstellar > 100%+) on each
+    /// mode's Stats card, as MW4 does (MW3, MW2). Absent: Black Ops', whose
+    /// ladder is its Mastery tab.
+    var statsLadder: Bool? = nil
     /// The game's own older tracker ("BO6 Camo Tracker"), whose exported
     /// file Customise can import (see `LegacyImport`)
     var legacyApp: String? = nil
