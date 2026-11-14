@@ -155,7 +155,9 @@ enum ShareCard {
         struct Step { let name: String; let gradient: [Color]; let date: UnlockDate?; let took: String? }
         let name: String
         let className: String?
-        let prestige: String?
+        /// "Weapon Unlocks" or the Prestige stage's name, and "34/71",
+        /// as the weapon page's level line; none in quick tick
+        let level: (label: String, value: String)?
         let picture: UIImage?
         /// The mode on the header, where camos are each mode's own (Black Ops)
         let mode: AppMode?
@@ -187,12 +189,25 @@ enum ShareCard {
         }
         return Weapon(name: weapon.name.resolved(),
                       className: viewModel.category(containingWeaponId: id)?.name.resolved(),
-                      prestige: viewModel.prestigeName(for: id),
+                      level: levelLine(weapon, viewModel: viewModel),
                       picture: await fetch(weapon.imageURL),
                       mode: GameRegistry.current.sharedCamos == true ? nil : mode,
                       accent: mode.accent,
                       camos: camos,
                       steps: steps)
+    }
+
+    @MainActor
+    private static func levelLine(_ weapon: WeaponEntry, viewModel: TrackerViewModel) -> (label: String, value: String)? {
+        guard !viewModel.quickTick else { return nil }
+        let id = weapon.weaponId
+        let unlocks = viewModel.countsUnlocks(weaponId: id)
+        let level = viewModel.level(for: id), max = viewModel.maxLevel(for: weapon)
+        let shown = unlocks ? TrackerViewModel.unlocks(forLevel: level) : level
+        let shownMax = unlocks ? TrackerViewModel.unlocks(forLevel: max) : max
+        let label = viewModel.prestigeName(for: id)
+            ?? (unlocks ? "mw4.ui.weapon_unlocks" : "mw4.ui.weapon_level").localized()
+        return (label, "\(shown)/\(shownMax)")
     }
 
     private static func fetch(_ urlString: String?) async -> UIImage? {
@@ -609,10 +624,23 @@ struct WeaponCardView: View {
                         .foregroundStyle(Color.appInk)
                         .lineLimit(1)
                         .minimumScaleFactor(0.6)
-                    Text([data.className, data.prestige].compactMap { $0 }.joined(separator: " · "))
-                        .font(.system(size: 11.5, weight: .semibold))
-                        .foregroundStyle(Color.appInkMuted)
+                    if let className = data.className {
+                        Text(className)
+                            .font(.system(size: 11.5, weight: .semibold))
+                            .foregroundStyle(Color.appInkMuted)
+                            .lineLimit(1)
+                    }
+                    if let level = data.level {
+                        HStack(spacing: 5) {
+                            Text(level.label)
+                                .font(.system(size: 11.5, weight: .semibold))
+                                .foregroundStyle(Color.appInkMuted)
+                            Text(level.value)
+                                .font(.system(size: 12, weight: .bold, design: .monospaced))
+                                .foregroundStyle(data.accent)
+                        }
                         .lineLimit(1)
+                    }
                 }
                 Spacer(minLength: 0)
                 ZStack {
