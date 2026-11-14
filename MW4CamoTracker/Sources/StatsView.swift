@@ -407,6 +407,27 @@ private struct ModeStatsCard: View {
                 }
             }
 
+            // Each weapon's badges and Prestige camos (MW3, MW2, BO6),
+            // counted across the mode's weapons
+            if part == .weapons {
+                ForEach(Array(viewModel.extraStats(mode: mode.rawValue).enumerated()), id: \.offset) { _, section in
+                    VStack(spacing: 10) {
+                        trackTitle(section.title)
+                        let rows = ForEach(section.rows) { row in
+                            statRow(name: row.name,
+                                    fraction: row.total > 0 ? Double(row.done) / Double(row.total) : 0,
+                                    count: "\(row.done)/\(row.total)")
+                        }
+                        if twoColumns {
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16, alignment: .top), count: 2),
+                                      alignment: .leading, spacing: 14) { rows }
+                        } else {
+                            rows
+                        }
+                    }
+                }
+            }
+
             if (part == .weapons && !weaponCategories.isEmpty) || (part == .mastery && !objectiveCategories.isEmpty) {
                 // A manual toggle instead of `DisclosureGroup` — inside a
                 // custom `List` row, `DisclosureGroup`'s own expand/collapse

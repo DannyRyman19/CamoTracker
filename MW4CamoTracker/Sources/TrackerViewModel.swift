@@ -387,9 +387,14 @@ final class TrackerViewModel: ObservableObject {
     func applyImport(_ progress: ProgressImport) {
         for (weaponId, entry) in progress.levels {
             let current = (prestige(for: weaponId), level(for: weaponId))
-            if (entry.prestige, entry.level) > current {
-                weaponPrestige[weaponId] = entry.prestige
-                weaponLevels[weaponId] = entry.level
+            let stage = min(entry.prestige, prestigeStages.count)
+            // Never past the stage's cap (an old app's list could run past
+            // a weapon's max, or a launcher's max is under it)
+            let cap = weapon(id: weaponId).map { stage > 0 ? (prestigeStages[stage - 1].maxLevel ?? $0.maxLevel) : $0.maxLevel } ?? entry.level
+            let level = min(entry.level, cap)
+            if (stage, level) > current {
+                weaponPrestige[weaponId] = stage
+                weaponLevels[weaponId] = level
             }
         }
         for entry in progress.camos where entry.amount > 0 {
@@ -1130,6 +1135,45 @@ final class TrackerViewModel: ObservableObject {
         case .onSpecial: return stage(mode: mode, weaponId: weaponId) == .special
         case .inCompletionist: return stage(mode: mode, weaponId: weaponId) == .completionist
         case .hasFinal: return stage(mode: mode, weaponId: weaponId) == .finished
+        }
+    }
+
+    /// The mode's `extra` challenges across its weapons, for Stats: each
+    /// section (Badges, Prestige) with each challenge in it, by `itemId`,
+    /// and how many of the weapons that have it have earned it.
+    struct ExtraStat: Identifiable {
+        let itemId: Int
+        let name: String
+        let done: Int
+        let total: Int
+        var id: Int { itemId }
+    }
+
+    func extraStats(mode: String) -> [(title: String, rows: [ExtraStat])] {
+        var sections: [(title: String, rows: [ExtraStat])] = []
+        var counts: [String: [Int: (name: String, done: Int, total: Int)]] = [:]
+        var order: [String: [Int]] = [:]
+        for weapon in weapons(mode: mode) {
+            for camo in allCamos(weaponId: weapon.weaponId, mode: mode) where camo.extra == true {
+                let title = camo.section?.resolved() ?? "mw4.ui.section.camos".localized()
+                if counts[title] == nil {
+                    counts[title] = [:]
+                    order[title] = []
+                    sections.append((title, []))
+                }
+                if counts[title]?[camo.itemId] == nil {
+                    counts[title]?[camo.itemId] = (camo.name.resolved(), 0, 0)
+                    order[title]?.append(camo.itemId)
+                }
+                let done = isCamoComplete(mode: mode, weaponId: weapon.weaponId, camo: camo) ? 1 : 0
+                counts[title]?[camo.itemId]?.done += done
+                counts[title]?[camo.itemId]?.total += 1
+            }
+        }
+        return sections.map { section in
+            (section.title, (order[section.title] ?? []).compactMap { id in
+                counts[section.title]?[id].map { ExtraStat(itemId: id, name: $0.name, done: $0.done, total: $0.total) }
+            })
         }
     }
 

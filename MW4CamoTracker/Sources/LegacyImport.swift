@@ -18,7 +18,10 @@ struct ProgressImport {
 /// four lists in a row (MW3 Multiplayer, MW3 Zombies, MWII Multiplayer,
 /// MWII Zombies), each weapon with its `Camos`, `CompletionistCamos`,
 /// `MasteryChallenges` and `PrestigeChallenges`, kept here at the same
-/// places: MW3 takes the first two, MW2 the last two.
+/// places: MW3 takes the first two, MW2 the last two. The older MW2 Camo
+/// Tracker's is one list of MWII Multiplayer weapons, each with `Camos`,
+/// `MasteryCamos` (Gold, Platinum, Polyatomic) and its mastery kill counts
+/// (`GoldMasteryCurrentAmount`...): MW2's Multiplayer.
 enum LegacyImport {
     enum Failure: Error {
         case notAnExport
@@ -30,7 +33,19 @@ enum LegacyImport {
 
     /// Which game's old app wrote this shape of file: BO6's keeps a list
     /// of weapons per mode, BO7's one list with a block per mode.
-    private static let modeListsGame = "bo6", weaponListGame = "bo7", fourListsGame = "mw3"
+    private static let modeListsGame = "bo6", weaponListGame = "bo7", fourListsGame = "mw3", mw2AppGame = "mw2"
+
+    /// The MW2 app's kill counts with each mastery camo, in badge order
+    private static let mw2Badges = ["GoldMasteryCurrentAmount", "PlatinumMasteryCurrentAmount",
+                                    "PolyatomicMasteryCurrentAmount", "OrionMasteryCurrentAmount"]
+
+    /// The MW2 app's one list: its weapons carry `MasteryCamos` at the top
+    /// level, where BO7's carry a block per mode
+    private static func isMW2App(_ json: Any) -> Bool {
+        guard let categories = json as? [[String: Any]],
+              let weapon = categories.lazy.compactMap({ ($0["Weapons"] as? [[String: Any]])?.first }).first else { return false }
+        return weapon["MasteryCamos"] != nil && weapon["GoldMasteryCurrentAmount"] != nil
+    }
 
     /// The MW3 app's four lists, in the order it exported them: each one's
     /// game here and mode in it
@@ -52,6 +67,7 @@ enum LegacyImport {
     /// The game whose old app wrote `json`, by its shape; `nil` for neither.
     static func exportGame(_ json: Any) -> String? {
         if isFourLists(json) { return fourListsGame }
+        if isMW2App(json) { return mw2AppGame }
         if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
             return modeListsGame
         }
@@ -111,7 +127,23 @@ enum LegacyImport {
             result.levels[weaponId] = (prestige, level)
         }
 
-        if isFourLists(json), let lists = json as? [[[String: Any]]] {
+        if isMW2App(json), let categories = json as? [[String: Any]] {
+            // The MW2 app: Multiplayer only, the level picker's index as MW3's
+            for weapon in weapons(categories) {
+                guard let id = byName[key((weapon["WeaponName"] as? String) ?? "")] else { continue }
+                result.weapons.insert(id)
+                level(weapon, id, offset: 1)
+                for (index, value) in amounts(weapon["Camos"]).enumerated() {
+                    result.camos.append(("multiplayer", id, index, value))
+                }
+                for (step, value) in amounts(weapon["MasteryCamos"]).prefix(TrackerViewModel.completionistStepCount).enumerated() {
+                    result.steps.append(("multiplayer", id, step, value))
+                }
+                for (index, field) in mw2Badges.enumerated() {
+                    result.camos.append(("multiplayer", id, 100 + index, (weapon[field] as? Int) ?? 0))
+                }
+            }
+        } else if isFourLists(json), let lists = json as? [[[String: Any]]] {
             // The MW3 app: a list per tab, this game's two of them
             for ((game, mode), categories) in zip(fourLists, lists) where game == viewModel.game.id {
                 let names = byName

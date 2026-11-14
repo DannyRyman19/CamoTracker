@@ -139,6 +139,71 @@ struct MW3Tests {
         #expect(vm.isCamoAvailable(mode: "multiplayer", weaponId: 0, camo: molten))
     }
 
+    /// A whole export as the old app writes one: its own four lists
+    /// (Data/MW3/Updated_*.json, what it downloaded and saved), every weapon
+    /// on level picker index 9 with its first camo at 7.
+    @Test func aFullExportSetsEveryWeaponsLevel() throws {
+        let data = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+            .appendingPathComponent("../../Data/MW3").standardized
+        var lists: [Any] = []
+        for name in ["Updated_MultiplayerWeapons", "Updated_ZombiesWeapons", "Updated_MW2MultiplayerWeapons", "Updated_MW2ZombiesWeapons"] {
+            var raw = try Data(contentsOf: data.appendingPathComponent("\(name).json"))
+            if raw.starts(with: [0xEF, 0xBB, 0xBF]) { raw = raw.dropFirst(3) }
+            var categories = try #require(try JSONSerialization.jsonObject(with: raw) as? [[String: Any]])
+            for c in categories.indices {
+                var weapons = try #require(categories[c]["Weapons"] as? [[String: Any]])
+                for w in weapons.indices {
+                    weapons[w]["CurrentLevel"] = 9
+                    var camos = try #require(weapons[w]["Camos"] as? [[String: Any]])
+                    camos[0]["CurrentAmount"] = 7
+                    weapons[w]["Camos"] = camos
+                }
+                categories[c]["Weapons"] = weapons
+            }
+            lists.append(categories)
+        }
+        let export = try JSONSerialization.data(withJSONObject: lists)
+        for (id, count) in [("mw3", 60), ("mw2", 77)] {
+            let vm = try model(id)
+            let progress = try LegacyImport.read(export, into: vm)
+            // Every weapon found by name, none left behind
+            #expect(progress.weapons.count == count)
+            vm.applyImport(progress)
+            for weapon in vm.allWeapons {
+                #expect(vm.level(for: weapon.weaponId) == min(10, weapon.maxLevel), "\(id) \(weapon.name.resolved())")
+                let first = try #require(vm.camos(weaponId: weapon.weaponId, mode: "multiplayer").first)
+                #expect(vm.camoAmount(mode: "multiplayer", weaponId: weapon.weaponId, camo: first) == min(7, first.requirement?.amount ?? 7))
+            }
+        }
+    }
+
+    /// The older MW2 Camo Tracker's file: one list of MWII Multiplayer guns,
+    /// as its exports look (the level picker's index, mastery kill counts
+    /// beside the camos).
+    @Test func theMW2AppsExportImportsIntoMW2() throws {
+        let export: [[String: Any]] = [["WeaponCategoryID": 0, "Weapons": [[
+            "WeaponName": "M4", "WeaponPlatform": 1, "MaxLevel": 20, "CurrentLevel": 19,
+            "Camos": [["CurrentAmount": 50], ["CurrentAmount": 50]],
+            "MasteryCamos": [["CurrentAmount": 10], ["CurrentAmount": 25], ["CurrentAmount": 4]],
+            "GoldMasteryCurrentAmount": 60, "PlatinumMasteryCurrentAmount": 0,
+            "PolyatomicMasteryCurrentAmount": 0, "OrionMasteryCurrentAmount": 0,
+        ]]]]
+        #expect(LegacyImport.exportGame(export) == "mw2")
+        // Not BO7's one list, and not for MW3
+        #expect(throws: LegacyImport.Failure.self) { try LegacyImport.check(export, isFor: try #require(GameRegistry.game("mw3"))) }
+        let vm = try model("mw2")
+        try LegacyImport.check(export, isFor: vm.game)
+        vm.applyImport(try LegacyImport.read(try JSONSerialization.data(withJSONObject: export), into: vm))
+        let m4 = try #require(vm.allWeapons.first { $0.name.resolved() == "M4" })
+        #expect(vm.level(for: m4.weaponId) == 20)
+        let scales = try #require(vm.camos(weaponId: m4.weaponId, mode: "multiplayer").first)
+        #expect(vm.camoAmount(mode: "multiplayer", weaponId: m4.weaponId, camo: scales) == 50)
+        #expect(vm.isCompletionistComplete(mode: "multiplayer", weaponId: m4.weaponId, step: 1))
+        #expect(vm.completionistAmount(mode: "multiplayer", weaponId: m4.weaponId, step: 2) == 4)
+        let goldKills = try #require(vm.allCamos(weaponId: m4.weaponId, mode: "multiplayer").first { $0.itemId == 100 })
+        #expect(vm.camoAmount(mode: "multiplayer", weaponId: m4.weaponId, camo: goldKills) == 60)
+    }
+
     @Test func theOldAppsExportImports() throws {
         let vm = try model()
         func weapon(_ name: String, level: Int, camo: Int) -> [String: Any] {
