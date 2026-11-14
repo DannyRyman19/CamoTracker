@@ -1,5 +1,5 @@
 {
-  "version": "0.8.32",
+  "version": "0.8.33",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -8713,6 +8713,69 @@
                   "nl": "Een camo-uitdagingsevenement. De uitdagingen en camo’s verschijnen hier bij de start op 16 nov.",
                   "it": "Un evento di sfide mimetiche. Sfide e mimetiche appariranno qui all’inizio, il 16 nov.",
                   "pt": "Um evento de desafios de camuflagem. Os desafios e camuflagens aparecem aqui quando começar, em 16 de nov."
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Special",
+        "fr": "Spéciaux",
+        "es": "Especiales",
+        "de": "Spezial",
+        "nl": "Speciaal",
+        "it": "Speciali",
+        "pt": "Especiais"
+      },
+      "shared": true,
+      "items": [
+        {
+          "itemId": 100,
+          "name": {
+            "en": "Special camos",
+            "fr": "Camouflages spéciaux",
+            "es": "Camuflajes especiales",
+            "de": "Spezial-Tarnungen",
+            "nl": "Speciale camo's",
+            "it": "Mimetiche speciali",
+            "pt": "Camuflagens especiais"
+          },
+          "imageURL": null,
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "ordered": false,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Locked Down",
+                "fr": "Locked Down",
+                "es": "Locked Down",
+                "de": "Locked Down",
+                "nl": "Locked Down",
+                "it": "Locked Down",
+                "pt": "Locked Down"
+              },
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/locked_down.png?v=sw",
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Verify the email on your Activision account, which turns on two-factor sign-in.",
+                  "fr": "Vérifiez l’adresse e-mail de votre compte Activision, ce qui active la connexion à deux facteurs.",
+                  "es": "Verifica el correo de tu cuenta de Activision, lo que activa el inicio de sesión en dos pasos.",
+                  "de": "Bestätige die E-Mail-Adresse deines Activision-Kontos. Damit wird die Zwei-Faktor-Anmeldung aktiviert.",
+                  "nl": "Verifieer het e-mailadres van je Activision-account. Daarmee zet je inloggen in twee stappen aan.",
+                  "it": "Verifica l’email del tuo account Activision: così si attiva l’accesso a due fattori.",
+                  "pt": "Verifique o e-mail da sua conta Activision, o que ativa o login em duas etapas."
                 }
               },
               "children": []

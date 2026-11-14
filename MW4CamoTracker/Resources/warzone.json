@@ -1,5 +1,5 @@
 {
-  "version": "0.8.82",
+  "version": "0.8.83",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8897,6 +8897,98 @@
                   "nl": "Behaal 10 eliminaties met een Classified-wapen in Warzone (Rally Point of Resurgence). Geanimeerde camo.",
                   "it": "Ottieni 10 eliminazioni con un’arma Classified in Warzone (Rally Point o Resurgence). Mimetica animata.",
                   "pt": "Consiga 10 eliminações com uma arma Classified no Warzone (Rally Point ou Ressurgência). Camuflagem animada."
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": 2,
+      "name": {
+        "en": "Special",
+        "fr": "Spéciaux",
+        "es": "Especiales",
+        "de": "Spezial",
+        "nl": "Speciaal",
+        "it": "Speciali",
+        "pt": "Especiais"
+      },
+      "shared": true,
+      "items": [
+        {
+          "itemId": 100,
+          "name": {
+            "en": "Special camos",
+            "fr": "Camouflages spéciaux",
+            "es": "Camuflajes especiales",
+            "de": "Spezial-Tarnungen",
+            "nl": "Speciale camo's",
+            "it": "Mimetiche speciali",
+            "pt": "Camuflagens especiais"
+          },
+          "imageURL": null,
+          "tier": 1,
+          "unlockLevel": null,
+          "requirement": null,
+          "ordered": false,
+          "children": [
+            {
+              "itemId": 0,
+              "name": {
+                "en": "Locked Down",
+                "fr": "Locked Down",
+                "es": "Locked Down",
+                "de": "Locked Down",
+                "nl": "Locked Down",
+                "it": "Locked Down",
+                "pt": "Locked Down"
+              },
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/locked_down.png?v=sw",
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Verify the email on your Activision account, which turns on two-factor sign-in.",
+                  "fr": "Vérifiez l’adresse e-mail de votre compte Activision, ce qui active la connexion à deux facteurs.",
+                  "es": "Verifica el correo de tu cuenta de Activision, lo que activa el inicio de sesión en dos pasos.",
+                  "de": "Bestätige die E-Mail-Adresse deines Activision-Kontos. Damit wird die Zwei-Faktor-Anmeldung aktiviert.",
+                  "nl": "Verifieer het e-mailadres van je Activision-account. Daarmee zet je inloggen in twee stappen aan.",
+                  "it": "Verifica l’email del tuo account Activision: così si attiva l’accesso a due fattori.",
+                  "pt": "Verifique o e-mail da sua conta Activision, o que ativa o login em duas etapas."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 1,
+              "name": {
+                "en": "Renaissance",
+                "fr": "Renaissance",
+                "es": "Renaissance",
+                "de": "Renaissance",
+                "nl": "Renaissance",
+                "it": "Renaissance",
+                "pt": "Renaissance"
+              },
+              "imageURL": "https://camotracker.djr.li/Images/Camos/MW4/renaissance.png?v=sw",
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 4,
+                "unit": "times",
+                "description": {
+                  "en": "Win 4 Resurgence matches.",
+                  "fr": "Remportez 4 parties de Résurgence.",
+                  "es": "Gana 4 partidas de Resurgimiento.",
+                  "de": "Gewinne 4 Resurgence-Matches.",
+                  "nl": "Win 4 Resurgence-potjes.",
+                  "it": "Vinci 4 partite di Resurgence.",
+                  "pt": "Vença 4 partidas de Ressurgência."
                 }
               },
               "children": []
