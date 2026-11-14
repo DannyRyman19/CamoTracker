@@ -150,7 +150,9 @@ enum ShareCard {
     /// renderer can't wait on a download).
     struct Weapon {
         struct Camo { let name: String; let swatch: UIImage?; let done: Bool }
-        struct Step { let name: String; let gradient: [Color]; let done: Bool }
+        /// An earned Completionist camo, when, and how long it took from the
+        /// weapon's first camo
+        struct Step { let name: String; let gradient: [Color]; let date: UnlockDate?; let took: String? }
         let name: String
         let className: String?
         let prestige: String?
@@ -159,58 +161,38 @@ enum ShareCard {
         let mode: AppMode?
         let accent: Color
         let camos: [Camo]
-        let stepsTitle: String
+        /// Gold, Platinum, Harmonic Break, the final camo: as far as it's got
         let steps: [Step]
-        struct Headline { let text: String; let gradient: [Color] }
-        /// How long its furthest Completionist camo took
-        let headline: Headline?
-        /// The latest things earned on it, newest first
-        let latest: [(name: String, date: UnlockDate)]
         var done: Int { camos.filter(\.done).count }
     }
 
     @MainActor
     static func weaponData(_ weapon: WeaponEntry, mode: AppMode, viewModel: TrackerViewModel) async -> Weapon {
         let id = weapon.weaponId, m = mode.rawValue
-        let items = viewModel.camos(weaponId: id, mode: m).flatMap(viewModel.leafItems)
-        var dated: [(name: String, date: UnlockDate)] = []
         var camos: [Weapon.Camo] = []
-        for item in items {
-            let name = item.name.resolved()
-            if let date = viewModel.camoUnlockedDate(mode: m, weaponId: id, camo: item) { dated.append((name, date)) }
-            let swatch = await fetch(item.imageURL)
-            camos.append(.init(name: name, swatch: swatch, done: viewModel.isCamoComplete(mode: m, weaponId: id, camo: item)))
+        for item in viewModel.camos(weaponId: id, mode: m).flatMap(viewModel.leafItems) {
+            camos.append(.init(name: item.name.resolved(), swatch: await fetch(item.imageURL),
+                               done: viewModel.isCamoComplete(mode: m, weaponId: id, camo: item)))
         }
-        var steps = (0..<TrackerViewModel.completionistStepCount).map { step in
-            let camo = mode.completionist.steps[step]
-            if let date = viewModel.completionistUnlockedDate(mode: m, weaponId: id, step: step) { dated.append((camo.name, date)) }
-            return Weapon.Step(name: camo.name, gradient: camo.gradient,
-                               done: viewModel.isCompletionistComplete(mode: m, weaponId: id, step: step))
+        var track = (0..<TrackerViewModel.completionistStepCount).map {
+            (camo: mode.completionist.steps[$0], done: viewModel.isCompletionistComplete(mode: m, weaponId: id, step: $0))
         }
         if mode.hasFinalCamo {
-            let final = mode.completionist.final
-            let count = TrackerViewModel.completionistStepCount
-            if let date = viewModel.completionistUnlockedDate(mode: m, weaponId: id, step: count) { dated.append((final.name, date)) }
-            steps.append(.init(name: final.name, gradient: final.gradient, done: viewModel.hasFinalCamo(mode: m, weaponId: id)))
+            track.append((mode.completionist.final, viewModel.hasFinalCamo(mode: m, weaponId: id)))
         }
-        // The furthest Completionist camo with a time to it: "Gold in 6 days"
-        let headline = steps.indices.reversed().lazy.compactMap { step -> Weapon.Headline? in
-            guard steps[step].done, let took = viewModel.completionistDuration(mode: m, weaponId: id, step: step)?.text else { return nil }
-            return Weapon.Headline(text: String(format: "mw4.ui.share.weapon_took".localized(), steps[step].name, took),
-                                   gradient: steps[step].gradient)
-        }.first
-        let picture = await fetch(weapon.imageURL)
+        let steps = track.enumerated().filter(\.element.done).map { step, entry in
+            Weapon.Step(name: entry.camo.name, gradient: entry.camo.gradient,
+                        date: viewModel.completionistUnlockedDate(mode: m, weaponId: id, step: step),
+                        took: viewModel.completionistDuration(mode: m, weaponId: id, step: step)?.text)
+        }
         return Weapon(name: weapon.name.resolved(),
                       className: viewModel.category(containingWeaponId: id)?.name.resolved(),
                       prestige: viewModel.prestigeName(for: id),
-                      picture: picture,
+                      picture: await fetch(weapon.imageURL),
                       mode: GameRegistry.current.sharedCamos == true ? nil : mode,
                       accent: mode.accent,
                       camos: camos,
-                      stepsTitle: (GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized(),
-                      steps: steps,
-                      headline: headline,
-                      latest: Array(dated.sorted { $0.date.date > $1.date.date }.prefix(3)))
+                      steps: steps)
     }
 
     private static func fetch(_ urlString: String?) async -> UIImage? {
@@ -607,7 +589,7 @@ struct MilestoneCardView: View {
 }
 
 /// One weapon: its picture, every camo as a swatch (dimmed until earned),
-/// its Completionist camos, and the latest unlocks with their dates.
+/// and the Completionist camos it has, each with when and how long it took.
 struct WeaponCardView: View {
     let data: ShareCard.Weapon
 
@@ -631,12 +613,6 @@ struct WeaponCardView: View {
                         .font(.system(size: 11.5, weight: .semibold))
                         .foregroundStyle(Color.appInkMuted)
                         .lineLimit(1)
-                    if let headline = data.headline {
-                        CamoText(text: headline.text, gradient: headline.gradient, font: .hitmarker(14))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                            .padding(.top, 2)
-                    }
                 }
                 Spacer(minLength: 0)
                 ZStack {
@@ -668,49 +644,34 @@ struct WeaponCardView: View {
             }
             .frame(maxWidth: .infinity)
 
-            HStack(spacing: 6) {
-                ForEach(data.steps.indices, id: \.self) { i in
-                    let step = data.steps[i]
-                    HStack(spacing: 4) {
-                        Image(systemName: step.done ? "diamond.fill" : "diamond")
-                            .font(.system(size: 8, weight: .bold))
-                            .foregroundStyle(step.done ? (step.gradient.first ?? data.accent) : Color.appInkMuted.opacity(0.5))
-                        if step.done {
-                            CamoText(text: step.name, gradient: step.gradient, font: .hitmarker(10.5))
-                                .lineLimit(1).minimumScaleFactor(0.6)
-                        } else {
-                            Text(step.name)
-                                .font(.hitmarker(10.5))
-                                .foregroundStyle(Color.appInkMuted)
-                                .lineLimit(1).minimumScaleFactor(0.6)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 3)
-                    .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
-                    .overlay(RoundedRectangle(cornerRadius: 6)
-                        .strokeBorder((step.gradient.first ?? .appInkMuted).opacity(step.done ? 0.55 : 0.15), lineWidth: 1))
-                }
-            }
-
-            if !data.latest.isEmpty {
-                VStack(alignment: .leading, spacing: 3) {
-                    ForEach(data.latest.indices, id: \.self) { i in
-                        HStack {
-                            Text(data.latest[i].name)
-                                .font(.system(size: 11.5, weight: .semibold))
-                                .foregroundStyle(Color.appInk)
+            if !data.steps.isEmpty {
+                VStack(spacing: 7) {
+                    ForEach(data.steps.indices, id: \.self) { i in
+                        let step = data.steps[i]
+                        HStack(spacing: 8) {
+                            Image(systemName: "diamond.fill")
+                                .font(.system(size: 9, weight: .bold))
+                                .foregroundStyle(step.gradient.first ?? data.accent)
+                            CamoText(text: step.name, gradient: step.gradient, font: .hitmarker(14))
                                 .lineLimit(1)
-                            Spacer()
-                            Text(data.latest[i].date.text)
-                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
-                                .foregroundStyle(Color.appInkMuted)
+                                .minimumScaleFactor(0.7)
+                            Spacer(minLength: 6)
+                            if let date = step.date {
+                                Text(date.text)
+                                    .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                    .foregroundStyle(Color.appInkMuted)
+                            }
+                            if let took = step.took {
+                                Text(took)
+                                    .font(.system(size: 11.5, weight: .bold, design: .monospaced))
+                                    .foregroundStyle(Color.appInk)
+                                    .frame(minWidth: 58, alignment: .trailing)
+                            }
                         }
                     }
                 }
                 .padding(.horizontal, 10)
-                .padding(.vertical, 7)
+                .padding(.vertical, 8)
                 .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
             }
 
