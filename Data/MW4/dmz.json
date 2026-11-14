@@ -1,5 +1,5 @@
 {
-  "version": "0.8.33",
+  "version": "0.8.34",
   "mode": "dmz",
   "weaponCamos": [
     {
@@ -8776,6 +8776,35 @@
                   "nl": "Verifieer het e-mailadres van je Activision-account. Daarmee zet je inloggen in twee stappen aan.",
                   "it": "Verifica l’email del tuo account Activision: così si attiva l’accesso a due fattori.",
                   "pt": "Verifique o e-mail da sua conta Activision, o que ativa o login em duas etapas."
+                }
+              },
+              "children": []
+            },
+            {
+              "itemId": 2,
+              "name": {
+                "en": "Prestige Master",
+                "fr": "Prestige Master",
+                "es": "Prestige Master",
+                "de": "Prestige Master",
+                "nl": "Prestige Master",
+                "it": "Prestige Master",
+                "pt": "Prestige Master"
+              },
+              "imageURL": null,
+              "tier": null,
+              "unlockLevel": null,
+              "requirement": {
+                "amount": 1,
+                "unit": "times",
+                "description": {
+                  "en": "Reach Prestige Master level 1000.",
+                  "fr": "Atteignez le niveau 1000 de Maître de prestige.",
+                  "es": "Alcanza el nivel 1000 de Maestro de prestigio.",
+                  "de": "Erreiche Prestige-Meister-Stufe 1000.",
+                  "nl": "Bereik Prestige Master-niveau 1000.",
+                  "it": "Raggiungi il livello 1000 di Maestro del prestigio.",
+                  "pt": "Alcance o nível 1000 de Mestre de Prestígio."
                 }
               },
               "children": []
