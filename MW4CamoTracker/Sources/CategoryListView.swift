@@ -29,7 +29,7 @@ struct CategoryListView: View {
         Binding(get: { filter }, set: { filterRaw = $0.rawValue })
     }
 
-    private var weaponCategories: [WeaponCategory] { viewModel.catalog?.categories ?? [] }
+    private var weaponCategories: [WeaponCategory] { viewModel.categories(mode: mode.rawValue) }
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
     private var allSuggestions: [Suggestion] { viewModel.suggestions(mode: mode.rawValue) }
     /// Free players see the top suggestion; Premium, all of them.
@@ -174,8 +174,8 @@ struct CategoryListView: View {
                 stats: {
                     // Out of the launch roster until it's done; 100%+
                     // then counts every weapon
-                    let total = viewModel.launchRoster
-                    let capped: (Int) -> Int = { viewModel.launchProgress($0).done }
+                    let total = viewModel.launchRoster(mode: mode.rawValue)
+                    let capped: (Int) -> Int = { viewModel.launchProgress($0, mode: mode.rawValue).done }
                     let fraction: (Int, Int) -> Double = { done, of in of > 0 ? Double(done) / Double(of) : 0 }
                     let completeCount = capped(viewModel.totalGoldWeaponCount(mode: mode.rawValue))
                     let harmonic = mode.completionist.steps[2]
@@ -576,7 +576,7 @@ enum CategoryStats {
             guard viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode,
                   !viewModel.isModeMasteryAvailable(mode: mode.rawValue, tier: tier) else { return nil }
             if tier == 1 {
-                return Self.needs(viewModel.totalWeaponCount, mode.lastCompletionist.name)
+                return Self.needs(viewModel.weaponCount(mode: mode.rawValue), mode.lastCompletionist.name)
             }
             let tiers = mode.masteryCamos
             return String(format: "ct.lock.needs_camo".localized(), [tiers.tier1, tiers.tier2, tiers.tier3][tier - 2].name)
@@ -1020,7 +1020,7 @@ struct CustomiseHomeSheet: View {
             .sheet(isPresented: $showsWidgetGuide) {
                 WidgetGuideSheet(accent: accent).environmentObject(viewModel)
             }
-            .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .data]) { result in
+            .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .plainText, .data]) { result in
                 importFile(result)
             }
             .alert(importMessage ?? "", isPresented: Binding(get: { importMessage != nil }, set: { if !$0 { importMessage = nil } })) {

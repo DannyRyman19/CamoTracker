@@ -9,12 +9,15 @@ struct ProgressImport {
     var weapons = Set<Int>()
 }
 
-/// Reads the file the old BO6 and BO7 Camo Tracker apps export: every
+/// Reads the file the old BO6, BO7 and MW3 Camo Tracker apps export: every
 /// weapon with each camo's `CurrentAmount`, its `CurrentLevel` and, in
 /// BO7, `PrestigeLevel`. BO6's is `{"multiplayer": [...], "zombies": [...],
 /// "warzone": [...]}`; BO7's is one list with a block per mode on each
 /// weapon. Weapons are matched by name and camos by their place, which is
-/// how this app's BO6 and BO7 data was made from theirs.
+/// how this app's BO6 and BO7 data was made from theirs. MW3's is four
+/// lists in a row (MW3 Multiplayer, MW3 Zombies, MWII Multiplayer, MWII
+/// Zombies), each weapon with its `Camos`, `CompletionistCamos`,
+/// `MasteryChallenges` and `PrestigeChallenges`, kept here at the same places.
 enum LegacyImport {
     enum Failure: Error {
         case notAnExport
@@ -26,7 +29,15 @@ enum LegacyImport {
 
     /// Which game's old app wrote this shape of file: BO6's keeps a list
     /// of weapons per mode, BO7's one list with a block per mode.
-    private static let modeListsGame = "bo6", weaponListGame = "bo7"
+    private static let modeListsGame = "bo6", weaponListGame = "bo7", fourListsGame = "mw3"
+
+    /// The MW3 app's four lists, in the order it exported them
+    private static let fourListModes = ["multiplayer", "zombies", "mw2multiplayer", "mw2zombies"]
+
+    private static func isFourLists(_ json: Any) -> Bool {
+        guard let lists = json as? [Any], lists.count == fourListModes.count else { return false }
+        return lists.allSatisfy { $0 is [[String: Any]] }
+    }
 
     /// The old apps spelt a few weapons differently
     private static let aliases = ["gravemark": "gravemark .357", "nuncahku": "nunchaku", "ps-21": "pu-21"]
@@ -38,6 +49,7 @@ enum LegacyImport {
 
     /// The game whose old app wrote `json`, by its shape; `nil` for neither.
     static func exportGame(_ json: Any) -> String? {
+        if isFourLists(json) { return fourListsGame }
         if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
             return modeListsGame
         }
@@ -85,8 +97,9 @@ enum LegacyImport {
             }
         }
 
-        func level(_ weapon: [String: Any], _ weaponId: Int) {
-            let level = (weapon["CurrentLevel"] as? Int) ?? 0
+        /// `offset`: the MW3 app kept the level picker's index (level 1 is 0)
+        func level(_ weapon: [String: Any], _ weaponId: Int, offset: Int = 0) {
+            let level = ((weapon["CurrentLevel"] as? Int) ?? 0) + offset
             let prestige = (weapon["PrestigeLevel"] as? Int) ?? 0
             // BO6 keeps a copy of each weapon per mode: the highest wins
             guard level > 1 || prestige > 0 else { return }
@@ -94,7 +107,31 @@ enum LegacyImport {
             result.levels[weaponId] = (prestige, level)
         }
 
-        if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
+        if isFourLists(json), let lists = json as? [[[String: Any]]] {
+            // MW3: a list per tab, MWII guns in their own two
+            for (mode, categories) in zip(fourListModes, lists) where AppMode(rawValue: mode) != nil {
+                // Names are matched within the tab's own guns
+                let names = Dictionary(viewModel.weapons(mode: mode).map { (key($0.name.resolved()), $0.weaponId) },
+                                       uniquingKeysWith: { a, _ in a })
+                for weapon in weapons(categories) {
+                    guard let id = names[key((weapon["WeaponName"] as? String) ?? "")] else { continue }
+                    result.weapons.insert(id)
+                    level(weapon, id, offset: 1)
+                    for (index, value) in amounts(weapon["Camos"]).enumerated() {
+                        result.camos.append((mode, id, index, value))
+                    }
+                    for (step, value) in amounts(weapon["CompletionistCamos"]).prefix(TrackerViewModel.completionistStepCount).enumerated() {
+                        result.steps.append((mode, id, step, value))
+                    }
+                    for (index, value) in amounts(weapon["MasteryChallenges"]).prefix(4).enumerated() {
+                        result.camos.append((mode, id, 100 + index, value))
+                    }
+                    for (index, value) in amounts(weapon["PrestigeChallenges"]).prefix(4).enumerated() {
+                        result.camos.append((mode, id, 200 + index, value))
+                    }
+                }
+            }
+        } else if let modes = json as? [String: Any], modes.keys.contains(where: { ["multiplayer", "zombies", "warzone"].contains($0.lowercased()) }) {
             // BO6: a list of weapons per mode
             for (rawMode, categories) in modes {
                 guard let mode = AppMode(rawValue: rawMode.lowercased())?.rawValue else { continue }

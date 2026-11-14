@@ -122,8 +122,9 @@ struct WeaponEntry: Codable, Identifiable {
     let imageURL: String?
     let maxLevel: Int
     let unlockRequirement: LocalizedText?
-    /// How a weapon with no unlock level is obtained: `"battlePass"` or
-    /// `"event"`. Absent: unlocked by default. (A sentence with no digits,
+    /// How a weapon with no unlock level is obtained: `"battlePass"`,
+    /// `"event"`, `"armory"` (MW3's Armory unlocks) or `"challenge"` (its
+    /// `unlockRequirement` sentence says how). Absent: unlocked by default. (A sentence with no digits,
     /// like "Unlocked in the Battle Pass.", can't say this by itself.)
     var acquiredBy: String? = nil
     var id: Int { weaponId }
@@ -135,7 +136,9 @@ struct WeaponEntry: Codable, Identifiable {
     /// them without touching the network JSON's shape. `nil` for a weapon
     /// that's unlocked by default (no digits in that sentence at all).
     var unlockLevel: Int? {
-        guard let text = unlockRequirement?.resolved(),
+        // A weapon got another way says so in words that can hold numbers
+        // ("Season 5 Battle Pass", "Get 45 kills..."): none of them a level
+        guard acquiredBy == nil, let text = unlockRequirement?.resolved(),
               let range = text.range(of: #"\d+"#, options: .regularExpression) else { return nil }
         return Int(text[range])
     }
@@ -333,6 +336,13 @@ struct ChallengeItem: Codable, Identifiable {
     /// `true` keeps this child shut until every other child is done (a
     /// BlackCell Mastery camo after the class camos).
     var afterSiblings: Bool? = nil
+    /// A weapon's `extra` challenge that opens once the weapon has this
+    /// Completionist camo in the mode: 0, 1, 2 the steps, 3 the final camo
+    /// (MW3's "kills with the Gilded camo" Mastery challenges).
+    var afterCompletionist: Int? = nil
+    /// Opens once the camo with this `itemId` on the same weapon is earned
+    /// (MW3's Prestige camos, one after another).
+    var afterItem: Int? = nil
     var id: Int { itemId }
 
     enum Window { case undated, upcoming, live, ended }

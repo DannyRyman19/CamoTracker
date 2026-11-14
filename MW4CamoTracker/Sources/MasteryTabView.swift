@@ -86,7 +86,7 @@ struct MasteryTabView: View {
     /// A mode-wide challenge to tick and count (any weapon counts; the
     /// weapon only names the milestone), else the read-only status.
     @ViewBuilder private func row(mode: AppMode, tier: Int) -> some View {
-        if viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode, let weapon = viewModel.allWeapons.first {
+        if viewModel.masteryKind(mode: mode.rawValue, tier: tier) == .mode, let weapon = viewModel.weapons(mode: mode.rawValue).first {
             MasteryModeChallengeRow(mode: mode, weapon: weapon, tier: tier)
         } else {
             MasteryModeRow(mode: mode, tier: tier)
@@ -154,7 +154,7 @@ private struct TrackCamoRows: View {
             let count = index < TrackerViewModel.completionistStepCount
                 ? viewModel.completionistCount(mode: mode.rawValue, step: index)
                 : viewModel.finalCamoCount(mode: mode.rawValue)
-            let progress = viewModel.launchProgress(count)
+            let progress = viewModel.launchProgress(count, mode: mode.rawValue)
             let gate = gate(index: index, before: index > 0 ? camos[index - 1].name : nil)
             VStack(alignment: .leading, spacing: 6) {
                 StatusRow(name: camo.name, achieved: progress.done >= progress.total, color: camo.color, gradient: camo.gradient,
@@ -168,8 +168,9 @@ private struct TrackCamoRows: View {
             }
         }
         let full = viewModel.fullRosterFinalProgress(mode: mode.rawValue)
-        if let last = camos.last, viewModel.launchProgress(viewModel.finalCamoCount(mode: mode.rawValue)).done >= viewModel.launchRoster,
-           full.total > viewModel.launchRoster {
+        let roster = viewModel.launchRoster(mode: mode.rawValue)
+        if let last = camos.last, viewModel.launchProgress(viewModel.finalCamoCount(mode: mode.rawValue), mode: mode.rawValue).done >= roster,
+           full.total > roster {
             StatusRow(name: "mw4.ui.stats.100_plus".localized(), achieved: full.done >= full.total, color: .camoPlatinum, gradient: .platinum,
                       detail: String(format: "mw4.ui.milestone.100_plus_subtitle".localized(), last.name))
         }
@@ -186,14 +187,14 @@ private struct TrackCamoRows: View {
         }
         switch viewModel.completionistGate(mode: raw, step: index) {
         case .weapon:
-            let ready = viewModel.launchProgress(viewModel.totalGoldWeaponCount(mode: raw)).done
+            let ready = viewModel.launchProgress(viewModel.totalGoldWeaponCount(mode: raw), mode: raw).done
             return (String(format: "ct.mastery.gate_camos".localized(), ready), false)
         case .mode:
             let gate = viewModel.completionistModeGateProgress(mode: raw, step: index)
             return (gate.done >= gate.total ? nil
                     : String(format: "ct.mastery.gate_weapons".localized(), before ?? "", gate.total, min(gate.done, gate.total)), false)
         case .category:
-            let classes = viewModel.catalog?.categories ?? []
+            let classes = viewModel.categories(mode: raw)
             let open = classes.filter { category in
                 let p = viewModel.completionistCategoryGateProgress(category, mode: raw, step: index)
                 return p.done >= p.total
@@ -208,7 +209,7 @@ private struct TrackCamoRows: View {
     /// else one. Open classes drop off, since no class has to be done for
     /// another to open.
     private func classCounts(step: Int) -> some View {
-        let rows = (viewModel.catalog?.categories ?? []).map { category in
+        let rows = viewModel.categories(mode: mode.rawValue).map { category in
             (category, viewModel.completionistCategoryGateProgress(category, mode: mode.rawValue, step: step))
         }.filter { $0.1.done < $0.1.total }
         let half = (rows.count + 1) / 2

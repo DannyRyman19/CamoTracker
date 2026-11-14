@@ -47,7 +47,8 @@ extension TrackerViewModel {
     /// already into their Completionist camos come first, furthest along
     /// first; then weapons by fewest camos left on their list.
     func suggestions(mode: String, limit: Int = 3) -> [Suggestion] {
-        guard let categories = catalog?.categories, let appMode = AppMode(rawValue: mode) else { return [] }
+        let categories = categories(mode: mode)
+        guard !categories.isEmpty, let appMode = AppMode(rawValue: mode) else { return [] }
         let steps = appMode.completionist.steps
         var onCompletionist: [(Suggestion, Int)] = []
         var onCamoList: [(Suggestion, Int)] = []

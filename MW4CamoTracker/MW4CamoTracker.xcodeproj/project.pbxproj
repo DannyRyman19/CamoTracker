@@ -105,6 +105,11 @@
 		CAFDE0EC6BFF2DF2EEA9C40E /* bo7_zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = 784D26C28EC4DBBAB2D06F9D /* bo7_zombies.json */; };
 		79CC019812A53253ABEA5F4B /* bo7_warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F10A398AB5B57AA3DEB76EB /* bo7_warzone.json */; };
 		2CEBC0178E845046CFBE45C7 /* bo7_campaign.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F60459091B7BE88FFC10 /* bo7_campaign.json */; };
+		46EABE35F1C3F922FB373CD0 /* mw3_weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = D6E7536352C6CFE7747A9B9F /* mw3_weapons.json */; };
+		2F0E2AF31AD0F79164137AE9 /* mw3_multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D418B834E2CC3091715972B /* mw3_multiplayer.json */; };
+		3CEC3CF614A0DB18937E426F /* mw3_zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = EF760F70BEC802AD1486D8FC /* mw3_zombies.json */; };
+		A11CB27D14FE54C464BD050A /* mw3_mw2multiplayer.json in Resources */ = {isa = PBXBuildFile; fileRef = 34F2E4F168630AE5BBFCF0E5 /* mw3_mw2multiplayer.json */; };
+		B454B9B7D322B32B27B01A63 /* mw3_mw2zombies.json in Resources */ = {isa = PBXBuildFile; fileRef = AA4B08CC2C28D26AEF536736 /* mw3_mw2zombies.json */; };
 		E5D477BF08C34A7DEE0B4C11 /* stash_tile_r2c0.png in Resources */ = {isa = PBXBuildFile; fileRef = A2113858AE231E57620D9C91 /* stash_tile_r2c0.png */; };
 		EA76D1EE791EC486AE90AD08 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A2E8CFFC9E147140CB22B860 /* fr.lproj */; };
 		F007641376295D2DE45C6967 /* HajinTraitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD87D3E1EB0474E855A5E907 /* HajinTraitsView.swift */; };
@@ -269,6 +274,11 @@
 		784D26C28EC4DBBAB2D06F9D /* bo7_zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bo7_zombies.json"; sourceTree = "<group>"; };
 		7F10A398AB5B57AA3DEB76EB /* bo7_warzone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bo7_warzone.json"; sourceTree = "<group>"; };
 		7E01F60459091B7BE88FFC10 /* bo7_campaign.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bo7_campaign.json"; sourceTree = "<group>"; };
+		D6E7536352C6CFE7747A9B9F /* mw3_weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mw3_weapons.json"; sourceTree = "<group>"; };
+		2D418B834E2CC3091715972B /* mw3_multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mw3_multiplayer.json"; sourceTree = "<group>"; };
+		EF760F70BEC802AD1486D8FC /* mw3_zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mw3_zombies.json"; sourceTree = "<group>"; };
+		34F2E4F168630AE5BBFCF0E5 /* mw3_mw2multiplayer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mw3_mw2multiplayer.json"; sourceTree = "<group>"; };
+		AA4B08CC2C28D26AEF536736 /* mw3_mw2zombies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mw3_mw2zombies.json"; sourceTree = "<group>"; };
 		ECE376FB912D5E08B09A2AA8 /* MW4CamoTracker.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = MW4CamoTracker.entitlements; sourceTree = "<group>"; };
 		EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinItemViews.swift; sourceTree = "<group>"; };
 		F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinGuideTests.swift; sourceTree = "<group>"; };
@@ -331,6 +341,11 @@
 				784D26C28EC4DBBAB2D06F9D /* bo7_zombies.json */,
 				7F10A398AB5B57AA3DEB76EB /* bo7_warzone.json */,
 				7E01F60459091B7BE88FFC10 /* bo7_campaign.json */,
+				D6E7536352C6CFE7747A9B9F /* mw3_weapons.json */,
+				2D418B834E2CC3091715972B /* mw3_multiplayer.json */,
+				EF760F70BEC802AD1486D8FC /* mw3_zombies.json */,
+				34F2E4F168630AE5BBFCF0E5 /* mw3_mw2multiplayer.json */,
+				AA4B08CC2C28D26AEF536736 /* mw3_mw2zombies.json */,
 				D6D4CDA89124982F18FDAA90 /* multiplayer.json */,
 				87E24B1D1EBDC96E0CE57DEE /* nl.lproj */,
 				1A7C3E9F2B4D5F6071829305 /* it.lproj */,
@@ -643,6 +658,11 @@
 				CAFDE0EC6BFF2DF2EEA9C40E /* bo7_zombies.json in Resources */,
 				79CC019812A53253ABEA5F4B /* bo7_warzone.json in Resources */,
 				2CEBC0178E845046CFBE45C7 /* bo7_campaign.json in Resources */,
+				46EABE35F1C3F922FB373CD0 /* mw3_weapons.json in Resources */,
+				2F0E2AF31AD0F79164137AE9 /* mw3_multiplayer.json in Resources */,
+				3CEC3CF614A0DB18937E426F /* mw3_zombies.json in Resources */,
+				A11CB27D14FE54C464BD050A /* mw3_mw2multiplayer.json in Resources */,
+				B454B9B7D322B32B27B01A63 /* mw3_mw2zombies.json in Resources */,
 				99B580FC66079179AA15A449 /* de.lproj in Resources */,
 				57E1E10B61A7903CDC964565 /* dmz.json in Resources */,
 				D48BE5C4D4E07D400C1EB04B /* en.lproj in Resources */,

@@ -76,7 +76,7 @@ enum ShareCard {
                               let count = index < TrackerViewModel.completionistStepCount
                                   ? viewModel.completionistCount(mode: mode.rawValue, step: index)
                                   : viewModel.finalCamoCount(mode: mode.rawValue)
-                              let progress = viewModel.launchProgress(count)
+                              let progress = viewModel.launchProgress(count, mode: mode.rawValue)
                               return Camo(name: camo.name, gradient: camo.gradient, done: progress.done, total: progress.total)
                           }
                           // 100%+ once the last camo is on the launch roster:

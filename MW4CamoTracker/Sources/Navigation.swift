@@ -22,7 +22,8 @@ struct RouteDestinationView: View {
     var body: some View {
         switch route {
         case .weaponCategory(let categoryId):
-            if let category = viewModel.catalog?.categories.first(where: { $0.categoryId == categoryId }) {
+            if let category = viewModel.categories(mode: mode.rawValue).first(where: { $0.categoryId == categoryId })
+                ?? viewModel.catalog?.categories.first(where: { $0.categoryId == categoryId }) {
                 WeaponListView(mode: mode, category: category)
             }
         case .weapon(let weaponId):
@@ -30,7 +31,7 @@ struct RouteDestinationView: View {
                 WeaponDetailView(mode: mode, weapon: weapon)
             }
         case .allWeapons:
-            if let all = viewModel.allWeaponsCategory {
+            if let all = viewModel.allWeaponsCategory(mode: mode.rawValue) {
                 WeaponListView(mode: mode, category: all)
             }
         case .objectiveCategory(let categoryId):

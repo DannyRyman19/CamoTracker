@@ -1,0 +1,27 @@
+{
+  "catalog": {
+    "version": "1.0.0",
+    "path": "weapons.json"
+  },
+  "modes": {
+    "multiplayer": {
+      "version": "1.0.0",
+      "path": "multiplayer.json"
+    },
+    "zombies": {
+      "version": "1.0.0",
+      "path": "zombies.json"
+    },
+    "mw2multiplayer": {
+      "version": "1.0.0",
+      "path": "mw2multiplayer.json"
+    },
+    "mw2zombies": {
+      "version": "1.0.0",
+      "path": "mw2zombies.json"
+    }
+  },
+  "notification": {
+    "silent": true
+  }
+}

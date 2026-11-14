@@ -323,7 +323,7 @@ private struct ModeStatsCard: View {
     /// where half the card is too narrow for a class name.
     private var twoColumns: Bool { !GameRegistry.hasMastery && !dynamicTypeSize.isAccessibilitySize }
 
-    private var weaponCategories: [WeaponCategory] { viewModel.catalog?.categories ?? [] }
+    private var weaponCategories: [WeaponCategory] { viewModel.categories(mode: mode.rawValue) }
     private var objectiveCategories: [Category] { viewModel.modes[mode.rawValue]?.objectives ?? [] }
     private var completion: Double { viewModel.trueCompletionFraction(mode: mode.rawValue) }
 
@@ -331,9 +331,9 @@ private struct ModeStatsCard: View {
     /// mode's weapons have each.
     private var completionistNodes: [MasteryTrack.Node] {
         // Out of the launch roster; 100%+ below counts every weapon
-        let total = viewModel.launchRoster
+        let total = viewModel.launchRoster(mode: mode.rawValue)
         var nodes: [MasteryTrack.Node] = mode.completionistCamos.enumerated().map { index, camo in
-            let done = viewModel.launchProgress(viewModel.completionistCount(mode: mode.rawValue, step: index)).done
+            let done = viewModel.launchProgress(viewModel.completionistCount(mode: mode.rawValue, step: index), mode: mode.rawValue).done
             return .init(name: camo.name, color: camo.color, gradient: camo.gradient,
                          achieved: total > 0 && done >= total, detail: "\(done)/\(total)")
         }

@@ -1,0 +1,1918 @@
+{
+ "version": "1.0.0",
+ "baseWeaponCount": 87,
+ "weaponPrestige": [],
+ "prestigeCamos": [],
+ "_note": "Converted from the MW3 Camo Tracker data by Tools/games/convert_mw3.py.",
+ "categories": [
+  {
+   "categoryId": 0,
+   "name": {
+    "en": "Assault Rifles",
+    "de": "Sturmgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 0,
+     "name": {
+      "en": "SVA 545"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/sva-545.png"
+    },
+    {
+     "weaponId": 1,
+     "name": {
+      "en": "MTZ-556"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlocked at level 12",
+      "de": "Freigegeben auf Stufe 12"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/mtz-556.png"
+    },
+    {
+     "weaponId": 2,
+     "name": {
+      "en": "Holger 556"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlocked at level 37",
+      "de": "Freigegeben auf Stufe 37"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/holger-556.png"
+    },
+    {
+     "weaponId": 3,
+     "name": {
+      "en": "MCW"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlocked at level 44",
+      "de": "Freigegeben auf Stufe 44"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/mcw.png"
+    },
+    {
+     "weaponId": 4,
+     "name": {
+      "en": "DG-56"
+     },
+     "maxLevel": 25,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/dg-58.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 5,
+     "name": {
+      "en": "FR 5.56"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/fr-556.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 87,
+     "name": {
+      "en": "RAM-7"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/ram-7.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 88,
+     "name": {
+      "en": "BP50"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/BP50.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 89,
+     "name": {
+      "en": "BAL-27"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/BAL-27.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 90,
+     "name": {
+      "en": "STG44"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/stg44.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 1,
+   "name": {
+    "en": "Battle Rifles",
+    "de": "Kampfgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 6,
+     "name": {
+      "en": "BAS-B"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 17",
+      "de": "Freigegeben auf Stufe 17"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/bas-b.png"
+    },
+    {
+     "weaponId": 7,
+     "name": {
+      "en": "Sidewinder"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/sidewinder.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 8,
+     "name": {
+      "en": "MTZ-762"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/mtz-762.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 91,
+     "name": {
+      "en": "SOA Subverter"
+     },
+     "maxLevel": 17,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/soa-subverter.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 92,
+     "name": {
+      "en": "DTIR 30-06"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass in Sector",
+      "de": "Unlocked with the Season 6 Battle Pass in Sector "
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/dtir_30-06.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 2,
+   "name": {
+    "en": "SMGs",
+    "de": "MPs"
+   },
+   "weapons": [
+    {
+     "weaponId": 9,
+     "name": {
+      "en": "Striker"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/striker.png"
+    },
+    {
+     "weaponId": 10,
+     "name": {
+      "en": "WSP Swarm"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked at level 27",
+      "de": "Freigegeben auf Stufe 27"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/wsp-swarm.png"
+    },
+    {
+     "weaponId": 11,
+     "name": {
+      "en": "AMR9"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 55",
+      "de": "Freigegeben auf Stufe 55"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/amr9.png"
+    },
+    {
+     "weaponId": 12,
+     "name": {
+      "en": "WSP-9"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/wsp-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 13,
+     "name": {
+      "en": "Rival-9"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/rival-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 14,
+     "name": {
+      "en": "Striker 9"
+     },
+     "maxLevel": 25,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/striker-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 93,
+     "name": {
+      "en": "HRM-9"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/HRM-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 94,
+     "name": {
+      "en": "RAM-9"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/RAM-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 95,
+     "name": {
+      "en": "FJX Horus"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/FJX-HORUS.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 96,
+     "name": {
+      "en": "Superi 46"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/superi-46.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 97,
+     "name": {
+      "en": "Static-HV"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/static-hv.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 3,
+   "name": {
+    "en": "Shotguns",
+    "de": "Schrotflinten"
+   },
+   "weapons": [
+    {
+     "weaponId": 15,
+     "name": {
+      "en": "Lockwood 680"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/lockwood-680.png"
+    },
+    {
+     "weaponId": 16,
+     "name": {
+      "en": "Haymaker"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlocked at level 39",
+      "de": "Freigegeben auf Stufe 39"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/haymaker.png"
+    },
+    {
+     "weaponId": 17,
+     "name": {
+      "en": "Riveter"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/riveter.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 98,
+     "name": {
+      "en": "Reclaimer 18"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/reclaimer-18.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 4,
+   "name": {
+    "en": "LMGs",
+    "de": "LMGs"
+   },
+   "weapons": [
+    {
+     "weaponId": 18,
+     "name": {
+      "en": "Pulemyot 762"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/pulemyot-762.png"
+    },
+    {
+     "weaponId": 19,
+     "name": {
+      "en": "DG-58 LSW"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 7",
+      "de": "Freigegeben auf Stufe 7"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/dg-58-lsw.png"
+    },
+    {
+     "weaponId": 20,
+     "name": {
+      "en": "Holger 26"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/holger-26.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 21,
+     "name": {
+      "en": "Bruen MK9"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocked at level 31",
+      "de": "Freigegeben auf Stufe 31"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/bruen-mk9.png"
+    },
+    {
+     "weaponId": 99,
+     "name": {
+      "en": "Taq Eradicator"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/tac-eradicator.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 100,
+     "name": {
+      "en": "Taq Evolvere"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Schließe 5 Herausforderungen aus Woche 7 ab"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/taq-evolvere.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 101,
+     "name": {
+      "en": "Kastov LSW"
+     },
+     "maxLevel": 17,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass in Sector",
+      "de": "Unlocked with the Season 6 Battle Pass in Sector "
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/kastov_lsw.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 5,
+   "name": {
+    "en": "Marksman Rifles",
+    "de": "Präzisionsgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 22,
+     "name": {
+      "en": "KVD Enforcer"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/kvd-enforcer.png"
+    },
+    {
+     "weaponId": 23,
+     "name": {
+      "en": "MCW 6.8"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/mcw-68.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 24,
+     "name": {
+      "en": "DM56"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/dm56.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 25,
+     "name": {
+      "en": "MTZ Interceptor"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/mtz-interceptor.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 102,
+     "name": {
+      "en": "Kar98k"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/kar98k.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 6,
+   "name": {
+    "en": "Sniper Rifles",
+    "de": "Scharfschützengewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 26,
+     "name": {
+      "en": "KATT-AMR"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/katt-amr.png"
+    },
+    {
+     "weaponId": 27,
+     "name": {
+      "en": "Longbow"
+     },
+     "maxLevel": 31,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/longbow.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 28,
+     "name": {
+      "en": "KV Inhibitor"
+     },
+     "maxLevel": 33,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/kv-inhibitor.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 103,
+     "name": {
+      "en": "XRK Stalker"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/xrk-stalker.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 104,
+     "name": {
+      "en": "MORS"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/MORS.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 7,
+   "name": {
+    "en": "Pistols",
+    "de": "Pistolen"
+   },
+   "weapons": [
+    {
+     "weaponId": 29,
+     "name": {
+      "en": "COR-45"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock at level 4",
+      "de": "Unlock at level 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/cor-45.png"
+    },
+    {
+     "weaponId": 30,
+     "name": {
+      "en": "Renetti"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlocked at level 21",
+      "de": "Freigegeben auf Stufe 21"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/renetti.png"
+    },
+    {
+     "weaponId": 31,
+     "name": {
+      "en": "TYR"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlocked at level 50",
+      "de": "Freigegeben auf Stufe 50"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/tyr.png"
+    },
+    {
+     "weaponId": 32,
+     "name": {
+      "en": "WSP Stinger"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/wsp-stinger.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 8,
+   "name": {
+    "en": "Launchers",
+    "de": "Werfer"
+   },
+   "weapons": [
+    {
+     "weaponId": 33,
+     "name": {
+      "en": "RGL-80"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "Unlocked at level 38",
+      "de": "Freigegeben auf Stufe 38"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/rgl-80.png"
+    },
+    {
+     "weaponId": 105,
+     "name": {
+      "en": "Stormender"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/stormender.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 106,
+     "name": {
+      "en": "Torque 35"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Complete week 5 challenges"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/torque-35.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 9,
+   "name": {
+    "en": "Melee",
+    "de": "Nahkampf"
+   },
+   "weapons": [
+    {
+     "weaponId": 34,
+     "name": {
+      "en": "Gutter Knife"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/gutter-knife.png"
+    },
+    {
+     "weaponId": 35,
+     "name": {
+      "en": "Karambit"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/karambit.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 107,
+     "name": {
+      "en": "Soulrender"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/soulrender.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 108,
+     "name": {
+      "en": "Gladiator"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/gladiator.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 109,
+     "name": {
+      "en": "Sledgehammer"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/sledgehammer.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 110,
+     "name": {
+      "en": "Spear"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/MW3/spear.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 10,
+   "name": {
+    "en": "Assault Rifles",
+    "de": "Sturmgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 36,
+     "name": {
+      "en": "M4"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M4.png"
+    },
+    {
+     "weaponId": 37,
+     "name": {
+      "en": "TAQ-56"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 19",
+      "de": "Freigegeben auf Stufe 19"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-56.png"
+    },
+    {
+     "weaponId": 38,
+     "name": {
+      "en": "Kastov 762"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 23",
+      "de": "Freigegeben auf Stufe 23"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_762.png"
+    },
+    {
+     "weaponId": 39,
+     "name": {
+      "en": "Lachmann-556"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 13",
+      "de": "Wird freigeschaltet, indem das Lachmann-762 (Kampfgewehr) auf Stufe 13 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN-556.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 40,
+     "name": {
+      "en": "STB 556"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlock at player level 41",
+      "de": "Freigegeben auf Stufe 41"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/STB_556.png"
+    },
+    {
+     "weaponId": 41,
+     "name": {
+      "en": "M16"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the 556 Icarus (LMG) to Level 13",
+      "de": "Wird freigeschaltet, indem die 556 Icarus (LMG) auf Stufe 13 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M16.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 42,
+     "name": {
+      "en": "Kastov-74u"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Kastov 545 (Assault Rifle) to Level 13",
+      "de": "Wird freigeschaltet, indem das Kastov 545 (Sturmgewehr) auf Stufe 13 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV-74U.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 43,
+     "name": {
+      "en": "Kastov 545"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 10",
+      "de": "Wird freigeschaltet, indem das Kastov 762 (Sturmgewehr) auf Stufe 10 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KASTOV_545.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 111,
+     "name": {
+      "en": "M13B"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlock by defeating the chemist in the radiation zone of DMZ and extracting his dropped weapon",
+      "de": "Schalte es frei, indem du den Chemiker in der Strahlungszone der DMZ besiegst und seine fallen gelassene Waffe einsammelst."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13B.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 112,
+     "name": {
+      "en": "Chimera"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "Extract from DMZ Building 21 OR Get 2 Operator Kills with ARs in 15 seperate matches",
+      "de": "Auszug aus DMZ-Gebäude 21 ODER Erzielen Sie 2 Operator-Kills mit ARs in 15 separaten Matches"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/Chimera.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 113,
+     "name": {
+      "en": "ISO Hemlock"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 20 Longshot kills with Assault Rifles",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER 20 Longshot-Kills mit Sturmgewehren"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_HEMLOCK.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 114,
+     "name": {
+      "en": "Tempus Razorback"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 35 kills while mounted using Assault Rifles.",
+      "de": "Wird freigeschaltet durch Extraktion aus der DMZ ODER Erzielen von 35 Kills zu Pferd mit Sturmgewehren."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_RAZORBACK.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 115,
+     "name": {
+      "en": "FR Avancer"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 5 Battle Pass",
+      "de": "Freigegeben mit dem Season 5 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FR_AVANCER.png",
+     "acquiredBy": "battlePass"
+    },
+    {
+     "weaponId": 116,
+     "name": {
+      "en": "M13C"
+     },
+     "maxLevel": 11,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 5 Battle Pass",
+      "de": "Freigegeben mit dem Season 5 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/M13C.png",
+     "acquiredBy": "battlePass"
+    },
+    {
+     "weaponId": 117,
+     "name": {
+      "en": "TR-76 Geist"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass",
+      "de": "Freigegeben mit dem Season 6 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TR-76_GEIST.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 11,
+   "name": {
+    "en": "Battle Rifles",
+    "de": "Kampfgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 44,
+     "name": {
+      "en": "Lachmann-762"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 16",
+      "de": "Freigegeben auf Stufe 16"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png"
+    },
+    {
+     "weaponId": 45,
+     "name": {
+      "en": "SO-14"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the EBR-14 (Marksman Rifle) to Level 12",
+      "de": "Wird freigeschaltet, indem das EBR-14 (DMR) auf Stufe 12 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/S0-14.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 46,
+     "name": {
+      "en": "TAQ-V"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the TAQ-56 (Assault Rifle) to Level 11",
+      "de": "Freischaltung durch Aufleveln des TAQ-56 (Sturmgewehr) auf Stufe 11"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-V.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 47,
+     "name": {
+      "en": "FTAC Recon"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the M4 (Assault Rifle) to Level 13",
+      "de": "Freischaltung durch Aufleveln des M4 (Sturmgewehr) auf Stufe 13"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_RECON.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 118,
+     "name": {
+      "en": "Cronen Squall"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with Battle Rifles",
+      "de": "Wird durch Extraktion aus der DMZ freigeschaltet ODER durch 30 Headshot-Kills mit Kampfgewehr"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CRONEN_SQUALL.png",
+     "acquiredBy": "challenge"
+    }
+   ]
+  },
+  {
+   "categoryId": 12,
+   "name": {
+    "en": "SMGs",
+    "de": "MPs"
+   },
+   "weapons": [
+    {
+     "weaponId": 48,
+     "name": {
+      "en": "VEL 46"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VEL_46.png"
+    },
+    {
+     "weaponId": 49,
+     "name": {
+      "en": "MX9"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the STB 556 (Assault Rifle) to Level 13",
+      "de": "Wird freigeschaltet, indem das STB 556 (Sturmgewehr) auf Stufe 13 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX9.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 50,
+     "name": {
+      "en": "Lachmann Sub"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 12",
+      "de": "Wird freigeschaltet, indem das Lachmann-556 (Sturmgewehr) auf Stufe 12 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SUB.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 51,
+     "name": {
+      "en": "Vaznev-9k"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Kastov-74u (Assault Rifle) to Level 15",
+      "de": "Wird freigeschaltet, indem das Kastov-74u (Sturmgewehr) auf Stufe 15 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VAZNEV-9k.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 52,
+     "name": {
+      "en": "FSS Hurricane"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the FTAC Recon (Battle Rifle) to Level 16",
+      "de": "Wird freigeschaltet, indem du das FTAC-Aufklärungsgewehr (Kampfgewehr) auf Stufe 16 bringst."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FSS_HURRICANE.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 53,
+     "name": {
+      "en": "Minibak"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Vaznev-9k (SMG) to Level 14",
+      "de": "Freischalten durch Aufleveln des Vaznev-9k (MP) auf Stufe 14"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MINIBAK.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 54,
+     "name": {
+      "en": "PDSW 528"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlock at player level 5",
+      "de": "Freigegeben auf Stufe 5"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PDSW_528.png"
+    },
+    {
+     "weaponId": 55,
+     "name": {
+      "en": "Fennec 45"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 38",
+      "de": "Freigegeben auf Stufe 38"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FENNEC_45.png"
+    },
+    {
+     "weaponId": 119,
+     "name": {
+      "en": "BAS-P"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR 25 Headshots using SMGs",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER 25 Kopfschüsse mit MPS"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BAS-P.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 120,
+     "name": {
+      "en": "ISO 45"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 45 kills without taking any damage using SMGs",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER Erzielen von 45 Kills, ohne Schaden zu nehmen, mit MPS"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_45.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 121,
+     "name": {
+      "en": "Lachmann Shroud"
+     },
+     "maxLevel": 11,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 45 kills without taking any damage using SMGs",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER Erzielen von 45 Kills, ohne Schaden zu nehmen, mit MPS"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LACHMANN_SHROUD.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 122,
+     "name": {
+      "en": "ISO 9mm"
+     },
+     "maxLevel": 13,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass",
+      "de": "Freigegeben mit dem Season 6 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/ISO_9MM.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 13,
+   "name": {
+    "en": "Shotguns",
+    "de": "Schrotflinten"
+   },
+   "weapons": [
+    {
+     "weaponId": 56,
+     "name": {
+      "en": "Lockwood 300"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 36",
+      "de": "Freigegeben auf Stufe 36"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_300.png"
+    },
+    {
+     "weaponId": 57,
+     "name": {
+      "en": "Expedite 12"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 9",
+      "de": "Freigegeben auf Stufe 9"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/EXPEDITE_12.png"
+    },
+    {
+     "weaponId": 58,
+     "name": {
+      "en": "Bryson 800"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock at player level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_800.png"
+    },
+    {
+     "weaponId": 59,
+     "name": {
+      "en": "Bryson 890"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Bryson 800 (Shotgun) to Level 16",
+      "de": "Freischalten, indem du die Bryson 800 (Schrotflinte) auf Stufe 16 bringst."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BRYSON_890.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 123,
+     "name": {
+      "en": "KV Broadside"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 10 one-shot kills with Shotguns",
+      "de": "Wird durch Extraktion aus der DMZ freigeschaltet ODER durch 10 One-Shot-Kills mit Schrotflinten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/KV_BROADSIDE.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 124,
+     "name": {
+      "en": "MX Guardian"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Get 30 point blank kills with shotguns",
+      "de": "Erziele 30 Abschüsse aus nächster Nähe mit Schrotflinten"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MX_GUARDIAN.png",
+     "acquiredBy": "challenge"
+    }
+   ]
+  },
+  {
+   "categoryId": 14,
+   "name": {
+    "en": "LMGs",
+    "de": "LMGs"
+   },
+   "weapons": [
+    {
+     "weaponId": 60,
+     "name": {
+      "en": "Sakin MG38"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SAKIN_MG38.png"
+    },
+    {
+     "weaponId": 61,
+     "name": {
+      "en": "HCR 56"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the STB 556 (Assault Rifle) to Level 20",
+      "de": "Wird freigeschaltet, indem das STB 556 (Sturmgewehr) auf Stufe 20 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/HCR_56.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 62,
+     "name": {
+      "en": "556 Icarus"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the M4 (Assault Rifle) to Level 18",
+      "de": "Wird freigeschaltet, indem das M4 (Sturmgewehr) auf Stufe 18 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/556_ICARUS.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 63,
+     "name": {
+      "en": "RAAL MG"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 25",
+      "de": "Freigegeben auf Stufe 25"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAAL_MG.png"
+    },
+    {
+     "weaponId": 64,
+     "name": {
+      "en": "RPK"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Kastov 762 (Assault Rifle) to Level 16",
+      "de": "Wird freigeschaltet, indem das Kastov 762 (Sturmgewehr) auf Stufe 16 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPK.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 65,
+     "name": {
+      "en": "RAPP H"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Lachmann-556 (Assault Rifle) to Level 16",
+      "de": "Wird freigeschaltet, indem das Lachmann-556 (Sturmgewehr) auf Stufe 16 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RAPP_H.png",
+     "acquiredBy": "challenge"
+    }
+   ]
+  },
+  {
+   "categoryId": 15,
+   "name": {
+    "en": "Marksman Rifles",
+    "de": "Präzisionsgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 66,
+     "name": {
+      "en": "EBR-14"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/EBR-14.png"
+    },
+    {
+     "weaponId": 67,
+     "name": {
+      "en": "SP-R 208"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 7",
+      "de": "Freigegeben auf Stufe 7"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-R_208.png"
+    },
+    {
+     "weaponId": 68,
+     "name": {
+      "en": "Lockwood MK2"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 28",
+      "de": "Freigegeben auf Stufe 28"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LOCKWOOD_MK2.png"
+    },
+    {
+     "weaponId": 69,
+     "name": {
+      "en": "LM-S"
+     },
+     "maxLevel": 13,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the Lachmann-762 (Battle Rifle) to Level 17",
+      "de": "Wird freigeschaltet, indem das Lachmann-762 (Kampfgewehr) auf Stufe 17 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LM-S.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 70,
+     "name": {
+      "en": "SA-B 50"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the SP-R 208 to Level 13",
+      "de": "Freischaltung durch Aufleveln des SP-R 208 auf Level 13"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SA-B_50.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 71,
+     "name": {
+      "en": "TAQ-M"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the TAQ-56 (Assault Rifle) to Level 20",
+      "de": "Wird freigeschaltet, indem das TAQ-56 (Sturmgewehr) auf Stufe 20 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TAQ-M.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 125,
+     "name": {
+      "en": "Crossbow"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 50 Longshot kills using a Marksman Rifle",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER 50 Longshot-Kills mit einem DMR"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CROSSBOW.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 126,
+     "name": {
+      "en": "Tempus Torrent"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 25 Double Kills using a Marksman Rifle",
+      "de": "Wird durch Extraktion aus der DMZ freigeschaltet ODER durch 25 Double Kills mit einem DMR"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TEMPUS_TORRENT.png",
+     "acquiredBy": "challenge"
+    }
+   ]
+  },
+  {
+   "categoryId": 16,
+   "name": {
+    "en": "Sniper Rifles",
+    "de": "Scharfschützengewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 72,
+     "name": {
+      "en": "MCPR-300"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/MCPR-300.png"
+    },
+    {
+     "weaponId": 73,
+     "name": {
+      "en": "Signal 50"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlock at player Level 44",
+      "de": "Freigegeben auf Stufe 44"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SIGNAL_50.png"
+    },
+    {
+     "weaponId": 74,
+     "name": {
+      "en": "LA-B 330"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the SA-B 50 (Marksman Rifle) to Level 16",
+      "de": "Wird freigeschaltet, indem das SA-B 50 (DMR) auf Stufe 16 gebracht wird."
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/LA-B_330.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 75,
+     "name": {
+      "en": "SP-X 80"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the LA-B 330 (Sniper Rifle) to Level 17",
+      "de": "Freischaltung durch Aufleveln des LA-B 330 (Scharfschützengewehr) auf Stufe 17"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/SP-X_80.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 127,
+     "name": {
+      "en": "Victus XMR"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR 15 Headshots using Sniper Rifles",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER 15 Kopfschüsse mit Scharfschützengewehren"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/VICTUS_XMR.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 128,
+     "name": {
+      "en": "FJX Imperium"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 30 one shot one kills with sniper rifles",
+      "de": "Wird freigeschaltet durch Extraktion aus der DMZ ODER durch 30 One-Shot-Kills mit Scharfschützengewehren"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FJX_IMPERIUM.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 129,
+     "name": {
+      "en": "Carrack .300"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 5 Battle Pass",
+      "de": "Freigegeben mit dem Season 5 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/CARRACK_300.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 17,
+   "name": {
+    "en": "Melee",
+    "de": "Nahkampf"
+   },
+   "weapons": [
+    {
+     "weaponId": 76,
+     "name": {
+      "en": "Riot Shield"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 37",
+      "de": "Freigegeben auf Stufe 37"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RIOT_SHIELD.png"
+    },
+    {
+     "weaponId": 77,
+     "name": {
+      "en": "Combat Knife"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 17",
+      "de": "Freigegeben auf Stufe 17"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/COMBAT_KNIFE.png"
+    },
+    {
+     "weaponId": 130,
+     "name": {
+      "en": "Dual Kodachis"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Get 20 kills with Melee weapons",
+      "de": "Erziele 20 Kills mit Nahkampfwaffen"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KODACHIS.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 131,
+     "name": {
+      "en": "Tonfa"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": ""
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/TONFA.png"
+    },
+    {
+     "weaponId": 132,
+     "name": {
+      "en": "Pickaxe"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": ""
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PICKAXE.png"
+    },
+    {
+     "weaponId": 133,
+     "name": {
+      "en": "Dual Kamas"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass",
+      "de": "Freigegeben mit dem Season 6 Battle Pass"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/DUAL_KAMAS.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 18,
+   "name": {
+    "en": "Handguns",
+    "de": "Pistolen"
+   },
+   "weapons": [
+    {
+     "weaponId": 78,
+     "name": {
+      "en": "P890"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/P890.png"
+    },
+    {
+     "weaponId": 79,
+     "name": {
+      "en": ".50 GS"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 13",
+      "de": "Freigegeben auf Stufe 13"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png"
+    },
+    {
+     "weaponId": 80,
+     "name": {
+      "en": "X12"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 31",
+      "de": "Freigegeben auf Stufe 31"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/X12.png"
+    },
+    {
+     "weaponId": 81,
+     "name": {
+      "en": "Basilisk"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 39",
+      "de": "Freigegeben auf Stufe 39"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/BASILISK.png"
+    },
+    {
+     "weaponId": 82,
+     "name": {
+      "en": "X13 Auto"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock by leveling the X12 (Handgun) to Level 10",
+      "de": "Freischaltung durch Aufleveln der X12 (Handfeuerwaffe) auf Stufe 10"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/X13_AUTO.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 134,
+     "name": {
+      "en": "FTAC Siege"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 50 hipfire kills with Handguns",
+      "de": "Freigegeben durch Extraktion aus der DMZ ODER 50 Kills aus der Hüfte mit Handfeuerwaffen"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/FTAC_SIEGE.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 135,
+     "name": {
+      "en": "GS Magna"
+     },
+     "maxLevel": 10,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with the .50 GS",
+      "de": "Wird durch Extraktion aus der DMZ freigeschaltet ODER durch 30 Headshot-Kills mit der .50 GS"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/50_GS.png",
+     "acquiredBy": "challenge"
+    },
+    {
+     "weaponId": 136,
+     "name": {
+      "en": "9mm Daemon"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlocked via extraction from DMZ OR Get 30 headshot kills with the .50 GS",
+      "de": "Wird durch Extraktion aus der DMZ freigeschaltet ODER durch 30 Headshot-Kills mit der .50 GS"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/9MM_DAEMON.png",
+     "acquiredBy": "challenge"
+    }
+   ]
+  },
+  {
+   "categoryId": 19,
+   "name": {
+    "en": "Launchers",
+    "de": "Werfer"
+   },
+   "weapons": [
+    {
+     "weaponId": 83,
+     "name": {
+      "en": "PILA"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/PILA.png"
+    },
+    {
+     "weaponId": 84,
+     "name": {
+      "en": "Strela-P"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 14",
+      "de": "Freigegeben auf Stufe 14"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/STRELA-P.png"
+    },
+    {
+     "weaponId": 85,
+     "name": {
+      "en": "JOKR"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 24",
+      "de": "Freigegeben auf Stufe 24"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/JOKR.png"
+    },
+    {
+     "weaponId": 86,
+     "name": {
+      "en": "RPG-7"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "Unlocks at Player Level 32",
+      "de": "Freigegeben auf Stufe 32"
+     },
+     "imageURL": "https://camotracker.djr.li/Images/Guns/MWII/RPG-7.png"
+    }
+   ]
+  }
+ ]
+}

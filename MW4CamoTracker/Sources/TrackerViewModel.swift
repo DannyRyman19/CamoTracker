@@ -704,6 +704,19 @@ final class TrackerViewModel: ObservableObject {
     /// even though its level has reset.
     func isCamoAvailable(mode: String, weaponId: Int, camo: ChallengeItem) -> Bool {
         if quickTick || isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) { return true }
+        // An extra that waits for a Completionist camo on the weapon (MW3's
+        // "kills with Gilded"), or for another camo (its Prestige camos)
+        if let step = camo.afterCompletionist {
+            let has = step >= Self.completionistStepCount
+                ? hasFinalCamo(mode: mode, weaponId: weaponId)
+                : isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
+            guard has else { return false }
+        }
+        if let after = camo.afterItem,
+           let before = allCamos(weaponId: weaponId, mode: mode).first(where: { $0.itemId == after }),
+           !isCamoComplete(mode: mode, weaponId: weaponId, camo: before) {
+            return false
+        }
         // Always tappable: a tap sets the weapon level.
         if militaryLevel(mode: mode, weaponId: weaponId, camo: camo) != nil { return true }
         // Specials open at their own level; with `specialsAfterMilitary`
@@ -767,6 +780,36 @@ final class TrackerViewModel: ObservableObject {
         catalog?.categories.count ?? 0
     }
 
+    // MARK: - Each mode's weapons
+
+    /// The weapon classes a mode covers: every class, or the ones its game
+    /// lists for it (MW3's MWII tabs have only the MWII guns).
+    func categories(mode: String) -> [WeaponCategory] {
+        let all = catalog?.categories ?? []
+        guard let ids = modeCategoryIds(mode) else { return all }
+        return all.filter { ids.contains($0.categoryId) }
+    }
+
+    private func modeCategoryIds(_ mode: String) -> Set<Int>? {
+        game.modes.first { $0.id == mode }?.categories.map(Set.init)
+    }
+
+    func weapons(mode: String) -> [WeaponEntry] { categories(mode: mode).flatMap(\.weapons) }
+
+    func weaponCount(mode: String) -> Int { weapons(mode: mode).count }
+
+    /// The launch roster of the guns this mode covers (MW3's 36, MWII's 51).
+    func launchRoster(mode: String) -> Int {
+        guard modeCategoryIds(mode) != nil else { return launchRoster }
+        return max(1, weapons(mode: mode).filter { $0.weaponId < baseWeaponCount }.count)
+    }
+
+    /// `launchProgress` out of this mode's own launch roster.
+    func launchProgress(_ done: Int, mode: String) -> (done: Int, total: Int) {
+        let roster = launchRoster(mode: mode)
+        return (min(done, roster), roster)
+    }
+
     /// The launch-day weapon roster size, for the Mastery tier3 capstone gate
     /// (see `WeaponCatalog.baseWeaponCount`) — falls back to the live weapon
     /// count for a catalog that predates this field, which just reproduces
@@ -789,7 +832,7 @@ final class TrackerViewModel: ObservableObject {
     }
 
     func totalGoldWeaponCount(mode: String) -> Int {
-        catalog?.categories.reduce(0) { $0 + goldWeaponCount(in: $1, mode: mode) } ?? 0
+        categories(mode: mode).reduce(0) { $0 + goldWeaponCount(in: $1, mode: mode) }
     }
 
     // MARK: - Completionist (per weapon, per mode)
@@ -908,8 +951,8 @@ final class TrackerViewModel: ObservableObject {
     /// roster (a finished DLC weapon can stand in for a launch one).
     func completionistModeGateProgress(mode: String, step: Int) -> (done: Int, total: Int) {
         let total = gateTotal(needed: completionistStepConfig(mode: mode, step: step)?.needed,
-                              available: totalWeaponCount, launch: min(totalWeaponCount, baseWeaponCount))
-        let done = allWeapons.filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
+                              available: weaponCount(mode: mode), launch: launchRoster(mode: mode))
+        let done = weapons(mode: mode).filter { hasPrerequisite(mode: mode, weaponId: $0.weaponId, step: step) }.count
         return (min(done, total), total)
     }
 
@@ -990,7 +1033,7 @@ final class TrackerViewModel: ObservableObject {
 
     /// How many weapons have their Harmonic Break in this mode.
     func harmonicBreakCount(mode: String) -> Int {
-        allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: 2) }.count
+        weapons(mode: mode).filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: 2) }.count
     }
 
     /// Harmonic Breaks across the mode that open the final camo. Zero (no
@@ -1090,12 +1133,13 @@ final class TrackerViewModel: ObservableObject {
         }
     }
 
-    /// Every weapon as one list, for the "All weapons" screen.
-    var allWeaponsCategory: WeaponCategory? {
-        guard let catalog else { return nil }
+    /// Every weapon as one list, for the "All weapons" screen: the mode's
+    /// own, for a game whose modes cover different guns.
+    func allWeaponsCategory(mode: String? = nil) -> WeaponCategory? {
+        guard catalog != nil else { return nil }
         return WeaponCategory(categoryId: Self.allWeaponsCategoryId,
                               name: LocalizedText("mw4.ui.all_weapons".localized()),
-                              weapons: catalog.categories.flatMap(\.weapons))
+                              weapons: mode.map(weapons(mode:)) ?? allWeapons)
     }
 
     static let allWeaponsCategoryId = -1
@@ -1136,7 +1180,7 @@ final class TrackerViewModel: ObservableObject {
     func masteryWeaponsNeeded(mode: String, tier: Int) -> Int {
         let tiers = AppMode(rawValue: mode)?.masteryCamos
         let configured = [tiers?.tier1, tiers?.tier2, tiers?.tier3][max(0, min(tier, 3) - 1)]?.weaponsNeeded
-        return configured ?? max(1, Int((Double(launchRoster) * Double(tier) / 3).rounded(.up)))
+        return configured ?? max(1, Int((Double(launchRoster(mode: mode)) * Double(tier) / 3).rounded(.up)))
     }
 
     /// The weapons the game launched with: what the mode-wide counts are
@@ -1160,8 +1204,8 @@ final class TrackerViewModel: ObservableObject {
             }
             return (modeMasteryAmount(mode: mode, tier: tier), max(1, requirement.amount))
         case .challenge:
-            let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
-            return (min(done, launchRoster), launchRoster)
+            let done = weapons(mode: mode).filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
+            return launchProgress(done, mode: mode)
         case .count:
             let needed = masteryWeaponsNeeded(mode: mode, tier: tier)
             return (min(lastCompletionistCount(mode: mode), needed), needed)
@@ -1314,11 +1358,11 @@ final class TrackerViewModel: ObservableObject {
     /// Weapons with what this tier builds on, out of the launch roster
     /// ("mode" gate) or the class's launch count (pass its category).
     func masteryGateProgress(mode: String, tier: Int, category: WeaponCategory? = nil) -> (done: Int, total: Int) {
-        let weapons = category?.weapons ?? allWeapons
+        let weapons = category?.weapons ?? weapons(mode: mode)
         let needed = masteryTierConfig(mode: mode, tier: tier)?.needed
         let total = category.map {
             gateTotal(needed: needed, available: $0.weapons.count, launch: $0.weapons.filter { $0.weaponId < baseWeaponCount }.count)
-        } ?? gateTotal(needed: needed, available: totalWeaponCount, launch: launchRoster)
+        } ?? gateTotal(needed: needed, available: weaponCount(mode: mode), launch: launchRoster(mode: mode))
         let done = weapons.filter { hasMasteryPrerequisite(mode: mode, weaponId: $0.weaponId, tier: tier) }.count
         return (min(done, total), total)
     }
@@ -1377,10 +1421,10 @@ final class TrackerViewModel: ObservableObject {
     /// the "100%+" flex milestone past the third Mastery tier.
     func fullRosterFinalProgress(mode: String) -> (done: Int, total: Int) {
         if masteryKind(mode: mode, tier: 3) == .challenge {
-            let done = allWeapons.filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: 3) }.count
-            return (done, totalWeaponCount)
+            let done = weapons(mode: mode).filter { isWeaponMasteryComplete(mode: mode, weaponId: $0.weaponId, tier: 3) }.count
+            return (done, weaponCount(mode: mode))
         }
-        return (lastCompletionistCount(mode: mode), totalWeaponCount)
+        return (lastCompletionistCount(mode: mode), weaponCount(mode: mode))
     }
 
     func is100PlusAchieved(mode: String) -> Bool {
@@ -1413,7 +1457,7 @@ final class TrackerViewModel: ObservableObject {
 
     /// Overall camo completion across every weapon in every category, for this mode.
     func overallProgressFraction(mode: String) -> Double {
-        guard let categories = catalog?.categories else { return 0 }
+        let categories = categories(mode: mode)
         let leaves = categories.flatMap { $0.weapons.flatMap { camos(weaponId: $0.weaponId, mode: mode).flatMap(leafItems) } }
         guard !leaves.isEmpty else { return 0 }
         let done = categories.reduce(0) { partial, category in
@@ -1431,7 +1475,7 @@ final class TrackerViewModel: ObservableObject {
     /// every call, so new weapons count the moment a content update adds
     /// them.
     func trueCompletionFraction(mode: String) -> Double {
-        fullTrackFraction(of: catalog?.categories.flatMap(\.weapons) ?? [], mode: mode, modeMastery: true)
+        fullTrackFraction(of: weapons(mode: mode), mode: mode, modeMastery: true)
     }
 
     /// The same full-track measure for one weapon class, for the Stats
@@ -1445,7 +1489,7 @@ final class TrackerViewModel: ObservableObject {
     /// final camo for `step == completionistStepCount`.
     func completionistCount(mode: String, step: Int) -> Int {
         guard step < Self.completionistStepCount else { return finalCamoCount(mode: mode) }
-        return allWeapons.filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: step) }.count
+        return weapons(mode: mode).filter { isCompletionistComplete(mode: mode, weaponId: $0.weaponId, step: step) }.count
     }
 
     /// Each stage of the track counts the same: the camo lists (camos done

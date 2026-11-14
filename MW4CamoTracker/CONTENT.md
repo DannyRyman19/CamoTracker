@@ -130,9 +130,11 @@ The publish script enforces the first three.
 - `categories[]`: `categoryId`, `name`, `weapons[]`.
 - Each weapon: `weaponId`, `name`, `maxLevel`, `unlockRequirement` (a
   sentence; the app reads the unlock level out of its digits), `imageURL`,
-  and optional `acquiredBy` (`"battlePass"` or `"event"`) for a weapon with
-  no unlock level that isn't a default one: without it the app says
-  "Acquired by: Default". Keep digits out of such a weapon's
+  and optional `acquiredBy` (`"battlePass"`, `"event"`, `"armory"`, or
+  `"challenge"`, which shows the `unlockRequirement` sentence itself) for a
+  weapon with no unlock level that isn't a default one: without it the app
+  says "Acquired by: Default". A weapon with `acquiredBy` never reads a level
+  out of its sentence ("armory" and "challenge" need the build after 1.0.2). Keep digits out of such a weapon's
   `unlockRequirement` (they'd show as a level). Apps before 1.0.2 ignore
   `acquiredBy` and still say Default.
 - `weaponPrestige[]`: the prestige stages after a weapon's normal levels, in
@@ -153,7 +155,11 @@ The publish script enforces the first three.
   shows in), `unlockLevel` (the weapon level it opens at), `imageURL` and an
   optional `requirement` with `amount`, `unit` and a `description`
   sentence. A Military camo with an `unlockLevel` and no `requirement` is
-  ticked automatically once the weapon reaches that level.
+  ticked automatically once the weapon reaches that level. An `extra`
+  camo (shown in its own tab under its `section`, outside the camo chain)
+  can wait for `afterCompletionist` (0-2 a Completionist step on the
+  weapon, 3 the final camo) and/or `afterItem` (another camo's `itemId` on
+  the weapon): MW3's "kills with Gilded" badges and its Prestige camos.
 - `objectives[]`: mode-only, non-weapon content (DMZ's missions and
   contracts).
 - `completionist` (optional): the four camos after a weapon's camo list.
@@ -229,6 +235,25 @@ block is what the publish flags write:
 ```
 
 or `"notification": { "silent": true }`.
+
+## Other games (BO7, BO6, MW3)
+
+Each game in `Resources/games.json` has its own data folder (`path`, e.g.
+`Data/CT/MW3/`) and bundled copies named with its `seedPrefix`
+(`mw3_weapons.json`...). Publish one with `--game <id>`:
+
+    python3 MW4CamoTracker/Tools/publish_data.py --game mw3 --silent
+
+A mode in `games.json` can list the weapon `categories` it covers. MW3 does:
+its catalog has MW3's classes as 0-9 and the MWII guns carried into MW3 as
+10-19, and the MWII MP and MWII Zombies tabs show only 10-19 (their own
+Gold > Platinum > Polyatomic > Orion and Golden Ivory > Spinel Husk >
+Arachnida > Bioluminescent). Every count in such a mode (its launch roster,
+gates, Stats, widgets) is over its own guns. MW3's data comes from the old
+MW3 Camo Tracker's lists (`Data/MW3/Updated_*.json`) through
+`Tools/games/convert_mw3.py`, which says where each unlock number comes from.
+Weapon ids put the 87 launch weapons first (MW3's 36, then MWII's 51), so a
+season weapon added later takes the next id after 136.
 
 ## What still needs an app update
 

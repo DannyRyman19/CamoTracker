@@ -96,6 +96,10 @@ struct GameMode: Codable, Hashable {
     var symbol: String? = nil
     /// Hex colour, e.g. "#E0575B"
     var accent: String? = nil
+    /// The weapon classes (`categoryId`s) this mode covers, for a game whose
+    /// modes track different guns (MW3's MWII tabs have the MWII weapons
+    /// only). Absent: every class.
+    var categories: [Int]? = nil
 
     static func == (a: GameMode, b: GameMode) -> Bool { a.id == b.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

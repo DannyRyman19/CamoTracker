@@ -30,14 +30,13 @@ extension TrackerViewModel {
         let playedRaw = defaults.string(forKey: AppMode.playedKey) ?? ""
         let played = AppMode.played(playedRaw)
         let start = AppMode.start(defaults.string(forKey: AppMode.startKey) ?? "", played: playedRaw)
-        let weapons = allWeapons.count
 
         let modes = played.map { mode -> WidgetSnapshot.Mode in
             let raw = mode.rawValue
             let camos = mode.completionistCamos
             let steps = camos.enumerated().map { index, camo in
-                WidgetSnapshot.Step(name: camo.name, done: launchProgress(completionistCount(mode: raw, step: index)).done,
-                                    total: launchRoster, colorHex: camo.color.hexString)
+                WidgetSnapshot.Step(name: camo.name, done: launchProgress(completionistCount(mode: raw, step: index), mode: raw).done,
+                                    total: launchRoster(mode: raw), colorHex: camo.color.hexString)
             }
             let tiers = mode.masteryCamos
             // Black Ops has no account Mastery after the weapon camos
@@ -50,7 +49,7 @@ extension TrackerViewModel {
                                            total: max(progress.total, 1), colorHex: camo.color.hexString)
             }
             return WidgetSnapshot.Mode(id: raw, name: mode.displayName, accentHex: mode.accent.hexString,
-                                       fraction: trueCompletionFraction(mode: raw), weaponCount: weapons,
+                                       fraction: trueCompletionFraction(mode: raw), weaponCount: weaponCount(mode: raw),
                                        steps: steps, mastery: mastery)
         }
 

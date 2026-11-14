@@ -78,6 +78,7 @@ MODES = ["multiplayer", "warzone", "dmz"]
 GUIDES = ["hajin"]
 # Bundled files are `<PREFIX><name>.json`; MW4's have none
 PREFIX = ""
+MODE_CATEGORIES = {}
 # Where installed apps fetch from: Game.dataURL in Games.swift, plus OUT's
 # path in the repo
 CDN = "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/"
@@ -85,13 +86,15 @@ CDN = "https://cdn.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/"
 
 def use_game(game_id):
     """Point OUT, MODES, GUIDES and PREFIX at a game from games.json."""
-    global OUT, MODES, GUIDES, PREFIX
+    global OUT, MODES, GUIDES, PREFIX, MODE_CATEGORIES
     games = {g["id"]: g for g in load(RES / "games.json")}
     if game_id not in games:
         raise SystemExit(f"--game: no game {game_id!r} (games.json has {', '.join(games)})")
     game = games[game_id]
     OUT = ROOT / game["path"]
     MODES = [m["id"] for m in game["modes"]]
+    # A mode that covers only some classes (MW3's MWII tabs)
+    MODE_CATEGORIES = {m["id"]: set(m["categories"]) for m in game["modes"] if m.get("categories")}
     PREFIX = game["seedPrefix"]
     if game_id != "mw4":
         GUIDES = []
@@ -261,7 +264,7 @@ REQUIREMENT = {"amount": INT, "unit": STR, "description": TEXT}
 CHALLENGE_ITEM = {
     "itemId": INT, "name": TEXT, "imageURL": opt(STR), "tier": opt(INT), "unlockLevel": opt(INT),
     "requirement": opt(REQUIREMENT), "group": opt(STR), "section": opt(TEXT), "extra": opt(BOOL),
-    "counter": opt(INT),
+    "counter": opt(INT), "afterCompletionist": opt(INT), "afterItem": opt(INT),
 }
 CHALLENGE_ITEM["children"] = array(CHALLENGE_ITEM)
 STEP = {
@@ -302,7 +305,7 @@ WEAPON_CATALOG = {
     "categories": array({
         "categoryId": INT, "name": TEXT,
         "weapons": array({"weaponId": INT, "name": TEXT, "imageURL": opt(STR), "maxLevel": INT,
-                          "unlockRequirement": opt(TEXT)}),
+                          "unlockRequirement": opt(TEXT), "acquiredBy": opt(STR)}),
     }),
 }
 COST = {"item": STR, "qty": INT}
@@ -689,10 +692,12 @@ def check(problems, warnings, notes=None, allow_removed=(), allow_trackfrom_chan
         return
 
     check_catalog(problems, warnings, catalog, published("weapons"))
-    weapon_ids = [w["weaponId"] for c in catalog["categories"] for w in c["weapons"]]
     removed = []
     for mode, data in files.items():
         before = published(mode)
+        classes = MODE_CATEGORIES.get(mode)
+        weapon_ids = [w["weaponId"] for c in catalog["categories"] if classes is None or c["categoryId"] in classes
+                      for w in c["weapons"]]
         check_mode(problems, warnings, mode, data, weapon_ids, before, MODES, files, allow_trackfrom_change, notes)
         if before is not None and not decode_problems(f"{mode}.json", before, MODE_FILE):
             removed += removed_keys(warnings, notes, f"{mode}.json", objective_keys(mode, before), objective_keys(mode, data), allowed)

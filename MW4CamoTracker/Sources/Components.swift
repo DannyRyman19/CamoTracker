@@ -1101,6 +1101,10 @@ struct AcquiredByLabel: View {
             "mw4.ui.acquired_by_battle_pass".localized()
         } else if weapon.acquiredBy == "event" {
             "mw4.ui.acquired_by_event".localized()
+        } else if weapon.acquiredBy == "armory" {
+            "mw4.ui.acquired_by_armory".localized()
+        } else if weapon.acquiredBy == "challenge", let how = weapon.unlockRequirement?.resolved(), !how.isEmpty {
+            how
         } else {
             "mw4.ui.acquired_by_default".localized()
         }

@@ -490,7 +490,7 @@ struct TrackerViewModelTests {
 
     @Test func allWeaponsListsEveryWeaponOnce() throws {
         let model = try model()
-        let all = try #require(model.allWeaponsCategory)
+        let all = try #require(model.allWeaponsCategory())
         #expect(all.weapons.count == model.totalWeaponCount)
         #expect(Set(all.weapons.map(\.weaponId)).count == all.weapons.count)
     }

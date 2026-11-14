@@ -130,5 +130,113 @@
       "accent": "#FF6B1A"
     },
     "legacyApp": "BO6 Camo Tracker"
+  },
+  {
+    "id": "mw3",
+    "name": {
+      "en": "Modern Warfare III",
+      "de": "Modern Warfare III"
+    },
+    "shortName": "MW3",
+    "path": "Data/CT/MW3/",
+    "seedPrefix": "mw3_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#E5482F",
+        "categories": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "zombies",
+        "accent": "#C64BD0",
+        "categories": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": "mw2multiplayer",
+        "accent": "#7CC32D",
+        "symbol": "person.3",
+        "name": {
+          "en": "MWII MP",
+          "de": "MWII MP",
+          "fr": "MWII MP",
+          "es": "MWII MP",
+          "it": "MWII MP",
+          "nl": "MWII MP",
+          "pt": "MWII MP"
+        },
+        "categories": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "id": "mw2zombies",
+        "accent": "#FF8B00",
+        "symbol": "brain.head.profile",
+        "name": {
+          "en": "MWII Zombies",
+          "de": "MWII Zombies",
+          "fr": "MWII Zombies",
+          "es": "MWII Zombis",
+          "it": "MWII Zombi",
+          "nl": "MWII Zombies",
+          "pt": "MWII Zumbis"
+        },
+        "categories": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      }
+    ],
+    "theme": {
+      "background": "#0D0D0E",
+      "surface": "#18181A",
+      "surface2": "#232325",
+      "tint": "#E5482F",
+      "mark": "MW3",
+      "markWhite": 2,
+      "markColor": "#E5482F",
+      "accent": "#E5482F"
+    },
+    "legacyApp": "MW3 Camo Tracker"
   }
 ]
