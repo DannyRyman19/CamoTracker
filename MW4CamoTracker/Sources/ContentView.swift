@@ -258,6 +258,8 @@ struct ContentView: View {
                     paths[index] = path
                 }
                 splashDone = true
+                // The store shot of the game picker: onboarding's first page
+                if screen == "games" { showOnboarding = true }
                 return
             }
             // Weapons opens in the mode last picked in its title

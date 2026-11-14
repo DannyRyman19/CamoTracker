@@ -178,6 +178,7 @@ struct Shot {
 }
 let shots = [
     Shot(name: "multiplayer"),
+    Shot(name: "games"),
     Shot(name: "dmzmap"),
     Shot(name: "scan"),
     Shot(name: "stats"),
@@ -191,6 +192,7 @@ let shots = [
 // the type stays at full size. Same order as `shots`.
 let headlines: [String: [[String]]] = [
     "en": [["EVERY WEAPON", "EVERY CAMO"],
+           ["FIVE GAMES", "ONE TRACKER"],
            ["THE WHOLE", "DMZ MAP"],
            ["READ YOUR STASH", "FROM A PHOTO"],
            ["WATCH IT", "ALL ADD UP"],
@@ -199,6 +201,7 @@ let headlines: [String: [[String]]] = [
            ["YOUR GRIND", "ON YOUR HOME SCREEN"],
            ["BROWSE BY", "WEAPON CLASS"]],
     "de": [["JEDE WAFFE", "JEDE TARNUNG"],
+           ["FÜNF SPIELE", "EIN TRACKER"],
            ["DIE GANZE", "DMZ-KARTE"],
            ["LAGER PER FOTO", "EINLESEN"],
            ["SIEH ZU", "WIE ES AUFGEHT"],
@@ -207,6 +210,7 @@ let headlines: [String: [[String]]] = [
            ["DEIN GRIND", "AUF DEM HOMESCREEN"],
            ["NACH KLASSE", "STÖBERN"]],
     "es": [["CADA ARMA", "CADA CAMO"],
+           ["CINCO JUEGOS", "UN TRACKER"],
            ["TODO EL", "MAPA DE DMZ"],
            ["LEE TU ALIJO", "CON UNA FOTO"],
            ["MIRA CÓMO", "TODO SUMA"],
@@ -215,6 +219,7 @@ let headlines: [String: [[String]]] = [
            ["TU PROGRESO", "EN TU INICIO"],
            ["EXPLORA POR", "CLASE DE ARMA"]],
     "fr": [["CHAQUE ARME", "CHAQUE CAMO"],
+           ["CINQ JEUX", "UN SEUL TRACKER"],
            ["TOUTE LA", "CARTE DMZ"],
            ["LISEZ VOTRE STOCK", "EN PHOTO"],
            ["REGARDEZ", "TOUT MONTER"],
@@ -223,6 +228,7 @@ let headlines: [String: [[String]]] = [
            ["VOTRE GRIND", "SUR L'ACCUEIL"],
            ["PARCOURIR PAR", "CLASSE D'ARME"]],
     "nl": [["ELK WAPEN", "ELKE CAMO"],
+           ["VIJF GAMES", "ÉÉN TRACKER"],
            ["DE HELE", "DMZ-KAART"],
            ["LEES JE VOORRAAD", "VAN EEN FOTO"],
            ["ZIE HET", "ALLEMAAL OPTELLEN"],
@@ -231,6 +237,7 @@ let headlines: [String: [[String]]] = [
            ["JE GRIND", "OP JE BEGINSCHERM"],
            ["BLADER PER", "WAPENKLASSE"]],
     "it": [["OGNI ARMA", "OGNI MIMETICA"],
+           ["CINQUE GIOCHI", "UN SOLO TRACKER"],
            ["TUTTA LA", "MAPPA DMZ"],
            ["LEGGI LA SCORTA", "DA UNA FOTO"],
            ["GUARDA COME", "TUTTO SI SOMMA"],

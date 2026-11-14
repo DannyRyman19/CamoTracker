@@ -225,6 +225,7 @@ for LANG_CODE in "${LANGS[@]}"; do
 if [[ $DEVICE == ipad ]]; then MAP_VIEW="1.8,0.52,0.56"; else MAP_VIEW="3.0,0.52,0.62"; fi
   echo "==> capture [$LANG_CODE]"
   shot multiplayer multiplayer
+  shot games       games             # the game picker: MW4, BO7, BO6, MW3, MW2
   shot hajin       dmzmap  "" "" SS_HAJIN=map "SS_MAP_VIEW=$MAP_VIEW"  # the Tac Map, on the city
   shot hajin       scan    "" "" SS_GRID_INTRO=1                  # Read your stash
   shot stats       stats
@@ -238,7 +239,7 @@ if [[ $DEVICE == ipad ]]; then MAP_VIEW="1.8,0.52,0.56"; else MAP_VIEW="3.0,0.52
 
   if [[ $ALL -eq 1 ]]; then
     i=1
-    for n in multiplayer dmzmap scan stats weapon icons widgets category; do
+    for n in multiplayer games dmzmap scan stats weapon icons widgets category; do
       mv "$FRAMED/$n.png" "$FRAMED/${SHOT_PREFIX}${i}_$n${SHOT_SUFFIX}.png"
       i=$((i + 1))
     done
