@@ -278,7 +278,10 @@ def convert(game, files):
                                       (cde.get("CategoryRequirement") or "").replace("Engima", "Enigma") or None, c["AmountRequired"])
                     camos.append({
                         "itemId": 100 + k, "name": name, "tier": None, "unlockLevel": None, "requirement": req,
-                        "children": [], "imageURL": None, "section": SECTIONS["mastery"], "extra": True,
+                        # No badge art is published: the camo the kills are with stands in
+                        "children": [], "section": SECTIONS["mastery"], "extra": True,
+                        "imageURL": f"{SITE}Images/Camos/MW3Tracker/" + (
+                            w["CompletionistCamos"][k]["CamoURL"].rsplit("/", 1)[-1] if k < 3 else track["final_image"]),
                         "afterCompletionist": k,
                     })
                 # Weapon XP past max level, one after another
