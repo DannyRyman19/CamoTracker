@@ -459,10 +459,15 @@ private struct WeaponCategoryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("\(category.weapons.count) \("mw4.ui.section.weapons".localized())")
-                .scaledFont(11, weight: .bold)
-                .textCase(.uppercase)
-                .foregroundStyle(Color.appInkMuted)
+            HStack(alignment: .center) {
+                Text("\(category.weapons.count) \("mw4.ui.section.weapons".localized())")
+                    .scaledFont(11, weight: .bold)
+                    .textCase(.uppercase)
+                    .foregroundStyle(Color.appInkMuted)
+                Spacer(minLength: 8)
+                ClassIcon(category: category, height: 14, maxWidth: 44)
+                    .foregroundStyle(categoryAccent ?? Color.appInkMuted)
+            }
 
             Text(category.name.resolved())
                 .hitmarkerFont(16)

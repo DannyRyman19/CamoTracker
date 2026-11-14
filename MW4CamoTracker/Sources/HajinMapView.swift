@@ -202,7 +202,8 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
                 minZoom = area ? 0 : 2.5
             } else {
                 make = { [unowned self] selected in
-                    accessible(badge(symbol: marker.symbol ?? category.symbol, tint: UIColor(category.tint), selected: selected),
+                    accessible(badge(symbol: marker.symbol ?? category.symbol, glyph: marker.symbol == nil ? Glyph.mapName(category) : nil,
+                                         tint: UIColor(category.tint), selected: selected),
                                spoken: spoken, tag: tag, selected: selected)
                 }
                 minZoom = 0
@@ -293,7 +294,7 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         set {}
     }
 
-    private func badge(symbol: String, tint: UIColor, selected: Bool, pin: Bool = false) -> UIView {
+    private func badge(symbol: String, glyph: String? = nil, tint: UIColor, selected: Bool, pin: Bool = false) -> UIView {
         let side: CGFloat = selected ? 34 : 26
         let view = HajinMarkerBadge(frame: CGRect(x: 0, y: 0, width: side, height: side))
         view.layer.cornerRadius = side / 2
@@ -305,7 +306,9 @@ final class HajinMapUIView: UIView, UIScrollViewDelegate {
         view.layer.shadowRadius = 3
         view.layer.shadowOffset = .zero
         let config = UIImage.SymbolConfiguration(pointSize: side * 0.45, weight: .semibold)
-        let icon = UIImageView(image: UIImage(systemName: symbol, withConfiguration: config))
+        // The category's drawing when there is one, else its symbol
+        let drawn = glyph.flatMap { Glyph.image($0, height: (side * 0.56).rounded(), square: true) }
+        let icon = UIImageView(image: drawn ?? UIImage(systemName: symbol, withConfiguration: config))
         icon.tintColor = tint
         icon.contentMode = .center
         icon.frame = view.bounds

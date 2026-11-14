@@ -159,8 +159,7 @@ private struct OverallStatsHero: View {
             HStack(spacing: 0) {
                 ForEach(perMode, id: \.mode.rawValue) { entry in
                     VStack(spacing: 4) {
-                        Image(systemName: entry.mode.symbol)
-                            .font(.system(size: 13, weight: .bold))
+                        ModeIcon(entry.mode, size: 13, weight: .bold)
                             .foregroundStyle(entry.mode.accent)
                         Text(entry.fraction.percentText)
                             .scaledFont(14, weight: .bold, design: .monospaced)
@@ -200,7 +199,7 @@ private struct DMZStatsCard: View {
                 ProgressRing(fraction: overall, accent: .accentDMZ, lineWidth: 6, size: 56)
                     .accessibilityLabel(Text("mw4.ui.stats.dmz".localized()))
                 VStack(alignment: .leading, spacing: 2) {
-                    Label("mw4.ui.stats.dmz".localized(), systemImage: AppMode.dmz.symbol)
+                    Label { Text("mw4.ui.stats.dmz".localized()) } icon: { ModeIcon(.dmz, size: 17) }
                         .font(.headline)
                         .foregroundStyle(Color.accentDMZText)
                     if store.cash > 0 {
@@ -415,8 +414,13 @@ private struct ModeStatsCard: View {
             HStack(spacing: 10) {
                 // A mode's own weapons card (Black Ops) is named for the mode
                 let ownGrind = part == .weapons && GameRegistry.current.sharedCamos != true
-                Image(systemName: part == .weapons && !ownGrind ? "scope" : mode.symbol)
-                    .font(.system(size: 15, weight: .bold))
+                Group {
+                    if part == .weapons && !ownGrind {
+                        Image(systemName: "scope").font(.system(size: 15, weight: .bold))
+                    } else {
+                        ModeIcon(mode, size: 15, weight: .bold)
+                    }
+                }
                     .foregroundStyle(mode.accent)
                 Text(ownGrind ? mode.displayName
                      : part == .weapons ? "mw4.ui.section.weapons".localized()

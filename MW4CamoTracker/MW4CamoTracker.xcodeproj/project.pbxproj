@@ -26,6 +26,7 @@
 		F232E4EB1262B8606A18D98B /* LegacyImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */; };
 		1BF00A9ABB744995496686E3 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123056CE45A50392C830785 /* Games.swift */; };
 		A1C0DE5A1E00000000000001 /* ShareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE5A1E00000000000002 /* ShareCard.swift */; };
+		A1C0DE5A1E000000000000F1 /* Glyphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE5A1E000000000000F2 /* Glyphs.swift */; };
 		2EB98D97AE2E08C7219CFA9D /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712A377EABACE253BE27F61 /* ItemListView.swift */; };
 		3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */; };
 		3A69BB325248C404557D3503 /* warzone.json in Resources */ = {isa = PBXBuildFile; fileRef = 55B063F6E81EF142F5E8BE3A /* warzone.json */; };
@@ -213,6 +214,7 @@
 		31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyImport.swift; sourceTree = "<group>"; };
 		E123056CE45A50392C830785 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		A1C0DE5A1E00000000000002 /* ShareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCard.swift; sourceTree = "<group>"; };
+		A1C0DE5A1E000000000000F2 /* Glyphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glyphs.swift; sourceTree = "<group>"; };
 		82971534ADD2CA7EFF592137 /* weapons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
 		82E6BE0838A8B785F45509FD /* WeaponListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponListView.swift; sourceTree = "<group>"; };
 		87E24B1D1EBDC96E0CE57DEE /* nl.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				31A4F254E79FDD61B6A99A26 /* LegacyImport.swift */,
 				E123056CE45A50392C830785 /* Games.swift */,
 				A1C0DE5A1E00000000000002 /* ShareCard.swift */,
+				A1C0DE5A1E000000000000F2 /* Glyphs.swift */,
 				5C82D9A41E634B77B0F3A2C8 /* ReviewPrompt.swift */,
 				5D260791573B9EE8356EAC22 /* Theme.swift */,
 				205D76C7F12357E1D3A978BF /* TrackerViewModel.swift */,
@@ -729,6 +732,7 @@
 				F232E4EB1262B8606A18D98B /* LegacyImport.swift in Sources */,
 				1BF00A9ABB744995496686E3 /* Games.swift in Sources */,
 				A1C0DE5A1E00000000000001 /* ShareCard.swift in Sources */,
+				A1C0DE5A1E000000000000F1 /* Glyphs.swift in Sources */,
 				3A11C4E70B7D4F2A9C51D6E0 /* ReviewPrompt.swift in Sources */,
 				CDAB50CC05BE8060A14662EA /* Theme.swift in Sources */,
 				6ADFB7693AE1D8C6860A2411 /* TrackerViewModel.swift in Sources */,

@@ -102,7 +102,7 @@ struct HajinTrackingCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 12) {
-                HajinCardSymbol("scope")
+                HajinCardSymbol("scope", glyph: HajinMineCard.tracking.glyph)
                 Text("mw4.ui.hajin.tracking".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer()
                 Text("\(store.tracked.count)/\(HajinStore.maxTracked)")
@@ -330,7 +330,7 @@ struct HajinStashEntry: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: "shippingbox.fill")
+            Glyph.icon(HajinMineCard.stash.glyph, symbol: "shippingbox.fill", size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)
@@ -420,7 +420,7 @@ struct HajinBuildNextCard: View {
         let picks = store.buildNext()
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 12) {
-                HajinCardSymbol("hammer.fill")
+                HajinCardSymbol("hammer.fill", glyph: HajinMineCard.buildNext.glyph)
                 Text("mw4.ui.hajin.build_next".localized()).hitmarkerFont(16).foregroundStyle(Color.appInk)
                 Spacer()
                 if store.stash.isEmpty {

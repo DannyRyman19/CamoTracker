@@ -261,7 +261,7 @@ private struct SectionRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: section.symbol)
+            Glyph.icon(section.glyph, symbol: section.symbol, size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)
@@ -284,7 +284,7 @@ struct MarkerRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: marker.symbol ?? category?.symbol ?? "mappin")
+            Glyph.marker(marker.symbol, category, size: 17)
                 .foregroundStyle(category?.tint ?? .appInk)
                 .frame(width: 28)
             VStack(alignment: .leading, spacing: 2) {
@@ -559,7 +559,7 @@ struct HajinMinePage: View {
         if card == .blueprints {
             let progress = store.findProgress
             open(openBlueprints, .blueprints) { HajinBlueprintsView() } label: {
-                HajinProgressTile(title: card.title, symbol: card.symbol,
+                HajinProgressTile(title: card.title, symbol: card.symbol, glyph: card.glyph,
                                   fraction: Double(progress.found) / Double(max(progress.total, 1)),
                                   count: "\(progress.found)/\(progress.total)", wide: wide)
             }
@@ -575,7 +575,7 @@ struct HajinMinePage: View {
             open(openSection.map { open in { open(section) } }, .section(section.id)) {
                 GuideSectionView(section: section)
             } label: {
-                HajinProgressTile(title: card.title, symbol: card.symbol,
+                HajinProgressTile(title: card.title, symbol: card.symbol, glyph: card.glyph,
                                   // Prestige has no ticks: how many operators are tracked
                                   fraction: keys.isEmpty ? nil : Double(done) / Double(max(keys.count, 1)),
                                   count: keys.isEmpty ? "\(store.operators.count)" : "\(done)/\(keys.count)", wide: wide)
@@ -655,7 +655,7 @@ struct HajinMineCustomise: View {
                                 if on { h.remove(card.rawValue) } else { h.insert(card.rawValue) }
                                 hiddenRaw = h.sorted().joined(separator: ",")
                             })) {
-                            Label(card.title, systemImage: card.symbol)
+                            Label { Text(card.title) } icon: { Glyph.icon(card.glyph, symbol: card.symbol, size: 17) }
                         }
                         .tint(.accentDMZ)
                     }
@@ -1105,7 +1105,7 @@ private struct FilterChips: View {
                         if on { hidden.insert(category.id) } else { hidden.remove(category.id) }
                         store.hiddenCategories = hidden
                     } label: {
-                        Label(category.name.resolved, systemImage: category.symbol)
+                        Label { Text(category.name.resolved) } icon: { Glyph.marker(nil, category, size: 12) }
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(on ? category.tint : Color.appInkMuted)
                             .padding(.horizontal, 10)
@@ -1395,7 +1395,7 @@ private struct SelectionDetails: View {
     @ViewBuilder private func markerBody(_ marker: HajinGuide.Marker) -> some View {
         let category = store.guide?.category(marker.cat)
         HStack(spacing: 10) {
-            Image(systemName: category?.symbol ?? "mappin")
+            Glyph.marker(nil, category, size: 20)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(category?.tint ?? .appInk)
             VStack(alignment: .leading, spacing: 2) {
@@ -1514,7 +1514,7 @@ private struct FilterSheet: View {
                                     Text("\(count)").monospacedDigit().foregroundStyle(Color.appInkMuted)
                                 }
                             } icon: {
-                                Image(systemName: category.symbol).foregroundStyle(category.tint)
+                                Glyph.marker(nil, category, size: 17).foregroundStyle(category.tint)
                             }
                         }
                         .tint(.accentDMZ)
@@ -2101,7 +2101,7 @@ struct HajinGuideTile: View {
     }
 
     private var icon: some View {
-        Image(systemName: section.symbol)
+        Glyph.icon(section.glyph, symbol: section.symbol, size: 16)
             .font(.system(size: 16, weight: .bold))
             .foregroundStyle(Color.accentDMZText)
             .frame(width: 36, height: 36)
@@ -2128,6 +2128,8 @@ struct HajinGuideTile: View {
 struct HajinProgressTile: View {
     let title: String
     let symbol: String
+    /// Its drawing (`Glyph`), shown instead of `symbol` when bundled
+    var glyph: String? = nil
     /// nil: nothing to tick (prestige), so a plain symbol
     let fraction: Double?
     let count: String
@@ -2167,7 +2169,7 @@ struct HajinProgressTile: View {
             } else {
                 Circle().stroke(Color.appSurface2, lineWidth: 4).frame(width: 40, height: 40)
             }
-            Image(systemName: symbol)
+            Glyph.icon(glyph, symbol: symbol, size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(Color.accentDMZText)
         }

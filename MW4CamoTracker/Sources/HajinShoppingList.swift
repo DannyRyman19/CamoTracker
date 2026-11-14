@@ -226,7 +226,7 @@ struct HajinShoppingEntry: View {
     var body: some View {
         let missing = store.shoppingList(HajinStore.ShoppingScope(rawValue: scopeRaw) ?? .upgrades).reduce(0) { $0 + $1.missing }
         HStack(spacing: 12) {
-            Image(systemName: "list.bullet.clipboard.fill")
+            Glyph.icon(HajinMineCard.shopping.glyph, symbol: "list.bullet.clipboard.fill", size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)

@@ -128,7 +128,7 @@ struct ContentView: View {
                                 Menu {
                                     Picker("mw4.ui.mostly_play".localized(), selection: $primaryModeRaw) {
                                         ForEach(viewModel.visibleModes) { m in
-                                            Label(m.displayName, systemImage: m.symbol).tag(m.rawValue)
+                                            Label { Text(m.displayName) } icon: { m.menuIcon }.tag(m.rawValue)
                                         }
                                     }
                                     Picker("ct.ui.game".localized(), selection: Binding(
@@ -180,13 +180,13 @@ struct ContentView: View {
                     path.append(route)
                     paths[index] = path
                 }
-                .tabItem { Label("mw4.ui.section.weapons".localized(), systemImage: "scope") }
+                .tabItem { Label { Text("mw4.ui.section.weapons".localized()) } icon: { Glyph.tab("weapons", fallback: "scope") } }
                 .tag(index)
 
                 // iPad has Mastery beside the weapons instead
                 if !hasMasteryColumn {
                     NavigationStack { MasteryTabView() }
-                        .tabItem { Label("mw4.ui.section.mastery".localized(), systemImage: "star.circle.fill") }
+                        .tabItem { Label { Text("mw4.ui.section.mastery".localized()) } icon: { Glyph.tab("mastery", fallback: "star.circle.fill") } }
                         .tag(2)
                 }
 
@@ -203,12 +203,12 @@ struct ContentView: View {
                 .environment(\.hajinOpenOrder) { check in hajinPath.append(HajinOrderRoute(check: check)) }
                 .environment(\.hajinPush) { screen in hajinPath.append(screen) }
                 .overlay(alignment: .bottom) { HajinUndoOverlay().padding(.bottom, 70) }
-                    .tabItem { Label("mw4.ui.hajin.title".localized(), systemImage: "map.fill") }
+                    .tabItem { Label { Text("mw4.ui.hajin.title".localized()) } icon: { Glyph.tab("map", fallback: "map.fill") } }
                     .tag(Self.hajinTab)
                 }
 
                 NavigationStack { StatsView() }
-                    .tabItem { Label("mw4.ui.tab.stats".localized(), systemImage: "chart.bar.fill") }
+                    .tabItem { Label { Text("mw4.ui.tab.stats".localized()) } icon: { Glyph.tab("stats", fallback: "chart.bar.fill") } }
                     .tag(1)
             }
             .tint(currentAccent)

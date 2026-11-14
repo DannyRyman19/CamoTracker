@@ -35,7 +35,7 @@ struct WeaponDetailView: View {
                 Menu {
                     Picker(countsLabel, selection: $mode) {
                         ForEach(viewModel.visibleModes) { m in
-                            Label(m.displayName, systemImage: m.symbol).tag(m)
+                            Label { Text(m.displayName) } icon: { m.menuIcon }.tag(m)
                         }
                     }
                 } label: {
@@ -151,7 +151,7 @@ struct WeaponDetailView: View {
         // worth of attention before the Camos list even starts.
         Section {
             VStack(alignment: .leading, spacing: 12) {
-                WeaponHeroImage(urlString: weapon.imageURL)
+                WeaponHeroImage(urlString: weapon.imageURL, category: category)
 
                 titleBlock
 
@@ -469,7 +469,7 @@ struct WeaponDetailView: View {
         let columns = tileColumns
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .center, spacing: 20) {
-                WeaponHeroImage(urlString: weapon.imageURL, height: 210)
+                WeaponHeroImage(urlString: weapon.imageURL, height: 210, category: category)
                 VStack(alignment: .leading, spacing: 14) {
                     titleBlock
                     if !viewModel.quickTick {

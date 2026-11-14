@@ -476,7 +476,7 @@ struct HajinPostMatchReview: View {
     /// Every key, unnamed: a key's picture doesn't say which it is.
     private var keysRow: some View {
         HStack(spacing: 12) {
-            HajinCardSymbol("key.fill")
+            HajinCardSymbol("key.fill", glyph: "glyph-map-key")
             Text("mw4.ui.postmatch.keys".localized()).font(.subheadline).foregroundStyle(Color.appInk)
             Spacer()
             Text("×\(keys.count)").scaledFont(12, weight: .semibold, design: .monospaced).foregroundStyle(Color.appInkMuted)

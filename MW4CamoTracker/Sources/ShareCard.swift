@@ -49,7 +49,7 @@ enum ShareCard {
             /// mode's weapons, as Stats counts them
             var extras: [(title: String, done: Int, total: Int)] = []
         }
-        struct Mode { let name: String; let symbol: String; let accent: Color; let fraction: Double; let tiers: [(name: String, gradient: [Color], achieved: Bool)] }
+        struct Mode { let id: String; let name: String; let symbol: String; let accent: Color; let fraction: Double; let tiers: [(name: String, gradient: [Color], achieved: Bool)] }
         let overall: Double
         let tracks: [Track]
         let modes: [Mode]
@@ -65,7 +65,7 @@ enum ShareCard {
             let visible = viewModel.visibleModes
             modes = visible.map { mode in
                 let tiers = mode.masteryCamos
-                return Mode(name: mode.displayName, symbol: mode.symbol, accent: mode.accent,
+                return Mode(id: mode.rawValue, name: mode.displayName, symbol: mode.symbol, accent: mode.accent,
                             fraction: viewModel.trueCompletionFraction(mode: mode.rawValue),
                             tiers: [tiers.tier1, tiers.tier2, tiers.tier3].enumerated().map { index, camo in
                                 (camo.name, camo.gradient, viewModel.isMasteryAchieved(mode: mode.rawValue, tier: index + 1))
@@ -302,8 +302,7 @@ struct ProgressCardView: View {
                 VStack(alignment: .leading, spacing: 7) {
                     ForEach(data.modes, id: \.name) { mode in
                         HStack(spacing: 6) {
-                            Image(systemName: mode.symbol)
-                                .font(.system(size: 10, weight: .bold))
+                            ModeIcon(id: mode.id, symbol: mode.symbol, size: 10, weight: .bold)
                                 .foregroundStyle(mode.accent)
                                 .frame(width: 14)
                             Text(mode.name)
@@ -417,7 +416,7 @@ struct ProgressCardView: View {
             if !data.dmz.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
-                        Label("mw4.ui.stats.dmz".localized(), systemImage: AppMode.dmz.symbol)
+                        Label { Text("mw4.ui.stats.dmz".localized()) } icon: { ModeIcon(.dmz, size: 12, weight: .bold) }
                             .font(.system(size: 12, weight: .bold))
                             .foregroundStyle(Color.accentDMZ)
                         Spacer()

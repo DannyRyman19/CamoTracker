@@ -127,10 +127,12 @@ struct HajinRarityLine: View {
 /// The round icon a My DMZ card leads with (Level, Cash, Tracking...).
 struct HajinCardSymbol: View {
     let name: String
-    init(_ name: String) { self.name = name }
+    /// Its drawing (`Glyph`), shown instead of `name` when bundled
+    var glyph: String? = nil
+    init(_ name: String, glyph: String? = nil) { self.name = name; self.glyph = glyph }
 
     var body: some View {
-        Image(systemName: name)
+        Glyph.icon(glyph, symbol: name, size: 14)
             .font(.system(size: 14, weight: .bold))
             .foregroundStyle(.white)
             .frame(width: 30, height: 30)
@@ -945,7 +947,7 @@ struct HajinItemView: View {
                 }
                 ForEach(Array(mentions.enumerated()), id: \.offset) { index, mention in
                     HStack(alignment: .top, spacing: 12) {
-                        Image(systemName: mention.section.symbol)
+                        Glyph.icon(mention.section.glyph, symbol: mention.section.symbol, size: 15)
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(Color.accentDMZText)
                             .frame(width: 28)
@@ -1206,7 +1208,8 @@ struct HajinWeaponRow: View {
             if needsManual {
                 HajinTick(done: manualDone, label: row.title.resolved) { store.toggle(manualKey) }
             }
-            WeaponThumbnail(urlString: weapon?.imageURL, size: 72, inset: 6)
+            WeaponThumbnail(urlString: weapon?.imageURL, size: 72, inset: 6,
+                            category: viewModel.category(containingWeaponId: weaponId))
                 .frame(width: 96, height: 54)
                 .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface2))
                 .clipShape(RoundedRectangle(cornerRadius: 6))

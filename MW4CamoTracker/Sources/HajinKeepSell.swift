@@ -467,7 +467,7 @@ struct HajinKeepSellEntry: View {
     var body: some View {
         let spare = store.spare().total
         HStack(spacing: 12) {
-            Image(systemName: "arrow.left.arrow.right")
+            Glyph.icon(HajinMineCard.keepSell.glyph, symbol: "arrow.left.arrow.right", size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)

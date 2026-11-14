@@ -166,14 +166,16 @@ struct WeaponRow: View {
                 // under the name, which gets the card's whole width
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 12) {
-                        WeaponThumbnail(urlString: weapon.imageURL, size: 56)
+                        WeaponThumbnail(urlString: weapon.imageURL, size: 56,
+                                    category: viewModel.category(containingWeaponId: weapon.weaponId))
                         nameColumn
                     }
                     progress(alignment: .leading)
                 }
             } else {
                 HStack(spacing: 12) {
-                    WeaponThumbnail(urlString: weapon.imageURL, size: 56)
+                    WeaponThumbnail(urlString: weapon.imageURL, size: 56,
+                                    category: viewModel.category(containingWeaponId: weapon.weaponId))
                     nameColumn
                     Spacer(minLength: 8)
                     // Pips stay right-aligned above the level, out of the name's

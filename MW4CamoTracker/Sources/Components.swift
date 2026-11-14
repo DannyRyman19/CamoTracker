@@ -124,15 +124,13 @@ struct PlayedModesPicker: View {
             Group {
                 if stacked {
                     HStack(spacing: 10) {
-                        Image(systemName: mode.symbol)
-                            .font(.system(size: 17, weight: .semibold))
+                        ModeIcon(mode, size: 17)
                         name.minimumScaleFactor(0.8)
                     }
                     .padding(.horizontal, 28)
                 } else {
                     VStack(spacing: 5) {
-                        Image(systemName: mode.symbol)
-                            .font(.system(size: 17, weight: .semibold))
+                        ModeIcon(mode, size: 17)
                         // Its whole width, clear of the tick in the corner
                         name.fixedSize().padding(.horizontal, 10)
                     }
@@ -308,6 +306,9 @@ struct WeaponThumbnail: View {
     /// square frame — an inset keeps it from touching the tile's rounded
     /// corners, matching `WeaponHeroImage`'s own padding.
     var inset: CGFloat? = nil
+    /// The weapon's class, so a gun without its picture shows its class's
+    /// silhouette rather than a generic scope.
+    var category: WeaponCategory? = nil
 
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
@@ -317,14 +318,33 @@ struct WeaponThumbnail: View {
             case .success(let image):
                 image.resizable().aspectRatio(contentMode: .fit).padding(inset ?? size * 0.14)
             default:
-                Image(systemName: "scope")
-                    .font(.system(size: size * 0.4))
-                    .foregroundStyle(Color.appInkMuted)
+                WeaponPlaceholder(category: category, height: size * 0.3, maxWidth: size * 0.72, symbolSize: size * 0.4)
             }
         }
         .frame(width: size, height: size)
         .background(Color.appSurface2)
         .clipShape(RoundedRectangle(cornerRadius: size * 0.2))
+    }
+}
+
+/// What a weapon tile shows until (or instead of) its picture: its class's
+/// silhouette, or a scope when the class has no drawing.
+private struct WeaponPlaceholder: View {
+    let category: WeaponCategory?
+    let height: CGFloat
+    let maxWidth: CGFloat
+    let symbolSize: CGFloat
+
+    var body: some View {
+        Group {
+            if let category, let name = Glyph.className(category),
+               let drawn = Glyph.image(name, height: height.rounded(), maxWidth: maxWidth.rounded()) {
+                Image(uiImage: drawn)
+            } else {
+                Image(systemName: "scope").font(.system(size: symbolSize))
+            }
+        }
+        .foregroundStyle(Color.appInkMuted)
     }
 }
 
@@ -336,6 +356,7 @@ struct WeaponThumbnail: View {
 struct WeaponHeroImage: View {
     let urlString: String?
     var height: CGFloat = 108
+    var category: WeaponCategory? = nil
 
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
@@ -345,9 +366,7 @@ struct WeaponHeroImage: View {
             case .success(let image):
                 image.resizable().aspectRatio(contentMode: .fit).padding(12)
             default:
-                Image(systemName: "scope")
-                    .font(.system(size: height * 0.32))
-                    .foregroundStyle(Color.appInkMuted)
+                WeaponPlaceholder(category: category, height: height * 0.4, maxWidth: height * 1.6, symbolSize: height * 0.32)
             }
         }
         .frame(maxWidth: .infinity)

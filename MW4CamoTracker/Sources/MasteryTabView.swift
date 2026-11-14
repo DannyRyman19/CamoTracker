@@ -64,7 +64,7 @@ struct MasteryTabView: View {
                             TrackCamoRows(mode: mode)
                         }
                     } header: {
-                        ListHeading(title: Label(mode.displayName, systemImage: mode.symbol)
+                        ListHeading(title: Label { Text(mode.displayName) } icon: { ModeIcon(mode, size: 15) }
                             .foregroundStyle(mode.textAccent), opaque: false)
                     }
                     .listRowBackground(Color.appSurface)

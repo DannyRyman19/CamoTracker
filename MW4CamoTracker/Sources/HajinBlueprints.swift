@@ -158,7 +158,7 @@ struct HajinBlueprintsEntry: View {
     var body: some View {
         let progress = store.findProgress
         HStack(spacing: 12) {
-            Image(systemName: "doc.text.magnifyingglass")
+            Glyph.icon(HajinMineCard.blueprints.glyph, symbol: "doc.text.magnifyingglass", size: 14)
                 .font(.system(size: 14, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 30, height: 30)
