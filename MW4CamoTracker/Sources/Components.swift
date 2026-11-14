@@ -884,8 +884,19 @@ struct ChallengeRow: View {
     /// The line under the name for a camo with no challenge sentence, once
     /// it's open ("Earned at weapon level 12.").
     var detail: String? = nil
+    /// When it was earned, shown under a done row ("Unlocked 12 Nov").
+    var earnedOn: Date? = nil
+    /// How long it took, after the date ("· in 6 days").
+    var took: TimeInterval? = nil
     let onToggle: () -> Void
     let onSetAmount: (Int) -> Void
+
+    private var earnedText: String? {
+        guard isDone, let earnedOn else { return nil }
+        let day = String(format: "ct.ui.earned_on".localized(), earnedOn.earnedDayText)
+        guard let took = took?.tookText else { return day }
+        return day + " · " + String(format: "ct.ui.took".localized(), took)
+    }
 
     @State private var showAmountEntry = false
     @State private var amountText = ""
@@ -953,6 +964,11 @@ struct ChallengeRow: View {
                     Text(line)
                         .scaledFont(13)
                         .foregroundStyle(Color.appInkMuted)
+                }
+                if let earnedText {
+                    Text(earnedText)
+                        .scaledFont(11.5, weight: .medium)
+                        .foregroundStyle(accent.opacity(0.85))
                 }
                 // At the accessibility text sizes the −/+ go under the
                 // challenge, so a long name keeps the row's width
@@ -1058,7 +1074,28 @@ struct ChallengeRow: View {
         } else if let line = isAvailable ? detail : lockedReason {
             parts.append(line)
         }
+        if let earnedText { parts.append(earnedText) }
         return parts.joined(separator: ", ")
+    }
+}
+
+extension TimeInterval {
+    /// "6 days" or "5 hours": how long something took, in its largest unit.
+    var tookText: String? {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.maximumUnitCount = 1
+        formatter.allowedUnits = self >= 86_400 ? [.day] : [.hour]
+        return formatter.string(from: self)
+    }
+}
+
+extension Date {
+    /// "12 Nov", or "12 Nov 2025" outside this year, in the reader's own
+    /// order: when a camo was earned.
+    var earnedDayText: String {
+        let sameYear = Calendar.current.isDate(self, equalTo: .now, toGranularity: .year)
+        return formatted(sameYear ? .dateTime.day().month(.abbreviated) : .dateTime.day().month(.abbreviated).year())
     }
 }
 

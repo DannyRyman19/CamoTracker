@@ -225,6 +225,13 @@ final class CloudSync {
         syncNow()
     }
 
+    /// When an entry last changed, here or on another device: nil for one
+    /// saved before stamps existed. Stamped for every player, Premium or
+    /// not, so it doubles as when a camo was ticked.
+    func changedAt(_ key: String) -> Date? {
+        snapshot.stamps[key].map(Date.init(timeIntervalSince1970:))
+    }
+
     /// Records a local save: stamps what changed, and merges and pushes it
     /// a moment later, so a burst of taps is one write.
     func recordLocal(_ values: [String: Int]) {

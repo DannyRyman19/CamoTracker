@@ -181,4 +181,34 @@ final class GridTapUITests: XCTestCase {
                                evaluatedWith: app.descendants(matching: .any)["1/50"])
         wait(for: [gone], timeout: 5)
     }
+
+    /// A ticked camo says when it was unlocked, and the weapon's share
+    /// button opens its card.
+    func testTickedCamoShowsItsDateAndTheWeaponShares() {
+        // M4 at max level: its Military camos are earned, the Specials open
+        let save = Data(#"{"weaponLevels":{"1":72},"weaponPrestige":{},"amounts":{},"completed":[]}"#.utf8)
+            .map { String(format: "%02x", $0) }.joined()
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["SS_WEAPON"] = "1"
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-AppleLocale", "en_GB", "-mw4_progress_v2", "<\(save)>",
+                                "-mw4_home_class", "-1", "-mw4_quick_tick", "YES"]
+        app.launch()
+
+        let smoke = app.descendants(matching: .any)["tick.Smoke"]
+        XCTAssertTrue(smoke.waitForExistence(timeout: 15))
+        smoke.tap()
+        app.descendants(matching: .any)["tick.Stormwave"].tap()
+        let today = Date.now.formatted(.dateTime.day().month(.abbreviated).locale(Locale(identifier: "en_GB")))
+        let stamp = NSPredicate(format: "value CONTAINS %@", "Unlocked \(today)")
+        XCTAssertTrue(app.descendants(matching: .any).matching(stamp).firstMatch.waitForExistence(timeout: 5))
+        add(XCTAttachment(screenshot: app.screenshot()))
+
+        app.buttons["weapon.share"].tap()
+        XCTAssertTrue(app.buttons["Share"].waitForExistence(timeout: 15))
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.lifetime = .keepAlways
+        add(shot)
+    }
 }

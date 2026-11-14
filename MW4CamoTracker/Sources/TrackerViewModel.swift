@@ -102,6 +102,7 @@ final class TrackerViewModel: ObservableObject {
             pinnedWeaponIds = [defaults.integer(forKey: pinnedWeaponKey)]
         }
         liftPrestigeFromTicks()
+        recordFirstEarned()
     }
 
     /// Checks the CDN manifest and pulls only the catalog/mode files whose version changed.
@@ -732,6 +733,151 @@ final class TrackerViewModel: ObservableObject {
         objectWillChange.send()
         checkMilestone(weaponId: weaponId, mode: mode, wasGold: wasGold)
         Haptics.change(wasDone: wasDone, isDone: isCamoComplete(mode: mode, weaponId: weaponId, camo: camo))
+    }
+
+    // MARK: - When things were earned
+
+    /// When this camo was ticked or its count finished, from the time sync
+    /// stamps on each saved entry; the earliest mode's when several have it.
+    /// Nil when it isn't done, was earned by weapon level (the level's stamp
+    /// moves with every later level), shares a running count (Black Ops'
+    /// Military), or was saved before stamps existed.
+    func camoEarnedDate(mode: String, weaponId: Int, camo: ChallengeItem) -> Date? {
+        guard camo.counter == nil, isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) else { return nil }
+        let keys: [String] = countingModes(mode).compactMap { other in
+            let key = camoKey(other, weaponId, camo.itemId)
+            if completed.contains(key) { return "d|\(key)" }
+            let own = trackMode(other) == trackMode(mode) ? camo
+                : allCamos(weaponId: weaponId, mode: other).first { $0.itemId == camo.itemId }
+            if let req = own?.requirement, (amounts[key] ?? 0) >= req.amount { return "a|\(key)" }
+            return nil
+        }
+        return earliestStamp(keys)
+    }
+
+    /// When Gold, Platinum or Harmonic Break was finished on this weapon.
+    func completionistEarnedDate(mode: String, weaponId: Int, step: Int) -> Date? {
+        let keys = countingModes(mode).filter { isCompletionistDone(in: $0, weaponId: weaponId, step: step) }
+            .map { completionistKey($0, weaponId, step) }
+            .map { completed.contains($0) ? "d|\($0)" : "a|\($0)" }
+        return earliestStamp(keys)
+    }
+
+    private func earliestStamp(_ keys: [String]) -> Date? {
+        keys.compactMap { cloud?.changedAt($0) }.min()
+    }
+
+    // First earned: when each camo, Completionist camo and Mastery tier was
+    // first done, kept for good (sync's stamps move with every later
+    // change). Kept on this device only. Anything already done when this was
+    // first saved is 0, "before tracking", so it never gets a made-up date.
+    private var firstEarnedKey: String { game.key("mw4_first_earned", "first_earned") }
+    private var firstEarned: [String: Double] = [:]
+
+    /// A tick taken back within this long was a mis-tap: its date goes too,
+    /// so the real one is the next tick. Later, the first date stands.
+    private static let mistapWindow: Double = 10 * 60
+
+    private func firstEarnedCamoKey(_ mode: String, _ weaponId: Int, _ itemId: Int) -> String { "c|\(trackMode(mode))|\(weaponId)|\(itemId)" }
+    private func firstEarnedStepKey(_ mode: String, _ weaponId: Int, _ step: Int) -> String { "s|\(trackMode(mode))|\(weaponId)|\(step)" }
+
+    /// Everything earnable and whether it's done now, by first-earned key,
+    /// with sync's stamp for it when `stamped` (progress from another
+    /// device keeps that device's time, not when it arrived here).
+    private func earnedNow(stamped: Bool) -> [String: (done: Bool, at: Date?)] {
+        var out: [String: (done: Bool, at: Date?)] = [:]
+        for mode in camoTrackModes {
+            for weapon in weapons(mode: mode) {
+                let id = weapon.weaponId
+                for camo in camos(weaponId: id, mode: mode).flatMap(leafItems) {
+                    out[firstEarnedCamoKey(mode, id, camo.itemId)] = (isCamoComplete(mode: mode, weaponId: id, camo: camo),
+                        stamped ? camoEarnedDate(mode: mode, weaponId: id, camo: camo) : nil)
+                }
+                for step in 0..<Self.completionistStepCount {
+                    out[firstEarnedStepKey(mode, id, step)] = (isCompletionistComplete(mode: mode, weaponId: id, step: step),
+                        stamped ? completionistEarnedDate(mode: mode, weaponId: id, step: step) : nil)
+                }
+                if finalEnabled(mode: mode) {
+                    out[firstEarnedStepKey(mode, id, Self.completionistStepCount)] = (hasFinalCamo(mode: mode, weaponId: id), nil)
+                }
+            }
+        }
+        if game.hasMastery != false {
+            for mode in modes.keys {
+                for tier in 1...3 { out["m|\(mode)|\(tier)"] = (isMasteryAchieved(mode: mode, tier: tier), nil) }
+            }
+        }
+        return out
+    }
+
+    /// Notes the first time each thing is done. The first run on a device
+    /// marks what's already done as before tracking.
+    private func recordFirstEarned(remote: Bool = false) {
+        guard !modes.isEmpty else { return }
+        let baseline = defaults.object(forKey: firstEarnedKey) == nil
+        if !baseline, firstEarned.isEmpty,
+           let saved = defaults.dictionary(forKey: firstEarnedKey) as? [String: Double] {
+            firstEarned = saved
+        }
+        let now = Date().timeIntervalSince1970
+        var changed = baseline
+        for (key, state) in earnedNow(stamped: remote && !baseline) {
+            let done = state.done
+            if done, firstEarned[key] == nil {
+                firstEarned[key] = baseline ? 0 : min(now, state.at?.timeIntervalSince1970 ?? now)
+                changed = true
+            } else if !done, let at = firstEarned[key], at > 0, now - at < Self.mistapWindow {
+                firstEarned[key] = nil
+                changed = true
+            }
+        }
+        if changed { defaults.set(firstEarned, forKey: firstEarnedKey) }
+    }
+
+    private func firstEarnedDate(_ key: String) -> Date? {
+        guard let at = firstEarned[key], at > 0 else { return nil }
+        return Date(timeIntervalSince1970: at)
+    }
+
+    /// When this camo was unlocked: its first-earned date, else sync's
+    /// stamp for what was ticked before first-earned existed.
+    func camoUnlockedDate(mode: String, weaponId: Int, camo: ChallengeItem) -> Date? {
+        guard isCamoComplete(mode: mode, weaponId: weaponId, camo: camo) else { return nil }
+        return firstEarnedDate(firstEarnedCamoKey(mode, weaponId, camo.itemId))
+            ?? camoEarnedDate(mode: mode, weaponId: weaponId, camo: camo)
+    }
+
+    /// When Gold, Platinum, Harmonic Break (or, at `completionistStepCount`,
+    /// the final camo) was unlocked on this weapon.
+    func completionistUnlockedDate(mode: String, weaponId: Int, step: Int) -> Date? {
+        if step >= Self.completionistStepCount {
+            guard hasFinalCamo(mode: mode, weaponId: weaponId) else { return nil }
+            return firstEarnedDate(firstEarnedStepKey(mode, weaponId, step))
+        }
+        guard isCompletionistComplete(mode: mode, weaponId: weaponId, step: step) else { return nil }
+        return firstEarnedDate(firstEarnedStepKey(mode, weaponId, step))
+            ?? completionistEarnedDate(mode: mode, weaponId: weaponId, step: step)
+    }
+
+    /// How long a Completionist camo took on this weapon: from its first
+    /// camo to it, both first-earned since tracking began. Nil when any of
+    /// the weapon's camos was done before tracking (the start is unknown),
+    /// or under an hour, which is filling in old progress, not playing.
+    func completionistDuration(mode: String, weaponId: Int, step: Int) -> TimeInterval? {
+        guard let end = firstEarned[firstEarnedStepKey(mode, weaponId, step)], end > 0 else { return nil }
+        var start = end
+        for camo in camos(weaponId: weaponId, mode: mode).flatMap(leafItems) {
+            guard let at = firstEarned[firstEarnedCamoKey(mode, weaponId, camo.itemId)] else { continue }
+            guard at > 0 else { return nil }
+            start = min(start, at)
+        }
+        let took = end - start
+        return took >= 3600 ? took : nil
+    }
+
+    /// When a mode's Mastery tier was first achieved, for Stats.
+    func masteryUnlockedDate(mode: String, tier: Int) -> Date? {
+        firstEarnedDate("m|\(mode)|\(tier)")
     }
 
     /// Whether this camo's challenge is open yet. A camo with an
@@ -1798,6 +1944,7 @@ final class TrackerViewModel: ObservableObject {
     private func saveProgress() {
         writeProgress()
         cloud?.recordLocal(syncValues())
+        recordFirstEarned()
     }
 
     private func writeProgress() {
@@ -1849,6 +1996,7 @@ final class TrackerViewModel: ObservableObject {
         objectWillChange.send()
         restore(from: values)
         writeProgress()
+        recordFirstEarned(remote: true)
     }
 
     /// Progress from `syncValues`' flat entries.

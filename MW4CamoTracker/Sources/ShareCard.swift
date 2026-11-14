@@ -144,6 +144,85 @@ enum ShareCard {
         return context + ": " + milestoneLine(banner, viewModel: viewModel)
     }
 
+    // MARK: Weapon
+
+    /// Everything one weapon's card shows, its pictures fetched first (the
+    /// renderer can't wait on a download).
+    struct Weapon {
+        struct Camo { let name: String; let swatch: UIImage?; let done: Bool }
+        struct Step { let name: String; let gradient: [Color]; let done: Bool }
+        let name: String
+        let className: String?
+        let prestige: String?
+        let picture: UIImage?
+        /// The mode on the header, where camos are each mode's own (Black Ops)
+        let mode: AppMode?
+        let accent: Color
+        let camos: [Camo]
+        let stepsTitle: String
+        let steps: [Step]
+        struct Headline { let text: String; let gradient: [Color] }
+        /// How long its furthest Completionist camo took
+        let headline: Headline?
+        /// The latest things earned on it, newest first
+        let latest: [(name: String, date: Date)]
+        var done: Int { camos.filter(\.done).count }
+    }
+
+    @MainActor
+    static func weaponData(_ weapon: WeaponEntry, mode: AppMode, viewModel: TrackerViewModel) async -> Weapon {
+        let id = weapon.weaponId, m = mode.rawValue
+        let items = viewModel.camos(weaponId: id, mode: m).flatMap(viewModel.leafItems)
+        var dated: [(name: String, date: Date)] = []
+        var camos: [Weapon.Camo] = []
+        for item in items {
+            let name = item.name.resolved()
+            if let date = viewModel.camoUnlockedDate(mode: m, weaponId: id, camo: item) { dated.append((name, date)) }
+            let swatch = await fetch(item.imageURL)
+            camos.append(.init(name: name, swatch: swatch, done: viewModel.isCamoComplete(mode: m, weaponId: id, camo: item)))
+        }
+        var steps = (0..<TrackerViewModel.completionistStepCount).map { step in
+            let camo = mode.completionist.steps[step]
+            if let date = viewModel.completionistUnlockedDate(mode: m, weaponId: id, step: step) { dated.append((camo.name, date)) }
+            return Weapon.Step(name: camo.name, gradient: camo.gradient,
+                               done: viewModel.isCompletionistComplete(mode: m, weaponId: id, step: step))
+        }
+        if mode.hasFinalCamo {
+            let final = mode.completionist.final
+            let count = TrackerViewModel.completionistStepCount
+            if let date = viewModel.completionistUnlockedDate(mode: m, weaponId: id, step: count) { dated.append((final.name, date)) }
+            steps.append(.init(name: final.name, gradient: final.gradient, done: viewModel.hasFinalCamo(mode: m, weaponId: id)))
+        }
+        // The furthest Completionist camo with a time to it: "Gold in 6 days"
+        let headline = steps.indices.reversed().lazy.compactMap { step -> Weapon.Headline? in
+            guard steps[step].done, let took = viewModel.completionistDuration(mode: m, weaponId: id, step: step)?.tookText else { return nil }
+            return Weapon.Headline(text: String(format: "mw4.ui.share.weapon_took".localized(), steps[step].name, took),
+                                   gradient: steps[step].gradient)
+        }.first
+        let picture = await fetch(weapon.imageURL)
+        return Weapon(name: weapon.name.resolved(),
+                      className: viewModel.category(containingWeaponId: id)?.name.resolved(),
+                      prestige: viewModel.prestigeName(for: id),
+                      picture: picture,
+                      mode: GameRegistry.current.sharedCamos == true ? nil : mode,
+                      accent: mode.accent,
+                      camos: camos,
+                      stepsTitle: (GameRegistry.hasMastery ? "mw4.ui.section.completionist" : "mw4.ui.section.mastery").localized(),
+                      steps: steps,
+                      headline: headline,
+                      latest: Array(dated.sorted { $0.date > $1.date }.prefix(3)))
+    }
+
+    private static func fetch(_ urlString: String?) async -> UIImage? {
+        guard let url = urlString.flatMap(URL.init(string:)) else { return nil }
+        return await ImageStore.shared.image(for: url)
+    }
+
+    static func weaponMessage(_ data: Weapon) -> String {
+        message(String(format: "mw4.ui.share.weapon_line".localized(), data.name, GameRegistry.current.shortName,
+                       data.done, data.camos.count))
+    }
+
     @MainActor
     private static func milestoneLine(_ banner: MilestoneBanner, viewModel: TrackerViewModel) -> String {
         if let name = banner.weaponId.flatMap(viewModel.weapon(id:))?.name.resolved() {
@@ -527,6 +606,138 @@ struct MilestoneCardView: View {
     }
 }
 
+/// One weapon: its picture, every camo as a swatch (dimmed until earned),
+/// its Completionist camos, and the latest unlocks with their dates.
+struct WeaponCardView: View {
+    let data: ShareCard.Weapon
+
+    /// Military on one row, Specials on the next, as MW4 has 8 + 3
+    private var rows: [[ShareCard.Weapon.Camo]] {
+        stride(from: 0, to: data.camos.count, by: 8).map { Array(data.camos[$0..<min($0 + 8, data.camos.count)]) }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            CardHeader(trailing: Date.now.formatted(date: .abbreviated, time: .omitted), mode: data.mode)
+
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(data.name)
+                        .font(.hitmarker(24))
+                        .foregroundStyle(Color.appInk)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
+                    Text([data.className, data.prestige].compactMap { $0 }.joined(separator: " · "))
+                        .font(.system(size: 11.5, weight: .semibold))
+                        .foregroundStyle(Color.appInkMuted)
+                        .lineLimit(1)
+                    if let headline = data.headline {
+                        CamoText(text: headline.text, gradient: headline.gradient, font: .hitmarker(14))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                            .padding(.top, 2)
+                    }
+                }
+                Spacer(minLength: 0)
+                ZStack {
+                    StillRing(fraction: data.camos.isEmpty ? 0 : Double(data.done) / Double(data.camos.count),
+                              accent: data.accent, lineWidth: 5)
+                    Text("\(data.done)/\(data.camos.count)")
+                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                        .foregroundStyle(Color.appInk)
+                }
+                .frame(width: 50, height: 50)
+            }
+
+            if let picture = data.picture {
+                Image(uiImage: picture)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 92)
+                    .shadow(color: data.accent.opacity(0.5), radius: 16)
+            }
+
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(rows.indices, id: \.self) { r in
+                    HStack(spacing: 6) {
+                        ForEach(rows[r].indices, id: \.self) { i in
+                            swatch(rows[r][i])
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+
+            HStack(spacing: 6) {
+                ForEach(data.steps.indices, id: \.self) { i in
+                    let step = data.steps[i]
+                    HStack(spacing: 4) {
+                        Image(systemName: step.done ? "diamond.fill" : "diamond")
+                            .font(.system(size: 8, weight: .bold))
+                            .foregroundStyle(step.done ? (step.gradient.first ?? data.accent) : Color.appInkMuted.opacity(0.5))
+                        if step.done {
+                            CamoText(text: step.name, gradient: step.gradient, font: .hitmarker(10.5))
+                                .lineLimit(1).minimumScaleFactor(0.6)
+                        } else {
+                            Text(step.name)
+                                .font(.hitmarker(10.5))
+                                .foregroundStyle(Color.appInkMuted)
+                                .lineLimit(1).minimumScaleFactor(0.6)
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 3)
+                    .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
+                    .overlay(RoundedRectangle(cornerRadius: 6)
+                        .strokeBorder((step.gradient.first ?? .appInkMuted).opacity(step.done ? 0.55 : 0.15), lineWidth: 1))
+                }
+            }
+
+            if !data.latest.isEmpty {
+                VStack(alignment: .leading, spacing: 3) {
+                    ForEach(data.latest.indices, id: \.self) { i in
+                        HStack {
+                            Text(data.latest[i].name)
+                                .font(.system(size: 11.5, weight: .semibold))
+                                .foregroundStyle(Color.appInk)
+                                .lineLimit(1)
+                            Spacer()
+                            Text(data.latest[i].date.earnedDayText)
+                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                .foregroundStyle(Color.appInkMuted)
+                        }
+                    }
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 7)
+                .background(RoundedRectangle(cornerRadius: 6).fill(Color.appSurface))
+            }
+
+            Spacer(minLength: 0)
+            CardFooter()
+        }
+        .padding(20)
+        .background(CardBackground(glow: data.accent))
+    }
+
+    @ViewBuilder private func swatch(_ camo: ShareCard.Weapon.Camo) -> some View {
+        Group {
+            if let image = camo.swatch {
+                Image(uiImage: image).resizable().scaledToFill()
+            } else {
+                Color.appSurface2
+            }
+        }
+        .frame(width: 33, height: 33)
+        .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+        .saturation(camo.done ? 1 : 0)
+        .opacity(camo.done ? 1 : 0.28)
+        .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous)
+            .strokeBorder(camo.done ? data.accent.opacity(0.7) : Color.clear, lineWidth: 1.2))
+    }
+}
+
 // MARK: - Preview sheet
 
 /// The card as it will be sent, with the share button under it.
@@ -582,6 +793,24 @@ struct MilestoneShareSheet: View {
     var body: some View {
         ShareCardSheet(image: image, message: ShareCard.milestoneMessage(banner, viewModel: viewModel))
             .task { image = await ShareCard.milestoneImage(banner, viewModel: viewModel) }
+    }
+}
+
+/// One weapon's card, from its page.
+struct WeaponShareSheet: View {
+    let weapon: WeaponEntry
+    let mode: AppMode
+    @EnvironmentObject private var viewModel: TrackerViewModel
+    @State private var image: UIImage?
+    @State private var message = ""
+
+    var body: some View {
+        ShareCardSheet(image: image, message: message)
+            .task {
+                let data = await ShareCard.weaponData(weapon, mode: mode, viewModel: viewModel)
+                message = ShareCard.weaponMessage(data)
+                image = ShareCard.render(WeaponCardView(data: data))
+            }
     }
 }
 

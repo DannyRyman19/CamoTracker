@@ -133,6 +133,8 @@ struct WeaponDetailView: View {
     /// Hosted here rather than inside the toolbar's menu: a `.alert` attached
     /// to `ToolbarItem` content does not reliably present.
     @State private var askingMaxLevel = false
+    /// This weapon's share card, from the toolbar.
+    @State private var sharing = false
     /// The full Military list under its summary card.
     @State private var showsMilitary = false
     /// Specials above the Military card (a Customise switch); Military first by default.
@@ -396,6 +398,7 @@ struct WeaponDetailView: View {
                 ? "mw4.ui.special_locked".localized()
                 : camo.unlockLevel.map { viewModel.levelGateText($0, weaponId: weapon.weaponId, kind: "locked") },
             detail: militaryDetail(camo),
+            earnedOn: viewModel.camoUnlockedDate(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo),
             onToggle: { viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo) },
             onSetAmount: { viewModel.setCamoAmount(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo, amount: $0) }
         )
@@ -574,6 +577,10 @@ struct WeaponDetailView: View {
         .onChange(of: viewModel.allCamosComplete(weaponId: weapon.weaponId, mode: mode.rawValue)) { done in
             if done, pickedPart == .camos { withAnimation { pickedPart = nil } }
         }
+        .sheet(isPresented: $sharing) {
+            WeaponShareSheet(weapon: weapon, mode: mode)
+                .environmentObject(viewModel)
+        }
         .alert("mw4.ui.report.max_level".localized(), isPresented: $askingMaxLevel) {
             TextField("mw4.ui.report.max_level.field".localized(), text: $maxLevelText)
                 .keyboardType(.numberPad)
@@ -620,6 +627,11 @@ struct WeaponDetailView: View {
                                     unlockLevelText = ""
                                     askingUnlockLevel = true
                                 })
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button { sharing = true } label: { Image(systemName: "square.and.arrow.up") }
+                    .accessibilityLabel(String(format: "mw4.ui.share.weapon".localized(), weapon.name.resolved()))
+                    .accessibilityIdentifier("weapon.share")
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -695,6 +707,8 @@ private struct CompletionistStepRow: View {
             isAvailable: viewModel.isCompletionistAvailable(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
             lockedReason: lockedReason,
             titleGradient: camo.gradient,
+            earnedOn: viewModel.completionistUnlockedDate(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
+            took: viewModel.completionistDuration(mode: mode.rawValue, weaponId: weapon.weaponId, step: step),
             onToggle: { viewModel.toggleCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId, step: step) },
             onSetAmount: { viewModel.setCompletionistAmount(mode: mode.rawValue, weaponId: weapon.weaponId, step: step, amount: $0) }
         )
