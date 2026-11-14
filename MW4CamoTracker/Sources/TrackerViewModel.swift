@@ -405,6 +405,15 @@ final class TrackerViewModel: ObservableObject {
             let key = completionistKey(entry.mode, entry.weaponId, entry.step)
             amounts[key] = max(amounts[key] ?? 0, entry.amount)
         }
+        // A Mastery camo is only earned once the weapon's camo list is done,
+        // so one in the file means the list is done, whatever counts the old
+        // app kept (BO7's raised Hunter and Sapphire Snake to 25 after
+        // players had finished them at 20)
+        for entry in progress.steps where entry.amount > 0
+        && isCompletionistComplete(mode: entry.mode, weaponId: entry.weaponId, step: entry.step)
+        && !allCamosComplete(weaponId: entry.weaponId, mode: entry.mode) {
+            completeCamoList(mode: entry.mode, weaponId: entry.weaponId)
+        }
         saveProgress()
         objectWillChange.send()
         refreshWidgets()

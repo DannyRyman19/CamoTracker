@@ -204,6 +204,22 @@ struct MW3Tests {
         #expect(vm.camoAmount(mode: "multiplayer", weaponId: m4.weaponId, camo: goldKills) == 60)
     }
 
+    /// An old app's counts can trail its own requirements (BO7's raised
+    /// Hunter); a Mastery camo it has means the camo list was done.
+    @Test func anEarnedMasteryCamoFinishesTheCamoList() throws {
+        let vm = try model()
+        let export: [[[String: Any]]] = [
+            [["Weapons": [["WeaponName": "SVA 545", "CurrentLevel": 29,
+                           "Camos": [["CurrentAmount": 50], ["CurrentAmount": 10]],
+                           "CompletionistCamos": [["CurrentAmount": 99]]]]]],
+            [], [], [],
+        ]
+        vm.applyImport(try LegacyImport.read(try JSONSerialization.data(withJSONObject: export), into: vm))
+        #expect(vm.allCamosComplete(weaponId: 0, mode: "multiplayer"))
+        #expect(vm.isCompletionistComplete(mode: "multiplayer", weaponId: 0, step: 0))
+        #expect(!vm.allCamosComplete(weaponId: 0, mode: "zombies"))
+    }
+
     @Test func theOldAppsExportImports() throws {
         let vm = try model()
         func weapon(_ name: String, level: Int, camo: Int) -> [String: Any] {
