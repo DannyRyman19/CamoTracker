@@ -112,6 +112,12 @@ The publish script enforces the first three.
   that's intended (a retired op), say so with `--allow-removed KEY,KEY` (or
   `--allow-removed all`). Changing a published mode's `trackFrom` strands
   its camo progress and needs `--allow-trackfrom-change`.
+- **An objective camo's `itemId` is unique across its whole category**, not
+  just its event. Ticks are saved by category and camo `itemId` only, so two
+  events in Events that both have a camo `0` share one count (ticking Wager
+  Match's once cleared Grinding for Royalty's). A new event's camos take
+  fresh numbers: Wager Match uses 10–11, Natural Concealment 20, Rally Point
+  30, 31 and 2, so the next event starts at 40.
 - **New weapons take the next unused `weaponId`** (one more than the highest
   in `weapons.json`), and need a camo entry in each mode file, or that mode
   shows "no camo data" for them.
