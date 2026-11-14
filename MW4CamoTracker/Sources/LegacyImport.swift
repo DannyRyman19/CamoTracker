@@ -14,10 +14,11 @@ struct ProgressImport {
 /// BO7, `PrestigeLevel`. BO6's is `{"multiplayer": [...], "zombies": [...],
 /// "warzone": [...]}`; BO7's is one list with a block per mode on each
 /// weapon. Weapons are matched by name and camos by their place, which is
-/// how this app's BO6 and BO7 data was made from theirs. MW3's is four
-/// lists in a row (MW3 Multiplayer, MW3 Zombies, MWII Multiplayer, MWII
-/// Zombies), each weapon with its `Camos`, `CompletionistCamos`,
-/// `MasteryChallenges` and `PrestigeChallenges`, kept here at the same places.
+/// how this app's BO6 and BO7 data was made from theirs. The MW3 app's is
+/// four lists in a row (MW3 Multiplayer, MW3 Zombies, MWII Multiplayer,
+/// MWII Zombies), each weapon with its `Camos`, `CompletionistCamos`,
+/// `MasteryChallenges` and `PrestigeChallenges`, kept here at the same
+/// places: MW3 takes the first two, MW2 the last two.
 enum LegacyImport {
     enum Failure: Error {
         case notAnExport
@@ -31,11 +32,12 @@ enum LegacyImport {
     /// of weapons per mode, BO7's one list with a block per mode.
     private static let modeListsGame = "bo6", weaponListGame = "bo7", fourListsGame = "mw3"
 
-    /// The MW3 app's four lists, in the order it exported them
-    private static let fourListModes = ["multiplayer", "zombies", "mw2multiplayer", "mw2zombies"]
+    /// The MW3 app's four lists, in the order it exported them: each one's
+    /// game here and mode in it
+    private static let fourLists = [("mw3", "multiplayer"), ("mw3", "zombies"), ("mw2", "multiplayer"), ("mw2", "zombies")]
 
     private static func isFourLists(_ json: Any) -> Bool {
-        guard let lists = json as? [Any], lists.count == fourListModes.count else { return false }
+        guard let lists = json as? [Any], lists.count == fourLists.count else { return false }
         return lists.allSatisfy { $0 is [[String: Any]] }
     }
 
@@ -60,6 +62,8 @@ enum LegacyImport {
     /// Refuses the other game's export rather than merge it by name.
     static func check(_ json: Any, isFor game: Game) throws {
         guard let owner = exportGame(json), owner != game.id else { return }
+        // The MW3 app's file holds the MWII guns too
+        if owner == fourListsGame, fourLists.contains(where: { $0.0 == game.id }) { return }
         throw Failure.otherGame(GameRegistry.game(owner) ?? game)
     }
 
@@ -108,11 +112,9 @@ enum LegacyImport {
         }
 
         if isFourLists(json), let lists = json as? [[[String: Any]]] {
-            // MW3: a list per tab, MWII guns in their own two
-            for (mode, categories) in zip(fourListModes, lists) where AppMode(rawValue: mode) != nil {
-                // Names are matched within the tab's own guns
-                let names = Dictionary(viewModel.weapons(mode: mode).map { (key($0.name.resolved()), $0.weaponId) },
-                                       uniquingKeysWith: { a, _ in a })
+            // The MW3 app: a list per tab, this game's two of them
+            for ((game, mode), categories) in zip(fourLists, lists) where game == viewModel.game.id {
+                let names = byName
                 for weapon in weapons(categories) {
                     guard let id = names[key((weapon["WeaponName"] as? String) ?? "")] else { continue }
                     result.weapons.insert(id)

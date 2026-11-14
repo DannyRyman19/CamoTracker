@@ -236,7 +236,7 @@ block is what the publish flags write:
 
 or `"notification": { "silent": true }`.
 
-## Other games (BO7, BO6, MW3)
+## Other games (BO7, BO6, MW3, MW2)
 
 Each game in `Resources/games.json` has its own data folder (`path`, e.g.
 `Data/CT/MW3/`) and bundled copies named with its `seedPrefix`
@@ -244,16 +244,17 @@ Each game in `Resources/games.json` has its own data folder (`path`, e.g.
 
     python3 MW4CamoTracker/Tools/publish_data.py --game mw3 --silent
 
-A mode in `games.json` can list the weapon `categories` it covers. MW3 does:
-its catalog has MW3's classes as 0-9 and the MWII guns carried into MW3 as
-10-19, and the MWII MP and MWII Zombies tabs show only 10-19 (their own
-Gold > Platinum > Polyatomic > Orion and Golden Ivory > Spinel Husk >
-Arachnida > Bioluminescent). Every count in such a mode (its launch roster,
-gates, Stats, widgets) is over its own guns. MW3's data comes from the old
-MW3 Camo Tracker's lists (`Data/MW3/Updated_*.json`) through
-`Tools/games/convert_mw3.py`, which says where each unlock number comes from.
-Weapon ids put the 87 launch weapons first (MW3's 36, then MWII's 51), so a
-season weapon added later takes the next id after 136.
+MW3 and MW2 come from the old MW3 Camo Tracker's lists
+(`Data/MW3/Updated_*.json`) through `Tools/games/convert_mw3.py`, which says
+where each unlock number comes from. MW2 is the MWII guns as they are in
+MW3 (Multiplayer and MW3 Zombies), with their own Gold > Platinum >
+Polyatomic > Orion and Golden Ivory > Spinel Husk > Arachnida >
+Bioluminescent. Each game's weapon ids put its launch weapons first (MW3's
+36, MW2's 51), so a season weapon added later takes the next id.
+
+A mode in `games.json` can also list the weapon `categories` it covers, for
+a game whose modes track different guns; every count in such a mode is over
+its own guns. No game uses it at the moment.
 
 ## What still needs an app update
 

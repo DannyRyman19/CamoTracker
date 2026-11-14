@@ -134,8 +134,7 @@
   {
     "id": "mw3",
     "name": {
-      "en": "Modern Warfare III",
-      "de": "Modern Warfare III"
+      "en": "Modern Warfare III"
     },
     "shortName": "MW3",
     "path": "Data/CT/MW3/",
@@ -144,87 +143,11 @@
     "modes": [
       {
         "id": "multiplayer",
-        "accent": "#E5482F",
-        "categories": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
+        "accent": "#E5482F"
       },
       {
         "id": "zombies",
-        "accent": "#C64BD0",
-        "categories": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      {
-        "id": "mw2multiplayer",
-        "accent": "#7CC32D",
-        "symbol": "person.3",
-        "name": {
-          "en": "MWII MP",
-          "de": "MWII MP",
-          "fr": "MWII MP",
-          "es": "MWII MP",
-          "it": "MWII MP",
-          "nl": "MWII MP",
-          "pt": "MWII MP"
-        },
-        "categories": [
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ]
-      },
-      {
-        "id": "mw2zombies",
-        "accent": "#FF8B00",
-        "symbol": "brain.head.profile",
-        "name": {
-          "en": "MWII Zombies",
-          "de": "MWII Zombies",
-          "fr": "MWII Zombies",
-          "es": "MWII Zombis",
-          "it": "MWII Zombi",
-          "nl": "MWII Zombies",
-          "pt": "MWII Zumbis"
-        },
-        "categories": [
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ]
+        "accent": "#C64BD0"
       }
     ],
     "theme": {
@@ -236,6 +159,37 @@
       "markWhite": 2,
       "markColor": "#E5482F",
       "accent": "#E5482F"
+    },
+    "legacyApp": "MW3 Camo Tracker"
+  },
+  {
+    "id": "mw2",
+    "name": {
+      "en": "Modern Warfare II"
+    },
+    "shortName": "MW2",
+    "path": "Data/CT/MW2/",
+    "seedPrefix": "mw2_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#7CC32D"
+      },
+      {
+        "id": "zombies",
+        "accent": "#FF8B00"
+      }
+    ],
+    "theme": {
+      "background": "#0B0D0A",
+      "surface": "#161914",
+      "surface2": "#20241D",
+      "tint": "#7CC32D",
+      "mark": "MW2",
+      "markWhite": 2,
+      "markColor": "#7CC32D",
+      "accent": "#7CC32D"
     },
     "legacyApp": "MW3 Camo Tracker"
   }

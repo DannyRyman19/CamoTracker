@@ -36,9 +36,9 @@ struct LegacyImportTests {
     }
 }
 
-/// MW3: four tabs over two rosters (MW3's guns, the MWII guns carried
-/// over), each with its own camo chain and the game's unlock counts, and
-/// the old MW3 Camo Tracker's export brought in by position.
+/// MW3 and MW2 (the MWII guns carried into MW3), each with its own camo
+/// chains and the game's unlock counts, and the old MW3 Camo Tracker's
+/// export brought into both by position.
 @Suite("MW3")
 @MainActor
 struct MW3Tests {
@@ -51,11 +51,11 @@ struct MW3Tests {
         cache = FileManager.default.temporaryDirectory.appendingPathComponent(name, isDirectory: true)
     }
 
-    private func model() throws -> TrackerViewModel {
+    private func model(_ id: String = "mw3") throws -> TrackerViewModel {
         try? FileManager.default.createDirectory(at: cache, withIntermediateDirectories: true)
-        let mw3 = try #require(GameRegistry.game("mw3"))
-        GameRegistry.current = mw3
-        return TrackerViewModel(game: mw3, dataService: DataService(game: mw3, cacheDir: cache), defaults: defaults)
+        let game = try #require(GameRegistry.game(id))
+        GameRegistry.current = game
+        return TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: defaults)
     }
 
     /// Every base camo on a weapon, earned
@@ -65,14 +65,31 @@ struct MW3Tests {
         }
     }
 
-    @Test func eachTabHasItsOwnGuns() throws {
-        let vm = try model()
-        #expect(vm.weaponCount(mode: "multiplayer") == 60)
-        #expect(vm.weaponCount(mode: "zombies") == 60)
-        #expect(vm.weaponCount(mode: "mw2multiplayer") == 77)
-        #expect(vm.launchRoster(mode: "multiplayer") == 36)
-        #expect(vm.launchRoster(mode: "mw2zombies") == 51)
-        #expect(!vm.weapons(mode: "multiplayer").contains { $0.name.resolved() == "M4" })
+    @Test func eachGameHasItsOwnGuns() throws {
+        let mw3 = try model()
+        #expect(mw3.totalWeaponCount == 60)
+        #expect(mw3.launchRoster == 36)
+        #expect(!mw3.allWeapons.contains { $0.name.resolved() == "M4" })
+        let mw2 = try model("mw2")
+        #expect(mw2.totalWeaponCount == 77)
+        #expect(mw2.launchRoster == 51)
+    }
+
+    @Test func mw2PlatinumWaitsForTheClassAndPolyatomicFor51() throws {
+        let vm = try model("mw2")
+        let ars = try #require(vm.catalog?.categories.first)
+        let launch = ars.weapons.filter { $0.weaponId < vm.baseWeaponCount }
+        #expect(launch.count == 8)
+        for weapon in launch.dropLast() {
+            finishCamos(vm, mode: "multiplayer", weaponId: weapon.weaponId)
+            vm.toggleCompletionist(mode: "multiplayer", weaponId: weapon.weaponId, step: 0)
+        }
+        let first = launch[0].weaponId
+        #expect(!vm.isCompletionistAvailable(mode: "multiplayer", weaponId: first, step: 1))
+        finishCamos(vm, mode: "multiplayer", weaponId: launch[7].weaponId)
+        vm.toggleCompletionist(mode: "multiplayer", weaponId: launch[7].weaponId, step: 0)
+        #expect(vm.isCompletionistAvailable(mode: "multiplayer", weaponId: first, step: 1))
+        #expect(vm.completionistModeGateProgress(mode: "multiplayer", step: 2).total == 51)
     }
 
     @Test func forgedWaitsForGildedAcrossTheClass() throws {
@@ -99,7 +116,7 @@ struct MW3Tests {
         vm.toggleCompletionist(mode: "zombies", weaponId: 0, step: 0)
         #expect(vm.isCompletionistAvailable(mode: "zombies", weaponId: 0, step: 1))
         #expect(vm.harmonicBreaksNeeded(mode: "zombies") == 36)
-        #expect(vm.harmonicBreaksNeeded(mode: "mw2zombies") == 51)
+        #expect(try model("mw2").harmonicBreaksNeeded(mode: "zombies") == 51)
     }
 
     @Test func badgesAndPrestigeWaitTheirTurn() throws {
@@ -136,6 +153,7 @@ struct MW3Tests {
             [],
         ]
         #expect(LegacyImport.exportGame(export) == "mw3")
+        try LegacyImport.check(export, isFor: try #require(GameRegistry.game("mw2")))
         let data = try JSONSerialization.data(withJSONObject: export)
         vm.applyImport(try LegacyImport.read(data, into: vm))
         // The level picker's index, so level 10; the highest copy wins
@@ -143,9 +161,12 @@ struct MW3Tests {
         let blueTones = try #require(vm.camos(weaponId: 0, mode: "multiplayer").first)
         #expect(vm.camoAmount(mode: "multiplayer", weaponId: 0, camo: blueTones) == 50)
         #expect(vm.completionistAmount(mode: "multiplayer", weaponId: 0, step: 0) == 3)
-        let m4 = try #require(vm.weapons(mode: "mw2multiplayer").first { $0.name.resolved() == "M4" })
-        #expect(vm.level(for: m4.weaponId) == 5)
-        let scales = try #require(vm.camos(weaponId: m4.weaponId, mode: "mw2multiplayer").first)
-        #expect(vm.camoAmount(mode: "mw2multiplayer", weaponId: m4.weaponId, camo: scales) == 12)
+        // The MWII lists go to MW2, not onto MW3's guns
+        let mw2 = try model("mw2")
+        mw2.applyImport(try LegacyImport.read(data, into: mw2))
+        let m4 = try #require(mw2.allWeapons.first { $0.name.resolved() == "M4" })
+        #expect(mw2.level(for: m4.weaponId) == 5)
+        let scales = try #require(mw2.camos(weaponId: m4.weaponId, mode: "multiplayer").first)
+        #expect(mw2.camoAmount(mode: "multiplayer", weaponId: m4.weaponId, camo: scales) == 12)
     }
 }

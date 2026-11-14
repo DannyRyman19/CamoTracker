@@ -1,6 +1,6 @@
 {
  "version": "1.0.0",
- "mode": "mw2multiplayer",
+ "mode": "multiplayer",
  "completionist": {
   "steps": [
    {
@@ -23,55 +23,111 @@
      "unit": "times"
     },
     "byWeapon": {
+     "40": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "41": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "70": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "71": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "72": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "73": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills without dying 10 times.",
+       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
+      }
+     },
+     "42": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "43": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "44": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "45": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "46": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "74": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
+     "75": {
+      "amount": 5,
+      "unit": "times",
+      "description": {
+       "en": "Get 3 kills without dying 5 times.",
+       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
+      }
+     },
      "76": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "77": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "130": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "131": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "132": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "133": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills without dying 10 times.",
-       "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
-      }
-     },
-     "78": {
       "amount": 5,
       "unit": "times",
       "description": {
@@ -79,63 +135,7 @@
        "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
       }
      },
-     "79": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "80": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "81": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "82": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "134": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "135": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "136": {
-      "amount": 5,
-      "unit": "times",
-      "description": {
-       "en": "Get 3 kills without dying 5 times.",
-       "de": "Erreiche 5-mal 3 Abschüsse, ohne zu sterben."
-      }
-     },
-     "83": {
+     "47": {
       "amount": 5,
       "unit": "times",
       "description": {
@@ -143,7 +143,7 @@
        "de": "Erreiche 5-mal 2 Abschüsse, ohne zu sterben."
       }
      },
-     "84": {
+     "48": {
       "amount": 5,
       "unit": "times",
       "description": {
@@ -151,7 +151,7 @@
        "de": "Erreiche 5-mal 2 Abschüsse, ohne zu sterben."
       }
      },
-     "85": {
+     "49": {
       "amount": 10,
       "unit": "times",
       "description": {
@@ -159,7 +159,7 @@
        "de": "Erreiche 10-mal 2 Abschüsse, ohne zu sterben."
       }
      },
-     "86": {
+     "50": {
       "amount": 5,
       "unit": "times",
       "description": {
@@ -182,16 +182,16 @@
      "#7C8790"
     ],
     "neededByCategory": {
-     "10": 8,
-     "11": 4,
-     "12": 8,
-     "13": 4,
-     "14": 6,
-     "15": 6,
-     "16": 4,
-     "17": 2,
-     "18": 5,
-     "19": 4
+     "0": 8,
+     "1": 4,
+     "2": 8,
+     "3": 4,
+     "4": 6,
+     "5": 6,
+     "6": 4,
+     "7": 2,
+     "8": 5,
+     "9": 4
     },
     "requirement": {
      "amount": 25,
@@ -202,7 +202,7 @@
      "unit": "kills"
     },
     "byWeapon": {
-     "56": {
+     "20": {
       "amount": 20,
       "unit": "kills",
       "description": {
@@ -210,7 +210,7 @@
        "de": "Erreiche 20 Weitschuss-Abschüsse."
       }
      },
-     "57": {
+     "21": {
       "amount": 20,
       "unit": "kills",
       "description": {
@@ -218,7 +218,7 @@
        "de": "Erreiche 20 Weitschuss-Abschüsse."
       }
      },
-     "58": {
+     "22": {
       "amount": 20,
       "unit": "kills",
       "description": {
@@ -226,79 +226,135 @@
        "de": "Erreiche 20 Weitschuss-Abschüsse."
       }
      },
-     "59": {
+     "23": {
       "amount": 20,
       "unit": "kills",
       "description": {
        "en": "Get 20 Longshot kills.",
        "de": "Erreiche 20 Weitschuss-Abschüsse."
+      }
+     },
+     "36": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 Longshot kills.",
+       "de": "Erreiche 20 Weitschuss-Abschüsse."
+      }
+     },
+     "37": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 Longshot kills.",
+       "de": "Erreiche 20 Weitschuss-Abschüsse."
+      }
+     },
+     "40": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
+       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
+      }
+     },
+     "41": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
+       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
+      }
+     },
+     "70": {
+      "amount": 10,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
+       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
+      }
+     },
+     "71": {
+      "amount": 15,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
+       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
       }
      },
      "72": {
-      "amount": 20,
-      "unit": "kills",
+      "amount": 15,
+      "unit": "times",
       "description": {
-       "en": "Get 20 Longshot kills.",
-       "de": "Erreiche 20 Weitschuss-Abschüsse."
+       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
+       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
       }
      },
      "73": {
-      "amount": 20,
+      "amount": 15,
+      "unit": "times",
+      "description": {
+       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
+       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
+      }
+     },
+     "42": {
+      "amount": 15,
       "unit": "kills",
       "description": {
-       "en": "Get 20 Longshot kills.",
-       "de": "Erreiche 20 Weitschuss-Abschüsse."
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "43": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "44": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "45": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "46": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "74": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
+      }
+     },
+     "75": {
+      "amount": 15,
+      "unit": "kills",
+      "description": {
+       "en": "Get 15 Longshot kills.",
+       "de": "Erreiche 15 Weitschuss-Abschüsse."
       }
      },
      "76": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
-       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "77": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
-       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "130": {
-      "amount": 10,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 10 times.",
-       "de": "Erreiche 10-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "131": {
-      "amount": 15,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
-       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "132": {
-      "amount": 15,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
-       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "133": {
-      "amount": 15,
-      "unit": "times",
-      "description": {
-       "en": "Get 2 kills within 10 seconds of eachother 15 times.",
-       "de": "Erreiche 15-mal innerhalb von 10 Sekunden 2 Abschüsse."
-      }
-     },
-     "78": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -306,63 +362,7 @@
        "de": "Erreiche 15 Weitschuss-Abschüsse."
       }
      },
-     "79": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "80": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "81": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "82": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "134": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "135": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "136": {
-      "amount": 15,
-      "unit": "kills",
-      "description": {
-       "en": "Get 15 Longshot kills.",
-       "de": "Erreiche 15 Weitschuss-Abschüsse."
-      }
-     },
-     "83": {
+     "47": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -370,7 +370,7 @@
        "de": "Zerstöre 15 feindliche Abschussserien, Ausrüstung oder Farhrzeuge."
       }
      },
-     "84": {
+     "48": {
       "amount": 25,
       "unit": "kills",
       "description": {
@@ -378,7 +378,7 @@
        "de": "Zerstöre 25 feindliche Abschussserien, Ausrüstung oder Farhrzeuge."
       }
      },
-     "85": {
+     "49": {
       "amount": 10,
       "unit": "kills",
       "description": {
@@ -386,7 +386,7 @@
        "de": "Zerstöre 10 feindliche Abschussserien, Ausrüstung oder Farhrzeuge."
       }
      },
-     "86": {
+     "50": {
       "amount": 10,
       "unit": "kills",
       "description": {
@@ -418,7 +418,7 @@
      "unit": "headshots"
     },
     "byWeapon": {
-     "56": {
+     "20": {
       "amount": 20,
       "unit": "headshots",
       "description": {
@@ -426,7 +426,7 @@
        "de": "Erreiche 20 Kopfschüsse."
       }
      },
-     "57": {
+     "21": {
       "amount": 20,
       "unit": "headshots",
       "description": {
@@ -434,7 +434,7 @@
        "de": "Erreiche 20 Kopfschüsse."
       }
      },
-     "58": {
+     "22": {
       "amount": 20,
       "unit": "headshots",
       "description": {
@@ -442,23 +442,127 @@
        "de": "Erreiche 20 Kopfschüsse."
       }
      },
-     "59": {
+     "23": {
       "amount": 20,
       "unit": "headshots",
       "description": {
        "en": "Get 20 headshot kills.",
        "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "36": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "37": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "40": {
+      "amount": 10,
+      "unit": "kills",
+      "description": {
+       "en": "Get 10 kills from behind.",
+       "de": "Erreiche 10 Abschüsse von hinten."
+      }
+     },
+     "41": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 kills from behind.",
+       "de": "Erreiche 20 Abschüsse von hinten."
+      }
+     },
+     "70": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 kills from behind.",
+       "de": "Erreiche 20 Abschüsse von hinten."
+      }
+     },
+     "71": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 kills from behind.",
+       "de": "Erreiche 20 Abschüsse von hinten."
       }
      },
      "72": {
       "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 kills from behind.",
+       "de": "Erreiche 20 Abschüsse von hinten."
+      }
+     },
+     "73": {
+      "amount": 20,
+      "unit": "kills",
+      "description": {
+       "en": "Get 20 kills from behind.",
+       "de": "Erreiche 20 Abschüsse von hinten."
+      }
+     },
+     "42": {
+      "amount": 20,
       "unit": "headshots",
       "description": {
        "en": "Get 20 headshot kills.",
        "de": "Erreiche 20 Kopfschüsse."
       }
      },
-     "73": {
+     "43": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "44": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "45": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "46": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "74": {
+      "amount": 20,
+      "unit": "headshots",
+      "description": {
+       "en": "Get 20 headshot kills.",
+       "de": "Erreiche 20 Kopfschüsse."
+      }
+     },
+     "75": {
       "amount": 20,
       "unit": "headshots",
       "description": {
@@ -467,54 +571,6 @@
       }
      },
      "76": {
-      "amount": 10,
-      "unit": "kills",
-      "description": {
-       "en": "Get 10 kills from behind.",
-       "de": "Erreiche 10 Abschüsse von hinten."
-      }
-     },
-     "77": {
-      "amount": 20,
-      "unit": "kills",
-      "description": {
-       "en": "Get 20 kills from behind.",
-       "de": "Erreiche 20 Abschüsse von hinten."
-      }
-     },
-     "130": {
-      "amount": 20,
-      "unit": "kills",
-      "description": {
-       "en": "Get 20 kills from behind.",
-       "de": "Erreiche 20 Abschüsse von hinten."
-      }
-     },
-     "131": {
-      "amount": 20,
-      "unit": "kills",
-      "description": {
-       "en": "Get 20 kills from behind.",
-       "de": "Erreiche 20 Abschüsse von hinten."
-      }
-     },
-     "132": {
-      "amount": 20,
-      "unit": "kills",
-      "description": {
-       "en": "Get 20 kills from behind.",
-       "de": "Erreiche 20 Abschüsse von hinten."
-      }
-     },
-     "133": {
-      "amount": 20,
-      "unit": "kills",
-      "description": {
-       "en": "Get 20 kills from behind.",
-       "de": "Erreiche 20 Abschüsse von hinten."
-      }
-     },
-     "78": {
       "amount": 20,
       "unit": "headshots",
       "description": {
@@ -522,63 +578,7 @@
        "de": "Erreiche 20 Kopfschüsse."
       }
      },
-     "79": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "80": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "81": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "82": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "134": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "135": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "136": {
-      "amount": 20,
-      "unit": "headshots",
-      "description": {
-       "en": "Get 20 headshot kills.",
-       "de": "Erreiche 20 Kopfschüsse."
-      }
-     },
-     "83": {
+     "47": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -586,7 +586,7 @@
        "de": "Erreiche 15 Doppelabschüsse."
       }
      },
-     "84": {
+     "48": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -594,7 +594,7 @@
        "de": "Erreiche 15 Doppelabschüsse."
       }
      },
-     "85": {
+     "49": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -602,7 +602,7 @@
        "de": "Erreiche 15 Doppelabschüsse."
       }
      },
-     "86": {
+     "50": {
       "amount": 15,
       "unit": "kills",
       "description": {
@@ -628,7 +628,7 @@
  },
  "weaponCamos": [
   {
-   "weaponId": 36,
+   "weaponId": 0,
    "camos": [
     {
      "itemId": 0,
@@ -944,7 +944,7 @@
    ]
   },
   {
-   "weaponId": 37,
+   "weaponId": 1,
    "camos": [
     {
      "itemId": 0,
@@ -1260,7 +1260,7 @@
    ]
   },
   {
-   "weaponId": 38,
+   "weaponId": 2,
    "camos": [
     {
      "itemId": 0,
@@ -1576,7 +1576,7 @@
    ]
   },
   {
-   "weaponId": 39,
+   "weaponId": 3,
    "camos": [
     {
      "itemId": 0,
@@ -1891,7 +1891,7 @@
    ]
   },
   {
-   "weaponId": 40,
+   "weaponId": 4,
    "camos": [
     {
      "itemId": 0,
@@ -2207,7 +2207,7 @@
    ]
   },
   {
-   "weaponId": 41,
+   "weaponId": 5,
    "camos": [
     {
      "itemId": 0,
@@ -2523,7 +2523,7 @@
    ]
   },
   {
-   "weaponId": 42,
+   "weaponId": 6,
    "camos": [
     {
      "itemId": 0,
@@ -2839,7 +2839,7 @@
    ]
   },
   {
-   "weaponId": 43,
+   "weaponId": 7,
    "camos": [
     {
      "itemId": 0,
@@ -3154,7 +3154,7 @@
    ]
   },
   {
-   "weaponId": 111,
+   "weaponId": 51,
    "camos": [
     {
      "itemId": 0,
@@ -3470,7 +3470,7 @@
    ]
   },
   {
-   "weaponId": 112,
+   "weaponId": 52,
    "camos": [
     {
      "itemId": 0,
@@ -3786,7 +3786,7 @@
    ]
   },
   {
-   "weaponId": 113,
+   "weaponId": 53,
    "camos": [
     {
      "itemId": 0,
@@ -4102,7 +4102,7 @@
    ]
   },
   {
-   "weaponId": 114,
+   "weaponId": 54,
    "camos": [
     {
      "itemId": 0,
@@ -4418,7 +4418,7 @@
    ]
   },
   {
-   "weaponId": 115,
+   "weaponId": 55,
    "camos": [
     {
      "itemId": 0,
@@ -4733,7 +4733,7 @@
    ]
   },
   {
-   "weaponId": 116,
+   "weaponId": 56,
    "camos": [
     {
      "itemId": 0,
@@ -5049,7 +5049,7 @@
    ]
   },
   {
-   "weaponId": 117,
+   "weaponId": 57,
    "camos": [
     {
      "itemId": 0,
@@ -5364,7 +5364,7 @@
    ]
   },
   {
-   "weaponId": 44,
+   "weaponId": 8,
    "camos": [
     {
      "itemId": 0,
@@ -5680,7 +5680,7 @@
    ]
   },
   {
-   "weaponId": 45,
+   "weaponId": 9,
    "camos": [
     {
      "itemId": 0,
@@ -5996,7 +5996,7 @@
    ]
   },
   {
-   "weaponId": 46,
+   "weaponId": 10,
    "camos": [
     {
      "itemId": 0,
@@ -6312,7 +6312,7 @@
    ]
   },
   {
-   "weaponId": 47,
+   "weaponId": 11,
    "camos": [
     {
      "itemId": 0,
@@ -6628,7 +6628,7 @@
    ]
   },
   {
-   "weaponId": 118,
+   "weaponId": 58,
    "camos": [
     {
      "itemId": 0,
@@ -6944,7 +6944,7 @@
    ]
   },
   {
-   "weaponId": 48,
+   "weaponId": 12,
    "camos": [
     {
      "itemId": 0,
@@ -7260,7 +7260,7 @@
    ]
   },
   {
-   "weaponId": 49,
+   "weaponId": 13,
    "camos": [
     {
      "itemId": 0,
@@ -7576,7 +7576,7 @@
    ]
   },
   {
-   "weaponId": 50,
+   "weaponId": 14,
    "camos": [
     {
      "itemId": 0,
@@ -7892,7 +7892,7 @@
    ]
   },
   {
-   "weaponId": 51,
+   "weaponId": 15,
    "camos": [
     {
      "itemId": 0,
@@ -8207,7 +8207,7 @@
    ]
   },
   {
-   "weaponId": 52,
+   "weaponId": 16,
    "camos": [
     {
      "itemId": 0,
@@ -8522,7 +8522,7 @@
    ]
   },
   {
-   "weaponId": 53,
+   "weaponId": 17,
    "camos": [
     {
      "itemId": 0,
@@ -8838,7 +8838,7 @@
    ]
   },
   {
-   "weaponId": 54,
+   "weaponId": 18,
    "camos": [
     {
      "itemId": 0,
@@ -9153,7 +9153,7 @@
    ]
   },
   {
-   "weaponId": 55,
+   "weaponId": 19,
    "camos": [
     {
      "itemId": 0,
@@ -9469,7 +9469,7 @@
    ]
   },
   {
-   "weaponId": 119,
+   "weaponId": 59,
    "camos": [
     {
      "itemId": 0,
@@ -9785,7 +9785,7 @@
    ]
   },
   {
-   "weaponId": 120,
+   "weaponId": 60,
    "camos": [
     {
      "itemId": 0,
@@ -10101,7 +10101,7 @@
    ]
   },
   {
-   "weaponId": 121,
+   "weaponId": 61,
    "camos": [
     {
      "itemId": 0,
@@ -10417,7 +10417,7 @@
    ]
   },
   {
-   "weaponId": 122,
+   "weaponId": 62,
    "camos": [
     {
      "itemId": 0,
@@ -10733,7 +10733,7 @@
    ]
   },
   {
-   "weaponId": 56,
+   "weaponId": 20,
    "camos": [
     {
      "itemId": 0,
@@ -11049,7 +11049,7 @@
    ]
   },
   {
-   "weaponId": 57,
+   "weaponId": 21,
    "camos": [
     {
      "itemId": 0,
@@ -11365,7 +11365,7 @@
    ]
   },
   {
-   "weaponId": 58,
+   "weaponId": 22,
    "camos": [
     {
      "itemId": 0,
@@ -11681,7 +11681,7 @@
    ]
   },
   {
-   "weaponId": 59,
+   "weaponId": 23,
    "camos": [
     {
      "itemId": 0,
@@ -11997,7 +11997,7 @@
    ]
   },
   {
-   "weaponId": 123,
+   "weaponId": 63,
    "camos": [
     {
      "itemId": 0,
@@ -12313,7 +12313,7 @@
    ]
   },
   {
-   "weaponId": 124,
+   "weaponId": 64,
    "camos": [
     {
      "itemId": 0,
@@ -12629,7 +12629,7 @@
    ]
   },
   {
-   "weaponId": 60,
+   "weaponId": 24,
    "camos": [
     {
      "itemId": 0,
@@ -12945,7 +12945,7 @@
    ]
   },
   {
-   "weaponId": 61,
+   "weaponId": 25,
    "camos": [
     {
      "itemId": 0,
@@ -13261,7 +13261,7 @@
    ]
   },
   {
-   "weaponId": 62,
+   "weaponId": 26,
    "camos": [
     {
      "itemId": 0,
@@ -13577,7 +13577,7 @@
    ]
   },
   {
-   "weaponId": 63,
+   "weaponId": 27,
    "camos": [
     {
      "itemId": 0,
@@ -13893,7 +13893,7 @@
    ]
   },
   {
-   "weaponId": 64,
+   "weaponId": 28,
    "camos": [
     {
      "itemId": 0,
@@ -14208,7 +14208,7 @@
    ]
   },
   {
-   "weaponId": 65,
+   "weaponId": 29,
    "camos": [
     {
      "itemId": 0,
@@ -14524,7 +14524,7 @@
    ]
   },
   {
-   "weaponId": 66,
+   "weaponId": 30,
    "camos": [
     {
      "itemId": 0,
@@ -14840,7 +14840,7 @@
    ]
   },
   {
-   "weaponId": 67,
+   "weaponId": 31,
    "camos": [
     {
      "itemId": 0,
@@ -15156,7 +15156,7 @@
    ]
   },
   {
-   "weaponId": 68,
+   "weaponId": 32,
    "camos": [
     {
      "itemId": 0,
@@ -15472,7 +15472,7 @@
    ]
   },
   {
-   "weaponId": 69,
+   "weaponId": 33,
    "camos": [
     {
      "itemId": 0,
@@ -15788,7 +15788,7 @@
    ]
   },
   {
-   "weaponId": 70,
+   "weaponId": 34,
    "camos": [
     {
      "itemId": 0,
@@ -16104,7 +16104,7 @@
    ]
   },
   {
-   "weaponId": 71,
+   "weaponId": 35,
    "camos": [
     {
      "itemId": 0,
@@ -16420,7 +16420,7 @@
    ]
   },
   {
-   "weaponId": 125,
+   "weaponId": 65,
    "camos": [
     {
      "itemId": 0,
@@ -16735,7 +16735,7 @@
    ]
   },
   {
-   "weaponId": 126,
+   "weaponId": 66,
    "camos": [
     {
      "itemId": 0,
@@ -17049,7 +17049,7 @@
    ]
   },
   {
-   "weaponId": 72,
+   "weaponId": 36,
    "camos": [
     {
      "itemId": 0,
@@ -17365,7 +17365,7 @@
    ]
   },
   {
-   "weaponId": 73,
+   "weaponId": 37,
    "camos": [
     {
      "itemId": 0,
@@ -17680,7 +17680,7 @@
    ]
   },
   {
-   "weaponId": 74,
+   "weaponId": 38,
    "camos": [
     {
      "itemId": 0,
@@ -17996,7 +17996,7 @@
    ]
   },
   {
-   "weaponId": 75,
+   "weaponId": 39,
    "camos": [
     {
      "itemId": 0,
@@ -18312,7 +18312,7 @@
    ]
   },
   {
-   "weaponId": 127,
+   "weaponId": 67,
    "camos": [
     {
      "itemId": 0,
@@ -18628,7 +18628,7 @@
    ]
   },
   {
-   "weaponId": 128,
+   "weaponId": 68,
    "camos": [
     {
      "itemId": 0,
@@ -18943,7 +18943,7 @@
    ]
   },
   {
-   "weaponId": 129,
+   "weaponId": 69,
    "camos": [
     {
      "itemId": 0,
@@ -19259,7 +19259,7 @@
    ]
   },
   {
-   "weaponId": 76,
+   "weaponId": 40,
    "camos": [
     {
      "itemId": 0,
@@ -19518,7 +19518,7 @@
    ]
   },
   {
-   "weaponId": 77,
+   "weaponId": 41,
    "camos": [
     {
      "itemId": 0,
@@ -19777,7 +19777,7 @@
    ]
   },
   {
-   "weaponId": 130,
+   "weaponId": 70,
    "camos": [
     {
      "itemId": 0,
@@ -20036,7 +20036,7 @@
    ]
   },
   {
-   "weaponId": 131,
+   "weaponId": 71,
    "camos": [
     {
      "itemId": 0,
@@ -20294,7 +20294,7 @@
    ]
   },
   {
-   "weaponId": 132,
+   "weaponId": 72,
    "camos": [
     {
      "itemId": 0,
@@ -20553,7 +20553,7 @@
    ]
   },
   {
-   "weaponId": 133,
+   "weaponId": 73,
    "camos": [
     {
      "itemId": 0,
@@ -20812,7 +20812,7 @@
    ]
   },
   {
-   "weaponId": 78,
+   "weaponId": 42,
    "camos": [
     {
      "itemId": 0,
@@ -21127,7 +21127,7 @@
    ]
   },
   {
-   "weaponId": 79,
+   "weaponId": 43,
    "camos": [
     {
      "itemId": 0,
@@ -21442,7 +21442,7 @@
    ]
   },
   {
-   "weaponId": 80,
+   "weaponId": 44,
    "camos": [
     {
      "itemId": 0,
@@ -21757,7 +21757,7 @@
    ]
   },
   {
-   "weaponId": 81,
+   "weaponId": 45,
    "camos": [
     {
      "itemId": 0,
@@ -22073,7 +22073,7 @@
    ]
   },
   {
-   "weaponId": 82,
+   "weaponId": 46,
    "camos": [
     {
      "itemId": 0,
@@ -22388,7 +22388,7 @@
    ]
   },
   {
-   "weaponId": 134,
+   "weaponId": 74,
    "camos": [
     {
      "itemId": 0,
@@ -22704,7 +22704,7 @@
    ]
   },
   {
-   "weaponId": 135,
+   "weaponId": 75,
    "camos": [
     {
      "itemId": 0,
@@ -23020,7 +23020,7 @@
    ]
   },
   {
-   "weaponId": 136,
+   "weaponId": 76,
    "camos": [
     {
      "itemId": 0,
@@ -23336,7 +23336,7 @@
    ]
   },
   {
-   "weaponId": 83,
+   "weaponId": 47,
    "camos": [
     {
      "itemId": 0,
@@ -23595,7 +23595,7 @@
    ]
   },
   {
-   "weaponId": 84,
+   "weaponId": 48,
    "camos": [
     {
      "itemId": 0,
@@ -23854,7 +23854,7 @@
    ]
   },
   {
-   "weaponId": 85,
+   "weaponId": 49,
    "camos": [
     {
      "itemId": 0,
@@ -24113,7 +24113,7 @@
    ]
   },
   {
-   "weaponId": 86,
+   "weaponId": 50,
    "camos": [
     {
      "itemId": 0,

@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""Builds Camo Track's MW3 data from the old MW3 Camo Tracker's lists.
+"""Builds Camo Track's MW3 and MW2 data from the old MW3 Camo Tracker's lists.
 
 The old app (Xamarin, ~/MW3CamoTracker) read four files from
 camotracker.djr.li/Data/MW3/: MW3 weapons in Multiplayer and Zombies, and the
 MWII weapons carried into MW3, in Multiplayer and Zombies. Each has German
-twins (`-de`). This writes, into MW4CamoTracker/Resources/:
+twins (`-de`). Camo Track has them as two games, writing into
+MW4CamoTracker/Resources/:
 
-    mw3_weapons.json         one catalog: MW3 classes 0-9, MWII classes 10-19
-    mw3_multiplayer.json     MW3 guns: base camos, Gilded > Forged > Priceless > Interstellar
-    mw3_zombies.json         MW3 guns: Golden Enigma > Zircon Scale > Serpentinite > Borealis
-    mw3_mw2multiplayer.json  MWII guns: Gold > Platinum > Polyatomic > Orion
-    mw3_mw2zombies.json      MWII guns: Golden Ivory > Spinel Husk > Arachnida > Bioluminescent
+    mw3_weapons.json      MW3's 60 guns
+    mw3_multiplayer.json  base camos, Gilded > Forged > Priceless > Interstellar
+    mw3_zombies.json      base camos, Golden Enigma > Zircon Scale > Serpentinite > Borealis
+    mw2_weapons.json      the 77 MWII guns
+    mw2_multiplayer.json  base camos, Gold > Platinum > Polyatomic > Orion
+    mw2_zombies.json      base camos, Golden Ivory > Spinel Husk > Arachnida > Bioluminescent
 
-then `publish_data.py --game mw3` copies them to Data/CT/MW3/.
+then `publish_data.py --game mw3` and `--game mw2` copy them to Data/CT/.
 
-Weapon ids: launch weapons first (MW3's 36, then MWII's 51, so
-`baseWeaponCount` 87 marks them), then MW3's and MWII's season weapons.
+Weapon ids: each game's launch weapons first (MW3's 36, MWII's 51, so
+`baseWeaponCount` marks them), then its season weapons.
 Camo itemIds are each weapon's camo order (0...), its four Mastery
 challenges 100-103 and its four Prestige camos 200-203, the same places the
 old app kept them in, so its exported file imports by position.
@@ -47,11 +49,10 @@ SITE = "https://camotracker.djr.li/"
 CAMO_DIR = ROOT / "Images" / "Camos" / "MW3Tracker"
 VERSION = "1.0.0"
 
-FILES = {
-    "multiplayer": "Updated_MultiplayerWeapons",
-    "zombies": "Updated_ZombiesWeapons",
-    "mw2multiplayer": "Updated_MW2MultiplayerWeapons",
-    "mw2zombies": "Updated_MW2ZombiesWeapons",
+# Each game's modes, from the old app's lists
+GAMES = {
+    "mw3": {"multiplayer": "Updated_MultiplayerWeapons", "zombies": "Updated_ZombiesWeapons"},
+    "mw2": {"multiplayer": "Updated_MW2MultiplayerWeapons", "zombies": "Updated_MW2ZombiesWeapons"},
 }
 # GameType in the old files: 0 MW3 launch, 1 MW3 season, 3 MWII launch, 4 MWII season
 LAUNCH = {0, 3}
@@ -81,16 +82,16 @@ NAMES = {
 
 # The four completionist camos per list, with what opens each
 TRACKS = {
-    "multiplayer": dict(
+    ("mw3", "multiplayer"): dict(
         unlocks=["weapon", "category", "mode"], needed=36, final="Interstellar", final_de="Interstellar",
         final_image="interstellar.png"),
-    "zombies": dict(
+    ("mw3", "zombies"): dict(
         unlocks=["weapon", "weapon", "weapon"], needed=None, final="Borealis", final_de="Borealis",
         final_image="borealis.png", final_needed=36),
-    "mw2multiplayer": dict(
+    ("mw2", "multiplayer"): dict(
         unlocks=["weapon", "category", "mode"], needed=51, final="Orion", final_de="Orion",
         final_image="orion.png"),
-    "mw2zombies": dict(
+    ("mw2", "zombies"): dict(
         unlocks=["weapon", "weapon", "weapon"], needed=None, final="Bioluminescent", final_de="Biolumineszenz",
         final_image="bioluminescent.png", final_needed=51),
 }
@@ -179,74 +180,70 @@ def colors(image_name, fallback):
 
 
 def main():
-    en = {m: load(f) for m, f in FILES.items()}
-    de = {m: load(f + "-de") for m, f in FILES.items()}
+    for game, files in GAMES.items():
+        convert(game, files)
+
+
+def convert(game, files):
+    en = {m: load(f) for m, f in files.items()}
+    de = {m: load(f + "-de") for m, f in files.items()}
+    ref = en["multiplayer"]
 
     # ── Catalog ─────────────────────────────────────────────────────────
-    # (old list, category index, weapon index) -> new id
-    rosters = {"mw3": "multiplayer", "mw2": "mw2multiplayer"}
-    order = []  # (launch?, roster, cat_index, weapon_index)
-    for roster, mode in rosters.items():
-        for ci, cat in enumerate(en[mode]):
-            for wi, w in enumerate(cat["Weapons"]):
-                order.append((w["GameType"] in LAUNCH, roster, ci, wi))
+    # (category index, weapon index) -> id: launch weapons first
+    order = [(w["GameType"] in LAUNCH, ci, wi) for ci, cat in enumerate(ref) for wi, w in enumerate(cat["Weapons"])]
     ids = {}
-    nid = 0
     for launch_pass in (True, False):
-        for roster in ("mw3", "mw2"):
-            for launch, r, ci, wi in order:
-                if launch == launch_pass and r == roster:
-                    ids[(r, ci, wi)] = nid
-                    nid += 1
+        for launch, ci, wi in order:
+            if launch == launch_pass:
+                ids[(ci, wi)] = len(ids)
     base_count = sum(1 for o in order if o[0])
 
     categories = []
-    for roster, mode in rosters.items():
-        offset = 0 if roster == "mw3" else 10
-        for ci, cat in enumerate(en[mode]):
-            name_en, name_de = CATEGORY_NAMES[cat["WeaponCategoryName"]]
-            weapons = []
-            for wi, w in enumerate(cat["Weapons"]):
-                wde = de[mode][ci]["Weapons"][wi]
-                unlock = {"en": w["UnlockRequirement"]}
-                if wde.get("UnlockRequirement"):
-                    unlock["de"] = wde["UnlockRequirement"]
-                entry = {
-                    "weaponId": ids[(roster, ci, wi)],
-                    "name": {"en": NAMES.get(w["WeaponName"], w["WeaponName"])},
-                    "maxLevel": w["MaxLevel"],
-                    "unlockRequirement": unlock,
-                    "imageURL": w.get("WeaponImageURL") or None,
-                }
-                # Season weapons: how they're got, so "Season 5 Battle Pass"
-                # or "Get 45 kills" isn't read as an unlock level
-                said = w["UnlockRequirement"].strip().replace("Rfile", "Rifle")
-                unlock["en"] = said
-                if re.search(r"battle ?pass", said, re.I):
-                    entry["acquiredBy"] = "battlePass"
-                elif re.search(r"armou?ry", said, re.I):
-                    entry["acquiredBy"] = "armory"
-                elif said and not re.match(r"unlock(s|ed)? at (player )?level \d+", said, re.I):
-                    entry["acquiredBy"] = "challenge"
-                weapons.append(entry)
-            categories.append({"categoryId": offset + ci, "name": {"en": name_en, "de": name_de}, "weapons": weapons})
+    for ci, cat in enumerate(ref):
+        name_en, name_de = CATEGORY_NAMES[cat["WeaponCategoryName"]]
+        weapons = []
+        for wi, w in enumerate(cat["Weapons"]):
+            wde = de["multiplayer"][ci]["Weapons"][wi]
+            unlock = {"en": w["UnlockRequirement"]}
+            if wde.get("UnlockRequirement"):
+                unlock["de"] = wde["UnlockRequirement"]
+            entry = {
+                "weaponId": ids[(ci, wi)],
+                "name": {"en": NAMES.get(w["WeaponName"], w["WeaponName"])},
+                "maxLevel": w["MaxLevel"],
+                "unlockRequirement": unlock,
+                "imageURL": w.get("WeaponImageURL") or None,
+            }
+            # Season weapons: how they're got, so "Season 5 Battle Pass"
+            # or "Get 45 kills" isn't read as an unlock level
+            said = w["UnlockRequirement"].strip().replace("Rfile", "Rifle")
+            unlock["en"] = said
+            if re.search(r"battle ?pass", said, re.I):
+                entry["acquiredBy"] = "battlePass"
+            elif re.search(r"armou?ry", said, re.I):
+                entry["acquiredBy"] = "armory"
+            elif said and not re.match(r"unlock(s|ed)? at (player )?level \d+", said, re.I):
+                entry["acquiredBy"] = "challenge"
+            weapons.append(entry)
+        categories.append({"categoryId": ci, "name": {"en": name_en, "de": name_de}, "weapons": weapons})
 
-    catalog = {
+    write(f"{game}_weapons.json", {
         "version": VERSION,
         "baseWeaponCount": base_count,
         "weaponPrestige": [],
         "prestigeCamos": [],
         "_note": "Converted from the MW3 Camo Tracker data by Tools/games/convert_mw3.py.",
         "categories": categories,
-    }
-    write("mw3_weapons.json", catalog)
+    })
 
     # ── Mode files ──────────────────────────────────────────────────────
-    for mode, track in TRACKS.items():
-        roster = "mw2" if mode.startswith("mw2") else "mw3"
+    for mode in files:
+        track = TRACKS[(game, mode)]
         lists_en, lists_de = en[mode], de[mode]
-        # The same weapons, in the same places, as the catalog's roster list
-        ref = en[rosters[roster]]
+        steps_by_weapon = [{}, {}, {}]
+        step_names = [None, None, None]
+        launch_by_class = {}
         weapon_camos = []
         steps_by_weapon = [{}, {}, {}]
         step_names = [None, None, None]
@@ -254,9 +251,9 @@ def main():
         for ci, cat in enumerate(lists_en):
             for wi, w in enumerate(cat["Weapons"]):
                 assert w["WeaponName"].lower() == ref[ci]["Weapons"][wi]["WeaponName"].lower(), (mode, w["WeaponName"])
-                wid = ids[(roster, ci, wi)]
+                wid = ids[(ci, wi)]
                 wde = lists_de[ci]["Weapons"][wi]
-                class_id = ci + (10 if roster == "mw2" else 0)
+                class_id = ci
                 if w["GameType"] in LAUNCH:
                     launch_by_class[str(class_id)] = launch_by_class.get(str(class_id), 0) + 1
                 camos = []
@@ -336,7 +333,7 @@ def main():
             "colors": PALETTES.get(track["final"]) or colors(track["final_image"], ["#6E9BE8", "#C9DBFF", "#2B3F7A"]),
             "harmonicBreaksNeeded": track.get("final_needed") or track["needed"],
         }
-        write(f"mw3_{mode}.json", {
+        write(f"{game}_{mode}.json", {
             "version": VERSION, "mode": mode,
             "completionist": {"steps": steps, "final": final},
             "weaponCamos": weapon_camos, "objectives": [],

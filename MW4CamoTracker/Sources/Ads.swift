@@ -23,6 +23,7 @@ enum AdConfig {
         "bo6": (banner: "fipjry0oebp367c4", interstitial: "bgxevec9c92rww69"),
         "bo7": (banner: "ptql35gzi327ljk0", interstitial: "cjumwhahmkvyqb0p"),
         "mw3": (banner: "fzh0m7bvvjd7u5rg", interstitial: "t5rixa2399wftbly"),
+        "mw2": (banner: "impfaytqdb01ovju", interstitial: "slla2w42dt4pkdun"),
     ]
 
     /// The placement names set up in the dashboard ("weapons", "stats"...):
