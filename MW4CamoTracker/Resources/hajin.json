@@ -1,6 +1,6 @@
 {
- "version": "0.9.54",
- "updated": "2026-11-12",
+ "version": "0.9.56",
+ "updated": "2026-11-15",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -6714,6 +6714,42 @@
      "title": "South Block Armory",
      "subtitle": "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter",
      "item": "south-block-armory"
+    },
+    {
+     "title": "Encodable Blank Keycard",
+     "value": "X01",
+     "subtitle": "Season 1, in X01. Loot one in X01 or print it at the X01 3D Printer in Production Assembly, then encode it at a Keycard Encoder Station: the Supply Depot station (F2) makes Maintenance Access or Executive Access, the Data Center station (I5) makes Engineering Access or Audit Officer Access. What Engineering Access opens isn't known yet",
+     "item": "encodable-blank-keycard"
+    },
+    {
+     "title": "X01 Maintenance Room Keycard",
+     "value": "X01 E5",
+     "subtitle": "Season 1, in X01. Encoded at the Supply Depot station. Opens the Maintenance Room at the top of Production Assembly, next to fenced pipework; guides don't agree which floor, or whether the card is Rare or Epic",
+     "item": "x01-maintenance-room-keycard"
+    },
+    {
+     "title": "X01 Audit Room Keycard",
+     "value": "X01 G5",
+     "subtitle": "Epic. Season 1, in X01. Encoded as Audit Officer Access at the Data Center station. Opens the Audit Room up the stairwell on the east side of the Main Warehouse hall",
+     "item": "x01-audit-room-keycard"
+    },
+    {
+     "title": "X01 Executive Room Keycard",
+     "value": "X01 C5",
+     "subtitle": "Legendary. Season 1, in X01. Encoded as Executive Access at the Supply Depot station. Opens the Executive Room on the second floor of the Admin Offices; players report the Deep Vault 406 Keycard on its desk every time",
+     "item": "x01-executive-room-keycard"
+    },
+    {
+     "title": "Deep Vault 106 Keycard",
+     "value": "X01",
+     "subtitle": "Season 1, in X01. One of the three Deep Vault keycards. Players report it drops from the Data Center's Lieutenant, Knuckle, though one guide names a different Lieutenant",
+     "item": "deep-vault-106-keycard"
+    },
+    {
+     "title": "Deep Vault 406 Keycard",
+     "value": "X01",
+     "subtitle": "Season 1, in X01. One of the three Deep Vault keycards: on the desk in the Executive Room, which needs an Executive Access keycard. The Executive card alone doesn't open the vault",
+     "item": "deep-vault-406-keycard"
     }
    ]
   },
@@ -10023,6 +10059,24 @@
    "image": "https://camotracker.djr.li/Images/DMZ/decoy-grenade.png?v=1"
   },
   {
+   "id": "deep-vault-106-keycard",
+   "name": "Deep Vault 106 Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "note": "One of the three Deep Vault keycards. Players report it drops from the Data Center's Lieutenant, Knuckle, though one guide names a different Lieutenant",
+   "grid": "X01",
+   "value": 100
+  },
+  {
+   "id": "deep-vault-406-keycard",
+   "name": "Deep Vault 406 Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "note": "One of the three Deep Vault keycards: on the desk in the Executive Room, which needs an Executive Access keycard. The Executive card alone doesn't open the vault",
+   "grid": "X01",
+   "value": 100
+  },
+  {
    "id": "defibrillator",
    "name": "Defibrillator",
    "image": "https://camotracker.djr.li/Images/DMZ/defibrillator.png?v=1",
@@ -10316,6 +10370,15 @@
    ],
    "effect": "Night vision you can toggle on and off",
    "image": "https://camotracker.djr.li/Images/DMZ/elite-night-vision-goggles.png?v=1"
+  },
+  {
+   "id": "encodable-blank-keycard",
+   "name": "Encodable Blank Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "note": "Loot one in X01 or print it at the X01 3D Printer in Production Assembly, then encode it at a Keycard Encoder Station: the Supply Depot station (F2) makes Maintenance Access or Executive Access, the Data Center station (I5) makes Engineering Access or Audit Officer Access. What Engineering Access opens isn't known yet",
+   "grid": "X01",
+   "value": 100
   },
   {
    "id": "encrypted-archive",
@@ -13132,6 +13195,37 @@
    "value": 100,
    "image": "https://camotracker.djr.li/Images/DMZ/haksan-school-armory.png?v=1",
    "found": "Loot containers around Hajin"
+  },
+  {
+   "id": "x01-audit-room-keycard",
+   "name": "X01 Audit Room Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "Season 1, in X01. Encoded as Audit Officer Access at the Data Center station. Opens the Audit Room up the stairwell on the east side of the Main Warehouse hall",
+   "grid": "X01 G5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/vault-armory.png?v=1"
+  },
+  {
+   "id": "x01-executive-room-keycard",
+   "name": "X01 Executive Room Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Legendary",
+   "note": "Season 1, in X01. Encoded as Executive Access at the Supply Depot station. Opens the Executive Room on the second floor of the Admin Offices; players report the Deep Vault 406 Keycard on its desk every time",
+   "grid": "X01 C5",
+   "value": 100,
+   "image": "https://camotracker.djr.li/Images/DMZ/iskras-control-room.png?v=1"
+  },
+  {
+   "id": "x01-maintenance-room-keycard",
+   "name": "X01 Maintenance Room Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "note": "Encoded at the Supply Depot station. Opens the Maintenance Room at the top of Production Assembly, next to fenced pipework; guides don't agree which floor, or whether the card is Rare or Epic",
+   "grid": "X01 E5",
+   "value": 100
   },
   {
    "id": "zip-gun",
