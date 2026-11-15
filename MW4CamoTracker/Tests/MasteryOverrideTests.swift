@@ -1063,6 +1063,27 @@ struct ObjectiveWindowTests {
         #expect(plain.window() == .undated)
     }
 
+    /// A finished event leaves Live now; it's still under its category.
+    @MainActor @Test func aFinishedObjectiveLeavesLiveNow() throws {
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        let suite = "objective-live-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(suite)
+        let model = TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
+        let when = day("2026-11-15")
+        let live = model.liveObjectives(mode: "multiplayer", at: when)
+        let entry = try #require(live.first { $0.categoryId == 1 && $0.item.itemId == 101 })
+
+        func leaves(_ item: ChallengeItem) -> [ChallengeItem] { item.children.isEmpty ? [item] : item.children.flatMap(leaves) }
+        for leaf in leaves(entry.item) {
+            model.setObjectiveAmount(mode: "multiplayer", categoryId: 1, item: leaf, amount: leaf.requirement?.amount ?? 1)
+        }
+        #expect(model.objectiveProgressFraction(of: entry.item, mode: "multiplayer", categoryId: 1) >= 1)
+        #expect(!model.liveObjectives(mode: "multiplayer", at: when).contains { $0.id == entry.id })
+        #expect(model.liveObjectives(mode: "multiplayer", at: when).count == live.count - 1)
+    }
+
     /// BlackCell: class camos in any order, the Mastery camo after them all.
     @MainActor @Test func unorderedChildrenOpenAtOnceAndAfterSiblingsWaitsForTheRest() throws {
         let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback

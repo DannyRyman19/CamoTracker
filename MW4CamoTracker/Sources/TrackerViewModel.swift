@@ -965,9 +965,14 @@ final class TrackerViewModel: ObservableObject {
 
     /// The time-limited objectives running now in this mode (a BlackCell
     /// season, an event), soonest-ending first, for the tab's Live section.
+    /// One the player has finished leaves Live now (it's still under its
+    /// category in Objectives): the section is for what's left to do.
     func liveObjectives(mode: String, at now: Date = Date()) -> [LiveObjective] {
         (modes[mode]?.objectives ?? []).flatMap { category in
-            category.items.filter { $0.window(at: now) == .live }.map { LiveObjective(categoryId: category.categoryId, item: $0) }
+            category.items
+                .filter { $0.window(at: now) == .live }
+                .filter { objectiveProgressFraction(of: $0, mode: mode, categoryId: category.categoryId) < 1 }
+                .map { LiveObjective(categoryId: category.categoryId, item: $0) }
         }
         .sorted { ($0.item.endDate ?? .distantFuture) < ($1.item.endDate ?? .distantFuture) }
     }
