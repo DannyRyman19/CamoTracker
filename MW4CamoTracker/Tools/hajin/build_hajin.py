@@ -450,6 +450,13 @@ guide = [
    ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
    ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
    ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
+   # X01 (Season 1) keycards players report (dmzcodex news and vault guide, codcentral, dmzmap, thebasedotaku, 2026-11-15); X01 has its own grid
+   ("Encodable Blank Keycard", "X01", "Season 1, in X01. Loot one in X01 or print it at the X01 3D Printer in Production Assembly, then encode it at a Keycard Encoder Station: the Supply Depot station (F2) makes Maintenance Access or Executive Access, the Data Center station (I5) makes Engineering Access or Audit Officer Access. What Engineering Access opens isn't known yet"),
+   ("X01 Maintenance Room Keycard", "X01 E5", "Season 1, in X01. Encoded at the Supply Depot station. Opens the Maintenance Room at the top of Production Assembly, next to fenced pipework; guides don't agree which floor, or whether the card is Rare or Epic"),
+   ("X01 Audit Room Keycard", "X01 G5", "Epic. Season 1, in X01. Encoded as Audit Officer Access at the Data Center station. Opens the Audit Room up the stairwell on the east side of the Main Warehouse hall"),
+   ("X01 Executive Room Keycard", "X01 C5", "Legendary. Season 1, in X01. Encoded as Executive Access at the Supply Depot station. Opens the Executive Room on the second floor of the Admin Offices; players report the Deep Vault 406 Keycard on its desk every time"),
+   ("Deep Vault 106 Keycard", "X01", "Season 1, in X01. One of the three Deep Vault keycards. Players report it drops from the Data Center's Lieutenant, Knuckle, though one guide names a different Lieutenant"),
+   ("Deep Vault 406 Keycard", "X01", "Season 1, in X01. One of the three Deep Vault keycards: on the desk in the Executive Room, which needs an Executive Access keycard. The Executive card alone doesn't open the vault"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
@@ -542,7 +549,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.56", "updated": "2026-11-15",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
