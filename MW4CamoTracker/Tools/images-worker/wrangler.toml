@@ -1,0 +1,14 @@
+# camo-track.app/Images/*: the app's weapon, camo and badge images, served
+# as Workers Static Assets (no script). Asset requests are free and don't
+# count against the Workers request limit, and Cloudflare serves them from
+# its edge. The rest of camo-track.app is the camo-track-site repo on GitHub
+# Pages. Deploy with ./deploy.sh after adding or changing images.
+name = "camo-track-images"
+compatibility_date = "2026-09-01"
+workers_dev = false
+preview_urls = false
+routes = [{ pattern = "camo-track.app/Images/*", zone_name = "camo-track.app" }]
+
+[assets]
+directory = "./public"
+not_found_handling = "none"

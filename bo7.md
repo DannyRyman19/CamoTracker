@@ -7,7 +7,7 @@ image: "/bo7.png"
 ---
 <a href="https://apps.apple.com/us/app/bo7-camo-tracker/id6754783254" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
-<a href="https://apps.apple.com/us/app/bo7-camo-tracker/id6754783254" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/bo7.png" alt="BO7 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://apps.apple.com/us/app/bo7-camo-tracker/id6754783254" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo7.png" alt="BO7 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 # BO7 Black Ops 7 Camo Tracker
 Please Note: This app does not automatically fetch your camo progression as it is impossible. You will have to enter your progression manually!

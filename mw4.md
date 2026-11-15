@@ -6,7 +6,7 @@ description: "Track every Modern Warfare 4 camo challenge across Multiplayer, Wa
 app_id: "6775247927"
 image: "/mw4.png"
 ---
-<a href="https://camo-track.app/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/mw4.png" alt="MW4 Camo Tracker app icon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://camotracker.djr.li/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="MW4 Camo Tracker app icon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 # MW4 Camo Tracker
 
