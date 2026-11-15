@@ -3,7 +3,7 @@ layout: default
 title: "MW2 Camo Tracker"
 description: "Track every Modern Warfare II camo challenge on your way to Gold, Platinum, Polyatomic and Orion. Unofficial iPhone and iPad app."
 app_id: "6444090116"
-canonical_url: "https://camotracker.djr.li/mw2.html"
+canonical_url: "https://camo-track.app/mw2.html"
 sitemap: false
 ---
 
@@ -22,4 +22,4 @@ Works offline!
 <a href="https://apps.apple.com/gb/app/mwii-camo-tracker/id6444090116?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1667692800" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
 # Need Help, Support or Have Feedback?
-If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
+If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camo-track.app>

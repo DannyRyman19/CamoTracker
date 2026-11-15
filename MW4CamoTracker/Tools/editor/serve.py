@@ -14,7 +14,7 @@ Every save copies the previous file into Tools/editor/.backups/<timestamp>/
 first (git-ignored) - a safety net for uncommitted edits.
 
 Images dropped into the page are written under the site repo's Images/ tree
-(Images/Guns/MW4/, Images/Camos/MW4/) and get their camotracker.djr.li URL;
+(Images/Guns/MW4/, Images/Camos/MW4/) and get their camo-track.app URL;
 they go live once the repo is pushed, same as the JSON.
 
 "Publish" runs ../publish_data.py, which copies the JSON into Data/MW4/ and
@@ -41,7 +41,7 @@ ROOT = APP.parent                          # the CamoTracker site repo
 RES = APP / "Resources"
 BACKUPS = HERE / ".backups"
 FILES = ["weapons", "multiplayer", "warzone", "dmz"]
-SITE = "https://camotracker.djr.li/"
+SITE = "https://camo-track.app/"
 IMAGE_DIRS = {"guns": "Images/Guns/MW4", "camos": "Images/Camos/MW4"}
 MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
         ".webp": "image/webp", ".gif": "image/gif"}
@@ -78,7 +78,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/data":
             return self.send(200, {n: json.loads((RES / f"{n}.json").read_text(encoding="utf-8")) for n in FILES})
         if path.startswith("/site/Images/"):
-            # Local copy of a camotracker.djr.li image, so a freshly added
+            # Local copy of a camo-track.app image, so a freshly added
             # picture previews before it's pushed.
             target = (ROOT / path[len("/site/"):]).resolve()
             images = (ROOT / "Images").resolve()

@@ -19,4 +19,4 @@ Works offline!
 <a href="https://apps.apple.com/us/app/cold-war-camo-tracker/id1542484781?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1607040000" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
 # Need Help, Support or Have Feedback?
-If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
+If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camo-track.app>

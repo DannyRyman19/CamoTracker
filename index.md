@@ -10,23 +10,23 @@ We have apps for Modern Warfare 4 MW4, Black Ops 7 BO7, Black Ops 6 BO6, Black O
 
 <div class="table-container">
 <div class="column">
- <div class="data"><a href="/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="Camo Tracker Warfare 4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+ <div class="data"><a href="/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/mw4.png" alt="Camo Tracker Warfare 4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Modern Warfare 4 MW4</div>
       </div>
 <div class="column">
- <div class="data"><a href="/bo7" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo7.png" alt="BO7 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+ <div class="data"><a href="/bo7" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/bo7.png" alt="BO7 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Black Ops 7 BO7</div>
       </div>
 <div class="column">
-      <div class="data"><a href="/bo6" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo6.png" alt="BO6 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+      <div class="data"><a href="/bo6" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/bo6.png" alt="BO6 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Black Ops 6 BO6</div>
     </div>
     <div class="column">
-      <div class="data"><a href="/bo2" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo2.png" alt="BO2 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+      <div class="data"><a href="/bo2" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/bo2.png" alt="BO2 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Black Ops 2 BO2</div>
     </div>
     <div class="column">
-      <div class="data"><a href="/mw3" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/MW3_CAMOTRACKER.png" alt="MW3 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
+      <div class="data"><a href="/mw3" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/MW3_CAMOTRACKER.png" alt="MW3 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a></div>
       <div class="header">Modern Warfare III MW3</div>
     </div>
     <div class="column">

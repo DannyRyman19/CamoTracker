@@ -43,7 +43,7 @@ xcodebuild test -scheme MW4CamoTrackerTests -destination 'platform=iOS Simulator
 Pictures: an item gets `Images/DMZ/<item id>.png` and a trait gets
 `Images/DMZ/traits/<trait id>.png` when that file exists in this repo
 (FOB upgrades use their station's icon from `Images/DMZ/fob/`), so add
-the picture to `Images/DMZ` (it is served from camotracker.djr.li) and
+the picture to `Images/DMZ` (it is served from camo-track.app) and
 rebuild. Keys without their own picture use one per rarity.
 
 Sources: data the player reads off the game wins; a dmzhub.gg listing on its

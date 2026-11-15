@@ -180,7 +180,7 @@ struct PremiumView: View {
                 .multilineTextAlignment(.center)
             HStack(spacing: 16) {
                 Link("mw4.ui.premium.terms".localized(), destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-                Link("mw4.ui.premium.privacy".localized(), destination: URL(string: "https://camotracker.djr.li/privacy-policy")!)
+                Link("mw4.ui.premium.privacy".localized(), destination: URL(string: "https://camo-track.app/privacy-policy")!)
             }
             .font(.caption.weight(.semibold))
             .foregroundStyle(Color.appInkMuted)

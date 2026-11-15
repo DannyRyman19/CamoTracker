@@ -1,7 +1,7 @@
 """Data read off the in-game 3D Printer, Gunsmith, Vendor and Traits screens
 (video Call of Duty_20261020203519.webm, 2026-10-20). Applied by build_hajin.py."""
 import json
-IMG_BASE = "https://camotracker.djr.li/Images/DMZ/"
+IMG_BASE = "https://camo-track.app/Images/DMZ/"
 
 def _imgs():
     try:
@@ -505,7 +505,7 @@ def link_rows(guide, items, weapons):
     return sorted(by_id.values(), key=lambda i: i["name"])
 
 # ---- Trait trees, laid out like the game (rows top to bottom, emblem last)
-TRAIT_IMG = "https://camotracker.djr.li/Images/DMZ/traits/"
+TRAIT_IMG = "https://camo-track.app/Images/DMZ/traits/"
 TRAIT_TREES = [
  {"id": "warfighter", "name": "Warfighter", "color": "#E0575B", "shape": "hexagon",
   "rows": [["possum", "adaptive-restock"], [None, None, None], [None, None, None], ["viper-sense", "quick-fix"],

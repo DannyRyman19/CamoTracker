@@ -11,7 +11,7 @@ import UIKit
 /// exactly what is needed to fix a row without a round trip asking which
 /// weapon, which mode, and what it currently says.
 enum SupportMail {
-    static let address = "support@camotracker.djr.li"
+    static let address = "support@camo-track.app"
 
     /// What a weapon's unlock should actually be. The app stores it as a
     /// sentence ("Unlock at level 25.") and derives the number, so a report

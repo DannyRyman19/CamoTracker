@@ -2,7 +2,7 @@
 """Builds Camo Track's MW3 and MW2 data from the old MW3 Camo Tracker's lists.
 
 The old app (Xamarin, ~/MW3CamoTracker) read four files from
-camotracker.djr.li/Data/MW3/: MW3 weapons in Multiplayer and Zombies, and the
+camo-track.app/Data/MW3/: MW3 weapons in Multiplayer and Zombies, and the
 MWII weapons carried into MW3, in Multiplayer and Zombies. Each has German
 twins (`-de`). Camo Track has them as two games, writing into
 MW4CamoTracker/Resources/:
@@ -45,7 +45,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[3]
 SRC = ROOT / "Data" / "MW3"
 RES = ROOT / "MW4CamoTracker" / "Resources"
-SITE = "https://camotracker.djr.li/"
+SITE = "https://camo-track.app/"
 CAMO_DIR = ROOT / "Images" / "Camos" / "MW3Tracker"
 VERSION = "1.0.0"
 

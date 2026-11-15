@@ -6,7 +6,7 @@ description: "Track every Modern Warfare 4 camo challenge across Multiplayer, Wa
 app_id: "6775247927"
 image: "/mw4.png"
 ---
-<a href="https://camotracker.djr.li/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/mw4.png" alt="MW4 Camo Tracker app icon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://camo-track.app/mw4" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/mw4.png" alt="MW4 Camo Tracker app icon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 # MW4 Camo Tracker
 
@@ -47,6 +47,6 @@ Available in English, French, Spanish, German and Dutch.
 The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are the property of their respective owners. All In-Game Images are the sole property of Activision, Sledgehammer Games, Infinity Ward, Raven Software, Treyarch or their respective owners. Any such Content is used for educational purposes only!
 
 # Need Help, Support or Have Feedback?
-If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
+If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camo-track.app>
 
 [Privacy Policy](/privacy-policy)

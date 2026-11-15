@@ -79,6 +79,6 @@ This policy is effective as of 2026-11-03
 
 **Contact Us**
 
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at <support@camotracker.djr.li>.
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at <support@camo-track.app>.
 
 

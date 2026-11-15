@@ -137,7 +137,7 @@ kbd { font: 11px ui-monospace, Menlo, monospace; color: var(--muted); border: 1p
 const LANGS = ["en", "fr", "es", "de", "nl"];
 const MODES = ["multiplayer", "warzone", "dmz"];
 const FILES = ["weapons", ...MODES];
-const SITE = "https://camotracker.djr.li/";
+const SITE = "https://camo-track.app/";
 const TITLES = { weapons: "Weapons", multiplayer: "Multiplayer", warzone: "Warzone", dmz: "DMZ" };
 const SET_COLORS = ["#f5a524", "#6ea8fe", "#4cc38a", "#e879b9", "#b69cff", "#5fd4d4", "#ef8b5b", "#c9d16a"];
 // Mirrors the sentences weapons.json already uses, so WeaponEntry.unlockLevel keeps parsing them.
@@ -445,7 +445,7 @@ function imageField(getUrl, setUrl, kind, suggest) {
           h("button", { class: "small", onclick: () => file.click() }, "Upload file…"),
           h("button", { class: "small", title: "Download the image at the URL above into the repo and point at the hosted copy", onclick: () => {
             const u = input.value.trim(); if (!u) return toast("Paste an image URL first", true);
-            if (u.startsWith(SITE)) return toast("That's already hosted on camotracker.djr.li");
+            if (u.startsWith(SITE)) return toast("That's already hosted on camo-track.app");
             upload({ url: u }); } }, "Host this URL in repo"),
           h("span", { style: "color:var(--dim);font-size:11px;align-self:center" }, "or drop an image / image link here"), file))));
   paint();

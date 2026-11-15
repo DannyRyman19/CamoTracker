@@ -240,7 +240,7 @@ private struct DMZStatsCard: View {
 /// a mode tab because those are for tracking and this is housekeeping, and the
 /// list already ends in a natural gap.
 private struct SupportRow: View {
-    private static let address = "support@camotracker.djr.li"
+    private static let address = "support@camo-track.app"
 
     var body: some View {
         Link(destination: URL(string: "mailto:\(Self.address)")!) {

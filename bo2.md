@@ -7,7 +7,7 @@ image: "/bo2.png"
 ---
 <a href="https://apps.apple.com/us/app/bo2-camo-tracker/id6781461500" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
-<a href="https://apps.apple.com/us/app/bo2-camo-tracker/id6781461500" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camotracker.djr.li/bo2.png" alt="BO2 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+<a href="https://apps.apple.com/us/app/bo2-camo-tracker/id6781461500" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://camo-track.app/bo2.png" alt="BO2 Camo Tracker" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 # BO2 Black Ops 2 Camo Tracker
 Please Note: This app does not automatically fetch your camo progression as it is impossible. You will have to enter your progression manually!
@@ -64,4 +64,4 @@ Each optic has a kill counter with stepper controls so you can log your progress
 The Call of Duty franchise is a trademark of Activision Publishing, Inc. All other trademarks and trade names are the property of their respective owners. All In-Game Images are the sole property of Activision, Treyarch or their respective owners. Any such Content is used for educational purposes only!
 
 # Need Help, Support or Have Feedback?
-If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camotracker.djr.li>
+If you have any issues, questions, or just want to provide some feedback, please contact me: <support@camo-track.app>
