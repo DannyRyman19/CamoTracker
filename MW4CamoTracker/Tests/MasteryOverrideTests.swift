@@ -1176,3 +1176,51 @@ struct DeepLinkTests {
         #expect(try JSONDecoder().decode(Manifest.self, from: Data(json.utf8)).notification?.link == "mw4camo://mode/current/event/1/102")
     }
 }
+
+@Suite("Stream overlay")
+struct StreamOverlayTests {
+    @MainActor @Test func everyGameMakesAnOverviewAndAWeaponView() throws {
+        var covered: [String] = []
+        for game in GameRegistry.games {
+            let suite = "overlay-\(game.id)-\(UUID().uuidString)"
+            let defaults = try #require(UserDefaults(suiteName: suite))
+            defer { defaults.removePersistentDomain(forName: suite) }
+            let cache = FileManager.default.temporaryDirectory.appendingPathComponent(suite)
+            let model = TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: cache), defaults: defaults)
+            guard model.catalog != nil else { continue }
+            let mode = try #require(game.modes.first?.id)
+            let overview = try #require(model.streamOverlayPayload(content: .overview, modeRaw: mode, weaponId: nil), "\(game.id)")
+            #expect(overview.view == "overview")
+            #expect(overview.game == game.shortName)
+            #expect(!(overview.overview?.steps.isEmpty ?? true), "\(game.id) has a camo ladder")
+            let weaponId = try #require(model.catalog?.categories.first?.weapons.first?.weaponId)
+            let weapon = try #require(model.streamOverlayPayload(content: .weapon, modeRaw: mode, weaponId: weaponId), "\(game.id)")
+            let w = try #require(weapon.weapon)
+            #expect(!w.camos.isEmpty, "\(game.id) weapon has camos")
+            #expect(w.total == w.camos.count)
+            // Pictures the Worker will let through (camo-track.app), or none
+            for url in [w.image] + w.camos.map(\.image) where !url.isEmpty {
+                #expect(url.hasPrefix("https://camo-track.app/Images/") || url.hasPrefix("https://imgs.callofduty.com/"), "\(game.id): \(url)")
+            }
+            #expect(model.streamOverlayPayload(content: .weapon, modeRaw: mode, weaponId: nil) == nil)
+            covered.append(game.id)
+        }
+        // Every game the app tracks, not just the ones that happened to load
+        #expect(Set(covered) == Set(GameRegistry.games.map(\.id)), "covered \(covered)")
+    }
+
+    @MainActor @Test func theLinkCarriesOnlyTheOptionsThatArentDefault() throws {
+        let suite = "overlay-link-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let overlay = StreamOverlay(defaults: defaults)
+        overlay.send = { _ in (Data(), HTTPURLResponse(url: URL(string: "https://x")!, statusCode: 200, httpVersion: nil, headerFields: nil)!) }
+        overlay.turnOn()
+        #expect(overlay.pageURL.query == nil)
+        #expect(overlay.pageURL.absoluteString.hasPrefix("https://camo-track.app/overlay/"))
+        overlay.layout = .minimal; overlay.style = .glass; overlay.showsQR = false
+        #expect(overlay.pageURL.query == "layout=minimal&style=glass&qr=0")
+        #expect(StreamOverlay.cleanChannel("@My_Channel") == "My_Channel")
+        #expect(StreamOverlay.cleanChannel("no spaces") == "")
+    }
+}

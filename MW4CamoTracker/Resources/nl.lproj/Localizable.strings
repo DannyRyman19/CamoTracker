@@ -636,3 +636,37 @@
 
 "ct.objective.all_modes" = "Alle modi";
 "ct.objective.only_in" = "Alleen %@";
+
+"ct.overlay.title" = "Stream-overlay";
+"ct.overlay.on" = "Tonen in mijn stream";
+"ct.overlay.footer" = "Gratis. Voeg de link in OBS toe als browserbron: je camovoortgang verschijnt in je stream met een QR-code naar Camo Track en werkt bij als je camo's afvinkt. Zolang het aan staat, worden je cijfers naar camo-track.app gestuurd en kan iedereen met de link ze zien.";
+"ct.overlay.shows" = "Toont";
+"ct.overlay.overview" = "Overzicht";
+"ct.overlay.weapon" = "Een wapen";
+"ct.overlay.which_weapon" = "Wapen";
+"ct.overlay.pick" = "Kies er een";
+"ct.overlay.mode" = "Modus";
+"ct.overlay.mode_start" = "Zoals in de app";
+"ct.overlay.look" = "Uiterlijk";
+"ct.overlay.layout" = "Indeling";
+"ct.overlay.layout.card" = "Kaart";
+"ct.overlay.layout.vertical" = "Verticaal";
+"ct.overlay.layout.minimal" = "Minimaal";
+"ct.overlay.style" = "Stijl";
+"ct.overlay.style.glass" = "Glas";
+"ct.overlay.style.clean" = "Strak";
+"ct.overlay.qr" = "QR-code";
+"ct.overlay.celebrate" = "Nieuwe camo's vieren";
+"ct.overlay.right" = "Rechts uitlijnen";
+"ct.overlay.link" = "Link voor OBS";
+"ct.overlay.copy" = "Link kopiëren";
+"ct.overlay.copied" = "Gekopieerd";
+"ct.overlay.share" = "Link delen";
+"ct.overlay.link_footer" = "Grootte van de browserbron: %d × %d.";
+"ct.overlay.channel" = "Naam van je kanaal (optioneel)";
+"ct.overlay.channel_footer" = "Alleen om te tellen hoeveel kijkers je QR-code scannen, nooit getoond. Een nieuwe link maakt de oude ongeldig.";
+"ct.overlay.new_link" = "Nieuwe link maken";
+"ct.overlay.status.waiting" = "Versturen…";
+"ct.overlay.status.live" = "Live.";
+"ct.overlay.status.failed" = "Server niet bereikbaar; nieuwe poging zodra je voortgang verandert.";
+"ct.overlay.preview" = "Voorbeeld van de overlay";

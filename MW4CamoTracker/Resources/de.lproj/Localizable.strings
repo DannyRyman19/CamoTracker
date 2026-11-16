@@ -636,3 +636,37 @@
 
 "ct.objective.all_modes" = "Alle Modi";
 "ct.objective.only_in" = "Nur %@";
+
+"ct.overlay.title" = "Stream-Overlay";
+"ct.overlay.on" = "Im Stream zeigen";
+"ct.overlay.footer" = "Kostenlos. Füge den Link in OBS als Browserquelle hinzu: Dein Tarnungsfortschritt erscheint im Stream mit einem QR-Code zu Camo Track und aktualisiert sich, wenn du Tarnungen abhakst. Solange es an ist, werden deine Zahlen an camo-track.app gesendet, und jeder mit dem Link kann sie sehen.";
+"ct.overlay.shows" = "Zeigt";
+"ct.overlay.overview" = "Überblick";
+"ct.overlay.weapon" = "Eine Waffe";
+"ct.overlay.which_weapon" = "Waffe";
+"ct.overlay.pick" = "Auswählen";
+"ct.overlay.mode" = "Modus";
+"ct.overlay.mode_start" = "Wie in der App";
+"ct.overlay.look" = "Aussehen";
+"ct.overlay.layout" = "Layout";
+"ct.overlay.layout.card" = "Karte";
+"ct.overlay.layout.vertical" = "Hochformat";
+"ct.overlay.layout.minimal" = "Minimal";
+"ct.overlay.style" = "Stil";
+"ct.overlay.style.glass" = "Glas";
+"ct.overlay.style.clean" = "Schlicht";
+"ct.overlay.qr" = "QR-Code";
+"ct.overlay.celebrate" = "Neue Tarnungen feiern";
+"ct.overlay.right" = "Rechts ausrichten";
+"ct.overlay.link" = "Link für OBS";
+"ct.overlay.copy" = "Link kopieren";
+"ct.overlay.copied" = "Kopiert";
+"ct.overlay.share" = "Link teilen";
+"ct.overlay.link_footer" = "Größe der Browserquelle: %d × %d.";
+"ct.overlay.channel" = "Dein Kanalname (optional)";
+"ct.overlay.channel_footer" = "Dient nur dazu zu zählen, wie viele Zuschauer deinen QR-Code scannen, und wird nie angezeigt. Ein neuer Link macht den alten ungültig.";
+"ct.overlay.new_link" = "Neuen Link erstellen";
+"ct.overlay.status.waiting" = "Wird gesendet…";
+"ct.overlay.status.live" = "Live.";
+"ct.overlay.status.failed" = "Server nicht erreichbar; neuer Versuch, sobald sich dein Fortschritt ändert.";
+"ct.overlay.preview" = "Overlay-Vorschau";

@@ -31,6 +31,14 @@ struct MW4CamoTrackerApp: App {
                 .id(gameStore.game.id)
                 .preferredColorScheme(.dark)
                 .task {
+                    // The stream overlay's figures, from whichever game is open
+                    let store = gameStore
+                    StreamOverlay.shared.makePayload = {
+                        let overlay = StreamOverlay.shared, tracker = store.viewModel
+                        return tracker.streamOverlayPayload(content: overlay.content, modeRaw: overlay.mode,
+                                                            weaponId: overlay.weaponId(game: tracker.game.id))
+                    }
+                    StreamOverlay.shared.refresh(immediately: true)
                     Premium.shared.start()
                     #if DEBUG
                     Premium.shared.debugOverride()
@@ -60,6 +68,8 @@ struct MW4CamoTrackerApp: App {
             // A yearly plan can lapse, or a purchase be refunded, while the
             // app sits in the background; launch isn't the only time to ask.
             if newPhase == .active { Task { await Premium.shared.refresh() } }
+            // Back in the app: send the overlay's figures (retries one that failed)
+            if newPhase == .active { StreamOverlay.shared.refresh(immediately: true) }
             if newPhase == .active, !viewModel.isRefreshing {
                 Task { await viewModel.refresh() }
             }

@@ -7,6 +7,8 @@ import WidgetKit
 /// the widgets told to redraw.
 extension TrackerViewModel {
     func refreshWidgets() {
+        // The stream overlay shows the same figures: it sends once they settle
+        StreamOverlay.shared.refresh()
         widgetTask?.cancel()
         widgetTask = Task { @MainActor [weak self] in
             try? await Task.sleep(nanoseconds: 600_000_000)

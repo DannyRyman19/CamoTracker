@@ -636,3 +636,37 @@
 
 "ct.objective.all_modes" = "All modes";
 "ct.objective.only_in" = "%@ only";
+
+"ct.overlay.title" = "Stream overlay";
+"ct.overlay.on" = "Show on my stream";
+"ct.overlay.footer" = "Free. Add the link to OBS as a Browser source: your camo progress shows on stream with a QR code to Camo Track, and updates as you tick camos off. While it's on, your figures are sent to camo-track.app, and anyone with the link can see them.";
+"ct.overlay.shows" = "Shows";
+"ct.overlay.overview" = "Overview";
+"ct.overlay.weapon" = "A weapon";
+"ct.overlay.which_weapon" = "Weapon";
+"ct.overlay.pick" = "Pick one";
+"ct.overlay.mode" = "Mode";
+"ct.overlay.mode_start" = "Same as the app";
+"ct.overlay.look" = "Look";
+"ct.overlay.layout" = "Layout";
+"ct.overlay.layout.card" = "Card";
+"ct.overlay.layout.vertical" = "Vertical";
+"ct.overlay.layout.minimal" = "Minimal";
+"ct.overlay.style" = "Style";
+"ct.overlay.style.glass" = "Glass";
+"ct.overlay.style.clean" = "Clean";
+"ct.overlay.qr" = "QR code";
+"ct.overlay.celebrate" = "Celebrate new camos";
+"ct.overlay.right" = "Line up on the right";
+"ct.overlay.link" = "Link for OBS";
+"ct.overlay.copy" = "Copy link";
+"ct.overlay.copied" = "Copied";
+"ct.overlay.share" = "Share link";
+"ct.overlay.link_footer" = "Browser source size: %d × %d.";
+"ct.overlay.channel" = "Your channel name (optional)";
+"ct.overlay.channel_footer" = "Only used to count how many viewers scan your QR code, never shown. A new link stops the old one working.";
+"ct.overlay.new_link" = "Make a new link";
+"ct.overlay.status.waiting" = "Sending…";
+"ct.overlay.status.live" = "Live.";
+"ct.overlay.status.failed" = "Couldn't reach the server; it tries again when your progress changes.";
+"ct.overlay.preview" = "Overlay preview";

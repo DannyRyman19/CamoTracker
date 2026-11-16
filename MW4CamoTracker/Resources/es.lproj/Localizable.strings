@@ -636,3 +636,37 @@
 
 "ct.objective.all_modes" = "Todos los modos";
 "ct.objective.only_in" = "Solo %@";
+
+"ct.overlay.title" = "Overlay para directos";
+"ct.overlay.on" = "Mostrar en mi directo";
+"ct.overlay.footer" = "Gratis. Añade el enlace en OBS como fuente de navegador: tu progreso de camuflajes aparece en el directo con un código QR a Camo Track y se actualiza al marcar camuflajes. Mientras esté activo, tus cifras se envían a camo-track.app y cualquiera con el enlace puede verlas.";
+"ct.overlay.shows" = "Muestra";
+"ct.overlay.overview" = "Resumen";
+"ct.overlay.weapon" = "Un arma";
+"ct.overlay.which_weapon" = "Arma";
+"ct.overlay.pick" = "Elegir";
+"ct.overlay.mode" = "Modo";
+"ct.overlay.mode_start" = "Igual que la app";
+"ct.overlay.look" = "Aspecto";
+"ct.overlay.layout" = "Diseño";
+"ct.overlay.layout.card" = "Tarjeta";
+"ct.overlay.layout.vertical" = "Vertical";
+"ct.overlay.layout.minimal" = "Mínimo";
+"ct.overlay.style" = "Estilo";
+"ct.overlay.style.glass" = "Cristal";
+"ct.overlay.style.clean" = "Limpio";
+"ct.overlay.qr" = "Código QR";
+"ct.overlay.celebrate" = "Celebrar camuflajes nuevos";
+"ct.overlay.right" = "Alinear a la derecha";
+"ct.overlay.link" = "Enlace para OBS";
+"ct.overlay.copy" = "Copiar enlace";
+"ct.overlay.copied" = "Copiado";
+"ct.overlay.share" = "Compartir enlace";
+"ct.overlay.link_footer" = "Tamaño de la fuente de navegador: %d × %d.";
+"ct.overlay.channel" = "Nombre de tu canal (opcional)";
+"ct.overlay.channel_footer" = "Solo sirve para contar cuántos espectadores escanean tu código QR; nunca se muestra. Un enlace nuevo deja sin efecto el anterior.";
+"ct.overlay.new_link" = "Crear un enlace nuevo";
+"ct.overlay.status.waiting" = "Enviando…";
+"ct.overlay.status.live" = "En directo.";
+"ct.overlay.status.failed" = "No se pudo conectar con el servidor; lo reintentará cuando cambie tu progreso.";
+"ct.overlay.preview" = "Vista previa del overlay";

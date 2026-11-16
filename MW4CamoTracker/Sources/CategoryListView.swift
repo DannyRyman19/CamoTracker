@@ -729,6 +729,7 @@ struct CustomiseHomeSheet: View {
     @ObservedObject private var syncState = CloudSyncState.shared
     @State private var showsPremium = false
     @State private var showsIcons = false
+    @State private var showsOverlay = false
     @State private var showsWidgetGuide = false
     /// How a restore went (see `Premium.Notice`).
     @State private var premiumNotice: Premium.Notice?
@@ -969,6 +970,11 @@ struct CustomiseHomeSheet: View {
                     }
                     .foregroundStyle(accent)
                     .accessibilityIdentifier("customise.appIcon")
+                    Button { showsOverlay = true } label: {
+                        Label("ct.overlay.title".localized(), systemImage: "dot.radiowaves.left.and.right")
+                    }
+                    .foregroundStyle(accent)
+                    .accessibilityIdentifier("customise.overlay")
                     // The home tab's widget card goes once it's opened or
                     // closed; the guide stays here
                     if #available(iOS 17, *) {
@@ -1025,6 +1031,7 @@ struct CustomiseHomeSheet: View {
             }
             .environment(\.editMode, .constant(.active))
             .navigationDestination(isPresented: $showsIcons) { AppIconPicker(accent: accent) }
+            .navigationDestination(isPresented: $showsOverlay) { StreamOverlayView(accent: accent).environmentObject(viewModel) }
             .sheet(isPresented: $showsWidgetGuide) {
                 WidgetGuideSheet(accent: accent).environmentObject(viewModel)
             }
