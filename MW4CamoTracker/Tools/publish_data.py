@@ -260,7 +260,8 @@ def dictionary(kind):
 TEXT = dictionary(STR)                          # LocalizedText
 GUIDE_TEXT = ("either", STR, TEXT)              # GuideText: plain English or per language
 
-REQUIREMENT = {"amount": INT, "unit": STR, "description": TEXT}
+REQUIREMENT = {"amount": INT, "unit": STR, "description": TEXT, "lead": opt(TEXT),
+               "byMode": opt(array({"mode": STR, "description": TEXT}))}
 CHALLENGE_ITEM = {
     "itemId": INT, "name": TEXT, "imageURL": opt(STR), "tier": opt(INT), "unlockLevel": opt(INT),
     "requirement": opt(REQUIREMENT), "group": opt(STR), "section": opt(TEXT), "extra": opt(BOOL),

@@ -375,11 +375,22 @@ struct ChallengeItem: Codable, Identifiable {
 struct Requirement: Codable {
     let amount: Int
     let unit: String
+    /// The whole challenge in one line, which builds before `byMode` show.
+    let description: LocalizedText
+    /// When each mode has its own way to earn it (BlackCell: "Any one:"), the
+    /// line before them ("After all five class camos. Any one:")...
+    var lead: LocalizedText? = nil
+    /// ...and each mode's challenge, shown as a row per mode with the one
+    /// being played first.
+    var byMode: [ModeChallenge]? = nil
+}
+
+/// One mode's way to earn a challenge that can be earned in any of several.
+struct ModeChallenge: Codable {
+    let mode: String
     let description: LocalizedText
 }
 
-/// A time-limited objective that's live now, with the category it sits in
-/// (progress is keyed by category), for the mode tab's Live section.
 /// Where an objective can be earned: in every mode, or only in some.
 enum ObjectiveScope: Equatable {
     case allModes
@@ -396,6 +407,8 @@ enum ObjectiveScope: Equatable {
     }
 }
 
+/// A time-limited objective that's live now, with the category it sits in
+/// (progress is keyed by category), for the mode tab's Live section.
 struct LiveObjective: Identifiable, Hashable {
     let categoryId: Int
     let item: ChallengeItem

@@ -18,6 +18,7 @@ struct ItemDetailView: View {
                     ChallengeRow(
                         item: row,
                         accent: mode.accent,
+                        mode: mode,
                         amount: viewModel.objectiveAmount(mode: mode.rawValue, categoryId: category.categoryId, item: row),
                         isDone: viewModel.isObjectiveComplete(mode: mode.rawValue, categoryId: category.categoryId, item: row),
                         isAvailable: viewModel.isObjectiveAvailable(mode: mode.rawValue, categoryId: category.categoryId, siblings: rows, item: row,

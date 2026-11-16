@@ -865,6 +865,9 @@ struct MasteryTrack: View {
 struct ChallengeRow: View {
     let item: ChallengeItem
     let accent: Color
+    /// The mode being looked at, whose challenge leads when each mode has
+    /// its own (BlackCell).
+    var mode: AppMode? = nil
     let amount: Int
     let isDone: Bool
     /// Whether this row is open yet — a base camo opens at its weapon level,
@@ -940,9 +943,13 @@ struct ChallengeRow: View {
                 }
                 if let requirement = item.requirement {
                     if isAvailable || showLockedChallenges {
-                        Text(requirement.description.resolved())
-                            .scaledFont(13)
-                            .foregroundStyle(Color.appInkMuted)
+                        if let byMode = requirement.byMode, !byMode.isEmpty {
+                            ModeChallengeList(lead: requirement.lead, challenges: byMode, current: mode)
+                        } else {
+                            Text(requirement.description.resolved())
+                                .scaledFont(13)
+                                .foregroundStyle(Color.appInkMuted)
+                        }
                     }
                     if !isAvailable {
                         // With the challenge shown too, what unlocks it sits
@@ -1582,5 +1589,50 @@ struct ObjectiveScopeTag: View {
             .padding(.vertical, 2)
             .overlay(Capsule().strokeBorder(tint.opacity(0.5), lineWidth: 1))
             .accessibilityLabel(scope.label)
+    }
+}
+
+
+/// A challenge that each mode earns its own way (BlackCell's "any one of"):
+/// the lead line, then a row per mode with its icon and colour, the mode
+/// being played first and in full ink, the others after it, dimmer.
+struct ModeChallengeList: View {
+    let lead: LocalizedText?
+    let challenges: [ModeChallenge]
+    let current: AppMode?
+
+    private var ordered: [(AppMode, ModeChallenge)] {
+        let known = challenges.compactMap { c in AppMode(rawValue: c.mode).map { ($0, c) } }
+        let order = AppMode.allCases
+        return known.sorted { a, b in
+            if (a.0 == current) != (b.0 == current) { return a.0 == current }
+            return (order.firstIndex(of: a.0) ?? 99) < (order.firstIndex(of: b.0) ?? 99)
+        }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            if let lead {
+                Text(lead.resolved())
+                    .scaledFont(12)
+                    .foregroundStyle(Color.appInkMuted)
+            }
+            ForEach(ordered, id: \.0) { mode, challenge in
+                let isCurrent = mode == current
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Image(systemName: mode.symbol)
+                        .scaledFont(11, weight: .semibold)
+                        .foregroundStyle(mode.accent)
+                        .frame(width: 16)
+                    (Text(mode.displayName).bold().foregroundColor(isCurrent ? mode.accent : Color.appInkMuted)
+                        + Text("  ") + Text(challenge.description.resolved()))
+                        .scaledFont(13)
+                        .foregroundStyle(isCurrent ? Color.appInk : Color.appInkMuted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .opacity(isCurrent || current == nil ? 1 : 0.8)
+                .accessibilityElement(children: .combine)
+            }
+        }
     }
 }

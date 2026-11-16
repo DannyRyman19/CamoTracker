@@ -1,5 +1,5 @@
 {
-  "version": "0.8.87",
+  "version": "0.8.88",
   "mode": "warzone",
   "weaponCamos": [
     {
@@ -8423,7 +8423,54 @@
                   "nl": "Eén van: Multiplayer: Behaal 10 dubbele kills met aanvalsgeweren; DMZ: Behaal 20 driedubbele kills met aanvalsgeweren; Warzone: Behaal 25 kills met aanvalsgeweren van de grond.",
                   "it": "Una a scelta: Multigiocatore: Esegui 10 uccisioni doppie con fucili d'assalto; DMZ: Esegui 20 uccisioni triple con fucili d'assalto; Warzone: Esegui 25 uccisioni con fucili d'assalto raccolti a terra.",
                   "pt": "Qualquer um: Multijogador: Consiga 10 baixas duplas com fuzis de assalto; DMZ: Consiga 20 baixas triplas com fuzis de assalto; Warzone: Consiga 25 baixas com fuzis de assalto pegos do chão."
-                }
+                },
+                "lead": {
+                  "en": "Any one:",
+                  "fr": "Au choix :",
+                  "es": "Cualquiera:",
+                  "de": "Eine davon:",
+                  "nl": "Eén van:",
+                  "it": "Una a scelta:",
+                  "pt": "Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Get 10 Double Kills with Assault Rifles",
+                      "fr": "Réussissez 10 doubles éliminations avec des fusils d'assaut",
+                      "es": "Consigue 10 bajas dobles con fusiles de asalto",
+                      "de": "Erziele 10 Doppelabschüsse mit Sturmgewehren",
+                      "nl": "Behaal 10 dubbele kills met aanvalsgeweren",
+                      "it": "Esegui 10 uccisioni doppie con fucili d'assalto",
+                      "pt": "Consiga 10 baixas duplas com fuzis de assalto"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 25 Kills with Ground Loot Assault Rifles",
+                      "fr": "Faites 25 éliminations avec des fusils d'assaut ramassés au sol",
+                      "es": "Consigue 25 bajas con fusiles de asalto recogidos del suelo",
+                      "de": "Erziele 25 Abschüsse mit Sturmgewehren vom Boden",
+                      "nl": "Behaal 25 kills met aanvalsgeweren van de grond",
+                      "it": "Esegui 25 uccisioni con fucili d'assalto raccolti a terra",
+                      "pt": "Consiga 25 baixas com fuzis de assalto pegos do chão"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Get 20 Triple Kills with Assault Rifles",
+                      "fr": "Réussissez 20 triples éliminations avec des fusils d'assaut",
+                      "es": "Consigue 20 bajas triples con fusiles de asalto",
+                      "de": "Erziele 20 Dreifachabschüsse mit Sturmgewehren",
+                      "nl": "Behaal 20 driedubbele kills met aanvalsgeweren",
+                      "it": "Esegui 20 uccisioni triple con fucili d'assalto",
+                      "pt": "Consiga 20 baixas triplas com fuzis de assalto"
+                    }
+                  }
+                ]
               },
               "children": []
             },
@@ -8452,7 +8499,54 @@
                   "nl": "Eén van: Multiplayer: Behaal 20 kills van dichtbij met SMG's; DMZ: Behaal 200 kills met SMG's; Warzone: Behaal 10 kills vanuit de heup met SMG's.",
                   "it": "Una a scelta: Multigiocatore: Esegui 20 uccisioni a bruciapelo con mitragliette; DMZ: Esegui 200 uccisioni con mitragliette; Warzone: Esegui 10 uccisioni senza mirare con mitragliette.",
                   "pt": "Qualquer um: Multijogador: Consiga 20 baixas à queima-roupa com submetralhadoras; DMZ: Consiga 200 baixas com submetralhadoras; Warzone: Consiga 10 baixas sem mirar com submetralhadoras."
-                }
+                },
+                "lead": {
+                  "en": "Any one:",
+                  "fr": "Au choix :",
+                  "es": "Cualquiera:",
+                  "de": "Eine davon:",
+                  "nl": "Eén van:",
+                  "it": "Una a scelta:",
+                  "pt": "Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Get 20 Point Blank Kills with SMGs",
+                      "fr": "Éliminez 20 joueur(s) à bout portant avec des mitraillettes",
+                      "es": "Consigue 20 bajas a bocajarro con subfusiles",
+                      "de": "Erziele 20 Abschüsse aus nächster Nähe mit MPs",
+                      "nl": "Behaal 20 kills van dichtbij met SMG's",
+                      "it": "Esegui 20 uccisioni a bruciapelo con mitragliette",
+                      "pt": "Consiga 20 baixas à queima-roupa com submetralhadoras"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 10 Hipfire Kills with SMGs",
+                      "fr": "Faites 10 éliminations sans viser avec des mitraillettes",
+                      "es": "Consigue 10 bajas sin apuntar con subfusiles",
+                      "de": "Erziele 10 Hüftfeuer-Abschüsse mit MPs",
+                      "nl": "Behaal 10 kills vanuit de heup met SMG's",
+                      "it": "Esegui 10 uccisioni senza mirare con mitragliette",
+                      "pt": "Consiga 10 baixas sem mirar com submetralhadoras"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Get 200 Kills with SMGs",
+                      "fr": "Faites 200 éliminations avec des mitraillettes",
+                      "es": "Consigue 200 bajas con subfusiles",
+                      "de": "Erziele 200 Abschüsse mit MPs",
+                      "nl": "Behaal 200 kills met SMG's",
+                      "it": "Esegui 200 uccisioni con mitragliette",
+                      "pt": "Consiga 200 baixas com submetralhadoras"
+                    }
+                  }
+                ]
               },
               "children": []
             },
@@ -8481,7 +8575,54 @@
                   "nl": "Eén van: Multiplayer: Behaal 5 keer 3 kills zonder te sterven met sluipschuttersgeweren; DMZ: Behaal 100 headshotkills met sluipschuttersgeweren; Warzone: Behaal 10 headshotkills met sluipschuttersgeweren.",
                   "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni senza morire 5 volte con fucili di precisione; DMZ: Esegui 100 uccisioni con colpi alla testa con fucili di precisione; Warzone: Esegui 10 uccisioni con colpi alla testa con fucili di precisione.",
                   "pt": "Qualquer um: Multijogador: Consiga 3 baixas sem morrer 5 vezes com fuzis de precisão; DMZ: Consiga 100 baixas com tiros na cabeça com fuzis de precisão; Warzone: Consiga 10 baixas com tiros na cabeça com fuzis de precisão."
-                }
+                },
+                "lead": {
+                  "en": "Any one:",
+                  "fr": "Au choix :",
+                  "es": "Cualquiera:",
+                  "de": "Eine davon:",
+                  "nl": "Eén van:",
+                  "it": "Una a scelta:",
+                  "pt": "Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Get 3 Kills without Dying 5 times with Sniper Rifles",
+                      "fr": "Faites 3 éliminations sans mourir 5 fois avec des fusils de précision",
+                      "es": "Consigue 3 bajas sin morir 5 veces con fusiles de francotirador",
+                      "de": "Erziele 5-mal 3 Abschüsse ohne zu sterben mit Scharfschützengewehren",
+                      "nl": "Behaal 5 keer 3 kills zonder te sterven met sluipschuttersgeweren",
+                      "it": "Esegui 3 uccisioni senza morire 5 volte con fucili di precisione",
+                      "pt": "Consiga 3 baixas sem morrer 5 vezes com fuzis de precisão"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 10 Headshot Kills with Sniper Rifles",
+                      "fr": "Faites 10 éliminations d'un tir dans la tête avec des fusils de précision",
+                      "es": "Consigue 10 bajas con tiros a la cabeza con fusiles de francotirador",
+                      "de": "Erziele 10 Kopfschuss-Abschüsse mit Scharfschützengewehren",
+                      "nl": "Behaal 10 headshotkills met sluipschuttersgeweren",
+                      "it": "Esegui 10 uccisioni con colpi alla testa con fucili di precisione",
+                      "pt": "Consiga 10 baixas com tiros na cabeça com fuzis de precisão"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Get 100 Headshot Kills with Sniper Rifles",
+                      "fr": "Faites 100 éliminations d'un tir dans la tête avec des fusils de précision",
+                      "es": "Consigue 100 bajas con tiros a la cabeza con fusiles de francotirador",
+                      "de": "Erziele 100 Kopfschuss-Abschüsse mit Scharfschützengewehren",
+                      "nl": "Behaal 100 headshotkills met sluipschuttersgeweren",
+                      "it": "Esegui 100 uccisioni con colpi alla testa con fucili di precisione",
+                      "pt": "Consiga 100 baixas com tiros na cabeça com fuzis de precisão"
+                    }
+                  }
+                ]
               },
               "children": []
             },
@@ -8510,7 +8651,54 @@
                   "nl": "Eén van: Multiplayer: Behaal 30 kills van grote afstand met LMG's; DMZ: Behaal 10 keer 5 kills zonder te herladen met LMG's; Warzone: Behaal 10 keer 2 kills zonder te sterven met LMG's.",
                   "it": "Una a scelta: Multigiocatore: Esegui 30 uccisioni a lunga distanza con mitragliatrici leggere; DMZ: Esegui 5 uccisioni senza ricaricare 10 volte con mitragliatrici leggere; Warzone: Esegui 2 uccisioni senza morire 10 volte con mitragliatrici leggere.",
                   "pt": "Qualquer um: Multijogador: Consiga 30 baixas de longa distância com metralhadoras leves; DMZ: Consiga 5 baixas sem recarregar 10 vezes com metralhadoras leves; Warzone: Consiga 2 baixas sem morrer 10 vezes com metralhadoras leves."
-                }
+                },
+                "lead": {
+                  "en": "Any one:",
+                  "fr": "Au choix :",
+                  "es": "Cualquiera:",
+                  "de": "Eine davon:",
+                  "nl": "Eén van:",
+                  "it": "Una a scelta:",
+                  "pt": "Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Get 30 Longshot Kills with LMGs",
+                      "fr": "Réussissez 30 éliminations à longue distance avec des mitrailleuses",
+                      "es": "Consigue 30 bajas a larga distancia con ametralladoras ligeras",
+                      "de": "Erziele 30 Weitschuss-Abschüsse mit LMGs",
+                      "nl": "Behaal 30 kills van grote afstand met LMG's",
+                      "it": "Esegui 30 uccisioni a lunga distanza con mitragliatrici leggere",
+                      "pt": "Consiga 30 baixas de longa distância com metralhadoras leves"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 2 Kills without Dying 10 times with LMGs",
+                      "fr": "Faites 2 éliminations sans mourir 10 fois avec des mitrailleuses",
+                      "es": "Consigue 2 bajas sin morir 10 veces con ametralladoras ligeras",
+                      "de": "Erziele 10-mal 2 Abschüsse ohne zu sterben mit LMGs",
+                      "nl": "Behaal 10 keer 2 kills zonder te sterven met LMG's",
+                      "it": "Esegui 2 uccisioni senza morire 10 volte con mitragliatrici leggere",
+                      "pt": "Consiga 2 baixas sem morrer 10 vezes com metralhadoras leves"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Get 5 Kills without Reloading 10 times with LMGs",
+                      "fr": "Faites 5 éliminations sans recharger 10 fois avec des mitrailleuses",
+                      "es": "Consigue 5 bajas sin recargar 10 veces con ametralladoras ligeras",
+                      "de": "Erziele 10-mal 5 Abschüsse ohne Nachladen mit LMGs",
+                      "nl": "Behaal 10 keer 5 kills zonder te herladen met LMG's",
+                      "it": "Esegui 5 uccisioni senza ricaricare 10 volte con mitragliatrici leggere",
+                      "pt": "Consiga 5 baixas sem recarregar 10 vezes com metralhadoras leves"
+                    }
+                  }
+                ]
               },
               "children": []
             },
@@ -8539,7 +8727,54 @@
                   "nl": "Eén van: Multiplayer: Behaal 3 keer 3 kills in één wedstrijd met slagwapens; DMZ: Behaal 50 kills onopgemerkt met slagwapens; Warzone: Behaal 5 eliminaties in de top 10 met slagwapens.",
                   "it": "Una a scelta: Multigiocatore: Esegui 3 uccisioni in una partita 3 volte con armi da mischia; DMZ: Esegui 50 uccisioni senza essere individuato con armi da mischia; Warzone: Esegui 5 eliminazioni nella top 10 con armi da mischia.",
                   "pt": "Qualquer um: Multijogador: Consiga 3 baixas em uma partida 3 vezes com armas brancas; DMZ: Consiga 50 baixas sem ser detectado com armas brancas; Warzone: Consiga 5 eliminações no top 10 com armas brancas."
-                }
+                },
+                "lead": {
+                  "en": "Any one:",
+                  "fr": "Au choix :",
+                  "es": "Cualquiera:",
+                  "de": "Eine davon:",
+                  "nl": "Eén van:",
+                  "it": "Una a scelta:",
+                  "pt": "Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Get 3 Kills in a single match 3 times with Melee weapons",
+                      "fr": "Faites 3 éliminations en une partie 3 fois avec des armes de mêlée",
+                      "es": "Consigue 3 bajas en una sola partida 3 veces con armas cuerpo a cuerpo",
+                      "de": "Erziele 3-mal 3 Abschüsse in einem Match mit Nahkampfwaffen",
+                      "nl": "Behaal 3 keer 3 kills in één wedstrijd met slagwapens",
+                      "it": "Esegui 3 uccisioni in una partita 3 volte con armi da mischia",
+                      "pt": "Consiga 3 baixas em uma partida 3 vezes com armas brancas"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 5 Eliminations while in the Top 10 with Melee weapons",
+                      "fr": "Faites 5 éliminations dans le top 10 avec des armes de mêlée",
+                      "es": "Consigue 5 eliminaciones estando entre los 10 mejores con armas cuerpo a cuerpo",
+                      "de": "Erziele 5 Eliminierungen unter den Top 10 mit Nahkampfwaffen",
+                      "nl": "Behaal 5 eliminaties in de top 10 met slagwapens",
+                      "it": "Esegui 5 eliminazioni nella top 10 con armi da mischia",
+                      "pt": "Consiga 5 eliminações no top 10 com armas brancas"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Get 50 Kills while Undetected with Melee weapons",
+                      "fr": "Faites 50 éliminations sans être détecté avec des armes de mêlée",
+                      "es": "Consigue 50 bajas sin ser detectado con armas cuerpo a cuerpo",
+                      "de": "Erziele 50 Abschüsse unentdeckt mit Nahkampfwaffen",
+                      "nl": "Behaal 50 kills onopgemerkt met slagwapens",
+                      "it": "Esegui 50 uccisioni senza essere individuato con armi da mischia",
+                      "pt": "Consiga 50 baixas sem ser detectado com armas brancas"
+                    }
+                  }
+                ]
               },
               "children": []
             },
@@ -8568,7 +8803,54 @@
                   "nl": "Na alle vijf klassecamo's. Eén van: Multiplayer: Eindig 3 keer als 1e op het scorebord; DMZ: Exfiltreer 5 keer met meer dan 150 kills; Warzone: Behaal 10 keer 2 kills binnen 10 seconden.",
                   "it": "Dopo le cinque mimetiche di classe. Una a scelta: Multigiocatore: Arriva 1° nella classifica 3 volte; DMZ: Esfiltra con oltre 150 uccisioni 5 volte; Warzone: Esegui 2 uccisioni in 10 secondi 10 volte.",
                   "pt": "Depois das cinco camuflagens de classe. Qualquer um: Multijogador: Fique em 1º no placar 3 vezes; DMZ: Faça a exfiltração com mais de 150 baixas 5 vezes; Warzone: Consiga 2 baixas em 10 segundos 10 vezes."
-                }
+                },
+                "lead": {
+                  "en": "After all five class camos. Any one:",
+                  "fr": "Après les cinq camouflages de classe. Au choix :",
+                  "es": "Tras los cinco camuflajes de clase. Cualquiera:",
+                  "de": "Nach allen fünf Klassen-Tarnungen. Eine davon:",
+                  "nl": "Na alle vijf klassecamo's. Eén van:",
+                  "it": "Dopo le cinque mimetiche di classe. Una a scelta:",
+                  "pt": "Depois das cinco camuflagens de classe. Qualquer um:"
+                },
+                "byMode": [
+                  {
+                    "mode": "multiplayer",
+                    "description": {
+                      "en": "Place 1st on the scoreboard 3 times",
+                      "fr": "Terminez 1er au tableau des scores 3 fois",
+                      "es": "Termina 1.º en el marcador 3 veces",
+                      "de": "Belege 3-mal Platz 1 auf der Anzeigetafel",
+                      "nl": "Eindig 3 keer als 1e op het scorebord",
+                      "it": "Arriva 1° nella classifica 3 volte",
+                      "pt": "Fique em 1º no placar 3 vezes"
+                    }
+                  },
+                  {
+                    "mode": "warzone",
+                    "description": {
+                      "en": "Get 2 Kills within 10 seconds 10 times",
+                      "fr": "Faites 2 éliminations en 10 secondes 10 fois",
+                      "es": "Consigue 2 bajas en 10 segundos 10 veces",
+                      "de": "Erziele 10-mal 2 Abschüsse innerhalb von 10 Sekunden",
+                      "nl": "Behaal 10 keer 2 kills binnen 10 seconden",
+                      "it": "Esegui 2 uccisioni in 10 secondi 10 volte",
+                      "pt": "Consiga 2 baixas em 10 segundos 10 vezes"
+                    }
+                  },
+                  {
+                    "mode": "dmz",
+                    "description": {
+                      "en": "Exfil with over 150 Kills 5 times",
+                      "fr": "Exfiltrez avec plus de 150 éliminations 5 fois",
+                      "es": "Extrae con más de 150 bajas 5 veces",
+                      "de": "Exfiltriere 5-mal mit über 150 Abschüssen",
+                      "nl": "Exfiltreer 5 keer met meer dan 150 kills",
+                      "it": "Esfiltra con oltre 150 uccisioni 5 volte",
+                      "pt": "Faça a exfiltração com mais de 150 baixas 5 vezes"
+                    }
+                  }
+                ]
               },
               "children": [],
               "afterSiblings": true

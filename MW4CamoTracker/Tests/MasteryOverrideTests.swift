@@ -1098,6 +1098,14 @@ struct ObjectiveWindowTests {
         #expect(model.objectiveScope(categoryId: 1, itemId: 103) == .only([.warzone]))
         #expect(model.objectiveScope(categoryId: 1, itemId: 999) == nil)
         #expect(ObjectiveScope.only([.warzone]).label == String(format: "ct.objective.only_in".localized(), "Warzone"))
+
+        // BlackCell's camos carry a challenge per mode, in every language
+        let blackCell = try #require(model.modes["warzone"]?.objectives.first { $0.categoryId == 0 }?.items.first)
+        for camo in blackCell.children {
+            let byMode = try #require(camo.requirement?.byMode)
+            #expect(Set(byMode.map(\.mode)) == ["multiplayer", "warzone", "dmz"])
+            #expect(byMode.allSatisfy { $0.description.values.count == 7 })
+        }
     }
 
     /// BlackCell: class camos in any order, the Mastery camo after them all.

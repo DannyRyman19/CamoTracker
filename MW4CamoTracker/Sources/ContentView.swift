@@ -38,6 +38,10 @@ struct ContentView: View {
         #if DEBUG
         let env = ProcessInfo.processInfo.environment
         if let raw = env["SS_WEAPON"], let id = Int(raw) { return .weapon(id) }
+        // SS_OBJ=<categoryId>:<itemId>, an objective's page (BlackCell is 0:100)
+        if let parts = env["SS_OBJ"]?.split(separator: ":").compactMap({ Int($0) }), parts.count == 2 {
+            return .objectiveItem(categoryId: parts[0], itemId: parts[1])
+        }
         if env["SS_CAT"] == "all" { return .allWeapons }
         if let raw = env["SS_CAT"], let id = Int(raw) { return .weaponCategory(id) }
         return nil
