@@ -1157,3 +1157,22 @@ struct PushAnnouncementTests {
         #expect(["en", "fr", "es", "de", "it", "nl"].contains(PushRegistration.language))
     }
 }
+
+@Suite("Links")
+struct DeepLinkTests {
+    @Test func linksToAWeaponAnEventAndAnEventsCategory() throws {
+        let weapon = try #require(DeepLink.parse(URL(string: "mw4camo://mode/warzone/weapon/12")!))
+        #expect(weapon == .init(mode: "warzone", route: .weapon(12), game: nil))
+        let event = try #require(DeepLink.parse(URL(string: "mw4camo://mode/current/event/1/102")!))
+        #expect(event == .init(mode: nil, route: .objectiveItem(categoryId: 1, itemId: 102), game: nil))
+        let events = try #require(DeepLink.parse(URL(string: "mw4camo://mode/dmz/events/1?game=mw4")!))
+        #expect(events == .init(mode: "dmz", route: .objectiveCategory(1), game: "mw4"))
+        #expect(DeepLink.parse(URL(string: "mw4camo://mode/warzone")!)?.route == nil)
+        #expect(DeepLink.parse(URL(string: "https://camo-track.app/x")!) == nil)
+    }
+
+    @Test func anAnnouncementCanCarryALink() throws {
+        let json = #"{"catalog":{"version":"1","path":"w.json"},"modes":{},"notification":{"title":{"en":"Hi"},"id":"a","link":"mw4camo://mode/current/event/1/102"}}"#
+        #expect(try JSONDecoder().decode(Manifest.self, from: Data(json.utf8)).notification?.link == "mw4camo://mode/current/event/1/102")
+    }
+}

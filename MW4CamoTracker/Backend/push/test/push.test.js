@@ -39,6 +39,9 @@ test("text in the phone's language, else English", () => {
   assert.deepEqual(p.aps.alert, { title: "Hallo", body: "Body" });
   assert.equal(p.aps["content-available"], 1);
   assert.equal(p.announcement, "nc-1");
+  assert.equal(p.link, undefined);
+  assert.equal(payload({ id: "x", title: "t", body: "b", link: "mw4camo://mode/current/event/1/102" }, "en").link, "mw4camo://mode/current/event/1/102");
+  assert.equal(payload({ id: "x", title: "t", body: "b", link: "https://evil.example" }, "en").link, undefined);
 });
 
 test("register and unregister", async () => {

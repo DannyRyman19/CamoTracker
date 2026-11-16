@@ -347,7 +347,7 @@ ENTRY = {"version": STR, "path": STR}
 MANIFEST = {
     "catalog": ENTRY,
     "modes": dictionary(ENTRY),
-    "notification": opt({"title": opt(TEXT), "body": opt(TEXT), "silent": opt(BOOL), "id": opt(STR)}),
+    "notification": opt({"title": opt(TEXT), "body": opt(TEXT), "silent": opt(BOOL), "id": opt(STR), "link": opt(STR)}),
     "guides": opt(dictionary(ENTRY)),
 }
 # Past this many, a file's decode problems are counted, not listed: one
@@ -720,6 +720,8 @@ def main():
     ap.add_argument("--silent", action="store_true", help="publish without notifying anyone")
     ap.add_argument("--dry-run", action="store_true", help="check and report; write nothing")
     ap.add_argument("--game", default="mw4", help="which game in Resources/games.json (default mw4)")
+    ap.add_argument("--link", help="where tapping the notification goes, e.g. mw4camo://mode/current/event/1/102 "
+                                   "(an event: objective category, item), mw4camo://mode/current/weapon/12; with --title/--body")
     ap.add_argument("--allow-removed", action="append", default=[], metavar="KEY[,KEY...]",
                     help="saved tick keys this publish removes on purpose (or 'all'): a note instead of the warning")
     ap.add_argument("--allow-trackfrom-change", action="store_true",
@@ -778,6 +780,10 @@ def main():
             notification["body"] = localized(args.body, "--body")
         # Ties the manifest's announcement to the push Tools/send_push.py sends
         # for it, so a phone that had the push doesn't post it again itself.
+        if args.link:
+            if not re.match(r"^mw4camo://mode/[\w/?=&.-]{1,120}$", args.link):
+                raise SystemExit("--link: an app link such as mw4camo://mode/current/event/1/102")
+            notification["link"] = args.link
         notification["id"] = f"{args.game}-{datetime.datetime.now(datetime.timezone.utc):%Y%m%dT%H%M%SZ}"
 
     manifest = {"catalog": {"version": version_of(src("weapons")), "path": "weapons.json"}, "modes": {}}

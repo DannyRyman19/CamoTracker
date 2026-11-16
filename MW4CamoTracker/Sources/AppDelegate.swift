@@ -51,9 +51,28 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         }
     }
 
+    /// Tapping an announcement (a push or the app's own) opens its link, if it has one.
+    /// The completion-handler form, called back on the main thread: the async
+    /// form finishes off it, and UIKit aborts the app (state restoration
+    /// asserts it's on the main thread) when a tap launches it.
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+                                            withCompletionHandler completionHandler: @escaping () -> Void) {
+        let link = response.notification.request.content.userInfo["link"] as? String
+        // UIKit's handler, called once and on the main thread
+        nonisolated(unsafe) let done = completionHandler
+        DispatchQueue.main.async {
+            if let link, let url = URL(string: link), DeepLink.parse(url) != nil {
+                MainActor.assumeIsolated { DeepLink.open(url) }
+            }
+            done()
+        }
+    }
+
     /// An announcement arriving while the app is open still shows, as a banner.
-    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
-        [.banner, .list, .sound]
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        nonisolated(unsafe) let done = completionHandler
+        DispatchQueue.main.async { done([.banner, .list, .sound]) }
     }
 
     /// `.navigationTitle` can't be restyled per-view, so design-system v0.1's

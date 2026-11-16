@@ -124,6 +124,7 @@ enum BackgroundRefreshCoordinator {
         content.title = text.title
         content.body = text.body
         content.sound = .default
+        if let link = announcement?.link { content.userInfo = ["link": link] }
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         try? await center.add(request)

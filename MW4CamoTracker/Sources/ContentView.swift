@@ -221,6 +221,9 @@ struct ContentView: View {
             // A widget tap: mw4camo://mode/<mode>[/weapon/<id>] opens that
             // mode's tab, and the weapon on it when there is one.
             .onOpenURL { url in openLink(url) }
+            // A tapped notification's link (see DeepLink.pending)
+            .onReceive(NotificationCenter.default.publisher(for: DeepLink.arrived)) { _ in takePendingLink() }
+            .onAppear { takePendingLink() }
             .onChange(of: languageRaw) { _ in viewModel.refreshWidgets() }
             .onChange(of: hasMasteryColumn) { column in
                 if column, selectedTab == 2 { selectedTab = 0 }
@@ -436,26 +439,28 @@ struct ContentView: View {
     /// A widget tap: mw4camo://mode/<mode>[/weapon/<id>][?game=<game>]
     /// opens the mode's tab, and the weapon on it when there is one, in the
     /// widget's game (switching to it first).
+    private func takePendingLink() {
+        guard let url = DeepLink.pending else { return }
+        DeepLink.pending = nil
+        openLink(url)
+    }
+
     private func openLink(_ url: URL) {
-        guard url.scheme == "mw4camo", url.host == "mode" else { return }
-        let gameID = URLComponents(url: url, resolvingAgainstBaseURL: false)?
-            .queryItems?.first { $0.name == "game" }?.value
-        if let gameID, gameID != gameStore.game.id, let game = GameRegistry.game(gameID) {
+        guard let target = DeepLink.parse(url) else { return }
+        if let gameID = target.game, gameID != gameStore.game.id, let game = GameRegistry.game(gameID) {
             // The screens rebuild for the new game and open it on appearing
             GameStore.pendingLink = url
             gameStore.select(game)
             return
         }
-        let parts = url.pathComponents.filter { $0 != "/" }
-        guard let mode = parts.first.flatMap(AppMode.init(rawValue:)),
-              viewModel.visibleModes.contains(mode) else { return }
+        // The named mode if the player plays it, else the one they're on
+        let mode = target.mode.flatMap(AppMode.init(rawValue:)).flatMap { viewModel.visibleModes.contains($0) ? $0 : nil }
+            ?? primaryMode
         // The Weapons tab, in that mode
         primaryModeRaw = mode.rawValue
         selectedTab = 0
         var path = NavigationPath()
-        if parts.count >= 3, parts[1] == "weapon", let id = Int(parts[2]) {
-            path.append(Route.weapon(id))
-        }
+        if let route = target.route { path.append(route) }
         paths[0] = path
     }
 

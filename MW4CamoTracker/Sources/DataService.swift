@@ -30,6 +30,8 @@ struct Manifest: Codable {
         /// a phone registered for pushes leaves it to the push instead of
         /// posting its own copy.
         var id: String? = nil
+        /// Where tapping it goes (`mw4camo://…`, see `DeepLink`), if anywhere.
+        var link: String? = nil
     }
     let catalog: Entry
     let modes: [String: Entry]

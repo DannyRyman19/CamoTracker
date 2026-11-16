@@ -80,7 +80,7 @@ def main():
     totals = {"sent": 0, "failed": 0, "removed": 0}
     cursor = None
     while True:
-        r = call("POST", "/send", token, {"id": note["id"], "title": note.get("title") or {}, "body": note.get("body") or {}, "cursor": cursor})
+        r = call("POST", "/send", token, {"id": note["id"], "title": note.get("title") or {}, "body": note.get("body") or {}, "link": note.get("link"), "cursor": cursor})
         for k in totals:
             totals[k] += r.get(k, 0)
         cursor = r.get("cursor")

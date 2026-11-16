@@ -27,10 +27,13 @@ export function localized(text, lang) {
 
 /** What a phone in `lang` is sent for announcement `a` ({ id, title, body }). */
 export function payload(a, lang) {
-  return {
+  const p = {
     aps: { alert: { title: localized(a.title, lang), body: localized(a.body, lang) }, sound: "default", "content-available": 1 },
     announcement: String(a.id ?? ""),
   };
+  // Where tapping it goes in the app: only the app's own links.
+  if (typeof a.link === "string" && /^mw4camo:\/\/mode\/[\w/?=&.-]{1,120}$/.test(a.link)) p.link = a.link;
+  return p;
 }
 
 export async function register(kv, body) {
