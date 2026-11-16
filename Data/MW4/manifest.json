@@ -5,15 +5,15 @@
   },
   "modes": {
     "multiplayer": {
-      "version": "0.8.37",
+      "version": "0.8.38",
       "path": "multiplayer.json"
     },
     "warzone": {
-      "version": "0.8.90",
+      "version": "0.8.91",
       "path": "warzone.json"
     },
     "dmz": {
-      "version": "0.8.40",
+      "version": "0.8.41",
       "path": "dmz.json"
     }
   },
@@ -24,21 +24,6 @@
     }
   },
   "notification": {
-    "title": {
-      "en": "Natural Concealment is live",
-      "fr": "Natural Concealment est en cours",
-      "es": "Natural Concealment ya está disponible",
-      "de": "Natural Concealment ist live",
-      "nl": "Natural Concealment is live",
-      "it": "Natural Concealment è attivo"
-    },
-    "body": {
-      "en": "Forest Dusk for every class and the Woodfall mastery camo are in. Track them before it ends on 23 Nov.",
-      "fr": "Forest Dusk pour chaque catégorie et le camouflage Maîtrise Woodfall sont là. Suivez-les avant la fin, le 23 nov.",
-      "es": "Ya están Forest Dusk para cada clase y el camuflaje de maestría Woodfall. Sigue tu progreso antes de que acabe el 23 de nov.",
-      "de": "Forest Dusk für jede Klasse und die Meisterschaftstarnung Woodfall sind da. Verfolge sie, bevor es am 23. Nov. endet.",
-      "nl": "Forest Dusk voor elke klasse en de meesterschapscamo Woodfall staan erin. Volg ze voordat het op 23 nov. eindigt.",
-      "it": "Ci sono Forest Dusk per ogni classe e la mimetica Maestria Woodfall. Tienili d’occhio prima della fine, il 23 nov."
-    }
+    "silent": true
   }
 }
