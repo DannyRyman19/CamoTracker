@@ -1,0 +1,19 @@
+# camo-track.app/api/push/*: Camo Track's content announcements as real
+# pushes (see src/index.js). Deploy with `npx wrangler deploy`. Secrets:
+# APNS_KEY_P8 (the team's APNs key, ~/LIFTER_AuthKey_683JTWR2V2.p8) and
+# PUSH_ADMIN_TOKEN (what Tools/send_push.py sends with; kept locally in
+# Backend/push/.admin-token, which git ignores).
+name = "camo-track-push"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+preview_urls = false
+routes = [{ pattern = "camo-track.app/api/push/*", zone_name = "camo-track.app" }]
+
+[vars]
+APNS_KEY_ID = "683JTWR2V2"
+APNS_TEAM_ID = "44G72CWWEW"
+
+[[kv_namespaces]]
+binding = "TOKENS"
+id = "e3229401a6ed462caec9db658c715ec7"

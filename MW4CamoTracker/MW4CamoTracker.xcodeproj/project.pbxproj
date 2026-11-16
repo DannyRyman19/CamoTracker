@@ -874,6 +874,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker;
+				APS_ENVIRONMENT = development;
 				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker Dev";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
@@ -1153,6 +1154,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyRyman.MW4CamoTracker;
+				APS_ENVIRONMENT = production;
 				PROVISIONING_PROFILE_SPECIFIER = "MW4 Camo Tracker CI App Store";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;

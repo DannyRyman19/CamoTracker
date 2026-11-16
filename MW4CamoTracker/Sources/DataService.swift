@@ -26,6 +26,10 @@ struct Manifest: Codable {
         let title: LocalizedText?
         let body: LocalizedText?
         let silent: Bool?
+        /// Set when the announcement is also sent as a push (Tools/send_push.py):
+        /// a phone registered for pushes leaves it to the push instead of
+        /// posting its own copy.
+        var id: String? = nil
     }
     let catalog: Entry
     let modes: [String: Entry]

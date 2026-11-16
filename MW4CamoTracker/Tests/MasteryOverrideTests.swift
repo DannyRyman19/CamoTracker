@@ -1128,3 +1128,32 @@ struct ObjectiveWindowTests {
         #expect(!model.isObjectiveAvailable(mode: "multiplayer", categoryId: cat, siblings: kids, item: kids[2], ordered: false))
     }
 }
+
+@Suite("Push announcements")
+struct PushAnnouncementTests {
+    @Test func theManifestCarriesTheAnnouncementsIdAndOldManifestsStillRead() throws {
+        let new = #"{"catalog":{"version":"1","path":"w.json"},"modes":{},"notification":{"title":{"en":"Hi"},"id":"mw4-20261116T1900Z"}}"#
+        let old = #"{"catalog":{"version":"1","path":"w.json"},"modes":{},"notification":{"title":{"en":"Hi"}}}"#
+        #expect(try JSONDecoder().decode(Manifest.self, from: Data(new.utf8)).notification?.id == "mw4-20261116T1900Z")
+        #expect(try JSONDecoder().decode(Manifest.self, from: Data(old.utf8)).notification?.id == nil)
+    }
+
+    @Test func aPushedAnnouncementIsntPostedAgainOnARegisteredPhone() throws {
+        let key = PushRegistration.sentTokenKey
+        let before = UserDefaults.standard.string(forKey: key)
+        defer { UserDefaults.standard.set(before, forKey: key) }
+        let pushed = Manifest.Announcement(title: nil, body: nil, silent: nil, id: "a1")
+        let local = Manifest.Announcement(title: nil, body: nil, silent: nil)
+        UserDefaults.standard.removeObject(forKey: key)
+        #expect(!PushRegistration.covers(pushed))      // not registered: post it as before
+        UserDefaults.standard.set("abc", forKey: key)
+        #expect(PushRegistration.covers(pushed))       // registered: the push said it
+        #expect(!PushRegistration.covers(local))       // never pushed: post it
+        #expect(!PushRegistration.covers(nil))
+    }
+
+    @Test func tokensAreSentAsHexInOneOfTheSixLanguages() {
+        #expect(PushRegistration.hex(Data([0x00, 0xab, 0xff])) == "00abff")
+        #expect(["en", "fr", "es", "de", "it", "nl"].contains(PushRegistration.language))
+    }
+}

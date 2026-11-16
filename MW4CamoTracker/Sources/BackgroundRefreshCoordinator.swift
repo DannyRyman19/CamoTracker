@@ -1,6 +1,7 @@
 import Foundation
 import BackgroundTasks
 import UserNotifications
+import UIKit
 
 /// Periodically checks `manifest.json` in the background and posts a local
 /// notification if a new season/weapon/challenge has landed.
@@ -25,7 +26,8 @@ enum BackgroundRefreshCoordinator {
         // on the main actor still gets Swift 6's main-queue check, and the
         // system calls it back on a background queue.
         Task {
-            _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+            let granted = (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])) ?? false
+            if granted { await PushRegistration.register() }
         }
     }
 
@@ -51,7 +53,13 @@ enum BackgroundRefreshCoordinator {
         }
     }
 
-    private static func checkForUpdates() async {
+    /// A push said there's an announcement: fetch the data it's about now, so
+    /// it's there when the player taps it. The push itself was the notification.
+    static func refreshForPush() async {
+        await checkForUpdates(notify: false)
+    }
+
+    private static func checkForUpdates(notify: Bool = true) async {
         let game = GameRegistry.current
         let dataService = DataService(game: game)
         // The same data `TrackerViewModel` starts on: the kept download or
@@ -77,7 +85,9 @@ enum BackgroundRefreshCoordinator {
         guard result.catalog != nil || !changedModes.isEmpty else { return }
         // The data is already downloaded and cached by now; a silent update
         // only skips telling anyone.
-        guard shouldNotify(result.notification) else { return }
+        guard notify, shouldNotify(result.notification) else { return }
+        // Announced by push already (this phone is registered for them).
+        guard !PushRegistration.covers(result.notification) else { return }
 
         await postNotification(catalogChanged: result.catalog != nil, changedModes: changedModes, announcement: result.notification)
     }
@@ -117,5 +127,61 @@ enum BackgroundRefreshCoordinator {
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         try? await center.add(request)
+    }
+}
+
+
+/// Real pushes for content announcements: the phone's APNs token goes to
+/// camo-track.app/api/push (the camo-track-push Worker) with its language and
+/// nothing else, and `Tools/send_push.py` sends each announcement to every
+/// registered phone. Only once notifications are allowed.
+enum PushRegistration {
+    static let endpoint = URL(string: "https://camo-track.app/api/push/register")!
+    /// The token last sent to the Worker successfully.
+    static let sentTokenKey = "ct_push_token_sent"
+
+    /// Asks iOS for this phone's push token, if notifications are allowed.
+    /// The answer arrives in `AppDelegate`, which hands it to `send(token:)`.
+    static func register() async {
+        guard await UNUserNotificationCenter.current().notificationSettings().authorizationStatus == .authorized else { return }
+        await MainActor.run { UIApplication.shared.registerForRemoteNotifications() }
+    }
+
+    /// Whether pushes reach this phone, so it needn't post an announcement itself.
+    static var isRegistered: Bool { UserDefaults.standard.string(forKey: sentTokenKey) != nil }
+
+    /// A pushed announcement (one with an `id`) on a phone registered for pushes.
+    static func covers(_ announcement: Manifest.Announcement?) -> Bool {
+        announcement?.id != nil && isRegistered
+    }
+
+    /// The app's language for the push's words, of the six it ships.
+    static var language: String {
+        let code = Bundle.main.preferredLocalizations.first.map { String($0.prefix(2)) } ?? "en"
+        return ["en", "fr", "es", "de", "it", "nl"].contains(code) ? code : "en"
+    }
+
+    static func hex(_ token: Data) -> String { token.map { String(format: "%02x", $0) }.joined() }
+
+    /// Sends the token (again, each launch: tokens can change, and the
+    /// Worker drops ones Apple says are dead). Development builds use APNs's
+    /// sandbox; TestFlight and App Store builds the real one.
+    static func send(token: Data) async {
+        #if DEBUG
+        let sandbox = true
+        #else
+        let sandbox = false
+        #endif
+        let body: [String: Any] = [
+            "token": hex(token), "sandbox": sandbox, "lang": language,
+            "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "",
+        ]
+        var request = URLRequest(url: endpoint, timeoutInterval: 20)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        guard let (_, response) = try? await URLSession.shared.data(for: request),
+              (response as? HTTPURLResponse)?.statusCode == 200 else { return }
+        UserDefaults.standard.set(hex(token), forKey: sentTokenKey)
     }
 }

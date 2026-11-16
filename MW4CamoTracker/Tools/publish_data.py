@@ -57,6 +57,7 @@ https://purge.jsdelivr.net/gh/DannyRyman19/CamoTracker@master/Data/MW4/manifest.
 live until the commit is pushed to master.
 """
 import argparse
+import datetime
 import json
 import math
 import re
@@ -346,7 +347,7 @@ ENTRY = {"version": STR, "path": STR}
 MANIFEST = {
     "catalog": ENTRY,
     "modes": dictionary(ENTRY),
-    "notification": opt({"title": opt(TEXT), "body": opt(TEXT), "silent": opt(BOOL)}),
+    "notification": opt({"title": opt(TEXT), "body": opt(TEXT), "silent": opt(BOOL), "id": opt(STR)}),
     "guides": opt(dictionary(ENTRY)),
 }
 # Past this many, a file's decode problems are counted, not listed: one
@@ -775,6 +776,9 @@ def main():
             notification["title"] = localized(args.title, "--title")
         if args.body:
             notification["body"] = localized(args.body, "--body")
+        # Ties the manifest's announcement to the push Tools/send_push.py sends
+        # for it, so a phone that had the push doesn't post it again itself.
+        notification["id"] = f"{args.game}-{datetime.datetime.now(datetime.timezone.utc):%Y%m%dT%H%M%SZ}"
 
     manifest = {"catalog": {"version": version_of(src("weapons")), "path": "weapons.json"}, "modes": {}}
     for mode in MODES:
@@ -819,6 +823,8 @@ def main():
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"published -> {OUT}")
     print(f"next: commit Resources/ and {OUT.relative_to(ROOT)}/ together and push to master. It is live once pushed (purge jsDelivr to skip its cache).")
+    if notification and not args.silent:
+        print(f"then: python3 MW4CamoTracker/Tools/send_push.py --game {args.game}  (waits for jsDelivr, then pushes the announcement to every registered phone)")
 
 
 if __name__ == "__main__":

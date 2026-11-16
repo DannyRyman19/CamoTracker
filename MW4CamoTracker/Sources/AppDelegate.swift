@@ -1,13 +1,14 @@
 import SwiftUI
 import UIKit
 import BackgroundTasks
+import UserNotifications
 
 /// BGTaskScheduler registration has to happen during
 /// `application(_:didFinishLaunchingWithOptions:)`, before the app finishes
 /// launching — there's no equivalent hook on the SwiftUI `App` protocol pre-
 /// iOS 17 (`.backgroundTask(.appRefresh)` is iOS 17+), so a thin
 /// UIApplicationDelegateAdaptor is the only way to do this at iOS 16.
-final class AppDelegate: NSObject, UIApplicationDelegate {
+final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     static let refreshTaskIdentifier = "com.DannyRyman.MW4CamoTracker.refresh"
 
     func application(
@@ -24,11 +25,35 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             guard let refreshTask = task as? BGAppRefreshTask else { return }
             BackgroundRefreshCoordinator.handle(task: refreshTask)
         }
+        // Pushes: shown while the app is open too, and the token re-sent each
+        // launch (if notifications are allowed; nothing is asked here).
+        UNUserNotificationCenter.current().delegate = self
+        Task { await PushRegistration.register() }
         Self.configureNavigationBarAppearance()
         // Onboarded before this launch: this is a later session, which may
         // ask about ads (see `Ads.pastFirstSessionKey`)
         Ads.sessionBoundary()
         return true
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Task { await PushRegistration.send(token: deviceToken) }
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
+
+    /// A push woke the app (it carries content-available): fetch the new data now.
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        Task {
+            await BackgroundRefreshCoordinator.refreshForPush()
+            completionHandler(.newData)
+        }
+    }
+
+    /// An announcement arriving while the app is open still shows, as a banner.
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        [.banner, .list, .sound]
     }
 
     /// `.navigationTitle` can't be restyled per-view, so design-system v0.1's
