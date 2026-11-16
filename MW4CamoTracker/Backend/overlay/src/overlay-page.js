@@ -95,6 +95,10 @@ body.align-right{display:flex;justify-content:flex-end}
 .layout-vertical .ring{width:132px;height:132px}
 .layout-vertical .pct{font-size:36px}
 .layout-vertical .ladder,.layout-vertical .camos{justify-content:center}
+/* Everything stays inside the column: rows wrap, the challenge wraps */
+.layout-vertical .body{width:100%}
+.layout-vertical .ladder,.layout-vertical .camos,.layout-vertical .next{max-width:100%}
+.layout-vertical .next p{white-space:normal;overflow:visible;line-height:1.3}
 .layout-vertical .credit{justify-content:center}
 .layout-vertical .next .row{justify-content:center;gap:8px}
 .layout-vertical .gun{width:200px;height:100px}

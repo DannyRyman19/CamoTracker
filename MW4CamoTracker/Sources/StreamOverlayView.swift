@@ -185,6 +185,8 @@ struct OverlayPreview: View {
         }
         .aspectRatio(CGFloat(size.width) / CGFloat(size.height), contentMode: .fit)
         .frame(maxHeight: size.height > size.width ? 460 : 300)
+        // A tall layout is narrower than the row: centred, not left
+        .frame(maxWidth: .infinity)
         .accessibilityLabel(Text("ct.overlay.preview".localized()))
     }
 }
