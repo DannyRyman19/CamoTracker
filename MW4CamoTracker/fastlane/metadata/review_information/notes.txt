@@ -14,3 +14,7 @@ To see both after onboarding, go to the Home Screen and open the app again.
 Premium users never see either prompt, and the ad SDK is not started for them.
 
 Premium (com.DannyRyman.MW4CamoTracker.premium.yearly, an auto-renewing yearly subscription, or com.DannyRyman.MW4CamoTracker.premium.lifetime, a one-off purchase) removes all ads and adds stash scans with no ad, camo app icons, layout customisation and iCloud sync. Premium is reached from Customise (the sliders button at the top right of the Weapons tab, "Go Premium" section), the "Remove ads" link above a banner, or the stash scan sheet. Restore purchases is on the Premium sheet and also under Customise.
+
+Stream overlay (new, free): Customise (sliders button, top right of the Weapons tab) > Stream overlay. Switching it on makes a private link (camo-track.app/overlay/<random id>) for OBS; the app then sends the chosen mode's or weapon's camo figures to camo-track.app, nothing else. The preview at the top shows the page with made-up figures until it's switched on.
+
+Notifications: the app asks for permission at the end of onboarding. With it allowed, the device's push token and language are sent to camo-track.app so announcements of new seasons, events and camos can be pushed; tapping one opens what it announces. Data updates still also arrive by background refresh. What's New (once after an update, and Customise > What's new) explains both.
