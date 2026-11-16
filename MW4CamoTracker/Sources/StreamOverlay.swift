@@ -76,9 +76,9 @@ final class StreamOverlay: ObservableObject {
         var id: String { rawValue }
         var sourceSize: (width: Int, height: Int) {
             switch self {
-            case .card: (760, 300)
-            case .vertical: (320, 560)
-            case .minimal: (520, 220)
+            case .card: (760, 340)
+            case .vertical: (320, 700)
+            case .minimal: (560, 250)
             }
         }
     }

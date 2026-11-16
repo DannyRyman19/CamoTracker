@@ -40,7 +40,8 @@ body.style-clean{--panel:#0F0F10;--edge:#2A2A2C;--radius:12px;--shadow:none;--in
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:transparent;overflow:hidden;color:var(--ink);text-shadow:var(--glow);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
 body{padding:24px}
-.stack{display:inline-flex;flex-direction:column;gap:12px;align-items:flex-start}
+.stack{display:inline-flex;flex-direction:column;gap:12px;align-items:flex-start;transform-origin:top left}
+.align-right .stack{transform-origin:top right}
 .panel{background:var(--panel);border:1px solid var(--edge);border-radius:var(--radius);box-shadow:var(--shadow)}
 .display{font-family:'Saira Condensed','Arial Narrow',sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:.01em}
 .main{display:flex;align-items:center;gap:18px;padding:16px 18px 14px 16px}
@@ -254,7 +255,22 @@ body.align-right{display:flex;justify-content:flex-end}
     }
     $(".stack").classList.remove("hidden");
     last = JSON.parse(JSON.stringify(d));
+    fit();
   }
+
+  // Never cut off: if the content is bigger than the Browser source (a gun
+  // with lots of camos, a tall layout), the whole thing shrinks to fit. The
+  // "camo earned" line below keeps its room even while hidden, so it never
+  // pushes anything out either.
+  function fit() {
+    var stack = $(".stack");
+    stack.style.transform = "";
+    var zoom = parseFloat(body.style.zoom) || 1;
+    var roomW = window.innerWidth / zoom - 48, roomH = window.innerHeight / zoom - 48;
+    var k = Math.min(1, roomW / stack.offsetWidth, roomH / stack.offsetHeight);
+    if (k < 1) stack.style.transform = "scale(" + k.toFixed(3) + ")";
+  }
+  window.addEventListener("resize", fit);
 
   // Made-up figures for /overlay/demo: a camo earned every few seconds.
   var IMG = "https://camo-track.app/Images/";
