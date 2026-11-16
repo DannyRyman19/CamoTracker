@@ -32,6 +32,8 @@ struct CamoOverlayPayload: Codable, Equatable {
     struct Weapon: Codable, Equatable {
         var name: String
         var category: String
+        /// Its Prestige stage and level ("Prestige 1 · Level 34"), or just the level.
+        var badge: String = ""
         var image: String
         var camos: [Camo]
         var done: Int
@@ -337,10 +339,20 @@ extension TrackerViewModel {
                 CamoOverlayPayload.Camo(name: camo.name, image: camo.imageURL ?? "",
                                         done: isCompletionistComplete(mode: raw, weaponId: weaponId, step: step))
             }
+            // Then its Prestige camos, in this weapon's own names and pictures
+            // (BO7's per-weapon ones, MW4's Pyroclasts), where the game has them
+            camoRow += prestigeCamos.enumerated().map { index, camo in
+                CamoOverlayPayload.Camo(name: prestigeCamoName(camo, weaponId: weaponId).resolved(),
+                                        image: prestigeCamoImageURL(camo, weaponId: weaponId) ?? "",
+                                        done: isPrestigeCamoComplete(weaponId: weaponId, index: index))
+            }
+            let levelText = String(format: "ct.overlay.level".localized(), level(for: weaponId), maxLevel(for: weapon))
+            let badge = prestigeName(for: weaponId).map { "\($0) · \(levelText)" } ?? levelText
             let pinned = overlayNext(weapon, mode: mode)
             payload.weapon = CamoOverlayPayload.Weapon(
                 name: weapon.name.resolved(),
                 category: category(containingWeaponId: weaponId)?.name.resolved() ?? "",
+                badge: badge,
                 image: weapon.imageURL ?? "", camos: camoRow,
                 done: camoRow.filter(\.done).count, total: camoRow.count, next: pinned)
             payload.overview = nil
@@ -376,6 +388,12 @@ extension TrackerViewModel {
         if let step = (0..<mode.completionistCamos.count).first(where: {
             !isCompletionistComplete(mode: raw, weaponId: weapon.weaponId, step: $0)
         }) {
+            // Its own challenge where the mode gives one (BO7's Doomsteel: per weapon)
+            if let requirement = completionistRequirement(mode: raw, weaponId: weapon.weaponId, step: step) {
+                return .init(name: mode.completionistCamos[step].name, detail: requirement.description.resolved(),
+                             done: min(completionistAmount(mode: raw, weaponId: weapon.weaponId, step: step), requirement.amount),
+                             total: max(requirement.amount, 1))
+            }
             return .init(name: mode.completionistCamos[step].name, detail: "", done: 0, total: 1)
         }
         return nil

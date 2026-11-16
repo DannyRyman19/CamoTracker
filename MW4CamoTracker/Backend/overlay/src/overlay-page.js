@@ -207,7 +207,8 @@ body.align-right{display:flex;justify-content:flex-end}
     body.style.setProperty("--accent", d.accent || "#FFC81E");
     $(".head").textContent = "";
     $(".head").appendChild(el("b", null, d.game || ""));
-    $(".head").appendChild(document.createTextNode(d.mode ? "  " + d.mode : ""));
+    var badge = d.view === "weapon" && d.weapon && d.weapon.badge ? "  ·  " + d.weapon.badge : "";
+    $(".head").appendChild(document.createTextNode((d.mode ? "  " + d.mode : "") + badge));
     var isWeapon = d.view === "weapon" && d.weapon;
     $(".ring").classList.toggle("hidden", isWeapon);
     $(".ladder").classList.toggle("hidden", isWeapon);
@@ -287,7 +288,7 @@ body.align-right{display:flex;justify-content:flex-end}
     var earned = 7 + (demo.n % 5);
     if (view === "weapon") return {
       view: view, game: "MW4", mode: "Warzone", accent: "#26A0B5",
-      weapon: { name: "Kastov 762", category: "Assault Rifles", image: IMG + "Guns/MW4/KASTOV_762.png",
+      weapon: { name: "Kastov 762", category: "Assault Rifles", badge: "Prestige 1 · Level 34", image: IMG + "Guns/MW4/KASTOV_762.png",
         camos: names.map(function (nm, i) { return { name: nm, image: IMG + files[i], done: i < earned }; }),
         done: earned, total: names.length,
         next: { name: names[earned] || "Done", detail: "Get 20 headshot kills", done: (demo.n * 3) % 20, total: 20 } },

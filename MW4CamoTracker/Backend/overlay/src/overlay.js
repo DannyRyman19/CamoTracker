@@ -69,6 +69,7 @@ function cleanWeapon(w) {
   return {
     name: text(w.name, 40),
     category: text(w.category, 40),
+    badge: text(w.badge, 40),
     image: image(w.image),
     camos: (Array.isArray(w.camos) ? w.camos : []).slice(0, OVERLAY.maxCamos)
       .map((c) => ({ name: text(c?.name, 40), image: image(c?.image), done: c?.done === true }))

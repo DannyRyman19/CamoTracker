@@ -1209,6 +1209,23 @@ struct StreamOverlayTests {
         #expect(Set(covered) == Set(GameRegistry.games.map(\.id)), "covered \(covered)")
     }
 
+    @MainActor @Test func aBO7WeaponShowsItsPrestigeCamosAndStage() throws {
+        let bo7 = try #require(GameRegistry.game("bo7"))
+        let suite = "overlay-bo7-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(suite)
+        let model = TrackerViewModel(game: bo7, dataService: DataService(game: bo7, cacheDir: cache), defaults: defaults)
+        let first = try #require(model.catalog?.categories.first?.weapons.first)
+        let payload = try #require(model.streamOverlayPayload(content: .weapon, modeRaw: "zombies", weaponId: first.weaponId))
+        let w = try #require(payload.weapon)
+        // Each of the weapon's Prestige camos is on the row, in its own name
+        #expect(!model.prestigeCamos.isEmpty)
+        let prestigeNames = model.prestigeCamos.map { model.prestigeCamoName($0, weaponId: first.weaponId).resolved() }
+        #expect(Array(w.camos.suffix(prestigeNames.count)).map(\.name) == prestigeNames)
+        #expect(w.badge.contains(String(model.level(for: first.weaponId))))
+    }
+
     @MainActor @Test func theLinkCarriesOnlyTheOptionsThatArentDefault() throws {
         let suite = "overlay-link-\(UUID().uuidString)"
         let defaults = try #require(UserDefaults(suiteName: suite))

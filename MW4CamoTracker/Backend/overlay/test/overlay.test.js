@@ -11,7 +11,7 @@ const overview = {
 const weapon = {
   view: "weapon", game: "BO6", mode: "Zombies", accent: "#8CC63F",
   weapon: {
-    name: "XM4", category: "Assault Rifles", image: "https://camo-track.app/Images/BO6/xm4.png",
+    name: "XM4", category: "Assault Rifles", badge: "Prestige 2 · Level 40", image: "https://camo-track.app/Images/BO6/xm4.png",
     camos: [{ name: "Gold", image: "https://camo-track.app/Images/Camos/BO6/gold.png", done: true }, { name: "Diamond", image: "https://evil.example/x.png", done: false }],
     done: 1, total: 2, next: { name: "Diamond", detail: "Get 3 Gold", done: 1, total: 3 },
   },
@@ -37,6 +37,7 @@ test("a weapon keeps its camos; pictures only from camo-track.app", () => {
   assert.equal(r.overlay.weapon.camos[0].done, true);
   assert.equal(r.overlay.weapon.camos[1].image, "");
   assert.equal(r.overlay.weapon.next.total, 3);
+  assert.equal(r.overlay.weapon.badge, "Prestige 2 · Level 40");
 });
 
 test("broken or empty updates are turned away; sizes are bounded", () => {
