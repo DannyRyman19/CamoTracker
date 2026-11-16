@@ -500,11 +500,14 @@ private struct LiveObjectiveRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            HStack {
+            HStack(spacing: 6) {
                 Text(category?.name.resolved() ?? "")
                     .scaledFont(11, weight: .bold)
                     .textCase(.uppercase)
                     .foregroundStyle(Color.appInkMuted)
+                if let scope = viewModel.objectiveScope(categoryId: entry.categoryId, itemId: entry.item.itemId) {
+                    ObjectiveScopeTag(scope: scope, accent: mode.accent)
+                }
                 Spacer()
                 if let end = entry.item.endDate {
                     Text(String(format: "mw4.ui.objective.ends".localized(), end.formatted(.dateTime.day().month(.abbreviated))))

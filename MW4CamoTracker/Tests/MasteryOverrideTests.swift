@@ -1084,6 +1084,22 @@ struct ObjectiveWindowTests {
         #expect(model.liveObjectives(mode: "multiplayer", at: when).count == live.count - 1)
     }
 
+    /// The tag on an objective: BlackCell and Wager Match are in every mode,
+    /// Rally Point only in Warzone.
+    @MainActor @Test func objectivesSayWhichModesTheyreIn() throws {
+        let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback
+        let suite = "objective-scope-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let cache = FileManager.default.temporaryDirectory.appendingPathComponent(suite)
+        let model = TrackerViewModel(game: mw4, dataService: DataService(game: mw4, cacheDir: cache), defaults: defaults)
+        #expect(model.objectiveScope(categoryId: 0, itemId: 100) == .allModes)
+        #expect(model.objectiveScope(categoryId: 1, itemId: 101) == .allModes)
+        #expect(model.objectiveScope(categoryId: 1, itemId: 103) == .only([.warzone]))
+        #expect(model.objectiveScope(categoryId: 1, itemId: 999) == nil)
+        #expect(ObjectiveScope.only([.warzone]).label == String(format: "ct.objective.only_in".localized(), "Warzone"))
+    }
+
     /// BlackCell: class camos in any order, the Mastery camo after them all.
     @MainActor @Test func unorderedChildrenOpenAtOnceAndAfterSiblingsWaitsForTheRest() throws {
         let mw4 = GameRegistry.game("mw4") ?? GameRegistry.fallback

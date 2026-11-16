@@ -967,6 +967,20 @@ final class TrackerViewModel: ObservableObject {
     /// season, an event), soonest-ending first, for the tab's Live section.
     /// One the player has finished leaves Live now (it's still under its
     /// category in Objectives): the section is for what's left to do.
+    /// Where an objective can be earned, for the tag on its card: every mode
+    /// with objectives has it (BlackCell, most events), or only some do
+    /// (Warzone's Rally Point). Matched by category and item id, which is also
+    /// how shared progress is keyed. Nil when only one mode has objectives.
+    func objectiveScope(categoryId: Int, itemId: Int) -> ObjectiveScope? {
+        let withObjectives = AppMode.allCases.filter { !(modes[$0.rawValue]?.objectives ?? []).isEmpty }
+        guard withObjectives.count > 1 else { return nil }
+        let carrying = withObjectives.filter { m in
+            modes[m.rawValue]?.objectives.first { $0.categoryId == categoryId }?.items.contains { $0.itemId == itemId } == true
+        }
+        if carrying.isEmpty { return nil }
+        return carrying.count == withObjectives.count ? .allModes : .only(carrying)
+    }
+
     func liveObjectives(mode: String, at now: Date = Date()) -> [LiveObjective] {
         (modes[mode]?.objectives ?? []).flatMap { category in
             category.items

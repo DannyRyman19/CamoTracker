@@ -380,6 +380,22 @@ struct Requirement: Codable {
 
 /// A time-limited objective that's live now, with the category it sits in
 /// (progress is keyed by category), for the mode tab's Live section.
+/// Where an objective can be earned: in every mode, or only in some.
+enum ObjectiveScope: Equatable {
+    case allModes
+    case only([AppMode])
+
+    /// "All modes", "Warzone only", "Multiplayer and Warzone only"
+    var label: String {
+        switch self {
+        case .allModes: return "ct.objective.all_modes".localized()
+        case .only(let modes):
+            let names = ListFormatter.localizedString(byJoining: modes.map(\.displayName))
+            return String(format: "ct.objective.only_in".localized(), names)
+        }
+    }
+}
+
 struct LiveObjective: Identifiable, Hashable {
     let categoryId: Int
     let item: ChallengeItem

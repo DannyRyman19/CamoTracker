@@ -118,10 +118,15 @@ private struct ItemRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(category.name.resolved())
-                .scaledFont(11, weight: .bold)
-                .textCase(.uppercase)
-                .foregroundStyle(Color.appInkMuted)
+            HStack(spacing: 6) {
+                Text(category.name.resolved())
+                    .scaledFont(11, weight: .bold)
+                    .textCase(.uppercase)
+                    .foregroundStyle(Color.appInkMuted)
+                if let scope = viewModel.objectiveScope(categoryId: category.categoryId, itemId: item.itemId) {
+                    ObjectiveScopeTag(scope: scope, accent: mode.accent)
+                }
+            }
 
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 6) {

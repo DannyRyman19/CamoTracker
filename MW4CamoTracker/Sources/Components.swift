@@ -1563,3 +1563,24 @@ struct SegmentTabs<T: Hashable>: View {
         .overlay(RoundedRectangle(cornerRadius: 9).strokeBorder(Color.appSurface2, lineWidth: 1))
     }
 }
+
+
+/// The small tag on an objective's card saying where it can be earned:
+/// muted for "All modes", the mode's accent when it's only in some.
+struct ObjectiveScopeTag: View {
+    let scope: ObjectiveScope
+    let accent: Color
+
+    var body: some View {
+        let tint = scope == .allModes ? Color.appInkMuted : accent
+        Text(scope.label)
+            .scaledFont(10, weight: .bold)
+            .textCase(.uppercase)
+            .lineLimit(1)
+            .foregroundStyle(tint)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
+            .overlay(Capsule().strokeBorder(tint.opacity(0.5), lineWidth: 1))
+            .accessibilityLabel(scope.label)
+    }
+}
