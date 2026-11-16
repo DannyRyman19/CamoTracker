@@ -730,6 +730,7 @@ struct CustomiseHomeSheet: View {
     @State private var showsPremium = false
     @State private var showsIcons = false
     @State private var showsOverlay = false
+    @State private var showsWhatsNew = false
     @State private var showsWidgetGuide = false
     /// How a restore went (see `Premium.Notice`).
     @State private var premiumNotice: Premium.Notice?
@@ -970,6 +971,13 @@ struct CustomiseHomeSheet: View {
                     }
                     .foregroundStyle(accent)
                     .accessibilityIdentifier("customise.appIcon")
+                    if !WhatsNew.items.isEmpty {
+                        Button { showsWhatsNew = true } label: {
+                            Label("ct.whatsnew.title".localized(), systemImage: "sparkle")
+                        }
+                        .foregroundStyle(accent)
+                        .accessibilityIdentifier("customise.whatsNew")
+                    }
                     Button { showsOverlay = true } label: {
                         Label("ct.overlay.title".localized(), systemImage: "dot.radiowaves.left.and.right")
                     }
@@ -1032,6 +1040,7 @@ struct CustomiseHomeSheet: View {
             .environment(\.editMode, .constant(.active))
             .navigationDestination(isPresented: $showsIcons) { AppIconPicker(accent: accent) }
             .navigationDestination(isPresented: $showsOverlay) { StreamOverlayView(accent: accent).environmentObject(viewModel) }
+            .sheet(isPresented: $showsWhatsNew) { WhatsNewSheet(accent: accent).environmentObject(viewModel) }
             .sheet(isPresented: $showsWidgetGuide) {
                 WidgetGuideSheet(accent: accent).environmentObject(viewModel)
             }

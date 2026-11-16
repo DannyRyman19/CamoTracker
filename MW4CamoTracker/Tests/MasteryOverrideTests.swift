@@ -1241,3 +1241,34 @@ struct StreamOverlayTests {
         #expect(StreamOverlay.cleanChannel("no spaces") == "")
     }
 }
+
+@Suite("What's new")
+struct WhatsNewTests {
+    @Test func showsOnceAfterAnUpdateNeverOnAFreshInstall() throws {
+        let suite = "whatsnew-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        // A fresh install: not onboarded yet
+        #expect(!WhatsNew.shouldShow(hasOnboarded: false, defaults: defaults, version: "1.0.5"))
+        // Someone who'd used an older version: shown once
+        #expect(WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "1.0.5"))
+        WhatsNew.markSeen(defaults: defaults, version: "1.0.5")
+        #expect(!WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "1.0.5"))
+        // A version with nothing listed shows nothing
+        #expect(!WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "9.9.9"))
+    }
+
+    @Test func everyItemHasWordsInEveryLanguage() throws {
+        for (_, items) in WhatsNew.releases {
+            for item in items {
+                for lang in ["en", "fr", "es", "de", "it", "nl", "pt"] {
+                    let path = try #require(Bundle.main.path(forResource: lang, ofType: "lproj"))
+                    let bundle = try #require(Bundle(path: path))
+                    for key in ["ct.whatsnew.\(item.id).title", "ct.whatsnew.\(item.id).body"] {
+                        #expect(bundle.localizedString(forKey: key, value: "MISSING", table: nil) != "MISSING", "\(lang) \(key)")
+                    }
+                }
+            }
+        }
+    }
+}

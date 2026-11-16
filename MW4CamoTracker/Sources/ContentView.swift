@@ -17,6 +17,8 @@ struct ContentView: View {
     @AppStorage("mw4_has_onboarded") private var hasOnboarded = false
     @State private var splashFinishing = false
     @State private var splashDone = false
+    /// What's new in this version, once after an update (see WhatsNew).
+    @State private var showWhatsNew = false
     /// The milestone whose share card is open.
     @State private var sharingBanner: MilestoneBanner?
 
@@ -415,6 +417,15 @@ struct ContentView: View {
                 requestReview()
             }
         }
+        // After the splash, once per update, never over onboarding
+        .onChange(of: splashDone) { done in
+            if done, Self.screenshotScreen == nil, !showOnboarding, WhatsNew.shouldShow(hasOnboarded: hasOnboarded) {
+                showWhatsNew = true
+            }
+        }
+        .sheet(isPresented: $showWhatsNew) {
+            WhatsNewSheet(accent: currentAccent).environmentObject(viewModel)
+        }
         .sheet(item: $sharingBanner) { banner in
             MilestoneShareSheet(banner: banner)
                 .environmentObject(viewModel)
@@ -424,6 +435,8 @@ struct ContentView: View {
                 if !hasOnboarded {
                     BackgroundRefreshCoordinator.requestNotificationPermission()
                 }
+                // A fresh install starts on this version: nothing is "new"
+                if !hasOnboarded { WhatsNew.markSeen() }
                 hasOnboarded = true
                 showOnboarding = false
                 // The game picked in the walkthrough gets its tracker now
