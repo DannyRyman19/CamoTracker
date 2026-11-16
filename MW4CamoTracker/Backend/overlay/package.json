@@ -1,0 +1,16 @@
+{
+  "name": "camo-track-overlay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "deploy": "npx wrangler deploy",
+    "schema": "npx wrangler d1 execute camo-track-overlay --remote --file=schema.sql",
+    "overlays": "npx wrangler d1 execute camo-track-overlay --remote --command \"SELECT COUNT(*) AS overlays, MAX(updated_at) AS latest FROM overlays\"",
+    "overlays:prune": "npx wrangler d1 execute camo-track-overlay --remote --command \"DELETE FROM overlays WHERE updated_at < datetime('now', '-90 days')\"",
+    "scans": "npx wrangler d1 execute camo-track-overlay --remote --command \"SELECT c.channel, c.code, COALESCE(SUM(s.n), 0) AS scans, MAX(s.day) AS last_scan, c.last_seen FROM scan_codes c LEFT JOIN scans s ON s.code = c.code GROUP BY c.code ORDER BY scans DESC\""
+  },
+  "dependencies": {
+    "qrcode-generator": "^1.4.4"
+  }
+}

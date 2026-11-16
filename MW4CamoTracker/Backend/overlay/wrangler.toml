@@ -1,0 +1,22 @@
+# Camo Track's stream overlay (see src/index.js), on camo-track.app beside the
+# site, the images and the push Worker. Deploy with `npx wrangler deploy`;
+# the database's tables are in schema.sql (`npm run schema`). Secret:
+# IP_SALT (hashes the IP that creates an overlay, to limit bulk creation).
+name = "camo-track-overlay"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+preview_urls = false
+routes = [
+  { pattern = "camo-track.app/overlay/*", zone_name = "camo-track.app" },
+  { pattern = "camo-track.app/go/*", zone_name = "camo-track.app" },
+  { pattern = "camo-track.app/api/overlay/*", zone_name = "camo-track.app" },
+]
+
+[vars]
+PUBLIC_ORIGIN = "https://camo-track.app"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "camo-track-overlay"
+database_id = "1bb03517-ebc0-484b-81e3-77535c09916d"
