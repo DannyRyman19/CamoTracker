@@ -377,13 +377,28 @@ struct WeaponHeroImage: View {
 }
 
 /// Same idea as `WeaponThumbnail`, sized and clipped for a small camo swatch.
+/// Press and hold for the picture full size, with its name: a tap still
+/// belongs to the row around it.
 struct CamoThumbnail: View {
     let urlString: String?
     let size: CGFloat
+    var name: String? = nil
 
     private var url: URL? { urlString.flatMap(URL.init(string:)) }
 
     var body: some View {
+        swatch(size: size)
+            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: size * 0.25))
+            .contextMenu {
+                if let name {
+                    Text(name)
+                }
+            } preview: {
+                CamoPreview(url: url, name: name)
+            }
+    }
+
+    private func swatch(size: CGFloat) -> some View {
         CachedAsyncImage(url: url) { phase in
             switch phase {
             case .success(let image):
@@ -397,6 +412,37 @@ struct CamoThumbnail: View {
         .frame(width: size, height: size)
         .background(Color.appSurface2)
         .clipShape(RoundedRectangle(cornerRadius: size * 0.25))
+    }
+}
+
+/// A camo swatch full size: the press-and-hold preview.
+private struct CamoPreview: View {
+    let url: URL?
+    let name: String?
+
+    var body: some View {
+        VStack(spacing: 0) {
+            CachedAsyncImage(url: url) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable().interpolation(.high).aspectRatio(contentMode: .fill)
+                default:
+                    ProgressView()
+                }
+            }
+            .frame(width: 300, height: 300)
+            .clipped()
+            if let name {
+                Text(name)
+                    .font(.headline)
+                    .foregroundStyle(Color.appInk)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 12)
+                    .background(Color.appSurface)
+            }
+        }
+        .frame(width: 300)
+        .accessibilityIdentifier("camo.preview")
     }
 }
 
@@ -929,7 +975,7 @@ struct ChallengeRow: View {
             .disabled(!isAvailable)
 
             if item.imageURL != nil {
-                CamoThumbnail(urlString: item.imageURL, size: 34)
+                CamoThumbnail(urlString: item.imageURL, size: 34, name: item.name.resolved())
                     .opacity(isAvailable ? 1 : 0.4)
             }
 

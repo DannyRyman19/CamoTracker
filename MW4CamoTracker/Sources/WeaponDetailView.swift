@@ -922,7 +922,7 @@ struct StatusRow: View {
 
             // Same picture slot as the camo list's rows.
             if imageURL != nil {
-                CamoThumbnail(urlString: imageURL, size: 34)
+                CamoThumbnail(urlString: imageURL, size: 34, name: name)
                     .opacity(achieved ? 1 : 0.4)
             }
 
@@ -1344,7 +1344,7 @@ private struct MilitarySummary: View {
                 }
                 HStack(spacing: 6) {
                     ForEach(camos) { camo in
-                        CamoThumbnail(urlString: camo.imageURL, size: 28)
+                        CamoThumbnail(urlString: camo.imageURL, size: 28, name: camo.name.resolved())
                             .opacity(done(camo) ? 1 : 0.35)
                             .overlay(alignment: .bottomTrailing) {
                                 if done(camo) {
