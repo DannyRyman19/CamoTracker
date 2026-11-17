@@ -320,8 +320,8 @@ private fun HomeTitleBar(mode: String) {
             }
         }
         Row(Modifier.align(Alignment.CenterEnd)) {
-            // Help: the walkthrough isn't ported yet
-            IconButton(onClick = {}) { Icon(Icons.AutoMirrored.Outlined.HelpOutline, null, tint = accent) }
+            // Help: the walkthrough again
+            IconButton(onClick = { AppState.showsOnboarding = true }) { Icon(Icons.AutoMirrored.Outlined.HelpOutline, null, tint = accent) }
             IconButton(onClick = { AppState.push(Route.Customise) }) { Icon(Icons.Filled.Tune, L("mw4.ui.customise"), tint = accent) }
         }
     }

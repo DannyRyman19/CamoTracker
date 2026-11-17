@@ -43,7 +43,8 @@ object Strings {
 
     /** Re-reads the Customise choice (call after it changes). */
     fun refresh() {
-        val picked = app.getSharedPreferences("settings", Context.MODE_PRIVATE).getString(KEY, null)
+        // The same file as the rest of the settings (PrefsStore, "camotrack")
+        val picked = app.getSharedPreferences("camotrack", Context.MODE_PRIVATE).getString(KEY, null)
         val phone = Locale.getDefault().language
         language = listOf(picked, phone).firstOrNull { code -> supported.any { it.first == code } } ?: "en"
     }

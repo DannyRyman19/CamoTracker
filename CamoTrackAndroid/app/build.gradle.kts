@@ -73,6 +73,8 @@ dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.work:work-runtime-ktx:2.10.0")
     implementation("com.android.billingclient:billing-ktx:7.1.1")
+    // The QR code on share cards
+    implementation("com.google.zxing:core:3.5.3")
     // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
     implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
     implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")

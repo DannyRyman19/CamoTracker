@@ -66,6 +66,14 @@ object AppState {
 
     private var watch: Job? = null
 
+    /** The walkthrough is up: on first launch, and from the Weapons title's help button. */
+    var showsOnboarding by mutableStateOf(false)
+    /** What's New is up (after an update, or from Customise). */
+    var showsWhatsNew by mutableStateOf(false)
+    /** Bumped when the language changes, so every screen redraws in it. */
+    var languageTick by mutableIntStateOf(0)
+        private set
+
     /** "I mostly play": the mode the Weapons tab is in (iOS's mw4.primaryMode). */
     var primaryMode by mutableStateOf("multiplayer")
         private set
@@ -82,6 +90,39 @@ object AppState {
         // Pins and the like follow Premium as soon as it changes
         Premium.onChange = { owned -> current?.isPremium = owned; revision++ }
         open(GameRegistry.saved(games, store))
+        // The tab picked in Customise (iOS StartTab); DMZ has no tab here
+        tab = when (store.getString(START_TAB)) {
+            "mastery" -> Tab.MASTERY
+            "stats" -> Tab.STATS
+            else -> Tab.WEAPONS
+        }
+        showsOnboarding = !store.getBoolean(HAS_ONBOARDED)
+    }
+
+    /** Redraws what reads progress after a setting the tracker reads from the store changed (modes played). */
+    fun touch() { revision++ }
+
+    /** The picked language changed: re-read it and redraw everything. */
+    fun languageChanged() {
+        app.camotrack.android.i18n.Strings.refresh()
+        languageTick++
+        revision++
+    }
+
+    /**
+     * A link (`mw4camo://mode/...`, from a notification): the Weapons tab in
+     * that mode (if played, else the current one), on the route it names,
+     * switching game first when it names another.
+     */
+    fun openLink(link: String) {
+        val target = DeepLink.parse(link) ?: return
+        target.game?.let { id ->
+            if (id != tracker.game.id) games.firstOrNull { it.id == id }?.let(::open)
+        }
+        val m = target.mode?.takeIf { it in tracker.visibleModes } ?: mode
+        pickMode(m)
+        tab = Tab.WEAPONS
+        target.route?.let { push(it, Tab.WEAPONS) }
     }
 
     fun open(game: Game) {
@@ -125,4 +166,6 @@ object AppState {
     fun pop(on: Tab = tab): Boolean = stacks.getValue(on).removeLastOrNull() != null
 
     const val PRIMARY_MODE = "mw4.primaryMode"
+    const val START_TAB = "mw4_start_tab"
+    const val HAS_ONBOARDED = "mw4_has_onboarded"
 }

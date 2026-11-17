@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import app.camotrack.android.AppState
 import app.camotrack.android.Route
 import app.camotrack.android.i18n.L
 import app.camotrack.android.ui.TopBar
@@ -12,7 +13,7 @@ import app.camotrack.android.ui.appBackground
 import app.camotrack.android.ui.modeAccent
 import app.camotrack.android.ui.tracker
 
-/** A pushed screen (iOS's RouteDestinationView); routes not ported yet show a placeholder. */
+/** A pushed screen (iOS's RouteDestinationView); App icons (out of scope on Android) show a placeholder. */
 @Composable
 fun RouteScreen(route: Route, mode: String) {
     val t = tracker()
@@ -39,11 +40,11 @@ fun RouteScreen(route: Route, mode: String) {
             val item = category?.items?.firstOrNull { it.itemId == route.itemId }
             if (category != null && item != null) ObjectiveItemScreen(mode, category, item) else Missing()
         }
-        Route.Customise -> Pending(L("mw4.ui.customise"), mode)
+        Route.Customise -> CustomiseScreen()
         Route.Premium -> PremiumScreen()
         Route.StreamOverlay -> StreamOverlayScreen()
         Route.AppIcons -> Pending(L("mw4.ui.app_icon.title"), mode)
-        Route.WhatsNew -> Pending(L("ct.whatsnew.title"), mode)
+        Route.WhatsNew -> WhatsNewScreen(onClose = { AppState.pop() })
     }
 }
 

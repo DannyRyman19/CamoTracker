@@ -80,7 +80,6 @@ fun PremiumScreen() {
             }
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Perk(Icons.Filled.Block, "mw4.ui.premium.perk_ads", red)
-                Perk(Icons.Filled.AppShortcut, "mw4.ui.premium.perk_icons", red)
                 Perk(Icons.Filled.Tune, "mw4.ui.premium.perk_customise", red)
                 Perk(Icons.Filled.PushPin, "mw4.ui.premium.perk_pins", red)
                 Perk(Icons.Filled.Favorite, "mw4.ui.premium.perk_support", red)

@@ -132,7 +132,10 @@ fun WeaponDetailScreen(startMode: String, weapon: WeaponEntry) {
 
     Column(Modifier.fillMaxSize().appBackground(accent)) {
         TopBar(weapon.name.resolved()) {
-            IconButton(onClick = {}) { Icon(Icons.Filled.Share, L("mw4.ui.share.weapon", weapon.name.resolved()), tint = MaterialTheme.colorScheme.primary) }
+            ReportIssueMenu(weapon, mode, camos.filter { it.extra != true }, MaterialTheme.colorScheme.primary)
+            IconButton(onClick = { app.camotrack.android.ui.share.Sharing.open(app.camotrack.android.ui.share.ShareRequest.Weapon(id, mode)) }) {
+                Icon(Icons.Filled.Share, L("mw4.ui.share.weapon", weapon.name.resolved()), tint = MaterialTheme.colorScheme.primary)
+            }
             val pinned = t.isPinned(id)
             IconButton(onClick = { if (pinned) t.unpin(id) else t.pin(id) }) {
                 Icon(
@@ -330,7 +333,7 @@ private fun FinalCamoRow(mode: String, weapon: WeaponEntry) {
 
 /** A Mastery tier: this weapon's own challenge, a mode-wide challenge, or the mode-wide count. */
 @Composable
-private fun MasteryRow(mode: String, weapon: WeaponEntry, tier: Int) {
+internal fun MasteryRow(mode: String, weapon: WeaponEntry, tier: Int) {
     val t = tracker()
     val id = weapon.weaponId
     val tiers = t.masteryCamos(mode)

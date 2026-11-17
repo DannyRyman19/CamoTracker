@@ -8,14 +8,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import app.camotrack.android.ui.Ink
 
-// Stand-ins until each screen is ported; each moves to its own file.
-
-@Composable
-fun MasteryScreen() = Placeholder("Mastery")
-
-@Composable
-fun StatsScreen() = Placeholder("Stats")
-
 @Composable
 internal fun Placeholder(text: String) =
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { Text(text, color = Ink.muted) }

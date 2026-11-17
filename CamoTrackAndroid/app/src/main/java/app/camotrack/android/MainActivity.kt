@@ -1,7 +1,9 @@
 package app.camotrack.android
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -34,12 +36,46 @@ import app.camotrack.android.ui.screens.MasteryScreen
 import app.camotrack.android.ui.screens.RouteScreen
 import app.camotrack.android.ui.screens.StatsScreen
 import app.camotrack.android.ui.screens.WeaponsHome
+import app.camotrack.android.ui.screens.OnboardingScreen
+import app.camotrack.android.ui.screens.WhatsNewScreen
+import app.camotrack.android.ui.screens.findActivity
+import app.camotrack.android.ui.share.ShareRequest
+import app.camotrack.android.ui.share.ShareSheetHost
+import app.camotrack.android.ui.share.Sharing
+import app.camotrack.android.services.AdConsent
+import app.camotrack.android.services.Ads
+import app.camotrack.android.services.Interstitials
+import app.camotrack.android.ui.LocalPalette
+import app.camotrack.android.ui.sys
+import androidx.compose.ui.platform.LocalContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        // Light status and navigation bar icons: the app is always on a dark ground
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+        )
+        if (savedInstanceState == null) openLink(intent)
         setContent { Root() }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        openLink(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Free players: the ad SDK, once onboarding and the consent question are behind them
+        Ads.start(this)
+    }
+
+    /** A notification's (or any) mw4camo:// link. */
+    private fun openLink(intent: Intent?) {
+        val link = intent?.data?.toString() ?: return
+        if (link.startsWith("mw4camo://")) AppState.openLink(link)
     }
 }
 
@@ -62,7 +98,14 @@ fun currentPalette(): AppPalette {
 
 @Composable
 private fun Root() {
+    // A language change redraws every screen in it
+    key(AppState.languageTick) { Screens() }
+}
+
+@Composable
+private fun Screens() {
     val palette = currentPalette()
+    val context = LocalContext.current
     CamoTheme(palette) {
         val stack = AppState.stacks.getValue(AppState.tab)
         BackHandler(stack.isNotEmpty()) { AppState.pop() }
@@ -91,6 +134,70 @@ private fun Root() {
                 MilestoneOverlay()
             }
         }
+        WeaponInterstitials()
+        // After an update, once, never over onboarding (iOS shows it after the splash)
+        LaunchedEffect(Unit) {
+            if (!AppState.showsOnboarding && WhatsNew.shouldShow(AppState.store, AppState.store.getBoolean(AppState.HAS_ONBOARDED))) {
+                AppState.showsWhatsNew = true
+            }
+        }
+        if (AppState.showsWhatsNew && !AppState.showsOnboarding) {
+            BackHandler { AppState.showsWhatsNew = false }
+            WhatsNewScreen(onClose = { AppState.showsWhatsNew = false })
+        }
+        if (AppState.showsOnboarding) OnboardingScreen()
+        AdConsentQuestion()
+        ShareSheetHost()
+    }
+}
+
+/**
+ * The "About ads" question where the law asks it (EU, EEA, UK, Switzerland),
+ * for free players from their second session, once nothing else is up
+ * (onboarding, What's New); then the ad SDK starts.
+ */
+@Composable
+private fun AdConsentQuestion() {
+    val context = LocalContext.current
+    var asking by remember { mutableStateOf(false) }
+    val busy = AppState.showsOnboarding || AppState.showsWhatsNew || Sharing.request != null
+    LaunchedEffect(busy) {
+        if (busy) return@LaunchedEffect
+        kotlinx.coroutines.delay(1_000)
+        asking = Ads.showsAds && AppState.store.getBoolean(Ads.PAST_FIRST_SESSION) && AdConsent.needsAsking(context, AppState.store)
+    }
+    if (!asking) return
+    fun answer(yes: Boolean) {
+        asking = false
+        AdConsent.set(AppState.store, yes)
+        Ads.start(context)
+    }
+    AlertDialog(
+        onDismissRequest = {},
+        containerColor = LocalPalette.current.surface2,
+        title = { Text(L("ct.ads.consent.title"), color = Ink.text) },
+        text = { Text(L("ct.ads.consent.message"), color = Ink.muted) },
+        confirmButton = { TextButton(onClick = { answer(true) }) { Text(L("ct.ads.consent.yes")) } },
+        dismissButton = { TextButton(onClick = { answer(false) }) { Text(L("ct.ads.consent.no")) } },
+    )
+}
+
+/**
+ * Opening a weapon notes it; coming back from one to a list (the Weapons
+ * tab or a class) may show a full-screen ad (iOS Interstitials).
+ */
+@Composable
+private fun WeaponInterstitials() {
+    val context = LocalContext.current
+    val top = AppState.stacks.getValue(AppState.tab).lastOrNull()
+    LaunchedEffect(top, AppState.tab) {
+        when (top) {
+            is Route.Weapon -> Interstitials.leftWeapon = true
+            null, is Route.WeaponCategory, Route.AllWeapons -> if (AppState.tab == Tab.WEAPONS || top != null) {
+                context.findActivity()?.let { Interstitials.weaponClosed(it, AppState.store, AppState.tracker.game.id) }
+            }
+            else -> {}
+        }
     }
 }
 
@@ -113,7 +220,11 @@ private fun BoxScope.MilestoneOverlay() {
         // Kept through the exit animation
         val shown = remember { mutableStateOf(milestone) }
         if (milestone != null) shown.value = milestone
-        shown.value?.let { MilestoneBannerView(bannerText(it), modifier = Modifier.clickable { AppState.milestone = null }) }
+        shown.value?.let { m ->
+            // Its Share button (or a tap anywhere on it) opens the milestone's card
+            val share = { Sharing.open(ShareRequest.Milestone(m)); AppState.milestone = null }
+            MilestoneBannerView(bannerText(m), onShare = share, modifier = Modifier.clickable(onClick = share))
+        }
     }
 }
 

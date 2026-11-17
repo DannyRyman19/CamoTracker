@@ -138,7 +138,10 @@ fun WeaponPeekMenu(mode: String, weapon: WeaponEntry, dismiss: () -> Unit) {
                 dismiss()
             }
         }
-        PeekAction(L("mw4.ui.share.button"), Icons.Filled.Share) { dismiss() }
+        PeekAction(L("mw4.ui.share.button"), Icons.Filled.Share) {
+            dismiss()
+            app.camotrack.android.ui.share.Sharing.open(app.camotrack.android.ui.share.ShareRequest.Weapon(id, mode))
+        }
     }
 }
 
