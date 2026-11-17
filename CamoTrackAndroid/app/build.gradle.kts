@@ -23,11 +23,21 @@ android {
     kotlinOptions { jvmTarget = "17" }
 }
 
+// The iPhone app's bundled data (games.json and every game's seed files), copied
+// in at build time so both apps ship the same starting data from one place.
+val copySeeds by tasks.registering(Copy::class) {
+    from("../../MW4CamoTracker/Resources") { include("*.json") }
+    into(layout.buildDirectory.dir("generated/seeds/seeds"))
+}
+android.sourceSets["main"].assets.srcDir(layout.buildDirectory.dir("generated/seeds"))
+tasks.named("preBuild") { dependsOn(copySeeds) }
+
 dependencies {
     val compose = platform("androidx.compose:compose-bom:2024.12.01")
     implementation(compose)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
