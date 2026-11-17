@@ -145,6 +145,8 @@
             android:theme="@android:style/Theme.Material.NoActionBar" android:excludeFromRecents="true" android:taskAffinity="">
             <intent-filter><action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" /></intent-filter>
         </activity>
+        <!-- ML Kit's text model comes through Google Play services, fetched at install (the stash scan) -->
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="ocr" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.share"

@@ -80,7 +80,7 @@ dependencies {
     implementation("com.google.zxing:core:3.5.3")
     // The DMZ stash photo reader (hajin.scan): its two models, and on-device text
     implementation("com.google.ai.edge.litert:litert:1.4.2")
-    implementation("com.google.mlkit:text-recognition:16.0.1")
+    implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
     // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
     implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
     implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")
