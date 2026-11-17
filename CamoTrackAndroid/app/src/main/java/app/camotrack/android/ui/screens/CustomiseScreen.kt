@@ -175,6 +175,7 @@ fun CustomiseScreen() {
                         LinkRow(Icons.Filled.AutoAwesome, L("ct.whatsnew.title"), accent) { AppState.push(Route.WhatsNew) }
                         RowDivider()
                     }
+                    LinkRow(Icons.Filled.AppShortcut, L("mw4.ui.app_icon.title"), accent) { AppState.push(Route.AppIcons) }
                     LinkRow(Icons.Filled.Podcasts, L("ct.overlay.title"), accent) { AppState.push(Route.StreamOverlay) }
                 }
             }

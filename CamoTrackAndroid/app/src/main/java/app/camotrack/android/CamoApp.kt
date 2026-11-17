@@ -15,6 +15,7 @@ class CamoApp : Application() {
         // Data text (weapon and camo names) follows the same language as the app's own
         LocalizedText.preferredLanguages = { listOf(Strings.language, "en") }
         AppState.start(this)
+        app.camotrack.android.services.AppIcons.reapply(this, AppState.store)
         app.camotrack.android.services.Refresh.createChannel(this)
         app.camotrack.android.services.Refresh.schedule(this)
     }

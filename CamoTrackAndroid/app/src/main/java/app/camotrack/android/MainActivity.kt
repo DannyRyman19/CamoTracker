@@ -147,6 +147,7 @@ private fun Screens() {
         }
         if (AppState.showsOnboarding) OnboardingScreen()
         AdConsentQuestion()
+        IconUnlockNotice()
         ShareSheetHost()
     }
 }
@@ -241,5 +242,38 @@ private fun RowScope.TabItem(tab: Tab, icon: ImageVector, label: String) {
             unselectedIconColor = Ink.muted, unselectedTextColor = Ink.muted,
             indicatorColor = MaterialTheme.colorScheme.surfaceVariant,
         ),
+    )
+}
+
+/**
+ * A camo icon just earned: said once, after its celebration has gone (iOS
+ * IconUnlocks). The first look at launch only notes what's already earned.
+ */
+@Composable
+private fun IconUnlockNotice() {
+    var unlocked by remember { mutableStateOf<app.camotrack.android.services.AppIconChoice?>(null) }
+    LaunchedEffect(Unit) {
+        if (!AppState.store.contains(app.camotrack.android.services.AppIcons.KNOWN_KEY)) {
+            app.camotrack.android.services.AppIcons.newlyEarned(AppState.tracker, AppState.store)
+        }
+    }
+    val clear = AppState.milestone == null
+    LaunchedEffect(clear) {
+        if (!clear) return@LaunchedEffect
+        kotlinx.coroutines.delay(700)
+        if (AppState.milestone == null && !AppState.showsOnboarding && !AppState.showsWhatsNew && Sharing.request == null) {
+            unlocked = app.camotrack.android.services.AppIcons.newlyEarned(AppState.tracker, AppState.store)
+        }
+    }
+    val choice = unlocked ?: return
+    val t = AppState.tracker
+    val locked = choice.needsPremium && !app.camotrack.android.services.Premium.isPremium
+    AlertDialog(
+        onDismissRequest = { unlocked = null },
+        containerColor = LocalPalette.current.surface2,
+        title = { Text(L("ct.icon_unlock.title"), color = Ink.text) },
+        text = { Text(L(if (locked) "ct.icon_unlock.premium" else "ct.icon_unlock.body", choice.title(t)), color = Ink.muted) },
+        confirmButton = { TextButton(onClick = { unlocked = null; AppState.push(Route.AppIcons) }) { Text(L("ct.icon_unlock.choose")) } },
+        dismissButton = { TextButton(onClick = { unlocked = null }) { Text(L("ct.icon_unlock.later")) } },
     )
 }

@@ -43,7 +43,7 @@ fun RouteScreen(route: Route, mode: String) {
         Route.Customise -> CustomiseScreen()
         Route.Premium -> PremiumScreen()
         Route.StreamOverlay -> StreamOverlayScreen()
-        Route.AppIcons -> Pending(L("mw4.ui.app_icon.title"), mode)
+        Route.AppIcons -> AppIconsScreen()
         Route.WhatsNew -> WhatsNewScreen(onClose = { AppState.pop() })
     }
 }

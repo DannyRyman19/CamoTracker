@@ -379,7 +379,7 @@ private fun FreeAndPremiumPage(accent: Color) {
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             PerkGroup(L("mw4.onboarding.premium.free"), Icons.Filled.CheckCircle, accent, listOf("mw4.onboarding.premium.free_track"))
             PerkGroup(L("mw4.onboarding.premium.premium"), Icons.Filled.AutoAwesome, accent,
-                listOf("mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_customise", "mw4.ui.premium.perk_pins"))
+                listOf("mw4.ui.premium.perk_ads", "mw4.ui.premium.perk_icons", "mw4.ui.premium.perk_customise", "mw4.ui.premium.perk_pins"))
             Text(L("mw4.onboarding.premium.footer"), style = sys(13f), color = Ink.muted)
         }
     }
