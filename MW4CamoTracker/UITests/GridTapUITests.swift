@@ -43,6 +43,58 @@ final class GridTapUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Weapon Unlocks"].exists)
     }
 
+    /// Press and hold on the second card of a row: its own quick look, not
+    /// the first card's (a List row-wide context menu got that wrong).
+    func testHoldingAWeaponCardPeeksAtThatWeapon() {
+        let app = launch(category: 0)
+        let m4 = app.staticTexts["M4"]
+        XCTAssertTrue(m4.waitForExistence(timeout: 15))
+        m4.press(forDuration: 0.8)
+        XCTAssertTrue(app.descendants(matching: .any)["weapon.peek.M4"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["Share"].exists)
+        // It didn't open the weapon underneath
+        XCTAssertFalse(app.navigationBars["M4"].exists)
+    }
+
+    /// A quick tap on a camo's swatch still ticks its row; only a hold peeks.
+    func testTappingACamoSwatchStillTicksIt() {
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["SS_WEAPON"] = "1" // M4
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
+        app.launch()
+        let showAll = app.staticTexts["Show all"]
+        XCTAssertTrue(showAll.waitForExistence(timeout: 15))
+        showAll.tap()
+        // The second: the first is in the Military summary card above
+        let swatch = app.descendants(matching: .any).matching(identifier: "camo.thumb.Military 1").element(boundBy: 1)
+        XCTAssertTrue(swatch.waitForExistence(timeout: 5))
+        swatch.tap()
+        XCTAssertTrue(app.staticTexts["Earned at 9 weapon unlocks."].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.descendants(matching: .any)["camo.preview.Military 1"].exists)
+    }
+
+    /// Each Prestige camo's swatch shows that camo, not the first one's.
+    func testHoldingAPrestigeCamoShowsThatCamo() {
+        let app = XCUIApplication()
+        app.launchEnvironment["SS_SCREEN"] = "multiplayer"
+        app.launchEnvironment["SS_CAT"] = "0"
+        app.launchEnvironment["MW4_OFFLINE"] = "1"
+        app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1",
+                                "-mw4.prestigeCamosOpen", "YES"]
+        app.launch()
+        let m4 = app.staticTexts["M4"]
+        XCTAssertTrue(m4.waitForExistence(timeout: 15))
+        m4.tap()
+        let scatter = app.descendants(matching: .any)["camo.thumb.Pyroclast Scatter"]
+        for _ in 0..<6 where !scatter.exists || !scatter.isHittable { app.swipeUp() }
+        XCTAssertTrue(scatter.waitForExistence(timeout: 5))
+        scatter.press(forDuration: 0.8)
+        XCTAssertTrue(app.descendants(matching: .any)["camo.preview.Pyroclast Scatter"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.descendants(matching: .any)["camo.preview.Pyroclast"].exists)
+    }
+
     /// The class chips above the weapons filter the one list in place:
     /// SMGs shows the SMGs and nothing else, All brings every weapon back.
     func testClassChipsFilterTheList() {
@@ -146,8 +198,13 @@ final class GridTapUITests: XCTestCase {
         app.launchArguments += ["-AppleLanguages", "(en)", "-mw4_progress_v2", "<\(Self.emptySave)>", "-mw4_home_class", "-1"]
         app.launch()
 
-        let detail = app.staticTexts["Needs 9 weapon unlocks."]
-        XCTAssertTrue(detail.waitForExistence(timeout: 15))
+        // The Military camos sit under their summary card: open it, then
+        // tap the row (the summary repeats the next camo's line)
+        let showAll = app.staticTexts["Show all"]
+        XCTAssertTrue(showAll.waitForExistence(timeout: 15))
+        showAll.tap()
+        let detail = app.staticTexts.matching(identifier: "Needs 9 weapon unlocks.").element(boundBy: 1)
+        XCTAssertTrue(detail.waitForExistence(timeout: 5))
         detail.tap()
         XCTAssertTrue(app.staticTexts["Earned at 9 weapon unlocks."].waitForExistence(timeout: 5))
         XCTAssertTrue(app.descendants(matching: .any)["9/71"].exists)

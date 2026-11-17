@@ -190,6 +190,7 @@ struct WeaponRow: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(12)
         .borderedCard(accent: highest.map(color(ofCompletionist:)) ?? (isGold ? mode.accent : nil), borderGradient: borderGradient)
+        .weaponPeek(mode: mode, weapon: weapon)
     }
 
     private var nameColumn: some View {

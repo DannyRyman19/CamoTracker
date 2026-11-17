@@ -388,14 +388,9 @@ struct CamoThumbnail: View {
 
     var body: some View {
         swatch(size: size)
-            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: size * 0.25))
-            .contextMenu {
-                if let name {
-                    Text(name)
-                }
-            } preview: {
-                CamoPreview(url: url, name: name)
-            }
+            .accessibilityElement()
+            .accessibilityIdentifier("camo.thumb.\(name ?? "")")
+            .pressPeek { CamoPreview(url: url, name: name) }
     }
 
     private func swatch(size: CGFloat) -> some View {
@@ -442,7 +437,42 @@ private struct CamoPreview: View {
             }
         }
         .frame(width: 300)
-        .accessibilityIdentifier("camo.preview")
+        .accessibilityIdentifier("camo.preview.\(name ?? "")")
+    }
+}
+
+/// Press and hold for a pop-up anchored to the view: the camo or weapon
+/// close up. Not `.contextMenu`: inside a List that attaches to the whole
+/// row, so in a row of several (the Prestige camos, an iPad's weapon grid)
+/// every one opened the first. A tap still goes to whatever is underneath.
+struct PressPeek<Peek: View>: ViewModifier {
+    @ViewBuilder let peek: (_ dismiss: @escaping () -> Void) -> Peek
+    @State private var shown = false
+
+    func body(content: Content) -> some View {
+        content
+            .onLongPressGesture(minimumDuration: 0.35) {
+                Haptics.earned()
+                shown = true
+            }
+            .popover(isPresented: $shown) {
+                let view = peek { shown = false }
+                if #available(iOS 16.4, *) {
+                    view.presentationCompactAdaptation(.popover)
+                } else {
+                    view
+                }
+            }
+    }
+}
+
+extension View {
+    func pressPeek<Peek: View>(@ViewBuilder _ peek: @escaping () -> Peek) -> some View {
+        modifier(PressPeek { _ in peek() })
+    }
+
+    func pressPeek<Peek: View>(@ViewBuilder _ peek: @escaping (_ dismiss: @escaping () -> Void) -> Peek) -> some View {
+        modifier(PressPeek(peek: peek))
     }
 }
 
