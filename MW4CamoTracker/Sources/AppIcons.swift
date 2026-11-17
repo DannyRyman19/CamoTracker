@@ -1,14 +1,16 @@
 import SwiftUI
 
-/// The unlockable home-screen icons: the usual icon recoloured in a camo's
-/// own colours (drawn by `tools-mw4-icon.py variants`). Earn the camo and its
-/// icon unlocks; Gold's is free, the rest come with Premium too.
+/// The unlockable home-screen icons: the usual lettering over a camo's own
+/// picture (made by `Tools/camo_icons.py`). Earn the camo and its icon
+/// unlocks; Gold's is free, the rest come with Premium too. Flashpoint, the
+/// last, needs every Mastery camo in every mode.
 enum AppIconChoice: String, CaseIterable, Identifiable {
     case standard
     case gold, platinum, harmonicBreak, divergence
     case mercurialDrift, polyatomicReforged, orionReforged
     case parallax, damascusReforged, empyros
     case chiral, rippleTide, helio
+    case flashpoint
 
     var id: String { rawValue }
 
@@ -62,12 +64,16 @@ enum AppIconChoice: String, CaseIterable, Identifiable {
             let camos = mode.masteryCamos
             return [camos.tier1, camos.tier2, camos.tier3][tier - 1].name
         }
+        if self == .flashpoint {
+            return GameRegistry.game("mw4")?.capstone?.name.resolved() ?? "Flashpoint"
+        }
         return "mw4.ui.app_icon.standard".localized()
     }
 
     /// What earns it, for a locked one.
     var requirement: String {
         if step != nil { return String(format: "mw4.ui.app_icon.need_weapon".localized(), title) }
+        if self == .flashpoint { return String(format: "ct.app_icon.need_all_mastery".localized(), title) }
         if let (mode, _) = mastery {
             return String(format: "mw4.ui.app_icon.need_mode".localized(), title, mode.displayName)
         }
@@ -85,6 +91,7 @@ enum AppIconChoice: String, CaseIterable, Identifiable {
             }
         }
         if let (mode, tier) = mastery { return viewModel.isMasteryAchieved(mode: mode.rawValue, tier: tier) }
+        if self == .flashpoint { return viewModel.isGlobalMasteryAchieved }
         return true
     }
 
