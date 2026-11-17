@@ -10,7 +10,7 @@ import UserNotifications
 /// shows nothing.
 enum WhatsNew {
     struct Item: Identifiable {
-        enum Action { case streamOverlay, notifications }
+        enum Action { case streamOverlay, notifications, appIcons }
         let id: String
         let symbol: String
         var action: Action? = nil
@@ -23,6 +23,10 @@ enum WhatsNew {
             Item(id: "overlay", symbol: "dot.radiowaves.left.and.right", action: .streamOverlay),
             Item(id: "push", symbol: "bell.badge.fill", action: .notifications),
             Item(id: "modes", symbol: "square.stack.3d.up.fill"),
+        ],
+        "1.0.6": [
+            Item(id: "icons", symbol: "app.badge.fill", action: .appIcons),
+            Item(id: "peek", symbol: "hand.tap.fill"),
         ],
     ]
 
@@ -101,6 +105,12 @@ struct WhatsNewSheet: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
+                    if item.action == .appIcons, earnedIcons > 0 {
+                        Text(String(format: "ct.whatsnew.icons.earned".localized(), earnedIcons))
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.appInk)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                 }
             }
             if let action = item.action {
@@ -113,9 +123,22 @@ struct WhatsNewSheet: View {
         .background(Color.appSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 
+    /// Camo icons this player has already earned (the original doesn't count).
+    private var earnedIcons: Int {
+        AppIconChoice.allCases.filter { $0 != .standard && $0.isEarned(viewModel) }.count
+    }
+
     @ViewBuilder
     private func actionButton(_ action: WhatsNew.Item.Action) -> some View {
         switch action {
+        case .appIcons:
+            NavigationLink {
+                AppIconPicker(accent: accent).environmentObject(viewModel)
+            } label: {
+                Label("ct.whatsnew.icons.action".localized(), systemImage: "arrow.right")
+                    .font(.subheadline.weight(.semibold))
+            }
+            .foregroundStyle(accent)
         case .streamOverlay:
             NavigationLink {
                 StreamOverlayView(accent: accent).environmentObject(viewModel)
