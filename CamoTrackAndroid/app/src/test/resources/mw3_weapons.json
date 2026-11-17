@@ -1,0 +1,859 @@
+{
+ "version": "1.0.2",
+ "baseWeaponCount": 36,
+ "weaponPrestige": [],
+ "prestigeCamos": [],
+ "_note": "Converted from the MW3 Camo Tracker data by Tools/games/convert_mw3.py.",
+ "categories": [
+  {
+   "categoryId": 0,
+   "name": {
+    "en": "Assault Rifles",
+    "de": "Sturmgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 0,
+     "name": {
+      "en": "SVA 545"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/sva-545.png"
+    },
+    {
+     "weaponId": 1,
+     "name": {
+      "en": "MTZ-556"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlocked at level 12",
+      "de": "Freigegeben auf Stufe 12"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/mtz-556.png"
+    },
+    {
+     "weaponId": 2,
+     "name": {
+      "en": "Holger 556"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlocked at level 37",
+      "de": "Freigegeben auf Stufe 37"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/holger-556.png"
+    },
+    {
+     "weaponId": 3,
+     "name": {
+      "en": "MCW"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlocked at level 44",
+      "de": "Freigegeben auf Stufe 44"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/mcw.png"
+    },
+    {
+     "weaponId": 4,
+     "name": {
+      "en": "DG-56"
+     },
+     "maxLevel": 25,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/dg-58.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 5,
+     "name": {
+      "en": "FR 5.56"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/fr-556.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 36,
+     "name": {
+      "en": "RAM-7"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/ram-7.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 37,
+     "name": {
+      "en": "BP50"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/BP50.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 38,
+     "name": {
+      "en": "BAL-27"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/bal-27.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 39,
+     "name": {
+      "en": "STG44"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/stg44.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 1,
+   "name": {
+    "en": "Battle Rifles",
+    "de": "Kampfgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 6,
+     "name": {
+      "en": "BAS-B"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 17",
+      "de": "Freigegeben auf Stufe 17"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/bas-b.png"
+    },
+    {
+     "weaponId": 7,
+     "name": {
+      "en": "Sidewinder"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/sidewinder.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 8,
+     "name": {
+      "en": "MTZ-762"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/mtz-762.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 40,
+     "name": {
+      "en": "SOA Subverter"
+     },
+     "maxLevel": 17,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/soa-subverter.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 41,
+     "name": {
+      "en": "DTIR 30-06"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass in Sector",
+      "de": "Unlocked with the Season 6 Battle Pass in Sector "
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/dtir_30-06.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 2,
+   "name": {
+    "en": "SMGs",
+    "de": "MPs"
+   },
+   "weapons": [
+    {
+     "weaponId": 9,
+     "name": {
+      "en": "Striker"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/striker.png"
+    },
+    {
+     "weaponId": 10,
+     "name": {
+      "en": "WSP Swarm"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked at level 27",
+      "de": "Freigegeben auf Stufe 27"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/wsp-swarm.png"
+    },
+    {
+     "weaponId": 11,
+     "name": {
+      "en": "AMR9"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 55",
+      "de": "Freigegeben auf Stufe 55"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/amr9.png"
+    },
+    {
+     "weaponId": 12,
+     "name": {
+      "en": "WSP-9"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/wsp-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 13,
+     "name": {
+      "en": "Rival-9"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/rival-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 14,
+     "name": {
+      "en": "Striker 9"
+     },
+     "maxLevel": 25,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/striker-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 42,
+     "name": {
+      "en": "HRM-9"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/HRM-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 43,
+     "name": {
+      "en": "RAM-9"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/RAM-9.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 44,
+     "name": {
+      "en": "FJX Horus"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/FJX-HORUS.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 45,
+     "name": {
+      "en": "Superi 46"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/superi-46.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 46,
+     "name": {
+      "en": "Static-HV"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/static-hv.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 3,
+   "name": {
+    "en": "Shotguns",
+    "de": "Schrotflinten"
+   },
+   "weapons": [
+    {
+     "weaponId": 15,
+     "name": {
+      "en": "Lockwood 680"
+     },
+     "maxLevel": 27,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/lockwood-680.png"
+    },
+    {
+     "weaponId": 16,
+     "name": {
+      "en": "Haymaker"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlocked at level 39",
+      "de": "Freigegeben auf Stufe 39"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/haymaker.png"
+    },
+    {
+     "weaponId": 17,
+     "name": {
+      "en": "Riveter"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/riveter.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 47,
+     "name": {
+      "en": "Reclaimer 18"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/reclaimer-18.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 4,
+   "name": {
+    "en": "LMGs",
+    "de": "LMGs"
+   },
+   "weapons": [
+    {
+     "weaponId": 18,
+     "name": {
+      "en": "Pulemyot 762"
+     },
+     "maxLevel": 28,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/pulemyot-762.png"
+    },
+    {
+     "weaponId": 19,
+     "name": {
+      "en": "DG-58 LSW"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 7",
+      "de": "Freigegeben auf Stufe 7"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/dg-58-lsw.png"
+    },
+    {
+     "weaponId": 20,
+     "name": {
+      "en": "Holger 26"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/holger-26.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 21,
+     "name": {
+      "en": "Bruen MK9"
+     },
+     "maxLevel": 20,
+     "unlockRequirement": {
+      "en": "Unlocked at level 31",
+      "de": "Freigegeben auf Stufe 31"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/bruen-mk9.png"
+    },
+    {
+     "weaponId": 48,
+     "name": {
+      "en": "Taq Eradicator"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/tac-eradicator.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 49,
+     "name": {
+      "en": "Taq Evolvere"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Schließe 5 Herausforderungen aus Woche 7 ab"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/taq-evolvere.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 50,
+     "name": {
+      "en": "Kastov LSW"
+     },
+     "maxLevel": 17,
+     "unlockRequirement": {
+      "en": "Unlocked with the Season 6 Battle Pass in Sector",
+      "de": "Unlocked with the Season 6 Battle Pass in Sector "
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/kastov_lsw.png",
+     "acquiredBy": "battlePass"
+    }
+   ]
+  },
+  {
+   "categoryId": 5,
+   "name": {
+    "en": "Marksman Rifles",
+    "de": "Präzisionsgewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 22,
+     "name": {
+      "en": "KVD Enforcer"
+     },
+     "maxLevel": 30,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/kvd-enforcer.png"
+    },
+    {
+     "weaponId": 23,
+     "name": {
+      "en": "MCW 6.8"
+     },
+     "maxLevel": 24,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/mcw-68.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 24,
+     "name": {
+      "en": "DM56"
+     },
+     "maxLevel": 23,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/dm56.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 25,
+     "name": {
+      "en": "MTZ Interceptor"
+     },
+     "maxLevel": 18,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/mtz-interceptor.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 51,
+     "name": {
+      "en": "Kar98k"
+     },
+     "maxLevel": 16,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/kar98k.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 6,
+   "name": {
+    "en": "Sniper Rifles",
+    "de": "Scharfschützengewehre"
+   },
+   "weapons": [
+    {
+     "weaponId": 26,
+     "name": {
+      "en": "KATT-AMR"
+     },
+     "maxLevel": 29,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/katt-amr.png"
+    },
+    {
+     "weaponId": 27,
+     "name": {
+      "en": "Longbow"
+     },
+     "maxLevel": 31,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/longbow.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 28,
+     "name": {
+      "en": "KV Inhibitor"
+     },
+     "maxLevel": 33,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/kv-inhibitor.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 52,
+     "name": {
+      "en": "XRK Stalker"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/xrk-stalker.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 53,
+     "name": {
+      "en": "MORS"
+     },
+     "maxLevel": 19,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/MORS.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 7,
+   "name": {
+    "en": "Pistols",
+    "de": "Pistolen"
+   },
+   "weapons": [
+    {
+     "weaponId": 29,
+     "name": {
+      "en": "COR-45"
+     },
+     "maxLevel": 22,
+     "unlockRequirement": {
+      "en": "Unlock at level 4",
+      "de": "Unlock at level 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/cor-45.png"
+    },
+    {
+     "weaponId": 30,
+     "name": {
+      "en": "Renetti"
+     },
+     "maxLevel": 21,
+     "unlockRequirement": {
+      "en": "Unlocked at level 21",
+      "de": "Freigegeben auf Stufe 21"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/renetti.png"
+    },
+    {
+     "weaponId": 31,
+     "name": {
+      "en": "TYR"
+     },
+     "maxLevel": 26,
+     "unlockRequirement": {
+      "en": "Unlocked at level 50",
+      "de": "Freigegeben auf Stufe 50"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/tyr.png"
+    },
+    {
+     "weaponId": 32,
+     "name": {
+      "en": "WSP Stinger"
+     },
+     "maxLevel": 15,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/wsp-stinger.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 8,
+   "name": {
+    "en": "Launchers",
+    "de": "Werfer"
+   },
+   "weapons": [
+    {
+     "weaponId": 33,
+     "name": {
+      "en": "RGL-80"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "Unlocked at level 38",
+      "de": "Freigegeben auf Stufe 38"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/rgl-80.png"
+    },
+    {
+     "weaponId": 54,
+     "name": {
+      "en": "Stormender"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/stormender.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 55,
+     "name": {
+      "en": "Torque 35"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Complete week 5 challenges"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/torque-35.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  },
+  {
+   "categoryId": 9,
+   "name": {
+    "en": "Melee",
+    "de": "Nahkampf"
+   },
+   "weapons": [
+    {
+     "weaponId": 34,
+     "name": {
+      "en": "Gutter Knife"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "Unlocked at level 4",
+      "de": "Freigegeben auf Stufe 4"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/gutter-knife.png"
+    },
+    {
+     "weaponId": 35,
+     "name": {
+      "en": "Karambit"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/karambit.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 56,
+     "name": {
+      "en": "Soulrender"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/soulrender.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 57,
+     "name": {
+      "en": "Gladiator"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/gladiator.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 58,
+     "name": {
+      "en": "Sledgehammer"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/sledgehammer.png",
+     "acquiredBy": "armory"
+    },
+    {
+     "weaponId": 59,
+     "name": {
+      "en": "Spear"
+     },
+     "maxLevel": 6,
+     "unlockRequirement": {
+      "en": "ARMORY UNLOCK",
+      "de": "Waffenkammer freischalten"
+     },
+     "imageURL": "https://camo-track.app/Images/MW3/spear.png",
+     "acquiredBy": "armory"
+    }
+   ]
+  }
+ ]
+}

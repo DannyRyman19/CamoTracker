@@ -1,0 +1,196 @@
+[
+  {
+    "id": "mw4",
+    "name": {
+      "en": "Modern Warfare 4"
+    },
+    "shortName": "MW4",
+    "path": "Data/MW4/",
+    "seedPrefix": "",
+    "countsUnlocks": true,
+    "levelCategories": [
+      7,
+      8
+    ],
+    "modes": [
+      {
+        "id": "multiplayer"
+      },
+      {
+        "id": "warzone"
+      },
+      {
+        "id": "dmz"
+      }
+    ],
+    "sharedCamos": true,
+    "capstone": {
+      "name": {
+        "en": "Flashpoint"
+      },
+      "imageURL": "https://camo-track.app/Images/Camos/MW4/flashpoint.png?v=wiki",
+      "colors": [
+        "#FF8A3D",
+        "#8B5CFF",
+        "#FF4FA3"
+      ]
+    }
+  },
+  {
+    "id": "bo7",
+    "name": {
+      "en": "Black Ops 7"
+    },
+    "shortName": "BO7",
+    "path": "Data/CT/BO7/",
+    "seedPrefix": "bo7_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#FF5A1F"
+      },
+      {
+        "id": "zombies",
+        "accent": "#8FD14F"
+      },
+      {
+        "id": "warzone",
+        "accent": "#3FA9F5"
+      },
+      {
+        "id": "campaign",
+        "accent": "#C9A24B",
+        "name": {
+          "en": "Endgame"
+        },
+        "symbol": "flag.checkered"
+      }
+    ],
+    "theme": {
+      "background": "#0B0A0B",
+      "surface": "#161416",
+      "surface2": "#211E21",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF6A2A",
+      "mark": "BO7",
+      "markWhite": 2,
+      "markColor": "#FF5A1F",
+      "accent": "#FF5A1F"
+    },
+    "capstone": {
+      "name": {
+        "en": "Nexus Horizon"
+      },
+      "imageURL": "https://camo-track.app/Images/BO7/Camos/nexus-horizon.png",
+      "colors": [
+        "#7FE3D8",
+        "#B49CFF",
+        "#2E6B5A"
+      ]
+    },
+    "legacyApp": "BO7 Camo Tracker"
+  },
+  {
+    "id": "bo6",
+    "name": {
+      "en": "Black Ops 6"
+    },
+    "shortName": "BO6",
+    "path": "Data/CT/BO6/",
+    "seedPrefix": "bo6_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#FF6B1A"
+      },
+      {
+        "id": "zombies",
+        "accent": "#8CC63F"
+      },
+      {
+        "id": "warzone",
+        "accent": "#3FA9F5"
+      }
+    ],
+    "theme": {
+      "background": "#0D0B0A",
+      "surface": "#191512",
+      "surface2": "#241E1A",
+      "font": "Teko",
+      "fontScale": 1.3,
+      "fontWeight": "semibold",
+      "tint": "#FF8A2A",
+      "mark": "BO6",
+      "markWhite": 2,
+      "markColor": "#FF6B1A",
+      "accent": "#FF6B1A"
+    },
+    "legacyApp": "BO6 Camo Tracker"
+  },
+  {
+    "id": "mw3",
+    "name": {
+      "en": "Modern Warfare III"
+    },
+    "shortName": "MW3",
+    "path": "Data/CT/MW3/",
+    "seedPrefix": "mw3_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#E5482F"
+      },
+      {
+        "id": "zombies",
+        "accent": "#C64BD0"
+      }
+    ],
+    "theme": {
+      "background": "#0D0D0E",
+      "surface": "#18181A",
+      "surface2": "#232325",
+      "tint": "#E5482F",
+      "mark": "MW3",
+      "markWhite": 2,
+      "markColor": "#E5482F",
+      "accent": "#E5482F"
+    },
+    "legacyApp": "MW3 Camo Tracker"
+  },
+  {
+    "id": "mw2",
+    "name": {
+      "en": "Modern Warfare II"
+    },
+    "shortName": "MW2",
+    "path": "Data/CT/MW2/",
+    "seedPrefix": "mw2_",
+    "hasMastery": false,
+    "modes": [
+      {
+        "id": "multiplayer",
+        "accent": "#7CC32D"
+      },
+      {
+        "id": "zombies",
+        "accent": "#FF8B00"
+      }
+    ],
+    "theme": {
+      "background": "#0B0D0A",
+      "surface": "#161914",
+      "surface2": "#20241D",
+      "tint": "#7CC32D",
+      "mark": "MW2",
+      "markWhite": 2,
+      "markColor": "#7CC32D",
+      "accent": "#7CC32D"
+    },
+    "legacyApp": "MW2 / MW3 Camo Tracker"
+  }
+]
