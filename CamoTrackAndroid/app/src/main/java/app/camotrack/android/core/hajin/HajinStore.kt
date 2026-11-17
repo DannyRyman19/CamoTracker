@@ -129,6 +129,21 @@ class HajinStore(
         saved()
     }
 
+    /** A photo read's counts, set in one go and offered for undo (iOS applyScannedCounts). */
+    fun applyScannedCounts(counts: Map<String, Int>) {
+        if (counts.isEmpty()) return
+        val previous = stash
+        val previousTracked = tracked
+        val next = stash.toMutableMap()
+        for ((id, count) in counts) {
+            val n = count.coerceIn(0, 99_999)
+            if (n == 0) next.remove(id) else next[id] = n
+        }
+        stash = next
+        stashUndo = StashUndo(text("mw4.ui.hajin.scan_updated", arrayOf(counts.size)), previous, previousTracked)
+        saved()
+    }
+
     /** The recipe is unlocked and the stash covers every part of its cost (or an upgrade's). */
     fun canPrint(item: HajinGuide.Item): Boolean {
         val cost = item.cost

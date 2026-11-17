@@ -371,7 +371,7 @@ enum class MineCard(val raw: String) {
     }
 }
 
-/** The player's own cards in the order they chose, with a Customise button (iOS HajinMinePage). The photo reader comes later on Android. */
+/** The player's own cards in the order they chose, with a Customise button (iOS HajinMinePage). */
 private fun LazyListScope.minePage() {
     item(key = "mine") { MineCards() }
 }
@@ -383,8 +383,12 @@ private fun MineCards() {
     val hiddenRaw by Prefs.string(MineCard.HIDDEN_KEY, "")
     var customising by remember { mutableStateOf(false) }
     val hidden = hiddenRaw.split(",").filter { it.isNotEmpty() }.toSet()
-    val shown = MineCard.order(orderRaw).filter { it.raw !in hidden && it != MineCard.SCAN }
+    val shown = MineCard.order(orderRaw).filter { it.raw !in hidden }
     Column {
+        // The photo reader: the big card until there's a stash, then a tile
+        if (MineCard.SCAN in shown) {
+            if (store.stash.isEmpty()) app.camotrack.android.ui.hajin.scan.ScanHeroCard() else app.camotrack.android.ui.hajin.scan.ScanReaderTile()
+        }
         for (card in shown.filter { it == MineCard.TRACKING || it == MineCard.BUILD_NEXT }) {
             Box(Modifier.hajinCard()) { if (card == MineCard.TRACKING) TrackingCard() else BuildNextCard() }
         }
@@ -471,14 +475,10 @@ private fun MineCustomise(onDismiss: () -> Unit) {
     var orderRaw by Prefs.string(MineCard.ORDER_KEY, "")
     var hiddenRaw by Prefs.string(MineCard.HIDDEN_KEY, "")
     val full = MineCard.order(orderRaw)
-    // The photo reader comes later on Android: kept in the saved order, not listed
-    val order = full.filter { it != MineCard.SCAN }
+    val order = full
     val hidden = hiddenRaw.split(",").filter { it.isNotEmpty() }.toSet()
     fun save(list: List<MineCard>) {
-        val withScan = list.toMutableList()
-        val at = full.indexOf(MineCard.SCAN)
-        if (at >= 0) withScan.add(at.coerceAtMost(withScan.size), MineCard.SCAN)
-        orderRaw = withScan.joinToString(",") { it.raw }
+        orderRaw = list.joinToString(",") { it.raw }
     }
     AlertDialog(
         onDismissRequest = onDismiss,

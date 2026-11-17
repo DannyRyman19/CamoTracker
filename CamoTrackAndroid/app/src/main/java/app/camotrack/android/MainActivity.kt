@@ -153,6 +153,8 @@ private fun Screens() {
             WhatsNewScreen(onClose = { AppState.showsWhatsNew = false })
         }
         if (AppState.showsOnboarding) OnboardingScreen()
+        // The DMZ stash photo reader, over the tabs once started
+        app.camotrack.android.ui.hajin.scan.HajinScanHost()
         AdConsentQuestion()
         IconUnlockNotice()
         ShareSheetHost()

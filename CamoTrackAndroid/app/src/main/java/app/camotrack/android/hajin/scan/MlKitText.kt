@@ -2,6 +2,7 @@ package app.camotrack.android.hajin.scan
 
 import android.graphics.Bitmap
 import com.google.android.gms.tasks.Tasks
+import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
@@ -18,13 +19,35 @@ class MlKitTextReader : TextReader, Closeable {
     override fun lines(image: Raster): List<TextLine> = lines(image.toBitmap())
 
     fun lines(bitmap: Bitmap): List<TextLine> {
-        val text = Tasks.await(recognizer.process(InputImage.fromBitmap(bitmap, 0)))
+        val text = try {
+            Tasks.await(recognizer.process(InputImage.fromBitmap(bitmap, 0)))
+        } catch (e: java.util.concurrent.ExecutionException) {
+            // Play services still fetching the text model (a new phone, or
+            // just installed): no text this time, so the grid still reads
+            val cause = e.cause
+            if (cause is MlKitException && cause.errorCode == MlKitException.UNAVAILABLE) return emptyList()
+            throw e
+        }
         return toLines(text, bitmap.width, bitmap.height)
     }
 
     override fun close() = recognizer.close()
 
     companion object {
+        /**
+         * Asks Play services for the text model now if it isn't on the phone
+         * yet. The manifest's install-time request only covers Play Store
+         * installs; until the model arrives, `lines` gives no text.
+         */
+        fun requestModel(context: android.content.Context) {
+            runCatching {
+                val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+                com.google.android.gms.common.moduleinstall.ModuleInstall.getClient(context.applicationContext).installModules(
+                    com.google.android.gms.common.moduleinstall.ModuleInstallRequest.newBuilder().addApi(recognizer).build(),
+                ).addOnCompleteListener { recognizer.close() }
+            }
+        }
+
         fun toLines(text: Text, width: Int, height: Int): List<TextLine> =
             text.textBlocks.flatMap { block -> block.lines }.flatMap { line ->
                 val words = line.elements.mapNotNull { e ->

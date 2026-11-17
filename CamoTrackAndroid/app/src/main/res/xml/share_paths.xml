@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Share cards: the PNG written to the cache before it goes to the share sheet -->
+<!-- Share cards: the PNG written to the cache before it goes to the share sheet.
+     The stash scan: a camera shot being taken, and a reader report's photo and JSON for the email. -->
 <paths>
     <cache-path name="share" path="share/" />
+    <cache-path name="scan" path="scan/" />
 </paths>

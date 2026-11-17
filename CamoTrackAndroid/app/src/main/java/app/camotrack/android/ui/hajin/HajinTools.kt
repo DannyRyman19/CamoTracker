@@ -212,8 +212,11 @@ fun StashScreen() {
         TopBar(L("mw4.ui.hajin.stash"))
         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_section")) { query = it } }
-            // The photo reader comes later on Android
-            if (query.isEmpty()) item(key = "intro") { HajinIntro(L("mw4.ui.hajin.stash_intro")) }
+            if (query.isEmpty()) {
+                item(key = "intro") { HajinIntro(L("mw4.ui.hajin.stash_intro")) }
+                // One photo reader: the stash grid, a backpack or a 3D Printer screen
+                item(key = "scan") { app.camotrack.android.ui.hajin.scan.ScanStashRow() }
+            }
             for ((title, items) in groups) {
                 item(key = "h-$title") { HajinHeading(title) }
                 for (item in items) item(key = "${title}-${item.id}") { StashRow(item) }

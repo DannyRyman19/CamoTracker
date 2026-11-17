@@ -17,13 +17,13 @@ val keystoreProps = Properties().apply {
 
 android {
     namespace = "app.camotrack.android"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig {
         applicationId = "app.camotrack.android"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
-        versionName = "0.1"
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures { compose = true; buildConfig = true }
