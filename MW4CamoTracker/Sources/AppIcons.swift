@@ -101,6 +101,27 @@ enum AppIconChoice: String, CaseIterable, Identifiable {
     }
 }
 
+/// Tells the player once when they earn a camo icon. The first time it looks
+/// it only notes what's already earned (What's New covered those), so an
+/// update doesn't announce every icon at once.
+enum IconUnlocks {
+    static let key = "ct_icons_known"
+
+    /// The icon earned since last time, if any (the latest, when several).
+    @MainActor
+    static func newlyEarned(_ viewModel: TrackerViewModel, defaults: UserDefaults = .standard) -> AppIconChoice? {
+        let earned = AppIconChoice.allCases.filter { $0 != .standard && $0.isEarned(viewModel) }
+        guard let known = defaults.stringArray(forKey: key) else {
+            defaults.set(earned.map(\.rawValue), forKey: key)
+            return nil
+        }
+        let fresh = earned.filter { !known.contains($0.rawValue) }
+        guard !fresh.isEmpty else { return nil }
+        defaults.set(Array(Set(known).union(fresh.map(\.rawValue))), forKey: key)
+        return fresh.last
+    }
+}
+
 /// Customise > App icon: every icon, the earned ones to pick from, the rest
 /// showing what unlocks them.
 struct AppIconPicker: View {

@@ -1272,3 +1272,23 @@ struct WhatsNewTests {
         }
     }
 }
+
+@Suite("Icon unlock notice")
+struct IconUnlockTests {
+    @MainActor @Test func quietTheFirstTimeThenOncePerIcon() throws {
+        let game = try #require(GameRegistry.game("mw4"))
+        let suite = "icons-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let model = TrackerViewModel(game: game, dataService: DataService(game: game, cacheDir: FileManager.default.temporaryDirectory.appendingPathComponent(suite)), defaults: defaults)
+        let notes = try #require(UserDefaults(suiteName: suite + "-n"))
+        defer { notes.removePersistentDomain(forName: suite + "-n") }
+        // First look: notes what's earned, says nothing
+        #expect(IconUnlocks.newlyEarned(model, defaults: notes) == nil)
+        // Gold earned on a weapon: announced once
+        let weapon = try #require(model.catalog?.categories.first?.weapons.first)
+        model.toggleCompletionist(mode: "multiplayer", weaponId: weapon.weaponId, step: 0)
+        #expect(IconUnlocks.newlyEarned(model, defaults: notes) == .gold)
+        #expect(IconUnlocks.newlyEarned(model, defaults: notes) == nil)
+    }
+}

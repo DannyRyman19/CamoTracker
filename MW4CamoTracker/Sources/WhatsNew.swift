@@ -106,7 +106,7 @@ struct WhatsNewSheet: View {
                         .foregroundStyle(Color.appInkMuted)
                         .fixedSize(horizontal: false, vertical: true)
                     if item.action == .appIcons, earnedIcons > 0 {
-                        Text(String(format: "ct.whatsnew.icons.earned".localized(), earnedIcons))
+                        Text(String(format: (Premium.shared.isPremium ? "ct.whatsnew.icons.earned" : "ct.whatsnew.icons.earned_free").localized(), earnedIcons))
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(Color.appInk)
                             .fixedSize(horizontal: false, vertical: true)

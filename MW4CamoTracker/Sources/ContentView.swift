@@ -19,6 +19,10 @@ struct ContentView: View {
     @State private var splashDone = false
     /// What's new in this version, once after an update (see WhatsNew).
     @State private var showWhatsNew = false
+    /// A camo icon just earned, to say it can be switched to
+    @State private var iconUnlock: AppIconChoice?
+    @State private var showIconPicker = false
+    @ObservedObject private var premium = Premium.shared
     /// The milestone whose share card is open.
     @State private var sharingBanner: MilestoneBanner?
 
@@ -417,10 +421,37 @@ struct ContentView: View {
                 requestReview()
             }
         }
+        // A camo icon earned: say so once the celebration has finished
+        .onChange(of: viewModel.milestoneBanner == nil) { cleared in
+            guard cleared, Self.screenshotScreen == nil, Self.demoTake == nil else { return }
+            Task {
+                try? await Task.sleep(nanoseconds: 700_000_000)
+                guard viewModel.milestoneBanner == nil, sharingBanner == nil, !showOnboarding, !showWhatsNew, splashDone else { return }
+                iconUnlock = IconUnlocks.newlyEarned(viewModel)
+            }
+        }
+        .alert("ct.icon_unlock.title".localized(), isPresented: Binding(get: { iconUnlock != nil }, set: { if !$0 { iconUnlock = nil } }),
+               presenting: iconUnlock) { _ in
+            Button("ct.icon_unlock.choose".localized()) { showIconPicker = true }
+            Button("ct.icon_unlock.later".localized(), role: .cancel) {}
+        } message: { choice in
+            Text(choice.needsPremium && !premium.isPremium
+                 ? String(format: "ct.icon_unlock.premium".localized(), choice.title)
+                 : String(format: "ct.icon_unlock.body".localized(), choice.title))
+        }
+        .sheet(isPresented: $showIconPicker) {
+            NavigationStack { AppIconPicker(accent: currentAccent) }
+                .environmentObject(viewModel)
+        }
         // After the splash, once per update, never over onboarding
         .onChange(of: splashDone) { done in
             if done, Self.screenshotScreen == nil, !showOnboarding, WhatsNew.shouldShow(hasOnboarded: hasOnboarded) {
                 showWhatsNew = true
+            }
+            // Note the icons already earned before this version, so only
+            // ones earned from here on are announced
+            if done, UserDefaults.standard.stringArray(forKey: IconUnlocks.key) == nil {
+                _ = IconUnlocks.newlyEarned(viewModel)
             }
         }
         .sheet(isPresented: $showWhatsNew) {
