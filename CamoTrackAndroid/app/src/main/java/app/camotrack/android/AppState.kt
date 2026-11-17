@@ -17,6 +17,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import app.camotrack.android.services.Premium
+import app.camotrack.android.services.StreamOverlay
+import app.camotrack.android.services.overlayPayload
 import java.io.File
 
 /** Where a tab can go, past its root (iOS's Route). */
@@ -73,6 +76,11 @@ object AppState {
         cacheRoot = File(context.filesDir, "data")
         games = GameRegistry.load(seeds)
         primaryMode = store.getString(PRIMARY_MODE) ?: "multiplayer"
+        StreamOverlay.start(store)
+        Premium.start(context, store)
+        app.camotrack.android.services.Ads.noteLaunch(store)
+        // Pins and the like follow Premium as soon as it changes
+        Premium.onChange = { owned -> current?.isPremium = owned; revision++ }
         open(GameRegistry.saved(games, store))
     }
 
@@ -80,10 +88,20 @@ object AppState {
         store.putString(GameRegistry.KEY, game.id)
         val t = GameTracker(game, DataService(game, File(cacheRoot, game.id), seeds), store)
         t.milestoneListener = { milestone = it }
+        t.isPremium = Premium.isPremium
         current = t
         stacks.values.forEach { it.clear() }
         watch?.cancel()
-        watch = scope.launch { t.revision.collect { revision++ } }
+        watch = scope.launch {
+            t.revision.collect {
+                revision++
+                // The stream overlay follows every change (it skips sends that change nothing)
+                StreamOverlay.refresh()
+            }
+        }
+        StreamOverlay.makePayload = {
+            t.overlayPayload(StreamOverlay.content, StreamOverlay.mode, StreamOverlay.weaponId(t.game.id), mode)
+        }
         refresh()
     }
 

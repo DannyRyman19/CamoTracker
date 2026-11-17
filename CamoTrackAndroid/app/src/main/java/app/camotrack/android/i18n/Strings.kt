@@ -50,11 +50,16 @@ object Strings {
 
     private fun table(lang: String): Table = synchronized(tables) {
         tables.getOrPut(lang) {
-            runCatching {
-                app.assets.open("strings/$lang.json").bufferedReader().use { json.decodeFromString<Table>(it.readText()) }
-            }.getOrDefault(Table())
+            // The iPhone app's strings, plus the few only Android needs (strings/android/)
+            val ios = read("strings/$lang.json")
+            val android = read("strings/android/$lang.json")
+            Table(ios.strings + android.strings, ios.plurals + android.plurals)
         }
     }
+
+    private fun read(path: String): Table = runCatching {
+        app.assets.open(path).bufferedReader().use { json.decodeFromString<Table>(it.readText()) }
+    }.getOrDefault(Table())
 
     fun raw(key: String): String =
         table(language).strings[key] ?: table("en").strings[key] ?: key

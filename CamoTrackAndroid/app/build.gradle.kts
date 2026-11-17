@@ -15,7 +15,7 @@ android {
         versionCode = 1
         versionName = "0.1"
     }
-    buildFeatures { compose = true }
+    buildFeatures { compose = true; buildConfig = true }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -43,6 +43,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("io.coil-kt:coil-compose:2.7.0")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.work:work-runtime-ktx:2.10.0")
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
+    // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
+    implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
+    implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
