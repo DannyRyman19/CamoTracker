@@ -445,6 +445,8 @@ struct ContentView: View {
         }
         // After the splash, once per update, never over onboarding
         .onChange(of: splashDone) { done in
+            // The ad questions wait for this, and then for What's New
+            if done { Task { try? await Task.sleep(nanoseconds: 1_000_000_000); Ads.screenReady = true } }
             if done, Self.screenshotScreen == nil, !showOnboarding, WhatsNew.shouldShow(hasOnboarded: hasOnboarded) {
                 showWhatsNew = true
             }
@@ -453,6 +455,12 @@ struct ContentView: View {
             if done, UserDefaults.standard.stringArray(forKey: IconUnlocks.key) == nil {
                 _ = IconUnlocks.newlyEarned(viewModel)
             }
+            #if DEBUG
+            // Screenshots: the unlock notice for an icon, e.g. SS_ICON_UNLOCK=platinum
+            if done, let raw = ProcessInfo.processInfo.environment["SS_ICON_UNLOCK"] {
+                iconUnlock = AppIconChoice(rawValue: raw)
+            }
+            #endif
         }
         .sheet(isPresented: $showWhatsNew) {
             WhatsNewSheet(accent: currentAccent).environmentObject(viewModel)

@@ -199,6 +199,12 @@ final class Ads: NSObject, ObservableObject {
             for _ in 0..<20 where UIApplication.shared.applicationState != .active {
                 try? await Task.sleep(for: .milliseconds(300))
             }
+            // Not while What's New (due after the splash) or any other sheet
+            // is up: an alert and a sheet presented at once means neither
+            // shows, and the question would never be answered
+            for _ in 0..<600 where Self.isBusy() {
+                try? await Task.sleep(for: .milliseconds(500))
+            }
             // The law's question (EU, EEA, UK, Switzerland) before Apple's
             await AdConsent.updateStorefront()
             if AdConsent.needsAsking { await AdConsent.ask() }
@@ -290,6 +296,20 @@ final class Ads: NSObject, ObservableObject {
     }
 
     /// What to present the ad over: the frontmost screen.
+    /// Set once the splash has gone (ContentView): what follows it (What's
+    /// New, a notice) gets the screen first.
+    static var screenReady = false
+
+    /// Something is on screen, or about to be, that a question mustn't
+    /// land on: What's New not yet seen this version, or any presented sheet.
+    static func isBusy() -> Bool {
+        if !screenReady { return true }
+        if WhatsNew.shouldShow(hasOnboarded: UserDefaults.standard.bool(forKey: "mw4_has_onboarded")) { return true }
+        let scene = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive }
+        return scene?.windows.first { $0.isKeyWindow }?.rootViewController?.presentedViewController != nil
+    }
+
     static func topController() -> UIViewController? {
         let scene = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
             .first { $0.activationState == .foregroundActive }
