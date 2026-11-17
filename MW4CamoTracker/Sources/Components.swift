@@ -1491,7 +1491,20 @@ struct CardGrid<Item: Identifiable, Card: View>: View {
 
     var body: some View {
         let perRow = fillsRow ? 1 : columns
-        if columns <= 1 || pushRoute == nil {
+        if let pushRoute, columns <= 1 {
+            // A button rather than a hidden link behind the card: the card's
+            // press-and-hold quick look would otherwise swallow the tap
+            ForEach(items) { item in
+                Button {
+                    pushRoute(route(item))
+                } label: {
+                    card(item)
+                }
+                .buttonStyle(.plain)
+                .listRowInsets(Self.insets)
+                .listRowBackground(Color.clear)
+            }
+        } else if columns <= 1 || pushRoute == nil {
             ForEach(items) { item in
                 // The link sits behind the card, hidden: a visible one gets
                 // the system chevron, outside the card's own border
