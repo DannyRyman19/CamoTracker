@@ -9,12 +9,25 @@ struct WeaponPeekMenu: ViewModifier {
     @EnvironmentObject private var viewModel: TrackerViewModel
     @ObservedObject private var overlay = StreamOverlay.shared
     @State private var sharing = false
+    /// The quick look's own height, so the pop-up hugs it up to a cap
+    @State private var contentHeight: CGFloat = 440
 
     /// The next camo still to earn, which "Mark done" ticks.
     private var nextCamo: ChallengeItem? {
         viewModel.camos(weaponId: weapon.weaponId, mode: mode.rawValue)
             .flatMap(viewModel.leafItems)
             .first { !viewModel.isCamoComplete(mode: mode.rawValue, weaponId: weapon.weaponId, camo: $0) }
+    }
+
+    /// With every camo done: the next Completionist camo (Gold, Platinum...)
+    /// that can be ticked now. The final one comes by itself, so never that.
+    private var nextCompletionist: Int? {
+        let raw = mode.rawValue
+        let steps = min(mode.completionist.steps.count, TrackerViewModel.completionistStepCount)
+        guard nextCamo == nil,
+              let step = (0..<steps).first(where: { !viewModel.isCompletionistComplete(mode: raw, weaponId: weapon.weaponId, step: $0) }),
+              viewModel.isCompletionistAvailable(mode: raw, weaponId: weapon.weaponId, step: step) else { return nil }
+        return step
     }
 
     private var onOverlay: Bool {
@@ -25,11 +38,18 @@ struct WeaponPeekMenu: ViewModifier {
     func body(content: Content) -> some View {
         content
             .pressPeek { dismiss in
-                VStack(spacing: 0) {
-                    WeaponPeek(mode: mode, weapon: weapon).environmentObject(viewModel)
-                    actions(dismiss)
+                // Scrolls when it's taller than the room above or below the card
+                ScrollView {
+                    VStack(spacing: 0) {
+                        WeaponPeek(mode: mode, weapon: weapon).environmentObject(viewModel)
+                        actions(dismiss)
+                    }
+                    .background(GeometryReader { geo in
+                        Color.clear.preference(key: PeekHeight.self, value: geo.size.height)
+                    })
                 }
-                .frame(width: 340)
+                .onPreferenceChange(PeekHeight.self) { contentHeight = $0 }
+                .frame(width: 340, height: min(max(contentHeight, 200), 440))
                 .background(Color.appSurface)
             }
             .sheet(isPresented: $sharing) {
@@ -43,6 +63,10 @@ struct WeaponPeekMenu: ViewModifier {
             if let camo = nextCamo {
                 action(String(format: "ct.peek.mark_done".localized(), camo.name.resolved()), "checkmark.circle") {
                     viewModel.toggleCamo(mode: mode.rawValue, weaponId: weapon.weaponId, camo: camo)
+                }
+            } else if let step = nextCompletionist {
+                action(String(format: "ct.peek.mark_done".localized(), mode.completionist.steps[step].name), "checkmark.circle") {
+                    viewModel.toggleCompletionist(mode: mode.rawValue, weaponId: weapon.weaponId, step: step)
                 }
             }
             // Only while the overlay is on: it puts this gun on stream
@@ -82,6 +106,11 @@ struct WeaponPeekMenu: ViewModifier {
     }
 }
 
+private struct PeekHeight: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = max(value, nextValue()) }
+}
+
 extension View {
     func weaponPeek(mode: AppMode, weapon: WeaponEntry) -> some View {
         modifier(WeaponPeekMenu(mode: mode, weapon: weapon))
@@ -96,25 +125,28 @@ struct WeaponPeek: View {
 
     var body: some View {
         let data = viewModel.streamOverlayPayload(content: .weapon, modeRaw: mode.rawValue, weaponId: weapon.weaponId)?.weapon
-        VStack(alignment: .leading, spacing: 12) {
-            WeaponHeroImage(urlString: weapon.imageURL)
-                .frame(maxWidth: .infinity)
-                .frame(height: 120)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(weapon.name.resolved())
-                    .hitmarkerFont(22)
-                    .foregroundStyle(Color.appInk)
-                if let data {
-                    Text("\(mode.displayName) · \(data.badge)")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.appInkMuted)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 12) {
+                WeaponThumbnail(urlString: weapon.imageURL, size: 64,
+                                category: viewModel.category(containingWeaponId: weapon.weaponId))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(weapon.name.resolved())
+                        .hitmarkerFont(20)
+                        .foregroundStyle(Color.appInk)
+                        .lineLimit(1)
+                    if let data {
+                        Text("\(mode.displayName) · \(data.badge)")
+                            .font(.footnote)
+                            .foregroundStyle(Color.appInkMuted)
+                            .lineLimit(2)
+                    }
                 }
             }
             if let data, !data.camos.isEmpty {
                 // Every camo, earned ones lit, wrapping to as many rows as it needs
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(28), spacing: 6), count: 9), alignment: .leading, spacing: 6) {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(26), spacing: 6), count: 10), alignment: .leading, spacing: 6) {
                     ForEach(Array(data.camos.enumerated()), id: \.offset) { _, camo in
-                        CamoThumbnail(urlString: camo.image, size: 28)
+                        CamoThumbnail(urlString: camo.image, size: 26)
                             .opacity(camo.done ? 1 : 0.3)
                     }
                 }

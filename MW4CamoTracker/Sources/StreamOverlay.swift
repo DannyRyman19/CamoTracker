@@ -337,7 +337,7 @@ extension TrackerViewModel {
             // Then the Completionist camos (Gold, Platinum...), earned per weapon
             camoRow += mode.completionistCamos.enumerated().map { step, camo in
                 CamoOverlayPayload.Camo(name: camo.name, image: camo.imageURL ?? "",
-                                        done: isCompletionistComplete(mode: raw, weaponId: weaponId, step: step))
+                                        done: overlayCompletionistDone(raw, weaponId: weaponId, step: step))
             }
             // Then its Prestige camos, in this weapon's own names and pictures
             // (BO7's per-weapon ones, MW4's Pyroclasts), where the game has them
@@ -367,6 +367,15 @@ extension TrackerViewModel {
         return payload
     }
 
+    /// A Completionist camo earned on this weapon. The last (the final camo)
+    /// comes by itself once the mode has enough, so it's checked the way the
+    /// weapon card's diamonds are, not as a tick.
+    func overlayCompletionistDone(_ mode: String, weaponId: Int, step: Int) -> Bool {
+        step >= Self.completionistStepCount
+            ? hasFinalCamo(mode: mode, weaponId: weaponId)
+            : isCompletionistComplete(mode: mode, weaponId: weaponId, step: step)
+    }
+
     /// What the weapon is on now: the next camo with its challenge and count,
     /// else the next Completionist camo. Nil once it has everything.
     private func overlayNext(_ weapon: WeaponEntry, mode: AppMode) -> CamoOverlayPayload.Next? {
@@ -386,7 +395,7 @@ extension TrackerViewModel {
             return .init(name: camo.name.resolved(), detail: "", done: 0, total: 1)
         }
         if let step = (0..<mode.completionistCamos.count).first(where: {
-            !isCompletionistComplete(mode: raw, weaponId: weapon.weaponId, step: $0)
+            !overlayCompletionistDone(raw, weaponId: weapon.weaponId, step: $0)
         }) {
             // Its own challenge where the mode gives one (BO7's Doomsteel: per weapon)
             if let requirement = completionistRequirement(mode: raw, weaponId: weapon.weaponId, step: step) {
