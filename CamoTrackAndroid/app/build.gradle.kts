@@ -1,8 +1,18 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
+}
+
+// Release signing from ~/.camotrack/keystore.properties (storeFile,
+// storePassword, keyAlias, keyPassword), never committed. Without it a
+// release build is signed with the debug key, for testing only.
+val keystoreProps = Properties().apply {
+    val f = File(System.getProperty("user.home"), ".camotrack/keystore.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
 }
 
 android {
@@ -16,6 +26,23 @@ android {
         versionName = "0.1"
     }
     buildFeatures { compose = true; buildConfig = true }
+
+    signingConfigs {
+        if (keystoreProps.isNotEmpty()) create("upload") {
+            storeFile = File(keystoreProps.getProperty("storeFile"))
+            storePassword = keystoreProps.getProperty("storePassword")
+            keyAlias = keystoreProps.getProperty("keyAlias")
+            keyPassword = keystoreProps.getProperty("keyPassword")
+        }
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.findByName("upload") ?: signingConfigs.getByName("debug")
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
