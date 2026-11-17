@@ -6,8 +6,9 @@ import UserNotifications
 /// a few things, each with a button that takes the player straight to it.
 ///
 /// To announce a release: add its items under its version in `releases`, with
-/// their strings in every Localizable.strings. A version with nothing listed
-/// shows nothing.
+/// their strings in every Localizable.strings. An update shows every release
+/// since the one the player last saw, newest first, so a release that never
+/// reached them (1.0.5 was pulled for 1.0.6) still gets told.
 enum WhatsNew {
     struct Item: Identifiable {
         enum Action { case streamOverlay, notifications, appIcons }
@@ -34,16 +35,42 @@ enum WhatsNew {
 
     static var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
 
-    /// This version's items, or none.
-    static var items: [Item] { releases[version] ?? [] }
+    private static func newer(_ a: String, than b: String) -> Bool {
+        a.compare(b, options: .numeric) == .orderedDescending
+    }
+
+    /// The releases after `seen` up to `version`, newest first (with no
+    /// `seen`, every one up to `version`).
+    static func items(since seen: String?, version: String = WhatsNew.version) -> [Item] {
+        releases.keys
+            .filter { key in !newer(key, than: version) && (seen.map { s in newer(key, than: s) } ?? true) }
+            .sorted { newer($0, than: $1) }
+            .flatMap { releases[$0] ?? [] }
+    }
+
+    /// What the sheet shows: everything since what this player last saw. From
+    /// Customise once it's been seen, the releases since the one before.
+    static var items: [Item] {
+        let seen = UserDefaults.standard.string(forKey: seenKey)
+        let fresh = items(since: seen == version ? shownFrom : seen)
+        return fresh.isEmpty ? items(since: nil).prefix(3).map { $0 } : fresh
+    }
+
+    /// The version the sheet last counted from, so it shows the same after
+    /// it's been marked seen.
+    private static let fromKey = "ct_whats_new_from"
+    private static var shownFrom: String? { UserDefaults.standard.string(forKey: fromKey) }
 
     /// After an update, for someone who'd already been through onboarding.
     static func shouldShow(hasOnboarded: Bool, defaults: UserDefaults = .standard, version: String = WhatsNew.version) -> Bool {
-        hasOnboarded && !(releases[version] ?? []).isEmpty && defaults.string(forKey: seenKey) != version
+        let seen = defaults.string(forKey: seenKey)
+        return hasOnboarded && seen != version && !items(since: seen, version: version).isEmpty
     }
 
     /// Seen (or nothing to see: a fresh install, which starts on this version).
     static func markSeen(defaults: UserDefaults = .standard, version: String = WhatsNew.version) {
+        let seen = defaults.string(forKey: seenKey)
+        if seen != version { defaults.set(seen, forKey: fromKey) }
         defaults.set(version, forKey: seenKey)
     }
 }

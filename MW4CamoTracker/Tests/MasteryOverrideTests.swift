@@ -1254,8 +1254,16 @@ struct WhatsNewTests {
         #expect(WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "1.0.5"))
         WhatsNew.markSeen(defaults: defaults, version: "1.0.5")
         #expect(!WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "1.0.5"))
-        // A version with nothing listed shows nothing
-        #expect(!WhatsNew.shouldShow(hasOnboarded: true, defaults: defaults, version: "9.9.9"))
+    }
+
+    @Test func anUpdateTellsEveryReleaseSinceTheLastOneSeen() {
+        // From 1.0.3 (before What's New): 1.0.6's items, then 1.0.5's
+        #expect(WhatsNew.items(since: nil, version: "1.0.6").map(\.id) == ["icons", "peek", "overlay", "push", "modes"])
+        #expect(WhatsNew.items(since: "1.0.3", version: "1.0.6").map(\.id) == ["icons", "peek", "overlay", "push", "modes"])
+        // From 1.0.5: only what's new since
+        #expect(WhatsNew.items(since: "1.0.5", version: "1.0.6").map(\.id) == ["icons", "peek"])
+        // Nothing past the running version
+        #expect(WhatsNew.items(since: "1.0.3", version: "1.0.5").map(\.id) == ["overlay", "push", "modes"])
     }
 
     @Test func everyItemHasWordsInEveryLanguage() throws {
