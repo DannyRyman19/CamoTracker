@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget picker's names and descriptions, from the iPhone widgets' Localizable.strings -->
+<resources>
+    <string name="widget_pinned_name">Angepinnte Waffe</string>
+    <string name="widget_pinned_description">Die Waffe, an der du arbeitest, und ihre nächste Tarnung.</string>
+    <string name="widget_mode_progress_name">Modus-Fortschritt</string>
+    <string name="widget_mode_progress_description">Der Stand jeder Meisterschafts-Tarnung in einem Modus.</string>
+    <string name="widget_completion_name">Fortschritt</string>
+    <string name="widget_completion_description">Dein gesamter Tarnungsfortschritt.</string>
+</resources>

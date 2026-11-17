@@ -46,7 +46,7 @@ fun MasteryScreen() {
             if (!hasMastery && (capstone != null || t.prestigeCamos.any { it.weaponsNeeded != null })) {
                 item(key = "game-camos") {
                     // Not sparkles: across the app those mean Premium
-                    SectionHeading(L("ct.ui.stats.game_camos"), Icons.Filled.WorkspacePremium, gameAccent)
+                    SectionHeading(L("ct.ui.stats.game_camos"), androidx.compose.ui.graphics.vector.rememberVectorPainter(Icons.Filled.WorkspacePremium), gameAccent)
                     SectionCard { GameCamoRows(t) }
                 }
             }
@@ -67,7 +67,7 @@ fun MasteryScreen() {
             }
             if (hasMastery && capstone != null) {
                 item(key = "global") {
-                    SectionHeading(L("ct.mastery.global"), Icons.Filled.WorkspacePremium, gameAccent)
+                    SectionHeading(L("ct.mastery.global"), androidx.compose.ui.graphics.vector.rememberVectorPainter(Icons.Filled.WorkspacePremium), gameAccent)
                     SectionCard {
                         val progress = t.globalMasteryProgress
                         val colors = colorsOf(HexColor.parseAll(capstone.colors))
@@ -86,7 +86,7 @@ fun MasteryScreen() {
 
 /** A section's heading: the mode's symbol and name in its colour. */
 @Composable
-private fun SectionHeading(title: String, icon: ImageVector, color: Color) {
+private fun SectionHeading(title: String, icon: androidx.compose.ui.graphics.painter.Painter, color: Color) {
     Row(
         Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 6.dp),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp),

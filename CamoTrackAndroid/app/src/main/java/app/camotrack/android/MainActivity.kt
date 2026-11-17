@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.MilitaryTech
 import androidx.compose.material.icons.filled.GpsFixed
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.animation.AnimatedVisibility
@@ -24,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.camotrack.android.ui.MilestoneBannerView
+import app.camotrack.android.ui.hajin.HajinUndoOverlay
 import app.camotrack.android.ui.bannerText
 import androidx.compose.ui.graphics.vector.ImageVector
 import app.camotrack.android.i18n.L
@@ -116,9 +118,11 @@ private fun Screens() {
                 // Free players: the banner above the tabs on each tab's main screen (as on iPhone)
                 if (stack.isEmpty()) app.camotrack.android.ui.AdBanner()
                 NavigationBar(containerColor = palette.surface) {
-                    TabItem(Tab.WEAPONS, Icons.Filled.GpsFixed, L("mw4.ui.section.weapons"))
-                    TabItem(Tab.MASTERY, Icons.Filled.MilitaryTech, L("mw4.ui.section.mastery"))
-                    TabItem(Tab.STATS, Icons.Filled.BarChart, L("mw4.ui.tab.stats"))
+                    TabItem(Tab.WEAPONS, app.camotrack.android.ui.Glyphs.tabWeapons, L("mw4.ui.section.weapons"))
+                    TabItem(Tab.MASTERY, app.camotrack.android.ui.Glyphs.tabMastery, L("mw4.ui.section.mastery"))
+                    // MW4's DMZ map and guide
+                    if (AppState.tracker.game.hasHajin) TabItem(Tab.HAJIN, app.camotrack.android.ui.Glyphs.tabMap, L("mw4.ui.hajin.title"))
+                    TabItem(Tab.STATS, app.camotrack.android.ui.Glyphs.tabStats, L("mw4.ui.tab.stats"))
                 }
                 }
             },
@@ -129,8 +133,11 @@ private fun Screens() {
                     route != null -> RouteScreen(route, AppState.mode)
                     AppState.tab == Tab.WEAPONS -> WeaponsHome(AppState.mode)
                     AppState.tab == Tab.MASTERY -> MasteryScreen()
+                    AppState.tab == Tab.HAJIN -> app.camotrack.android.ui.hajin.HajinHome()
                     else -> StatsScreen()
                 }
+                // A stash spend (an upgrade ticked as printed) offered for undo
+                if (AppState.tab == Tab.HAJIN) HajinUndoOverlay()
                 MilestoneOverlay()
             }
         }
@@ -230,12 +237,12 @@ private fun BoxScope.MilestoneOverlay() {
 }
 
 @Composable
-private fun RowScope.TabItem(tab: Tab, icon: ImageVector, label: String) {
+private fun RowScope.TabItem(tab: Tab, icon: Int, label: String) {
     val selected = AppState.tab == tab
     NavigationBarItem(
         selected = selected,
         onClick = { if (selected) AppState.stacks.getValue(tab).clear() else AppState.tab = tab },
-        icon = { Icon(icon, contentDescription = null) },
+        icon = { Icon(androidx.compose.ui.res.painterResource(icon), contentDescription = null, modifier = androidx.compose.ui.Modifier.size(26.dp)) },
         label = { Text(label) },
         colors = NavigationBarItemDefaults.colors(
             selectedIconColor = MaterialTheme.colorScheme.primary, selectedTextColor = MaterialTheme.colorScheme.primary,

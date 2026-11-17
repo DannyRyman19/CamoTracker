@@ -70,7 +70,7 @@ fun WeaponRow(mode: String, weapon: WeaponEntry, showsCamoCount: Boolean = true,
             Eyebrow("${counts.done}/${counts.total} ${L("mw4.ui.section.camos")}")
         }
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            WeaponThumbnail(weapon.imageURL, 56.dp)
+            WeaponThumbnail(weapon.imageURL, 56.dp, category = t.category(weapon.weaponId))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
                 Text(weapon.name.resolved(), style = displayStyle(15.sp), color = Ink.text, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 AcquiredByLabel(weapon, size = 10.5f)
@@ -191,7 +191,7 @@ private fun WeaponPeek(mode: String, weapon: WeaponEntry) {
     }
     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            WeaponThumbnail(weapon.imageURL, 64.dp)
+            WeaponThumbnail(weapon.imageURL, 64.dp, category = t.category(weapon.weaponId))
             Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                 Text(weapon.name.resolved(), style = displayStyle(20.sp), color = Ink.text, maxLines = 1)
                 Text("${modeName(mode)} · $badge", style = sys(13f), color = Ink.muted, maxLines = 2)

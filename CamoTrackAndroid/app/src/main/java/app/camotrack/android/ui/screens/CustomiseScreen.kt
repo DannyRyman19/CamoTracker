@@ -113,7 +113,8 @@ fun CustomiseScreen() {
                     RowDivider()
                     PickerRow(
                         L("mw4.ui.start_tab"), accent, startTab,
-                        listOf("weapons" to L("mw4.ui.section.weapons"), "mastery" to L("mw4.ui.section.mastery"), "stats" to L("mw4.ui.tab.stats")),
+                        listOfNotNull("weapons" to L("mw4.ui.section.weapons"), "mastery" to L("mw4.ui.section.mastery"),
+                            ("dmz" to L("mw4.ui.hajin.title")).takeIf { AppState.tracker.game.hasHajin }, "stats" to L("mw4.ui.tab.stats")),
                     ) { startTab = it }
                 }
             }

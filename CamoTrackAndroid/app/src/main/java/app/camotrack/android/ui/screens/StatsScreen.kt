@@ -169,7 +169,7 @@ private fun ModeStatsCard(t: GameTracker, mode: String, weapons: Boolean) {
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Icon(if (weapons && !ownGrind) Icons.Filled.GpsFixed else modeIcon(mode), null, tint = accent, modifier = Modifier.size(17.dp))
+            Icon(if (weapons && !ownGrind) app.camotrack.android.ui.Glyphs.painter(app.camotrack.android.ui.Glyphs.tabWeapons, Icons.Filled.GpsFixed) else modeIcon(mode), null, tint = accent, modifier = Modifier.size(17.dp))
             Text(
                 when {
                     ownGrind -> modeName(mode)

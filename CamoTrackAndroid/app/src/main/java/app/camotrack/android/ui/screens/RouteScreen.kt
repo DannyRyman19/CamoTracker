@@ -45,6 +45,13 @@ fun RouteScreen(route: Route, mode: String) {
         Route.StreamOverlay -> StreamOverlayScreen()
         Route.AppIcons -> AppIconsScreen()
         Route.WhatsNew -> WhatsNewScreen(onClose = { AppState.pop() })
+        is Route.HajinWeapon -> {
+            val weapon = t.weapon(route.weaponId)
+            if (weapon != null) WeaponDetailScreen("dmz", weapon) else Missing()
+        }
+        is Route.HajinSection, is Route.HajinItem, is Route.HajinOrder, is Route.HajinMap,
+        Route.HajinStash, Route.HajinKeepSell, Route.HajinShopping, Route.HajinBlueprints ->
+            app.camotrack.android.ui.hajin.HajinRouteScreen(route)
     }
 }
 

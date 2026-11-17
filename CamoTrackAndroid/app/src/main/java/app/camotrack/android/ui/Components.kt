@@ -161,9 +161,9 @@ fun Modifier.borderedCard(cornerRadius: Dp = 8.dp, accent: Color? = null, border
 
 // MARK: - Images
 
-/** A weapon's picture in a square tile, or a scope while it loads or when it has none. */
+/** A weapon's picture in a square tile, or its class's silhouette (else a scope) while it loads or when it has none. */
 @Composable
-fun WeaponThumbnail(url: String?, size: Dp, inset: Dp? = null) {
+fun WeaponThumbnail(url: String?, size: Dp, inset: Dp? = null, category: app.camotrack.android.core.WeaponCategory? = null) {
     val surface2 = LocalPalette.current.surface2
     Box(
         Modifier.size(size).clip(RoundedCornerShape(size * 0.2f)).background(surface2),
@@ -172,21 +172,36 @@ fun WeaponThumbnail(url: String?, size: Dp, inset: Dp? = null) {
         SubcomposeAsyncImage(
             model = url, contentDescription = null, contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxSize().padding(inset ?: (size * 0.14f)),
-            loading = { WeaponPlaceholder(size * 0.4f) }, error = { WeaponPlaceholder(size * 0.4f) },
+            loading = { WeaponPlaceholder(size * 0.4f, category, size * 0.72f) }, error = { WeaponPlaceholder(size * 0.4f, category, size * 0.72f) },
         )
     }
 }
 
 @Composable
-private fun WeaponPlaceholder(size: Dp) {
+private fun WeaponPlaceholder(size: Dp, category: app.camotrack.android.core.WeaponCategory? = null, maxWidth: Dp = size * 2) {
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Icon(Icons.Filled.GpsFixed, contentDescription = null, tint = Ink.muted, modifier = Modifier.size(size))
+        val drawn = category?.let { Glyphs.weaponClass(it) }
+        if (drawn != null) {
+            // The class's silhouette, its own shape, held to the tile's width
+            Icon(androidx.compose.ui.res.painterResource(drawn), contentDescription = null, tint = Ink.muted,
+                 modifier = Modifier.widthIn(max = maxWidth).height(size * 0.75f))
+        } else {
+            Icon(androidx.compose.ui.res.painterResource(Glyphs.tabWeapons), contentDescription = null, tint = Ink.muted, modifier = Modifier.size(size))
+        }
     }
+}
+
+/** A weapon class's silhouette (iOS ClassIcon), or nothing when the class has no drawing. */
+@Composable
+fun ClassIcon(category: app.camotrack.android.core.WeaponCategory, height: Dp = 16.dp, maxWidth: Dp = 52.dp, tint: androidx.compose.ui.graphics.Color = Ink.muted) {
+    val drawn = Glyphs.weaponClass(category) ?: return
+    Icon(androidx.compose.ui.res.painterResource(drawn), contentDescription = null, tint = tint,
+         modifier = Modifier.height(height).widthIn(max = maxWidth))
 }
 
 /** The weapon detail's wide banner, sized for the art's wide shape. */
 @Composable
-fun WeaponHeroImage(url: String?, height: Dp = 108.dp, modifier: Modifier = Modifier) {
+fun WeaponHeroImage(url: String?, height: Dp = 108.dp, modifier: Modifier = Modifier, category: app.camotrack.android.core.WeaponCategory? = null) {
     val surface2 = LocalPalette.current.surface2
     Box(
         modifier.fillMaxWidth().height(height).clip(RoundedCornerShape(12.dp)).background(surface2),
@@ -195,7 +210,7 @@ fun WeaponHeroImage(url: String?, height: Dp = 108.dp, modifier: Modifier = Modi
         SubcomposeAsyncImage(
             model = url, contentDescription = null, contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxSize().padding(12.dp),
-            loading = { WeaponPlaceholder(height * 0.32f) }, error = { WeaponPlaceholder(height * 0.32f) },
+            loading = { WeaponPlaceholder(height * 0.4f, category, height * 1.6f) }, error = { WeaponPlaceholder(height * 0.4f, category, height * 1.6f) },
         )
     }
 }

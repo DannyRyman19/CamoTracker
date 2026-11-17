@@ -27,6 +27,9 @@ data class Game(
 
     val isMW4: Boolean get() = id == "mw4"
 
+    /** The Hajin tab (DMZ map and guide): MW4 only. */
+    val hasHajin: Boolean get() = isMW4
+
     /** MW4 keeps its original keys; every other game gets `ct_<name>_<id>`. */
     fun key(mw4: String, name: String): String = if (isMW4) mw4 else "ct_${name}_$id"
 

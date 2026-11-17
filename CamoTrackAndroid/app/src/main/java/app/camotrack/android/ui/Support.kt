@@ -62,8 +62,12 @@ fun modeName(mode: String): String {
 fun modeAccent(mode: String): Color = Color(AppState.tracker.modeAccent(mode))
 fun modeTextAccent(mode: String): Color = Color(AppState.tracker.modeTextAccent(mode))
 
-/** The mode's symbol (iOS's SF Symbols, in Material's nearest). */
-fun modeIcon(mode: String): ImageVector {
+/** The mode's drawing (iOS ModeIcon), else its symbol in Material's nearest. */
+@androidx.compose.runtime.Composable
+fun modeIcon(mode: String): androidx.compose.ui.graphics.painter.Painter =
+    Glyphs.painter(Glyphs.mode(mode), modeSymbol(mode))
+
+fun modeSymbol(mode: String): ImageVector {
     val symbol = AppState.tracker.modeDefinition(mode)?.symbol
     return when {
         symbol?.startsWith("person") == true -> Icons.Filled.Groups

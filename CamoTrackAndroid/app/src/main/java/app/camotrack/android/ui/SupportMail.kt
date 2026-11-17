@@ -105,6 +105,12 @@ object SupportMail {
         send(context, "Camo Tracker: ${kind.mail}", lines.joinToString("\n") + "\n\n" + diagnosticsFooter())
     }
 
+    /** A DMZ guide report (an item or section of the Hajin guide), with the guide's version (iOS dmzURL). */
+    fun dmz(context: Context, kind: String, lines: List<String>, guideVersion: String?) {
+        val body = (listOf("Issue type: $kind") + lines + "Guide data: ${guideVersion ?: "?"}").joinToString("\n")
+        send(context, "Camo Tracker DMZ: $kind", body + "\n\n" + diagnosticsFooter())
+    }
+
     private fun diagnosticsFooter(): String =
         "---\nApp ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) · Android ${Build.VERSION.RELEASE} · ${Build.MANUFACTURER} ${Build.MODEL}"
 

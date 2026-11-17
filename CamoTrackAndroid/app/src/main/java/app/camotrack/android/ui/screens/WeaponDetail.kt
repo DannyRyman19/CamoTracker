@@ -150,7 +150,7 @@ fun WeaponDetailScreen(startMode: String, weapon: WeaponEntry) {
                     Modifier.padding(horizontal = 12.dp, vertical = 6.dp).fillMaxWidth().borderedCard().padding(12.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp),
                 ) {
-                    WeaponHeroImage(weapon.imageURL)
+                    WeaponHeroImage(weapon.imageURL, category = t.category(weapon.weaponId))
                     Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
                         t.category(id)?.let { Text(it.name.resolved(), style = displayStyle(15.sp), color = Ink.text) }
                         AcquiredByLabel(weapon)

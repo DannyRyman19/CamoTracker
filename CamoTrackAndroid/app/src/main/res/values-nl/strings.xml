@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget picker's names and descriptions, from the iPhone widgets' Localizable.strings -->
+<resources>
+    <string name="widget_pinned_name">Vastgezet wapen</string>
+    <string name="widget_pinned_description">Het wapen waar je aan werkt en zijn volgende camo.</string>
+    <string name="widget_mode_progress_name">Voortgang per modus</string>
+    <string name="widget_mode_progress_description">De stand van elke Mastery-camo in één modus.</string>
+    <string name="widget_completion_name">Voortgang</string>
+    <string name="widget_completion_description">Je totale camovoortgang.</string>
+</resources>

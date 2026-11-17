@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget picker's names and descriptions, from the iPhone widgets' Localizable.strings -->
+<resources>
+    <string name="widget_pinned_name">Arme épinglée</string>
+    <string name="widget_pinned_description">L\'arme sur laquelle vous travaillez et son prochain camouflage.</string>
+    <string name="widget_mode_progress_name">Progression du mode</string>
+    <string name="widget_mode_progress_description">Le compte de chaque camo de Maîtrise dans un mode.</string>
+    <string name="widget_completion_name">Progression</string>
+    <string name="widget_completion_description">Votre progression totale de camouflages.</string>
+</resources>

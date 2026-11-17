@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 import app.camotrack.android.services.Premium
 import app.camotrack.android.services.StreamOverlay
 import app.camotrack.android.services.overlayPayload
+import app.camotrack.android.widgets.WidgetSync
 import java.io.File
 
 /** Where a tab can go, past its root (iOS's Route). */
@@ -34,9 +35,21 @@ sealed interface Route {
     data object StreamOverlay : Route
     data object AppIcons : Route
     data object WhatsNew : Route
+    // The Hajin tab (MW4's DMZ map and guide)
+    data class HajinSection(val id: String) : Route
+    data class HajinItem(val id: String) : Route
+    data class HajinOrder(val check: String) : Route
+    /** The Tac Map, opened on a marker when one is given. */
+    data class HajinMap(val startAt: String? = null) : Route
+    /** A Gunsmith weapon's camos, in DMZ. */
+    data class HajinWeapon(val weaponId: Int) : Route
+    data object HajinStash : Route
+    data object HajinKeepSell : Route
+    data object HajinShopping : Route
+    data object HajinBlueprints : Route
 }
 
-enum class Tab { WEAPONS, MASTERY, STATS }
+enum class Tab { WEAPONS, MASTERY, HAJIN, STATS }
 
 /**
  * The app's state outside any one screen: the games, the picked game's
@@ -85,28 +98,32 @@ object AppState {
         games = GameRegistry.load(seeds)
         primaryMode = store.getString(PRIMARY_MODE) ?: "multiplayer"
         StreamOverlay.start(store)
+        WidgetSync.start(context)
         Premium.start(context, store)
         app.camotrack.android.services.Ads.noteLaunch(store)
         // Pins and the like follow Premium as soon as it changes
         Premium.onChange = { owned -> current?.isPremium = owned; revision++ }
+        app.camotrack.android.ui.hajin.Hajin.start(context)
         open(GameRegistry.saved(games, store))
-        // The tab picked in Customise (iOS StartTab); DMZ has no tab here
+        // The tab picked in Customise (iOS StartTab); DMZ only where the game has Hajin
         tab = when (store.getString(START_TAB)) {
             "mastery" -> Tab.MASTERY
             "stats" -> Tab.STATS
+            "dmz" -> if (tracker.game.hasHajin) Tab.HAJIN else Tab.WEAPONS
             else -> Tab.WEAPONS
         }
         showsOnboarding = !store.getBoolean(HAS_ONBOARDED)
     }
 
     /** Redraws what reads progress after a setting the tracker reads from the store changed (modes played). */
-    fun touch() { revision++ }
+    fun touch() { revision++; WidgetSync.refresh() }
 
     /** The picked language changed: re-read it and redraw everything. */
     fun languageChanged() {
         app.camotrack.android.i18n.Strings.refresh()
         languageTick++
         revision++
+        WidgetSync.refresh()
     }
 
     /**
@@ -132,12 +149,15 @@ object AppState {
         t.isPremium = Premium.isPremium
         current = t
         stacks.values.forEach { it.clear() }
+        if (tab == Tab.HAJIN && !game.hasHajin) tab = Tab.WEAPONS
         watch?.cancel()
         watch = scope.launch {
             t.revision.collect {
                 revision++
                 // The stream overlay follows every change (it skips sends that change nothing)
                 StreamOverlay.refresh()
+                // The widgets too, once changes settle (written only when the snapshot changed)
+                WidgetSync.refresh()
             }
         }
         StreamOverlay.makePayload = {
@@ -160,6 +180,8 @@ object AppState {
         primaryMode = mode
         store.putString(PRIMARY_MODE, mode)
         stacks.getValue(Tab.WEAPONS).clear()
+        // The pinned weapon widget shows the start mode
+        WidgetSync.refresh()
     }
 
     fun push(route: Route, on: Tab = tab) { stacks.getValue(on).add(route) }

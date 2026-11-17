@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget picker's names and descriptions, from the iPhone widgets' Localizable.strings -->
+<resources>
+    <string name="widget_pinned_name">Pinned weapon</string>
+    <string name="widget_pinned_description">The weapon you\'re grinding and its next camo.</string>
+    <string name="widget_mode_progress_name">Mode progress</string>
+    <string name="widget_mode_progress_description">Each Mastery camo\'s count for one mode.</string>
+    <string name="widget_completion_name">Completion</string>
+    <string name="widget_completion_description">Your overall camo completion.</string>
+</resources>

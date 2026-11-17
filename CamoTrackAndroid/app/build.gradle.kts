@@ -24,6 +24,7 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "0.1"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures { compose = true; buildConfig = true }
 
@@ -72,13 +73,21 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.work:work-runtime-ktx:2.10.0")
+    // The home-screen widgets
+    implementation("androidx.glance:glance-appwidget:1.1.1")
     implementation("com.android.billingclient:billing-ktx:7.1.1")
     // The QR code on share cards
     implementation("com.google.zxing:core:3.5.3")
+    // The DMZ stash photo reader (hajin.scan): its two models, and on-device text
+    implementation("com.google.ai.edge.litert:litert:1.4.2")
+    implementation("com.google.mlkit:text-recognition:16.0.1")
     // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
     implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
     implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    // On-device checks of the stash photo reader's models (hajin.scan)
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
 }

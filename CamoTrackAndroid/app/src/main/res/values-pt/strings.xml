@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The widget picker's names and descriptions, from the iPhone widgets' Localizable.strings -->
+<resources>
+    <string name="widget_pinned_name">Arma fixada</string>
+    <string name="widget_pinned_description">A arma que você está upando e a próxima camuflagem.</string>
+    <string name="widget_mode_progress_name">Progresso do modo</string>
+    <string name="widget_mode_progress_description">A contagem de cada camuflagem de Mestria num modo.</string>
+    <string name="widget_completion_name">Conclusão</string>
+    <string name="widget_completion_description">Sua conclusão geral de camuflagens.</string>
+</resources>
