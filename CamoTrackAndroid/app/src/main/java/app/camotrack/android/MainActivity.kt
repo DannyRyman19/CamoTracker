@@ -12,7 +12,17 @@ import androidx.compose.material.icons.filled.MilitaryTech
 import androidx.compose.material.icons.filled.GpsFixed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import app.camotrack.android.ui.MilestoneBannerView
+import app.camotrack.android.ui.bannerText
 import androidx.compose.ui.graphics.vector.ImageVector
 import app.camotrack.android.i18n.L
 import app.camotrack.android.ui.AppPalette
@@ -59,10 +69,14 @@ private fun Root() {
         Scaffold(
             containerColor = palette.background,
             bottomBar = {
+                Column {
+                // Free players: the banner above the tabs on each tab's main screen (as on iPhone)
+                if (stack.isEmpty()) app.camotrack.android.ui.AdBanner()
                 NavigationBar(containerColor = palette.surface) {
                     TabItem(Tab.WEAPONS, Icons.Filled.GpsFixed, L("mw4.ui.section.weapons"))
                     TabItem(Tab.MASTERY, Icons.Filled.MilitaryTech, L("mw4.ui.section.mastery"))
                     TabItem(Tab.STATS, Icons.Filled.BarChart, L("mw4.ui.tab.stats"))
+                }
                 }
             },
         ) { padding ->
@@ -74,8 +88,32 @@ private fun Root() {
                     AppState.tab == Tab.MASTERY -> MasteryScreen()
                     else -> StatsScreen()
                 }
+                MilestoneOverlay()
             }
         }
+    }
+}
+
+/** The latest milestone's banner, at the top for six seconds (iOS's MilestoneBannerView in ContentView). */
+@Composable
+private fun BoxScope.MilestoneOverlay() {
+    val milestone = AppState.milestone
+    LaunchedEffect(milestone) {
+        if (milestone != null) {
+            kotlinx.coroutines.delay(6_000)
+            if (AppState.milestone == milestone) AppState.milestone = null
+        }
+    }
+    AnimatedVisibility(
+        visible = milestone != null,
+        enter = slideInVertically { -it } + fadeIn(),
+        exit = slideOutVertically { -it } + fadeOut(),
+        modifier = Modifier.align(Alignment.TopCenter).statusBarsPadding().padding(top = 8.dp),
+    ) {
+        // Kept through the exit animation
+        val shown = remember { mutableStateOf(milestone) }
+        if (milestone != null) shown.value = milestone
+        shown.value?.let { MilestoneBannerView(bannerText(it), modifier = Modifier.clickable { AppState.milestone = null }) }
     }
 }
 
