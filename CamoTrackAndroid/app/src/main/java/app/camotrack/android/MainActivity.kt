@@ -60,6 +60,7 @@ class MainActivity : ComponentActivity() {
             navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
         )
         if (savedInstanceState == null) openLink(intent)
+        if (BuildConfig.DEBUG && intent?.getBooleanExtra("debug_seed", false) == true) DebugSeed.run()
         setContent { Root() }
     }
 
