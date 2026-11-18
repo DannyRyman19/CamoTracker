@@ -42,7 +42,7 @@ fun MasteryScreen() {
     val gameAccent = hexColor(t.game.theme?.accent) ?: CamoGold
     Column(Modifier.fillMaxSize().appBackground(modeAccent(modes.first()))) {
         TopBar(L("mw4.ui.section.mastery"), onBack = null)
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             if (!hasMastery && (capstone != null || t.prestigeCamos.any { it.weaponsNeeded != null })) {
                 item(key = "game-camos") {
                     // Not sparkles: across the app those mean Premium

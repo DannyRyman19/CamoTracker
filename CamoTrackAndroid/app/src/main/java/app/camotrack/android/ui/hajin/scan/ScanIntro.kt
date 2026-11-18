@@ -58,18 +58,28 @@ fun ScanIntro(onClose: () -> Unit) {
     var recent by remember { mutableStateOf(RecentPhotos.all(context)) }
     val needsAd = !Premium.isPremium && Rewarded.showsAds && !watched
 
+    // At the largest text sizes the pinned buttons took most of the screen,
+    // leaving a sliver for the explanation: there they scroll in after the
+    // tips instead (as on iPhone)
+    val pinsButtons = !isAccessibilityFontSize()
     Column(Modifier.fillMaxSize().background(palette.background).systemBarsPadding()) {
-        Row(Modifier.fillMaxWidth().height(52.dp).padding(horizontal = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            TextButton(onClick = onClose) { Text(L("mw4.ui.hajin.cancel"), color = HajinColors.text, style = sys(16f)) }
-            Text(L("mw4.ui.hajin.grid_scan"), style = displayStyle(17.sp), color = Ink.text, maxLines = 1,
+        // A bar's title stops growing at iOS's largest standard size, so "Read from a photo" stays whole
+        CapFontScale {
+        Row(Modifier.fillMaxWidth().heightIn(min = 52.dp).padding(horizontal = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+            TextButton(onClick = onClose, modifier = Modifier.widthIn(min = 88.dp)) { Text(L("mw4.ui.hajin.cancel"), color = HajinColors.text, style = sys(16f), maxLines = 1) }
+            Text(L("mw4.ui.hajin.grid_scan"), style = displayStyle(17.sp), color = Ink.text, maxLines = 2,
                 modifier = Modifier.weight(1f), textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             Spacer(Modifier.width(88.dp))
         }
+        }
+        val actions: @Composable () -> Unit = { ScanIntroActions(needsAd, recent, onClose, onWatched = { watched = true }, onNoAd = { noAd = true },
+            onRecentChange = { recent = RecentPhotos.all(context) }) }
         Column(
-            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(16.dp),
+            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = readableInset()).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
         ) {
-            Box(Modifier.fillMaxWidth().padding(vertical = 6.dp), contentAlignment = Alignment.Center) { ScanDemo() }
+            // A picture of a stash: its labels stop growing at the largest standard size, so the names still fit
+            Box(Modifier.fillMaxWidth().padding(vertical = 6.dp), contentAlignment = Alignment.Center) { CapFontScale { ScanDemo() } }
             Text(L("mw4.ui.hajin.grid_intro"), style = sys(15f), color = Ink.text)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Icon(Icons.Filled.PhonelinkLock, null, tint = HajinColors.text, modifier = Modifier.size(18.dp))
@@ -91,38 +101,12 @@ fun ScanIntro(onClose: () -> Unit) {
                 Tip(Icons.Filled.Backpack, L("mw4.ui.postmatch.tip_screen"))
                 Tip(Icons.Filled.Apps, L("mw4.ui.postmatch.tip_whole"))
             }
+            if (!pinsButtons) actions()
         }
-        // Pinned under the tips, so the next step is always in view
-        Box(Modifier.fillMaxWidth().height(1.dp).background(Ink.muted.copy(alpha = 0.25f)))
-        Column(
-            Modifier.fillMaxWidth().background(palette.background).padding(horizontal = 16.dp).padding(top = 12.dp, bottom = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            if (needsAd) {
-                // Free players: an ad for this scan, or Premium for none
-                FilledButton(L("mw4.ui.premium.scan_watch"), Icons.Filled.SmartDisplay) {
-                    Rewarded.afterAd(context.findActivity(), AppState.store, { watched = true }, { noAd = true })
-                }
-                Row(
-                    Modifier.fillMaxWidth().borderedCard(accent = HajinColors.accent).clickable { onClose(); AppState.push(Route.Premium) }.padding(12.dp),
-                    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp),
-                ) {
-                    CardSymbol(Icons.Filled.AutoAwesome)
-                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                        Text(L("mw4.ui.premium.scan_premium"), style = displayStyle(16.sp), color = Ink.text)
-                        Text(L("mw4.ui.premium.subtitle"), style = sys(12f), color = Ink.muted)
-                    }
-                    Chevron()
-                }
-            } else {
-                if (recent.isNotEmpty()) RecentStrip(recent, onRemove = { RecentPhotos.remove(it); recent = RecentPhotos.all(context) }) {
-                    ScanFlow.recent(context, it)
-                }
-                if (ScanFlow.hasCamera) {
-                    FilledButton(L("mw4.ui.hajin.grid_camera"), Icons.Filled.PhotoCamera) { ScanFlow.replacing = false; ScanFlow.takePhoto() }
-                }
-                OutlineButton(L("mw4.ui.hajin.grid_choose"), Icons.Filled.PhotoLibrary) { ScanFlow.replacing = false; ScanFlow.pickPhotos() }
-            }
+        if (pinsButtons) {
+            // Pinned under the tips, so the next step is always in view
+            Box(Modifier.fillMaxWidth().height(1.dp).background(Ink.muted.copy(alpha = 0.25f)))
+            Box(Modifier.fillMaxWidth().background(palette.background).padding(horizontal = 16.dp).padding(top = 12.dp, bottom = 8.dp)) { actions() }
         }
     }
     if (noAd) {
@@ -134,6 +118,39 @@ fun ScanIntro(onClose: () -> Unit) {
             confirmButton = { TextButton(onClick = { noAd = false; onClose(); AppState.push(Route.Premium) }) { Text(L("mw4.ui.premium.scan_premium"), color = HajinColors.text) } },
             dismissButton = { TextButton(onClick = { noAd = false }) { Text(L("mw4.ui.hajin.cancel"), color = HajinColors.text) } },
         )
+    }
+}
+
+/** Watch an ad and Go Premium for a free player's scan, else the recent photos and Take / Choose a photo. */
+@Composable
+private fun ScanIntroActions(needsAd: Boolean, recent: List<File>, onClose: () -> Unit, onWatched: () -> Unit, onNoAd: () -> Unit, onRecentChange: () -> Unit) {
+    val context = LocalContext.current
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        if (needsAd) {
+            // Free players: an ad for this scan, or Premium for none
+            FilledButton(L("mw4.ui.premium.scan_watch"), Icons.Filled.SmartDisplay) {
+                Rewarded.afterAd(context.findActivity(), AppState.store, onWatched, onNoAd)
+            }
+            Row(
+                Modifier.fillMaxWidth().borderedCard(accent = HajinColors.accent).clickable { onClose(); AppState.push(Route.Premium) }.padding(12.dp),
+                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                CardSymbol(Icons.Filled.AutoAwesome)
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                    Text(L("mw4.ui.premium.scan_premium"), style = displayStyle(16.sp), color = Ink.text)
+                    Text(L("mw4.ui.premium.subtitle"), style = sys(12f), color = Ink.muted)
+                }
+                Chevron()
+            }
+        } else {
+            if (recent.isNotEmpty()) RecentStrip(recent, onRemove = { RecentPhotos.remove(it); onRecentChange() }) {
+                ScanFlow.recent(context, it)
+            }
+            if (ScanFlow.hasCamera) {
+                FilledButton(L("mw4.ui.hajin.grid_camera"), Icons.Filled.PhotoCamera) { ScanFlow.replacing = false; ScanFlow.takePhoto() }
+            }
+            OutlineButton(L("mw4.ui.hajin.grid_choose"), Icons.Filled.PhotoLibrary) { ScanFlow.replacing = false; ScanFlow.pickPhotos() }
+        }
     }
 }
 

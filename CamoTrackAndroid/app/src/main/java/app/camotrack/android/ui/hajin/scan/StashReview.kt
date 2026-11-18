@@ -201,7 +201,7 @@ fun StashReview(
             }
         }
         PhotoBeside(photo?.let { p -> { ZoomPhoto(p, highlighted?.let { marks(it) } ?: emptyList()) } }) {
-            LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 32.dp)) {
+            LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 32.dp)) {
                 item(key = "hint") {
                     if (rows.isEmpty() && cash == null && level == null) {
                         Text(L("mw4.ui.hajin.scan_none"), style = sys(15f), color = Ink.muted, modifier = Modifier.padding(16.dp))
@@ -579,7 +579,7 @@ fun ItemPicker(current: HajinGuide.Item, onCancel: () -> Unit, onPick: (String) 
             Spacer(Modifier.width(88.dp))
         }
         HajinSearchField(query, L("mw4.ui.hajin.search_guide")) { query = it }
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             for ((title, list) in listOf(
                 L(if (valuable) "mw4.ui.hajin.valuables" else "mw4.ui.hajin.ingredients") to alike,
                 L(if (valuable) "mw4.ui.hajin.ingredients" else "mw4.ui.hajin.valuables") to rest,

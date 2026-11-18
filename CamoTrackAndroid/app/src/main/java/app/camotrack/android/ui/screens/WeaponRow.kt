@@ -69,13 +69,17 @@ fun WeaponRow(mode: String, weapon: WeaponEntry, showsCamoCount: Boolean = true,
             val counts = t.camoCounts(id, mode)
             Eyebrow("${counts.done}/${counts.total} ${L("mw4.ui.section.camos")}")
         }
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            WeaponThumbnail(weapon.imageURL, 56.dp, category = t.category(weapon.weaponId))
+        // At the largest text sizes the pips and level go under the name,
+        // which gets the card's whole width and two lines (as on iPhone)
+        val stacked = isAccessibilityFontSize()
+        val name: @Composable RowScope.() -> Unit = {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                Text(weapon.name.resolved(), style = displayStyle(15.sp), color = Ink.text, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(weapon.name.resolved(), style = displayStyle(15.sp), color = Ink.text, maxLines = if (stacked) 2 else 1, overflow = TextOverflow.Ellipsis)
                 AcquiredByLabel(weapon, size = 10.5f)
             }
-            Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        }
+        val progress: @Composable (Alignment.Horizontal) -> Unit = { alignment ->
+            Column(horizontalAlignment = alignment, verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 if (camos.isNotEmpty()) {
                     CamoPipRow(
                         done = camos.map { t.isCamoComplete(mode, id, it) },
@@ -88,6 +92,12 @@ fun WeaponRow(mode: String, weapon: WeaponEntry, showsCamoCount: Boolean = true,
                 }
             }
         }
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            WeaponThumbnail(weapon.imageURL, 56.dp, category = t.category(weapon.weaponId))
+            name()
+            if (!stacked) progress(Alignment.End)
+        }
+        if (stacked) progress(Alignment.Start)
         if (peeking) PeekPopup(onDismiss = { peeking = false }) { WeaponPeekMenu(mode, weapon) { peeking = false } }
     }
 }

@@ -117,12 +117,15 @@ private fun Screens() {
                 Column {
                 // Free players: the banner above the tabs on each tab's main screen (as on iPhone)
                 if (stack.isEmpty()) app.camotrack.android.ui.AdBanner()
+                // The labels stop growing at iOS's tab bar size: past it "Weapons" broke mid-word
+                app.camotrack.android.ui.CapFontScale {
                 NavigationBar(containerColor = palette.surface) {
                     TabItem(Tab.WEAPONS, app.camotrack.android.ui.Glyphs.tabWeapons, L("mw4.ui.section.weapons"))
                     TabItem(Tab.MASTERY, app.camotrack.android.ui.Glyphs.tabMastery, L("mw4.ui.section.mastery"))
                     // MW4's DMZ map and guide
                     if (AppState.tracker.game.hasHajin) TabItem(Tab.HAJIN, app.camotrack.android.ui.Glyphs.tabMap, L("mw4.ui.hajin.title"))
                     TabItem(Tab.STATS, app.camotrack.android.ui.Glyphs.tabStats, L("mw4.ui.tab.stats"))
+                }
                 }
                 }
             },
@@ -245,7 +248,7 @@ private fun RowScope.TabItem(tab: Tab, icon: Int, label: String) {
         selected = selected,
         onClick = { if (selected) AppState.stacks.getValue(tab).clear() else AppState.tab = tab },
         icon = { Icon(androidx.compose.ui.res.painterResource(icon), contentDescription = null, modifier = androidx.compose.ui.Modifier.size(26.dp)) },
-        label = { Text(label) },
+        label = { Text(label, maxLines = 1, softWrap = false) },
         colors = NavigationBarItemDefaults.colors(
             selectedIconColor = MaterialTheme.colorScheme.primary, selectedTextColor = MaterialTheme.colorScheme.primary,
             unselectedIconColor = Ink.muted, unselectedTextColor = Ink.muted,

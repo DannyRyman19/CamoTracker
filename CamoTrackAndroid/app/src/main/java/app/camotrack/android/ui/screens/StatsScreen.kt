@@ -114,6 +114,12 @@ data class TrackNode(val name: String, val color: Color, val gradient: List<Colo
 fun MasteryTrack(nodes: List<TrackNode>) {
     val surface2 = LocalPalette.current.surface2
     val ground = LocalPalette.current.background
+    // Capped at xxxLarge as on iPhone: past it "Harmonic Break" broke mid-word
+    app.camotrack.android.ui.CapFontScale {
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+    // Each word whole, shrinking a little to fit its column
+    val nameStyle = app.camotrack.android.ui.fittedStyle(nodes.flatMap { app.camotrack.android.ui.words(it.name) },
+        sys(10.5f, FontWeight.SemiBold), maxWidth / nodes.size.coerceAtLeast(1) - 2.dp, minScale = 0.7f)
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             nodes.forEachIndexed { index, node ->
@@ -137,14 +143,16 @@ fun MasteryTrack(nodes: List<TrackNode>) {
             for (node in nodes) {
                 Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
                     if (node.achieved) {
-                        AnimatedGradientText(node.name, node.gradient, size = 10.5f, weight = FontWeight.SemiBold, textAlign = TextAlign.Center, maxLines = 2)
+                        AnimatedGradientText(node.name, node.gradient, size = nameStyle.fontSize.value, weight = FontWeight.SemiBold, textAlign = TextAlign.Center, maxLines = 2)
                     } else {
-                        Text(node.name, style = sys(10.5f, FontWeight.SemiBold), color = Ink.text, textAlign = TextAlign.Center, maxLines = 2)
+                        Text(node.name, style = nameStyle, color = Ink.text, textAlign = TextAlign.Center, maxLines = 2)
                     }
                     Text(node.detail, style = sys(9.5f, mono = true), color = Ink.muted, textAlign = TextAlign.Center, maxLines = 1)
                 }
             }
         }
+    }
+    }
     }
 }
 
@@ -266,7 +274,11 @@ private fun CompactStatRow(line: StatLine, accent: Color) {
 private fun WideStatRow(line: StatLine, accent: Color) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Row(verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            if (app.camotrack.android.ui.isAccessibilityFontSize()) {
+                // The count under the name at the largest sizes, which cut "Assault Rifles" to "Assault Ri…"
+                Text(line.name, style = sys(13f), color = Ink.text)
+                line.count?.let { Text(it, style = sys(11f, mono = true), color = Ink.muted) }
+            } else Row(verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text(line.name, style = sys(13f), color = Ink.text, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false))
                 line.count?.let { Text(it, style = sys(11f, mono = true), color = Ink.muted, maxLines = 1) }
             }

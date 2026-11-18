@@ -43,6 +43,7 @@ import app.camotrack.android.services.StreamOverlay.Layout
 import app.camotrack.android.services.StreamOverlay.Style
 import app.camotrack.android.ui.Ink
 import app.camotrack.android.ui.LocalPalette
+import app.camotrack.android.ui.readableInset
 
 /**
  * Customise > Stream overlay (iOS StreamOverlayView): switch it on, choose
@@ -71,7 +72,7 @@ fun StreamOverlayScreen() {
 
     Column(Modifier.fillMaxSize().background(palette.background).statusBarsPadding()) {
         SettingsTopBar(L("ct.overlay.title"))
-        LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+        LazyColumn(contentPadding = PaddingValues(horizontal = readableInset() + 16.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
             item {
                 SettingsCard {
                     OverlayPreview(o.previewUrl, o.layout, o.status)
@@ -162,7 +163,7 @@ private fun WeaponPicker(done: () -> Unit) {
     androidx.activity.compose.BackHandler { done() }
     Column(Modifier.fillMaxSize().background(palette.background).statusBarsPadding()) {
         SettingsTopBar(L("ct.overlay.which_weapon"), done)
-        LazyColumn(contentPadding = PaddingValues(16.dp)) {
+        LazyColumn(contentPadding = PaddingValues(horizontal = readableInset() + 16.dp, vertical = 16.dp)) {
             t.catalog?.categories.orEmpty().forEach { category ->
                 item { SettingsHeader(category.name.resolved()) }
                 items(category.weapons, key = { "w${it.weaponId}" }) { weapon ->

@@ -11,6 +11,8 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import app.camotrack.android.R
@@ -102,3 +104,24 @@ fun CamoTheme(palette: AppPalette, content: @Composable () -> Unit) {
 }
 
 val DefaultTextSize = 15.sp
+
+/** iOS's xxxLarge over the default size: where the iPhone app caps a
+ *  view's text with `.dynamicTypeSize(...xxxLarge)`. */
+const val CAPPED_FONT_SCALE = 1.35f
+
+/**
+ * The text inside follows the system font size only up to [max], as iOS's
+ * `.dynamicTypeSize(...)` caps fixed chrome: the tab bar, the summary rings,
+ * a segmented control, where bigger text would only break words.
+ */
+@Composable
+fun CapFontScale(max: Float = CAPPED_FONT_SCALE, content: @Composable () -> Unit) {
+    val density = LocalDensity.current
+    if (density.fontScale <= max) content()
+    else androidx.compose.runtime.CompositionLocalProvider(LocalDensity provides Density(density.density, max), content = content)
+}
+
+/** The largest font sizes (150% and up), iOS's accessibility sizes, where
+ *  rows stack what sat side by side. */
+@Composable
+fun isAccessibilityFontSize(): Boolean = LocalDensity.current.fontScale >= 1.5f

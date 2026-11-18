@@ -95,7 +95,7 @@ fun ObjectiveListScreen(mode: String, category: ObjectiveCategory) {
 
     Column(Modifier.fillMaxSize().appBackground(accent)) {
         TopBar(category.name.resolved())
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 16.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 16.dp)) {
             item(key = "filters") {
                 Row(Modifier.padding(horizontal = 12.dp, vertical = 6.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     FilterSortMenu(L("mw4.ui.filter"), CompletionFilter.entries, { it.label }, filter, textAccent, { filterRaw = it.raw }, Modifier.weight(1f))
@@ -154,7 +154,7 @@ fun ObjectiveItemScreen(mode: String, category: ObjectiveCategory, item: Challen
     val ordered = item.children.isEmpty() || item.ordered != false
     Column(Modifier.fillMaxSize().appBackground(accent)) {
         TopBar(item.name.resolved())
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 16.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 16.dp)) {
             items(rows, key = { it.itemId }) { row ->
                 val tt = tracker()
                 Column(Modifier.fillMaxWidth().background(LocalPalette.current.surface).padding(horizontal = 16.dp, vertical = 4.dp)) {

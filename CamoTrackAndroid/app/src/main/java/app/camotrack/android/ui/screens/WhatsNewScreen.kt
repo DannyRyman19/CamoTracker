@@ -52,7 +52,7 @@ fun WhatsNewScreen(onClose: () -> Unit) {
     Column(Modifier.fillMaxSize().background(palette.background).systemBarsPadding()) {
         TopBar("", onBack = onClose)
         Column(
-            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp),
+            Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = readableInset()).padding(horizontal = 20.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp),
         ) {
             Text(L("ct.whatsnew.heading", WhatsNew.version), style = displayStyle(28.sp), color = Ink.text, modifier = Modifier.padding(bottom = 4.dp))

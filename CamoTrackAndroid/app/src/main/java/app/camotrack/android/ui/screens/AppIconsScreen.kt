@@ -53,7 +53,9 @@ fun AppIconsScreen() {
     var current by remember { mutableStateOf(AppIcons.current(AppState.store)) }
     Column(Modifier.fillMaxSize().background(palette.background).statusBarsPadding()) {
         SettingsTopBar(L("mw4.ui.app_icon.title"))
-        LazyVerticalGrid(GridCells.Adaptive(96.dp), contentPadding = PaddingValues(16.dp),
+        // Wider cells as the text grows: at 200% three across cut every name and hint
+        val textScale = androidx.compose.ui.platform.LocalDensity.current.fontScale
+        LazyVerticalGrid(GridCells.Adaptive(96.dp * textScale.coerceIn(1f, 1.6f)), contentPadding = PaddingValues(16.dp),
                          horizontalArrangement = Arrangement.spacedBy(14.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
             item(span = { GridItemSpan(maxLineSpan) }) {
                 Text(L("mw4.ui.app_icon.footer"), color = Ink.muted, fontSize = 13.sp)
@@ -87,7 +89,8 @@ fun AppIconsScreen() {
                     Text(choice.title(t), color = if (earned) Ink.text else Ink.muted, fontSize = 12.sp, fontWeight = FontWeight.SemiBold,
                          maxLines = 1, overflow = TextOverflow.Ellipsis)
                     Text(if (earned) (if (needsPremium) L("mw4.ui.app_icon.premium") else " ") else choice.requirement(t),
-                         color = Ink.muted, fontSize = 11.sp, textAlign = TextAlign.Center, maxLines = 2, minLines = 2)
+                         color = Ink.muted, fontSize = 11.sp, textAlign = TextAlign.Center, minLines = 2,
+                         maxLines = if (textScale > 1f) 3 else 2, overflow = TextOverflow.Ellipsis)
                 }
             }
         }

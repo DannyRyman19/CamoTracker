@@ -106,11 +106,15 @@ fun OnboardingScreen() {
         if (page > 0) scope.launch { pager.animateScrollToPage(page - 1) } else AppState.showsOnboarding = false
     }
 
+    // A phone on its side: tighter spacing, and Skip beside Next, so the page
+    // keeps more than a sliver of the height
+    val compact = androidx.compose.ui.platform.LocalConfiguration.current.screenHeightDp < 480
     Column(
         Modifier.fillMaxSize().background(LocalPalette.current.background)
             .background(Brush.verticalGradient(0f to accent.copy(alpha = 0.16f), 0.5f to Color.Transparent))
-            .systemBarsPadding().padding(vertical = 20.dp),
-        verticalArrangement = Arrangement.spacedBy(18.dp),
+            .systemBarsPadding().displayCutoutPadding().padding(vertical = if (compact) 8.dp else 20.dp),
+        verticalArrangement = Arrangement.spacedBy(if (compact) 8.dp else 18.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         // Header: the step, and segmented bars
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -124,7 +128,8 @@ fun OnboardingScreen() {
             }
         }
 
-        HorizontalPager(pager, Modifier.weight(1f), verticalAlignment = Alignment.Top) { index ->
+        // A readable width on a tablet, as the iPad's sheet
+        HorizontalPager(pager, Modifier.weight(1f).widthIn(max = 640.dp), verticalAlignment = Alignment.Top) { index ->
             when (index) {
                 0 -> GamePickerPage()
                 1 -> WelcomePage()
@@ -137,23 +142,41 @@ fun OnboardingScreen() {
             }
         }
 
-        Column(Modifier.padding(horizontal = 24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            val last = page >= pageCount - 1
+        val last = page >= pageCount - 1
+        val next: @Composable (Modifier) -> Unit = { modifier ->
             Text(
                 L(if (!last) "mw4.onboarding.next" else if (firstRun) "mw4.onboarding.continue" else "mw4.onboarding.get_started"),
                 style = displayStyle(16.sp), color = LocalPalette.current.background, textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(8.dp)).background(accent)
+                modifier = modifier.clip(RoundedCornerShape(8.dp)).background(accent)
                     .clickable { if (!last) scope.launch { pager.animateScrollToPage(page + 1) } else done() }
-                    .padding(vertical = 15.dp),
+                    .padding(vertical = if (compact) 12.dp else 15.dp),
             )
+        }
+        val skip: @Composable () -> Unit = {
             if (!last) {
-                // Skipping still lands on the notifications page when there is one, so the prompt never comes unexplained
-                Text(
-                    L("mw4.onboarding.skip"), style = sys(13f, FontWeight.SemiBold), color = Ink.muted,
-                    modifier = Modifier.clip(RoundedCornerShape(6.dp)).clickable {
+                // Skipping still lands on the notifications page when there is one, so the prompt never comes unexplained.
+                // A whole touch target (48dp), not just the word's height
+                Box(
+                    Modifier.heightIn(min = 48.dp).clip(RoundedCornerShape(6.dp)).clickable {
                         if (firstRun) scope.launch { pager.animateScrollToPage(pageCount - 1) } else finish()
-                    }.padding(horizontal = 12.dp, vertical = 4.dp),
-                )
+                    }.padding(horizontal = 12.dp),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Text(L("mw4.onboarding.skip"), style = sys(13f, FontWeight.SemiBold), color = Ink.muted)
+                }
+            }
+        }
+        if (compact) {
+            Row(Modifier.widthIn(max = 640.dp).padding(horizontal = 24.dp), verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                skip()
+                next(Modifier.weight(1f))
+            }
+        } else {
+            Column(Modifier.widthIn(max = 640.dp).padding(horizontal = 24.dp), horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                next(Modifier.fillMaxWidth())
+                skip()
             }
         }
     }
@@ -197,11 +220,14 @@ private fun GameCard(game: Game, on: Boolean) {
             .padding(14.dp),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp),
     ) {
+        // The logo keeps its size in its slot (iOS shrinks it to fit): larger text cut "MW4" to "MW"
+        app.camotrack.android.ui.CapFontScale(1f) {
         Text(
-            game.shortName, maxLines = 1, color = color, textAlign = TextAlign.Center, modifier = Modifier.width(74.dp),
+            game.shortName, maxLines = 1, softWrap = false, color = color, textAlign = TextAlign.Center, modifier = Modifier.width(74.dp),
             style = androidx.compose.ui.text.TextStyle(fontFamily = Fonts.named(game.theme?.font), fontWeight = FontWeight.Bold,
                 fontSize = (24 * (game.theme?.fontScale ?: 1.0)).sp),
         )
+        }
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
             Text(game.name.resolved(), style = sys(16f, FontWeight.Bold), color = Ink.text)
             Text(modes, style = sys(12.5f), color = Ink.muted)

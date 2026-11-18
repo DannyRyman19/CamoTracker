@@ -61,7 +61,7 @@ fun HajinItemScreen(id: String) {
             return@Column
         }
         Column(
-            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
+            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = readableInset()).padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
         ) {
             Header(item)
@@ -549,7 +549,7 @@ fun HajinOrderScreen(check: String) {
     Column(Modifier.fillMaxSize().appBackground(HajinColors.accent)) {
         TopBar(row?.title?.resolved ?: "")
         if (row == null) return@Column
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(vertical = 8.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(horizontal = readableInset(), vertical = 8.dp)) {
             row.group?.let { group -> item { Box(Modifier.padding(horizontal = 16.dp, vertical = 6.dp)) { SmallCaps(group.resolved) } } }
             item { Box(Modifier.hajinCard()) { MissionRow(row) } }
         }

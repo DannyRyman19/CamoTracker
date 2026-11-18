@@ -82,7 +82,7 @@ fun CustomiseScreen() {
 
     Column(Modifier.fillMaxSize().appBackground(accent)) {
         TopBar(L("mw4.ui.customise"))
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 32.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 32.dp)) {
             if (locked) item(key = "premium-card") {
                 Group {
                     Row(
@@ -251,14 +251,22 @@ fun PlayedModesPicker() {
     val all = t.modeIds
     val played = ModeSelection.played(raw, all)
     val offered = all.filter { t.modes[it]?.hidden != true }
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        for (mode in offered) {
+    // Side by side while every name fits whole; one under another at the
+    // larger text sizes, rather than "Multipla…" (iOS's ViewThatFits)
+    val measurer = androidx.compose.ui.text.rememberTextMeasurer()
+    val nameStyle = sys(12f, FontWeight.Bold)
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val density = androidx.compose.ui.platform.LocalDensity.current
+        val widest = offered.maxOfOrNull { with(density) { measurer.measure(modeName(it), LocalTextStyle.current.merge(nameStyle)).size.width.toDp() } } ?: 0.dp
+        val slot = (maxWidth - 8.dp * (offered.size - 1)) / offered.size.coerceAtLeast(1)
+        val stacked = widest + 20.dp > slot
+        val chip: @Composable (String, Modifier) -> Unit = { mode, modifier ->
             val on = mode in played
             val accent = modeAccent(mode)
             val shape = RoundedCornerShape(14.dp)
             val muted = Ink.muted.copy(alpha = 0.3f)
             Box(
-                Modifier.weight(1f).clip(shape)
+                modifier.clip(shape)
                     .background(if (on) accent.copy(alpha = 0.18f) else Color.Transparent)
                     .then(
                         if (on) Modifier.border(2.dp, accent, shape)
@@ -272,20 +280,39 @@ fun PlayedModesPicker() {
                         if (next != raw) { raw = next; AppState.touch() }
                     },
             ) {
-                Column(
-                    Modifier.fillMaxWidth().padding(vertical = 12.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(5.dp),
-                ) {
-                    val color = if (on) accent else Ink.muted.copy(alpha = 0.7f)
-                    Icon(modeIcon(mode), null, tint = color, modifier = Modifier.size(20.dp))
-                    Text(modeName(mode), style = sys(12f, FontWeight.Bold), color = color, maxLines = 1, overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.padding(horizontal = 6.dp))
+                val color = if (on) accent else Ink.muted.copy(alpha = 0.7f)
+                if (stacked) {
+                    Row(
+                        Modifier.fillMaxWidth().padding(horizontal = 28.dp, vertical = 12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(modeIcon(mode), null, tint = color, modifier = Modifier.size(20.dp))
+                        Text(modeName(mode), style = nameStyle, color = color, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    }
+                } else {
+                    Column(
+                        Modifier.fillMaxWidth().padding(vertical = 12.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(5.dp),
+                    ) {
+                        Icon(modeIcon(mode), null, tint = color, modifier = Modifier.size(20.dp))
+                        Text(modeName(mode), style = nameStyle, color = color, maxLines = 1, overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(horizontal = 6.dp))
+                    }
                 }
                 Icon(
                     if (on) Icons.Filled.CheckCircle else Icons.Outlined.Circle, null,
                     tint = if (on) accent else Ink.muted.copy(alpha = 0.5f),
-                    modifier = Modifier.align(Alignment.TopEnd).padding(6.dp).size(15.dp),
+                    modifier = Modifier.align(if (stacked) Alignment.CenterEnd else Alignment.TopEnd).padding(if (stacked) 12.dp else 6.dp).size(15.dp),
                 )
+            }
+        }
+        if (stacked) {
+            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                for (mode in offered) chip(mode, Modifier.fillMaxWidth())
+            }
+        } else {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                for (mode in offered) chip(mode, Modifier.weight(1f))
             }
         }
     }

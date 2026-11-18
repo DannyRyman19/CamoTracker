@@ -288,14 +288,26 @@ private fun HomeTitleBar(mode: String) {
     val accent = modeAccent(mode)
     var open by remember { mutableStateOf(false) }
     val palette = LocalPalette.current
-    Box(Modifier.fillMaxWidth().statusBarsPadding().height(52.dp)) {
-        Box(Modifier.align(Alignment.Center)) {
+    // The title stops growing at iOS's largest standard size, and shrinks to
+    // fit between the buttons: on a small phone it ran under Help and Customise
+    CapFontScale {
+    BoxWithConstraints(Modifier.fillMaxWidth().statusBarsPadding().height(52.dp)) {
+        // Centred while it fits between the buttons; otherwise from the leading edge, with the room up to them
+        val text = listOf("${t.game.shortName} ${modeName(mode)}")
+        val chrome = 16.dp + 6.dp * 2 + 18.dp
+        val base = displayStyle(22.sp)
+        val needed = with(androidx.compose.ui.platform.LocalDensity.current) {
+            androidx.compose.ui.text.rememberTextMeasurer().measure(text[0], LocalTextStyle.current.merge(base), maxLines = 1, softWrap = false).size.width.toDp()
+        }
+        val fitsCentred = needed <= maxWidth - 96.dp * 2 - chrome
+        val title = if (fitsCentred) base else fittedStyle(text, base, maxWidth - 96.dp - 8.dp - chrome, minScale = 0.6f)
+        Box(if (fitsCentred) Modifier.align(Alignment.Center).padding(horizontal = 96.dp) else Modifier.align(Alignment.CenterStart).padding(start = 8.dp, end = 96.dp)) {
             Row(
                 Modifier.clip(RoundedCornerShape(8.dp)).clickable { open = true }.padding(horizontal = 8.dp, vertical = 4.dp),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
-                Text(t.game.shortName, style = displayStyle(22.sp), color = accent, maxLines = 1)
-                Text(modeName(mode), style = displayStyle(22.sp), color = Ink.text, maxLines = 1)
+                Text(t.game.shortName, style = title, color = accent, maxLines = 1)
+                Text(modeName(mode), style = title, color = Ink.text, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false))
                 Icon(Icons.Filled.ExpandCircleDown, contentDescription = L("mw4.ui.mostly_play"), tint = accent, modifier = Modifier.size(18.dp))
             }
             DropdownMenu(open, onDismissRequest = { open = false }, containerColor = palette.surface2) {
@@ -324,6 +336,7 @@ private fun HomeTitleBar(mode: String) {
             IconButton(onClick = { AppState.showsOnboarding = true }) { Icon(Icons.AutoMirrored.Outlined.HelpOutline, null, tint = accent) }
             IconButton(onClick = { AppState.push(Route.Customise) }) { Icon(Icons.Filled.Tune, L("mw4.ui.customise"), tint = accent) }
         }
+    }
     }
 }
 

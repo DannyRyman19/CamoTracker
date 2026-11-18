@@ -66,7 +66,7 @@ fun HajinHome() {
         TopBar(L("mw4.ui.hajin.title"), onBack = null) { NumbersChip() }
         val guide = store.guide ?: return@Column
         // Kept while a pushed screen is up, so Back returns to the same place
-        LazyColumn(Modifier.fillMaxSize(), state = homeList, contentPadding = PaddingValues(bottom = 16.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), state = homeList, contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 16.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_guide")) { query = it } }
             if (query.isEmpty()) {
                 item(key = "picker") {

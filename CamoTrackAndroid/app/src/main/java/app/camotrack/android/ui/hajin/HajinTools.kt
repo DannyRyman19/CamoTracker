@@ -210,7 +210,7 @@ fun StashScreen() {
     }
     Column(Modifier.fillMaxSize().appBackground(HajinColors.accent)) {
         TopBar(L("mw4.ui.hajin.stash"))
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_section")) { query = it } }
             if (query.isEmpty()) {
                 item(key = "intro") { HajinIntro(L("mw4.ui.hajin.stash_intro")) }
@@ -336,7 +336,7 @@ fun KeepSellScreen() {
     }
     Column(Modifier.fillMaxSize().appBackground(HajinColors.accent)) {
         TopBar(L("mw4.ui.keep.title"))
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.keep.search")) { query = it } }
             if (query.isEmpty()) {
                 item(key = "intro") { HajinIntro(L("mw4.ui.keep.intro")) }
@@ -455,7 +455,7 @@ fun ShoppingScreen() {
     val covered = all.filter { it.missing == 0 }
     Column(Modifier.fillMaxSize().appBackground(HajinColors.accent)) {
         TopBar(L("mw4.ui.hajin.shop"))
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_section")) { query = it } }
             item(key = "header") { ShoppingHeader(scope, short, query.isEmpty()) { scopeRaw = it.raw } }
             if (short.isNotEmpty()) {
@@ -560,7 +560,7 @@ fun BlueprintsScreen() {
         .sortedWith(compareBy<HajinGuide.Row> { if (store.hasManual(it)) 1 else 0 }.thenBy { it.title.resolved })
     Column(Modifier.fillMaxSize().appBackground(HajinColors.accent)) {
         TopBar(L("mw4.ui.hajin.blueprints"))
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_section")) { query = it } }
             item(key = "head") {
                 Column(Modifier.padding(horizontal = 16.dp, vertical = 6.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {

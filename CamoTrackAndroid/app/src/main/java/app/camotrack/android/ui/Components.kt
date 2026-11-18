@@ -61,6 +61,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntRect
@@ -458,6 +459,13 @@ data class Stat(
 @Composable
 fun StatSummaryCard(stats: List<Stat>, bordered: Boolean = true, horizontalPadding: Dp = 12.dp, verticalPadding: Dp = 14.dp) {
     val hasLock = stats.any { it.lockedHint != null }
+    // Capped at xxxLarge as on iPhone: four columns broke "PLATINUM" mid-word past it
+    CapFontScale {
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+    // Each word whole in its column, shrinking a little to fit (iOS's minimumScaleFactor): "DIVERGENCE" broke after "DIVERGENC"
+    val column = (maxWidth - horizontalPadding * 2 - 1.dp * (stats.size - 1)) / stats.size.coerceAtLeast(1)
+    val labelStyle = fittedStyle(stats.flatMap { words(it.label.uppercase(appLocale)) }, sys(11f), column, minScale = 0.6f)
+    val hintStyle = fittedStyle(stats.flatMap { words(it.lockedHint.orEmpty()) }, sys(10f, FontWeight.SemiBold), column, minScale = 0.6f)
     Row(
         Modifier.fillMaxWidth()
             .then(if (bordered) Modifier.borderedCard() else Modifier)
@@ -474,8 +482,9 @@ fun StatSummaryCard(stats: List<Stat>, bordered: Boolean = true, horizontalPaddi
                         Icon(Icons.Filled.Lock, contentDescription = null, tint = Ink.muted, modifier = Modifier.size(15.dp))
                     }
                     Text(
-                        stat.lockedHint, style = sys(10f, FontWeight.SemiBold), color = Ink.muted, textAlign = TextAlign.Center,
-                        minLines = 2, maxLines = 2, overflow = TextOverflow.Ellipsis,
+                        stat.lockedHint, style = hintStyle, color = Ink.muted, textAlign = TextAlign.Center,
+                        // A third line past the default size, as on iPhone ("Needs 33 Harmonic Break")
+                        minLines = 2, maxLines = if (LocalDensity.current.fontScale > 1f) 3 else 2, overflow = TextOverflow.Ellipsis,
                     )
                 } else if (stat.ringFraction != null) {
                     ProgressRing(stat.ringFraction, stat.ringColor ?: Ink.text, lineWidth = 4.dp, size = 40.dp, shimmer = stat.ringGradient ?: GoldColors)
@@ -488,12 +497,12 @@ fun StatSummaryCard(stats: List<Stat>, bordered: Boolean = true, horizontalPaddi
                 }
                 if (stat.labelGradient != null) {
                     AnimatedGradientText(
-                        stat.label.uppercase(appLocale), stat.labelGradient, size = 11f, weight = FontWeight.Normal,
+                        stat.label.uppercase(appLocale), stat.labelGradient, size = labelStyle.fontSize.value, weight = FontWeight.Normal,
                         textAlign = TextAlign.Center, maxLines = 2, modifier = Modifier.heightIn(min = 28.dp),
                     )
                 } else {
                     Text(
-                        stat.label.uppercase(appLocale), style = sys(11f), color = Ink.muted, textAlign = TextAlign.Center,
+                        stat.label.uppercase(appLocale), style = labelStyle, color = Ink.muted, textAlign = TextAlign.Center,
                         minLines = 2, maxLines = 2, overflow = TextOverflow.Ellipsis,
                     )
                 }
@@ -502,6 +511,8 @@ fun StatSummaryCard(stats: List<Stat>, bordered: Boolean = true, horizontalPaddi
                 Box(Modifier.width(1.dp).height(30.dp).background(Ink.muted.copy(alpha = 0.25f)))
             }
         }
+    }
+    }
     }
 }
 
@@ -539,6 +550,23 @@ fun ChallengeRow(
         val day = L("ct.ui.earned_on", earnedOn.text())
         took?.let { day + " · " + L("ct.ui.took", it.text()) } ?: day
     } else null
+    // At the largest text sizes the −/+ go under the challenge, so a long
+    // name keeps the row's width (as on iPhone): beside it, the name and
+    // challenge were squeezed to a few letters a line
+    val stacksCounter = isAccessibilityFontSize()
+    val counter: @Composable () -> Unit = {
+        if (showsCounter && requirement != null) {
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
+                StepButton(Icons.Filled.Remove, amount > 0, 22.dp, accent) { onSetAmount(maxOf(0, amount - 1)) }
+                Text(
+                    "$amount/${requirement.amount}", style = sys(12.5f, mono = true), color = Ink.muted, maxLines = 1, softWrap = false,
+                    modifier = Modifier.clip(CircleShape).background(LocalPalette.current.surface2)
+                        .clickable { askingAmount = true }.padding(horizontal = 9.dp, vertical = 5.dp),
+                )
+                StepButton(Icons.Filled.Add, amount < requirement.amount, 22.dp, accent) { onSetAmount(minOf(requirement.amount, amount + 1)) }
+            }
+        }
+    }
 
     Row(
         Modifier.fillMaxWidth()
@@ -594,18 +622,9 @@ fun ChallengeRow(
             if (earnedText != null) {
                 Text(earnedText, style = sys(11.5f, FontWeight.Medium), color = accent.copy(alpha = 0.85f))
             }
+            if (stacksCounter) counter()
         }
-        if (showsCounter && requirement != null) {
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                StepButton(Icons.Filled.Remove, amount > 0, 22.dp, accent) { onSetAmount(maxOf(0, amount - 1)) }
-                Text(
-                    "$amount/${requirement.amount}", style = sys(12.5f, mono = true), color = Ink.muted, maxLines = 1, softWrap = false,
-                    modifier = Modifier.clip(CircleShape).background(LocalPalette.current.surface2)
-                        .clickable { askingAmount = true }.padding(horizontal = 9.dp, vertical = 5.dp),
-                )
-                StepButton(Icons.Filled.Add, amount < requirement.amount, 22.dp, accent) { onSetAmount(minOf(requirement.amount, amount + 1)) }
-            }
-        }
+        if (!stacksCounter) counter()
     }
     if (askingAmount && requirement != null) {
         NumberDialog(
@@ -787,21 +806,63 @@ fun <T> FilterSortMenu(title: String, options: List<T>, label: (T) -> String, se
     }
 }
 
+// MARK: - Readable width
+
+/** The widest a single column of cards and rows gets on a tablet or an unfolded phone. */
+val ReadableWidth = 720.dp
+
+/**
+ * The side inset that centres a single-column screen at [ReadableWidth] on a
+ * wide screen, for a list's content padding: the list itself stays full
+ * width, so it scrolls from anywhere. Nothing on a phone.
+ */
+@Composable
+fun readableInset(): Dp {
+    val width = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp.dp
+    return ((width - ReadableWidth) / 2).coerceAtLeast(0.dp)
+}
+
+// MARK: - Fitting text
+
+/**
+ * [style] shrunk, down to [minScale], until each of [texts] fits [width] on
+ * one line: iOS's `minimumScaleFactor`, one size for all of them. For words
+ * that would otherwise break mid-word, pass the words.
+ */
+@Composable
+fun fittedStyle(texts: List<String>, style: TextStyle, width: Dp, minScale: Float = 0.5f): TextStyle {
+    val measurer = androidx.compose.ui.text.rememberTextMeasurer()
+    val px = with(LocalDensity.current) { width.toPx() }
+    // As Text sets it: merged over the theme's body style (its letter spacing widens every word)
+    val merged = androidx.compose.material3.LocalTextStyle.current.merge(style)
+    val widest = texts.maxOfOrNull { measurer.measure(it, merged, maxLines = 1, softWrap = false).size.width } ?: 0
+    return if (widest <= px || widest == 0 || px <= 0f) style
+    else style.copy(fontSize = style.fontSize * (px / widest * 0.97f).coerceAtLeast(minScale))
+}
+
+/** Words of [text]: for [fittedStyle], so a label wraps between words rather than inside one. */
+fun words(text: String): List<String> = text.split(' ', '\n').filter { it.isNotEmpty() }
+
 // MARK: - Tabs
 
 /** The app's tab switcher: the picked tab lit in the accent, with a bar along its foot. */
 @Composable
 fun <T> SegmentTabs(selection: T, items: List<Pair<T, String>>, accent: Color, onSelect: (T) -> Unit, modifier: Modifier = Modifier) {
     val palette = LocalPalette.current
+    // Every title at one size, the largest at which they all fit whole
+    // (iOS's ViewThatFits), rather than "Completionist" cut to "Comple…"
+    BoxWithConstraints(modifier.fillMaxWidth()) {
+        val slot = (maxWidth - 8.dp - 4.dp * (items.size - 1)) / items.size.coerceAtLeast(1) - 8.dp
+        val style = fittedStyle(items.map { it.second }, displayStyle(15.sp), slot)
     Row(
-        modifier.fillMaxWidth().clip(RoundedCornerShape(9.dp)).background(palette.surface)
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(9.dp)).background(palette.surface)
             .border(1.dp, palette.surface2, RoundedCornerShape(9.dp)).padding(4.dp),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         for ((value, title) in items) {
             val on = value == selection
             Box(
-                Modifier.weight(1f).clip(RoundedCornerShape(6.dp))
+                Modifier.weight(1f).heightIn(min = 40.dp).clip(RoundedCornerShape(6.dp))
                     .then(
                         if (on) Modifier.background(accent.copy(alpha = 0.18f)).border(1.dp, accent.copy(alpha = 0.45f), RoundedCornerShape(6.dp))
                             .drawBehind {
@@ -816,9 +877,10 @@ fun <T> SegmentTabs(selection: T, items: List<Pair<T, String>>, accent: Color, o
                     .padding(vertical = 9.dp, horizontal = 4.dp),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(title, style = displayStyle(15.sp), color = if (on) Ink.text else Ink.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(title, style = style, color = if (on) Ink.text else Ink.muted, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
         }
+    }
     }
 }
 

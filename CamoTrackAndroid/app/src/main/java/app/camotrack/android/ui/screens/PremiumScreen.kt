@@ -34,6 +34,8 @@ import app.camotrack.android.ui.Ink
 import app.camotrack.android.ui.LocalPalette
 import app.camotrack.android.ui.ModeColors
 import app.camotrack.android.ui.displayStyle
+import app.camotrack.android.ui.isAccessibilityFontSize
+import app.camotrack.android.ui.readableInset
 import kotlinx.coroutines.launch
 
 fun Context.findActivity(): Activity? = when (this) {
@@ -61,7 +63,7 @@ fun PremiumScreen() {
         Row(Modifier.fillMaxWidth().padding(4.dp), verticalAlignment = Alignment.CenterVertically) {
             IconButton(onClick = { AppState.pop() }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, L("mw4.ui.done"), tint = Ink.text) }
         }
-        Column(Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+        Column(Modifier.verticalScroll(rememberScrollState()).padding(horizontal = readableInset()).padding(horizontal = 20.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             if (Premium.isPremium) {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(L("ct.premium.you_have"), style = displayStyle(26.sp), color = Ink.text)
@@ -170,15 +172,24 @@ private fun Perk(icon: ImageVector, key: String, color: Color) {
 private fun Option(yearly: Boolean, price: String, red: Color, enabled: Boolean = true, onClick: () -> Unit) {
     val palette = LocalPalette.current
     val ink = if (yearly) Color.White else Ink.text
-    Row(
-        Modifier.fillMaxWidth().background(if (yearly) red else palette.surface, RoundedCornerShape(12.dp))
-            .clickable(enabled = enabled, onClick = onClick).padding(14.dp),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Column(Modifier.weight(1f)) {
-            Text(L(if (yearly) "mw4.ui.premium.yearly" else "mw4.ui.premium.lifetime"), color = ink, fontWeight = FontWeight.SemiBold)
-            Text(L(if (yearly) "mw4.ui.premium.yearly_hint" else "mw4.ui.premium.lifetime_hint"), color = ink.copy(alpha = 0.8f), fontSize = 12.sp)
-        }
+    val modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).background(if (yearly) red else palette.surface, RoundedCornerShape(12.dp))
+        .clickable(enabled = enabled, onClick = onClick).padding(14.dp)
+    val title: @Composable () -> Unit = {
+        Text(L(if (yearly) "mw4.ui.premium.yearly" else "mw4.ui.premium.lifetime"), color = ink, fontWeight = FontWeight.SemiBold)
+        Text(L(if (yearly) "mw4.ui.premium.yearly_hint" else "mw4.ui.premium.lifetime_hint"), color = ink.copy(alpha = 0.8f), fontSize = 12.sp)
+    }
+    val priceText: @Composable () -> Unit = {
         Text(price, color = ink, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace, fontSize = 16.sp)
+    }
+    // The price under the plan at the largest text sizes: beside it, it
+    // squeezed "Yearly" to a letter a line
+    if (isAccessibilityFontSize()) {
+        Column(modifier, verticalArrangement = Arrangement.spacedBy(6.dp)) { title(); priceText() }
+    } else {
+        Row(modifier, verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) { title() }
+            Spacer(Modifier.width(10.dp))
+            priceText()
+        }
     }
 }

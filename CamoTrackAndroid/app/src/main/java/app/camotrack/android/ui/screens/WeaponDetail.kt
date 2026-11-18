@@ -144,7 +144,7 @@ fun WeaponDetailScreen(startMode: String, weapon: WeaponEntry) {
                 )
             }
         }
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "header") {
                 Column(
                     Modifier.padding(horizontal = 12.dp, vertical = 6.dp).fillMaxWidth().borderedCard().padding(12.dp),

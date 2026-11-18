@@ -175,7 +175,7 @@ fun PostMatchReview(result: PostMatchResult, photo: Bitmap?, onBack: () -> Unit,
             }
         }
         PhotoBeside(photo?.let { p -> { ZoomPhoto(p, highlighted?.let { marks(it) } ?: emptyList()) } }) {
-            LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 32.dp)) {
+            LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 32.dp)) {
                 item(key = "summary") { Summary(sold.sumOf { it.count }, total) }
                 if (result.resources.isNotEmpty()) {
                     sectionHeader("res", L("mw4.ui.hajin.resources"))

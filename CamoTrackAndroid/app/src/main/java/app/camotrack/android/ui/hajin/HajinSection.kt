@@ -58,7 +58,7 @@ fun GuideSectionScreen(section: HajinGuide.Section) {
         TopBar(section.title.resolved) {
             HajinReportMenu(listOf("Section: ${section.title.en ?: section.title.resolved}", "Section ID: ${section.id}"))
         }
-        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 24.dp)) {
+        LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(start = readableInset(), end = readableInset(), bottom = 24.dp)) {
             item(key = "search") { HajinSearchField(query, L("mw4.ui.hajin.search_section")) { query = it } }
             when (section.id) {
                 "prestige" -> {
