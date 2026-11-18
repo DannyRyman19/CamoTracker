@@ -22,7 +22,7 @@ android {
         applicationId = "app.camotrack.android"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,7 +75,7 @@ dependencies {
     implementation("androidx.work:work-runtime-ktx:2.10.0")
     // The home-screen widgets
     implementation("androidx.glance:glance-appwidget:1.1.1")
-    implementation("com.android.billingclient:billing-ktx:7.1.1")
+    implementation("com.android.billingclient:billing-ktx:8.3.0")
     // The QR code on share cards
     implementation("com.google.zxing:core:3.5.3")
     // The DMZ stash photo reader (hajin.scan): its two models, and on-device text
