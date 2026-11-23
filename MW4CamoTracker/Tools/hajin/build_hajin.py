@@ -126,6 +126,8 @@ KEY_ROOMS = [
     ("k-mechanics-shack", "Mechanic's Shack", "Cheongun Village", "poiLabel", "Rare key, grid F5. Opens the standalone shack south of the clinic.", (-30, 30)),
     ("k-militia-depot", "Militia Arms Depot", "Hajin River Heights", "poiLabel", "Rare key, grid G7. Opens the lower-floor armory in Gangbyeon Apartment B.", (30, 30)),
     ("k-airbase-drc", "Air Base DRC Weapons Locker", "Admin Complex No. 2", "dmz_fortress_adminComplexNo2", "Ultra key, grid B6. Opens the DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker."),
+    # community key guides, 2026-11-23
+    ("k-downtown-branch-lobby", "Downtown Branch Lobby Main", "Hanex Bank", "poiLabelSecondary", "Uncommon key, grid G6. Players report it opens the glass doors up the front steps of the Hanex Bank branch, across the street from NuriGO West.", (-34, 30)),
 ]
 
 def cat_of(c):
@@ -385,8 +387,8 @@ guide = [
    ("Colossus", "Commander", "A seven-foot armored soldier with a minigun. Drops Military Composites, and now and then Experimental Compounds. The first kill pays $50,000."),
    ("Deathstalker", "Commander", "A huge autonomous drone with twin machine-gun turrets. A captured SAM site can shoot it. Drops a Prototype RF Module, and the first kill pays $50,000"),
    ("NK Battle Tank", "Commander", "Roams the roads and highways across Hajin. Drops Nano-Structured Alloy, and the first kill pays $50,000"),
-   ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
-   ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
+   ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Players report him in X01's Data Center, in the dark server room behind reinforced glass, and say he drops a Rezi 12, his backpack and his Dog Tag"),
+   ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Players report him in X01's Motor Pool, hidden among the tanks, and say he drops a Type 73, his backpack and his Dog Tag"),
    ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
    ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet"),
   ])},
@@ -406,8 +408,8 @@ guide = [
    ("Shopping DRC Locker", "H5", "Ultra. Reported to open the DRC Locker in the DRC Labs under NuriGO Mall, in the secured lower car park"),
    ("Mechanic's Shack", "F5", "Rare. The standalone shack south of the clinic, Cheongun Village"),
    ("Militia Arms Depot", "G7", "Rare. The lower-floor armory in Gangbyeon Apartment B, Hajin River Heights. Players have found it in a duffel bag in the Citadel East Wing"),
-   ("Blackmarket Weapons Locker", None, "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet"),
-   ("Underground Propaganda Store Room", None, "Rare. Where its door is isn't known yet"),
+   ("Blackmarket Weapons Locker", None, "Rare. Comes in the Recon Equipment Kit (DMZ level 46). Opens one of the two lockers in a black market's back room. Players report black markets in southern Deadtown (B7: in through the rear door, behind the big shelf and down the stairs to an armored door) and eastern Hanrim Village (C2: behind the shop counter, through the green double doors)"),
+   ("Underground Propaganda Store Room", "B7", "Rare. The blue door in the basement cell block of the Re-Education Center, Deadtown. Players report two levers inside that open the other locked doors down there"),
    ("Air Base DRC Weapons Locker", "B6", "Ultra. The DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker"),
    ("Vault Armory", "F4", "Epic. The small armory in the Heavenly Luck Casino's underground car park, Cheongun Village"),
    ("Imjin Mill Foreman's Office", "D8", "Rare. First floor of the Rice Mill, Imjin Farmland"),
@@ -427,12 +429,12 @@ guide = [
    ("Coin Mining Den", "G6", "Rare. The e-coin mining lab in an upper apartment east of the westernmost gas station, NuriGO West: a grey office door beside a red fire alarm. Reported as a reward from Operation Shopping Hacks"),
    ("Supreme Leader's Bunker Access Card", "B6", "Legendary. The Supreme Leader's Bunker deep in the Chang-san Air Base bunker; Bale cloned its credentials onto a new card. Reported as a reward from Operation Iron Citadel"),
    ("Roze's High-Rise Armory", "G6", "Legendary. The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault"),
-   ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
+   ("Hoesik Supply Room", "D8", "Epic. Players report the upstairs supply room of the southernmost office building at the Rice Mill, Imjin Farmland"),
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
    # in the game's loot tables (dmz.tips atlas, 2026-11-12); doors not found yet
    ("The Citadel Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
    ("The Grid Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
-   ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("Downtown Branch Lobby Main", "G6", "Uncommon. Found on bodies and in jackets and military duffles. Players report it opens the glass doors up the front steps of the Hanex Bank branch in The Grid, across the street from NuriGO West"),
    ("Field Depot", "B5", "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
    ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
@@ -542,7 +544,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.56", "updated": "2026-11-23",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

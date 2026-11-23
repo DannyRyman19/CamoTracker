@@ -1,6 +1,6 @@
 {
- "version": "0.9.55",
- "updated": "2026-11-12",
+ "version": "0.9.56",
+ "updated": "2026-11-23",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -1533,6 +1533,14 @@
    "x": 0.1233,
    "y": 0.5846,
    "note": "Ultra key, grid B6. Opens the DRC Weapons Locker in the secure armory deep in the Chang-san Air Base bunker."
+  },
+  {
+   "id": "k-downtown-branch-lobby",
+   "cat": "key",
+   "name": "Downtown Branch Lobby Main",
+   "x": 0.6744,
+   "y": 0.6906,
+   "note": "Uncommon key, grid G6. Players report it opens the glass doors up the front steps of the Hanex Bank branch, across the street from NuriGO West."
   },
   {
    "id": "k-locked-room",
@@ -6264,13 +6272,13 @@
     },
     {
      "title": "Knuckle (Tae-Hyun)",
-     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "subtitle": "New in Season 1, with intel on the Boss Board. Players report him in X01's Data Center, in the dark server room behind reinforced glass, and say he drops a Rezi 12, his backpack and his Dog Tag",
      "group": "Lieutenants",
      "check": "boss-knuckle-tae-hyun"
     },
     {
      "title": "The Wrench (Chol-Min)",
-     "subtitle": "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet",
+     "subtitle": "New in Season 1, with intel on the Boss Board. Players report him in X01's Motor Pool, hidden among the tanks, and say he drops a Type 73, his backpack and his Dog Tag",
      "group": "Lieutenants",
      "check": "boss-the-wrench-chol-min"
     },
@@ -6479,12 +6487,13 @@
     },
     {
      "title": "Blackmarket Weapons Locker",
-     "subtitle": "Rare. Comes in DMZ level reward kits. Where its door is isn't known yet",
+     "subtitle": "Rare. Comes in the Recon Equipment Kit (DMZ level 46). Opens one of the two lockers in a black market's back room. Players report black markets in southern Deadtown (B7: in through the rear door, behind the big shelf and down the stairs to an armored door) and eastern Hanrim Village (C2: behind the shop counter, through the green double doors)",
      "item": "blackmarket-weapons-locker"
     },
     {
      "title": "Underground Propaganda Store Room",
-     "subtitle": "Rare. Where its door is isn't known yet",
+     "value": "B7",
+     "subtitle": "Rare. The blue door in the basement cell block of the Re-Education Center, Deadtown. Players report two levers inside that open the other locked doors down there",
      "item": "underground-propaganda-store-room"
     },
     {
@@ -6601,7 +6610,8 @@
     },
     {
      "title": "Hoesik Supply Room",
-     "subtitle": "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+     "value": "D8",
+     "subtitle": "Epic. Players report the upstairs supply room of the southernmost office building at the Rice Mill, Imjin Farmland",
      "item": "hoesik-supply-room"
     },
     {
@@ -6621,7 +6631,8 @@
     },
     {
      "title": "Downtown Branch Lobby Main",
-     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "value": "G6",
+     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Players report it opens the glass doors up the front steps of the Hanex Bank branch in The Grid, across the street from NuriGO West",
      "item": "downtown-branch-lobby-main"
     },
     {
@@ -9639,7 +9650,7 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Comes in DMZ level reward kits. Where its door is isn't known yet",
+   "note": "Comes in the Recon Equipment Kit (DMZ level 46). Opens one of the two lockers in a black market's back room. Players report black markets in southern Deadtown (B7: in through the rear door, behind the big shelf and down the stairs to an armored door) and eastern Hanrim Village (C2: behind the shop counter, through the green double doors)",
    "marker": "k-blackmarket-weapons-locker-2",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/haksan-school-armory.png?v=1"
@@ -10203,7 +10214,7 @@
      "qty": 3
     }
    ],
-   "effect": "Single-use charge that breaches a locked door"
+   "effect": "Single-use charge that breaches a locked key door. Players report it won't open keycard doors"
   },
   {
    "id": "downtown-branch-lobby-main",
@@ -10211,7 +10222,9 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "note": "Found on bodies and in jackets and military duffles. Players report it opens the glass doors up the front steps of the Hanex Bank branch in The Grid, across the street from NuriGO West",
+   "grid": "G6",
+   "marker": "k-downtown-branch-lobby",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
@@ -10799,7 +10812,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Epic",
-   "note": "Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet",
+   "note": "Players report the upstairs supply room of the southernmost office building at the Rice Mill, Imjin Farmland",
+   "grid": "D8",
    "marker": "k-hoesik-supply-room",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/vault-armory.png?v=1",
@@ -12944,7 +12958,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Rare",
-   "note": "Where its door is isn't known yet",
+   "note": "The blue door in the basement cell block of the Re-Education Center, Deadtown. Players report two levers inside that open the other locked doors down there",
+   "grid": "B7",
    "marker": "k-underground-propaganda-store-room",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/haksan-school-armory.png?v=1",
