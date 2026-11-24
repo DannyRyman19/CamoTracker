@@ -1,6 +1,6 @@
 {
- "version": "0.9.55",
- "updated": "2026-11-12",
+ "version": "0.9.59",
+ "updated": "2026-11-24",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -6616,7 +6616,8 @@
     },
     {
      "title": "The Grid Side Access",
-     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "value": "G6",
+     "subtitle": "Uncommon. Players report it opens the door on the west side of The Grid, past the security blockade, straight into the Netshin Tech Complex. Found on bodies and in jackets and military duffles",
      "item": "the-grid-side-access"
     },
     {
@@ -6714,6 +6715,12 @@
      "title": "South Block Armory",
      "subtitle": "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter",
      "item": "south-block-armory"
+    },
+    {
+     "title": "X01 Vault DRC Locker",
+     "value": "X01 C2",
+     "subtitle": "Ultra. New in Season 1. The DRC Weapons Locker in the Deep Vault's Core Room, X01. The Hajin DRC keys and the numbered Deep Vault keycards don't open it. Where it drops isn't known yet; players report rare finds in X01 lockers and containers",
+     "item": "x01-vault-drc-locker"
     }
    ]
   },
@@ -7881,6 +7888,7 @@
      "title": "Ears Everywhere",
      "group": "DMZ Orders: Page 20",
      "check": "op-ears-everywhere",
+     "pageReward": "$20,000, a 3-Plate Armor Vest and a Bomb Glider",
      "place": "Cheonwang Peak Array",
      "objectives": [
       "Hack the Communications Broadcast System on the OBN TV building's second floor",
@@ -7891,6 +7899,7 @@
      "title": "The Vault",
      "group": "DMZ Orders: Page 20",
      "check": "op-the-vault-2",
+     "pageReward": "$20,000, a 3-Plate Armor Vest and a Bomb Glider",
      "place": "Wolves Stadium, Hanex Branch Bank",
      "objectives": [
       "Find a Battery and put it in the Electric Panel",
@@ -7905,6 +7914,7 @@
      "tips": [
       "A Shock Stick works on it once the DDOS is used up"
      ],
+     "pageReward": "$20,000, a 3-Plate Armor Vest and a Bomb Glider",
      "objectives": [
       "Hit a tank with a DDOS 3 times",
       "Destroy it with a rocket launcher (RPG or JOKR)"
@@ -7929,6 +7939,7 @@
      "tips": [
       "Nylon Laminate you bring in, drop and pick up again counts"
      ],
+     "pageReward": "$20,000, a Triage Kit (Basic, by one guide), an Operator Rescue Beacon and a Weapon Insurance Contract",
      "objectives": [
       "Print or extract 2 Nylon Laminate (you can bring them in, drop them and pick them up)",
       "Gather Structural Alloy",
@@ -7942,10 +7953,21 @@
      "tips": [
       "Rice Mills usually has an enemy with an RPG"
      ],
+     "pageReward": "$20,000, a Triage Kit (Basic, by one guide), an Operator Rescue Beacon and a Weapon Insurance Contract",
      "place": "The Grid",
      "objectives": [
       "Take a SAM site at the edge of The Grid",
       "Kill the Deathstalkers, one with an RPG or JOKR"
+     ]
+    },
+    {
+     "title": "Operation Fallen Ember",
+     "group": "DMZ Orders: Page 21",
+     "check": "op-operation-fallen-ember-2",
+     "pageReward": "$20,000, a Triage Kit (Basic, by one guide), an Operator Rescue Beacon and a Weapon Insurance Contract",
+     "place": "Haneul Nuclear Reactor",
+     "objectives": [
+      "Complete the Operation Fallen Ember Story Mission"
      ]
     },
     {
@@ -8288,6 +8310,74 @@
      ]
     },
     {
+     "title": "Ghost Shipment",
+     "group": "Dynamic Ops",
+     "place": "14th Political Prison and the Citadel",
+     "objectives": [
+      "Kill the marked HVT and take the Classified Orders",
+      "Capture the SAM site and hold it until it shoots the helicopter down",
+      "Loot the Lieutenant's cargo container"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
+    },
+    {
+     "title": "Ignition Point",
+     "group": "Dynamic Ops",
+     "objectives": [
+      "Reach the target area",
+      "Some routes add: take the bomb from the dead drop (a white dumpster in the industrial yard by the gas station) and plant it"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
+    },
+    {
+     "title": "Sky Heist",
+     "group": "Dynamic Ops",
+     "place": "Songdo Wharf phone (reported)",
+     "objectives": [
+      "Find the intel",
+      "Kill the helicopter pilot and take his keys",
+      "Unlock the heavy chopper and fly it to exfil before the timer (about 3:45) runs out"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
+    },
+    {
+     "title": "Special Delivery",
+     "group": "Dynamic Ops",
+     "objectives": [
+      "Collect 3 bomb parts (Songdo Wharf, a dead drop and a hidden cache in the Construction Zone reported)",
+      "Build the bomb at the marked workbench",
+      "Capture a UAV Tower",
+      "Plant the bomb on the mobile launcher (Shoreline Station reported) and hold out for about a minute"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
+    },
+    {
+     "title": "Viral Reckoning",
+     "group": "Dynamic Ops",
+     "objectives": [
+      "Kill the HVT and take the enemy radio",
+      "Use it to find the scientist, open the keypad door (the code is in your objective) and rescue them",
+      "Defend the landing zone until the chopper arrives",
+      "Plant an explosive on the biological weapon, or leave on the chopper for partial credit"
+     ],
+     "rewards": [
+      "$10,000 to $20,000",
+      "Supply Drop"
+     ]
+    },
+    {
      "title": "Paid Intel",
      "group": "Side Ops",
      "place": "Tank Depot",
@@ -8347,6 +8437,40 @@
      ],
      "rewards": [
       "A working truck"
+     ]
+    },
+    {
+     "title": "Loot Radio Tower",
+     "group": "Side Ops",
+     "place": "Any marked radio tower",
+     "objectives": [
+      "Climb the tower",
+      "Use the panel at the top"
+     ],
+     "rewards": [
+      "Guides say $2,000 since the 30 October update"
+     ]
+    },
+    {
+     "title": "Crack Safe",
+     "group": "Side Ops",
+     "objectives": [
+      "Find the marked safe",
+      "Open it"
+     ],
+     "rewards": [
+      "Guides say $2,000 since the 30 October update"
+     ]
+    },
+    {
+     "title": "Clear the Military Compound",
+     "group": "Side Ops",
+     "place": "Any marked Compound",
+     "objectives": [
+      "Clear the Compound of enemies"
+     ],
+     "rewards": [
+      "Guides say $2,000 since the 30 October update"
      ]
     }
    ],
@@ -11724,7 +11848,8 @@
    "id": "radiation-gear",
    "name": "Radiation Gear",
    "kind": "Gear",
-   "note": "Protects you in radiation; the Haneul Nuclear Reactor needs it and a Gas Mask. Search Fire Stations for it",
+   "rarity": "Legendary",
+   "note": "Also called the Hazmat Suit. Protects you in radiation; the Haneul Nuclear Reactor needs it and a Gas Mask. Search Fire Stations for it. Discarded on exfil, so it never reaches your Stash",
    "image": "https://camo-track.app/Images/DMZ/radiation-gear.png?v=1"
   },
   {
@@ -12772,7 +12897,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "note": "Players report it opens the door on the west side of The Grid, past the security blockade, straight into the Netshin Tech Complex. Found on bodies and in jackets and military duffles",
+   "grid": "G6",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
@@ -13132,6 +13258,17 @@
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/haksan-school-armory.png?v=1",
    "found": "Loot containers around Hajin"
+  },
+  {
+   "id": "x01-vault-drc-locker",
+   "name": "X01 Vault DRC Locker",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Ultra",
+   "note": "New in Season 1. The DRC Weapons Locker in the Deep Vault's Core Room, X01. The Hajin DRC keys and the numbered Deep Vault keycards don't open it. Where it drops isn't known yet; players report rare finds in X01 lockers and containers",
+   "grid": "X01 C2",
+   "value": 100,
+   "image": "https://camo-track.app/Images/DMZ/air-base-drc-weapons-locker.png?v=1"
   },
   {
    "id": "zip-gun",
