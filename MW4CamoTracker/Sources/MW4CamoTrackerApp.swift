@@ -47,6 +47,7 @@ struct MW4CamoTrackerApp: App {
                         URLCache.shared.removeAllCachedResponses()
                         imageCacheToken = Self.currentImageCacheToken
                     }
+                    Task { await NoticeStore.shared.refresh() }
                     await viewModel.refresh()
                     BackgroundRefreshCoordinator.scheduleNext()
                 }
@@ -70,6 +71,8 @@ struct MW4CamoTrackerApp: App {
             if newPhase == .active { Task { await Premium.shared.refresh() } }
             // Back in the app: send the overlay's figures (retries one that failed)
             if newPhase == .active { StreamOverlay.shared.refresh(immediately: true) }
+            // A notice switched on or off in the repo (Data/CT/notices.json)
+            if newPhase == .active { Task { await NoticeStore.shared.refresh() } }
             if newPhase == .active, !viewModel.isRefreshing {
                 Task { await viewModel.refresh() }
             }

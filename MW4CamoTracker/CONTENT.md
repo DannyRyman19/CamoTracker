@@ -304,3 +304,42 @@ go out with the built-in wording instead of its own.
 
 Marker positions are 0 to 1 across and down `hajin_map.jpg`, which is the
 official 4096 px Tac Map cropped at x 750, y 740, 2660 px square.
+
+## Notices (a card on the home screen, switched on and off from here)
+
+`Data/CT/notices.json` holds cards the app shows at the top of every mode tab,
+in every game: a title, a line or two, an optional button and a close button.
+It is not part of `publish_data.py`: there is no version to bump and no
+notification. It needs app 1.0.7 or later; older builds ignore the file.
+
+```sh
+python3 MW4CamoTracker/Tools/notices.py                      # list and check
+python3 MW4CamoTracker/Tools/notices.py on android-testers
+python3 MW4CamoTracker/Tools/notices.py off android-testers
+```
+
+Then commit `Data/CT/notices.json` and push to `master`. The app asks for the
+file at launch and each time it comes back to the front; jsDelivr keeps its
+copy for up to 12 hours, so open the purge link the script prints to switch
+at once.
+
+To change the words, link or dates, edit the file and run the script with no
+arguments to check it. One notice:
+
+| Field | |
+| --- | --- |
+| `id` | Needed. Closing the card is remembered by `id`: keep it to change the wording quietly, change it to show the card again to people who closed it. |
+| `enabled` | `false` is off. Left out counts as on. |
+| `title` | Needed. Text per language, as everywhere else (`en` at least). |
+| `body` | The smaller text under the title. |
+| `url` | Where the button goes. `https://` only; without it there is no button. |
+| `action` | `"share"` opens the share sheet with `url` (and `shareText` before it); otherwise the link opens in the browser. |
+| `button` | The button's words. A share without them says "Share"; a link to open without them has no button. |
+| `shareText` | The message sent along with the link when sharing. |
+| `icon` | An SF Symbol name (`person.2.fill`); a megaphone otherwise. |
+| `from`, `until` | First and last day shown, `2026-12-31`, UTC, both included. |
+
+Only one card shows at a time: the first in the file that is on, within its
+dates and not closed by that player. A notice the app can't read is skipped,
+and a file it can't read at all leaves the last good copy showing, which is
+why the script refuses to save a broken one.

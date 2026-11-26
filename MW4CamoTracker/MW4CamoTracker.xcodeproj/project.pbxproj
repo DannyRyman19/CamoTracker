@@ -10,6 +10,7 @@
 		6AB4A9029D4D7D0A1E13EB65 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 71B567DA50280AD4B947CE4C /* PrivacyInfo.xcprivacy */; };
 		BAC8184808A9C7CEC66D0AD6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 288D4FC985DA85C31FE88002 /* PrivacyInfo.xcprivacy */; };
 		03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */; };
+		A1C0FFEE0000000000000001 /* Notices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0FFEE0000000000000002 /* Notices.swift */; };
 		05B97224043C5B44BFEE69FA /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613DA0B92D98434F953C3144 /* StatsView.swift */; };
 		061AF3F322A05D82472AD02D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00C36E336BC0A943B5CBFB /* SplashView.swift */; };
 		0D06644637814F96A8671ADB /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2F5D24163231262425B4C4 /* ItemDetailView.swift */; };
@@ -70,6 +71,7 @@
 		B39983607DD7CA0C2A98BAF1 /* MW4CamoTrackerWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E63CAA2281D717492836A497 /* MW4CamoTrackerWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B5901F3F78BA7F7BA03893A4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4D4216871DE1E40B303C87 /* OnboardingView.swift */; };
 		B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */; };
+		A1C0FFEE0000000000000003 /* NoticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0FFEE0000000000000004 /* NoticeTests.swift */; };
 		B99935210D4E62994789E4CA /* CloudSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41AAC69D95FF9C7CD60A0B9 /* CloudSyncTests.swift */; };
 		A7C3E5F1B2D4068A9C1E3F51 /* UnreadableSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C3E5F1B2D4068A9C1E3F52 /* UnreadableSaveTests.swift */; };
 		B5C7A11E2D9F40A1A0C0F101 /* PremiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A11E2D9F40A1A0C0F102 /* PremiumTests.swift */; };
@@ -246,6 +248,7 @@
 		B5C7A11E2D9F40A1A0C0F104 /* AdsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTests.swift; sourceTree = "<group>"; };
 		A7C3E5F1B2D4068A9C1E3F54 /* LegacyImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyImportTests.swift; sourceTree = "<group>"; };
 		B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPromptTests.swift; sourceTree = "<group>"; };
+		A1C0FFEE0000000000000004 /* NoticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F13 /* MasteryOverrideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryOverrideTests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F21 /* GridTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTapUITests.swift; sourceTree = "<group>"; };
 		B9D0A1C3E5F7092B4D6E8F22 /* MW4CamoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW4CamoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,6 +298,7 @@
 		EF2C14F801A0EEEEB2AD34E1 /* HajinItemViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinItemViews.swift; sourceTree = "<group>"; };
 		F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HajinGuideTests.swift; sourceTree = "<group>"; };
 		F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetGuide.swift; sourceTree = "<group>"; };
+		A1C0FFEE0000000000000002 /* Notices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notices.swift; sourceTree = "<group>"; };
 		202E4FC72459A6253A5B2B7C /* Premium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Premium.swift; sourceTree = "<group>"; };
 		ABFC2C043486400F10E42010 /* Ads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		9E18584995CE0647A750FAF9 /* PremiumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 				C3D5E7F9A1B2C4D6E8F0A1B2 /* MasteryTabView.swift */,
 				BE4427FBEDC7A7333BC088B7 /* WidgetSync.swift */,
 				F798CEA79936E3B8F3F32ABB /* WidgetGuide.swift */,
+				A1C0FFEE0000000000000002 /* Notices.swift */,
 				137CA712348610EDF30BE314 /* HajinModels.swift */,
 				3C16FB38FF86F93546E5F2D5 /* HajinPostMatch.swift */,
 				61C12525E32F5F8867F49126 /* AppIcons.swift */,
@@ -477,6 +482,7 @@
 				C1D2E3F4A5B6C7D8E9F0A1B3 /* DataServiceTests.swift */,
 				B9D0A1C3E5F7092B4D6E8F31 /* NotificationTextTests.swift */,
 				B4EAF63F2715708BBBD3F844 /* ReviewPromptTests.swift */,
+				A1C0FFEE0000000000000004 /* NoticeTests.swift */,
 				F6CB4645B82983468D4BB939 /* HajinGuideTests.swift */,
 				B41AAC69D95FF9C7CD60A0B9 /* CloudSyncTests.swift */,
 				A7C3E5F1B2D4068A9C1E3F52 /* UnreadableSaveTests.swift */,
@@ -759,6 +765,7 @@
 				DD8DA57611E4F76BB696DC1B /* WidgetSnapshot.swift in Sources */,
 				C7DBE44742D8CD7A76F93F78 /* WidgetViews.swift in Sources */,
 				03435C017A92906079E0AD6C /* WidgetGuide.swift in Sources */,
+				A1C0FFEE0000000000000001 /* Notices.swift in Sources */,
 				41C4A8E67C4682A9263DFEEF /* HajinModels.swift in Sources */,
 				919813FB7392C71D66C6DE86 /* HajinMapView.swift in Sources */,
 				E4F159CCFEE9066C7A6B3223 /* HajinView.swift in Sources */,
@@ -787,6 +794,7 @@
 				C1D2E3F4A5B6C7D8E9F0A1B2 /* DataServiceTests.swift in Sources */,
 				B9D0A1C3E5F7092B4D6E8F30 /* NotificationTextTests.swift in Sources */,
 				B5FB07403826819CCCE40955 /* ReviewPromptTests.swift in Sources */,
+				A1C0FFEE0000000000000003 /* NoticeTests.swift in Sources */,
 				AAEC0C7F5B899153501B92FF /* HajinGuideTests.swift in Sources */,
 				B99935210D4E62994789E4CA /* CloudSyncTests.swift in Sources */,
 				A7C3E5F1B2D4068A9C1E3F51 /* UnreadableSaveTests.swift in Sources */,

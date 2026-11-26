@@ -332,6 +332,10 @@ struct CategoryListView: View {
                         }
                     }
                 } else {
+                    NoticeCard(accent: mode.accent)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     WidgetTipCard(accent: mode.accent)
                         .listRowInsets(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
                         .listRowBackground(Color.clear)
