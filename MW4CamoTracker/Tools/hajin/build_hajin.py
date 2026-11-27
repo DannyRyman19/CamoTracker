@@ -388,7 +388,7 @@ guide = [
    ("Knuckle (Tae-Hyun)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
    ("The Wrench (Chol-Min)", "Lieutenant", "New in Season 1, with intel on the Boss Board. Where he spawns and what he drops isn't known yet"),
    ("The Captain", "Commander", "New in Season 1. A Juggernaut with an elite guard inside X01. During the Threat Briefing: The Captain event, loot helmet sections from him; they pay out when you exfil, for the whole squad"),
-   ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet"),
+   ("Wheelson", "Commander", "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. Drops a Remote Module, not a keycard: it shuts down the Power Generators console so the emergency gate can be cranked open. One player reported an Epic Power Regulator from the wreck. Since 16 November it no longer targets operators running Viper Sense"),
   ])},
  {"id": "keys", "title": "Keys", "symbol": "key.fill",
   "intro": "Keys open locked loot rooms; Lieutenants can drop them. Each key's description names its Tac Map grid square. Locations reported by players, more as they're found.",
@@ -430,7 +430,7 @@ guide = [
    ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
    # in the game's loot tables (dmz.tips atlas, 2026-11-12); doors not found yet
-   ("The Citadel Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("The Citadel Side Access", "B3", "Uncommon. Found on bodies and in jackets and military duffles. Reported to open the Citadel's side and roof doors, security grilles with Korean text above them, 14th Political Prison. One guide still lists the door as unconfirmed"),
    ("The Grid Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
    ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
    ("Field Depot", "B5", "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles"),
@@ -448,6 +448,8 @@ guide = [
    ("Jin-Tae's Private Lounge", "F4", "The upper-floor lounge of the Heavenly Luck Casino: take the lobby elevator to the penthouse. Reported as a drop from Jin-Tae"),
    ("Gorani's Scout Overlook", "D8", "The Scout Overlook, reached from the Rice Mill roof, Imjin Farmland. Gorani sometimes drops it"),
    ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
+   # X01 (2026-11-21, dmzcodex.com, dmzmap.com, codcentral.net, thebasedotaku.com)
+   ("Small Test Chamber Keycard", "X01 F4", "Epic. Made by encoding an Encodable Blank Keycard as Engineering Access at the Data Center's Keycard Encoder Station (X01 I5); the Supply Depot station doesn't offer it. Opens a room in the Tech Lab, in front of the security checkpoints: a safe and two weapon lockers reported. Used up when the door opens. One player saw Engineering Access show X0 afterwards, so it may be one per deployment"),
    ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
    ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
   ])},
@@ -542,7 +544,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.58", "updated": "2026-11-21",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

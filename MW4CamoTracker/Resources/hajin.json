@@ -1,6 +1,6 @@
 {
- "version": "0.9.55",
- "updated": "2026-11-12",
+ "version": "0.9.58",
+ "updated": "2026-11-21",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5558,7 +5558,7 @@
     },
     {
      "title": "SR-16 Bio Agent Sample",
-     "subtitle": "Survivor Box (X01). Where it's found isn't known yet",
+     "subtitle": "Survivor Box (X01). Reported loose on the lab table in Deep Vault Room 406 in X01, though not every match. Some guides also list it as an X01 orders page reward; others say it isn't",
      "value": "Legendary",
      "item": "sr-16-bio-agent-sample"
     },
@@ -6310,7 +6310,10 @@
     },
     {
      "title": "Wheelson",
-     "subtitle": "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. What it drops isn't known yet",
+     "subtitle": "New in Season 1. An autonomous robot vehicle in the X01 Logistics Tunnel; destroying it is part of the X01 Door Opener order. Drops a Remote Module, not a keycard: it shuts down the Power Generators console so the emergency gate can be cranked open. One player reported an Epic Power Regulator from the wreck. Since 16 November it no longer targets operators running Viper Sense",
+     "links": [
+      "power-regulator"
+     ],
      "group": "Commanders",
      "check": "boss-wheelson"
     }
@@ -6611,7 +6614,8 @@
     },
     {
      "title": "The Citadel Side Access",
-     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+     "value": "B3",
+     "subtitle": "Uncommon. Found on bodies and in jackets and military duffles. Reported to open the Citadel's side and roof doors, security grilles with Korean text above them, 14th Political Prison. One guide still lists the door as unconfirmed",
      "item": "the-citadel-side-access"
     },
     {
@@ -6703,6 +6707,12 @@
      "title": "The Citadel Main Control Room",
      "subtitle": "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence",
      "item": "the-citadel-main-control-room"
+    },
+    {
+     "title": "Small Test Chamber Keycard",
+     "value": "X01 F4",
+     "subtitle": "Epic. Made by encoding an Encodable Blank Keycard as Engineering Access at the Data Center's Keycard Encoder Station (X01 I5); the Supply Depot station doesn't offer it. Opens a room in the Tech Lab, in front of the security checkpoints: a safe and two weapon lockers reported. Used up when the door opens. One player saw Engineering Access show X0 afterwards, so it may be one per deployment",
+     "item": "small-test-chamber-keycard"
     },
     {
      "title": "The Citadel Secondary Control Room",
@@ -8556,6 +8566,11 @@
      "image": "https://camo-track.app/Images/DMZ/traits/resupply.png?v=2"
     },
     {
+     "title": "Supplied Drops",
+     "subtitle": "A supply drop may hold an extra container, for the whole squad (Warfighter)",
+     "group": "Warfighter: random"
+    },
+    {
      "title": "Hostile Looter",
      "subtitle": "Enemies sometimes drop an Uncommon printer ingredient, and very rarely a Rare one",
      "group": "Scout: fixed",
@@ -9737,7 +9752,8 @@
    "kind": "Gear",
    "rarity": "Uncommon",
    "value": 200,
-   "note": "A repair item for vehicles. Where to find it isn't known yet",
+   "found": "Gas stations and their back rooms, garages and UAV trucks (reported)",
+   "note": "A repair item for vehicles: one of the four radar truck parts, with the Alternator, Spark Plug and Vehicle Water Pump. A part fitted to another disabled truck can be moved over",
    "image": "https://camo-track.app/Images/DMZ/car-battery.png?v=1"
   },
   {
@@ -9908,7 +9924,7 @@
    "rarity": "Epic",
    "value": 1000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
-   "note": "What it holds isn't known yet.",
+   "note": "Its card says it deploys enhancement items for the squad. The exact contents aren't listed yet",
    "image": "https://camo-track.app/Images/DMZ/consumable-box.png?v=1"
   },
   {
@@ -10750,7 +10766,7 @@
    "rarity": "Legendary",
    "value": 2500,
    "found": "A rare find in weapons lockers and Lieutenant crates",
-   "note": "What it holds isn't known yet.",
+   "note": "Its card says it deploys radiation protection items for the squad. The exact contents aren't listed yet",
    "image": "https://camo-track.app/Images/DMZ/hazmat-box.png?v=1"
   },
   {
@@ -11177,7 +11193,7 @@
    "rarity": "Legendary",
    "value": 2500,
    "found": "A rare find in weapons lockers and Lieutenant crates",
-   "note": "What it holds isn't known yet.",
+   "note": "Its card says it deploys medical supplies for you and your teammates. The exact contents aren't listed yet",
    "image": "https://camo-track.app/Images/DMZ/medical-box.png?v=1"
   },
   {
@@ -11997,7 +12013,7 @@
    "name": "SR-16 Bio Agent Sample",
    "rarity": "Legendary",
    "kind": "Ingredient",
-   "note": "Survivor Box (X01). Where it's found isn't known yet",
+   "note": "Survivor Box (X01). Reported loose on the lab table in Deep Vault Room 406 in X01, though not every match. Some guides also list it as an X01 orders page reward; others say it isn't",
    "image": "https://camo-track.app/Images/DMZ/sr-16-bio-agent-sample.png?v=1"
   },
   {
@@ -12241,6 +12257,17 @@
    "effect": "Three Secure Slots"
   },
   {
+   "id": "small-test-chamber-keycard",
+   "name": "Small Test Chamber Keycard",
+   "kind": "Key",
+   "symbol": "key.fill",
+   "rarity": "Epic",
+   "note": "Made by encoding an Encodable Blank Keycard as Engineering Access at the Data Center's Keycard Encoder Station (X01 I5); the Supply Depot station doesn't offer it. Opens a room in the Tech Lab, in front of the security checkpoints: a safe and two weapon lockers reported. Used up when the door opens. One player saw Engineering Access show X0 afterwards, so it may be one per deployment",
+   "grid": "X01 F4",
+   "value": 100,
+   "image": "https://camo-track.app/Images/DMZ/vault-armory.png?v=1"
+  },
+  {
    "id": "smelling-salts",
    "name": "Smelling Salts",
    "image": "https://camo-track.app/Images/DMZ/smelling-salts.png?v=1",
@@ -12335,7 +12362,8 @@
    "kind": "Gear",
    "rarity": "Uncommon",
    "value": 100,
-   "note": "A repair item for vehicles. Where to find it isn't known yet",
+   "found": "Garages and gas stations (reported, not a sure spawn)",
+   "note": "A repair item for vehicles: one of the four radar truck parts. Players say it is the hardest of the four to find",
    "image": "https://camo-track.app/Images/DMZ/spark-plug.png?v=1"
   },
   {
@@ -12630,7 +12658,7 @@
    "rarity": "Ultra",
    "value": 3000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
-   "note": "What it holds isn't known yet. A recipe for it can be found too",
+   "note": "Its card says it deploys survival items for you and your teammates; the exact contents aren't listed yet. A recipe for it can be found too",
    "image": "https://camo-track.app/Images/DMZ/survivor-box.png?v=1"
   },
   {
@@ -12725,7 +12753,8 @@
    "kind": "Key",
    "symbol": "key.fill",
    "rarity": "Uncommon",
-   "note": "Found on bodies and in jackets and military duffles. Where its door is isn't known yet",
+   "note": "Found on bodies and in jackets and military duffles. Reported to open the Citadel's side and roof doors, security grilles with Korean text above them, 14th Political Prison. One guide still lists the door as unconfirmed",
+   "grid": "B3",
    "value": 100,
    "image": "https://camo-track.app/Images/DMZ/the-citadel-south-wing.png?v=1"
   },
@@ -12957,7 +12986,7 @@
    "rarity": "Ultra",
    "value": 3000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
-   "note": "What it holds isn't known yet. A recipe for it can be found too",
+   "note": "Its card says it deploys ammo, equipment and armor plates for you and your teammates; the exact contents aren't listed yet. A recipe for it can be found too",
    "image": "https://camo-track.app/Images/DMZ/utility-box.png?v=1"
   },
   {
