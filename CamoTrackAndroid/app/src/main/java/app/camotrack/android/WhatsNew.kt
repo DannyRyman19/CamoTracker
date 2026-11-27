@@ -9,7 +9,7 @@ import app.camotrack.android.core.KeyValueStore
  * To announce a release: add its items under its version name in
  * [releases], with `ct.whatsnew.<id>.title` and `.body` in every language.
  * An update shows every release since the one the player last saw, newest
- * first. The first Android release has nothing "new", so the list starts empty.
+ * first. The first Android release (1.0.0) had nothing "new".
  */
 object WhatsNew {
     enum class Action { STREAM_OVERLAY, NOTIFICATIONS }
@@ -20,7 +20,9 @@ object WhatsNew {
         val bodyKey: String get() = "ct.whatsnew.$id.body"
     }
 
-    var releases: Map<String, List<Item>> = emptyMap()
+    var releases: Map<String, List<Item>> = mapOf(
+        "1.0.1" to listOf(Item("push", "bell", Action.NOTIFICATIONS), Item("sync", "sync")),
+    )
 
     const val SEEN_KEY = "ct_whats_new_seen"
     const val FROM_KEY = "ct_whats_new_from"

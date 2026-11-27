@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.Layers
 import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material.icons.filled.Podcasts
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Sync
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.Icon
@@ -68,6 +69,7 @@ fun WhatsNewScreen(onClose: () -> Unit) {
 }
 
 private fun icon(symbol: String): ImageVector = when (symbol) {
+    "sync" -> Icons.Filled.Sync
     "overlay" -> Icons.Filled.Podcasts
     "bell" -> Icons.Filled.NotificationsActive
     "modes" -> Icons.Filled.Layers

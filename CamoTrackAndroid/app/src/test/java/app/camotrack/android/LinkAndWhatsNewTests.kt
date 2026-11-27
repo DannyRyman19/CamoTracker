@@ -10,7 +10,8 @@ import org.junit.Test
 
 /** iOS DeepLinkTests and WhatsNewTests, for the Android ports. */
 class LinkAndWhatsNewTests {
-    @After fun reset() { WhatsNew.releases = emptyMap() }
+    private val shipped = WhatsNew.releases
+    @After fun reset() { WhatsNew.releases = shipped }
 
     @Test fun parsesEveryLinkForm() {
         assertEquals(DeepLink.Target("warzone", null, null), DeepLink.parse("mw4camo://mode/warzone"))
