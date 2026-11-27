@@ -24,6 +24,23 @@
     }
   },
   "notification": {
-    "silent": true
+    "title": {
+      "en": "Natural Concealment ends tomorrow",
+      "fr": "Natural Concealment se termine demain",
+      "es": "Natural Concealment termina mañana",
+      "de": "Natural Concealment endet morgen",
+      "it": "Natural Concealment termina domani",
+      "nl": "Natural Concealment eindigt morgen"
+    },
+    "body": {
+      "en": "The event ends Monday at 6 PM UK time. Tap to check your progress.",
+      "fr": "L’événement se termine lundi à 18 h (heure du Royaume-Uni). Touchez pour voir votre progression.",
+      "es": "El evento termina el lunes a las 18:00 (hora del Reino Unido). Toca para ver tu progreso.",
+      "de": "Das Event endet am Montag um 18 Uhr (britische Zeit). Tippe, um deinen Fortschritt zu sehen.",
+      "it": "L’evento termina lunedì alle 18:00 (ora del Regno Unito). Tocca per vedere i tuoi progressi.",
+      "nl": "Het evenement eindigt maandag om 18:00 (Britse tijd). Tik om je voortgang te bekijken."
+    },
+    "link": "mw4camo://mode/current/event/1/102",
+    "id": "mw4-20261122T112138Z"
   }
 }
