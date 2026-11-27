@@ -97,6 +97,8 @@ RECIPES = [
  ("Gear", "Elite Night Vision Goggles", F, "Legendary", "2 Power Regulator, 3 CPU, 5 Electronic Sensors", "Night vision you can toggle on and off"),
  ("Gear", "Disposable Parachute", "Lv 55", "Rare", "30 Chemicals, 3 Rigid Synthetics", "A parachute with limited uses"),
  ("Gear", "Parachute", F, "Legendary", "2 Turned Components, 5 Nylon Cloth, 10 Rigid Synthetics", "Reusable"),
+ # the X01 printer's Survivor Box, cost from the dmzcodex, missionkey, u4gm and mmoexp guides (2026-11-25), not read in game yet
+ ("Gear", "Survivor Box", "X01 printer", "Ultra", "1 SR-16 Bio Agent Sample, 2 Ballistic Fabric, 3 High-Tenacity Fibers", "Season 1. Printed at the X01 3D Printer in Production Assembly (E5). Cost from guides, not confirmed in game; one guide says the recipe found in Hajin takes 1 SR-16 Bio Agent Sample, 3 Stabilized Reagents and 6 Nitro Compounds at the FOB instead"),
  ("Ingredients", "Biomaterials", "Upgrade", "Uncommon", "20 Synthetics, 20 Chemicals", "Needs Uncommon Ingredient Printing"),
  ("Ingredients", "Detonators", "Upgrade", "Uncommon", "20 Chemicals, 20 Electronics", "Needs Uncommon Ingredient Printing"),
  ("Ingredients", "Electronic Sensors", "Upgrade", "Uncommon", "20 Synthetics, 20 Electronics", "Needs Uncommon Ingredient Printing"),
@@ -436,8 +438,10 @@ EXTRA_ITEMS = [
  {"id": "weapon-manual", "name": "Weapon Manual", "kind": "Gear", "note": "Extract one to unlock its weapon for repeat buys at the Gunsmith, plus $5,000. Search military containers and safes"},
  {"id": "encrypted-drive", "name": "Encrypted Drive", "kind": "Gear", "note": "The objective item in the Dead Man's Cache op: collect it from the enemy comms server in Cheongun Outskirts"},
  {"id": "defibrillator", "name": "Defibrillator", "kind": "Gear", "rarity": "Uncommon", "note": "A reward from Operation Critical Extraction; DMZ level 67 gives one"},
- {"id": "tank-water-pump", "name": "Tank Water Pump", "kind": "Gear", "rarity": "Legendary", "note": "Used to repair heavy military tanks"},
- {"id": "tank-alternator", "name": "Tank Alternator", "kind": "Gear", "rarity": "Legendary", "value": 100, "note": "Used to repair heavy military tanks"},
+ {"id": "tank-water-pump", "name": "Tank Water Pump", "kind": "Gear", "rarity": "Legendary", "note": "One of the four parts that repair the tank in the Chang-san Air Base Tank Depot; fit them at the back of the tank",
+  "found": "Guides place it on the north side of Chang-san Air Base, near the fuel tanks and the hangar entrance, on rooftops, shelves and in building corners. The spot changes between deployments"},
+ {"id": "tank-alternator", "name": "Tank Alternator", "kind": "Gear", "rarity": "Legendary", "value": 100, "note": "One of the four parts that repair the tank in the Chang-san Air Base Tank Depot; fit them at the back of the tank",
+  "found": "Guides disagree: the Air Base Armory inside the bunker (open during Operation Iron Citadel) or the bunkers across the north of Chang-san Air Base. The spot changes between deployments"},
  {"id": "car-battery", "name": "Car Battery", "kind": "Gear", "rarity": "Uncommon", "value": 200, "note": "A repair item for vehicles. Where to find it isn't known yet"},
  {"id": "spark-plug", "name": "Spark Plug", "kind": "Gear", "rarity": "Uncommon", "value": 100, "note": "A repair item for vehicles. Where to find it isn't known yet"},
  {"id": "night-vision-goggles", "name": "Night Vision Goggles", "kind": "Gear", "value": None, "note": "On sale at the Vendor for $7,000 on day one, and a reward from Shopping Hacks. Useful in the dark casino and the underground mall"},
@@ -1044,6 +1048,13 @@ MISSIONS = [
  ("Side Ops", "Download Intel to Locate Lieutenant", None, ["Download the intel"], None, [], ["A Lieutenant's location"]),
  ("Side Ops", "Secure Lost Supply Drop", None, ["Find and open a lost supply drop"], None, [], []),
  ("Side Ops", "Repair a Truck", None, ["Fix a useful truck you come across"], None, [], ["A working truck"]),
+ # limited-time events, from the codcentral, fanboydestroy, gamerfuzion and dmzmap guides and the Call of Duty wiki (2026-11-25)
+ ("Threat Briefings", "Threat Briefing: Battle Tank", "Hajin roads and highways", ["Destroy a Battle Tank", "Loot the Reactive Armor Fragment from the wreck's hatch, one per deployment", "Extract with it"], None,
+  ["3-plate-armor-vest", "self-revive-kit", "parachute", "large-secure-backpack"],
+  ["Ran 6 to 12 November; guides say it comes back and keeps your progress", "Reported rewards: 1 fragment 2 3-Plate Armor Vests, 3 fragments 2 Self-Revive Kits, 5 fragments 2 Parachutes, 7 fragments 2 Large Secure Backpacks, 10 fragments the Advanced SERE Kit"]),
+ ("Threat Briefings", "Threat Briefing: The Captain", "X01", ["Kill The Captain", "Loot the Prototype Helmet sections he drops", "Extract with them; they pay out for the whole squad"], None,
+  ["large-backpack", "self-revive-kit", "tempered-armor-vest", "argonaut-armor"],
+  ["Started 24 November; one wiki says it runs to 2 December", "Reported rewards: 1 helmet 2 Large Backpacks, 3 helmets 2 Self-Revive Kits, 5 helmets 2 Tempered Armor Vests, 7 helmets Argonaut Armor, 10 helmets the Advanced SERE Kit"]),
 ]
 OPS_NOTES = [
  ("Weekly Story Missions", "Finish a random Story Mission three times a week for the weekly rewards"),
@@ -1136,7 +1147,7 @@ ORDER_PAGES = {
     "DMZ Orders: Page 23, other route": (23.5, "DMZ Orders: Page 23, other route"),
 }
 # Repeatable ops: guide reading, not ticked
-REPEATABLE = ("Dynamic Ops", "Side Ops")
+REPEATABLE = ("Dynamic Ops", "Side Ops", "Threat Briefings")
 
 def structured_ops(guide):
     sec = next(s for s in guide if s["id"] == "ops")
@@ -1187,7 +1198,8 @@ def structured_ops(guide):
         "id": "dynamic-ops", "title": "Dynamic & Side Ops", "symbol": "bolt.fill", "rows": wiki,
         "intro": ("Finish a random Story Mission three times a week for the weekly rewards. "
                   "Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. "
-                  "A Bounty Station clears your bounty for $5,000; four kills make you Wanted.")})
+                  "A Bounty Station clears your bounty for $5,000; four kills make you Wanted. "
+                  "Threat Briefings are limited-time events: extract the items they ask for and the rewards step up with the count.")})
 
 # ---- Where keys turn up, from the sources players report (dmzcodex.com/map)
 KEY_ALIASES = {"supremeleaderaccesscard": "supreme-leaders-bunker-access-card"}

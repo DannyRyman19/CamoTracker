@@ -1,6 +1,6 @@
 {
- "version": "0.9.55",
- "updated": "2026-11-12",
+ "version": "0.9.60",
+ "updated": "2026-11-25",
  "map": {
   "image": "hajin_map",
   "credit": "Map: Activision Hajin DMZ Tac Map"
@@ -5290,6 +5290,13 @@
      "item": "parachute"
     },
     {
+     "title": "Survivor Box",
+     "subtitle": "Ultra. 1 SR-16 Bio Agent Sample, 2 Ballistic Fabric, 3 High-Tenacity Fibers. Season 1. Printed at the X01 3D Printer in Production Assembly (E5). Cost from guides, not confirmed in game; one guide says the recipe found in Hajin takes 1 SR-16 Bio Agent Sample, 3 Stabilized Reagents and 6 Nitro Compounds at the FOB instead",
+     "group": "Gear",
+     "value": "X01 printer",
+     "item": "survivor-box"
+    },
+    {
      "title": "Biomaterials",
      "subtitle": "Uncommon. 20 Synthetics, 20 Chemicals. Needs Uncommon Ingredient Printing",
      "group": "Ingredients",
@@ -8348,9 +8355,49 @@
      "rewards": [
       "A working truck"
      ]
+    },
+    {
+     "title": "Threat Briefing: Battle Tank",
+     "group": "Threat Briefings",
+     "place": "Hajin roads and highways",
+     "objectives": [
+      "Destroy a Battle Tank",
+      "Loot the Reactive Armor Fragment from the wreck's hatch, one per deployment",
+      "Extract with it"
+     ],
+     "links": [
+      "3-plate-armor-vest",
+      "self-revive-kit",
+      "parachute",
+      "large-secure-backpack"
+     ],
+     "rewards": [
+      "Ran 6 to 12 November; guides say it comes back and keeps your progress",
+      "Reported rewards: 1 fragment 2 3-Plate Armor Vests, 3 fragments 2 Self-Revive Kits, 5 fragments 2 Parachutes, 7 fragments 2 Large Secure Backpacks, 10 fragments the Advanced SERE Kit"
+     ]
+    },
+    {
+     "title": "Threat Briefing: The Captain",
+     "group": "Threat Briefings",
+     "place": "X01",
+     "objectives": [
+      "Kill The Captain",
+      "Loot the Prototype Helmet sections he drops",
+      "Extract with them; they pay out for the whole squad"
+     ],
+     "links": [
+      "large-backpack",
+      "self-revive-kit",
+      "tempered-armor-vest",
+      "argonaut-armor"
+     ],
+     "rewards": [
+      "Started 24 November; one wiki says it runs to 2 December",
+      "Reported rewards: 1 helmet 2 Large Backpacks, 3 helmets 2 Self-Revive Kits, 5 helmets 2 Tempered Armor Vests, 7 helmets Argonaut Armor, 10 helmets the Advanced SERE Kit"
+     ]
     }
    ],
-   "intro": "Finish a random Story Mission three times a week for the weekly rewards. Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. A Bounty Station clears your bounty for $5,000; four kills make you Wanted."
+   "intro": "Finish a random Story Mission three times a week for the weekly rewards. Dynamic Ops pay $10,000 to $20,000 into your Bank, plus a Supply Drop that gets better with each one you finish in the same deployment. A Bounty Station clears your bounty for $5,000; four kills make you Wanted. Threat Briefings are limited-time events: extract the items they ask for and the rewards step up with the count."
   },
   {
    "id": "rules",
@@ -12628,6 +12675,22 @@
    "name": "Survivor Box",
    "kind": "Gear",
    "rarity": "Ultra",
+   "unlock": "X01 printer",
+   "cost": [
+    {
+     "item": "sr-16-bio-agent-sample",
+     "qty": 1
+    },
+    {
+     "item": "ballistic-fabric",
+     "qty": 2
+    },
+    {
+     "item": "high-tenacity-fibers",
+     "qty": 3
+    }
+   ],
+   "effect": "Season 1. Printed at the X01 3D Printer in Production Assembly (E5). Cost from guides, not confirmed in game; one guide says the recipe found in Hajin takes 1 SR-16 Bio Agent Sample, 3 Stabilized Reagents and 6 Nitro Compounds at the FOB instead",
    "value": 3000,
    "found": "A rare find in weapons lockers and Lieutenant crates",
    "note": "What it holds isn't known yet. A recipe for it can be found too",
@@ -12645,7 +12708,8 @@
    "kind": "Gear",
    "rarity": "Legendary",
    "value": 100,
-   "note": "Used to repair heavy military tanks",
+   "note": "One of the four parts that repair the tank in the Chang-san Air Base Tank Depot; fit them at the back of the tank",
+   "found": "Guides disagree: the Air Base Armory inside the bunker (open during Operation Iron Citadel) or the bunkers across the north of Chang-san Air Base. The spot changes between deployments",
    "image": "https://camo-track.app/Images/DMZ/tank-alternator.png?v=1"
   },
   {
@@ -12653,7 +12717,8 @@
    "name": "Tank Water Pump",
    "kind": "Gear",
    "rarity": "Legendary",
-   "note": "Used to repair heavy military tanks",
+   "note": "One of the four parts that repair the tank in the Chang-san Air Base Tank Depot; fit them at the back of the tank",
+   "found": "Guides place it on the north side of Chang-san Air Base, near the fuel tanks and the hangar entrance, on rooftops, shelves and in building corners. The spot changes between deployments",
    "image": "https://camo-track.app/Images/DMZ/tank-water-pump.png?v=1"
   },
   {
