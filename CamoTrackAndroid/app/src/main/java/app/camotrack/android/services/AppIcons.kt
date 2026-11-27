@@ -82,6 +82,9 @@ enum class AppIconChoice(val alias: String, val preview: Int) {
 }
 
 object AppIcons {
+    /** Where the manifest declares the icon aliases: the code's package, not the app id (a debug build can add a suffix to that). */
+    private const val NAMESPACE = "app.camotrack.android"
+
     private const val KEY = "ct_app_icon"
     /** Icons already earned when last looked (iOS IconUnlocks), so each new one is told once. */
     const val KNOWN_KEY = "ct_icons_known"
@@ -96,7 +99,7 @@ object AppIcons {
         val ordered = listOf(choice) + AppIconChoice.entries.filter { it != choice }
         for (c in ordered) {
             pm.setComponentEnabledSetting(
-                ComponentName(context, "${context.packageName}.${c.alias}"),
+                ComponentName(context, "$NAMESPACE.${c.alias}"),
                 if (c == choice) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP,
             )
@@ -110,7 +113,7 @@ object AppIcons {
      */
     fun reapply(context: Context, store: KeyValueStore) {
         val choice = current(store)
-        val state = context.packageManager.getComponentEnabledSetting(ComponentName(context, "${context.packageName}.${choice.alias}"))
+        val state = context.packageManager.getComponentEnabledSetting(ComponentName(context, "$NAMESPACE.${choice.alias}"))
         val enabled = state == PackageManager.COMPONENT_ENABLED_STATE_ENABLED ||
             (state == PackageManager.COMPONENT_ENABLED_STATE_DEFAULT && choice == AppIconChoice.STANDARD)
         if (!enabled) pick(context, store, choice)
