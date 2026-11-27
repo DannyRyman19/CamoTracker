@@ -112,7 +112,7 @@ NOTES = {
 KEY_ROOMS = [
     ("k-vault-armory", "Vault Armory", "Heavenly Luck Casino", "dmz_fortress_heavenlyLuckCasino", "Epic key, grid F4. Opens the small armory in the casino's underground car park."),
     ("k-imjin-mill", "Imjin Mill Foreman's Office", "Rice Mill", "dmz_fortress_riceMill", "Rare key, grid D8. Opens the foreman's office on the first floor of the Rice Mill."),
-    ("k-citadel-south", "The Citadel South Wing", "The Citadel", "dmz_fortress_theCitadel", "Uncommon key. Opens the South Wing of the Citadel inside the prison."),
+    ("k-citadel-south", "The Citadel South Wing", "The Citadel", "dmz_fortress_theCitadel", "Uncommon key, grid B3. Opens the outside door into the South Wing of the Citadel inside the prison."),
     ("k-reeducation-annex", "Re-Education Center Annex", "Re-Education Center", "dmz_fortress_reEducationCenter", "Epic key, grid B7. Opens the annex on the ground floor of the Re-Education Center in Deadtown."),
     ("k-iskra", "Iskra's Control Room", "Cheonwang Peak Array", "poiLabel", "Legendary key, grid F7. Opens the control room on the upper floor of the broadcast building."),
     ("k-counting-room", "Counting Room Vault", "Heavenly Luck Casino", "dmz_fortress_heavenlyLuckCasino", "Epic key, grid F4. Opens the counting-room vault on the casino's main floor; players report a backpack inside.", (-34, -26)),
@@ -370,7 +370,7 @@ guide = [
    ("Firing Range", None, "Targets from under 10 m to over 100 m"),
   ])},
  {"id": "bosses", "title": "Bosses", "symbol": "scope",
-  "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients.",
+  "intro": "Lieutenants drop lots of cash, a Dog Tag (picking it up shows your position), sometimes a Key and rarely their weapon. Since the 16 November update a Lieutenant Dog Tag's cash pays every squad member. Commanders roam the map; the first kill of each pays cash, and extracting after a kill gives ingredients. Since Season 1 both finish off downed players, so don't lie near one waiting for a revive.",
   "rows": rows([
    ("Gorani", "Lieutenant", "Ghillie-suited sniper in the woods above Hanrim Village. Drops Gorani's Dog Tag (Legendary), which sells for $25,000"),
    ("Bale", "Lieutenant", "Tank Depot in the Chang-san Air Base bunker. Bale's Dog Tag (Legendary) marks you for nearby squads until you extract"),
@@ -417,7 +417,7 @@ guide = [
    ("Netshin IT Room", "G6", "Epic. The high-security server room on the upper floors of the Netshin Tech Complex, The Grid"),
    ("Traindepot Storage Room", "E5", "Rare. Basement of the train station by the fire station, Cheongun Village"),
    ("The Chemist's Secure Armory", "I4", "Legendary. A secured bunker by the Haneul Nuclear Reactor boathouse"),
-   ("The Citadel South Wing", None, "Uncommon. The Citadel's South Wing, 14th Political Prison"),
+   ("The Citadel South Wing", "B3", "Uncommon. The outside door into the Citadel's South Wing, the Y-shaped building in the 14th Political Prison. Random loot. The keypad to the inner cells is separate and needs its code, not another key"),
    ("Bank Branch Vault Access", None, "Rare. The cash vaults of South Korean bank branches"),
    ("Hanex Guard Station", "G6", "Epic. The guard station on an upper floor near the Hanex Bank vault, The Grid"),
    ("Lucera Suite 703 Bedroom", "H7", "Epic. The upper-floor executive suite in Hotel Lucera, The Grid"),
@@ -427,16 +427,16 @@ guide = [
    ("Coin Mining Den", "G6", "Rare. The e-coin mining lab in an upper apartment east of the westernmost gas station, NuriGO West: a grey office door beside a red fire alarm. Reported as a reward from Operation Shopping Hacks"),
    ("Supreme Leader's Bunker Access Card", "B6", "Legendary. The Supreme Leader's Bunker deep in the Chang-san Air Base bunker; Bale cloned its credentials onto a new card. Reported as a reward from Operation Iron Citadel"),
    ("Roze's High-Rise Armory", "G6", "Legendary. The upstairs offices of the Netshin Tech Complex, The Grid. Reported as a reward from Operation Grid Assault"),
-   ("Hoesik Supply Room", None, "Epic. Reported to open a key-marked building around the rice mill, Imjin Farmland. The exact door isn't known yet"),
+   ("Hoesik Supply Room", "D8", "Epic. The locked room upstairs in the southernmost two-storey office building at the Rice Mill, Imjin Farmland, not the main mill building; guides don't agree which floor. Random loot, and used up when you open the door"),
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
    # in the game's loot tables (dmz.tips atlas, 2026-11-12); doors not found yet
    ("The Citadel Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
    ("The Grid Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
-   ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. One video guide says it opens a bank branch lobby in The Grid; the exact door isn't pinned yet"),
    ("Field Depot", "B5", "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
    ("Utility Maintenance Storage", "H4", "Rare. The maintenance room under the transformer area next to Reactor 01, Haneul Nuclear Reactor"),
-   ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound"),
+   ("Gangbyeon Apartment B", "G7", "Uncommon. Opens Gangbyeon Apartment B in the Hajin River Heights compound. One guide reports the key turning up in Gangbyeon Apartment A next door"),
    ("Police Station Armory", None, "Uncommon. Reported to open any Police Station armory: West Cheongun Village, north NuriGO Mall, Revolution Dam and south Pyonghwa Village. Whether it is the same key as the Police Station Key isn't known yet"),
    ("Police Station Key", None, "Comes in the Recon Equipment Kit (DMZ level 19). Where its door is isn't known yet"),
    ("Air Base Access Card - Multi Use", "B5", "Epic. Opens doors around Chang-san Air Base, and can be used more than once"),
@@ -542,7 +542,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.57", "updated": "2026-11-20",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}

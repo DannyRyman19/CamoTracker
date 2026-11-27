@@ -81,11 +81,11 @@ RECIPES = [
  ("Field Upgrades", "Fulton Drop Marker", F, "Ultra", "1 Prototype RF Module, 3 Comms Module, 5 Control Unit", "Marks a spot and calls in a fulton extraction"),
  ("Fire Support", "Care Package", "Lv 28", "Rare", "20 Electronics, 2 Control Unit, 2 Rigid Synthetics", "Calls in a supply drop"),
  ("Fire Support", "Combat Drone", F, "Epic", "30 Electronics, 2 CPU, 5 Control Unit", "Remote-controlled anti-personnel drone"),
- ("Fire Support", "UAV", "Lv 31", "Epic", "30 Electronics, 2 Structural Alloy, 5 Electronic Sensors", "Shows enemies on the minimap"),
+ ("Fire Support", "UAV", "Lv 31", "Epic", "30 Electronics, 2 Structural Alloy, 5 Electronic Sensors", "Shows enemies on the minimap. Disabled inside X01 since the 10 November update"),
  ("Fire Support", "Bombing Run", F, "Epic", "30 Chemicals, 2 Nitro Compounds, 5 Control Unit", "An aerial bombing run on a target location"),
  ("Fire Support", "Bomb Glider", F, "Epic", "30 Chemicals, 2 Stock Rod, 5 Control Unit", "Hand-held glider with an explosive payload"),
  ("Fire Support", "Artillery Beacon", F, "Legendary", "2 Volatile Explosives, 3 Nitro Compounds, 5 Detonators", "Heat-seeking missiles that track the beacon"),
- ("Fire Support", "Advanced UAV", F, "Legendary", "2 Comms Module, 3 Nitro Compounds, 5 Electronic Sensors", "An orbital UAV that can't be shot down; shows which way enemies face"),
+ ("Fire Support", "Advanced UAV", F, "Legendary", "2 Comms Module, 3 Nitro Compounds, 5 Electronic Sensors", "An orbital UAV that can't be shot down; shows which way enemies face. Disabled inside X01 since the 10 November update"),
  ("Fire Support", "Impact Warhead", F, "Legendary", "2 Turned Components, 3 Nitro Compounds, 5 Detonators", "A payload that drills through several floors"),
  ("Fire Support", "Railgun Sentry", F, "Legendary", "2 Power Regulator, 3 Nitro Compounds, 5 Control Unit", "Hypersonic flechette cannon that works as a sentry"),
  ("Fire Support", "Argonaut Armor", F, "Ultra", "1 Specter Fabric Sample, 2 Alloyed Plating, 5 High-Tenacity Fibers", "New in Season 1. Heavy Argonaut armor for massive protection"),
@@ -97,6 +97,8 @@ RECIPES = [
  ("Gear", "Elite Night Vision Goggles", F, "Legendary", "2 Power Regulator, 3 CPU, 5 Electronic Sensors", "Night vision you can toggle on and off"),
  ("Gear", "Disposable Parachute", "Lv 55", "Rare", "30 Chemicals, 3 Rigid Synthetics", "A parachute with limited uses"),
  ("Gear", "Parachute", F, "Legendary", "2 Turned Components, 5 Nylon Cloth, 10 Rigid Synthetics", "Reusable"),
+ # the X01 printer's keycard blank, cost from the xboxplay.games and games.gg guides (2026-11-20), not read in game yet
+ ("Gear", "Encodable Blank Keycard", "X01 printer", None, "8 Control Unit, 6 Printed Circuit Board", "Season 1. Printed only at the X01 3D Printer in Production Assembly, or looted in X01, then encoded at a Keycard Encoder Station in the Supply Depot or the Data Center. Cost from guides, not confirmed in game yet"),
  ("Ingredients", "Biomaterials", "Upgrade", "Uncommon", "20 Synthetics, 20 Chemicals", "Needs Uncommon Ingredient Printing"),
  ("Ingredients", "Detonators", "Upgrade", "Uncommon", "20 Chemicals, 20 Electronics", "Needs Uncommon Ingredient Printing"),
  ("Ingredients", "Electronic Sensors", "Upgrade", "Uncommon", "20 Synthetics, 20 Electronics", "Needs Uncommon Ingredient Printing"),
@@ -163,7 +165,7 @@ GUNS = [
  ("Melee", [("FSS Carbon Edge 1095", 250, True)]),
 ]
 TRAITS = [
- ("Thermal Padding", "Scout", "Hides you from UAVs and drops Advanced UAVs to normal UAV detection"),
+ ("Thermal Padding", "Scout", "Hides you from UAVs and drops Advanced UAVs to normal UAV detection. Since the 7 November fix it hides you from UAV Towers too"),
  ("Overwatch", "Scout", "UAV Towers you activate never expire"),
  ("Resource Hoarder", "Scout", "20% more printer resource capacity. Stacks with Pack Rat"),
  ("Investor", "Scout", "A little more cash when you extract"),
@@ -280,7 +282,7 @@ def apply(guide, rows):
         if r["title"] == "Bank":
             r["subtitle"] = "Holds your DMZ Cash; cash you extract goes here. Bank Upgrade III raises the cap to $1 million"
         if r["title"] == "Vendor":
-            r["subtitle"] = "Sells weapons and gear for DMZ Cash, restocking daily. More slots unlock with DMZ level and Vendor Item Upgrades. Seen on day one: night vision goggles $7,000, a built rifle $46,250"
+            r["subtitle"] = "Sells weapons and gear for DMZ Cash, restocking daily. More slots unlock with DMZ level and Vendor Item Upgrades. Seen on day one: night vision goggles $7,000, a built rifle $46,250. Season 1 BlackCell owners get a vendor of their own with extra weapons and gear"
     i = next(k for k, s in enumerate(guide) if s["id"] == "stations") + 1
     guide.insert(i, {"id": "upgrades", "title": "FOB upgrades", "symbol": "arrow.up.circle.fill",
         "intro": "Printed at the 3D Printer to improve your FOB. Costs read from the in-game printer.",
@@ -430,7 +432,7 @@ EXTRA_ITEMS = [
  {"id": "the-doctors-dog-tag", "name": "The Doctor's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by The Doctor. Extract it for Boss Board progress. Sells for $25,000"},
  {"id": "goranis-dog-tag", "name": "Gorani's Dog Tag", "kind": "Valuable", "rarity": "Legendary", "note": "Dropped by Lieutenant Gorani. Sells for $25,000"},
  {"id": "hazmat-suit", "name": "Hazmat Suit", "kind": "Gear", "rarity": "Legendary", "note": "Protective suit that shields you from radiation. Discarded when you extract"},
- {"id": "irradiated-container", "name": "Irradiated Container", "kind": "Gear", "rarity": "Ultra", "note": "An Ultra item listed on dmzhub.gg. What it does isn't known yet"},
+ {"id": "irradiated-container", "name": "Irradiated Container", "kind": "Gear", "rarity": "Ultra", "found": "Chemical Storage lockers", "note": "A sealed loot box you can't open in the field. Carry it to the decontamination machine at Reactor 02, Haneul Nuclear Reactor, run the cycle and loot it like any loot box; players report Legendary gear inside, but nothing is guaranteed. Bank Upgrade XII wants 3"},
  {"id": "armor-plate", "name": "Armor Plate", "kind": "Gear", "rarity": "Common", "note": "Extra protection in combat; stacks to 6. Your armor slot fills with plates when you infil, and Ammo Armor Caches refill them (with a cooldown)"},
  {"id": "gas-can", "name": "Gas Can", "kind": "Gear", "rarity": "Common", "note": "Attach it to a vehicle to refuel it. Refill it at Gas Stations and Marine Gas Stations"},
  {"id": "weapon-manual", "name": "Weapon Manual", "kind": "Gear", "note": "Extract one to unlock its weapon for repeat buys at the Gunsmith, plus $5,000. Search military containers and safes"},
@@ -522,7 +524,7 @@ TRAIT_TREES = [
   "emblem": "surv-emblem"},
 ]
 EXTRA_TRAITS = [
- ("possum", "Possum", "Warfighter", "Once per match, self-revive from death into Last Stand with full health"),
+ ("possum", "Possum", "Warfighter", "Once per match, self-revive from death into Last Stand with full health. It only fires once the squad that killed you is far enough away; Season 1 widened that radius 2.5 times and raised its failsafe timer from 4 to 5 minutes"),
  ("adaptive-restock", "Adaptive Restock", "Warfighter", "Enemies drop one extra item"),
  ("viper-sense", "Viper Sense", "Warfighter", "Warns you when enemy operators are nearby"),
  ("quick-fix", "Quick Fix", "Warfighter", "Shorter health regen delay after you kill an enemy operator or hostile"),
@@ -545,7 +547,7 @@ UNPLACED = [
  ("Numb the Pain", "Revives also give Pain Killers and Smelling Salts effects"),
  ("Ammo Reserves", "More reserve ammo for every ammo type (Scout)"),
  ("Objective Oriented", "Op reward crates are one rarity higher, up to Rare (Survivalist)"),
- ("Supplied Drops", "A supply drop may hold an extra container, for the whole squad (Survivalist)"),
+ ("Supplied Drops", "A supply drop or Dynamic Op crate may hold an extra container, for the whole squad; the chance went from 25% to 50% in Season 1 (Survivalist)"),
  ("Bounty Hunter", "Bounties pay more (Warfighter)"),
  ("Bounty Intel", "Bounty Intel costs less (Warfighter)"),
  ("Hostile Ammo", "Hostiles drop an extra ammo pack (Warfighter)"),
@@ -606,7 +608,7 @@ TRAIT_PROS = [
     ("Quick Fix Pro", "Warfighter", "Health starts regenerating straight away when you kill an operator or hostile"),
     ("Viper Sense Pro", "Warfighter", "Hidden from thermal optics and AI targeting, and warned when an enemy operator aims at you"),
     ("Overwatch Pro", "Scout", "UAV Towers you activate never expire, and reach further"),
-    ("UAV Upgrade Pro", "Scout", "Longer-lasting, longer-range Advanced UAVs, and a bigger minimap"),
+    ("UAV Upgrade Pro", "Scout", "Longer-lasting, longer-range Advanced UAVs, and a bigger minimap: zoomed out 1.5 times since the 16 November update, down from 3"),
     ("Thermal Padding Pro", "Scout", "Hidden from UAVs, and so is a vehicle you're in"),
     ("Field Crafting Pro", "Scout", "Craft from Common printer resources while deployed, for half the resources"),
     ("Free Revive Pro", "Survivalist", "Your first Wound repairs itself, and you can tourniquet while Wounded"),
