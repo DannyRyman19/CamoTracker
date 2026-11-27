@@ -1,6 +1,7 @@
 // camo-track.app/api/push/*: Camo Track's content announcements as pushes.
 //
 //   POST /api/push/register    { token, sandbox, lang, version }   from the app
+//        (the Android app adds platform: "android"; its token is Firebase's)
 //   POST /api/push/unregister  { token }                           from the app
 //   POST /api/push/send        { id, title, body, cursor }         from publish
 //        (Authorization: Bearer PUSH_ADMIN_TOKEN): one page of phones, with
@@ -13,6 +14,7 @@
 
 import { register, unregister, sendPage } from "./push.js";
 import { providerToken, push } from "./apns.js";
+import { access, push as pushAndroid } from "./fcm.js";
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json", "cache-control": "no-store" } });
@@ -40,17 +42,22 @@ export default {
       const b = await body(request);
       if (!b?.id || !b?.title || !b?.body) return json({ error: "Needs id, title and body." }, 400);
       const jwt = await providerToken(env);
-      return json(await sendPage(env.TOKENS, b, b.cursor, (device, payload, id) => push(jwt, device, payload, id)));
+      // Asked for once per page, and only when the page has an Android phone
+      let google;
+      return json(await sendPage(env.TOKENS, b, b.cursor, (device, payload, id) => device.android
+        ? (google ??= access(env)).then((auth) => pushAndroid(auth, device.token, payload, id))
+        : push(jwt, device, payload, id)));
     }
     if (route === "/count" && request.method === "GET") {
       if (!admin(request, env)) return json({ error: "Not allowed." }, 401);
-      let n = 0, sandbox = 0, cursor;
+      let n = 0, sandbox = 0, android = 0, cursor;
       do {
         const page = await env.TOKENS.list({ prefix: "tok:", cursor });
         n += page.keys.length; sandbox += page.keys.filter((k) => k.metadata?.s === 1).length;
+        android += page.keys.filter((k) => k.metadata?.p === "a").length;
         cursor = page.list_complete ? null : page.cursor;
       } while (cursor);
-      return json({ phones: n, sandbox });
+      return json({ phones: n, sandbox, android });
     }
     return json({ error: "Not found." }, 404);
   },

@@ -73,6 +73,8 @@ class MainActivity : ComponentActivity() {
         super.onResume()
         // Free players: the ad SDK, once onboarding and the consent question are behind them
         Ads.start(this)
+        // Announcements as pushes, once notifications are allowed
+        app.camotrack.android.services.Push.sync(this, AppState.store)
     }
 
     /** A notification's (or any) mw4camo:// link. */

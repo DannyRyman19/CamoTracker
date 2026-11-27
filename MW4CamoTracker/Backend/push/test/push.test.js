@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { parseRegistration, localized, payload, register, unregister, sendPage, PAGE } from "../src/push.js";
+import { parseRegistration, localized, payload, androidData, register, unregister, sendPage, PAGE } from "../src/push.js";
+import { push as pushAndroid, serviceAccount } from "../src/fcm.js";
 import { push } from "../src/apns.js";
 
 // A Map-backed stand-in for a KV namespace: put with metadata, list by prefix with a cursor.
@@ -27,7 +28,8 @@ test("registrations: a real token, a known language or English, and nothing else
   const r = parseRegistration({ token: tok(1).toUpperCase(), sandbox: true, lang: "de", version: "1.0.4", name: "Danny" });
   assert.equal(r.token, tok(1));
   assert.deepEqual(r.meta, { s: 1, l: "de", v: "1.0.4" });
-  assert.equal(parseRegistration({ token: tok(1), lang: "pt" }).meta.l, "en");
+  assert.equal(parseRegistration({ token: tok(1), lang: "pt" }).meta.l, "pt");
+  assert.equal(parseRegistration({ token: tok(1), lang: "xx" }).meta.l, "en");
 });
 
 test("text in the phone's language, else English", () => {
@@ -80,4 +82,57 @@ test("APNs: the right server and topic, and Apple's answers read", async () => {
   assert.match(calls[1][0], /^https:\/\/api\.push\.apple\.com/);
   assert.equal(await push("jwt", { token: tok(1) }, {}, null, fake(400, '{"reason":"BadDeviceToken"}')), "gone");
   assert.equal(await push("jwt", { token: tok(1) }, {}, null, fake(500, "oops")), "failed");
+});
+
+// Android (Firebase)
+
+const fcmTok = (n) => `fcm${n}:APA91b` + "Ab_-".repeat(35);
+
+test("android registrations: Firebase's token kept as it is, marked as Android", () => {
+  const r = parseRegistration({ platform: "android", token: fcmTok(1), lang: "fr", version: "1.0.1", sandbox: true });
+  assert.equal(r.token, fcmTok(1));
+  assert.deepEqual(r.meta, { s: 0, l: "fr", v: "1.0.1", p: "a" });
+  assert.deepEqual(parseRegistration({ platform: "android", token: tok(1) }), { error: "Not a device token." });
+  assert.deepEqual(parseRegistration({ platform: "android", token: fcmTok(1) + " x" }), { error: "Not a device token." });
+  // An Apple token is still an Apple token
+  assert.equal(parseRegistration({ token: tok(2) }).meta.p, undefined);
+});
+
+test("android data: the phone's language, strings only, the app's own links", () => {
+  const a = { id: "mw4-1", title: { en: "Hi", de: "Hallo" }, body: { en: "New" }, link: "mw4camo://mode/current/event/1/102" };
+  assert.deepEqual(androidData(a, "de"), { title: "Hallo", body: "New", announcement: "mw4-1", link: "mw4camo://mode/current/event/1/102" });
+  assert.equal(androidData({ ...a, link: "https://example.com" }, "en").link, undefined);
+});
+
+test("a page with both kinds: each phone gets its own payload", async () => {
+  const kv = fakeKV();
+  await register(kv, { token: tok(1), lang: "de" });
+  await register(kv, { platform: "android", token: fcmTok(1), lang: "fr" });
+  const seen = [];
+  const out = await sendPage(kv, { id: "x", title: { en: "T", fr: "Titre", de: "Titel" }, body: "B" }, null, async (device, p) => {
+    seen.push([device.android, device.android ? p.title : p.aps.alert.title]);
+    return "sent";
+  });
+  assert.equal(out.sent, 2);
+  assert.deepEqual(seen.sort(), [[false, "Titel"], [true, "Titre"]]);
+});
+
+test("fcm: sent, a dead token is dropped, anything else keeps it, no key means failed", async () => {
+  const auth = { token: "t", project: "camo-track" };
+  const calls = [];
+  const answer = (status, text = "{}") => async (url, init) => { calls.push([url, JSON.parse(init.body)]); return new Response(text, { status }); };
+  assert.equal(await pushAndroid(auth, "abc", { title: "T" }, "id-1", answer(200)), "sent");
+  assert.equal(calls[0][0], "https://fcm.googleapis.com/v1/projects/camo-track/messages:send");
+  assert.deepEqual(calls[0][1], { message: { token: "abc", data: { title: "T" }, android: { priority: "high", collapse_key: "id-1" } } });
+  assert.equal(await pushAndroid(auth, "abc", {}, null, answer(404, '{"error":{"details":[{"errorCode":"UNREGISTERED"}]}}')), "gone");
+  assert.equal(await pushAndroid(auth, "abc", {}, null, answer(400, '{"error":{"status":"INVALID_ARGUMENT"}}')), "failed");
+  assert.equal(await pushAndroid(auth, "abc", {}, null, answer(500)), "failed");
+  assert.equal(await pushAndroid(null, "abc", {}, null, answer(200)), "failed");
+});
+
+test("fcm: the service account is read from the secret, or there is none", () => {
+  assert.equal(serviceAccount({}), null);
+  assert.equal(serviceAccount({ FCM_SERVICE_ACCOUNT: "not json" }), null);
+  assert.equal(serviceAccount({ FCM_SERVICE_ACCOUNT: '{"client_email":"a@b"}' }), null);
+  assert.equal(serviceAccount({ FCM_SERVICE_ACCOUNT: '{"client_email":"a@b","private_key":"k","project_id":"p"}' }).project_id, "p");
 });

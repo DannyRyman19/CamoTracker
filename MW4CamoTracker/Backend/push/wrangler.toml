@@ -3,6 +3,9 @@
 # APNS_KEY_P8 (the team's APNs key, ~/LIFTER_AuthKey_683JTWR2V2.p8) and
 # PUSH_ADMIN_TOKEN (what Tools/send_push.py sends with; kept locally in
 # Backend/push/.admin-token, which git ignores).
+# FCM_SERVICE_ACCOUNT (the Firebase project camo-track's service account key,
+# the whole JSON, kept locally in ~/.camotrack/firebase-service-account.json)
+# sends to the Android app; without it Android phones are skipped.
 name = "camo-track-push"
 main = "src/index.js"
 compatibility_date = "2026-09-01"

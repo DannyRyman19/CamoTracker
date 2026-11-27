@@ -1,10 +1,11 @@
 // Camo Track's content announcements as real pushes. The app registers its
-// APNs token with its language; publish_data.py's announcement is then sent
+// push token (APNs on iPhone, Firebase on Android: `platform: "android"`)
+// with its language; publish_data.py's announcement is then sent
 // to every phone in its own language, a page at a time (the Workers free plan
 // allows 50 outbound requests per request, so a page is 40 and the sender
 // asks for the next page with the cursor until there's none).
 
-export const LANGS = ["en", "fr", "es", "de", "it", "nl"];
+export const LANGS = ["en", "fr", "es", "de", "it", "nl", "pt"];
 export const PAGE = 40;
 const PREFIX = "tok:";
 
@@ -12,9 +13,15 @@ const clean = (v, max) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 /** A registration from the app, or an error message. */
 export function parseRegistration(body) {
+  const lang = LANGS.includes(body?.lang) ? body.lang : "en";
+  if (body?.platform === "android") {
+    // A Firebase registration token: longer than Apple's, case matters
+    const token = clean(body?.token, 500);
+    if (!/^[A-Za-z0-9_:-]{100,500}$/.test(token)) return { error: "Not a device token." };
+    return { token, meta: { s: 0, l: lang, v: clean(body?.version, 16), p: "a" } };
+  }
   const token = clean(body?.token, 200).toLowerCase();
   if (!/^[0-9a-f]{64,200}$/.test(token)) return { error: "Not a device token." };
-  const lang = LANGS.includes(body?.lang) ? body.lang : "en";
   return { token, meta: { s: body?.sandbox === true ? 1 : 0, l: lang, v: clean(body?.version, 16) } };
 }
 
@@ -34,6 +41,14 @@ export function payload(a, lang) {
   // Where tapping it goes in the app: only the app's own links.
   if (typeof a.link === "string" && /^mw4camo:\/\/mode\/[\w/?=&.-]{1,120}$/.test(a.link)) p.link = a.link;
   return p;
+}
+
+/** The same announcement as an Android data message: every value a string. */
+export function androidData(a, lang) {
+  const p = payload(a, lang);
+  const data = { title: p.aps.alert.title, body: p.aps.alert.body, announcement: p.announcement };
+  if (p.link) data.link = p.link;
+  return data;
 }
 
 export async function register(kv, body) {
@@ -59,7 +74,8 @@ export async function sendPage(kv, a, cursor, send) {
   const out = { sent: 0, failed: 0, removed: 0, cursor: list.list_complete ? null : list.cursor };
   await Promise.all(list.keys.map(async ({ name, metadata }) => {
     const token = name.slice(PREFIX.length);
-    const result = await send({ token, sandbox: metadata?.s === 1 }, payload(a, metadata?.l || "en"), a.id);
+    const android = metadata?.p === "a", lang = metadata?.l || "en";
+    const result = await send({ token, sandbox: metadata?.s === 1, android }, android ? androidData(a, lang) : payload(a, lang), a.id);
     if (result === "sent") out.sent += 1;
     else if (result === "gone") { out.removed += 1; await kv.delete(name); }
     else out.failed += 1;

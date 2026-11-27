@@ -48,6 +48,14 @@ object Refresh {
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(WORK, ExistingPeriodicWorkPolicy.KEEP, request)
     }
 
+    /** One check now (a push just said there is something new), on a network. */
+    fun now(context: Context) {
+        val request = androidx.work.OneTimeWorkRequestBuilder<RefreshWorker>()
+            .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
+            .build()
+        WorkManager.getInstance(context).enqueueUniqueWork("$WORK-now", androidx.work.ExistingWorkPolicy.REPLACE, request)
+    }
+
     fun createChannel(context: Context) {
         val channel = NotificationChannel(CHANNEL, L("ct.android.channel.updates"), NotificationManager.IMPORTANCE_DEFAULT)
         context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)

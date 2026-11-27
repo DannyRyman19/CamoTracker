@@ -7,6 +7,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization")
 }
 
+// Firebase (push) reads app/google-services.json, which git ignores (it is the
+// Firebase project's config, from its console). Without the file the app
+// still builds: nothing registers for pushes, and announcements come from
+// the background refresh alone.
+if (file("google-services.json").exists()) apply(plugin = "com.google.gms.google-services")
+
 // Release signing from ~/.camotrack/keystore.properties (storeFile,
 // storePassword, keyAlias, keyPassword), never committed. Without it a
 // release build is signed with the debug key, for testing only.
@@ -81,6 +87,9 @@ dependencies {
     // The DMZ stash photo reader (hajin.scan): its two models, and on-device text
     implementation("com.google.ai.edge.litert:litert:1.4.2")
     implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.1")
+    // Announcements as pushes (services/Push.kt), sent by the push Worker
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation("com.google.firebase:firebase-messaging")
     // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
     implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
     implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")
