@@ -80,7 +80,8 @@ object Refresh {
         }
         val tap = PendingIntent.getActivity(context, 0, open, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val n = NotificationCompat.Builder(context, CHANNEL)
-            .setSmallIcon(R.drawable.ic_notification)
+            // The app icon's 사 (tools/make_notification_icon.py), in its gold
+            .setSmallIcon(R.drawable.ic_notification).setColor(0xFFFFD000.toInt())
             .setContentTitle(title).setContentText(body)
             .setStyle(NotificationCompat.BigTextStyle().bigText(body))
             .setContentIntent(tap).setAutoCancel(true)

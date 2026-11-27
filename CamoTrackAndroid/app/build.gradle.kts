@@ -90,6 +90,8 @@ dependencies {
     // Announcements as pushes (services/Push.kt), sent by the push Worker
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-messaging")
+    // Sync between the player's devices through their own Google Drive (services/GoogleSync.kt)
+    implementation("com.google.android.gms:play-services-auth:21.4.0")
     // LevelPlay (Unity's ad mediation) and its Unity Ads adapter, as on iPhone
     implementation("com.unity3d.ads-mediation:mediation-sdk:9.7.0")
     implementation("com.unity3d.ads-mediation:unityads-adapter:5.15.0")

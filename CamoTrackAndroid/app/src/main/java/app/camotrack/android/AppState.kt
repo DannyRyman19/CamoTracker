@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import app.camotrack.android.services.GoogleSync
 import app.camotrack.android.services.Premium
 import app.camotrack.android.services.StreamOverlay
 import app.camotrack.android.services.overlayPayload
@@ -100,9 +101,11 @@ object AppState {
         StreamOverlay.start(store)
         WidgetSync.start(context)
         Premium.start(context, store)
+        GoogleSync.start(context, store)
         app.camotrack.android.services.Ads.noteLaunch(store)
         // Pins and the like follow Premium as soon as it changes
-        Premium.onChange = { owned -> current?.isPremium = owned; revision++ }
+        // and sync starts (or stops) with it
+        Premium.onChange = { owned -> current?.isPremium = owned; revision++; GoogleSync.syncAll() }
         app.camotrack.android.ui.hajin.Hajin.start(context)
         open(GameRegistry.saved(games, store))
         // The tab picked in Customise (iOS StartTab); DMZ only where the game has Hajin
@@ -144,7 +147,11 @@ object AppState {
 
     fun open(game: Game) {
         store.putString(GameRegistry.KEY, game.id)
-        val t = GameTracker(game, DataService(game, File(cacheRoot, game.id), seeds), store)
+        // The same name as the iPhone app's iCloud key; its saved entries can restore a save that won't read
+        val syncKey = game.key("mw4_progress_sync", "sync")
+        val t = GameTracker(game, DataService(game, File(cacheRoot, game.id), seeds), store,
+            syncFallback = GoogleSync.engine(syncKey).snapshot.values.takeIf { it.isNotEmpty() })
+        GoogleSync.attach(syncKey, t.syncValues(), holdsWrites = { !t.loadedCleanly }) { t.applySynced(it) }
         t.milestoneListener = { milestone = it }
         t.isPremium = Premium.isPremium
         current = t
@@ -154,6 +161,7 @@ object AppState {
         watch = scope.launch {
             t.revision.collect {
                 revision++
+                GoogleSync.record(syncKey, t.syncValues())
                 // The stream overlay follows every change (it skips sends that change nothing)
                 StreamOverlay.refresh()
                 // The widgets too, once changes settle (written only when the snapshot changed)

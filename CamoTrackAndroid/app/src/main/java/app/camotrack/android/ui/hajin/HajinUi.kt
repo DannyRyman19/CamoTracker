@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.camotrack.android.AppState
+import app.camotrack.android.services.GoogleSync
 import app.camotrack.android.Route
 import app.camotrack.android.core.hajin.HajinGuide
 import app.camotrack.android.core.hajin.HajinGuideService
@@ -70,6 +71,7 @@ object Hajin {
     private lateinit var appContext: Context
     private var instance: HajinStore? = null
     private var refreshed = false
+    private const val SYNC_KEY = "mw4_hajin_sync"
 
     /** Bumped on every change to My DMZ or the guide. */
     var revision by mutableIntStateOf(0)
@@ -84,7 +86,9 @@ object Hajin {
 
     val store: HajinStore
         get() = instance ?: HajinStore(AppState.store, service.load()) { key, args -> L(key, *args) }.also {
-            it.onChange = { revision++ }
+            // My DMZ syncs too, under the iPhone app's key
+            GoogleSync.attach(SYNC_KEY, it.syncValues()) { values -> it.applySynced(values) }
+            it.onChange = { revision++; GoogleSync.record(SYNC_KEY, it.syncValues()) }
             instance = it
         }
 

@@ -91,6 +91,30 @@ class HajinStore(
         onChange()
     }
 
+    // MARK: Sync (the iOS flat entries: a tick is its key, plus the level, cash, tracked order and stash)
+
+    fun syncValues(): Map<String, Int> {
+        val values = HashMap<String, Int>()
+        for (key in checked) values[key] = 1
+        if (dmzLevel > 0) values[LEVEL_SYNC_KEY] = dmzLevel
+        if (cash > 0) values[CASH_SYNC_KEY] = cash
+        tracked.forEachIndexed { index, id -> values["track:$id"] = index + 1 }
+        for ((id, count) in stash) if (count > 0) values["stash:$id"] = count
+        return values
+    }
+
+    /** Replaces My DMZ with another device's entries and saves it. */
+    fun applySynced(values: Map<String, Int>) {
+        val ticks = values.keys.filter { it != LEVEL_SYNC_KEY && it != CASH_SYNC_KEY && !it.startsWith("track:") && !it.startsWith("stash:") }.toSet()
+        // An operator's Prestige set on two devices before they synced: the lower one goes
+        checked = withoutDuplicateOperators(ticks)
+        dmzLevel = values[LEVEL_SYNC_KEY] ?: 0
+        cash = values[CASH_SYNC_KEY] ?: 0
+        tracked = values.filter { it.key.startsWith("track:") }.entries.sortedBy { it.value }.map { it.key.removePrefix("track:") }
+        stash = values.filter { it.key.startsWith("stash:") }.mapKeys { it.key.removePrefix("stash:") }
+        saved()
+    }
+
     // MARK: Pins
 
     fun addPin(pin: HajinPin) { setPins(pins + pin) }
@@ -465,6 +489,8 @@ class HajinStore(
     }
 
     companion object {
+        private const val LEVEL_SYNC_KEY = "dmz-level"
+        private const val CASH_SYNC_KEY = "dmz-cash"
         const val PINS_KEY = "mw4_hajin_pins"
         const val CHECKED_KEY = "mw4_hajin_checked"
         const val LEVEL_KEY = "mw4_hajin_dmz_level"

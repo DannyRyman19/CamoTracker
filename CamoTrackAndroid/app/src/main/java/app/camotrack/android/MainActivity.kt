@@ -75,6 +75,8 @@ class MainActivity : ComponentActivity() {
         Ads.start(this)
         // Announcements as pushes, once notifications are allowed
         app.camotrack.android.services.Push.sync(this, AppState.store)
+        // Another device's progress may have landed while the app was away
+        app.camotrack.android.services.GoogleSync.syncAll()
     }
 
     /** A notification's (or any) mw4camo:// link. */

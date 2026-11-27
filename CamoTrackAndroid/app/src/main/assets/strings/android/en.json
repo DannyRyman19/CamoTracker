@@ -37,7 +37,13 @@
 "ct.android.hajin.scan_open_failed": "Couldn't open that photo. Try another one.",
 "ct.android.hajin.scan_no_camera": "No camera app to take a photo with. Choose a photo instead.",
 "ct.android.hajin.scan_remove_recent": "Remove this photo from Recent photos?",
-"ct.android.hajin.scan_read_failed": "Couldn't read this photo. Try again, or choose another."
+"ct.android.hajin.scan_read_failed": "Couldn't read this photo. Try again, or choose another.",
+"mw4.ui.icloud.title": "Sync with Google",
+"mw4.ui.icloud.footer": "Keeps your camos, weapon levels, Prestige and boss ticks the same on every Android phone and tablet signed in to your Google Account. It is kept in your own Google Drive, in a folder only Camo Track can see.",
+"ct.android.sync.failed": "Couldn't reach Google Drive. Changes stay on this device until it can.",
+"ct.android.sync.signed_out": "Google needs you to sign in again. Switch sync off and on to carry on."
 },
-"plurals": {}
+"plurals": {
+
+}
 }

@@ -37,7 +37,12 @@ import app.camotrack.android.WhatsNew
 import app.camotrack.android.core.ModeSelection
 import app.camotrack.android.i18n.L
 import app.camotrack.android.i18n.Strings
+import app.camotrack.android.core.SyncStatus
 import app.camotrack.android.services.AdConsent
+import app.camotrack.android.services.GoogleSync
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import app.camotrack.android.services.Premium
 import app.camotrack.android.ui.*
 import kotlinx.coroutines.launch
@@ -117,6 +122,10 @@ fun CustomiseScreen() {
                             ("dmz" to L("mw4.ui.hajin.title")).takeIf { AppState.tracker.game.hasHajin }, "stats" to L("mw4.ui.tab.stats")),
                     ) { startTab = it }
                 }
+            }
+
+            headedSection(premiumHeader(locked, accent, openPremium), footer = L("mw4.ui.icloud.footer")) {
+                Group { GoogleSyncRow(locked, accent) }
             }
 
             headedSection(premiumHeader(locked, accent, openPremium), footer = L("mw4.ui.customise.footer")) {
@@ -377,6 +386,44 @@ private fun ToggleRow(title: String, checked: Boolean, accent: Color, enabled: B
             checked = checked, onCheckedChange = onChange, enabled = enabled,
             colors = SwitchDefaults.colors(checkedTrackColor = accent, checkedThumbColor = Color.White, disabledCheckedTrackColor = accent.copy(alpha = 0.35f), disabledCheckedThumbColor = Color.White.copy(alpha = 0.6f)),
         )
+    }
+}
+
+/**
+ * Sync with Google (iOS's iCloud switch): on asks Google for the player's
+ * say-so the first time, and what is wrong shows under it while it is on.
+ */
+@Composable
+private fun GoogleSyncRow(locked: Boolean, accent: Color) {
+    val scope = rememberCoroutineScope()
+    var on by remember { mutableStateOf(GoogleSync.isEnabled) }
+    var failed by remember { mutableStateOf(false) }
+    val ask = rememberLauncherForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+        on = GoogleSync.finishConsent(result.resultCode, result.data)
+    }
+    ToggleRow(L("mw4.ui.icloud.title"), checked = on && !locked, accent = accent, enabled = !locked) { wanted ->
+        failed = false
+        if (!wanted) { GoogleSync.switchOff(); on = false; return@ToggleRow }
+        scope.launch {
+            when (val consent = GoogleSync.switchOn()) {
+                GoogleSync.Consent.Granted -> on = true
+                is GoogleSync.Consent.Ask -> ask.launch(IntentSenderRequest.Builder(consent.intent.intentSender).build())
+                GoogleSync.Consent.Failed -> failed = true
+            }
+        }
+    }
+    val problem = when {
+        failed -> L("ct.android.sync.failed")
+        locked || !on -> null
+        else -> when (GoogleSync.status) {
+            SyncStatus.SIGNED_OUT -> L("ct.android.sync.signed_out")
+            SyncStatus.NEEDS_UPDATE -> L("mw4.ui.icloud.needs_update")
+            SyncStatus.FAILED -> L("ct.android.sync.failed")
+            SyncStatus.OFF, SyncStatus.SYNCED -> null
+        }
+    }
+    if (problem != null) {
+        Text(problem, style = sys(13f), color = Ink.muted, modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 12.dp))
     }
 }
 
