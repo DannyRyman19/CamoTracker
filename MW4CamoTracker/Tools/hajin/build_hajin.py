@@ -431,7 +431,7 @@ guide = [
    ("Mill Explosives Lab", None, "Uncommon. The Explosives Lab in the Rice Mill, Imjin Farmland. Its grid square isn't on the key yet"),
    # in the game's loot tables (dmz.tips atlas, 2026-11-12); doors not found yet
    ("The Citadel Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
-   ("The Grid Side Access", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
+   ("The Grid Side Access", "G6", "Uncommon. Players report it opens the door on the west side of The Grid, past the security blockade, straight into the Netshin Tech Complex. Found on bodies and in jackets and military duffles"),
    ("Downtown Branch Lobby Main", None, "Uncommon. Found on bodies and in jackets and military duffles. Where its door is isn't known yet"),
    ("Field Depot", "B5", "Rare. The Field Depot, a locked room players have reported. Found on bodies and in jackets and military duffles"),
    ("Prison Encampment Storage", "C3", "Rare. The ordnance storage on the southeast side of the prison camp, 14th Political Prison"),
@@ -450,6 +450,8 @@ guide = [
    ("The Citadel Main Control Room", None, "Uncommon. The Citadel's main control room. Players find it after the East Wing's four-core K9 terminal sequence"),
    ("The Citadel Secondary Control Room", "B3", "Uncommon. The Citadel's secondary control room and its security station. Players find it after the South Wing controls"),
    ("South Block Armory", None, "Legendary. An armory in the Citadel. Players have found the key on the main control room's counter"),
+   # web guides (2026-11-24); dmzhub.gg and dmzcodex.com were not reachable
+   ("X01 Vault DRC Locker", "X01 C2", "Ultra. New in Season 1. The DRC Weapons Locker in the Deep Vault's Core Room, X01. The Hajin DRC keys and the numbered Deep Vault keycards don't open it. Where it drops isn't known yet; players report rare finds in X01 lockers and containers"),
   ])},
  {"id": "valuables", "title": "Valuables", "symbol": "diamond.fill",
   "intro": "Gem-icon loot: sell it for DMZ Cash or put it toward FOB upgrades.",
@@ -542,7 +544,7 @@ _vd.fob_pictures(items)
 _vd.key_sources(items, markers, CODEX["keys"])
 
 cats = [{"id": c[0], "name": c[1], "symbol": c[2], "color": c[3], "visible": c[5], **({"blurb": CAT_BLURB[c[0]]} if c[0] in CAT_BLURB else {})} for c in CATS]
-data = {"version": "0.9.54", "updated": "2026-11-12",
+data = {"version": "0.9.59", "updated": "2026-11-24",
         "map": {"image": "hajin_map", "credit": "Map: Activision Hajin DMZ Tac Map"},
         "threatLevels": ["Low", "Medium", "High", "Critical", "Extreme"],
         "categories": cats, "markers": markers, "guide": guide, "items": items, "traitTrees": trees, "traits": traits}
