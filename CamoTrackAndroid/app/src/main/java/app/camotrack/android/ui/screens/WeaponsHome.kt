@@ -316,7 +316,7 @@ private fun HomeTitleBar(mode: String) {
                     DropdownMenuItem(
                         text = { Text(modeName(m), color = Ink.text) },
                         leadingIcon = { if (m == mode) Icon(Icons.Filled.Check, null, tint = Ink.text) else Spacer(Modifier.size(24.dp)) },
-                        trailingIcon = { Icon(modeIcon(m), null, tint = modeAccent(m)) },
+                        trailingIcon = { Icon(modeIcon(m), null, tint = modeAccent(m), modifier = Modifier.size(24.dp)) },
                         onClick = { open = false; AppState.pickMode(m) },
                     )
                 }
