@@ -767,6 +767,7 @@ EFFECTS = {
  "bandage": "Restores max health for 180 seconds after you're hurt",
  "medkit": "Permanently restores the health you've lost to a wound",
  "radiation-blockers": "Cuts the effects of radiation for a minute",
+ "door-breacher-charge": "Single-use charge that breaches a locked key door. Players report it won't open keycard doors",
 }
 
 def sweep_oct20(guide, markers, items):
