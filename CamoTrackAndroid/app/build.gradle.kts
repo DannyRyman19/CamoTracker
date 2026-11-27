@@ -11,7 +11,10 @@ plugins {
 // Firebase project's config, from its console). Without the file the app
 // still builds: nothing registers for pushes, and announcements come from
 // the background refresh alone.
-if (file("google-services.json").exists()) apply(plugin = "com.google.gms.google-services")
+// -PsyncTest builds the debug app as app.camotrack.android.synctest (below), which
+// Firebase doesn't know, so it goes without.
+val syncTest = project.hasProperty("syncTest")
+if (file("google-services.json").exists() && !syncTest) apply(plugin = "com.google.gms.google-services")
 
 // Release signing from ~/.camotrack/keystore.properties (storeFile,
 // storePassword, keyAlias, keyPassword), never committed. Without it a
@@ -43,6 +46,10 @@ android {
         }
     }
     buildTypes {
+        // `./gradlew assembleDebug -PsyncTest`: a debug build that installs beside
+        // the real app, for trying Sync with Google on a phone that has the
+        // release build (its own OAuth client: the package and the debug key).
+        if (syncTest) getByName("debug") { applicationIdSuffix = ".synctest" }
         release {
             isMinifyEnabled = true
             isShrinkResources = true

@@ -61,6 +61,9 @@ class MainActivity : ComponentActivity() {
         )
         if (savedInstanceState == null) openLink(intent)
         if (BuildConfig.DEBUG && intent?.getBooleanExtra("debug_seed", false) == true) DebugSeed.run()
+        // `--ez debug_premium true`: Premium without a purchase, for trying what it unlocks
+        if (BuildConfig.DEBUG && intent?.getBooleanExtra("debug_premium", false) == true) app.camotrack.android.services.Premium.fakeBuy()
+        if (BuildConfig.DEBUG && intent?.getBooleanExtra("debug_sync_wipe", false) == true) app.camotrack.android.services.GoogleSync.debugWipeDrive()
         setContent { Root() }
     }
 

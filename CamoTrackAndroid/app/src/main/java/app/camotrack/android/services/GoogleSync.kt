@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import app.camotrack.android.BuildConfig
 import app.camotrack.android.core.KeyValueStore
 import app.camotrack.android.core.SyncEngine
 import app.camotrack.android.core.SyncStatus
@@ -146,8 +147,8 @@ object GoogleSync {
         if (!isEnabled) { status = SyncStatus.OFF; return@withLock }
         val auth = authorize()
         val token = auth?.accessToken
-        if (auth == null) { status = SyncStatus.FAILED; return@withLock }
-        if (auth.hasResolution() || token == null) { status = SyncStatus.SIGNED_OUT; return@withLock }
+        if (auth == null) { status = SyncStatus.FAILED; log("no answer from Google"); return@withLock }
+        if (auth.hasResolution() || token == null) { status = SyncStatus.SIGNED_OUT; log("Google wants the player to agree"); return@withLock }
         var worst = SyncStatus.SYNCED
         for ((key, entry) in entries.toList()) {
             val result = runCatching { one(Drive(token), key, entry) }.getOrElse { error ->
@@ -155,11 +156,38 @@ object GoogleSync {
                 if (error is Drive.Refused) runCatching {
                     Identity.getAuthorizationClient(app).clearToken(ClearTokenRequest.builder().setToken(token).build())
                 }
+                log("$key failed: $error")
                 SyncStatus.FAILED
             }
             if (result != SyncStatus.SYNCED && worst != SyncStatus.NEEDS_UPDATE) worst = result
         }
         status = worst
+        log("pass done: $worst")
+    }
+
+    /**
+     * Debug builds only (`--ez debug_sync_wipe true`): sync off, and every
+     * file this app keeps in the signed-in account's Drive removed, so test
+     * progress doesn't stay behind to merge into real progress later.
+     */
+    fun debugWipeDrive() {
+        if (!BuildConfig.DEBUG) return
+        switchOff()
+        scope.launch {
+            passLock.withLock {
+                val token = authorize()?.accessToken
+                if (token == null) { log("wipe: not signed in"); return@withLock }
+                val removed = runCatching {
+                    withContext(Dispatchers.IO) { Drive(token).run { all().onEach(::delete).size } }
+                }.getOrElse { log("wipe failed: $it"); return@withLock }
+                log("wipe: removed $removed files from Drive")
+            }
+        }
+    }
+
+    /** Debug builds say what each pass did (`adb logcat -s CamoSync`). */
+    private fun log(message: String) {
+        if (BuildConfig.DEBUG) android.util.Log.d("CamoSync", message)
     }
 
     private suspend fun one(drive: Drive, key: String, entry: Entry): SyncStatus {
@@ -167,6 +195,8 @@ object GoogleSync {
         val files = withContext(Dispatchers.IO) { drive.find(name).map { it to drive.read(it) } }
         // Merged here, on the main thread, with whatever was ticked while Drive answered
         val pass = entry.engine.merge(files.map { it.second }, entry.holdsWrites())
+        log("$key: ${files.size} in Drive, ${entry.engine.snapshot.values.size} entries here" +
+            (pass.applied?.let { ", took in ${it.size}" } ?: "") + (pass.upload?.let { ", writing ${it.length} bytes" } ?: ", nothing to write"))
         pass.applied?.let(entry.apply)
         pass.upload?.let { text ->
             withContext(Dispatchers.IO) {
@@ -199,6 +229,12 @@ internal class Drive(private val token: String) {
         val query = URLEncoder.encode("name = '$name'", "UTF-8")
         val text = call("GET", "$API/files?spaces=appDataFolder&q=$query&orderBy=createdTime&fields=files(id)&pageSize=20")
         val files = JSONObject(text).optJSONArray("files") ?: return emptyList()
+        return (0 until files.length()).map { files.getJSONObject(it).getString("id") }
+    }
+
+    /** Every file in the app's folder, whatever it is called. */
+    fun all(): List<String> {
+        val files = JSONObject(call("GET", "$API/files?spaces=appDataFolder&fields=files(id)&pageSize=100")).optJSONArray("files") ?: return emptyList()
         return (0 until files.length()).map { files.getJSONObject(it).getString("id") }
     }
 
